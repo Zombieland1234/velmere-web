@@ -1,11 +1,5 @@
 {
-  "installCommand": "npm_config_engine_strict=false npm ci --no-audit --no-fund --progress=false",
-  "buildCommand": "npm run build",
   "framework": "nextjs",
-  "crons": [
-    {
-      "path": "/api/market-integrity/cron?pages=2&perPage=100",
-      "schedule": "*/30 * * * *"
-    }
-  ]
+  "installCommand": "npm_config_engine_strict=false npm ci --no-audit --no-fund --progress=false",
+  "buildCommand": "npm run build"
 }
