@@ -21,7 +21,6 @@ const a60RuntimeProbeSha256 = /^[a-f0-9]{64}$/u.test(process.env.VELMERE_A60_RUN
 const nextConfig = {
   reactStrictMode: true,
   typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   enablePrerenderSourceMaps: false,
