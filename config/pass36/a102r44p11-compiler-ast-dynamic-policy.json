@@ -1,0 +1,104 @@
+{
+  "creditBoundary": {
+    "customerCredit": false,
+    "independentAdjudicationCredit": false,
+    "liveCredit": false,
+    "localCompilerAstCredit": true,
+    "localFoundryFuzzCredit": true,
+    "localFoundryInvariantCredit": true,
+    "localMultifileProtocolCredit": true,
+    "realExternalProtocolAccuracyCredit": false,
+    "saleCredit": false
+  },
+  "evidenceArtifact": {
+    "byteLength": 339789,
+    "githubActionsRunId": 30809467587,
+    "githubArtifactId": 8854146043,
+    "materialsPath": "r44p11/compiler-ast/r44p11-compiler-ast-dynamic-evidence.zip",
+    "sha256": "c68fedf5a6f55e9f70cec47326d8d216d6163927204be6cdb218fc066bb232d5",
+    "workflowConclusion": "success"
+  },
+  "fixtureFiles": [
+    {
+      "byteLength": 287,
+      "path": "fixtures/pass36/r44p11-compiler-ast/foundry.toml",
+      "sha256": "74bd305c432eea017f425a3a752252d53d3d8a87cbefceb878eb1147d795aa17"
+    },
+    {
+      "byteLength": 955,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/bridge/BridgeProtocol.sol",
+      "sha256": "c202f2db5f47708c3c6845714380e79a0f380162f11f2aaa55f69b91b8d3ff26"
+    },
+    {
+      "byteLength": 422,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/governance/GovernanceProtocol.sol",
+      "sha256": "9508f4c8f1f097415b0d6918ea3ec5b465ccf120959f1bcc64eefcdd364ea88d"
+    },
+    {
+      "byteLength": 2192,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/lending/SolvencyProtocol.sol",
+      "sha256": "ba3bf2e4347c2ecd448e32eb48c2ce4e90abfa593979c1092ba41e496e7c5434"
+    },
+    {
+      "byteLength": 1255,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/oracle/OracleProtocol.sol",
+      "sha256": "8fda9bc0a42e6f20b21ad8f9c54e6b70aeeb0683900e1aef875e911a3be770cd"
+    },
+    {
+      "byteLength": 377,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/upgrade/NamespacedState.sol",
+      "sha256": "427af130e96e985a97b171bc4ffcdd76ad71c7cc663e08d952349d125e386143"
+    },
+    {
+      "byteLength": 749,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/upgrade/UpgradeableProtocol.sol",
+      "sha256": "cecde12d8a8d6153593a405c989c9a7d1d03b4ab95c7497a386d714382e4d8a1"
+    },
+    {
+      "byteLength": 1291,
+      "path": "fixtures/pass36/r44p11-compiler-ast/src/vault/ShareVault.sol",
+      "sha256": "efc371a09c362b1f90cb544da13e3255ed592608dc0aee33f3b07e6a88524761"
+    },
+    {
+      "byteLength": 7469,
+      "path": "fixtures/pass36/r44p11-compiler-ast/test/R44P11Protocol.t.sol",
+      "sha256": "396792d2a34158887d2f8c167be0dc49c3e89503241a52857c5bc9a59319d61c"
+    }
+  ],
+  "globalTruth": {
+    "decision": "NO_GO",
+    "live": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "ledger": {
+    "astAssertions": 64,
+    "astFailed": 0,
+    "astPassed": 64,
+    "byteLength": 13311,
+    "forgeFuzzTests": 3,
+    "forgeInvariantCampaigns": 4,
+    "forgePassedTests": 16,
+    "materialsPath": "r44p11/compiler-ast/extracted/evidence/R44P11_COMPILER_AST_DYNAMIC_PROTOCOL_LEDGER.json",
+    "metamorphicCompilerRuns": 4,
+    "protocolPairs": 6,
+    "protocolVariants": 12,
+    "sha256": "e5cb0f7005c3352cfad6f0952c38f71cd42bb26132d0926894324dcd6c08919c",
+    "sourceFiles": 7,
+    "status": "PASS_LOCAL_COMPILER_AST_MULTIFILE_FUZZ_INVARIANT"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p11.compiler-ast-dynamic-policy.v1",
+  "toolIdentities": {
+    "forge": {
+      "sha256": "fb15fd52f774c935fa15f1ad6ff018c56b7054f50b6329e20a882b8d12992a16",
+      "version": "1.2.3"
+    },
+    "solc": {
+      "sha256": "fb03a29a517452b9f12bcf459ef37d0a543765bb3bbc911e70a87d6a37c30d5f",
+      "version": "0.8.24+commit.e11b9ed9"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "velmere.pass36.a96.rls-tenant-isolation-policy.v1",
+  "revisionId": "VELMERE_PASS36_A96R0_RLS_19_CASE_EXECUTABLE_REPLAY_AND_CUSTOMER_ARTIFACT_USER_CLIENT_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A95R0_STAGING_SUBJECT_REBIND_ENVIRONMENT_ISOLATION_AND_ZERO_MUTATION_PREFLIGHT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "generatedAt": "2026-07-29T02:00:00.000Z",
+  "purpose": "Execute the exact 19-case owner/operator RLS denominator inside a rollback-only disposable staging transaction and ensure customer artifact reads use an active user-scoped Supabase client instead of service-role authority.",
+  "requiredA95Decision": "READY_FOR_BOUNDED_STAGING_PROGRAM_NOT_EXECUTED",
+  "confirmationToken": "I_UNDERSTAND_A96_USES_ONLY_A_DISPOSABLE_STAGING_DATABASE_AND_ROLLS_BACK_ALL_FIXTURES",
+  "databaseClass": "disposable_staging",
+  "requiredCases": 19,
+  "requiredExecuted": 19,
+  "requiredPassed": 19,
+  "requiredOwnerCases": 13,
+  "requiredOperatorCases": 6,
+  "sqlPath": "tests/staging/pass36/a96-rls-19-case-replay.sql",
+  "matrixPath": "config/pass23/rls-staging-case-matrix.json",
+  "budgets": {
+    "timeoutMs": 600000,
+    "maximumStdoutBytes": 8388608,
+    "maximumStderrBytes": 8388608,
+    "maximumReceiptBytes": 2097152
+  },
+  "databaseSafety": {
+    "protocols": ["postgres:", "postgresql:"],
+    "rejectHostnameTokens": ["prod", "production", "live", "primary"],
+    "rejectDatabaseTokens": ["prod", "production", "live", "primary"],
+    "localhostAllowedOnlyInFixture": true,
+    "requiredSslModes": ["require", "verify-full"],
+    "requireDetachedHostSha256": true,
+    "requireAbsolutePsqlPath": true,
+    "requirePsqlSha256": true,
+    "forbidPsqlRc": true,
+    "forbidShell": true,
+    "passCredentialsInArguments": false,
+    "inheritWholeProcessEnvironment": false
+  },
+  "customerArtifactBoundary": {
+    "routePath": "lib/server/lazy-route-modules/account--customer-artifact.ts",
+    "storePath": "lib/reporting/account-customer-artifact-store.ts",
+    "boundaryPath": "lib/db/customer-owned-write-boundary.ts",
+    "requireUserScopedClientForRealAccounts": true,
+    "serviceRoleReadAllowedForCustomerRoute": false,
+    "previewMemoryAllowedOnlyOutsideProduction": true,
+    "requireExactAccountIdFilterInAdditionToRls": true
+  },
+  "decisions": {
+    "verified": "VERIFIED_STAGING_RLS_19_OF_19",
+    "blocked": "BLOCKED_A96_EXTERNAL_OR_A95_PRECONDITIONS",
+    "rejected": "REJECTED_A96_INTEGRITY",
+    "actionRequired": "ACTION_REQUIRED_A96_RLS_OR_TENANT_ISOLATION"
+  },
+  "promotion": {
+    "a96PassCredit": false,
+    "stagingCredit": false,
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "A96 local implementation can prove the runner, exact denominator, rollback contract, user-client wiring and adversarial fail-closed behavior. Only a genuine disposable staging execution with exact A95 admission and 19/19 row-fixture outcomes may receive the narrow RLS staging decision. It does not prove all API tenant isolation, payments, provider rights, legal approval, customers, LIVE or sale readiness."
+}

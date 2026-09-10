@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "velmere.pass36.a94r2.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "generatedAt": "2026-07-28T22:30:00Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "decision": "NO_GO",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A94_PARTIAL_PLUS_A59R2_A93R2_A94R2_LOCAL_CLOSURES",
+  "passCredit": {
+    "A90": false,
+    "A91": false,
+    "A92": false,
+    "A93": false,
+    "A94": false,
+    "A77R1": false,
+    "A78R1": false,
+    "A79R1": false,
+    "A80R1": false
+  },
+  "localImplementation": {
+    "apiEdgeAndWorkerMutationHardening": true,
+    "providerConcurrencyAndSingleFlightBudgets": true,
+    "attachmentFailClosedAvCdrQuarantineBoundary": true,
+    "durableFileIdentityAndHardlinkBoundary": true,
+    "rasterContainerStructuralValidation": true,
+    "remoteProductImageRejection": true,
+    "paymentRuntimeAuthorityAndStopSell": true,
+    "stripeWebhookDurabilityAndPartialRefundBoundary": true,
+    "buildEnvironmentAllowlist": true,
+    "buildOutputExclusiveLockAndPhaseBinding": true,
+    "privateExternalBuildLockBoundary": true,
+    "postProcessBuildLockAbsenceVerification": true,
+    "dependencyAuditZeroAtCheckpoint": true,
+    "productionSmokeCanonicalOriginHarness": true,
+    "analysisPaidDepthServerOwnership": true,
+    "focusContrastLocaleMetadata": true,
+    "realDenominatorPreservation": true,
+    "cssLexicalMinifierDisabled": true,
+    "routeExportAstRegistry": true,
+    "lazyRouteShellMethodParity": true,
+    "orphanBuildLockDualReviewRecovery": true,
+    "retainedPhysicalPdfIndependentQa": true,
+    "crossSurfaceBasicProAdvancedTruthControl": true
+  },
+  "localVerification": {
+    "runtimeObservedNodeVersion": "22.16.0",
+    "runtimeObservedNpmVersion": "10.9.2",
+    "officialNodeArchiveProvenanceVerified": false,
+    "lockfileDependencyBundle827Of827Verified": false,
+    "exactPlaywrightChromiumVerified": false,
+    "routeAstRegistryBuilt": true,
+    "routeAstFiles": 254,
+    "routeAstParserVersion": "5.8.3",
+    "routeAstUsedExternalDiagnosticTypeScript": true,
+    "routeAstExactToolchainCreditGranted": false,
+    "routeDispatchPassed": true,
+    "routeDispatchChecks": 1480,
+    "lazyRouteShellVerifierPassed": true,
+    "lazyRouteShellChecks": 176,
+    "orphanBuildLockRecoveryFixturePassed": true,
+    "orphanBuildLockRecoveryAssertions": 26,
+    "realOrphanBuildLockRecoveries": 0,
+    "retainedPhysicalPdfQaPassed": true,
+    "retainedPdfDocuments": 450,
+    "retainedPdfPages": 2100,
+    "retainedPdfBlankPages": 0,
+    "retainedPdfEdgeContactPages": 0,
+    "retainedPdfGhostscriptSamplePassed": 45,
+    "crossSurfaceValueTruthPassed": true,
+    "crossSurfaceSemanticMutationsKilled": 16,
+    "targetedLocalSuitePassed": true,
+    "typecheckPassedOnA94R2FinalBytes": false,
+    "fullLintPassedOnA94R2FinalBytes": false,
+    "webpackBuildPassedOnA94R2FinalBytes": false,
+    "turbopackBuildPassedOnA94R2FinalBytes": false,
+    "productionRuntimeSmokePassedOnA94R2FinalBytes": false,
+    "browserExecuted": false,
+    "currentRoot30Of30PassedOnA94R2FinalBytes": false,
+    "cleanUnpackPassedOnFinalA94R2Archive": false,
+    "sourceFrozen": true,
+    "exactReleaseCreditGranted": false,
+    "browserCreditGranted": false,
+    "routeAstVerifierChecks": 1021,
+    "crossSurfaceValueTruthChecks": 32,
+    "retainedPdfMaterialsBindingPassed": true,
+    "retainedPdfMaterialsBindingChecks": 19,
+    "a59StaticBudgetPassed": true,
+    "a59StaticBudgetChecks": 77,
+    "productTierChecksPassed": 186,
+    "zeroBudgetChecksPassed": 439,
+    "targetedLocalSuitePassedChecks": 16,
+    "targetedLocalSuiteBlockedChecks": 1,
+    "targetedLocalSuiteFailedChecks": 0,
+    "a94ExactTailwindRerunExecuted": false,
+    "a94ExactTailwindBlocker": "EXACT_TAILWIND_3_4_19_DEPENDENCY_UNAVAILABLE_IN_SOURCE_ONLY_ENVIRONMENT",
+    "cssInputParityPaths": 26,
+    "cssInputParityChanged": 0,
+    "sourceAuditPreDescendant": {
+      "filesRead": 4651,
+      "codeFiles": 2873,
+      "syntaxErrors": 0,
+      "localImports": 7069,
+      "missingLocalImports": 0,
+      "cssModuleReferences": 758,
+      "missingCssModuleClasses": 0,
+      "classification": "PASS_DIAGNOSTIC_SOURCE_AUDIT_PRE_DESCENDANT_NO_EXACT_TOOLCHAIN_CREDIT"
+    },
+    "changeSet": {
+      "baselineFiles": 4620,
+      "currentFilesExcludingSelfAndDescendant": 4648,
+      "added": 28,
+      "modified": 17,
+      "deleted": 0,
+      "changedPathsTotal": 45,
+      "summaryPath": "config/pass36/a94r2-change-set-summary.json"
+    }
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "promotion": {
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "nextRequiredStep": "Run and freeze the A94R2 targeted regression, cross-surface truth verifier, descendant lineage and deterministic packaging. Then supply hash-anchored official Node 24.18.0/npm 11.16.0, 827/827 lockfile inputs and exact Chromium for A77R1-A80R1 before browser, staging, LIVE or sale credit.",
+  "truthBoundary": "This sparse ACTION_REQUIRED A94R2 child closes local route-export AST discovery, lazy-route parity, dual-reviewed orphan-lock recovery, retained physical PDF QA and consolidated Basic/Pro/Advanced truth controls. It grants no A90-A94 PASS credit, no exact toolchain or browser credit, no staging, real-data, rights, legal, customer, assurance, LIVE, sale or world-class credit.",
+  "planningEstimate": {
+    "formalRemainingEntries": 31,
+    "realisticRemainingCheckpointsLow": 39,
+    "realisticRemainingCheckpointsHigh": 46,
+    "classification": "PLANNING_INFERENCE_NOT_CREDIT",
+    "basis": "31 formal entries plus likely 8-15 repair/retest revisions after exact browser, staging, real-data, rights, legal, assurance and customer execution."
+  },
+  "sourceFreezeTruth": {
+    "frozenForPackaging": true,
+    "finalArchiveCleanUnpackReceiptExternalToSource": true,
+    "sourceMayNotEmbedOwnFinalArchiveHashOrCleanReceipt": true,
+    "exactA77R1ToA80R1Credit": false
+  }
+}

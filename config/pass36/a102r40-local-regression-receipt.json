@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "velmere.pass36.a102r40.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T06:04:00+02:00",
+  "status": "PASS_A102R40_CURRENT_SOURCE_AUTHORITY_AND_EXACT_PREFLIGHT_REGRESSION_ACTION_REQUIRED_NO_FRESH_WINDOWS_BUILD_BROWSER_CREDIT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 20,
+  "executedStages": 20,
+  "passedStages": 20,
+  "failedStages": 0,
+  "stages": [
+    {
+      "id": "a102r40-current-source-authority-preflight",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r40-current-source-authority-preflight.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "9b1a6b5a89b572c007f05a9f4f3e3fd970ebe4dba6021752b6ccf46fcba55a4e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 868,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a60-exact-preflight-harness",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "1ada4876253821d8be681b05228a78ed675edba62b2574e9c4203985560fe9c4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 38935,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a79-exact-build-browser-admission",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a79-exact-final-byte-build-browser-evidence-binding.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "cd92ce4e560c368ae44baca4b8557672a58596a47ad59576ac376b0f12890524",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 11416,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a79-exact-build-browser-verifier",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a79-exact-final-byte-build-browser-evidence-binding.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "c6e97d699991c2fb5ed06d60fddede4477789fe6fb187cdc9526f1534c863a7a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 922,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a58-release-integrity-adversarial",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a58-release-integrity.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "81e734fedc64ae448937e1ccfbea5b78284e02f87b8f47b7183f03ae574eac58",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5828,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r38-smoke-evidence",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r38-production-smoke-evidence-uniqueness.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "9e6f6321fb61192ae00dae1b98c1d062865d7945dc07cb0a6b22f3c7c89fb840",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 946,
+      "stderrBytes": 0
+    },
+    {
+      "id": "production-smoke-contract",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/deployment/test-production-smoke-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "3717d0eb692fc9f81c70ad1eff3cbb8eca56df1db30c4d5246cfbb26e386a8a4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 191,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r36-eslint-portability",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r36-eslint-runner-portability.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a540ec4df9ba950f5a8e22bf93b78a2c535ed160855a338bd560f50fe0afbb47",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5451,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a42-rebaseline",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r40-a42-critical-rebaseline.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "ca4d9098150ce9010728e3aede5eaf142a782ca48cbfacb3e866256901e1fb70",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 202,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a42-contract",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-a42-dev-runtime-cache-recovery.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "14fa340ad7d954478fc6fc34020357e0f6b53c48bbfd4606e708594218586703",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 52,
+      "stderrBytes": 0
+    },
+    {
+      "id": "dev-bootstrap",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/velmere-dev-bootstrap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "fbb8f135712376c0500385932212e403d8cf69dd45b9cd6af622654f7f6a92ee",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1028,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-dispatch",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-route-dispatch-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-tamper",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/test-route-dispatch-manifest-tamper.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy-routes",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-lazy-route-shells.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product-tiers",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-product-tier-content-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero-budget",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-zero-budget-functional-roadmap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit-generated-next-types",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r38-source-audit-generated-next-types.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a464bad3df513561d8c890c3793ba7074639140488651771369d6eb878209acf",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 231,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/a44-source-integrity-audit.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "0bd72e1116390945459565d797b17a10e90984841187ff819a6d67729ab63d63",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r40-approved-current-source-changes",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r40-approved-current-source-changes.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "1cbadc546fa05960fee05e39adf56a44bd018dd7c116dbf205616c50ebd65f84",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 188,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r40-authority",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r40-action-required-authority.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "9e31644549eeda8a6a78dd5a6c51857fc609970d67bfc6be38f884a01232dfb6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 634,
+      "stderrBytes": 0
+    }
+  ],
+  "keyDenominators": {
+    "currentSourceAuthorityChecks": 37,
+    "releaseSourceBindingSurfaces": 6,
+    "crossPlatformModeChecks": 21,
+    "canonicalExecutablePaths": 35,
+    "a58AdversarialBaselineChecks": 45,
+    "a102r38EvidenceChecks": 46,
+    "productionSmokeContractChecks": 82,
+    "parentA102r36Checks": 39,
+    "a42CriticalFiles": 76,
+    "a42ContractChecks": 126,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439,
+    "sourceAuditGeneratedNextTypesChecks": 11,
+    "a60HarnessChecks": 32,
+    "a79AdmissionChecks": 54,
+    "a79VerifierChecks": 18,
+    "a79BrowserRowsRequired": 56,
+    "a79ScreenshotsRequired": 29,
+    "authorityChecks": 40
+  },
+  "sourceAudit": {
+    "filesRead": 5480,
+    "codeFiles": 3375,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "sourceBeforePayload": {
+    "fileCount": 5479,
+    "byteLength": 125232827,
+    "pathSetSha256": "c69ea25d812c0e28c8e3ca728be66b099e1e33bab1b287d17d4e6c8ee370dd6c",
+    "aggregateSha256": "898dc8c79d9cee97ae5f2af2dbb4dd69d3095d073781adbd972cb92fbed82291"
+  },
+  "sourceAfterPayload": {
+    "fileCount": 5479,
+    "byteLength": 125232827,
+    "pathSetSha256": "c69ea25d812c0e28c8e3ca728be66b099e1e33bab1b287d17d4e6c8ee370dd6c",
+    "aggregateSha256": "898dc8c79d9cee97ae5f2af2dbb4dd69d3095d073781adbd972cb92fbed82291"
+  },
+  "localClosure": {
+    "legacyA57CurrentPreflightEligible": false,
+    "currentAuthorityPayloadExactRequired": true,
+    "a60CurrentSourceBound": true,
+    "a62CurrentSourceBound": true,
+    "a63CurrentSourceBound": true,
+    "a78CurrentSourceBound": true,
+    "a79CurrentSourceBound": true,
+    "a80CurrentSourceBound": true,
+    "a63SystemNpmShimRemaining": false,
+    "a63ExactNpmCliViaProcessExecPath": true,
+    "sourceImmutable": true,
+    "sourceImmutableDuringStages": true
+  },
+  "environmentBlockers": [
+    {
+      "id": "fresh_exact_windows_node_npm",
+      "requiredNode": "24.18.0",
+      "requiredNpm": "11.16.0",
+      "credit": false
+    },
+    {
+      "id": "fresh_windows_webpack_turbopack_smoke_parity",
+      "credit": false
+    },
+    {
+      "id": "exact_chrome_playwright",
+      "credit": false
+    },
+    {
+      "id": "a77r1_to_a80r1_0_of_4",
+      "credit": false
+    },
+    {
+      "id": "staging_rights_legal_customers",
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "actualWindowsExecutionCredit": false,
+    "freshWebpackBuildCredit": false,
+    "freshTurbopackBuildCredit": false,
+    "freshProductionSmokeCredit": false,
+    "exactBrowserCredit": false,
+    "a102ObservationRuns": 0,
+    "stagingStages": 0,
+    "providerRights": 0,
+    "legalDecisions": 0,
+    "customerCohorts": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Current-source authority, exact full-payload preflight wiring, stale pointer reconciliation and retained local regression only. No fresh exact Windows build, exact browser, staging, rights, legal, customer, LIVE or sale credit."
+}

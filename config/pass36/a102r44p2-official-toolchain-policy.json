@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.official-toolchain-policy.v1",
+  "tools": [
+    {
+      "id": "solc",
+      "requiredVersion": "0.8.24",
+      "versionArguments": [
+        "--version"
+      ],
+      "expectedPattern": "0\\.8\\.24",
+      "executionClass": "compiler"
+    },
+    {
+      "id": "slither",
+      "requiredVersion": "0.11.5",
+      "versionArguments": [
+        "--version"
+      ],
+      "expectedPattern": "0\\.11\\.5",
+      "executionClass": "static_analysis"
+    },
+    {
+      "id": "semgrep",
+      "requiredVersion": "1.129.0",
+      "versionArguments": [
+        "--version"
+      ],
+      "expectedPattern": "1\\.129\\.0",
+      "executionClass": "pattern_analysis"
+    },
+    {
+      "id": "forge",
+      "requiredVersion": "1.2.3",
+      "versionArguments": [
+        "--version"
+      ],
+      "expectedPattern": "1\\.2\\.3",
+      "executionClass": "test_and_fuzz"
+    }
+  ],
+  "caseDenominator": 50,
+  "plannedExecutionDenominator": 200,
+  "creditRule": "A row receives official execution credit only when the exact executable is present, the pinned version matches, a source-bound invocation exits successfully and a hash-bound receipt is written.",
+  "truthBoundary": "Tool absence, a planned row, a synthetic fixture or an adapter simulation never counts as an official tool execution.",
+  "authoritativeAdmissionPolicyPath": "config/pass36/a102r44p2-official-audit-toolchain-admission.json",
+  "readinessDiscoveryPolicyPath": "config/pass36/a102r44p2-official-tool-readiness-policy.json"
+}

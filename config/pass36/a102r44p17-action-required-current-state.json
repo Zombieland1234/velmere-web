@@ -1,0 +1,101 @@
+{
+  "LIVE": false,
+  "globalDecision": "NO_GO",
+  "localEvidence": {
+    "angelRisk": {
+      "calibrationWindows": 0,
+      "probabilisticRiskAllowed": false,
+      "realIndependentEvalCases": 0
+    },
+    "marketImpact": {
+      "currentOrderBookCredit": 0,
+      "denominator": 318,
+      "paidDeliveryCredit": 0,
+      "realizedSlippageCredit": 0
+    },
+    "providerDiagnostic": {
+      "assetDenominator": 50,
+      "commerciallyDeliverableAssets": 0,
+      "conflictedAssets": 0,
+      "evidenceClass": "REAL_NETWORK_DETERMINISTIC_50_ASSET_DIAGNOSTIC_NO_COMMERCIAL_RIGHTS_CREDIT",
+      "failedOrRateLimitedAssets": 0,
+      "oneProviderObservedAssets": 21,
+      "providerRowDenominator": 100,
+      "realNetworkObservedAssets": 50,
+      "realNetworkObservedProviderRows": 79,
+      "rightsApprovedAssets": 0,
+      "twoProviderObservedAssets": 29
+    },
+    "realMarkets": {
+      "denominator": 583,
+      "paidDeliveryCredit": 0,
+      "realCurrentDataCredit": 0,
+      "realNetworkDiagnosticAssets": 50,
+      "rightsApprovedCredit": 0
+    },
+    "shield": {
+      "denominator": 318,
+      "paidDeliveryCredit": 0,
+      "realNetworkDiagnosticAssets": 50,
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0
+    },
+    "shieldProMap": {
+      "denominator": 318,
+      "paidDeliveryCredit": 0,
+      "realNetworkDiagnosticAssets": 50,
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0
+    },
+    "whaleWatch": {
+      "currentTransferEvidenceCredit": 0,
+      "denominator": 318,
+      "paidDeliveryCredit": 0,
+      "signedLabelCredit": 0
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "central": 5,
+    "range": [
+      4,
+      8
+    ]
+  },
+  "remainingExternalBlockers": [
+    "PROVIDER_RIGHTS",
+    "FULL_318_SHIELD",
+    "FULL_583_REAL_MARKETS",
+    "CURRENT_ORDER_BOOK_AND_SLIPPAGE",
+    "SIGNED_LABELS",
+    "300_INDEPENDENT_AI_EVALS",
+    "EXACT_WINDOWS",
+    "STAGING_AND_CUSTOMER_COHORTS"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p17.action-required-current-state.v1",
+  "skuDecisions": {
+    "angel": "LOCAL_INFORMATIONAL_PILOT",
+    "auditAdvanced": "NOT_FOR_SALE",
+    "auditBasic": "PILOT_ONLY_FREE_LIMITED_PRESCREEN",
+    "auditPro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED",
+    "browserAdvanced": "NOT_FOR_SALE",
+    "browserBasic": "BLOCKED_CURRENT_BYTE_BUILD_BROWSER",
+    "browserPro": "NOT_FOR_SALE",
+    "marketImpact": "REFERENCE_DEMO_ONLY",
+    "pdfAdvanced": "NOT_FOR_CUSTOMER_DELIVERY",
+    "pdfBasic": "RETAINED_ENGINEERING_CURRENT_BYTE_REGEN_REQUIRED",
+    "pdfPro": "RETAINED_ENGINEERING_CURRENT_BYTE_REGEN_REQUIRED",
+    "realMarketsAdvanced": "NOT_FOR_SALE",
+    "realMarketsBasic": "REFERENCE_DEMO_REAL_NETWORK_DIAGNOSTIC_50_OF_583",
+    "realMarketsPro": "NOT_FOR_SALE",
+    "riskManagement": "NON_PROBABILISTIC_BASIC_ONLY",
+    "shieldBasic": "REFERENCE_DEMO_REAL_NETWORK_DIAGNOSTIC_50_OF_318",
+    "shieldMap": "REFERENCE_DEMO_ONLY",
+    "shieldPro": "NOT_FOR_SALE",
+    "whaleWatch": "REFERENCE_DEMO_ONLY"
+  },
+  "worldClassProven": false
+}

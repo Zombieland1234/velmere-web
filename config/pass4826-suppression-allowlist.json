@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "velmere.pass4826.suppression-allowlist.v1",
+  "entries": [
+    {
+      "path": "components/market-integrity/CrossAssetCollapseRadarPanel.tsx",
+      "kind": "eslint-disable",
+      "rules": [
+        "jsx-a11y/role-supports-aria-props",
+        "react-hooks/static-components"
+      ],
+      "commentSha256": "ba7fa08d237f5170fcdf1ca8b94037fbc5c9452b4440f9543ef855b0e165af3a",
+      "ownerRole": "market-integrity-ui-maintainers",
+      "rationale": "The reviewed exception preserves the signed JSX projection while the semantic ownership repair remains separately gated.",
+      "expiresOn": "2026-10-31"
+    },
+    {
+      "path": "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+      "kind": "eslint-disable-next-line",
+      "rules": [
+        "jsx-a11y/role-supports-aria-props"
+      ],
+      "commentSha256": "6c5f790ae3b1907e8a5cfb1125474ed52f495b5fb6ed176f9063fdee7f03707d",
+      "ownerRole": "market-integrity-ui-maintainers",
+      "rationale": "The narrow one-line exception is limited to the frozen sort header until its semantic attribute moves to the owning header.",
+      "expiresOn": "2026-10-31"
+    },
+    {
+      "path": "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+      "kind": "eslint-disable-next-line",
+      "rules": [
+        "jsx-a11y/role-supports-aria-props"
+      ],
+      "commentSha256": "ba15aaefec7af2d2d13f961ad557530e81e817344553a1c72b8a53596e423bef",
+      "ownerRole": "market-integrity-ui-maintainers",
+      "rationale": "The narrow one-line exception tracks removal of the unsupported frozen row attribute without broadening the suppression scope.",
+      "expiresOn": "2026-10-31"
+    },
+    {
+      "path": "components/security/SecurityPaymentReplayBoard.tsx",
+      "kind": "eslint-disable",
+      "rules": [
+        "@next/next/no-html-link-for-pages"
+      ],
+      "commentSha256": "a42c4813faf50c5579702af81aabec157e0ec75e5e1bcaa53f2bcd645989a055",
+      "ownerRole": "security-surface-maintainers",
+      "rationale": "Native anchors intentionally retrieve JSON evidence documents and must not be converted into application page navigation.",
+      "expiresOn": "2026-10-31"
+    },
+    {
+      "path": "scripts/verify-pass4649-generated-pdf-pack.ts",
+      "kind": "eslint-disable",
+      "rules": [
+        "@typescript-eslint/no-explicit-any"
+      ],
+      "commentSha256": "27ed4a393cb1422aae041a1d985c6f8172df33b0d633fd63c94d9a6e2e784446",
+      "ownerRole": "pdf-verification-maintainers",
+      "rationale": "The verifier accepts heterogeneous parser output but narrows every security-relevant field before consuming it.",
+      "expiresOn": "2026-10-31"
+    }
+  ]
+}

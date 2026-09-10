@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "velmere.pass35.a08-foundry-invariant-plan.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "productCellId": "audit_evm_pro_automated_review",
+  "status": "PREPARED_TARGET_NOT_EXECUTED",
+  "projectPath": "fixtures/pass35/audit-a7/forge-invariant-project",
+  "foundryConfigPath": "fixtures/pass35/audit-a7/forge-invariant-project/foundry.toml",
+  "targetSourcePath": "fixtures/pass35/audit-a7/forge-invariant-project/src/A7InvariantToken.sol",
+  "invariantTestPath": "fixtures/pass35/audit-a7/forge-invariant-project/test/A7InvariantToken.invariant.t.sol",
+  "modelSourcePath": "lib/security/audit-a08-model-fuzz.ts",
+  "invariantMappings": [
+    {
+      "modelInvariantId": "INV_TOTAL_SUPPLY_EQUALS_BALANCE_SUM",
+      "foundryFunction": "invariant_totalSupplyEqualsTrackedBalances"
+    },
+    {
+      "modelInvariantId": "INV_NON_NEGATIVE_BALANCES",
+      "foundryFunction": "invariant_balancesNeverExceedSupply"
+    },
+    {
+      "modelInvariantId": "INV_UNAUTHORIZED_MINT_REJECTED",
+      "foundryFunction": "invariant_ownerIsStable"
+    },
+    {
+      "modelInvariantId": "INV_OPERATION_DELTA_CORRECT",
+      "foundryFunction": "invariant_contractBalanceAccountingNonNegative"
+    }
+  ],
+  "requiredOfficialTool": "Foundry Forge",
+  "requiredSolc": "0.8.28",
+  "officialForgeExecuted": false,
+  "compiledTargetExecuted": false,
+  "implementationModelEquivalenceProven": false,
+  "paidGateEligible": false,
+  "fullAuditClaimAllowed": false,
+  "truthBoundary": "A7 prepares and cryptographically inventories a Solidity/Foundry invariant target. It does not compile or execute it and cannot convert A08 model evidence into EVM, real-case, paid or independent proof.",
+  "projectInventory": [
+    {
+      "path": "fixtures/pass35/audit-a7/forge-invariant-project/foundry.toml",
+      "sha256": "sha256:3e436372ff56f6127ef497a7cfbafa139b6f4fd4fe5de836b82c420ad62b1eaa",
+      "byteLength": 189
+    },
+    {
+      "path": "fixtures/pass35/audit-a7/forge-invariant-project/src/A7InvariantToken.sol",
+      "sha256": "sha256:eec7555b9e0c8cc47e1ef702151bd6563c1278ced8ace2a52e80d492f7734740",
+      "byteLength": 818
+    },
+    {
+      "path": "fixtures/pass35/audit-a7/forge-invariant-project/test/A7InvariantToken.invariant.t.sol",
+      "sha256": "sha256:9828c4151f7185cf9a8ddf05d5a827dbf1e362b49444a5ddd9c5d14038da89e6",
+      "byteLength": 1088
+    }
+  ],
+  "projectInventorySha256": "sha256:dcddf1418c7d876c91c983f951b90946f4f1a7d9ba039911f3eaa7f92f685bb8",
+  "modelSourceSha256": "sha256:4c24c0715ec184672c76157e9ea00bea7b3f86d8105a05c9614416281f1570b7"
+}

@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "velmere.pass36.a102r18.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R18_ACTION_REQUIRED_PUBLIC_COMMUNITY_SYSTEM_CLIPBOARD_TEXT_LINK_CONTROL_BIDI_AND_SAME_ORIGIN_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R17_ACTION_REQUIRED_CLIENT_RESPONSE_STRICT_JSON_RAW_SERVER_ERROR_AND_ANGEL_SESSION_STORAGE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T17:45:00.000Z",
+  "status": "PASS_A102R18_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 26,
+  "executedStages": 26,
+  "passedStages": 26,
+  "failedStages": 0,
+  "stages": [
+    {
+      "id": "a102r18",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r18-public-community-system-clipboard-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 567,
+      "stdoutSha256": "9536ec4f4927152bab0c8fd8259b3be0236976cfb854ff24ccbdd5396e96d06a",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 42
+    },
+    {
+      "id": "a102r17",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r17-browser-response-strict-json-error-redaction.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 625,
+      "stdoutSha256": "0b764ff54d73c9aeae1516bd107b60e472b625de85c9b397ac81d58a8d37ad85",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 52
+    },
+    {
+      "id": "a102r5",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r5-paid-entitlement-browser-secret-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 341,
+      "stdoutSha256": "1cb88dacf43528b298770bbb2fc050d4045e311ffef182c0d0d98f2141ffaece",
+      "stderrByteLength": 960,
+      "stderrSha256": "482f91f3e4ae6eedd09cd46ae87262e57587083e86325992ff525285330dbfa5",
+      "expectedDenominator": 26
+    },
+    {
+      "id": "a102r6",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r6-private-account-browser-state-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 2847,
+      "stdoutSha256": "adc436bb8b2f96f125b80f0ece20002d4e93c4f312723a59c809f31c9f08b545",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 30
+    },
+    {
+      "id": "a102r7",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r7-mobile-wallet-deeplink-privacy-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 5297,
+      "stdoutSha256": "84cf0800f07329ac9c4eff20408969a546a913af7c0573dbb7418d05316403b3",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 43
+    },
+    {
+      "id": "a102r8",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r8-checkout-customer-browser-privacy-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 6777,
+      "stdoutSha256": "ee09444dab3fb4ff473f08666ef40a1ba70abdf9e8383fb6b4ab9fa96e8b033a",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 41
+    },
+    {
+      "id": "a102r9",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r9-system-clipboard-private-export-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 5889,
+      "stdoutSha256": "0de86eb90c3afbfa1162c5157adfbc68b329766799b081ee72948999ce1a1939",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 38
+    },
+    {
+      "id": "a102r10",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r10-external-navigation-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 106,
+      "stdoutSha256": "f8af07140ab645a2d906fc47a105a605d255004e97cbb87dc0795235142b84d2",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 59
+    },
+    {
+      "id": "a102r11",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r11-client-pdf-blob-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 131,
+      "stdoutSha256": "eb4648f5529cc7534882776ddf78eabe9734f2866692cd0622943f7e1a647639",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 43
+    },
+    {
+      "id": "a102r12",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r12-admin-product-draft-browser-state.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 516,
+      "stdoutSha256": "f5d964eef100123eef0289c69af92b636d87fc9c4c98c4c67a61350f462fd38f",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 29
+    },
+    {
+      "id": "a102r13",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r13-operational-log-and-client-error-redaction.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 817,
+      "stdoutSha256": "2fa77869660c971dddeef3721534c6e164c907720af0cdbee77d79cf745b559e",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 38
+    },
+    {
+      "id": "a102r14",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r14-browser-shield-handoff-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 482,
+      "stdoutSha256": "322896d88e93d05b2fd947627846c11a589209d3917c1727b8c7586b6a6f1133",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 48
+    },
+    {
+      "id": "a102r15",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r15-asset-analysis-clipboard-redaction.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 527,
+      "stdoutSha256": "e4ef3ea51cae38e11e1e3980fec2869a39513917b5897494efbbc09db688204f",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 54
+    },
+    {
+      "id": "a102r16",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r16-cookie-consent-granular-expiry-privacy-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 581,
+      "stdoutSha256": "4b397fc003d37bf81a984f7abec7b85b30d06357ca0ea5451eaafff73f379d44",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 62
+    },
+    {
+      "id": "a73",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a73-cookie-session-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 6488,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 57
+    },
+    {
+      "id": "a89",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a89-account-auth-tenant-privacy-red-team.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 42201,
+      "stdoutSha256": "8b556bab06491ff4ac03f7d45d3442d8376897c6958eb1688e906256ff1fcc87",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 54
+    },
+    {
+      "id": "api-body",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass6/test-api-body-stream-boundaries.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 526,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 37
+    },
+    {
+      "id": "malformed-json",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass4823/test-audit-malformed-json-routes.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 118,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 112
+    },
+    {
+      "id": "mega4800",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass4800/test-mega-pass.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 649,
+      "stdoutSha256": "94b61342f99a6cdfd3e81802f6c49ec53b2adab6f4e340973d5a13a1d7aefc94",
+      "stderrByteLength": 1920,
+      "stderrSha256": "f99b1e60469c9ec8388799bac3e02041371bc9f8a23ab8f4ad749c5ec56b4e8d",
+      "expectedDenominator": 61
+    },
+    {
+      "id": "route-dispatch",
+      "command": [
+        "node",
+        "scripts/pass15/verify-route-dispatch-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 232,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 1480
+    },
+    {
+      "id": "route-tamper",
+      "command": [
+        "node",
+        "scripts/pass15/test-route-dispatch-manifest-tamper.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 234,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 7
+    },
+    {
+      "id": "lazy-routes",
+      "command": [
+        "node",
+        "scripts/pass15/verify-lazy-route-shells.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 234,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 176
+    },
+    {
+      "id": "a59",
+      "command": [
+        "node",
+        "scripts/pass36/test-a59-build-graph-route-css-budget-recovery.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 15785,
+      "stdoutSha256": "03d7ff18a06f6b977e4affd37b5103b979dd45928b91aba07db2791c65209fa3",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 77
+    },
+    {
+      "id": "product-tiers",
+      "command": [
+        "node",
+        "scripts/pass35/test-product-tier-content-contract.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 132,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 186
+    },
+    {
+      "id": "zero-budget",
+      "command": [
+        "node",
+        "scripts/pass35/test-zero-budget-functional-roadmap.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 255,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 439
+    },
+    {
+      "id": "source-audit",
+      "command": [
+        "node",
+        "scripts/a44-source-integrity-audit.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 206,
+      "stdoutSha256": "1593dcda5f0c2d8c28fe99490e6793909de6a5472ecf38660cdc4d3b9d06f247",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expectedDenominator": 0
+    }
+  ],
+  "keyDenominators": {
+    "a102r18Checks": 42,
+    "a102r17Checks": 52,
+    "a102r5Checks": 26,
+    "a102r6Checks": 30,
+    "a102r7Checks": 43,
+    "a102r8Checks": 41,
+    "a102r9Checks": 38,
+    "a102r10Checks": 59,
+    "a102r11Checks": 43,
+    "a102r12Checks": 29,
+    "a102r13Checks": 38,
+    "a102r14Checks": 48,
+    "a102r15Checks": 54,
+    "a102r16Checks": 62,
+    "a73Checks": 57,
+    "a89Checks": 54,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeDispatchTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "a59Checks": 77,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439
+  },
+  "sourceAudit": {
+    "filesRead": 5101,
+    "bytesRead": 119774949,
+    "codeFiles": 3146,
+    "syntaxErrors": 0,
+    "localImports": 7463,
+    "missingLocalImports": 0,
+    "cssModuleReferences": 758,
+    "missingCssModuleClasses": 0
+  },
+  "localClosure": {
+    "publicCommunityClipboardCentralBoundaryImplemented": true,
+    "directPublicClipboardSinksRemaining": 0,
+    "secureContextRequired": true,
+    "publicTextByteLimit": 8192,
+    "controlAndBidiRejected": true,
+    "squareLinksCanonicalSameOrigin": true,
+    "clipboardAuthority": false
+  },
+  "environmentBlockers": [
+    {
+      "id": "exact_node_npm_provenance",
+      "credit": false
+    },
+    {
+      "id": "exact_chromium_browser_54",
+      "credit": false
+    },
+    {
+      "id": "real_public_community_clipboard_matrix",
+      "credit": false
+    },
+    {
+      "id": "a102_real_observation_0_of_3",
+      "credit": false
+    },
+    {
+      "id": "staging_rights_legal_customers",
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "realBrowserRows": 0,
+    "realObservationRuns": 0,
+    "stagingStages": 0,
+    "providerRights": 0,
+    "legalDecisions": 0,
+    "customerCohorts": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Local public-community clipboard text/link hardening only; no exact build/browser, staging, rights, legal, customer, LIVE or sale credit."
+}

@@ -1,0 +1,245 @@
+{
+  "legacyCompatibility": {
+    "allowedUse": [
+      "historical receipt replay",
+      "internal report-content-depth compatibility"
+    ],
+    "forbiddenUse": [
+      "current product scorecard",
+      "public pricing",
+      "sale readiness",
+      "customer product count"
+    ],
+    "status": "DEPRECATED_FOR_CURRENT_CUSTOMER_PRODUCT_ASSESSMENT"
+  },
+  "nonNegotiable": {
+    "angelSafetyAndTruthStandardCannotChangeByReportTier": true,
+    "legacyThirtyRowTableIsHistoricalOnly": true,
+    "reportTierMayChangeDepthNotUnderlyingModuleTruth": true,
+    "riskValueCannotChangeBecauseCustomerPaidMore": true,
+    "shieldAndShieldProAreSeparateProducts": true,
+    "standaloneProductsNeverReceiveCustomerFacingBasicProAdvancedScores": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P33_ACTION_REQUIRED_EXTERNAL_CI_STRIPE_MOCK_PROTOCOL12_SIGSTORE_OIDC_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "products": [
+    {
+      "commercialRole": "FREE_CORE",
+      "customerProduct": true,
+      "displayName": "Audit Basic",
+      "family": "audit",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "audit-basic",
+      "tier": "basic"
+    },
+    {
+      "commercialRole": "CONTROLLED_BETA_CANDIDATE",
+      "customerProduct": true,
+      "displayName": "Audit Pro",
+      "family": "audit",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "audit-pro",
+      "tier": "pro"
+    },
+    {
+      "commercialRole": "NOT_FOR_SALE",
+      "customerProduct": true,
+      "displayName": "Audit Advanced",
+      "family": "audit",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "audit-advanced",
+      "tier": "advanced"
+    },
+    {
+      "commercialRole": "FREE_CORE",
+      "customerProduct": true,
+      "displayName": "PDF / Report Basic",
+      "family": "pdf",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "pdf-basic",
+      "tier": "basic"
+    },
+    {
+      "commercialRole": "CONTROLLED_BETA_CANDIDATE",
+      "customerProduct": true,
+      "displayName": "PDF / Report Pro",
+      "family": "pdf",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "pdf-pro",
+      "tier": "pro"
+    },
+    {
+      "commercialRole": "NOT_FOR_SALE",
+      "customerProduct": true,
+      "displayName": "PDF / Report Advanced",
+      "family": "pdf",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "pdf-advanced",
+      "tier": "advanced"
+    },
+    {
+      "commercialRole": "FREE_CORE",
+      "customerProduct": true,
+      "displayName": "Browser / Report Viewer Basic",
+      "family": "browser",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "browser-basic",
+      "tier": "basic"
+    },
+    {
+      "commercialRole": "NOT_FOR_SALE",
+      "customerProduct": true,
+      "displayName": "Browser / Report Viewer Pro",
+      "family": "browser",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "browser-pro",
+      "tier": "pro"
+    },
+    {
+      "commercialRole": "NOT_FOR_SALE",
+      "customerProduct": true,
+      "displayName": "Browser / Report Viewer Advanced",
+      "family": "browser",
+      "productClass": "TIERED_REPORT_PRODUCT",
+      "productId": "browser-advanced",
+      "tier": "advanced"
+    },
+    {
+      "commercialRole": "FREE_CORE_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Shield",
+      "family": "shield",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "shield",
+      "tier": null
+    },
+    {
+      "commercialRole": "NOT_FOR_SALE",
+      "customerProduct": true,
+      "displayName": "Shield Pro",
+      "family": "shield-pro",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "shield-pro",
+      "tier": null
+    },
+    {
+      "commercialRole": "FREE_REFERENCE_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Shield Map",
+      "family": "shield-map",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "shield-map",
+      "tier": null
+    },
+    {
+      "commercialRole": "FREE_REFERENCE_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Real Markets",
+      "family": "real-markets",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "real-markets",
+      "tier": null
+    },
+    {
+      "commercialRole": "FREE_MODULE_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Market Impact",
+      "family": "market-impact",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "market-impact",
+      "tier": null
+    },
+    {
+      "commercialRole": "FREE_MODULE_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Whale Watch",
+      "family": "whale-watch",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "whale-watch",
+      "tier": null
+    },
+    {
+      "commercialRole": "FREE_INFORMATIONAL_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Angel",
+      "family": "angel",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "angel",
+      "tier": null
+    },
+    {
+      "commercialRole": "FREE_DESCRIPTIVE_ACTION_REQUIRED",
+      "customerProduct": true,
+      "displayName": "Risk Indicator",
+      "family": "risk-indicator",
+      "productClass": "STANDALONE_PRODUCT",
+      "productId": "risk-indicator",
+      "tier": null
+    }
+  ],
+  "reportIntegrationDepth": {
+    "angel": {
+      "advanced": "full report-history context and team workflow; no higher truth standard",
+      "basic": "plain-language explanation of bound facts and limits",
+      "pro": "deeper evidence navigation using the same safety policy"
+    },
+    "market-impact": {
+      "advanced": "history and predicted-versus-realized comparison when outcomes exist",
+      "basic": "simulation status, assumptions and uncertainty",
+      "pro": "expanded depth, spread and scenario evidence"
+    },
+    "real-markets": {
+      "advanced": "workspace, export and governance; no separate Real Markets tier product",
+      "basic": "reference and derived status with freshness",
+      "pro": "expanded source comparison and history where legally available"
+    },
+    "risk-indicator": {
+      "advanced": "the same indicator with history and governance; payment must never change the risk value",
+      "basic": "one descriptive indicator with factors and missing data",
+      "pro": "the same indicator with deeper justification"
+    },
+    "shield": {
+      "advanced": "history, comparison and team evidence workflow",
+      "basic": "identity, core on-chain facts and withheld-data reasons",
+      "pro": "expanded evidence and source conflicts"
+    },
+    "shield-map": {
+      "advanced": "history, correction ledger and export",
+      "basic": "verified or UNCLASSIFIED graph summary",
+      "pro": "expanded provenance and concentration context"
+    },
+    "shield-pro": {
+      "advanced": "history, export and team workflow; product identity remains Shield Pro",
+      "basic": "short Shield Pro terminal-derived summary only",
+      "pro": "expanded terminal evidence when entitled"
+    },
+    "whale-watch": {
+      "advanced": "monitoring history, label corrections and export",
+      "basic": "verifiable transfers and concentration facts",
+      "pro": "expanded provenance and category context"
+    }
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p34.canonical-product-topology.v1",
+  "standaloneProductIds": [
+    "shield",
+    "shield-pro",
+    "shield-map",
+    "real-markets",
+    "market-impact",
+    "whale-watch",
+    "angel",
+    "risk-indicator"
+  ],
+  "testCycle": {
+    "current": 1,
+    "fullRegressionDueRevision": "A102R44P36",
+    "resetAfterFullRegression": true,
+    "total": 3
+  },
+  "tieredFamilies": [
+    "audit",
+    "pdf",
+    "browser"
+  ],
+  "truthBoundary": "The topology changes product identity and assessment semantics. It does not by itself prove customer value, current-child full release, provider rights, real Stripe TEST, or world-class quality."
+}

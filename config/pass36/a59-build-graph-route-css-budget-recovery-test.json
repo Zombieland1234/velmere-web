@@ -1,0 +1,590 @@
+{
+  "schemaVersion": "velmere.pass36.a59.build-graph-route-css-budget-recovery-test.v1",
+  "revisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY",
+  "status": "PASS_STATIC_BUDGET_RECOVERY",
+  "exactFinalByteBuildExecuted": false,
+  "browserScreenshotParityExecuted": false,
+  "summary": {
+    "checks": 77,
+    "passed": 77,
+    "failed": 0
+  },
+  "buildGraph": {
+    "analyzedFiles": 1780,
+    "analyzedBytes": 21185429,
+    "entrypoints": 148,
+    "apiRoutes": 78,
+    "pageEntries": 70,
+    "fixtureBlockedRoutes": 0,
+    "serverRoutesImportingClientCode": 0,
+    "unresolvedLocalImports": 0,
+    "cssFiles": 24,
+    "cssBytes": 2914605
+  },
+  "globalsCssBytes": 2211131,
+  "cssCompaction": {
+    "cssFiles": 24,
+    "beforeBytes": 4329038,
+    "afterBytes": 2914605,
+    "savedBytes": 1414433,
+    "removedRules": 3636,
+    "removedSerializedBytes": 831407,
+    "usedIdentifierViolations": 0,
+    "parseErrorsBefore": 0,
+    "parseErrorsAfter": 0,
+    "exactDuplicateGroupsRemoved": 2,
+    "exactDuplicateRulesRemoved": 2,
+    "exactDuplicateBytesRemoved": 430
+  },
+  "api": {
+    "ok": true,
+    "passId": "pass4659-canonical-api-surface-registry-v1",
+    "routeCount": 265,
+    "controlPlaneCount": 0,
+    "counts": {
+      "control_plane": 0,
+      "machine_webhook": 11,
+      "admin_operator": 27,
+      "authenticated_customer": 15,
+      "public_product": 212,
+      "unclassified": 0
+    },
+    "mutatingRouteCount": 76,
+    "boundedMutatingRouteCount": 76,
+    "unboundedMutatingRouteCount": 0,
+    "boundedMutatingCoveragePercent": 100,
+    "allMutatingBodyHandlingCounts": {
+      "stream_bounded": 64,
+      "body_rejected": 12
+    },
+    "mutatingProductRouteCount": 76,
+    "boundedMutatingProductRouteCount": 76,
+    "unboundedMutatingProductRouteCount": 0,
+    "mutatingBodyHandlingCounts": {
+      "stream_bounded": 64,
+      "body_rejected": 12
+    },
+    "boundedCoveragePercent": 100,
+    "assertions": 101
+  },
+  "routeDispatch": {
+    "groups": 5,
+    "routesPreserved": 160,
+    "publicPathsUnique": 160,
+    "checks": 1320,
+    "passed": 1320,
+    "failed": 0,
+    "netNextEntrypointReduction": 155
+  },
+  "failures": [],
+  "checks": [
+    {
+      "id": "build-graph-profiler-exit",
+      "ok": true,
+      "detail": {
+        "exitCode": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "id": "entrypoint-budget",
+      "ok": true,
+      "detail": {
+        "actual": 148,
+        "limit": 148
+      }
+    },
+    {
+      "id": "api-route-budget",
+      "ok": true,
+      "detail": {
+        "actual": 78,
+        "limit": 82
+      }
+    },
+    {
+      "id": "aggregate-css-budget",
+      "ok": true,
+      "detail": {
+        "actual": 2914605,
+        "limit": 3400000
+      }
+    },
+    {
+      "id": "server-client-boundary",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "id": "local-import-boundary",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "id": "globals-css-budget",
+      "ok": true,
+      "detail": {
+        "actual": 2211131,
+        "limit": 3100000
+      }
+    },
+    {
+      "id": "retired-root-shell:app/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/browser/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/search/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/shield/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/market-integrity/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/shield-pro/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/shield-map/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-root-shell:app/real-markets/page.tsx",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/investigator/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/klines/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/market-intelligence/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/markets/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/real-markets/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/search/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/vlm/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/search/bridge/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/search/lens-report/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/search/lens-route/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/search/live-preview/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/search/token-metadata/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/vlm/access-policy/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/vlm/keys/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/vlm/verify/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/real-markets/catalog/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/real-markets/provider-contract/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "retired-api-shell:app/api/market-integrity/real-markets/search/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-present:app/api/market-integrity/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-runtime:app/api/market-integrity/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-dynamic:app/api/market-integrity/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-lazy:app/api/market-integrity/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-present:app/api/search/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-runtime:app/api/search/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-dynamic:app/api/search/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-lazy:app/api/search/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-present:app/api/market-integrity/vlm/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-runtime:app/api/market-integrity/vlm/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-dynamic:app/api/market-integrity/vlm/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-lazy:app/api/market-integrity/vlm/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-present:app/api/market-integrity/real-markets/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-runtime:app/api/market-integrity/real-markets/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-dynamic:app/api/market-integrity/real-markets/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dispatcher-lazy:app/api/market-integrity/real-markets/[operation]/route.ts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "route-dispatch-exit",
+      "ok": true,
+      "detail": {
+        "exitCode": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "id": "route-dispatch-paths",
+      "ok": true,
+      "detail": {
+        "groups": 5,
+        "routesPreserved": 160,
+        "publicPathsUnique": 160,
+        "checks": 1320,
+        "passed": 1320,
+        "failed": 0,
+        "netNextEntrypointReduction": 155
+      }
+    },
+    {
+      "id": "route-dispatch-failures",
+      "ok": true,
+      "detail": {
+        "groups": 5,
+        "routesPreserved": 160,
+        "publicPathsUnique": 160,
+        "checks": 1320,
+        "passed": 1320,
+        "failed": 0,
+        "netNextEntrypointReduction": 155
+      }
+    },
+    {
+      "id": "api-inventory-exit",
+      "ok": true,
+      "detail": {
+        "exitCode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"ok\": true,\n  \"passId\": \"pass4659-canonical-api-surface-registry-v1\",\n  \"routeCount\": 265,\n  \"controlPlaneCount\": 0,\n  \"counts\": {\n    \"control_plane\": 0,\n    \"machine_webhook\": 11,\n    \"admin_operator\": 27,\n    \"authenticated_customer\": 15,\n    \"public_product\": 212,\n    \"unclassified\": 0\n  },\n  \"mutatingRouteCount\": 76,\n  \"boundedMutatingRouteCount\": 76,\n  \"unboundedMutatingRouteCount\": 0,\n  \"boundedMutatingCoveragePercent\": 100,\n  \"allMutatingBodyHandlingCounts\": {\n    \"stream_bounded\": 64,\n    \"body_rejected\": 12\n  },\n  \"mutatingProductRouteCount\": 76,\n  \"boundedMutatingProductRouteCount\": 76,\n  \"unboundedMutatingProductRouteCount\": 0,\n  \"mutatingBodyHandlingCounts\": {\n    \"stream_bounded\": 64,\n    \"body_rejected\": 12\n  },\n  \"boundedCoveragePercent\": 100,\n  \"assertions\": 101\n}\n"
+      }
+    },
+    {
+      "id": "api-logical-operation-parity",
+      "ok": true,
+      "detail": 265
+    },
+    {
+      "id": "api-mutating-body-coverage",
+      "ok": true,
+      "detail": {
+        "ok": true,
+        "passId": "pass4659-canonical-api-surface-registry-v1",
+        "routeCount": 265,
+        "controlPlaneCount": 0,
+        "counts": {
+          "control_plane": 0,
+          "machine_webhook": 11,
+          "admin_operator": 27,
+          "authenticated_customer": 15,
+          "public_product": 212,
+          "unclassified": 0
+        },
+        "mutatingRouteCount": 76,
+        "boundedMutatingRouteCount": 76,
+        "unboundedMutatingRouteCount": 0,
+        "boundedMutatingCoveragePercent": 100,
+        "allMutatingBodyHandlingCounts": {
+          "stream_bounded": 64,
+          "body_rejected": 12
+        },
+        "mutatingProductRouteCount": 76,
+        "boundedMutatingProductRouteCount": 76,
+        "unboundedMutatingProductRouteCount": 0,
+        "mutatingBodyHandlingCounts": {
+          "stream_bounded": 64,
+          "body_rejected": 12
+        },
+        "boundedCoveragePercent": 100,
+        "assertions": 101
+      }
+    },
+    {
+      "id": "css-receipt-revision",
+      "ok": true,
+      "detail": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY"
+    },
+    {
+      "id": "css-files-covered",
+      "ok": true,
+      "detail": {
+        "receipt": 24,
+        "profile": 24
+      }
+    },
+    {
+      "id": "css-parser-clean",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "css-used-identifier-safety",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "css-real-reduction",
+      "ok": true,
+      "detail": {
+        "cssFiles": 24,
+        "beforeBytes": 4329038,
+        "afterBytes": 2914605,
+        "savedBytes": 1414433,
+        "removedRules": 3636,
+        "removedSerializedBytes": 831407,
+        "usedIdentifierViolations": 0,
+        "parseErrorsBefore": 0,
+        "parseErrorsAfter": 0,
+        "exactDuplicateGroupsRemoved": 2,
+        "exactDuplicateRulesRemoved": 2,
+        "exactDuplicateBytesRemoved": 430
+      }
+    },
+    {
+      "id": "css-exact-dedup-status",
+      "ok": true,
+      "detail": "PASS_A39_CSS_EXACT_DUPLICATES_REMOVED"
+    },
+    {
+      "id": "css-exact-dedup-closed",
+      "ok": true,
+      "detail": {
+        "removedBytes": 430,
+        "duplicateGroups": 2,
+        "duplicateExtras": 2
+      }
+    },
+    {
+      "id": "css-exact-dedup-binding",
+      "ok": true,
+      "detail": {
+        "receipt": {
+          "cssFiles": 24,
+          "beforeBytes": 4329038,
+          "afterBytes": 2914605,
+          "savedBytes": 1414433,
+          "removedRules": 3636,
+          "removedSerializedBytes": 831407,
+          "usedIdentifierViolations": 0,
+          "parseErrorsBefore": 0,
+          "parseErrorsAfter": 0,
+          "exactDuplicateGroupsRemoved": 2,
+          "exactDuplicateRulesRemoved": 2,
+          "exactDuplicateBytesRemoved": 430
+        },
+        "dedup": {
+          "removedBytes": 430,
+          "duplicateGroups": 2,
+          "duplicateExtras": 2
+        }
+      }
+    },
+    {
+      "id": "css-final-byte-binding",
+      "ok": true,
+      "detail": {
+        "mismatches": 0
+      }
+    },
+    {
+      "id": "css-profile-byte-parity",
+      "ok": true,
+      "detail": {
+        "calculated": 2914605,
+        "profile": 2914605,
+        "receipt": 2914605
+      }
+    },
+    {
+      "id": "css-removed-identifiers-recomputed-unused",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "id": "proxy-alias:/",
+      "ok": true,
+      "detail": "/pl"
+    },
+    {
+      "id": "proxy-alias:/browser",
+      "ok": true,
+      "detail": "/pl/search"
+    },
+    {
+      "id": "proxy-alias:/search",
+      "ok": true,
+      "detail": "/pl/search"
+    },
+    {
+      "id": "proxy-alias:/shield",
+      "ok": true,
+      "detail": "/pl/market-integrity"
+    },
+    {
+      "id": "proxy-alias:/market-integrity",
+      "ok": true,
+      "detail": "/pl/market-integrity"
+    },
+    {
+      "id": "proxy-alias:/shield-pro",
+      "ok": true,
+      "detail": "/pl/shield-pro"
+    },
+    {
+      "id": "proxy-alias:/shield-map",
+      "ok": true,
+      "detail": "/pl/shield-map"
+    },
+    {
+      "id": "proxy-alias:/real-markets",
+      "ok": true,
+      "detail": "/pl/real-markets"
+    },
+    {
+      "id": "a59-retained-as-budget-parent",
+      "ok": true,
+      "detail": {
+        "sourceRevisionId": "VELMERE_PASS36_A67R0_NETWORK_EGRESS_CREDENTIAL_AND_SAME_ORIGIN_TRUST_BOUNDARY_HARDENING",
+        "buildGraphBudgetRecoveryRevisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY"
+      }
+    },
+    {
+      "id": "acceptance-remains-a57",
+      "ok": true,
+      "detail": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE"
+    },
+    {
+      "id": "truth-boundary-sale-live",
+      "ok": true,
+      "detail": {
+        "saleEnabled": false,
+        "liveProven": false
+      }
+    }
+  ],
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A59 proves static build-graph, route-registry, stream-safe body-boundary and CSS parser/identifier-budget recovery on the frozen source candidate. It does not claim a fresh exact Node 24.18.0 Next build, browser screenshot parity, staging, LIVE, customer value, provider rights or sale readiness."
+}

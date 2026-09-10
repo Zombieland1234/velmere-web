@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "velmere.pass36.a97r1.payment-operator-assertion-policy.v1",
+  "revisionId": "VELMERE_PASS36_A97R1_SCOPED_PAYMENT_OPERATOR_ASSERTIONS_DUAL_CONTROL_AND_SINGLE_USE_REQUEUE",
+  "parentRevisionId": "VELMERE_PASS36_A97R0_STRIPE_TEST_RUNTIME_RECEIPT_REFUND_REPLAY_AND_RECONCILIATION_CONTROL",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "localPassCredit": false,
+  "globalDecision": "NO_GO",
+  "liveProven": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "purpose": "Replace legacy shared admin-import authorization on payment reconciliation and dead-letter requeue with scoped admin sessions plus body-bound, short-lived, phishing-resistant, single-use operator assertions; require a distinct owner approval for every requeue.",
+  "scopes": {
+    "reconciliation": {
+      "scope": "payment:reconcile",
+      "independentApprovalRequired": false,
+      "bodyBound": true,
+      "singleUse": true
+    },
+    "deadLetterRequeue": {
+      "scope": "payment:requeue",
+      "independentApprovalRequired": true,
+      "approverRole": "owner",
+      "distinctActorAndSessionRequired": true,
+      "bodyBound": true,
+      "singleUse": true
+    }
+  },
+  "cryptographicContract": {
+    "primaryAlgorithm": "HMAC-SHA256",
+    "independentApprovalAlgorithm": "HMAC-SHA256",
+    "canonicalBase64url": true,
+    "maxAssertionLifetimeSeconds": 600,
+    "maxRecentAuthAgeSeconds": 300,
+    "maxClockSkewSeconds": 30,
+    "mfaMethod": "webauthn",
+    "environment": "test_only"
+  },
+  "durableContract": {
+    "rpc": "velmere_consume_payment_operator_action_assertion",
+    "primaryAssertionUnique": true,
+    "approvalUnique": true,
+    "consumeBeforeMutation": true,
+    "duplicateResult": "already_consumed",
+    "realDurableExecution": false
+  },
+  "routeBindings": [
+    {
+      "path": "/api/admin/payments/stripe-webhook-reconcile",
+      "method": "POST",
+      "scope": "payment:reconcile"
+    },
+    {
+      "path": "/api/admin/payments/stripe-webhook-dead-letter",
+      "method": "POST",
+      "scope": "payment:requeue"
+    }
+  ],
+  "localDenominators": {
+    "behavioralAssertions": 44,
+    "validReconcileActions": 1,
+    "validRequeueActions": 1,
+    "blockedActionExecutions": 0,
+    "independentApprovalCases": 3
+  },
+  "realDenominators": {
+    "realOperatorReauthCeremonies": 0,
+    "realDurableAssertionConsumptions": 0,
+    "realStripeRequeues": 0,
+    "realStripeReconciliationRuns": 0
+  },
+  "truthBoundary": "Local cryptographic verifier, fake durable RPC and effect-spy proof only. No real identity-provider recent-auth/MFA ceremony, Supabase assertion consumption, Stripe TEST dead-letter requeue or reconciliation run is credited."
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "velmere.customer-facing-sku-truth.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P9_ACTION_REQUIRED_INDEPENDENT_FINAL_AUDIT_SEMANTIC_GENERALIZATION_SKU_TRUTH_AND_REAL_LOCAL_E2E_NO_LIVE_CREDIT",
+  "findingConfidence": {
+    "publicValue": "NOT_CALIBRATED",
+    "numericTierConfidenceAllowed": false
+  },
+  "reviewStatus": {
+    "publicValue": "AUTOMATED_UNREVIEWED",
+    "humanReviewClaimAllowed": false
+  },
+  "adjudicationStatus": {
+    "publicValue": "NOT_PERFORMED"
+  },
+  "tiers": {
+    "basic": {
+      "customerDecision": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_RETEST",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false
+    },
+    "pro": {
+      "customerDecision": "CONTROLLED_INVITATION_ONLY_BETA",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false,
+      "manualQaRequired": true
+    },
+    "advanced": {
+      "customerDecision": "NOT_FOR_SALE",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false,
+      "independentCertification": false
+    }
+  },
+  "customerStatusNormalization": {
+    "human_review_queued": "analysis_queue",
+    "human_review_processing": "analysis_processing",
+    "human_review_completed": "analysis_completed",
+    "operator_signoff_pending": "analysis_verification_pending"
+  },
+  "forbiddenCustomerClaims": [
+    "independent certification",
+    "guaranteed secure",
+    "human reviewed",
+    "operator signoff included",
+    "live provider coverage"
+  ]
+}

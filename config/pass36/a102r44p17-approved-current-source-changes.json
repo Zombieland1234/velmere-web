@@ -1,0 +1,458 @@
+{
+  "added": [
+    {
+      "byteLength": 599,
+      "mode": 420,
+      "path": "VELMERE_A102R44P17_PATCH.txt",
+      "sha256": "fab360e05c35345730f53759d0332d5b4fb45dbeb0a1d11fdeeb43d92a4ee292"
+    },
+    {
+      "byteLength": 3396,
+      "mode": 420,
+      "path": "config/pass36/a102r44p17-action-required-current-state.json",
+      "sha256": "1083194b4cd0865ce23dd34728f868c2c141a8ac6cbeb0fad64f0c52857a5d80"
+    },
+    {
+      "byteLength": 3410,
+      "mode": 420,
+      "path": "config/pass36/a102r44p17-lazy-route-denominator-migration.json",
+      "sha256": "3b8a6a2061edd85fe9fdc23d19def205c095df79cdd76955bb0a72476f0f7363"
+    },
+    {
+      "byteLength": 23844,
+      "mode": 420,
+      "path": "config/pass36/a102r44p17-real-provider-diagnostic-policy.json",
+      "sha256": "2ea153743109738ab8f02c653469df1f843dda9bf28a3d1d7c0232aa4aa4111d"
+    },
+    {
+      "byteLength": 3259,
+      "mode": 420,
+      "path": "config/pass36/a102r44p17-route-ast-denominator-migration.json",
+      "sha256": "ab1bd98649d67d727b6eeb0f2cdab148d1d21429b76c067169be4403b1bbddd2"
+    },
+    {
+      "byteLength": 5787,
+      "mode": 420,
+      "path": "lib/market-integrity/r44p17-real-provider-diagnostic-boundary.ts",
+      "sha256": "754cc5828c5104ced57fc0969ad2d09e46b85ce1aa5d563b5521b5431cd6ab79"
+    },
+    {
+      "byteLength": 5288,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p17-real-provider-diagnostic-boundary.ts",
+      "sha256": "5b240d8e745ec246c5efe65d59fe0da66c0104a29f08ef588d042f3991437344"
+    },
+    {
+      "byteLength": 3512,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p17-approved-source-changes.mjs",
+      "sha256": "36ccc6791de8cb869d947906ee4e9ce7d29b59d8afa91b35869f5559390956f6"
+    },
+    {
+      "byteLength": 2724,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p17-lazy-route-denominator-migration.mjs",
+      "sha256": "7fed449605f7b529c2032582226e27a2ddcf472698cb173262a8daf0e8b89945"
+    },
+    {
+      "byteLength": 2485,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p17-route-ast-denominator-migration.mjs",
+      "sha256": "e246349367b44a2290e07eb48e54c560f301048f06fb8970bf3889b8aa6ad0db"
+    },
+    {
+      "byteLength": 5575,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p17-source-authority.mjs",
+      "sha256": "53ebed7d9ab5684874b63a6904f30c5222f33ccb20234112b3cacfc3ab0188fa"
+    },
+    {
+      "byteLength": 6421,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p17-static-policy.mjs",
+      "sha256": "64022ae2851c2f05b571d582b9c08a4ba1d21635a0bcf174db1621022d6248d7"
+    }
+  ],
+  "addedCount": 12,
+  "deleted": [],
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "modified": [
+    {
+      "current": {
+        "byteLength": 144,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "25092f81a070ffb17ff7227681a78c4ed86720223a0d33ffd052f9528840774b"
+      },
+      "parent": {
+        "byteLength": 116,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "6483aa915692233a94ebbb166d6333a8c01cbd9c9813af55d0613e88d875b156"
+      },
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "current": {
+        "byteLength": 1965591,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "6f8152b0cfeef696f88227b540d9fa6cebdc70674a45dd503feb070f63726442"
+      },
+      "parent": {
+        "byteLength": 1963191,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "307b6686d0d8c5f53f0d4480a942869be87d795d067ba65453cc63ca19f2dba0"
+      },
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "current": {
+        "byteLength": 3850,
+        "mode": 420,
+        "path": "app/[locale]/intelligence/page.tsx",
+        "sha256": "a7d44035c0d2c91d05cbe5d4e52a8a9e4730e82ec24200b29f672e2bb0faa124"
+      },
+      "parent": {
+        "byteLength": 4463,
+        "mode": 420,
+        "path": "app/[locale]/intelligence/page.tsx",
+        "sha256": "cbafb7978f4d9910cf4bbe0982a02f0f0383769dd3749915dcb3dbcd3c89a772"
+      },
+      "path": "app/[locale]/intelligence/page.tsx"
+    },
+    {
+      "current": {
+        "byteLength": 254040,
+        "mode": 420,
+        "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+        "sha256": "5bc6321f0fb1f73e43d9fff759e813e5e5f219464c11e99293f49d73b0124e76"
+      },
+      "parent": {
+        "byteLength": 254655,
+        "mode": 420,
+        "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+        "sha256": "179ed3246cef0a43a08e5a5a6bd60ec378a0e380793dd7a155e588e1c29462a5"
+      },
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx"
+    },
+    {
+      "current": {
+        "byteLength": 15341,
+        "mode": 420,
+        "path": "components/security/SecurityAuditOperatorActionsClient.tsx",
+        "sha256": "6adf3808ed7170983d60d9c4a9c0e0f4e14628fb4d2de050837607b1fae4a109"
+      },
+      "parent": {
+        "byteLength": 15161,
+        "mode": 420,
+        "path": "components/security/SecurityAuditOperatorActionsClient.tsx",
+        "sha256": "8f51aa5c6b68834de645221133e751ff6ae141847f33c6fdec2bd99a6fc2ac5c"
+      },
+      "path": "components/security/SecurityAuditOperatorActionsClient.tsx"
+    },
+    {
+      "current": {
+        "byteLength": 33359,
+        "mode": 420,
+        "path": "components/security/SecurityLinkedRequestDrawer.tsx",
+        "sha256": "1112091f7633fa2c7733e9dea8e3671ba7a9779a7d44687e628ee5b691b46447"
+      },
+      "parent": {
+        "byteLength": 33319,
+        "mode": 420,
+        "path": "components/security/SecurityLinkedRequestDrawer.tsx",
+        "sha256": "7df4ebe839584b1d2201f4ecfff04785cab0fe14d56e6a4ac46840f95e5e3292"
+      },
+      "path": "components/security/SecurityLinkedRequestDrawer.tsx"
+    },
+    {
+      "current": {
+        "byteLength": 12901,
+        "mode": 420,
+        "path": "components/security/SecurityLinkedRequestQuickActionsClient.tsx",
+        "sha256": "33623e31f7c0488ec8721db5dfde282e4591893c6ad19fce5affa20afae8bdaa"
+      },
+      "parent": {
+        "byteLength": 12861,
+        "mode": 420,
+        "path": "components/security/SecurityLinkedRequestQuickActionsClient.tsx",
+        "sha256": "4c012090adf00551677c0af593b75373dd3cbfa5c8a57714c30734009c048f97"
+      },
+      "path": "components/security/SecurityLinkedRequestQuickActionsClient.tsx"
+    },
+    {
+      "current": {
+        "byteLength": 22406,
+        "mode": 384,
+        "path": "config/pass15/lazy-build-surface-profile.json",
+        "sha256": "776e8bfe87efc746b35c69736a419966b529d7ebf2a63188aa14622b14cd0355"
+      },
+      "parent": {
+        "byteLength": 22366,
+        "mode": 420,
+        "path": "config/pass15/lazy-build-surface-profile.json",
+        "sha256": "a10bcdcc371eebeeb33ef40a36fac3b5917f3f2b50a51b2ca8f390e07032c790"
+      },
+      "path": "config/pass15/lazy-build-surface-profile.json"
+    },
+    {
+      "current": {
+        "byteLength": 10270,
+        "mode": 384,
+        "path": "config/pass15/lazy-route-shell-manifest.json",
+        "sha256": "86c98f75a6395f14f3ab0f9728cf63cf031173e74089d47965e2f134eb5bb3db"
+      },
+      "parent": {
+        "byteLength": 10270,
+        "mode": 420,
+        "path": "config/pass15/lazy-route-shell-manifest.json",
+        "sha256": "d68300e454facd69bc88a0bdc44361b98b06c9ddc2a896c8be0ce6f3f1fb8293"
+      },
+      "path": "config/pass15/lazy-route-shell-manifest.json"
+    },
+    {
+      "current": {
+        "byteLength": 144698,
+        "mode": 384,
+        "path": "config/pass15/route-export-ast-registry.json",
+        "sha256": "93c9ec721404d835038b20c882f49d6bc7bf3c23aca76ee9cac0b67f1057ae96"
+      },
+      "parent": {
+        "byteLength": 144672,
+        "mode": 384,
+        "path": "config/pass15/route-export-ast-registry.json",
+        "sha256": "0d770081788498ade6e5755a5b520a51154bc0ef3fad9fcddc6e790c3f82f2c3"
+      },
+      "path": "config/pass15/route-export-ast-registry.json"
+    },
+    {
+      "current": {
+        "byteLength": 13575,
+        "mode": 420,
+        "path": "lib/ai/claim-proof-firewall.ts",
+        "sha256": "c438e5acba39836b7fb30d10846fe501e72376aa6220b9525a07d2b1458af90c"
+      },
+      "parent": {
+        "byteLength": 13594,
+        "mode": 420,
+        "path": "lib/ai/claim-proof-firewall.ts",
+        "sha256": "efa57c10556410bcbecda7a228711743c7fbfacc312c575033f152bc03339267"
+      },
+      "path": "lib/ai/claim-proof-firewall.ts"
+    },
+    {
+      "current": {
+        "byteLength": 14344,
+        "mode": 420,
+        "path": "lib/ai/worldclass-output-payment-qa.ts",
+        "sha256": "d02eecc238fda9f99ca28e978003af2d83dceff58f8c7a91cc15aefce0bf5976"
+      },
+      "parent": {
+        "byteLength": 14363,
+        "mode": 420,
+        "path": "lib/ai/worldclass-output-payment-qa.ts",
+        "sha256": "8fd7161b7d400773fa912fe20151c8ac39a955c495b73d29907883464bf7605b"
+      },
+      "path": "lib/ai/worldclass-output-payment-qa.ts"
+    },
+    {
+      "current": {
+        "byteLength": 8016,
+        "mode": 420,
+        "path": "lib/checkout/stripe-blik-readiness.ts",
+        "sha256": "ba7dd798f1c530a3d401c6544764a89acd458ad4450adadee5dc1116c76d3bea"
+      },
+      "parent": {
+        "byteLength": 7883,
+        "mode": 420,
+        "path": "lib/checkout/stripe-blik-readiness.ts",
+        "sha256": "cb84676565eaae537b5c2f5a05a2bf6dbd0b456491e8b29335fa811ea946837e"
+      },
+      "path": "lib/checkout/stripe-blik-readiness.ts"
+    },
+    {
+      "current": {
+        "byteLength": 14533,
+        "mode": 420,
+        "path": "lib/reporting/runtime-canonical-field-adapter.ts",
+        "sha256": "fc2e4c58bffd74cce1d2ef59174a7cde9e01f81f0d10ffbc73e239e59c3b9187"
+      },
+      "parent": {
+        "byteLength": 14510,
+        "mode": 420,
+        "path": "lib/reporting/runtime-canonical-field-adapter.ts",
+        "sha256": "2a580e0077f2d1e7ae78a4c9e90e65ebdcbcc7f8d2b72418ce5e1b4766e55e93"
+      },
+      "path": "lib/reporting/runtime-canonical-field-adapter.ts"
+    },
+    {
+      "current": {
+        "byteLength": 24982,
+        "mode": 420,
+        "path": "lib/security/audit-case-vault-private-delivery-ledger.ts",
+        "sha256": "e019c8c2da70956c690195fa74574176bf5e2a535d959046a35a409a57b7ff8d"
+      },
+      "parent": {
+        "byteLength": 24921,
+        "mode": 420,
+        "path": "lib/security/audit-case-vault-private-delivery-ledger.ts",
+        "sha256": "a9422055c50c1836c435a500cfe963d30024af8226301ea1eb25c954a4734143"
+      },
+      "path": "lib/security/audit-case-vault-private-delivery-ledger.ts"
+    },
+    {
+      "current": {
+        "byteLength": 24104,
+        "mode": 420,
+        "path": "lib/security/audit-customer-report-pipeline.ts",
+        "sha256": "fb7ab2a5d7a577538fa2340ce5884b80a231473ce53a753bf6d7c4518168623f"
+      },
+      "parent": {
+        "byteLength": 24021,
+        "mode": 420,
+        "path": "lib/security/audit-customer-report-pipeline.ts",
+        "sha256": "1834fcad5f632abb365798301c5cf0f056fea8a73f52527b27f0345c48731eac"
+      },
+      "path": "lib/security/audit-customer-report-pipeline.ts"
+    },
+    {
+      "current": {
+        "byteLength": 4846,
+        "mode": 420,
+        "path": "lib/security/audit-watch-account-delivery-helpers.ts",
+        "sha256": "64493d9499980df0f05084bde629d3f26f96c108157ad057673976f02f4008e4"
+      },
+      "parent": {
+        "byteLength": 4550,
+        "mode": 420,
+        "path": "lib/security/audit-watch-account-delivery-helpers.ts",
+        "sha256": "aaa21ace76915773102ccd9a1ec76765a83fea6b3f5dfc4533971c90adae56df"
+      },
+      "path": "lib/security/audit-watch-account-delivery-helpers.ts"
+    },
+    {
+      "current": {
+        "byteLength": 39493,
+        "mode": 420,
+        "path": "lib/security/audit-watch-post-handler.ts",
+        "sha256": "a5f44db654ce7bd185c973c56c6140bbf94a9e44b23189dc51936202a9de89ec"
+      },
+      "parent": {
+        "byteLength": 39719,
+        "mode": 420,
+        "path": "lib/security/audit-watch-post-handler.ts",
+        "sha256": "1e96da9b5aa79ac687bd4caa9387965aeae4102938ea981c9cb0fe29aea5ccc9"
+      },
+      "path": "lib/security/audit-watch-post-handler.ts"
+    },
+    {
+      "current": {
+        "byteLength": 4091,
+        "mode": 420,
+        "path": "lib/security/linked-request-drawer-actions.ts",
+        "sha256": "543d43facd9e63eb7bda66280f6d1f909cb25efe69a1de33b3c31134a760455d"
+      },
+      "parent": {
+        "byteLength": 4018,
+        "mode": 420,
+        "path": "lib/security/linked-request-drawer-actions.ts",
+        "sha256": "6b3d8d2c5a2abead2a074d9266124c5cb22bdc06b80fbf06a0fde7d3e44fb791"
+      },
+      "path": "lib/security/linked-request-drawer-actions.ts"
+    },
+    {
+      "current": {
+        "byteLength": 12745,
+        "mode": 420,
+        "path": "lib/security/linked-request-drawer.ts",
+        "sha256": "6b734974df53d54c02273c19d9d63b56385b1f725d756eebe42e7295f1080b12"
+      },
+      "parent": {
+        "byteLength": 12749,
+        "mode": 420,
+        "path": "lib/security/linked-request-drawer.ts",
+        "sha256": "3506bdfa61f3306f75bdf88283ff76f38cf2700af74dd7089288dd301c2bec89"
+      },
+      "path": "lib/security/linked-request-drawer.ts"
+    },
+    {
+      "current": {
+        "byteLength": 26157,
+        "mode": 420,
+        "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+        "sha256": "b2705e106ea62da1d29a4feaa840d1b907f2d39159d03b0f836d0545d2701989"
+      },
+      "parent": {
+        "byteLength": 26035,
+        "mode": 420,
+        "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+        "sha256": "90ada1d8b46ca8bc5b8fc647d9cb67f14a64c3d8bf54566a3bda3c2066965e88"
+      },
+      "path": "lib/security/risk-formula-evidence-weighting-contract.ts"
+    },
+    {
+      "current": {
+        "byteLength": 22177,
+        "mode": 420,
+        "path": "lib/security/server-payment-account-delivery-gate.ts",
+        "sha256": "b5111643556f0e7fdddc175fd596259b728cd15bc125cf7a5caa70dbc221a8d7"
+      },
+      "parent": {
+        "byteLength": 22129,
+        "mode": 420,
+        "path": "lib/security/server-payment-account-delivery-gate.ts",
+        "sha256": "a0f5fe90c0aba63c123a5134d306cd4f62ad954f9354022ad2d7b6f567c03060"
+      },
+      "path": "lib/security/server-payment-account-delivery-gate.ts"
+    },
+    {
+      "current": {
+        "byteLength": 8423,
+        "mode": 420,
+        "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+        "sha256": "f7d3720c252a26fd8d4eee77b34696e105ce00b1bceeef466c41b28f096cfdbf"
+      },
+      "parent": {
+        "byteLength": 8310,
+        "mode": 420,
+        "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+        "sha256": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44"
+      },
+      "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts"
+    },
+    {
+      "current": {
+        "byteLength": 122128,
+        "mode": 420,
+        "path": "package.json",
+        "sha256": "9fa271f6f6cdc22f7e8761f11b1c1d2ab20bc7e8da9f3bd543836e22e602fc0d"
+      },
+      "parent": {
+        "byteLength": 121906,
+        "mode": 420,
+        "path": "package.json",
+        "sha256": "2b84f835faa01efbfc799271074042ac3aabba8851a6ec38be91cbd284506658"
+      },
+      "path": "package.json"
+    }
+  ],
+  "modifiedCount": 24,
+  "parentManifestEntry": {
+    "byteLength": 1235034,
+    "mode": 384,
+    "path": "_velmere/PASS36_A102R44P16_SOURCE_ONLY_MANIFEST.json",
+    "sha256": "d56a4653ce87e901cf5ee5cd7c309dd25f066174c97f63d8f54ac074382fa58d"
+  },
+  "parentManifestPath": "_velmere/PASS36_A102R44P16_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "d56a4653ce87e901cf5ee5cd7c309dd25f066174c97f63d8f54ac074382fa58d",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p17.approved-current-source-changes.v1",
+  "selfExcludedPath": "config/pass36/a102r44p17-approved-current-source-changes.json",
+  "sourceManifestExcludedPath": "_velmere/PASS36_A102R44P17_SOURCE_ONLY_MANIFEST.json",
+  "truthBoundary": "R44P17 approves only the explicit child changes needed for deterministic 50-asset real-network diagnostic truth. It grants no provider rights, paid, LIVE, customer, staging or full 318/583 credit."
+}

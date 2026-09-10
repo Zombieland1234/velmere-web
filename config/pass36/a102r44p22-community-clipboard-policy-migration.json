@@ -1,0 +1,48 @@
+{
+  "addedAssertions": 14,
+  "centralPolicy": {
+    "byteLength": 1781,
+    "path": "lib/security/control-character-policy.ts",
+    "sha256": "e453405620a7d6e8446591a0564d1563b8e9f30c6b2dcddc6b4949d9a4016537"
+  },
+  "creditBoundary": {
+    "exactBrowserCredit": false,
+    "historicalPassRewritten": false,
+    "liveCredit": false,
+    "saleCredit": false,
+    "securityBehaviorCredit": true,
+    "stagingCredit": false
+  },
+  "currentImplementation": {
+    "byteLength": 13599,
+    "path": "lib/security/browser-system-clipboard.ts",
+    "sha256": "5365aef00fd523bb9c47a87aedb8a99ca9f133e504047c8a63d0d55738c7ddb0"
+  },
+  "currentTest": {
+    "byteLength": 3855,
+    "expectedAssertions": 14,
+    "path": "scripts/pass36/test-a102r44p22-community-clipboard-central-policy.mjs",
+    "sha256": "b0cd9103eb1b04c614c2082815a5d81d6cf97b9f3509f3811dd6bb8c2a5cb67e"
+  },
+  "denominatorCollapse": false,
+  "historicalTest": {
+    "byteLength": 8964,
+    "expectedAssertions": 42,
+    "expectedLegacyFailureId": "control-bidi-policy",
+    "expectedPassed": 41,
+    "path": "scripts/pass36/test-a102r18-public-community-system-clipboard-boundary.ts",
+    "sha256": "ce3b8d46ef220ba541d37ec6b156ceb5c4f2638ce63787d5bc6dc298692b6623"
+  },
+  "historyRewritten": false,
+  "methodChange": [
+    "Historical static marker PUBLIC_TEXT_FORBIDDEN is preserved as a negative receipt contract and is not reintroduced into active code.",
+    "Current clipboard safety delegates to the shared control-character-policy and physically rejects NUL, C1 controls and bidi overrides.",
+    "No browser clipboard authority, staging, live or sale credit is granted."
+  ],
+  "newDenominator": 56,
+  "oldDenominator": 42,
+  "removedAssertions": 0,
+  "retainedAssertions": 42,
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.community-clipboard-policy-migration.v1"
+}

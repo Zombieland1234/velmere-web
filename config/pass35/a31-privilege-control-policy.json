@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "velmere.pass35.a31-privilege-control-policy.v1",
+  "passId": "PASS35_A31",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "GENERATED_BENCHMARK",
+    "LOCAL_CASE"
+  ],
+  "requiredControlFamilies": [
+    "CASE_TARGET_ROLE_STATE_BINDING",
+    "ROLE_HOLDER_SOURCE_EVIDENCE",
+    "SELECTOR_PERMISSION_COVERAGE",
+    "ROLE_ADMIN_GRAPH_INTEGRITY",
+    "PROXY_ADMIN_AUTHORITY_BINDING",
+    "MULTISIG_TIMELOCK_DELEGATION",
+    "SEPARATION_OF_DUTIES",
+    "PRIVILEGE_ESCALATION_PATHS",
+    "REVOKE_RENOUNCE_RECOVERY_CONTROLS",
+    "HIDDEN_PRIVILEGED_SURFACE_DETECTION",
+    "DETERMINISTIC_PRIVILEGE_REPLAY",
+    "MUTATION_EVIDENCE"
+  ],
+  "thresholds": {
+    "minimumRoles": 7,
+    "minimumPrincipals": 6,
+    "minimumPrivilegedEntryPoints": 8,
+    "minimumRoleAdminEdges": 6,
+    "minimumSeparationRules": 4,
+    "minimumEscalationScenarios": 6,
+    "minimumReplayRuns": 3,
+    "criticalEntryPointCoverage": 1,
+    "roleHolderEvidenceCoverage": 1,
+    "mutationKillRate": 0.9,
+    "requireUniqueIds": true,
+    "requireAcyclicRoleAdminGraph": true,
+    "requireNoUnknownCriticalSelector": true,
+    "requireExplicitDefaultAdminControl": true,
+    "requireRevokeAndEmergencyRecovery": true,
+    "requireClaimBoundary": true
+  },
+  "benchmark": {
+    "families": [
+      "CASE_TARGET_ROLE_STATE_BINDING",
+      "ROLE_HOLDER_SOURCE_EVIDENCE",
+      "SELECTOR_PERMISSION_COVERAGE",
+      "ROLE_ADMIN_GRAPH_INTEGRITY",
+      "PROXY_ADMIN_AUTHORITY_BINDING",
+      "MULTISIG_TIMELOCK_DELEGATION",
+      "SEPARATION_OF_DUTIES",
+      "PRIVILEGE_ESCALATION_PATHS",
+      "REVOKE_RENOUNCE_RECOVERY_CONTROLS",
+      "HIDDEN_PRIVILEGED_SURFACE_DETECTION",
+      "DETERMINISTIC_PRIVILEGE_REPLAY",
+      "MUTATION_EVIDENCE"
+    ],
+    "mutationTypes": [
+      "TARGET_DIGEST_TAMPER",
+      "ROLE_HOLDER_EVIDENCE_TAMPER",
+      "SELECTOR_PERMISSION_GAP",
+      "ROLE_ADMIN_CYCLE",
+      "PROXY_ADMIN_SLOT_GAP",
+      "TIMELOCK_BYPASS",
+      "SOD_CONFLICT",
+      "ESCALATION_PATH_GAP",
+      "RECOVERY_CONTROL_GAP",
+      "HIDDEN_SURFACE_UNMAPPED",
+      "REPLAY_DRIFT",
+      "MUTATION_SCORE_DROP"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "A31 verifies a bounded local privilege and authorization evidence contract over generated or explicitly supplied local case data. It can bind role definitions, principals, selector permissions, role-admin relationships, proxy/admin authority, multisig/timelock delegation, separation-of-duties rules, escalation scenarios, revoke/recovery controls, hidden privileged surfaces and deterministic replay receipts. It does not prove current on-chain role holders, real proxy/admin slots, multisig custody, timelock execution, absence of hidden business-logic privileges, qualified manual authorization review, customer outcomes, independent assurance, LIVE operation or paid readiness. Generated benchmark evidence must never be promoted to on-chain, reviewer, customer, independent or commercial credit."
+}

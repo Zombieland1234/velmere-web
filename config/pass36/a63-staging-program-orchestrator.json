@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "velmere.pass36.a63.staging-program-orchestrator-policy.v1",
+  "revisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+  "parentRevisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+  "activeAcceptanceRevisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "projectClass": "disposable_staging_program",
+  "confirmationToken": "I_UNDERSTAND_A63_RUNS_A47_THROUGH_A57_ONLY_ON_DISPOSABLE_STAGING_WITH_TEST_PAYMENTS_STOP_ON_FAILURE_AND_NO_SALE_LIVE_OR_PRODUCTION_PROMOTION",
+  "sourceManifestPath": "config/pass36/a102r44-current-root-descendant-manifest.json",
+  "requiredPreconditions": {
+    "a60": {
+      "path": "artifacts/pass36/a60/PASS36_A60_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE.json",
+      "revisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+      "decision": "VERIFIED_LOCAL_EXACT_FINAL_BYTE_BUILD_BROWSER"
+    },
+    "a61": {
+      "path": "artifacts/pass36/a61/PASS36_A61_HISTORICAL_ARTIFACT_RECOVERY.json",
+      "revisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+      "decision": "VERIFIED_HISTORICAL_ARTIFACTS"
+    },
+    "criticalGate": {
+      "path": "config/pass36/a61-critical-offline-gate-triage-receipt.json",
+      "suites": 30,
+      "passed": 30,
+      "blocked": 0,
+      "semanticFailures": 0
+    },
+    "lineage": {
+      "rule": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT",
+      "legacy": {
+        "path": "artifacts/pass36/a61/PASS36_A61_HISTORICAL_ARTIFACT_RECOVERY.json",
+        "revisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+        "decision": "VERIFIED_HISTORICAL_ARTIFACTS"
+      },
+      "cleanRoot": {
+        "path": "artifacts/pass36/a77/PASS36_A77_CLEAN_ROOT_GOVERNANCE.json",
+        "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+        "decision": "VERIFIED_SIGNED_CLEAN_ROOT_MIGRATION"
+      },
+      "criticalGateModes": {
+        "legacy": "legacy",
+        "cleanRoot": "current-root"
+      }
+    }
+  },
+  "commonEnvironment": [
+    "VELMERE_A63_PROGRAM_ID",
+    "VELMERE_A63_PROJECT_CLASS",
+    "VELMERE_A63_STAGING_ENVIRONMENT_ID",
+    "VELMERE_A63_EXPECTED_SOURCE_MANIFEST_SHA256",
+    "VELMERE_A63_CONFIRM"
+  ],
+  "stagingSafety": {
+    "requireHttps": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHints": [
+      "staging",
+      "preview",
+      "test",
+      "canary",
+      "sandbox"
+    ],
+    "minimumDistinctOrigins": 3,
+    "minimumSecretLength": 32,
+    "maximumEvidenceAgeSeconds": 3888000,
+    "maximumClockSkewSeconds": 120,
+    "rejectLivePaymentPrefixes": [
+      "sk_live_",
+      "pk_live_",
+      "rk_live_"
+    ]
+  },
+  "stages": [
+    {
+      "id": "A47",
+      "revisionId": "VELMERE_PASS35_A47_ACCEPTANCE_EVIDENCE_INTAKE_TRIAGE",
+      "command": [
+        "node",
+        "scripts/a47-evidence-intake.mjs"
+      ],
+      "argumentEnvironment": {
+        "--a45": "VELMERE_A63_A45_EVIDENCE_ZIP",
+        "--a46": "VELMERE_A63_A46_EVIDENCE_ZIP"
+      },
+      "receiptPath": "artifacts/pass35/a47/PASS35_A47_ACCEPTANCE_EVIDENCE_TRIAGE.json",
+      "expectedDecision": "VERIFIED_LOCAL_ACCEPTANCE",
+      "mutationRisk": false
+    },
+    {
+      "id": "A48",
+      "revisionId": "VELMERE_PASS35_A48_STAGING_TENANT_ISOLATION_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a48-staging-tenant-isolation.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a48/PASS35_A48_STAGING_TENANT_ISOLATION.json",
+      "expectedDecision": "VERIFIED_STAGING_TENANT_ISOLATION",
+      "mutationRisk": true
+    },
+    {
+      "id": "A49",
+      "revisionId": "VELMERE_PASS35_A49_STRIPE_TEST_PAYMENT_REFUND_RECONCILIATION_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a49-stripe-payment-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a49/PASS35_A49_STRIPE_TEST_PAYMENT_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_PAYMENT_REFUND_RECONCILIATION",
+      "mutationRisk": true
+    },
+    {
+      "id": "A50",
+      "revisionId": "VELMERE_PASS35_A50_TRANSACTIONAL_EMAIL_PRIVATE_STORAGE_KMS_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a50-email-storage-kms-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a50/PASS35_A50_TRANSACTIONAL_EMAIL_PRIVATE_STORAGE_KMS_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_EMAIL_STORAGE_KMS",
+      "mutationRisk": true
+    },
+    {
+      "id": "A51",
+      "revisionId": "VELMERE_PASS35_A51_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a51-backup-restore-rollback-provider-loss-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a51/PASS35_A51_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_BACKUP_RESTORE_ROLLBACK_PROVIDER_FAILOVER",
+      "mutationRisk": true
+    },
+    {
+      "id": "A52",
+      "revisionId": "VELMERE_PASS35_A52_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a52-kill-switch-incident-customer-communication-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a52/PASS35_A52_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION",
+      "mutationRisk": true
+    },
+    {
+      "id": "A54",
+      "revisionId": "VELMERE_PASS35_A54_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a54-strict-slo-alert-ack-vendor-exit-recovery-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a54/PASS35_A54_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY",
+      "mutationRisk": true
+    },
+    {
+      "id": "A55",
+      "revisionId": "VELMERE_PASS35_A55_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a55-independent-retest-legal-customer-release-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a55/PASS35_A55_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE",
+      "mutationRisk": false
+    },
+    {
+      "id": "A56",
+      "revisionId": "VELMERE_PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a56-out-of-time-slo-vendor-exit-observation-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a56/PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION",
+      "mutationRisk": false
+    },
+    {
+      "id": "A57",
+      "revisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+      "command": [
+        "node",
+        "scripts/a57-controlled-canary-kill-switch-rollback-telemetry-acceptance.mjs"
+      ],
+      "receiptPath": "artifacts/pass35/a57/PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE.json",
+      "expectedDecision": "VERIFIED_STAGING_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY",
+      "mutationRisk": true
+    }
+  ],
+  "decisions": {
+    "verified": "VERIFIED_STAGING_PROGRAM_A47_A57",
+    "blocked": "BLOCKED_STAGING_PROGRAM_PRECONDITIONS",
+    "incomplete": "INCOMPLETE_STAGING_PROGRAM_EVIDENCE",
+    "actionRequired": "ACTION_REQUIRED_STAGING_PROGRAM",
+    "recoveryRequired": "RECOVERY_REQUIRED_STAGING_PROGRAM"
+  },
+  "truthBoundary": "A63 accepts either exact A61 legacy recovery or a dual-control signed A77 clean root, always paired with a 30/30 exact-runtime critical gate for the same lineage. Local clean-root construction alone does not admit staging. All other A47-A57 gates remain unchanged and fail-closed.",
+  "historicalA57ManifestPath": "config/pass35/a57-source-manifest.json",
+  "currentSourceAuthorityPath": "config/pass36/current-release-authority.json",
+  "currentSourceRevisionId": "VELMERE_PASS36_A102R44_ACTION_REQUIRED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF_NO_LIVE_CREDIT",
+  "currentSourceParentRevisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT"
+}

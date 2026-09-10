@@ -1,0 +1,45 @@
+{
+  "decision": "ACTION_REQUIRED_NO_GO",
+  "flags": {
+    "LIVE": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "implementedTracks": [
+    "strict canonical envelope",
+    "bounded envelope lifetime",
+    "key validity at observation and admission",
+    "durable replay journal outside SOURCE",
+    "atomic hash-chain admission",
+    "concurrent single-writer replay protection",
+    "exact semantic artifact bijection"
+  ],
+  "localMechanismTests": {
+    "admissionJournal": "15/15",
+    "concurrentAdmission": "10/10",
+    "envelopeHardening": "24/24",
+    "externalEvidenceImport": "7/7",
+    "total": "56/56"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "remainingTracks": [
+    "independently admitted external signing key",
+    "external staging RLS 19/19",
+    "Stripe TEST 12/12",
+    "storage KMS email 10/10",
+    "backup restore 10/10",
+    "incident 8/8",
+    "real 72-hour observations 3/3",
+    "exact full release and Windows",
+    "rights-approved 318/583",
+    "independent review and customer outcomes"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p27.world-class-completion-program.v1"
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "velmere.pass36.a102r32.route-hash-timeout-prefetch-reentry-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R32_ACTION_REQUIRED_ROUTE_HASH_INVALID_MISSING_TARGET_TIMEOUT_AND_PREFETCH_INTENT_REENTRY_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R31_ACTION_REQUIRED_ROUTE_TRANSITION_HASH_FOCUS_PREFETCH_BOUND_AND_ACCESSIBILITY_CONTINUITY_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T06:20:00.000Z",
+  "status": "PASS_A102R32_ROUTE_HASH_TIMEOUT_PREFETCH_REENTRY_LOCAL_ONLY",
+  "checks": 38,
+  "hashTargetWaitMs": 1800,
+  "invalidHashBlocksTransition": false,
+  "missingHashTargetMaximumWaitMs": 1800,
+  "sameAnchorIntentRestarted": false,
+  "noRouteTransitionPrefetched": false,
+  "realBrowserRows": 0,
+  "exactBuildBrowserCredit": false,
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Local invalid/missing hash timeout and same-anchor prefetch-intent reentry behavior only. No exact browser, screenshot, performance, staging, rights, legal, customer, LIVE or sale credit."
+}

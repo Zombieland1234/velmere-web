@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.worldclass-output-contract.v1",
+  "commonRequiredFields": [
+    "schemaVersion",
+    "matrixId",
+    "caseId",
+    "surface",
+    "tier",
+    "locale",
+    "sourceSha256",
+    "corpusSha256",
+    "status",
+    "scope",
+    "evidence",
+    "missingData",
+    "limitations",
+    "confidence",
+    "nextSafeCheck"
+  ],
+  "statuses": [
+    "passed",
+    "blocked",
+    "failed"
+  ],
+  "tierRequirements": {
+    "basic": {
+      "requiredFields": [
+        "evidenceStatus"
+      ],
+      "minimumIndependentSourceFamilies": 1,
+      "allowsNumericVerdictWithoutEvidence": false
+    },
+    "pro": {
+      "requiredFields": [
+        "evidenceTable",
+        "riskDrivers",
+        "commercialRights",
+        "freshnessReceipt"
+      ],
+      "minimumIndependentSourceFamilies": 2,
+      "mustBlockOnMissingEvidence": true,
+      "mustDifferMateriallyFromBasic": true
+    },
+    "advanced": {
+      "requiredFields": [
+        "evidenceTable",
+        "riskDrivers",
+        "contradictions",
+        "confidenceBasis",
+        "commercialRights",
+        "freshnessReceipt",
+        "provenanceReceipt"
+      ],
+      "minimumIndependentSourceFamilies": 3,
+      "mustBlockOnMissingEvidence": true,
+      "mustDifferMateriallyFromPro": true
+    }
+  },
+  "surfaceRequirements": {
+    "shield": [
+      "assetIdentity",
+      "marketSnapshot",
+      "liquidity",
+      "onchainOrIssuerSignals",
+      "riskAssessment"
+    ],
+    "real_markets": [
+      "assetIdentity",
+      "marketSnapshot",
+      "sessionAndVenue",
+      "issuerOrOfficialSignals",
+      "riskAssessment"
+    ],
+    "smart_contract_audit": [
+      "contractIdentity",
+      "analysisScope",
+      "findings",
+      "falsePositiveControls",
+      "severityRationale",
+      "remediation",
+      "analysisMode",
+      "claimBoundary",
+      "tierValue",
+      "evidenceCoverage"
+    ],
+    "lens_pdf": [
+      "reportIdentity",
+      "renderReceipt",
+      "previewHash",
+      "downloadHash",
+      "accountCopyHash",
+      "pageManifest",
+      "sourceManifest"
+    ],
+    "vlm_brain": [
+      "factPacketHash",
+      "epistemicDecision",
+      "claims",
+      "claimSourceBindings",
+      "policyDecision"
+    ],
+    "angel": [
+      "answer",
+      "severity",
+      "evidenceSummary",
+      "missingProof",
+      "safeRemediation",
+      "policyDecision"
+    ]
+  },
+  "advancedAuditHumanReview": {
+    "required": false,
+    "claimRequiresValidReceipt": true,
+    "requiredFields": [
+      "authorityId",
+      "reviewerRole",
+      "reviewStatus",
+      "reviewedAt",
+      "reviewReceiptSha256"
+    ],
+    "allowedReviewStatusForRelease": [
+      "approved"
+    ]
+  },
+  "localeRequirements": {
+    "supported": [
+      "pl",
+      "en",
+      "de"
+    ],
+    "mustMatchRequestedLocale": true,
+    "silentEnglishFallbackForbidden": true
+  },
+  "pdfParityRule": {
+    "required": true,
+    "condition": "previewHash == downloadHash == accountCopyHash",
+    "note": "A renderer-specific transport wrapper may differ, but the canonical customer report payload and page manifest must hash identically."
+  },
+  "truthBoundary": "A102R44P2 current automated informational contract. Content compliance on local fixtures is not paid-release, real-accuracy, official-tool, real-customer, independent-certification, staging or LIVE proof.",
+  "advancedAuditAutomatedInformational": {
+    "analysisMode": "automated_informational",
+    "requiredFields": [
+      "analysisMode",
+      "claimBoundary",
+      "tierValue",
+      "methodology",
+      "evidenceCoverage"
+    ],
+    "minimumIndependentSourceFamilies": 3,
+    "independentCertificationClaimAllowed": false,
+    "personalisedAdviceAllowed": false,
+    "securityGuaranteeAllowed": false
+  }
+}

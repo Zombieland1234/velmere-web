@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "velmere.pass35.a13-functional-runtime-contract.v1",
+  "passId": "PASS35_A13",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "visualChangesMade": false,
+  "publicFxRuntime": {
+    "providers": [
+      "ecb",
+      "bank_of_canada"
+    ],
+    "transportProof": "LOCAL_HTTP_NETWORK_FIXTURE",
+    "fixtureExecution": {
+      "providers": 2,
+      "pairs": 4,
+      "basicEligible": 4,
+      "proEligible": 3,
+      "advancedEligible": 0,
+      "assertions": 25
+    },
+    "controls": [
+      "bounded_response",
+      "cache",
+      "shared_inflight",
+      "quota_budget",
+      "schema_quarantine",
+      "freshness",
+      "independent_family_reconciliation",
+      "tier_quorum"
+    ],
+    "publicNetworkStatus": "BLOCKED_ENVIRONMENT_DNS"
+  },
+  "fullCatalogScheduler": {
+    "fixtureExecution": {
+      "activeAssets": 80,
+      "activeListings": 319,
+      "jobs": 957,
+      "assertions": 15
+    },
+    "roles": [
+      "spot_quote",
+      "klines",
+      "order_book"
+    ],
+    "surfaces": [
+      "shield",
+      "shield_pro",
+      "market_impact"
+    ],
+    "controls": [
+      "all_active_listings_counted",
+      "provider_budget",
+      "maximum_concurrency",
+      "freshness_target",
+      "unsupported_reason",
+      "tamper_verification"
+    ],
+    "networkExecutionStatus": "PLAN_ONLY_NOT_EXECUTED"
+  },
+  "whaleTokenDenominator": {
+    "fixtureExecution": {
+      "activeAssets": 120,
+      "boundTokens": 60,
+      "basicEligible": 60,
+      "proEligible": 40,
+      "advancedEligible": 20,
+      "bindingCoverageBps": 5000,
+      "assertions": 13
+    },
+    "controls": [
+      "all_active_crypto_assets_counted",
+      "exact_chain_address_binding",
+      "fresh_holder_evidence",
+      "fresh_transfer_evidence",
+      "verified_label_evidence",
+      "market_impact_binding",
+      "explicit_unavailable",
+      "tamper_verification"
+    ],
+    "realDenominatorStatus": "NOT_EXECUTED_REAL_MARKET"
+  },
+  "zeroBudgetWeightedPlanningPercent": 82.1,
+  "canonicalWeightedPlanningPercent": 41.9,
+  "canonicalStrictDonePercent": 9.3,
+  "sellEnabled": false,
+  "paidDeliveryEligible": false,
+  "liveClaimed": false,
+  "truthBoundary": "A13 proves local functional runtimes and full-denominator math. It does not prove current public internet, provider rights, complete field observations, chain state, customer outcome, paid readiness or LIVE."
+}

@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "velmere.pass36.a102r15.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A102R15_ACTION_REQUIRED_ASSET_ANALYSIS_SYSTEM_CLIPBOARD_PACKET_RECEIPT_SOURCE_CLAIM_AND_TIMESTAMP_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R14_ACTION_REQUIRED_SOURCE_PACKAGE_UPLOAD_RECOVERY_AND_BROWSER_SHIELD_HANDOFF_SESSION_STORAGE_QUERY_TIER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentDescendantManifestDigestSha256": "8849b7f91136ed2cc2e27231c3e8fb404ea10cba0a26007dfc2e4a50e155b8d0",
+  "generatedAt": "2026-07-30T10:05:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A102_LOCAL_ASSET_ANALYSIS_SYSTEM_CLIPBOARD_REDACTION_NO_FORMAL_PASS_CREDIT",
+  "payload": {
+    "fileCount": 5053,
+    "byteLength": 119332060,
+    "pathSetSha256": "4df26e0f50dae4bf57b3ac902b50324a848cce97f7b3c2059c3e4ca4789c7356",
+    "aggregateSha256": "6278c64cf02f8dd0e3edb86eaa4b0f097af37fe99c381660627170f05cf84082"
+  },
+  "localRegressionReceiptSha256": "6437cf3d18405932e5c38c28bfa9394706300d90dc380e4d97ba90981102f336",
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a98PassCredit": false,
+    "a99PassCredit": false,
+    "a100PassCredit": false,
+    "a101PassCredit": false,
+    "a102PassCredit": false,
+    "a103PassCredit": false,
+    "a104PassCredit": false,
+    "a105PassCredit": false,
+    "a106PassCredit": false,
+    "a107PassCredit": false,
+    "a108PassCredit": false,
+    "a109PassCredit": false,
+    "a110PassCredit": false,
+    "a111PassCredit": false,
+    "a112PassCredit": false,
+    "a113PassCredit": false,
+    "a114PassCredit": false,
+    "a115PassCredit": false,
+    "a116PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "freshExactBuildBrowserCredit": false,
+    "assetAnalysisClipboardBoundaryChecks": 54,
+    "rawAssetClipboardSinksRemaining": 0,
+    "redactedSummaryOnly": true,
+    "secureContextRequired": true,
+    "receiptPacketIdentifiersIncluded": false,
+    "sourceLabelsTimestampsClaimsIncluded": false,
+    "fullManifestBrowserEventDispatched": false,
+    "packageNestedPointerDriftRepaired": true,
+    "realAssetClipboardBrowserRows": 0,
+    "realObservationRuns": 0,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "a102ObservationRuns": {
+      "required": 3,
+      "realVerified": 0,
+      "minimumSpanSeconds": 259200
+    },
+    "exactClosureTracks": {
+      "required": 4,
+      "verified": 0
+    },
+    "browserChecks": {
+      "required": 54,
+      "exactChromiumCredit": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stripeTestLifecycle": {
+      "required": 1,
+      "realVerified": 0,
+      "productionPayments": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100,
+      "pypdfVerified": 450,
+      "pdfinfoVerified": 450,
+      "pdftotextVerified": 450,
+      "ghostscriptVerified": 450,
+      "rasterPagesVerified": 2100,
+      "blankPages": 0,
+      "edgeContactPages": 0,
+      "independentA102R3PypdfVerified": 450,
+      "independentA102R3PdfinfoVerified": 450,
+      "independentA102R3PdftotextVerified": 450,
+      "independentA102R3GhostscriptVerified": 450,
+      "independentA102R3VisualSampleDocuments": 9,
+      "independentA102R3VisualSamplePages": 51
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "whaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0,
+      "localHandlerExecutions": 324
+    },
+    "riskRealCalibrationWindows": {
+      "requiredRegimes": 2,
+      "closed": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0,
+      "acceptedMediumHigh": 0,
+      "confirmedFixes": 0,
+      "successfulRetests": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "browserCustomerPrivacy": {
+      "checkoutPiiPersistenceCasesRequired": 3,
+      "checkoutPiiPersistenceCasesVerified": 0,
+      "auditCasePersistenceCasesRequired": 3,
+      "auditCasePersistenceCasesVerified": 0,
+      "pdfActivityPersistenceCasesRequired": 3,
+      "pdfActivityPersistenceCasesVerified": 0,
+      "realAccountSwitchLogoutSharedDeviceRows": 0
+    },
+    "systemClipboardPrivacy": {
+      "privateAccountArtifactProfilesRequired": 12,
+      "privateAccountArtifactProfilesLocallyRedacted": 12,
+      "adminSupportProfilesRequired": 1,
+      "adminSupportProfilesLocallyRedacted": 1,
+      "realOsBrowserClipboardRowsRequired": 12,
+      "realOsBrowserClipboardRowsVerified": 0,
+      "realClipboardRevocationOrExpiryGuarantee": false
+    },
+    "clientPdfBrowserLifecycle": {
+      "required": 18,
+      "realVerified": 0,
+      "matrix": "Chrome/Edge/Firefox x desktop/mobile x Basic/Pro/Advanced",
+      "status": "BLOCKED_ENVIRONMENT"
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "priceRecommendation": null,
+      "reason": "Local prescreen and safety tooling only; current real data, rights, legal, staging, customer utility and exact-browser release evidence remain unproven."
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_ACCURACY",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "BLOCKED_ACCURACY",
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "846ae90df6727d249ea6808f708eb871af84a28813652f1620fdb21fa3a13aa3"
+}

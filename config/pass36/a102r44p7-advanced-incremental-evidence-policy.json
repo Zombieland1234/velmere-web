@@ -1,0 +1,159 @@
+{
+  "bindings": {
+    "analysis": {
+      "bytes": 136116,
+      "path": "r44p7/evidence/ADVANCED_EVIDENCE_ANALYSIS_R44P7.json",
+      "sha256": "5244a17955bdd5a02546630936f926049eef2b0a794a80a9e531c9c90546f09c"
+    },
+    "answerKey": {
+      "bytes": 22145,
+      "path": "r44p7/restricted/BLIND_ADJUDICATION_ANSWER_KEY_R44P7.json",
+      "sha256": "41e541849f22688efe120352caf06b1b9ddb75674fb3e1ae6819f61206d5e696"
+    },
+    "blindPackets": {
+      "bytes": 118755,
+      "path": "r44p7/evidence/BLIND_ADJUDICATION_PACKETS_R44P7.jsonl",
+      "sha256": "ae727bf1343bea397f4403897ab0d04c486c5ce4f4e58065e8d409e856d96eeb"
+    },
+    "officialEvidenceArtifact": {
+      "bytes": 1046873,
+      "path": "inherited/r44p4-official-tool-evidence-v2.zip",
+      "sha256": "3727858b943df088af0d3aa71a2851461e8484712f6ec8ab92778fe5c3674b26"
+    },
+    "packets": {
+      "bytes": 2862626,
+      "path": "r44p7/evidence/official-tool-audit-packets-r44p7.jsonl",
+      "sha256": "dc4ca879d5565aa29f3e7c383b0c95051fa958ab8f17637a43af7dc6888d2087"
+    },
+    "pdfManifest": {
+      "bytes": 101220,
+      "path": "r44p7/OFFICIAL_TOOL_PDF_MANIFEST_R44P7.json",
+      "sha256": "11db623e32f0897f2a5112353a1e9e6b353b5d12d00864daad60e99fda1e8dba"
+    },
+    "pdfVerification": {
+      "bytes": 83328,
+      "path": "r44p7/OFFICIAL_TOOL_PDF_VERIFICATION_R44P7.json",
+      "sha256": "aea7746247775c5e9504cbc8de4417794de744e9f8ab3528879a14a6dff0c15c"
+    },
+    "reviewTemplate": {
+      "bytes": 698,
+      "path": "r44p7/evidence/INDEPENDENT_REVIEW_TEMPLATE_R44P7.json",
+      "sha256": "39df4233202cf5c7a81cfd45ed185d004478e2061cadea49f9f6472d638c4bae"
+    },
+    "summary": {
+      "bytes": 23320,
+      "path": "r44p7/evidence/OFFICIAL_TOOL_TIER_PACKET_SUMMARY_R44P7.json",
+      "sha256": "def9c470a2837ba1b48ecedfe3355ab75523f570446f47d7e39ceceab198a6fe"
+    },
+    "valueVerification": {
+      "bytes": 808,
+      "path": "r44p7/evidence/A102R44P7_ADVANCED_EVIDENCE_VERIFICATION.json",
+      "sha256": "c4c057ef60ce0a9493ebc19b239d18847a0f391d0a801c5b1a88012d70452da2"
+    }
+  },
+  "denominators": {
+    "advancedRows": 150,
+    "basicRows": 150,
+    "blindAdjudicationPackets": 50,
+    "cases": 50,
+    "independentAdjudications": 0,
+    "officialProcesses": 200,
+    "packetRows": 450,
+    "pdfDocuments": 150,
+    "pdfPages": 700,
+    "proRows": 150,
+    "riskControlPairs": 24
+  },
+  "evidenceFamilies": {
+    "advancedExact": 7,
+    "advancedGreaterThanProCases": 50,
+    "advancedNew": [
+      "cross_tool_consensus",
+      "compiler_artifact_diff",
+      "comparative_control_analysis"
+    ],
+    "basicMinimum": 1,
+    "proExact": 4
+  },
+  "generatedAt": "2026-08-02T22:55:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "pairwiseMetrics": {
+    "averageAgreementScore": 28.166,
+    "averageIntroducedThemes": 0.208,
+    "averagePersistentThemes": 0.667,
+    "averageResolvedThemes": 0.625,
+    "averageSeverityWeightDelta": -1.542,
+    "crossToolConsensusCases": 12,
+    "riskControlPairs": 24,
+    "severityEqualPairs": 9,
+    "severityImprovedPairs": 10,
+    "severityWorsePairs": 5,
+    "singleToolThemeCases": 39
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P6_ACTION_REQUIRED_CROSS_SURFACE_TIER_VALUE_TRUTH_AND_REAL_DATA_READINESS_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P7_ACTION_REQUIRED_ADVANCED_INCREMENTAL_EVIDENCE_REMEDIATION_DELTA_AND_ADJUDICATION_READINESS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p7.advanced-incremental-evidence-policy.v1",
+  "skuDecisions": {
+    "AuditAdvanced": "PILOT_ONLY_PAID_INFORMATIONAL_INCREMENTAL_EVIDENCE_CLOSED_ADJUDICATION_OPEN",
+    "AuditBasic": "GO_FREE_INFORMATIONAL_PILOT",
+    "AuditPro": "PILOT_ONLY_PAID_INFORMATIONAL",
+    "PdfAdvanced": "PILOT_ONLY_INCREMENTAL_EVIDENCE_CLOSED_ADJUDICATION_OPEN",
+    "PdfBasic": "GO_FREE_TECHNICAL_PDF_PILOT",
+    "PdfPro": "PILOT_ONLY"
+  },
+  "sourceBindings": {
+    "components/security/SecurityAuditsCleanPage.tsx": {
+      "bytes": 44302,
+      "sha256": "5dd0bc590fa27b2600a22ff2055f72dbd888ea1a86d163f800f9764663df6299"
+    },
+    "lib/security/audit-business-flow.ts": {
+      "bytes": 16746,
+      "sha256": "0db51f052f9b6cbcca6d09d7dcba40c5ef3854160b6df581013356e86e6ea851"
+    },
+    "lib/security/audit-tier-contract.ts": {
+      "bytes": 10725,
+      "sha256": "8472f48ab1372022a7b792043182344038364b7ba95caed156e686d9e73d35cb"
+    },
+    "lib/security/vlm-audit-product.ts": {
+      "bytes": 34553,
+      "sha256": "1bd92f0acd13a885fe5d59a5a8091da3cdce1017ddc98a04c6b2790e7b4cd5f1"
+    },
+    "package.json": {
+      "bytes": 121588,
+      "sha256": "abd24681f3d6ba500503c300dc37a7f29cbdce03f39f664f1bdb46727b83d741"
+    },
+    "scripts/pass36/build-a102r44p7-blind-adjudication-packets.py": {
+      "bytes": 6377,
+      "sha256": "c16072569cc9bee69cae1c2b437c652c24f3b4bd19f10bb7930b37260c9f7e5d"
+    },
+    "scripts/pass36/generate-a102r44p7-advanced-evidence-packets.py": {
+      "bytes": 29742,
+      "sha256": "17528f0ae03caa0b2f275bbf4c9b517880eb9a8d801ee8e090ca5a906f70fcb0"
+    },
+    "scripts/pass36/render-a102r44p7-advanced-evidence-pdf-corpus.py": {
+      "bytes": 34048,
+      "sha256": "23537706c5541fee9efc2bdb44c42af22f0735c6bb469c7e977db58581bb7de8"
+    },
+    "scripts/pass36/verify-a102r44p7-action-required-authority.mjs": {
+      "bytes": 7313,
+      "sha256": "9039d415ed51903b0d91e326084c4c7f9c5b9047d8f7717c278446d79f2c3ef1"
+    },
+    "scripts/pass36/verify-a102r44p7-advanced-evidence-pdf-corpus.py": {
+      "bytes": 9283,
+      "sha256": "36044fee2c4b84e8292fec4a020ad8693b11fa9c557be0d18cabaaf71314bcfe"
+    },
+    "scripts/pass36/verify-a102r44p7-advanced-evidence-value.py": {
+      "bytes": 10754,
+      "sha256": "a00a093b3e267b56020035a62a6dfebef27a1bf9693fa0709d2e9a6fa9e951f9"
+    },
+    "scripts/pass36/verify-a102r44p7-static-policy.mjs": {
+      "bytes": 8448,
+      "sha256": "156bf137a27960ce06dd794ee160a0fbcbf8d88d1688fb9433f05e374c64e1de"
+    }
+  },
+  "truthBoundary": "Advanced now has three deterministic evidence families beyond Pro on 50 project-owned fixtures. Independent adjudication, deployed-contract evidence, customer outcomes, exact Windows, staging, LIVE and public-sale proof remain absent.",
+  "worldClassProven": false
+}

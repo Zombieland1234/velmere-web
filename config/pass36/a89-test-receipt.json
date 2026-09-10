@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "velmere.pass36.a89.account-auth-tenant-privacy-red-team-receipt-summary.v2",
+  "revisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "parentRevisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "generatedAt": "2026-07-28T00:00:00.000Z",
+  "status": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+  "summary": {
+    "checks": 54,
+    "passed": 54,
+    "failed": 0
+  },
+  "redTeamMatrix": {
+    "cases": 192,
+    "families": 16,
+    "casesPerFamily": 12,
+    "mismatches": 0
+  },
+  "strictEnvelopeMutationCampaign": {
+    "generated": 768,
+    "killed": 768,
+    "survived": 0
+  },
+  "closedGapDenominator": 28,
+  "claims": {
+    "realOAuthRuns": 0,
+    "realTwoTenantRlsChecks": 0,
+    "realAccountTakeoverDrills": 0,
+    "realCrossDeviceRevocationDrills": 0,
+    "realDsarRuns": 0,
+    "externalTrustIntakeRecordsVerified": 0,
+    "legalRegulatoryDecisionsSigned": 0,
+    "exactA80CandidateBound": false,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "fullReceipt": {
+    "materialsRelativePath": "CHECKPOINT_HISTORY/A89R0/a89-full-test-receipt.json",
+    "sha256": "8ffc2295d83e75033c4f2e34421767eb0c2d9b6365d3297ffa5f62caf878e5a7",
+    "byteLength": 41989,
+    "embeddedInSource": false
+  },
+  "truthBoundary": "This compact historical summary binds the full A89 receipt retained in MATERIALS. It is not an active execution receipt. A89 proves local contracts only and does not prove real OAuth, production edge behavior, two-tenant RLS, account-takeover resistance in staging, cross-device revocation, DSAR execution, legal approval, LIVE or sale readiness."
+}

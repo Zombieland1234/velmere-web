@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p37.a42-critical-rebaseline.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P37_ACTION_REQUIRED_AUTHORITY_RELEASE_TRUTH_TYPESCRIPT_AND_EVIDENCE_REPAIR_TEST_CYCLE_0_OF_3_NO_LIVE_CREDIT",
+  "criticalFileDenominator": 76,
+  "changedRows": [
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "parentSha256": "4520a5006832cea4906a8c886c8d1df8ec26c9be875140238243dc1cbba1ea14",
+      "currentSha256": "08d3a684500196b486f2d5f81afca15e6520bc3c750af1552d5dfb9efbe212d5",
+      "byteLength": 130
+    },
+    {
+      "path": "app/[locale]/intelligence/page.tsx",
+      "parentSha256": "42e378782c1c4d7f118f0d023a4c7c5b77f5ffa1603d968055909302088d1160",
+      "currentSha256": "a7d44035c0d2c91d05cbe5d4e52a8a9e4730e82ec24200b29f672e2bb0faa124",
+      "byteLength": 3850
+    },
+    {
+      "path": "app/[locale]/security/audits/page.tsx",
+      "parentSha256": "8edf6e42c21970310a2fa9f15e586af568aaa835cceb1991f97c15b91d577d10",
+      "currentSha256": "7c3ba7fdf5d8fa584c2851b3c231c6acf3941dfc1aca4921efa699bb629b640f",
+      "byteLength": 842
+    },
+    {
+      "path": "app/layout.tsx",
+      "parentSha256": "ea0f99403229cf371214cf028944f57d785d9b017ceec7471b0264680ea4acf9",
+      "currentSha256": "bf9cfc5fcbdbdd121a25ba807995204e466e9e131efe96635ab94d12125987c3",
+      "byteLength": 1542
+    },
+    {
+      "path": "components/market-integrity/AssetIntelligenceTabs.tsx",
+      "parentSha256": "91b22424f06a90141f1474bffd5962c7ba55d0f895ad824ee53ae68de82e2d43",
+      "currentSha256": "548fa5de9566fdcd9a9fae25be2e5c26c3122d594428504cfb62a3f2751bacc4",
+      "byteLength": 40340
+    },
+    {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "parentSha256": "e586e5b65857138d3e3b09b2a308f3c621fe8c69fa00a5b0f19e1f92529f9036",
+      "currentSha256": "e255a733c2e894a083427025faa3b595c4a9ee6fb08d18f631fb47b4396f7f8d",
+      "byteLength": 55341
+    },
+    {
+      "path": "components/market-integrity/asset-detail/market-intelligence-client-runtime.ts",
+      "parentSha256": "75beab1e6fcbfc48bd84fc3fb483ca6f738481e55302bfff437299d678ac36a8",
+      "currentSha256": "bbb5775b0d417f7a34a55d54fe94b248a1322f4f543ce23959b0c3a38f72c336",
+      "byteLength": 31888
+    },
+    {
+      "path": "components/security/SecurityAuditsCleanPage.tsx",
+      "parentSha256": "2010078c3224526244e5eeab7b4b80065aac164590afac87b9bd4350255b534c",
+      "currentSha256": "8c54d3bbb828b271089ba2b5f711fc5e5f3259fc692277462e1d468f794cdf5f",
+      "byteLength": 48087
+    },
+    {
+      "path": "components/ui/VelmereRouteTransition.tsx",
+      "parentSha256": "a8a897bd4e667cb071a7206772e7f792e88215658b7e4501802b369d82178a36",
+      "currentSha256": "408f0ab8fa4ebee27463b22bf805c1c5bfe6038707230ca44872e945921d3ec1",
+      "byteLength": 21758
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "parentSha256": "f361d0f85f4b89a251ba9137af8e5296b94da4bec019289ae52566bcc29a6ad1",
+      "currentSha256": "bc74d174ea4009ce20e515d5783adb4dcdecf08a6bde0fa33897d17123d2dfea",
+      "byteLength": 80455
+    },
+    {
+      "path": "i18n.ts",
+      "parentSha256": "c912d45351e1d355abfea29dc1725b322bf5d10425a9a106d91cd83db4b67b10",
+      "currentSha256": "84e2cae43864cb9a0dcd6da6cd275b33ce82af72203361270a0d210e41ac5b1a",
+      "byteLength": 1021
+    },
+    {
+      "path": "lib/market-integrity/local-development-market-reference.ts",
+      "parentSha256": "2f2c2f5f9269fcc1133bee4d3449bfd12cec37cbd364c7fe9568b6961eee678b",
+      "currentSha256": "50a67ca22883db97e442f3ad232e7d12946236dfa3bf0e57803f2ab20a82046a",
+      "byteLength": 9693
+    },
+    {
+      "path": "messages/de.json",
+      "parentSha256": "9f44b9a1836e150778645591d696265dd0a03d83088325d5b9da001affa779d4",
+      "currentSha256": "53938385cec2a6f8fbddc27503fac595ee61cc4689100eec236e35bfed85f88e",
+      "byteLength": 140080
+    },
+    {
+      "path": "messages/en.json",
+      "parentSha256": "5d470e31c151832881c37eef20ebe85b30a70af5288e2753b6ea7fbddd589b65",
+      "currentSha256": "0144916a349b482367cba00632459bfd34739f5316210cc62095045d39172b6b",
+      "byteLength": 137990
+    },
+    {
+      "path": "messages/pl.json",
+      "parentSha256": "64ba2e8a76f86a9b3cc157dd8cb330f6c3fa39577df913ef21436ecb5f013a85",
+      "currentSha256": "f4aed0822a55a97625301ba53ed91f56a82000ba72038230ed3b1b381c71cc0d",
+      "byteLength": 140740
+    },
+    {
+      "path": "package-lock.json",
+      "parentSha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+      "currentSha256": "abd75eb78ca1570c0b8c13717d128ae439c0ddd4c02c196e3ec03a877258258f",
+      "byteLength": 354771
+    },
+    {
+      "path": "package.json",
+      "parentSha256": "b2d11275d95c767229d537b7e165d20fa44c8ec09aec6753aabd18d4b97e1707",
+      "currentSha256": "09614344c3fbde9a784f3e18c6314656b0972bb53d4a5b04cddaf4ddbe33c77d",
+      "byteLength": 126140
+    }
+  ],
+  "changedRowCount": 17,
+  "removedCriticalFiles": 0,
+  "denominatorCollapse": false,
+  "exactRuntimeCredit": false,
+  "saleCredit": false,
+  "liveCredit": false,
+  "truthBoundary": "Rebaselining admits current source bytes to the historical A42 dev-bootstrap integrity boundary. It does not grant release, browser, customer or production credit."
+}

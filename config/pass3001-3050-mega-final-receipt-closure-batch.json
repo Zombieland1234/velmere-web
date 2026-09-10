@@ -1,0 +1,513 @@
+{
+  "id": "PASS3001_3050_MEGA_FINAL_RECEIPT_CLOSURE_BATCH",
+  "status": "PREPARED_NOT_EXECUTED",
+  "npmRunExecuted": false,
+  "top1ReadinessArchitecture": 98.0,
+  "worldClassLiveClaimReadiness": 56.4,
+  "passCount": 50,
+  "matrixRows": 4000,
+  "p0": 2700,
+  "p1": 1300,
+  "passes": [
+    {
+      "pass": 3001,
+      "title": "Evidence Receipt Ingest Contract",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "receipt ingestion, source identity, signed metadata, replay safety",
+      "csv": "VELMERE_PASS3001_EVIDENCE_RECEIPT_INGEST_CONTRACT_MATRIX.csv"
+    },
+    {
+      "pass": 3002,
+      "title": "Evidence Receipt Normalizer",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "normalize provider/payment/pdf/ai/browser receipts into one schema",
+      "csv": "VELMERE_PASS3002_EVIDENCE_RECEIPT_NORMALIZER_MATRIX.csv"
+    },
+    {
+      "pass": 3003,
+      "title": "Evidence Receipt Deduplicator",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "dedupe repeated receipts without losing chronology",
+      "csv": "VELMERE_PASS3003_EVIDENCE_RECEIPT_DEDUPLICATOR_MATRIX.csv"
+    },
+    {
+      "pass": 3004,
+      "title": "Evidence Receipt Expiry Enforcer",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "expire stale receipts by claim class and changed surface",
+      "csv": "VELMERE_PASS3004_EVIDENCE_RECEIPT_EXPIRY_ENFORCER_MATRIX.csv"
+    },
+    {
+      "pass": 3005,
+      "title": "Claim Degradation Renderer",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "render degraded/blocked/prepared/live states safely",
+      "csv": "VELMERE_PASS3005_CLAIM_DEGRADATION_RENDERER_MATRIX.csv"
+    },
+    {
+      "pass": 3006,
+      "title": "Final Test Runner Dry Plan",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "single final runner DAG without executing npm now",
+      "csv": "VELMERE_PASS3006_FINAL_TEST_RUNNER_DRY_PLAN_MATRIX.csv"
+    },
+    {
+      "pass": 3007,
+      "title": "Browser Smoke Fixture Atlas",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "route/screen/modal/mobile fixture map",
+      "csv": "VELMERE_PASS3007_BROWSER_SMOKE_FIXTURE_ATLAS_MATRIX.csv"
+    },
+    {
+      "pass": 3008,
+      "title": "Mobile Gesture Regression Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "touch, safe-area, scroll lock, pinch/zoom, modal escape",
+      "csv": "VELMERE_PASS3008_MOBILE_GESTURE_REGRESSION_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3009,
+      "title": "Chart Interaction Proof Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "wheel zoom, drag, timeframe, current price line, skeleton",
+      "csv": "VELMERE_PASS3009_CHART_INTERACTION_PROOF_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3010,
+      "title": "Shield Table Integrity Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "icons, rows, sorting, chart loading, neutral row state",
+      "csv": "VELMERE_PASS3010_SHIELD_TABLE_INTEGRITY_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3011,
+      "title": "Real Markets Cross Asset Integrity",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "AAPL/NVDA/FX/ETF/commodity identity and value contracts",
+      "csv": "VELMERE_PASS3011_REAL_MARKETS_CROSS_ASSET_INTEGRITY_MATRIX.csv"
+    },
+    {
+      "pass": 3012,
+      "title": "Provider Identity Resolver Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "symbol collisions, exchange labels, chain labels, fake names",
+      "csv": "VELMERE_PASS3012_PROVIDER_IDENTITY_RESOLVER_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3013,
+      "title": "Provider Stale Cache Kill Switch",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "ETIMEDOUT fallback, cache age, degraded source labels",
+      "csv": "VELMERE_PASS3013_PROVIDER_STALE_CACHE_KILL_SWITCH_MATRIX.csv"
+    },
+    {
+      "pass": 3014,
+      "title": "Source Quorum Conflict Explainer",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "show conflict/missing data instead of fake confidence",
+      "csv": "VELMERE_PASS3014_SOURCE_QUORUM_CONFLICT_EXPLAINER_MATRIX.csv"
+    },
+    {
+      "pass": 3015,
+      "title": "Risk Score Formula Receipt Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "formula id, inputs, version, delta, confidence cap",
+      "csv": "VELMERE_PASS3015_RISK_SCORE_FORMULA_RECEIPT_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3016,
+      "title": "Liquidity Squeeze Orderbook Contract",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "orderbook/liquidity/squeeze long-short readiness gate",
+      "csv": "VELMERE_PASS3016_LIQUIDITY_SQUEEZE_ORDERBOOK_CONTRACT_MATRIX.csv"
+    },
+    {
+      "pass": 3017,
+      "title": "PDF Hash Parity Fixture Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "preview/download identical payload and hash proof",
+      "csv": "VELMERE_PASS3017_PDF_HASH_PARITY_FIXTURE_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3018,
+      "title": "PDF Tier Value Differentiation",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "Basic/Pro/Advanced real field/value separation",
+      "csv": "VELMERE_PASS3018_PDF_TIER_VALUE_DIFFERENTIATION_MATRIX.csv"
+    },
+    {
+      "pass": 3019,
+      "title": "PDF Locale Purity Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "PL/EN/DE no mixed copy and no debug leakage",
+      "csv": "VELMERE_PASS3019_PDF_LOCALE_PURITY_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3020,
+      "title": "Paid Report Entitlement Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "server entitlement before paid PDF/report/advanced",
+      "csv": "VELMERE_PASS3020_PAID_REPORT_ENTITLEMENT_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3021,
+      "title": "Stripe BLIK Web3 Lifecycle Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "checkout, webhook, refund, chargeback, wallet identity",
+      "csv": "VELMERE_PASS3021_STRIPE_BLIK_WEB3_LIFECYCLE_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3022,
+      "title": "Wallet Connect Identity Contract",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "MetaMask/Phantom/Other identity-only no payment proof",
+      "csv": "VELMERE_PASS3022_WALLET_CONNECT_IDENTITY_CONTRACT_MATRIX.csv"
+    },
+    {
+      "pass": 3023,
+      "title": "Cart Checkout Overlay Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "cart no click stealing, buy now, drawer, focus return",
+      "csv": "VELMERE_PASS3023_CART_CHECKOUT_OVERLAY_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3024,
+      "title": "Customer Account Receipt Timeline",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "customer-visible entitlement/report/export history",
+      "csv": "VELMERE_PASS3024_CUSTOMER_ACCOUNT_RECEIPT_TIMELINE_MATRIX.csv"
+    },
+    {
+      "pass": 3025,
+      "title": "Customer Export DSR Proof Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "export redaction, expiry, recall, purge tombstone",
+      "csv": "VELMERE_PASS3025_CUSTOMER_EXPORT_DSR_PROOF_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3026,
+      "title": "Admin Role Dual Control Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "manual override, force-green prevention, audit log",
+      "csv": "VELMERE_PASS3026_ADMIN_ROLE_DUAL_CONTROL_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3027,
+      "title": "Operator Release Console Guard",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "release promote/revoke/recover signoff controls",
+      "csv": "VELMERE_PASS3027_OPERATOR_RELEASE_CONSOLE_GUARD_MATRIX.csv"
+    },
+    {
+      "pass": 3028,
+      "title": "Public Evidence Board Renderer",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "public status board blocked until L5 receipts",
+      "csv": "VELMERE_PASS3028_PUBLIC_EVIDENCE_BOARD_RENDERER_MATRIX.csv"
+    },
+    {
+      "pass": 3029,
+      "title": "Public Claim Copy Firewall",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "no top/world-class/live claims without fresh receipt",
+      "csv": "VELMERE_PASS3029_PUBLIC_CLAIM_COPY_FIREWALL_MATRIX.csv"
+    },
+    {
+      "pass": 3030,
+      "title": "No FOMO Financial Safety Copy",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "no buy/sell/ROI/guaranteed/profit prompts",
+      "csv": "VELMERE_PASS3030_NO_FOMO_FINANCIAL_SAFETY_COPY_MATRIX.csv"
+    },
+    {
+      "pass": 3031,
+      "title": "Angel Prompt Injection Firewall",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "prompt injection, memory mixing, tier bypass prevention",
+      "csv": "VELMERE_PASS3031_ANGEL_PROMPT_INJECTION_FIREWALL_MATRIX.csv"
+    },
+    {
+      "pass": 3032,
+      "title": "Angel Multilingual Golden Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "PL/EN/DE semantic quality and no local-mode leakage",
+      "csv": "VELMERE_PASS3032_ANGEL_MULTILINGUAL_GOLDEN_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3033,
+      "title": "Brain Result Coherence Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "score stability, missing evidence, source linked answers",
+      "csv": "VELMERE_PASS3033_BRAIN_RESULT_COHERENCE_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3034,
+      "title": "AI Eval Judge Handoff Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "offline judge plan and golden expected outcomes",
+      "csv": "VELMERE_PASS3034_AI_EVAL_JUDGE_HANDOFF_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3035,
+      "title": "Community Moderation Trust Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "Square public read/gated write/mod queue/abuse",
+      "csv": "VELMERE_PASS3035_COMMUNITY_MODERATION_TRUST_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3036,
+      "title": "Fashion Product Ops Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "product import, size table, images, fulfillment handoff",
+      "csv": "VELMERE_PASS3036_FASHION_PRODUCT_OPS_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3037,
+      "title": "Analytics Privacy Minimalism Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "consent, event taxonomy, no PII leakage",
+      "csv": "VELMERE_PASS3037_ANALYTICS_PRIVACY_MINIMALISM_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3038,
+      "title": "Security Headers CSP Render Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "CSP, frame, XSS, HTML sink classification",
+      "csv": "VELMERE_PASS3038_SECURITY_HEADERS_CSP_RENDER_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3039,
+      "title": "Dependency License SBOM Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "SBOM, license, vuln, lockfile provenance placeholders",
+      "csv": "VELMERE_PASS3039_DEPENDENCY_LICENSE_SBOM_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3040,
+      "title": "DB RLS Backup Restore Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "Supabase RLS, append-only, backup/restore drill plan",
+      "csv": "VELMERE_PASS3040_DB_RLS_BACKUP_RESTORE_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3041,
+      "title": "Performance Edge Cost Budget Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "bundle, API latency, cache, rate-limit, cost ceiling",
+      "csv": "VELMERE_PASS3041_PERFORMANCE_EDGE_COST_BUDGET_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3042,
+      "title": "Accessibility WCAG Keyboard Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "focus, keyboard, screenreader, contrast, reduced motion",
+      "csv": "VELMERE_PASS3042_ACCESSIBILITY_WCAG_KEYBOARD_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3043,
+      "title": "SEO Social Launch Integrity Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "metadata, share previews, legal copy, sitemap readiness",
+      "csv": "VELMERE_PASS3043_SEO_SOCIAL_LAUNCH_INTEGRITY_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3044,
+      "title": "Incident Remedy Runbook Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "provider/payment/pdf/ai/security/customer incident steps",
+      "csv": "VELMERE_PASS3044_INCIDENT_REMEDY_RUNBOOK_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3045,
+      "title": "Canary Rollback Dark Launch Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "canary, rollback, dark launch, observation windows",
+      "csv": "VELMERE_PASS3045_CANARY_ROLLBACK_DARK_LAUNCH_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3046,
+      "title": "Support Refund Remedy SLA Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "refund/remedy SLA, support handoff, customer messaging",
+      "csv": "VELMERE_PASS3046_SUPPORT_REFUND_REMEDY_SLA_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3047,
+      "title": "Zero Skip Diff Audit Pack",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "final changed-files-to-receipts mapping",
+      "csv": "VELMERE_PASS3047_ZERO_SKIP_DIFF_AUDIT_PACK_MATRIX.csv"
+    },
+    {
+      "pass": 3048,
+      "title": "Final L5 Receipt Checklist",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "strict list required before unblocking live claims",
+      "csv": "VELMERE_PASS3048_FINAL_L5_RECEIPT_CHECKLIST_MATRIX.csv"
+    },
+    {
+      "pass": 3049,
+      "title": "Release Candidate Signoff Binder",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "roles, signatures, freeze digest, no override",
+      "csv": "VELMERE_PASS3049_RELEASE_CANDIDATE_SIGNOFF_BINDER_MATRIX.csv"
+    },
+    {
+      "pass": 3050,
+      "title": "Post Launch Surveillance Loop",
+      "rows": 80,
+      "p0": 54,
+      "p1": 26,
+      "status": "PREPARED_NOT_EXECUTED",
+      "scope": "post launch monitoring, decay, renewal, revalidation",
+      "csv": "VELMERE_PASS3050_POST_LAUNCH_SURVEILLANCE_LOOP_MATRIX.csv"
+    }
+  ]
+}

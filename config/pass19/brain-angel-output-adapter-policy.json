@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "velmere.pass19.brain-angel-output-adapter-policy.v1",
+  "supportedSurfaces": [
+    "vlm_brain",
+    "angel"
+  ],
+  "supportedTiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "supportedLocales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "vlmBrain": {
+    "minimumSourceFamilies": {
+      "basic": 1,
+      "pro": 2,
+      "advanced": 2
+    },
+    "allowedLicenseStatus": {
+      "basic": [
+        "verified",
+        "display_only"
+      ],
+      "pro": [
+        "verified"
+      ],
+      "advanced": [
+        "verified"
+      ]
+    },
+    "requiresEntitlement": {
+      "basic": false,
+      "pro": true,
+      "advanced": true
+    },
+    "maximumClaims": {
+      "basic": 2,
+      "pro": 5,
+      "advanced": 8
+    },
+    "maximumToolCalls": {
+      "basic": 0,
+      "pro": 2,
+      "advanced": 4
+    },
+    "maximumInputCharacters": 24000,
+    "numericScoreRequiresBoundSources": true,
+    "untrustedInstructionsNeverExecutable": true,
+    "hiddenPromptDisclosureForbidden": true,
+    "unsafeAdviceMustRefuse": true,
+    "paidBlockingMissingFields": [
+      "independent_source",
+      "commercial_rights",
+      "entitlement",
+      "canonical_fact_packet",
+      "freshness_receipt"
+    ],
+    "safeRefusalTopics": [
+      "personalized_financial_advice",
+      "market_manipulation_instruction",
+      "insider_information_claim",
+      "request_hidden_prompt"
+    ]
+  },
+  "angel": {
+    "minimumSourceFamilies": {
+      "basic": 1,
+      "pro": 2,
+      "advanced": 2
+    },
+    "allowedLicenseStatus": {
+      "basic": [
+        "verified",
+        "display_only"
+      ],
+      "pro": [
+        "verified"
+      ],
+      "advanced": [
+        "verified"
+      ]
+    },
+    "requiresEntitlement": {
+      "basic": false,
+      "pro": true,
+      "advanced": true
+    },
+    "requiredAnswerFields": [
+      "scope",
+      "severity",
+      "confidence",
+      "evidence",
+      "missing_proof",
+      "safe_remediation",
+      "next_safe_check"
+    ],
+    "maximumAnswerCharacters": {
+      "basic": 1200,
+      "pro": 2400,
+      "advanced": 4000
+    },
+    "unsafeAdviceMustRefuse": true,
+    "mustRedactSensitiveInput": true,
+    "mustNotFetchUntrustedUrls": true,
+    "mustNotClaimHumanAuthority": true,
+    "safeRefusalCaseIds": [
+      "angel-032-hidden_prompt_request",
+      "angel-033-malicious_link",
+      "angel-035-tool_override",
+      "angel-036-financial_advice",
+      "angel-037-guaranteed_profit",
+      "angel-038-market_manipulation",
+      "angel-039-insider_claim",
+      "angel-040-privacy_request"
+    ]
+  },
+  "truthBoundary": "PASS19 verifies deterministic Brain and Angel adapter behavior on synthetic fact packets and conversation snapshots. It does not measure model hallucination rate, answer usefulness with real providers, human review, staging, browser or LIVE behavior. Canonical provider/model-bound outputs remain 0/2700 until exact-runtime execution and frozen provider inputs exist."
+}

@@ -1,0 +1,58 @@
+{
+  "attempts": [
+    {
+      "artifactBytes": 20716,
+      "artifactFilename": "r44p31-run1-signature-expiration-not-enforced.zip",
+      "artifactSha256": "542e9cd9244298bff61c7b2f28e81a460a9c6dea5b4af98e5e61f59449d3ee53",
+      "credit": false,
+      "label": "RUN1_REJECTED",
+      "reason": "PRESIGNED_URL_EXPIRATION_NOT_ENFORCED_BY_DEFAULT_LOCALSTACK",
+      "runId": "31227721421"
+    },
+    {
+      "artifactBytes": 20709,
+      "artifactFilename": "r44p31-failed-run2-evidence.zip",
+      "artifactSha256": "5baa780d0bea3e05626c2082a3f62dab80b13773b0504117c75afb1102210012",
+      "credit": false,
+      "label": "RUN2_REJECTED",
+      "reason": "RAW_UNSIGNED_HTTP_GET_RETURNED_200_NO_HTTP_PRIVACY_CREDIT",
+      "runId": "31227924574"
+    },
+    {
+      "artifactBytes": 22719,
+      "artifactFilename": "r44p31-run4-execution-pass-verifier-stale.zip",
+      "artifactSha256": "148bf21a90735d24e95049ab3498fb6e74acc37ee7139bfb2b87a66ea9cc1fad",
+      "credit": false,
+      "label": "RUN4_REJECTED",
+      "reason": "EXECUTION_10_OF_10_BUT_STALE_VERIFIER_AND_ARTIFACT_INDEX_RACE",
+      "runId": "31228297920"
+    },
+    {
+      "artifactBytes": 37225,
+      "artifactFilename": "r44p31-external-ci-storage-kms-email-success.zip",
+      "artifactId": "9012942728",
+      "artifactSha256": "62e8e43148394703772fa446a4985513bcf4659e614d8b4adf0854b79c84ac7c",
+      "credit": "EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL_ONLY",
+      "headSha": "383fdf3c772f2ad5c04b036a7483bc61c0054fcd",
+      "independentChecks": 35,
+      "label": "RUN6_ACCEPTED",
+      "mergeSha": "1c5a02026d5aa22123ad622b205f208d8f6e46f4",
+      "passed": 10,
+      "required": 10,
+      "runId": "31228486644",
+      "sigstoreVerified": true
+    }
+  ],
+  "classification": "EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL_ONLY",
+  "denominatorReduced": false,
+  "failedAttemptsPreserved": true,
+  "intermediateRunsWithoutFinalCredit": [
+    {
+      "credit": false,
+      "reason": "SUPERSEDED_BRANCH_UPDATE_OR_INCOMPLETE_EVIDENCE"
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p31.external-ci-attempt-ledger.v1"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "velmere.pass35.governance-decision-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "defaultDecision": "NO_GO",
+  "requiredSignatureAlgorithm": "Ed25519",
+  "trustedOrganizationalKeyFingerprints": [],
+  "maxPacketAgeSeconds": 2592000,
+  "maxFutureSkewSeconds": 300,
+  "allowedFlagshipProductCellIds": [
+    "audit_evm_pro_automated_review",
+    "shield_pro_terminal_analysis",
+    "real_markets_pro_cross_asset_analysis"
+  ],
+  "requiredOrganizationControlIds": [
+    "SR00",
+    "FG00",
+    "PC00",
+    "ORG00",
+    "HG01",
+    "HG02",
+    "HG03",
+    "HG04",
+    "HG05",
+    "HG06",
+    "HG07",
+    "HG08",
+    "HG09",
+    "HG10",
+    "HG11",
+    "HG12",
+    "HG13",
+    "HG14"
+  ],
+  "truthBoundary": "This policy validates the shape, candidate binding, currentness and Ed25519 integrity of FG00/ORG00 decision packets. The default trust-anchor list is intentionally empty: local key generation or a self-signed packet cannot create organizational authority or promotion credit."
+}

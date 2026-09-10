@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "velmere.pass35.a19-audit-static-benchmark-policy.v1",
+  "passId": "PASS35_A19",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "families": [
+    {
+      "id": "TX_ORIGIN_AUTH",
+      "severity": "high"
+    },
+    {
+      "id": "UNCHECKED_LOW_LEVEL_CALL",
+      "severity": "high"
+    },
+    {
+      "id": "UNTRUSTED_DELEGATECALL",
+      "severity": "critical"
+    },
+    {
+      "id": "UNPROTECTED_SELFDESTRUCT",
+      "severity": "critical"
+    },
+    {
+      "id": "REENTRANCY_STATE_AFTER_CALL",
+      "severity": "critical"
+    },
+    {
+      "id": "UNPROTECTED_MINT",
+      "severity": "high"
+    },
+    {
+      "id": "UNPROTECTED_UPGRADE",
+      "severity": "critical"
+    },
+    {
+      "id": "UNBOUNDED_STORAGE_LOOP",
+      "severity": "medium"
+    },
+    {
+      "id": "SIGNATURE_REPLAY",
+      "severity": "high"
+    },
+    {
+      "id": "TIMESTAMP_RANDOMNESS",
+      "severity": "medium"
+    },
+    {
+      "id": "UNSAFE_ERC20_RETURN",
+      "severity": "high"
+    },
+    {
+      "id": "ARBITRARY_SSTORE_SLOT",
+      "severity": "critical"
+    },
+    {
+      "id": "PUBLIC_INITIALIZER_NO_GUARD",
+      "severity": "high"
+    },
+    {
+      "id": "SPOT_ORACLE_ONLY",
+      "severity": "high"
+    },
+    {
+      "id": "ARBITRARY_EXTERNAL_CALL",
+      "severity": "critical"
+    }
+  ],
+  "corpus": {
+    "variantsPerClass": 8,
+    "vulnerablePerClass": 8,
+    "remediatedPerClass": 8,
+    "expectedCases": 240,
+    "expectedVulnerable": 120,
+    "expectedRemediated": 120,
+    "expectedDevelopment": 90,
+    "expectedValidation": 60,
+    "expectedFrozenTest": 90
+  },
+  "mutations": {
+    "types": [
+      "comment_decoy_front",
+      "comment_decoy_inline",
+      "string_decoy",
+      "whitespace_expand",
+      "whitespace_compact",
+      "rename_irrelevant",
+      "add_safe_helper",
+      "duplicate_comment",
+      "newline_normalize",
+      "harmless_pragma",
+      "strip_comments",
+      "paired_security_flip"
+    ],
+    "expectedTotal": 2880
+  },
+  "thresholds": {
+    "minimumFrozenRecall": 0.95,
+    "minimumFrozenSpecificity": 0.95,
+    "minimumFrozenPrecision": 0.95,
+    "minimumFrozenF1": 0.95,
+    "minimumSeverityAccuracy": 0.95,
+    "minimumMutationKillRate": 0.99,
+    "maximumSafeCaseUnexpectedFindings": 0
+  },
+  "hardStops": {
+    "syntheticBenchmarkMayUnlockPaid": false,
+    "localFamilyMayCountAsIndependentExternalFamily": false,
+    "benchmarkMayClaimExploitability": false,
+    "benchmarkMayReplaceOfficialTools": false,
+    "benchmarkMayReplaceHumanReview": false,
+    "benchmarkMayEnableFullAuditClaim": false
+  },
+  "truthBoundary": "The A19 corpus benchmarks a deterministic local Solidity structural prescreen on generated vulnerable/remediated pairs with disjoint template variants and mutation defense. It measures local rule behavior only. Shared authoring bias, no compilation, no path feasibility, no real protocol business logic, no official analyzer and no independent labels prevent paid, full-audit or world-class claims."
+}

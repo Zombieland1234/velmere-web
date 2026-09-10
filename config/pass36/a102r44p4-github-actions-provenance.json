@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p4.github-actions-provenance.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P4_ACTION_REQUIRED_OFFICIAL_TOOLCHAIN_200_EXECUTIONS_SEMGREP_MIGRATION_AND_AUTOMATED_AUDIT_EVIDENCE_BINDING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P3_ACTION_REQUIRED_CURRENT_BYTE_SHIELD_PRO_REAL_MARKETS_AND_MULTILINGUAL_AI_MATRIX_CLOSURE_NO_LIVE_CREDIT",
+  "repository": "Zombieland1234/velmere1",
+  "pullRequest": 3,
+  "pullRequestDraft": true,
+  "pullRequestMerged": false,
+  "baseBranch": "main",
+  "baseSha": "6f9af214a0a7a21e10bdd6bf3a796c2454c2c5f0",
+  "headBranch": "r44p4-official-toolchain-20260802",
+  "headSha": "5e265cc30e45a7c570a213174350af574ccc3ab9",
+  "workflow": {
+    "name": "R44P4 Official Toolchain 200 Executions",
+    "runId": 30741096878,
+    "runNumber": 5,
+    "jobId": 91478569336,
+    "status": "completed",
+    "conclusion": "success",
+    "runnerImage": "ubuntu-24.04"
+  },
+  "artifact": {
+    "artifactId": 8831326437,
+    "name": "r44p4-official-tool-evidence",
+    "bytes": 1046873,
+    "sha256": "3727858b943df088af0d3aa71a2851461e8484712f6ec8ab92778fe5c3674b26",
+    "expired": false,
+    "expiresAt": "2026-08-16T09:08:18Z"
+  },
+  "independentVerification": {
+    "status": "PASS",
+    "checks": 34,
+    "passed": 34,
+    "failed": 0,
+    "receiptSha256": "43c8fcb3520195f55728abc744927c0c27da328451ebb281d0eab57d10592cbd"
+  },
+  "creditBoundary": {
+    "officialToolProcessCredit": 200,
+    "rightsApprovedRealAuditCredit": 0,
+    "realCustomerPdfCredit": 0,
+    "independentAdjudicationCredit": 0,
+    "windowsCredit": 0,
+    "stagingCredit": 0,
+    "liveCredit": 0,
+    "saleCredit": false
+  },
+  "truthBoundary": "Draft, unmerged evidence branch used only for isolated official-tool execution. The successful workflow and downloaded artifact prove 200 exact CI processes on project-owned fixtures; they do not prove production code deployment, real customer audits, Windows, staging, LIVE or sale readiness."
+}

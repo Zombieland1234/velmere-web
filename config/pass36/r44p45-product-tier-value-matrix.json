@@ -1,0 +1,498 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p45.tier-value-matrix.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "rows": [
+    {
+      "product": "Audit",
+      "tierOrDepth": "Basic",
+      "currentValue": "Compiler-AST prescreen, bounded supported rules, evidence/missing-proof/limitations, local Foundry evidence where available.",
+      "targetValue": "Free, useful, honest prescreen with deployment identity and clear next safe action.",
+      "whatProAdds": "Deeper evidence, attack preconditions, remediation, traceability, targeted reproducer and mandatory QA.",
+      "whatAdvancedAdds": "Architecture/business-logic review, two reviewers, severity/FN/fix adjudication, signed evidence pack and SLA.",
+      "missing": [
+        "formal precision/FPR",
+        "broad business-logic coverage",
+        "real deployment binding",
+        "independent reviewers"
+      ],
+      "saleStatus": "ACTION_REQUIRED"
+    },
+    {
+      "product": "Audit",
+      "tierOrDepth": "Pro",
+      "currentValue": "More evidence and remediation than Basic; invitation-only; public checkout disabled; accuracy delta over Basic not independently proven.",
+      "targetValue": "Controlled beta with reproducible evidence, manual QA, fix/re-audit workflow and defensible scope.",
+      "whatProAdds": "Current row is Pro depth.",
+      "whatAdvancedAdds": "Two-reviewer professional assurance, fix review, team workflow and SLA.",
+      "missing": [
+        "staffed manual QA",
+        "reviewer SLA",
+        "external ground truth",
+        "real customer outcomes"
+      ],
+      "saleStatus": "CONTROLLED_BETA"
+    },
+    {
+      "product": "Audit",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Traceability/evidence-pack scaffolding, contradiction and missing-proof registers; no human-review operation.",
+      "targetValue": "Professional architecture/business-logic audit with independent reviewers, adjudication, fix review and signed report.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Independent detection and decision-value delta, team/project workflow, approvals, audit trail and SLA.",
+      "missing": [
+        "2 independent reviewers",
+        "business-logic review",
+        "severity/FN adjudication",
+        "fix review",
+        "SLA"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Browser",
+      "tierOrDepth": "Basic",
+      "currentValue": "Current local result dashboard, top findings, evidence, limitations, PL/EN/DE, mobile/desktop; parent full browser 57/57 stable.",
+      "targetValue": "Plain-language result that a non-technical user can act on without false certainty.",
+      "whatProAdds": "Complete evidence views, function/path context, attack scenarios, remediation, history and exports.",
+      "whatAdvancedAdds": "Team workspace, roles, approvals, re-audit, signed reports, audit trail, API and retention governance.",
+      "missing": [
+        "real-user comprehension",
+        "exact Windows",
+        "production auth lifecycle"
+      ],
+      "saleStatus": "ACTION_REQUIRED"
+    },
+    {
+      "product": "Browser",
+      "tierOrDepth": "Pro",
+      "currentValue": "Pro views/scaffolding exist, but paid entitlement/workflow and customer value are not proven.",
+      "targetValue": "Technical evidence workspace for a controlled beta.",
+      "whatProAdds": "Current row is Pro depth.",
+      "whatAdvancedAdds": "Team collaboration, approvals, project history and governed export.",
+      "missing": [
+        "real entitlement lifecycle",
+        "saved reports/history",
+        "value proof",
+        "manual QA operation"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Browser",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Advanced display scaffolding; no enterprise collaboration or operational sign-off.",
+      "targetValue": "Enterprise audit workspace with roles, comments, sign-off, re-audit, API and retention.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "organizations/roles",
+        "approval workflow",
+        "signed reports",
+        "SLA",
+        "audit trail"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "PDF",
+      "tierOrDepth": "Basic",
+      "currentValue": "Short deterministic A4 prescreen with limitations and next actions; parent 450/450 deterministic corpus stable.",
+      "targetValue": "Readable, customer-safe, concise prescreen with no evidence dump.",
+      "whatProAdds": "Richer findings, evidence, attack scenarios, remediation, methodology and appendix.",
+      "whatAdvancedAdds": "Executive + full technical report, reviewer records, version/fix history, signed authenticity and audit trail.",
+      "missing": [
+        "real customer comprehension",
+        "independent QA",
+        "real delivery outcomes"
+      ],
+      "saleStatus": "ACTION_REQUIRED"
+    },
+    {
+      "product": "PDF",
+      "tierOrDepth": "Pro",
+      "currentValue": "Strongest current report format; richer evidence and remediation; controlled-beta candidate only.",
+      "targetValue": "Defensible technical report delivered only after manual QA.",
+      "whatProAdds": "Current row is Pro depth.",
+      "whatAdvancedAdds": "Reviewer records, fix review, signed authenticity and team metadata.",
+      "missing": [
+        "manual QA operation",
+        "real delivery",
+        "customer utility",
+        "price/WTP evidence"
+      ],
+      "saleStatus": "CONTROLLED_BETA"
+    },
+    {
+      "product": "PDF",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Large evidence pack and traceability; professional reviewer workflow absent.",
+      "targetValue": "Executive and technical package with reviewer history, fix review and signed authenticity.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "independent reviewers",
+        "fix history",
+        "signed authenticity",
+        "team metadata"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Shield",
+      "tierOrDepth": "Basic",
+      "currentValue": "Reference identity/permission state with AVAILABLE/STALE/CONFLICTED/UNAVAILABLE semantics; rights-approved current coverage 0/318.",
+      "targetValue": "Free token/contract risk-context layer using lawful current facts and clear provenance.",
+      "whatProAdds": "History, holder/liquidity changes, monitoring, provider comparison, alerts and snapshots.",
+      "whatAdvancedAdds": "Professional monitoring, custom rules, cross-chain context, signed snapshots, API/export governance and SLA.",
+      "missing": [
+        "rights-approved providers",
+        "current coverage",
+        "freshness SLA",
+        "holder/liquidity rights"
+      ],
+      "saleStatus": "REFERENCE_ONLY"
+    },
+    {
+      "product": "Shield",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth only; current module data does not support real paid Pro value.",
+      "targetValue": "Richer on-chain history, watchlists, alerts, anomaly detection and provenance.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Organization monitoring, custom rules, signed snapshots and governed API.",
+      "missing": [
+        "real history",
+        "monitoring",
+        "alerts",
+        "provider comparison",
+        "customer value proof"
+      ],
+      "saleStatus": "BLOCKED_EXTERNAL"
+    },
+    {
+      "product": "Shield",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target only; no operational professional monitoring.",
+      "targetValue": "Professional governed monitoring with cross-chain context and SLA.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "operations team",
+        "SLA",
+        "data lineage",
+        "cross-chain entity evidence"
+      ],
+      "saleStatus": "BLOCKED_EXTERNAL"
+    },
+    {
+      "product": "Shield Pro Terminal",
+      "tierOrDepth": "Basic",
+      "currentValue": "Read-only/demo terminal surface with clear unavailable states; no verified live data credit.",
+      "targetValue": "Useful free read-only security/market context terminal.",
+      "whatProAdds": "Full terminal tables, filters, history, alerts, watchlists, depth and saved views.",
+      "whatAdvancedAdds": "Team layouts, automation, organization context, governed export/API and audit logs.",
+      "missing": [
+        "lawful current feed",
+        "latency/freshness evidence",
+        "real depth",
+        "load/soak evidence"
+      ],
+      "saleStatus": "DEMO_ONLY"
+    },
+    {
+      "product": "Shield Pro Terminal",
+      "tierOrDepth": "Pro",
+      "currentValue": "Terminal UI and scaffolding exist; real order-book/provider data and paid value are absent.",
+      "targetValue": "Professional single-user terminal with monitoring, provenance, alerts and saved views.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Team automation, custom layouts, API and governed exports.",
+      "missing": [
+        "order-book rights",
+        "monitoring pipeline",
+        "alerts",
+        "provider resilience"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Shield Pro Terminal",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target-only enterprise terminal.",
+      "targetValue": "Organization terminal with automation, governance, API, audit logs and SLA.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "enterprise workflows",
+        "SLA",
+        "operational monitoring",
+        "data contracts"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Shield Map",
+      "tierOrDepth": "Basic",
+      "currentValue": "Graph and UNCLASSIFIED-by-default labeling scaffold; no verified entity coverage.",
+      "targetValue": "Honest visual on-chain graph with provenance, timestamps and no unsupported attribution.",
+      "whatProAdds": "Historical flows, filters, watchlists, entity provenance and alerts.",
+      "whatAdvancedAdds": "Cross-chain investigation workspace, annotations, signed labels, correction workflow, API and audit trail.",
+      "missing": [
+        "signed label registry",
+        "current flows",
+        "reorg handling",
+        "entity coverage"
+      ],
+      "saleStatus": "DEMO_ONLY"
+    },
+    {
+      "product": "Shield Map",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth only; current label/flow operations not proven.",
+      "targetValue": "Historical graph exploration with watchlists, alerts and label provenance.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Cross-chain professional investigation workspace and governed exports.",
+      "missing": [
+        "monitoring",
+        "historical flow data",
+        "label confidence operations"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Shield Map",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target only.",
+      "targetValue": "Professional investigation workspace with signed labels, correction SLA, API and audit trail.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "cross-chain dedup",
+        "team annotations",
+        "correction SLA",
+        "audit trail"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Real Markets",
+      "tierOrDepth": "Basic",
+      "currentValue": "Reference catalog and data-state machine across asset classes; rights-approved current coverage 0/583.",
+      "targetValue": "Lawful reference/current values with source, timestamp, freshness and no placeholders.",
+      "whatProAdds": "Legal history, comparisons, correlations, events, alerts, fundamentals where permitted, corrections and export.",
+      "whatAdvancedAdds": "Team research, portfolio context without advice, quorum/failover, lineage, governed API and SLA.",
+      "missing": [
+        "field-level rights",
+        "current quotes",
+        "history",
+        "corporate actions",
+        "market calendars"
+      ],
+      "saleStatus": "REFERENCE_ONLY"
+    },
+    {
+      "product": "Real Markets",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth only; current Pro value is not more than scaffolding/columns.",
+      "targetValue": "Legal history, comparisons, alerts, events, corrections and export.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Team research, quorum/failover, data governance and SLA.",
+      "missing": [
+        "lawful history",
+        "provider comparison",
+        "corrections",
+        "fundamentals rights"
+      ],
+      "saleStatus": "BLOCKED_EXTERNAL"
+    },
+    {
+      "product": "Real Markets",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target-only professional data workspace.",
+      "targetValue": "Professional governed research with provider quorum/failover, lineage, API and SLA.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "provider contracts",
+        "operations",
+        "enterprise workflows",
+        "SLA"
+      ],
+      "saleStatus": "BLOCKED_EXTERNAL"
+    },
+    {
+      "product": "Angel",
+      "tierOrDepth": "Basic",
+      "currentValue": "Deterministic safety/truth boundaries, facts/assumptions/missing proof/contradictions, abstention, PL/EN/DE; live independent quality not proven.",
+      "targetValue": "Natural evidence-grounded assistant that answers concisely and safely from Velmère data.",
+      "whatProAdds": "Cross-module synthesis, richer citations, longer context, report interpretation and saved research.",
+      "whatAdvancedAdds": "Governed organization knowledge, cross-report research workflows, controlled exports and audit trail.",
+      "missing": [
+        "live model evals",
+        "citation factuality",
+        "context/follow-up quality",
+        "independent 300-case panel"
+      ],
+      "saleStatus": "ACTION_REQUIRED"
+    },
+    {
+      "product": "Angel",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth; current paid context/value not independently proven.",
+      "targetValue": "Deep Audit+Shield+Markets synthesis with richer citations and saved research.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Team/governed research workspace and audit trail.",
+      "missing": [
+        "live model integration evidence",
+        "tenant isolation",
+        "saved research",
+        "value proof"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Angel",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target-only organization AI workspace.",
+      "targetValue": "Governed cross-report and organization research with controlled exports and audit trail.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "organization knowledge controls",
+        "tenant isolation",
+        "audit logs",
+        "external evals"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Risk Indicator",
+      "tierOrDepth": "Basic",
+      "currentValue": "DESCRIPTIVE_REVIEW_PRIORITY separating technical, permissions, market, liquidity, data-quality and provenance risk; no probability claim.",
+      "targetValue": "Clear descriptive priority with factors up/down, missing data and no false precision.",
+      "whatProAdds": "History, comparative context, scenarios, contradiction sensitivity and defined confidence bands.",
+      "whatAdvancedAdds": "Probabilistic/calibrated risk only after preregistered outcomes, drift tests and independent evaluation.",
+      "missing": [
+        "outcome windows",
+        "real cohorts",
+        "calibration",
+        "independent validation"
+      ],
+      "saleStatus": "ACTION_REQUIRED"
+    },
+    {
+      "product": "Risk Indicator",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth only; richer explanation/history is not yet an independently proven paid advantage.",
+      "targetValue": "History, comparisons, scenario views and evidence weighting.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Calibrated probabilistic model after evidence threshold.",
+      "missing": [
+        "history/outcomes",
+        "confidence-band definition",
+        "drift monitoring"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Risk Indicator",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Probability not proven.",
+      "targetValue": "Calibrated risk model with real outcomes, drift controls and independent evaluation.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "preregistered outcomes",
+        "calibration",
+        "independent validation"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Whale Watch",
+      "tierOrDepth": "Basic",
+      "currentValue": "On-chain transfer facts, UNCLASSIFIED unknowns and transfer≠sale/purchase truth; verified label coverage/operations absent.",
+      "targetValue": "Free factual transfer monitor with provenance, freshness and conservative attribution.",
+      "whatProAdds": "Watchlists, alerts, historical patterns, stronger verified labels and correction workflow.",
+      "whatAdvancedAdds": "Cross-chain dedup/entity resolution, reorg handling, label revalidation, SLA, team workflow and API.",
+      "missing": [
+        "signed labels",
+        "monitoring SLA",
+        "reorg handling",
+        "false-attribution metrics"
+      ],
+      "saleStatus": "REFERENCE_ONLY"
+    },
+    {
+      "product": "Whale Watch",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth only.",
+      "targetValue": "Watchlists, alerts, history, patterns and stronger attribution evidence.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Professional cross-chain attribution operations and governed API.",
+      "missing": [
+        "verified entity coverage",
+        "alerts",
+        "correction workflow",
+        "provider rights"
+      ],
+      "saleStatus": "BLOCKED_EXTERNAL"
+    },
+    {
+      "product": "Whale Watch",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target-only professional operations.",
+      "targetValue": "Cross-chain entity resolution, reorg handling, label lifecycle, SLA and team workflow.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "cross-chain operations",
+        "label SLA",
+        "false-attribution tracking"
+      ],
+      "saleStatus": "BLOCKED_EXTERNAL"
+    },
+    {
+      "product": "Market Impact",
+      "tierOrDepth": "Basic",
+      "currentValue": "Explicit snapshot-based SIMULATION_ONLY with spread, visible depth, assumptions and uncertainty; no future-price claim.",
+      "targetValue": "Honest visible-book simulation with clear unavailable/stale states.",
+      "whatProAdds": "Multiple snapshots, history, multi-venue comparison, sensitivity ranges and scenarios.",
+      "whatAdvancedAdds": "Asset-class models, predicted-vs-realized calibration, outlier/manipulation cohorts and professional workflows.",
+      "missing": [
+        "lawful L2 feeds",
+        "real outcomes",
+        "error calibration",
+        "asset-specific validation"
+      ],
+      "saleStatus": "SIMULATION_ONLY"
+    },
+    {
+      "product": "Market Impact",
+      "tierOrDepth": "Pro",
+      "currentValue": "Target depth only; current data does not support paid Pro value.",
+      "targetValue": "Multi-snapshot/multi-venue sensitivity analysis and better uncertainty.",
+      "whatProAdds": "Current row is Pro target.",
+      "whatAdvancedAdds": "Calibrated institutional scenarios and team/export workflow.",
+      "missing": [
+        "multi-venue data",
+        "history",
+        "outcome cohorts",
+        "provider rights"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    },
+    {
+      "product": "Market Impact",
+      "tierOrDepth": "Advanced",
+      "currentValue": "Target only; predicted-vs-realized performance unproven.",
+      "targetValue": "Calibrated asset-class models with outlier handling and professional exports.",
+      "whatProAdds": "N/A — lower tier is Pro.",
+      "whatAdvancedAdds": "Current row is Advanced target.",
+      "missing": [
+        "realized outcomes",
+        "calibration",
+        "institutional validation"
+      ],
+      "saleStatus": "NOT_FOR_SALE"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+.globe {
+  position: absolute;
+  z-index: 1;
+  top: 1.75rem;
+  right: clamp(-7rem, -3vw, -2rem);
+  width: min(58vw, 52rem);
+  aspect-ratio: 1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.62;
+  filter: drop-shadow(0 2.5rem 5rem rgba(0, 0, 0, 0.72));
+  mask-image: radial-gradient(circle at 52% 47%, #000 0 58%, rgba(0, 0, 0, 0.82) 72%, transparent 92%);
+}
+
+.globe::before {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 27%, rgba(255, 255, 255, 0.055), transparent 39%);
+  box-shadow: 0 0 4rem rgba(255, 255, 255, 0.045), inset -2.5rem -2rem 5rem rgba(0, 0, 0, 0.72);
+  content: "";
+}
+
+.canvas,
+.fallback {
+  position: absolute;
+  inset: 7%;
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+}
+
+.fallback {
+  opacity: 0.72;
+  filter: grayscale(1) contrast(1.08) brightness(0.82);
+  transition: opacity 180ms ease;
+}
+
+.canvas {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.globe[data-globe-state="ready"] .canvas {
+  opacity: 1;
+}
+
+.globe[data-globe-state="ready"] .fallback {
+  opacity: 0;
+}
+
+@media (max-width: 900px) {
+  .globe {
+    top: 4rem;
+    right: -10rem;
+    width: 43rem;
+    opacity: 0.38;
+  }
+}
+
+@media (max-width: 640px) {
+  .globe {
+    top: 4.75rem;
+    right: -12rem;
+    width: 34rem;
+    opacity: 0.29;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas,
+  .fallback {
+    transition: none;
+  }
+}

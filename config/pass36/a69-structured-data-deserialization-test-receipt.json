@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "velmere.pass36.a69.structured-data-deserialization-test.v1",
+  "revisionId": "VELMERE_PASS36_A69R0_STRUCTURED_DATA_DESERIALIZATION_TRUST_BOUNDARY_HARDENING",
+  "total": 44,
+  "passed": 44,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "valid_object_parsed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "valid_array_parsed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "valid_primitive_when_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "valid_utf8_bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "duplicate_key_rejected",
+      "pass": true,
+      "detail": "strict_json_duplicate_key:a"
+    },
+    {
+      "id": "nested_duplicate_key_rejected",
+      "pass": true,
+      "detail": "strict_json_duplicate_key:a"
+    },
+    {
+      "id": "escaped_duplicate_key_rejected",
+      "pass": true,
+      "detail": "strict_json_duplicate_key:a"
+    },
+    {
+      "id": "forbidden___proto___rejected",
+      "pass": true,
+      "detail": "strict_json_forbidden_key:__proto__"
+    },
+    {
+      "id": "forbidden_prototype_rejected",
+      "pass": true,
+      "detail": "strict_json_forbidden_key:prototype"
+    },
+    {
+      "id": "forbidden_constructor_rejected",
+      "pass": true,
+      "detail": "strict_json_forbidden_key:constructor"
+    },
+    {
+      "id": "escaped_forbidden_key_rejected",
+      "pass": true,
+      "detail": "strict_json_forbidden_key:__proto__"
+    },
+    {
+      "id": "depth_limit_rejected",
+      "pass": true,
+      "detail": "strict_json_depth_exceeded:16"
+    },
+    {
+      "id": "node_limit_rejected",
+      "pass": true,
+      "detail": "strict_json_node_limit_exceeded:5"
+    },
+    {
+      "id": "byte_limit_rejected",
+      "pass": true,
+      "detail": "strict_json_too_large:32"
+    },
+    {
+      "id": "invalid_json_rejected",
+      "pass": true,
+      "detail": "strict_json_invalid"
+    },
+    {
+      "id": "trailing_json_rejected",
+      "pass": true,
+      "detail": "strict_json_invalid"
+    },
+    {
+      "id": "object_requirement_enforced",
+      "pass": true,
+      "detail": "strict_json_object_required"
+    },
+    {
+      "id": "array_requirement_enforced",
+      "pass": true,
+      "detail": "strict_json_array_required"
+    },
+    {
+      "id": "conflicting_shape_requirements_rejected",
+      "pass": true,
+      "detail": "strict_json_input_type_invalid"
+    },
+    {
+      "id": "invalid_max_bytes_rejected",
+      "pass": true,
+      "detail": "strict_json_max_bytes_invalid"
+    },
+    {
+      "id": "invalid_utf8_rejected",
+      "pass": true,
+      "detail": "strict_json_invalid_utf8"
+    },
+    {
+      "id": "prototype_not_polluted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_lens_imports_boundary",
+      "pass": true,
+      "detail": "lib/server/search-route-modules/lens-report.ts"
+    },
+    {
+      "id": "integration_lens_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/server/search-route-modules/lens-report.ts"
+    },
+    {
+      "id": "integration_provider_imports_boundary",
+      "pass": true,
+      "detail": "lib/security/audit-provider-runtime-client.ts"
+    },
+    {
+      "id": "integration_provider_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/security/audit-provider-runtime-client.ts"
+    },
+    {
+      "id": "integration_permission_imports_boundary",
+      "pass": true,
+      "detail": "lib/security/audit-permission-parser.ts"
+    },
+    {
+      "id": "integration_permission_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/security/audit-permission-parser.ts"
+    },
+    {
+      "id": "integration_abi_imports_boundary",
+      "pass": true,
+      "detail": "lib/security/contract-source-abi-extraction.ts"
+    },
+    {
+      "id": "integration_abi_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/security/contract-source-abi-extraction.ts"
+    },
+    {
+      "id": "integration_payload_imports_boundary",
+      "pass": true,
+      "detail": "lib/jobs/durable-computation-payload.ts"
+    },
+    {
+      "id": "integration_payload_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/jobs/durable-computation-payload.ts"
+    },
+    {
+      "id": "integration_replay_imports_boundary",
+      "pass": true,
+      "detail": "lib/jobs/durable-computation-replay.ts"
+    },
+    {
+      "id": "integration_replay_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/jobs/durable-computation-replay.ts"
+    },
+    {
+      "id": "integration_csp_imports_boundary",
+      "pass": true,
+      "detail": "lib/server/security-route-modules/csp-report.ts"
+    },
+    {
+      "id": "integration_csp_uses_strict_parser",
+      "pass": true,
+      "detail": "lib/server/security-route-modules/csp-report.ts"
+    },
+    {
+      "id": "lens_form_payload_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "provider_response_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "permission_abi_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "extraction_abi_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "durable_payload_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "durable_result_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "csp_report_no_direct_json_parse",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

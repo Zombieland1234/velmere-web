@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "velmere.pass36.a94r2.retained-pdf-evidence-summary.v1",
+  "revisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "generatedAt": "2026-07-28T22:30:00Z",
+  "evidenceMode": "PHYSICAL_SYNTHETIC_FILES_IN_MATERIALS_HASH_BOUND_FROM_SOURCE_ONLY",
+  "materialsPaths": {
+    "receipt": "A94R2/PDF_QA/A94R2_RETAINED_PHYSICAL_PDF_QA_RECEIPT.json",
+    "details": "A94R2/PDF_QA/A94R2_RETAINED_PHYSICAL_PDF_QA_DETAILS.json",
+    "contactSheet": "A94R2/PDF_QA/A94R2_PDF_SAMPLE_CONTACT_SHEET.png"
+  },
+  "bindings": {
+    "receiptByteLength": 4012,
+    "receiptSha256": "b3b9aa366727dcf4a2e8995ac6a65f625ba61b78438a0b2051eeb31b85ee4609",
+    "detailsByteLength": 416876,
+    "detailsSha256": "5a1883ba1f819460603e355ed623a883e55bdc78aebf5d47f470d20d2502be3e",
+    "contactSheetByteLength": 270165,
+    "contactSheetSha256": "e2ec0c2e340bf3ccd0adffc2e72872b7a3a3a714ef00e65a03158e5e47433df0",
+    "entryAggregateSha256": "2b35182963d5225ebc77a8df34306adde675d4254bb14426598101e3eaf143fc"
+  },
+  "qa": {
+    "status": "PASS_LOCAL_PHYSICAL_SYNTHETIC_PDF_QA_NO_REAL_CUSTOMER_CREDIT",
+    "documents": 450,
+    "pages": 2100,
+    "byLocale": {
+      "de": 150,
+      "en": 150,
+      "pl": 150
+    },
+    "byTier": {
+      "advanced": 150,
+      "basic": 150,
+      "pro": 150
+    },
+    "pypdfPassed": 450,
+    "pdfinfoPassed": 450,
+    "pdftotextPassed": 450,
+    "a4Pages": 2100,
+    "rotationZeroPages": 2100,
+    "blankPages": 0,
+    "edgeContactPages": 0,
+    "ghostscriptSampleCount": 45,
+    "ghostscriptSamplePassed": 45,
+    "sampleRenderCount": 9
+  },
+  "truthBoundary": "Independent local re-verification of the retained 450-document synthetic A83 corpus. It proves physical presence, structure, renderability and declared 2/4/8-page tier shape only. It grants no real provider, real audit, production browser, secure customer delivery, customer value, LIVE or sale credit.",
+  "realCustomerPdfs": 0,
+  "productionBrowserRuns": 0,
+  "secureCustomerDeliveries": 0,
+  "customerPurchaseWorthinessProven": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "integritySha256": "d85a89170301a3fd5f05738ed099eb232b6d53e2d065ea5761b3a0395a2739c8"
+}

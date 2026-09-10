@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "velmere.pass36.a78.exact-runtime-lockfile-browser-bootstrap.v1",
+  "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+  "supersededMechanismRevisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+  "deterministicEpoch": "2026-07-27T09:00:00.000Z",
+  "sourceManifestPath": "config/pass36/a102r44-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a78-current-root-descendant-manifest.json",
+  "parentCleanRootGenesisPath": "config/pass36/a77-clean-root-genesis.json",
+  "parentCleanRootGenesisDigestSha256": "fb597fb6e7d1d8c734e88e249c2319a3b6658abefe60f5238fe6f3d2711df764",
+  "expectedRuntime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "packageLock": {
+    "path": "package-lock.json",
+    "sha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+    "expectedRemotePackages": 654,
+    "denominatorMigrationPath": "config/pass36/a102r41-a78-lockfile-denominator-migration.json"
+  },
+  "browserBundle": {
+    "playwrightVersion": "1.60.0",
+    "browserName": "chromium",
+    "browserVersion": "148.0.7778.96",
+    "browserRevision": "1223",
+    "projectBrowserManifestPath": "node_modules/playwright-core/browsers.json",
+    "projectBrowserManifestSha256": "af53e32ffe35a024ddb34563700956b01ada00ac7e9270ba5df0604ec57e38e1",
+    "externalSha256Required": true,
+    "platformExactRequired": true,
+    "launchSmokeRequired": true
+  },
+  "localCasDirectories": [
+    "config/supply-chain-license-archive-cas-pass4825",
+    "config/supply-chain-install-script-archive-cas-pass4825"
+  ],
+  "descendantManifestExclusions": [
+    "config/pass36/a78-current-root-descendant-manifest.json",
+    "config/pass35/a57-source-manifest.json"
+  ],
+  "decisions": {
+    "verified": "VERIFIED_LOCAL_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP",
+    "blocked": "BLOCKED_EXACT_TOOLCHAIN_ARTIFACTS",
+    "rejected": "REJECTED_EXACT_TOOLCHAIN_INTEGRITY",
+    "actionRequired": "ACTION_REQUIRED_EXACT_TOOLCHAIN_EXECUTION"
+  },
+  "promotionConditions": {
+    "runtimeArchiveExactHashRequired": true,
+    "runtimeTreeImmutableRequired": true,
+    "isolatedEnvironmentRequired": true,
+    "parentEnvironmentSecretsInherited": false,
+    "systemPathInherited": false,
+    "allLockfileTarballsRequired": true,
+    "allTarballSriRequired": true,
+    "offlineNpmCiRequired": true,
+    "exactBrowserBundleRequired": true,
+    "browserLaunchSmokeRequired": true,
+    "currentRootCriticalGate30Of30Required": true,
+    "a60Required": true,
+    "saleEnabled": false,
+    "liveProven": false
+  },
+  "truthBoundary": "A78 hardens and verifies the current-root exact runtime/dependency/browser admission mechanism. Local CAS coverage, compatible runtimes, system Chromium, synthetic fixtures or source-level contracts do not receive exact bootstrap credit. VERIFIED requires physical hash-matching Node 24.18.0/npm 11.16.0, every one of 654 lockfile-bound tarballs, an externally SHA-256-anchored Windows x64 Playwright 1.60.0 Chromium 148.0.7778.96 revision 1223 bundle, isolated no-secret execution, unchanged runtime tree, the full current-root gate and VERIFIED A60.",
+  "historicalA57ManifestPath": "config/pass35/a57-source-manifest.json",
+  "currentSourceAuthorityPath": "config/pass36/current-release-authority.json",
+  "currentSourceRevisionId": "VELMERE_PASS36_A102R44_ACTION_REQUIRED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF_NO_LIVE_CREDIT",
+  "currentSourceParentRevisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT"
+}

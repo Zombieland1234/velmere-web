@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "velmere.pass26.ci-contract.v1",
+  "ok": true,
+  "activeWorkflows": [
+    "pass26-exact-runtime-bridge.yml",
+    "pass4992-supply-chain-security.yml",
+    "quality-and-fresh-builds.yml"
+  ],
+  "expectedActiveWorkflows": [
+    "pass26-exact-runtime-bridge.yml",
+    "pass4992-supply-chain-security.yml",
+    "quality-and-fresh-builds.yml"
+  ],
+  "retiredWorkflowCount": 6,
+  "retiredWorkflows": [
+    "pass4710-exact-checkpoint.yml",
+    "pass4727-exact-checkpoint.yml",
+    "pass4737-exact-candidate.yml",
+    "pass4738-exact-candidate.yml",
+    "pass4739-exact-candidate.yml",
+    "pass4741-exact-candidate.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "workflows": [
+    {
+      "file": "pass26-exact-runtime-bridge.yml",
+      "npmRuns": [
+        "build:turbopack",
+        "build:webpack",
+        "bundle:runtime-cache",
+        "runtime:requirements",
+        "verify:runtime-cache-bundle",
+        "verify:runtime-contract"
+      ],
+      "missingScripts": [],
+      "actions": [
+        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+        "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+        "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
+      ],
+      "unpinnedActions": [],
+      "checkoutCount": 1,
+      "persistFalseCount": 1,
+      "hasConcurrency": true,
+      "forbiddenTrigger": false
+    },
+    {
+      "file": "pass4992-supply-chain-security.yml",
+      "npmRuns": [],
+      "missingScripts": [],
+      "actions": [
+        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+        "actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294",
+        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+        "github/codeql-action/init@7188fc363630916deb702c7fdcf4e481b751f97a",
+        "github/codeql-action/analyze@7188fc363630916deb702c7fdcf4e481b751f97a",
+        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+        "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+        "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
+      ],
+      "unpinnedActions": [],
+      "checkoutCount": 3,
+      "persistFalseCount": 3,
+      "hasConcurrency": true,
+      "forbiddenTrigger": false
+    },
+    {
+      "file": "quality-and-fresh-builds.yml",
+      "npmRuns": [],
+      "missingScripts": [],
+      "actions": [
+        "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+        "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+        "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
+      ],
+      "unpinnedActions": [],
+      "checkoutCount": 1,
+      "persistFalseCount": 1,
+      "hasConcurrency": true,
+      "forbiddenTrigger": false
+    }
+  ],
+  "truthBoundary": "This is a static CI contract. A GitHub Actions run and downloaded runtime/cache artifact remain required for exact milestone proof."
+}

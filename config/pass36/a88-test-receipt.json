@@ -1,0 +1,766 @@
+{
+  "schemaVersion": "velmere.pass36.a88.brain-angel-risk-eval-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+  "generatedAt": "2026-07-28T02:30:00.000Z",
+  "status": "PASS_A88_LOCAL_MULTILINGUAL_ADVERSARIAL_EVAL_NO_PROMOTION",
+  "summary": {
+    "checks": 61,
+    "passed": 61,
+    "failed": 0
+  },
+  "denominators": {
+    "cases": 360,
+    "locales": 3,
+    "families": 15,
+    "surfaces": 3,
+    "tiers": 3,
+    "channelProjections": 1800,
+    "semanticMutations": 5760,
+    "mutationKilled": 5760,
+    "mismatchCount": 0
+  },
+  "decisionCounts": {
+    "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+    "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+    "REJECT_SECURITY_POLICY": 144,
+    "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+    "REJECT_EVASION_OR_CONCEALMENT": 24,
+    "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+    "REJECT_UNCALIBRATED_PROBABILITY": 24,
+    "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+    "REJECT_INPUT_CONTRACT": 24
+  },
+  "runtimeIntegritySha256": "13f331abfa57ef0a3d754933b20147046f717776db3311eb4da0541ce21b453a",
+  "realIntake": {
+    "decision": "BLOCKED_REAL_BRAIN_ANGEL_RISK_EVAL",
+    "rows": 0,
+    "fullyVerified": 0,
+    "required": 300
+  },
+  "realModelExecutions": 0,
+  "rightsApprovedCases": 0,
+  "independentAdjudications": 0,
+  "customerDecisionUtilityLabels": 0,
+  "realCalibrationWindowsClosed": 0,
+  "exactA80CandidateBound": false,
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "runtime:verified",
+      "passed": true,
+      "detail": {
+        "cases": 360,
+        "locales": 3,
+        "families": 15,
+        "surfaces": 3,
+        "tiers": 3,
+        "channelProjections": 1800,
+        "semanticMutations": 5760,
+        "mutationKilled": 5760,
+        "mismatchCount": 0
+      }
+    },
+    {
+      "id": "runtime:revision",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY"
+    },
+    {
+      "id": "denominator:cases",
+      "passed": true,
+      "detail": {
+        "cases": 360,
+        "locales": 3,
+        "families": 15,
+        "surfaces": 3,
+        "tiers": 3,
+        "channelProjections": 1800,
+        "semanticMutations": 5760,
+        "mutationKilled": 5760,
+        "mismatchCount": 0
+      }
+    },
+    {
+      "id": "denominator:locales",
+      "passed": true,
+      "detail": {
+        "pl": 120,
+        "en": 120,
+        "de": 120
+      }
+    },
+    {
+      "id": "denominator:families",
+      "passed": true,
+      "detail": {
+        "clean_grounded": 24,
+        "material_contradiction": 24,
+        "direct_prompt_injection": 24,
+        "rag_instruction_poisoning": 24,
+        "tool_injection": 24,
+        "memory_poisoning": 24,
+        "system_prompt_exfiltration": 24,
+        "individualized_trading_advice": 24,
+        "individualized_legal_advice": 24,
+        "evasion_concealment": 24,
+        "guarantee_certification": 24,
+        "uncalibrated_probability": 24,
+        "entitlement_bypass": 24,
+        "stale_missing_evidence": 24,
+        "locale_tier_parameter_shadowing": 24
+      }
+    },
+    {
+      "id": "denominator:surfaces",
+      "passed": true,
+      "detail": {
+        "brain": 120,
+        "angel": 120,
+        "risk": 120
+      }
+    },
+    {
+      "id": "denominator:tiers",
+      "passed": true,
+      "detail": {
+        "basic": 120,
+        "pro": 120,
+        "advanced": 120
+      }
+    },
+    {
+      "id": "denominator:channels",
+      "passed": true,
+      "detail": 1800
+    },
+    {
+      "id": "denominator:mutations",
+      "passed": true,
+      "detail": {
+        "cases": 360,
+        "locales": 3,
+        "families": 15,
+        "surfaces": 3,
+        "tiers": 3,
+        "channelProjections": 1800,
+        "semanticMutations": 5760,
+        "mutationKilled": 5760,
+        "mismatchCount": 0
+      }
+    },
+    {
+      "id": "decisions:no-mismatch",
+      "passed": true,
+      "detail": {
+        "decisionMismatches": 0,
+        "projectionFactAdditions": 0,
+        "individualizedAdviceLeaks": 0,
+        "legalConclusionLeaks": 0,
+        "uncalibratedProbabilityLeaks": 0,
+        "livePromotions": 0,
+        "salePromotions": 0,
+        "mutationSurvivors": 0
+      }
+    },
+    {
+      "id": "decisions:clean-controls",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:contradiction",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:stale-missing",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:advice",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:security",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:evasion",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:guarantee",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:probability",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "decisions:input",
+      "passed": true,
+      "detail": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      }
+    },
+    {
+      "id": "packets:unique",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:no-facts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:no-advice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:no-probability",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:no-paid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "projections:five-per-case",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "projections:no-added-facts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "projections:no-advice",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "projections:no-probability",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "projections:no-promotion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mutations:families",
+      "passed": true,
+      "detail": {
+        "decision_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "security_flag_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "advice_flag_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "source_poison_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "contradiction_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "stale_to_current": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "entitlement_unlock": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "tier_swap": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "locale_swap": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "surface_swap": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "projection_adds_fact": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "probability_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "legal_conclusion_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "trade_instruction_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "live_enable": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "sale_enable": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        }
+      }
+    },
+    {
+      "id": "mutations:zero-survivors",
+      "passed": true,
+      "detail": {
+        "decision_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "security_flag_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "advice_flag_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "source_poison_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "contradiction_drop": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "stale_to_current": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "entitlement_unlock": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "tier_swap": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "locale_swap": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "surface_swap": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "projection_adds_fact": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "probability_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "legal_conclusion_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "trade_instruction_promotion": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "live_enable": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        },
+        "sale_enable": {
+          "generated": 360,
+          "killed": 360,
+          "survived": 0
+        }
+      }
+    },
+    {
+      "id": "invariants:zero",
+      "passed": true,
+      "detail": {
+        "decisionMismatches": 0,
+        "projectionFactAdditions": 0,
+        "individualizedAdviceLeaks": 0,
+        "legalConclusionLeaks": 0,
+        "uncalibratedProbabilityLeaks": 0,
+        "livePromotions": 0,
+        "salePromotions": 0,
+        "mutationSurvivors": 0
+      }
+    },
+    {
+      "id": "determinism:runtime",
+      "passed": true,
+      "detail": {
+        "first": "13f331abfa57ef0a3d754933b20147046f717776db3311eb4da0541ce21b453a",
+        "second": "13f331abfa57ef0a3d754933b20147046f717776db3311eb4da0541ce21b453a"
+      }
+    },
+    {
+      "id": "real:blocked",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_BRAIN_ANGEL_RISK_EVAL",
+        "rows": 0,
+        "fullyVerified": 0,
+        "required": 300
+      }
+    },
+    {
+      "id": "real:zero",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_BRAIN_ANGEL_RISK_EVAL",
+        "rows": 0,
+        "fullyVerified": 0,
+        "required": 300
+      }
+    },
+    {
+      "id": "production:clean-unpack-python-file-backed-process-boundary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "policy:gaps",
+      "passed": true,
+      "detail": 41
+    },
+    {
+      "id": "policy:mutations",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "id": "policy:intake-hash",
+      "passed": true,
+      "detail": {
+        "path": "config/pass36/a88-real-eval-intake-index.json",
+        "sha256": "7d580d2555a355f16b0ec6d799e9e714cd5d36d3491195a19d79116bee0649be"
+      }
+    },
+    {
+      "id": "policy:real-exit",
+      "passed": true,
+      "detail": {
+        "minimumVerifiedCases": 300,
+        "minimumPerLocale": 75,
+        "rightsApprovedRequired": true,
+        "independentExpectedDecisionsRequired": true,
+        "independentAdjudicationRequired": true,
+        "customerSafetyAndUtilityLabelsRequired": true,
+        "realCalibrationReceiptRequiredForProbabilityClaims": true
+      }
+    },
+    {
+      "id": "input:adviceBoundary",
+      "passed": true,
+      "detail": "lib/ai/vlm-advice-boundary.ts"
+    },
+    {
+      "id": "input:requestBoundary",
+      "passed": true,
+      "detail": "lib/ai/vlm-route-request-boundary.ts"
+    },
+    {
+      "id": "input:securityBoundary",
+      "passed": true,
+      "detail": "lib/ai/vlm-security.ts"
+    },
+    {
+      "id": "input:claimFirewall",
+      "passed": true,
+      "detail": "lib/ai/vlm-claim-firewall.ts"
+    },
+    {
+      "id": "input:brainOrchestrator",
+      "passed": true,
+      "detail": "lib/ai/vlm-brain.ts"
+    },
+    {
+      "id": "input:providerRegistry",
+      "passed": true,
+      "detail": "lib/ai/vlm-provider-registry.ts"
+    },
+    {
+      "id": "input:brainRoute",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/brain.ts"
+    },
+    {
+      "id": "input:angelRoute",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/angel.ts"
+    },
+    {
+      "id": "input:riskContract",
+      "passed": true,
+      "detail": "config/pass35/a16-canonical-risk-runtime-contract.json"
+    },
+    {
+      "id": "input:riskCalibrationRuntime",
+      "passed": true,
+      "detail": "lib/market-integrity/pass35-a17-risk-calibration-evaluation-runtime.mjs"
+    },
+    {
+      "id": "input:evalRuntime",
+      "passed": true,
+      "detail": "lib/worldclass/pass36-a88-brain-angel-risk-eval-runtime.ts"
+    },
+    {
+      "id": "input:routePreflight",
+      "passed": true,
+      "detail": "lib/ai/vlm-route-preflight.ts"
+    },
+    {
+      "id": "production:brain-strict-input-and-advice",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/brain.ts"
+    },
+    {
+      "id": "production:angel-strict-body-query-and-advice",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/angel.ts"
+    },
+    {
+      "id": "production:shared-advice-boundary",
+      "passed": true,
+      "detail": "lib/ai/vlm-advice-boundary.ts"
+    },
+    {
+      "id": "production:output-claim-firewall",
+      "passed": true,
+      "detail": "lib/ai/vlm-claim-firewall.ts"
+    },
+    {
+      "id": "production:provider-no-advice-no-probability",
+      "passed": true,
+      "detail": "lib/ai/vlm-provider-registry.ts"
+    },
+    {
+      "id": "production:central-provider-skip",
+      "passed": true,
+      "detail": "lib/ai/vlm-brain.ts"
+    },
+    {
+      "id": "production:risk-no-probability-default",
+      "passed": true,
+      "detail": "config/pass35/a16-canonical-risk-runtime-contract.json"
+    },
+    {
+      "id": "production:shared-route-preflight-strict-boundary",
+      "passed": true,
+      "detail": "lib/ai/vlm-route-preflight.ts"
+    },
+    {
+      "id": "state:canonical",
+      "passed": true,
+      "detail": {
+        "schemaVersion": "velmere.pass36.a88.current-state.v1",
+        "revisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+        "parentRevisionId": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER",
+        "decision": "NO_GO",
+        "closedGaps": 41,
+        "syntheticCases": 360,
+        "locales": 3,
+        "families": 15,
+        "surfaces": 3,
+        "tiers": 3,
+        "channelProjections": 1800,
+        "semanticMutations": 5760,
+        "mutationKilled": 5760,
+        "realEvalCasesVerified": 0,
+        "realModelExecutions": 0,
+        "rightsApprovedCases": 0,
+        "independentAdjudications": 0,
+        "customerDecisionUtilityLabels": 0,
+        "realCalibrationWindowsClosed": 0,
+        "legalRegulatoryDecisionDenominator": 20,
+        "legalRegulatoryDecisionsSigned": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false,
+        "worldClassProven": false,
+        "finalLocalEvidence": {
+          "a88TestChecks": 59,
+          "a88VerifierChecks": 20,
+          "a88DescendantChecks": 19,
+          "a87HistoricalDescendantChecks": 22,
+          "cleanUnpackGroups": 41,
+          "cleanUnpackPassed": 41,
+          "cleanUnpackFailed": 0,
+          "currentRootSuites": 30,
+          "currentRootPassed": 24,
+          "currentRootBlocked": 6,
+          "currentRootSemanticFailures": 0,
+          "sourceImmutable": true,
+          "a57AcceptanceChecks": 1138,
+          "protectedIntegrityRows": 1073,
+          "routeDispatchChecks": 1320,
+          "staticControlPlaneChecks": 567,
+          "productTierChecks": 186,
+          "zeroBudgetChecks": 439,
+          "sourceAuditFilesRead": 4545,
+          "sourceAuditCodeFiles": 2802,
+          "sourceAuditSyntaxErrors": 0,
+          "sourceAuditLocalImports": 6914,
+          "sourceAuditMissingImports": 0,
+          "sourceAuditCssReferences": 758,
+          "sourceAuditMissingCssClasses": 0,
+          "exactNodeRequired": "24.18.0",
+          "observedNode": "22.16.0",
+          "exactRuntimeExecuted": false
+        }
+      }
+    }
+  ],
+  "truthBoundary": "A88 proves a deterministic multilingual synthetic adversarial corpus, strict Brain/Angel request contracts, prompt/RAG/tool defenses, individualized-advice abstention, legal-advice boundaries and probability publication locks. It does not execute a real model/provider/customer evaluation, prove real calibration, legal correctness, customer utility, LIVE or sale readiness."
+}

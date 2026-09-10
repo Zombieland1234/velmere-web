@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "velmere.pass36.a85.shield-pro-map-full-depth-policy.v1",
+  "revisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+  "parentRevisionId": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER",
+  "deterministicEpoch": "2026-07-27T18:30:00.000Z",
+  "inputs": {
+    "a84Policy": {
+      "path": "config/pass36/a84-shield-full-catalog-tier-matrix-policy.json",
+      "sha256": "95bbe8a4bfc01ff5507404e0c7cc80be62eba1ddd18f6f0492d5d7c551deacf1"
+    },
+    "a84Receipt": {
+      "path": "config/pass36/a84-test-receipt.json",
+      "sha256": "6893934d6c27dd61832b93aa3ff702b5622b11d536523d5ff701f846fc5d7cef"
+    },
+    "a84Descendant": {
+      "path": "config/pass36/a84-current-root-descendant-manifest.json",
+      "sha256": "a76ad3da24dc691fa55e60282453f813c52ade0029b154e2fcfedfdec76cc6dc"
+    },
+    "a84Runtime": {
+      "path": "lib/worldclass/pass36-a84-shield-full-catalog-tier-matrix-runtime.ts",
+      "sha256": "b2816316180827eb9a80efff8cd6b786e235b75bde01a5855990986f58789e02"
+    },
+    "shieldProClient": {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "sha256": "03ecb26072e57e3f7eb7e11d585d46a182f4a332fb7a7f7560e03d60d0ea83ea"
+    },
+    "shieldProPagination": {
+      "path": "lib/market-integrity/shield-pro-full-catalog-client.ts",
+      "sha256": "fa7a555b58308a3954ea9e3ad51ecfee4d47de967f8561329abf13f18a29cde8"
+    },
+    "shieldMapClient": {
+      "path": "components/market-integrity/ShieldMapCommandClient.tsx",
+      "sha256": "609f58464f0360c455d5e1f12d146c78c75f2e42c35cfab54b76f3e79a917c01"
+    },
+    "investigatorRoute": {
+      "path": "lib/server/market-integrity-route-modules/investigator.ts",
+      "sha256": "ac2b61d3b37e9b8b1509826d80d6a42249c56167044e7083d4db630dc3354b70"
+    },
+    "shieldMapQueryBoundary": {
+      "path": "lib/market-integrity/shield-map-query-boundary.ts",
+      "sha256": "82e7acd2b8b036516b94dcf746ce336f411c19d817dfa3c34ed5383b18ba8bef"
+    },
+    "shieldInvestigator": {
+      "path": "lib/market-integrity/shield-investigator.ts",
+      "sha256": "0738cae17bdacc69510a38e52db2ec66673d8462749343490a71fea3acf4b97a"
+    },
+    "marketAssetBinding": {
+      "path": "lib/market-integrity/market-asset-binding.ts",
+      "sha256": "f030a89318f0013404987e779ef846472ce51698cc423680fb34ac069afc5d04"
+    },
+    "walletLabelRegistry": {
+      "path": "lib/market-integrity/wallet-label-registry.ts",
+      "sha256": "05803547621ec32a21e80336faf854421d2d4948424310f8d4af024529950d61"
+    }
+  },
+  "realIntakeIndex": {
+    "path": "evaluation/pass36/a85-real-shield-pro-map-intake.json",
+    "sha256": "8c7f485c56e5669e2800ab5dfd97afa7560e4e325facc9096c4bdb79efefef65"
+  },
+  "productionAssertions": [
+    {
+      "id": "shield-pro-bounded-pagination",
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "includes": [
+        "fetchShieldProFullCatalog<MarketRow>",
+        "bounded partial catalog"
+      ],
+      "excludes": [
+        "/api/market-integrity/markets?perPage=100"
+      ]
+    },
+    {
+      "id": "pagination-tier-binding",
+      "path": "lib/market-integrity/shield-pro-full-catalog-client.ts",
+      "includes": [
+        "perPage: String(SHIELD_PRO_MARKET_PAGE_SIZE)",
+        "tier: \"basic\"",
+        "repeated_or_non_advancing_page"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "investigator-query-boundary",
+      "path": "lib/server/market-integrity-route-modules/investigator.ts",
+      "includes": [
+        "parseShieldMapQuery",
+        "verifyShieldMapResolvedIdentity",
+        "identityBinding",
+        "shieldMapTierState()"
+      ],
+      "excludes": [
+        "searchParams.get(\"query\")"
+      ]
+    },
+    {
+      "id": "deep-dive-basic-only",
+      "path": "components/market-integrity/ShieldMapCommandClient.tsx",
+      "includes": [
+        "depth=\"basic\"",
+        "compact={!showDeepDive}"
+      ],
+      "excludes": [
+        "depth=\"advanced\""
+      ]
+    }
+  ],
+  "mutationFamilies": [
+    "market_id_substitution",
+    "symbol_substitution",
+    "quote_substitution",
+    "timeframe_drop",
+    "page_coverage_promotion",
+    "depth_state_promotion",
+    "binding_state_promotion",
+    "address_substitution",
+    "label_state_promotion",
+    "lane_drop",
+    "entitlement_promotion",
+    "paid_delivery_promotion",
+    "tier_substitution",
+    "blocked_to_ready",
+    "deep_dive_paid_depth",
+    "live_sale_promotion"
+  ],
+  "closedByA85": [
+    {
+      "gapId": "A85-GAP-01",
+      "severity": "P0",
+      "title": "Shield Pro fetched only the first 100 rows",
+      "closure": "A bounded 250-row pagination loop walks up to 20 canonical pages, deduplicates exact IDs and stops only on a short final page."
+    },
+    {
+      "gapId": "A85-GAP-02",
+      "severity": "P0",
+      "title": "A repeated provider page could create a false complete catalog",
+      "closure": "Pagination detects a non-advancing page and returns an explicit partial blocker."
+    },
+    {
+      "gapId": "A85-GAP-03",
+      "severity": "P1",
+      "title": "A later-page outage could erase the distinction between partial and complete coverage",
+      "closure": "Rows already fetched are retained with mode=partial and an exact later-page failure blocker."
+    },
+    {
+      "gapId": "A85-GAP-04",
+      "severity": "P0",
+      "title": "Shield Pro batch requests did not explicitly bind the free delivery tier",
+      "closure": "Every catalog page sends tier=basic; paid depth remains a separate account-bound route."
+    },
+    {
+      "gapId": "A85-GAP-05",
+      "severity": "P0",
+      "title": "Shield Map accepted unknown query parameters",
+      "closure": "The server rejects every parameter outside query and locale."
+    },
+    {
+      "gapId": "A85-GAP-06",
+      "severity": "P0",
+      "title": "Duplicate query or locale parameters could shadow identity",
+      "closure": "Duplicate security-relevant parameters are rejected before provider work."
+    },
+    {
+      "gapId": "A85-GAP-07",
+      "severity": "P1",
+      "title": "Shield Map query length, control and bidi characters were not centrally bounded",
+      "closure": "A 120-byte strict query boundary and 2048-byte URL ceiling reject control and bidi input."
+    },
+    {
+      "gapId": "A85-GAP-08",
+      "severity": "P0",
+      "title": "A fuzzy CoinGecko suggestion could be published as the requested asset",
+      "closure": "CoinGecko output is used only when an integrity-valid provider receipt proves exact requested identity."
+    },
+    {
+      "gapId": "A85-GAP-09",
+      "severity": "P0",
+      "title": "Ambiguous symbol or market resolution could continue to risk analysis",
+      "closure": "Unresolved identity fails closed with HTTP 409 before investigator publication."
+    },
+    {
+      "gapId": "A85-GAP-10",
+      "severity": "P0",
+      "title": "An EVM address could be accepted without an exact chain binding",
+      "closure": "Address requests require exact address equality and a non-empty resolved chain ID."
+    },
+    {
+      "gapId": "A85-GAP-11",
+      "severity": "P0",
+      "title": "A tampered provider identity receipt could authorize Shield Map",
+      "closure": "Provider receipt integrity is recomputed before identity credit."
+    },
+    {
+      "gapId": "A85-GAP-12",
+      "severity": "P0",
+      "title": "The Shield Map deep-dive toggle could be mistaken for paid analysis",
+      "closure": "The response and UI contract fix deepDivePresentationOnly=true and VLM depth=basic."
+    },
+    {
+      "gapId": "A85-GAP-13",
+      "severity": "P0",
+      "title": "Pro and Advanced delivery lacked one full-catalog entitlement proof",
+      "closure": "All 636 paid packets remain blocked until a real server-owned account entitlement is verified."
+    },
+    {
+      "gapId": "A85-GAP-14",
+      "severity": "P0",
+      "title": "Symbol-only inference could promote paid Shield Map depth",
+      "closure": "Pro and Advanced map readiness require exact multi-source chain/address consensus."
+    },
+    {
+      "gapId": "A85-GAP-15",
+      "severity": "P1",
+      "title": "Wallet or entity labels could be promoted without signed current evidence",
+      "closure": "Advanced map readiness requires SIGNED_CURRENT labels; stale, conflict and missing stay blocked."
+    },
+    {
+      "gapId": "A85-GAP-16",
+      "severity": "P1",
+      "title": "Investigator lane completeness lacked a full-catalog denominator",
+      "closure": "Every tier packet binds all six lanes: supply, unlock, liquidity, insider, social and contract."
+    },
+    {
+      "gapId": "A85-GAP-17",
+      "severity": "P1",
+      "title": "Shield Pro and Shield Map could drift on market identity",
+      "closure": "Both surfaces bind the same canonical marketId, symbol and USD quote."
+    },
+    {
+      "gapId": "A85-GAP-18",
+      "severity": "P1",
+      "title": "Terminal timeframe coverage was not proven across all tiers",
+      "closure": "Six exact ranges are bound for every one of 954 tier packets."
+    },
+    {
+      "gapId": "A85-GAP-19",
+      "severity": "P0",
+      "title": "Advanced could become ready on stale or conflicted order-book depth",
+      "closure": "Paid terminal readiness requires AVAILABLE depth and preserves stale/conflict blockers."
+    },
+    {
+      "gapId": "A85-GAP-20",
+      "severity": "P0",
+      "title": "Offline functional readiness could be mistaken for paid delivery",
+      "closure": "Functional readiness and real delivery decisions are separate fields; paidDelivered remains zero."
+    },
+    {
+      "gapId": "A85-GAP-21",
+      "severity": "P0",
+      "title": "Re-signed identity, binding, entitlement and depth mutations were not tested jointly",
+      "closure": "Sixteen semantic mutation families are re-sealed for every tier packet and must fail verification."
+    },
+    {
+      "gapId": "A85-GAP-22",
+      "severity": "P0",
+      "title": "Real Shield Pro/Map evidence had no exact denominator",
+      "closure": "A fail-closed 318-asset intake requires pagination, identity, binding, labels, depth, browser, entitlement, rights and customer labels."
+    },
+    {
+      "gapId": "A85-GAP-23",
+      "severity": "P0",
+      "title": "A85 could be promoted without an exact A80 candidate",
+      "closure": "All A85 packets remain exactA80CandidateBound=false and ineligible for promotion."
+    },
+    {
+      "gapId": "A85-GAP-24",
+      "severity": "P1",
+      "title": "Injected fixture evidence could be described as current public-network execution",
+      "closure": "The runtime records zero real cases, browser assets, rights, entitlements and customer labels."
+    },
+    {
+      "gapId": "A85-GAP-25",
+      "severity": "P1",
+      "title": "A84 descendant verification treated A84 as permanently current",
+      "closure": "A84 frozen payload remains exact while lineage is verified through the authority-bound A85 child."
+    },
+    {
+      "gapId": "A85-GAP-26",
+      "severity": "P1",
+      "title": "Current metadata and completion program still pointed at A84",
+      "closure": "Active pass, authority, compatibility mirror, package metadata and roadmap program are advanced together to A85."
+    },
+    {
+      "gapId": "A85-GAP-27",
+      "severity": "P1",
+      "title": "The completion program omitted the authoritative remainingAfterA85 denominator",
+      "closure": "The A76-A110 program records remainingAfterA85=25 and historical matrix verifiers derive the current remainder from authority."
+    },
+    {
+      "gapId": "A85-GAP-28",
+      "severity": "P1",
+      "title": "The A78 bootstrap verifier hardcoded A83 as the permanently current superseding source",
+      "closure": "A78 preserves its frozen policy and blocked exact-artifact truth while resolving current source, authority and active pass dynamically."
+    },
+    {
+      "gapId": "A85-GAP-29",
+      "severity": "P1",
+      "title": "The route-dispatch manifest retained the pre-A85 investigator handler digest",
+      "closure": "The exact investigator handler SHA-256 is rebound after strict Shield Map identity hardening; all 1320 dispatch checks must pass."
+    },
+    {
+      "gapId": "A85-GAP-30",
+      "severity": "P1",
+      "title": "The canonical current-status test hardcoded A84 as the first roadmap revision",
+      "closure": "Roadmap precedence now derives the exact current revision from current-release authority while preserving the required historical sections and A32 canonical rows."
+    }
+  ],
+  "descendantManifestPath": "config/pass36/a85-current-root-descendant-manifest.json",
+  "parentDescendantManifestPath": "config/pass36/a84-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a85-current-root-descendant-manifest.json"
+  ],
+  "truthBoundary": "A85 proves local injected full-catalog Shield Pro and Shield Map identity, pagination, binding, depth, lane and entitlement semantics. It does not prove current public-network coverage, rights, real account entitlements, production browser behavior, customer value, LIVE or sale readiness."
+}

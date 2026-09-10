@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "velmere.pass35.pre-gates.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "evaluatedAt": "2026-07-22T00:00:00.000Z",
+  "truthBoundary": "This file records candidate preparation only. A technical template, local test, or unsigned digest is not staging, live, independent, customer, legal, or market proof.",
+  "scoreEligible": false,
+  "promotionAllowed": false,
+  "preGates": {
+    "SR00": {
+      "status": "BLOCKED",
+      "reason": "Local source cleanup and packaging can be proven, but independent clean-machine verification and an organizational signature are not available in this execution.",
+      "owner": "UNASSIGNED_RELEASE_OWNER",
+      "requiredExternalEvidence": [
+        "independent_clean_machine_verification",
+        "organizational_detached_signature"
+      ]
+    },
+    "FG00": {
+      "status": "BLOCKED",
+      "reason": "No signed flagship decision, observed ICP workflow, willingness-to-pay threshold, or kill rule was supplied.",
+      "owner": "UNASSIGNED_PRODUCT_OWNER",
+      "candidateCells": [
+        "audit_evm_pro_automated_review",
+        "shield_pro_terminal_analysis",
+        "real_markets_pro_cross_asset_analysis"
+      ],
+      "technicalRecommendation": {
+        "productCellId": "audit_evm_pro_automated_review",
+        "status": "ENGINEERING_RECOMMENDATION_ONLY_NOT_FG00",
+        "reason": "Most complete existing intake, case/account binding, billing mapping, automation/review queue, PDF delivery and offline test footprint.",
+        "remainingBlockers": [
+          "signed_flagship_decision",
+          "real_analyzer_execution",
+          "independent_benchmark",
+          "qualified_reviewer_capacity",
+          "legal_and_provider_rights",
+          "real_staging"
+        ],
+        "planPath": "config/pass35/flagship-candidate-plan.json",
+        "commercialNameUntilFullStack": "Automated Security Evidence Review",
+        "fullAuditClaimAllowed": false,
+        "sellEnabled": false
+      },
+      "selectedCell": null
+    },
+    "PC00": {
+      "status": "STATIC_PROVEN",
+      "reason": "A per-cell catalog, exact legacy billing-family mapping, and fail-closed sell gate are machine-validated. No cell is sell-ready.",
+      "owner": "UNASSIGNED_CATALOG_OWNER",
+      "catalogPath": "config/pass35/product-cell-catalog.json",
+      "runtimeGatePath": "lib/commerce/pass35-product-cell-readiness.ts"
+    },
+    "ORG00": {
+      "status": "BLOCKED",
+      "reason": "Required named Responsible/Accountable/backup/reviewer/risk-acceptor roles, budgets, capacity, dates, signatures, and conflict declarations were not supplied.",
+      "owner": "UNASSIGNED_EXECUTIVE_OWNER",
+      "segregationOfDutiesEnforcedInPolicy": true,
+      "signedOrganizationRecord": false
+    }
+  },
+  "globalResult": "NO_GO",
+  "allowedActivity": [
+    "offline_engineering",
+    "cleanup",
+    "static_and_synthetic_testing",
+    "controlled_discovery_without_paid_claims"
+  ],
+  "forbiddenClaims": [
+    "production_ready",
+    "live_proven",
+    "independently_certified",
+    "top_tier",
+    "market_leader",
+    "global_world_class",
+    "100_of_100"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "velmere.pass36.a95.local-evidence-summary.v1",
+  "revisionId": "VELMERE_PASS36_A95R0_STAGING_SUBJECT_REBIND_ENVIRONMENT_ISOLATION_AND_ZERO_MUTATION_PREFLIGHT",
+  "parentRevisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "generatedAt": "2026-07-29T00:50:00.000Z",
+  "localResults": {
+    "adversarialCases": 44,
+    "adversarialPassed": 44,
+    "verifierChecks": 13,
+    "verifierPassed": 13,
+    "stageCallsOnBlockedCases": 0,
+    "mutationStarted": false,
+    "sourceUnchanged": true,
+    "legacyCandidateAuthoritative": false,
+    "crossSurfaceValueTruthChecks": 32,
+    "crossSurfaceSemanticMutationsKilled": 17,
+    "historicalCrossSurfaceBoundDescendantVerification": true,
+    "finalCleanUnpackControllerPrepared": true,
+    "finalCleanUnpackReceiptExternalToSource": true
+  },
+  "blocked": {
+    "exactA77R1ToA80R1": true,
+    "currentRootExact30Of30": true,
+    "externalSourceArchive": true,
+    "realDisposableEnvironment": true,
+    "twoTenantAccounts": true,
+    "realStages": true
+  },
+  "claims": {
+    "a95PassCredit": false,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "sourceBindings": {
+    "policyPath": "config/pass36/a95-staging-subject-admission-policy.json",
+    "intakeIndexPath": "evaluation/pass36/a95-real-staging-intake-index.json",
+    "testSummaryPath": "config/pass36/a95-test-receipt.json",
+    "stagingPlanPath": "config/pass35/staging-plan.json"
+  },
+  "truthBoundary": "Local fail-closed admission hardening only. Final archive clean-unpack is an external MATERIALS receipt generated after SOURCE packaging; it cannot be self-credited inside SOURCE. Real exact release and staging evidence remain zero.",
+  "integritySha256": "ab89be80226a6ea007ff6cc7a783bca23e7d16d8af93fae802be44034fd2fc94",
+  "localImplementation": {
+    "readOnlyVerificationBoundary": true
+  }
+}

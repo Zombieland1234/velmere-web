@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "velmere.repository-retention-policy.v1",
+  "currentPass": 4782,
+  "distributionMode": "compact-full-source",
+  "preserve": [
+    "all active product source and configuration",
+    "current current PASS4782 receipts",
+    "immediately previous PASS4781 receipts used by delegated regression",
+    "last exact checkpoint PASS4725",
+    "supply-chain baseline PASS4726",
+    "active preflight/release/browser receipts referenced by current configuration",
+    "minimal reversible archive inputs required by active preflight policies",
+    "repository-local offline TypeScript toolchain pinned by aggregate SHA-256 and licenses"
+  ],
+  "excludeFromDistribution": [
+    "historical root PASS reports",
+    "embedded Founder Master history copies",
+    "superseded generated receipts not referenced by active gates",
+    "legacy proof bundles and duplicate snapshots",
+    "historical quarantine packages recoverable from prior full ZIP"
+  ],
+  "recoverySource": "velmere_pass4781_clean_core_wave4_mega.zip",
+  "limits": {
+    "artifactsBytesMax": 50000000,
+    "archiveBytesMax": 10000000,
+    "rootHistoricalReportCountMax": 0,
+    "masterLinesMax": 2500,
+    "offlineToolchainBytesMax": 30000000
+  },
+  "truthRules": [
+    "removal is distribution hygiene, not feature completion",
+    "deleted history is not counted as live proof",
+    "active source/UI hashes must remain unchanged",
+    "last exact checkpoint remains PASS4725",
+    "offline test toolchain is not production dependency or exact build proof"
+  ]
+}

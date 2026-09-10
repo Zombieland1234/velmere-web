@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "velmere.p33.paid-readiness-policy.v1",
+  "states": [
+    "PASS_RELEASE",
+    "PASS_INTERNAL",
+    "PARTIAL_INTERNAL",
+    "BLOCKED_INTERNAL",
+    "EXTERNAL_OPEN",
+    "FAIL"
+  ],
+  "axes": [
+    {
+      "id": "sku_stop_sell_truth",
+      "label": "SKU / stop-sell truth",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Current SKU catalogue, public surfaces and entitlement minting agree; disabled or invitation-only products cannot be sold by URL, receipt, browser state or provider callback."
+    },
+    {
+      "id": "server_entitlement_revocation",
+      "label": "Server entitlement / revocation",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Paid access is server-authoritative, tenant-bound, revocable and replay-safe on the final deployed runtime."
+    },
+    {
+      "id": "checkout_public_contract_auth",
+      "label": "Checkout / public contract / auth",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Checkout, verification and success flows use pinned customer-safe schemas and authenticated server-side policy."
+    },
+    {
+      "id": "stripe_webhook_replay_idempotency",
+      "label": "Stripe webhook / replay / idempotency",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Stripe TEST lifecycle passes on current build/staging with signature verification, replay denial, idempotency and reconciliation."
+    },
+    {
+      "id": "refund_cancel_revoke",
+      "label": "Refund / cancel / revoke lifecycle",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Refund, cancellation, chargeback/dispute and entitlement revocation are tested end-to-end with customer-safe state transitions."
+    },
+    {
+      "id": "customer_delivery_support_projection",
+      "label": "Customer delivery / support projection",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Paid artifacts, receipts, account messages and support handoff are tenant-bound, customer-safe and operationally deliverable."
+    },
+    {
+      "id": "tenant_privacy",
+      "label": "Tenant / privacy / retention",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Disposable staging proves tenant isolation and privacy lifecycle; retention, deletion, export and processor boundaries are approved."
+    },
+    {
+      "id": "provider_data_rights",
+      "label": "Provider / data rights",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Every paid-output field has a current commercial-use/display/retention/redistribution/AI/PDF rights decision."
+    },
+    {
+      "id": "merchant_legal_identity_terms",
+      "label": "Merchant / legal identity / customer terms",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Merchant identity, tax, support, terms, privacy, refunds, dispute handling and required legal classifications are approved."
+    },
+    {
+      "id": "final_tier_value_holdout",
+      "label": "Final tier-value holdout",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Frozen same-input Basic/Pro/Advanced holdouts prove material paid delta, acceptable factuality/FN/FP and bounded refund risk."
+    },
+    {
+      "id": "clean_build_staging_operations",
+      "label": "Clean build / staging / operations",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Clean lockfile install, project typecheck, production build, staging identity, observability, restore and rollback pass on final bytes."
+    },
+    {
+      "id": "real_customer_wtp_refund",
+      "label": "Real customer value / WTP / refund evidence",
+      "requiredForGoPaid": true,
+      "releaseRequirement": "Pre-registered real-customer protocol provides utility, comprehension, WTP, negative evidence and refund-expectation results."
+    }
+  ],
+  "nonAliasing": [
+    "GO_INTERNAL progress does not automatically advance GO_PAID.",
+    "Local Stripe fixture evidence is not Stripe production or staging credit.",
+    "Internal AI review is not professional legal or independent external credit.",
+    "Code presence and API credentials do not grant provider commercial rights.",
+    "Fixture tier output is not final holdout customer value.",
+    "A planning estimate is not a release decision."
+  ]
+}

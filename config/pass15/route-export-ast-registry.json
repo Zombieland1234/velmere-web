@@ -1,0 +1,5611 @@
+{
+  "schemaVersion": "velmere.pass15.route-export-ast-registry.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-14T16:21:02.000Z",
+  "parser": {
+    "source": "PROJECT_DEPENDENCY",
+    "version": "5.9.3",
+    "moduleSha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+    "moduleByteLength": 9112572,
+    "exactToolchainCreditEligible": true,
+    "pathDisclosure": "node_modules/typescript/lib/typescript.js",
+    "mode": "100644"
+  },
+  "truthBoundary": "TypeScript AST-derived export and route-config inventory. A DIAGNOSTIC_EXTERNAL_ONLY parser may build local evidence but grants no exact toolchain, browser, LIVE or sale credit; final A78R1/A79R1 must reparse with the project dependency on exact final bytes.",
+  "fileCount": 256,
+  "methodExportCount": 319,
+  "pathSetSha256": "b09398a462c5c835420211c33b3dc6e4bc9c24f9ad9d669fbd0a9d61604a6027",
+  "aggregateSha256": "85393c1220320f65dac28ffe830837b3477fa766243513f07e0f901f7274db29",
+  "rows": [
+    {
+      "path": "app/api/account/audit-messages/route.ts",
+      "byteLength": 586,
+      "sha256": "467923b1781c55d7bc21a65a7ef3e64d5fd868675dd1774a77f9bee13ba55eb8",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/account/customer-artifact/route.ts",
+      "byteLength": 386,
+      "sha256": "283543c824886cb560fd38ad3e5e80691b9efcbc4b407ed4b537bbd7d4ee738a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/[operation]/route.ts",
+      "byteLength": 1141,
+      "sha256": "02f2a756a004899ae58d97628e6e100b1d5d9a0558445e9485f9997c3de30a1c",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/accounts/supabase-subject-binding/route.ts",
+      "byteLength": 2759,
+      "sha256": "2663d82bae57310206eb40c447b3e84681c0dbd4b885a12ffd23a569f110306f",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/operations/auth-security/route.ts",
+      "byteLength": 1242,
+      "sha256": "2bd133c8a6fec52cc2ae4dcd22be01019c10b09c3d190682aebd0c41ac0cc398",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/operations/supabase-rpc/route.ts",
+      "byteLength": 1222,
+      "sha256": "b3b5b11fa1c30a9e63e3a14f6f702a85da7d1a9154f10d6636c5ebbc2ab49b2f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/event-ledger/route.ts",
+      "byteLength": 2386,
+      "sha256": "255e0e029aa947616e71517717a0020a85be84d8edf40087b1a28de57a6aff5f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/fulfilment-incident-case/route.ts",
+      "byteLength": 5401,
+      "sha256": "8d95f3343485662994cdc5b8c29fde9a170e4376629b400f1a6411ca47bac242",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/fulfilment-outbox-dead-letter/route.ts",
+      "byteLength": 3936,
+      "sha256": "0632b2cec140dc3456a28c408a5f16282fd76acb86a3f2472c96a4cff855d04e",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/fulfilment-provider-sync/route.ts",
+      "byteLength": 3008,
+      "sha256": "a90c6539752a0e6036b2bd2eb39b835c54d04533af7e78a90eb31b2f0b345a5f",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/fulfilment-retry-queue/route.ts",
+      "byteLength": 6721,
+      "sha256": "9d4deffd60311118be574377fa372ac015e1b10f07c7154ee8318baa24811e56",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/fulfilment-retry/route.ts",
+      "byteLength": 3865,
+      "sha256": "f132cd7858e1a0e72e11ad58d95064a08c8cc49b0cb4c4e9cebd5751747d352e",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/orders/provider-sandbox/route.ts",
+      "byteLength": 2691,
+      "sha256": "5169a293a6c020e8774f5487b811d8147b86b0f12ddc1f521936934134977d75",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/payments/stripe-webhook-dead-letter/route.ts",
+      "byteLength": 4209,
+      "sha256": "9cc605ea2a304caaa892db0298086bd41f0476282e15270aaa0f71ab36b2f16b",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/payments/stripe-webhook-reconcile/route.ts",
+      "byteLength": 4374,
+      "sha256": "b11d14553d2f3ad91517c2d504ce9906b3d2c70a403449908a10fbc6ec437d0f",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/products/brain-review/route.ts",
+      "byteLength": 2600,
+      "sha256": "3bc68de0e92db1103dc9a912fe51e1b229f1a5c1df434e055fe61baae033b877",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/products/publish-audit/route.ts",
+      "byteLength": 958,
+      "sha256": "21b76dd753ce19de241d61724ef4449eaed767b555001eaaed757fc59a872409",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/products/publish-state/route.ts",
+      "byteLength": 1107,
+      "sha256": "33164434e59f77f81d4d36dc7fb10d23c2ba776de65f9f064774d7f8765a9b8e",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/products/publish/route.ts",
+      "byteLength": 8569,
+      "sha256": "16cae56377d0345aa23788e79b4fde35410684f193e110e41f10d5ba82dbb1ab",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/security/advanced-audit-release/route.ts",
+      "byteLength": 1017,
+      "sha256": "b7d3dc7cb86003dfb3441d8aee22add17e4c1ac68ac4ff0a05757f917f45c3ec",
+      "mode": "100644",
+      "methods": [
+        "PATCH",
+        "POST",
+        "PUT"
+      ],
+      "exportKinds": {
+        "PATCH": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ],
+        "PUT": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+      "byteLength": 671,
+      "sha256": "2f5473db1fe1c8833fad09443abdf95b4184b94425cbc6d2670c0e97aeff313c",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/ai/route.ts",
+      "byteLength": 324,
+      "sha256": "95ad43ae17cf8ce151f54c3868faeed4f8b1b15e6d5fb88dd0e361bcca3b6946",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/angel/memory/route.ts",
+      "byteLength": 3271,
+      "sha256": "414d1e0fd8e52c8c4289db89b489858dccada3d6df85e3e0586249518b3f2e34",
+      "mode": "100644",
+      "methods": [
+        "DELETE",
+        "POST"
+      ],
+      "exportKinds": {
+        "DELETE": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/angel/route.ts",
+      "byteLength": 327,
+      "sha256": "cfb671dc669906c593707818bc9afcb26473da2e858b029dbdf5070998382a90",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/angel/stream/route.ts",
+      "byteLength": 335,
+      "sha256": "2c86c91b9ece922a978046d8aa2038e5d0f08a4a3b11dbfe75592e437ad01efa",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/auth/callback/route.ts",
+      "byteLength": 3980,
+      "sha256": "39185095cbe1190efce1aac32fa670439881f1cd4809f5f625a6a0b9d0635de7",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/auth/email-change/route.ts",
+      "byteLength": 2493,
+      "sha256": "c2a27c061c03532890155112d8f4720fda5036fef34f469efd2d2e137533b791",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/auth/oauth/google/route.ts",
+      "byteLength": 2123,
+      "sha256": "58db17428b0c311cfd82cfaa83d8927beca50ffc50af4924eb0da9e061a3d6a8",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/auth/recovery/route.ts",
+      "byteLength": 4812,
+      "sha256": "8d2dd5abe4d579925defdfa6e71e7c8e2345f2483731d2f0c8544b8ac065e337",
+      "mode": "100644",
+      "methods": [
+        "POST",
+        "PUT"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ],
+        "PUT": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/auth/session/route.ts",
+      "byteLength": 11114,
+      "sha256": "0b0560df99ce06c5d34906e701ea8a77a3ab8ddf3dad9c87fd901aba81488ec9",
+      "mode": "100644",
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "exportKinds": {
+        "DELETE": [
+          "function_declaration"
+        ],
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ],
+        "PUT": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/checkout/route.ts",
+      "byteLength": 20875,
+      "sha256": "dfdbe3f7854d2600379a0515f6ce621759aaeabe8924d270596cff45ca4c8320",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/checkout/vlm-service/readiness/route.ts",
+      "byteLength": 4203,
+      "sha256": "2085560ee5e2bda67f69bd973f3ab8b20612cbfd4114b398e3b8fafc84dcb083",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/checkout/vlm-service/route.ts",
+      "byteLength": 27018,
+      "sha256": "f18987d1659c69aea1c7440dcdc934c51f4cba65eedd1e6e2fabd910b2f78a52",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/checkout/vlm-service/verify/route.ts",
+      "byteLength": 259,
+      "sha256": "65bc3aa79b7e81db5749abd4ccc0665dd6c0c3d1a974d06327da9cec06d1fdb3",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/contact/message/route.ts",
+      "byteLength": 11399,
+      "sha256": "32d016d1ddf4fb52019fe16f2fd55444ee3ec9eb2d0bc8681d67ac424ea78b6d",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/internal/providers/observation-operations/route.ts",
+      "byteLength": 7473,
+      "sha256": "5c44dfba0926c148f1d8864e5f72cde9e3b8ad3511cbf2a9291a09f01c1bd04d",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "30"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/internal/vlm-entitlements/lifecycle/route.ts",
+      "byteLength": 2289,
+      "sha256": "37ad001fc99e9e482e9c704e530e6605357ca3a131df5fa9a4d751b41b0cf643",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/internal/workers/[worker]/route.ts",
+      "byteLength": 1204,
+      "sha256": "686c2cbca13dc7632dcb811dfa7148925e772e9c1494e42d3985a9756a9c75ed",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "30"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/market-integrity/[operation]/route.ts",
+      "byteLength": 1247,
+      "sha256": "592179efe7fd00a26df415b5984ac9ce7d2c3ad3acb34f5bd7fcbbe5cae9ef97",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "revalidate": "0"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/market-integrity/account-operations/[operation]/route.ts",
+      "byteLength": 8818,
+      "sha256": "e5a90fc1f3c061fae402b0608681848198d6cd6326a08361b786b46f18f03fba",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/market-integrity/continuity/refresh/route.ts",
+      "byteLength": 397,
+      "sha256": "9dfb16230aefbea2f51b83758f7838e5a4f60ed3dbcde1ce25b06fe9845dc3d0",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/market-integrity/real-markets/[operation]/route.ts",
+      "byteLength": 1051,
+      "sha256": "13a070981103ba83729ae45e379872968e1af72dfc4e160e92ddf72167318414",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/market-integrity/vlm/[operation]/route.ts",
+      "byteLength": 1207,
+      "sha256": "b5ea3b11fd9d96a2b567e2b053bbe5f1cec6e1889a3316a6245c49ec220a2d53",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/ops/readiness/route.ts",
+      "byteLength": 1180,
+      "sha256": "e7fe8ea306575ef0b2b0b6842e06562f19ba1874372bf6eb21f2d2d80ffe5190",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/printful/products/route.ts",
+      "byteLength": 691,
+      "sha256": "dac04117ed9f8e8dcd3c574ebc615b7efb48169aeaad8f510de11eef76ba096d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/products/catalog/route.ts",
+      "byteLength": 1313,
+      "sha256": "cdb1219ccf29950d4c5dd12ea976a66e7832356fff1572f277914effe6ae7620",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/products/checkout-guard/route.ts",
+      "byteLength": 1693,
+      "sha256": "285c37f4337cbc68225418c2badb758dbb2c14570541608706f54e5c8f43066f",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/profile/route.ts",
+      "byteLength": 5018,
+      "sha256": "8ccceb645acbfb6f0adc79592fa2d65ac12fd57c80c49cbb7f1d3be9ff386781",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "PATCH"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "PATCH": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/audit-snapshots/route.ts",
+      "byteLength": 1463,
+      "sha256": "08059249a85ceeec73d5583e79c7d245030eefddf8933e7b9024a19b9bb5c848",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/checkpoints/route.ts",
+      "byteLength": 1308,
+      "sha256": "b135c27d3457fb4ecd6fce39a956761d00f1ceb8a57e8dbe2c3fe8e29cf13fb2",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/consistency/route.ts",
+      "byteLength": 1232,
+      "sha256": "8ca71f3951bfcfe4ab2ff0c473f8426a27b76e8a4b71f1da2ff9dfb4571fb597",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/proofs/route.ts",
+      "byteLength": 1053,
+      "sha256": "03138ad32c2e29d51e3b54827655a64a53629d13bb0fed90e3f8b124d9ab8a39",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/releases/route.ts",
+      "byteLength": 1421,
+      "sha256": "3b48137449ed4d3e7ef3fc3a66874b427c9bb7ecd7cbdc6b6b8b08daf35707d6",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/transparency/route.ts",
+      "byteLength": 1212,
+      "sha256": "68fdf50a7173522dc659b4b53238e07401ddc25e6340bd17ce4b01f94f38e68b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/witness-health/route.ts",
+      "byteLength": 1067,
+      "sha256": "c76e4663121ea778a3416e92a79ce7e999561a83114f3351cee85c04a5186e1b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/witness-recoveries/route.ts",
+      "byteLength": 1234,
+      "sha256": "a68a5d2a0b0913e2bc7fec6bbf7d28bd2fc3c456282a534eeb1d2a42a380a9fe",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/witness-rollback-resolutions/route.ts",
+      "byteLength": 1265,
+      "sha256": "f1e0c517bdfd9c32f0c9b76c721bbd0054b51586c83843c22b68b38a7ceef765",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/provenance/witnesses/route.ts",
+      "byteLength": 1450,
+      "sha256": "3e4d417abcccc3e89feaed510b113abc19fafe801c65f3c71a64db0fe9ff52cf",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\"",
+        "maxDuration": "15"
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/search/[operation]/route.ts",
+      "byteLength": 1148,
+      "sha256": "9d9d99cf8e0beaed3476b639e60bad9163d41bb65a92c30ca3ec8f38384b6e8c",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/search/route.ts",
+      "byteLength": 366,
+      "sha256": "572ef6bebe95e8fec0989e32df1024536628a59a4bafe1620f5f416fe0c1b157",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/[operation]/route.ts",
+      "byteLength": 1162,
+      "sha256": "5eaa3340adc64912a06a33b3f0fce92ac8e149e1c94d988e4f7381e773c265ed",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "OPTIONS",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "OPTIONS": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-case/status/route.ts",
+      "byteLength": 4047,
+      "sha256": "fe69c5c86de0bb4b8f814006d1c1fe8b20387c54b303f48a94dd39baadffb217",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-review/advanced/assign/route.ts",
+      "byteLength": 3308,
+      "sha256": "53d0afce1aedce355f0abd73ad94c752a2d3443b4cbe3527ee2d265f6ca5700f",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-review/pro/claim/route.ts",
+      "byteLength": 3625,
+      "sha256": "8658d88e0e0cd20ce99252d2703488de358d1beea75239a9ae6447550917d3c9",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-review/pro/settle/route.ts",
+      "byteLength": 397,
+      "sha256": "cb52d5e5090490455623ceb45c6d27b3263435a94b97847c4a54e340a3ff7071",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/business/route.ts",
+      "byteLength": 1150,
+      "sha256": "90f181d76552293e7192ceea4efc69db9864f7ed7e56ae29820dc5af0d9515a7",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/customer-safe-report/route.ts",
+      "byteLength": 403,
+      "sha256": "1eeca6faf5d670af36534e62c9735ba957f1df342a846a3fd88979e13b76707d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/delivery-receipt/route.ts",
+      "byteLength": 399,
+      "sha256": "a8781b910abd909399d705792c5f72b5c966c47939eefa0b371f56cb36481ff5",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/paid-preview/route.ts",
+      "byteLength": 414,
+      "sha256": "aae6f7ae9e05d9b1bf65baf7d7359f2249b9c29d0235efd4d4a50dac7e08203c",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/pro-pdf/route.ts",
+      "byteLength": 390,
+      "sha256": "32c5c27b60d4f7973edaf3fe03aa22fab53edf603e04d110a0b872a799592907",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/pro-pdf/token/route.ts",
+      "byteLength": 359,
+      "sha256": "395fca4811bbd67b906f304d77ec4874a61eb65774a2fc8ffd8b2ac6744faf1c",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/registry/route.ts",
+      "byteLength": 1196,
+      "sha256": "a535a1eea29a77360009096d7a8a7857410d1bcd5605113e8fe3bff672839508",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/report/route.ts",
+      "byteLength": 844,
+      "sha256": "c091d0df8a78ccb8aa08876a3ba5b0617f855bea98103473f2313057e1e348ea",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/route-health/route.ts",
+      "byteLength": 395,
+      "sha256": "6c47765a46bc55a7e41b45e84b2630f24b03762c41b00d1e6da04cb3d7629f5a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/security/audit-watch/support-handoff/route.ts",
+      "byteLength": 325,
+      "sha256": "834f04272013215846c19b529d8174f2371b1c63f788d46f634d3d87292b3479",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/square/comments/route.ts",
+      "byteLength": 3970,
+      "sha256": "6de2ecfe98a32c8eedaa82933c1f4813bcec8f67477b2875a99bd342d7233eff",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/square/moderation-state/route.ts",
+      "byteLength": 2656,
+      "sha256": "1aa82c9c6b1b415df943977fd973448c1bb1341452f45b60ce041042ebd1a722",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\"",
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/square/posts/route.ts",
+      "byteLength": 12359,
+      "sha256": "b92c2ce5d83fee4ef2892d89efd6f18536dcfd4609293a9bdc7b0105dd1af98f",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "dynamic": "\"force-dynamic\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "app/api/stripe/webhook/route.ts",
+      "byteLength": 214,
+      "sha256": "09b4e2ccc404042e34b510632278f8850ffb480a58a7fb3e4124e83f1b32267e",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {
+        "runtime": "\"nodejs\""
+      },
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/admin-route-modules/audit-events.ts",
+      "byteLength": 2302,
+      "sha256": "98d4de0ec93d9cc61af3a650e7e2e826a1a249aaf5cdd0d075ebc10257e798b4",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/admin-route-modules/import-products.ts",
+      "byteLength": 3142,
+      "sha256": "6eab8e1d729b34035dfef11ed93b6f6217df3978e660aa4996c3b24046085f6d",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/admin-route-modules/sync-printful.ts",
+      "byteLength": 1997,
+      "sha256": "e589f08afc937df7d3806e2f15dceba1fe07dbbefc8526f837b8b0246d0a54bb",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/auth-security-alerts.ts",
+      "byteLength": 1686,
+      "sha256": "9975255635352421fbf62d21edc1e036b1fe9589aff639dbabbc42798266fbfd",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/commerce-fulfilment-outbox.ts",
+      "byteLength": 2886,
+      "sha256": "ae19f53633f7b2c21094640e724bfa7f80a715ec9ca245ad4b038ab16724c2a3",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/durable-computation-alerts.ts",
+      "byteLength": 2203,
+      "sha256": "93e5c0b87f03239fc880a7233237f3928c9e7dac6360eced891db15263ba78da",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/durable-computation-operations.ts",
+      "byteLength": 6721,
+      "sha256": "6721b232d50815b0e59a9c43e393bdfa2d3f7d8bcf666d2501cbd2214561f7da",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/durable-computation-promotion.ts",
+      "byteLength": 9490,
+      "sha256": "0e9bdad62f383e347e6176f84d7610b4ce7dd802207fc0c86da41b390541cd18",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/fulfilment-incident-outbox.ts",
+      "byteLength": 2615,
+      "sha256": "2c001e0accc04b2753ba75033feec3b29de158e6e10519eb49c0cfbd17073a05",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/fulfilment-provider-sync.ts",
+      "byteLength": 2778,
+      "sha256": "6a879ca801eb919d9a175af78f86edb4431caf9c9f4676dc245c873ddc7f8605",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/stripe-webhook-reconciliation.ts",
+      "byteLength": 2415,
+      "sha256": "1ccbe5cab50ce4389142c0c0bf2139a0bcf8670af1695984f0a495454e1b9ae3",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/account--audit-messages.ts",
+      "byteLength": 13062,
+      "sha256": "198ad1c5781e5ee7d5730e34f4862a7d194b87f3940ad3f578ca435c3117f67e",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/account--customer-artifact.ts",
+      "byteLength": 14779,
+      "sha256": "5996b2826d10496370eaefd0803c15de08f8f01fc2b7cc9e315c0e44303bf08f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/admin--security--advanced-audit-release.ts",
+      "byteLength": 24026,
+      "sha256": "87c66d6f34593e3fe3c3bc487e172070942d791b37582f46704312ee8335ff7d",
+      "mode": "100644",
+      "methods": [
+        "PATCH",
+        "POST",
+        "PUT"
+      ],
+      "exportKinds": {
+        "PATCH": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ],
+        "PUT": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+      "byteLength": 8423,
+      "sha256": "f7d3720c252a26fd8d4eee77b34696e105ce00b1bceeef466c41b28f096cfdbf",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/ai.ts",
+      "byteLength": 4430,
+      "sha256": "e9bdccb4bd49c123345d02b45015e3b340f3e0b84ec3340e497c7114117e2b21",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/angel--stream.ts",
+      "byteLength": 9218,
+      "sha256": "65952d86b44b1d23288fe921f0799fe52f1ccfb746cd65d9213c70fc607d53ed",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/angel.ts",
+      "byteLength": 58667,
+      "sha256": "2206d882b0e5b2956e0161d112c5028965648d5f24bb56fc8f27cf1184053275",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/market-integrity--continuity--refresh.ts",
+      "byteLength": 2357,
+      "sha256": "908161adfcb7fe113fecaeeefbd879e2e485d8bb04dd03256471a0dce995884f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/search.ts",
+      "byteLength": 307,
+      "sha256": "d4e085e37c862bcfcc41ab0af0e9509b97f3bb27483464eaf1791d5e340fa832",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-review--pro--settle.ts",
+      "byteLength": 8513,
+      "sha256": "10dd228b29f0ed8b6fce3b8ac4b4c83dbf4c0b984ede61121d241ffe791fe790",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--customer-safe-report.ts",
+      "byteLength": 6443,
+      "sha256": "8a721907ce558845fe261548d93241c7112056ddfda8c37972534b55c50a1435",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--delivery-receipt.ts",
+      "byteLength": 3920,
+      "sha256": "40cdf9ee2160ffbee09d1c8d26f54a8754e1e931de86ce7f168bbb5b5ed54e22",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--paid-preview.ts",
+      "byteLength": 3857,
+      "sha256": "d77c5780510f245e961a9ecf69435cf69582cd26a164516464dfc90b6d0c1367",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf--token.ts",
+      "byteLength": 8475,
+      "sha256": "f8530506e79eec86ca42cab2478b06cd103283a2e772fc4c53f7e8a079786ffc",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf.ts",
+      "byteLength": 12860,
+      "sha256": "1edb0f60c3ba4d3bb100b3d149f838cc5fa0a9b00c93ad760dad96bddd241bfb",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--route-health.ts",
+      "byteLength": 7344,
+      "sha256": "01fd7a94fbe58dc5f7ecd1a7d2647d023a6a1fd460dc8068e17dbd07d79a6cfb",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--support-handoff.ts",
+      "byteLength": 10458,
+      "sha256": "7aa28d7618a0c0061acfe8e68e422ba6a9cafe6b07c8a012d960ddb8b44de886",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/access.ts",
+      "byteLength": 1903,
+      "sha256": "b69dfa3e392ffdc06dbc6ef7bce7d766e58c0451c11720f64cd4d9fa6a990e82",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/advanced-click-runtime.ts",
+      "byteLength": 5706,
+      "sha256": "959efbc805125e2a7a2d5609b293acd37adcf0b459614301688ed16176bc40c4",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/advanced-cta-entitlement-contract.ts",
+      "byteLength": 4573,
+      "sha256": "18a39d34f9f547e35e9575a0f3537381205ad6d2de64633fa05381d211b4d1ce",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/advanced-review-state.ts",
+      "byteLength": 3349,
+      "sha256": "bd689484eb4df6b66e8cb45a4c68d4273ac0667338c83bf80711ea15e99a0f18",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/advanced-value-audit.ts",
+      "byteLength": 5503,
+      "sha256": "00069c4011ae230494c0dd6b48f5dabd8ec7c4777c7f2ad4f421b92f220d5381",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/ai-human-copy.ts",
+      "byteLength": 788,
+      "sha256": "d26debc02d34fd2cb5fc24b267fb0837885b808c795c856d777f045378d7f961",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/alerts.ts",
+      "byteLength": 1020,
+      "sha256": "c3d7d009e36b0f580c5eb58358bdd422e0138eaa7c0612aa7837a2b0c44647cc",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/analyze.ts",
+      "byteLength": 9170,
+      "sha256": "b5134f629a3c8101c861d428d7b2263f3c2a910b8d7c815998f45319695d54e3",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/angel.ts",
+      "byteLength": 15591,
+      "sha256": "543b264fbc9ea41772ff629caf828b87ad3f84c257e659e6f9fca86c9668dc11",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/architecture-guard.ts",
+      "byteLength": 391,
+      "sha256": "749f22f4b4b87d5d22f9959e6d40a936b092cab9e96a8a31a779e8c03d0ed6ca",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/asset-logo.ts",
+      "byteLength": 5878,
+      "sha256": "9dbc15b8d8e36a62af80417cfd0911fec0ee34c90b0bf2519eaf6d0620e4bdd0",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/assistant.ts",
+      "byteLength": 3460,
+      "sha256": "13b83587a3d3284506eccda2c42aa9e283878ba53a991956bc37345131ec75c6",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/brain.ts",
+      "byteLength": 9272,
+      "sha256": "561e4d4e98e7b57563279f4e805e3f0e6157cf5daf4ad231228b056bc88fe54c",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/brand-icon.ts",
+      "byteLength": 3504,
+      "sha256": "13b46925977b1ec5e8980e34d92cfae1f142b26cb6c4df3a31000d2baa7ccd29",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/chart-overlay.ts",
+      "byteLength": 10271,
+      "sha256": "cf6080ec27fbf209fd40106ce4150eeab1400a620a648be6d23acdab441ca98a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/chart-regime.ts",
+      "byteLength": 2759,
+      "sha256": "484b8f5676e82a7354a5cc7e8260a4798b190477d3b9328331862faef75f9df5",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/chart.ts",
+      "byteLength": 16011,
+      "sha256": "14448dc269796890dc36aa6148a2196a7b7d8a60eb6b32cede6343d4f7f095d8",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/chat.ts",
+      "byteLength": 6023,
+      "sha256": "469b7062372447b9e42ed61205018310d69c02490928cd4d52e4f2ffdd0fde7b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/claim-expiry-renewal.ts",
+      "byteLength": 1009,
+      "sha256": "14191052a4d490a40bd7ba0390cc93f2455a5163310ee2c13f7c04f2c7aec8dc",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/consensus.ts",
+      "byteLength": 4404,
+      "sha256": "d11369b8ae00cd62939b409b40a1c5a480c6eca93d60d0ade580d96c4b423faf",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/contract-lens.ts",
+      "byteLength": 948,
+      "sha256": "c56927c1ee12188f3cda64ae89a8982923ea369bf71b84eb9a45cc8f84b10f89",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/cron.ts",
+      "byteLength": 7205,
+      "sha256": "0b282b4eb420da39c0dc60440f63d11e1ab1b78557ea98f5fef983406caa56bd",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/cross-asset.ts",
+      "byteLength": 2825,
+      "sha256": "fbf5d089f8de6e2cbe64f5d6d37524f1ccfdfb189e6921d06be69237005f045b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/customer-export-download.ts",
+      "byteLength": 29661,
+      "sha256": "f10c2cf21151d09fe52a566292029cf251b8d9733ae4411f5f592857a957bf07",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/data-provenance.ts",
+      "byteLength": 3893,
+      "sha256": "c53e8dcd02f87414180ae81d186973aa33c60d95fc9ef49996a3f3e2735ef3e5",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/defillama.ts",
+      "byteLength": 1060,
+      "sha256": "3c794411ae940cf0a47510ab595bd1f5dd27bd6ff27377233aac4b001f4c92f5",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/dependency-reality-build-input.ts",
+      "byteLength": 651,
+      "sha256": "181b740ee02e2856953df1ff7c81f37db73577067be4d279f799f574f8a0d92f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/entitlement-artifact-delivery-ledger.ts",
+      "byteLength": 6977,
+      "sha256": "75c00748ce778b2bc921c05292375ea45f186f83e2d2bd6a6f48efdf40e70beb",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/evidence-export.ts",
+      "byteLength": 3263,
+      "sha256": "2eb8b6d54ea73b52f1cca884b51be935d45fd1b6aff39d4b814306f87fcf9b41",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/evidence-workflow.ts",
+      "byteLength": 2050,
+      "sha256": "61195d0e26cedaa13782b9352f50c538ae16eb76883e7c5f3b5d386fc75e4161",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/exchange-health.ts",
+      "byteLength": 621,
+      "sha256": "4a4fcc2b274531ff1df679633bc48b522ca0d1f94b76ef1fd94380d940e212bd",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/freshness-drift-sentinel.ts",
+      "byteLength": 2999,
+      "sha256": "043de431123efcfc48b098f38f6ed72d59cde523e256d1c0fb6cfc4555f507a8",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/geckoterminal.ts",
+      "byteLength": 2422,
+      "sha256": "28e727fc8743bf6c00e177bc0e4128ed1ff0c189f03231f81aa90ee2bdd73dcc",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/global-risk-map.ts",
+      "byteLength": 387,
+      "sha256": "ee8fedc3ce23153abf6f668f7ba5baec3ffcd047fc4caf71d19afb4e54ebf646",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/historical-backfill.ts",
+      "byteLength": 4464,
+      "sha256": "84cfa2be8b1f6867b269a441d3e52b7c759c61780245120641b28f4f1b82706d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/historical-range-window.ts",
+      "byteLength": 4192,
+      "sha256": "3bb0aefc4e820035ef7fbcfab18d48263c415f09a1f9b955c4142f978edda427",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/history.ts",
+      "byteLength": 1514,
+      "sha256": "03159cbcc2bbb557ee889a4cf6b111a193ef67b5cb348b83e49f3030ba0532c3",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/holders.ts",
+      "byteLength": 1526,
+      "sha256": "d162e0700cc47149d232a2a16514e440abef9426f4c3d0fa8fe5ca1c7fb9c616",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/icon.ts",
+      "byteLength": 3900,
+      "sha256": "1ae6b490a63f43916592882136063e4ebe4eea1fbd622f3b5a273e99c09ca312",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/institutional-router.ts",
+      "byteLength": 3062,
+      "sha256": "d495a5465b6d8c51c02a8b2991ec3036afff6a291ac5b82cd89d11a23511c9bf",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/interaction-stability.ts",
+      "byteLength": 2227,
+      "sha256": "a8866c7a84e250040c723ca54a208a69f66f484886d2f9b6e5d443962d11d38d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/investigator.ts",
+      "byteLength": 7184,
+      "sha256": "ac2b61d3b37e9b8b1509826d80d6a42249c56167044e7083d4db630dc3354b70",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/klines.ts",
+      "byteLength": 160,
+      "sha256": "cf5de6df2bd0d6c9ce52d352ebdde643166d6721b34cc58d46571a589046f91e",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/launch-bridge.ts",
+      "byteLength": 2066,
+      "sha256": "80340aec13ec19f70023214ff7a5e4f067a536d17de40a6b780efc7892fa68b0",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/liquidation-replay-store.ts",
+      "byteLength": 10692,
+      "sha256": "6f6bd8494f1dbed4abb0a0c65858d9315069c5783bbbb64c28e80bd83399e7c8",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/liquidation-snapshot-ledger.ts",
+      "byteLength": 9328,
+      "sha256": "09bb9e0b98ccd428e90a9f9c9337cd8310cee4267cba76f9a27a85afe58d64b5",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/liquidity-intelligence.ts",
+      "byteLength": 2540,
+      "sha256": "de25b05b3a123738f3eb3edad5f23cf91b08cd2e3cb58e0cc550f820cd5975f3",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/macro-chart-integrity.ts",
+      "byteLength": 3908,
+      "sha256": "08acf3bd87aed2b85f6967781842e3a61070d489a57a77720b75eca88f546810",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "byteLength": 45942,
+      "sha256": "dbe1e78d6c4e8cc7b8d423b141765b221dd332df2df46cd7da415ecc61a7b168",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/market-source-cadence.ts",
+      "byteLength": 606,
+      "sha256": "b7c5727d18870b4eca10ab6431fb36fee444435b4e34a55530fe6ecb1707ed3d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/markets.ts",
+      "byteLength": 16672,
+      "sha256": "a0a25b6c248547075a24c4887ffcfd6e2380a04950f7c8de89bcaeec2478540f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/observability.ts",
+      "byteLength": 3452,
+      "sha256": "12fa51c2b50b3f3e7cae755183a9cedb31af8d257cee98fc08a15a0adb0182b9",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/orchestrator.ts",
+      "byteLength": 1655,
+      "sha256": "713b9328feb05b8edab074e480e142d645d24bab4586a9cf3ab2fbf5a9509b36",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/orderbook.ts",
+      "byteLength": 987,
+      "sha256": "391d1c967c474add72cb9bb2745ee6d65183ffc4095fefca6e1de1e6b802ef2a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/osint-queue.ts",
+      "byteLength": 705,
+      "sha256": "88818e552c15d42e592e845f755d164ad5462a8d8db8edecf7134a3feb7cc2c0",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/performance-guard.ts",
+      "byteLength": 1501,
+      "sha256": "55923e4e12022d03b4a5c5606971f89191f94cb76146fc70ea9a167523b5739f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/playbook.ts",
+      "byteLength": 1891,
+      "sha256": "f8a5160541eb62697cb0e5d2628e7c8d5f3e483523f608fe258b0925e0fa7afc",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/premium-evidence-bridge.ts",
+      "byteLength": 5076,
+      "sha256": "c0c0b37f9a15c3f5191c1a0a47dacef26119c1d80740f0df34de6982ffd5d290",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/probe.ts",
+      "byteLength": 18503,
+      "sha256": "fa1c08caf86118bd086233d191580a1acb1cbcc6f88c98b98dc31797504bdd59",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/provider-closeout-runtime.ts",
+      "byteLength": 2942,
+      "sha256": "38316a835ec19c11b23bb68fc499bc9dd1994f3f8deebbda400e67edb4241d88",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/provider-methodology.ts",
+      "byteLength": 3959,
+      "sha256": "0413def71349af7eb97120ff5ddaa30c5ea49fdbc88f99fd1717f1b21fe0f35b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/public-claim-transparency.ts",
+      "byteLength": 1302,
+      "sha256": "7ffd565818906cd8577f392695a30216a1f98e8af45a8038b462fde9a6128968",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/public-trust-evidence-decay-renewal-escrow.ts",
+      "byteLength": 2353,
+      "sha256": "48299533198a07b4a975cb4805c6a0d051b4f1d2317553053ba6e6eb50b4708e",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/readiness.ts",
+      "byteLength": 989,
+      "sha256": "c09d4566432fb2a804df8f4c91708de821beee9388d9ac6c7d9c4bdaa306bfb6",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/real-markets-sec-companyfacts-hydrator.ts",
+      "byteLength": 3743,
+      "sha256": "c1c66cabac9ef57fc5c7915838eea277f4da811a691ca69906d5f80756d45e7d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/real-markets.ts",
+      "byteLength": 339,
+      "sha256": "bc8b01052e0281fcb6dc79953a992b2f83a209e5db4e11b451843c04f39f0a57",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/report-access.ts",
+      "byteLength": 6180,
+      "sha256": "339d6e309e55e975d78a65055ae382d8e81130647fc70d1960fabdd984494057",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/report-evidence.ts",
+      "byteLength": 4854,
+      "sha256": "d1b108e9dbf6ce02f568f093bbbbcc9521185ce6bbbdc40b4e631df1bc4aa8d5",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/report-pdf.ts",
+      "byteLength": 4164,
+      "sha256": "83a0e76551cce8e62e41612b7ece714f0007b87bea210de2602d4e0fa6e2925a",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/report.ts",
+      "byteLength": 40164,
+      "sha256": "51712c4eb9fa26718ec194fa3a3f03da350168a29a51eef6bf101cb6da53774f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/review-deck.ts",
+      "byteLength": 2216,
+      "sha256": "2e725a7fa750af129e42b0b37eef074723a49d8eaf4c42cbf24c0552436ecbc0",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/risk-calibration.ts",
+      "byteLength": 7883,
+      "sha256": "d1c7aae43cd5323bc8d67bdf4af58d279a58672d806cfc6b8e35dc98fe45530b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/rules.ts",
+      "byteLength": 1924,
+      "sha256": "53ecd30884687ce64d0cbe2a5fc6df59def34bd661a3c57c7e1844490084898b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/scheduled-revalidation-execution-breach.ts",
+      "byteLength": 2576,
+      "sha256": "eb03aaa20828e26a156c2d6392241d2103a26efed93efe5a06591ae9821ebf68",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/search.ts",
+      "byteLength": 1375,
+      "sha256": "b11ab8a77bce0542dc8eb378e0f6b70a8d1cd2ba20b29e14df43c79df2c0fdde",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/second-source-divergence.ts",
+      "byteLength": 414,
+      "sha256": "5587be6419be3332784cb6fc9adeb51cd633c8f073bac462457ef8182ebe78df",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/sentinel.ts",
+      "byteLength": 2767,
+      "sha256": "21b9aa0f5048c21424ebb6d961152f47e39065dc73e96d6bf9415602aac75862",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/soc.ts",
+      "byteLength": 1731,
+      "sha256": "fe40247ab2bfd6a0196eccad96267278541f9ce7693af25db7a126d70a3f01c4",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/source-readiness.ts",
+      "byteLength": 791,
+      "sha256": "1211409a172abce04559e990de3e4bd19085bc32ae8dc2629b94bf4a4b5fcaf3",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/source-snapshot.ts",
+      "byteLength": 3054,
+      "sha256": "ad898e2b39baf07909c3c500afa226b86f42b73be9ec94e08f450088d949af5d",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/source-snapshots.ts",
+      "byteLength": 1351,
+      "sha256": "1e9c983bcd7f0040a2ce367c5fd6272588e0717d3e68bbaec13f997d98e0e272",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/source-sync.ts",
+      "byteLength": 2639,
+      "sha256": "7657c3fcf071c4ad9064932759282d888aa9ac13ff62c4972df933405ebd3581",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/source-trust.ts",
+      "byteLength": 2106,
+      "sha256": "d5f9aaefd8a3878af566482bd7829e3e6448caa18b7d49d0a03fc28383828416",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/stress.ts",
+      "byteLength": 1333,
+      "sha256": "25487272b85642cdbd32b83545bbc85596ec186b8517ca7df98f25f6fe95b0ae",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/supply-filing-provenance-lock.ts",
+      "byteLength": 3775,
+      "sha256": "a9f86c282fa4bf4b47f8d0061cc2dd999a7742245d394d1c8d9184f1dd7afabe",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/tier-180-output-matrix.ts",
+      "byteLength": 4001,
+      "sha256": "a058c6621db3a9118434cf05c7a30891a6866b667bba755f376349b48a78da59",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/tier-commercial-value-contract.ts",
+      "byteLength": 3925,
+      "sha256": "e0688eecdcb2f344bb58eebc3c6b4419427ccb00f1b1dc39961ec366086b1e09",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/tier-depth-scenario-parity.ts",
+      "byteLength": 4483,
+      "sha256": "6777f21f4eef664cbf9f5f6801ff14d1f67bea52d6e2b09d5ba98c4e8f19ae71",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/tier-proof.ts",
+      "byteLength": 4864,
+      "sha256": "3bab96102e16058bb99be73a658c279900a6e4da7d4a7256571671f70d1470f1",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/ui-proof-strip.ts",
+      "byteLength": 3178,
+      "sha256": "9dec221c15f16b6fcaab37babc063913b8471071aaeb5d4d9b22355a516b1b98",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/usability-guard.ts",
+      "byteLength": 2181,
+      "sha256": "7053b10f447004fe28cf34fa707bd54154f2aa42815562b2e9aa65fd44bc8514",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/venue-health.ts",
+      "byteLength": 4866,
+      "sha256": "b1cd167aec2289ca78c8ae0f7c066d0f4d31e9d3e6f0a71d6c13f217507d73f0",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/vlm.ts",
+      "byteLength": 21584,
+      "sha256": "68506ea81ec4ef9883b86b034d0554648994181f005b7fddde80920249ded1f7",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/window-reconciliation.ts",
+      "byteLength": 3106,
+      "sha256": "9a9e48e5b3ab91068612ddeea02b84834eced271841a974cdc663045faf2a8f2",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/workspace.ts",
+      "byteLength": 2303,
+      "sha256": "c5179165e454405e44865bd04c96be2fd26e04ed723028c502610ef6b0a356f2",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/search-route-modules/bridge.ts",
+      "byteLength": 1116,
+      "sha256": "30bcb04b1b308ef92975fc6838f32676f80bc542a386c6356482cbd80b538608",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/search-route-modules/lens-report.ts",
+      "byteLength": 33862,
+      "sha256": "3a30497ceec3b5e20f6075aa1a447472edab7c4b3101d62f4dafc3765390b71b",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/search-route-modules/lens-route.ts",
+      "byteLength": 784,
+      "sha256": "73d715fbe2a553709918220919a90d65104c19b041d8324cca0392eed2f68575",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/search-route-modules/live-preview.ts",
+      "byteLength": 1504,
+      "sha256": "1cbacdfef58ec92e6331778fe22474617a5331d70f8dba438f2f63cb0ce82bd3",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/search-route-modules/token-metadata.ts",
+      "byteLength": 1008,
+      "sha256": "9796e96b50cbbf73ebad7c6603ad63f6235491bada684e4f750a98254d260614",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/abuse-shield.ts",
+      "byteLength": 634,
+      "sha256": "a46d32c20ae9f97745bd0e2c7d4941035d7a268f186d34ac6ee2f886161dd1c6",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/admin-audit.ts",
+      "byteLength": 996,
+      "sha256": "349890de233d972961cb0187442b67de4550b9a47d203c39967cda6e3f7d84db",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/admin-replay-board.ts",
+      "byteLength": 1724,
+      "sha256": "0e3d703d6d581eba7a2bda3358ae0c47a9e584392ca7c6313e2c922dc365e63b",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/advanced-entitlement-proof.ts",
+      "byteLength": 3896,
+      "sha256": "6406f4cf5cb49b0e636becc43b6a4cd5b30956c62486b5d41902ac0c97784c5c",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/advanced-entitlement-smoke.ts",
+      "byteLength": 3219,
+      "sha256": "498bec6cfa79ab44df966938847570fbd9731a0bfdee2f93c5e50ce6e36b2b3f",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/alerts.ts",
+      "byteLength": 1097,
+      "sha256": "6c8e21ac46902e6f6229e30e584f5e0fc0e9a80d542baf737ca54909b863b4ab",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/angel-gemini-health.ts",
+      "byteLength": 3970,
+      "sha256": "2981240152d45d8abaf4667e9bec19659a11751f7035d6fc31509966e6dc70ec",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/angel-route-live-binding.ts",
+      "byteLength": 728,
+      "sha256": "990b7f0c9e03297e1a98a4c9cad1dda45e6997516d377890f26958553c6958a9",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-account-delivery-production-lock.ts",
+      "byteLength": 1524,
+      "sha256": "17d52f001e4059f38dd15903dfb942e35b4f253dee8193ff633a261b4d0235de",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-advanced-manual-review.ts",
+      "byteLength": 5129,
+      "sha256": "bf1eda5e3097c7edb16c5f4713f3917a2cd13252a0d269571797ad0d6fff24ff",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-advanced-operator-console-merge.ts",
+      "byteLength": 2879,
+      "sha256": "e8e310381cd8f3b9a7fa660f2bcc27a54f40a671239676cb0b50c1b77644114d",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-case-vault-private-delivery-ledger.ts",
+      "byteLength": 4001,
+      "sha256": "e89ea6e993706ab66344fafb52b04df63144e0dbac9b6ddd60bc9e4e31f1baae",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-claim-ledger.ts",
+      "byteLength": 3134,
+      "sha256": "4f7bce7cc9647537d456f550b1731779d763957effb4fd6e5f13eeb2ce4fc9fe",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-contract-source-abi-extraction.ts",
+      "byteLength": 4457,
+      "sha256": "7237c6e05c658a4555dc50c460dccb247d006ccd495b5a953d9ccfeecc7f8272",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-customer-safe-delivery-decision.ts",
+      "byteLength": 4240,
+      "sha256": "4a9dcbc976342d918706f27a0887303148115090e6cbc656482c84829822f99a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-holder-liquidity-depth-evidence.ts",
+      "byteLength": 4921,
+      "sha256": "1e4a49c67b769d8f6e76453182a0fcf032a6d396e6a9c33935bd7ffc06595f47",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-intake.ts",
+      "byteLength": 7294,
+      "sha256": "74bf46aa540b19abef41194601551e7a26302a76ff9c40c2fb617b8cd50cf019",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-liquidity-holder-risk.ts",
+      "byteLength": 4180,
+      "sha256": "3ed21fe731d8ed05f3ac22f35c691c64d4a66cb700ae13ae8fabdcf13b5c2c7a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-permission-parser.ts",
+      "byteLength": 3936,
+      "sha256": "9f3b5642cd9bb83b8d412c0a4c615c5710c2a15c5da052bd766020349c2c6552",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-provider-conflict-arbitration-matrix.ts",
+      "byteLength": 9225,
+      "sha256": "c1f4adba33d20f3b3e7f956630f82fee62dd3ec71104b4e68ad9c728086b121d",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-provider-intelligence.ts",
+      "byteLength": 3401,
+      "sha256": "7e08ef6d8d2e2067de46b7be801614e39e5e7ec9dc714e64702ec402ee691abf",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-provider-runtime.ts",
+      "byteLength": 4312,
+      "sha256": "a899a1cdb692152b8b4859d0694b4ddb46e9560372a47de414d54424dee72b4f",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-public-private-route-lockdown.ts",
+      "byteLength": 1788,
+      "sha256": "68339946a24c4235eeac8a3807e340bf6635cfa7e870baebe378b753cc6f6df1",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-real-provider-adapter-hardening.ts",
+      "byteLength": 3781,
+      "sha256": "d271d36dffbf3732676dd33879dae76e61c57237cf667c39fee5419a667b080c",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-report-assembler.ts",
+      "byteLength": 11639,
+      "sha256": "eae5402c2a99545549e5184270f88c18ee61739d3c9374d1152ddfdb87870e82",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-risk-formula-evidence-weighting-contract.ts",
+      "byteLength": 5670,
+      "sha256": "07c2eaeb78043f96b803a74f83ff4b8b20656c14c1bb0c5276e253e8c6c465ce",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-runtime-build-readiness-type-safety-sweep.ts",
+      "byteLength": 2777,
+      "sha256": "dbee57cb8f08ff3b4270b147d8ccefa69371847e4507b3642f5d230f20dd9833",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-runtime-confidence.ts",
+      "byteLength": 3804,
+      "sha256": "5169d261c12cdb4f489ea2a5e2a2535ab9d2a5ca927d81704f7455ed6d6aeab1",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-source-freshness-recheck-orchestrator.ts",
+      "byteLength": 3540,
+      "sha256": "be6dfbf957b39ea416586071a7611f9f7b8ce05ee18c535fab25f0ec59098112",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-source-freshness.ts",
+      "byteLength": 3539,
+      "sha256": "afc7439bd88c3a53f9fcd27f35cb0e99f089ef2596f3ca2479c61e21683f62a7",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-source-quorum.ts",
+      "byteLength": 3654,
+      "sha256": "dca9d530708aecbbb196ffb65534362af6de66946700e1712ab6aabeb656282e",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-source-spine.ts",
+      "byteLength": 1081,
+      "sha256": "1d75d2ce843581219cd7b0c0b0f7dd226b45fdcdbc3f7515f0b5c22afe211aa8",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-watch.ts",
+      "byteLength": 422,
+      "sha256": "059365e04c6b58f1993cfe43171768848ababac8f5af52e7feae51039300db1e",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/cart-mail-wallet-microinteraction-sweep.ts",
+      "byteLength": 3005,
+      "sha256": "a53c40284c8dcdb8d8d92219b0ff4fe71f3a392516ecbff0b340370e9ff111f2",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/csp-report.ts",
+      "byteLength": 3271,
+      "sha256": "ab181c1a0255c6f5e07ad07330768179c551bd2b17cfb11287dcfe7d277ea0fd",
+      "mode": "100644",
+      "methods": [
+        "POST"
+      ],
+      "exportKinds": {
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/event-store.ts",
+      "byteLength": 1248,
+      "sha256": "5a6ccaeb6ce15e04b600e1fea177d35449b6c486433b56ff85c718b54ed37a52",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/events.ts",
+      "byteLength": 1529,
+      "sha256": "90a577afd5b80dc08fcced1ea8f52e426e0adb58b0b9b1054665f626681bfeb4",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/export.ts",
+      "byteLength": 5378,
+      "sha256": "111f99c3ebebfa68450c9081a6920d2a16b173cbd6841e14a8d59dbc09b9ee5c",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/modal-mobile-scroll-lock-final-sweep.ts",
+      "byteLength": 2996,
+      "sha256": "dee71bb2acf7a6c82faf30a2788dba33a32304a87891624ad527b92117f3c731",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/operations-checklist.ts",
+      "byteLength": 670,
+      "sha256": "cd710bec97a5a6b42244ff12474f0450679947d9febf72e4f41cd9317b2eff4f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/payment-runtime-evidence.ts",
+      "byteLength": 4529,
+      "sha256": "bcc328a41523c997f22e331980c37a00a6b08cad60eb481aa4279faf6f322cde",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/payment-webhook-review.ts",
+      "byteLength": 1126,
+      "sha256": "69f5927500a159d3f6762efd6da6dd87f18a14ae884013dee67df0da76a741c6",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/production-env-contract.ts",
+      "byteLength": 919,
+      "sha256": "52260a8362f4d61794d34e710060f116a9190c2fc1c3fdf28a9422218a6c235f",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/readiness.ts",
+      "byteLength": 629,
+      "sha256": "7ab90c46a62c51e6357714fe3f9620aed2f1a9545fbcc917db0bb73e7536ea78",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/release-gate.ts",
+      "byteLength": 1116,
+      "sha256": "4ee079ab8c702e37df4eb0850513c21012a03131dc208832e047f8d0ff21d44a",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/runtime-qa.ts",
+      "byteLength": 1108,
+      "sha256": "8dd3050a2bcf7b49858f8783215d81f00140827a1b1f6d16c32fab09e6ff6b62",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/stripe-webhook-replay-qa.ts",
+      "byteLength": 4224,
+      "sha256": "1347288a7181c0465cc48c04add1d3714a25efab2315d8ea3d6efad3c92704f0",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/supabase-runtime-truth.ts",
+      "byteLength": 3169,
+      "sha256": "9bbda5186ed732c3a95b7fd5c5fc786a0d52bd89ea75b74421ccefe46f876573",
+      "mode": "100644",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ],
+        "POST": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    },
+    {
+      "path": "lib/server/security-route-modules/trust.ts",
+      "byteLength": 912,
+      "sha256": "75cdffe03a2f939bc54397c9ab7483dfc6c77c696b2274e2afb95cbc450c1b56",
+      "mode": "100644",
+      "methods": [
+        "GET"
+      ],
+      "exportKinds": {
+        "GET": [
+          "function_declaration"
+        ]
+      },
+      "duplicateMethods": [],
+      "routeConfig": {},
+      "parseDiagnostics": [],
+      "namedReExportCount": 0,
+      "exportStarCount": 0,
+      "astEligible": true
+    }
+  ],
+  "exactAstReparseCredit": true,
+  "registryDigestSha256": "ca17e7673f0548704118b623477db5d8e6e973b37318afc7d8264403644a10d3"
+}

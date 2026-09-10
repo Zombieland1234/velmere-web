@@ -1,0 +1,116 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": true,
+    "browser57": false,
+    "durableReplayMechanism": true,
+    "exactWindows": false,
+    "externalStaging": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "pdf150": false,
+    "sourceAuthority": true,
+    "staticPolicy": true,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "APPROVED_EXTERNAL_SIGNING_KEY",
+    "REAL_EXTERNAL_RECEIPT_DIRECTORY",
+    "TWO_DISPOSABLE_EXTERNAL_TENANTS",
+    "RLS_19_OF_19",
+    "STRIPE_TEST_LIFECYCLE",
+    "PRIVATE_STORAGE_KMS_EMAIL",
+    "BACKUP_RESTORE",
+    "INCIDENT_DRILL",
+    "REAL_72_HOUR_WINDOW",
+    "EXACT_RUNTIME_CACHE_BUNDLE",
+    "EXACT_WINDOWS"
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "atomicAdmissionCommit": true,
+    "boundedEnvelopeLifetime": true,
+    "durableReplayJournal": true,
+    "exactSemanticArtifactBijection": true,
+    "hashOnlyReplayIdentifiers": true,
+    "journalHashChain": true,
+    "keyActiveAtObservationAndAdmission": true,
+    "singleWriterJournalLock": true,
+    "strictCanonicalEnvelope": true
+  },
+  "newFindings": [
+    {
+      "id": "R44P27-P0-DURABLE-REPLAY-NOT-IMPLEMENTED",
+      "severity": "P0",
+      "status": "FIXED_MECHANISM_NO_EXTERNAL_CREDIT",
+      "summary": "R44P26 verified replay only against caller-supplied in-memory sets. The CLI did not persist or atomically update a replay register, so the same valid envelope could be imported again in a later process."
+    },
+    {
+      "id": "R44P27-P1-ENVELOPE-TIMELINE-UNDERCONSTRAINED",
+      "severity": "P1",
+      "status": "FIXED_MECHANISM",
+      "summary": "R44P26 did not require expiresAt to follow observedAt, did not bound total envelope lifetime and did not require the signing key to be valid at the observation time."
+    },
+    {
+      "id": "R44P27-P1-SEMANTIC-ARTIFACT-BIJECTION-MISSING",
+      "severity": "P1",
+      "status": "FIXED_MECHANISM",
+      "summary": "R44P26 verified artifacts individually but did not require an exact one-to-one match between every semantic test row and the artifact index."
+    },
+    {
+      "id": "R44P27-P1-EXTERNAL-TRUST-ANCHOR-MISSING",
+      "severity": "P1",
+      "status": "OPEN_EXTERNAL",
+      "summary": "Production trust policy still intentionally contains zero independently admitted keys."
+    },
+    {
+      "id": "R44P27-P1-EXTERNAL-STAGING-NOT_EXECUTED",
+      "severity": "P1",
+      "status": "OPEN_EXTERNAL",
+      "summary": "No real external RLS, Stripe, storage, backup, incident or 72-hour evidence has been admitted."
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p27.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "testResults": {
+    "admissionJournal": {
+      "checks": 15,
+      "failed": 0,
+      "passed": 15
+    },
+    "concurrentAdmission": {
+      "checks": 10,
+      "failed": 0,
+      "passed": 10
+    },
+    "envelopeHardening": {
+      "checks": 24,
+      "failed": 0,
+      "passed": 24
+    },
+    "externalEvidenceImport": {
+      "checks": 7,
+      "failed": 0,
+      "passed": 7
+    }
+  },
+  "truthBoundary": {
+    "durableAdmissionIsExternalStagingCredit": false,
+    "durableAdmissionIsLiveCredit": false,
+    "durableAdmissionIsSaleCredit": false,
+    "exactReleaseNotRunOnChildBytes": true,
+    "noExternalReceiptAdmitted": true,
+    "noProductionTrustedKeyAdmitted": true
+  },
+  "worldClassProven": false
+}

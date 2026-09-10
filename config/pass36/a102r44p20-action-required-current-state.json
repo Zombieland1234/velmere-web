@@ -1,0 +1,56 @@
+{
+  "LIVE": false,
+  "advancedPreparation": {
+    "currentDecision": "NOT_FOR_SALE",
+    "independentAdjudicationRequired": true,
+    "publicCheckoutAllowed": false,
+    "target": "GO_PAID"
+  },
+  "basicGuarantee": {
+    "alwaysFree": true,
+    "paymentRequired": false,
+    "publicCheckoutAllowed": false,
+    "publicPrice": null
+  },
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": false,
+    "browser57": false,
+    "browserVerifier584": false,
+    "cleanUnpack": false,
+    "fullEslint": false,
+    "packageDeterminism": false,
+    "pdf150": false,
+    "popupTabs4": false,
+    "postBuildTypeScript": false,
+    "preBuildTypeScript": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "sourceAuthority": false,
+    "staticPolicy": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "EXACT_WINDOWS",
+    "PROVIDER_RIGHTS",
+    "INDEPENDENT_ADJUDICATION",
+    "STAGING_OPERATIONS",
+    "REAL_CUSTOMER_OUTCOMES"
+  ],
+  "globalDecision": "NO_GO",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P19_ACTION_REQUIRED_BASIC_ALWAYS_FREE_PRO_ADVANCED_SALE_READINESS_AND_CROSS_SURFACE_COMMERCIAL_GATE_CLOSURE_NO_LIVE_CREDIT",
+  "proPreparation": {
+    "currentDecision": "INVITATION_ONLY_CONTROLLED_BETA",
+    "manualQaRequired": true,
+    "publicCheckoutAllowed": false,
+    "target": "GO_PAID"
+  },
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P20_ACTION_REQUIRED_CURRENT_BYTE_DUAL_BUILD_BROWSER_PDF_AND_BASIC_FREE_PRO_ADVANCED_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p20.action-required-current-state.v1",
+  "worldClassProven": false
+}

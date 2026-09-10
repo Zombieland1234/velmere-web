@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p8.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P8_ACTION_REQUIRED_ACCURACY_CUSTOMER_TRUTH_PDF_CONFIDENCE_CONSENSUS_AND_SYNTHETIC_DATA_BOUNDARY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P7_ACTION_REQUIRED_ADVANCED_INCREMENTAL_EVIDENCE_REMEDIATION_DELTA_AND_ADJUDICATION_READINESS_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-03T00:30:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "completed": {
+    "pdfSemanticTruth": "150 PDFs regenerated; exact official-tool coverage is derived from valid receipt rows and checked semantically",
+    "confidenceTruth": "hardcoded 78/86/91 removed; confidence is uncalibrated and split into evidence completeness, source identity, deployment reproduction, tool agreement, review and uncertainty",
+    "consensusTruth": "NO_SIGNAL has no 100 percent agreement score",
+    "humanReviewTruth": "active customer timeline no longer promises human review or operator signoff for automated Advanced",
+    "blindBundleTruth": "50 neutral-name bundles contain full source; external independent labels and reviews remain 0/50",
+    "basicLocalE2e": "local intake-worker-packet-PDF-account-bound-delivery harness 11/11; no customer or sale credit",
+    "syntheticDataTruth": "tier-value benchmark outputs are explicitly SYNTHETIC_READINESS_ONLY with real provider and rights coverage zero"
+  },
+  "remainingCheckpointEstimate": {
+    "central": 10,
+    "range": "8-13",
+    "reason": "independent accuracy, dynamic/fuzz/invariant coverage, real protocols, provider rights/data, staging and customer outcomes remain"
+  },
+  "requiredNext": [
+    "exact final-byte Linux and Windows browser retest on R44P8",
+    "two independent reviewers and independently authored ground truth",
+    "multi-file protocol benchmark with Foundry tests, fuzz, invariants and fork replay",
+    "rights-approved real deployed-contract pilot",
+    "rights-approved real provider pilot for Shield and Real Markets",
+    "disposable staging RLS/Stripe TEST/storage/email/rollback",
+    "real customer comprehension and willingness-to-pay cohorts"
+  ],
+  "skuDecisions": {
+    "AuditBasic": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BYTE_BROWSER_RETEST",
+    "AuditPro": "CONTROLLED_BETA_ONLY_WITH_100_PERCENT_MANUAL_QA",
+    "AuditAdvanced": "NOT_FOR_SALE",
+    "PdfBasic": "TECHNICALLY_REGENERATED_NOT_FOR_CUSTOMER_DELIVERY",
+    "PdfPro": "TECHNICALLY_REGENERATED_NOT_FOR_CUSTOMER_DELIVERY",
+    "PdfAdvanced": "TECHNICALLY_REGENERATED_NOT_FOR_CUSTOMER_DELIVERY",
+    "ShieldBasic": "REFERENCE_DEMO_ONLY",
+    "ShieldPro": "NOT_FOR_SALE",
+    "ShieldMap": "REFERENCE_DEMO_ONLY",
+    "RealMarketsBasic": "REFERENCE_DEMO_ONLY",
+    "RealMarketsPro": "NOT_FOR_SALE",
+    "RealMarketsAdvanced": "NOT_FOR_SALE"
+  },
+  "truthBoundary": "Customer-facing semantic defects identified by the independent R44P7 audit are locally repaired and retested. Independent accuracy, real protocol coverage, real customer delivery, real market data and production operations remain unproven."
+}

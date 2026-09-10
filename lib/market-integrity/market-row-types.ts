@@ -1,0 +1,30 @@
+import type { MarketMemoryMeta } from "./market-memory";
+import type { TokenRiskResult } from "./risk-types";
+
+export type MarketIntegrityRow = {
+  id: string;
+  rank?: number;
+  symbol: string;
+  name: string;
+  image?: string;
+  price?: number;
+  priceChange1h?: number;
+  priceChange24h?: number;
+  priceChange7d?: number;
+  priceChange14d?: number;
+  priceChange30d?: number;
+  marketCap?: number;
+  fdv?: number;
+  volume24h?: number;
+  high24h?: number;
+  low24h?: number;
+  observedAt?: string;
+  ath?: number;
+  athChangePercent?: number;
+  circulatingSupply?: number;
+  totalSupply?: number;
+  maxSupply?: number;
+  sparkline7d: number[];
+  result: TokenRiskResult;
+  memory?: MarketMemoryMeta;
+};

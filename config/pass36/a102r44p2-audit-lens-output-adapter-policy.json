@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.audit-lens-output-adapter-policy.v1",
+  "supportedSurfaces": [
+    "smart_contract_audit",
+    "lens_pdf"
+  ],
+  "supportedTiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "supportedLocales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "smartContractAudit": {
+    "minimumAnalyzerFamilies": {
+      "basic": 1,
+      "pro": 2,
+      "advanced": 3
+    },
+    "allowedLicenseStatus": {
+      "basic": [
+        "verified",
+        "display_only"
+      ],
+      "pro": [
+        "verified"
+      ],
+      "advanced": [
+        "verified"
+      ]
+    },
+    "requiresEntitlement": {
+      "basic": false,
+      "pro": true,
+      "advanced": true
+    },
+    "advancedRequiresRealHumanReview": false,
+    "allowedHumanAuthorityKinds": [
+      "real_human"
+    ],
+    "allowedReviewStatuses": [
+      "approved"
+    ],
+    "severityOrder": [
+      "none",
+      "informational",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "minimumFindingEvidenceLocations": 1,
+    "minimumFindingFamiliesForHighOrCritical": 2,
+    "cleanControlLanguage": "No confirmed finding in the bounded evidence packet is not a safety certificate.",
+    "advancedHumanReviewClaimRequiresReceipt": true,
+    "automatedAdvancedAnalysisMode": "automated_informational",
+    "independentCertificationClaimAllowed": false,
+    "personalisedAdviceAllowed": false,
+    "securityGuaranteeAllowed": false
+  },
+  "lensPdf": {
+    "minimumSourceFamilies": {
+      "basic": 1,
+      "pro": 2,
+      "advanced": 2
+    },
+    "allowedLicenseStatus": {
+      "basic": [
+        "verified",
+        "display_only"
+      ],
+      "pro": [
+        "verified"
+      ],
+      "advanced": [
+        "verified"
+      ]
+    },
+    "requiresEntitlement": {
+      "basic": false,
+      "pro": true,
+      "advanced": true
+    },
+    "requiredChannels": [
+      "preview",
+      "download",
+      "account_copy"
+    ],
+    "minimumPages": {
+      "basic": 2,
+      "pro": 4,
+      "advanced": 8
+    },
+    "paidBlockingMissingFields": [
+      "second_source",
+      "chart_data",
+      "source_manifest",
+      "render_receipt",
+      "canonical_identity"
+    ],
+    "canonicalHashAlgorithm": "sha256-stable-json-v1",
+    "transportWrapperMayDiffer": true
+  },
+  "truthBoundary": "A102R44P2 verifies deterministic automated informational Basic/Pro/Advanced adapter behavior on synthetic contract and report fixtures. Advanced automated output never claims human review, independent certification, safety guarantee or personalised advice. Fixture success remains zero real detector, customer, provider, official-tool, staging or LIVE credit."
+}

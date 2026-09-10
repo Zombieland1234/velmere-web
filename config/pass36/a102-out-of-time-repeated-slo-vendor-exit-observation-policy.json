@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "velmere.pass36.a102.repeated-observation-policy.v2",
+  "revisionId": "VELMERE_PASS36_A102R1_OUT_OF_TIME_REPEATED_SLO_VENDOR_EXIT_OBSERVATION_INDEPENDENT_WITNESS_AND_FROZEN_SOURCE_DIVERSITY_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A102R0_OUT_OF_TIME_REPEATED_SLO_VENDOR_EXIT_OBSERVATION_INDEPENDENT_WITNESS_AND_FROZEN_SOURCE_DIVERSITY_TRUTH_BOUNDARY",
+  "frozenSourceRevisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedCanonicalThrough": 89,
+  "observation": {
+    "minimumRuns": 3,
+    "minimumObservationSpanSeconds": 259200,
+    "minimumGapBetweenRunStartsSeconds": 86400,
+    "minimumSloWindowSeconds": 900,
+    "maximumSloWindowSeconds": 1800,
+    "minimumRunObserverOrganizations": 2,
+    "minimumAggregateWitnessOrganizations": 1,
+    "minimumDistinctObserverKeys": 3,
+    "minimumDistinctAlternateProviders": 2,
+    "minimumDistinctAlternateVendorFamilies": 2,
+    "minimumDistinctAlternateControlPlanes": 2,
+    "minimumDistinctAlternateFailureDomains": 2,
+    "maximumWitnessDelaySeconds": 86400,
+    "maximumClockSkewSeconds": 2
+  },
+  "requiredPrerequisiteRevisions": [
+    "A77R1",
+    "A78R1",
+    "A79R1",
+    "A80R1",
+    "VELMERE_PASS36_A95R0_STAGING_SUBJECT_REBIND_ENVIRONMENT_ISOLATION_AND_ZERO_MUTATION_PREFLIGHT",
+    "VELMERE_PASS36_A96R0_RLS_19_CASE_EXECUTABLE_REPLAY_AND_CUSTOMER_ARTIFACT_USER_CLIENT_BOUNDARY",
+    "VELMERE_PASS36_A97R1_SCOPED_PAYMENT_OPERATOR_ASSERTIONS_DUAL_CONTROL_AND_SINGLE_USE_REQUEUE",
+    "VELMERE_PASS36_A98R0_EMAIL_STORAGE_KMS_ORIGIN_CONTEXT_CLEANUP_AND_DELIVERY_TRUTH_BOUNDARY",
+    "VELMERE_PASS36_A99R0_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_AND_RESTORED_RLS_TRUTH_BOUNDARY",
+    "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+    "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY"
+  ],
+  "requiredRealDecision": "VERIFIED_REAL_DISPOSABLE_STAGING",
+  "requiredObservationDecision": "VERIFIED_REAL_OUT_OF_TIME_REPEATED_OBSERVATION",
+  "localValidatorMode": "SYNTHETIC_STRUCTURAL_ONLY_REAL_EVIDENCE_REQUIRES_EXTERNAL_VERIFIER",
+  "truthBoundary": {
+    "syntheticOrFixtureMayReceiveRealCredit": false,
+    "clockManipulationMayReceiveOutOfTimeCredit": false,
+    "singleWindowMayReceiveContinuousMonitoringCredit": false,
+    "customerPaymentsAllowed": 0,
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  }
+}

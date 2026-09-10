@@ -1,0 +1,826 @@
+{
+  "id": "pass3101-3150-mega-final-execution-control-plane-batch",
+  "created_at": "2026-06-28T17:28:18",
+  "source_zip": "velmere_pass3051_3100_mega_execution_readiness_hardening_batch.zip",
+  "range": {
+    "from": 3101,
+    "to": 3150,
+    "count": 50
+  },
+  "execution_policy": {
+    "npm_run": "SKIPPED_BY_USER_INSTRUCTION",
+    "tests": "PREPARED_NOT_EXECUTED"
+  },
+  "readiness_after": {
+    "top1_architecture": 99.0,
+    "world_class_live_claim": 60.0
+  },
+  "passes": [
+    {
+      "pass": 3101,
+      "key": "FINAL_CLEAN_ROOM_NODE20_BOOTSTRAP_QUEUE",
+      "description": "Node 20 clean-room bootstrap and install lock queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "final_clean_room_node20_bootstrap_queue.prepared_matrix_receipt",
+        "final_clean_room_node20_bootstrap_queue.final_execution_receipt",
+        "final_clean_room_node20_bootstrap_queue.operator_signoff_receipt",
+        "final_clean_room_node20_bootstrap_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3102,
+      "key": "TYPECHECK_ERROR_BUCKETIZER_FIX_PLAN",
+      "description": "Typecheck error bucketizer and fix plan",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "typecheck_error_bucketizer_fix_plan.prepared_matrix_receipt",
+        "typecheck_error_bucketizer_fix_plan.final_execution_receipt",
+        "typecheck_error_bucketizer_fix_plan.operator_signoff_receipt",
+        "typecheck_error_bucketizer_fix_plan.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3103,
+      "key": "NEXT_BUILD_STATIC_DYNAMIC_ROUTE_GUARD",
+      "description": "Next build static/dynamic route guard",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "next_build_static_dynamic_route_guard.prepared_matrix_receipt",
+        "next_build_static_dynamic_route_guard.final_execution_receipt",
+        "next_build_static_dynamic_route_guard.operator_signoff_receipt",
+        "next_build_static_dynamic_route_guard.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3104,
+      "key": "API_ROUTE_CONTRACT_RUNTIME_ASSERTION_PACK",
+      "description": "API route runtime assertion pack",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "api_route_contract_runtime_assertion_pack.prepared_matrix_receipt",
+        "api_route_contract_runtime_assertion_pack.final_execution_receipt",
+        "api_route_contract_runtime_assertion_pack.operator_signoff_receipt",
+        "api_route_contract_runtime_assertion_pack.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3105,
+      "key": "MARKET_PROVIDER_QUORUM_EXECUTION_DRY_PLAN",
+      "description": "Market provider quorum execution dry plan",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "market_provider_quorum_execution_dry_plan.prepared_matrix_receipt",
+        "market_provider_quorum_execution_dry_plan.final_execution_receipt",
+        "market_provider_quorum_execution_dry_plan.operator_signoff_receipt",
+        "market_provider_quorum_execution_dry_plan.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3106,
+      "key": "EXCHANGE_OUTAGE_DEGRADED_MODE_CONTRACTS",
+      "description": "Exchange outage degraded mode contracts",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "exchange_outage_degraded_mode_contracts.prepared_matrix_receipt",
+        "exchange_outage_degraded_mode_contracts.final_execution_receipt",
+        "exchange_outage_degraded_mode_contracts.operator_signoff_receipt",
+        "exchange_outage_degraded_mode_contracts.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3107,
+      "key": "REAL_MARKETS_CROSS_ASSET_SANITY_FIXTURES",
+      "description": "Real Markets cross-asset sanity fixtures",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "real_markets_cross_asset_sanity_fixtures.prepared_matrix_receipt",
+        "real_markets_cross_asset_sanity_fixtures.final_execution_receipt",
+        "real_markets_cross_asset_sanity_fixtures.operator_signoff_receipt",
+        "real_markets_cross_asset_sanity_fixtures.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3108,
+      "key": "SHIELD_CRYPTO_TABLE_ROW_INTEGRITY_FIXTURES",
+      "description": "Shield crypto table row integrity fixtures",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "shield_crypto_table_row_integrity_fixtures.prepared_matrix_receipt",
+        "shield_crypto_table_row_integrity_fixtures.final_execution_receipt",
+        "shield_crypto_table_row_integrity_fixtures.operator_signoff_receipt",
+        "shield_crypto_table_row_integrity_fixtures.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3109,
+      "key": "RISK_SCORE_DRIFT_BASELINE_LOCK",
+      "description": "Risk score drift baseline lock",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "risk_score_drift_baseline_lock.prepared_matrix_receipt",
+        "risk_score_drift_baseline_lock.final_execution_receipt",
+        "risk_score_drift_baseline_lock.operator_signoff_receipt",
+        "risk_score_drift_baseline_lock.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3110,
+      "key": "LIQUIDITY_SQUEEZE_HEATMAP_FIXTURE_QUEUE",
+      "description": "Liquidity squeeze heatmap fixture queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "liquidity_squeeze_heatmap_fixture_queue.prepared_matrix_receipt",
+        "liquidity_squeeze_heatmap_fixture_queue.final_execution_receipt",
+        "liquidity_squeeze_heatmap_fixture_queue.operator_signoff_receipt",
+        "liquidity_squeeze_heatmap_fixture_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3111,
+      "key": "TRADINGVIEW_LEVEL_CHART_INTERACTION_QUEUE",
+      "description": "TradingView-level chart interaction queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "tradingview_level_chart_interaction_queue.prepared_matrix_receipt",
+        "tradingview_level_chart_interaction_queue.final_execution_receipt",
+        "tradingview_level_chart_interaction_queue.operator_signoff_receipt",
+        "tradingview_level_chart_interaction_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3112,
+      "key": "SEARCH_RESOLVER_EXACT_MATCH_COLLISION_GUARD",
+      "description": "Search resolver exact-match collision guard",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "search_resolver_exact_match_collision_guard.prepared_matrix_receipt",
+        "search_resolver_exact_match_collision_guard.final_execution_receipt",
+        "search_resolver_exact_match_collision_guard.operator_signoff_receipt",
+        "search_resolver_exact_match_collision_guard.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3113,
+      "key": "ICON_CANONICAL_IDENTITY_LEDGER",
+      "description": "Icon canonical identity ledger",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "icon_canonical_identity_ledger.prepared_matrix_receipt",
+        "icon_canonical_identity_ledger.final_execution_receipt",
+        "icon_canonical_identity_ledger.operator_signoff_receipt",
+        "icon_canonical_identity_ledger.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3114,
+      "key": "BRAIN_ADVANCED_TIER_FIELD_PARITY_GUARD",
+      "description": "Brain Advanced tier field parity guard",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "brain_advanced_tier_field_parity_guard.prepared_matrix_receipt",
+        "brain_advanced_tier_field_parity_guard.final_execution_receipt",
+        "brain_advanced_tier_field_parity_guard.operator_signoff_receipt",
+        "brain_advanced_tier_field_parity_guard.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3115,
+      "key": "ANGEL_EVIDENCE_MODE_EVAL_QUEUE",
+      "description": "Angel evidence mode eval queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "angel_evidence_mode_eval_queue.prepared_matrix_receipt",
+        "angel_evidence_mode_eval_queue.final_execution_receipt",
+        "angel_evidence_mode_eval_queue.operator_signoff_receipt",
+        "angel_evidence_mode_eval_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3116,
+      "key": "AI_PROMPT_INJECTION_REGRESSION_PACK",
+      "description": "AI prompt injection regression pack",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "ai_prompt_injection_regression_pack.prepared_matrix_receipt",
+        "ai_prompt_injection_regression_pack.final_execution_receipt",
+        "ai_prompt_injection_regression_pack.operator_signoff_receipt",
+        "ai_prompt_injection_regression_pack.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3117,
+      "key": "PDF_PREVIEW_DOWNLOAD_HASH_EXECUTION_DAG",
+      "description": "PDF preview/download hash execution DAG",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "pdf_preview_download_hash_execution_dag.prepared_matrix_receipt",
+        "pdf_preview_download_hash_execution_dag.final_execution_receipt",
+        "pdf_preview_download_hash_execution_dag.operator_signoff_receipt",
+        "pdf_preview_download_hash_execution_dag.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3118,
+      "key": "PDF_LOCALE_PURITY_TIER_COPY_GUARD",
+      "description": "PDF locale purity and tier copy guard",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "pdf_locale_purity_tier_copy_guard.prepared_matrix_receipt",
+        "pdf_locale_purity_tier_copy_guard.final_execution_receipt",
+        "pdf_locale_purity_tier_copy_guard.operator_signoff_receipt",
+        "pdf_locale_purity_tier_copy_guard.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3119,
+      "key": "REPORT_SOURCE_RECEIPT_SIGNING_QUEUE",
+      "description": "Report source receipt signing queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "report_source_receipt_signing_queue.prepared_matrix_receipt",
+        "report_source_receipt_signing_queue.final_execution_receipt",
+        "report_source_receipt_signing_queue.operator_signoff_receipt",
+        "report_source_receipt_signing_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3120,
+      "key": "PAYMENT_SUCCESS_URL_BYPASS_NEGATIVE_QUEUE",
+      "description": "Payment success URL bypass negative queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "payment_success_url_bypass_negative_queue.prepared_matrix_receipt",
+        "payment_success_url_bypass_negative_queue.final_execution_receipt",
+        "payment_success_url_bypass_negative_queue.operator_signoff_receipt",
+        "payment_success_url_bypass_negative_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3121,
+      "key": "STRIPE_WEBHOOK_IDEMPOTENCY_EXECUTION_PLAN",
+      "description": "Stripe webhook idempotency execution plan",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "stripe_webhook_idempotency_execution_plan.prepared_matrix_receipt",
+        "stripe_webhook_idempotency_execution_plan.final_execution_receipt",
+        "stripe_webhook_idempotency_execution_plan.operator_signoff_receipt",
+        "stripe_webhook_idempotency_execution_plan.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3122,
+      "key": "WEB3_WALLET_IDENTITY_NOT_PAYMENT_GUARD",
+      "description": "Web3 wallet identity-not-payment guard",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "web3_wallet_identity_not_payment_guard.prepared_matrix_receipt",
+        "web3_wallet_identity_not_payment_guard.final_execution_receipt",
+        "web3_wallet_identity_not_payment_guard.operator_signoff_receipt",
+        "web3_wallet_identity_not_payment_guard.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3123,
+      "key": "CART_OVERLAY_CLICK_CAPTURE_REGRESSION_QUEUE",
+      "description": "Cart overlay click-capture regression queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "cart_overlay_click_capture_regression_queue.prepared_matrix_receipt",
+        "cart_overlay_click_capture_regression_queue.final_execution_receipt",
+        "cart_overlay_click_capture_regression_queue.operator_signoff_receipt",
+        "cart_overlay_click_capture_regression_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3124,
+      "key": "ENTITLEMENT_CACHE_REPLAY_CONFLICT_QUEUE",
+      "description": "Entitlement cache replay conflict queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "entitlement_cache_replay_conflict_queue.prepared_matrix_receipt",
+        "entitlement_cache_replay_conflict_queue.final_execution_receipt",
+        "entitlement_cache_replay_conflict_queue.operator_signoff_receipt",
+        "entitlement_cache_replay_conflict_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3125,
+      "key": "CUSTOMER_EXPORT_DSR_E2E_REPLAY_DAG",
+      "description": "Customer export DSR E2E replay DAG",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "customer_export_dsr_e2e_replay_dag.prepared_matrix_receipt",
+        "customer_export_dsr_e2e_replay_dag.final_execution_receipt",
+        "customer_export_dsr_e2e_replay_dag.operator_signoff_receipt",
+        "customer_export_dsr_e2e_replay_dag.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3126,
+      "key": "PRIVACY_REDACTION_PII_LEAK_SCAN_QUEUE",
+      "description": "Privacy redaction PII leak scan queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "privacy_redaction_pii_leak_scan_queue.prepared_matrix_receipt",
+        "privacy_redaction_pii_leak_scan_queue.final_execution_receipt",
+        "privacy_redaction_pii_leak_scan_queue.operator_signoff_receipt",
+        "privacy_redaction_pii_leak_scan_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3127,
+      "key": "ACCOUNT_VAULT_RECEIPT_REOPEN_REMEDY_QUEUE",
+      "description": "Account vault receipt reopen remedy queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "account_vault_receipt_reopen_remedy_queue.prepared_matrix_receipt",
+        "account_vault_receipt_reopen_remedy_queue.final_execution_receipt",
+        "account_vault_receipt_reopen_remedy_queue.operator_signoff_receipt",
+        "account_vault_receipt_reopen_remedy_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3128,
+      "key": "ADMIN_FORCE_GREEN_PREVENTION_GUARD",
+      "description": "Admin force-green prevention guard",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "admin_force_green_prevention_guard.prepared_matrix_receipt",
+        "admin_force_green_prevention_guard.final_execution_receipt",
+        "admin_force_green_prevention_guard.operator_signoff_receipt",
+        "admin_force_green_prevention_guard.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3129,
+      "key": "OPERATOR_DUAL_CONTROL_RELEASE_ACTION_QUEUE",
+      "description": "Operator dual-control release action queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "operator_dual_control_release_action_queue.prepared_matrix_receipt",
+        "operator_dual_control_release_action_queue.final_execution_receipt",
+        "operator_dual_control_release_action_queue.operator_signoff_receipt",
+        "operator_dual_control_release_action_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3130,
+      "key": "PUBLIC_EVIDENCE_BOARD_RENDER_MODEL_FREEZE",
+      "description": "Public evidence board render model freeze",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "public_evidence_board_render_model_freeze.prepared_matrix_receipt",
+        "public_evidence_board_render_model_freeze.final_execution_receipt",
+        "public_evidence_board_render_model_freeze.operator_signoff_receipt",
+        "public_evidence_board_render_model_freeze.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3131,
+      "key": "CLAIM_EXPIRY_AUTODOWNGRADE_POLICY_QUEUE",
+      "description": "Claim expiry auto-downgrade policy queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "claim_expiry_autodowngrade_policy_queue.prepared_matrix_receipt",
+        "claim_expiry_autodowngrade_policy_queue.final_execution_receipt",
+        "claim_expiry_autodowngrade_policy_queue.operator_signoff_receipt",
+        "claim_expiry_autodowngrade_policy_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3132,
+      "key": "NO_FOMO_COPY_SNAPSHOT_REVIEW_QUEUE",
+      "description": "No-FOMO copy snapshot review queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "no_fomo_copy_snapshot_review_queue.prepared_matrix_receipt",
+        "no_fomo_copy_snapshot_review_queue.final_execution_receipt",
+        "no_fomo_copy_snapshot_review_queue.operator_signoff_receipt",
+        "no_fomo_copy_snapshot_review_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3133,
+      "key": "LEGAL_EU_CONSUMER_TERMS_RELEASE_BLOCKERS",
+      "description": "Legal EU consumer terms release blockers",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "legal_eu_consumer_terms_release_blockers.prepared_matrix_receipt",
+        "legal_eu_consumer_terms_release_blockers.final_execution_receipt",
+        "legal_eu_consumer_terms_release_blockers.operator_signoff_receipt",
+        "legal_eu_consumer_terms_release_blockers.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3134,
+      "key": "COMMUNITY_SQUARE_MODERATION_ABUSE_QUEUE",
+      "description": "Community/Square moderation abuse queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "community_square_moderation_abuse_queue.prepared_matrix_receipt",
+        "community_square_moderation_abuse_queue.final_execution_receipt",
+        "community_square_moderation_abuse_queue.operator_signoff_receipt",
+        "community_square_moderation_abuse_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3135,
+      "key": "FASHION_PRODUCT_IMPORT_PROVIDER_DRY_RUN_PLAN",
+      "description": "Fashion product import provider dry-run plan",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "fashion_product_import_provider_dry_run_plan.prepared_matrix_receipt",
+        "fashion_product_import_provider_dry_run_plan.final_execution_receipt",
+        "fashion_product_import_provider_dry_run_plan.operator_signoff_receipt",
+        "fashion_product_import_provider_dry_run_plan.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3136,
+      "key": "ANALYTICS_CONSENT_EVENT_MINIMIZATION_QUEUE",
+      "description": "Analytics consent event minimization queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "analytics_consent_event_minimization_queue.prepared_matrix_receipt",
+        "analytics_consent_event_minimization_queue.final_execution_receipt",
+        "analytics_consent_event_minimization_queue.operator_signoff_receipt",
+        "analytics_consent_event_minimization_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3137,
+      "key": "SECURITY_HEADERS_CSP_REPORT_ONLY_PLAN",
+      "description": "Security headers CSP report-only plan",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "security_headers_csp_report_only_plan.prepared_matrix_receipt",
+        "security_headers_csp_report_only_plan.final_execution_receipt",
+        "security_headers_csp_report_only_plan.operator_signoff_receipt",
+        "security_headers_csp_report_only_plan.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3138,
+      "key": "XSS_MARKDOWN_PDF_SANITIZATION_FIXTURES",
+      "description": "XSS/Markdown/PDF sanitization fixtures",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "xss_markdown_pdf_sanitization_fixtures.prepared_matrix_receipt",
+        "xss_markdown_pdf_sanitization_fixtures.final_execution_receipt",
+        "xss_markdown_pdf_sanitization_fixtures.operator_signoff_receipt",
+        "xss_markdown_pdf_sanitization_fixtures.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3139,
+      "key": "SUPABASE_RLS_BACKUP_RESTORE_RECEIPT_QUEUE",
+      "description": "Supabase RLS backup/restore receipt queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "supabase_rls_backup_restore_receipt_queue.prepared_matrix_receipt",
+        "supabase_rls_backup_restore_receipt_queue.final_execution_receipt",
+        "supabase_rls_backup_restore_receipt_queue.operator_signoff_receipt",
+        "supabase_rls_backup_restore_receipt_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3140,
+      "key": "OBSERVABILITY_SLO_ALERT_ROUTE_WIRING_PLAN",
+      "description": "Observability SLO alert route wiring plan",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "observability_slo_alert_route_wiring_plan.prepared_matrix_receipt",
+        "observability_slo_alert_route_wiring_plan.final_execution_receipt",
+        "observability_slo_alert_route_wiring_plan.operator_signoff_receipt",
+        "observability_slo_alert_route_wiring_plan.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3141,
+      "key": "INCIDENT_TABLETOP_CUSTOMER_REMEDY_PLAYBOOK",
+      "description": "Incident tabletop customer remedy playbook",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "incident_tabletop_customer_remedy_playbook.prepared_matrix_receipt",
+        "incident_tabletop_customer_remedy_playbook.final_execution_receipt",
+        "incident_tabletop_customer_remedy_playbook.operator_signoff_receipt",
+        "incident_tabletop_customer_remedy_playbook.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3142,
+      "key": "REDTEAM_ABUSE_CASE_PRIORITIZATION_QUEUE",
+      "description": "Red-team abuse case prioritization queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "redteam_abuse_case_prioritization_queue.prepared_matrix_receipt",
+        "redteam_abuse_case_prioritization_queue.final_execution_receipt",
+        "redteam_abuse_case_prioritization_queue.operator_signoff_receipt",
+        "redteam_abuse_case_prioritization_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3143,
+      "key": "PERFORMANCE_EDGE_BUDGET_CANARY_QUEUE",
+      "description": "Performance edge budget canary queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "performance_edge_budget_canary_queue.prepared_matrix_receipt",
+        "performance_edge_budget_canary_queue.final_execution_receipt",
+        "performance_edge_budget_canary_queue.operator_signoff_receipt",
+        "performance_edge_budget_canary_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3144,
+      "key": "ACCESSIBILITY_MOBILE_SCREENREADER_FINAL_QUEUE",
+      "description": "Accessibility mobile screenreader final queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "accessibility_mobile_screenreader_final_queue.prepared_matrix_receipt",
+        "accessibility_mobile_screenreader_final_queue.final_execution_receipt",
+        "accessibility_mobile_screenreader_final_queue.operator_signoff_receipt",
+        "accessibility_mobile_screenreader_final_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3145,
+      "key": "SEO_SOCIAL_METADATA_LAUNCH_SNAPSHOT_QUEUE",
+      "description": "SEO/social metadata launch snapshot queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "seo_social_metadata_launch_snapshot_queue.prepared_matrix_receipt",
+        "seo_social_metadata_launch_snapshot_queue.final_execution_receipt",
+        "seo_social_metadata_launch_snapshot_queue.operator_signoff_receipt",
+        "seo_social_metadata_launch_snapshot_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3146,
+      "key": "I18N_PL_EN_DE_SEMANTIC_SIGNOFF_QUEUE",
+      "description": "i18n PL/EN/DE semantic signoff queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "i18n_pl_en_de_semantic_signoff_queue.prepared_matrix_receipt",
+        "i18n_pl_en_de_semantic_signoff_queue.final_execution_receipt",
+        "i18n_pl_en_de_semantic_signoff_queue.operator_signoff_receipt",
+        "i18n_pl_en_de_semantic_signoff_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3147,
+      "key": "CANARY_DARK_LAUNCH_ROLLBACK_OPERATOR_DAG",
+      "description": "Canary dark-launch rollback operator DAG",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "canary_dark_launch_rollback_operator_dag.prepared_matrix_receipt",
+        "canary_dark_launch_rollback_operator_dag.final_execution_receipt",
+        "canary_dark_launch_rollback_operator_dag.operator_signoff_receipt",
+        "canary_dark_launch_rollback_operator_dag.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3148,
+      "key": "POST_LAUNCH_SURVEILLANCE_REVALIDATION_QUEUE",
+      "description": "Post-launch surveillance revalidation queue",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "post_launch_surveillance_revalidation_queue.prepared_matrix_receipt",
+        "post_launch_surveillance_revalidation_queue.final_execution_receipt",
+        "post_launch_surveillance_revalidation_queue.operator_signoff_receipt",
+        "post_launch_surveillance_revalidation_queue.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3149,
+      "key": "L5_RECEIPT_NOTARIZATION_FINAL_BINDER",
+      "description": "L5 receipt notarization final binder",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "l5_receipt_notarization_final_binder.prepared_matrix_receipt",
+        "l5_receipt_notarization_final_binder.final_execution_receipt",
+        "l5_receipt_notarization_final_binder.operator_signoff_receipt",
+        "l5_receipt_notarization_final_binder.public_claim_binding_receipt"
+      ]
+    },
+    {
+      "pass": 3150,
+      "key": "PASS3150_RELEASE_CANDIDATE_BLOCKER_INDEX",
+      "description": "PASS3150 release candidate blocker index",
+      "status": "PREPARED_NOT_EXECUTED",
+      "do_not_skip": true,
+      "claim_state": "BLOCKED_UNTIL_FINAL_L5_RECEIPTS",
+      "test_policy": "NO_NPM_RUN_IN_THIS_PASS_USER_REQUEST",
+      "final_runner_required": true,
+      "acceptance_receipts": [
+        "pass3150_release_candidate_blocker_index.prepared_matrix_receipt",
+        "pass3150_release_candidate_blocker_index.final_execution_receipt",
+        "pass3150_release_candidate_blocker_index.operator_signoff_receipt",
+        "pass3150_release_candidate_blocker_index.public_claim_binding_receipt"
+      ]
+    }
+  ],
+  "hard_blockers": [
+    "NO_FINAL_NPM_RUNNER_RECEIPT_NO_RELEASE_CANDIDATE",
+    "NO_CLEAN_TYPECHECK_BUILD_BROWSER_NO_WORLD_CLASS_LIVE_CLAIM",
+    "NO_PROVIDER_PAYMENT_PDF_AI_RECEIPTS_NO_PAID_LIVE_CLAIM",
+    "NO_ZERO_SKIP_RECONCILIATION_NO_PUBLIC_TOP1_CLAIM"
+  ]
+}

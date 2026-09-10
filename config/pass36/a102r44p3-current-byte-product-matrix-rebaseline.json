@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p3.current-byte-product-matrix-rebaseline.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P3_ACTION_REQUIRED_CURRENT_BYTE_SHIELD_PRO_REAL_MARKETS_AND_MULTILINGUAL_AI_MATRIX_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P2_ACTION_REQUIRED_AUTOMATED_INFORMATIONAL_SKU_PDF_POSIX_TOOL_BOUNDARY_AND_OFFICIAL_TOOLCHAIN_ADMISSION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T07:30:00.000Z",
+  "parentSourceManifest": {
+    "path": "_velmere/PASS36_A102R44P2_PATCH_SOURCE_MANIFEST.json",
+    "sha256": "6875bf76aad4edf3128936e88abdcf14cdb40828b815beec09328123b333d289",
+    "aggregateSha256": "c1d5ef6bc4b7aaa766cc14d2ac871904afe42bf28620545c00132a04ddca8b7c",
+    "fileCount": 5637
+  },
+  "migrations": [
+    {
+      "id": "A85_SHIELD_PRO_PAGINATION_CURRENT_BYTE_BINDING",
+      "policyPath": "config/pass36/a85-shield-pro-map-full-depth-policy.json",
+      "parentPolicySha256": "a723fb7500c5440c8c36be379945461865803af6c2b41f75af3081be806c1712",
+      "currentPolicySha256": "6ce6d3c1451744cf3438e10c4f58914eb8808e4cfb7eb9ab720bea72a2d31744",
+      "bindingKey": "shieldProPagination",
+      "boundPath": "lib/market-integrity/shield-pro-full-catalog-client.ts",
+      "oldBoundSha256": "a71c518256bccedc8b7fa195d25e01b6b49f0c26b7d90e43929f91ca86f30a26",
+      "currentBoundSha256": "fa7a555b58308a3954ea9e3ad51ecfee4d47de967f8561329abf13f18a29cde8",
+      "classification": "APPROVED_R44_UI_PAGINATION_BYTES_CURRENT_BINDING",
+      "denominatorsChanged": false
+    },
+    {
+      "id": "A86_REAL_MARKETS_PARENT_A85_POLICY_CURRENT_BYTE_BINDING",
+      "policyPath": "config/pass36/a86-real-markets-cross-asset-policy.json",
+      "parentPolicySha256": "f197ab8165c72adbbe25712be0d6f09c2d5878c38d6626fb169167b6cfa51790",
+      "currentPolicySha256": "b0edde004b2628cadbf3e1578962793c305bd9e497e5bff96a2895fe7ec683af",
+      "bindingKey": "a85Policy",
+      "boundPath": "config/pass36/a85-shield-pro-map-full-depth-policy.json",
+      "oldBoundSha256": "2863b4e759c9ae3d99848ab0d86e0be3f3def3799ee811797944d61318c26a05",
+      "currentBoundSha256": "6ce6d3c1451744cf3438e10c4f58914eb8808e4cfb7eb9ab720bea72a2d31744",
+      "classification": "APPROVED_DESCENDANT_POLICY_BINDING_ONLY",
+      "denominatorsChanged": false
+    }
+  ],
+  "denominatorMigration": {
+    "a85Assets": {
+      "old": 318,
+      "new": 318,
+      "removed": 0
+    },
+    "a85TierPackets": {
+      "old": 954,
+      "new": 954,
+      "removed": 0
+    },
+    "a85SemanticMutations": {
+      "old": 15264,
+      "new": 15264,
+      "removed": 0
+    },
+    "a86Instruments": {
+      "old": 583,
+      "new": 583,
+      "removed": 0
+    },
+    "a86TierPackets": {
+      "old": 1749,
+      "new": 1749,
+      "removed": 0
+    },
+    "a86SemanticMutations": {
+      "old": 31482,
+      "new": 31482,
+      "removed": 0
+    }
+  },
+  "creditBoundary": {
+    "localFixtureCredit": true,
+    "realDataCredit": false,
+    "providerRightsCredit": false,
+    "productionBrowserCredit": false,
+    "paidCredit": false,
+    "liveCredit": false,
+    "saleEnabled": false
+  },
+  "truthBoundary": "This migration restores exact current-byte execution of the inherited A85 and A86 local fixture matrices. It changes only two SHA-256 bindings, preserves every denominator and grants zero real-data, rights, customer, production-browser, paid, LIVE or sale credit.",
+  "migrationDigestSha256": "30716744b406a9af71149552d2c03a1604a5f4e8b4d3165283873e8a3a4c615f"
+}

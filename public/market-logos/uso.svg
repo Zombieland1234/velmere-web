@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Oil USO">
+  <defs>
+    <linearGradient id="oil-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="40%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#0C0A09" stroke="#7C2D12" stroke-width="1.5"/>
+  <path fill="url(#oil-grad)" d="M32 14 C32 14 20 30 20 38 C20 44.6 25.4 50 32 50 C38.6 50 44 44.6 44 38 C44 30 32 14 32 14 Z"/>
+  <ellipse cx="28" cy="34" rx="3" ry="6" fill="#FFF7ED" opacity="0.4" transform="rotate(-20 28 34)"/>
+  <text x="32" y="43" text-anchor="middle" font-family="system-ui, sans-serif" font-size="9" font-weight="900" fill="#FFF7ED" letter-spacing="0.05em">USO</text>
+</svg>

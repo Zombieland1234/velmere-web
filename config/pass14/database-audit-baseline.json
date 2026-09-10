@@ -1,0 +1,433 @@
+{
+  "schemaVersion": "velmere.pass14.database-contract-audit.v1",
+  "generatedAt": "2026-07-20T05:46:32.805Z",
+  "truthBoundary": "Static SQL corpus audit. RLS/policy presence is not proof that migrations apply cleanly or that multi-user isolation works in a real Postgres/Supabase instance.",
+  "ok": true,
+  "blockers": [],
+  "planes": [
+    {
+      "name": "deployable_migrations",
+      "files": 93,
+      "bytes": 906736,
+      "lines": 14383,
+      "aggregateSha256": "29212e0c45f07e68530062c012fb03bac1d4b3d4838c149d475628789182ad6c",
+      "tablesDeclared": 108,
+      "rlsEnabledTables": 108,
+      "rlsForcedTables": 0,
+      "tablesWithPolicies": 20,
+      "tablesWithoutRls": [],
+      "rlsWithoutPolicy": [
+        "instrument_identity_snapshots",
+        "provider_evidence_ledgers",
+        "provider_evidence_refresh_targets",
+        "provider_evidence_snapshots",
+        "provider_health_observations",
+        "provider_health_snapshots",
+        "velmere_account_supabase_subject_bindings",
+        "velmere_admin_roles",
+        "velmere_admin_sessions",
+        "velmere_advanced_audit_releases",
+        "velmere_angel_memories",
+        "velmere_audit_case_payment_events",
+        "velmere_audit_case_status_history",
+        "velmere_audit_intake_cases",
+        "velmere_audit_logs",
+        "velmere_audit_pdf_token_consumptions",
+        "velmere_audit_report_snapshots",
+        "velmere_audit_review_orchestration",
+        "velmere_auth_security_alerts",
+        "velmere_auth_security_events",
+        "velmere_auth_session_families",
+        "velmere_customer_artifact_pdf_blobs",
+        "velmere_customer_artifact_snapshots",
+        "velmere_durable_computation_alert_outbox",
+        "velmere_durable_computation_cycle_receipts",
+        "velmere_durable_computation_deployment_ledger",
+        "velmere_durable_computation_jobs",
+        "velmere_durable_computation_maintenance_runs",
+        "velmere_durable_computation_operator_events",
+        "velmere_fulfilment_incident_outbox",
+        "velmere_fulfilment_incidents",
+        "velmere_fulfilment_outbox_recovery_actions",
+        "velmere_fulfilment_outbox_worker_lease",
+        "velmere_fulfilment_outbox_worker_runs",
+        "velmere_fulfilment_provider_sync_queue",
+        "velmere_fulfilment_provider_sync_runs",
+        "velmere_fulfilment_provider_sync_worker_lock",
+        "velmere_fulfilment_retry_queue",
+        "velmere_mutation_receipts",
+        "velmere_order_drafts",
+        "velmere_order_events",
+        "velmere_order_items",
+        "velmere_order_state_events",
+        "velmere_orders",
+        "velmere_overlay_qa_receipts",
+        "velmere_paid_audit_access_events",
+        "velmere_payment_event_watermarks",
+        "velmere_payment_runtime_evidence",
+        "velmere_product_brain_reviews",
+        "velmere_product_variants",
+        "velmere_provider_contracts",
+        "velmere_provider_observation_quarantine",
+        "velmere_provider_observations",
+        "velmere_provider_quality_incidents",
+        "velmere_provider_quality_recovery_proofs",
+        "velmere_provider_quality_rollback_executions",
+        "velmere_provider_recovery_release_bundles",
+        "velmere_provider_recovery_release_certificates",
+        "velmere_provider_recovery_smoke_receipts",
+        "velmere_provider_reliability_leases",
+        "velmere_provider_reliability_state",
+        "velmere_provider_sandbox_runs",
+        "velmere_provider_snapshots",
+        "velmere_release_candidate_attestations",
+        "velmere_release_proof_packages",
+        "velmere_release_provenance_indexes",
+        "velmere_release_transparency_checkpoints",
+        "velmere_release_transparency_entries",
+        "velmere_release_transparency_witness_health_events",
+        "velmere_release_transparency_witness_health_policies",
+        "velmere_release_transparency_witness_health_recoveries",
+        "velmere_release_transparency_witness_quorums",
+        "velmere_release_transparency_witness_rollback_resolutions",
+        "velmere_release_trust_checkpoints",
+        "velmere_release_trust_consistency_proofs",
+        "velmere_runtime_bridge_evidence_runs",
+        "velmere_runtime_bridge_gate_results",
+        "velmere_source_receipts",
+        "velmere_stripe_webhook_dead_letter_actions",
+        "velmere_stripe_webhook_effects",
+        "velmere_stripe_webhook_events",
+        "velmere_stripe_webhook_reconciliation_runs",
+        "velmere_support_handoff_event_ledger",
+        "velmere_vlm_audit_human_queue",
+        "velmere_vlm_paid_entitlement_events",
+        "velmere_vlm_paid_entitlement_release_holds",
+        "velmere_vlm_paid_entitlements",
+        "velmere_write_rate_limit_events"
+      ],
+      "securityDefinerFunctions": 161,
+      "securityDefinerWithoutSearchPath": [],
+      "triggerFunctionsWithoutExplicitRevoke": [],
+      "broadGrantCount": 4,
+      "broadGrants": [
+        {
+          "file": "supabase/migrations/20260624000003_2637_release_board_public_receipt_view_live_rls.sql",
+          "grant": "grant select on public.velmere_audit_release_evidence_board_public_receipts to authenticated;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "grant": "grant select, insert, update on table public.velmere_profiles to authenticated;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "grant": "grant select, insert on table public.velmere_square_posts to authenticated;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "grant": "grant select, insert on table public.velmere_square_comments to authenticated;"
+        }
+      ],
+      "destructiveStatementCount": 38,
+      "destructiveStatements": [
+        {
+          "file": "supabase/migrations/20260617000004_2189_provider_order_fulfilment_receipts.sql",
+          "statement": "drop policy if exists \"service role manages provider order fulfilment receipts\" on public.velmere_provider_order_fulfilment_receipts;"
+        },
+        {
+          "file": "supabase/migrations/20260624000004_2645_safe_pdf_download_token_consumption_ledger_rls.sql",
+          "statement": "drop policy if exists audit_safe_pdf_download_token_anon_insert_deny on public.audit_safe_pdf_download_token_consumption_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260624000004_2645_safe_pdf_download_token_consumption_ledger_rls.sql",
+          "statement": "drop policy if exists audit_safe_pdf_download_token_anon_select_deny on public.audit_safe_pdf_download_token_consumption_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260624000004_2645_safe_pdf_download_token_consumption_ledger_rls.sql",
+          "statement": "drop policy if exists audit_safe_pdf_download_token_anon_update_deny on public.audit_safe_pdf_download_token_consumption_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260624000004_2645_safe_pdf_download_token_consumption_ledger_rls.sql",
+          "statement": "drop policy if exists audit_safe_pdf_download_token_anon_delete_deny on public.audit_safe_pdf_download_token_consumption_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260625000001_2649_entitlement_revocation_ledger_adapter_rls.sql",
+          "statement": "drop policy if exists audit_entitlement_revocation_deny_anon_write on public.audit_entitlement_revocation_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260625000001_2649_entitlement_revocation_ledger_adapter_rls.sql",
+          "statement": "drop policy if exists audit_entitlement_revocation_deny_anon_update on public.audit_entitlement_revocation_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260625000001_2649_entitlement_revocation_ledger_adapter_rls.sql",
+          "statement": "drop policy if exists audit_entitlement_revocation_deny_anon_delete on public.audit_entitlement_revocation_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260625000001_2649_entitlement_revocation_ledger_adapter_rls.sql",
+          "statement": "drop policy if exists audit_entitlement_revocation_public_select on public.audit_entitlement_revocation_ledger;"
+        },
+        {
+          "file": "supabase/migrations/20260704000001_4435_audit_watch_receipts_rls_write_executor_contract.sql",
+          "statement": "drop policy if exists audit_watch_receipts_select_own_account on public.audit_watch_receipts;"
+        },
+        {
+          "file": "supabase/migrations/20260704000001_4435_audit_watch_receipts_rls_write_executor_contract.sql",
+          "statement": "drop policy if exists audit_watch_receipt_manifest_chain_select_own_account on public.audit_watch_receipt_manifest_chain;"
+        },
+        {
+          "file": "supabase/migrations/20260712000001_4708_fulfilment_outbox_worker_rls_evidence.sql",
+          "statement": "drop function if exists public.velmere_resolve_fulfilment_incident(text,text,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_profiles_owner_select on public.velmere_profiles;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_profiles_owner_insert on public.velmere_profiles;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_profiles_owner_update on public.velmere_profiles;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_square_posts_owner_insert on public.velmere_square_posts;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_square_posts_owner_select on public.velmere_square_posts;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_square_comments_owner_insert on public.velmere_square_comments;"
+        },
+        {
+          "file": "supabase/migrations/20260712000004_4716_profile_square_user_rls.sql",
+          "statement": "drop policy if exists velmere_square_comments_owner_select on public.velmere_square_comments;"
+        },
+        {
+          "file": "supabase/migrations/20260712000005_4717_auth_cookie_owner_read_policy.sql",
+          "statement": "drop policy if exists \"Public can read approved Velmere Square posts\" on public.velmere_square_posts;"
+        },
+        {
+          "file": "supabase/migrations/20260712000005_4717_auth_cookie_owner_read_policy.sql",
+          "statement": "drop policy if exists \"Public can read approved Velmere Square comments\" on public.velmere_square_comments;"
+        },
+        {
+          "file": "supabase/migrations/20260713000003_4745_durable_computation_sealed_worker.sql",
+          "statement": "drop function if exists public.velmere_claim_durable_computation(text,text,text,text,text,integer,integer);"
+        },
+        {
+          "file": "supabase/migrations/20260713000004_4746_durable_computation_all_kind_worker.sql",
+          "statement": "drop function if exists public.velmere_claim_durable_computation(text,text,text,text,text,integer,integer);"
+        },
+        {
+          "file": "supabase/migrations/20260713000013_4758_provider_quality_promotion_quarantine.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000013_4758_provider_quality_promotion_quarantine.sql",
+          "statement": "drop function if exists public.velmere_rollback_durable_computation_deployment(text,uuid,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000016_4761_provider_quality_recovery_proof_repromotion.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000018_4763_provider_recovery_release_certificate.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000019_4764_provider_recovery_release_bundle.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000020_4765_release_candidate_attestation.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000022_4767_release_provenance_promotion_gate_public_feed.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000029_4774_witness_bound_promotion_atomic_consume.sql",
+          "statement": "drop function if exists public.velmere_get_release_transparency_witness_quorum_status(text);"
+        },
+        {
+          "file": "supabase/migrations/20260713000029_4774_witness_bound_promotion_atomic_consume.sql",
+          "statement": "drop function if exists public.velmere_promote_durable_computation_deployment(text,text,text,text,text,text,text,text,text,text,text,text,integer,text,text);"
+        },
+        {
+          "file": "supabase/migrations/20260717000004_4824_customer_artifact_exact_pdf_blobs.sql",
+          "statement": "drop function if exists public.velmere_store_customer_artifact_pdf_bundle_v1(text, jsonb, jsonb, text);"
+        },
+        {
+          "file": "supabase/migrations/20260718000002_4991_operator_nonce_and_square_rls.sql",
+          "statement": "drop policy if exists velmere_idempotency_keys_service_role_all on public.velmere_idempotency_keys;"
+        },
+        {
+          "file": "supabase/migrations/20260718000002_4991_operator_nonce_and_square_rls.sql",
+          "statement": "drop policy if exists \"Public can read approved Velmere Square posts\" on public.velmere_square_posts;"
+        },
+        {
+          "file": "supabase/migrations/20260718000002_4991_operator_nonce_and_square_rls.sql",
+          "statement": "drop policy if exists \"Public can read visible Velmere Square comments\" on public.velmere_square_comments;"
+        },
+        {
+          "file": "supabase/migrations/20260718000002_4991_operator_nonce_and_square_rls.sql",
+          "statement": "drop policy if exists \"Public can read approved Velmere Square comments\" on public.velmere_square_comments;"
+        },
+        {
+          "file": "supabase/migrations/20260718000003_4992_atomic_commerce_paid_fulfilment_outbox.sql",
+          "statement": "drop policy if exists velmere_commerce_fulfilment_outbox_service_role_all on public.velmere_commerce_fulfilment_outbox;"
+        }
+      ],
+      "duplicateMigrationPrefixes": []
+    },
+    {
+      "name": "legacy_or_design_sql",
+      "files": 88,
+      "bytes": 211217,
+      "lines": 4056,
+      "aggregateSha256": "36612b2b942015423d921c49dca3e70ed9561a668051fd2980e5f06bfe8c53c9",
+      "tablesDeclared": 118,
+      "rlsEnabledTables": 12,
+      "rlsForcedTables": 0,
+      "tablesWithPolicies": 3,
+      "tablesWithoutRls": [
+        "market_integrity_browser_route_smoke_readinesses",
+        "market_integrity_claim_expiry_renewal_gates",
+        "market_integrity_customer_export_archive_channel_purge_receipts",
+        "market_integrity_customer_export_archive_retention_decisions",
+        "market_integrity_customer_export_archive_tombstone_index_pass2852",
+        "market_integrity_customer_export_channel_purge_execution_receipts",
+        "market_integrity_customer_export_channel_reconciliation_snapshots",
+        "market_integrity_customer_export_delivery_events",
+        "market_integrity_customer_export_delivery_ledger",
+        "market_integrity_customer_export_dispute_chargeback_holds",
+        "market_integrity_customer_export_dsr_appeal_resolution_channel_receipts",
+        "market_integrity_customer_export_dsr_appeal_resolution_closures",
+        "market_integrity_customer_export_dsr_channel_delivery_receipts",
+        "market_integrity_customer_export_dsr_delivery_appeals",
+        "market_integrity_customer_export_dsr_redaction_manifests",
+        "market_integrity_customer_export_final_archive_bundles",
+        "market_integrity_customer_export_final_archive_channel_receipts",
+        "market_integrity_customer_export_operator_release_reinstatements",
+        "market_integrity_customer_export_outbox",
+        "market_integrity_customer_export_outbox_health_checks",
+        "market_integrity_customer_export_post_purge_privacy_attestations",
+        "market_integrity_customer_export_post_reinstatement_audit_notifications",
+        "market_integrity_customer_export_privacy_case_supervisor_sla_cases",
+        "market_integrity_customer_export_privacy_case_supervisor_sla_events",
+        "market_integrity_customer_export_privacy_incident_customer_notices",
+        "market_integrity_customer_export_privacy_incident_dsr_escalations",
+        "market_integrity_customer_export_reconciliations",
+        "market_integrity_customer_export_remediation_freeze_lift_events",
+        "market_integrity_customer_export_remediation_ticket_closes",
+        "market_integrity_customer_export_replay_recoveries",
+        "market_integrity_customer_export_residual_scan_receipts",
+        "market_integrity_customer_export_retention_purge_executions",
+        "market_integrity_customer_export_retry_counters",
+        "market_integrity_customer_export_runtime_events",
+        "market_integrity_customer_export_stuck_lease_unlocks",
+        "market_integrity_customer_export_supervisory_access_expiry_receipts",
+        "market_integrity_customer_export_supervisory_access_revocation_receipts",
+        "market_integrity_customer_export_supervisory_disclosure_final_ack_receipts",
+        "market_integrity_customer_export_supervisory_disclosure_final_closes",
+        "market_integrity_customer_export_supervisory_disclosure_responses",
+        "market_integrity_customer_export_supervisory_emergency_refreeze_resolution_reseals",
+        "market_integrity_customer_export_supervisory_evidence_cases",
+        "market_integrity_customer_export_supervisory_evidence_channel_receipts",
+        "market_integrity_customer_export_supervisory_evidence_events",
+        "market_integrity_customer_export_supervisory_evidence_index_tamper_incidents",
+        "market_integrity_customer_export_supervisory_final_evidence_index_freezes",
+        "market_integrity_customer_export_supervisory_final_evidence_index_mutation_attempts",
+        "market_integrity_customer_export_supervisory_final_trust_restore_long_term_surveillance_handovers",
+        "market_integrity_customer_export_supervisory_post_closure_mutation_incident_resolution_recloses",
+        "market_integrity_customer_export_supervisory_post_closure_mutation_watch_auto_freezes",
+        "market_integrity_customer_export_supervisory_post_purge_residual_channel_scans",
+        "market_integrity_customer_export_supervisory_post_purge_residual_evidence_scans",
+        "market_integrity_customer_export_supervisory_post_rebaseline_stability_enforcements",
+        "market_integrity_customer_export_supervisory_post_reclose_regression_slos",
+        "market_integrity_customer_export_supervisory_post_release_channel_monitor_rollbacks",
+        "market_integrity_customer_export_supervisory_post_release_observation_close_final_channel_seals",
+        "market_integrity_customer_export_supervisory_post_reseal_probation_relapse_sentinels",
+        "market_integrity_customer_export_supervisory_post_seal_drift_sentinel_emergency_refreezes",
+        "market_integrity_customer_export_supervisory_recurrence_escalation_resolution_rebaselines",
+        "market_integrity_customer_export_supervisory_residual_escalation_resolution_freeze_lifts",
+        "market_integrity_customer_export_supervisory_residual_finding_corrected_rescan_receipts",
+        "market_integrity_customer_export_supervisory_residual_finding_remediation_rescan_closes",
+        "market_integrity_customer_export_supervisory_residual_remediation_escalation_missed_slas",
+        "market_integrity_customer_export_supervisory_response_channel_receipts",
+        "market_integrity_customer_export_supervisory_retention_monitors",
+        "market_integrity_customer_export_supervisory_retention_purge_tombstones",
+        "market_integrity_customer_export_supervisory_stability_evidence_rollup_release_eligibilities",
+        "market_integrity_customer_export_supervisory_tamper_incident_resolution_archive_resumes",
+        "market_integrity_customer_export_supervisory_tamper_resolution_reconciliation_closure_audits",
+        "market_integrity_dependency_reality_build_inputs",
+        "market_integrity_downgrade_recovery_escrow_gates",
+        "market_integrity_local_runtime_proof_harnesses",
+        "market_integrity_operator_go_no_go_gates",
+        "market_integrity_playwright_receipt_packs",
+        "market_integrity_post_arbitration_public_resolution_seal_gates",
+        "market_integrity_post_claim_surveillance_probation_gates",
+        "market_integrity_post_graduation_public_restore_seal_gates",
+        "market_integrity_post_remediation_stability_watch_gates",
+        "market_integrity_post_remediation_trust_restore_handover_gates",
+        "market_integrity_post_restore_continuity_monitor_gates",
+        "market_integrity_post_rollback_recovery_reapproval_gates",
+        "market_integrity_probation_exit_seal_gates",
+        "market_integrity_production_claim_notarization_gates",
+        "market_integrity_production_reality_sweeps",
+        "market_integrity_public_claim_transparency_gates",
+        "market_integrity_public_status_appeal_independent_review_gates",
+        "market_integrity_public_status_dispute_correction_gates",
+        "market_integrity_public_status_final_arbitration_gates",
+        "market_integrity_public_trust_evidence_decay_renewal_escrow_gates",
+        "market_integrity_receipt_freshness_quarantine_gates",
+        "market_integrity_recovery_replay_adjudication_gates",
+        "market_integrity_recovery_restore_candidate_probation_gates",
+        "market_integrity_release_attestation_verifier_gates",
+        "market_integrity_release_continuity_lock_gates",
+        "market_integrity_release_evidence_bundles",
+        "market_integrity_release_promotion_escrow_gates",
+        "market_integrity_release_revocation_rollback_sentinel_gates",
+        "market_integrity_remediation_execution_closure_gates",
+        "market_integrity_renewal_escrow_promotion_quarantine_gates",
+        "market_integrity_renewal_promotion_final_seal_gates",
+        "market_integrity_scheduled_revalidation_execution_breach_gates",
+        "market_integrity_tamper_proof_release_ledger_gates",
+        "market_integrity_typescript_compile_surface_sweeps",
+        "market_integrity_visible_runtime_typecheck_repairs",
+        "market_integrity_visible_runtime_ux_proofs",
+        "market_integrity_worldclass_receipt_closures"
+      ],
+      "rlsWithoutPolicy": [
+        "legal_hold_dsar_gates",
+        "market_integrity_customer_export_ack_signed_receipt_events",
+        "market_integrity_customer_export_ack_signed_receipts",
+        "market_integrity_provider_evidence_packet_ledger",
+        "provider_erasure_webhooks",
+        "purge_jobs",
+        "retention_capsules",
+        "support_dashboard_audit_events",
+        "worker_runs"
+      ],
+      "securityDefinerFunctions": 1,
+      "securityDefinerWithoutSearchPath": [],
+      "triggerFunctionsWithoutExplicitRevoke": [],
+      "broadGrantCount": 0,
+      "broadGrants": [],
+      "destructiveStatementCount": 0,
+      "destructiveStatements": [],
+      "duplicateMigrationPrefixes": []
+    }
+  ],
+  "nextRequiredProof": [
+    "Apply the deployable migration chain to an empty staging database.",
+    "Apply it again through the supported upgrade path.",
+    "Run multi-user RLS positive/negative tests with anon, authenticated, service_role and operator roles.",
+    "Measure migration duration, locks, rollback and backup/restore."
+  ]
+}

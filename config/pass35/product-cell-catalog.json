@@ -1,0 +1,1519 @@
+{
+  "schemaVersion": "velmere.pass35.product-cell-catalog.v1",
+  "passId": "PASS35_PC00_PRODUCT_CELL_CATALOG",
+  "status": "PREPARED_NO_CELL_SELL_READY",
+  "generatedFrom": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35",
+  "truthBoundary": "This catalog registers candidate product cells and a fail-closed legacy migration. It does not select a flagship, approve a SKU, prove rights, staging, capacity, tier value or authorize a charge.",
+  "catalogPolicy": {
+    "flagshipSelected": false,
+    "catalogApproved": false,
+    "sellByDefault": false,
+    "legacySkuMayAuthorizeCharge": false,
+    "missingProductCellMayBeDerivedOnlyFromExactLegacySurfaceAndTier": true,
+    "unknownOrAmbiguousBindingFailsClosed": true,
+    "engineeringFlagshipCandidateId": "audit_evm_pro_automated_review",
+    "engineeringFlagshipCandidateIsFg00Selection": false,
+    "engineeringFlagshipCandidateMayAuthorizeCharge": false
+  },
+  "legacySkuMappings": [
+    {
+      "legacyProductId": "vlm_pro_analysis_single",
+      "productCellId": "brain_pro_evidence_analysis",
+      "requiredSurfaces": [
+        "shield",
+        "real-markets"
+      ],
+      "requiredTier": "pro",
+      "mappingMode": "DERIVE_WHEN_PRODUCT_CELL_ID_OMITTED",
+      "status": "BLOCKED_PC00_MIGRATION"
+    },
+    {
+      "legacyProductId": "vlm_advanced_analysis_single",
+      "productCellId": "brain_advanced_investigation",
+      "requiredSurfaces": [
+        "shield",
+        "real-markets"
+      ],
+      "requiredTier": "advanced",
+      "mappingMode": "DERIVE_WHEN_PRODUCT_CELL_ID_OMITTED",
+      "status": "BLOCKED_PC00_MIGRATION"
+    },
+    {
+      "legacyProductId": "vlm_pro_pdf_single",
+      "productCellId": "lens_pro_evidence_pdf",
+      "requiredSurfaces": [
+        "browser"
+      ],
+      "requiredTier": "pro",
+      "mappingMode": "DERIVE_WHEN_PRODUCT_CELL_ID_OMITTED",
+      "status": "BLOCKED_PC00_MIGRATION"
+    },
+    {
+      "legacyProductId": "vlm_advanced_pdf_single",
+      "productCellId": "lens_advanced_proof_pdf",
+      "requiredSurfaces": [
+        "browser"
+      ],
+      "requiredTier": "advanced",
+      "mappingMode": "DERIVE_WHEN_PRODUCT_CELL_ID_OMITTED",
+      "status": "BLOCKED_PC00_MIGRATION"
+    },
+    {
+      "legacyProductId": "vlm_pro_audit_review",
+      "productCellId": "audit_evm_pro_automated_review",
+      "requiredSurfaces": [
+        "audit"
+      ],
+      "requiredTier": "pro",
+      "mappingMode": "DERIVE_WHEN_PRODUCT_CELL_ID_OMITTED",
+      "status": "BLOCKED_PC00_MIGRATION"
+    },
+    {
+      "legacyProductId": "vlm_advanced_audit_human_review",
+      "productCellId": "audit_evm_advanced_human_review",
+      "requiredSurfaces": [
+        "audit"
+      ],
+      "requiredTier": "advanced",
+      "mappingMode": "DERIVE_WHEN_PRODUCT_CELL_ID_OMITTED",
+      "status": "BLOCKED_PC00_MIGRATION"
+    }
+  ],
+  "productCells": [
+    {
+      "productCellId": "audit_evm_basic_prescreen",
+      "productFamily": "audit",
+      "surface": "audit",
+      "acceptedCheckoutSurfaces": [
+        "audit"
+      ],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "audit_evm_basic_prescreen",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_OFFLINE_NO_REAL_EXECUTION",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "REAL_AUDIT_EXECUTION_NOT_PROVEN",
+        "FG00_FLAGSHIP_NOT_SELECTED"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG08",
+        "HG10",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "audit_evm_pro_automated_review",
+      "productFamily": "audit",
+      "surface": "audit",
+      "acceptedCheckoutSurfaces": [
+        "audit"
+      ],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "audit_evm_pro_automated_review",
+      "legacyProductIds": [
+        "vlm_pro_audit_review"
+      ],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PC00_EXACT_SKU_NOT_APPROVED",
+        "FULL_ANALYZER_STACK_NOT_EXECUTED",
+        "REAL_BENCHMARK_NOT_PROVEN",
+        "STAGING_NOT_PROVEN",
+        "REVIEWER_CAPACITY_NOT_APPROVED"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG10",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": true,
+      "commercialTruth": {
+        "customerFacingNameBeforeFullStack": "Automated Security Evidence Review",
+        "fullAuditClaimAllowed": false,
+        "humanReviewedClaimAllowed": false,
+        "requiredUiState": "UNAVAILABLE_NOT_FOR_SALE",
+        "flagshipApprovalStatus": "NOT_SIGNED_FG00"
+      }
+    },
+    {
+      "productCellId": "audit_evm_advanced_human_review",
+      "productFamily": "audit",
+      "surface": "audit",
+      "acceptedCheckoutSurfaces": [
+        "audit"
+      ],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "audit_evm_advanced_human_review",
+      "legacyProductIds": [
+        "vlm_advanced_audit_human_review"
+      ],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PC00_EXACT_SKU_NOT_APPROVED",
+        "QUALIFIED_HUMAN_REVIEW_NOT_PROVEN",
+        "INDEPENDENT_RETEST_NOT_PROVEN",
+        "STAGING_NOT_PROVEN",
+        "REVIEWER_CAPACITY_NOT_APPROVED"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG10",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false,
+      "roadmapTargetSplit": {
+        "role": "OPTIONAL_HUMAN_REVIEW_ADDON",
+        "doesNotBlockAutomatedAdvanced": true,
+        "futureAutomatedCoreSku": "audit_evm_advanced_automated_assurance"
+      }
+    },
+    {
+      "productCellId": "shield_basic_market_review",
+      "productFamily": "shield",
+      "surface": "shield",
+      "acceptedCheckoutSurfaces": [
+        "shield"
+      ],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "shield_basic_market_review",
+      "legacyProductIds": [],
+      "currentStatus": "OFFLINE_PROVEN_PROVIDER_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "PROVIDER_RIGHTS_NOT_VERIFIED",
+        "LIVE_PROVIDER_BROWSER_PROOF_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "shield_pro_terminal_analysis",
+      "productFamily": "shield",
+      "surface": "shield",
+      "acceptedCheckoutSurfaces": [
+        "shield"
+      ],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "shield_pro_terminal_analysis",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_BLOCKED_NO_LEGACY_MAPPING",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_BILLING_MAPPING",
+        "MULTI_PROVIDER_RIGHTS_NOT_VERIFIED",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "shield_map_advanced_investigation",
+      "productFamily": "shield_map",
+      "surface": "shield-map",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "shield_map_advanced_investigation",
+      "legacyProductIds": [],
+      "currentStatus": "EXPERIMENT_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "CHAIN_ENTITY_BINDING_NOT_PROVEN",
+        "PRIVACY_REVIEW_NOT_COMPLETE",
+        "INDEPENDENT_BENCHMARK_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "real_markets_basic_cross_asset",
+      "productFamily": "real_markets",
+      "surface": "real-markets",
+      "acceptedCheckoutSurfaces": [
+        "real-markets"
+      ],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "real_markets_basic_cross_asset",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_PROVIDER_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "FIELD_DENOMINATOR_NOT_FROZEN",
+        "PROVIDER_RIGHTS_NOT_VERIFIED",
+        "LIVE_DATA_PROOF_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "real_markets_pro_cross_asset_analysis",
+      "productFamily": "real_markets",
+      "surface": "real-markets",
+      "acceptedCheckoutSurfaces": [
+        "real-markets"
+      ],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "real_markets_pro_cross_asset_analysis",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_FAIL_CLOSED_424",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_BILLING_MAPPING",
+        "PROVIDER_RIGHTS_NOT_VERIFIED",
+        "FIELD_CONTRACT_INCOMPLETE",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "real_markets_advanced_evidence_analysis",
+      "productFamily": "real_markets",
+      "surface": "real-markets",
+      "acceptedCheckoutSurfaces": [
+        "real-markets"
+      ],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "real_markets_advanced_evidence_analysis",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_FAIL_CLOSED_424",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_BILLING_MAPPING",
+        "HIGHER_PROVIDER_FLOOR_NOT_PROVEN",
+        "CONFLICT_ADJUDICATION_NOT_PROVEN",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "lens_basic_report",
+      "productFamily": "lens",
+      "surface": "browser",
+      "acceptedCheckoutSurfaces": [
+        "browser"
+      ],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "lens_basic_report",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "CUSTOMER_GRADE_APPROVAL_MISSING",
+        "CANONICAL_RENDER_PARITY_NOT_STAGING_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "lens_pro_evidence_pdf",
+      "productFamily": "lens",
+      "surface": "browser",
+      "acceptedCheckoutSurfaces": [
+        "browser"
+      ],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "lens_pro_evidence_pdf",
+      "legacyProductIds": [
+        "vlm_pro_pdf_single"
+      ],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PC00_EXACT_SKU_NOT_APPROVED",
+        "LIVE_PROVIDER_FAMILIES_NOT_PROVEN",
+        "PDF_EXPORT_RIGHTS_NOT_VERIFIED",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "lens_advanced_proof_pdf",
+      "productFamily": "lens",
+      "surface": "browser",
+      "acceptedCheckoutSurfaces": [
+        "browser"
+      ],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "lens_advanced_proof_pdf",
+      "legacyProductIds": [
+        "vlm_advanced_pdf_single"
+      ],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PC00_EXACT_SKU_NOT_APPROVED",
+        "THREE_PROVIDER_FAMILIES_NOT_PROVEN",
+        "PROOF_CAPSULE_NOT_STAGING_PROVEN",
+        "TIER_VALUE_NOT_PROVEN",
+        "REVIEW_POLICY_NOT_APPROVED"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "brain_basic_grounded_brief",
+      "productFamily": "brain",
+      "surface": "brain",
+      "acceptedCheckoutSurfaces": [
+        "shield",
+        "real-markets"
+      ],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "brain_basic_grounded_brief",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "REAL_MODEL_EVAL_NOT_PROVEN",
+        "PROVIDER_RIGHTS_NOT_VERIFIED",
+        "PL_EN_DE_SAFETY_NONINFERIORITY_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "brain_pro_evidence_analysis",
+      "productFamily": "brain",
+      "surface": "brain",
+      "acceptedCheckoutSurfaces": [
+        "shield",
+        "real-markets"
+      ],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "brain_pro_evidence_analysis",
+      "legacyProductIds": [
+        "vlm_pro_analysis_single"
+      ],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PC00_EXACT_SKU_NOT_APPROVED",
+        "REAL_MODEL_EVAL_NOT_PROVEN",
+        "PROMPT_DATA_RIGHTS_NOT_VERIFIED",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "brain_advanced_investigation",
+      "productFamily": "brain",
+      "surface": "brain",
+      "acceptedCheckoutSurfaces": [
+        "shield",
+        "real-markets"
+      ],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "brain_advanced_investigation",
+      "legacyProductIds": [
+        "vlm_advanced_analysis_single"
+      ],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PC00_EXACT_SKU_NOT_APPROVED",
+        "ACTION_APPROVAL_ROLLBACK_NOT_STAGING_PROVEN",
+        "AI_RED_TEAM_NOT_INDEPENDENTLY_PROVEN",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "angel_basic_assistant",
+      "productFamily": "angel",
+      "surface": "angel",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "angel_basic_assistant",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "REAL_MODEL_EVAL_NOT_PROVEN",
+        "LIVE_ACTION_SAFETY_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "angel_pro_evidence_assistant",
+      "productFamily": "angel",
+      "surface": "angel",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "angel_pro_evidence_assistant",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "REAL_MODEL_EVAL_NOT_PROVEN",
+        "TIER_VALUE_NOT_PROVEN",
+        "STAGING_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "angel_advanced_operator_assistant",
+      "productFamily": "angel",
+      "surface": "angel",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "angel_advanced_operator_assistant",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "TOOL_ACTION_APPROVAL_NOT_STAGING_PROVEN",
+        "HUMAN_ESCALATION_CAPACITY_NOT_APPROVED",
+        "INDEPENDENT_AI_RED_TEAM_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "risk_basic_evidence_ranking",
+      "productFamily": "risk",
+      "surface": "risk",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "risk_basic_evidence_ranking",
+      "legacyProductIds": [],
+      "currentStatus": "OFFLINE_PROVEN_RANKING_ONLY",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "NO_PROBABILITY_CLAIM_ALLOWED",
+        "PROSPECTIVE_CUSTOMER_OUTCOME_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "risk_pro_calibrated_model",
+      "productFamily": "risk",
+      "surface": "risk",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "risk_pro_calibrated_model",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "EMPIRICAL_CALIBRATION_NOT_PROVEN",
+        "OUT_OF_TIME_VALIDATION_MISSING",
+        "LEGAL_PERIMETER_NOT_APPROVED"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "risk_advanced_prospective_decision_support",
+      "productFamily": "risk",
+      "surface": "risk",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "risk_advanced_prospective_decision_support",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "PROSPECTIVE_FROZEN_COHORT_NOT_EXECUTED",
+        "HUMAN_ESCALATION_CAPACITY_NOT_APPROVED",
+        "INDEPENDENT_ADJUDICATION_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG05",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "market_impact_basic_representative",
+      "productFamily": "market_impact",
+      "surface": "market-impact",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "market_impact_basic_representative",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "ORDER_BOOK_RIGHTS_NOT_VERIFIED",
+        "REALIZED_SLIPPAGE_REPLAY_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "market_impact_pro_multivenue_analysis",
+      "productFamily": "market_impact",
+      "surface": "market-impact",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "market_impact_pro_multivenue_analysis",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "MULTI_VENUE_RIGHTS_NOT_VERIFIED",
+        "IMPACT_ERROR_BENCHMARK_MISSING",
+        "TIER_VALUE_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "market_impact_advanced_stress_evidence",
+      "productFamily": "market_impact",
+      "surface": "market-impact",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "market_impact_advanced_stress_evidence",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "STRESS_MODEL_ERROR_BANDS_NOT_PROVEN",
+        "OUTAGE_REPLAY_NOT_PROVEN",
+        "CUSTOMER_WORKFLOW_BENCHMARK_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "whale_watch_basic_aggregate",
+      "productFamily": "whale_watch",
+      "surface": "whale-watch",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "whale_watch_basic_aggregate",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "BASIC_CELL_NOT_A_PAID_SKU",
+        "LABEL_RIGHTS_NOT_VERIFIED",
+        "PRIVACY_ABUSE_REVIEW_NOT_COMPLETE",
+        "INDEPENDENT_LABEL_ADJUDICATION_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "whale_watch_pro_verified_flows",
+      "productFamily": "whale_watch",
+      "surface": "whale-watch",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "pro",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "whale_watch_pro_verified_flows",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "VERIFIED_LABEL_SOURCE_NOT_PROVEN",
+        "FALSE_LINK_RATE_NOT_MEASURED",
+        "TIER_VALUE_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "whale_watch_advanced_cluster_stress",
+      "productFamily": "whale_watch",
+      "surface": "whale-watch",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "advanced",
+      "role": "EXPERIMENT",
+      "roleReason": "FG00_BLOCKED_NO_SIGNED_FLAGSHIP",
+      "candidateSku": "whale_watch_advanced_cluster_stress",
+      "legacyProductIds": [],
+      "currentStatus": "PREPARED_BLOCKED",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_APPROVED_CHECKOUT_SURFACE",
+        "CLUSTER_METHOD_INDEPENDENT_REVIEW_MISSING",
+        "PRIVACY_CONFLICT_REVIEW_NOT_COMPLETE",
+        "EXIT_STRESS_BENCHMARK_MISSING"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG03",
+        "HG04",
+        "HG06",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "square_basic_public_community",
+      "productFamily": "square",
+      "surface": "square",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "ROADMAP_MARKS_PUBLIC_SQUARE_AS_EXPERIMENT",
+      "candidateSku": "square_basic_public_community",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_EXPERIMENT",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "PAID_TIERS_NOT_DEFINED",
+        "DSA_PRIVACY_APPLICABILITY_NOT_APPROVED",
+        "MODERATION_APPEAL_SCALE_NOT_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG04",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "research_lab_public_experiment",
+      "productFamily": "research_lab",
+      "surface": "research-lab",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "EXPERIMENT",
+      "roleReason": "ROADMAP_MARKS_RESEARCH_LAB_AS_EXPERIMENT",
+      "candidateSku": "research_lab_public_experiment",
+      "legacyProductIds": [],
+      "currentStatus": "IMPLEMENTED_EXPERIMENT",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NO_PAID_TOP_TIER_CLAIM_ALLOWED",
+        "FROZEN_METHOD_REPRODUCIBILITY_NOT_INDEPENDENTLY_PROVEN"
+      ],
+      "requiredGates": [
+        "SR00",
+        "FG00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG04",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    },
+    {
+      "productCellId": "clothing_commerce_store",
+      "productFamily": "clothing",
+      "surface": "clothing",
+      "acceptedCheckoutSurfaces": [],
+      "tier": "basic",
+      "role": "PARKED",
+      "roleReason": "SEPARATE_BUSINESS_LINE_REQUIRES_SIGNED_SCOPE_DECISION",
+      "candidateSku": "clothing_commerce_store",
+      "legacyProductIds": [],
+      "currentStatus": "SEPARATE_LINE_NO_PASS35_SERVICE_SKU",
+      "sellEnabled": false,
+      "sellBlockedReasons": [
+        "NOT_A_VLM_SERVICE_CHECKOUT_CELL",
+        "MERCHANT_LEGAL_PROFILE_NO_GO",
+        "SEPARATE_BUSINESS_DECISION_REQUIRED"
+      ],
+      "requiredGates": [
+        "SR00",
+        "PC00",
+        "ORG00",
+        "HG02",
+        "HG04",
+        "HG07",
+        "HG08",
+        "HG09",
+        "HG13"
+      ],
+      "readiness": {
+        "catalogApproved": false,
+        "flagshipApproved": false,
+        "organizationApproved": false,
+        "legalApproved": false,
+        "providerRightsApproved": false,
+        "securityStagingProven": false,
+        "tierValueProven": false,
+        "paymentLifecycleStagingProven": false,
+        "capacityApproved": false,
+        "canonicalPacketProven": false
+      },
+      "engineeringFlagshipCandidate": false
+    }
+  ],
+  "flagshipCandidatePlanPath": "config/pass35/flagship-candidate-plan.json",
+  "tierContentContractPath": "config/pass35/product-tier-content-contract.json",
+  "zeroBudgetFunctionalRoadmapPath": "config/pass35/zero-budget-functional-roadmap.json",
+  "auditAdvancedTargetModel": {
+    "coreAutomatedTargetSku": "audit_evm_advanced_automated_assurance",
+    "optionalHumanReviewAddOnSku": "audit_evm_advanced_human_review",
+    "humanReviewRequiredForCoreAutomatedAdvanced": false,
+    "migrationStatus": "ROADMAP_DEFINED_CATALOG_SKU_MIGRATION_NOT_EXECUTED"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "contract": {
+    "allCurrentFilesExactlyOnce": true,
+    "allParentLintableFilesRetained": true,
+    "discoveryRulesChanged": false,
+    "errorsAndWarningsStillBlocking": true,
+    "fileDenominatorMustNotShrink": true,
+    "processFailuresStillBlocking": true,
+    "sourceImmutabilityStillRequired": true
+  },
+  "current": {
+    "fileChunkSize": 500,
+    "maxBatchBytes": 150000,
+    "maxBatchFiles": 3
+  },
+  "persistentRunner": {
+    "batchSize": 25,
+    "errorsWarningsAndExceptionsBlocking": true,
+    "exactPathSetRequired": true,
+    "oneEslintInstancePerPartition": true,
+    "partitionProcessIsolation": true,
+    "reason": "Avoid repeated TypeScript-program construction in 1,244 child processes while preserving the exact 3,708-file denominator and per-partition memory isolation.",
+    "script": "scripts/pass36/run-a102r44p30-persistent-eslint-shard.mjs",
+    "sourceImmutabilityRequired": true
+  },
+  "previous": {
+    "fileChunkSize": 35,
+    "maxBatchBytes": 200000,
+    "maxBatchFiles": 10
+  },
+  "reason": "Retain conservative discovery and path-set rules, but execute each partition through one persistent ESLint API process to remove pathological repeated parser startup without shrinking the denominator.",
+  "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p30.eslint-batching-migration.v1"
+}

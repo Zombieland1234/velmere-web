@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.pass36.a89.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "parentRevisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "parentDescendantManifestDigestSha256": "51e4a9570d52a845080b33f424d5221752ba5d8a251b1bc3447d2e73ce6eb2be",
+  "generatedAt": "2026-07-28T00:00:00.000Z",
+  "payload": {
+    "fileCount": 4579,
+    "byteLength": 113499134,
+    "pathSetSha256": "2f0a9c3653893b4d3c8a6ccc6b04abfa2e7520d88d5c17057c9e57637bc8e543",
+    "aggregateSha256": "83da70df5b21bb4bf8b7d0018d639b3ac001f0ac56cffc8c93c0ae308ca5290c"
+  },
+  "exclusions": [
+    "_velmere/PASS35_SOURCE_ONLY_MANIFEST.json",
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a89-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "accountAuthTenantPrivacyRedTeamImplemented": true,
+    "redTeamFamilies": 16,
+    "redTeamCases": 192,
+    "redTeamMismatches": 0,
+    "strictEnvelopeMutations": 768,
+    "strictEnvelopeMutationsKilled": 768,
+    "closedGaps": 28,
+    "realOAuthRuns": 0,
+    "realTwoTenantRlsChecks": 0,
+    "realAccountTakeoverDrills": 0,
+    "realCrossDeviceRevocationDrills": 0,
+    "realDsarRuns": 0,
+    "externalTrustIntakeRecordsVerified": 0,
+    "legalRegulatoryDecisionsSigned": 0,
+    "exactA80CandidateBound": false,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "manifestDigestSha256": "8900eab75426203d41a6012c265a1824fe2d45b68ed8e3dd240e007def2f30f8"
+}

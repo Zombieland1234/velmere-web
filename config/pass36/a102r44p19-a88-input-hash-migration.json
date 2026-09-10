@@ -1,0 +1,77 @@
+{
+  "creditBoundary": {
+    "denominatorReduced": false,
+    "historicalReceiptsRewritten": false,
+    "independentAdjudicationCredit": false,
+    "liveCredit": false,
+    "realModelExecutionCredit": false,
+    "saleCredit": false,
+    "stagingCredit": false
+  },
+  "denominators": {
+    "a88ChecksRemoved": 0,
+    "a88ChecksRetained": 61,
+    "a88r1RouteChecksRemoved": 0,
+    "a88r1RouteChecksRetained": 143,
+    "a88r1SemanticChecksRemoved": 0,
+    "a88r1SemanticChecksRetained": 56
+  },
+  "observedCurrentRuns": {
+    "a88": {
+      "behavioralFailures": 0,
+      "checks": 61,
+      "failed": 1,
+      "passed": 60,
+      "staleHashOnly": true,
+      "status": "FAIL_A88_BRAIN_ANGEL_RISK_EVAL"
+    },
+    "a88r1Route": {
+      "checks": 143,
+      "failed": 0,
+      "passed": 143,
+      "providerCallsOnBlockedCases": 0,
+      "status": "PASS_A88R1_ROUTE_PREFLIGHT_PROVIDER_ZERO_BEFORE_BOUNDARY"
+    },
+    "a88r1Semantic": {
+      "behavioralFailures": 0,
+      "checks": 56,
+      "failed": 3,
+      "passed": 53,
+      "staleHashOnly": true,
+      "status": "FAIL_A88R1_SEMANTIC_ROUTE_PRIVACY_PDF"
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P18_ACTION_REQUIRED_OFFICIAL_PROVIDER_RIGHTS_FAIL_CLOSED_CUSTOMER_DELIVERY_COINPAPRIKA_COINBASE_NO_LIVE_CREDIT",
+  "reason": "Historical A88/A88R1 policies remain immutable. R44P19 changes only current commercial presentation and keeps the full behavioral denominator; current-byte hashes are bound by this explicit migration.",
+  "revisionId": "VELMERE_PASS36_A102R44P19_ACTION_REQUIRED_BASIC_ALWAYS_FREE_PRO_ADVANCED_SALE_READINESS_AND_CROSS_SURFACE_COMMERCIAL_GATE_CLOSURE_NO_LIVE_CREDIT",
+  "rows": [
+    {
+      "currentReason": "Retained multilingual probability-order and safety hardening; behavior denominator remains intact.",
+      "currentSha256": "84f58c65a2d250ea7f372f50d1818e694e8aee9919e0db6728810687b1723f5a",
+      "historicalPolicyPath": "config/pass36/a88-brain-angel-risk-eval-policy.json",
+      "historicalSha256": "8aef189203293f1edc512982907eac1da30230c561f1bebaf2fb8e2c6efe61ba",
+      "id": "a88-advice-boundary",
+      "inputKey": "adviceBoundary",
+      "path": "lib/ai/vlm-advice-boundary.ts"
+    },
+    {
+      "currentReason": "R44P19 makes Basic permanently free and adds explicit GO_PAID_AFTER_EVIDENCE preparation targets for Pro and Advanced without enabling checkout.",
+      "currentSha256": "7d15c03ca6b993104ebb630255cede4d8b6c98c79d54f7189dc9d716546d2254",
+      "historicalPolicyPath": "config/pass36/a88r1-semantic-route-privacy-pdf-policy.json",
+      "historicalSha256": "e883caaeb274a538f63afd1b2573feef2264d601f8fe95f23fe01c92fc365c33",
+      "id": "a88r1-tier-presentation",
+      "inputKey": "tierPresentationPolicy",
+      "path": "lib/commerce/vlm-tier-presentation-policy.ts"
+    },
+    {
+      "currentReason": "Retained customer-truth and UI binding; no A88R1 behavior denominator removed.",
+      "currentSha256": "a7d44035c0d2c91d05cbe5d4e52a8a9e4730e82ec24200b29f672e2bb0faa124",
+      "historicalPolicyPath": "config/pass36/a88r1-semantic-route-privacy-pdf-policy.json",
+      "historicalSha256": "42e378782c1c4d7f118f0d023a4c7c5b77f5ffa1603d968055909302088d1160",
+      "id": "a88r1-intelligence-consumer",
+      "inputKey": "intelligencePresentationConsumer",
+      "path": "app/[locale]/intelligence/page.tsx"
+    }
+  ],
+  "schemaVersion": "velmere.pass36.a102r44p19.a88-input-hash-migration.v1"
+}

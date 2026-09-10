@@ -1,0 +1,500 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T10:25:32+02:00",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "formalOpenEntries": 31,
+  "planningEstimate": {
+    "minimumCheckpoints": 13,
+    "mostLikelyCheckpoints": 25,
+    "withRevisionsRetestsLegalProviderCustomer": 46
+  },
+  "a102r40": {
+    "currentSourceAuthorityChecks": 37,
+    "releaseSourceBindingSurfaces": 6,
+    "legacyA57ManifestDeclaredFiles": 4584,
+    "legacyA57ManifestCurrentExpectedFilesObserved": 5458,
+    "legacyA57CurrentPreflightEligible": false,
+    "currentAuthorityPayloadExactRequired": true,
+    "a63ExactNpmCliProcessExecPath": true,
+    "freshExactWindowsBuildBrowserCredit": false,
+    "passCredit": false,
+    "a79BrowserRowsRequired": 56,
+    "a79ScreenshotsRequired": 29,
+    "historical36Row19ScreenshotCredit": false,
+    "a58AuthorityVerifierStatusBound": true,
+    "a58ExecutablePathDenominator": 35,
+    "authorityVerifierChecks": 40,
+    "localRegressionStages": 20,
+    "localRegressionSourcePayloadComparedBeforeAfter": true,
+    "stalePreFinalSourceArchiveRejected": true,
+    "approvedChangeLedgerReceiptCycleRemoved": true
+  },
+  "hardExitGates": [
+    {
+      "id": "A77R1_A80R1",
+      "verified": 0,
+      "required": 4,
+      "status": "OPEN"
+    },
+    {
+      "id": "NORMAL_LIFECYCLE_REVIEWED_NPM_CI",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "EXACT_WINDOWS_FINAL_BYTE_BUILD",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "EXACT_CHROME_FINAL_BROWSER",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "A102_OBSERVATIONS",
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200,
+      "status": "OPEN_MINIMUM_72H"
+    },
+    {
+      "id": "STAGING_A95_A104",
+      "verified": 0,
+      "required": 10,
+      "status": "OPEN"
+    },
+    {
+      "id": "RLS_STAGING",
+      "verified": 0,
+      "required": 19,
+      "status": "OPEN"
+    },
+    {
+      "id": "STRIPE_TEST_LIFECYCLE",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "PRIVATE_STORAGE_MUTATIONS",
+      "verified": 0,
+      "required": 2,
+      "status": "OPEN"
+    },
+    {
+      "id": "EXTERNAL_KMS_CALLS",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "TRANSACTIONAL_EMAIL_PROVIDER_DELIVERIES",
+      "verified": 0,
+      "required": 1,
+      "inboxProofCredited": false,
+      "status": "OPEN"
+    },
+    {
+      "id": "SUCCESS_FAILURE_CLEANUP_CONFIRMATIONS",
+      "verified": 0,
+      "required": 2,
+      "status": "OPEN"
+    },
+    {
+      "id": "ALTERNATE_PROVIDER_PROBES",
+      "verified": 0,
+      "required": 10,
+      "status": "OPEN"
+    },
+    {
+      "id": "PROVIDER_RIGHTS",
+      "verified": 0,
+      "required": 21,
+      "status": "OPEN"
+    },
+    {
+      "id": "LEGAL_DPO",
+      "verified": 0,
+      "required": 20,
+      "status": "OPEN"
+    },
+    {
+      "id": "INDEPENDENT_ASSURANCE",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "REAL_CONTRACT_CASES",
+      "verified": 0,
+      "required": 50,
+      "status": "OPEN"
+    },
+    {
+      "id": "SOURCE_BYTECODE_REPRODUCTION",
+      "verified": 0,
+      "required": 50,
+      "status": "OPEN"
+    },
+    {
+      "id": "OFFICIAL_AUDIT_TOOL_RUNS",
+      "verified": 0,
+      "required": 200,
+      "status": "OPEN"
+    },
+    {
+      "id": "REAL_TIER_OUTPUTS",
+      "verified": 0,
+      "required": 150,
+      "status": "OPEN"
+    },
+    {
+      "id": "CROSS_AUDITS",
+      "verified": 0,
+      "required": 20,
+      "status": "OPEN"
+    },
+    {
+      "id": "REAL_CUSTOMER_PDFS",
+      "verified": 0,
+      "required": 50,
+      "status": "OPEN"
+    },
+    {
+      "id": "SHIELD",
+      "verified": 0,
+      "required": 318,
+      "status": "OPEN"
+    },
+    {
+      "id": "SHIELD_PRO_MAP",
+      "verified": 0,
+      "required": 318,
+      "status": "OPEN"
+    },
+    {
+      "id": "REAL_MARKETS",
+      "verified": 0,
+      "required": 583,
+      "status": "OPEN"
+    },
+    {
+      "id": "MARKET_IMPACT",
+      "verified": 0,
+      "required": 318,
+      "status": "OPEN"
+    },
+    {
+      "id": "WHALE_WATCH",
+      "verified": 0,
+      "required": 318,
+      "status": "OPEN"
+    },
+    {
+      "id": "BRAIN_ANGEL_RISK",
+      "verified": 0,
+      "required": 300,
+      "status": "OPEN"
+    },
+    {
+      "id": "CUSTOMER_COHORTS",
+      "verified": 0,
+      "required": 2,
+      "status": "OPEN"
+    },
+    {
+      "id": "A114_POST_STAGING",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "A115_FINAL_SKU_LEGAL_CLAIMS",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "A116_INDEPENDENT_FINAL_RELEASE",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "PRODUCTION_SMOKE_UNIQUE_ASSERTIONS",
+      "verified": 0,
+      "required": 55,
+      "status": "OPEN"
+    },
+    {
+      "id": "PRODUCTION_SMOKE_UNIQUE_RESULTS",
+      "verified": 0,
+      "required": 16,
+      "status": "OPEN"
+    },
+    {
+      "id": "BROWSER_ROWS",
+      "verified": 0,
+      "required": 56,
+      "status": "OPEN"
+    },
+    {
+      "id": "SCREENSHOTS",
+      "verified": 0,
+      "required": 29,
+      "status": "OPEN"
+    },
+    {
+      "id": "POPUP_TABS",
+      "verified": 0,
+      "required": 4,
+      "status": "OPEN"
+    },
+    {
+      "id": "DETERMINISTIC_SOURCE_BUILDS",
+      "verified": 0,
+      "required": 2,
+      "status": "OPEN"
+    },
+    {
+      "id": "DETERMINISTIC_MATERIALS_BUILDS",
+      "verified": 0,
+      "required": 2,
+      "status": "OPEN"
+    },
+    {
+      "id": "CLEAN_UNPACK",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "A58_LITERAL_FIRST_CHILD",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "INDEPENDENT_CRYPTOGRAPHIC_DUAL_CONTROL",
+      "verified": 0,
+      "required": 2,
+      "status": "BLOCKED_EXTERNAL"
+    }
+  ],
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    }
+  },
+  "nextExecutionOrder": [
+    "Freeze the final A102R41 source payload and rerun exact Node/npm lint, pre-build 159-root typecheck, Webpack, Turbopack, post-build 300-root typecheck, production smoke and exact Chromium browser evidence on unchanged bytes.",
+    "Execute A80R1 two-phase deterministic SOURCE and MATERIALS 2/2 packaging, clean-unpack with A58 as the literal first child, and external final verification.",
+    "Implement and stage-test a pinned process-tree broker, durable server-owned account operations and durable opaque HttpOnly checkout flow before any paid execution.",
+    "Use disposable TEST staging and lawful external evidence for A95-A116; keep every unavailable denominator at zero."
+  ],
+  "truthBoundary": "A102R41 records local security, privacy, evidence-authority and exact Windows input-preflight repairs that require a final physical descendant verification. It grants no exact final-byte build/browser, A77R1-A80R1, staging, provider-rights, legal/DPO, independent assurance, real-data, customer, LIVE, production or sale credit.",
+  "passes": [
+    {
+      "passNumber": 77,
+      "revisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+      "status": "LOCAL_CONSTRUCTION_ONLY_EXTERNAL_GOVERNANCE_OPEN",
+      "credit": false
+    },
+    {
+      "passNumber": 78,
+      "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+      "status": "LOCAL_BOOTSTRAP_HARDENING_BLOCKED_EXACT_ARTIFACTS",
+      "credit": false
+    },
+    {
+      "passNumber": 79,
+      "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+      "status": "DONE_LOCAL_ADMISSION_HARDENING_BLOCKED_A78_EXACT_ARTIFACTS",
+      "credit": false
+    },
+    {
+      "passNumber": 80,
+      "revisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+      "status": "LOCAL_ADMISSION_ONLY_BLOCKED_A79_EXACT_EXECUTION",
+      "credit": false
+    }
+  ],
+  "generatedAtSemantics": "Authority metadata recording time only; not a source freeze, execution receipt, elapsed-time observation or promotion timestamp.",
+  "openEntryMigration": {
+    "parentOpenEntries": 31,
+    "newFormalProgramEntriesAdded": 0,
+    "entriesClosed": 0,
+    "currentOpenEntries": 31,
+    "reason": "The thirty-nine R41 findings refine existing A77R1-A116 gates and do not create duplicate scored program entries.",
+    "findingToExistingGate": {
+      "A102R41-P0-01": "A77R1",
+      "A102R41-P0-02": "A96",
+      "A102R41-P0-03": "A105-A113",
+      "A102R41-P0-04": "A79R1_A111",
+      "A102R41-P1-05": "A96",
+      "A102R41-P1-06": "A97",
+      "A102R41-P1-07": "A80R1",
+      "A102R41-P2-08": "A78R1",
+      "A102R41-P0-09": "A80R1",
+      "A102R41-P1-10": "A80R1",
+      "A102R41-P1-11": "A77R1_A80R1",
+      "A102R41-P1-12": "A78R1_A79R1",
+      "A102R41-P1-13": "A80R1",
+      "A102R41-P1-14": "A79R1_A80R1",
+      "A102R41-P2-15": "A79R1_A80R1",
+      "A102R41-P0-16": "A79R1",
+      "A102R41-P1-17": "A79R1_A80R1",
+      "A102R41-P1-18": "A80R1",
+      "A102R41-P0-19": "A79R1",
+      "A102R41-P0-20": "A79R1_A80R1",
+      "A102R41-P0-21": "A79R1_A80R1",
+      "A102R41-P2-22": "A79R1_A80R1",
+      "A102R41-P1-23": "A79R1",
+      "A102R41-P1-24": "A79R1_A80R1",
+      "A102R41-P0-25": "A79R1_A80R1",
+      "A102R41-P1-26": "A79R1_A80R1",
+      "A102R41-P1-27": "A79R1_A80R1",
+      "A102R41-P1-28": "A79R1_A80R1",
+      "A102R41-P0-29": "A79R1_A80R1",
+      "A102R41-P0-30": "A79R1_A80R1",
+      "A102R41-P0-31": "A79R1_A80R1",
+      "A102R41-P1-32": "A79R1_A80R1",
+      "A102R41-P1-33": "A79R1_A80R1",
+      "A102R41-P0-34": "A79R1_A80R1",
+      "A102R41-P0-35": "A79R1_A80R1",
+      "A102R41-P0-36": "A79R1_A80R1",
+      "A102R41-P2-37": "A79R1_A80R1",
+      "A102R41-P1-38": "A77R1_A80R1",
+      "A102R41-P1-39": "A77R1_A80R1"
+    },
+    "scoreImprovementClaimed": false
+  },
+  "a102r41": {
+    "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+    "completedThrough": 89,
+    "findingCount": 39,
+    "currentSourceAuthorityChecksRequired": 46,
+    "historicalSparseEdgeLedgerChecksRequired": 11,
+    "historicalDescendantInnerChainChecksExpected": 415,
+    "a80HistoricalReportChecksExpected": 426,
+    "historicalDescendantChainStatus": "EXPECTED_NOT_EXECUTED_UNTIL_FINAL_DESCENDANT",
+    "sourceModeExecutablePathsRequired": 58,
+    "a80r1MechanismChecksRequired": 36,
+    "packageBoundaryChecksRequired": 36,
+    "browserRowsRequired": 56,
+    "screenshotsRequired": 29,
+    "popupTabsRequired": 4,
+    "browserEvidenceVerifierChecksRequired": 584,
+    "browserEvidenceVerifierCheckIdentitySha256": "21ae399b4bc46252ed02f29946019e2e97544ac0afb2bd9d5c48ca0412702ea3",
+    "browserScenarioChecksRequired": 57,
+    "a45BrowserFixtureChecksRequired": 28,
+    "a45StaticBrowserContractChecksRequired": 64,
+    "a60HarnessChecksRequired": 36,
+    "a60BrowserFixtureMigrationChecksRequired": 38,
+    "sanitizedChildProcessChecksRequired": 11,
+    "sanitizedChildProcessChecksPriorRejectedClaim": 12,
+    "failedFrozenRegressionAttemptsRetained": 1,
+    "failedFrozenRegressionRequiredStages": 28,
+    "failedFrozenRegressionExecutedStages": 27,
+    "failedFrozenRegressionPassedStages": 26,
+    "failedFrozenRegressionStage": "eslint",
+    "failedFrozenRegressionEslintPartitions": 98,
+    "failedFrozenRegressionEslintPassedPartitions": 93,
+    "failedFrozenRegressionLintErrors": 13,
+    "failedFrozenRegressionLintWarnings": 0,
+    "failedFrozenRegressionProcessFailures": 0,
+    "failedFrozenRegressionSourceImmutable": true,
+    "targetedLintRemediationFiles": 6,
+    "targetedLintRemediationExitCode": 0,
+    "failedCleanUnpackAttemptsRetained": 1,
+    "failedCleanUnpackRequiredSteps": 17,
+    "failedCleanUnpackPassedSteps": 17,
+    "failedCleanUnpackNestedRegressionPassedStages": 28,
+    "failedCleanUnpackSourceFilesBefore": 5544,
+    "failedCleanUnpackSourceFilesAfter": 5545,
+    "failedCleanUnpackUnexpectedArtifactBytes": 222,
+    "failedCleanUnpackSourceImmutable": false,
+    "failedCleanUnpackCleanExtractImmutable": false,
+    "a45StaticSourceTrackedReceiptWrites": 0,
+    "a45StaticStdoutOnly": true,
+    "a79HarnessChecksRequired": 54,
+    "a79VerifierChecksRequired": 18,
+    "browserSemanticAndPngSubcasesRequired": 16,
+    "browserPngIntegritySubcasesRequired": 3,
+    "browserPrivacyAndBudgetSubcasesRequired": 8,
+    "a60StageSequenceAndLogBindingSubcasesRequired": 16,
+    "a60EvidencePathSetSubcasesRequired": 8,
+    "a60EvidencePackageCorePathsRequired": 4,
+    "a60EvidencePackageLogPathsRequired": 26,
+    "a60EvidencePackageScreenshotPathsRequired": 29,
+    "a60EvidencePackagePathsRequired": 59,
+    "a60EvidencePackagePathSetSha256": "748873f54fb9fe4c10946f1f55e13fc9f8ccabec30ba28758735d102be60eba9",
+    "a60EvidencePackageDeterministicBuildsRequired": 2,
+    "a60EvidencePackagePathsVerified": 0,
+    "a60EvidencePackageDeterministicBuildsExecuted": 0,
+    "a60RuntimeProbeObservationsRequired": 2,
+    "a60RuntimeProbeObservationsVerified": 0,
+    "a60PortClosureRefusalProbesRequired": 3,
+    "a60PortClosureRefusalProbesVerified": 0,
+    "frozenLocalRegressionStagesRequired": 28,
+    "exactWindowsInputPreflightLocalOnly": true,
+    "exactFinalByteBuildBrowserCredit": false,
+    "externalCommandExecutionCredit": false,
+    "durableAccountOperationWorkflows": 0,
+    "durableOpaqueCheckoutFlowImplemented": false,
+    "paidCheckoutStopSellActive": true,
+    "realEvidenceDenominatorsCredited": 0,
+    "passCredit": false
+  }
+}

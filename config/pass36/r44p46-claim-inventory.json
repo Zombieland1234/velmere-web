@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.claim-inventory.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "evidenceClass": "TESTED_STATIC",
+  "scanMode": "ACTIVE_ROUTE_DEPENDENCY_CLOSURE_PLUS_PL_EN_DE_MESSAGES",
+  "dependencyClosureFileCount": 1521,
+  "riskyLiteralOccurrenceCount": 6037,
+  "stateCounts": {
+    "PROVEN": 0,
+    "QUALIFIED": 3387,
+    "REMOVE": 575,
+    "INTERNAL_ONLY": 2055,
+    "HISTORICAL_ONLY": 20
+  },
+  "termCounts": {
+    "all vulnerabilities": 0,
+    "professional audit": 0,
+    "human reviewed": 1,
+    "ai verified": 0,
+    "real-time": 6,
+    "realtime": 3,
+    "institutional": 56,
+    "probability": 62,
+    "prediction": 44,
+    "guaranteed": 129,
+    "certified": 72,
+    "verified": 1015,
+    "accurate": 1,
+    "complete": 302,
+    "instant": 22,
+    "secure": 48,
+    "safe": 1593,
+    "live": 2683
+  },
+  "occurrenceProjectionSha256": "7030d6982e83614a419fda717c1f3e01b5a2edfd88717276bc2ce3e849695271",
+  "publicHighRiskRemoveCandidateCount": 575,
+  "provenClaimCount": 0,
+  "fixesAppliedThisTruthRebaseline": 0,
+  "classificationBoundary": "A REMOVE row is a conservative review/removal candidate, not an adjudicated false statement. PROVEN requires exact evidence; none was awarded by lexical scanning.",
+  "limitations": [
+    "Static lexical inventory can include identifiers, internal diagnostics and negative statements.",
+    "QUALIFIED is syntax/context triage, not legal approval.",
+    "INTERNAL_ONLY does not permit the same wording to appear on a public surface.",
+    "G09 remains open while REMOVE candidates exist and until public rendered copy, email, SEO, metadata, OpenGraph, PDF and Browser surfaces are adjudicated."
+  ],
+  "gateG09Closed": false
+}

@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "velmere.pass36.a74.navigation-redirect-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A74R0_NAVIGATION_REDIRECT_AND_CALLBACK_TRUST_BOUNDARY_HARDENING",
+  "counts": {
+    "total": 58,
+    "passed": 58,
+    "failed": 0
+  },
+  "coveredProductionFiles": 9,
+  "redirectProfiles": 4,
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "canonical_configured_https",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "canonical_dev_request_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "canonical_production_requires_config",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_origin_invalid"
+    },
+    {
+      "id": "canonical_credentials_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_credentials_forbidden"
+    },
+    {
+      "id": "canonical_path_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_origin_invalid"
+    },
+    {
+      "id": "canonical_query_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_origin_invalid"
+    },
+    {
+      "id": "canonical_http_production_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_protocol_invalid"
+    },
+    {
+      "id": "internal_account_path",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_recovery_path",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_auth_unknown_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_absolute_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_scheme_relative_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_backslash_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_encoded_slash_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_crlf_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_fragment_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_api_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "internal_root_api_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "paid_success_loop_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "paid_login_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "paid_asset_return_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "paid_query_budget_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "server_redirect_uses_configured_origin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "server_error_redirect_same_origin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "browser_same_origin_relative",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "browser_same_origin_dev_port",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "browser_cross_origin_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_origin_invalid"
+    },
+    {
+      "id": "browser_credentials_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_credentials_forbidden"
+    },
+    {
+      "id": "browser_fragment_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_fragment_forbidden"
+    },
+    {
+      "id": "stripe_checkout_exact_host_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "checkout_same_origin_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "stripe_subdomain_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_provider_origin_invalid"
+    },
+    {
+      "id": "stripe_http_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_protocol_invalid"
+    },
+    {
+      "id": "stripe_port_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_port_forbidden"
+    },
+    {
+      "id": "stripe_path_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_path_forbidden"
+    },
+    {
+      "id": "supabase_oauth_exact_origin_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_origin_mismatch_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_provider_origin_invalid"
+    },
+    {
+      "id": "supabase_path_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_path_forbidden"
+    },
+    {
+      "id": "supabase_fragment_rejected",
+      "pass": true,
+      "detail": "navigation_redirect_boundary:navigation_fragment_forbidden"
+    },
+    {
+      "id": "paid_access_return_uses_boundary",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "paid_access_return_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "auth_state_external_return_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:app/api/auth/callback/route.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/auth/supabase-auth-flow.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:components/auth/AuthGate.tsx",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:app/api/checkout/vlm-service/route.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/commerce/vlm-paid-access.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/commerce/vlm-paid-access-client.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:components/security/SecurityAuditsCleanPage.tsx",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:components/checkout/VelmereCheckoutFlowClient.tsx",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:components/market-integrity/AssetDetailModal.tsx",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "callback_no_request_origin_redirect",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "oauth_server_validates_provider_url",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "checkout_server_canonical_origin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "checkout_cancel_url_canonical",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "clients_no_unvalidated_payload_assign",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "checkout_exact_stripe_host",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

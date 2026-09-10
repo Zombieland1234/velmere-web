@@ -1,0 +1,479 @@
+{
+  "artifactModel": {
+    "auditPdf": {
+      "mustDifferByTierValue": true,
+      "ownerRequired": true,
+      "relationship": "CUSTOMER_FACING_OUTPUT_ARTIFACT_OF_AUDIT",
+      "tiers": [
+        "basic",
+        "pro",
+        "advanced"
+      ]
+    },
+    "browserPdf": {
+      "relationship": "CUSTOMER_FACING_OUTPUT_ARTIFACT_OF_BROWSER_WHERE_CURRENTLY_PRESENT"
+    },
+    "pdfIsProductFamily": false
+  },
+  "authority": {
+    "canonicalDirectiveV16Sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9",
+    "currentOwnerCorrection": "CURRENT_SESSION_EXPLICIT_OWNER_TOPOLOGY_INSTRUCTION",
+    "precedenceRule": "Current explicit owner product topology corrects stale measurement topology without rewriting historical receipts."
+  },
+  "customerFacingRows": [
+    {
+      "customerFacing": true,
+      "family": "audit",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": "AUDIT_REPORT_PDF",
+      "rowId": "audit-basic",
+      "tier": "basic"
+    },
+    {
+      "customerFacing": true,
+      "family": "audit",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": "AUDIT_REPORT_PDF",
+      "rowId": "audit-pro",
+      "tier": "pro"
+    },
+    {
+      "customerFacing": true,
+      "family": "audit",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": "AUDIT_REPORT_PDF",
+      "rowId": "audit-advanced",
+      "tier": "advanced"
+    },
+    {
+      "customerFacing": true,
+      "family": "browser",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": "BROWSER_REPORT_PDF",
+      "rowId": "browser-basic",
+      "tier": "basic"
+    },
+    {
+      "customerFacing": true,
+      "family": "browser",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": "BROWSER_REPORT_PDF",
+      "rowId": "browser-pro",
+      "tier": "pro"
+    },
+    {
+      "customerFacing": true,
+      "family": "browser",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": "BROWSER_REPORT_PDF",
+      "rowId": "browser-advanced",
+      "tier": "advanced"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "shield-basic",
+      "tier": "basic"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "shield-pro",
+      "tier": "pro"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "shield-advanced",
+      "tier": "advanced"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield-pro",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "shield-pro-basic",
+      "tier": "basic"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield-pro",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "shield-pro-pro",
+      "tier": "pro"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield-pro",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "shield-pro-advanced",
+      "tier": "advanced"
+    },
+    {
+      "customerFacing": true,
+      "family": "real-markets",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "real-markets-basic",
+      "tier": "basic"
+    },
+    {
+      "customerFacing": true,
+      "family": "real-markets",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "real-markets-pro",
+      "tier": "pro"
+    },
+    {
+      "customerFacing": true,
+      "family": "real-markets",
+      "kind": "CUSTOMER_TIER",
+      "pdfArtifact": null,
+      "rowId": "real-markets-advanced",
+      "tier": "advanced"
+    },
+    {
+      "customerFacing": true,
+      "family": "shield-map",
+      "kind": "STANDALONE_CUSTOMER_PRODUCT",
+      "pdfArtifact": null,
+      "rowId": "shield-map",
+      "tier": null
+    },
+    {
+      "customerFacing": true,
+      "family": "market-impact",
+      "kind": "STANDALONE_CUSTOMER_PRODUCT",
+      "pdfArtifact": null,
+      "rowId": "market-impact",
+      "tier": null
+    },
+    {
+      "customerFacing": true,
+      "family": "whale-watch",
+      "kind": "STANDALONE_CUSTOMER_PRODUCT",
+      "pdfArtifact": null,
+      "rowId": "whale-watch",
+      "tier": null
+    },
+    {
+      "customerFacing": true,
+      "family": "angel",
+      "kind": "STANDALONE_CUSTOMER_PRODUCT",
+      "pdfArtifact": null,
+      "rowId": "angel",
+      "tier": null
+    },
+    {
+      "customerFacing": true,
+      "family": "risk-indicator",
+      "kind": "STANDALONE_CUSTOMER_PRODUCT",
+      "pdfArtifact": null,
+      "rowId": "risk-indicator",
+      "tier": null
+    }
+  ],
+  "denominators": {
+    "currentExecutionProfiles": 20,
+    "customerFacingRows": 20,
+    "legacy33ProductCompletionDenominatorRetired": true,
+    "legacyP64ContextArtifacts": 33,
+    "productFamilies": 10,
+    "realPaidValueTransitions": 10,
+    "standaloneCustomerRows": 5,
+    "standaloneExecutionProfiles": 5,
+    "tieredCustomerRows": 15,
+    "tieredExecutionProfiles": 15,
+    "tieredProductFamilies": 5
+  },
+  "generatedAt": "2026-08-16T17:30:00.000Z",
+  "legacy33Adjudication": [
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "audit"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "audit"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "audit"
+    },
+    {
+      "classification": "INTERNAL_ARTIFACT_TEST_CONTEXT_NOT_PRODUCT_FAMILY",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "pdf"
+    },
+    {
+      "classification": "INTERNAL_ARTIFACT_TEST_CONTEXT_NOT_PRODUCT_FAMILY",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "pdf"
+    },
+    {
+      "classification": "INTERNAL_ARTIFACT_TEST_CONTEXT_NOT_PRODUCT_FAMILY",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "pdf"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "browser"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "browser"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "browser"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "shield"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "shield"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "shield"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "shield-pro"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "shield-pro"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "shield-pro"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "shield-map"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "shield-map"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "shield-map"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "real-markets"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "real-markets"
+    },
+    {
+      "classification": "CUSTOMER_TIER_CONTEXT_LEGACY_NAME_MATCHES_REAL_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "real-markets"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "market-impact"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "market-impact"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "market-impact"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "whale-watch"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "whale-watch"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "whale-watch"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "angel"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "angel"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "angel"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "BASIC_CONTEXT",
+      "legacyFamily": "risk-indicator"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "PRO_CONTEXT",
+      "legacyFamily": "risk-indicator"
+    },
+    {
+      "classification": "INTERNAL_TEST_CONTEXT_NOT_CUSTOMER_TIER",
+      "legacyContext": "ADVANCED_CONTEXT",
+      "legacyFamily": "risk-indicator"
+    }
+  ],
+  "productFamilies": [
+    {
+      "customerModel": "BASIC_PRO_ADVANCED",
+      "customerRows": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "family": "audit",
+      "tiered": true
+    },
+    {
+      "customerModel": "BASIC_PRO_ADVANCED",
+      "customerRows": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "family": "browser",
+      "tiered": true
+    },
+    {
+      "customerModel": "BASIC_PRO_ADVANCED",
+      "customerRows": [
+        "shield-basic",
+        "shield-pro",
+        "shield-advanced"
+      ],
+      "family": "shield",
+      "tiered": true
+    },
+    {
+      "customerModel": "BASIC_PRO_ADVANCED",
+      "customerRows": [
+        "shield-pro-basic",
+        "shield-pro-pro",
+        "shield-pro-advanced"
+      ],
+      "family": "shield-pro",
+      "tiered": true
+    },
+    {
+      "customerModel": "BASIC_PRO_ADVANCED",
+      "customerRows": [
+        "real-markets-basic",
+        "real-markets-pro",
+        "real-markets-advanced"
+      ],
+      "family": "real-markets",
+      "tiered": true
+    },
+    {
+      "customerModel": "STANDALONE_NO_TIERS",
+      "customerRows": [
+        "shield-map"
+      ],
+      "family": "shield-map",
+      "freeFunction": false,
+      "tiered": false
+    },
+    {
+      "customerModel": "STANDALONE_NO_TIERS",
+      "customerRows": [
+        "market-impact"
+      ],
+      "family": "market-impact",
+      "freeFunction": true,
+      "tiered": false
+    },
+    {
+      "customerModel": "STANDALONE_NO_TIERS",
+      "customerRows": [
+        "whale-watch"
+      ],
+      "family": "whale-watch",
+      "freeFunction": true,
+      "tiered": false
+    },
+    {
+      "customerModel": "STANDALONE_NO_TIERS",
+      "customerRows": [
+        "angel"
+      ],
+      "family": "angel",
+      "freeFunction": false,
+      "tiered": false
+    },
+    {
+      "customerModel": "STANDALONE_NO_TIERS",
+      "customerRows": [
+        "risk-indicator"
+      ],
+      "family": "risk-indicator",
+      "freeFunction": false,
+      "tiered": false
+    }
+  ],
+  "releaseCredit": {
+    "customerFinalOutputs": 0,
+    "live": false,
+    "saleEligibleRows": 0,
+    "worldClassProven": false
+  },
+  "revision": "P66_OWNER_TOPOLOGY_CORRECTION_AND_AUDIT_PDF_REQUIREMENT",
+  "schemaVersion": "velmere.p66.owner-product-topology.v1",
+  "standaloneTruth": {
+    "angel": "ONE_COHERENT_AI_SYSTEM_NO_TIERS",
+    "market-impact": "FREE_FUNCTION_NO_TIERS",
+    "risk-indicator": "STANDALONE_NO_TIERS",
+    "shield-map": "STANDALONE_NO_TIERS",
+    "whale-watch": "FREE_FUNCTION_NO_TIERS"
+  },
+  "truthBoundary": "P66 owner-corrected measurement authority: 10 real product families / 20 customer-facing rows. Only Audit, Browser, Shield, Shield Pro and Real Markets have Basic/Pro/Advanced customer tiers. Shield Map, Market Impact, Whale Watch, Angel and Risk Indicator are standalone no-tier products. PDF is an output artifact of Audit/Browser, never a separate product family. The historical 33 contexts are retained only as legacy internal test artifacts and are retired as a product-completion denominator."
+}

@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "velmere.pass16.diff-from-pass15.v1",
+  "generatedAt": "2026-07-20T07:35:00Z",
+  "baseArtifact": {
+    "name": "VELMERE_PASS15_LAZY_ROUTE_BUILD_GRAPH_SAFE_SOURCE.zip",
+    "sha256": "3af8d9b84b79317ef16b9c707970d6efd9fb85963441812986bb3f3c3294707c"
+  },
+  "scope": "Source/evidence diff excluding generated .velmere diagnostics/gates, package manifest, verification and this diff report.",
+  "summary": {
+    "newFiles": 71,
+    "changedFiles": 4,
+    "removedFiles": 0,
+    "newBytes": 3256660,
+    "changedCurrentBytes": 9473,
+    "changedPreviousBytes": 36111
+  },
+  "new": [
+    {
+      "path": "config/pass16/gate-policy.json",
+      "bytes": 4289,
+      "sha256": "800a3eb899e541d34ccb32e00a2b26f327e3078d1c4e7c59c6b24c1560dcd6a9"
+    },
+    {
+      "path": "config/pass16/typescript-syntax-scan.json",
+      "bytes": 447,
+      "sha256": "767f0d49b5537c86c2c04660d2054784a85d09dcaa4da741f2216c95460506c0"
+    },
+    {
+      "path": "config/pass16/worldclass-evaluation-policy.json",
+      "bytes": 1315,
+      "sha256": "d2bbf83fdad5794673cc77e4c1fa7c9514ae91904933c33b0c2222c6abc63e1a"
+    },
+    {
+      "path": "config/pass16/worldclass-output-contract.json",
+      "bytes": 2670,
+      "sha256": "0f4c99c93dc7b8e4c1c9d94ba1db4f19fedc390ef3efd19f419626f4c3f85d8f"
+    },
+    {
+      "path": "docs/productization/PASS16_WORLDCLASS_2700_EXECUTION_PLAN.md",
+      "bytes": 3532,
+      "sha256": "01b8d95709e8cb4da8b45f696d093c4e97ab4ced16921730a25842558d178a92"
+    },
+    {
+      "path": "evaluation/pass16/README.md",
+      "bytes": 1378,
+      "sha256": "ef1350ee490a38fb2aff7854d21d3fcfc5e5ab2cd693b742f0ea3fae17290fdc"
+    },
+    {
+      "path": "evaluation/pass16/smart-contract-fixture-manifest.json",
+      "bytes": 19931,
+      "sha256": "3db2c119a1dbc626ae3c8d7c5faf9d08c2a087fba90ed3fafff7b80c825d54e4"
+    },
+    {
+      "path": "evaluation/pass16/worldclass-2700-matrix.csv",
+      "bytes": 624343,
+      "sha256": "35964df3ef26390fdee59bbdaf8ac3785e037c3d96a413bff4391e74a5cb4c45"
+    },
+    {
+      "path": "evaluation/pass16/worldclass-2700-matrix.jsonl",
+      "bytes": 1772586,
+      "sha256": "5507b5bfcee1debf5c80f777a11707a147355de8a944e8a44f8551beafccc6eb"
+    },
+    {
+      "path": "evaluation/pass16/worldclass-2700-summary.json",
+      "bytes": 801,
+      "sha256": "4faafb84f0c27f2d33e8f54c99f4f162e1b6c6eee0b66e864ba1070a85cda4b3"
+    },
+    {
+      "path": "evaluation/pass16/worldclass-base-corpus.json",
+      "bytes": 753193,
+      "sha256": "00acdd2019c03abba0a5ea596de242915d16deb5108b41aeac436f34a21e7d3b"
+    },
+    {
+      "path": "fixtures/pass16/contracts/01_reentrant-vault.sol",
+      "bytes": 377,
+      "sha256": "0484ef368326f3c25e9adbe0443f9075dd2119af709d9f0fcfc357c884ba7591"
+    },
+    {
+      "path": "fixtures/pass16/contracts/02_guarded-vault.sol",
+      "bytes": 430,
+      "sha256": "7980768749e85779a2ce49b0f7c337e2075f4046b1f0b57e2334d3a4f0ed7217"
+    },
+    {
+      "path": "fixtures/pass16/contracts/03_tx-origin-admin.sol",
+      "bytes": 277,
+      "sha256": "1ab04ec09e5cab1059c014880391553ff49c472983cc88acea90cf3e9d99e734"
+    },
+    {
+      "path": "fixtures/pass16/contracts/04_sender-admin.sol",
+      "bytes": 286,
+      "sha256": "c065adc7a22906eb4dfd5d9695537a07da3e3ca52f937dd2508efaa85b805afa"
+    },
+    {
+      "path": "fixtures/pass16/contracts/05_uninitialized-owner.sol",
+      "bytes": 223,
+      "sha256": "2141dfd5751fd3f4f7ea7e16c977dba0df54387f33075923713f46519fc6e820"
+    },
+    {
+      "path": "fixtures/pass16/contracts/06_one-time-initializer.sol",
+      "bytes": 226,
+      "sha256": "d80e3f2939f12a52c2ebb28894b06532b364b9935121e292a25b67fb7b9aca4f"
+    },
+    {
+      "path": "fixtures/pass16/contracts/07_unchecked-call.sol",
+      "bytes": 168,
+      "sha256": "7f69b3cc05fc6621b99ab6fae9e79a4ebc096a82eea4df3478c51a19c0303b90"
+    },
+    {
+      "path": "fixtures/pass16/contracts/08_checked-call.sol",
+      "bytes": 221,
+      "sha256": "3a779635a0ba7c641aad48acaf102ef0757c71bffbf48eee7910117eaeabd770"
+    },
+    {
+      "path": "fixtures/pass16/contracts/09_delegate-user-target.sol",
+      "bytes": 202,
+      "sha256": "7a11f748ed367260f44106680f7a9a32e966504d0f55b358b4889a5af2976445"
+    },
+    {
+      "path": "fixtures/pass16/contracts/10_delegate-allowlist.sol",
+      "bytes": 400,
+      "sha256": "db74bad95f719b39092d2d0b48cd07e90465f9c43c23484ed95609f6ef3b9951"
+    },
+    {
+      "path": "fixtures/pass16/contracts/11_spot-oracle.sol",
+      "bytes": 289,
+      "sha256": "a8127ff7d0ab85e2611a50dddb7132320b52213d40c2256f07d983da8a9acf75"
+    },
+    {
+      "path": "fixtures/pass16/contracts/12_twap-oracle.sol",
+      "bytes": 312,
+      "sha256": "7d046886634052a04069e72b871c57dd46032e14547050db7dbf6e4c60f7e73d"
+    },
+    {
+      "path": "fixtures/pass16/contracts/13_donation-share-price.sol",
+      "bytes": 315,
+      "sha256": "74824ac7ea97d75e2dfdf240d0d176515bc0a4ab8753662b8cfe6fa136667eaf"
+    },
+    {
+      "path": "fixtures/pass16/contracts/14_prebalance-shares.sol",
+      "bytes": 368,
+      "sha256": "9f5835a40841425456f6c441d78dda4f1728191c968d29e1d1d05a6fd5df0c10"
+    },
+    {
+      "path": "fixtures/pass16/contracts/15_rounding-loss.sol",
+      "bytes": 223,
+      "sha256": "2d38b994722dea3d850e62cc0814a5f4dd1d542b6ab69bf60f625c890821fbaa"
+    },
+    {
+      "path": "fixtures/pass16/contracts/16_rounding-guard.sol",
+      "bytes": 244,
+      "sha256": "8f21b9540eed4c4f7a4a211f38515563ae7dc181a2c838e165b34b70cadd3b40"
+    },
+    {
+      "path": "fixtures/pass16/contracts/17_open-mint.sol",
+      "bytes": 187,
+      "sha256": "30e065541eb4daa8e67fc2c01f5e7a56682984f0ea57ee87910ec55a3216f8e3"
+    },
+    {
+      "path": "fixtures/pass16/contracts/18_role-mint.sol",
+      "bytes": 392,
+      "sha256": "4068672d779dbbddd3fda08b834b54a9f47f37841fa2d1b09f3a8f81b02ed37d"
+    },
+    {
+      "path": "fixtures/pass16/contracts/19_unbounded-loop.sol",
+      "bytes": 255,
+      "sha256": "404cd93ec6c7f0c1bc769253f9208890c7f5f3d0ffced3304fc05b220acb9859"
+    },
+    {
+      "path": "fixtures/pass16/contracts/20_paged-loop.sol",
+      "bytes": 372,
+      "sha256": "1b9debc77b8a57623a7bfc8d52636891a3d16c170c0ed77b161c12058e7a20eb"
+    },
+    {
+      "path": "fixtures/pass16/contracts/21_timestamp-lottery.sol",
+      "bytes": 161,
+      "sha256": "e08425f1925df22b2e30545679fb346beacdaae5a0c951c38e9870a064c32070"
+    },
+    {
+      "path": "fixtures/pass16/contracts/22_deadline-window.sol",
+      "bytes": 168,
+      "sha256": "04f69afc096e8c909a2ade42c2ce19d4a2d1f5c2cf5a1d46efec0663c8b49446"
+    },
+    {
+      "path": "fixtures/pass16/contracts/23_signature-replay.sol",
+      "bytes": 246,
+      "sha256": "ea298c57ecddc5bca42405bc6ac53a27acd0062d6cac112d8282d1ff8a9ba26b"
+    },
+    {
+      "path": "fixtures/pass16/contracts/24_signature-domain.sol",
+      "bytes": 397,
+      "sha256": "c430f9990dc254b8dc1e3534c85a3a7fc82a51ee00827511923949b5bced1415"
+    },
+    {
+      "path": "fixtures/pass16/contracts/25_permit-no-deadline.sol",
+      "bytes": 328,
+      "sha256": "1c60e5eacc156d5dd257b85336660144815ce19b8cd0a11b9f27c6a7bcb4e896"
+    },
+    {
+      "path": "fixtures/pass16/contracts/26_permit-deadline.sol",
+      "bytes": 412,
+      "sha256": "d27a6920be87bae61692d34454ee4b55ef89f716a541383ded4e16d78ae65694"
+    },
+    {
+      "path": "fixtures/pass16/contracts/27_storage-collision.sol",
+      "bytes": 174,
+      "sha256": "29684968c336af7b38910f1325251a0258a50c6e43ae7e3f986e37a35d208639"
+    },
+    {
+      "path": "fixtures/pass16/contracts/28_namespaced-storage.sol",
+      "bytes": 350,
+      "sha256": "456cbbb68d21a8e419f30d0c0857dae1cedf3eb7629797aa8c3766c4caee2bdf"
+    },
+    {
+      "path": "fixtures/pass16/contracts/29_selfdestruct-admin.sol",
+      "bytes": 229,
+      "sha256": "312097e23d5dd84934adb360416e264086585a683def7f1f383974b998ef2f08"
+    },
+    {
+      "path": "fixtures/pass16/contracts/30_immutable-vault.sol",
+      "bytes": 177,
+      "sha256": "bb5eadf733e82a960d2cdba05dcb97f4a809903195d578c94b4e69f043ddd38e"
+    },
+    {
+      "path": "fixtures/pass16/contracts/31_hook-reentrancy.sol",
+      "bytes": 296,
+      "sha256": "83397fe68eb16d28eab7574fbcf988623521e21210aa8ea791509627fc4853c3"
+    },
+    {
+      "path": "fixtures/pass16/contracts/32_cei-token.sol",
+      "bytes": 297,
+      "sha256": "bc8fa1a01415e4b1d03ea658f965a3a9ef152075ca8163b31a4e70e7c758ed74"
+    },
+    {
+      "path": "fixtures/pass16/contracts/33_fee-token-mismatch.sol",
+      "bytes": 357,
+      "sha256": "ef785ef4984d0aa15b0a3f545c8bd6a9b50f04cceb36aed9edaf58afefcbbfe8"
+    },
+    {
+      "path": "fixtures/pass16/contracts/34_balance-delta.sol",
+      "bytes": 491,
+      "sha256": "8c135ab09e03b799958aacec5beb2a5a129ad6378d6e4e9558e7566c57420c4c"
+    },
+    {
+      "path": "fixtures/pass16/contracts/35_blacklist-bypass.sol",
+      "bytes": 373,
+      "sha256": "f53c766fba1c99d579f7b18cb0a741325668860ab002fee0ffb2a21ea7503c68"
+    },
+    {
+      "path": "fixtures/pass16/contracts/36_policy-consistent.sol",
+      "bytes": 387,
+      "sha256": "304fae63d9bbd2192fba24ae634d4df82e7c208a729d399277c25c6c956024bf"
+    },
+    {
+      "path": "fixtures/pass16/contracts/37_no-pause.sol",
+      "bytes": 169,
+      "sha256": "17146a218e7ce58f328fc9240a9bb666db77b325020d6590f74e4ec6ab2f6f96"
+    },
+    {
+      "path": "fixtures/pass16/contracts/38_pausable.sol",
+      "bytes": 339,
+      "sha256": "605e2171a4a277bcc8f952c12550ac9acdaeda450eaf59fca79e070629a5c050"
+    },
+    {
+      "path": "fixtures/pass16/contracts/39_insolvent-withdraw.sol",
+      "bytes": 288,
+      "sha256": "a7f930f6d95aefdc663798019ed81b5ddb63da0cd63dab2b46374e08b33836fe"
+    },
+    {
+      "path": "fixtures/pass16/contracts/40_solvency-guard.sol",
+      "bytes": 338,
+      "sha256": "26242ccc339431f9e468ba3fd949544cb832c7925d2815cc01a9a66f0f0a5993"
+    },
+    {
+      "path": "fixtures/pass16/contracts/41_low-quorum.sol",
+      "bytes": 183,
+      "sha256": "b29de810fd4d367e4df0d4f8e64c0d64b028fefecb94e7f33fe3d75165f2ebfa"
+    },
+    {
+      "path": "fixtures/pass16/contracts/42_snapshot-quorum.sol",
+      "bytes": 216,
+      "sha256": "8c7eae2dd3ddf5281d22ca4fbd269fa80693f60d439efa05f35eafadbf238752"
+    },
+    {
+      "path": "fixtures/pass16/contracts/43_front-run-reveal.sol",
+      "bytes": 187,
+      "sha256": "43fcb7e65cbe89c32ffb58dfc0895332f1242b73ced1dec3c7bbfb6f8a58c0ae"
+    },
+    {
+      "path": "fixtures/pass16/contracts/44_commit-reveal.sol",
+      "bytes": 321,
+      "sha256": "c608be5818d9101ce33311e91744dab6c1f9201efedfa8d804ecedead4b4e5d5"
+    },
+    {
+      "path": "fixtures/pass16/contracts/45_blockhash-random.sol",
+      "bytes": 175,
+      "sha256": "c2a8d66a76da24d8e08b770ae095da0da41d9f90bbd5546d3ba21b1da961c025"
+    },
+    {
+      "path": "fixtures/pass16/contracts/46_vrf-consumer.sol",
+      "bytes": 245,
+      "sha256": "398b4a73c5fd5a18b30da42b99a04983667883e72287ddc0b6e288a914dda415"
+    },
+    {
+      "path": "fixtures/pass16/contracts/47_cross-chain-replay.sol",
+      "bytes": 273,
+      "sha256": "70a7e9f1a2d91b6b18daab2b6f642ddbdade9e1d43d75fe8caf5b2a7202f6509"
+    },
+    {
+      "path": "fixtures/pass16/contracts/48_cross-chain-domain.sol",
+      "bytes": 411,
+      "sha256": "758f42cd079b1cdff656940a6661d475f81de76c3502a37ab880db566d89ad62"
+    },
+    {
+      "path": "fixtures/pass16/contracts/49_minimal-vault-clean.sol",
+      "bytes": 335,
+      "sha256": "e0b5ed640b8e1841b8bec53c0ff5e2ed36f8245d619715c1adfc08f60987f1a6"
+    },
+    {
+      "path": "fixtures/pass16/contracts/50_external-dependency-ambiguous.sol",
+      "bytes": 319,
+      "sha256": "2d20cb7e2b0e15c4e4aae8732cb3e51a80e4ecaab2ca2066bee1083da9bbd87b"
+    },
+    {
+      "path": "lib/worldclass/output-scorer.mjs",
+      "bytes": 7532,
+      "sha256": "828a08e9add1d57b59a366f8c45bc8a0e69b7cab0be49e4ecfe13adaf9b80a62"
+    },
+    {
+      "path": "scripts/pass16/audit-clean-source.mjs",
+      "bytes": 11971,
+      "sha256": "db80fd8256c7c20d38f4655036faf1cebdc04fd7085da99a742b410e20b69b65"
+    },
+    {
+      "path": "scripts/pass16/audit-current-product-readiness.mjs",
+      "bytes": 5346,
+      "sha256": "454e3aabf5fc3b604b9a21be0fbdd395c27b7977d5e9aa0065e17fcd66322190"
+    },
+    {
+      "path": "scripts/pass16/audit-runner-contract.mjs",
+      "bytes": 2279,
+      "sha256": "ccd59e5ff17e90d382f3a359cf49523cf5e06671c18ce0bedc280c23319f2acd"
+    },
+    {
+      "path": "scripts/pass16/run-gate.mjs",
+      "bytes": 5617,
+      "sha256": "c31f9e786f52e1206d1a7c621eb0eb6c6b345137aca7fc1ecc9d0c2309b9eea7"
+    },
+    {
+      "path": "scripts/pass16/run-typescript-syntax-scan.mjs",
+      "bytes": 2987,
+      "sha256": "2f5e443f370b81ac8a9d84b37a666a267e2dc84c267392a70b504c5cbfbd0b7a"
+    },
+    {
+      "path": "scripts/pass16/test-worldclass-output-scorer.mjs",
+      "bytes": 4419,
+      "sha256": "a69d41eb9acf7dd48defd46278c170d5084c4a7b0bb8162514232619e097d133"
+    },
+    {
+      "path": "scripts/pass16/verify-worldclass-corpus.mjs",
+      "bytes": 9605,
+      "sha256": "d2500fbaef45b77c2e848cd2380d2349da5ac8d40f70b305db1efc7112f12d2a"
+    },
+    {
+      "path": "scripts/pass16/verify-worldclass-output-contract.mjs",
+      "bytes": 4537,
+      "sha256": "7d5fe54605a69024e62d80d621ee710d76ca195d9cd77a8607b58115f4a9d430"
+    },
+    {
+      "path": "supabase/migrations/20260720000002_5001_worldclass_evaluation_registry.sql",
+      "bytes": 3473,
+      "sha256": "9ac5fcbf0adeb489f42df67f9e22c0a9efacba0acdfaf680ee1e72c3afbfb162"
+    }
+  ],
+  "changed": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "before": {
+        "bytes": 2963,
+        "sha256": "d8623cc968d1110341d1c1d85896ebf160a5755c101aea4fb7fc25c57ee11e0b"
+      },
+      "after": {
+        "bytes": 1295,
+        "sha256": "61a2741b7fd3f33b0be59e07dc60f1d5608f6a41c43038690810cf14d38632b8"
+      }
+    },
+    {
+      "path": "README.md",
+      "before": {
+        "bytes": 25980,
+        "sha256": "492b6f0ce1f99afd8284339412c4164d0923a0c06999dd58dcb71e02708e9bfb"
+      },
+      "after": {
+        "bytes": 570,
+        "sha256": "88822c00f6ab5f01143d9aa7416612b7507619194aa9aefecd4295ab2a813326"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "before": {
+        "bytes": 621,
+        "sha256": "bca0042f8e31f7beab805106458ceda7793d8e0f35a29da50110e5eac3e0c552"
+      },
+      "after": {
+        "bytes": 634,
+        "sha256": "bd6bc179d3d2cd4c5082ac34f10a19c40a89e5576d29aca6377ea81b74f1d42d"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "bytes": 6547,
+        "sha256": "4734bcbd113f0078d7b6d46334f7fde89215c28e4aeccbcca629252ec70beb16"
+      },
+      "after": {
+        "bytes": 6974,
+        "sha256": "a3556b2dc19cae2069f3f475e5b97c81de3635f6d91ef4ee5f120b8b25de04fb"
+      }
+    }
+  ],
+  "removed": [],
+  "truthBoundary": "Diff presence is not execution proof. Product outputs remain NOT_EXECUTED until source-bound runtime evaluation."
+}

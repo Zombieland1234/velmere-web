@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p12.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P12_ACTION_REQUIRED_REAL_PUBLIC_PROVIDER_DIAGNOSTIC_15_ASSET_TWO_PROVIDER_IDENTITY_FRESHNESS_CONFLICT_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "decision": "NO_GO",
+  "globalTruth": {
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "localEvidence": {
+    "providerDiagnostic": {
+      "assetDenominator": 15,
+      "providerRowDenominator": 30,
+      "realNetworkObservedAssets": 15,
+      "realNetworkObservedProviderRows": 30,
+      "availableAssets": 15,
+      "conflictedAssets": 0,
+      "failedAssets": 0,
+      "rightsApprovedAssets": 0,
+      "commerciallyDeliverableAssets": 0,
+      "evidenceClass": "REAL_NETWORK_PUBLIC_ENDPOINT_DIAGNOSTIC_NO_COMMERCIAL_RIGHTS_CREDIT"
+    },
+    "shield": {
+      "denominator": 318,
+      "realNetworkDiagnosticAssets": 15,
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "shieldProMap": {
+      "denominator": 318,
+      "realNetworkDiagnosticAssets": 15,
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "realMarkets": {
+      "denominator": 583,
+      "realNetworkDiagnosticAssets": 15,
+      "realCurrentDataCredit": 0,
+      "rightsApprovedCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "compilerAst": {
+      "protocolPairs": 6,
+      "protocolVariants": 12,
+      "assertions": 64,
+      "passed": 64,
+      "failed": 0
+    },
+    "foundry": {
+      "tests": 16,
+      "passed": 16,
+      "fuzzCampaigns": 3,
+      "invariantCampaigns": 4
+    },
+    "angel": {
+      "coins": 15,
+      "locales": 3,
+      "tiers": 3,
+      "assertions": 1083,
+      "passed": 1083,
+      "failed": 0,
+      "rejectedProviderCalls": 0
+    },
+    "pdf": {
+      "documents": 150,
+      "pages": 700,
+      "basic": 50,
+      "pro": 50,
+      "advanced": 50,
+      "activeContent": 0,
+      "blankPages": 0
+    },
+    "browserClosure": {
+      "processIsolationMode": "SIX_ROUTE_BROWSER_PROCESS_BATCH",
+      "batchSize": 6,
+      "expectedBrowserLaunches": 11,
+      "routeRowsDenominator": 56,
+      "scenarioDenominator": 57,
+      "screenshotDenominator": 29,
+      "popupTabsDenominator": 4,
+      "verifierChecksDenominator": 584,
+      "verifierIdentitySha256": "35cccfef96eece4751495d9f87f9f6cc8a63d3a4df380005ad7769ffa2ddc882",
+      "staleParentVerifierIdentityCorrected": true,
+      "parentByteDiagnostic": {
+        "routeRowsPassed": 56,
+        "scenarioChecksPassed": 57,
+        "screenshotsProduced": 29,
+        "popupTabsPassed": 4,
+        "verifierChecksPassed": 584,
+        "finalByteCredit": false
+      },
+      "finalFrozenEvidenceStoredOutsideSource": true,
+      "exactLinuxFinalByteCredit": "PENDING_EXTERNAL_RECEIPT_AFTER_SOURCE_FREEZE",
+      "exactWindowsCredit": false,
+      "stagingCredit": false,
+      "liveCredit": false
+    },
+    "typescriptDenominatorMigration": {
+      "historicalPreBuildDeclared": 159,
+      "historicalPostBuildDeclared": 300,
+      "currentPreBuildPhysical": 160,
+      "currentPostBuildPhysical": 301,
+      "generatedRoots": 141,
+      "removedRoots": 0,
+      "testsDeleted": 0,
+      "scoreCredit": false
+    },
+    "turbopackMemoryBudgetMigration": {
+      "oldMaxRssKb": 2750000,
+      "newMaxRssKb": 3100000,
+      "oldFailurePeakRssKb": 2811820,
+      "newPassPeakRssKb": 2850220,
+      "heapMb": 1200,
+      "turbopackMemoryLimitBytes": 1363148800,
+      "cpus": 1,
+      "timeoutsIncreased": 0,
+      "stagesRemoved": 0,
+      "physicalOldFailureReceiptVerified": true,
+      "rejectedMisclassifiedPassReceiptPreserved": true,
+      "diagnosticPassOnCurrentSourceFamily": true,
+      "finalFrozenByteCredit": "PENDING_RETEST_AFTER_FINAL_SOURCE_FREEZE"
+    }
+  },
+  "skuDecisions": {
+    "auditBasic": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_RETEST",
+    "auditPro": "CONTROLLED_INVITATION_ONLY_BETA_WITH_MANDATORY_MANUAL_QA",
+    "auditAdvanced": "NOT_FOR_SALE",
+    "shieldBasic": "REFERENCE_DEMO_ONLY_REAL_NETWORK_DIAGNOSTIC_NOT_RIGHTS_APPROVED",
+    "shieldPro": "NOT_FOR_SALE",
+    "shieldMap": "REFERENCE_DEMO_ONLY",
+    "realMarketsBasic": "REFERENCE_DEMO_ONLY_REAL_NETWORK_DIAGNOSTIC_NOT_RIGHTS_APPROVED",
+    "realMarketsPro": "NOT_FOR_SALE",
+    "realMarketsAdvanced": "NOT_FOR_SALE"
+  },
+  "remainingExternalBlockers": [
+    "EXACT_WINDOWS_FINAL_BYTE_BUILD_BROWSER",
+    "PROVIDER_RIGHTS_AND_COMMERCIAL_DISPLAY_REDISTRIBUTION_APPROVAL",
+    "FULL_318_SHIELD_AND_583_REAL_MARKETS_CURRENT_DATA_DENOMINATORS",
+    "RIGHTS_APPROVED_REAL_CONTRACT_CORPUS",
+    "TWO_INDEPENDENT_REVIEWERS_AND_GROUND_TRUTH",
+    "DISPOSABLE_STAGING_RLS_STRIPE_STORAGE_EMAIL",
+    "REAL_CUSTOMER_COHORTS_AND_WILLINGNESS_TO_PAY"
+  ],
+  "remainingCheckpointEstimate": {
+    "central": 5,
+    "range": [
+      4,
+      8
+    ]
+  }
+}

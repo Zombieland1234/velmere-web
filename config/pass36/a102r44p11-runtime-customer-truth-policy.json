@@ -1,0 +1,48 @@
+{
+  "angelMatrix": {
+    "assertions": 1083,
+    "categoriesPerCell": 8,
+    "coins": 15,
+    "crossLocaleConfusableCases": 3,
+    "depths": 3,
+    "locales": 3,
+    "rejectedProviderCallsAllowed": 0
+  },
+  "customerAuditTruth": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_RETEST",
+    "humanReviewClaimAllowed": false,
+    "numericTierConfidenceAllowed": false,
+    "pro": "CONTROLLED_INVITATION_ONLY_BETA_WITH_MANDATORY_MANUAL_QA",
+    "publicCheckoutAllowed": false,
+    "publicPriceAllowed": false
+  },
+  "globalTruth": {
+    "decision": "NO_GO",
+    "live": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "globe": {
+    "adaptiveFps": [
+      20,
+      30
+    ],
+    "gradientCache": true,
+    "imageSmoothing": false,
+    "landPointFetchCount": 1,
+    "pauseHiddenDocument": true,
+    "pauseOutsideViewport": true,
+    "realGeographyOnly": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "routeTransition": {
+    "criticalImagesRequired": true,
+    "fontReadyRequired": true,
+    "quietLayoutRequired": true,
+    "safetyTimeoutMs": 30000
+  },
+  "schemaVersion": "velmere.pass36.a102r44p11.runtime-customer-truth-policy.v1"
+}

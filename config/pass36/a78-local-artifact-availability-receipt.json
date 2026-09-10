@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "velmere.pass36.a78.local-artifact-availability-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "generatedAt": "2026-07-27T09:00:00.000Z",
+  "decision": "BLOCKED_EXACT_TOOLCHAIN_ARTIFACTS",
+  "policyChecks": 9,
+  "policyPassed": true,
+  "packageLock": {
+    "sha256": "542d0d10654125ff54015b4b619ee8c926cbcc0dec361fb5c1a723578b0d1401",
+    "remotePackages": 827
+  },
+  "localCas": {
+    "expectedLockPaths": 827,
+    "exactCoveredLockPaths": 81,
+    "uncoveredLockPaths": 746,
+    "uniqueCasTarballs": 106,
+    "coveragePercent": 9.794,
+    "coveredPathSetSha256": "4ecb5b5acab84cd0133b076aae10ce269a57ff352ed4b6062c7cd827d75b2be2",
+    "uncoveredPathSetSha256": "22f298488e8d730c07b4fa58c6cd51bd9db3e8dff81fa53600879b2278d4d201"
+  },
+  "runtimeCandidates": [
+    {
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "node": "22.16.0",
+      "npm": "10.9.2"
+    },
+    {
+      "path": "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+      "node": "24.11.1",
+      "npm": null
+    }
+  ],
+  "systemBrowser": {
+    "path": "/usr/bin/chromium",
+    "version": "Chromium 144.0.7559.96 built on Debian GNU/Linux 13 (trixie)",
+    "acceptedAsExactBundle": false
+  },
+  "inputIntake": {
+    "decision": "BLOCKED_RUNTIME_OR_DEPENDENCY_ARTIFACTS",
+    "summary": {
+      "runtimeVerified": false,
+      "dependencyBundleVerified": false,
+      "browserBundleVerified": false,
+      "packageCount": 0,
+      "browserFiles": 0,
+      "errors": 3
+    },
+    "errors": [
+      "a62_node_archive_not_supplied",
+      "a62_dependency_bundle_not_supplied",
+      "a62_browser_bundle_not_supplied"
+    ]
+  },
+  "exactCredits": {
+    "runtime": false,
+    "dependencies": false,
+    "browser": false,
+    "currentRootGate": false,
+    "a60": false
+  },
+  "claims": {
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "truthBoundary": "A78 hardens and verifies the current-root exact runtime/dependency/browser admission mechanism. Local CAS coverage, compatible runtimes, system Chromium, synthetic fixtures or source-level contracts do not receive exact bootstrap credit. VERIFIED requires physical hash-matching Node 24.18.0/npm 11.16.0, every one of 827 lockfile-bound tarballs, an externally anchored platform-exact Playwright 1.60.0 Chromium bundle, isolated no-secret execution, unchanged runtime tree, 30/30 current-root gate and VERIFIED A60."
+}

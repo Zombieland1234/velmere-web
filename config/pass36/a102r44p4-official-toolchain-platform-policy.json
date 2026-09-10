@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p4.official-toolchain-platform-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P4_ACTION_REQUIRED_OFFICIAL_TOOLCHAIN_200_EXECUTIONS_SEMGREP_MIGRATION_AND_AUTOMATED_AUDIT_EVIDENCE_BINDING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P3_ACTION_REQUIRED_CURRENT_BYTE_SHIELD_PRO_REAL_MARKETS_AND_MULTILINGUAL_AI_MATRIX_CLOSURE_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T09:15:00.000Z",
+  "executionEnvironment": {
+    "provider": "GitHub Actions",
+    "workflowRunId": 30741096878,
+    "artifactId": 8831326437,
+    "headCommitSha": "5e265cc30e45a7c570a213174350af574ccc3ab9",
+    "runnerImage": "ubuntu-24.04",
+    "platform": "linux-x86_64",
+    "python": "3.11.15",
+    "artifactArchiveSha256": "3727858b943df088af0d3aa71a2851461e8484712f6ec8ab92778fe5c3674b26",
+    "artifactFileManifestSha256": "cd6fba083cf46df67acf267dadd5992d90fa18707e61baaddef087fd804a5773",
+    "artifactIndependentVerificationSha256": "43c8fcb3520195f55728abc744927c0c27da328451ebb281d0eab57d10592cbd",
+    "artifactIndependentVerificationChecks": 34,
+    "pullRequestDraft": true,
+    "pullRequestMerged": false
+  },
+  "tools": [
+    {
+      "toolId": "solc",
+      "requiredVersion": "0.8.24",
+      "observedVersion": "solc, the solidity compiler commandline interface\nVersion: 0.8.24+commit.e11b9ed9.Linux.g++",
+      "versionMatched": true,
+      "executableSha256": "fb03a29a517452b9f12bcf459ef37d0a543765bb3bbc911e70a87d6a37c30d5f",
+      "versionStdoutSha256": "28d286262a366da683788ca4ef59fcb8bc406156d92836b6082b824660314dbf",
+      "versionStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executionPlatform": "linux-x86_64",
+      "runnerImage": "ubuntu-24.04",
+      "allowedStatusSemantics": [
+        "EXECUTED_SUCCESS"
+      ],
+      "identitySha256": "3a813535282a0f2fece96ed348d48c19e4801d1abc1b88bf35c3e0193660a544"
+    },
+    {
+      "toolId": "slither",
+      "requiredVersion": "0.11.5",
+      "observedVersion": "0.11.5",
+      "versionMatched": true,
+      "executableSha256": "c1a8cc7dbfea17322a89aa5a73c23f92ee163b571cd16b06c1691f8edef264f2",
+      "versionStdoutSha256": "939f07bb10023db653bb019c8c57f7d01569bff679ec6841ff793f8cf37cde0d",
+      "versionStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executionPlatform": "linux-x86_64",
+      "runnerImage": "ubuntu-24.04",
+      "allowedStatusSemantics": [
+        "EXECUTED_SUCCESS",
+        "EXECUTED_FINDINGS"
+      ],
+      "interpreterSha256": "3d47c83556de5a94fb39905399cf8d7040be140c25c667bd34cb6d7eefd42075",
+      "interpreterVersion": "Python 3.11.15",
+      "identitySha256": "79fb0e6affc2a82dea8e3a02af0c9a19398180a8317b43e5a421a32090485ee8"
+    },
+    {
+      "toolId": "semgrep",
+      "requiredVersion": "1.130.0",
+      "observedVersion": "1.130.0",
+      "versionMatched": true,
+      "executableSha256": "7e0362f596fc3d58a50e017922269350a963af53effa1a03c5477efb5ecac851",
+      "versionStdoutSha256": "47867e6321e6fc97dc1c77a9c87ac6e7e90260e830c475d0e201474ee2b682dd",
+      "versionStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executionPlatform": "linux-x86_64",
+      "runnerImage": "ubuntu-24.04",
+      "allowedStatusSemantics": [
+        "EXECUTED_SUCCESS",
+        "EXECUTED_FINDINGS"
+      ],
+      "interpreterSha256": "3d47c83556de5a94fb39905399cf8d7040be140c25c667bd34cb6d7eefd42075",
+      "interpreterVersion": "Python 3.11.15",
+      "identitySha256": "087c6020482672f16b537f22fdd7bd191506ebbe1209d72b37d08959c8a9e143"
+    },
+    {
+      "toolId": "forge",
+      "requiredVersion": "1.2.3",
+      "observedVersion": "forge Version: 1.2.3-v1.2.3\nCommit SHA: a813a2cee7dd4926e7c56fd8a785b54f32e0d10f\nBuild Timestamp: 2025-06-08T14:03:06.325571356Z (1749391386)\nBuild Profile: maxperf",
+      "versionMatched": true,
+      "executableSha256": "fb15fd52f774c935fa15f1ad6ff018c56b7054f50b6329e20a882b8d12992a16",
+      "versionStdoutSha256": "14e4e7b190bd5136fe8dc8eeefca8c2ae113c14032ff6634749054227c4ef07b",
+      "versionStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "executionPlatform": "linux-x86_64",
+      "runnerImage": "ubuntu-24.04",
+      "allowedStatusSemantics": [
+        "EXECUTED_SUCCESS"
+      ],
+      "identitySha256": "778f938ddcf1fef97e254c624f1f4f1bd016183269d89d0baf4cff45d732b903"
+    }
+  ],
+  "denominators": {
+    "fixtureCases": 50,
+    "toolFamilies": 4,
+    "requiredExecutions": 200,
+    "completedOfficialExecutions": 200,
+    "findingsExecutions": 58,
+    "toolErrors": 0
+  },
+  "statusSemantics": {
+    "EXECUTED_SUCCESS": "Tool completed and emitted valid evidence without findings in its supported output semantics.",
+    "EXECUTED_FINDINGS": "Tool completed and emitted valid findings. A non-zero Slither exit code is accepted only when its JSON result has success=true and at least one detector.",
+    "EXECUTED_TOOL_ERROR": "Tool did not complete with valid machine-readable evidence."
+  },
+  "creditBoundary": {
+    "officialToolProcessCredit": 200,
+    "rightsApprovedRealAuditCredit": 0,
+    "realCustomerPdfCredit": 0,
+    "independentAdjudicationCredit": 0,
+    "stagingCredit": 0,
+    "liveCredit": 0,
+    "saleCredit": false
+  },
+  "truthBoundary": "R44P4 proves 200 actual hash-bound executions of exact official tool versions against fifty project-owned MIT fixtures in an isolated CI environment. It is not a real deployed-contract audit, independent adjudication, customer report, staging, Windows, LIVE or sale proof."
+}

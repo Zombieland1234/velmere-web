@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p7.advanced-value-scorecard.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P7_ACTION_REQUIRED_ADVANCED_INCREMENTAL_EVIDENCE_REMEDIATION_DELTA_AND_ADJUDICATION_READINESS_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P6_ACTION_REQUIRED_CROSS_SURFACE_TIER_VALUE_TRUTH_AND_REAL_DATA_READINESS_NO_LIVE_CREDIT",
+  "audit": {
+    "cases": 50,
+    "officialToolProcesses": 200,
+    "packetRows": 450,
+    "basic": {
+      "technicalValueScore": 7.6,
+      "commercialReadinessScore": 8.0,
+      "evidenceFamiliesRange": "1-3",
+      "decision": "GO_FREE_INFORMATIONAL_PILOT"
+    },
+    "pro": {
+      "technicalValueScore": 8.4,
+      "commercialReadinessScore": 5.5,
+      "evidenceFamilies": 4,
+      "decision": "PILOT_ONLY_PAID_INFORMATIONAL"
+    },
+    "advanced": {
+      "technicalValueScore": 8.9,
+      "commercialReadinessScore": 5.2,
+      "evidenceFamilies": 7,
+      "newEvidenceFamilies": [
+        "cross_tool_consensus",
+        "compiler_artifact_diff",
+        "comparative_control_analysis"
+      ],
+      "blindAdjudicationPackets": 50,
+      "independentAdjudications": 0,
+      "decision": "PILOT_ONLY_PAID_INFORMATIONAL_INCREMENTAL_EVIDENCE_CLOSED_ADJUDICATION_OPEN"
+    },
+    "pairwiseMetrics": {
+      "riskControlPairs": 24,
+      "severityImprovedPairs": 10,
+      "severityEqualPairs": 9,
+      "severityWorsePairs": 5,
+      "averageSeverityWeightDelta": -1.542,
+      "averageResolvedThemes": 0.625,
+      "averagePersistentThemes": 0.667,
+      "averageIntroducedThemes": 0.208,
+      "crossToolConsensusCases": 12,
+      "singleToolThemeCases": 39,
+      "averageAgreementScore": 28.166
+    }
+  },
+  "pdf": {
+    "documents": 150,
+    "pages": 700,
+    "passed": 150,
+    "activeContent": 0,
+    "blankPages": 0,
+    "embeddedFonts": 150,
+    "toUnicode": 150,
+    "basicValueScore": 7.7,
+    "proValueScore": 8.6,
+    "advancedValueScore": 8.9,
+    "advancedMarkersVerified": 50,
+    "realCustomerCredit": 0
+  },
+  "unchangedTracks": {
+    "Shield": "R44P6 denominators unchanged",
+    "ShieldProMap": "R44P6 denominators unchanged",
+    "RealMarkets": "R44P6 denominators unchanged",
+    "BrainAngelRisk": "R44P6 denominators unchanged"
+  },
+  "worldClassAssessment": {
+    "technologyScore": 8.6,
+    "commercialEvidenceScore": 5.0,
+    "worldClassProofScore": 6.3,
+    "remainingCheckpointCentral": 5,
+    "remainingCheckpointRange": "4-7"
+  },
+  "truthBoundary": "Advanced now has three deterministic evidence families beyond Pro on 50 project-owned fixtures. Independent adjudication, deployed-contract evidence, customer outcomes, exact Windows, staging, LIVE and public-sale proof remain absent."
+}

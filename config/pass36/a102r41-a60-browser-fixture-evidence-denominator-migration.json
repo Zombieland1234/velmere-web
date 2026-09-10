@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.a60-browser-fixture-evidence-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T19:04:14+02:00",
+  "reason": "The final07 exact A60 run executed all 56 browser rows on unchanged bytes, but the local production runtime emitted generic 503 console events while its external service configuration was intentionally absent. The final07 browser receipt did not capture response endpoint identity, so the precise per-endpoint cause remains an inference and receives no PASS credit. Preserve every route, screenshot, popup and A60 stage; add an exact deterministic no-credit fixture binding, explicit redacted HTTP 4xx/5xx evidence and denominator-stable verification.",
+  "browserScenarioDenominator": {
+    "routeRowsBefore": 56,
+    "routeRowsAfter": 56,
+    "popupRowsBefore": 1,
+    "popupRowsAfter": 1,
+    "scenarioChecksBefore": 57,
+    "scenarioChecksAfter": 57,
+    "screenshotsBefore": 29,
+    "screenshotsAfter": 29,
+    "popupTabsBefore": 4,
+    "popupTabsAfter": 4,
+    "removed": 0
+  },
+  "a60StageDenominator": {
+    "before": 14,
+    "after": 14,
+    "retained": 14,
+    "added": 0,
+    "removed": 0
+  },
+  "frozenLocalRegressionStageDenominator": {
+    "before": 27,
+    "after": 28,
+    "retained": 27,
+    "added": 1,
+    "removed": 0,
+    "addedIdentity": "a45-browser-fixture"
+  },
+  "browserEvidenceVerifier": {
+    "before": 520,
+    "after": 584,
+    "retained": 520,
+    "added": 64,
+    "removed": 0,
+    "addedFixtureChecks": 7,
+    "addedRouteHttpChecks": 56,
+    "addedPopupHttpChecks": 1,
+    "denominatorStableOnMissingRows": true,
+    "denominatorStableOnMissingScreenshots": true
+  },
+  "a45StaticContractTest": {
+    "before": 62,
+    "after": 64,
+    "retained": 62,
+    "added": 2,
+    "removed": 0,
+    "addedIdentities": [
+      "browser:httpErrors",
+      "browser:generateA45QaFixture"
+    ]
+  },
+  "a45FixtureTest": {
+    "historicalDeclared": 9,
+    "historicalPhysicallyIdentifiedPredicates": 7,
+    "historicalDeclaredDenominatorSupported": false,
+    "after": 29,
+    "retainedRequirements": 7,
+    "addedChecks": 22,
+    "removedRequirements": 0,
+    "handlerDenominatorBefore": 3,
+    "handlerDenominatorAfter": 10
+  },
+  "a60HarnessTest": {
+    "before": 35,
+    "after": 36,
+    "retained": 35,
+    "added": 1,
+    "removed": 0,
+    "addedIdentity": "browser-fixture-evidence-denominator-migration"
+  },
+  "postAuditExistingRowStrengthening": {
+    "topLevelChecksBefore": 38,
+    "topLevelChecksAfter": 38,
+    "retainedTopLevelChecks": 38,
+    "addedTopLevelChecks": 0,
+    "removedTopLevelChecks": 0,
+    "strengthenedExistingCheckIds": [
+      "fixture-no-clobber-and-reparse",
+      "fixture-test-identities",
+      "fixture-test-migration",
+      "http-evidence-redaction-adversarial",
+      "adversarial-probe-pass-denominator",
+      "adversarial-zero-fixture-usage-rejected",
+      "evidence-package-self-contained",
+      "fixture-request-denominator",
+      "route-http-collection"
+    ],
+    "nestedSubcaseDenominators": {
+      "fixtureOperations": 2,
+      "httpPrivacyAndBudget": 8,
+      "browserSemanticAndPng": 16,
+      "pngIntegrity": 3,
+      "a60StageSequenceAndLogBinding": 16,
+      "evidencePathSet": 8,
+      "fixtureRequestFamilyPolicy": 8,
+      "fixtureRequestHandlerMappings": 10,
+      "fixtureUsagePolarity": 2
+    },
+    "scoreCredit": false
+  },
+  "fixture": {
+    "relativePath": "artifacts/pass35/a45/A45_DETERMINISTIC_LOCAL_REFERENCE_QA_FIXTURE.json",
+    "generatorId": "a102r41-a45-deterministic-local-reference-fixture-v1",
+    "requestCounterKeysAtR41": 10,
+    "requestCounterKeys": 10,
+    "requestCounterKeyIdentities": [
+      "authSession",
+      "profile",
+      "markets",
+      "klines",
+      "marketIntelligence",
+      "realMarketsCatalog",
+      "realMarkets",
+      "assetLogo",
+      "brandIcon",
+      "icon"
+    ],
+    "requiredPositiveRequestFamiliesAtR41": 5,
+    "requiredPositiveRequestFamilies": 4,
+    "requiredPositiveRequestFamilyIdentities": [
+      "authSession",
+      "markets",
+      "realMarketsCatalog",
+      "realMarkets"
+    ],
+    "requiredZeroRequestFamiliesAtR41": 0,
+    "requiredZeroRequestFamilies": 1,
+    "requiredZeroRequestFamilyIdentities": [
+      "profile"
+    ],
+    "instrumentedNonRequiredRequestFamilies": 5,
+    "instrumentedNonRequiredRequestFamilyIdentities": [
+      "klines",
+      "marketIntelligence",
+      "assetLogo",
+      "brandIcon",
+      "icon"
+    ],
+    "constrainedRequestFamiliesAtR41": 5,
+    "constrainedRequestFamilies": 5,
+    "positiveToZeroTransitions": [
+      "profile"
+    ],
+    "currentPolicyMigrationAuthorityPath": "config/pass36/a102r44p30-browser-evidence-race-and-profile-migration.json",
+    "denominatorCollapsed": false,
+    "providerCredit": false,
+    "durableStorageCredit": false,
+    "realDataCredit": false,
+    "liveCredit": false,
+    "saleCredit": false
+  },
+  "final07NegativeEvidence": {
+    "a60StagesPassed": 12,
+    "a60StagesRequired": 14,
+    "browserRowsExecuted": 56,
+    "browserRowsPassed": 0,
+    "browserScenarioChecksPassed": 0,
+    "browserScenarioChecksRequired": 57,
+    "screenshotsProduced": 28,
+    "screenshotsRequired": 29,
+    "popupTabsPassed": 0,
+    "popupTabsRequired": 4,
+    "genericConsole503Events": 313,
+    "rowGenericConsole503Events": 306,
+    "popupGenericConsole503Events": 7,
+    "endpointIdentityCaptured": false,
+    "uniqueObservedHttp503Endpoints": null,
+    "sourceUnchanged": true,
+    "creditGranted": false
+  },
+  "testsDeleted": 0,
+  "skipsAdded": 0,
+  "timeoutsIncreased": 0,
+  "scoreCredit": false,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "migrationDigestSha256": "b865a334a777cdd1032b64926e92a330060040a0b2912bab53a06723e90dc8d9"
+}

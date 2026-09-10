@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "velmere.pass36.a66.audit-tool-execution-trust-boundary.v1",
+  "revisionId": "VELMERE_PASS36_A66R0_AUDIT_TOOL_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A65R0_EXTERNAL_COMMAND_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "scope": [
+    "official pinned solc native binary execution",
+    "synthetic Node-based compiler fixture execution",
+    "shared external command execution boundary"
+  ],
+  "requirements": {
+    "singleChildProcessSinkBelowLib": true,
+    "sharedBoundaryId": "velmere.pass36.external-command-boundary.v4",
+    "privateExecutionImageRequired": true,
+    "explicitInterpreterProfileRequired": true,
+    "originRecheckBeforeSpawnRequired": true,
+    "nativeExecutableSha256Required": true,
+    "interpreterEntrypointSha256Required": true,
+    "interpreterInlineEvalAndPreloadFlagsForbidden": true,
+    "canonicalArgumentDigestRecorded": true,
+    "isolatedWorkingDirectory": true,
+    "inheritedPathForbidden": true,
+    "sensitiveEnvironmentInheritanceForbidden": true,
+    "dangerousLoaderEnvironmentForbidden": true,
+    "symlinkExecutableOrEntrypointForbidden": true,
+    "groupOrWorldWritableExecutableOrEntrypointForbiddenOnPosix": true,
+    "shell": false,
+    "standardJsonInputMaximumBytes": 8388608,
+    "compilerOutputMaximumBytes": 4194304,
+    "timeoutMaximumMs": 120000,
+    "rawStderrInReceiptOrError": false,
+    "fixtureCannotUnlockPaidGate": true
+  },
+  "protectedAdapter": "lib/security/audit-a02-solc-reproduction.ts",
+  "truthBoundary": {
+    "officialSolcExecuted": false,
+    "realProviderBoundContractExecuted": false,
+    "sourceToDeployedBytecodeReproductionProvenForRealCase": false,
+    "localFixtureBoundaryBehaviorProven": true,
+    "saleEnabled": false,
+    "liveProven": false
+  }
+}

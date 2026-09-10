@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "velmere.pass35.a32-report-delivery-policy.v1",
+  "passId": "PASS35_A32",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "GENERATED_OFFLINE",
+    "FILE_IMPORT"
+  ],
+  "requiredControlFamilies": [
+    "CANONICAL_PACKET_BINDING",
+    "ANALYZER_RECEIPT_COVERAGE",
+    "CLAIM_TAXONOMY",
+    "TIER_SCOPE_ENFORCEMENT",
+    "SENSITIVE_REDACTION",
+    "ACCOUNT_CASE_ENTITLEMENT_BINDING",
+    "REPORT_STRUCTURE_COMPLETENESS",
+    "ARTIFACT_INTEGRITY_SEAL",
+    "ONE_TIME_DOWNLOAD_TOKEN",
+    "SUPERSESSION_INVALIDATION",
+    "CUSTOMER_COMPREHENSION",
+    "PRIVACY_RETENTION_DELETION"
+  ],
+  "thresholds": {
+    "minimumProSections": 12,
+    "minimumAdvancedSections": 18,
+    "minimumProClaims": 16,
+    "minimumAdvancedClaims": 24,
+    "minimumProAnalyzerReceipts": 8,
+    "minimumAdvancedAnalyzerReceipts": 12,
+    "criticalSectionCoverage": 1,
+    "tierFieldCoverage": 1,
+    "maximumDownloadTokenTtlSeconds": 900,
+    "maximumPrivateRetentionDays": 30,
+    "minimumComprehensionChecks": 4,
+    "minimumReplayRuns": 3,
+    "mutationKillRate": 0.9,
+    "requireUniqueIds": true,
+    "requireAllClaimClasses": true,
+    "requireNoGuaranteeLanguage": true,
+    "requireOneTimeDownload": true,
+    "requireSupersessionRules": true,
+    "requireMachineSeal": true,
+    "requireClaimBoundary": true
+  },
+  "benchmark": {
+    "families": [
+      "PACKET_BINDING",
+      "RECEIPT_COVERAGE",
+      "CLAIM_TAXONOMY",
+      "TIER_SCOPE",
+      "SENSITIVE_REDACTION",
+      "ENTITLEMENT_BINDING",
+      "REPORT_STRUCTURE",
+      "ARTIFACT_INTEGRITY",
+      "DOWNLOAD_TOKEN",
+      "SUPERSESSION",
+      "COMPREHENSION",
+      "PRIVACY_RETENTION"
+    ],
+    "mutationTypes": [
+      "break_packet_hash",
+      "drop_analyzer_receipt",
+      "remove_limitation_class",
+      "inject_advanced_field_into_pro",
+      "expose_sensitive_claim",
+      "swap_account_binding",
+      "remove_critical_section",
+      "tamper_artifact_hash",
+      "reuse_download_token",
+      "remove_invalidation_trigger",
+      "remove_false_safety_warning",
+      "extend_retention_without_policy"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "PASS35 A32 defines and benchmarks a bounded local A16 report-delivery evidence contract. It can prove packet/receipt/tier/redaction/account/artifact/download/supersession/comprehension/privacy integrity for generated or imported offline evidence. It does not prove real analyzer execution, real customer comprehension, production account isolation, staging delivery, qualified signatures, legal sufficiency, paid value, LIVE operation or customer outcome."
+}

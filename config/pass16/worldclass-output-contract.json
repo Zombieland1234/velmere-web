@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "velmere.pass16.worldclass-output-contract.v1",
+  "commonRequiredFields": [
+    "schemaVersion",
+    "matrixId",
+    "caseId",
+    "surface",
+    "tier",
+    "locale",
+    "sourceSha256",
+    "corpusSha256",
+    "status",
+    "scope",
+    "evidence",
+    "missingData",
+    "limitations",
+    "confidence",
+    "nextSafeCheck"
+  ],
+  "statuses": ["passed", "blocked", "failed"],
+  "tierRequirements": {
+    "basic": {
+      "requiredFields": ["evidenceStatus"],
+      "minimumIndependentSourceFamilies": 1,
+      "allowsNumericVerdictWithoutEvidence": false
+    },
+    "pro": {
+      "requiredFields": ["evidenceTable", "riskDrivers", "commercialRights", "freshnessReceipt"],
+      "minimumIndependentSourceFamilies": 2,
+      "mustBlockOnMissingEvidence": true,
+      "mustDifferMateriallyFromBasic": true
+    },
+    "advanced": {
+      "requiredFields": ["evidenceTable", "riskDrivers", "contradictions", "confidenceBasis", "commercialRights", "freshnessReceipt", "provenanceReceipt"],
+      "minimumIndependentSourceFamilies": 2,
+      "mustBlockOnMissingEvidence": true,
+      "mustDifferMateriallyFromPro": true
+    }
+  },
+  "surfaceRequirements": {
+    "shield": ["assetIdentity", "marketSnapshot", "liquidity", "onchainOrIssuerSignals", "riskAssessment"],
+    "real_markets": ["assetIdentity", "marketSnapshot", "sessionAndVenue", "issuerOrOfficialSignals", "riskAssessment"],
+    "smart_contract_audit": ["contractIdentity", "analysisScope", "findings", "falsePositiveControls", "severityRationale", "remediation"],
+    "lens_pdf": ["reportIdentity", "renderReceipt", "previewHash", "downloadHash", "accountCopyHash", "pageManifest", "sourceManifest"],
+    "vlm_brain": ["factPacketHash", "epistemicDecision", "claims", "claimSourceBindings", "policyDecision"],
+    "angel": ["answer", "severity", "evidenceSummary", "missingProof", "safeRemediation", "policyDecision"]
+  },
+  "advancedAuditHumanReview": {
+    "required": true,
+    "requiredFields": ["authorityId", "reviewerRole", "reviewStatus", "reviewedAt", "reviewReceiptSha256"],
+    "allowedReviewStatusForRelease": ["approved"]
+  },
+  "localeRequirements": {
+    "supported": ["pl", "en", "de"],
+    "mustMatchRequestedLocale": true,
+    "silentEnglishFallbackForbidden": true
+  },
+  "pdfParityRule": {
+    "required": true,
+    "condition": "previewHash == downloadHash == accountCopyHash",
+    "note": "A renderer-specific transport wrapper may differ, but the canonical customer report payload and page manifest must hash identically."
+  },
+  "truthBoundary": "This contract defines what an output must contain. It does not claim that any current product output satisfies it."
+}

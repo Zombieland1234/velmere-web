@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "velmere.pass36.a65.external-command-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A65R0_EXTERNAL_COMMAND_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "total": 34,
+  "passed": 34,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "valid_bound_command_executes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "valid_input_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "allowlisted_environment_present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "secret_environment_not_inherited",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "dangerous_node_options_not_inherited",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "isolated_working_directory",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "executable_digest_recorded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "args_digest_recorded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_file_digest_recorded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "relative_command_rejected",
+      "pass": true,
+      "detail": "a65_fixture_executable_path_not_absolute"
+    },
+    {
+      "id": "missing_executable_rejected",
+      "pass": true,
+      "detail": "a65_fixture_executable_unavailable"
+    },
+    {
+      "id": "wrong_executable_digest_rejected",
+      "pass": true,
+      "detail": "a65_fixture_executable_digest_mismatch"
+    },
+    {
+      "id": "invalid_executable_digest_rejected",
+      "pass": true,
+      "detail": "a65_fixture_executable_digest_invalid"
+    },
+    {
+      "id": "args_digest_mismatch_rejected",
+      "pass": true,
+      "detail": "a65_fixture_args_digest_mismatch"
+    },
+    {
+      "id": "invalid_args_digest_rejected",
+      "pass": true,
+      "detail": "a65_fixture_args_digest_invalid"
+    },
+    {
+      "id": "interpreter_entrypoint_must_be_bound",
+      "pass": true,
+      "detail": "external_command_interpreter_entrypoint_unbound"
+    },
+    {
+      "id": "duplicate_file_binding_rejected",
+      "pass": true,
+      "detail": "external_command_file_binding_index_invalid"
+    },
+    {
+      "id": "out_of_range_file_binding_rejected",
+      "pass": true,
+      "detail": "external_command_file_binding_index_invalid"
+    },
+    {
+      "id": "wrong_bound_file_digest_rejected",
+      "pass": true,
+      "detail": "external_command_bound_file_digest_mismatch"
+    },
+    {
+      "id": "symlink_entrypoint_rejected",
+      "pass": true,
+      "detail": "external_command_bound_file_symlink_forbidden"
+    },
+    {
+      "id": "writable_entrypoint_rejected",
+      "pass": true,
+      "detail": "external_command_bound_file_writable_by_group_or_world"
+    },
+    {
+      "id": "sensitive_environment_rejected",
+      "pass": true,
+      "detail": "external_command_sensitive_environment_forbidden"
+    },
+    {
+      "id": "dangerous_environment_rejected",
+      "pass": true,
+      "detail": "external_command_dangerous_environment_forbidden"
+    },
+    {
+      "id": "invalid_environment_name_rejected",
+      "pass": true,
+      "detail": "external_command_environment_name_invalid"
+    },
+    {
+      "id": "newline_argument_rejected",
+      "pass": true,
+      "detail": "external_command_arg_invalid"
+    },
+    {
+      "id": "too_many_arguments_rejected",
+      "pass": true,
+      "detail": "external_command_args_invalid"
+    },
+    {
+      "id": "timeout_rejected_fail_closed",
+      "pass": true,
+      "detail": "a65_fixture_command_failed:ETIMEDOUT"
+    },
+    {
+      "id": "oversized_output_rejected",
+      "pass": true,
+      "detail": "a65_fixture_command_failed:ENOBUFS"
+    },
+    {
+      "id": "stderr_secret_not_exposed",
+      "pass": true,
+      "detail": "a65_fixture_command_exit:7:sha256:498360ca9628506bc215411b2ed39c93a42de48c13b37c409f3eeda0ae436002"
+    },
+    {
+      "id": "timeout_floor_enforced",
+      "pass": true,
+      "detail": "a65_fixture_timeout_invalid"
+    },
+    {
+      "id": "timeout_ceiling_enforced",
+      "pass": true,
+      "detail": "a65_fixture_timeout_invalid"
+    },
+    {
+      "id": "output_floor_enforced",
+      "pass": true,
+      "detail": "a65_fixture_output_limit_invalid"
+    },
+    {
+      "id": "output_ceiling_enforced",
+      "pass": true,
+      "detail": "a65_fixture_output_limit_invalid"
+    },
+    {
+      "id": "input_limit_enforced",
+      "pass": true,
+      "detail": "a65_fixture_input_invalid"
+    }
+  ]
+}

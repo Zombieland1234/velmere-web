@@ -1,0 +1,170 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "externalAccuracy": {
+    "baselineControlFlagRate": 0.583333,
+    "baselineRecall": 0.710145,
+    "cases": 69,
+    "categoryDelta": {
+      "access_control": {
+        "baselineRecall": 0.444444,
+        "currentRecall": 0.888889,
+        "delta": 0.444445
+      },
+      "arithmetic": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "bad_randomness": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "denial_of_service": {
+        "baselineRecall": 0.333333,
+        "currentRecall": 1.0,
+        "delta": 0.666667
+      },
+      "front_running": {
+        "baselineRecall": 0.25,
+        "currentRecall": 1.0,
+        "delta": 0.75
+      },
+      "other": {
+        "baselineRecall": 0.666667,
+        "currentRecall": 0.666667,
+        "delta": 0.0
+      },
+      "reentrancy": {
+        "baselineRecall": 0.857143,
+        "currentRecall": 0.0,
+        "delta": -0.857143
+      },
+      "short_addresses": {
+        "baselineRecall": 0.0,
+        "currentRecall": 1.0,
+        "delta": 1.0
+      },
+      "time_manipulation": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "unchecked_low_level_calls": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      }
+    },
+    "controls": 12,
+    "currentControlFlagRate": 0.0,
+    "currentRecall": 0.855072,
+    "dataset": "SmartBugs Curated ICSE2020 69-case selection",
+    "datasetCommit": "230e649123477eff332742a59a1c7cc6dc286cab",
+    "externalToolReentrancyRecall": 0.857143,
+    "formalPrecision": false,
+    "hybridReviewQueueCustomerAccuracyCredit": 0,
+    "hybridReviewQueueLabelInstanceRecall": 0.942029,
+    "hybridReviewQueueMatchedCases": 65,
+    "hybridReviewQueueRecall": 0.942029,
+    "hybridReviewQueueTruthBoundary": "MANUAL_REVIEW_PRIORITIZATION_ONLY_NOT_AUTONOMOUS_CUSTOMER_FINDING_ACCURACY",
+    "modernProtocolRepresentativeness": false,
+    "projectAnalyzerReentrancyRecall": 0.0,
+    "recallDelta": 0.144927,
+    "severityCalibration": false,
+    "structuredAnalyzerCanReplaceExternalTools": false
+  },
+  "generatedAt": "2026-08-04T00:00:00.000Z",
+  "globalDecision": "NO_GO",
+  "implemented": [
+    "Structured control-flow analyzer integrated into the active A01-A05 audit engine.",
+    "Broad lexical low-level-call/timestamp/loop rules replaced by context-aware structured signals while callcode/assembly/unchecked remain explicit surfaces.",
+    "Weak-category detectors added for legacy constructor mismatch, unauthorized privilege writes, failed-refund DoS, storage-growth/reset DoS, preimage/reward/allowance/plaintext front-running and legacy short-address surfaces.",
+    "Risk/control generalization and tier-surface tests added.",
+    "R44P13 external-tool categories and R44P14 structured categories are combined into a 65/69 manual review queue with an explicit no-customer-accuracy boundary.",
+    "The standalone structured analyzer reentrancy regression is exposed as a release blocker; Slither/external-tool lanes remain mandatory."
+  ],
+  "localVerification": {
+    "auditEngineRegression": {
+      "checks": 28,
+      "failed": 0,
+      "passed": 28
+    },
+    "auditTier": {
+      "checks": 12,
+      "failed": 0,
+      "passed": 12
+    },
+    "fullPartitionedEslint": "INCOMPLETE_6_OF_101_TIMEOUT_NO_CREDIT",
+    "metamorphic": {
+      "assertions": 432,
+      "failed": 0,
+      "passed": 432
+    },
+    "partitionedTypeScript": "PASS_18_OF_18_ZERO_DIAGNOSTICS",
+    "routes": "PASS_ROUTE_AST_DISPATCH_LAZY_VISUAL",
+    "sourceAudit": "PASS_EXIT_ZERO",
+    "targetedEslint": "PASS_ZERO_WARNINGS",
+    "targetedRiskControl": {
+      "assertions": 40,
+      "failed": 0,
+      "passed": 40
+    }
+  },
+  "openBlockers": [
+    "Full 101-partition ESLint did not complete in the execution window; only changed-file ESLint has current-byte credit.",
+    "Final-byte Webpack, Turbopack, post-build TypeScript, next start and browser matrix were not re-run after R44P14 source changes.",
+    "R44P14 PDFs were not regenerated after the analyzer change.",
+    "External corpus is legacy and labeled but not exhaustive; formal precision, severity calibration and modern business-logic accuracy remain unproven.",
+    "Exact Windows, independent human adjudication, provider rights, staging and real customer outcomes remain open.",
+    "R44P14_P0_STRUCTURED_ANALYZER_REENTRANCY_RECALL_0_OF_7_EXTERNAL_TOOL_LANE_MANDATORY",
+    "R44P14_P0_HYBRID_65_OF_69_IS_REVIEW_QUEUE_ONLY_NOT_CUSTOMER_ACCURACY"
+  ],
+  "parentArtifacts": {
+    "materials": {
+      "bytes": 93015288,
+      "path": "/mnt/data/velmere_r44p13_delivery_final/VELMERE_PASS36_A102R44P13_ACTION_REQUIRED_EXTERNAL_LABELED_ACCURACY_FINAL_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_NO_LIVE_CREDIT_MATERIALS.zip",
+      "sha256": "a082eab249585d244599988bf5a84ba2cf6ad1766999ee70bcffead5a779387a"
+    },
+    "roadmap": {
+      "bytes": 1954814,
+      "path": "/mnt/data/velmere_r44p13_delivery_final/VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS36_A102R44P13_ACTION_REQUIRED_EXTERNAL_LABELED_ACCURACY_FINAL_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_NO_LIVE_CREDIT.txt",
+      "sha256": "11c5281aec689d9c21163037d24e6e0d0570086f3b7e9e102a236c4671bda511"
+    },
+    "source": {
+      "bytes": 56827943,
+      "path": "/mnt/data/velmere_r44p13_delivery_final/VELMERE_PASS36_A102R44P13_ACTION_REQUIRED_EXTERNAL_LABELED_ACCURACY_FINAL_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_NO_LIVE_CREDIT_SOURCE_ONLY.zip",
+      "sha256": "9d075e8e2145efc82d7ab6b5dd7f675805bdd9b1333c3f21632a849111d6ab9b"
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P13_ACTION_REQUIRED_EXTERNAL_LABELED_ACCURACY_FINAL_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "central": 5,
+    "range": [
+      4,
+      8
+    ]
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P14_ACTION_REQUIRED_WEAK_CATEGORY_RECALL_CONTROL_FALSE_ALERT_SUPPRESSION_AND_PRODUCT_ANALYZER_INTEGRATION_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p14.action-required-current-state.v1",
+  "skuDecisions": {
+    "auditAdvanced": "NOT_FOR_SALE",
+    "auditBasic": "PILOT_ONLY_FREE_LIMITED_PRESCREEN",
+    "auditPro": "INVITATION_ONLY_CONTROLLED_BETA_WITH_100_PERCENT_MANUAL_QA",
+    "pdfBasicProAdvanced": "NOT_FOR_CUSTOMER_DELIVERY_ON_R44P14_UNTIL_REGENERATED_AND_QA",
+    "realMarketsBasic": "REFERENCE_DEMO_ONLY",
+    "realMarketsProAdvanced": "NOT_FOR_SALE",
+    "shieldBasic": "REFERENCE_DEMO_ONLY",
+    "shieldProMapAdvanced": "NOT_FOR_SALE"
+  },
+  "supersededEvidence": {
+    "hybridReviewQueueAsCustomerAccuracy": "FORBIDDEN_REVIEW_PRIORITIZATION_ONLY",
+    "r44p13FinalBuildBrowser": "SUPERSEDED_BY_SOURCE_CHANGE_NOT_REEXECUTED",
+    "r44p13PdfCorpus": "SUPERSEDED_FOR_CURRENT_ANALYZER_NOT_REGENERATED",
+    "standaloneStructuredReentrancyCoverage": "REJECTED_0_OF_7_EXTERNAL_TOOL_LANE_MANDATORY"
+  },
+  "worldClassProven": false
+}

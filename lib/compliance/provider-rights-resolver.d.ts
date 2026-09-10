@@ -1,0 +1,3 @@
+export type ProviderRightsPurpose = "display" | "commercial" | "redistribution" | "model_training";
+export declare function resolveProviderRights(args: { providerId: string; purpose?: ProviderRightsPurpose; registry: Record<string, unknown>; evidenceManifest: Record<string, unknown>; now?: string }): Record<string, unknown>;
+export declare function canonicalLicenseState(args: { providerId: string; registry: Record<string, unknown>; evidenceManifest: Record<string, unknown>; now?: string }): { licenseStatus: "verified"|"display_only"|"restricted"; display: Record<string, unknown>; commercial: Record<string, unknown> };

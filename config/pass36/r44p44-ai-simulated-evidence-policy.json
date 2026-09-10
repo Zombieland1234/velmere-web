@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p44.ai-simulated-evidence-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P44_ACTION_REQUIRED_BRUTAL_PRODUCT_REALITY_50_CONTRACT_ANGEL120_PERSONA100_FULL_QA_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "classification": "AI_SIMULATED_CUSTOMERS_AND_REVIEWERS_NOT_REAL_HUMAN_PROOF",
+  "inputs": {
+    "personaJourney": "R44P44_PERSONA100_JOURNEY2400.json",
+    "angelBoundary": "R44P44_ANGEL120_EVALUATION.json",
+    "contractTierMatrix": "R44P44_CONTRACT50_TIER150.json"
+  },
+  "denominators": {
+    "simulatedPersonas": 100,
+    "journeyRows": 2400,
+    "angelCases": 121,
+    "contractCases": 50,
+    "contractTierRows": 150,
+    "simulatedReviewerRoles": 12
+  },
+  "transparentSimulationMetrics": {
+    "journeyRowsNotBlockedExternal": 2000,
+    "journeyLocalCoveragePercent": 83.33,
+    "journeyRowsWithoutHighTrustRisk": 2000,
+    "journeyNonHighTrustRiskPercent": 83.33,
+    "journeyRowsWithoutHighDropOffRisk": 2100,
+    "journeyNonHighDropOffRiskPercent": 87.5,
+    "angelDeterministicBoundaryPasses": 121,
+    "angelDeterministicBoundaryPassPercent": 100,
+    "simulationCompositePercent": 88.54
+  },
+  "allowedCredit": [
+    "static_product_truth",
+    "local_ux_psychology_simulation",
+    "test_design_coverage",
+    "adversarial_prompt_boundary_coverage",
+    "roadmap_prioritization"
+  ],
+  "forbiddenCredit": [
+    "real_customer_proof",
+    "willingness_to_pay",
+    "retention",
+    "real_purchase_intent",
+    "independent_human_review",
+    "legal_approval",
+    "sale_readiness",
+    "live_readiness",
+    "world_class_proof"
+  ],
+  "credits": {
+    "aiSimulatedReadiness": true,
+    "realCustomerProof": false,
+    "willingnessToPay": false,
+    "independentReviewer": false,
+    "sale": false,
+    "live": false,
+    "worldClass": false
+  }
+}

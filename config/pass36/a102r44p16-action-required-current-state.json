@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p16.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P15_ACTION_REQUIRED_REENTRANCY_RECALL_SOURCE_AUDIT_DECLARATION_BOUNDARY_AND_FINAL_BYTE_REGRESSION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-04T00:00:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED",
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "implemented": [
+    "A single current SKU truth now governs Basic, Pro and Advanced customer copy, checkout decisions, public prices, AI/Angel copy, audit delivery, market reports and current risk output.",
+    "Basic remains a free bounded prescreen; Pro is an invitation-only controlled beta; Advanced is NOT_FOR_SALE.",
+    "Public prices, public checkout, paid-delivery claims, human-review promises, operator sign-off and independent-certification claims were removed from current customer-facing paths.",
+    "Legacy human_review queue values are normalized to analysis_queue or automated_analysis through a fail-closed application adapter and a new database migration.",
+    "Historical A88/A88R1 hashes remain immutable; an explicit three-row input-hash migration binds the later legitimate advice, tier-policy and intelligence-page bytes without rewriting old receipts.",
+    "Asset detail and checkout UI no longer construct public paid checkout URLs; Pro routes to a controlled-beta contact path and Advanced routes to Trust Center only.",
+    "World-class report commercial envelopes now expose null public prices and cannot return paidDeliveryAllowed=true.",
+    "A diagnostic current-byte route AST registry reparse retained all 254 files and 317 method exports; exact project TypeScript/Node route credit remains open."
+  ],
+  "currentSkuTruth": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_LIMITED_PRESCREEN",
+      "publicCheckoutAllowed": false,
+      "publicPrice": null,
+      "findingConfidence": "NOT_CALIBRATED"
+    },
+    "pro": {
+      "decision": "INVITATION_ONLY_CONTROLLED_BETA",
+      "publicCheckoutAllowed": false,
+      "publicPrice": null,
+      "manualQualityControlRequired": true,
+      "findingConfidence": "NOT_CALIBRATED"
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "publicCheckoutAllowed": false,
+      "publicPrice": null,
+      "humanReviewIncluded": false,
+      "independentCertificationIncluded": false,
+      "findingConfidence": "NOT_CALIBRATED"
+    }
+  },
+  "verification": {
+    "currentSkuStatic": {
+      "checks": 85,
+      "passed": 85,
+      "failed": 0
+    },
+    "analysisQueueMigration": {
+      "checks": 32,
+      "passed": 32,
+      "failed": 0
+    },
+    "currentSkuRuntime": {
+      "checks": 185,
+      "passed": 185,
+      "failed": 0
+    },
+    "a88InputHashMigration": {
+      "checks": 32,
+      "passed": 32,
+      "failed": 0
+    },
+    "syntaxValidation": {
+      "files": 59,
+      "passed": 59,
+      "failed": 0,
+      "node": "v22.16.0",
+      "typescript": "5.8.3"
+    },
+    "sourceAudit": {
+      "status": "PASS",
+      "regularFilesRead": 5854,
+      "typescriptFamilyFilesSyntaxChecked": 1988,
+      "syntaxErrorFileCount": 0,
+      "unresolvedLocalImportCount": 0,
+      "undeclaredPackageImportCount": 0,
+      "secretCandidates": 2,
+      "secretCandidateBoundary": "two inherited negative-test fixtures; no raw secret value is copied into reports",
+      "auditTiming": "final post-authority manifest audit; output stored in MATERIALS, not SOURCE"
+    },
+    "routeAst": {
+      "status": "PASS_STATIC_REPLAY_DIAGNOSTIC_NO_EXACT_CREDIT",
+      "files": 254,
+      "methodExports": 317,
+      "changedRows": 1,
+      "exactAstReparseCredit": false
+    },
+    "routeDispatch": {
+      "checks": 1480,
+      "passed": 1480,
+      "failed": 0
+    },
+    "routeTamper": {
+      "assertions": 7,
+      "passed": 7,
+      "failed": 0
+    },
+    "lazyRoutes": {
+      "checks": 176,
+      "passed": 176,
+      "failed": 0
+    },
+    "visualFreeze": {
+      "checks": 20,
+      "passed": 20,
+      "failed": 0
+    },
+    "shieldA84": {
+      "checks": 32,
+      "passed": 32,
+      "failed": 0
+    },
+    "shieldProMapA85": {
+      "checks": 34,
+      "passed": 34,
+      "failed": 0
+    },
+    "realMarketsA86": {
+      "checks": 30,
+      "passed": 30,
+      "failed": 0
+    },
+    "marketImpactWhaleA87": {
+      "checks": 31,
+      "passed": 31,
+      "failed": 0
+    },
+    "brainAngelRiskA88": {
+      "checks": 61,
+      "passed": 60,
+      "failed": 1
+    },
+    "a88TruthBoundary": "60/61; the sole red row is a historical input hash superseded by a separately verified 32/32 migration; no behavior denominator was removed.",
+    "a88r1Route": {
+      "checks": 143,
+      "passed": 143,
+      "failed": 0
+    },
+    "a88r1Semantic": {
+      "checks": 56,
+      "passed": 53,
+      "failed": 3
+    },
+    "a88r1SemanticBoundary": "53/56; all three red rows are immutable historical input hashes bound by the R44P16 migration; route/privacy behavior remains fail-closed.",
+    "angelMulticoin": {
+      "assertions": 1083,
+      "passed": 1083,
+      "failed": 0,
+      "rejectedProviderCalls": 0,
+      "assets": 15,
+      "locales": 3,
+      "tiers": 3
+    }
+  },
+  "inheritedAccuracyTruth": {
+    "analyzerPath": "lib/security/solidity-structured-signal.mjs",
+    "analyzerSha256": "16e51259f81553e0b80d62136ee43157b3db4020792e4664d92b69372ecc1f8d",
+    "analyzerBytesUnchangedFromR44P15": true,
+    "externalSmartBugsCases": 69,
+    "detected": 66,
+    "recall": 0.956522,
+    "reentrancyRecall": 1.0,
+    "controls": 12,
+    "flaggedControls": 0,
+    "rerunInCurrentRuntime": false,
+    "creditBoundary": "Exact analyzer bytes are unchanged and R44P15 evidence is retained. R44P16 does not claim a fresh external benchmark run, formal precision, severity calibration, modern business-logic coverage or independent adjudication."
+  },
+  "surfaceTruth": {
+    "shield": {
+      "denominator": 318,
+      "executionClass": "INJECTED_FIXTURE",
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "shieldProMap": {
+      "denominator": 318,
+      "executionClass": "LOCAL_FIXTURE_DEPTH_AND_IDENTITY",
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "realMarkets": {
+      "denominator": 583,
+      "executionClass": "STATIC_REFERENCE_PLUS_SYNTHETIC_SCENARIOS",
+      "realCurrentDataCredit": 0,
+      "rightsApprovedCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "marketImpactWhale": {
+      "denominator": 318,
+      "executionClass": "FIXTURE_ONLY",
+      "realizedSlippageCredit": 0,
+      "signedCurrentLabelCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "brainAngelRisk": {
+      "syntheticCases": 360,
+      "independentRealEvalCredit": 0,
+      "probabilityCalibrationCredit": 0,
+      "paidDeliveryCredit": 0
+    },
+    "pdf": {
+      "historicalTechnicalCorpusRetained": true,
+      "currentByteRegeneration": "NOT_RUN",
+      "currentCustomerDeliveryCredit": 0
+    }
+  },
+  "currentByteCredit": {
+    "exactNode24_18_0": false,
+    "exactNpm11_16_0": false,
+    "fullPartitionedEslint": false,
+    "fullProjectTypeScript": false,
+    "webpack": false,
+    "turbopack": false,
+    "nextStartSmoke": false,
+    "browser57": false,
+    "screenshots29": false,
+    "exactWindows": false,
+    "pdfRegeneration150": false
+  },
+  "openBlockers": [
+    "Exact Node 24.18.0, npm 11.16.0 and project TypeScript 5.9.3 dependencies are unavailable in this runtime; current-byte build/browser and exact route AST credit remain NOT_RUN.",
+    "Full partitioned ESLint and full project TypeScript are not credited on R44P16; only changed-file syntax validation and the full source audit are current-byte.",
+    "The 150-document PDF corpus was not regenerated on R44P16 bytes; retained parent evidence cannot be promoted to current customer-delivery credit.",
+    "Database migration is structurally tested but was not executed against disposable staging; RLS, rollback and tenant isolation credit remain zero.",
+    "Shield, Shield Pro/Map, Real Markets, Market Impact and Whale Watch matrices remain fixture/reference tests with zero commercial rights or real paid-delivery credit.",
+    "Two independent reviewers, modern protocol ground truth, severity calibration, real customer cohorts and willingness-to-pay remain open."
+  ],
+  "skuDecisions": {
+    "auditBasic": "PILOT_ONLY_FREE_LIMITED_PRESCREEN",
+    "auditPro": "INVITATION_ONLY_CONTROLLED_BETA_WITH_100_PERCENT_INTERNAL_QUALITY_CONTROL",
+    "auditAdvanced": "NOT_FOR_SALE",
+    "pdfBasicProAdvanced": "NOT_FOR_CUSTOMER_DELIVERY_UNTIL_CURRENT_BYTE_REGENERATION_AND_INDEPENDENT_QA",
+    "browserBasic": "PILOT_ONLY_AFTER_CURRENT_BYTE_BROWSER_RETEST",
+    "browserProAdvanced": "NOT_FOR_SALE",
+    "shieldBasic": "REFERENCE_DEMO_ONLY",
+    "shieldProMapAdvanced": "NOT_FOR_SALE",
+    "realMarketsBasic": "REFERENCE_DEMO_ONLY",
+    "realMarketsProAdvanced": "NOT_FOR_SALE",
+    "marketImpactWhale": "REFERENCE_DEMO_ONLY",
+    "angel": "LOCAL_INFORMATIONAL_PILOT_ONLY",
+    "riskManagement": "NON_PROBABILISTIC_BASIC_ONLY"
+  },
+  "remainingCheckpointEstimate": {
+    "central": 5,
+    "range": [
+      4,
+      8
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "classification": "EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL_ONLY",
+  "evidence": {
+    "artifactIndexPath": "evidence/R44P31_ARTIFACT_INDEX.json",
+    "artifactZipFilename": "r44p31-external-ci-storage-kms-email-success.zip",
+    "deterministicTarFilename": "r44p31-external-ci-storage-kms-email-evidence.tar.gz",
+    "deterministicTarSha256": "66fa1ca6f35ada786f3c78ee2778495ddfbefee52867c6bdc50d9fcb9794ec61",
+    "independentChecks": 35,
+    "independentVerifierPath": "R44P31_INDEPENDENT_EXTERNAL_CI_VERIFICATION.json",
+    "ledgerPath": "evidence/R44P31_EXTERNAL_CI_STORAGE_KMS_EMAIL_LEDGER.json",
+    "passed": 10,
+    "required": 10,
+    "requiredCaseIds": [
+      "private-object",
+      "signed-url-short-lived",
+      "wrong-account-denied",
+      "kms-context-bound",
+      "ciphertext-at-rest",
+      "disposable-email-recipient",
+      "provider-delivery-not-inbox-proof",
+      "cleanup-success-path",
+      "cleanup-failure-path",
+      "secrets-redacted"
+    ],
+    "runnerIdentityPath": "evidence/R44P31_EXTERNAL_RUNNER_IDENTITY.json",
+    "serviceImages": {
+      "localstack": "localstack/localstack:3.8.1",
+      "mailpit": "axllent/mailpit:v1.20.4"
+    },
+    "sigstoreBundleFilename": "r44p31-external-ci-storage-kms-email-evidence.sigstore.json",
+    "sigstoreBundleSha256": "29c8664ba078e3649b1311fe37524e0091e8180f879f05c004ddf7af32e8f341"
+  },
+  "expectedParentSource": {
+    "aggregateSha256": "3620bb9336c8b913dbc036c86d2d2a95fdc6c2dbd3fa9553f7397e856249e105",
+    "manifestPath": "_velmere/PASS36_A102R44P30_SOURCE_ONLY_MANIFEST.json",
+    "manifestSha256": "f58cf1eebaf0ad35976afa919bb0f53452e963c1b269d93f578829d342b9fcfa",
+    "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+    "sourceArchiveSha256": "24d53118329e8ea605e79fa2944812e5fd1ebb0169dd371f45793adc08cf4334"
+  },
+  "github": {
+    "artifactBytes": 37225,
+    "artifactId": "9012942728",
+    "artifactName": "r44p31-external-ci-storage-kms-email-sigstore-evidence",
+    "artifactZipSha256": "62e8e43148394703772fa446a4985513bcf4659e614d8b4adf0854b79c84ac7c",
+    "headBranch": "r44p31-external-ci-storage-kms-email-20260808",
+    "headSha": "383fdf3c772f2ad5c04b036a7483bc61c0054fcd",
+    "mergeSha": "1c5a02026d5aa22123ad622b205f208d8f6e46f4",
+    "pullRequest": 18,
+    "repository": "Zombieland1234/velmere1",
+    "runAttempt": "1",
+    "runId": "31228486644",
+    "workflowRef": "Zombieland1234/velmere1/.github/workflows/r44p31-external-ci-storage-kms-email.yml@refs/pull/18/merge",
+    "workflowSan": "https://github.com/Zombieland1234/velmere1/.github/workflows/r44p31-external-ci-storage-kms-email.yml@refs/pull/18/merge"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "runnerSources": {
+    "requirementsSha256": "5f3e322872951a58eebc0588c8a4a6b1f91634c90069190cf7a69649aba881aa",
+    "runSha256": "d686d755c2eea02e07bb6f393ef1b13b12d8b3c43580e49c891f164b40dab7e6",
+    "verifySha256": "85b6b97493e07d3343cb6ce916910b5a5720b85da0690e7d6d1664c5192e79ba",
+    "workflowSha256": "eefd1c431fadb35f5b3df4cbb8b35401cc293c8a209b6614b4a06c4522a53439"
+  },
+  "schemaVersion": "velmere.pass36.a102r44p31.external-ci-storage-kms-email-policy.v1",
+  "security": {
+    "maxLeafCertificateLifetimeSeconds": 600,
+    "rawApplicationSecretsForbiddenInEvidence": true,
+    "rawPlaintextForbiddenInEvidence": true,
+    "rawSignedUrlsForbiddenInEvidence": true,
+    "requireInclusionPromise": true,
+    "requireInclusionProof": true,
+    "requireRfc3161Timestamp": true,
+    "requireSingleTlogEntry": true,
+    "unsignedRawLocalstackHttpMayGrantPrivacyCredit": false
+  },
+  "truthBoundary": {
+    "awsCredit": false,
+    "currentChildExactReleaseCredit": false,
+    "customerCredit": false,
+    "externalCiLocalstackStorageKmsEmail": true,
+    "externalProviderStagingCredit": false,
+    "liveCredit": false,
+    "productionEmailCredit": false,
+    "productionKmsCredit": false,
+    "productionStorageCredit": false,
+    "retainedParentExactLinuxReleaseOnly": true,
+    "saleCredit": false,
+    "sesCredit": false
+  }
+}

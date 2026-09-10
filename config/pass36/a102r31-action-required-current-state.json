@@ -1,0 +1,514 @@
+{
+  "schemaVersion": "velmere.pass36.a102r31.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R31_ACTION_REQUIRED_ROUTE_TRANSITION_HASH_FOCUS_PREFETCH_BOUND_AND_ACCESSIBILITY_CONTINUITY_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R30_ACTION_REQUIRED_CHART_PROVIDER_CADENCE_CANONICAL_SESSION_AND_EVIDENCE_STATE_TRUTH_RECOVERY_NO_REAL_CREDIT",
+  "frozenObservationSourceRevisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+  "generatedAt": "2026-07-31T04:30:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "decision": "NO_GO",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A102_ROUTE_TRANSITION_HASH_FOCUS_PREFETCH_BOUND_AND_ACCESSIBILITY_CONTINUITY_NO_FORMAL_PASS_CREDIT",
+  "passCredit": {
+    "a90ToA102": false,
+    "A102": false,
+    "A103ToA116": false,
+    "A77R1ToA80R1": false,
+    "A88R2": false,
+    "staging": false,
+    "realData": false,
+    "rights": false,
+    "legal": false,
+    "customer": false,
+    "assurance": false,
+    "A88R2HistoricalLocalResultRetained": true
+  },
+  "localImplementation": {
+    "testReceiptPath": "config/pass36/a102r31-test-receipt.json",
+    "approvedChangesPath": "config/pass36/a102r31-approved-route-cache-authority-changes.json",
+    "boundaryChecks": 29,
+    "prefetchCacheLimit": 48,
+    "crossRouteHashTargetReadiness": true,
+    "crossRouteHashScrollBeforeReveal": true,
+    "crossRouteHashFocusTransfer": true,
+    "nonHashMainFocusTransfer": true,
+    "pointerIntentCancellation": true,
+    "focusIntentCancellation": true,
+    "nonSelfTargetsIntercepted": false,
+    "routeLoaderScreenReaderStatus": true,
+    "visualVeilAriaHidden": true,
+    "realBrowserRows": 0,
+    "exactBuildBrowserCredit": false
+  },
+  "runtimeTruth": {
+    "retainedA102R2ExactLocalExecutionNodeVersion": "24.18.0",
+    "retainedA102R2ExactLocalExecutionNpmVersion": "11.16.0",
+    "currentAuditExecutionNodeVersion": "22.16.0",
+    "currentAuditExecutionNpmVersion": "10.9.2",
+    "currentAuditObservedChromiumVersion": "144.0.7559.96",
+    "requiredNodeVersion": "24.18.0",
+    "requiredNpmVersion": "11.16.0",
+    "requiredPlaywrightVersion": "1.60.0",
+    "requiredChromiumVersion": "148.0.7778.96",
+    "requiredChromiumRevision": "1223",
+    "officialNodeChecksumIndexAvailable": true,
+    "officialNodeArchiveBinaryVerifiedInCurrentAudit": false,
+    "projectNodeModulesAvailable": false,
+    "exactProjectZodAvailable": false,
+    "exactProjectTypeScriptAvailable": false,
+    "freshExactBrowserRowsExecuted": 0,
+    "freshExactBrowserRowsRequired": 54,
+    "exactReleaseCreditGranted": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R4Bytes": false,
+    "freshNpmCiOnA102R4BytesExecuted": false,
+    "freshLintOnA102R4BytesExecuted": false,
+    "freshTypecheckOnA102R4BytesExecuted": false,
+    "freshWebpackBuildOnA102R4BytesExecuted": false,
+    "freshTurbopackBuildOnA102R4BytesExecuted": false,
+    "freshNextStartSmokeOnA102R4BytesExecuted": false,
+    "diagnosticTypeScriptVersion": "5.8.3",
+    "diagnosticTypeScriptSha256": "dd17428736a07e1db1a138d8a14295ddb2699ba780ee15038acdd2c6da5373a0",
+    "diagnosticRouteAstReparseExecuted": true,
+    "diagnosticRouteAstExactCredit": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R5Bytes": false,
+    "freshNpmCiOnA102R5BytesExecuted": false,
+    "freshLintOnA102R5BytesExecuted": false,
+    "freshTypecheckOnA102R5BytesExecuted": false,
+    "freshWebpackBuildOnA102R5BytesExecuted": false,
+    "freshTurbopackBuildOnA102R5BytesExecuted": false,
+    "freshNextStartSmokeOnA102R5BytesExecuted": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R6Bytes": false,
+    "freshNpmCiOnA102R6BytesExecuted": false,
+    "freshLintOnA102R6BytesExecuted": false,
+    "freshTypecheckOnA102R6BytesExecuted": false,
+    "freshWebpackBuildOnA102R6BytesExecuted": false,
+    "freshTurbopackBuildOnA102R6BytesExecuted": false,
+    "freshNextStartSmokeOnA102R6BytesExecuted": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R7Bytes": false,
+    "freshNpmCiOnA102R7BytesExecuted": false,
+    "freshLintOnA102R7BytesExecuted": false,
+    "freshTypecheckOnA102R7BytesExecuted": false,
+    "freshWebpackBuildOnA102R7BytesExecuted": false,
+    "freshTurbopackBuildOnA102R7BytesExecuted": false,
+    "freshNextStartSmokeOnA102R7BytesExecuted": false,
+    "freshMobileWalletBrowserRowsExecuted": 0,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R8Bytes": false,
+    "freshNpmCiOnA102R8BytesExecuted": false,
+    "freshLintOnA102R8BytesExecuted": false,
+    "freshTypecheckOnA102R8BytesExecuted": false,
+    "freshWebpackBuildOnA102R8BytesExecuted": false,
+    "freshTurbopackBuildOnA102R8BytesExecuted": false,
+    "freshNextStartSmokeOnA102R8BytesExecuted": false,
+    "freshBrowserStoragePrivacyRowsExecuted": 0,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R9Bytes": false,
+    "freshNpmCiOnA102R9BytesExecuted": false,
+    "freshLintOnA102R9BytesExecuted": false,
+    "freshTypecheckOnA102R9BytesExecuted": false,
+    "freshWebpackBuildOnA102R9BytesExecuted": false,
+    "freshTurbopackBuildOnA102R9BytesExecuted": false,
+    "freshNextStartSmokeOnA102R9BytesExecuted": false,
+    "freshSystemClipboardBrowserRowsExecuted": 0,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R10Bytes": false,
+    "freshNpmCiOnA102R10BytesExecuted": false,
+    "freshLintOnA102R10BytesExecuted": false,
+    "freshTypecheckOnA102R10BytesExecuted": false,
+    "freshWebpackBuildOnA102R10BytesExecuted": false,
+    "freshTurbopackBuildOnA102R10BytesExecuted": false,
+    "freshNextStartSmokeOnA102R10BytesExecuted": false,
+    "freshExternalNavigationBrowserRowsExecuted": 0,
+    "freshExternalNavigationBrowserRowsRequired": 18,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R11Bytes": false,
+    "freshNpmCiOnA102R11BytesExecuted": false,
+    "freshLintOnA102R11BytesExecuted": false,
+    "freshTypecheckOnA102R11BytesExecuted": false,
+    "freshWebpackBuildOnA102R11BytesExecuted": false,
+    "freshTurbopackBuildOnA102R11BytesExecuted": false,
+    "freshNextStartSmokeOnA102R11BytesExecuted": false,
+    "freshClientPdfBrowserRowsExecuted": 0,
+    "freshClientPdfBrowserRowsRequired": 18,
+    "freshNpmCiOnA102R12BytesExecuted": false,
+    "freshLintOnA102R12BytesExecuted": false,
+    "freshTypecheckOnA102R12BytesExecuted": false,
+    "freshWebpackBuildOnA102R12BytesExecuted": false,
+    "freshTurbopackBuildOnA102R12BytesExecuted": false,
+    "freshNextStartSmokeOnA102R12BytesExecuted": false,
+    "freshAdminProductDraftBrowserRowsExecuted": 0,
+    "freshAdminProductDraftBrowserRowsRequired": 18,
+    "freshWebpackBuildOnA102R13BytesExecuted": false,
+    "freshTurbopackBuildOnA102R13BytesExecuted": false,
+    "freshProductionNextStartOnA102R13BytesExecuted": false,
+    "freshBrowserRowsExecuted": 0,
+    "freshOperationalLogSinkRowsExecuted": 0,
+    "freshExactBuildBrowserCredit": false,
+    "a102r23ExactNodeDownloadAttempted": true,
+    "a102r23ExactNodeDownloadCompleted": false,
+    "a102r23NpmCiExecuted": false
+  },
+  "denominators": {
+    "a102ObservationRuns": {
+      "required": 3,
+      "realVerified": 0,
+      "minimumSpanSeconds": 259200
+    },
+    "exactClosureTracks": {
+      "required": 4,
+      "verified": 0
+    },
+    "browserChecks": {
+      "required": 54,
+      "exactChromiumCredit": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stripeTestLifecycle": {
+      "required": 1,
+      "realVerified": 0,
+      "productionPayments": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100,
+      "pypdfVerified": 450,
+      "pdfinfoVerified": 450,
+      "pdftotextVerified": 450,
+      "ghostscriptVerified": 450,
+      "rasterPagesVerified": 2100,
+      "blankPages": 0,
+      "edgeContactPages": 0,
+      "independentA102R3PypdfVerified": 450,
+      "independentA102R3PdfinfoVerified": 450,
+      "independentA102R3PdftotextVerified": 450,
+      "independentA102R3GhostscriptVerified": 450,
+      "independentA102R3VisualSampleDocuments": 9,
+      "independentA102R3VisualSamplePages": 51
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "whaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0,
+      "localHandlerExecutions": 324
+    },
+    "riskRealCalibrationWindows": {
+      "requiredRegimes": 2,
+      "closed": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0,
+      "acceptedMediumHigh": 0,
+      "confirmedFixes": 0,
+      "successfulRetests": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "browserCustomerPrivacy": {
+      "checkoutPiiPersistenceCasesRequired": 3,
+      "checkoutPiiPersistenceCasesVerified": 0,
+      "auditCasePersistenceCasesRequired": 3,
+      "auditCasePersistenceCasesVerified": 0,
+      "pdfActivityPersistenceCasesRequired": 3,
+      "pdfActivityPersistenceCasesVerified": 0,
+      "realAccountSwitchLogoutSharedDeviceRows": 0
+    },
+    "systemClipboardPrivacy": {
+      "privateAccountArtifactProfilesRequired": 12,
+      "privateAccountArtifactProfilesLocallyRedacted": 12,
+      "adminSupportProfilesRequired": 1,
+      "adminSupportProfilesLocallyRedacted": 1,
+      "realOsBrowserClipboardRowsRequired": 12,
+      "realOsBrowserClipboardRowsVerified": 0,
+      "realClipboardRevocationOrExpiryGuarantee": false,
+      "publicCommunityProfilesRequired": 2,
+      "publicCommunityProfilesLocallyBounded": 2,
+      "directPublicClipboardSinksRemaining": 0,
+      "realPublicCommunityClipboardRowsRequired": 18,
+      "realPublicCommunityClipboardRowsVerified": 0
+    },
+    "clientPdfBrowserLifecycle": {
+      "required": 18,
+      "realVerified": 0,
+      "matrix": "Chrome/Edge/Firefox x desktop/mobile x Basic/Pro/Advanced",
+      "status": "BLOCKED_ENVIRONMENT"
+    },
+    "a102r17BrowserResponseBoundaryChecks": 52,
+    "realBrowserStrictJsonErrorRedactionRows": 0,
+    "a102r18PublicCommunityClipboardBoundaryChecks": 42,
+    "realPublicCommunityClipboardBrowserRows": {
+      "required": 18,
+      "verified": 0,
+      "matrix": "PL/EN/DE x desktop/mobile x Chrome/Edge/Firefox-or-equivalent OS clipboard behavior"
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "priceRecommendation": null,
+      "reason": "Local prescreen and safety tooling only; current real data, rights, legal, staging, customer utility and exact-browser release evidence remain unproven."
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_ACCURACY",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "BLOCKED_ACCURACY",
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "sourceMaterialsBinding": {
+    "literalMutualArchiveHashBinding": "IMPOSSIBLE_WITHOUT_EXTERNAL_INDIRECTION",
+    "implementedBoundary": "MATERIALS_MANIFEST_BINDS_EXACT_SOURCE_ARCHIVE_AND_BOTH_BIND_REVISION_ID",
+    "materialsMayOverrideSource": false
+  },
+  "nextRequiredStep": "Freeze R30 bytes, complete exact runtime/build/browser and a real 18-row cadence/session/evidence matrix; R31 may continue independent local runtime hardening without promotion.",
+  "truthBoundary": "A102R31 proves only local route-transition hash/focus/prefetch/accessibility contracts. No exact browser, screenshot, performance, staging, rights, legal, customer, LIVE or sale credit.",
+  "localVerification": {
+    "targetedBoundaryChecks": 33,
+    "parentA102R25RegressionChecks": 15,
+    "localRegressionStages": 31,
+    "devBootstrapCriticalHashes": 71,
+    "typescriptSyntaxFiles": 1965,
+    "typescriptParseErrors": 0,
+    "realBrowserRows": 0,
+    "exactBuildBrowserCredit": false
+  },
+  "realDenominators": {
+    "externalNewTabReferrerOpenerBrowserRows": {
+      "verified": 0,
+      "required": 18,
+      "status": "BLOCKED_ENVIRONMENT"
+    },
+    "clientPdfPreviewDownloadBrowserRows": {
+      "verified": 0,
+      "required": 18,
+      "status": "BLOCKED_ENVIRONMENT"
+    },
+    "realCustomerPdfCases": {
+      "verified": 0,
+      "required": 50,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    "a102r17BrowserResponseBoundaryChecks": 52,
+    "realBrowserStrictJsonErrorRedactionRows": 0
+  },
+  "exactResumePoint": "Freeze R30 bytes, complete exact runtime/build/browser and a real 18-row cadence/session/evidence matrix; R31 may continue independent local runtime hardening without promotion.",
+  "estimatedRemainingCheckpoints": {
+    "formalRemainingEntries": 31,
+    "minimumGroupedCheckpoints": 2,
+    "mostLikelyCheckpoints": 4,
+    "withRevisionsAndRetests": 10,
+    "notReleaseCredit": true
+  },
+  "livingGaps": [
+    {
+      "id": "A102R30-GAP-01",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Real Markets 4H provider hourly bars were audited with a false four-hour cadence"
+    },
+    {
+      "id": "A102R30-GAP-02",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Shield one-month range daily candles were audited as monthly bars"
+    },
+    {
+      "id": "A102R30-GAP-03",
+      "priority": "P0_TRUTH",
+      "status": "LOCALLY_FIXED",
+      "title": "Local-reference and last-known candles could reach a production-ready chart decision label"
+    },
+    {
+      "id": "A102R30-GAP-04",
+      "priority": "P1_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Session policy and action-ledger surface depended on localized customer copy"
+    },
+    {
+      "id": "A102R30-GAP-05",
+      "priority": "P1_MINIMALISM",
+      "status": "LOCALLY_FIXED",
+      "title": "Visible PASS4540 checkpoint jargon remained in the customer chart gate"
+    },
+    {
+      "id": "A102R30-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "title": "Real browser cadence/session/evidence-state matrix remains unexecuted"
+    }
+  ],
+  "resumePoint": "Freeze R30 bytes, complete exact runtime/build/browser and a real 18-row cadence/session/evidence matrix; R31 may continue independent local runtime hardening without promotion.",
+  "newLocalClosure": {
+    "chartProviderCadenceTruth": true,
+    "canonicalSessionPolicy": true,
+    "evidenceStateDecisionTruth": true,
+    "localizedCopyAuthority": false,
+    "productionSyntheticChartCredit": false
+  },
+  "newRoadmapGaps": [
+    {
+      "id": "A102R30-GAP-01",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Real Markets 4H provider hourly bars were audited with a false four-hour cadence"
+    },
+    {
+      "id": "A102R30-GAP-02",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Shield one-month range daily candles were audited as monthly bars"
+    },
+    {
+      "id": "A102R30-GAP-03",
+      "priority": "P0_TRUTH",
+      "status": "LOCALLY_FIXED",
+      "title": "Local-reference and last-known candles could reach a production-ready chart decision label"
+    },
+    {
+      "id": "A102R30-GAP-04",
+      "priority": "P1_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Session policy and action-ledger surface depended on localized customer copy"
+    },
+    {
+      "id": "A102R30-GAP-05",
+      "priority": "P1_MINIMALISM",
+      "status": "LOCALLY_FIXED",
+      "title": "Visible PASS4540 checkpoint jargon remained in the customer chart gate"
+    },
+    {
+      "id": "A102R30-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "title": "Real browser cadence/session/evidence-state matrix remains unexecuted"
+    }
+  ],
+  "date": "2026-07-31",
+  "currentCheckpoint": "VELMERE_PASS36_A102R30_ACTION_REQUIRED_CHART_PROVIDER_CADENCE_CANONICAL_SESSION_AND_EVIDENCE_STATE_TRUTH_RECOVERY_NO_REAL_CREDIT",
+  "planningEstimateRemainingPasses": {
+    "formalRemainingEntries": 31,
+    "minimumGroupedCheckpoints": 2,
+    "mostLikelyCheckpoints": 4,
+    "withRevisionsAndRetests": 10,
+    "notReleaseCredit": true
+  },
+  "planningEstimate": {
+    "formalRemainingEntries": 31,
+    "minimumGroupedCheckpoints": 2,
+    "mostLikelyCheckpoints": 5,
+    "withRevisionsAndRetests": 12,
+    "notReleaseCredit": true
+  },
+  "newGaps": [
+    {
+      "id": "A102R30-GAP-01",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Real Markets 4H provider hourly bars were audited with a false four-hour cadence"
+    },
+    {
+      "id": "A102R30-GAP-02",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Shield one-month range daily candles were audited as monthly bars"
+    },
+    {
+      "id": "A102R30-GAP-03",
+      "priority": "P0_TRUTH",
+      "status": "LOCALLY_FIXED",
+      "title": "Local-reference and last-known candles could reach a production-ready chart decision label"
+    },
+    {
+      "id": "A102R30-GAP-04",
+      "priority": "P1_LOCAL",
+      "status": "LOCALLY_FIXED",
+      "title": "Session policy and action-ledger surface depended on localized customer copy"
+    },
+    {
+      "id": "A102R30-GAP-05",
+      "priority": "P1_MINIMALISM",
+      "status": "LOCALLY_FIXED",
+      "title": "Visible PASS4540 checkpoint jargon remained in the customer chart gate"
+    },
+    {
+      "id": "A102R30-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "title": "Real browser cadence/session/evidence-state matrix remains unexecuted"
+    }
+  ]
+}

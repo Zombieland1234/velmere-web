@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "velmere.pass36.a98.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A98R0_EMAIL_STORAGE_KMS_ORIGIN_CONTEXT_CLEANUP_AND_DELIVERY_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A97R1_SCOPED_PAYMENT_OPERATOR_ASSERTIONS_DUAL_CONTROL_AND_SINGLE_USE_REQUEUE",
+  "parentDescendantManifestDigestSha256": "0641ccf40a501678e7f7aac1ae15bec4fa2ad6753c14a22d68d8453fbdf60c86",
+  "generatedAt": "2026-07-29T06:45:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A98_LOCAL_HARDENING_NO_PASS_CREDIT",
+  "payload": {
+    "fileCount": 4740,
+    "byteLength": 115900934,
+    "pathSetSha256": "5a465cdba7b6007b5d4f9b87ec0e7b7f70a7a37e5e5fade78ff0aa2648635fd7",
+    "aggregateSha256": "bd3b34c9593e526824e18c280b3da4e2614049568e1bf142812119a69dcef6be"
+  },
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a97r1PassCredit": false,
+    "a98PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "emailStorageKmsBoundaryImplemented": true,
+    "boundaryAssertions": 77,
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realSignedUrls": 0,
+    "realCleanupConfirmations": 0,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0,
+      "localExecutableCasesPrepared": 19
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    },
+    "stripePayments": {
+      "requiredRealTestLifecycle": 1,
+      "realTestLifecycleVerified": 0,
+      "realFullRefundsVerified": 0,
+      "realWebhookReplayRuns": 0,
+      "realReconciliationRuns": 0,
+      "productionPayments": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "d3ef6aac1614b20ce1bda6690f887ecb8fa0eb993cca33e63fdefb2f42209b15"
+}

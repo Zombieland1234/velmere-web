@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Berkshire Hathaway BRK">
+  <defs>
+    <radialGradient id="brk-navy" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#1A365D"/>
+      <stop offset="50%" stop-color="#0B1E36"/>
+      <stop offset="100%" stop-color="#050C17"/>
+    </radialGradient>
+    <linearGradient id="brk-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#996515"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#brk-navy)"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="url(#brk-gold)" stroke-width="1.8"/>
+  <circle cx="32" cy="32" r="24.5" fill="none" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">BRK</text>
+  <text x="32" y="47" text-anchor="middle" font-family="system-ui, sans-serif" font-size="6" font-weight="600" fill="#D4AF37" letter-spacing="1.5">HATHAWAY</text>
+</svg>

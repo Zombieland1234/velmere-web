@@ -1,0 +1,289 @@
+{
+  "schemaVersion": "velmere.pass6.retired-preflight-missing-source-registry.v1",
+  "generatedAt": "2026-07-18T00:00:00.000Z",
+  "policy": {
+    "onlyEnoentFailuresMayBeRetired": true,
+    "runtimeClaimsAreNotSatisfiedByHistoricalMarkers": true,
+    "currentReplacementPathsMustExist": true,
+    "currentReplacementGatesMustExist": true,
+    "historicalSourceMustRemainAbsent": true,
+    "pass5ReleaseOmissionMustBeVerified": true,
+    "historicalMerkleMembershipMustBeVerified": true
+  },
+  "releaseInputMerkle": {
+    "path": "config/release-input-merkle.json",
+    "fileSha256": "90efb0211ec6ef09482f526618c8b22db0a8f0abb39b8b556295d799f9cbf209",
+    "manifestSha256": "7d1acbd6a5ca0b32f43b980e9df749ccb068e9053024fa95dca109cd944d8a95",
+    "merkleRootSha256": "8424f33a718aa8d60173719d4d8f7fc217fdabeae5539097bb4c9f4f7d04ecf8"
+  },
+  "pass5ReleaseManifest": {
+    "path": "_velmere/VLM_PASS5_RELEASE_MANIFEST.json",
+    "fileSha256": "2205c361e4e2cdd753de88ded449a35edfcf0735d0911bcc40f9796a2e23f928",
+    "payloadFileCount": 6297
+  },
+  "entryCount": 18,
+  "entriesSha256": "54836f737f4bad418ff926e9fdda154566588d3e40a73f1586b76e184546aea8",
+  "entries": [
+    {
+      "sourcePath": "components/CartDrawer.tsx",
+      "historicalBytes": 24131,
+      "historicalSha256": "19d3f07a4531417303c8276831206ac2443675624bbefde434b45257680fd43c",
+      "historicalLeafSha256": "98b37b8165ca6ac50a5f54f0b99e5adb13954d31d3d538ea39d51f3195f68647",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/CartProvider.tsx",
+        "components/cart/CartGuardStatusPanel.tsx"
+      ],
+      "replacementGates": [
+        "scripts/pass4992/atomic-commerce-paid-outbox.test.ts",
+        "scripts/pass4994/commerce-fulfilment-outbox-worker.test.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/launch/PaymentOrderReadinessPanel.tsx",
+      "historicalBytes": 6468,
+      "historicalSha256": "c8c5ea1e8584d5551ae87c7996fc013563c8ca346843ea34ea57abfa8b327cfc",
+      "historicalLeafSha256": "01167a240ba797c8ea9f2e02124ef2bf696ad437c6c7f12d3ae832c555cdb2ea",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/launch/payment-order-readiness.ts",
+        "app/api/checkout/vlm-service/readiness/route.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass4992/atomic-commerce-paid-outbox.test.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/launch/ProviderTruthLedgerPanel.tsx",
+      "historicalBytes": 6496,
+      "historicalSha256": "594b169a3bb366c64a3fb33a2bf50ddf09bb320fba3aece23cc6d173f67c55d8",
+      "historicalLeafSha256": "9084325904a3311958e13be9dddf8e79971419d8b03ec51375600b7c442cd8b3",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/launch/provider-truth-ledger.ts",
+        "lib/market-integrity/provider-truth-router.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-real-markets-data-receipt-integrity.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/market-integrity/MarketIntegrityClient.tsx",
+      "historicalBytes": 146133,
+      "historicalSha256": "274a7d3608f40456d0cb2b39196369008fb0cf798e90e42fa57445fd29b124c3",
+      "historicalLeafSha256": "22b2ee2f37db89ac1c6a57d391661e0c66e0f71c4bb673c878a0049588820a2f",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+        "app/[locale]/market-integrity/page.tsx"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-ui-live-truth.ts",
+        "scripts/pass6/test-legacy-live-publication-truth.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/market-integrity/ShieldMapClient.tsx",
+      "historicalBytes": 163744,
+      "historicalSha256": "81ee1a0b2f73e5c8e221cd808c10a7f433695e23f781c2e27eb0ec0b3d646b41",
+      "historicalLeafSha256": "1ef66d8e022a545a9475a58b6df7412aa21b887eafa1d07aeb3c99180de07f0b",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/market-integrity/ShieldMapCommandClient.tsx",
+        "app/[locale]/market-integrity/shield-map/page.tsx"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-ui-live-truth.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/market-integrity/TokenRiskModal.tsx",
+      "historicalBytes": 130014,
+      "historicalSha256": "cbd5a08ac4fba50b7e138c569894e73598c4eb830112d41f84a7931e194ddfe6",
+      "historicalLeafSha256": "7742c0192a1830359d714bda71493294d7be4ad654359369bbd3189510530610",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/market-integrity/AssetDetailModal.tsx",
+        "components/market-integrity/asset-detail/contract.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-ui-live-truth.ts",
+        "scripts/pass6/test-market-risk-delivery-gate.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/market-integrity/VlmBrainWebGLPrototype.tsx",
+      "historicalBytes": 10280,
+      "historicalSha256": "4b68111893f211b2fecd67fdec0c052b013589b26f54ee3f2108e9400f28ac38",
+      "historicalLeafSha256": "05db898829ea8f8f6e57d45587ac51453af300bd63729b64c50048ce25e027f8",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/market-integrity/VlmBrainWorkspace.tsx",
+        "lib/ai/vlm-brain.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-ui-live-truth.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/search/TokenMetadataProviderPanel.tsx",
+      "historicalBytes": 6033,
+      "historicalSha256": "2a7b58ede269fa988bea1f8efdec0ceb7c401e3581f6f61887af05c59b79cd48",
+      "historicalLeafSha256": "1f72ec9a86a561b2a96f97934988c241417b5449fe17511b60a52beddffb232a",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/search/token-metadata-cache.ts",
+        "app/api/search/[operation]/route.ts",
+        "lib/server/route-registries/search.ts",
+        "lib/server/search-route-modules/token-metadata.ts"
+      ],
+      "replacementGates": [
+        "scripts/test-pass4659-api-surface-and-body-boundary.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/search/VelmereLensCommandRouter.tsx",
+      "historicalBytes": 26414,
+      "historicalSha256": "a5da5b654a5364bf54b31588159a50bf2892b791d788f6766a3690ba71c3d581",
+      "historicalLeafSha256": "e2cb9a4631a7ef318d2c62fa068aab071e00d7d5642cbddc0fce4b3defe0903c",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "app/[locale]/search/page.tsx",
+        "lib/market-integrity/top1-vlm-brain-source-router.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-legacy-live-publication-truth.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/search/VelmereSearchDiscoveryRail.tsx",
+      "historicalBytes": 4870,
+      "historicalSha256": "a7321ad4a9c918096fcf6612ae8fbd46fc118dee066ae2fe4211bc79448f5ea9",
+      "historicalLeafSha256": "b6fc1256de67dfe473940c183540e8217590f77729d1b1a1154b095ba6486822",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "app/[locale]/search/page.tsx",
+        "app/api/market-integrity/[operation]/route.ts",
+        "lib/server/route-registries/market-integrity.ts",
+        "lib/server/market-integrity-route-modules/search.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-legacy-live-publication-truth.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/security/SecurityOperationsChecklistPanel.tsx",
+      "historicalBytes": 6876,
+      "historicalSha256": "4c1bcf0f95746065b5d62e7e30fe2de7fa2322c492a80cf01b35a7f4359c7430",
+      "historicalLeafSha256": "808e127a4234177f265240bc5c1121a8d507bd7ebde3c1e940f4c2389adda7c3",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/security/security-operations-checklist.ts",
+        "app/[locale]/security/page.tsx"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-admin-iam-fail-closed.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/vlm/VlmModeSwitch.tsx",
+      "historicalBytes": 6460,
+      "historicalSha256": "75a09a2c7d5e2e185f69387feef7ac4fe9ac76b33f87a7d0349497fe30ef3b34",
+      "historicalLeafSha256": "6423fc4dbb51a328a4932d1af00806b68a7342897ef18fccf547147902bad440",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/market-integrity/VlmBrainWorkspace.tsx",
+        "lib/ai/vlm-brain-market-surface.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-ui-live-truth.ts"
+      ]
+    },
+    {
+      "sourcePath": "components/wallet/WalletConnectButton.tsx",
+      "historicalBytes": 5137,
+      "historicalSha256": "b8a02f2929d5b5767ea67ef1c55b80b44954c41ed0877f465ff67fedaae2dccc",
+      "historicalLeafSha256": "cdb41be89a58caf07b216c596e774e8dc4f0fc59f78c4dbea6a8a27c7a17ca67",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "components/wallet/WalletConnectDrawer.tsx",
+        "components/wallet/WalletConnectOptions.tsx",
+        "lib/wallet/useWalletConnect.ts"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-control-plane-boundaries.ts"
+      ]
+    },
+    {
+      "sourcePath": "lib/launch/commerce-launch-control.ts",
+      "historicalBytes": 4706,
+      "historicalSha256": "250275e8bcd38f0f91ed5cf87b5baa0dbc687efd54152befb53ea0a65edfc0a6",
+      "historicalLeafSha256": "2c917bf5d1fadb0a1b045a97f65ab8656206ed780c563832f73acf68e0429902",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/launch/square-vlm-launch-control.ts",
+        "components/launch/SquareVlmLaunchControl.tsx"
+      ],
+      "replacementGates": [
+        "scripts/pass4992/atomic-commerce-paid-outbox.test.ts"
+      ]
+    },
+    {
+      "sourcePath": "lib/launch/master-build-areas.ts",
+      "historicalBytes": 42305,
+      "historicalSha256": "fb8b8cc58b5bfab660bd3e5218e0951561e3414c13e311b71dffd28c93539dd1",
+      "historicalLeafSha256": "2850e18509ca784e58a3e2df25034d0fe5c7c76093a921fc94fc4d029757395b",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/launch/launch-readiness-summary.ts",
+        "scripts/pass6/run-critical-offline-gate.mjs"
+      ],
+      "replacementGates": [
+        "scripts/pass6/run-critical-offline-gate.mjs"
+      ]
+    },
+    {
+      "sourcePath": "lib/launch/master-build-progress-delta.ts",
+      "historicalBytes": 3744,
+      "historicalSha256": "ad109dbd1696eb29eae60282cba525a52fedb06a5dcd6e9f5365d3ee6daae241",
+      "historicalLeafSha256": "dd45986bbbfa258a44f235029f1c3e37ba4c207b5e839b936bb09b0e1930155f",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "lib/launch/launch-readiness-summary.ts",
+        "scripts/pass6/run-critical-offline-gate.mjs"
+      ],
+      "replacementGates": [
+        "scripts/pass6/run-critical-offline-gate.mjs"
+      ]
+    },
+    {
+      "sourcePath": "lib/launch/shipping-returns-truth.ts",
+      "historicalBytes": 4349,
+      "historicalSha256": "6abe9a1ee4c1ebe4ea7005de78b664f985112a3e6dd123f70c51919ba711ac9f",
+      "historicalLeafSha256": "ec7777f2bbbbe3bea12ed24d76dd2d506199fadc764aa49ea5902d4ff00b8a02",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "app/[locale]/legal/shipping/page.tsx",
+        "app/[locale]/legal/returns/page.tsx"
+      ],
+      "replacementGates": [
+        "scripts/pass6/test-control-plane-boundaries.ts"
+      ]
+    },
+    {
+      "sourcePath": "lib/launch/site-page-audit.ts",
+      "historicalBytes": 23229,
+      "historicalSha256": "b5247a539dcd4474abaf4522e15c016027c3abb11293df682d04f2f19472bc66",
+      "historicalLeafSha256": "444a90fb3cf2e24d1454c120f88c160d8e99285272e095162d92602d20bbc26f",
+      "pass5ReleaseOmitted": true,
+      "replacementPaths": [
+        "app/[locale]/page.tsx",
+        "scripts/pass4825/verify-appearance-freeze.mjs"
+      ],
+      "replacementGates": [
+        "scripts/pass4825/verify-appearance-freeze.mjs"
+      ]
+    }
+  ],
+  "registrySha256": "7aa34a53c531b1b590ce5845ed7724b18ba606e2c71a642dd67c031a7aa3924c"
+}

@@ -1,0 +1,273 @@
+{
+  "schemaVersion": "velmere.pass14.retired-production-fixture-routes.v1",
+  "generatedAt": "2026-07-20T00:00:00Z",
+  "truthBoundary": "These routes were synthetic/offline fixture endpoints guarded to return 404 in production. They are removed from the Next production graph. Their source remains under fixtures for deterministic tests. No real customer functionality is claimed.",
+  "routeCount": 33,
+  "routes": [
+    {
+      "url": "/api/market-integrity/account-vault-remedy-reopen",
+      "oldPath": "app/api/market-integrity/account-vault-remedy-reopen/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/account-vault-remedy-reopen.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-customer-receipt",
+      "oldPath": "app/api/market-integrity/action-report-customer-receipt/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-customer-receipt.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-download-access",
+      "oldPath": "app/api/market-integrity/action-report-download-access/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-download-access.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-download-closeout",
+      "oldPath": "app/api/market-integrity/action-report-download-closeout/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-download-closeout.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-download-consumption",
+      "oldPath": "app/api/market-integrity/action-report-download-consumption/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-download-consumption.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-download-manifest",
+      "oldPath": "app/api/market-integrity/action-report-download-manifest/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-download-manifest.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-package",
+      "oldPath": "app/api/market-integrity/action-report-package/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-package.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-package-delivery",
+      "oldPath": "app/api/market-integrity/action-report-package-delivery/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-package-delivery.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-post-closeout-attestation",
+      "oldPath": "app/api/market-integrity/action-report-post-closeout-attestation/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-post-closeout-attestation.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-public-proof-index",
+      "oldPath": "app/api/market-integrity/action-report-public-proof-index/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-public-proof-index.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-release",
+      "oldPath": "app/api/market-integrity/action-report-release/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-release.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-review",
+      "oldPath": "app/api/market-integrity/action-report-review/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-review.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/action-report-vault",
+      "oldPath": "app/api/market-integrity/action-report-vault/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/action-report-vault.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-archive-retention-legal-hold",
+      "oldPath": "app/api/market-integrity/customer-export-archive-retention-legal-hold/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-archive-retention-legal-hold.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-delivery-ledger-persistence",
+      "oldPath": "app/api/market-integrity/customer-export-delivery-ledger-persistence/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-delivery-ledger-persistence.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-dispute-chargeback-hold",
+      "oldPath": "app/api/market-integrity/customer-export-dispute-chargeback-hold/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-dispute-chargeback-hold.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-dsr-appeal-resolution-closure",
+      "oldPath": "app/api/market-integrity/customer-export-dsr-appeal-resolution-closure/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-dsr-appeal-resolution-closure.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-dsr-delivery-appeal-reopen",
+      "oldPath": "app/api/market-integrity/customer-export-dsr-delivery-appeal-reopen/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-dsr-delivery-appeal-reopen.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-expiry-recall",
+      "oldPath": "app/api/market-integrity/customer-export-expiry-recall/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-expiry-recall.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-final-archive-bundle",
+      "oldPath": "app/api/market-integrity/customer-export-final-archive-bundle/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-final-archive-bundle.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-operator-release-reinstatement",
+      "oldPath": "app/api/market-integrity/customer-export-operator-release-reinstatement/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-operator-release-reinstatement.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-post-purge-privacy-attestation",
+      "oldPath": "app/api/market-integrity/customer-export-post-purge-privacy-attestation/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-post-purge-privacy-attestation.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-privacy-case-supervisor-sla",
+      "oldPath": "app/api/market-integrity/customer-export-privacy-case-supervisor-sla/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-privacy-case-supervisor-sla.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-privacy-incident-dsr-escalation",
+      "oldPath": "app/api/market-integrity/customer-export-privacy-incident-dsr-escalation/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-privacy-incident-dsr-escalation.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-redaction-packet",
+      "oldPath": "app/api/market-integrity/customer-export-redaction-packet/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-redaction-packet.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-remediation-ticket-close",
+      "oldPath": "app/api/market-integrity/customer-export-remediation-ticket-close/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-remediation-ticket-close.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-retention-purge-execution-tombstone",
+      "oldPath": "app/api/market-integrity/customer-export-retention-purge-execution-tombstone/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-retention-purge-execution-tombstone.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-export-transactional-outbox-health",
+      "oldPath": "app/api/market-integrity/customer-export-transactional-outbox-health/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-export-transactional-outbox-health.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/customer-remedy-refund-credit",
+      "oldPath": "app/api/market-integrity/customer-remedy-refund-credit/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/customer-remedy-refund-credit.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/evidence-artifact-state",
+      "oldPath": "app/api/market-integrity/evidence-artifact-state/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/evidence-artifact-state.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/incident-disclosure-response",
+      "oldPath": "app/api/market-integrity/incident-disclosure-response/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/incident-disclosure-response.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/market-integrity/report-delivery-state",
+      "oldPath": "app/api/market-integrity/report-delivery-state/route.ts",
+      "fixtureModule": "fixtures/route-modules/market-integrity/report-delivery-state.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    },
+    {
+      "url": "/api/security/audit-rls-policy-regression-fixture-runner",
+      "oldPath": "app/api/security/audit-rls-policy-regression-fixture-runner/route.ts",
+      "fixtureModule": "fixtures/route-modules/security/audit-rls-policy-regression-fixture-runner.ts",
+      "productionBehaviorBefore": "404_not_found",
+      "productionBehaviorAfter": "404_not_found",
+      "realImplementationStatus": "MISSING"
+    }
+  ],
+  "requiredNextStep": "Implement DB/provider-backed production endpoints only where a validated customer journey requires them; do not restore metadata-only fixtures to app/api."
+}

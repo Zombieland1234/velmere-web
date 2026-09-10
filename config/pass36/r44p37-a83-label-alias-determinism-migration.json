@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p37.a83-label-alias-determinism-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P37_ACTION_REQUIRED_AUTHORITY_RELEASE_TRUTH_TYPESCRIPT_AND_EVIDENCE_REPAIR_TEST_CYCLE_0_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P36_ACTION_REQUIRED_FULL_CURRENT_BYTE_RELEASE_PSYCHOLOGY30_DYNAMIC_REBASELINE_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "findingId": "R44P37-P0-A83-SHARED-LABEL-ALIAS-NONDETERMINISM",
+  "severity": "P0",
+  "previousResult": {
+    "checks": 22,
+    "passed": 20,
+    "failed": 2,
+    "failedCheckIds": [
+      "corpus:deterministic",
+      "corpus:verify"
+    ],
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "semanticMutations": 8100
+  },
+  "rootCause": "A83 and the local PDF corpus generator assigned report.labels.signature through a shared locale-label object. The first render mutated global label state, so a second corpus run calculated different Pass609 density metadata even when PDF bytes for an isolated entry were stable.",
+  "repair": {
+    "mode": "COPY_ON_WRITE_REPORT_LABELS",
+    "directSharedMutationForbidden": true,
+    "denominatorsPreserved": true,
+    "files": [
+      {
+        "path": "lib/worldclass/pass36-a83-browser-lens-pdf-real-packet-runtime.ts",
+        "parentSha256": "ebd09484f40873573493221f6d22d1dd9bfc18ad876ebb2dc621a9682c793cf6",
+        "currentSha256": "6e127d42b2bb30f44adebbcfcfb8c5d4c87703b4d993433b7839a831d66f1c35"
+      },
+      {
+        "path": "scripts/pass35/generate-local-pdf-corpus.ts",
+        "parentSha256": "9cb2ceb6de462185d52b7be751f6ea39ace41a545145371da915f3a3f5b46f79",
+        "currentSha256": "e291979dac2724c14248d8a1aaecf241cfdafce27464ea556a41099f52aeee02"
+      }
+    ]
+  },
+  "expectedRetest": {
+    "checks": 22,
+    "passed": 22,
+    "failed": 0,
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "semanticMutations": 8100,
+    "byteIdenticalCorpusRuns": true
+  },
+  "creditBoundary": {
+    "realCustomerPdfCredit": 0,
+    "providerCredit": false,
+    "paidReleaseCredit": false,
+    "saleCredit": false,
+    "liveCredit": false,
+    "worldClassCredit": false
+  }
+}

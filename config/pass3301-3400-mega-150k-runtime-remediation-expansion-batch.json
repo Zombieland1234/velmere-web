@@ -1,0 +1,91 @@
+{
+  "pass_range": "PASS3301-3400",
+  "name": "Mega 150K Runtime Remediation Expansion Batch",
+  "created_at": "2026-06-28T18:30:00+02:00",
+  "mode": "PREPARED_ONLY_NO_NPM_RUN",
+  "previous_pass": "PASS3201-3300",
+  "target_line_volume": ">=150000 total new lines, mostly matrix/fixtures",
+  "matrix_rows": 150000,
+  "p0_rows": 90000,
+  "p1_rows": 60000,
+  "categories": [
+    {
+      "id": "A",
+      "name": "RUNTIME_TYPECHECK_BUILD_REMEDIATION",
+      "title": "typecheck/build/runtime contract closure",
+      "scope": "route handler types, dependency declarations, Node 20 clean-room, import contracts, server/client boundary",
+      "rows": 15000
+    },
+    {
+      "id": "B",
+      "name": "SHIELD_REALMARKETS_UI_REPAIR",
+      "title": "Shield/Real Markets visible UX repair",
+      "scope": "rows > 10, chart skeleton, grey-line layering, percent sanity, icons, modal safe area",
+      "rows": 15000
+    },
+    {
+      "id": "C",
+      "name": "PROVIDER_RISK_CHART_DATA_PIPE",
+      "title": "provider/risk/chart data pipe",
+      "scope": "freshness quorum, stale cache, timeout retry, liquidity/orderbook/squeeze, risk formula receipts",
+      "rows": 15000
+    },
+    {
+      "id": "D",
+      "name": "PAYMENT_WEB3_ENTITLEMENT_RUNTIME",
+      "title": "payment/web3 entitlement runtime",
+      "scope": "server-first entitlement, Stripe webhook idempotency, wallet identity not payment, nonce replay protection",
+      "rows": 15000
+    },
+    {
+      "id": "E",
+      "name": "PDF_AI_REPORT_PARITY_RUNTIME",
+      "title": "PDF/AI report runtime parity",
+      "scope": "single payload, preview/download hash parity, locale purity, tier differentiation, AI confidence cap",
+      "rows": 15000
+    },
+    {
+      "id": "F",
+      "name": "SECURITY_PRIVACY_STORAGE_ADMIN",
+      "title": "security/privacy/storage/admin",
+      "scope": "RLS gaps, append-only audit ledger, PII redaction, admin force-green kill switch, dual control",
+      "rows": 15000
+    },
+    {
+      "id": "G",
+      "name": "CUSTOMER_EXPORT_REMEDY_SUPPORT",
+      "title": "customer export/remedy/support",
+      "scope": "DSR e2e replay, expiry recall, refund/remedy SLA, account vault reopen, customer notices",
+      "rows": 15000
+    },
+    {
+      "id": "H",
+      "name": "COMMUNITY_FASHION_ANALYTICS_LEGAL",
+      "title": "community/fashion/analytics/legal",
+      "scope": "pre-publish moderation, product import key schema, analytics default off, no-FOMO static scan",
+      "rows": 15000
+    },
+    {
+      "id": "I",
+      "name": "OBSERVABILITY_INCIDENT_PERF_A11Y",
+      "title": "observability/incident/performance/accessibility",
+      "scope": "SLO receipt route, incident remedy template, performance route split, focus return keyboard",
+      "rows": 15000
+    },
+    {
+      "id": "J",
+      "name": "FINAL_RUNNER_RELEASE_GONO",
+      "title": "final runner/release go-no-go",
+      "scope": "L5 receipt notarization, zero-skip reconciliation, freeze digest, launch/release blocker index",
+      "rows": 15000
+    }
+  ],
+  "hard_rules": [
+    "NO_FINAL_NPM_RUNNER_RECEIPT = NO RELEASE_CANDIDATE",
+    "NO_CLEAN_TYPECHECK_BUILD_BROWSER_RECEIPT = NO WORLD_CLASS_LIVE_CLAIM",
+    "NO_PROVIDER_PAYMENT_PDF_AI_RECEIPTS = NO LIVE_PAID_CLAIM",
+    "NO_REAL_RUNTIME_PATCH_RECEIPTS = NO BUGFIX_CLAIM",
+    "NO_ZERO_SKIP_RECONCILIATION = NO PUBLIC_TOP1_CLAIM"
+  ],
+  "honesty": "Rows are execution/remediation artifacts and fixtures, not proof of runtime execution."
+}

@@ -1,0 +1,2749 @@
+{
+  "schemaVersion": "velmere.pass4785.top1-payload-characterization.v1",
+  "generatedAt": "2026-07-14T03:00:00.000Z",
+  "scenarioCount": 60,
+  "scenarios": [
+    {
+      "id": "pl-native_crypto-basic-default",
+      "args": {
+        "locale": "pl",
+        "tier": "Basic",
+        "symbol": "T1",
+        "name": "Fixture 1",
+        "family": "native_crypto",
+        "riskScore": 17,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 1. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "cdc3e205df66bc0e83dabe515518ae0f74ab1cf6aba9a073b47925d4540aa622",
+      "bytes": 205987,
+      "summary": {
+        "reportId": "VLM-T1-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 3,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "pl-native_crypto-pro-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T2",
+        "name": "Fixture 2",
+        "family": "native_crypto",
+        "riskScore": 34,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 2. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "85e93094e4b95d06968c1d8ac06b909a7b584c49ad3be949fd9dd72325bacbfd",
+      "bytes": 206474,
+      "summary": {
+        "reportId": "VLM-T2-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-native_crypto-pro-entitled",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T3",
+        "name": "Fixture 3",
+        "family": "native_crypto",
+        "riskScore": 51,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 3. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 3,
+        "projectUrl": null,
+        "accountId": "acct_00000003",
+        "serverReceiptId": "receipt_0000000000000003",
+        "reportToken": "token_000000000000000000000003",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000003",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "d0bc8289db4a9bf5d240386c8f9446a992e80f1dbb8f46855787e5fbd815493c",
+      "bytes": 210117,
+      "summary": {
+        "reportId": "VLM-T3-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-native_crypto-advanced-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T4",
+        "name": "Fixture 4",
+        "family": "native_crypto",
+        "riskScore": 68,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 4. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "57d82fd9e5c1ea151a0ad6b8041fa52a3a7fbfa24f09b9922221c03119039a95",
+      "bytes": 207944,
+      "summary": {
+        "reportId": "VLM-T4-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-native_crypto-advanced-reviewed",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T5",
+        "name": "Fixture 5",
+        "family": "native_crypto",
+        "riskScore": 85,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 5. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 1,
+        "projectUrl": null,
+        "accountId": "acct_00000005",
+        "serverReceiptId": "receipt_0000000000000005",
+        "reportToken": "token_000000000000000000000005",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000005",
+        "manualReviewReceiptId": "review_0000000000000005",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_5",
+        "operatorSignature": "signature_00000000000000000000000000000005",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000005",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000005"
+      },
+      "sha256": "93faf492b1596aa29587a348c35cc8e49b36157f0926e8d198eabf5228274306",
+      "bytes": 212837,
+      "summary": {
+        "reportId": "VLM-T5-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-erc20-basic-default",
+      "args": {
+        "locale": "pl",
+        "tier": "Basic",
+        "symbol": "T6",
+        "name": "Fixture 6",
+        "family": "erc20",
+        "riskScore": 1,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 6. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "f73d1b0c669c10bc06696ddc9bb46ae089172652e47d463b381b7131fefe4a99",
+      "bytes": 204914,
+      "summary": {
+        "reportId": "VLM-T6-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "pl-erc20-pro-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T7",
+        "name": "Fixture 7",
+        "family": "erc20",
+        "riskScore": 18,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 7. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "1aff9f4023cedff781b982ad76c65f4a132bb48b48f2101a7abba450b1eef4e8",
+      "bytes": 209845,
+      "summary": {
+        "reportId": "VLM-T7-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-erc20-pro-entitled",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T8",
+        "name": "Fixture 8",
+        "family": "erc20",
+        "riskScore": 35,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 8. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000008",
+        "serverReceiptId": "receipt_0000000000000008",
+        "reportToken": "token_000000000000000000000008",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000008",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "e868b0cf48696fb60413453a31a4df02777fd3c1230cc312ea08635819ba5569",
+      "bytes": 206988,
+      "summary": {
+        "reportId": "VLM-T8-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-erc20-advanced-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T9",
+        "name": "Fixture 9",
+        "family": "erc20",
+        "riskScore": 52,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 9. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "1e6b4f2e64037752831bf1938a813a5fa3993e4b012bc2226858e58750af2022",
+      "bytes": 212607,
+      "summary": {
+        "reportId": "VLM-T9-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-erc20-advanced-reviewed",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T10",
+        "name": "Fixture 10",
+        "family": "erc20",
+        "riskScore": 69,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 10. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000010",
+        "serverReceiptId": "receipt_0000000000000010",
+        "reportToken": "token_000000000000000000000010",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000010",
+        "manualReviewReceiptId": "review_0000000000000010",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_10",
+        "operatorSignature": "signature_00000000000000000000000000000010",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000010",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000010"
+      },
+      "sha256": "82044443d766e07a72f5ce5aa182ca00e3f451157d10ca0dfcfb8bf791964f20",
+      "bytes": 208300,
+      "summary": {
+        "reportId": "VLM-T10-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-equity-basic-default",
+      "args": {
+        "locale": "pl",
+        "tier": "Basic",
+        "symbol": "T11",
+        "name": "Fixture 11",
+        "family": "equity",
+        "riskScore": 86,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 11. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "52b972872d761bde98e36cf53b082ee530c320e8370dee9559b005f7d7133500",
+      "bytes": 205960,
+      "summary": {
+        "reportId": "VLM-T11-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 3,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "pl-equity-pro-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T12",
+        "name": "Fixture 12",
+        "family": "equity",
+        "riskScore": 2,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 12. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "3f1028cfdc726134119bcd5630b30a45e142cdecde23b06ef3ef527995f07272",
+      "bytes": 206670,
+      "summary": {
+        "reportId": "VLM-T12-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-equity-pro-entitled",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T13",
+        "name": "Fixture 13",
+        "family": "equity",
+        "riskScore": 19,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 13. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 1,
+        "projectUrl": null,
+        "accountId": "acct_00000013",
+        "serverReceiptId": "receipt_0000000000000013",
+        "reportToken": "token_000000000000000000000013",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000013",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "98be2e2e82e40b9717dfcf35bf3acb690dd1f7495c21d4f300c595de869fd940",
+      "bytes": 210128,
+      "summary": {
+        "reportId": "VLM-T13-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-equity-advanced-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T14",
+        "name": "Fixture 14",
+        "family": "equity",
+        "riskScore": 36,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 14. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "3f414a27019b26c31132980932b815f9018fe7ba347a4c7503f274584cb5a690",
+      "bytes": 207927,
+      "summary": {
+        "reportId": "VLM-T14-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-equity-advanced-reviewed",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T15",
+        "name": "Fixture 15",
+        "family": "equity",
+        "riskScore": 53,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 15. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 3,
+        "projectUrl": null,
+        "accountId": "acct_00000015",
+        "serverReceiptId": "receipt_0000000000000015",
+        "reportToken": "token_000000000000000000000015",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000015",
+        "manualReviewReceiptId": "review_0000000000000015",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_15",
+        "operatorSignature": "signature_00000000000000000000000000000015",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000015",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000015"
+      },
+      "sha256": "c782abe2053a4d6bbe34ad3aaf3bcf449adba24678194fd5b4ec40a27447a939",
+      "bytes": 212872,
+      "summary": {
+        "reportId": "VLM-T15-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-stablecoin-basic-default",
+      "args": {
+        "locale": "pl",
+        "tier": "Basic",
+        "symbol": "T16",
+        "name": "Fixture 16",
+        "family": "stablecoin",
+        "riskScore": 70,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 16. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "0dd8e7c85aa18142b268d4e5beddb7074d14bdfc2635d0052336112b9f3081c1",
+      "bytes": 205103,
+      "summary": {
+        "reportId": "VLM-T16-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "pl-stablecoin-pro-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T17",
+        "name": "Fixture 17",
+        "family": "stablecoin",
+        "riskScore": 87,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 17. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "6774fabeb16700a0cf1f7ba501678eaefef746f1bfaf0393992a20075c871593",
+      "bytes": 209892,
+      "summary": {
+        "reportId": "VLM-T17-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-stablecoin-pro-entitled",
+      "args": {
+        "locale": "pl",
+        "tier": "Pro",
+        "symbol": "T18",
+        "name": "Fixture 18",
+        "family": "stablecoin",
+        "riskScore": 3,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 18. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000018",
+        "serverReceiptId": "receipt_0000000000000018",
+        "reportToken": "token_000000000000000000000018",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000018",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "a79a722e569b49bf5193e1e5430dfa544e16e3c9904bbb7915ed81ee96546175",
+      "bytes": 206934,
+      "summary": {
+        "reportId": "VLM-T18-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-stablecoin-advanced-blocked",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T19",
+        "name": "Fixture 19",
+        "family": "stablecoin",
+        "riskScore": 20,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 19. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "7923b75125d8c7e031fb471aa355bc6a01798a1c485d80234950e2b151732ba5",
+      "bytes": 212637,
+      "summary": {
+        "reportId": "VLM-T19-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pl-stablecoin-advanced-reviewed",
+      "args": {
+        "locale": "pl",
+        "tier": "Advanced",
+        "symbol": "T20",
+        "name": "Fixture 20",
+        "family": "stablecoin",
+        "riskScore": 37,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 20. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000020",
+        "serverReceiptId": "receipt_0000000000000020",
+        "reportToken": "token_000000000000000000000020",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000020",
+        "manualReviewReceiptId": "review_0000000000000020",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_20",
+        "operatorSignature": "signature_00000000000000000000000000000020",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000020",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000020"
+      },
+      "sha256": "7270881efe2de433ca549484af64668b386b7fb887352963ab6abebad2109be7",
+      "bytes": 208379,
+      "summary": {
+        "reportId": "VLM-T20-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-native_crypto-basic-default",
+      "args": {
+        "locale": "en",
+        "tier": "Basic",
+        "symbol": "T21",
+        "name": "Fixture 21",
+        "family": "native_crypto",
+        "riskScore": 54,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 21. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "89f3f5054846a3044de8a7e3d0bde86f74c68b0bdfce9e8ef7b4425f3cbabe75",
+      "bytes": 206010,
+      "summary": {
+        "reportId": "VLM-T21-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 3,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "en-native_crypto-pro-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T22",
+        "name": "Fixture 22",
+        "family": "native_crypto",
+        "riskScore": 71,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 22. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "e71f6037c5df01f78620e785eefdf146b982449a120aed550f164bc4815ee724",
+      "bytes": 206486,
+      "summary": {
+        "reportId": "VLM-T22-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-native_crypto-pro-entitled",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T23",
+        "name": "Fixture 23",
+        "family": "native_crypto",
+        "riskScore": 88,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 23. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 3,
+        "projectUrl": null,
+        "accountId": "acct_00000023",
+        "serverReceiptId": "receipt_0000000000000023",
+        "reportToken": "token_000000000000000000000023",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000023",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "bf901c6c6413ea426e11441e626314ed0c6c1beac340b6dc3bbd2e7bd2787434",
+      "bytes": 210113,
+      "summary": {
+        "reportId": "VLM-T23-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-native_crypto-advanced-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T24",
+        "name": "Fixture 24",
+        "family": "native_crypto",
+        "riskScore": 4,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 24. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "4133b1cb175bea829c76ac72bb02e8cd9587ccdf611649b9b8ee521672740a34",
+      "bytes": 208122,
+      "summary": {
+        "reportId": "VLM-T24-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-native_crypto-advanced-reviewed",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T25",
+        "name": "Fixture 25",
+        "family": "native_crypto",
+        "riskScore": 21,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 25. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 1,
+        "projectUrl": null,
+        "accountId": "acct_00000025",
+        "serverReceiptId": "receipt_0000000000000025",
+        "reportToken": "token_000000000000000000000025",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000025",
+        "manualReviewReceiptId": "review_0000000000000025",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_25",
+        "operatorSignature": "signature_00000000000000000000000000000025",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000025",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000025"
+      },
+      "sha256": "a76672911b30e7e38837b9dcdf73f3c38c4a7cb3adccf7ea3609e8c05b5eaf51",
+      "bytes": 212844,
+      "summary": {
+        "reportId": "VLM-T25-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-erc20-basic-default",
+      "args": {
+        "locale": "en",
+        "tier": "Basic",
+        "symbol": "T26",
+        "name": "Fixture 26",
+        "family": "erc20",
+        "riskScore": 38,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 26. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "4eac4f9bd3774ae343004db23114a278945361a404a767d3ef16f4980697cf8d",
+      "bytes": 204923,
+      "summary": {
+        "reportId": "VLM-T26-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "en-erc20-pro-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T27",
+        "name": "Fixture 27",
+        "family": "erc20",
+        "riskScore": 55,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 27. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "fa03faa6fe1993a932ecbffe365b3726c91b09c7fd4d8b12c1788f58c9865165",
+      "bytes": 209872,
+      "summary": {
+        "reportId": "VLM-T27-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-erc20-pro-entitled",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T28",
+        "name": "Fixture 28",
+        "family": "erc20",
+        "riskScore": 72,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 28. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000028",
+        "serverReceiptId": "receipt_0000000000000028",
+        "reportToken": "token_000000000000000000000028",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000028",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "7487c21c251623e5ea7a026fc31a14089ec80b9f825f860aae295344e192c1e5",
+      "bytes": 206943,
+      "summary": {
+        "reportId": "VLM-T28-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-erc20-advanced-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T29",
+        "name": "Fixture 29",
+        "family": "erc20",
+        "riskScore": 89,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 29. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "a2fa5aee84cdda005fc2959833770303612c05a52179411b1d7f31124b516cfa",
+      "bytes": 212610,
+      "summary": {
+        "reportId": "VLM-T29-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-erc20-advanced-reviewed",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T30",
+        "name": "Fixture 30",
+        "family": "erc20",
+        "riskScore": 5,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 30. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000030",
+        "serverReceiptId": "receipt_0000000000000030",
+        "reportToken": "token_000000000000000000000030",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000030",
+        "manualReviewReceiptId": "review_0000000000000030",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_30",
+        "operatorSignature": "signature_00000000000000000000000000000030",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000030",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000030"
+      },
+      "sha256": "504a3957d63a96963517af5a659da74b0f8109b18ce66a58c6a6860eda2726bd",
+      "bytes": 208310,
+      "summary": {
+        "reportId": "VLM-T30-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-equity-basic-default",
+      "args": {
+        "locale": "en",
+        "tier": "Basic",
+        "symbol": "T31",
+        "name": "Fixture 31",
+        "family": "equity",
+        "riskScore": 22,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 31. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "0566578c64daeba2f8cfca07f7ac557a6fc2de8fa6182631c26a78070f3f416a",
+      "bytes": 205951,
+      "summary": {
+        "reportId": "VLM-T31-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 3,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "en-equity-pro-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T32",
+        "name": "Fixture 32",
+        "family": "equity",
+        "riskScore": 39,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 32. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "86ca3aac9afcbbd5841a6bd8d2e4cd1257af73f436cab7f6587176af3179fa82",
+      "bytes": 206605,
+      "summary": {
+        "reportId": "VLM-T32-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-equity-pro-entitled",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T33",
+        "name": "Fixture 33",
+        "family": "equity",
+        "riskScore": 56,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 33. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 1,
+        "projectUrl": null,
+        "accountId": "acct_00000033",
+        "serverReceiptId": "receipt_0000000000000033",
+        "reportToken": "token_000000000000000000000033",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000033",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "b9a1fc60e26cac038cc955c18ca971dae72f0fb196ba485bfb3e9e6cc82d0aaf",
+      "bytes": 210140,
+      "summary": {
+        "reportId": "VLM-T33-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-equity-advanced-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T34",
+        "name": "Fixture 34",
+        "family": "equity",
+        "riskScore": 73,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 34. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "acea8de79ae94b916ff7aca146daad3314ca889870f937885504f53c2c3686ee",
+      "bytes": 207927,
+      "summary": {
+        "reportId": "VLM-T34-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-equity-advanced-reviewed",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T35",
+        "name": "Fixture 35",
+        "family": "equity",
+        "riskScore": 90,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 35. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 3,
+        "projectUrl": null,
+        "accountId": "acct_00000035",
+        "serverReceiptId": "receipt_0000000000000035",
+        "reportToken": "token_000000000000000000000035",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000035",
+        "manualReviewReceiptId": "review_0000000000000035",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_35",
+        "operatorSignature": "signature_00000000000000000000000000000035",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000035",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000035"
+      },
+      "sha256": "1377009556b151c608ad063fef33407c75d3f973a93f0bd97bced8ff87783753",
+      "bytes": 212875,
+      "summary": {
+        "reportId": "VLM-T35-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-stablecoin-basic-default",
+      "args": {
+        "locale": "en",
+        "tier": "Basic",
+        "symbol": "T36",
+        "name": "Fixture 36",
+        "family": "stablecoin",
+        "riskScore": 6,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 36. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "073d280ccc4765c98ffcaead7d627df0e10df232b33c7a98a13f610a006a407b",
+      "bytes": 205172,
+      "summary": {
+        "reportId": "VLM-T36-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "en-stablecoin-pro-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T37",
+        "name": "Fixture 37",
+        "family": "stablecoin",
+        "riskScore": 23,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 37. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "738d08b30e54ed9cbb40dd9059760a4b1e49e082a7f75f2b3bbd3e3f0e93ad8c",
+      "bytes": 209883,
+      "summary": {
+        "reportId": "VLM-T37-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-stablecoin-pro-entitled",
+      "args": {
+        "locale": "en",
+        "tier": "Pro",
+        "symbol": "T38",
+        "name": "Fixture 38",
+        "family": "stablecoin",
+        "riskScore": 40,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 38. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000038",
+        "serverReceiptId": "receipt_0000000000000038",
+        "reportToken": "token_000000000000000000000038",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000038",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "86e7f0af38b853087485bacfca452c0524941dce7c69de82ca7e43f473002743",
+      "bytes": 206924,
+      "summary": {
+        "reportId": "VLM-T38-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-stablecoin-advanced-blocked",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T39",
+        "name": "Fixture 39",
+        "family": "stablecoin",
+        "riskScore": 57,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 39. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "098d718171d2469f5c6eb672e0cc257a38478c61a3496ac6578afd6e1c22f5fb",
+      "bytes": 212650,
+      "summary": {
+        "reportId": "VLM-T39-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "en-stablecoin-advanced-reviewed",
+      "args": {
+        "locale": "en",
+        "tier": "Advanced",
+        "symbol": "T40",
+        "name": "Fixture 40",
+        "family": "stablecoin",
+        "riskScore": 74,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 40. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000040",
+        "serverReceiptId": "receipt_0000000000000040",
+        "reportToken": "token_000000000000000000000040",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000040",
+        "manualReviewReceiptId": "review_0000000000000040",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_40",
+        "operatorSignature": "signature_00000000000000000000000000000040",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000040",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000040"
+      },
+      "sha256": "6bd3194465a7175bedd21acd49dac4d0e9695bcae55ad178102790349aa1d2ac",
+      "bytes": 208424,
+      "summary": {
+        "reportId": "VLM-T40-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-native_crypto-basic-default",
+      "args": {
+        "locale": "de",
+        "tier": "Basic",
+        "symbol": "T41",
+        "name": "Fixture 41",
+        "family": "native_crypto",
+        "riskScore": 91,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 41. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "9f5d24070916a1d470ddfdfd44b0af3473c6d55906b8489f95daf74c7c624fd9",
+      "bytes": 206013,
+      "summary": {
+        "reportId": "VLM-T41-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 3,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "de-native_crypto-pro-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T42",
+        "name": "Fixture 42",
+        "family": "native_crypto",
+        "riskScore": 7,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 42. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "fb056284f295d185c1427be68d201e3a306c642de33db5f498f1bf859aa4d58f",
+      "bytes": 206500,
+      "summary": {
+        "reportId": "VLM-T42-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-native_crypto-pro-entitled",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T43",
+        "name": "Fixture 43",
+        "family": "native_crypto",
+        "riskScore": 24,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 43. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 3,
+        "projectUrl": null,
+        "accountId": "acct_00000043",
+        "serverReceiptId": "receipt_0000000000000043",
+        "reportToken": "token_000000000000000000000043",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000043",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "55e73749812c9d7f168bd7fbe6ba698fbd07dd4e1ac5bb1934b31eb1e6f284c4",
+      "bytes": 210112,
+      "summary": {
+        "reportId": "VLM-T43-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-native_crypto-advanced-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T44",
+        "name": "Fixture 44",
+        "family": "native_crypto",
+        "riskScore": 41,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 44. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "98414a49b25d3fbc8b8c362be5a1f527b4191eed3e542a15943ab96625bf03da",
+      "bytes": 207963,
+      "summary": {
+        "reportId": "VLM-T44-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-native_crypto-advanced-reviewed",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T45",
+        "name": "Fixture 45",
+        "family": "native_crypto",
+        "riskScore": 58,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 45. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 1,
+        "projectUrl": null,
+        "accountId": "acct_00000045",
+        "serverReceiptId": "receipt_0000000000000045",
+        "reportToken": "token_000000000000000000000045",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000045",
+        "manualReviewReceiptId": "review_0000000000000045",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_45",
+        "operatorSignature": "signature_00000000000000000000000000000045",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000045",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000045"
+      },
+      "sha256": "98f3beb729e984cd3391c67bc88b064581df54bd4719441e7eabf5287960d614",
+      "bytes": 212857,
+      "summary": {
+        "reportId": "VLM-T45-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-erc20-basic-default",
+      "args": {
+        "locale": "de",
+        "tier": "Basic",
+        "symbol": "T46",
+        "name": "Fixture 46",
+        "family": "erc20",
+        "riskScore": 75,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 46. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "b2e7ae461971e82bb9e91eb5547675e1e1d0204f0ad46d5d5d8831d1407e305f",
+      "bytes": 204915,
+      "summary": {
+        "reportId": "VLM-T46-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "de-erc20-pro-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T47",
+        "name": "Fixture 47",
+        "family": "erc20",
+        "riskScore": 92,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 47. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "faaed33d135b6f0513788773d0f1238f0a1fb4edcbeda9fe8297423f03bba6ea",
+      "bytes": 209871,
+      "summary": {
+        "reportId": "VLM-T47-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-erc20-pro-entitled",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T48",
+        "name": "Fixture 48",
+        "family": "erc20",
+        "riskScore": 8,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 48. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000048",
+        "serverReceiptId": "receipt_0000000000000048",
+        "reportToken": "token_000000000000000000000048",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000048",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "465dcf84a8a660e1052fc75c40116ee086f2f71b540230ba9fe9d191b67530d8",
+      "bytes": 207106,
+      "summary": {
+        "reportId": "VLM-T48-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-erc20-advanced-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T49",
+        "name": "Fixture 49",
+        "family": "erc20",
+        "riskScore": 25,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 49. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "316c59784115c8328e7e69f4315744ddeb35fb17dec009b33b65765e08b33783",
+      "bytes": 212609,
+      "summary": {
+        "reportId": "VLM-T49-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-erc20-advanced-reviewed",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T50",
+        "name": "Fixture 50",
+        "family": "erc20",
+        "riskScore": 42,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 50. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000050",
+        "serverReceiptId": "receipt_0000000000000050",
+        "reportToken": "token_000000000000000000000050",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000050",
+        "manualReviewReceiptId": "review_0000000000000050",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_50",
+        "operatorSignature": "signature_00000000000000000000000000000050",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000050",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000050"
+      },
+      "sha256": "02f371b1222cc06e5e6b6d6da2da71f66296aa960cf00f43021da754cbbff9b9",
+      "bytes": 208304,
+      "summary": {
+        "reportId": "VLM-T50-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-equity-basic-default",
+      "args": {
+        "locale": "de",
+        "tier": "Basic",
+        "symbol": "T51",
+        "name": "Fixture 51",
+        "family": "equity",
+        "riskScore": 59,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 51. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "4d87e30e046daf814615664ad92c57441fcc6102d3760de09809590923435f65",
+      "bytes": 205968,
+      "summary": {
+        "reportId": "VLM-T51-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 3,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "de-equity-pro-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T52",
+        "name": "Fixture 52",
+        "family": "equity",
+        "riskScore": 76,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 52. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "7428a182320b5efa6fe3e7980cb7234a061b44c66d17a6e99c2471832cd9f48f",
+      "bytes": 206552,
+      "summary": {
+        "reportId": "VLM-T52-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-equity-pro-entitled",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T53",
+        "name": "Fixture 53",
+        "family": "equity",
+        "riskScore": 93,
+        "sourceFamilyCount": 6,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 53. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 1,
+        "projectUrl": null,
+        "accountId": "acct_00000053",
+        "serverReceiptId": "receipt_0000000000000053",
+        "reportToken": "token_000000000000000000000053",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000053",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "968fdcb933070423da69272f6970ad84288d83b5991b176c9fd8c66bc7283129",
+      "bytes": 210139,
+      "summary": {
+        "reportId": "VLM-T53-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-equity-advanced-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T54",
+        "name": "Fixture 54",
+        "family": "equity",
+        "riskScore": 9,
+        "sourceFamilyCount": 7,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 54. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "0bd98d5c462d15030be521edd8529f7c04a74e59e5ccffb9d8347792455218f1",
+      "bytes": 207937,
+      "summary": {
+        "reportId": "VLM-T54-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-equity-advanced-reviewed",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T55",
+        "name": "Fixture 55",
+        "family": "equity",
+        "riskScore": 26,
+        "sourceFamilyCount": 8,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 55. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 3,
+        "projectUrl": null,
+        "accountId": "acct_00000055",
+        "serverReceiptId": "receipt_0000000000000055",
+        "reportToken": "token_000000000000000000000055",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000055",
+        "manualReviewReceiptId": "review_0000000000000055",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_55",
+        "operatorSignature": "signature_00000000000000000000000000000055",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000055",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000055"
+      },
+      "sha256": "bfb4b4d576bdd69582162289fc9465afb9d52214f42ad41976f3418fb548225f",
+      "bytes": 212855,
+      "summary": {
+        "reportId": "VLM-T55-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-stablecoin-basic-default",
+      "args": {
+        "locale": "de",
+        "tier": "Basic",
+        "symbol": "T56",
+        "name": "Fixture 56",
+        "family": "stablecoin",
+        "riskScore": 43,
+        "sourceFamilyCount": 1,
+        "missingEvidence": [],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 56. Not financial advice.",
+        "topDriversCount": 2,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project"
+      },
+      "sha256": "98659566077c4374782a2686355c975931340f0e7e2dade30c65266e2372d97e",
+      "bytes": 205107,
+      "summary": {
+        "reportId": "VLM-T56-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "public_basic",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "pass",
+          "reasons": []
+        }
+      }
+    },
+    {
+      "id": "de-stablecoin-pro-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T57",
+        "name": "Fixture 57",
+        "family": "stablecoin",
+        "riskScore": 60,
+        "sourceFamilyCount": 2,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 57. Not financial advice.",
+        "topDriversCount": 3,
+        "mitigatorsCount": 1,
+        "projectUrl": null
+      },
+      "sha256": "ad2bcd117cc443dee58992ad3e1efbae45a4b37e95b12dabd751e69a013da571",
+      "bytes": 209900,
+      "summary": {
+        "reportId": "VLM-T57-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 7,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-stablecoin-pro-entitled",
+      "args": {
+        "locale": "de",
+        "tier": "Pro",
+        "symbol": "T58",
+        "name": "Fixture 58",
+        "family": "stablecoin",
+        "riskScore": 77,
+        "sourceFamilyCount": 3,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 58. Not financial advice.",
+        "topDriversCount": 4,
+        "mitigatorsCount": 2,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000058",
+        "serverReceiptId": "receipt_0000000000000058",
+        "reportToken": "token_000000000000000000000058",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000058",
+        "manualReviewReceiptId": null,
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": false,
+          "source": "trusted_internal"
+        }
+      },
+      "sha256": "5fd9a5314e3ed7001dd5aa3e8398bdb3cd5947338d5a821e3c3b0cf1b8bdfb40",
+      "bytes": 206924,
+      "summary": {
+        "reportId": "VLM-T58-20260714-PAYLOADV2",
+        "pageCount": 9,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-stablecoin-advanced-blocked",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T59",
+        "name": "Fixture 59",
+        "family": "stablecoin",
+        "riskScore": 94,
+        "sourceFamilyCount": 4,
+        "missingEvidence": [],
+        "providerConflicts": [],
+        "chartMode": "unavailable",
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 59. Not financial advice.",
+        "topDriversCount": 5,
+        "mitigatorsCount": 3,
+        "projectUrl": null
+      },
+      "sha256": "ec7dd606fa0e94f048ab54f5b783ae6832f9f3ded8e8b162455de3acf050fe55",
+      "bytes": 212653,
+      "summary": {
+        "reportId": "VLM-T59-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 9,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    },
+    {
+      "id": "de-stablecoin-advanced-reviewed",
+      "args": {
+        "locale": "de",
+        "tier": "Advanced",
+        "symbol": "T60",
+        "name": "Fixture 60",
+        "family": "stablecoin",
+        "riskScore": 10,
+        "sourceFamilyCount": 5,
+        "missingEvidence": [
+          "second provider unavailable",
+          "history incomplete"
+        ],
+        "providerConflicts": [
+          "provider price divergence"
+        ],
+        "chartMode": "fallback",
+        "sourceIds": [
+          "coingecko-market-data",
+          "velmere-deterministic-kernel"
+        ],
+        "generatedAt": "2026-07-14T01:23:45.000Z",
+        "narrativeText": "Fixture narrative 60. Not financial advice.",
+        "topDriversCount": 1,
+        "mitigatorsCount": 0,
+        "projectUrl": "https://example.com/project",
+        "accountId": "acct_00000060",
+        "serverReceiptId": "receipt_0000000000000060",
+        "reportToken": "token_000000000000000000000060",
+        "payloadHash": "sha256-0000000000000000000000000000000000000000000000000000000060",
+        "manualReviewReceiptId": "review_0000000000000060",
+        "accessVerification": {
+          "accountBound": true,
+          "serverReceiptVerified": true,
+          "reportTokenVerified": true,
+          "payloadHashBound": true,
+          "manualReviewVerified": true,
+          "source": "trusted_internal"
+        },
+        "operatorId": "operator_60",
+        "operatorSignature": "signature_00000000000000000000000000000060",
+        "reviewerNote": "Reviewed evidence remains bounded and redacted.",
+        "reviewPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000060",
+        "reviewedAt": "2026-07-14T01:20:00.000Z",
+        "deliveredPayloadHash": "sha256-0000000000000000000000000000000000000000000000000000000060"
+      },
+      "sha256": "7a53db38ea581c56a8d0243a4543993f6541cd515b11ddd71dc859ad0ff352fd",
+      "bytes": 208495,
+      "summary": {
+        "reportId": "VLM-T60-20260714-PAYLOADV2",
+        "pageCount": 10,
+        "receiptCount": 2,
+        "accessStatus": "locked_paid_evidence",
+        "paidEvidenceAllowed": false,
+        "integrityReleaseGate": {
+          "status": "block",
+          "reasons": [
+            "unknown_payload_hash_algorithm",
+            "paid_access_denied_or_incomplete_receipt_chain",
+            "advanced_manual_review_boundary_missing"
+          ]
+        }
+      }
+    }
+  ]
+}

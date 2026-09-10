@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "velmere.pass36.a61.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+  "parentRevisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+  "status": "BLOCKED_EXACT_HISTORICAL_BYTES",
+  "promotionAllowed": false,
+  "historicalMetadataAnchorsVerified": 2,
+  "historicalExactBytesRequired": 2,
+  "historicalExactBytesAvailable": 0,
+  "historicalExactBytesInstalled": 0,
+  "criticalGate": {
+    "freshCompatibilityRun": {
+      "runtime": "Node 22.16.0 without genuine runtime dependencies",
+      "suites": 30,
+      "passed": 22,
+      "exactByteBlocked": 2,
+      "runtimeDependencyBlocked": 6,
+      "semanticOrUnknownFailed": 0,
+      "credit": false
+    },
+    "historicalExactRuntimeRun": {
+      "runtime": "Node 24.18.0/npm 11.16.0 with genuine packages",
+      "passed": 28,
+      "suites": 30,
+      "exactByteBlocked": 2,
+      "freshA61Credit": false
+    }
+  },
+  "localContracts": {
+    "a61RecoveryIntake": "37/37 PASS",
+    "a60ExactBuildAdmission": "32/32 PASS",
+    "a59BudgetRecovery": "77/77 PASS",
+    "a57Contract": "1138/1138 PASS",
+    "a57AdversarialFixture": "50 scenarios / 157/157 assertions PASS",
+    "a46Contract": "791/791 PASS",
+    "a47Contract": "1118/1118 PASS"
+  },
+  "exactA60BuildBrowserExecuted": false,
+  "realStagingExecuted": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "A61 verifies the recovery mechanism and historical anchors, not the missing bytes themselves. No 30/30, exact-build, staging, LIVE or sale credit is granted until exact inputs are physically supplied and all required gates are rerun."
+}

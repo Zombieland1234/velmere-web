@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p35.standalone-psychology-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P35_ACTION_REQUIRED_STANDALONE_DECISION_SUPPORT_ANGEL_RISK_IMPACT_WHALE_AND_PSYCHOLOGY30_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "testCycle": {
+    "current": 2,
+    "total": 3
+  },
+  "personas": 30,
+  "standaloneModules": [
+    "market-impact",
+    "whale-watch",
+    "angel",
+    "risk-indicator"
+  ],
+  "checksPerPersonaModule": 6,
+  "rows": 720,
+  "measurementDomains": [
+    "factVsSimulation",
+    "transferVsTrade",
+    "labelProvenance",
+    "falsePrecision",
+    "abstentionClarity",
+    "nextSafeAction"
+  ],
+  "customerProof": {
+    "realParticipants": 0,
+    "customerProven": false,
+    "staticMatrixNeverCountsAsCustomerProof": true
+  },
+  "ethics": {
+    "darkPatternsForbidden": true,
+    "fearPressureForbidden": true,
+    "paidTierCannotChangeTruth": true,
+    "withheldReasonRequired": true
+  },
+  "truthBoundary": "Static and adversarial product-psychology checks only. No real participant, purchase intent, refund or customer-value credit."
+}

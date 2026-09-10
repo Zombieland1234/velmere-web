@@ -1,0 +1,617 @@
+{
+  "schemaVersion": "velmere.pass23.rls-staging-case-matrix.v1",
+  "truthBoundary": "Prepared 19-policy multi-user staging matrix. Static verification and structural preflight are not row-level isolation proof. Each case remains PENDING_STAGING until executed against a disposable Supabase/Postgres staging database with two tenants and four operator roles.",
+  "destructiveSafety": "Harness must run inside a transaction and end with ROLLBACK. It requires an explicit confirmation token and rejects production-like database URLs.",
+  "summary": {
+    "cases": 19,
+    "ownerCases": 13,
+    "operatorCases": 6,
+    "executed": 0,
+    "passed": 0
+  },
+  "cases": [
+    {
+      "caseId": "rls23_01_velmere_account_supabase_subject_bindings",
+      "table": "velmere_account_supabase_subject_bindings",
+      "policy": "pass22_account_subject_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "subject_binding"
+    },
+    {
+      "caseId": "rls23_02_velmere_admin_roles",
+      "table": "velmere_admin_roles",
+      "policy": "pass22_admin_role_self_or_owner_select",
+      "kind": "operator",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principals": [
+          "owner",
+          "operator",
+          "support",
+          "viewer:self-only"
+        ],
+        "expectedAtLeastOneRow": true
+      },
+      "negative": [
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0
+        },
+        {
+          "principal": "viewer_non_self",
+          "expectedRows": 0
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "allowedRoles": [
+        "owner",
+        "operator",
+        "support",
+        "viewer:self-only"
+      ]
+    },
+    {
+      "caseId": "rls23_03_velmere_admin_sessions",
+      "table": "velmere_admin_sessions",
+      "policy": "pass22_admin_session_self_or_owner_select",
+      "kind": "operator",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principals": [
+          "owner",
+          "operator",
+          "support",
+          "viewer:self-only"
+        ],
+        "expectedAtLeastOneRow": true
+      },
+      "negative": [
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0
+        },
+        {
+          "principal": "viewer_non_self",
+          "expectedRows": 0
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "allowedRoles": [
+        "owner",
+        "operator",
+        "support",
+        "viewer:self-only"
+      ],
+      "forbiddenColumnsForAuthenticated": [
+        "session_hash"
+      ]
+    },
+    {
+      "caseId": "rls23_04_velmere_angel_memories",
+      "table": "velmere_angel_memories",
+      "policy": "pass22_angel_memory_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:angel_session"
+    },
+    {
+      "caseId": "rls23_05_velmere_audit_intake_cases",
+      "table": "velmere_audit_intake_cases",
+      "policy": "pass22_audit_intake_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "account_id"
+    },
+    {
+      "caseId": "rls23_06_velmere_audit_logs",
+      "table": "velmere_audit_logs",
+      "policy": "pass22_audit_log_operator_select",
+      "kind": "operator",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principals": [
+          "owner",
+          "operator",
+          "support"
+        ],
+        "expectedAtLeastOneRow": true
+      },
+      "negative": [
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0
+        },
+        {
+          "principal": "viewer",
+          "expectedRows": 0
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "allowedRoles": [
+        "owner",
+        "operator",
+        "support"
+      ]
+    },
+    {
+      "caseId": "rls23_07_velmere_audit_pdf_token_consumptions",
+      "table": "velmere_audit_pdf_token_consumptions",
+      "policy": "pass22_audit_pdf_consumption_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "account_hash"
+    },
+    {
+      "caseId": "rls23_08_velmere_audit_report_snapshots",
+      "table": "velmere_audit_report_snapshots",
+      "policy": "pass22_audit_report_snapshot_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "account_hash"
+    },
+    {
+      "caseId": "rls23_09_velmere_customer_artifact_pdf_blobs",
+      "table": "velmere_customer_artifact_pdf_blobs",
+      "policy": "pass22_customer_artifact_pdf_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "account_and_hash"
+    },
+    {
+      "caseId": "rls23_10_velmere_customer_artifact_snapshots",
+      "table": "velmere_customer_artifact_snapshots",
+      "policy": "pass22_customer_artifact_snapshot_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "account_and_hash"
+    },
+    {
+      "caseId": "rls23_11_velmere_fulfilment_outbox_recovery_actions",
+      "table": "velmere_fulfilment_outbox_recovery_actions",
+      "policy": "pass22_fulfilment_recovery_operator_select",
+      "kind": "operator",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principals": [
+          "owner",
+          "operator"
+        ],
+        "expectedAtLeastOneRow": true
+      },
+      "negative": [
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0
+        },
+        {
+          "principal": "viewer",
+          "expectedRows": 0
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "allowedRoles": [
+        "owner",
+        "operator"
+      ]
+    },
+    {
+      "caseId": "rls23_12_velmere_order_drafts",
+      "table": "velmere_order_drafts",
+      "policy": "pass22_order_draft_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:order_draft"
+    },
+    {
+      "caseId": "rls23_13_velmere_order_events",
+      "table": "velmere_order_events",
+      "policy": "pass22_order_event_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:order"
+    },
+    {
+      "caseId": "rls23_14_velmere_order_items",
+      "table": "velmere_order_items",
+      "policy": "pass22_order_item_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:order"
+    },
+    {
+      "caseId": "rls23_15_velmere_order_state_events",
+      "table": "velmere_order_state_events",
+      "policy": "pass22_order_state_event_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:order_draft"
+    },
+    {
+      "caseId": "rls23_16_velmere_orders",
+      "table": "velmere_orders",
+      "policy": "pass22_order_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:order"
+    },
+    {
+      "caseId": "rls23_17_velmere_support_handoff_event_ledger",
+      "table": "velmere_support_handoff_event_ledger",
+      "policy": "pass22_support_handoff_operator_select",
+      "kind": "operator",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principals": [
+          "owner",
+          "operator",
+          "support"
+        ],
+        "expectedAtLeastOneRow": true
+      },
+      "negative": [
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0
+        },
+        {
+          "principal": "viewer",
+          "expectedRows": 0
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "allowedRoles": [
+        "owner",
+        "operator",
+        "support"
+      ]
+    },
+    {
+      "caseId": "rls23_18_velmere_vlm_audit_human_queue",
+      "table": "velmere_vlm_audit_human_queue",
+      "policy": "pass22_human_audit_queue_operator_select",
+      "kind": "operator",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principals": [
+          "owner",
+          "operator"
+        ],
+        "expectedAtLeastOneRow": true
+      },
+      "negative": [
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0
+        },
+        {
+          "principal": "viewer",
+          "expectedRows": 0
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "allowedRoles": [
+        "owner",
+        "operator"
+      ]
+    },
+    {
+      "caseId": "rls23_19_velmere_vlm_paid_entitlements",
+      "table": "velmere_vlm_paid_entitlements",
+      "policy": "pass22_entitlement_owner_select",
+      "kind": "owner",
+      "fixtureStrategy": "transactional_redacted_fixture",
+      "positive": {
+        "principal": "tenant_a",
+        "expectedRows": 1
+      },
+      "negative": [
+        {
+          "principal": "tenant_b",
+          "expectedRows": 0,
+          "reason": "cross_tenant"
+        },
+        {
+          "principal": "unbound_authenticated",
+          "expectedRows": 0,
+          "reason": "missing_binding"
+        },
+        {
+          "principal": "anon",
+          "expectedRows": 0,
+          "reason": "no_authenticated_grant"
+        }
+      ],
+      "executionStatus": "PENDING_STAGING",
+      "ownershipBinding": "resource:entitlement"
+    }
+  ]
+}

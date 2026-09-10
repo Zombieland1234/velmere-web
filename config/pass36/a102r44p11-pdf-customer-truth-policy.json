@@ -1,0 +1,63 @@
+{
+  "creditBoundary": {
+    "independentQaCredit": 0,
+    "liveCredit": false,
+    "paidReleaseCredit": false,
+    "realCustomerPdfCredit": 0
+  },
+  "customerTruth": {
+    "completionCopy": {
+      "de": "Analyse abgeschlossen",
+      "en": "Analysis completed",
+      "pl": "Analiza zako\u0144czona"
+    },
+    "findingConfidence": "NOT_CALIBRATED",
+    "publicCheckoutAllowed": false,
+    "publicPriceAllowed": false,
+    "sourceLabel": "case.sol"
+  },
+  "denominators": {
+    "activeContentDocuments": 0,
+    "advanced": 50,
+    "basic": 50,
+    "blankPages": 0,
+    "customerSemanticsDocuments": 150,
+    "documents": 150,
+    "edgeTouchPages": 0,
+    "fontEmbeddedDocuments": 150,
+    "neutralSourceDocuments": 150,
+    "pages": 700,
+    "pro": 50,
+    "toUnicodeDocuments": 150
+  },
+  "globalTruth": {
+    "decision": "NO_GO",
+    "live": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "materials": {
+    "corpusRoot": "r44p11/pdf-corpus/corpus",
+    "manifest": {
+      "byteLength": 100872,
+      "path": "r44p11/pdf-corpus/R44P11_PDF_MANIFEST.json",
+      "sha256": "a5d8ee391805dc5c1af85cec99ebe5eb26abba9f50f03f92bf9dd06149b1c9f8"
+    },
+    "verification": {
+      "byteLength": 103239,
+      "path": "r44p11/pdf-corpus/R44P11_PDF_VERIFICATION.json",
+      "sha256": "fddae2b73575cedbc3d85d761a439d7a0813fc6fdb918a84b91d0e734132f1aa"
+    },
+    "visualContactSheet": {
+      "byteLength": 175251,
+      "path": "r44p11/pdf-corpus/R44P11_VISUAL_CONTACT_SHEET.jpg",
+      "sha256": "51d2eff9c6dbcb1781a0ae9f89c5401558897d3ab97c70fee727377c59e6195a"
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "rendererPath": "scripts/pass36/render-a102r44p11-audit-pdf-corpus.py",
+  "revisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p11.pdf-customer-truth-policy.v1",
+  "verifierPath": "scripts/pass36/verify-a102r44p11-audit-pdf-corpus.py"
+}

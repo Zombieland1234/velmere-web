@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "velmere.pass36.a94r2.cross-surface-value-truth-policy.v1",
+  "revisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "generatedAt": "2026-07-28T22:30:00Z",
+  "surfaces": {
+    "audit": {
+      "realCaseDenominator": 50,
+      "tierOutputDenominator": 150,
+      "officialToolRunDenominator": 200,
+      "realCasesVerified": 0,
+      "officialToolRunsExecuted": 0,
+      "tierRequirements": {
+        "basic": {
+          "minimumMaterialFields": 8,
+          "minimumEvidenceFamilies": 3
+        },
+        "pro": {
+          "minimumMaterialFields": 16,
+          "minimumEvidenceFamilies": 6
+        },
+        "advanced": {
+          "minimumMaterialFields": 24,
+          "minimumEvidenceFamilies": 10,
+          "qualifiedHumanReviewRequired": true
+        }
+      }
+    },
+    "pdf": {
+      "syntheticDocuments": 450,
+      "syntheticPages": 2100,
+      "realCustomerCaseDenominator": 50,
+      "realCustomerCasesVerified": 0,
+      "pageContract": {
+        "basic": 2,
+        "pro": 4,
+        "advanced": 8
+      }
+    },
+    "shield": {
+      "assetDenominator": 318,
+      "currentProviderVerified": 0,
+      "tierRequirements": {
+        "basic": {
+          "minimumMaterialFields": 3,
+          "minimumEvidenceFamilies": 5
+        },
+        "pro": {
+          "minimumMaterialFields": 15,
+          "minimumEvidenceFamilies": 10
+        },
+        "advanced": {
+          "minimumMaterialFields": 23,
+          "minimumEvidenceFamilies": 10
+        }
+      }
+    },
+    "shieldPro": {
+      "assetDenominator": 318,
+      "realCasesVerified": 0,
+      "realEntitlementsVerified": 0
+    },
+    "shieldMap": {
+      "assetDenominator": 318,
+      "realCasesVerified": 0,
+      "realEntitlementsVerified": 0
+    },
+    "realMarkets": {
+      "instrumentDenominator": 583,
+      "realEvidenceRowsVerified": 0,
+      "tierRequirements": {
+        "basic": {
+          "minimumMaterialFields": 4,
+          "minimumEvidenceFamilies": 5
+        },
+        "pro": {
+          "minimumMaterialFields": 14,
+          "minimumEvidenceFamilies": 9
+        },
+        "advanced": {
+          "minimumMaterialFields": 24,
+          "minimumEvidenceFamilies": 13
+        }
+      }
+    },
+    "marketImpact": {
+      "assetDenominator": 318,
+      "realEvidenceRowsVerified": 0,
+      "realizedSlippageRows": 0
+    },
+    "whaleWatch": {
+      "assetDenominator": 318,
+      "realEvidenceRowsVerified": 0,
+      "continuousMonitoringRows": 0
+    },
+    "brain": {
+      "realMixedCaseDenominator": 300,
+      "verified": 0,
+      "realModelExecutions": 0
+    },
+    "angel": {
+      "realMixedCaseDenominator": 300,
+      "verified": 0,
+      "realModelExecutions": 0
+    },
+    "risk": {
+      "realMixedCaseDenominator": 300,
+      "verified": 0,
+      "closedCalibrationWindows": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false
+    }
+  },
+  "mandatoryPaidGates": [
+    "exact identity and current real evidence",
+    "commercial provider rights for display, export, PDF, derived data and AI/RAG",
+    "signed legal/DPO applicability",
+    "production browser and secure account-bound delivery",
+    "customer comprehension, decision utility and willingness-to-pay",
+    "operations, support, refund and rollback evidence",
+    "independent adjudication where the claim requires it"
+  ],
+  "claims": {
+    "exactReleaseProven": false,
+    "browserProven": false,
+    "stagingProven": false,
+    "realDataProven": false,
+    "rightsApproved": false,
+    "legalApproved": false,
+    "customerValueProven": false,
+    "independentlyAssured": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "truthSources": {
+    "auditPolicy": "config/pass36/a82-audit-real-contract-matrix-policy.json",
+    "auditIntake": "evaluation/pass36/a82-real-contract-intake-index.json",
+    "pdfRetention": "config/pass36/a88r1-physical-pdf-evidence-retention-index.json",
+    "pdfIndependentQa": "config/pass36/a94r2-retained-pdf-evidence-summary.json",
+    "shieldPolicy": "config/pass36/a84-shield-full-catalog-tier-matrix-policy.json",
+    "shieldProMapPolicy": "config/pass36/a85-shield-pro-map-full-depth-policy.json",
+    "realMarketsPolicy": "config/pass36/a86-real-markets-cross-asset-policy.json",
+    "impactWhalePolicy": "config/pass36/a87-market-impact-whale-watch-policy.json",
+    "brainAngelRiskPolicy": "config/pass36/a88-brain-angel-risk-eval-policy.json",
+    "semanticGeneralizationPolicy": "config/pass36/a88r1-semantic-route-privacy-pdf-policy.json",
+    "currentAuthority": "config/pass36/current-release-authority.json",
+    "currentState": "config/pass36/a94r2-action-required-current-state.json"
+  },
+  "truthBoundary": "One consolidated fail-closed view of Basic/Pro/Advanced structural value and real-evidence deficits. It does not create provider data, audit accuracy, model quality, customer value, rights, legal approval, browser, staging, LIVE or sale evidence.",
+  "integritySha256": "607fca2becc92311594dc99923d9e7c1e8384ee58cf3949452b11674deb2eabb"
+}

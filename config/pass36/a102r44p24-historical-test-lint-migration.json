@@ -1,0 +1,36 @@
+{
+  "addedTests": 0,
+  "allowedHistoricalTestPortabilityChanges": [
+    {
+      "currentByteLength": 1812,
+      "currentSha256": "8aaed24c74bc63a2e024bf4f99e32d3515d3f20735154dc89da173f2c9d1c7df",
+      "parentByteLength": 1892,
+      "parentSha256": "ebfab0b974a0cb1eea7cdfd61ba1611f00ab55ad7d2325f774abab6729f9c219",
+      "path": "scripts/pass36/test-a102r44p22-paid-entitlement-current-fail-closed.mjs",
+      "reason": "ESLINT_PORTABILITY_ONLY_NO_BEHAVIOR_CHANGE"
+    },
+    {
+      "currentByteLength": 4244,
+      "currentSha256": "0ef5300f60e5f08c761cb1a41d1eb0e58f787c70d5d150b426a90705e510dc3c",
+      "parentByteLength": 4246,
+      "parentSha256": "39a56d4fc73b6cc2370f091091179f371c4683f2b1aa4c68d7870513b2f672e3",
+      "path": "scripts/pass36/test-a102r44p22-preview-leakage-boundary.mjs",
+      "reason": "ESLINT_PORTABILITY_ONLY_NO_BEHAVIOR_CHANGE"
+    }
+  ],
+  "denominatorCollapse": false,
+  "negativeGuarantees": [
+    "NO_ESLINT_DISABLE",
+    "NO_SKIP_ONLY_TODO",
+    "NO_TEST_REMOVAL",
+    "NO_ASSERTION_REMOVAL",
+    "NO_RUNTIME_BEHAVIOR_CHANGE"
+  ],
+  "newDenominator": 105,
+  "oldDenominator": 105,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P23_ACTION_REQUIRED_LOCAL_DISPOSABLE_CUSTOMER_LIFECYCLE_REFUND_REVOCATION_DELETE_AND_DURABLE_DELIVERY_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "retainedTests": 105,
+  "revisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p24.historical-test-lint-migration.v1"
+}

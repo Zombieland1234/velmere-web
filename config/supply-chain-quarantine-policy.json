@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "velmere.supply-chain-quarantine-policy.v3",
+  "mode": "fail-closed-current-lock-target-aware-lifecycle-quarantine-and-native-platform-gate",
+  "rules": {
+    "publicRegistryOnly": true,
+    "httpsOnly": true,
+    "lockfileIntegrityRequired": true,
+    "downloadIntoTemporaryQuarantine": true,
+    "verifySubresourceIntegrityBeforeInspection": true,
+    "neverExecuteDuringInspection": true,
+    "exactInstallScriptTupleAllowlistRequired": true,
+    "unexpectedLifecycleScriptBlocksPromotion": true,
+    "dangerousLifecycleCommandBlocksPromotion": true,
+    "evidenceDriftBlocksPromotion": true,
+    "externalMalwareEngineRequiredForProductionDistribution": true,
+    "targetApplicabilityRequired": true,
+    "rootLifecycleSeparatedFromDependencyLifecycle": true,
+    "uncontrolledNetworkFallbackBlocksExecutionApproval": true,
+    "fullCommitPinnedWorkflowActionsRequired": true
+  },
+  "lifecycleNames": [
+    "preinstall",
+    "install",
+    "postinstall"
+  ],
+  "dangerousCommandPatterns": [
+    "remote-shell-pipe",
+    "powershell-download-execute",
+    "inline-eval",
+    "base64-decode-execute",
+    "netcat-shell"
+  ],
+  "boundFiles": {
+    "lockfile": "package-lock.json",
+    "lifecycleInventory": "config/p42/p42-current-lock-lifecycle-inventory.json",
+    "installScriptAllowlist": "config/p42/p42-lifecycle-execution-allowlist.json",
+    "githubActionPins": "config/p42/p42-github-action-pins.json",
+    "previousHistoricalInspectionEvidence": "config/supply-chain-install-script-evidence-pass4825.json",
+    "lifecycleQuarantinePolicy": "config/p42/p42-lifecycle-quarantine-policy.json",
+    "semanticDualBuildPolicy": "config/p42/p42-exact-windows-semantic-dual-build-policy.json",
+    "trustedNativeGuard": "scripts/runtime/rebuild-trusted-native.mjs",
+    "nativePlatformProbe": "scripts/pass42/verify-p42-native-platform-availability.mjs",
+    "semanticWorkflow": ".github/workflows/p42-exact-windows-semantic-dual-build.yml"
+  },
+  "limitations": [
+    "Static lifecycle inspection and exact archive integrity do not prove that arbitrary dependency runtime code is malware-free.",
+    "Archive evidence alone never authorizes lifecycle execution; an exact current tuple decision and controlled execution receipt are required.",
+    "A network-capable fallback in a lifecycle script remains blocked until deterministic target-package presence and network isolation are proven.",
+    "A production distribution still requires independent malware/reputation evidence and signed clean-room acquisition/provenance where available.",
+    "Exact platform-package availability must pass separately on the target runtime before semantic or production build credit is granted."
+  ]
+}

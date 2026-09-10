@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "velmere.p34.internal-ai-dual-ledger-policy.v2",
+  "revision": "P34_INTERNAL_AI_DUAL_LEDGER",
+  "generatedAt": "2026-08-13T03:00:00+00:00",
+  "executionMode": "MODEL_AUTHORED_ROLE_RUBRIC_DETERMINISTIC_EXPANSION",
+  "modelIdentity": {
+    "provider": "OpenAI",
+    "model": "GPT-5.6 Pro",
+    "liveModelCallsForRows": 0,
+    "modelFamilyIndependence": false,
+    "independenceCredit": false,
+    "description": "One model-authored frozen role/rubric set expanded deterministically against current profile receipts; not 4017 independent live model calls."
+  },
+  "authority": {
+    "methodologyPath": "docs/authority/VELMERE_METODOLOGIA_FINISHOWANIA_CANONICAL_V12_INTERNAL_AI_DUAL_LEDGER_2026-08-13.txt",
+    "growthIntelPath": "docs/authority/VELMERE_GROWTH_INTEL_TOP_WORLD_R10_INTERNAL_AI_DUAL_LEDGER_2026-08-13.txt",
+    "profileManifestPath": "artifacts/closure/p32/profile-execution-manifest.json",
+    "sourceIdentityPath": "artifacts/closure/p34/source-identity.json"
+  },
+  "cohorts": [
+    {
+      "id": "AI_CUSTOMER_JOURNEYS",
+      "label": "AI customer personas / customer journey",
+      "personas": 100,
+      "stepsPerPersona": 24,
+      "denominator": 2400,
+      "creditClass": "INTERNAL_SIMULATED_CUSTOMER_ONLY"
+    },
+    {
+      "id": "AI_TECHNICAL_AUDITORS",
+      "label": "AI technical auditors and skeptical reviewers",
+      "roles": 12,
+      "profilesPerRole": 33,
+      "denominator": 396,
+      "creditClass": "INTERNAL_AI_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_ATTACKERS",
+      "label": "AI attackers and abuse reviewers",
+      "roles": 8,
+      "profilesPerRole": 33,
+      "denominator": 264,
+      "creditClass": "INTERNAL_AI_ATTACK_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_LEGAL_RISK",
+      "label": "AI legal-risk reviewers",
+      "roles": 6,
+      "profilesPerRole": 33,
+      "denominator": 198,
+      "creditClass": "INTERNAL_AI_LEGAL_PREPARATION_ONLY"
+    },
+    {
+      "id": "AI_PRODUCT_VALUE_PRICING",
+      "label": "AI product-value and pricing reviewers",
+      "roles": 8,
+      "profilesPerRole": 33,
+      "denominator": 264,
+      "creditClass": "INTERNAL_AI_VALUE_HYPOTHESIS_ONLY"
+    },
+    {
+      "id": "AI_ACCESSIBILITY_I18N",
+      "label": "AI accessibility and i18n reviewers",
+      "roles": 5,
+      "profilesPerRole": 33,
+      "denominator": 165,
+      "creditClass": "INTERNAL_AI_ACCESSIBILITY_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_OPS_SRE",
+      "label": "AI operations and SRE reviewers",
+      "roles": 5,
+      "profilesPerRole": 33,
+      "denominator": 165,
+      "creditClass": "INTERNAL_AI_OPS_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_DATA_PROVIDER_RIGHTS",
+      "label": "AI data, provider and rights reviewers",
+      "roles": 5,
+      "profilesPerRole": 33,
+      "denominator": 165,
+      "creditClass": "INTERNAL_AI_DATA_RIGHTS_PREPARATION_ONLY"
+    }
+  ],
+  "expectedTotalRows": 4017,
+  "mandatoryFalseCredits": {
+    "externalCredit": false,
+    "realCustomerCredit": false,
+    "independentReviewerCredit": false,
+    "professionalLegalDecisionCredit": false,
+    "providerRightsCredit": false,
+    "customerValueCredit": false,
+    "paidReleaseCredit": false,
+    "worldClassCredit": false
+  },
+  "truthBoundary": "AI_INTERNAL_EXECUTION_COVERAGE may reach 100% independently. REAL_EXTERNAL_EXECUTION_COVERAGE is a separate table and may later reach 100% only through physical real/external evidence. The two percentages are never averaged or aliased.",
+  "externalTracks": [
+    {
+      "trackId": "real-customers",
+      "label": "Real customer comprehension / decision utility",
+      "denominator": "FROZEN_BEFORE_RECRUITMENT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "real-wtp-refund-retention",
+      "label": "Real willingness-to-pay / refund / retention",
+      "denominator": "FROZEN_BEFORE_PILOT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "independent-human-reviewers",
+      "label": "Independent qualified human/org review",
+      "denominator": "ER_LEVEL_DEPENDENT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "professional-legal-decisions",
+      "label": "Professional legal/product-role decisions",
+      "denominator": "SCOPE_AND_JURISDICTION_DEPENDENT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "provider-commercial-rights",
+      "label": "Provider commercial display/retention/redistribution rights",
+      "denominator": "ALL_PRODUCTION_PROVIDER_USE_CASE_CELLS",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "staging-production-runtime",
+      "label": "Disposable staging and production-like runtime proof",
+      "denominator": "FROZEN_STAGING_PROGRAM",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "real-accessibility-participants",
+      "label": "Real assistive-technology / disabled-user evidence",
+      "denominator": "FROZEN_ACCESSIBILITY_PROTOCOL",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "independent-security-test",
+      "label": "Independent deployed security/pentest falsification",
+      "denominator": "FROZEN_EXTERNAL_SECURITY_SCOPE",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "production-outcomes",
+      "label": "Sustained production outcomes / drift / correction evidence",
+      "denominator": "TIME_AND_VOLUME_FROZEN",
+      "canAiSimulationSatisfy": false
+    }
+  ]
+}

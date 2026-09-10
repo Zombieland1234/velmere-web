@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "velmere.pass17.market-output-adapter-policy.v1",
+  "supportedSurfaces": [
+    "shield",
+    "real_markets"
+  ],
+  "supportedTiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "supportedLocales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "freshnessSecondsByAssetClass": {
+    "crypto": 300,
+    "stock": 1200,
+    "etf": 1800,
+    "fx": 900,
+    "commodity": 1800,
+    "index": 1800,
+    "real_estate": 3600,
+    "rate": 172800,
+    "macro": 172800,
+    "option": 900,
+    "unknown": 0,
+    "reit": 3600,
+    "rates": 172800,
+    "crypto_reference": 300,
+    "futures": 1800,
+    "derivative": 900,
+    "credit": 86400
+  },
+  "relativeConflictToleranceByField": {
+    "price": 0.015,
+    "returns_24h": 0.02,
+    "volume_24h": 0.25,
+    "market_cap_or_notional": 0.1,
+    "liquidity_usd": 0.25,
+    "spread_bps": 0.35,
+    "risk_signal": 0.2
+  },
+  "requiredFields": {
+    "shield": {
+      "basic": [
+        "price"
+      ],
+      "pro": [
+        "price",
+        "returns_24h",
+        "volume_24h",
+        "liquidity_usd",
+        "risk_signal",
+        "official_signal"
+      ],
+      "advanced": [
+        "price",
+        "returns_24h",
+        "volume_24h",
+        "liquidity_usd",
+        "risk_signal",
+        "official_signal"
+      ]
+    },
+    "real_markets": {
+      "basic": [
+        "price"
+      ],
+      "pro": [
+        "price",
+        "returns_24h",
+        "volume_24h",
+        "market_cap_or_notional",
+        "risk_signal",
+        "session_status",
+        "official_signal"
+      ],
+      "advanced": [
+        "price",
+        "returns_24h",
+        "volume_24h",
+        "market_cap_or_notional",
+        "risk_signal",
+        "session_status",
+        "official_signal"
+      ]
+    }
+  },
+  "tierRules": {
+    "basic": {
+      "minimumIndependentFamilies": 1,
+      "requiresCommercialRights": false,
+      "requiresEntitlement": false,
+      "mayReleaseWithMissingNonIdentityEvidence": true
+    },
+    "pro": {
+      "minimumIndependentFamilies": 2,
+      "requiresCommercialRights": true,
+      "requiresEntitlement": true,
+      "mayReleaseWithMissingNonIdentityEvidence": false
+    },
+    "advanced": {
+      "minimumIndependentFamilies": 2,
+      "requiresCommercialRights": true,
+      "requiresEntitlement": true,
+      "mayReleaseWithMissingNonIdentityEvidence": false
+    }
+  },
+  "confidenceWeights": {
+    "identity": 20,
+    "coverage": 25,
+    "independence": 20,
+    "freshness": 15,
+    "license": 10,
+    "agreement": 10
+  },
+  "truthBoundary": "The adapter may only copy or derive values from explicit evidence observations. Scenario labels define tests, not facts. Fixtures and adapter simulations never count as provider, staging, paid-product or LIVE proof."
+}

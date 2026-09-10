@@ -1,0 +1,313 @@
+{
+  "schemaVersion": "velmere.pass36.a89.account-auth-tenant-privacy-policy.v1",
+  "revisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "parentRevisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "deterministicEpoch": "2026-07-28T00:00:00.000Z",
+  "decision": "NO_GO",
+  "scope": "LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE_CONTRACT",
+  "inputs": {
+    "exact-request-boundary_1": {
+      "path": "lib/security/exact-request-boundary.ts",
+      "byteLength": 2267,
+      "sha256": "7d5302998edd68f9816eb4f3b4cc69ddd2eda8ac9d14f35473bb9ae5d463973a"
+    },
+    "auth-secret-separation_2": {
+      "path": "lib/security/auth-secret-separation.ts",
+      "byteLength": 3597,
+      "sha256": "8ba9936bd56f214ba6524d8b5b5d26227aa079ec674ae5f2ef0953729a287251"
+    },
+    "auth-callback-contract_3": {
+      "path": "lib/security/auth-callback-contract.ts",
+      "byteLength": 4010,
+      "sha256": "007c1ae362ef1c0869197607a5359e90541944aebbc27305a71651a8755f8f49"
+    },
+    "trusted-account-header-boundary_4": {
+      "path": "lib/security/trusted-account-header-boundary.ts",
+      "byteLength": 10667,
+      "sha256": "3839598ff2285e4446da47dce049894b8ff3289809058577cf800d8a817a029f"
+    },
+    "public-trust-intake-boundary_5": {
+      "path": "lib/security/public-trust-intake-boundary.ts",
+      "byteLength": 6919,
+      "sha256": "a86a08e01738a853662b5edf5581b1beff8ba1eab66f99c55e19ba935c0007c3"
+    },
+    "password-recovery-grant_6": {
+      "path": "lib/auth/password-recovery-grant.ts",
+      "byteLength": 8332,
+      "sha256": "76b33c6dc7f24d30960ce72d1f4478b4192c2dca315c7e876ddfa68af5051cf2"
+    },
+    "account-session_7": {
+      "path": "lib/auth/account-session.ts",
+      "byteLength": 15468,
+      "sha256": "601ad1f527ba75a545e5cfce2498ac3a08eb9ea83b9222770515d003dfefb4d9"
+    },
+    "supabase-auth-flow_8": {
+      "path": "lib/auth/supabase-auth-flow.ts",
+      "byteLength": 12953,
+      "sha256": "b781d6bfe1121652e9da5a08bf9a9eb7027e82025c8c705b6389635fb5c25e03"
+    },
+    "route_9": {
+      "path": "app/api/auth/callback/route.ts",
+      "byteLength": 3980,
+      "sha256": "39185095cbe1190efce1aac32fa670439881f1cd4809f5f625a6a0b9d0635de7"
+    },
+    "route_10": {
+      "path": "app/api/auth/session/route.ts",
+      "byteLength": 11114,
+      "sha256": "0b0560df99ce06c5d34906e701ea8a77a3ab8ddf3dad9c87fd901aba81488ec9"
+    },
+    "route_11": {
+      "path": "app/api/auth/oauth/google/route.ts",
+      "byteLength": 2123,
+      "sha256": "58db17428b0c311cfd82cfaa83d8927beca50ffc50af4924eb0da9e061a3d6a8"
+    },
+    "route_12": {
+      "path": "app/api/auth/recovery/route.ts",
+      "byteLength": 4812,
+      "sha256": "8d2dd5abe4d579925defdfa6e71e7c8e2345f2483731d2f0c8544b8ac065e337"
+    },
+    "route_13": {
+      "path": "app/api/auth/email-change/route.ts",
+      "byteLength": 2493,
+      "sha256": "c2a27c061c03532890155112d8f4720fda5036fef34f469efd2d2e137533b791"
+    },
+    "route_14": {
+      "path": "app/api/profile/route.ts",
+      "byteLength": 5037,
+      "sha256": "0fe6ced2530f838e86d111407d8fa725cdfb37a5c800ef752b9d515538cedd8f"
+    },
+    "account--audit-messages_15": {
+      "path": "lib/server/lazy-route-modules/account--audit-messages.ts",
+      "byteLength": 13469,
+      "sha256": "4aeddacfd32f1f9e39422af889ff44d4fd4ec4ba9c698023eec10241e01bb70b"
+    },
+    "account--customer-artifact_16": {
+      "path": "lib/server/lazy-route-modules/account--customer-artifact.ts",
+      "byteLength": 13037,
+      "sha256": "ef47594f7c7a77be3f86dfd4e22b1b751686901bd2b67f61e503742f8ac6ced9"
+    },
+    "route_17": {
+      "path": "app/api/security/audit-case/status/route.ts",
+      "byteLength": 4047,
+      "sha256": "fe69c5c86de0bb4b8f814006d1c1fe8b20387c54b303f48a94dd39baadffb217"
+    },
+    "consent_18": {
+      "path": "lib/privacy/consent.ts",
+      "byteLength": 2093,
+      "sha256": "05a714f8d2ed943800a05d092868e128eaae68885f43ac9da880f19eddf03cc1"
+    },
+    "supabase-rpc-operation-registry_19": {
+      "path": "lib/db/supabase-rpc-operation-registry.ts",
+      "byteLength": 19319,
+      "sha256": "64e0af00cca05960041d81e2c6a3b8948472ef7e725bce4557d9a957551704aa"
+    },
+    "20260728000001_a89_password_recovery_grant_ledger_20": {
+      "path": "supabase/migrations/20260728000001_a89_password_recovery_grant_ledger.sql",
+      "byteLength": 4894,
+      "sha256": "5b6063296da2acc8b8c7414e7859912ffd2f7587fa05dafc25b5f510e405f1f8"
+    },
+    "historical_descendant_chain_lib": {
+      "path": "scripts/pass36/historical-descendant-chain-lib.mjs",
+      "byteLength": 15880,
+      "sha256": "ecaa604f4265cb4f3bc5c829dcc1c384d2be7199003c34b857348b39b9905e03"
+    }
+  },
+  "redTeamDenominator": {
+    "families": 16,
+    "casesPerFamily": 12,
+    "cases": 192,
+    "strictEnvelopeMutations": 768
+  },
+  "closedByA89": [
+    {
+      "id": "A89-GAP-01",
+      "severity": "P0",
+      "gap": "OAuth callback state could be checked without exact intent and locale binding",
+      "closure": "Strict callback contract binds state, intent and locale."
+    },
+    {
+      "id": "A89-GAP-02",
+      "severity": "P0",
+      "gap": "Callback accepted unknown or duplicate query parameters",
+      "closure": "Exact query allowlist rejects unknown and duplicate parameters."
+    },
+    {
+      "id": "A89-GAP-03",
+      "severity": "P0",
+      "gap": "OAuth code and OTP parameters could be mixed",
+      "closure": "Mutually exclusive callback modes fail closed."
+    },
+    {
+      "id": "A89-GAP-04",
+      "severity": "P0",
+      "gap": "OTP type could be confused between recovery, email change and confirmation",
+      "closure": "Intent-specific OTP type binding is mandatory."
+    },
+    {
+      "id": "A89-GAP-05",
+      "severity": "P0",
+      "gap": "Provider error mode could coexist with success material",
+      "closure": "Provider error, code and OTP modes are exclusive."
+    },
+    {
+      "id": "A89-GAP-06",
+      "severity": "P0",
+      "gap": "Auth secrets could be reused across purposes",
+      "closure": "Production readiness requires purpose-separated secrets."
+    },
+    {
+      "id": "A89-GAP-07",
+      "severity": "P0",
+      "gap": "Trusted account headers used a historical static bearer boundary",
+      "closure": "Request-bound HMAC replaces static bearer acceptance."
+    },
+    {
+      "id": "A89-GAP-08",
+      "severity": "P0",
+      "gap": "Trusted account identity was not bound to method and path",
+      "closure": "HMAC binds method and canonical pathname."
+    },
+    {
+      "id": "A89-GAP-09",
+      "severity": "P0",
+      "gap": "Trusted header replay lacked one-time durable nonce semantics",
+      "closure": "Timestamp plus durable one-use nonce is required."
+    },
+    {
+      "id": "A89-GAP-10",
+      "severity": "P0",
+      "gap": "Raw x-velmere-account-id could be mistaken for identity",
+      "closure": "Unsigned raw account headers never resolve an account."
+    },
+    {
+      "id": "A89-GAP-11",
+      "severity": "P0",
+      "gap": "Password recovery grant was reusable inside its TTL",
+      "closure": "Hash-only durable ledger atomically consumes grants once."
+    },
+    {
+      "id": "A89-GAP-12",
+      "severity": "P0",
+      "gap": "Recovery grant signing reused broader auth-flow secrets in production",
+      "closure": "Dedicated production recovery-grant key is required."
+    },
+    {
+      "id": "A89-GAP-13",
+      "severity": "P0",
+      "gap": "Recovery grant was not durably bound to subject and session family",
+      "closure": "Ledger binds subject fingerprint, family and expiry."
+    },
+    {
+      "id": "A89-GAP-14",
+      "severity": "P0",
+      "gap": "Production-like Vercel environments could inherit development Origin exceptions",
+      "closure": "Origin allowance checks NODE_ENV and VERCEL_ENV."
+    },
+    {
+      "id": "A89-GAP-15",
+      "severity": "P1",
+      "gap": "Auth and profile bodies accepted unknown fields",
+      "closure": "Exact object-key contracts reject mass-assignment fields."
+    },
+    {
+      "id": "A89-GAP-16",
+      "severity": "P1",
+      "gap": "Account artifact query parameters allowed ambiguity and coercion",
+      "closure": "Exact query, format, ID and bounded integer validation added."
+    },
+    {
+      "id": "A89-GAP-17",
+      "severity": "P1",
+      "gap": "Audit message account queries allowed duplicate or loose limits/locales",
+      "closure": "Exact query and strict account scope validation added."
+    },
+    {
+      "id": "A89-GAP-18",
+      "severity": "P1",
+      "gap": "Audit status varied on an untrusted account header",
+      "closure": "Vary excludes raw x-velmere-account-id and exact caseRef query is enforced."
+    },
+    {
+      "id": "A89-GAP-19",
+      "severity": "P1",
+      "gap": "Consent parsing accepted unknown keys and coerced shapes",
+      "closure": "Granular strict consent schema rejects unknown/type-invalid state."
+    },
+    {
+      "id": "A89-GAP-20",
+      "severity": "P0",
+      "gap": "Trust Center intake lacked a legal authorization denominator",
+      "closure": "Only contest, active bounty or written permission is accepted."
+    },
+    {
+      "id": "A89-GAP-21",
+      "severity": "P0",
+      "gap": "Client payload could self-claim external acceptance",
+      "closure": "Externally accepted finding state cannot be client-promoted."
+    },
+    {
+      "id": "A89-GAP-22",
+      "severity": "P0",
+      "gap": "Client payload could self-claim accredited certification",
+      "closure": "Accredited certification claim is hard-disabled without external evidence."
+    },
+    {
+      "id": "A89-GAP-23",
+      "severity": "P1",
+      "gap": "Trust intake could leak raw contact data publicly",
+      "closure": "Public projection contains only privacy-safe HMAC fingerprint and evidence metadata."
+    },
+    {
+      "id": "A89-GAP-24",
+      "severity": "P0",
+      "gap": "Embargo state could be bypassed by a publication flag",
+      "closure": "Active embargo blocks public eligibility."
+    },
+    {
+      "id": "A89-GAP-25",
+      "severity": "P1",
+      "gap": "Public Trust Website lacked a fixed completeness denominator",
+      "closure": "Twenty mandatory evidence-bound sections are enumerated."
+    },
+    {
+      "id": "A89-GAP-26",
+      "severity": "P0",
+      "gap": "A89 could be promoted from local red-team fixtures",
+      "closure": "Real OAuth, RLS, ATO, revocation, DSAR, legal, LIVE and sale remain zero."
+    },
+    {
+      "id": "A89-GAP-27",
+      "severity": "P1",
+      "gap": "A base pass descendant could skip a legal patch revision of the previous base pass",
+      "closure": "Historical descendant verification resolves one exact intermediate patch child, including A88R1 between A88R0 and A89."
+    },
+    {
+      "id": "A89-GAP-28",
+      "severity": "P1",
+      "gap": "The A89 local test wrote an active fixture receipt into SOURCE_ONLY and violated the source/evidence-history separation.",
+      "closure": "The test now writes only the compact deterministic config receipt; full execution output is retained exclusively in MATERIALS and the active fixture artifact is removed from source."
+    }
+  ],
+  "realExitRequirements": {
+    "realOAuthProviderRuns": ">0 across signup/signin/cancel/error/recovery/email-change",
+    "realTwoTenantRlsChecks": "19/19 on disposable staging",
+    "accountTakeoverAndFixationDrills": "required",
+    "crossDeviceRevocationDrills": "required",
+    "productionTrustedEdgeHeaderObservation": "required",
+    "privacyDsarAndDeletionRuns": "required",
+    "externalTrustRecords": "independently verified",
+    "legalRegulatoryDecisions": "20/20 signed before commercial release"
+  },
+  "truthBoundary": "A89 proves only the declared local account/auth/tenant/privacy and Trust Center intake contracts. It does not prove real OAuth, production proxy semantics, two-tenant RLS, account-takeover resistance, cross-device revocation, DSAR execution, external finding acceptance, legal approval, LIVE, sale readiness or world-class status.",
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "worldClassProven": false,
+  "parentDescendantManifestPath": "config/pass36/a88r1-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a89-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass36/a89-current-root-descendant-manifest.json",
+    "config/pass35/a57-source-manifest.json",
+    "_velmere/PASS35_SOURCE_ONLY_MANIFEST.json"
+  ]
+}

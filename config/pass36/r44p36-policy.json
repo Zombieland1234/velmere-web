@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p36.policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P36_ACTION_REQUIRED_FULL_CURRENT_BYTE_RELEASE_PSYCHOLOGY30_DYNAMIC_REBASELINE_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "testCycle": {
+    "position": 3,
+    "length": 3,
+    "label": "3/3",
+    "fullCurrentByteQaRequired": true,
+    "nextCyclePosition": 0
+  },
+  "truthBoundary": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false,
+    "exactWindowsCredit": false,
+    "realCustomerParticipants": 0,
+    "customerProofCredit": false
+  },
+  "canonicalProducts": {
+    "tieredFamilies": [
+      "audit",
+      "pdf",
+      "browser"
+    ],
+    "tiers": [
+      "basic",
+      "pro",
+      "advanced"
+    ],
+    "standalone": [
+      "shield",
+      "shield-pro",
+      "shield-map",
+      "real-markets",
+      "market-impact",
+      "whale-watch",
+      "angel",
+      "risk-indicator"
+    ],
+    "rowCount": 17,
+    "forbiddenStandaloneTiering": [
+      "market-impact-basic",
+      "market-impact-pro",
+      "market-impact-advanced",
+      "whale-watch-basic",
+      "whale-watch-pro",
+      "whale-watch-advanced",
+      "angel-basic",
+      "angel-pro",
+      "angel-advanced",
+      "risk-basic",
+      "risk-pro",
+      "risk-advanced"
+    ]
+  },
+  "fullQaRequired": {
+    "eslint": true,
+    "typescriptPrebuild": true,
+    "sourceAudit": true,
+    "webpack": true,
+    "turbopack": true,
+    "typescriptPostbuild": true,
+    "smokeWebpack": true,
+    "smokeTurbopack": true,
+    "browser57": true,
+    "screenshots29": true,
+    "popupTabs4": true,
+    "browserEvidence584": true,
+    "pdf150": true,
+    "psychology30": true,
+    "dynamicScorecard17": true,
+    "exactWindows": true
+  },
+  "scoring": {
+    "dimensions": [
+      "technology",
+      "securityPrivacy",
+      "dataProvenance",
+      "accuracySemanticTruth",
+      "uxPsychology",
+      "legalCustomerClaims",
+      "operations",
+      "customerProof"
+    ],
+    "copyPreviousScoreForbidden": true,
+    "unrelatedWorkCannotMoveProduct": true,
+    "syntheticCannotIncreaseCustomerProof": true,
+    "customerProofZeroCapsWorldClassAt": 49.0,
+    "newGateMayLowerScore": true
+  }
+}

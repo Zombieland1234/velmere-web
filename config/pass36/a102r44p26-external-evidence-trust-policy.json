@@ -1,0 +1,25 @@
+{
+  "allowEmbeddedPublicKeyAuthority": false,
+  "keyAdmission": {
+    "requiresIndependentOperator": true,
+    "requiresOutOfBandApproval": true,
+    "requiresRevocationStatus": true,
+    "requiresSpkiSha256": true,
+    "requiresValidFromAndExpiresAt": true,
+    "sourceOnlyMayNotContainPrivateKey": true
+  },
+  "productionTrustedKeys": [],
+  "requiredAlgorithm": "Ed25519",
+  "revisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p26.external-evidence-trust-policy.v1",
+  "truthBoundary": {
+    "liveCredit": false,
+    "rawArtifactVerificationRequired": true,
+    "saleCredit": false,
+    "semanticVerificationRequired": true,
+    "stagingCredit": false,
+    "syntheticFixtureGrantsExternalCredit": false,
+    "validSignatureAloneGrantsCredit": false
+  },
+  "unknownKeyFailClosed": true
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "velmere.pass36.a65.external-command-trust-boundary.v1",
+  "revisionId": "VELMERE_PASS36_A65R0_EXTERNAL_COMMAND_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+  "scope": [
+    "commercial cohort external signer command",
+    "commercial cohort transparency publisher command",
+    "shared external command execution boundary"
+  ],
+  "requirements": {
+    "absoluteExecutablePath": true,
+    "executableRegularFile": true,
+    "executableSymlinkForbidden": true,
+    "executableRealpathExact": true,
+    "executableSha256Required": true,
+    "groupOrWorldWritableForbiddenOnPosix": true,
+    "executableBitRequiredOnPosix": true,
+    "argumentCountMaximum": 64,
+    "argumentByteMaximum": 4096,
+    "argumentDigestRequired": true,
+    "interpreterEntrypointFileDigestRequired": true,
+    "boundFileSymlinkForbidden": true,
+    "sensitiveEnvironmentForbidden": true,
+    "dangerousLoaderEnvironmentForbidden": true,
+    "pathEnvironmentNotInherited": true,
+    "isolatedWorkingDirectory": true,
+    "shell": false,
+    "timeoutMaximumMs": 120000,
+    "inputMaximumBytes": 2097152,
+    "outputMaximumBytes": 4194304,
+    "rawStderrInErrors": false,
+    "temporaryDirectoryCleanup": true
+  },
+  "protectedClients": [
+    "lib/worldclass/commercial-cohort-external-key-custody.ts",
+    "lib/worldclass/commercial-cohort-transparency-publisher-client.ts"
+  ],
+  "truthBoundary": {
+    "fixtureExecutionProvesBoundaryBehaviorOnly": true,
+    "productionSignerExecuted": false,
+    "productionPublisherExecuted": false,
+    "externalKeyCustodyProven": false,
+    "appendOnlyPublicationProven": false,
+    "saleEnabled": false,
+    "liveProven": false
+  }
+}

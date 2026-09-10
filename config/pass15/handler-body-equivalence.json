@@ -1,0 +1,1617 @@
+{
+  "schemaVersion": "velmere.pass15.handler-body-equivalence.v1",
+  "generatedAt": "2026-07-20T06:44:39.842776+00:00",
+  "baselineZip": "VELMERE_PASS14_BUILD_GRAPH_DB_CONTROL_SAFE_SOURCE.zip",
+  "baselineZipSha256": "b13677badddee2902cddd7aeb9c0e0f94e3d3ebdab7d6f70f4cacde7a6257cb3",
+  "truthBoundary": "Compares PASS15 handler bodies to PASS14 route bodies after only route-config removal, import-path normalization and blank-line normalization. It does not replace runtime E2E.",
+  "summary": {
+    "handlers": 178,
+    "equivalent": 178,
+    "failed": 0
+  },
+  "failures": [],
+  "rows": [
+    {
+      "original": "app/api/market-integrity/access/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/access.ts",
+      "ok": true,
+      "expectedSha256": "dc8b7019312d49380c1ab07fd1cdc51ec93a360081b53f4bc1ba10423a6c4c8d",
+      "actualSha256": "dc8b7019312d49380c1ab07fd1cdc51ec93a360081b53f4bc1ba10423a6c4c8d",
+      "expectedBytes": 1867,
+      "actualBytes": 1867
+    },
+    {
+      "original": "app/api/market-integrity/advanced-click-runtime/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/advanced-click-runtime.ts",
+      "ok": true,
+      "expectedSha256": "959efbc805125e2a7a2d5609b293acd37adcf0b459614301688ed16176bc40c4",
+      "actualSha256": "959efbc805125e2a7a2d5609b293acd37adcf0b459614301688ed16176bc40c4",
+      "expectedBytes": 5706,
+      "actualBytes": 5706
+    },
+    {
+      "original": "app/api/market-integrity/advanced-cta-entitlement-contract/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/advanced-cta-entitlement-contract.ts",
+      "ok": true,
+      "expectedSha256": "18a39d34f9f547e35e9575a0f3537381205ad6d2de64633fa05381d211b4d1ce",
+      "actualSha256": "18a39d34f9f547e35e9575a0f3537381205ad6d2de64633fa05381d211b4d1ce",
+      "expectedBytes": 4573,
+      "actualBytes": 4573
+    },
+    {
+      "original": "app/api/market-integrity/advanced-review-state/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/advanced-review-state.ts",
+      "ok": true,
+      "expectedSha256": "ae56f32cdddb4f9431445dea01f8f91c42f35a7bbee640f85bd7d10438b0871c",
+      "actualSha256": "ae56f32cdddb4f9431445dea01f8f91c42f35a7bbee640f85bd7d10438b0871c",
+      "expectedBytes": 3283,
+      "actualBytes": 3283
+    },
+    {
+      "original": "app/api/market-integrity/advanced-value-audit/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/advanced-value-audit.ts",
+      "ok": true,
+      "expectedSha256": "00069c4011ae230494c0dd6b48f5dabd8ec7c4777c7f2ad4f421b92f220d5381",
+      "actualSha256": "00069c4011ae230494c0dd6b48f5dabd8ec7c4777c7f2ad4f421b92f220d5381",
+      "expectedBytes": 5503,
+      "actualBytes": 5503
+    },
+    {
+      "original": "app/api/market-integrity/ai-human-copy/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/ai-human-copy.ts",
+      "ok": true,
+      "expectedSha256": "d26debc02d34fd2cb5fc24b267fb0837885b808c795c856d777f045378d7f961",
+      "actualSha256": "d26debc02d34fd2cb5fc24b267fb0837885b808c795c856d777f045378d7f961",
+      "expectedBytes": 788,
+      "actualBytes": 788
+    },
+    {
+      "original": "app/api/market-integrity/alerts/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/alerts.ts",
+      "ok": true,
+      "expectedSha256": "c3d7d009e36b0f580c5eb58358bdd422e0138eaa7c0612aa7837a2b0c44647cc",
+      "actualSha256": "c3d7d009e36b0f580c5eb58358bdd422e0138eaa7c0612aa7837a2b0c44647cc",
+      "expectedBytes": 1020,
+      "actualBytes": 1020
+    },
+    {
+      "original": "app/api/market-integrity/analyze/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/analyze.ts",
+      "ok": true,
+      "expectedSha256": "b5134f629a3c8101c861d428d7b2263f3c2a910b8d7c815998f45319695d54e3",
+      "actualSha256": "b5134f629a3c8101c861d428d7b2263f3c2a910b8d7c815998f45319695d54e3",
+      "expectedBytes": 9170,
+      "actualBytes": 9170
+    },
+    {
+      "original": "app/api/market-integrity/angel/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/angel.ts",
+      "ok": true,
+      "expectedSha256": "2385199ac6039648b8fcad5adeea69a73462c453d5766d5ae561efd3a10e165a",
+      "actualSha256": "2385199ac6039648b8fcad5adeea69a73462c453d5766d5ae561efd3a10e165a",
+      "expectedBytes": 13750,
+      "actualBytes": 13750
+    },
+    {
+      "original": "app/api/market-integrity/architecture-guard/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/architecture-guard.ts",
+      "ok": true,
+      "expectedSha256": "749f22f4b4b87d5d22f9959e6d40a936b092cab9e96a8a31a779e8c03d0ed6ca",
+      "actualSha256": "749f22f4b4b87d5d22f9959e6d40a936b092cab9e96a8a31a779e8c03d0ed6ca",
+      "expectedBytes": 391,
+      "actualBytes": 391
+    },
+    {
+      "original": "app/api/market-integrity/asset-logo/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/asset-logo.ts",
+      "ok": true,
+      "expectedSha256": "877b490d5b137211a1f06f3c2e969413d987f9cfc3d268a991d9269b18c37f03",
+      "actualSha256": "877b490d5b137211a1f06f3c2e969413d987f9cfc3d268a991d9269b18c37f03",
+      "expectedBytes": 5696,
+      "actualBytes": 5696
+    },
+    {
+      "original": "app/api/market-integrity/assistant/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/assistant.ts",
+      "ok": true,
+      "expectedSha256": "13b83587a3d3284506eccda2c42aa9e283878ba53a991956bc37345131ec75c6",
+      "actualSha256": "13b83587a3d3284506eccda2c42aa9e283878ba53a991956bc37345131ec75c6",
+      "expectedBytes": 3460,
+      "actualBytes": 3460
+    },
+    {
+      "original": "app/api/market-integrity/brain/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/brain.ts",
+      "ok": true,
+      "expectedSha256": "4f9047ee298d9173829e3786a57e623f65e04ec73dffcff0a04da25b90c07fe3",
+      "actualSha256": "4f9047ee298d9173829e3786a57e623f65e04ec73dffcff0a04da25b90c07fe3",
+      "expectedBytes": 6538,
+      "actualBytes": 6538
+    },
+    {
+      "original": "app/api/market-integrity/brand-icon/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/brand-icon.ts",
+      "ok": true,
+      "expectedSha256": "dc920776db762e173cf59ad21e44fd0ccc821d8f7eb589aa17bb3725d6ce1ffa",
+      "actualSha256": "dc920776db762e173cf59ad21e44fd0ccc821d8f7eb589aa17bb3725d6ce1ffa",
+      "expectedBytes": 3243,
+      "actualBytes": 3243
+    },
+    {
+      "original": "app/api/market-integrity/chart/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/chart.ts",
+      "ok": true,
+      "expectedSha256": "14448dc269796890dc36aa6148a2196a7b7d8a60eb6b32cede6343d4f7f095d8",
+      "actualSha256": "14448dc269796890dc36aa6148a2196a7b7d8a60eb6b32cede6343d4f7f095d8",
+      "expectedBytes": 16011,
+      "actualBytes": 16011
+    },
+    {
+      "original": "app/api/market-integrity/chart-overlay/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/chart-overlay.ts",
+      "ok": true,
+      "expectedSha256": "cf6080ec27fbf209fd40106ce4150eeab1400a620a648be6d23acdab441ca98a",
+      "actualSha256": "cf6080ec27fbf209fd40106ce4150eeab1400a620a648be6d23acdab441ca98a",
+      "expectedBytes": 10271,
+      "actualBytes": 10271
+    },
+    {
+      "original": "app/api/market-integrity/chart-regime/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/chart-regime.ts",
+      "ok": true,
+      "expectedSha256": "484b8f5676e82a7354a5cc7e8260a4798b190477d3b9328331862faef75f9df5",
+      "actualSha256": "484b8f5676e82a7354a5cc7e8260a4798b190477d3b9328331862faef75f9df5",
+      "expectedBytes": 2759,
+      "actualBytes": 2759
+    },
+    {
+      "original": "app/api/market-integrity/chat/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/chat.ts",
+      "ok": true,
+      "expectedSha256": "469b7062372447b9e42ed61205018310d69c02490928cd4d52e4f2ffdd0fde7b",
+      "actualSha256": "469b7062372447b9e42ed61205018310d69c02490928cd4d52e4f2ffdd0fde7b",
+      "expectedBytes": 6023,
+      "actualBytes": 6023
+    },
+    {
+      "original": "app/api/market-integrity/claim-expiry-renewal/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/claim-expiry-renewal.ts",
+      "ok": true,
+      "expectedSha256": "14191052a4d490a40bd7ba0390cc93f2455a5163310ee2c13f7c04f2c7aec8dc",
+      "actualSha256": "14191052a4d490a40bd7ba0390cc93f2455a5163310ee2c13f7c04f2c7aec8dc",
+      "expectedBytes": 1009,
+      "actualBytes": 1009
+    },
+    {
+      "original": "app/api/market-integrity/consensus/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/consensus.ts",
+      "ok": true,
+      "expectedSha256": "d11369b8ae00cd62939b409b40a1c5a480c6eca93d60d0ade580d96c4b423faf",
+      "actualSha256": "d11369b8ae00cd62939b409b40a1c5a480c6eca93d60d0ade580d96c4b423faf",
+      "expectedBytes": 4404,
+      "actualBytes": 4404
+    },
+    {
+      "original": "app/api/market-integrity/contract-lens/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/contract-lens.ts",
+      "ok": true,
+      "expectedSha256": "c56927c1ee12188f3cda64ae89a8982923ea369bf71b84eb9a45cc8f84b10f89",
+      "actualSha256": "c56927c1ee12188f3cda64ae89a8982923ea369bf71b84eb9a45cc8f84b10f89",
+      "expectedBytes": 948,
+      "actualBytes": 948
+    },
+    {
+      "original": "app/api/market-integrity/cron/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/cron.ts",
+      "ok": true,
+      "expectedSha256": "0b282b4eb420da39c0dc60440f63d11e1ab1b78557ea98f5fef983406caa56bd",
+      "actualSha256": "0b282b4eb420da39c0dc60440f63d11e1ab1b78557ea98f5fef983406caa56bd",
+      "expectedBytes": 7205,
+      "actualBytes": 7205
+    },
+    {
+      "original": "app/api/market-integrity/cross-asset/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/cross-asset.ts",
+      "ok": true,
+      "expectedSha256": "fbf5d089f8de6e2cbe64f5d6d37524f1ccfdfb189e6921d06be69237005f045b",
+      "actualSha256": "fbf5d089f8de6e2cbe64f5d6d37524f1ccfdfb189e6921d06be69237005f045b",
+      "expectedBytes": 2825,
+      "actualBytes": 2825
+    },
+    {
+      "original": "app/api/market-integrity/customer-export-download/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/customer-export-download.ts",
+      "ok": true,
+      "expectedSha256": "f10c2cf21151d09fe52a566292029cf251b8d9733ae4411f5f592857a957bf07",
+      "actualSha256": "f10c2cf21151d09fe52a566292029cf251b8d9733ae4411f5f592857a957bf07",
+      "expectedBytes": 29661,
+      "actualBytes": 29661
+    },
+    {
+      "original": "app/api/market-integrity/data-provenance/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/data-provenance.ts",
+      "ok": true,
+      "expectedSha256": "c53e8dcd02f87414180ae81d186973aa33c60d95fc9ef49996a3f3e2735ef3e5",
+      "actualSha256": "c53e8dcd02f87414180ae81d186973aa33c60d95fc9ef49996a3f3e2735ef3e5",
+      "expectedBytes": 3893,
+      "actualBytes": 3893
+    },
+    {
+      "original": "app/api/market-integrity/defillama/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/defillama.ts",
+      "ok": true,
+      "expectedSha256": "3c794411ae940cf0a47510ab595bd1f5dd27bd6ff27377233aac4b001f4c92f5",
+      "actualSha256": "3c794411ae940cf0a47510ab595bd1f5dd27bd6ff27377233aac4b001f4c92f5",
+      "expectedBytes": 1060,
+      "actualBytes": 1060
+    },
+    {
+      "original": "app/api/market-integrity/dependency-reality-build-input/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/dependency-reality-build-input.ts",
+      "ok": true,
+      "expectedSha256": "181b740ee02e2856953df1ff7c81f37db73577067be4d279f799f574f8a0d92f",
+      "actualSha256": "181b740ee02e2856953df1ff7c81f37db73577067be4d279f799f574f8a0d92f",
+      "expectedBytes": 651,
+      "actualBytes": 651
+    },
+    {
+      "original": "app/api/market-integrity/entitlement-artifact-delivery-ledger/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/entitlement-artifact-delivery-ledger.ts",
+      "ok": true,
+      "expectedSha256": "75c00748ce778b2bc921c05292375ea45f186f83e2d2bd6a6f48efdf40e70beb",
+      "actualSha256": "75c00748ce778b2bc921c05292375ea45f186f83e2d2bd6a6f48efdf40e70beb",
+      "expectedBytes": 6977,
+      "actualBytes": 6977
+    },
+    {
+      "original": "app/api/market-integrity/evidence-export/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/evidence-export.ts",
+      "ok": true,
+      "expectedSha256": "4111fa7afa18f65f9b61fd181f3dede639a7329dec2e78bdc3de75c8b35e7e19",
+      "actualSha256": "4111fa7afa18f65f9b61fd181f3dede639a7329dec2e78bdc3de75c8b35e7e19",
+      "expectedBytes": 3230,
+      "actualBytes": 3230
+    },
+    {
+      "original": "app/api/market-integrity/evidence-workflow/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/evidence-workflow.ts",
+      "ok": true,
+      "expectedSha256": "61195d0e26cedaa13782b9352f50c538ae16eb76883e7c5f3b5d386fc75e4161",
+      "actualSha256": "61195d0e26cedaa13782b9352f50c538ae16eb76883e7c5f3b5d386fc75e4161",
+      "expectedBytes": 2050,
+      "actualBytes": 2050
+    },
+    {
+      "original": "app/api/market-integrity/exchange-health/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/exchange-health.ts",
+      "ok": true,
+      "expectedSha256": "4a4fcc2b274531ff1df679633bc48b522ca0d1f94b76ef1fd94380d940e212bd",
+      "actualSha256": "4a4fcc2b274531ff1df679633bc48b522ca0d1f94b76ef1fd94380d940e212bd",
+      "expectedBytes": 621,
+      "actualBytes": 621
+    },
+    {
+      "original": "app/api/market-integrity/freshness-drift-sentinel/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/freshness-drift-sentinel.ts",
+      "ok": true,
+      "expectedSha256": "043de431123efcfc48b098f38f6ed72d59cde523e256d1c0fb6cfc4555f507a8",
+      "actualSha256": "043de431123efcfc48b098f38f6ed72d59cde523e256d1c0fb6cfc4555f507a8",
+      "expectedBytes": 2999,
+      "actualBytes": 2999
+    },
+    {
+      "original": "app/api/market-integrity/geckoterminal/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/geckoterminal.ts",
+      "ok": true,
+      "expectedSha256": "28e727fc8743bf6c00e177bc0e4128ed1ff0c189f03231f81aa90ee2bdd73dcc",
+      "actualSha256": "28e727fc8743bf6c00e177bc0e4128ed1ff0c189f03231f81aa90ee2bdd73dcc",
+      "expectedBytes": 2422,
+      "actualBytes": 2422
+    },
+    {
+      "original": "app/api/market-integrity/global-risk-map/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/global-risk-map.ts",
+      "ok": true,
+      "expectedSha256": "ee8fedc3ce23153abf6f668f7ba5baec3ffcd047fc4caf71d19afb4e54ebf646",
+      "actualSha256": "ee8fedc3ce23153abf6f668f7ba5baec3ffcd047fc4caf71d19afb4e54ebf646",
+      "expectedBytes": 387,
+      "actualBytes": 387
+    },
+    {
+      "original": "app/api/market-integrity/historical-backfill/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/historical-backfill.ts",
+      "ok": true,
+      "expectedSha256": "84cfa2be8b1f6867b269a441d3e52b7c759c61780245120641b28f4f1b82706d",
+      "actualSha256": "84cfa2be8b1f6867b269a441d3e52b7c759c61780245120641b28f4f1b82706d",
+      "expectedBytes": 4464,
+      "actualBytes": 4464
+    },
+    {
+      "original": "app/api/market-integrity/historical-range-window/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/historical-range-window.ts",
+      "ok": true,
+      "expectedSha256": "3bb0aefc4e820035ef7fbcfab18d48263c415f09a1f9b955c4142f978edda427",
+      "actualSha256": "3bb0aefc4e820035ef7fbcfab18d48263c415f09a1f9b955c4142f978edda427",
+      "expectedBytes": 4192,
+      "actualBytes": 4192
+    },
+    {
+      "original": "app/api/market-integrity/history/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/history.ts",
+      "ok": true,
+      "expectedSha256": "03159cbcc2bbb557ee889a4cf6b111a193ef67b5cb348b83e49f3030ba0532c3",
+      "actualSha256": "03159cbcc2bbb557ee889a4cf6b111a193ef67b5cb348b83e49f3030ba0532c3",
+      "expectedBytes": 1514,
+      "actualBytes": 1514
+    },
+    {
+      "original": "app/api/market-integrity/holders/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/holders.ts",
+      "ok": true,
+      "expectedSha256": "d162e0700cc47149d232a2a16514e440abef9426f4c3d0fa8fe5ca1c7fb9c616",
+      "actualSha256": "d162e0700cc47149d232a2a16514e440abef9426f4c3d0fa8fe5ca1c7fb9c616",
+      "expectedBytes": 1526,
+      "actualBytes": 1526
+    },
+    {
+      "original": "app/api/market-integrity/icon/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/icon.ts",
+      "ok": true,
+      "expectedSha256": "ea5534a8d3a57e4bf24f684842d60cc84b5ca4da8d955c3becd69f183c2d8cfd",
+      "actualSha256": "ea5534a8d3a57e4bf24f684842d60cc84b5ca4da8d955c3becd69f183c2d8cfd",
+      "expectedBytes": 3846,
+      "actualBytes": 3846
+    },
+    {
+      "original": "app/api/market-integrity/institutional-router/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/institutional-router.ts",
+      "ok": true,
+      "expectedSha256": "d495a5465b6d8c51c02a8b2991ec3036afff6a291ac5b82cd89d11a23511c9bf",
+      "actualSha256": "d495a5465b6d8c51c02a8b2991ec3036afff6a291ac5b82cd89d11a23511c9bf",
+      "expectedBytes": 3062,
+      "actualBytes": 3062
+    },
+    {
+      "original": "app/api/market-integrity/interaction-stability/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/interaction-stability.ts",
+      "ok": true,
+      "expectedSha256": "a8866c7a84e250040c723ca54a208a69f66f484886d2f9b6e5d443962d11d38d",
+      "actualSha256": "a8866c7a84e250040c723ca54a208a69f66f484886d2f9b6e5d443962d11d38d",
+      "expectedBytes": 2227,
+      "actualBytes": 2227
+    },
+    {
+      "original": "app/api/market-integrity/investigator/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/investigator.ts",
+      "ok": true,
+      "expectedSha256": "5943fc9645884f6b50ad6212175837a3476e460f1cdd9b25281e225522aa365c",
+      "actualSha256": "5943fc9645884f6b50ad6212175837a3476e460f1cdd9b25281e225522aa365c",
+      "expectedBytes": 3365,
+      "actualBytes": 3365
+    },
+    {
+      "original": "app/api/market-integrity/klines/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/klines.ts",
+      "ok": true,
+      "expectedSha256": "cf5de6df2bd0d6c9ce52d352ebdde643166d6721b34cc58d46571a589046f91e",
+      "actualSha256": "cf5de6df2bd0d6c9ce52d352ebdde643166d6721b34cc58d46571a589046f91e",
+      "expectedBytes": 160,
+      "actualBytes": 160
+    },
+    {
+      "original": "app/api/market-integrity/launch-bridge/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/launch-bridge.ts",
+      "ok": true,
+      "expectedSha256": "80340aec13ec19f70023214ff7a5e4f067a536d17de40a6b780efc7892fa68b0",
+      "actualSha256": "80340aec13ec19f70023214ff7a5e4f067a536d17de40a6b780efc7892fa68b0",
+      "expectedBytes": 2066,
+      "actualBytes": 2066
+    },
+    {
+      "original": "app/api/market-integrity/liquidation-replay-store/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/liquidation-replay-store.ts",
+      "ok": true,
+      "expectedSha256": "29bc20e20098124ae9cc5b8ca2023e2228505f4552aa003e05f37b950e188204",
+      "actualSha256": "29bc20e20098124ae9cc5b8ca2023e2228505f4552aa003e05f37b950e188204",
+      "expectedBytes": 10267,
+      "actualBytes": 10267
+    },
+    {
+      "original": "app/api/market-integrity/liquidation-snapshot-ledger/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/liquidation-snapshot-ledger.ts",
+      "ok": true,
+      "expectedSha256": "9ab094baece984766358624147e6857a5133f2971d99a7d47042061c1e38f375",
+      "actualSha256": "9ab094baece984766358624147e6857a5133f2971d99a7d47042061c1e38f375",
+      "expectedBytes": 8903,
+      "actualBytes": 8903
+    },
+    {
+      "original": "app/api/market-integrity/liquidity-intelligence/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/liquidity-intelligence.ts",
+      "ok": true,
+      "expectedSha256": "de25b05b3a123738f3eb3edad5f23cf91b08cd2e3cb58e0cc550f820cd5975f3",
+      "actualSha256": "de25b05b3a123738f3eb3edad5f23cf91b08cd2e3cb58e0cc550f820cd5975f3",
+      "expectedBytes": 2540,
+      "actualBytes": 2540
+    },
+    {
+      "original": "app/api/market-integrity/macro-chart-integrity/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/macro-chart-integrity.ts",
+      "ok": true,
+      "expectedSha256": "08acf3bd87aed2b85f6967781842e3a61070d489a57a77720b75eca88f546810",
+      "actualSha256": "08acf3bd87aed2b85f6967781842e3a61070d489a57a77720b75eca88f546810",
+      "expectedBytes": 3908,
+      "actualBytes": 3908
+    },
+    {
+      "original": "app/api/market-integrity/market-intelligence/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "ok": true,
+      "expectedSha256": "ffd7fe77b76a140f64fb6a0d8e1b96a231d6bcc009b595e8798672316703eda5",
+      "actualSha256": "ffd7fe77b76a140f64fb6a0d8e1b96a231d6bcc009b595e8798672316703eda5",
+      "expectedBytes": 38809,
+      "actualBytes": 38809
+    },
+    {
+      "original": "app/api/market-integrity/market-source-cadence/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/market-source-cadence.ts",
+      "ok": true,
+      "expectedSha256": "b7c5727d18870b4eca10ab6431fb36fee444435b4e34a55530fe6ecb1707ed3d",
+      "actualSha256": "b7c5727d18870b4eca10ab6431fb36fee444435b4e34a55530fe6ecb1707ed3d",
+      "expectedBytes": 606,
+      "actualBytes": 606
+    },
+    {
+      "original": "app/api/market-integrity/markets/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/markets.ts",
+      "ok": true,
+      "expectedSha256": "a6fc115c980a252026c0e768ea6ee7069c70a8f5cb2eb3d4f8845fe49557f2bd",
+      "actualSha256": "a6fc115c980a252026c0e768ea6ee7069c70a8f5cb2eb3d4f8845fe49557f2bd",
+      "expectedBytes": 15094,
+      "actualBytes": 15094
+    },
+    {
+      "original": "app/api/market-integrity/observability/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/observability.ts",
+      "ok": true,
+      "expectedSha256": "12fa51c2b50b3f3e7cae755183a9cedb31af8d257cee98fc08a15a0adb0182b9",
+      "actualSha256": "12fa51c2b50b3f3e7cae755183a9cedb31af8d257cee98fc08a15a0adb0182b9",
+      "expectedBytes": 3452,
+      "actualBytes": 3452
+    },
+    {
+      "original": "app/api/market-integrity/orchestrator/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/orchestrator.ts",
+      "ok": true,
+      "expectedSha256": "713b9328feb05b8edab074e480e142d645d24bab4586a9cf3ab2fbf5a9509b36",
+      "actualSha256": "713b9328feb05b8edab074e480e142d645d24bab4586a9cf3ab2fbf5a9509b36",
+      "expectedBytes": 1655,
+      "actualBytes": 1655
+    },
+    {
+      "original": "app/api/market-integrity/orderbook/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/orderbook.ts",
+      "ok": true,
+      "expectedSha256": "391d1c967c474add72cb9bb2745ee6d65183ffc4095fefca6e1de1e6b802ef2a",
+      "actualSha256": "391d1c967c474add72cb9bb2745ee6d65183ffc4095fefca6e1de1e6b802ef2a",
+      "expectedBytes": 987,
+      "actualBytes": 987
+    },
+    {
+      "original": "app/api/market-integrity/osint-queue/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/osint-queue.ts",
+      "ok": true,
+      "expectedSha256": "88818e552c15d42e592e845f755d164ad5462a8d8db8edecf7134a3feb7cc2c0",
+      "actualSha256": "88818e552c15d42e592e845f755d164ad5462a8d8db8edecf7134a3feb7cc2c0",
+      "expectedBytes": 705,
+      "actualBytes": 705
+    },
+    {
+      "original": "app/api/market-integrity/performance-guard/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/performance-guard.ts",
+      "ok": true,
+      "expectedSha256": "55923e4e12022d03b4a5c5606971f89191f94cb76146fc70ea9a167523b5739f",
+      "actualSha256": "55923e4e12022d03b4a5c5606971f89191f94cb76146fc70ea9a167523b5739f",
+      "expectedBytes": 1501,
+      "actualBytes": 1501
+    },
+    {
+      "original": "app/api/market-integrity/playbook/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/playbook.ts",
+      "ok": true,
+      "expectedSha256": "f8a5160541eb62697cb0e5d2628e7c8d5f3e483523f608fe258b0925e0fa7afc",
+      "actualSha256": "f8a5160541eb62697cb0e5d2628e7c8d5f3e483523f608fe258b0925e0fa7afc",
+      "expectedBytes": 1891,
+      "actualBytes": 1891
+    },
+    {
+      "original": "app/api/market-integrity/premium-evidence-bridge/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/premium-evidence-bridge.ts",
+      "ok": true,
+      "expectedSha256": "c0c0b37f9a15c3f5191c1a0a47dacef26119c1d80740f0df34de6982ffd5d290",
+      "actualSha256": "c0c0b37f9a15c3f5191c1a0a47dacef26119c1d80740f0df34de6982ffd5d290",
+      "expectedBytes": 5076,
+      "actualBytes": 5076
+    },
+    {
+      "original": "app/api/market-integrity/probe/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/probe.ts",
+      "ok": true,
+      "expectedSha256": "96da9ed3d8dc7ade2c8170541f7bb50a1639d2bd5f26798799befed47707f017",
+      "actualSha256": "96da9ed3d8dc7ade2c8170541f7bb50a1639d2bd5f26798799befed47707f017",
+      "expectedBytes": 17999,
+      "actualBytes": 17999
+    },
+    {
+      "original": "app/api/market-integrity/provider-closeout-runtime/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/provider-closeout-runtime.ts",
+      "ok": true,
+      "expectedSha256": "38316a835ec19c11b23bb68fc499bc9dd1994f3f8deebbda400e67edb4241d88",
+      "actualSha256": "38316a835ec19c11b23bb68fc499bc9dd1994f3f8deebbda400e67edb4241d88",
+      "expectedBytes": 2942,
+      "actualBytes": 2942
+    },
+    {
+      "original": "app/api/market-integrity/provider-methodology/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/provider-methodology.ts",
+      "ok": true,
+      "expectedSha256": "0413def71349af7eb97120ff5ddaa30c5ea49fdbc88f99fd1717f1b21fe0f35b",
+      "actualSha256": "0413def71349af7eb97120ff5ddaa30c5ea49fdbc88f99fd1717f1b21fe0f35b",
+      "expectedBytes": 3959,
+      "actualBytes": 3959
+    },
+    {
+      "original": "app/api/market-integrity/public-claim-transparency/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/public-claim-transparency.ts",
+      "ok": true,
+      "expectedSha256": "7ffd565818906cd8577f392695a30216a1f98e8af45a8038b462fde9a6128968",
+      "actualSha256": "7ffd565818906cd8577f392695a30216a1f98e8af45a8038b462fde9a6128968",
+      "expectedBytes": 1302,
+      "actualBytes": 1302
+    },
+    {
+      "original": "app/api/market-integrity/public-trust-evidence-decay-renewal-escrow/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/public-trust-evidence-decay-renewal-escrow.ts",
+      "ok": true,
+      "expectedSha256": "48299533198a07b4a975cb4805c6a0d051b4f1d2317553053ba6e6eb50b4708e",
+      "actualSha256": "48299533198a07b4a975cb4805c6a0d051b4f1d2317553053ba6e6eb50b4708e",
+      "expectedBytes": 2353,
+      "actualBytes": 2353
+    },
+    {
+      "original": "app/api/market-integrity/readiness/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/readiness.ts",
+      "ok": true,
+      "expectedSha256": "036b41c7c09074b8d92b8abefc9b6efbb35187148d01d5bef38a8c8b95aa3d10",
+      "actualSha256": "036b41c7c09074b8d92b8abefc9b6efbb35187148d01d5bef38a8c8b95aa3d10",
+      "expectedBytes": 1099,
+      "actualBytes": 1099
+    },
+    {
+      "original": "app/api/market-integrity/real-markets/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/real-markets.ts",
+      "ok": true,
+      "expectedSha256": "bc8b01052e0281fcb6dc79953a992b2f83a209e5db4e11b451843c04f39f0a57",
+      "actualSha256": "bc8b01052e0281fcb6dc79953a992b2f83a209e5db4e11b451843c04f39f0a57",
+      "expectedBytes": 339,
+      "actualBytes": 339
+    },
+    {
+      "original": "app/api/market-integrity/real-markets-sec-companyfacts-hydrator/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/real-markets-sec-companyfacts-hydrator.ts",
+      "ok": true,
+      "expectedSha256": "c1c66cabac9ef57fc5c7915838eea277f4da811a691ca69906d5f80756d45e7d",
+      "actualSha256": "c1c66cabac9ef57fc5c7915838eea277f4da811a691ca69906d5f80756d45e7d",
+      "expectedBytes": 3743,
+      "actualBytes": 3743
+    },
+    {
+      "original": "app/api/market-integrity/report/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/report.ts",
+      "ok": true,
+      "expectedSha256": "3db7da2b01d52c77bd7869c1339a14491e99e37427b169b2e1d4f8671cc4f2be",
+      "actualSha256": "3db7da2b01d52c77bd7869c1339a14491e99e37427b169b2e1d4f8671cc4f2be",
+      "expectedBytes": 40469,
+      "actualBytes": 40469
+    },
+    {
+      "original": "app/api/market-integrity/report-access/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/report-access.ts",
+      "ok": true,
+      "expectedSha256": "339d6e309e55e975d78a65055ae382d8e81130647fc70d1960fabdd984494057",
+      "actualSha256": "339d6e309e55e975d78a65055ae382d8e81130647fc70d1960fabdd984494057",
+      "expectedBytes": 6180,
+      "actualBytes": 6180
+    },
+    {
+      "original": "app/api/market-integrity/report-evidence/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/report-evidence.ts",
+      "ok": true,
+      "expectedSha256": "d1b108e9dbf6ce02f568f093bbbbcc9521185ce6bbbdc40b4e631df1bc4aa8d5",
+      "actualSha256": "d1b108e9dbf6ce02f568f093bbbbcc9521185ce6bbbdc40b4e631df1bc4aa8d5",
+      "expectedBytes": 4854,
+      "actualBytes": 4854
+    },
+    {
+      "original": "app/api/market-integrity/report-pdf/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/report-pdf.ts",
+      "ok": true,
+      "expectedSha256": "6be43d16b2338de5be186f6b5b83ec1b3bc9dba5b76a7e04ab24cda5f9983996",
+      "actualSha256": "6be43d16b2338de5be186f6b5b83ec1b3bc9dba5b76a7e04ab24cda5f9983996",
+      "expectedBytes": 4218,
+      "actualBytes": 4218
+    },
+    {
+      "original": "app/api/market-integrity/review-deck/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/review-deck.ts",
+      "ok": true,
+      "expectedSha256": "2e725a7fa750af129e42b0b37eef074723a49d8eaf4c42cbf24c0552436ecbc0",
+      "actualSha256": "2e725a7fa750af129e42b0b37eef074723a49d8eaf4c42cbf24c0552436ecbc0",
+      "expectedBytes": 2216,
+      "actualBytes": 2216
+    },
+    {
+      "original": "app/api/market-integrity/risk-calibration/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/risk-calibration.ts",
+      "ok": true,
+      "expectedSha256": "6e1af69c2be46badc38d6d541fff9ac0aa8caffc78010d8cf56fbd133fe8235c",
+      "actualSha256": "6e1af69c2be46badc38d6d541fff9ac0aa8caffc78010d8cf56fbd133fe8235c",
+      "expectedBytes": 4545,
+      "actualBytes": 4545
+    },
+    {
+      "original": "app/api/market-integrity/rules/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/rules.ts",
+      "ok": true,
+      "expectedSha256": "53ecd30884687ce64d0cbe2a5fc6df59def34bd661a3c57c7e1844490084898b",
+      "actualSha256": "53ecd30884687ce64d0cbe2a5fc6df59def34bd661a3c57c7e1844490084898b",
+      "expectedBytes": 1924,
+      "actualBytes": 1924
+    },
+    {
+      "original": "app/api/market-integrity/scheduled-revalidation-execution-breach/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/scheduled-revalidation-execution-breach.ts",
+      "ok": true,
+      "expectedSha256": "eb03aaa20828e26a156c2d6392241d2103a26efed93efe5a06591ae9821ebf68",
+      "actualSha256": "eb03aaa20828e26a156c2d6392241d2103a26efed93efe5a06591ae9821ebf68",
+      "expectedBytes": 2576,
+      "actualBytes": 2576
+    },
+    {
+      "original": "app/api/market-integrity/search/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/search.ts",
+      "ok": true,
+      "expectedSha256": "b11ab8a77bce0542dc8eb378e0f6b70a8d1cd2ba20b29e14df43c79df2c0fdde",
+      "actualSha256": "b11ab8a77bce0542dc8eb378e0f6b70a8d1cd2ba20b29e14df43c79df2c0fdde",
+      "expectedBytes": 1375,
+      "actualBytes": 1375
+    },
+    {
+      "original": "app/api/market-integrity/second-source-divergence/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/second-source-divergence.ts",
+      "ok": true,
+      "expectedSha256": "5587be6419be3332784cb6fc9adeb51cd633c8f073bac462457ef8182ebe78df",
+      "actualSha256": "5587be6419be3332784cb6fc9adeb51cd633c8f073bac462457ef8182ebe78df",
+      "expectedBytes": 414,
+      "actualBytes": 414
+    },
+    {
+      "original": "app/api/market-integrity/sentinel/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/sentinel.ts",
+      "ok": true,
+      "expectedSha256": "21b9aa0f5048c21424ebb6d961152f47e39065dc73e96d6bf9415602aac75862",
+      "actualSha256": "21b9aa0f5048c21424ebb6d961152f47e39065dc73e96d6bf9415602aac75862",
+      "expectedBytes": 2767,
+      "actualBytes": 2767
+    },
+    {
+      "original": "app/api/market-integrity/soc/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/soc.ts",
+      "ok": true,
+      "expectedSha256": "fe40247ab2bfd6a0196eccad96267278541f9ce7693af25db7a126d70a3f01c4",
+      "actualSha256": "fe40247ab2bfd6a0196eccad96267278541f9ce7693af25db7a126d70a3f01c4",
+      "expectedBytes": 1731,
+      "actualBytes": 1731
+    },
+    {
+      "original": "app/api/market-integrity/source-readiness/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/source-readiness.ts",
+      "ok": true,
+      "expectedSha256": "1211409a172abce04559e990de3e4bd19085bc32ae8dc2629b94bf4a4b5fcaf3",
+      "actualSha256": "1211409a172abce04559e990de3e4bd19085bc32ae8dc2629b94bf4a4b5fcaf3",
+      "expectedBytes": 791,
+      "actualBytes": 791
+    },
+    {
+      "original": "app/api/market-integrity/source-snapshot/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/source-snapshot.ts",
+      "ok": true,
+      "expectedSha256": "ad898e2b39baf07909c3c500afa226b86f42b73be9ec94e08f450088d949af5d",
+      "actualSha256": "ad898e2b39baf07909c3c500afa226b86f42b73be9ec94e08f450088d949af5d",
+      "expectedBytes": 3054,
+      "actualBytes": 3054
+    },
+    {
+      "original": "app/api/market-integrity/source-snapshots/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/source-snapshots.ts",
+      "ok": true,
+      "expectedSha256": "967744bcc9a47304323602306d0def3778b62a878af4a4c51b0e84f730d3d421",
+      "actualSha256": "967744bcc9a47304323602306d0def3778b62a878af4a4c51b0e84f730d3d421",
+      "expectedBytes": 1485,
+      "actualBytes": 1485
+    },
+    {
+      "original": "app/api/market-integrity/source-sync/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/source-sync.ts",
+      "ok": true,
+      "expectedSha256": "7657c3fcf071c4ad9064932759282d888aa9ac13ff62c4972df933405ebd3581",
+      "actualSha256": "7657c3fcf071c4ad9064932759282d888aa9ac13ff62c4972df933405ebd3581",
+      "expectedBytes": 2639,
+      "actualBytes": 2639
+    },
+    {
+      "original": "app/api/market-integrity/source-trust/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/source-trust.ts",
+      "ok": true,
+      "expectedSha256": "d5f9aaefd8a3878af566482bd7829e3e6448caa18b7d49d0a03fc28383828416",
+      "actualSha256": "d5f9aaefd8a3878af566482bd7829e3e6448caa18b7d49d0a03fc28383828416",
+      "expectedBytes": 2106,
+      "actualBytes": 2106
+    },
+    {
+      "original": "app/api/market-integrity/stress/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/stress.ts",
+      "ok": true,
+      "expectedSha256": "25487272b85642cdbd32b83545bbc85596ec186b8517ca7df98f25f6fe95b0ae",
+      "actualSha256": "25487272b85642cdbd32b83545bbc85596ec186b8517ca7df98f25f6fe95b0ae",
+      "expectedBytes": 1333,
+      "actualBytes": 1333
+    },
+    {
+      "original": "app/api/market-integrity/supply-filing-provenance-lock/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/supply-filing-provenance-lock.ts",
+      "ok": true,
+      "expectedSha256": "a9f86c282fa4bf4b47f8d0061cc2dd999a7742245d394d1c8d9184f1dd7afabe",
+      "actualSha256": "a9f86c282fa4bf4b47f8d0061cc2dd999a7742245d394d1c8d9184f1dd7afabe",
+      "expectedBytes": 3775,
+      "actualBytes": 3775
+    },
+    {
+      "original": "app/api/market-integrity/tier-180-output-matrix/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/tier-180-output-matrix.ts",
+      "ok": true,
+      "expectedSha256": "a058c6621db3a9118434cf05c7a30891a6866b667bba755f376349b48a78da59",
+      "actualSha256": "a058c6621db3a9118434cf05c7a30891a6866b667bba755f376349b48a78da59",
+      "expectedBytes": 4001,
+      "actualBytes": 4001
+    },
+    {
+      "original": "app/api/market-integrity/tier-commercial-value-contract/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/tier-commercial-value-contract.ts",
+      "ok": true,
+      "expectedSha256": "e0688eecdcb2f344bb58eebc3c6b4419427ccb00f1b1dc39961ec366086b1e09",
+      "actualSha256": "e0688eecdcb2f344bb58eebc3c6b4419427ccb00f1b1dc39961ec366086b1e09",
+      "expectedBytes": 3925,
+      "actualBytes": 3925
+    },
+    {
+      "original": "app/api/market-integrity/tier-depth-scenario-parity/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/tier-depth-scenario-parity.ts",
+      "ok": true,
+      "expectedSha256": "6777f21f4eef664cbf9f5f6801ff14d1f67bea52d6e2b09d5ba98c4e8f19ae71",
+      "actualSha256": "6777f21f4eef664cbf9f5f6801ff14d1f67bea52d6e2b09d5ba98c4e8f19ae71",
+      "expectedBytes": 4483,
+      "actualBytes": 4483
+    },
+    {
+      "original": "app/api/market-integrity/tier-proof/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/tier-proof.ts",
+      "ok": true,
+      "expectedSha256": "3bab96102e16058bb99be73a658c279900a6e4da7d4a7256571671f70d1470f1",
+      "actualSha256": "3bab96102e16058bb99be73a658c279900a6e4da7d4a7256571671f70d1470f1",
+      "expectedBytes": 4864,
+      "actualBytes": 4864
+    },
+    {
+      "original": "app/api/market-integrity/ui-proof-strip/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/ui-proof-strip.ts",
+      "ok": true,
+      "expectedSha256": "9dec221c15f16b6fcaab37babc063913b8471071aaeb5d4d9b22355a516b1b98",
+      "actualSha256": "9dec221c15f16b6fcaab37babc063913b8471071aaeb5d4d9b22355a516b1b98",
+      "expectedBytes": 3178,
+      "actualBytes": 3178
+    },
+    {
+      "original": "app/api/market-integrity/usability-guard/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/usability-guard.ts",
+      "ok": true,
+      "expectedSha256": "7053b10f447004fe28cf34fa707bd54154f2aa42815562b2e9aa65fd44bc8514",
+      "actualSha256": "7053b10f447004fe28cf34fa707bd54154f2aa42815562b2e9aa65fd44bc8514",
+      "expectedBytes": 2181,
+      "actualBytes": 2181
+    },
+    {
+      "original": "app/api/market-integrity/venue-health/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/venue-health.ts",
+      "ok": true,
+      "expectedSha256": "3c1c9b30b292ebe8f85ef85a6d4a13776ebe8fcf837e123e9a071f72d4b44d49",
+      "actualSha256": "3c1c9b30b292ebe8f85ef85a6d4a13776ebe8fcf837e123e9a071f72d4b44d49",
+      "expectedBytes": 2593,
+      "actualBytes": 2593
+    },
+    {
+      "original": "app/api/market-integrity/vlm/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/vlm.ts",
+      "ok": true,
+      "expectedSha256": "8115229f77c06c6323be5754b124c0dd052f201beb50ee6e8f5b7a90ef63f8bc",
+      "actualSha256": "8115229f77c06c6323be5754b124c0dd052f201beb50ee6e8f5b7a90ef63f8bc",
+      "expectedBytes": 18424,
+      "actualBytes": 18424
+    },
+    {
+      "original": "app/api/market-integrity/window-reconciliation/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/window-reconciliation.ts",
+      "ok": true,
+      "expectedSha256": "9a9e48e5b3ab91068612ddeea02b84834eced271841a974cdc663045faf2a8f2",
+      "actualSha256": "9a9e48e5b3ab91068612ddeea02b84834eced271841a974cdc663045faf2a8f2",
+      "expectedBytes": 3106,
+      "actualBytes": 3106
+    },
+    {
+      "original": "app/api/market-integrity/workspace/route.ts",
+      "handler": "lib/server/market-integrity-route-modules/workspace.ts",
+      "ok": true,
+      "expectedSha256": "c5179165e454405e44865bd04c96be2fd26e04ed723028c502610ef6b0a356f2",
+      "actualSha256": "c5179165e454405e44865bd04c96be2fd26e04ed723028c502610ef6b0a356f2",
+      "expectedBytes": 2303,
+      "actualBytes": 2303
+    },
+    {
+      "original": "app/api/internal/workers/auth-security-alerts/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/auth-security-alerts.ts",
+      "ok": true,
+      "expectedSha256": "fb696a0d75538fa4d4a316c4cf9f3252c440d3e77551ebceee7b3a2336c7e309",
+      "actualSha256": "fb696a0d75538fa4d4a316c4cf9f3252c440d3e77551ebceee7b3a2336c7e309",
+      "expectedBytes": 1366,
+      "actualBytes": 1366
+    },
+    {
+      "original": "app/api/internal/workers/commerce-fulfilment-outbox/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/commerce-fulfilment-outbox.ts",
+      "ok": true,
+      "expectedSha256": "ae19f53633f7b2c21094640e724bfa7f80a715ec9ca245ad4b038ab16724c2a3",
+      "actualSha256": "ae19f53633f7b2c21094640e724bfa7f80a715ec9ca245ad4b038ab16724c2a3",
+      "expectedBytes": 2886,
+      "actualBytes": 2886
+    },
+    {
+      "original": "app/api/internal/workers/durable-computation-alerts/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/durable-computation-alerts.ts",
+      "ok": true,
+      "expectedSha256": "8fae9fab85ddb8161de403d74aa3495ba632c9521394f79b243fda90eb451826",
+      "actualSha256": "8fae9fab85ddb8161de403d74aa3495ba632c9521394f79b243fda90eb451826",
+      "expectedBytes": 1711,
+      "actualBytes": 1711
+    },
+    {
+      "original": "app/api/internal/workers/durable-computation-operations/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/durable-computation-operations.ts",
+      "ok": true,
+      "expectedSha256": "6721b232d50815b0e59a9c43e393bdfa2d3f7d8bcf666d2501cbd2214561f7da",
+      "actualSha256": "6721b232d50815b0e59a9c43e393bdfa2d3f7d8bcf666d2501cbd2214561f7da",
+      "expectedBytes": 6721,
+      "actualBytes": 6721
+    },
+    {
+      "original": "app/api/internal/workers/durable-computation-promotion/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/durable-computation-promotion.ts",
+      "ok": true,
+      "expectedSha256": "0e9bdad62f383e347e6176f84d7610b4ce7dd802207fc0c86da41b390541cd18",
+      "actualSha256": "0e9bdad62f383e347e6176f84d7610b4ce7dd802207fc0c86da41b390541cd18",
+      "expectedBytes": 9490,
+      "actualBytes": 9490
+    },
+    {
+      "original": "app/api/internal/workers/fulfilment-incident-outbox/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/fulfilment-incident-outbox.ts",
+      "ok": true,
+      "expectedSha256": "36f33c1a3b90d6d2514f1fe90bc37848187587cf21b5a72585e1c0fbe0f6b258",
+      "actualSha256": "36f33c1a3b90d6d2514f1fe90bc37848187587cf21b5a72585e1c0fbe0f6b258",
+      "expectedBytes": 2074,
+      "actualBytes": 2074
+    },
+    {
+      "original": "app/api/internal/workers/fulfilment-provider-sync/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/fulfilment-provider-sync.ts",
+      "ok": true,
+      "expectedSha256": "cc2d894316e00be63abbfa376770cfd6f99f3ffec5749aadb855e45af7b97bca",
+      "actualSha256": "cc2d894316e00be63abbfa376770cfd6f99f3ffec5749aadb855e45af7b97bca",
+      "expectedBytes": 2114,
+      "actualBytes": 2114
+    },
+    {
+      "original": "app/api/internal/workers/stripe-webhook-reconciliation/route.ts",
+      "handler": "lib/server/internal-worker-route-modules/stripe-webhook-reconciliation.ts",
+      "ok": true,
+      "expectedSha256": "85171478147215dd407773218ef26670d7c9b10076b4282a9a18f612037f0ad9",
+      "actualSha256": "85171478147215dd407773218ef26670d7c9b10076b4282a9a18f612037f0ad9",
+      "expectedBytes": 1996,
+      "actualBytes": 1996
+    },
+    {
+      "original": "app/api/security/abuse-shield/route.ts",
+      "handler": "lib/server/security-route-modules/abuse-shield.ts",
+      "ok": true,
+      "expectedSha256": "3f88db418836e9ed11ae39a16cea81edafa8bfa042e7435323a71f9a0cb38c44",
+      "actualSha256": "3f88db418836e9ed11ae39a16cea81edafa8bfa042e7435323a71f9a0cb38c44",
+      "expectedBytes": 3181,
+      "actualBytes": 3181
+    },
+    {
+      "original": "app/api/security/admin-audit/route.ts",
+      "handler": "lib/server/security-route-modules/admin-audit.ts",
+      "ok": true,
+      "expectedSha256": "349890de233d972961cb0187442b67de4550b9a47d203c39967cda6e3f7d84db",
+      "actualSha256": "349890de233d972961cb0187442b67de4550b9a47d203c39967cda6e3f7d84db",
+      "expectedBytes": 996,
+      "actualBytes": 996
+    },
+    {
+      "original": "app/api/security/admin-replay-board/route.ts",
+      "handler": "lib/server/security-route-modules/admin-replay-board.ts",
+      "ok": true,
+      "expectedSha256": "0e3d703d6d581eba7a2bda3358ae0c47a9e584392ca7c6313e2c922dc365e63b",
+      "actualSha256": "0e3d703d6d581eba7a2bda3358ae0c47a9e584392ca7c6313e2c922dc365e63b",
+      "expectedBytes": 1724,
+      "actualBytes": 1724
+    },
+    {
+      "original": "app/api/security/advanced-entitlement-proof/route.ts",
+      "handler": "lib/server/security-route-modules/advanced-entitlement-proof.ts",
+      "ok": true,
+      "expectedSha256": "f0e495eddf17f4a67d6173327d071c2bcedbe42c4a041b1c5c5e94c1b2b61145",
+      "actualSha256": "f0e495eddf17f4a67d6173327d071c2bcedbe42c4a041b1c5c5e94c1b2b61145",
+      "expectedBytes": 3482,
+      "actualBytes": 3482
+    },
+    {
+      "original": "app/api/security/advanced-entitlement-smoke/route.ts",
+      "handler": "lib/server/security-route-modules/advanced-entitlement-smoke.ts",
+      "ok": true,
+      "expectedSha256": "bd389efc2ed98ff3e417cb4a2e8508deb656d9818e48d4ebe35f2034be06840b",
+      "actualSha256": "bd389efc2ed98ff3e417cb4a2e8508deb656d9818e48d4ebe35f2034be06840b",
+      "expectedBytes": 2805,
+      "actualBytes": 2805
+    },
+    {
+      "original": "app/api/security/alerts/route.ts",
+      "handler": "lib/server/security-route-modules/alerts.ts",
+      "ok": true,
+      "expectedSha256": "6c8e21ac46902e6f6229e30e584f5e0fc0e9a80d542baf737ca54909b863b4ab",
+      "actualSha256": "6c8e21ac46902e6f6229e30e584f5e0fc0e9a80d542baf737ca54909b863b4ab",
+      "expectedBytes": 1097,
+      "actualBytes": 1097
+    },
+    {
+      "original": "app/api/security/angel-gemini-health/route.ts",
+      "handler": "lib/server/security-route-modules/angel-gemini-health.ts",
+      "ok": true,
+      "expectedSha256": "4b4fd8f6c20e3a79562aabc5bebfb2bbf7ade77653a97bbbee07d120c0d7ba30",
+      "actualSha256": "4b4fd8f6c20e3a79562aabc5bebfb2bbf7ade77653a97bbbee07d120c0d7ba30",
+      "expectedBytes": 3556,
+      "actualBytes": 3556
+    },
+    {
+      "original": "app/api/security/angel-route-live-binding/route.ts",
+      "handler": "lib/server/security-route-modules/angel-route-live-binding.ts",
+      "ok": true,
+      "expectedSha256": "990b7f0c9e03297e1a98a4c9cad1dda45e6997516d377890f26958553c6958a9",
+      "actualSha256": "990b7f0c9e03297e1a98a4c9cad1dda45e6997516d377890f26958553c6958a9",
+      "expectedBytes": 728,
+      "actualBytes": 728
+    },
+    {
+      "original": "app/api/security/audit-account-delivery-production-lock/route.ts",
+      "handler": "lib/server/security-route-modules/audit-account-delivery-production-lock.ts",
+      "ok": true,
+      "expectedSha256": "17d52f001e4059f38dd15903dfb942e35b4f253dee8193ff633a261b4d0235de",
+      "actualSha256": "17d52f001e4059f38dd15903dfb942e35b4f253dee8193ff633a261b4d0235de",
+      "expectedBytes": 1524,
+      "actualBytes": 1524
+    },
+    {
+      "original": "app/api/security/audit-advanced-manual-review/route.ts",
+      "handler": "lib/server/security-route-modules/audit-advanced-manual-review.ts",
+      "ok": true,
+      "expectedSha256": "bf1eda5e3097c7edb16c5f4713f3917a2cd13252a0d269571797ad0d6fff24ff",
+      "actualSha256": "bf1eda5e3097c7edb16c5f4713f3917a2cd13252a0d269571797ad0d6fff24ff",
+      "expectedBytes": 5129,
+      "actualBytes": 5129
+    },
+    {
+      "original": "app/api/security/audit-advanced-operator-console-merge/route.ts",
+      "handler": "lib/server/security-route-modules/audit-advanced-operator-console-merge.ts",
+      "ok": true,
+      "expectedSha256": "e8e310381cd8f3b9a7fa660f2bcc27a54f40a671239676cb0b50c1b77644114d",
+      "actualSha256": "e8e310381cd8f3b9a7fa660f2bcc27a54f40a671239676cb0b50c1b77644114d",
+      "expectedBytes": 2879,
+      "actualBytes": 2879
+    },
+    {
+      "original": "app/api/security/audit-case-vault-private-delivery-ledger/route.ts",
+      "handler": "lib/server/security-route-modules/audit-case-vault-private-delivery-ledger.ts",
+      "ok": true,
+      "expectedSha256": "e89ea6e993706ab66344fafb52b04df63144e0dbac9b6ddd60bc9e4e31f1baae",
+      "actualSha256": "e89ea6e993706ab66344fafb52b04df63144e0dbac9b6ddd60bc9e4e31f1baae",
+      "expectedBytes": 4001,
+      "actualBytes": 4001
+    },
+    {
+      "original": "app/api/security/audit-claim-ledger/route.ts",
+      "handler": "lib/server/security-route-modules/audit-claim-ledger.ts",
+      "ok": true,
+      "expectedSha256": "4f7bce7cc9647537d456f550b1731779d763957effb4fd6e5f13eeb2ce4fc9fe",
+      "actualSha256": "4f7bce7cc9647537d456f550b1731779d763957effb4fd6e5f13eeb2ce4fc9fe",
+      "expectedBytes": 3134,
+      "actualBytes": 3134
+    },
+    {
+      "original": "app/api/security/audit-contract-source-abi-extraction/route.ts",
+      "handler": "lib/server/security-route-modules/audit-contract-source-abi-extraction.ts",
+      "ok": true,
+      "expectedSha256": "7237c6e05c658a4555dc50c460dccb247d006ccd495b5a953d9ccfeecc7f8272",
+      "actualSha256": "7237c6e05c658a4555dc50c460dccb247d006ccd495b5a953d9ccfeecc7f8272",
+      "expectedBytes": 4457,
+      "actualBytes": 4457
+    },
+    {
+      "original": "app/api/security/audit-customer-safe-delivery-decision/route.ts",
+      "handler": "lib/server/security-route-modules/audit-customer-safe-delivery-decision.ts",
+      "ok": true,
+      "expectedSha256": "4a9dcbc976342d918706f27a0887303148115090e6cbc656482c84829822f99a",
+      "actualSha256": "4a9dcbc976342d918706f27a0887303148115090e6cbc656482c84829822f99a",
+      "expectedBytes": 4240,
+      "actualBytes": 4240
+    },
+    {
+      "original": "app/api/security/audit-holder-liquidity-depth-evidence/route.ts",
+      "handler": "lib/server/security-route-modules/audit-holder-liquidity-depth-evidence.ts",
+      "ok": true,
+      "expectedSha256": "1e4a49c67b769d8f6e76453182a0fcf032a6d396e6a9c33935bd7ffc06595f47",
+      "actualSha256": "1e4a49c67b769d8f6e76453182a0fcf032a6d396e6a9c33935bd7ffc06595f47",
+      "expectedBytes": 4921,
+      "actualBytes": 4921
+    },
+    {
+      "original": "app/api/security/audit-intake/route.ts",
+      "handler": "lib/server/security-route-modules/audit-intake.ts",
+      "ok": true,
+      "expectedSha256": "673acdaec6cf4881bf75ae69addc24e5871feb72c75ce719c9fc76c0de70650c",
+      "actualSha256": "673acdaec6cf4881bf75ae69addc24e5871feb72c75ce719c9fc76c0de70650c",
+      "expectedBytes": 7198,
+      "actualBytes": 7198
+    },
+    {
+      "original": "app/api/security/audit-liquidity-holder-risk/route.ts",
+      "handler": "lib/server/security-route-modules/audit-liquidity-holder-risk.ts",
+      "ok": true,
+      "expectedSha256": "3ed21fe731d8ed05f3ac22f35c691c64d4a66cb700ae13ae8fabdcf13b5c2c7a",
+      "actualSha256": "3ed21fe731d8ed05f3ac22f35c691c64d4a66cb700ae13ae8fabdcf13b5c2c7a",
+      "expectedBytes": 4180,
+      "actualBytes": 4180
+    },
+    {
+      "original": "app/api/security/audit-permission-parser/route.ts",
+      "handler": "lib/server/security-route-modules/audit-permission-parser.ts",
+      "ok": true,
+      "expectedSha256": "9f3b5642cd9bb83b8d412c0a4c615c5710c2a15c5da052bd766020349c2c6552",
+      "actualSha256": "9f3b5642cd9bb83b8d412c0a4c615c5710c2a15c5da052bd766020349c2c6552",
+      "expectedBytes": 3936,
+      "actualBytes": 3936
+    },
+    {
+      "original": "app/api/security/audit-provider-conflict-arbitration-matrix/route.ts",
+      "handler": "lib/server/security-route-modules/audit-provider-conflict-arbitration-matrix.ts",
+      "ok": true,
+      "expectedSha256": "c1f4adba33d20f3b3e7f956630f82fee62dd3ec71104b4e68ad9c728086b121d",
+      "actualSha256": "c1f4adba33d20f3b3e7f956630f82fee62dd3ec71104b4e68ad9c728086b121d",
+      "expectedBytes": 9225,
+      "actualBytes": 9225
+    },
+    {
+      "original": "app/api/security/audit-provider-intelligence/route.ts",
+      "handler": "lib/server/security-route-modules/audit-provider-intelligence.ts",
+      "ok": true,
+      "expectedSha256": "7e08ef6d8d2e2067de46b7be801614e39e5e7ec9dc714e64702ec402ee691abf",
+      "actualSha256": "7e08ef6d8d2e2067de46b7be801614e39e5e7ec9dc714e64702ec402ee691abf",
+      "expectedBytes": 3401,
+      "actualBytes": 3401
+    },
+    {
+      "original": "app/api/security/audit-provider-runtime/route.ts",
+      "handler": "lib/server/security-route-modules/audit-provider-runtime.ts",
+      "ok": true,
+      "expectedSha256": "a899a1cdb692152b8b4859d0694b4ddb46e9560372a47de414d54424dee72b4f",
+      "actualSha256": "a899a1cdb692152b8b4859d0694b4ddb46e9560372a47de414d54424dee72b4f",
+      "expectedBytes": 4312,
+      "actualBytes": 4312
+    },
+    {
+      "original": "app/api/security/audit-public-private-route-lockdown/route.ts",
+      "handler": "lib/server/security-route-modules/audit-public-private-route-lockdown.ts",
+      "ok": true,
+      "expectedSha256": "19dc9fdb0b82f14c684fdd24a8a03c0c9dbd07c4ac007af6c34f95fc3d3285b0",
+      "actualSha256": "19dc9fdb0b82f14c684fdd24a8a03c0c9dbd07c4ac007af6c34f95fc3d3285b0",
+      "expectedBytes": 1703,
+      "actualBytes": 1703
+    },
+    {
+      "original": "app/api/security/audit-real-provider-adapter-hardening/route.ts",
+      "handler": "lib/server/security-route-modules/audit-real-provider-adapter-hardening.ts",
+      "ok": true,
+      "expectedSha256": "d271d36dffbf3732676dd33879dae76e61c57237cf667c39fee5419a667b080c",
+      "actualSha256": "d271d36dffbf3732676dd33879dae76e61c57237cf667c39fee5419a667b080c",
+      "expectedBytes": 3781,
+      "actualBytes": 3781
+    },
+    {
+      "original": "app/api/security/audit-report-assembler/route.ts",
+      "handler": "lib/server/security-route-modules/audit-report-assembler.ts",
+      "ok": true,
+      "expectedSha256": "83573160cd7bb819fd624b6b514d6bad148723f3112d5cf6a948b5b955b3f117",
+      "actualSha256": "83573160cd7bb819fd624b6b514d6bad148723f3112d5cf6a948b5b955b3f117",
+      "expectedBytes": 10302,
+      "actualBytes": 10302
+    },
+    {
+      "original": "app/api/security/audit-risk-formula-evidence-weighting-contract/route.ts",
+      "handler": "lib/server/security-route-modules/audit-risk-formula-evidence-weighting-contract.ts",
+      "ok": true,
+      "expectedSha256": "07c2eaeb78043f96b803a74f83ff4b8b20656c14c1bb0c5276e253e8c6c465ce",
+      "actualSha256": "07c2eaeb78043f96b803a74f83ff4b8b20656c14c1bb0c5276e253e8c6c465ce",
+      "expectedBytes": 5670,
+      "actualBytes": 5670
+    },
+    {
+      "original": "app/api/security/audit-runtime-build-readiness-type-safety-sweep/route.ts",
+      "handler": "lib/server/security-route-modules/audit-runtime-build-readiness-type-safety-sweep.ts",
+      "ok": true,
+      "expectedSha256": "dbee57cb8f08ff3b4270b147d8ccefa69371847e4507b3642f5d230f20dd9833",
+      "actualSha256": "dbee57cb8f08ff3b4270b147d8ccefa69371847e4507b3642f5d230f20dd9833",
+      "expectedBytes": 2777,
+      "actualBytes": 2777
+    },
+    {
+      "original": "app/api/security/audit-runtime-confidence/route.ts",
+      "handler": "lib/server/security-route-modules/audit-runtime-confidence.ts",
+      "ok": true,
+      "expectedSha256": "5169d261c12cdb4f489ea2a5e2a2535ab9d2a5ca927d81704f7455ed6d6aeab1",
+      "actualSha256": "5169d261c12cdb4f489ea2a5e2a2535ab9d2a5ca927d81704f7455ed6d6aeab1",
+      "expectedBytes": 3804,
+      "actualBytes": 3804
+    },
+    {
+      "original": "app/api/security/audit-source-freshness/route.ts",
+      "handler": "lib/server/security-route-modules/audit-source-freshness.ts",
+      "ok": true,
+      "expectedSha256": "afc7439bd88c3a53f9fcd27f35cb0e99f089ef2596f3ca2479c61e21683f62a7",
+      "actualSha256": "afc7439bd88c3a53f9fcd27f35cb0e99f089ef2596f3ca2479c61e21683f62a7",
+      "expectedBytes": 3539,
+      "actualBytes": 3539
+    },
+    {
+      "original": "app/api/security/audit-source-freshness-recheck-orchestrator/route.ts",
+      "handler": "lib/server/security-route-modules/audit-source-freshness-recheck-orchestrator.ts",
+      "ok": true,
+      "expectedSha256": "be6dfbf957b39ea416586071a7611f9f7b8ce05ee18c535fab25f0ec59098112",
+      "actualSha256": "be6dfbf957b39ea416586071a7611f9f7b8ce05ee18c535fab25f0ec59098112",
+      "expectedBytes": 3540,
+      "actualBytes": 3540
+    },
+    {
+      "original": "app/api/security/audit-source-quorum/route.ts",
+      "handler": "lib/server/security-route-modules/audit-source-quorum.ts",
+      "ok": true,
+      "expectedSha256": "dca9d530708aecbbb196ffb65534362af6de66946700e1712ab6aabeb656282e",
+      "actualSha256": "dca9d530708aecbbb196ffb65534362af6de66946700e1712ab6aabeb656282e",
+      "expectedBytes": 3654,
+      "actualBytes": 3654
+    },
+    {
+      "original": "app/api/security/audit-source-spine/route.ts",
+      "handler": "lib/server/security-route-modules/audit-source-spine.ts",
+      "ok": true,
+      "expectedSha256": "59139e004c7bf8d6c51ca842ac1f983cf41fbc147a654f027f725f5757146d35",
+      "actualSha256": "59139e004c7bf8d6c51ca842ac1f983cf41fbc147a654f027f725f5757146d35",
+      "expectedBytes": 1012,
+      "actualBytes": 1012
+    },
+    {
+      "original": "app/api/security/audit-watch/route.ts",
+      "handler": "lib/server/security-route-modules/audit-watch.ts",
+      "ok": true,
+      "expectedSha256": "059365e04c6b58f1993cfe43171768848ababac8f5af52e7feae51039300db1e",
+      "actualSha256": "059365e04c6b58f1993cfe43171768848ababac8f5af52e7feae51039300db1e",
+      "expectedBytes": 422,
+      "actualBytes": 422
+    },
+    {
+      "original": "app/api/security/cart-mail-wallet-microinteraction-sweep/route.ts",
+      "handler": "lib/server/security-route-modules/cart-mail-wallet-microinteraction-sweep.ts",
+      "ok": true,
+      "expectedSha256": "3e15c3dd77257e83e05e2977937fec7b9188d62dbd85a20406372f6f78db912c",
+      "actualSha256": "3e15c3dd77257e83e05e2977937fec7b9188d62dbd85a20406372f6f78db912c",
+      "expectedBytes": 2591,
+      "actualBytes": 2591
+    },
+    {
+      "original": "app/api/security/csp-report/route.ts",
+      "handler": "lib/server/security-route-modules/csp-report.ts",
+      "ok": true,
+      "expectedSha256": "4862ca59d7b46a26048014345fb9b12f631f72da0bf5bab41744bec78dd64d19",
+      "actualSha256": "4862ca59d7b46a26048014345fb9b12f631f72da0bf5bab41744bec78dd64d19",
+      "expectedBytes": 3106,
+      "actualBytes": 3106
+    },
+    {
+      "original": "app/api/security/event-store/route.ts",
+      "handler": "lib/server/security-route-modules/event-store.ts",
+      "ok": true,
+      "expectedSha256": "5a6ccaeb6ce15e04b600e1fea177d35449b6c486433b56ff85c718b54ed37a52",
+      "actualSha256": "5a6ccaeb6ce15e04b600e1fea177d35449b6c486433b56ff85c718b54ed37a52",
+      "expectedBytes": 1248,
+      "actualBytes": 1248
+    },
+    {
+      "original": "app/api/security/events/route.ts",
+      "handler": "lib/server/security-route-modules/events.ts",
+      "ok": true,
+      "expectedSha256": "90a577afd5b80dc08fcced1ea8f52e426e0adb58b0b9b1054665f626681bfeb4",
+      "actualSha256": "90a577afd5b80dc08fcced1ea8f52e426e0adb58b0b9b1054665f626681bfeb4",
+      "expectedBytes": 1529,
+      "actualBytes": 1529
+    },
+    {
+      "original": "app/api/security/export/route.ts",
+      "handler": "lib/server/security-route-modules/export.ts",
+      "ok": true,
+      "expectedSha256": "35b7f5b3d76b1512359ef427e5dd9e2b6ad893017627b57e599440c479875211",
+      "actualSha256": "35b7f5b3d76b1512359ef427e5dd9e2b6ad893017627b57e599440c479875211",
+      "expectedBytes": 5113,
+      "actualBytes": 5113
+    },
+    {
+      "original": "app/api/security/modal-mobile-scroll-lock-final-sweep/route.ts",
+      "handler": "lib/server/security-route-modules/modal-mobile-scroll-lock-final-sweep.ts",
+      "ok": true,
+      "expectedSha256": "891061f0503cf9a357a6f0c85523a157774b6e4128fc15d7e48220e424639e7d",
+      "actualSha256": "891061f0503cf9a357a6f0c85523a157774b6e4128fc15d7e48220e424639e7d",
+      "expectedBytes": 2582,
+      "actualBytes": 2582
+    },
+    {
+      "original": "app/api/security/operations-checklist/route.ts",
+      "handler": "lib/server/security-route-modules/operations-checklist.ts",
+      "ok": true,
+      "expectedSha256": "9ab5406985e63d27f1d865c55cbdefbcae3b0e711c95d501de4de0d798bff72f",
+      "actualSha256": "9ab5406985e63d27f1d865c55cbdefbcae3b0e711c95d501de4de0d798bff72f",
+      "expectedBytes": 2222,
+      "actualBytes": 2222
+    },
+    {
+      "original": "app/api/security/payment-runtime-evidence/route.ts",
+      "handler": "lib/server/security-route-modules/payment-runtime-evidence.ts",
+      "ok": true,
+      "expectedSha256": "0ed973373cf3be062002faaae1aeea57a4a175e1baab8ce294ed3990a01afc61",
+      "actualSha256": "0ed973373cf3be062002faaae1aeea57a4a175e1baab8ce294ed3990a01afc61",
+      "expectedBytes": 4110,
+      "actualBytes": 4110
+    },
+    {
+      "original": "app/api/security/payment-webhook-review/route.ts",
+      "handler": "lib/server/security-route-modules/payment-webhook-review.ts",
+      "ok": true,
+      "expectedSha256": "69f5927500a159d3f6762efd6da6dd87f18a14ae884013dee67df0da76a741c6",
+      "actualSha256": "69f5927500a159d3f6762efd6da6dd87f18a14ae884013dee67df0da76a741c6",
+      "expectedBytes": 1126,
+      "actualBytes": 1126
+    },
+    {
+      "original": "app/api/security/production-env-contract/route.ts",
+      "handler": "lib/server/security-route-modules/production-env-contract.ts",
+      "ok": true,
+      "expectedSha256": "52260a8362f4d61794d34e710060f116a9190c2fc1c3fdf28a9422218a6c235f",
+      "actualSha256": "52260a8362f4d61794d34e710060f116a9190c2fc1c3fdf28a9422218a6c235f",
+      "expectedBytes": 919,
+      "actualBytes": 919
+    },
+    {
+      "original": "app/api/security/readiness/route.ts",
+      "handler": "lib/server/security-route-modules/readiness.ts",
+      "ok": true,
+      "expectedSha256": "4c0f6cec2dfc3b4e3ebd402901cc9ebae1474f0633b152a49ae8e8a3c56c7b39",
+      "actualSha256": "4c0f6cec2dfc3b4e3ebd402901cc9ebae1474f0633b152a49ae8e8a3c56c7b39",
+      "expectedBytes": 2369,
+      "actualBytes": 2369
+    },
+    {
+      "original": "app/api/security/release-gate/route.ts",
+      "handler": "lib/server/security-route-modules/release-gate.ts",
+      "ok": true,
+      "expectedSha256": "4ee079ab8c702e37df4eb0850513c21012a03131dc208832e047f8d0ff21d44a",
+      "actualSha256": "4ee079ab8c702e37df4eb0850513c21012a03131dc208832e047f8d0ff21d44a",
+      "expectedBytes": 1116,
+      "actualBytes": 1116
+    },
+    {
+      "original": "app/api/security/runtime-qa/route.ts",
+      "handler": "lib/server/security-route-modules/runtime-qa.ts",
+      "ok": true,
+      "expectedSha256": "8dd3050a2bcf7b49858f8783215d81f00140827a1b1f6d16c32fab09e6ff6b62",
+      "actualSha256": "8dd3050a2bcf7b49858f8783215d81f00140827a1b1f6d16c32fab09e6ff6b62",
+      "expectedBytes": 1108,
+      "actualBytes": 1108
+    },
+    {
+      "original": "app/api/security/stripe-webhook-replay-qa/route.ts",
+      "handler": "lib/server/security-route-modules/stripe-webhook-replay-qa.ts",
+      "ok": true,
+      "expectedSha256": "bada28a168881a0f635351cac36cc458fcc36ec0942272e945b1592e52a5daa5",
+      "actualSha256": "bada28a168881a0f635351cac36cc458fcc36ec0942272e945b1592e52a5daa5",
+      "expectedBytes": 3805,
+      "actualBytes": 3805
+    },
+    {
+      "original": "app/api/security/supabase-runtime-truth/route.ts",
+      "handler": "lib/server/security-route-modules/supabase-runtime-truth.ts",
+      "ok": true,
+      "expectedSha256": "ac0d5b20f479350587bd22ebde0cc87d12aae38b762021def8eb972cd50a3f9b",
+      "actualSha256": "ac0d5b20f479350587bd22ebde0cc87d12aae38b762021def8eb972cd50a3f9b",
+      "expectedBytes": 2755,
+      "actualBytes": 2755
+    },
+    {
+      "original": "app/api/security/trust/route.ts",
+      "handler": "lib/server/security-route-modules/trust.ts",
+      "ok": true,
+      "expectedSha256": "d04b9ed1fcb1f29f0cc8182ebae8d58ac9a1afe8fed10f7fa3ad3bc972cce058",
+      "actualSha256": "d04b9ed1fcb1f29f0cc8182ebae8d58ac9a1afe8fed10f7fa3ad3bc972cce058",
+      "expectedBytes": 1441,
+      "actualBytes": 1441
+    },
+    {
+      "original": "app/api/search/bridge/route.ts",
+      "handler": "lib/server/search-route-modules/bridge.ts",
+      "ok": true,
+      "expectedSha256": "30bcb04b1b308ef92975fc6838f32676f80bc542a386c6356482cbd80b538608",
+      "actualSha256": "30bcb04b1b308ef92975fc6838f32676f80bc542a386c6356482cbd80b538608",
+      "expectedBytes": 1116,
+      "actualBytes": 1116
+    },
+    {
+      "original": "app/api/search/lens-report/route.ts",
+      "handler": "lib/server/search-route-modules/lens-report.ts",
+      "ok": true,
+      "expectedSha256": "3049fd7781cb15df6b32c242b357f781c339c0d270933df2929004b1239d49d9",
+      "actualSha256": "3049fd7781cb15df6b32c242b357f781c339c0d270933df2929004b1239d49d9",
+      "expectedBytes": 33407,
+      "actualBytes": 33407
+    },
+    {
+      "original": "app/api/search/lens-route/route.ts",
+      "handler": "lib/server/search-route-modules/lens-route.ts",
+      "ok": true,
+      "expectedSha256": "73d715fbe2a553709918220919a90d65104c19b041d8324cca0392eed2f68575",
+      "actualSha256": "73d715fbe2a553709918220919a90d65104c19b041d8324cca0392eed2f68575",
+      "expectedBytes": 784,
+      "actualBytes": 784
+    },
+    {
+      "original": "app/api/search/live-preview/route.ts",
+      "handler": "lib/server/search-route-modules/live-preview.ts",
+      "ok": true,
+      "expectedSha256": "1cbacdfef58ec92e6331778fe22474617a5331d70f8dba438f2f63cb0ce82bd3",
+      "actualSha256": "1cbacdfef58ec92e6331778fe22474617a5331d70f8dba438f2f63cb0ce82bd3",
+      "expectedBytes": 1504,
+      "actualBytes": 1504
+    },
+    {
+      "original": "app/api/search/token-metadata/route.ts",
+      "handler": "lib/server/search-route-modules/token-metadata.ts",
+      "ok": true,
+      "expectedSha256": "9796e96b50cbbf73ebad7c6603ad63f6235491bada684e4f750a98254d260614",
+      "actualSha256": "9796e96b50cbbf73ebad7c6603ad63f6235491bada684e4f750a98254d260614",
+      "expectedBytes": 1008,
+      "actualBytes": 1008
+    },
+    {
+      "original": "app/api/admin/audit-events/route.ts",
+      "handler": "lib/server/admin-route-modules/audit-events.ts",
+      "ok": true,
+      "expectedSha256": "98d4de0ec93d9cc61af3a650e7e2e826a1a249aaf5cdd0d075ebc10257e798b4",
+      "actualSha256": "98d4de0ec93d9cc61af3a650e7e2e826a1a249aaf5cdd0d075ebc10257e798b4",
+      "expectedBytes": 2302,
+      "actualBytes": 2302
+    },
+    {
+      "original": "app/api/admin/import-products/route.ts",
+      "handler": "lib/server/admin-route-modules/import-products.ts",
+      "ok": true,
+      "expectedSha256": "6eab8e1d729b34035dfef11ed93b6f6217df3978e660aa4996c3b24046085f6d",
+      "actualSha256": "6eab8e1d729b34035dfef11ed93b6f6217df3978e660aa4996c3b24046085f6d",
+      "expectedBytes": 3142,
+      "actualBytes": 3142
+    },
+    {
+      "original": "app/api/admin/sync-printful/route.ts",
+      "handler": "lib/server/admin-route-modules/sync-printful.ts",
+      "ok": true,
+      "expectedSha256": "e589f08afc937df7d3806e2f15dceba1fe07dbbefc8526f837b8b0246d0a54bb",
+      "actualSha256": "e589f08afc937df7d3806e2f15dceba1fe07dbbefc8526f837b8b0246d0a54bb",
+      "expectedBytes": 1997,
+      "actualBytes": 1997
+    },
+    {
+      "original": "app/api/market-integrity/continuity/refresh/route.ts",
+      "handler": "lib/server/lazy-route-modules/market-integrity--continuity--refresh.ts",
+      "ok": true,
+      "expectedSha256": "908161adfcb7fe113fecaeeefbd879e2e485d8bb04dd03256471a0dce995884f",
+      "actualSha256": "908161adfcb7fe113fecaeeefbd879e2e485d8bb04dd03256471a0dce995884f",
+      "expectedBytes": 2357,
+      "actualBytes": 2357
+    },
+    {
+      "original": "app/api/security/audit-watch/pro-pdf/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf.ts",
+      "ok": true,
+      "expectedSha256": "a184fe7bdcaed2c35108496ed992121c90a482922417c7307eb710a74ce18611",
+      "actualSha256": "a184fe7bdcaed2c35108496ed992121c90a482922417c7307eb710a74ce18611",
+      "expectedBytes": 12590,
+      "actualBytes": 12590
+    },
+    {
+      "original": "app/api/account/customer-artifact/route.ts",
+      "handler": "lib/server/lazy-route-modules/account--customer-artifact.ts",
+      "ok": true,
+      "expectedSha256": "ef5f453b877cd922274d8ba554655eb27d059a4b7fbc7dbf2f088f9643e7875f",
+      "actualSha256": "ef5f453b877cd922274d8ba554655eb27d059a4b7fbc7dbf2f088f9643e7875f",
+      "expectedBytes": 10541,
+      "actualBytes": 10541
+    },
+    {
+      "original": "app/api/admin/security/advanced-audit-release/route.ts",
+      "handler": "lib/server/lazy-route-modules/admin--security--advanced-audit-release.ts",
+      "ok": true,
+      "expectedSha256": "e49638571f76e31d27a83fdaabe5bd04bc0a6218dcba4a502fb78c9a65587231",
+      "actualSha256": "e49638571f76e31d27a83fdaabe5bd04bc0a6218dcba4a502fb78c9a65587231",
+      "expectedBytes": 23931,
+      "actualBytes": 23931
+    },
+    {
+      "original": "app/api/security/audit-review/pro/settle/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-review--pro--settle.ts",
+      "ok": true,
+      "expectedSha256": "865a763121fdf22bdbc7ee16b0febc022e1db81cf31ef7ea1a35deba78c6012b",
+      "actualSha256": "865a763121fdf22bdbc7ee16b0febc022e1db81cf31ef7ea1a35deba78c6012b",
+      "expectedBytes": 8035,
+      "actualBytes": 8035
+    },
+    {
+      "original": "app/api/security/audit-watch/pro-pdf/token/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf--token.ts",
+      "ok": true,
+      "expectedSha256": "05572972c69e3b5f5983a1a9c45dff5678485dd87ffe2dff9633268145b05ca1",
+      "actualSha256": "05572972c69e3b5f5983a1a9c45dff5678485dd87ffe2dff9633268145b05ca1",
+      "expectedBytes": 8379,
+      "actualBytes": 8379
+    },
+    {
+      "original": "app/api/angel/stream/route.ts",
+      "handler": "lib/server/lazy-route-modules/angel--stream.ts",
+      "ok": true,
+      "expectedSha256": "c463af6564e9c05a20ed5b0d3b0261a30e283748cbcbb4bf12c6d4cc5a1a989a",
+      "actualSha256": "c463af6564e9c05a20ed5b0d3b0261a30e283748cbcbb4bf12c6d4cc5a1a989a",
+      "expectedBytes": 8993,
+      "actualBytes": 8993
+    },
+    {
+      "original": "app/api/angel/route.ts",
+      "handler": "lib/server/lazy-route-modules/angel.ts",
+      "ok": true,
+      "expectedSha256": "c997a66b5d396b0bfe810c10a9dff8b16fdd79d1d080a861d2c691902dd8345f",
+      "actualSha256": "c997a66b5d396b0bfe810c10a9dff8b16fdd79d1d080a861d2c691902dd8345f",
+      "expectedBytes": 58164,
+      "actualBytes": 58164
+    },
+    {
+      "original": "app/api/search/route.ts",
+      "handler": "lib/server/lazy-route-modules/search.ts",
+      "ok": true,
+      "expectedSha256": "d4e085e37c862bcfcc41ab0af0e9509b97f3bb27483464eaf1791d5e340fa832",
+      "actualSha256": "d4e085e37c862bcfcc41ab0af0e9509b97f3bb27483464eaf1791d5e340fa832",
+      "expectedBytes": 307,
+      "actualBytes": 307
+    },
+    {
+      "original": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+      "handler": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+      "ok": true,
+      "expectedSha256": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44",
+      "actualSha256": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44",
+      "expectedBytes": 8310,
+      "actualBytes": 8310
+    },
+    {
+      "original": "app/api/security/audit-watch/support-handoff/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-watch--support-handoff.ts",
+      "ok": true,
+      "expectedSha256": "1c02d13d82d6b90dceb0393a24d4215cd2939cf1972de46d2d42ec032d4921bf",
+      "actualSha256": "1c02d13d82d6b90dceb0393a24d4215cd2939cf1972de46d2d42ec032d4921bf",
+      "expectedBytes": 8826,
+      "actualBytes": 8826
+    },
+    {
+      "original": "app/api/security/audit-watch/route-health/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-watch--route-health.ts",
+      "ok": true,
+      "expectedSha256": "ef7fc48a5a7a55a8fcb750ae2074ea1fe3041ea160f5a902414b047fe7d35b66",
+      "actualSha256": "ef7fc48a5a7a55a8fcb750ae2074ea1fe3041ea160f5a902414b047fe7d35b66",
+      "expectedBytes": 5651,
+      "actualBytes": 5651
+    },
+    {
+      "original": "app/api/account/audit-messages/route.ts",
+      "handler": "lib/server/lazy-route-modules/account--audit-messages.ts",
+      "ok": true,
+      "expectedSha256": "74f2b3482fc2ec2b14c2535bb9b541dfab340659b9ca258768e391141d6bb6d9",
+      "actualSha256": "74f2b3482fc2ec2b14c2535bb9b541dfab340659b9ca258768e391141d6bb6d9",
+      "expectedBytes": 8111,
+      "actualBytes": 8111
+    },
+    {
+      "original": "app/api/ai/route.ts",
+      "handler": "lib/server/lazy-route-modules/ai.ts",
+      "ok": true,
+      "expectedSha256": "e9bdccb4bd49c123345d02b45015e3b340f3e0b84ec3340e497c7114117e2b21",
+      "actualSha256": "e9bdccb4bd49c123345d02b45015e3b340f3e0b84ec3340e497c7114117e2b21",
+      "expectedBytes": 4430,
+      "actualBytes": 4430
+    },
+    {
+      "original": "app/api/security/audit-watch/delivery-receipt/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-watch--delivery-receipt.ts",
+      "ok": true,
+      "expectedSha256": "c7d1074499d9773e207378e5322d9634f9bc73cd10ef953efe61f3272dd246c2",
+      "actualSha256": "c7d1074499d9773e207378e5322d9634f9bc73cd10ef953efe61f3272dd246c2",
+      "expectedBytes": 1791,
+      "actualBytes": 1791
+    },
+    {
+      "original": "app/api/market-integrity/vlm/verify/route.ts",
+      "handler": "lib/server/lazy-route-modules/market-integrity--vlm--verify.ts",
+      "ok": true,
+      "expectedSha256": "13600223986a892c2c960fd4670db29c34eab5cc00a134e3bb394a6e2cd60c50",
+      "actualSha256": "13600223986a892c2c960fd4670db29c34eab5cc00a134e3bb394a6e2cd60c50",
+      "expectedBytes": 3058,
+      "actualBytes": 3058
+    },
+    {
+      "original": "app/api/security/audit-watch/customer-safe-report/route.ts",
+      "handler": "lib/server/lazy-route-modules/security--audit-watch--customer-safe-report.ts",
+      "ok": true,
+      "expectedSha256": "3d10ebbf107aac8294a5bb028481bdb5eaa4a4fcc197466f0cafb8a802ff30b9",
+      "actualSha256": "3d10ebbf107aac8294a5bb028481bdb5eaa4a4fcc197466f0cafb8a802ff30b9",
+      "expectedBytes": 6385,
+      "actualBytes": 6385
+    },
+    {
+      "original": "app/api/market-integrity/vlm/keys/route.ts",
+      "handler": "lib/server/lazy-route-modules/market-integrity--vlm--keys.ts",
+      "ok": true,
+      "expectedSha256": "d3fa0b06051fb47b5afbf856d59a078fa4d04c002cb3f2ad52a2e61794348395",
+      "actualSha256": "d3fa0b06051fb47b5afbf856d59a078fa4d04c002cb3f2ad52a2e61794348395",
+      "expectedBytes": 680,
+      "actualBytes": 680
+    }
+  ]
+}

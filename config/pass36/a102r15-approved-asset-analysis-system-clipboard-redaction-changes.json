@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "velmere.pass36.a102r15.approved-asset-analysis-system-clipboard-redaction-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R15_ACTION_REQUIRED_ASSET_ANALYSIS_SYSTEM_CLIPBOARD_PACKET_RECEIPT_SOURCE_CLAIM_AND_TIMESTAMP_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R14_ACTION_REQUIRED_SOURCE_PACKAGE_UPLOAD_RECOVERY_AND_BROWSER_SHIELD_HANDOFF_SESSION_STORAGE_QUERY_TIER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T10:05:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "lib/security/browser-system-clipboard.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R14_ACTION_REQUIRED_SOURCE_PACKAGE_UPLOAD_RECOVERY_AND_BROWSER_SHIELD_HANDOFF_SESSION_STORAGE_QUERY_TIER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 6329,
+      "historicalSha256": "ba68e2ebde8e86f472418df614b4b1f38b760c343ce8e4095d3a64fda1654992",
+      "currentByteLength": 9795,
+      "currentSha256": "c3dd660531076a89025bad7c3265d995588343b91122ebf92447fe3c788219ad",
+      "reason": "Extend the central system-clipboard boundary with a redacted asset-analysis summary and block packet/receipt/source-time/source-claim keys.",
+      "requiredLocalTest": "PASS_A102R15_ASSET_ANALYSIS_CLIPBOARD_REDACTION_BOUNDARY_LOCAL_ONLY",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/market-integrity/AssetDetailModal.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R14_ACTION_REQUIRED_SOURCE_PACKAGE_UPLOAD_RECOVERY_AND_BROWSER_SHIELD_HANDOFF_SESSION_STORAGE_QUERY_TIER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 312740,
+      "historicalSha256": "7d5034d8734c64fe656073776f7de62a5ea9ed3d5310039bc4e4471907d35c26",
+      "currentByteLength": 312994,
+      "currentSha256": "b4a0c72bd37efa5ccc242184c5b1402b05a3b960553180c0a2b90e01d306ff46",
+      "reason": "Replace three raw full-packet clipboard sinks and one full-manifest browser event with the central redacted summary boundary.",
+      "requiredLocalTest": "PASS_A102R15_ASSET_ANALYSIS_CLIPBOARD_REDACTION_BOUNDARY_LOCAL_ONLY",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "package.json",
+      "parentRevisionId": "VELMERE_PASS36_A102R14_ACTION_REQUIRED_SOURCE_PACKAGE_UPLOAD_RECOVERY_AND_BROWSER_SHIELD_HANDOFF_SESSION_STORAGE_QUERY_TIER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 88691,
+      "historicalSha256": "69367ea2a0ad604b64a1125c5c526789e5453f93469dd3b0a9db0eded972b089",
+      "currentByteLength": 89696,
+      "currentSha256": "bc41ba518a0da8a5564daa743926f20481c9dafd013cdf8d67163e0355d87f46",
+      "reason": "Repair nested current revision, parent, completion-program and descendant-manifest pointers and register A102R15 commands.",
+      "requiredLocalTest": "PASS_A102R15_ASSET_ANALYSIS_CLIPBOARD_REDACTION_BOUNDARY_LOCAL_ONLY",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "scripts/pass36/test-a102r15-asset-analysis-clipboard-redaction.ts",
+      "purpose": "54-check asset-analysis operating-system clipboard redaction and secure-context boundary."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "fullAssetPacketsCopiedToClipboard": false,
+    "receiptOrPacketIdentifiersIncluded": false,
+    "sourceLabelsOrTimestampsIncluded": false,
+    "sourceClaimsOrHashesIncluded": false,
+    "fullManifestBrowserEventDispatched": false,
+    "redactedSummaryOnly": true,
+    "secureContextRequired": true,
+    "realBrowserRowsExecuted": 0,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "The ledger binds exact A102R14-to-A102R15 changes. Local tests do not prove real operating-system clipboard behavior, browser permissions, account switching, exact builds, staging, provider rights, legal/DPO, LIVE or sale readiness."
+}

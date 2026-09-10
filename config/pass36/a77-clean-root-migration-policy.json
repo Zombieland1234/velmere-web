@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "velmere.pass36.a77.clean-root-migration-policy.v1",
+  "revisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+  "parentRevisionId": "VELMERE_PASS36_A76R0_CURRENT_REVISION_ROADMAP_AND_REGULATORY_PERIMETER_TRUTH_AUTHORITY",
+  "deterministicEpoch": "2026-07-27T07:30:00.000Z",
+  "parentSourceArchive": {
+    "fileName": "VELMERE_PASS36_A76R0_CURRENT_REVISION_ROADMAP_AND_REGULATORY_PERIMETER_TRUTH_AUTHORITY_SOURCE_ONLY.zip",
+    "sha256": "ff5c6c28ba57dc83354be96feba193e43a85c0d4bdec715ba92810aa15d2c074"
+  },
+  "legacyLineage": {
+    "recoveryRevisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+    "status": "BLOCKED_EXACT_HISTORICAL_BYTES",
+    "verifiedExact": 0,
+    "requiredExact": 2,
+    "mayBeMarkedRecoveredByCleanRoot": false,
+    "artifacts": [
+      {
+        "id": "PASS6_ORPHAN_QUARANTINE",
+        "targetPath": ".velmere/orphan-quarantine-pass6.json",
+        "byteLength": 265454,
+        "sha256": "bb745e78049ca022ae34f9db9b8ec13e8ed728fa2a25224570ed6f8c66dd64e3",
+        "archive": {
+          "fileName": "VELMERE_PASS6_99_9_OFFLINE_CANDIDATE.zip",
+          "byteLength": 116095894,
+          "sha256": "b8d1b5c31d83b5f1b0cf0e67193909ae16e3b1a9ccec0a6c7ea02c5fc01f1369",
+          "entryCount": 7223
+        }
+      },
+      {
+        "id": "VLM_PASS5_RELEASE_MANIFEST",
+        "targetPath": "_velmere/VLM_PASS5_RELEASE_MANIFEST.json",
+        "byteLength": 1316551,
+        "sha256": "2205c361e4e2cdd753de88ded449a35edfcf0735d0911bcc40f9796a2e23f928",
+        "archive": {
+          "fileNames": [
+            "VLM_PASS5.zip",
+            "VLM_PASS5(1).zip"
+          ],
+          "byteLength": 63047481,
+          "sha256": "56a36af9d8fe976ff932a3f576f887f3d6bdae15ff8b9b08b40ef76eacaad6c4",
+          "entryCount": 6298
+        },
+        "zipEntry": {
+          "crc32Hex": "76b032e7",
+          "compressedByteLength": 340433
+        }
+      }
+    ]
+  },
+  "cleanRoot": {
+    "genesisPath": "config/pass36/a77-clean-root-genesis.json",
+    "currentStatePath": "config/pass36/a77-current-state.json",
+    "sourceManifestPath": "config/pass35/a57-source-manifest.json",
+    "inventoryExclusions": [
+      "config/pass36/a77-clean-root-genesis.json",
+      "config/pass36/a77-clean-root-migration-test-receipt.json",
+      "config/pass35/a57-source-manifest.json"
+    ],
+    "legacyArtifactBytesForbiddenFromSyntheticReconstruction": true,
+    "unresolvedAncestryMustRemainVisible": true,
+    "sourcePayloadMustBeHashBound": true,
+    "cleanRootCannotGrantLegacy30Of30": true,
+    "sourceManifestBinding": "A60/A78/A79 bind the separately generated exact source manifest; it is excluded from clean-root payload to avoid a circular genesis-to-manifest dependency."
+  },
+  "governance": {
+    "trustRootsSchema": "velmere.pass36.a77.clean-root-trust-roots.v1",
+    "attestationSchema": "velmere.pass36.a77.clean-root-attestation.v1",
+    "decision": "APPROVE_CLEAN_ROOT_MIGRATION_WITH_UNRESOLVED_LEGACY_ARTIFACTS",
+    "verifiedDecision": "VERIFIED_SIGNED_CLEAN_ROOT_MIGRATION",
+    "blockedDecision": "BLOCKED_EXTERNAL_GOVERNANCE_SIGNATURES",
+    "rejectedDecision": "REJECTED_INTEGRITY",
+    "algorithm": "ED25519",
+    "requiredRoles": [
+      "ACCOUNTABLE_RELEASE_OWNER",
+      "INDEPENDENT_ASSURANCE_CHAIR"
+    ],
+    "minimumDistinctOrganizations": 2,
+    "maximumClockSkewSeconds": 120,
+    "maximumAttestationAgeSeconds": 2592000,
+    "externalTrustRootsSha256Required": true,
+    "conditions": {
+      "stagingEntryOnly": true,
+      "legacyRecoveryClaimed": false,
+      "productionApproved": false,
+      "liveProven": false,
+      "saleEnabled": false
+    }
+  },
+  "lineageAdmission": {
+    "legacyMode": "EXACT_A61_LEGACY_LINEAGE",
+    "cleanRootMode": "SIGNED_A77_CLEAN_ROOT_LINEAGE",
+    "stagingRequires": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT",
+    "currentRootCriticalGateSuites": 30,
+    "currentRootCriticalGateCannotReceiveCreditWithoutExactRuntime": true
+  },
+  "claims": {
+    "historicalArtifactsRecovered": false,
+    "cleanRootGovernanceApproved": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "A77 can construct a new source-bound lineage root while preserving the unresolved PASS5/PASS6 ancestry as 0/2. It cannot reconstruct missing bytes, pass A61, promote staging without dual-control signatures, prove exact runtime/browser behavior, enable LIVE or enable sale."
+}

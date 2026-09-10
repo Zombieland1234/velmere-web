@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "velmere.pass35.audit-program.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "status": "A01_A12_A14_A15_A16_LOCAL_EXECUTABLE_BOUNDED_REAL_EXTERNAL_PROOF_MISSING",
+  "fullAuditClaimAllowed": false,
+  "controls": [
+    {
+      "id": "A01",
+      "name": "identity_source_abi_compiler",
+      "status": "IMPLEMENTED_LOCAL_STRUCTURE_PLUS_PROVIDER_RPC_ADAPTER_FIXTURE_PROVEN"
+    },
+    {
+      "id": "A02",
+      "name": "source_to_deployed_bytecode_reproducibility",
+      "status": "PINNED_SOLC_STANDARD_JSON_ADAPTER_FIXTURE_PROVEN_REAL_COMPILER_NOT_RUN"
+    },
+    {
+      "id": "A03",
+      "name": "architecture_threat_model",
+      "status": "IMPLEMENTED_LOCAL_CASE_BOUND_THREAT_MODEL_EVIDENCE_BENCHMARKED_HUMAN_REVIEW_MISSING"
+    },
+    {
+      "id": "A04",
+      "name": "privilege_and_upgrade_controls",
+      "status": "IMPLEMENTED_LOCAL_CASE_BOUND_PRIVILEGE_AUTHORIZATION_EVIDENCE_BENCHMARKED_ONCHAIN_REVIEW_MISSING"
+    },
+    {
+      "id": "A05",
+      "name": "two_independent_static_semantic_families",
+      "status": "A19_LOCAL_STRUCTURAL_PRESCREEN_15_FAMILIES_FROZEN_SYNTHETIC_BENCHMARKED_EXTERNAL_FAMILY_CREDIT_ZERO"
+    },
+    {
+      "id": "A06",
+      "name": "symbolic_path_analysis",
+      "status": "IMPLEMENTED_LOCAL_BOUNDED_ABSTRACT_PATH_BENCHMARKED_NOT_FULL_SMT"
+    },
+    {
+      "id": "A07",
+      "name": "exact_unit_and_integration_tests",
+      "status": "IMPLEMENTED_LOCAL_EXACT_TEST_EVIDENCE_BENCHMARKED_OFFICIAL_FORGE_REAL_EVM_MISSING"
+    },
+    {
+      "id": "A08",
+      "name": "property_fuzz_invariant_tests",
+      "status": "IMPLEMENTED_LOCAL_FUZZ_INVARIANT_EVIDENCE_BENCHMARKED_OFFICIAL_ENGINES_REAL_EVM_MISSING"
+    },
+    {
+      "id": "A09",
+      "name": "fork_replay_exact_state",
+      "status": "IMPLEMENTED_LOCAL_FORK_REPLAY_EVIDENCE_BENCHMARKED_NATIVE_FORK_REAL_PROVIDER_MISSING"
+    },
+    {
+      "id": "A10",
+      "name": "economic_adversarial_analysis",
+      "status": "IMPLEMENTED_LOCAL_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARKED_REAL_DATA_REPLAY_REVIEW_MISSING"
+    },
+    {
+      "id": "A11",
+      "name": "upgrade_deployment_operations",
+      "status": "IMPLEMENTED_LOCAL_UPGRADE_DEPLOYMENT_OPERATIONS_EVIDENCE_BENCHMARKED_ONCHAIN_DRILL_REVIEW_MISSING"
+    },
+    {
+      "id": "A12",
+      "name": "dependency_license_vulnerability_mapping",
+      "status": "IMPLEMENTED_LOCAL_CASE_BOUND_DEPENDENCY_LICENSE_ADVISORY_BENCHMARKED_REAL_REGISTRY_UNPROVEN"
+    },
+    {
+      "id": "A13",
+      "name": "qualified_manual_reviewer",
+      "status": "BLOCKED_REVIEWER"
+    },
+    {
+      "id": "A14",
+      "name": "severity_and_uncertainty",
+      "status": "IMPLEMENTED_LOCAL_EVIDENCE_BOUND_SEVERITY_ATTACK_CHAIN_BENCHMARKED_NOT_HUMAN_ADJUDICATED"
+    },
+    {
+      "id": "A15",
+      "name": "remediation_and_exact_retest",
+      "status": "IMPLEMENTED_LOCAL_EVIDENCE_BOUND_REMEDIATION_CLOSURE_BENCHMARKED_NOT_SIGNED"
+    },
+    {
+      "id": "A16",
+      "name": "fact_finding_assumption_limitation_report",
+      "status": "IMPLEMENTED_LOCAL_CASE_BOUND_REPORT_DELIVERY_EVIDENCE_BENCHMARKED_STAGING_CUSTOMER_PROOF_MISSING"
+    },
+    {
+      "id": "A17",
+      "name": "monitoring_incident_communications",
+      "status": "IMPLEMENTED_LOCAL_EVENT_AND_INCIDENT_LIFECYCLE_BENCHMARKED_NOT_LIVE"
+    }
+  ],
+  "benchmarkCorpus": {
+    "contractsRequired": 50,
+    "historicalExploitsRequired": 50,
+    "benignControlsRequired": 50,
+    "remediationRetestsRequired": 50,
+    "realIndependentLabelsAvailable": 0,
+    "fixtureCasesAreBenchmarkProof": false
+  },
+  "advancedHumanReviewRequired": true,
+  "qualifiedReviewerPoolAvailable": false,
+  "independentSecondAuditorAvailable": false,
+  "executionEnvelopePolicyPath": "config/pass35/audit-execution-envelope.json",
+  "capabilityInventoryStatus": "FCP04F_A01_A10_A15_A17_LOCAL_PARTIAL",
+  "executableA01A12StackComplete": false,
+  "paidAuditUiState": "UNAVAILABLE_NOT_FOR_SALE",
+  "currentCustomerFacingProName": "Automated Security Evidence Review",
+  "a01A05PolicyPath": "config/pass35/audit-a01-a05-policy.json",
+  "a01A05SyntheticReceiptPath": "fixtures/pass35/audit-a01-a05/PASS35_A3_A01_A05_SYNTHETIC_RECEIPT.json",
+  "localExecutableControls": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10",
+    "A15",
+    "A17"
+  ],
+  "paidGateEligibleControls": [],
+  "truthBoundary": "A31 verifies a bounded local privilege and authorization evidence contract over generated or explicitly supplied local case data. It can bind role definitions, principals, selector permissions, role-admin relationships, proxy/admin authority, multisig/timelock delegation, separation-of-duties rules, escalation scenarios, revoke/recovery controls, hidden privileged surfaces and deterministic replay receipts. It does not prove current on-chain role holders, real proxy/admin slots, multisig custody, timelock execution, absence of hidden business-logic privileges, qualified manual authorization review, customer outcomes, independent assurance, LIVE operation or paid readiness. Generated benchmark evidence must never be promoted to on-chain, reviewer, customer, independent or commercial credit.",
+  "a4ExecutionPolicyPath": "config/pass35/audit-a4-execution-policy.json",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "a7ExecutionPolicyPath": "config/pass35/audit-a7-execution-policy.json",
+  "a08FoundryInvariantPlanPath": "config/pass35/a08-foundry-invariant-plan.json",
+  "a8ExecutionPolicyPath": "config/pass35/audit-a8-execution-policy.json",
+  "a8SyntheticReceiptPaths": [
+    "fixtures/pass35/audit-a8/PASS35_A8_A10_ECONOMIC_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a8/PASS35_A8_A15_REMEDIATION_RETEST_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a8/PASS35_A8_A17_MONITORING_HANDOFF_SYNTHETIC_RECEIPT.json"
+  ],
+  "a19AuditStaticBenchmark": {
+    "policyPath": "config/pass35/a19-audit-static-benchmark-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A19_AUDIT_STATIC_BENCHMARK_RUNTIME.json",
+    "receiptPath": "artifacts/pass35/PASS35_A19_AUDIT_STATIC_BENCHMARK_RECEIPT.json",
+    "cases": 240,
+    "vulnerable": 120,
+    "remediated": 120,
+    "frozenTest": 90,
+    "mutations": 2880,
+    "frozenMetrics": {
+      "total": 90,
+      "tp": 45,
+      "fn": 0,
+      "tn": 45,
+      "fp": 0,
+      "recall": 1,
+      "specificity": 1,
+      "precision": 1,
+      "f1": 1,
+      "severityAccuracy": 1,
+      "recallWilson95": {
+        "lower": 0.921348,
+        "upper": 1
+      },
+      "specificityWilson95": {
+        "lower": 0.921348,
+        "upper": 1
+      }
+    },
+    "paidGateEligible": false,
+    "independentExternalFamily": false
+  },
+  "a20CaseBoundDependency": {
+    "policyPath": "config/pass35/a20-case-bound-dependency-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A20_CASE_BOUND_DEPENDENCY_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A20_CASE_BOUND_DEPENDENCY_RECEIPT.json",
+    "cases": 200,
+    "frozen": 80,
+    "mutations": 2400,
+    "paidGateEligible": false,
+    "advisoryCompletenessProven": false,
+    "legalConclusionAllowed": false
+  },
+  "a21AbstractPath": {
+    "policyPath": "config/pass35/a21-abstract-path-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A21_ABSTRACT_PATH_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A21_ABSTRACT_PATH_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "supportedConstraintDomain": [
+      "constant folding",
+      "calldata word equality and ranges",
+      "caller equality",
+      "call value equality and ranges",
+      "timestamp and block-number ranges",
+      "constant storage-slot equality and ranges"
+    ],
+    "paidGateEligible": false,
+    "fullSmtSymbolicExecutionClaimed": false,
+    "exploitabilityClaimAllowed": false
+  },
+  "a22SeverityTriage": {
+    "policyPath": "config/pass35/a22-severity-triage-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A22_SEVERITY_TRIAGE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A22_SEVERITY_TRIAGE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "raterProfiles": [
+      "EXPLOITABILITY_RATER",
+      "IMPACT_RATER"
+    ],
+    "paidGateEligible": false,
+    "independentHumanRatersClaimed": false,
+    "exploitabilityClaimAllowed": false
+  },
+  "a23RemediationClosure": {
+    "policyPath": "config/pass35/a23-remediation-closure-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A23_REMEDIATION_CLOSURE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A23_REMEDIATION_CLOSURE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "paidGateEligible": false,
+    "signedClosureClaimed": false,
+    "realFixClaimed": false
+  },
+  "a24MonitoringLifecycle": {
+    "policyPath": "config/pass35/a24-monitoring-lifecycle-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A24_MONITORING_LIFECYCLE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A24_MONITORING_LIFECYCLE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "liveMonitoringActive": false,
+    "paidGateEligible": false
+  },
+  "a25ExactTestEvidence": {
+    "policyPath": "config/pass35/a25-exact-test-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A25_EXACT_TEST_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A25_EXACT_TEST_EVIDENCE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "officialForgeExecuted": false,
+    "compiledEvmExecutionProven": false,
+    "paidGateEligible": false
+  },
+  "a26FuzzInvariantEvidence": {
+    "policyPath": "config/pass35/a26-fuzz-invariant-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A26_FUZZ_INVARIANT_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A26_FUZZ_INVARIANT_EVIDENCE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "officialFoundryExecuted": false,
+    "officialEchidnaExecuted": false,
+    "compiledEvmExecutionProven": false,
+    "implementationModelEquivalenceProven": false,
+    "paidGateEligible": false
+  },
+  "a27ForkReplayEvidence": {
+    "policyPath": "config/pass35/a27-fork-replay-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A27_FORK_REPLAY_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A27_FORK_REPLAY_EVIDENCE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "officialNativeForkRunnerExecuted": false,
+    "publicNetworkProviderUsed": false,
+    "realHistoricalExploitReplayed": false,
+    "realCustomerWorkflowReplayed": false,
+    "paidGateEligible": false
+  },
+  "a28EconomicAdversarialEvidence": {
+    "policyPath": "config/pass35/a28-economic-adversarial-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "currentRightsApprovedInputsUsed": false,
+    "officialForkedEvmExecuted": false,
+    "realEconomicExploitProven": false,
+    "calibratedProbabilityClaimAllowed": false,
+    "paidGateEligible": false
+  },
+  "a29UpgradeDeploymentOperations": {
+    "policyPath": "config/pass35/a29-upgrade-deployment-operations-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "currentOnChainStateVerified": false,
+    "realMultisigTimelockExecuted": false,
+    "productionUpgradeExecuted": false,
+    "qualifiedHumanReviewed": false,
+    "paidGateEligible": false
+  },
+  "a30ThreatModel": {
+    "policyPath": "config/pass35/a30-threat-model-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A30_THREAT_MODEL_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A30_THREAT_MODEL_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "protocolSpecificAssumptionsHumanValidated": false,
+    "businessLogicHumanReviewed": false,
+    "realArchitectureWorkshopExecuted": false,
+    "independentRerun": false,
+    "paidGateEligible": false
+  },
+  "a31PrivilegeControl": {
+    "policyPath": "config/pass35/a31-privilege-control-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A31_PRIVILEGE_CONTROL_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A31_PRIVILEGE_CONTROL_RECEIPT.json",
+    "cases": 192,
+    "frozen": 72,
+    "mutations": 2304,
+    "currentOnchainRoleStateProven": false,
+    "manualAuthorizationReviewed": false,
+    "allHiddenPrivilegesExcluded": false,
+    "independentRerun": false,
+    "paidGateEligible": false
+  },
+  "a32ReportDelivery": {
+    "policyPath": "config/pass35/a32-report-delivery-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A32_REPORT_DELIVERY_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A32_REPORT_DELIVERY_RECEIPT.json",
+    "contractPath": "config/pass35/a32-report-delivery-runtime-contract.json",
+    "status": "PASS_LOCAL_REPORT_DELIVERY_NOT_STAGING_NOT_CUSTOMER_PROVEN_NOT_FOR_SALE",
+    "paidGateEligible": false
+  }
+}

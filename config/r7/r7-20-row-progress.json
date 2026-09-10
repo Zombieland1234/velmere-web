@@ -1,0 +1,1069 @@
+{
+  "schemaVersion": "velmere.r7.20-row-progress-map.v1",
+  "generatedAt": "2026-08-24T00:00:00.000Z",
+  "canonicalCheckpoint": "P101R1",
+  "candidate": "R7_MERGED_CURRENT_SOURCE",
+  "ancestry": {
+    "commonBase": "R4",
+    "siblingBranches": [
+      "R5",
+      "R6"
+    ],
+    "mergeRule": "PRESERVE_SUM_OF_MATERIAL_R5_AND_R6_DELTAS"
+  },
+  "denominator": 20,
+  "customerFinalNumerator": 0,
+  "paidValueFinalNumerator": 0,
+  "globalState": "NO_GO_STOP_SELL",
+  "activeInternalFinalGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+  "externalPilotInternalFinalGate": false,
+  "rows": [
+    {
+      "ordinal": 1,
+      "productId": "audit-basic",
+      "displayName": "Audit Basic",
+      "family": "audit",
+      "tier": "basic",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CUSTOMER_AUTHORIZED_CURRENT_INPUT",
+        "AUTHORIZED_DATABASE_AND_DEPLOYED_IMMUTABLE_PDF_ACCOUNT_DELIVERY",
+        "FIELD_LEVEL_RIGHTS"
+      ],
+      "sourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Run the complete customer intake, current evidence, immutable PDF and account readback chain on authorized staging with a real external pilot.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_PUBLIC_PROOF_VERIFY_PURE_BOUNDARIES"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Audit Basic worker closure executes locally and passes.",
+        "Customer/public error redaction sweep passes.",
+        "Account export/erasure boundary passes locally."
+      ],
+      "r4NextInternalExecution": "Run one owner-authorized supported contract end to end on local/Supabase staging: intake \u2192 evidence \u2192 findings \u2192 remediation/retest \u2192 immutable PDF \u2192 account same-blob readback.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Public Proof publication now executes through a dependency-free server boundary: 63/63 assertions.",
+        "Verify customer projection now executes through a pure durable-registry view model: 66/66 assertions.",
+        "No React/Next production-rendering, immutable PDF, staging or customer credit was inferred."
+      ],
+      "r6NextInternalExecution": "Acquire the exact PGlite 0.5.4 bytes or run exact-lock npm ci, then execute owner-authorized intake \u2192 durable evidence \u2192 immutable PDF \u2192 same-blob account readback.",
+      "historicalSourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 2,
+      "productId": "audit-pro",
+      "displayName": "Audit Pro",
+      "family": "audit",
+      "tier": "pro",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CUSTOMER_AUTHORIZED_CURRENT_INPUT",
+        "FIVE_LIVE_FOUR_STRICT_THREE_INDEPENDENT_FAMILIES",
+        "COMMERCIAL_DISPLAY_PDF_CACHE_RETENTION_RIGHTS",
+        "MATCHED_INPUT_MATERIAL_PRO_VALUE"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Obtain the required rights-safe evidence families and execute matched-input Pro customer delivery on authorized staging.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_PUBLIC_PROOF_VERIFY_PURE_BOUNDARIES"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Shared customer-safe output and account lifecycle boundaries pass locally.",
+        "Exact Pro threshold remains preserved: 5 live lanes / 4 strict receipts / 3 independent families / 6 evidence rows.",
+        "No threshold was lowered and no provider alias/retry credit was added."
+      ],
+      "r4NextInternalExecution": "Integrate rights-safe replacement lanes and physically meet 5/4/3/6 on a generalization pack, then deliver matched-input Pro PDF/account artifact.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Shared Public Proof and Verify publication semantics now execute without a test React runtime.",
+        "The exact Pro quorum remains unchanged: 5 live / 4 strict / 3 independent families / 6 evidence rows.",
+        "No provider-rights or matched-input Pro value credit was added."
+      ],
+      "r6NextInternalExecution": "After the common DB/staging unlock, physically meet 5/4/3/6 with rights-safe independent lanes and matched-input Pro delivery.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 3,
+      "productId": "audit-advanced",
+      "displayName": "Audit Advanced",
+      "family": "audit",
+      "tier": "advanced",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CUSTOMER_AUTHORIZED_CURRENT_INPUT",
+        "SIX_LIVE_FIVE_STRICT_FOUR_INDEPENDENT_FAMILIES",
+        "ADDITIONAL_RIGHTS_SAFE_STRICT_CAPABLE_SOURCE",
+        "MATCHED_INPUT_MATERIAL_ADVANCED_VALUE"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "FREE_CREDENTIAL_OR_OWNER_PROVIDER_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Bind an additional independent rights-safe source and execute the automatic Advanced path on the same canonical customer input.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_PUBLIC_PROOF_VERIFY_PURE_BOUNDARIES"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Shared customer-safe output and account lifecycle boundaries pass locally.",
+        "Exact Advanced threshold remains preserved: 6 live lanes / 5 strict receipts / 4 independent families / 10 evidence rows.",
+        "No threshold was lowered and no provider alias/retry credit was added."
+      ],
+      "r4NextInternalExecution": "Physically meet 6/5/4/10 with an additional independent strict-capable lane, then prove material Advanced value on the same input.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Shared Public Proof and Verify publication semantics now execute without a test React runtime.",
+        "The exact Advanced quorum remains unchanged: 6 live / 5 strict / 4 independent families / 10 evidence rows.",
+        "No additional strict-capable lane or matched-input Advanced value credit was added."
+      ],
+      "r6NextInternalExecution": "After the common DB/staging unlock, physically meet 6/5/4/10 with one more strict-capable independent lane and matched-input Advanced delivery.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "FREE_CREDENTIAL_OR_OWNER_PROVIDER_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 4,
+      "productId": "browser-basic",
+      "displayName": "Browser Basic",
+      "family": "browser",
+      "tier": "basic",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "HOSTED_EXACT_WINDOWS_R7_52_X2_AND_SOURCE_AUTHORITY_BINDING"
+      ],
+      "sourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "LEGAL_RIGHTS_REVIEW",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute render-once store-first same-blob delivery and customer readback on authorized staging with a real input.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "browser-production-later-pass",
+        "current-byte-targeted-matrix",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_PUBLIC_PROOF_VERIFY_PURE_BOUNDARIES"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Rights-before-network firewall passes locally.",
+        "Combobox keyboard/accessibility boundary passes locally.",
+        "Account export/erasure and customer-safe output boundaries pass locally."
+      ],
+      "r4NextInternalExecution": "Run a real authorized input through safe fetch \u2192 render once \u2192 durable store \u2192 two-account negative \u2192 account readback on staging.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Public Proof page routing no longer needs React imports for current-source contract execution.",
+        "The real Browser customer fetch/store/readback chain remains open."
+      ],
+      "r6NextInternalExecution": "Run one authorized Browser input through safe fetch \u2192 durable store \u2192 two-account denial \u2192 exact account readback.",
+      "historicalSourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "LEGAL_RIGHTS_REVIEW",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS",
+      "r7NextInternalExecution": "Execute exact merged R7 on Windows Server 2025 with Node 24.18.0/npm 11.16.0, full lifecycle npm ci, engineering gates and 52 tests twice; then bind the PASS run to Supabase source authority and promote Browser Basic.",
+      "r7PreWindowsStagingStatus": "PASS",
+      "r7PreWindowsReceipt": "artifacts/r7/staging/R7_BROWSER_BASIC_FINAL_GATE_PRE_WINDOWS.json"
+    },
+    {
+      "ordinal": 5,
+      "productId": "browser-pro",
+      "displayName": "Browser Pro",
+      "family": "browser",
+      "tier": "pro",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CUSTOMER_AUTHORIZED_CURRENT_INPUT_AND_RIGHTS",
+        "AUTHORIZED_DURABLE_STORAGE_ENTITLEMENT_AND_ACCOUNT_READBACK",
+        "MATCHED_INPUT_MATERIAL_PRO_VALUE"
+      ],
+      "sourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "LEGAL_RIGHTS_REVIEW",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute the Pro tier against the same canonical input as Basic and prove entitlement-isolated same-blob delivery.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "browser-production-later-pass",
+        "current-byte-targeted-matrix",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_PUBLIC_PROOF_VERIFY_PURE_BOUNDARIES"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Browser rights and accessibility shared boundaries pass locally.",
+        "Tier identity contract prevents silent Basic fallback.",
+        "Account lifecycle boundary passes locally."
+      ],
+      "r4NextInternalExecution": "Execute the same Browser input as Basic with Pro entitlement and material additional depth, preserving the exact stored bytes.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "The shared publication route is now dependency-free and tier identity still blocks silent downgrade.",
+        "Material same-input Pro value and durable entitlement execution remain open."
+      ],
+      "r6NextInternalExecution": "Run the same Browser input with Pro entitlement and prove material additional depth without changing the stored truth.",
+      "historicalSourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "LEGAL_RIGHTS_REVIEW",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 6,
+      "productId": "browser-advanced",
+      "displayName": "Browser Advanced",
+      "family": "browser",
+      "tier": "advanced",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CUSTOMER_AUTHORIZED_CURRENT_INPUT_AND_RIGHTS",
+        "AUTHORIZED_DURABLE_STORAGE_ENTITLEMENT_AND_ACCOUNT_READBACK",
+        "MATCHED_INPUT_MATERIAL_ADVANCED_VALUE"
+      ],
+      "sourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "LEGAL_RIGHTS_REVIEW",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute automatic Advanced on the same canonical input and prove provenance, conflict and workspace value with durable delivery.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "browser-production-later-pass",
+        "current-byte-targeted-matrix",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_PUBLIC_PROOF_VERIFY_PURE_BOUNDARIES"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Browser rights and accessibility shared boundaries pass locally.",
+        "Tier identity contract prevents silent lower-tier delivery.",
+        "Account lifecycle boundary passes locally."
+      ],
+      "r4NextInternalExecution": "Execute the same input with material Advanced context/export and entitlement isolation, then read back the same stored artifact.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "The shared publication route is now dependency-free and lower-tier delivery remains prohibited.",
+        "Material Advanced value, export rights and durable entitlement execution remain open."
+      ],
+      "r6NextInternalExecution": "Run the same Browser input with Advanced entitlement, material context/export and field-level export rights.",
+      "historicalSourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "LEGAL_RIGHTS_REVIEW",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 7,
+      "productId": "shield-basic",
+      "displayName": "Shield Basic",
+      "family": "shield",
+      "tier": "basic",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CURRENT_EVIDENCE_AND_FIELD_RIGHTS",
+        "RISK_GROUND_TRUTH_AND_CALIBRATION",
+        "DEPLOYED_CUSTOMER_FAIL_CLOSED_EXECUTION"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute rights-preflight-first real evidence scoring on authorized staging and validate calibrated WITHHELD and customer payload behavior.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_SHIELD_BASIC_RIGHTS_FIREWALL",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical Shield table row is bound to the 20-row product topology.",
+        "Runtime table contract enforces rights, freshness, semantic class and customer-safe missing states.",
+        "Home Shield coverage copy fails closed rather than overstating coverage.",
+        "Dedicated Shield Basic rights firewall now executes and passes from the exact zod archive; blocked/unknown rights deny network and customer delivery."
+      ],
+      "r4NextInternalExecution": "Bind rights-safe current evidence to the real table on staging and prove fail-closed scoring, provenance, calibration boundary and customer payload.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "R6 preserves the green Shield Basic rights firewall and includes it in two stable 47-test campaigns.",
+        "Exact Windows execution is physically encoded but not executed."
+      ],
+      "r6NextInternalExecution": "Bind rights-safe current evidence to the real table on staging and prove fail-closed scoring, provenance, calibration boundary and customer payload.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 8,
+      "productId": "shield-pro",
+      "displayName": "Shield Pro",
+      "family": "shield",
+      "tier": "pro",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CURRENT_EVIDENCE_AND_FIELD_RIGHTS",
+        "RISK_GROUND_TRUTH_AND_CALIBRATION",
+        "MATCHED_INPUT_MATERIAL_PRO_VALUE",
+        "DEPLOYED_ENTITLEMENT_ISOLATED_CUSTOMER_EXECUTION"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Run Shield Pro on the matched Basic input and prove material paid value, entitlements and deployed fail-closed delivery.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical Shield Pro tier row is bound to the product topology.",
+        "Runtime table contract blocks silent downgrade and nulls risk/confidence when rights are blocked.",
+        "Reference data cannot be escalated to executable semantics."
+      ],
+      "r4NextInternalExecution": "Run the matched Basic input with material Pro evidence/history/context and entitlement isolation.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "R6 preserves blocked-rights nulling and no-silent-downgrade semantics in two stable campaigns.",
+        "Real evidence, calibration, entitlement and paid value remain open."
+      ],
+      "r6NextInternalExecution": "Run the matched Basic input with material Pro evidence/history/context and entitlement isolation.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 9,
+      "productId": "shield-advanced",
+      "displayName": "Shield Advanced",
+      "family": "shield",
+      "tier": "advanced",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CURRENT_MULTI_SOURCE_EVIDENCE_AND_RIGHTS",
+        "RISK_GROUND_TRUTH_AND_CALIBRATION",
+        "MATCHED_INPUT_MATERIAL_ADVANCED_VALUE",
+        "DEPLOYED_ENTITLEMENT_ISOLATED_CUSTOMER_EXECUTION"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Run automatic Advanced on the matched input and prove cross-source scenario value, conflicts, entitlements and durable delivery.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical Shield Advanced row is bound to the product topology.",
+        "Derived values require receipt IDs; blocked/unknown rights produce WITHHELD.",
+        "No calibrated-probability credit was granted."
+      ],
+      "r4NextInternalExecution": "Run the matched input with multi-source conflict/uncertainty value while keeping descriptive risk until calibration is proven.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "R6 preserves receipt-bound DERIVED semantics in two stable campaigns.",
+        "Multi-source evidence, calibration and Advanced customer value remain open."
+      ],
+      "r6NextInternalExecution": "Run the matched input with multi-source conflict/uncertainty value while keeping descriptive risk until calibration is proven.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 10,
+      "productId": "shield-pro-basic",
+      "displayName": "Shield Pro Basic",
+      "family": "shield-pro",
+      "tier": "basic",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_INVESTIGATOR_FUNCTIONALITY_AND_DATA",
+        "AUTHORIZATION_CASE_BOUNDARIES",
+        "PROVIDER_FAILURE_CONCURRENCY_RECOVERY",
+        "DEPLOYED_CUSTOMER_WORKFLOW"
+      ],
+      "sourceMapExternalBlockers": [
+        "OWNER_PRODUCT_TOPOLOGY_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Owner must confirm the Shield Pro topology, then execute a real investigator case with cross-account and recovery proof.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_CROSS_PRODUCT_CUSTOMER_RIGHTS_FIREWALL",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Separate Shield Pro product-family Basic row is preserved.",
+        "Runtime table contract enforces exact requested/analyzed/delivered identity.",
+        "Customer-safe states and field-rights boundary pass locally.",
+        "Cross-product investigator rights firewall executes and passes with withheld rights, zero network delivery and deterministic customer-safe projection."
+      ],
+      "r4NextInternalExecution": "Execute a real investigator case with tenant/auth boundaries, state transitions, concurrency, recovery and receipts on staging.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Investigator rights firewall remains green in both repeatability runs.",
+        "Real tenant-bound investigator execution remains open."
+      ],
+      "r6NextInternalExecution": "Execute a real investigator case with tenant/auth boundaries, state transitions, concurrency, recovery and receipts on staging.",
+      "historicalSourceMapExternalBlockers": [
+        "OWNER_PRODUCT_TOPOLOGY_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 11,
+      "productId": "shield-pro-pro",
+      "displayName": "Shield Pro Pro",
+      "family": "shield-pro",
+      "tier": "pro",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_INVESTIGATOR_FUNCTIONALITY_AND_DATA",
+        "AUTHORIZATION_ENTITLEMENT_CASE_BOUNDARIES",
+        "PROVIDER_FAILURE_CONCURRENCY_RECOVERY",
+        "MATCHED_INPUT_MATERIAL_PRO_WORKFLOW_VALUE",
+        "DEPLOYED_CUSTOMER_WORKFLOW"
+      ],
+      "sourceMapExternalBlockers": [
+        "OWNER_PRODUCT_TOPOLOGY_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "After topology approval, execute the Pro investigator workflow on the matched Basic case with entitlement and recovery evidence.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_CROSS_PRODUCT_CUSTOMER_RIGHTS_FIREWALL",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Separate Shield Pro Pro row is preserved.",
+        "Runtime table contract blocks silent tier downgrade and raw-error leakage.",
+        "No investigator-workflow FINAL was inferred from the shared contract.",
+        "Cross-product investigator rights firewall executes and passes; no Pro workflow or entitlement credit is inferred."
+      ],
+      "r4NextInternalExecution": "Execute the matched Basic investigator case with Pro entitlement and material workflow/monitoring value.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Investigator rights firewall and tier identity remain green in both repeatability runs.",
+        "Material Pro workflow value and entitlement remain open."
+      ],
+      "r6NextInternalExecution": "Execute the matched Basic investigator case with Pro entitlement and material workflow/monitoring value.",
+      "historicalSourceMapExternalBlockers": [
+        "OWNER_PRODUCT_TOPOLOGY_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 12,
+      "productId": "shield-pro-advanced",
+      "displayName": "Shield Pro Advanced",
+      "family": "shield-pro",
+      "tier": "advanced",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_INVESTIGATOR_FUNCTIONALITY_AND_DATA",
+        "AUTHORIZATION_ENTITLEMENT_CASE_BOUNDARIES",
+        "PROVIDER_FAILURE_CONCURRENCY_RECOVERY",
+        "MATCHED_INPUT_MATERIAL_ADVANCED_ADJUDICATION_EXPORT_VALUE",
+        "DEPLOYED_CUSTOMER_WORKFLOW"
+      ],
+      "sourceMapExternalBlockers": [
+        "OWNER_PRODUCT_TOPOLOGY_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "After topology approval, execute automatic Advanced adjudication, export and handoff on the matched investigator case.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_CROSS_PRODUCT_CUSTOMER_RIGHTS_FIREWALL",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Separate Shield Pro Advanced row is preserved.",
+        "Runtime table contract protects Advanced identity and exported-value rights boundary.",
+        "No real adjudication/export workflow credit was granted.",
+        "Cross-product investigator rights firewall executes and passes; no Advanced adjudication/export credit is inferred."
+      ],
+      "r4NextInternalExecution": "Execute automatic Advanced adjudication/export/handoff with field-level export rights and recovery proof.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Investigator rights firewall and export-rights boundary remain green in both repeatability runs.",
+        "Advanced adjudication/export value remains open."
+      ],
+      "r6NextInternalExecution": "Execute automatic Advanced adjudication/export/handoff with field-level export rights and recovery proof.",
+      "historicalSourceMapExternalBlockers": [
+        "OWNER_PRODUCT_TOPOLOGY_DECISION",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 13,
+      "productId": "real-markets-basic",
+      "displayName": "Real Markets Basic",
+      "family": "real-markets",
+      "tier": "basic",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CURRENT_MARKET_FIELDS_WITH_EXACT_SEMANTIC_CLASSES",
+        "FIELD_LEVEL_COMMERCIAL_RIGHTS_CURRENTNESS_SESSION_AND_TIME",
+        "DEPLOYED_DURABLE_CUSTOMER_ARTIFACT"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "After rights approval, execute the preflight and real current Basic route, preserving reference versus executable semantics.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_REAL_MARKETS_CURRENT_FIELD_AUTHORITY",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_MARKET_SNAPSHOT_250_ROUNDTRIP",
+        "R4_REAL_MARKETS_RISK_CONTRACT_BINDING",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical Basic row and semantic state machine pass static/runtime tests.",
+        "Current source requiredness is extracted for 553 catalog assets across 6 asset classes.",
+        "Basic baseline exposes 6,231 critical field-cells with 0 current runtime observations rather than fabricating values.",
+        "Real Markets risk/table contract binding now executes: 62 assertions across 23 field contracts and 19 risk-input contracts.",
+        "The 250-row market snapshot roundtrip passes with 4,904,441 serialized bytes and no invented runtime observation credit."
+      ],
+      "r4NextInternalExecution": "Map the 6,231 Basic critical cells to rights-safe providers/explicit missing states, then run current field observations and durable customer delivery.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Requiredness, risk binding and 250-row roundtrip remain green in both R6 campaigns.",
+        "No mandatory market observation was fabricated; 6,231 Basic critical cells remain the denominator."
+      ],
+      "r6NextInternalExecution": "Map the 6,231 Basic critical cells to rights-safe providers/explicit missing states, then run current field observations and durable customer delivery.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 14,
+      "productId": "real-markets-pro",
+      "displayName": "Real Markets Pro",
+      "family": "real-markets",
+      "tier": "pro",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CURRENT_MULTI_SOURCE_MARKET_FIELDS",
+        "FIELD_LEVEL_COMMERCIAL_RIGHTS_CURRENTNESS",
+        "MATCHED_INPUT_MATERIAL_PRO_VALUE",
+        "DEPLOYED_ENTITLEMENT_ISOLATED_DURABLE_ARTIFACT"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute Pro against the same canonical market snapshot after rights approval and prove durable entitled delivery and paid value.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_REAL_MARKETS_CURRENT_FIELD_AUTHORITY",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_MARKET_SNAPSHOT_250_ROUNDTRIP",
+        "R4_REAL_MARKETS_RISK_CONTRACT_BINDING",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical Pro row and semantic state machine pass static/runtime tests.",
+        "Current source field authority contains 300 rule rows; required fields cannot be silently optionalized.",
+        "Pro baseline exposes 8,283 critical field-cells, 0 available and 480 provider-required paid-blocked assets.",
+        "Real Markets risk/table contract binding now executes: 62 assertions across 23 field contracts and 19 risk-input contracts.",
+        "The 250-row market snapshot roundtrip passes; no missing Pro provider observation is converted into value."
+      ],
+      "r4NextInternalExecution": "Close actual Pro observations for the 8,283 critical cells in launch scope, with rights/currentness/session/corporate-action truth and matched value.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Requiredness and risk binding remain green in both R6 campaigns.",
+        "No missing Pro provider field was promoted to value; 8,283 critical cells remain the denominator."
+      ],
+      "r6NextInternalExecution": "Close actual Pro observations for the 8,283 critical cells in launch scope, with rights/currentness/session/corporate-action truth and matched value.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 15,
+      "productId": "real-markets-advanced",
+      "displayName": "Real Markets Advanced",
+      "family": "real-markets",
+      "tier": "advanced",
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CURRENT_MULTI_SOURCE_MARKET_FIELDS",
+        "FIELD_LEVEL_COMMERCIAL_RIGHTS_CURRENTNESS",
+        "MATCHED_INPUT_MATERIAL_ADVANCED_SCENARIO_CONFLICT_VALUE",
+        "DEPLOYED_ENTITLEMENT_ISOLATED_DURABLE_ARTIFACT"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute automatic Advanced against the same market snapshot and prove source conflict, scenario and decision value.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R3_REAL_MARKETS_CURRENT_FIELD_AUTHORITY",
+        "R3_TIERED_TABLE_CONTRACT_RUNTIME",
+        "R3_TIERED_TABLE_CONTRACT_STATIC",
+        "R4_MARKET_SNAPSHOT_250_ROUNDTRIP",
+        "R4_REAL_MARKETS_RISK_CONTRACT_BINDING",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical Advanced row and semantic state machine pass static/runtime tests.",
+        "Unknown/duplicate/rights-blocked/missing critical fields force WITHHELD.",
+        "Advanced baseline exposes 11,447 critical field-cells, 0 available and 480 provider-required paid-blocked assets.",
+        "Real Markets risk/table contract binding now executes: 62 assertions across 23 field contracts and 19 risk-input contracts.",
+        "The 250-row market snapshot roundtrip passes; no missing Advanced provider observation is converted into value."
+      ],
+      "r4NextInternalExecution": "Close actual Advanced observations for the 11,447 critical cells in launch scope, including conflict/scenario/quorum value or explicit supported-scope narrowing.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Requiredness, conflict-safe state semantics and risk binding remain green in both R6 campaigns.",
+        "No missing Advanced provider field was promoted to value; 11,447 critical cells remain the denominator."
+      ],
+      "r6NextInternalExecution": "Close actual Advanced observations for the 11,447 critical cells in launch scope, including conflict/scenario/quorum value or explicit supported-scope narrowing.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 16,
+      "productId": "shield-map",
+      "displayName": "Shield Map",
+      "family": "shield-map",
+      "tier": null,
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_NODE_EDGE_SOURCE_AND_SEMANTICS",
+        "RIGHTS_CURRENTNESS_CONFIDENCE_AND_PRIVACY",
+        "DEPLOYED_INTERACTIVE_CUSTOMER_ROUTE"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute a rights-safe real graph on authorized staging and validate identity conflict, privacy, interaction and customer comprehension.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Keyboard/combobox accessibility boundary passes locally.",
+        "Shared customer-safe redaction and operational telemetry boundaries pass locally."
+      ],
+      "r4NextInternalExecution": "Run a real rights-safe graph with node/edge provenance, label rights, privacy, currentness and deployed keyboard/mobile interaction.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Accessibility/customer-safe shared boundaries remain green in two stable campaigns.",
+        "Real node/edge provenance, rights and deployed interaction remain open."
+      ],
+      "r6NextInternalExecution": "Run a real rights-safe graph with node/edge provenance, label rights, privacy, currentness and deployed keyboard/mobile interaction.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 17,
+      "productId": "market-impact",
+      "displayName": "Market Impact",
+      "family": "market-impact",
+      "tier": null,
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "OWNER_AUTHORIZED_CURRENT_INPUT_AND_FIELD_RIGHTS_STATE",
+        "DEPLOYED_ROUTE_RETURNING_RIGHTS_SAFE_BOOK_OR_CANONICAL_NO_USABLE_ORDER_BOOK",
+        "MODEL_DOMAIN_CALIBRATION_UNCERTAINTY_AND_ADVERSARIAL_BOOKS"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW_OR_FREE_CREDENTIAL_REQUIRED",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Bind a rights-safe real order book or retain NO_USABLE_ORDER_BOOK, then execute calibrated thin, stale and manipulated-book cases.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R4_MARKET_IMPACT_NO_USABLE_ORDER_BOOK",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Global customer-safe table/telemetry boundaries are available.",
+        "Dedicated Market Impact runtime now passes the canonical NO_USABLE_ORDER_BOOK boundary instead of remaining dependency-WITHHELD.",
+        "The local result returns a null book/no synthetic liquidity and grants no impact/calibration/live-data credit."
+      ],
+      "r4NextInternalExecution": "Run one owner-authorized current input on staging and prove the deployed route returns either a rights-safe real/AMM book with exact semantics or the already-tested canonical NO_USABLE_ORDER_BOOK state.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Canonical NO_USABLE_ORDER_BOOK remains green in both R6 campaigns.",
+        "A deployed rights-safe book/current input is still required for row FINAL."
+      ],
+      "r6NextInternalExecution": "Run one owner-authorized current input on staging and prove the deployed route returns either a rights-safe real/AMM book with exact semantics or the already-tested canonical NO_USABLE_ORDER_BOOK state.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW_OR_FREE_CREDENTIAL_REQUIRED",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 18,
+      "productId": "whale-watch",
+      "displayName": "Whale Watch",
+      "family": "whale-watch",
+      "tier": null,
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "REAL_CHAIN_BLOCK_FINALITY_AND_REORG_EVIDENCE",
+        "LABEL_RIGHTS_IDENTITY_UNCERTAINTY_AND_DOUBLE_COUNT_NEGATIVES",
+        "DEPLOYED_CUSTOMER_ROUTE"
+      ],
+      "sourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW_OR_FREE_CREDENTIAL_REQUIRED",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Execute real finalized chain data with reorg, decimals, bridge, label and double-count proofs on authorized staging.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Canonical chain-event identity boundary passes locally.",
+        "Transfer identity/dedup foundation is exercised without promoting transfer to trade."
+      ],
+      "r4NextInternalExecution": "Execute finalized real-chain data with block/hash/finality, reorg rewind, labels, bridge/internal/double-count negatives and durable customer route.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Canonical chain-event identity remains green in both R6 campaigns.",
+        "Real finalized chain, reorg and label-rights execution remains open."
+      ],
+      "r6NextInternalExecution": "Execute finalized real-chain data with block/hash/finality, reorg rewind, labels, bridge/internal/double-count negatives and durable customer route.",
+      "historicalSourceMapExternalBlockers": [
+        "LEGAL_RIGHTS_REVIEW_OR_FREE_CREDENTIAL_REQUIRED",
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 19,
+      "productId": "angel",
+      "displayName": "Angel",
+      "family": "angel",
+      "tier": null,
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "OWNER_MODEL_PROVIDER_TERMS_PRIVACY_AGE_AND_COST_DECISIONS",
+        "REAL_GROUNDED_EVIDENCE_AND_TOOL_BOUNDARY",
+        "FULL_CORRECTNESS_HALLUCINATION_INJECTION_TOOL_MISUSE_PL_EN_DE_CAMPAIGN",
+        "DEPLOYED_PRIVACY_SAFE_CUSTOMER_ROUTE"
+      ],
+      "sourceMapExternalBlockers": [
+        "OWNER_AI_PROVIDER_DECISION",
+        "LEGAL_AND_PRIVACY_REVIEW",
+        "PRODUCTION_CREDENTIALS_AND_DEPLOYMENT_APPROVAL",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Owner must approve the model/provider obligations; then run the complete grounded multilingual adversarial campaign on a deployed authorized route.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R4_PROVIDER_COST_AMPLIFICATION_GUARD",
+        "R4_CROSS_PRODUCT_CUSTOMER_RIGHTS_FIREWALL",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_ANGEL_POSTGREST_DELETE",
+        "R6_SUPABASE_SERVICE_DELETE_REGRESSION"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Gemini/provider rights-before-network zero-network test passes locally.",
+        "AI campaign inventory verifies the existing 2,400/900 evidence counters without Customer FINAL credit.",
+        "Actual model, compute, privacy and multilingual adversarial execution remain separate.",
+        "Provider cost-amplification guard now executes and passes 16 assertions with 0 physical network calls and a maximum of 4 candidates.",
+        "Cross-product Angel rights firewall executes and passes while rights remain withheld; no model-quality credit is inferred."
+      ],
+      "r4NextInternalExecution": "Benchmark the approved real model on available hardware, then run PL/EN/DE grounding, privacy, tool-boundary, injection, exfiltration and tenant tests.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "Angel durable-memory deletion now uses the production Supabase PostgREST DELETE adapter.",
+        "53/53 assertions prove account-bound hashing, invalid-identity zero-network behavior, provider-error fail-close and a 5-second timeout fail-close.",
+        "The server adapter regression adds 24 assertions including DELETE, no-store and server-owned credentials.",
+        "Real model quality, compute, privacy, multilingual and adversarial execution remain open."
+      ],
+      "r6NextInternalExecution": "Choose the owner-approved real model/runtime, then run PL/EN/DE grounding, privacy, tool-boundary, injection, exfiltration, deletion and latency campaigns.",
+      "historicalSourceMapExternalBlockers": [
+        "OWNER_AI_PROVIDER_DECISION",
+        "LEGAL_AND_PRIVACY_REVIEW",
+        "PRODUCTION_CREDENTIALS_AND_DEPLOYMENT_APPROVAL",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    },
+    {
+      "ordinal": 20,
+      "productId": "risk-indicator",
+      "displayName": "Risk Indicator",
+      "family": "risk-indicator",
+      "tier": null,
+      "state": "WITHHELD",
+      "customerFinal": false,
+      "remainingBlockers": [
+        "AUTHORIZED_STAGING_MIGRATIONS_SERVICE_ROLE_AND_RLS",
+        "TWO_JWT_CROSS_ACCOUNT_ROLLBACK_CONCURRENCY_AND_RESTORE",
+        "DEPLOYED_REQUEST_BOUND_BROWSER_AND_REAL_CUSTOMER_EXECUTION"
+      ],
+      "sourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "sourceMapNextPhysicalAction": "Run the frozen Risk History contract on authorized staging with two JWTs, rollback, concurrency, restore and deployed customer readback.",
+      "evidenceReceiptIds": [
+        "R3_ACCOUNT_EXPORT_ERASURE_BOUNDARY",
+        "R3_CUSTOMER_PUBLIC_SAFETY_SWEEP",
+        "R4_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R4_CROSS_PRODUCT_CUSTOMER_RIGHTS_FIREWALL",
+        "R4_REFRESH_SESSION_FAMILY_REVOCATION",
+        "R4_SIGNUP_EMAIL_CONFIRMATION_FLOW",
+        "R6_LOCAL_CURRENT_EXECUTION_CAMPAIGN",
+        "R6_REPEATABILITY",
+        "R6_RUNTIME_ENV_CURRENT_MANIFEST",
+        "R6_EXACT_WINDOWS_WORKFLOW_CONTRACT"
+      ],
+      "r4DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r4ClosedLocalBoundaries": [
+        "Supabase customer-safe session/error-redaction boundaries pass locally.",
+        "Shared account export/erasure and operational telemetry boundaries pass locally.",
+        "No migration/RLS/restore/staging credit was inferred.",
+        "Cross-product Risk Indicator rights firewall now executes and passes while rights are withheld.",
+        "Refresh-session family revocation and signup email-confirmation boundaries now execute and pass through the test-only after() compatibility surface."
+      ],
+      "r4NextInternalExecution": "Use authorized local/Supabase staging to execute migrations, service role, two JWTs, RLS/cross-account denial, rollback/concurrency, DB+Storage restore, deployed HTTP/history/readback and the now-unblocked session lifecycle.",
+      "r6DistanceMovement": "CLOSER_NO_FINAL_PROMOTION",
+      "r6ClosedLocalBoundaries": [
+        "The canonical environment example is now bound to the current manifest: 17,006 bytes, 321 documented keys and 241 runtime keys.",
+        "The environment test is executed inside both campaigns instead of remaining NOT_RUN.",
+        "Exact Windows workflow contract passes 18/18 static controls but has not been executed.",
+        "Migrations, two JWTs, RLS, rollback/concurrency and restore remain open."
+      ],
+      "r6NextInternalExecution": "Run exact PGlite migrations or authorized Supabase staging with two JWTs, RLS/cross-account denial, rollback/concurrency, DB+Storage restore and deployed history/readback.",
+      "historicalSourceMapExternalBlockers": [
+        "AUTHORIZED_STAGING_CREDENTIALS",
+        "REAL_EXTERNAL_CUSTOMER_PROOF"
+      ],
+      "r7AuthorityGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+      "r7ExternalPilotInternalFinalGate": false,
+      "r7MergeAncestry": "R4_COMMON_BASE_PLUS_R5_AND_R6_MATERIAL_DELTAS"
+    }
+  ],
+  "nextPhysicalAction": "HOSTED_EXACT_WINDOWS_R7_52_X2_AND_SOURCE_AUTHORITY_BINDING_THEN_BROWSER_BASIC_FINAL_1_OF_20",
+  "truthBoundary": "Active internal map only. Historical P101/R5/R6 evidence remains immutable. No row is promoted by authority reconciliation or merge alone."
+}

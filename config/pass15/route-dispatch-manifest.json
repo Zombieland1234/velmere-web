@@ -1,0 +1,2817 @@
+{
+  "schemaVersion": "velmere.pass15.route-dispatch-consolidation.v1",
+  "purpose": "Preserve public URLs and method contracts while replacing repeated Next.js route entrypoints with two canonical lazy dispatchers.",
+  "truthBoundary": "Static source transformation; browser/runtime behavior still requires a successful production build and E2E replay.",
+  "marketIntegrity": {
+    "dispatcher": "app/api/market-integrity/[operation]/route.ts",
+    "routes": [
+      {
+        "operation": "access",
+        "publicPath": "/api/market-integrity/access",
+        "originalPath": "app/api/market-integrity/access/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/access.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "a97bfc3df75a8aea46a470038012a4b475e652f52fecdcefa68875942ca2e663",
+        "handlerSha256": "b69dfa3e392ffdc06dbc6ef7bce7d766e58c0451c11720f64cd4d9fa6a990e82",
+        "originalBytes": 1941,
+        "handlerBytes": 1903
+      },
+      {
+        "operation": "advanced-click-runtime",
+        "publicPath": "/api/market-integrity/advanced-click-runtime",
+        "originalPath": "app/api/market-integrity/advanced-click-runtime/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/advanced-click-runtime.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b33d39e9b2346d62a9ef1a0bca87f0fe54065d4a5c60360ec423edd6969ccb7f",
+        "handlerSha256": "959efbc805125e2a7a2d5609b293acd37adcf0b459614301688ed16176bc40c4",
+        "originalBytes": 5780,
+        "handlerBytes": 5706
+      },
+      {
+        "operation": "advanced-cta-entitlement-contract",
+        "publicPath": "/api/market-integrity/advanced-cta-entitlement-contract",
+        "originalPath": "app/api/market-integrity/advanced-cta-entitlement-contract/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/advanced-cta-entitlement-contract.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2c8eb70bc561c81d53c7e1b85e5bec672516330113570d60b4b1079ba99ee42f",
+        "handlerSha256": "18a39d34f9f547e35e9575a0f3537381205ad6d2de64633fa05381d211b4d1ce",
+        "originalBytes": 4647,
+        "handlerBytes": 4573
+      },
+      {
+        "operation": "advanced-review-state",
+        "publicPath": "/api/market-integrity/advanced-review-state",
+        "originalPath": "app/api/market-integrity/advanced-review-state/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/advanced-review-state.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "d59e76e4c83e5620151cf5992c746182b1435a38724da07ef010a446840132c1",
+        "handlerSha256": "bd689484eb4df6b66e8cb45a4c68d4273ac0667338c83bf80711ea15e99a0f18",
+        "originalBytes": 3357,
+        "handlerBytes": 3349
+      },
+      {
+        "operation": "advanced-value-audit",
+        "publicPath": "/api/market-integrity/advanced-value-audit",
+        "originalPath": "app/api/market-integrity/advanced-value-audit/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/advanced-value-audit.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "5cef9540eaa75af38f7d9dd2c326e8ee6535c6d99abd508f681f1c1b0d89da97",
+        "handlerSha256": "00069c4011ae230494c0dd6b48f5dabd8ec7c4777c7f2ad4f421b92f220d5381",
+        "originalBytes": 5577,
+        "handlerBytes": 5503
+      },
+      {
+        "operation": "ai-human-copy",
+        "publicPath": "/api/market-integrity/ai-human-copy",
+        "originalPath": "app/api/market-integrity/ai-human-copy/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/ai-human-copy.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2980ea71ab2789548741ceeca4fd420298b0a60425390855187e9a9cb0ae6348",
+        "handlerSha256": "d26debc02d34fd2cb5fc24b267fb0837885b808c795c856d777f045378d7f961",
+        "originalBytes": 862,
+        "handlerBytes": 788
+      },
+      {
+        "operation": "alerts",
+        "publicPath": "/api/market-integrity/alerts",
+        "originalPath": "app/api/market-integrity/alerts/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/alerts.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "1665b965befd7a80167b9ec2ad393ca5491a46041bf942405c4b92b800877a38",
+        "handlerSha256": "c3d7d009e36b0f580c5eb58358bdd422e0138eaa7c0612aa7837a2b0c44647cc",
+        "originalBytes": 1094,
+        "handlerBytes": 1020
+      },
+      {
+        "operation": "analyze",
+        "publicPath": "/api/market-integrity/analyze",
+        "originalPath": "app/api/market-integrity/analyze/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/analyze.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "7ae82beb4a93ac0ad8e75e883c802bda62152eccdcf3b5c2ed741fa7a463d4cb",
+        "handlerSha256": "b5134f629a3c8101c861d428d7b2263f3c2a910b8d7c815998f45319695d54e3",
+        "originalBytes": 9244,
+        "handlerBytes": 9170
+      },
+      {
+        "operation": "angel",
+        "publicPath": "/api/market-integrity/angel",
+        "originalPath": "app/api/market-integrity/angel/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/angel.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "ff3f22c082dfc36210cd039ec35f49ad3742257c6db4643649cceda3475a689e",
+        "handlerSha256": "543b264fbc9ea41772ff629caf828b87ad3f84c257e659e6f9fca86c9668dc11",
+        "originalBytes": 13825,
+        "handlerBytes": 15591
+      },
+      {
+        "operation": "architecture-guard",
+        "publicPath": "/api/market-integrity/architecture-guard",
+        "originalPath": "app/api/market-integrity/architecture-guard/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/architecture-guard.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b49195c6e01c283ce7ae675f8a86c0e7dd29ace1886a3949887bf057bbc6fe98",
+        "handlerSha256": "749f22f4b4b87d5d22f9959e6d40a936b092cab9e96a8a31a779e8c03d0ed6ca",
+        "originalBytes": 465,
+        "handlerBytes": 391
+      },
+      {
+        "operation": "asset-logo",
+        "publicPath": "/api/market-integrity/asset-logo",
+        "originalPath": "app/api/market-integrity/asset-logo/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/asset-logo.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "59f890bd5ea043debb41d851365d29578ff64149599b3688563ce64bc9bcdaf5",
+        "handlerSha256": "9dbc15b8d8e36a62af80417cfd0911fec0ee34c90b0bf2519eaf6d0620e4bdd0",
+        "originalBytes": 5771,
+        "handlerBytes": 5878
+      },
+      {
+        "operation": "assistant",
+        "publicPath": "/api/market-integrity/assistant",
+        "originalPath": "app/api/market-integrity/assistant/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/assistant.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "30d66317a2a11b374fcb0dc0947fecdcc2235599616adbb884037412d20eca20",
+        "handlerSha256": "13b83587a3d3284506eccda2c42aa9e283878ba53a991956bc37345131ec75c6",
+        "originalBytes": 3534,
+        "handlerBytes": 3460
+      },
+      {
+        "operation": "brain",
+        "publicPath": "/api/market-integrity/brain",
+        "originalPath": "app/api/market-integrity/brain/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/brain.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "1ddb1dc94a27c6b02916b5fc15e873a9b4875a4f2f76a879c6813314e183fff6",
+        "handlerSha256": "561e4d4e98e7b57563279f4e805e3f0e6157cf5daf4ad231228b056bc88fe54c",
+        "originalBytes": 6612,
+        "handlerBytes": 9272
+      },
+      {
+        "operation": "brand-icon",
+        "publicPath": "/api/market-integrity/brand-icon",
+        "originalPath": "app/api/market-integrity/brand-icon/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/brand-icon.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "e01f8e6a814c43188e57b3699c04051ae3811eb49edfff9489af769748ab9e75",
+        "handlerSha256": "13b46925977b1ec5e8980e34d92cfae1f142b26cb6c4df3a31000d2baa7ccd29",
+        "originalBytes": 3317,
+        "handlerBytes": 3504
+      },
+      {
+        "operation": "chart",
+        "publicPath": "/api/market-integrity/chart",
+        "originalPath": "app/api/market-integrity/chart/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/chart.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "0b8eded44497bb3a8d873a186acd0c7f2f3de3c0808d63acb09337377c1909c6",
+        "handlerSha256": "14448dc269796890dc36aa6148a2196a7b7d8a60eb6b32cede6343d4f7f095d8",
+        "originalBytes": 16085,
+        "handlerBytes": 16011
+      },
+      {
+        "operation": "chart-overlay",
+        "publicPath": "/api/market-integrity/chart-overlay",
+        "originalPath": "app/api/market-integrity/chart-overlay/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/chart-overlay.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b2196efcd3d09f348a60254365ff8d3676077340001a1ab043dc929dc705bed5",
+        "handlerSha256": "cf6080ec27fbf209fd40106ce4150eeab1400a620a648be6d23acdab441ca98a",
+        "originalBytes": 10345,
+        "handlerBytes": 10271
+      },
+      {
+        "operation": "chart-regime",
+        "publicPath": "/api/market-integrity/chart-regime",
+        "originalPath": "app/api/market-integrity/chart-regime/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/chart-regime.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "974a725d21c272d89c29441a4da18bb099fbb1a10a6ddbaa6444edf1d227c272",
+        "handlerSha256": "484b8f5676e82a7354a5cc7e8260a4798b190477d3b9328331862faef75f9df5",
+        "originalBytes": 2833,
+        "handlerBytes": 2759
+      },
+      {
+        "operation": "chat",
+        "publicPath": "/api/market-integrity/chat",
+        "originalPath": "app/api/market-integrity/chat/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/chat.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "cf14b13ced781fb91fcfde8f23075d9f41c90bc079a26767bcb05f23c8673181",
+        "handlerSha256": "469b7062372447b9e42ed61205018310d69c02490928cd4d52e4f2ffdd0fde7b",
+        "originalBytes": 6097,
+        "handlerBytes": 6023
+      },
+      {
+        "operation": "claim-expiry-renewal",
+        "publicPath": "/api/market-integrity/claim-expiry-renewal",
+        "originalPath": "app/api/market-integrity/claim-expiry-renewal/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/claim-expiry-renewal.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "523240fc992417ee88ae86d32ac04325f46c44bdd643004c3b32d00d743484c9",
+        "handlerSha256": "14191052a4d490a40bd7ba0390cc93f2455a5163310ee2c13f7c04f2c7aec8dc",
+        "originalBytes": 1060,
+        "handlerBytes": 1009
+      },
+      {
+        "operation": "consensus",
+        "publicPath": "/api/market-integrity/consensus",
+        "originalPath": "app/api/market-integrity/consensus/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/consensus.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "97c79c88079e1dcce333c7daf9298c06df9dce1f9a1b5d55155b043aaeed29cb",
+        "handlerSha256": "d11369b8ae00cd62939b409b40a1c5a480c6eca93d60d0ade580d96c4b423faf",
+        "originalBytes": 4478,
+        "handlerBytes": 4404
+      },
+      {
+        "operation": "contract-lens",
+        "publicPath": "/api/market-integrity/contract-lens",
+        "originalPath": "app/api/market-integrity/contract-lens/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/contract-lens.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "fe2d8f612d5cd6bdaa15405cbf00649cbe5290fa6adeab7ad0cbc5f17a357fc5",
+        "handlerSha256": "c56927c1ee12188f3cda64ae89a8982923ea369bf71b84eb9a45cc8f84b10f89",
+        "originalBytes": 1022,
+        "handlerBytes": 948
+      },
+      {
+        "operation": "cron",
+        "publicPath": "/api/market-integrity/cron",
+        "originalPath": "app/api/market-integrity/cron/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/cron.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "5c875a60eca00fde484542c17de66712fcab321c5de0cff7b59fd26ce0ce4eb4",
+        "handlerSha256": "0b282b4eb420da39c0dc60440f63d11e1ab1b78557ea98f5fef983406caa56bd",
+        "originalBytes": 7280,
+        "handlerBytes": 7205
+      },
+      {
+        "operation": "cross-asset",
+        "publicPath": "/api/market-integrity/cross-asset",
+        "originalPath": "app/api/market-integrity/cross-asset/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/cross-asset.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "7b72b59d63507d8aecf670d8360e137a149c5d46a1fbbfb72245bbddb9cec226",
+        "handlerSha256": "fbf5d089f8de6e2cbe64f5d6d37524f1ccfdfb189e6921d06be69237005f045b",
+        "originalBytes": 2899,
+        "handlerBytes": 2825
+      },
+      {
+        "operation": "customer-export-download",
+        "publicPath": "/api/market-integrity/customer-export-download",
+        "originalPath": "app/api/market-integrity/customer-export-download/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/customer-export-download.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "a96df011f2abdce391baffd5e28632538b51bd3c6195c466e18a74a7dc48e427",
+        "handlerSha256": "f10c2cf21151d09fe52a566292029cf251b8d9733ae4411f5f592857a957bf07",
+        "originalBytes": 29702,
+        "handlerBytes": 29661
+      },
+      {
+        "operation": "data-provenance",
+        "publicPath": "/api/market-integrity/data-provenance",
+        "originalPath": "app/api/market-integrity/data-provenance/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/data-provenance.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "88f8189b61d1b0c0ef4c192d4f047dc6b5a5dc8d5f2682a073f635f968108a3e",
+        "handlerSha256": "c53e8dcd02f87414180ae81d186973aa33c60d95fc9ef49996a3f3e2735ef3e5",
+        "originalBytes": 3967,
+        "handlerBytes": 3893
+      },
+      {
+        "operation": "defillama",
+        "publicPath": "/api/market-integrity/defillama",
+        "originalPath": "app/api/market-integrity/defillama/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/defillama.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "eac35d041299f967b46af061ad144bcad0f15020a29b39a8588b139e2b413304",
+        "handlerSha256": "3c794411ae940cf0a47510ab595bd1f5dd27bd6ff27377233aac4b001f4c92f5",
+        "originalBytes": 1134,
+        "handlerBytes": 1060
+      },
+      {
+        "operation": "dependency-reality-build-input",
+        "publicPath": "/api/market-integrity/dependency-reality-build-input",
+        "originalPath": "app/api/market-integrity/dependency-reality-build-input/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/dependency-reality-build-input.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "94d2f7416241448a840e687a66ad4af4421e355c878056ca2924aa538abe7f65",
+        "handlerSha256": "181b740ee02e2856953df1ff7c81f37db73577067be4d279f799f574f8a0d92f",
+        "originalBytes": 692,
+        "handlerBytes": 651
+      },
+      {
+        "operation": "entitlement-artifact-delivery-ledger",
+        "publicPath": "/api/market-integrity/entitlement-artifact-delivery-ledger",
+        "originalPath": "app/api/market-integrity/entitlement-artifact-delivery-ledger/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/entitlement-artifact-delivery-ledger.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "7279de86e6f1ed7f8e8347fec3967cbe0ddc55cb46789bea416abe10926cb063",
+        "handlerSha256": "75c00748ce778b2bc921c05292375ea45f186f83e2d2bd6a6f48efdf40e70beb",
+        "originalBytes": 7051,
+        "handlerBytes": 6977
+      },
+      {
+        "operation": "evidence-export",
+        "publicPath": "/api/market-integrity/evidence-export",
+        "originalPath": "app/api/market-integrity/evidence-export/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/evidence-export.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "7a02228b5fb8f8a16638151bcf3e3ba7c014584b29ba320cf38919f28f2c198d",
+        "handlerSha256": "2eb8b6d54ea73b52f1cca884b51be935d45fd1b6aff39d4b814306f87fcf9b41",
+        "originalBytes": 3304,
+        "handlerBytes": 3263
+      },
+      {
+        "operation": "evidence-workflow",
+        "publicPath": "/api/market-integrity/evidence-workflow",
+        "originalPath": "app/api/market-integrity/evidence-workflow/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/evidence-workflow.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "20a946994cdade3acad3a545f265dfa54bfd0e4269812509e618c84d5442d914",
+        "handlerSha256": "61195d0e26cedaa13782b9352f50c538ae16eb76883e7c5f3b5d386fc75e4161",
+        "originalBytes": 2124,
+        "handlerBytes": 2050
+      },
+      {
+        "operation": "exchange-health",
+        "publicPath": "/api/market-integrity/exchange-health",
+        "originalPath": "app/api/market-integrity/exchange-health/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/exchange-health.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4e209a290b17807bb7d5b5466ada713b728a490268968f03de5f4c64140a26cd",
+        "handlerSha256": "4a4fcc2b274531ff1df679633bc48b522ca0d1f94b76ef1fd94380d940e212bd",
+        "originalBytes": 695,
+        "handlerBytes": 621
+      },
+      {
+        "operation": "freshness-drift-sentinel",
+        "publicPath": "/api/market-integrity/freshness-drift-sentinel",
+        "originalPath": "app/api/market-integrity/freshness-drift-sentinel/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/freshness-drift-sentinel.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b1c893fcd3f2bf96922e5d8a516358581335d4437a0b8d9af02921570084861d",
+        "handlerSha256": "043de431123efcfc48b098f38f6ed72d59cde523e256d1c0fb6cfc4555f507a8",
+        "originalBytes": 3073,
+        "handlerBytes": 2999
+      },
+      {
+        "operation": "geckoterminal",
+        "publicPath": "/api/market-integrity/geckoterminal",
+        "originalPath": "app/api/market-integrity/geckoterminal/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/geckoterminal.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "66f10647e8874256fe88ea959f33ad7bec88a9b2a3186ffaac329e29c7d8717b",
+        "handlerSha256": "28e727fc8743bf6c00e177bc0e4128ed1ff0c189f03231f81aa90ee2bdd73dcc",
+        "originalBytes": 2496,
+        "handlerBytes": 2422
+      },
+      {
+        "operation": "global-risk-map",
+        "publicPath": "/api/market-integrity/global-risk-map",
+        "originalPath": "app/api/market-integrity/global-risk-map/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/global-risk-map.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "49169dd5a4f4d3ea652cb8df3114550fbe421f4934a3d799a3e61086fb6ff24f",
+        "handlerSha256": "ee8fedc3ce23153abf6f668f7ba5baec3ffcd047fc4caf71d19afb4e54ebf646",
+        "originalBytes": 461,
+        "handlerBytes": 387
+      },
+      {
+        "operation": "historical-backfill",
+        "publicPath": "/api/market-integrity/historical-backfill",
+        "originalPath": "app/api/market-integrity/historical-backfill/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/historical-backfill.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "39335e1945ace5837666ea4806e6f69bd18c90aaffd7692e9c16ce8c057d6627",
+        "handlerSha256": "84cfa2be8b1f6867b269a441d3e52b7c759c61780245120641b28f4f1b82706d",
+        "originalBytes": 4538,
+        "handlerBytes": 4464
+      },
+      {
+        "operation": "historical-range-window",
+        "publicPath": "/api/market-integrity/historical-range-window",
+        "originalPath": "app/api/market-integrity/historical-range-window/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/historical-range-window.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "9e53804c99a9e862c557d51f6ca5b9bb0a70b372eae959132484b97739c75340",
+        "handlerSha256": "3bb0aefc4e820035ef7fbcfab18d48263c415f09a1f9b955c4142f978edda427",
+        "originalBytes": 4266,
+        "handlerBytes": 4192
+      },
+      {
+        "operation": "history",
+        "publicPath": "/api/market-integrity/history",
+        "originalPath": "app/api/market-integrity/history/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/history.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "revalidate": "0"
+        },
+        "originalSha256": "995b9f7fa1220bf208e921f411b0959de6b9580b8397b5c2357dae2b9c5336ee",
+        "handlerSha256": "03159cbcc2bbb557ee889a4cf6b111a193ef67b5cb348b83e49f3030ba0532c3",
+        "originalBytes": 1617,
+        "handlerBytes": 1514
+      },
+      {
+        "operation": "holders",
+        "publicPath": "/api/market-integrity/holders",
+        "originalPath": "app/api/market-integrity/holders/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/holders.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "eb23909b39fe36cd30296d84f76f106cfa9df88d7ce9d254b832240d6fe8db8c",
+        "handlerSha256": "d162e0700cc47149d232a2a16514e440abef9426f4c3d0fa8fe5ca1c7fb9c616",
+        "originalBytes": 1600,
+        "handlerBytes": 1526
+      },
+      {
+        "operation": "icon",
+        "publicPath": "/api/market-integrity/icon",
+        "originalPath": "app/api/market-integrity/icon/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/icon.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "97b3d5dca2bbe698489b8bf14d53961ee55dc62cc2f89204e15c58a0adf45a7f",
+        "handlerSha256": "1ae6b490a63f43916592882136063e4ebe4eea1fbd622f3b5a273e99c09ca312",
+        "originalBytes": 3920,
+        "handlerBytes": 3900
+      },
+      {
+        "operation": "institutional-router",
+        "publicPath": "/api/market-integrity/institutional-router",
+        "originalPath": "app/api/market-integrity/institutional-router/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/institutional-router.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "1c3d517c23678c66dfbeffe316ad5de31bf7ea194360395e21971b4cc1a95291",
+        "handlerSha256": "d495a5465b6d8c51c02a8b2991ec3036afff6a291ac5b82cd89d11a23511c9bf",
+        "originalBytes": 3136,
+        "handlerBytes": 3062
+      },
+      {
+        "operation": "interaction-stability",
+        "publicPath": "/api/market-integrity/interaction-stability",
+        "originalPath": "app/api/market-integrity/interaction-stability/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/interaction-stability.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "51b8c46a34eddde78ab1d6ebced278d72accce951ab9a48dfcd3407135ae75a4",
+        "handlerSha256": "a8866c7a84e250040c723ca54a208a69f66f484886d2f9b6e5d443962d11d38d",
+        "originalBytes": 2301,
+        "handlerBytes": 2227
+      },
+      {
+        "operation": "investigator",
+        "publicPath": "/api/market-integrity/investigator",
+        "originalPath": "app/api/market-integrity/investigator/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/investigator.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "9fc47624ea7b063539b6cb1cdf815a45d386444e94f40f0e898555f484f9ceef",
+        "handlerSha256": "ac2b61d3b37e9b8b1509826d80d6a42249c56167044e7083d4db630dc3354b70",
+        "originalBytes": 3439,
+        "handlerBytes": 7184
+      },
+      {
+        "operation": "klines",
+        "publicPath": "/api/market-integrity/klines",
+        "originalPath": "app/api/market-integrity/klines/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/klines.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "83a53c906432fb6dd3f79b175cce39436d52833eece81c38006f08637970b69e",
+        "handlerSha256": "cf5de6df2bd0d6c9ce52d352ebdde643166d6721b34cc58d46571a589046f91e",
+        "originalBytes": 234,
+        "handlerBytes": 160
+      },
+      {
+        "operation": "launch-bridge",
+        "publicPath": "/api/market-integrity/launch-bridge",
+        "originalPath": "app/api/market-integrity/launch-bridge/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/launch-bridge.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "67a7d0f4d056a1970c147ff8b8c8bab8b184e8ecb5c636e50cb0d28f2c8c3810",
+        "handlerSha256": "80340aec13ec19f70023214ff7a5e4f067a536d17de40a6b780efc7892fa68b0",
+        "originalBytes": 2140,
+        "handlerBytes": 2066
+      },
+      {
+        "operation": "liquidation-replay-store",
+        "publicPath": "/api/market-integrity/liquidation-replay-store",
+        "originalPath": "app/api/market-integrity/liquidation-replay-store/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/liquidation-replay-store.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "bc12fac30709ffc3e91764500b2d8f64ad690e834d7bf844e39b6026ee5d96cd",
+        "handlerSha256": "6f6bd8494f1dbed4abb0a0c65858d9315069c5783bbbb64c28e80bd83399e7c8",
+        "originalBytes": 10341,
+        "handlerBytes": 10692
+      },
+      {
+        "operation": "liquidation-snapshot-ledger",
+        "publicPath": "/api/market-integrity/liquidation-snapshot-ledger",
+        "originalPath": "app/api/market-integrity/liquidation-snapshot-ledger/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/liquidation-snapshot-ledger.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "a787dcb26f5dd816dd79e0bbf9ee66006dc3ad5a750ac08d01e2298a6d8e672c",
+        "handlerSha256": "09bb9e0b98ccd428e90a9f9c9337cd8310cee4267cba76f9a27a85afe58d64b5",
+        "originalBytes": 8977,
+        "handlerBytes": 9328
+      },
+      {
+        "operation": "liquidity-intelligence",
+        "publicPath": "/api/market-integrity/liquidity-intelligence",
+        "originalPath": "app/api/market-integrity/liquidity-intelligence/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/liquidity-intelligence.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "769ce683b1ddaa84b8bd3f6f1ed6cadf6689bce4fd308074e97edab0b2b4a0c0",
+        "handlerSha256": "de25b05b3a123738f3eb3edad5f23cf91b08cd2e3cb58e0cc550f820cd5975f3",
+        "originalBytes": 2614,
+        "handlerBytes": 2540
+      },
+      {
+        "operation": "macro-chart-integrity",
+        "publicPath": "/api/market-integrity/macro-chart-integrity",
+        "originalPath": "app/api/market-integrity/macro-chart-integrity/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/macro-chart-integrity.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b1b80aa8a13a80b4da5dd54b77e95c339b439a7f6c5ed7e38b2fb15748759692",
+        "handlerSha256": "08acf3bd87aed2b85f6967781842e3a61070d489a57a77720b75eca88f546810",
+        "originalBytes": 3982,
+        "handlerBytes": 3908
+      },
+      {
+        "operation": "market-intelligence",
+        "publicPath": "/api/market-integrity/market-intelligence",
+        "originalPath": "app/api/market-integrity/market-intelligence/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "c740fe406e4a65610dee53cc3e60d746e88e5a79cbbd7b3e1149d1e0359f054f",
+        "handlerSha256": "dbe1e78d6c4e8cc7b8d423b141765b221dd332df2df46cd7da415ecc61a7b168",
+        "originalBytes": 38883,
+        "handlerBytes": 45942
+      },
+      {
+        "operation": "market-source-cadence",
+        "publicPath": "/api/market-integrity/market-source-cadence",
+        "originalPath": "app/api/market-integrity/market-source-cadence/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/market-source-cadence.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "944d0ef8b17ed971f27c9cf77744a7c19eb9e16ece128affa2e78ea9c41f100e",
+        "handlerSha256": "b7c5727d18870b4eca10ab6431fb36fee444435b4e34a55530fe6ecb1707ed3d",
+        "originalBytes": 680,
+        "handlerBytes": 606
+      },
+      {
+        "operation": "markets",
+        "publicPath": "/api/market-integrity/markets",
+        "originalPath": "app/api/market-integrity/markets/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/markets.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2f646a77cff4689abe1c5b1ed6ef402ef64e351f9fa7afd120060932c1c39313",
+        "handlerSha256": "a0a25b6c248547075a24c4887ffcfd6e2380a04950f7c8de89bcaeec2478540f",
+        "originalBytes": 15168,
+        "handlerBytes": 16672
+      },
+      {
+        "operation": "observability",
+        "publicPath": "/api/market-integrity/observability",
+        "originalPath": "app/api/market-integrity/observability/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/observability.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b7bed167e4b9e455abbb22ce535b9d925c0b6813cdd848de27c5f3b8c697ee1e",
+        "handlerSha256": "12fa51c2b50b3f3e7cae755183a9cedb31af8d257cee98fc08a15a0adb0182b9",
+        "originalBytes": 3526,
+        "handlerBytes": 3452
+      },
+      {
+        "operation": "orchestrator",
+        "publicPath": "/api/market-integrity/orchestrator",
+        "originalPath": "app/api/market-integrity/orchestrator/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/orchestrator.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2143ca2bb3b9c7a76f63092562c2eb58f5b5dc7a7bc6746fec1aa711a27c43e7",
+        "handlerSha256": "713b9328feb05b8edab074e480e142d645d24bab4586a9cf3ab2fbf5a9509b36",
+        "originalBytes": 1729,
+        "handlerBytes": 1655
+      },
+      {
+        "operation": "orderbook",
+        "publicPath": "/api/market-integrity/orderbook",
+        "originalPath": "app/api/market-integrity/orderbook/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/orderbook.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "017b4d06a46c2c899564f2fae2eca25244fac46515aa87d879777701748d7a71",
+        "handlerSha256": "391d1c967c474add72cb9bb2745ee6d65183ffc4095fefca6e1de1e6b802ef2a",
+        "originalBytes": 1061,
+        "handlerBytes": 987
+      },
+      {
+        "operation": "osint-queue",
+        "publicPath": "/api/market-integrity/osint-queue",
+        "originalPath": "app/api/market-integrity/osint-queue/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/osint-queue.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b9e52c921d6331308c73ff622b042bf516774f9db97c1e546f2691d0b1a97a29",
+        "handlerSha256": "88818e552c15d42e592e845f755d164ad5462a8d8db8edecf7134a3feb7cc2c0",
+        "originalBytes": 779,
+        "handlerBytes": 705
+      },
+      {
+        "operation": "performance-guard",
+        "publicPath": "/api/market-integrity/performance-guard",
+        "originalPath": "app/api/market-integrity/performance-guard/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/performance-guard.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "dded1c359d67731a74b353a53be58ffaa132e600df4a9e5c75e38b089a77c132",
+        "handlerSha256": "55923e4e12022d03b4a5c5606971f89191f94cb76146fc70ea9a167523b5739f",
+        "originalBytes": 1575,
+        "handlerBytes": 1501
+      },
+      {
+        "operation": "playbook",
+        "publicPath": "/api/market-integrity/playbook",
+        "originalPath": "app/api/market-integrity/playbook/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/playbook.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "98bc6228d211ffb7b86d6a57187097546ebe866bd8091c6ebc4ae18b21c84cb7",
+        "handlerSha256": "f8a5160541eb62697cb0e5d2628e7c8d5f3e483523f608fe258b0925e0fa7afc",
+        "originalBytes": 1965,
+        "handlerBytes": 1891
+      },
+      {
+        "operation": "premium-evidence-bridge",
+        "publicPath": "/api/market-integrity/premium-evidence-bridge",
+        "originalPath": "app/api/market-integrity/premium-evidence-bridge/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/premium-evidence-bridge.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "97fb399427229e64df3c2daea825d8e0cfed9dbb386637b0e094986d2c06e739",
+        "handlerSha256": "c0c0b37f9a15c3f5191c1a0a47dacef26119c1d80740f0df34de6982ffd5d290",
+        "originalBytes": 5150,
+        "handlerBytes": 5076
+      },
+      {
+        "operation": "probe",
+        "publicPath": "/api/market-integrity/probe",
+        "originalPath": "app/api/market-integrity/probe/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/probe.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "3e631997bcfc0a52f292920d8184374792d48fc95a280ac19ec21d6526623b8f",
+        "handlerSha256": "fa1c08caf86118bd086233d191580a1acb1cbcc6f88c98b98dc31797504bdd59",
+        "originalBytes": 18074,
+        "handlerBytes": 18503
+      },
+      {
+        "operation": "provider-closeout-runtime",
+        "publicPath": "/api/market-integrity/provider-closeout-runtime",
+        "originalPath": "app/api/market-integrity/provider-closeout-runtime/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/provider-closeout-runtime.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "a40716040863999052b839cf50b1906a0fc80ecec8a3ea5be3fea19947600b80",
+        "handlerSha256": "38316a835ec19c11b23bb68fc499bc9dd1994f3f8deebbda400e67edb4241d88",
+        "originalBytes": 3016,
+        "handlerBytes": 2942
+      },
+      {
+        "operation": "provider-methodology",
+        "publicPath": "/api/market-integrity/provider-methodology",
+        "originalPath": "app/api/market-integrity/provider-methodology/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/provider-methodology.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "123359c28e0a85caa609528fa1397af6b14de1f8cee9ca9ab6fc63c2ecb567d0",
+        "handlerSha256": "0413def71349af7eb97120ff5ddaa30c5ea49fdbc88f99fd1717f1b21fe0f35b",
+        "originalBytes": 4033,
+        "handlerBytes": 3959
+      },
+      {
+        "operation": "public-claim-transparency",
+        "publicPath": "/api/market-integrity/public-claim-transparency",
+        "originalPath": "app/api/market-integrity/public-claim-transparency/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/public-claim-transparency.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "55ae664ad1382796f56193015d170426d6792e00902b7f211074c5ba99c8cc58",
+        "handlerSha256": "7ffd565818906cd8577f392695a30216a1f98e8af45a8038b462fde9a6128968",
+        "originalBytes": 1353,
+        "handlerBytes": 1302
+      },
+      {
+        "operation": "public-trust-evidence-decay-renewal-escrow",
+        "publicPath": "/api/market-integrity/public-trust-evidence-decay-renewal-escrow",
+        "originalPath": "app/api/market-integrity/public-trust-evidence-decay-renewal-escrow/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/public-trust-evidence-decay-renewal-escrow.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "6b7dfdc8ba9a087bc5d542d5cf87adbc58c6140d92efbec4e09aee3b1bd0a207",
+        "handlerSha256": "48299533198a07b4a975cb4805c6a0d051b4f1d2317553053ba6e6eb50b4708e",
+        "originalBytes": 2404,
+        "handlerBytes": 2353
+      },
+      {
+        "operation": "readiness",
+        "publicPath": "/api/market-integrity/readiness",
+        "originalPath": "app/api/market-integrity/readiness/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/readiness.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "cad5dc88c0cc60c57775873f2c82661ef34edbfbc5de957a776610c3ae644a5d",
+        "handlerSha256": "c09d4566432fb2a804df8f4c91708de821beee9388d9ac6c7d9c4bdaa306bfb6",
+        "originalBytes": 1173,
+        "handlerBytes": 989
+      },
+      {
+        "operation": "real-markets",
+        "publicPath": "/api/market-integrity/real-markets",
+        "originalPath": "app/api/market-integrity/real-markets/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/real-markets.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "973497f665d4ab652348fe7eea7e54e751f6456492a8800ebb44825e1e2c96f5",
+        "handlerSha256": "bc8b01052e0281fcb6dc79953a992b2f83a209e5db4e11b451843c04f39f0a57",
+        "originalBytes": 413,
+        "handlerBytes": 339
+      },
+      {
+        "operation": "real-markets-sec-companyfacts-hydrator",
+        "publicPath": "/api/market-integrity/real-markets-sec-companyfacts-hydrator",
+        "originalPath": "app/api/market-integrity/real-markets-sec-companyfacts-hydrator/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/real-markets-sec-companyfacts-hydrator.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "8123d29353602e118aca42ce0c58ec0d11d7089cf4d40db1d4da68180ca36eb6",
+        "handlerSha256": "c1c66cabac9ef57fc5c7915838eea277f4da811a691ca69906d5f80756d45e7d",
+        "originalBytes": 3817,
+        "handlerBytes": 3743
+      },
+      {
+        "operation": "report",
+        "publicPath": "/api/market-integrity/report",
+        "originalPath": "app/api/market-integrity/report/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/report.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "84c3439dde2e011418eb4b69ea7e5909d0707ee0535b9eb35bf8471fc29510e3",
+        "handlerSha256": "51712c4eb9fa26718ec194fa3a3f03da350168a29a51eef6bf101cb6da53774f",
+        "originalBytes": 40544,
+        "handlerBytes": 40164
+      },
+      {
+        "operation": "report-access",
+        "publicPath": "/api/market-integrity/report-access",
+        "originalPath": "app/api/market-integrity/report-access/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/report-access.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "d382e6e25360ab731e3c3c2143f8df8a44d0df632ec653653929968bfdf4d7a2",
+        "handlerSha256": "339d6e309e55e975d78a65055ae382d8e81130647fc70d1960fabdd984494057",
+        "originalBytes": 6254,
+        "handlerBytes": 6180
+      },
+      {
+        "operation": "report-evidence",
+        "publicPath": "/api/market-integrity/report-evidence",
+        "originalPath": "app/api/market-integrity/report-evidence/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/report-evidence.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "6fe9a9e12075bdaa9379b70a5e8792af2926598f9d2f1123f16f6380bcb0e600",
+        "handlerSha256": "d1b108e9dbf6ce02f568f093bbbbcc9521185ce6bbbdc40b4e631df1bc4aa8d5",
+        "originalBytes": 4928,
+        "handlerBytes": 4854
+      },
+      {
+        "operation": "report-pdf",
+        "publicPath": "/api/market-integrity/report-pdf",
+        "originalPath": "app/api/market-integrity/report-pdf/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/report-pdf.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "73b33f070c25772b00559ec7fff7adaa119ae10d33f506bb26057a2a7cc54475",
+        "handlerSha256": "83a0e76551cce8e62e41612b7ece714f0007b87bea210de2602d4e0fa6e2925a",
+        "originalBytes": 4293,
+        "handlerBytes": 4164
+      },
+      {
+        "operation": "review-deck",
+        "publicPath": "/api/market-integrity/review-deck",
+        "originalPath": "app/api/market-integrity/review-deck/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/review-deck.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "17bcb3c717522344d6fe338ad1fee302113329522292ab67d61189b70c38f3e2",
+        "handlerSha256": "2e725a7fa750af129e42b0b37eef074723a49d8eaf4c42cbf24c0552436ecbc0",
+        "originalBytes": 2290,
+        "handlerBytes": 2216
+      },
+      {
+        "operation": "risk-calibration",
+        "publicPath": "/api/market-integrity/risk-calibration",
+        "originalPath": "app/api/market-integrity/risk-calibration/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/risk-calibration.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "85797687e7aa61251428005ed758362bcc34fa4442a3299260b267ffda450737",
+        "handlerSha256": "d1c7aae43cd5323bc8d67bdf4af58d279a58672d806cfc6b8e35dc98fe45530b",
+        "originalBytes": 4619,
+        "handlerBytes": 7883
+      },
+      {
+        "operation": "rules",
+        "publicPath": "/api/market-integrity/rules",
+        "originalPath": "app/api/market-integrity/rules/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/rules.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "9fea371213a0241194023961dd88b2d7c87f2a384b523f9d40d23db6768093fe",
+        "handlerSha256": "53ecd30884687ce64d0cbe2a5fc6df59def34bd661a3c57c7e1844490084898b",
+        "originalBytes": 1998,
+        "handlerBytes": 1924
+      },
+      {
+        "operation": "scheduled-revalidation-execution-breach",
+        "publicPath": "/api/market-integrity/scheduled-revalidation-execution-breach",
+        "originalPath": "app/api/market-integrity/scheduled-revalidation-execution-breach/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/scheduled-revalidation-execution-breach.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "9f2462e43c44ce42c6d6727b1755cbe8b98638a27b259ee21e2aabe6f8b07534",
+        "handlerSha256": "eb03aaa20828e26a156c2d6392241d2103a26efed93efe5a06591ae9821ebf68",
+        "originalBytes": 2627,
+        "handlerBytes": 2576
+      },
+      {
+        "operation": "search",
+        "publicPath": "/api/market-integrity/search",
+        "originalPath": "app/api/market-integrity/search/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/search.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "e9522f766364543cb7bf4c23c6f5b920f8357c5817d2e14b0add9e03ed0fcedb",
+        "handlerSha256": "b11ab8a77bce0542dc8eb378e0f6b70a8d1cd2ba20b29e14df43c79df2c0fdde",
+        "originalBytes": 1449,
+        "handlerBytes": 1375
+      },
+      {
+        "operation": "second-source-divergence",
+        "publicPath": "/api/market-integrity/second-source-divergence",
+        "originalPath": "app/api/market-integrity/second-source-divergence/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/second-source-divergence.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "c35f620078ad551dd17922e36a87f938a00592ad586c336f051c619ac64b1949",
+        "handlerSha256": "5587be6419be3332784cb6fc9adeb51cd633c8f073bac462457ef8182ebe78df",
+        "originalBytes": 488,
+        "handlerBytes": 414
+      },
+      {
+        "operation": "sentinel",
+        "publicPath": "/api/market-integrity/sentinel",
+        "originalPath": "app/api/market-integrity/sentinel/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/sentinel.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "273d115208c9921c51b32424e578a00d382ade02da7d9872cf90db3fa25ec1e4",
+        "handlerSha256": "21b9aa0f5048c21424ebb6d961152f47e39065dc73e96d6bf9415602aac75862",
+        "originalBytes": 2841,
+        "handlerBytes": 2767
+      },
+      {
+        "operation": "soc",
+        "publicPath": "/api/market-integrity/soc",
+        "originalPath": "app/api/market-integrity/soc/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/soc.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "11bf0d52557bff3ca1bc89d75c38d8551e6bf77ea6d07cf67651b0c69d69d97a",
+        "handlerSha256": "fe40247ab2bfd6a0196eccad96267278541f9ce7693af25db7a126d70a3f01c4",
+        "originalBytes": 1805,
+        "handlerBytes": 1731
+      },
+      {
+        "operation": "source-readiness",
+        "publicPath": "/api/market-integrity/source-readiness",
+        "originalPath": "app/api/market-integrity/source-readiness/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/source-readiness.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b7dc24805bfadae8e239d7f610c68985c68f5c833f72521fce67dc666ec66747",
+        "handlerSha256": "1211409a172abce04559e990de3e4bd19085bc32ae8dc2629b94bf4a4b5fcaf3",
+        "originalBytes": 865,
+        "handlerBytes": 791
+      },
+      {
+        "operation": "source-snapshot",
+        "publicPath": "/api/market-integrity/source-snapshot",
+        "originalPath": "app/api/market-integrity/source-snapshot/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/source-snapshot.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "67809745d6e00b8a54790775090829cea5cabb8dbcede73f589311cb48df4e73",
+        "handlerSha256": "ad898e2b39baf07909c3c500afa226b86f42b73be9ec94e08f450088d949af5d",
+        "originalBytes": 3128,
+        "handlerBytes": 3054
+      },
+      {
+        "operation": "source-snapshots",
+        "publicPath": "/api/market-integrity/source-snapshots",
+        "originalPath": "app/api/market-integrity/source-snapshots/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/source-snapshots.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "eaa1fcee15acf5de531e9b776755a866d0036a2015d7b89e709f0b61104bd732",
+        "handlerSha256": "1e9c983bcd7f0040a2ce367c5fd6272588e0717d3e68bbaec13f997d98e0e272",
+        "originalBytes": 1559,
+        "handlerBytes": 1351
+      },
+      {
+        "operation": "source-sync",
+        "publicPath": "/api/market-integrity/source-sync",
+        "originalPath": "app/api/market-integrity/source-sync/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/source-sync.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "22879cad16bf9bb4146f73bf84972656e54b1d32d3bf69c71ecb3a7e0c6c83bd",
+        "handlerSha256": "7657c3fcf071c4ad9064932759282d888aa9ac13ff62c4972df933405ebd3581",
+        "originalBytes": 2713,
+        "handlerBytes": 2639
+      },
+      {
+        "operation": "source-trust",
+        "publicPath": "/api/market-integrity/source-trust",
+        "originalPath": "app/api/market-integrity/source-trust/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/source-trust.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "007a399adbbd2d37fb1e519909135b882b1f823e644e46a9160b4d7aecadeeee",
+        "handlerSha256": "d5f9aaefd8a3878af566482bd7829e3e6448caa18b7d49d0a03fc28383828416",
+        "originalBytes": 2180,
+        "handlerBytes": 2106
+      },
+      {
+        "operation": "stress",
+        "publicPath": "/api/market-integrity/stress",
+        "originalPath": "app/api/market-integrity/stress/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/stress.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "0ad771b64316d2855fa0e3468d3d8cfca8bbd6d0d8cf2bb002c41e613655b7dd",
+        "handlerSha256": "25487272b85642cdbd32b83545bbc85596ec186b8517ca7df98f25f6fe95b0ae",
+        "originalBytes": 1407,
+        "handlerBytes": 1333
+      },
+      {
+        "operation": "supply-filing-provenance-lock",
+        "publicPath": "/api/market-integrity/supply-filing-provenance-lock",
+        "originalPath": "app/api/market-integrity/supply-filing-provenance-lock/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/supply-filing-provenance-lock.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "32eda23ee29a42d0cd7d839d4f4ab040887e459fce414bb2f309a6f8f14e79b2",
+        "handlerSha256": "a9f86c282fa4bf4b47f8d0061cc2dd999a7742245d394d1c8d9184f1dd7afabe",
+        "originalBytes": 3849,
+        "handlerBytes": 3775
+      },
+      {
+        "operation": "tier-180-output-matrix",
+        "publicPath": "/api/market-integrity/tier-180-output-matrix",
+        "originalPath": "app/api/market-integrity/tier-180-output-matrix/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/tier-180-output-matrix.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "05451bbbf699e4476efaafcaf0c2d3d23e97945fffb69600902be435ceb27217",
+        "handlerSha256": "a058c6621db3a9118434cf05c7a30891a6866b667bba755f376349b48a78da59",
+        "originalBytes": 4075,
+        "handlerBytes": 4001
+      },
+      {
+        "operation": "tier-commercial-value-contract",
+        "publicPath": "/api/market-integrity/tier-commercial-value-contract",
+        "originalPath": "app/api/market-integrity/tier-commercial-value-contract/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/tier-commercial-value-contract.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "7d8973f2f0f4b00059446924ac57131fa8d77a1e13265069b69b2af43970553e",
+        "handlerSha256": "e0688eecdcb2f344bb58eebc3c6b4419427ccb00f1b1dc39961ec366086b1e09",
+        "originalBytes": 3999,
+        "handlerBytes": 3925
+      },
+      {
+        "operation": "tier-depth-scenario-parity",
+        "publicPath": "/api/market-integrity/tier-depth-scenario-parity",
+        "originalPath": "app/api/market-integrity/tier-depth-scenario-parity/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/tier-depth-scenario-parity.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "8eb9c465ccc0ca7fce434bd701c24395baa2cd56f5cbe4a7bc143262fe022eb1",
+        "handlerSha256": "6777f21f4eef664cbf9f5f6801ff14d1f67bea52d6e2b09d5ba98c4e8f19ae71",
+        "originalBytes": 4557,
+        "handlerBytes": 4483
+      },
+      {
+        "operation": "tier-proof",
+        "publicPath": "/api/market-integrity/tier-proof",
+        "originalPath": "app/api/market-integrity/tier-proof/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/tier-proof.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4bfc02fe5ec54abcdf9a328ab930863399963b3c6552379959736f4aee22602b",
+        "handlerSha256": "3bab96102e16058bb99be73a658c279900a6e4da7d4a7256571671f70d1470f1",
+        "originalBytes": 4938,
+        "handlerBytes": 4864
+      },
+      {
+        "operation": "ui-proof-strip",
+        "publicPath": "/api/market-integrity/ui-proof-strip",
+        "originalPath": "app/api/market-integrity/ui-proof-strip/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/ui-proof-strip.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "ac81525d629a06fb0606e396f3eb6a2110ff4ec31f81a7d636a915ae5531313e",
+        "handlerSha256": "9dec221c15f16b6fcaab37babc063913b8471071aaeb5d4d9b22355a516b1b98",
+        "originalBytes": 3252,
+        "handlerBytes": 3178
+      },
+      {
+        "operation": "usability-guard",
+        "publicPath": "/api/market-integrity/usability-guard",
+        "originalPath": "app/api/market-integrity/usability-guard/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/usability-guard.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4380c6d8bacea2f57a2981e66c1b7fa71dc3aae0a1ad12b609d75d463046fd6f",
+        "handlerSha256": "7053b10f447004fe28cf34fa707bd54154f2aa42815562b2e9aa65fd44bc8514",
+        "originalBytes": 2255,
+        "handlerBytes": 2181
+      },
+      {
+        "operation": "venue-health",
+        "publicPath": "/api/market-integrity/venue-health",
+        "originalPath": "app/api/market-integrity/venue-health/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/venue-health.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "15502a2111b878ed57538efe600301cace400bca4fff4606a62ab2b1fd382939",
+        "handlerSha256": "b1cd167aec2289ca78c8ae0f7c066d0f4d31e9d3e6f0a71d6c13f217507d73f0",
+        "originalBytes": 2667,
+        "handlerBytes": 4866
+      },
+      {
+        "operation": "vlm",
+        "publicPath": "/api/market-integrity/vlm",
+        "originalPath": "app/api/market-integrity/vlm/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/vlm.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "5472defa9f7b7dfd82642ffe2da3cca8c8e0b2df32cd8ce471c7421ffdbdc1bd",
+        "handlerSha256": "68506ea81ec4ef9883b86b034d0554648994181f005b7fddde80920249ded1f7",
+        "originalBytes": 18505,
+        "handlerBytes": 21584
+      },
+      {
+        "operation": "window-reconciliation",
+        "publicPath": "/api/market-integrity/window-reconciliation",
+        "originalPath": "app/api/market-integrity/window-reconciliation/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/window-reconciliation.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "f2aa53e1673b119851869628dba43a00816ff8edc49801aa98e7afe5d16ae894",
+        "handlerSha256": "9a9e48e5b3ab91068612ddeea02b84834eced271841a974cdc663045faf2a8f2",
+        "originalBytes": 3180,
+        "handlerBytes": 3106
+      },
+      {
+        "operation": "workspace",
+        "publicPath": "/api/market-integrity/workspace",
+        "originalPath": "app/api/market-integrity/workspace/route.ts",
+        "handlerModule": "lib/server/market-integrity-route-modules/workspace.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "5d35e63f60f9a453c2375cad9c433305f5477e0d85f59219a0d741da07036daf",
+        "handlerSha256": "c5179165e454405e44865bd04c96be2fd26e04ed723028c502610ef6b0a356f2",
+        "originalBytes": 2377,
+        "handlerBytes": 2303
+      }
+    ],
+    "parameter": "operation",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";",
+      "export const revalidate = 0;"
+    ],
+    "registry": "lib/server/route-registries/market-integrity.ts"
+  },
+  "internalWorkers": {
+    "dispatcher": "app/api/internal/workers/[worker]/route.ts",
+    "routes": [
+      {
+        "operation": "auth-security-alerts",
+        "publicPath": "/api/internal/workers/auth-security-alerts",
+        "originalPath": "app/api/internal/workers/auth-security-alerts/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/auth-security-alerts.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "144687b241a04e73e402b50b43b1091f6fc0079088641d9786835f129c34cd43",
+        "handlerSha256": "9975255635352421fbf62d21edc1e036b1fe9589aff639dbabbc42798266fbfd",
+        "originalBytes": 1464,
+        "handlerBytes": 1686
+      },
+      {
+        "operation": "commerce-fulfilment-outbox",
+        "publicPath": "/api/internal/workers/commerce-fulfilment-outbox",
+        "originalPath": "app/api/internal/workers/commerce-fulfilment-outbox/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/commerce-fulfilment-outbox.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "d6475f54fba6f2ea71514c174854e48596406a7ff9655861aaecbe19dd9fa41c",
+        "handlerSha256": "ae19f53633f7b2c21094640e724bfa7f80a715ec9ca245ad4b038ab16724c2a3",
+        "originalBytes": 2991,
+        "handlerBytes": 2886
+      },
+      {
+        "operation": "durable-computation-alerts",
+        "publicPath": "/api/internal/workers/durable-computation-alerts",
+        "originalPath": "app/api/internal/workers/durable-computation-alerts/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/durable-computation-alerts.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "58fa3d7597b3c30f7d425124bfdd24725232c75003b8673e1a7d1e7ccff8848e",
+        "handlerSha256": "93e5c0b87f03239fc880a7233237f3928c9e7dac6360eced891db15263ba78da",
+        "originalBytes": 1816,
+        "handlerBytes": 2203
+      },
+      {
+        "operation": "durable-computation-operations",
+        "publicPath": "/api/internal/workers/durable-computation-operations",
+        "originalPath": "app/api/internal/workers/durable-computation-operations/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/durable-computation-operations.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "759a22ffb2d6499c6ecc15cf37a4b28b6be17cf2842debbd4fe37d631337f45f",
+        "handlerSha256": "6721b232d50815b0e59a9c43e393bdfa2d3f7d8bcf666d2501cbd2214561f7da",
+        "originalBytes": 6826,
+        "handlerBytes": 6721
+      },
+      {
+        "operation": "durable-computation-promotion",
+        "publicPath": "/api/internal/workers/durable-computation-promotion",
+        "originalPath": "app/api/internal/workers/durable-computation-promotion/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/durable-computation-promotion.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "4d9d327589aaf49ce73bf266eff58182ff31f3b6c66e3a9bff371ed3d7f67163",
+        "handlerSha256": "0e9bdad62f383e347e6176f84d7610b4ce7dd802207fc0c86da41b390541cd18",
+        "originalBytes": 9595,
+        "handlerBytes": 9490
+      },
+      {
+        "operation": "fulfilment-incident-outbox",
+        "publicPath": "/api/internal/workers/fulfilment-incident-outbox",
+        "originalPath": "app/api/internal/workers/fulfilment-incident-outbox/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/fulfilment-incident-outbox.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "ed28729a435c66d7835c040906a1637dda6435d3e196af2d43999bcdb547825a",
+        "handlerSha256": "2c001e0accc04b2753ba75033feec3b29de158e6e10519eb49c0cfbd17073a05",
+        "originalBytes": 2179,
+        "handlerBytes": 2615
+      },
+      {
+        "operation": "fulfilment-provider-sync",
+        "publicPath": "/api/internal/workers/fulfilment-provider-sync",
+        "originalPath": "app/api/internal/workers/fulfilment-provider-sync/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/fulfilment-provider-sync.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "bfda9eb3cd24c21df0c032f972e4111e7c4324ceb4e003382211158807072034",
+        "handlerSha256": "6a879ca801eb919d9a175af78f86edb4431caf9c9f4676dc245c873ddc7f8605",
+        "originalBytes": 2219,
+        "handlerBytes": 2778
+      },
+      {
+        "operation": "stripe-webhook-reconciliation",
+        "publicPath": "/api/internal/workers/stripe-webhook-reconciliation",
+        "originalPath": "app/api/internal/workers/stripe-webhook-reconciliation/route.ts",
+        "handlerModule": "lib/server/internal-worker-route-modules/stripe-webhook-reconciliation.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\"",
+          "maxDuration": "30"
+        },
+        "originalSha256": "7eac4992982c31d901e77f4f0dae7d7dd7d03dfc61516b7610058b96fb3c9bed",
+        "handlerSha256": "1ccbe5cab50ce4389142c0c0bf2139a0bcf8670af1695984f0a495454e1b9ae3",
+        "originalBytes": 2101,
+        "handlerBytes": 2415
+      }
+    ],
+    "parameter": "worker",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";",
+      "export const maxDuration = 30;"
+    ],
+    "registry": "lib/server/route-registries/internal-workers.ts"
+  },
+  "summary": {
+    "routeGroupsConsolidated": 5,
+    "oldEntrypointsRemoved": 160,
+    "newEntrypointsAdded": 5,
+    "netEntrypointReduction": 155,
+    "marketRoutesConsolidated": 95,
+    "workerRoutesConsolidated": 8,
+    "securityRoutesConsolidated": 49,
+    "searchRoutesConsolidated": 5,
+    "adminRoutesConsolidated": 3
+  },
+  "security": {
+    "routes": [
+      {
+        "operation": "abuse-shield",
+        "publicPath": "/api/security/abuse-shield",
+        "originalPath": "app/api/security/abuse-shield/route.ts",
+        "handlerModule": "lib/server/security-route-modules/abuse-shield.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "c036699cd751ff35a60b446c908b3d6fc2e210685a2bb400051217418a188226",
+        "handlerSha256": "a46d32c20ae9f97745bd0e2c7d4941035d7a268f186d34ac6ee2f886161dd1c6",
+        "originalBytes": 3255,
+        "handlerBytes": 634
+      },
+      {
+        "operation": "admin-audit",
+        "publicPath": "/api/security/admin-audit",
+        "originalPath": "app/api/security/admin-audit/route.ts",
+        "handlerModule": "lib/server/security-route-modules/admin-audit.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "6e5b8b3f288727a2b8d6a9cdae9194bb52e531b0f44e6404eaebeafbc5be5180",
+        "handlerSha256": "349890de233d972961cb0187442b67de4550b9a47d203c39967cda6e3f7d84db",
+        "originalBytes": 1070,
+        "handlerBytes": 996
+      },
+      {
+        "operation": "admin-replay-board",
+        "publicPath": "/api/security/admin-replay-board",
+        "originalPath": "app/api/security/admin-replay-board/route.ts",
+        "handlerModule": "lib/server/security-route-modules/admin-replay-board.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "f8da1f2ce9705e167148e83fb1a0423b7e1237f75ed3d63290df734b8b177098",
+        "handlerSha256": "0e3d703d6d581eba7a2bda3358ae0c47a9e584392ca7c6313e2c922dc365e63b",
+        "originalBytes": 1798,
+        "handlerBytes": 1724
+      },
+      {
+        "operation": "advanced-entitlement-proof",
+        "publicPath": "/api/security/advanced-entitlement-proof",
+        "originalPath": "app/api/security/advanced-entitlement-proof/route.ts",
+        "handlerModule": "lib/server/security-route-modules/advanced-entitlement-proof.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "cc26ddae1aeadf0cdc39d72591db50b2c683cb6199720b6755ddeb431d73ab43",
+        "handlerSha256": "6406f4cf5cb49b0e636becc43b6a4cd5b30956c62486b5d41902ac0c97784c5c",
+        "originalBytes": 3556,
+        "handlerBytes": 3896
+      },
+      {
+        "operation": "advanced-entitlement-smoke",
+        "publicPath": "/api/security/advanced-entitlement-smoke",
+        "originalPath": "app/api/security/advanced-entitlement-smoke/route.ts",
+        "handlerModule": "lib/server/security-route-modules/advanced-entitlement-smoke.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2d637e0b1c7d34d69d3bab9705af82cd45530c8a569726ff155b64e08b8376d1",
+        "handlerSha256": "498bec6cfa79ab44df966938847570fbd9731a0bfdee2f93c5e50ce6e36b2b3f",
+        "originalBytes": 2879,
+        "handlerBytes": 3219
+      },
+      {
+        "operation": "alerts",
+        "publicPath": "/api/security/alerts",
+        "originalPath": "app/api/security/alerts/route.ts",
+        "handlerModule": "lib/server/security-route-modules/alerts.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "64ddddf5a875adbaebc36228496cd805616bd525862b051a549327a4b45c7b0c",
+        "handlerSha256": "6c8e21ac46902e6f6229e30e584f5e0fc0e9a80d542baf737ca54909b863b4ab",
+        "originalBytes": 1171,
+        "handlerBytes": 1097
+      },
+      {
+        "operation": "angel-gemini-health",
+        "publicPath": "/api/security/angel-gemini-health",
+        "originalPath": "app/api/security/angel-gemini-health/route.ts",
+        "handlerModule": "lib/server/security-route-modules/angel-gemini-health.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\""
+        },
+        "originalSha256": "0571c7bc3105ba52561c0bf1cdf2fbe26e4fe475a75d913eae5ee217784d6bac",
+        "handlerSha256": "2981240152d45d8abaf4667e9bec19659a11751f7035d6fc31509966e6dc70ec",
+        "originalBytes": 3590,
+        "handlerBytes": 3970
+      },
+      {
+        "operation": "angel-route-live-binding",
+        "publicPath": "/api/security/angel-route-live-binding",
+        "originalPath": "app/api/security/angel-route-live-binding/route.ts",
+        "handlerModule": "lib/server/security-route-modules/angel-route-live-binding.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\""
+        },
+        "originalSha256": "089f0dd1eb6dbc844d6147ba64747a258f31ebee3773f258fb28f385c08c7640",
+        "handlerSha256": "990b7f0c9e03297e1a98a4c9cad1dda45e6997516d377890f26958553c6958a9",
+        "originalBytes": 762,
+        "handlerBytes": 728
+      },
+      {
+        "operation": "audit-account-delivery-production-lock",
+        "publicPath": "/api/security/audit-account-delivery-production-lock",
+        "originalPath": "app/api/security/audit-account-delivery-production-lock/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-account-delivery-production-lock.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4fa734fa290371d94115a7e758c5f3ccbbeb0efa851a61a20ab16b839bc16947",
+        "handlerSha256": "17d52f001e4059f38dd15903dfb942e35b4f253dee8193ff633a261b4d0235de",
+        "originalBytes": 1598,
+        "handlerBytes": 1524
+      },
+      {
+        "operation": "audit-advanced-manual-review",
+        "publicPath": "/api/security/audit-advanced-manual-review",
+        "originalPath": "app/api/security/audit-advanced-manual-review/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-advanced-manual-review.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b044cbc8f631bd2ffae3ab3394f983b42937c00b794c67cbf47ffaa693fadcfd",
+        "handlerSha256": "bf1eda5e3097c7edb16c5f4713f3917a2cd13252a0d269571797ad0d6fff24ff",
+        "originalBytes": 5203,
+        "handlerBytes": 5129
+      },
+      {
+        "operation": "audit-advanced-operator-console-merge",
+        "publicPath": "/api/security/audit-advanced-operator-console-merge",
+        "originalPath": "app/api/security/audit-advanced-operator-console-merge/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-advanced-operator-console-merge.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "c1ac64ed423610dbab9605347aa9120268f4a2bec0f405736d24bcf851825e36",
+        "handlerSha256": "e8e310381cd8f3b9a7fa660f2bcc27a54f40a671239676cb0b50c1b77644114d",
+        "originalBytes": 2953,
+        "handlerBytes": 2879
+      },
+      {
+        "operation": "audit-case-vault-private-delivery-ledger",
+        "publicPath": "/api/security/audit-case-vault-private-delivery-ledger",
+        "originalPath": "app/api/security/audit-case-vault-private-delivery-ledger/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-case-vault-private-delivery-ledger.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4d9fb5bd3001f426b5c48f2711980666ddd72de311ec2ed8ddf69b0e198f2620",
+        "handlerSha256": "e89ea6e993706ab66344fafb52b04df63144e0dbac9b6ddd60bc9e4e31f1baae",
+        "originalBytes": 4075,
+        "handlerBytes": 4001
+      },
+      {
+        "operation": "audit-claim-ledger",
+        "publicPath": "/api/security/audit-claim-ledger",
+        "originalPath": "app/api/security/audit-claim-ledger/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-claim-ledger.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "d1220f06583f747146d0dff6f0b80b4365df76cb9fb16709c08d2eced57f522d",
+        "handlerSha256": "4f7bce7cc9647537d456f550b1731779d763957effb4fd6e5f13eeb2ce4fc9fe",
+        "originalBytes": 3208,
+        "handlerBytes": 3134
+      },
+      {
+        "operation": "audit-contract-source-abi-extraction",
+        "publicPath": "/api/security/audit-contract-source-abi-extraction",
+        "originalPath": "app/api/security/audit-contract-source-abi-extraction/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-contract-source-abi-extraction.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "9686d7384767d0f84f9d696a6b2f6ce0ffbc54e6003425315902a01e2f1ea1e7",
+        "handlerSha256": "7237c6e05c658a4555dc50c460dccb247d006ccd495b5a953d9ccfeecc7f8272",
+        "originalBytes": 4531,
+        "handlerBytes": 4457
+      },
+      {
+        "operation": "audit-customer-safe-delivery-decision",
+        "publicPath": "/api/security/audit-customer-safe-delivery-decision",
+        "originalPath": "app/api/security/audit-customer-safe-delivery-decision/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-customer-safe-delivery-decision.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "c8ada66d9145b94a56b327004945e3bfa9cdb2050daf7b915b5bca70b327bd06",
+        "handlerSha256": "4a9dcbc976342d918706f27a0887303148115090e6cbc656482c84829822f99a",
+        "originalBytes": 4314,
+        "handlerBytes": 4240
+      },
+      {
+        "operation": "audit-holder-liquidity-depth-evidence",
+        "publicPath": "/api/security/audit-holder-liquidity-depth-evidence",
+        "originalPath": "app/api/security/audit-holder-liquidity-depth-evidence/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-holder-liquidity-depth-evidence.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "322debc3cedf4d66e32db82ff79d72557c79940db2bf889f065d3c9b65f9cd8b",
+        "handlerSha256": "1e4a49c67b769d8f6e76453182a0fcf032a6d396e6a9c33935bd7ffc06595f47",
+        "originalBytes": 4995,
+        "handlerBytes": 4921
+      },
+      {
+        "operation": "audit-intake",
+        "publicPath": "/api/security/audit-intake",
+        "originalPath": "app/api/security/audit-intake/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-intake.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4dbb095513fabfa3c8dece8cfb612f00950fa71897b54730bed04c781ef7bcaa",
+        "handlerSha256": "74bf46aa540b19abef41194601551e7a26302a76ff9c40c2fb617b8cd50cf019",
+        "originalBytes": 7272,
+        "handlerBytes": 7294
+      },
+      {
+        "operation": "audit-liquidity-holder-risk",
+        "publicPath": "/api/security/audit-liquidity-holder-risk",
+        "originalPath": "app/api/security/audit-liquidity-holder-risk/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-liquidity-holder-risk.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "b016ab90a73dcca56b86a40e2e57adeb463955b4dc43f27c2be4a81f3539b6b9",
+        "handlerSha256": "3ed21fe731d8ed05f3ac22f35c691c64d4a66cb700ae13ae8fabdcf13b5c2c7a",
+        "originalBytes": 4254,
+        "handlerBytes": 4180
+      },
+      {
+        "operation": "audit-permission-parser",
+        "publicPath": "/api/security/audit-permission-parser",
+        "originalPath": "app/api/security/audit-permission-parser/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-permission-parser.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "0315d78ca05ce5a88950e151d7024b1c17b147623e469cfa549ae7db04fc5a1e",
+        "handlerSha256": "9f3b5642cd9bb83b8d412c0a4c615c5710c2a15c5da052bd766020349c2c6552",
+        "originalBytes": 4010,
+        "handlerBytes": 3936
+      },
+      {
+        "operation": "audit-provider-conflict-arbitration-matrix",
+        "publicPath": "/api/security/audit-provider-conflict-arbitration-matrix",
+        "originalPath": "app/api/security/audit-provider-conflict-arbitration-matrix/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-provider-conflict-arbitration-matrix.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "187014de9ae150863e43db7e86901ba756f2bc439ce2baf0aaa9b345e010803b",
+        "handlerSha256": "c1f4adba33d20f3b3e7f956630f82fee62dd3ec71104b4e68ad9c728086b121d",
+        "originalBytes": 9266,
+        "handlerBytes": 9225
+      },
+      {
+        "operation": "audit-provider-intelligence",
+        "publicPath": "/api/security/audit-provider-intelligence",
+        "originalPath": "app/api/security/audit-provider-intelligence/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-provider-intelligence.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2644c4d459a5d1b9ef8e4e86e19ec5d5fcdee09c5776d4349c804187b6b65344",
+        "handlerSha256": "7e08ef6d8d2e2067de46b7be801614e39e5e7ec9dc714e64702ec402ee691abf",
+        "originalBytes": 3475,
+        "handlerBytes": 3401
+      },
+      {
+        "operation": "audit-provider-runtime",
+        "publicPath": "/api/security/audit-provider-runtime",
+        "originalPath": "app/api/security/audit-provider-runtime/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-provider-runtime.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "648310cd8fe21268cad43ad6baa3f8693b9b670bb9b8f8d07172a6ba98426934",
+        "handlerSha256": "a899a1cdb692152b8b4859d0694b4ddb46e9560372a47de414d54424dee72b4f",
+        "originalBytes": 4386,
+        "handlerBytes": 4312
+      },
+      {
+        "operation": "audit-public-private-route-lockdown",
+        "publicPath": "/api/security/audit-public-private-route-lockdown",
+        "originalPath": "app/api/security/audit-public-private-route-lockdown/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-public-private-route-lockdown.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "ce1a73e66b68ae261bd8d120dfe230622b61066fe003ee6377fb7726174916a6",
+        "handlerSha256": "68339946a24c4235eeac8a3807e340bf6635cfa7e870baebe378b753cc6f6df1",
+        "originalBytes": 1777,
+        "handlerBytes": 1788
+      },
+      {
+        "operation": "audit-real-provider-adapter-hardening",
+        "publicPath": "/api/security/audit-real-provider-adapter-hardening",
+        "originalPath": "app/api/security/audit-real-provider-adapter-hardening/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-real-provider-adapter-hardening.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "659974cf79dfc2d6bd8d7a9d3133b624a47bdf2e206acb022294276c4e1a84b3",
+        "handlerSha256": "d271d36dffbf3732676dd33879dae76e61c57237cf667c39fee5419a667b080c",
+        "originalBytes": 3855,
+        "handlerBytes": 3781
+      },
+      {
+        "operation": "audit-report-assembler",
+        "publicPath": "/api/security/audit-report-assembler",
+        "originalPath": "app/api/security/audit-report-assembler/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-report-assembler.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "21c65a71d1692e4164f280676a282e63e497604dc003b97c15afa96bab34717a",
+        "handlerSha256": "eae5402c2a99545549e5184270f88c18ee61739d3c9374d1152ddfdb87870e82",
+        "originalBytes": 10376,
+        "handlerBytes": 11639
+      },
+      {
+        "operation": "audit-risk-formula-evidence-weighting-contract",
+        "publicPath": "/api/security/audit-risk-formula-evidence-weighting-contract",
+        "originalPath": "app/api/security/audit-risk-formula-evidence-weighting-contract/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-risk-formula-evidence-weighting-contract.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "785d7c6f096dc990a04df91780de276dbce1a923d1cf0509112bc3fa828e9219",
+        "handlerSha256": "07c2eaeb78043f96b803a74f83ff4b8b20656c14c1bb0c5276e253e8c6c465ce",
+        "originalBytes": 5744,
+        "handlerBytes": 5670
+      },
+      {
+        "operation": "audit-runtime-build-readiness-type-safety-sweep",
+        "publicPath": "/api/security/audit-runtime-build-readiness-type-safety-sweep",
+        "originalPath": "app/api/security/audit-runtime-build-readiness-type-safety-sweep/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-runtime-build-readiness-type-safety-sweep.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4b2688a697498ea13a6afd07fe5b381aa97cb25ad845dcefe414505988a662a3",
+        "handlerSha256": "dbee57cb8f08ff3b4270b147d8ccefa69371847e4507b3642f5d230f20dd9833",
+        "originalBytes": 2818,
+        "handlerBytes": 2777
+      },
+      {
+        "operation": "audit-runtime-confidence",
+        "publicPath": "/api/security/audit-runtime-confidence",
+        "originalPath": "app/api/security/audit-runtime-confidence/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-runtime-confidence.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "3a6db94d1581ad455399f8d7b79b9b4763b6013e9d54af236f93069fa6d7ea8e",
+        "handlerSha256": "5169d261c12cdb4f489ea2a5e2a2535ab9d2a5ca927d81704f7455ed6d6aeab1",
+        "originalBytes": 3878,
+        "handlerBytes": 3804
+      },
+      {
+        "operation": "audit-source-freshness",
+        "publicPath": "/api/security/audit-source-freshness",
+        "originalPath": "app/api/security/audit-source-freshness/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-source-freshness.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "c864e41dee507e6a498a32b4365c6e82d4ca9fff3646344a32ec518542c981d2",
+        "handlerSha256": "afc7439bd88c3a53f9fcd27f35cb0e99f089ef2596f3ca2479c61e21683f62a7",
+        "originalBytes": 3613,
+        "handlerBytes": 3539
+      },
+      {
+        "operation": "audit-source-freshness-recheck-orchestrator",
+        "publicPath": "/api/security/audit-source-freshness-recheck-orchestrator",
+        "originalPath": "app/api/security/audit-source-freshness-recheck-orchestrator/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-source-freshness-recheck-orchestrator.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "7224947a33526911e9e9c4e015191beaf18d706bf930ec51d2e49a2ea19ba215",
+        "handlerSha256": "be6dfbf957b39ea416586071a7611f9f7b8ce05ee18c535fab25f0ec59098112",
+        "originalBytes": 3614,
+        "handlerBytes": 3540
+      },
+      {
+        "operation": "audit-source-quorum",
+        "publicPath": "/api/security/audit-source-quorum",
+        "originalPath": "app/api/security/audit-source-quorum/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-source-quorum.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "043368817e37e5e2b88a6d74af18c0c06d891e2d70c38ce1a954081253e53870",
+        "handlerSha256": "dca9d530708aecbbb196ffb65534362af6de66946700e1712ab6aabeb656282e",
+        "originalBytes": 3728,
+        "handlerBytes": 3654
+      },
+      {
+        "operation": "audit-source-spine",
+        "publicPath": "/api/security/audit-source-spine",
+        "originalPath": "app/api/security/audit-source-spine/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-source-spine.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "ee1d10c47f70127cbcbc9b1b98b490d3e2deabf980b27509a5bc93b467a74b52",
+        "handlerSha256": "1d75d2ce843581219cd7b0c0b0f7dd226b45fdcdbc3f7515f0b5c22afe211aa8",
+        "originalBytes": 1086,
+        "handlerBytes": 1081
+      },
+      {
+        "operation": "audit-watch",
+        "publicPath": "/api/security/audit-watch",
+        "originalPath": "app/api/security/audit-watch/route.ts",
+        "handlerModule": "lib/server/security-route-modules/audit-watch.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "024309f5a8feffac93e9941395ce75e32912b2551b397149fc4c758ea9b2a386",
+        "handlerSha256": "059365e04c6b58f1993cfe43171768848ababac8f5af52e7feae51039300db1e",
+        "originalBytes": 463,
+        "handlerBytes": 422
+      },
+      {
+        "operation": "cart-mail-wallet-microinteraction-sweep",
+        "publicPath": "/api/security/cart-mail-wallet-microinteraction-sweep",
+        "originalPath": "app/api/security/cart-mail-wallet-microinteraction-sweep/route.ts",
+        "handlerModule": "lib/server/security-route-modules/cart-mail-wallet-microinteraction-sweep.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "00cd94f5edc114041bac0219cda71c2ad3022cabc7a910094fa8ca7f26516509",
+        "handlerSha256": "a53c40284c8dcdb8d8d92219b0ff4fe71f3a392516ecbff0b340370e9ff111f2",
+        "originalBytes": 2665,
+        "handlerBytes": 3005
+      },
+      {
+        "operation": "csp-report",
+        "publicPath": "/api/security/csp-report",
+        "originalPath": "app/api/security/csp-report/route.ts",
+        "handlerModule": "lib/server/security-route-modules/csp-report.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "e759837e5c0574391f606e740ae489e02930b62c5619573dd5acfe8de80e6103",
+        "handlerSha256": "ab181c1a0255c6f5e07ad07330768179c551bd2b17cfb11287dcfe7d277ea0fd",
+        "originalBytes": 3180,
+        "handlerBytes": 3271
+      },
+      {
+        "operation": "event-store",
+        "publicPath": "/api/security/event-store",
+        "originalPath": "app/api/security/event-store/route.ts",
+        "handlerModule": "lib/server/security-route-modules/event-store.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "33f221116c3eb8082b188c92874f45f867f18140ecce7b41551d2eb55c212a7b",
+        "handlerSha256": "5a6ccaeb6ce15e04b600e1fea177d35449b6c486433b56ff85c718b54ed37a52",
+        "originalBytes": 1322,
+        "handlerBytes": 1248
+      },
+      {
+        "operation": "events",
+        "publicPath": "/api/security/events",
+        "originalPath": "app/api/security/events/route.ts",
+        "handlerModule": "lib/server/security-route-modules/events.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "872bb77626affc4701cc74d8b156060eeff581f975c9b62154bdbb64f63435ba",
+        "handlerSha256": "90a577afd5b80dc08fcced1ea8f52e426e0adb58b0b9b1054665f626681bfeb4",
+        "originalBytes": 1603,
+        "handlerBytes": 1529
+      },
+      {
+        "operation": "export",
+        "publicPath": "/api/security/export",
+        "originalPath": "app/api/security/export/route.ts",
+        "handlerModule": "lib/server/security-route-modules/export.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "ef0cce2f31eb2a7b8f897a906f198e815a4463f83b2406e9bd3c4f3a2209713d",
+        "handlerSha256": "111f99c3ebebfa68450c9081a6920d2a16b173cbd6841e14a8d59dbc09b9ee5c",
+        "originalBytes": 5187,
+        "handlerBytes": 5378
+      },
+      {
+        "operation": "modal-mobile-scroll-lock-final-sweep",
+        "publicPath": "/api/security/modal-mobile-scroll-lock-final-sweep",
+        "originalPath": "app/api/security/modal-mobile-scroll-lock-final-sweep/route.ts",
+        "handlerModule": "lib/server/security-route-modules/modal-mobile-scroll-lock-final-sweep.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "6d4fd30d5376315f3ee9995226799c3551f04247a3ce0af6e4a1651ac83fdaa8",
+        "handlerSha256": "dee71bb2acf7a6c82faf30a2788dba33a32304a87891624ad527b92117f3c731",
+        "originalBytes": 2656,
+        "handlerBytes": 2996
+      },
+      {
+        "operation": "operations-checklist",
+        "publicPath": "/api/security/operations-checklist",
+        "originalPath": "app/api/security/operations-checklist/route.ts",
+        "handlerModule": "lib/server/security-route-modules/operations-checklist.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "78de26889236988442564ce928fa3a96f14cd66aa193c481fce12bdc2abd852e",
+        "handlerSha256": "cd710bec97a5a6b42244ff12474f0450679947d9febf72e4f41cd9317b2eff4f",
+        "originalBytes": 2296,
+        "handlerBytes": 670
+      },
+      {
+        "operation": "payment-runtime-evidence",
+        "publicPath": "/api/security/payment-runtime-evidence",
+        "originalPath": "app/api/security/payment-runtime-evidence/route.ts",
+        "handlerModule": "lib/server/security-route-modules/payment-runtime-evidence.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "d2935a937421ee6ad7afaccc5720af1ae91880eb029996ad1f59073bc23ae99e",
+        "handlerSha256": "bcc328a41523c997f22e331980c37a00a6b08cad60eb481aa4279faf6f322cde",
+        "originalBytes": 4186,
+        "handlerBytes": 4529
+      },
+      {
+        "operation": "payment-webhook-review",
+        "publicPath": "/api/security/payment-webhook-review",
+        "originalPath": "app/api/security/payment-webhook-review/route.ts",
+        "handlerModule": "lib/server/security-route-modules/payment-webhook-review.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "f6fe88de8906193379ae8aa22b040f4cc29b0f04f6977ec1781c7723bcd73157",
+        "handlerSha256": "69f5927500a159d3f6762efd6da6dd87f18a14ae884013dee67df0da76a741c6",
+        "originalBytes": 1200,
+        "handlerBytes": 1126
+      },
+      {
+        "operation": "production-env-contract",
+        "publicPath": "/api/security/production-env-contract",
+        "originalPath": "app/api/security/production-env-contract/route.ts",
+        "handlerModule": "lib/server/security-route-modules/production-env-contract.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "2ce01493b9cd7194969f9217598aca5a8bbddfb100974a0b9db623ba89d32198",
+        "handlerSha256": "52260a8362f4d61794d34e710060f116a9190c2fc1c3fdf28a9422218a6c235f",
+        "originalBytes": 993,
+        "handlerBytes": 919
+      },
+      {
+        "operation": "readiness",
+        "publicPath": "/api/security/readiness",
+        "originalPath": "app/api/security/readiness/route.ts",
+        "handlerModule": "lib/server/security-route-modules/readiness.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "834b1cfba5fbb9c781117cb494fe20ee8ba7984ada9a7151dbd603c7bf5336c2",
+        "handlerSha256": "7ab90c46a62c51e6357714fe3f9620aed2f1a9545fbcc917db0bb73e7536ea78",
+        "originalBytes": 2443,
+        "handlerBytes": 629
+      },
+      {
+        "operation": "release-gate",
+        "publicPath": "/api/security/release-gate",
+        "originalPath": "app/api/security/release-gate/route.ts",
+        "handlerModule": "lib/server/security-route-modules/release-gate.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "4e6e140717df3e7ae24f65d4b64197648398961305b5f76977222799e12e92e3",
+        "handlerSha256": "4ee079ab8c702e37df4eb0850513c21012a03131dc208832e047f8d0ff21d44a",
+        "originalBytes": 1190,
+        "handlerBytes": 1116
+      },
+      {
+        "operation": "runtime-qa",
+        "publicPath": "/api/security/runtime-qa",
+        "originalPath": "app/api/security/runtime-qa/route.ts",
+        "handlerModule": "lib/server/security-route-modules/runtime-qa.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "33503118df1ef6449e1a82310798ec05721bfde6b5003027a7af122bb34940bd",
+        "handlerSha256": "8dd3050a2bcf7b49858f8783215d81f00140827a1b1f6d16c32fab09e6ff6b62",
+        "originalBytes": 1182,
+        "handlerBytes": 1108
+      },
+      {
+        "operation": "stripe-webhook-replay-qa",
+        "publicPath": "/api/security/stripe-webhook-replay-qa",
+        "originalPath": "app/api/security/stripe-webhook-replay-qa/route.ts",
+        "handlerModule": "lib/server/security-route-modules/stripe-webhook-replay-qa.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "936709292bde91b15b1522d636fb3bbf3e69be57df7fcfc95626a8335167e6a3",
+        "handlerSha256": "1347288a7181c0465cc48c04add1d3714a25efab2315d8ea3d6efad3c92704f0",
+        "originalBytes": 3881,
+        "handlerBytes": 4224
+      },
+      {
+        "operation": "supabase-runtime-truth",
+        "publicPath": "/api/security/supabase-runtime-truth",
+        "originalPath": "app/api/security/supabase-runtime-truth/route.ts",
+        "handlerModule": "lib/server/security-route-modules/supabase-runtime-truth.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "be6955420a52c0555bdfa95f73ebc1c4b684b04af35eb398d89eed42fbb13a89",
+        "handlerSha256": "9bbda5186ed732c3a95b7fd5c5fc786a0d52bd89ea75b74421ccefe46f876573",
+        "originalBytes": 2829,
+        "handlerBytes": 3169
+      },
+      {
+        "operation": "trust",
+        "publicPath": "/api/security/trust",
+        "originalPath": "app/api/security/trust/route.ts",
+        "handlerModule": "lib/server/security-route-modules/trust.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "53302c19287ec51e27a8fe6f3aaac9eefa7959302f3ae6220acca769eb40bee2",
+        "handlerSha256": "75cdffe03a2f939bc54397c9ab7483dfc6c77c696b2274e2afb95cbc450c1b56",
+        "originalBytes": 1515,
+        "handlerBytes": 912
+      }
+    ],
+    "parameter": "operation",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";"
+    ],
+    "dispatcher": "app/api/security/[operation]/route.ts",
+    "registry": "lib/server/route-registries/security.ts"
+  },
+  "search": {
+    "routes": [
+      {
+        "operation": "bridge",
+        "publicPath": "/api/search/bridge",
+        "originalPath": "app/api/search/bridge/route.ts",
+        "handlerModule": "lib/server/search-route-modules/bridge.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "83260c3021b705309a7b6b955b9054d9c34b52f253423cef083399f5f20b2d9b",
+        "handlerSha256": "30bcb04b1b308ef92975fc6838f32676f80bc542a386c6356482cbd80b538608",
+        "originalBytes": 1190,
+        "handlerBytes": 1116
+      },
+      {
+        "operation": "lens-report",
+        "publicPath": "/api/search/lens-report",
+        "originalPath": "app/api/search/lens-report/route.ts",
+        "handlerModule": "lib/server/search-route-modules/lens-report.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "49f92ac06b2d0e229be885d99ce254f77dfc7586c30468ad003859adb656caea",
+        "handlerSha256": "3a30497ceec3b5e20f6075aa1a447472edab7c4b3101d62f4dafc3765390b71b",
+        "originalBytes": 33481,
+        "handlerBytes": 33862
+      },
+      {
+        "operation": "lens-route",
+        "publicPath": "/api/search/lens-route",
+        "originalPath": "app/api/search/lens-route/route.ts",
+        "handlerModule": "lib/server/search-route-modules/lens-route.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "42f253dcb9d4b543e3adcb6ab4d723ea6ee1e3a865a87846bbfce52148776916",
+        "handlerSha256": "73d715fbe2a553709918220919a90d65104c19b041d8324cca0392eed2f68575",
+        "originalBytes": 858,
+        "handlerBytes": 784
+      },
+      {
+        "operation": "live-preview",
+        "publicPath": "/api/search/live-preview",
+        "originalPath": "app/api/search/live-preview/route.ts",
+        "handlerModule": "lib/server/search-route-modules/live-preview.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "01397ae5f40d8ebfabf4354324bde10d8c8d1ef735c11f88726bb4068eb73ce8",
+        "handlerSha256": "1cbacdfef58ec92e6331778fe22474617a5331d70f8dba438f2f63cb0ce82bd3",
+        "originalBytes": 1578,
+        "handlerBytes": 1504
+      },
+      {
+        "operation": "token-metadata",
+        "publicPath": "/api/search/token-metadata",
+        "originalPath": "app/api/search/token-metadata/route.ts",
+        "handlerModule": "lib/server/search-route-modules/token-metadata.ts",
+        "methods": [
+          "GET"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "713743706e3be9df480d12f013f64c4ba0e572ecac509500df823fc94fcfb1e1",
+        "handlerSha256": "9796e96b50cbbf73ebad7c6603ad63f6235491bada684e4f750a98254d260614",
+        "originalBytes": 1082,
+        "handlerBytes": 1008
+      }
+    ],
+    "parameter": "operation",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";"
+    ],
+    "dispatcher": "app/api/search/[operation]/route.ts",
+    "registry": "lib/server/route-registries/search.ts"
+  },
+  "admin": {
+    "routes": [
+      {
+        "operation": "audit-events",
+        "publicPath": "/api/admin/audit-events",
+        "originalPath": "app/api/admin/audit-events/route.ts",
+        "handlerModule": "lib/server/admin-route-modules/audit-events.ts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "originalSha256": "f582c833da62d1708ed78bc900b664fe58d552e547f36a78e56473f096f4ac25",
+        "handlerSha256": "98d4de0ec93d9cc61af3a650e7e2e826a1a249aaf5cdd0d075ebc10257e798b4",
+        "originalBytes": 2376,
+        "handlerBytes": 2302
+      },
+      {
+        "operation": "import-products",
+        "publicPath": "/api/admin/import-products",
+        "originalPath": "app/api/admin/import-products/route.ts",
+        "handlerModule": "lib/server/admin-route-modules/import-products.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\""
+        },
+        "originalSha256": "4e482ff0cc89311d273f1711f2a9212730f23e8542971625f48dd3e4fe730a6f",
+        "handlerSha256": "6eab8e1d729b34035dfef11ed93b6f6217df3978e660aa4996c3b24046085f6d",
+        "originalBytes": 3176,
+        "handlerBytes": 3142
+      },
+      {
+        "operation": "sync-printful",
+        "publicPath": "/api/admin/sync-printful",
+        "originalPath": "app/api/admin/sync-printful/route.ts",
+        "handlerModule": "lib/server/admin-route-modules/sync-printful.ts",
+        "methods": [
+          "POST"
+        ],
+        "routeConfig": {
+          "runtime": "\"nodejs\""
+        },
+        "originalSha256": "6f492df09704376d918200a380bb33737ce4c4fefee2181416c10c9c9f42a514",
+        "handlerSha256": "e589f08afc937df7d3806e2f15dceba1fe07dbbefc8526f837b8b0246d0a54bb",
+        "originalBytes": 2031,
+        "handlerBytes": 1997
+      }
+    ],
+    "parameter": "operation",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";"
+    ],
+    "dispatcher": "app/api/admin/[operation]/route.ts",
+    "registry": "lib/server/route-registries/admin.ts"
+  }
+}

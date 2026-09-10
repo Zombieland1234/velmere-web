@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "velmere.pass36.a102r18.approved-public-community-system-clipboard-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R18_ACTION_REQUIRED_PUBLIC_COMMUNITY_SYSTEM_CLIPBOARD_TEXT_LINK_CONTROL_BIDI_AND_SAME_ORIGIN_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R17_ACTION_REQUIRED_CLIENT_RESPONSE_STRICT_JSON_RAW_SERVER_ERROR_AND_ANGEL_SESSION_STORAGE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T17:35:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "components/community/CommentThread.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R17_ACTION_REQUIRED_CLIENT_RESPONSE_STRICT_JSON_RAW_SERVER_ERROR_AND_ANGEL_SESSION_STORAGE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalExists": true,
+      "historicalByteLength": 10402,
+      "historicalSha256": "6fadcdf4d7bafc2b83db2dd19117da0cf20812db92ea4070e97244e5c8851c97",
+      "currentByteLength": 10478,
+      "currentSha256": "f6e7287b9f8d79df526133d4e3934d9251e52359d9b4fa09fffbe08984254b0c",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/square/VelmereSquareClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R17_ACTION_REQUIRED_CLIENT_RESPONSE_STRICT_JSON_RAW_SERVER_ERROR_AND_ANGEL_SESSION_STORAGE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalExists": true,
+      "historicalByteLength": 60301,
+      "historicalSha256": "3775749a81ce42a4195de34770d68faeabd4709fd87d207020bd8090055970b6",
+      "currentByteLength": 60702,
+      "currentSha256": "1c20802f28060ef530f16be31fc986ee405c246b7ebeec2f0f6688116fdcf53f",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/security/browser-system-clipboard.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R17_ACTION_REQUIRED_CLIENT_RESPONSE_STRICT_JSON_RAW_SERVER_ERROR_AND_ANGEL_SESSION_STORAGE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalExists": true,
+      "historicalByteLength": 9795,
+      "historicalSha256": "c3dd660531076a89025bad7c3265d995588343b91122ebf92447fe3c788219ad",
+      "currentByteLength": 13462,
+      "currentSha256": "eda99ea57cc13e153724c57e569c2db9a73658f4ac1533b158f60b14ed912228",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "scripts/pass36/test-a102r18-public-community-system-clipboard-boundary.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R17_ACTION_REQUIRED_CLIENT_RESPONSE_STRICT_JSON_RAW_SERVER_ERROR_AND_ANGEL_SESSION_STORAGE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalExists": false,
+      "historicalByteLength": 0,
+      "historicalSha256": null,
+      "currentByteLength": 8964,
+      "currentSha256": "ce3b8d46ef220ba541d37ec6b156ceb5c4f2638ce63787d5bc6dc298692b6623",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    "scripts/pass36/test-a102r18-public-community-system-clipboard-boundary.ts"
+  ],
+  "claims": {
+    "publicCommunityClipboardBoundaryChecks": 42,
+    "directPublicClipboardSinksRemaining": 0,
+    "secureContextRequired": true,
+    "publicTextByteLimit": 8192,
+    "controlAndBidiRejected": true,
+    "squareLinksCanonicalSameOrigin": true,
+    "clipboardAuthority": false,
+    "realBrowserRowsExecuted": 0,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Approved local public-community system clipboard text/link hardening only. Historical parent bytes remain exact; no exact browser, staging, legal, rights, customer, LIVE or sale credit is granted."
+}

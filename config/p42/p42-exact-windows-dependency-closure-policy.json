@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "velmere.p42.exact-windows-dependency-closure-policy.v1",
+  "revision": "P42_V16_EXACT_WINDOWS_DEPENDENCY_CLOSURE_SEMANTIC_DUAL_BUILD_BRIDGE",
+  "generatedAt": "2026-08-14T10:21:00.000Z",
+  "state": "CURRENT_SOURCE_ONLY_IN_PROGRESS",
+  "releaseState": "NO_GO",
+  "parentRoot": "R44P46",
+  "parentCheckpoint": "P41_V16_EXACT_WINDOWS_PREFLIGHT_CURRENT_ROOT_BRIDGE_REPAIR",
+  "parentSourceAggregateSha256": "b646ea33ba3c66d163c77bb6df1b1c02d93c883238abacc026b2f949ed6bad68",
+  "parentPackageSha256": "55cd2f5518d850548d315de7161d1f38dfe4d64b91b2a407e1386f0059daf080",
+  "authority": {
+    "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V16_FULL_TOPOLOGY_FREE_LEGAL_CURRENT_WORLD_CLASS_2026-08-14.txt",
+    "sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9"
+  },
+  "currentRoot": {
+    "packageJsonSha256": "04aa4b393337fffa6e02ef54ad7668fe8136b038b0d924b208158a095b6f70a5",
+    "packageLockSha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+    "lockPathsWithTarball": 661,
+    "uniqueTarballs": 618
+  },
+  "nativeRun": {
+    "runId": 31789874601,
+    "jobId": 94734145996,
+    "headSha": "e253190985a41584495d19dbec440bd4c7142f10",
+    "artifactId": 9215059167,
+    "artifactZipSha256": "0cb731f4399dcd301d534f20374c0f64a24a9f8b631ea102e1c4000ff7dac677",
+    "status": "PASS"
+  },
+  "requiredChecks": [
+    "current package bytes match native payload",
+    "current lock bytes match native payload",
+    "exact Windows Server 2025 x64",
+    "Node v24.18.0",
+    "npm 11.16.0",
+    "online npm ci ignore-scripts status 0",
+    "offline npm ci ignore-scripts status 0",
+    "661/661 lock paths covered",
+    "618/618 unique tarballs SRI-verified",
+    "0 failures",
+    "manifest and current-lock topology identical"
+  ],
+  "creditBoundary": {
+    "exactWindowsToolchain": true,
+    "currentLockDependencyGraphClosure": true,
+    "onlineNpmCiIgnoreScripts": true,
+    "offlineNpmCiIgnoreScripts": true,
+    "sriCasManifest": true,
+    "lifecycleScripts": false,
+    "currentRootApplicationExecution": false,
+    "typecheck": false,
+    "lint": false,
+    "webpack": false,
+    "turbopack": false,
+    "browser": false,
+    "pdf": false,
+    "goInternal": false
+  },
+  "truthBoundary": "P42 may credit exact Windows/Node/npm dependency graph and offline install closure for the exact current package/lock bytes. It may not credit lifecycle scripts, current-root source execution, semantic checks, builds or downstream product gates.",
+  "integritySha256": "147f4ed49ecd61de184dd5d1c2677de2a2615e06cfce7bf348d93d0a61d1f656"
+}

@@ -1,0 +1,360 @@
+{
+  "schemaVersion": "velmere.pass36.a102r38.approved-production-smoke-evidence-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "generatedAt": "2026-08-01T05:30:00+02:00",
+  "parentSourceArchiveSha256": "da02611bc1baba82927df003889de1125b38d1d65ee0317128a4e2a6fecdec1e",
+  "parentSourceTreeSha256": "5b0a53eb29b8ea770314520f71f27f2867611fc01b3a8cb6c41a46f0830ba757",
+  "scope": "COMPLETE_PARENT_TO_A102R38_PRE_SELF_BINDING_CHANGESET",
+  "fileCount": 37,
+  "addedFiles": 19,
+  "modifiedFiles": 18,
+  "deletedFiles": [],
+  "selfExcludedPaths": [
+    "config/pass36/a102r38-approved-production-smoke-evidence-changes.json",
+    "config/pass36/a102r38-current-root-descendant-manifest.json"
+  ],
+  "approvedFiles": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "changeType": "MODIFIED",
+      "family": "DOCUMENTED_TRUTH_AND_ROADMAP",
+      "parentByteLength": 25237,
+      "parentSha256": "e06fb265b58463f4400728fe42db63cf2651748633b7cfe4b65183bb0258706a",
+      "currentByteLength": 26832,
+      "currentSha256": "495b4f698d0008f885ebcaee63b1f53ca37ac4201dc8b3d27f9f338a72a4af32"
+    },
+    {
+      "path": "README.md",
+      "changeType": "MODIFIED",
+      "family": "DOCUMENTED_TRUTH_AND_ROADMAP",
+      "parentByteLength": 44805,
+      "parentSha256": "2154a9e689695a0512849f9b0078f2791c93d8ed7f3a068111323d6980659cf7",
+      "currentByteLength": 46400,
+      "currentSha256": "35e7493605f60f06ce537506af02cfa53b94129cdb11c7c4d46b1aa853d1159b"
+    },
+    {
+      "path": "VELMERE_A102R38_PATCH.txt",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2755,
+      "currentSha256": "a9acebfbccc91c77a11d55b5994d04ae3e7c993fdc517545798514b0ccaeef53"
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "changeType": "MODIFIED",
+      "family": "CURRENT_AUTHORITY_AND_RELEASE_POINTER",
+      "parentByteLength": 129,
+      "parentSha256": "cbc333b0be8075575d6898541059bb2826a8c71d82623527ee01845acfd6b1fc",
+      "currentByteLength": 143,
+      "currentSha256": "257e0882773a9139b4cf1ca62522095cb00468aec510e2e132ac06420e2b6473"
+    },
+    {
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "changeType": "MODIFIED",
+      "family": "DOCUMENTED_TRUTH_AND_ROADMAP",
+      "parentByteLength": 1800469,
+      "parentSha256": "ae91837430839eff166a954f6d579cc1230f3689da08126fc3e58fb25376c615",
+      "currentByteLength": 1809812,
+      "currentSha256": "bdb26b0f74a3f4b2d0f0295eb243371c717fd18d6ed3e0a3df2adbbd5b3599c8"
+    },
+    {
+      "path": "config/current-release.json",
+      "changeType": "MODIFIED",
+      "family": "CURRENT_AUTHORITY_AND_RELEASE_POINTER",
+      "parentByteLength": 27667,
+      "parentSha256": "f47b8857d6bb88b8695b780aad6b12cd21d7186003eb4f58152e5a805670261f",
+      "currentByteLength": 27999,
+      "currentSha256": "acfc2124944a37bb979123c5fb872ff4fe1f20c2b23d70232a294dddca5ace76"
+    },
+    {
+      "path": "config/pass15/route-dispatch-manifest.json",
+      "changeType": "MODIFIED",
+      "family": "ROUTE_AST_AND_DISPATCH_REBASELINE",
+      "parentByteLength": 114194,
+      "parentSha256": "2513ee0158eed33ac470dc25652dc55b2b80bb6fa7f419d0c49dc56938851674",
+      "currentByteLength": 114194,
+      "currentSha256": "3f435f532bd8c2c9085ff8e09a47a6b1825941a866e9dab39e52896696007706"
+    },
+    {
+      "path": "config/pass15/route-export-ast-registry.json",
+      "changeType": "MODIFIED",
+      "family": "ROUTE_AST_AND_DISPATCH_REBASELINE",
+      "parentByteLength": 144611,
+      "parentSha256": "d3f775a9165e9d246e95b399394c2b16a86b60ef08ff5831b9be878bdbd14f30",
+      "currentByteLength": 144622,
+      "currentSha256": "951a4e36777c54a6c13dde01935043255e91c58ac047ed8fdebb38326be4738b"
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "changeType": "MODIFIED",
+      "family": "HISTORICAL_TEST_AND_DEV_ADMISSION_REPAIR",
+      "parentByteLength": 16181,
+      "parentSha256": "376469912a21d09b217efb8e88fd4e55bf7012a841682ad078ef591ba384e6a7",
+      "currentByteLength": 16181,
+      "currentSha256": "77a831f4ba64d4f188b1712c6fe41d63fad3a31dd0c158f52b02676454608417"
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "changeType": "MODIFIED",
+      "family": "CURRENT_AUTHORITY_AND_RELEASE_POINTER",
+      "parentByteLength": 29447,
+      "parentSha256": "1066dc0c36022a2ed54fb5a09a0ae348aa5d310f35e48596e7622de6cc8c8f5f",
+      "currentByteLength": 30015,
+      "currentSha256": "b5e1989862a2948462b138289af696ef9c95c11278803a829e4baaab0c8a6b8c"
+    },
+    {
+      "path": "config/pass36/a102r38-a42-critical-rebaseline.json",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 6101,
+      "currentSha256": "062aacf4d2cd3ef2c63185a40a57b06e7e8feeb822338f05d3d7e387bc0d5ee7"
+    },
+    {
+      "path": "config/pass36/a102r38-action-required-current-state.json",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 12987,
+      "currentSha256": "9fb364d47de449ca43e95b8af8f2b7b63c838efa3abb784774a0e37c361a3a7f"
+    },
+    {
+      "path": "config/pass36/a102r38-local-regression-receipt.json",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 9305,
+      "currentSha256": "ae6f7c375aa5bbc5b419aee5024e0f2f31fe0cd90cebade4cc52d03e936ec3ab"
+    },
+    {
+      "path": "config/pass36/a102r38-test-receipt.json",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2174,
+      "currentSha256": "029f897210cd268b473f4c1b47aa07d7e3046dc8e90aea013bc4e45f122ec39f"
+    },
+    {
+      "path": "config/pass36/a102r38-world-class-completion-program.json",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 8979,
+      "currentSha256": "1781d2c56cd7632fabe0206f08661835a2d8d7f4daf3d6b6b42b5d1f03b72ca0"
+    },
+    {
+      "path": "config/pass36/a58-release-integrity-policy.json",
+      "changeType": "MODIFIED",
+      "family": "CURRENT_AUTHORITY_AND_RELEASE_POINTER",
+      "parentByteLength": 3276,
+      "parentSha256": "c8f2f1d1381f08d6e965eb622effa8984ce10df152f4d62691b64bd195185502",
+      "currentByteLength": 3367,
+      "currentSha256": "297ff94e0c6e2322235c1a3520543fc2809d66e2c320a1961b5a949a6c55318c"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "changeType": "MODIFIED",
+      "family": "CURRENT_AUTHORITY_AND_RELEASE_POINTER",
+      "parentByteLength": 61956,
+      "parentSha256": "7d34343128aa28ff9d51262dbf77264d3a5c7cbb6bdf544c39ccf1a1634e5f0f",
+      "currentByteLength": 63123,
+      "currentSha256": "c5043c59bad1e242c7f95d3c0f95e0e5b771b474392bb5eb74ef6f4734ed670a"
+    },
+    {
+      "path": "package.json",
+      "changeType": "MODIFIED",
+      "family": "CURRENT_AUTHORITY_AND_RELEASE_POINTER",
+      "parentByteLength": 108900,
+      "parentSha256": "6124fc24430239438b12b1330acdda55c88c8ef4c68453de76228092fbf82f99",
+      "currentByteLength": 110455,
+      "currentSha256": "52ff1d5f1ea093bdd79876eef1cad3d386158b2db2db29524fc23574a93d923c"
+    },
+    {
+      "path": "scripts/a44-source-integrity-audit.mjs",
+      "changeType": "MODIFIED",
+      "family": "SOURCE_AUDIT_BOUNDARY_REPAIR",
+      "parentByteLength": 7416,
+      "parentSha256": "4ed3bdae518b1b1779818906741ca81ffa2296d7f3daa79df742a3fcf4238166",
+      "currentByteLength": 7560,
+      "currentSha256": "e6ecc630587cf9f7720dc0b9ee6f6bea020d4114a475f006c151568f92d26eaf"
+    },
+    {
+      "path": "scripts/deployment/production-smoke-evidence.mjs",
+      "changeType": "ADDED",
+      "family": "PRODUCTION_SMOKE_EVIDENCE_CONTRACT",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 4548,
+      "currentSha256": "d974886573a7f457248622b912fbb7a303d1d1e02b439528c1e7ab2f2ee1f211"
+    },
+    {
+      "path": "scripts/deployment/production-smoke-network.mjs",
+      "changeType": "MODIFIED",
+      "family": "PRODUCTION_SMOKE_EVIDENCE_CONTRACT",
+      "parentByteLength": 5091,
+      "parentSha256": "7cdfb720cdeb1db8e0ba4e857b8c70c204069469f9e0273f1237447082e3ca46",
+      "currentByteLength": 5156,
+      "currentSha256": "f7566897663b5b3de1d391f8957ae9707177e52f531b6e167f8c9e7de71516ad"
+    },
+    {
+      "path": "scripts/deployment/run-production-smoke.mjs",
+      "changeType": "MODIFIED",
+      "family": "PRODUCTION_SMOKE_EVIDENCE_CONTRACT",
+      "parentByteLength": 10616,
+      "parentSha256": "cfd378b3961eb27373174d2ea001aeaa666073f2d01ddd6eb3f3026d30fa2796",
+      "currentByteLength": 11129,
+      "currentSha256": "7eb67741387b9782da072144c9630213362281ae5ac18f403a11fea1c11c6783"
+    },
+    {
+      "path": "scripts/deployment/test-production-smoke-contract.mjs",
+      "changeType": "MODIFIED",
+      "family": "PRODUCTION_SMOKE_EVIDENCE_CONTRACT",
+      "parentByteLength": 15823,
+      "parentSha256": "c6541ce938bb3d283293a65b43f44e4426d610dd80c3383537cb305b5447929e",
+      "currentByteLength": 18869,
+      "currentSha256": "9994ad78452cd314e867db5c3216a3efe23c5e869ec7f32ab8fa5f7ff1547e8a"
+    },
+    {
+      "path": "scripts/pass35/test-a42-dev-runtime-cache-recovery.mjs",
+      "changeType": "MODIFIED",
+      "family": "HISTORICAL_TEST_AND_DEV_ADMISSION_REPAIR",
+      "parentByteLength": 21051,
+      "parentSha256": "a106d003d6b3bdd18b50923a952e25cda05db3652aa814aba25cc7af684dcf09",
+      "currentByteLength": 21369,
+      "currentSha256": "ac115f238b18de5300fabc63a33f31d4c700730b4a6f542f4f73fb275d39bebb"
+    },
+    {
+      "path": "scripts/pass36/a102r38-source-boundary.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3209,
+      "currentSha256": "482d38a0ef240f07f57d343732c0e4d54f209f5b673e3e8697d68b88501adc53"
+    },
+    {
+      "path": "scripts/pass36/build-a102r38-current-root-descendant-manifest.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2417,
+      "currentSha256": "0d25b8898d40b10e1c70cfbd19519403092ad6c1c0d45203d2c1ea8bfd4e95e8"
+    },
+    {
+      "path": "scripts/pass36/build-a102r38-local-regression-receipt.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 5608,
+      "currentSha256": "c23956dc75af136e617723c6ec17b30850540a2820c53d98567d21624daed616"
+    },
+    {
+      "path": "scripts/pass36/package-a102r38-deterministic.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 24771,
+      "currentSha256": "ed58e5decfad35ff856553c8355274026da1b6c654fb438321ee69b058ef0779"
+    },
+    {
+      "path": "scripts/pass36/test-a102r36-eslint-runner-portability.mjs",
+      "changeType": "MODIFIED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": 12280,
+      "parentSha256": "794c4672fc14ac1062d86dc1a3c13cde37b805ac75315b57b618982b67fd24ce",
+      "currentByteLength": 12855,
+      "currentSha256": "e4c2f8a576df2cb3edf84f7307f864508a73bc3f9755c373715fa69acc11fb78"
+    },
+    {
+      "path": "scripts/pass36/test-a102r38-production-smoke-evidence-uniqueness.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 7597,
+      "currentSha256": "3d60067f219748b1b9aade76e1ff309feeb30e991c969127ec94a865a4aa5624"
+    },
+    {
+      "path": "scripts/pass36/test-a102r38-source-audit-generated-next-types.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3639,
+      "currentSha256": "9bbdf2d9c2ebe1e321d4777a6274100b1799a7b40647f66b6f3771176d9e6e73"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r38-a42-critical-rebaseline.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2293,
+      "currentSha256": "67dd9d791124b00846e3ce16ae424a83b146227fac73e18e7db2a36120530a3b"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r38-action-required-authority.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 4786,
+      "currentSha256": "8a75ef37b6ded24296ca0fa98636e9be9209ce8de6ab67e7e64830c6c884e033"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r38-approved-production-smoke-evidence-changes.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2049,
+      "currentSha256": "68402bb3c7aeff248587838ed85e997a530978187129d5e0dd12576c908b8f6e"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r38-current-root-descendant.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1693,
+      "currentSha256": "f13e8a5578188216eaca3deb3acc36e1b6192a4cd510de994359da8ed6632eaa"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r38-final-packages.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 7293,
+      "currentSha256": "67233a64b897af25832a30cdf0e117f0ef4dcb38492ee334491b79863002626b"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r38-local-regression-receipt.mjs",
+      "changeType": "ADDED",
+      "family": "A102R38_SOURCE_BOUND_CONTROL",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2162,
+      "currentSha256": "2c4d3c921fef32397bdd7154fefefcb40a090ee9cf33438ed4bf3f4bfa1f3956"
+    }
+  ],
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Complete byte/hash diff against the exact delivered parent SOURCE before adding this self-referential ledger and the descendant manifest. Self-excluded files are bound by the final descendant/package layers. No build, browser, staging, LIVE or sale credit."
+}

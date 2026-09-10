@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "velmere.pass19.diff-from-pass18.v1",
+  "generatedAt": "2026-07-20T10:10:00Z",
+  "baseArtifact": {
+    "name": "VELMERE_PASS18_AUDIT_LENS_ADAPTER_SAFE_SOURCE.zip",
+    "sha256": "94927098cf53010885bb56d3bd504c75eb3cb3320fb3c14f93347130322c3216"
+  },
+  "scope": "Source/evidence diff excluding generated .velmere diagnostics/gates/builds, package manifest, verification and this diff report.",
+  "summary": {
+    "newFiles": 17,
+    "changedFiles": 11,
+    "removedFiles": 0,
+    "newBytes": 1228453,
+    "changedCurrentBytes": 2009272,
+    "changedPreviousBytes": 2009718
+  },
+  "new": [
+    {
+      "path": "config/pass19/brain-angel-output-adapter-policy.json",
+      "bytes": 2961,
+      "sha256": "f14cd3b42ba18907187bcd40126b65458a721e79267d5e2bfb622b663c989719"
+    },
+    {
+      "path": "config/pass19/gate-policy.json",
+      "bytes": 5598,
+      "sha256": "ca9c482d280c50cd5dc3facb06dbcd7936da976c90893f22f631e476942dfa35"
+    },
+    {
+      "path": "config/pass19/typescript-syntax-scan.json",
+      "bytes": 447,
+      "sha256": "4d284077f25ca6898ee0a8c4a74e553cab7c5c6eaa51a8873dc177a3f1c3f550"
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+      "bytes": 431556,
+      "sha256": "10c9c1a815b2e9591a19caf25c808634e674c8d8abb600ebb11e54e0dc0e3c24"
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+      "bytes": 1464,
+      "sha256": "078c9b6dbea2c4c3ae76a870a393dbc91b78fc74d5e7991172bea70d2b591b7e"
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-evidence-fixtures.json",
+      "bytes": 718563,
+      "sha256": "2b776d281486deef25d55b4187c355ecef0b35480de0d6337860813913e1270e"
+    },
+    {
+      "path": "lib/worldclass/brain-angel-output-adapter.d.ts",
+      "bytes": 426,
+      "sha256": "80eedac9fec89ccfaf6b50c42aa95a53a7f9f77ebd560715e75ee9c6695ed434"
+    },
+    {
+      "path": "lib/worldclass/brain-angel-output-adapter.mjs",
+      "bytes": 16057,
+      "sha256": "b437800f62e735ce0b67d0d3a384e4ffa4f3b011dfde0c557a9ff888b9ce57af"
+    },
+    {
+      "path": "scripts/pass19/audit-clean-source.mjs",
+      "bytes": 11971,
+      "sha256": "408020058e804ac0aec11220f83593e2672147ec5ad3b666986851ccbb4db805"
+    },
+    {
+      "path": "scripts/pass19/audit-current-product-readiness.mjs",
+      "bytes": 3904,
+      "sha256": "2e04e4b4d749a057b7e27c6369752f1665ca92d610ae817e3771e12d98ee652d"
+    },
+    {
+      "path": "scripts/pass19/audit-runner-contract.mjs",
+      "bytes": 2279,
+      "sha256": "262a9a1254de6e8b3c8dd4a689b86a22f5cfae54334000622d849c1db53f5ccd"
+    },
+    {
+      "path": "scripts/pass19/run-gate.mjs",
+      "bytes": 5617,
+      "sha256": "f04990120c2f57837cf9df0059f7479fc2b8616d192a85059f33d7f8a5fa684b"
+    },
+    {
+      "path": "scripts/pass19/run-typescript-syntax-scan.mjs",
+      "bytes": 2987,
+      "sha256": "e5c25934be14e9322ee759b2856574c12cc3ee6defaba75ef26da76a098e02a5"
+    },
+    {
+      "path": "scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs",
+      "bytes": 7124,
+      "sha256": "a068c88b4a3eff0b46d14f5a88db064c8e4199d426d0aa927df7702de5d2dc9b"
+    },
+    {
+      "path": "scripts/pass19/verify-brain-angel-output-adapters.mjs",
+      "bytes": 13659,
+      "sha256": "c31e0529b9454be2cf0ac0a32da6200649253e58fb54475a2187ff8f9a71537c"
+    },
+    {
+      "path": "scripts/worldclass/common-implementation-digest.mjs",
+      "bytes": 1868,
+      "sha256": "ea39ac3ea71196d253c8b4bdb4f92e4c1cfa95af275ee2177ccf9caeb9709fe6"
+    },
+    {
+      "path": "supabase/migrations/20260720000005_5004_worldclass_brain_angel_adapter_evidence.sql",
+      "bytes": 1972,
+      "sha256": "f056c8413c7038415d60375f54e8deb8b1ea18a9e8764c2e4c10309277bc4722"
+    }
+  ],
+  "changed": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "before": {
+        "bytes": 1822,
+        "sha256": "8c3857f95cef73a2f0ed5c909ee8f6b89f5fba0b3a0f3b6cc59f854aaca55721"
+      },
+      "after": {
+        "bytes": 1772,
+        "sha256": "f698ad34d99454bcb8b1650da0ed779864c8d9a8c614846f8c23f9f44eca1960"
+      }
+    },
+    {
+      "path": "README.md",
+      "before": {
+        "bytes": 914,
+        "sha256": "6d12760395d8f2d40ff14ba0f8314501950bd9f31dd30b8bf84b766c574c92c1"
+      },
+      "after": {
+        "bytes": 2692,
+        "sha256": "437c398d00a62d493bfc77526b47fac6da413727e4b167dc99d0a8f358b6ea89"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "before": {
+        "bytes": 686,
+        "sha256": "76d59ae9ccba55324b6780a2f521ce5da8cb97765d9cd5a96403e4b4b1c14e00"
+      },
+      "after": {
+        "bytes": 734,
+        "sha256": "e66cb42ba99795c0e2efe144bc118cb2ec20024afb008c609b99a07b6bfe3486"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 448548,
+        "sha256": "3689b023a9a92dc4dbd5f3dd2e120fb7ca69d94e852fa4f346bc41a8202ccc62"
+      },
+      "after": {
+        "bytes": 448548,
+        "sha256": "e4e5caaf563f0dff468fc5ccf714ba46925b31dcd3f4048fda7ac10a4a2bc4ce"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1290,
+        "sha256": "d6b08c8b026ad567efa38a4bfb82e4715a6ca04d08bf32ac6a34105364fc331c"
+      },
+      "after": {
+        "bytes": 1290,
+        "sha256": "865be8455fdcb4ea47729592efbc5aa8caa142396bb6e8bd7871d9d88d688a05"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 438789,
+        "sha256": "e27aeba3c477fc253f77f9fcb39e5229a973893049debcb56dea585e227c39e7"
+      },
+      "after": {
+        "bytes": 438789,
+        "sha256": "9e2a793846dcd56120a9c6324fdd0f005fb0b13ad0e2823e6a61c990487de3f9"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1507,
+        "sha256": "6e867f36bfe4819e3b2130de4cf4fa36ba759afc87dc2f3b370bfc300c892f66"
+      },
+      "after": {
+        "bytes": 1507,
+        "sha256": "8958adbe1fb1878651a9ad7c69ef2536e64f35ed4ce68aed4b5678d63c67f24f"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-evidence-fixtures.json",
+      "before": {
+        "bytes": 1073770,
+        "sha256": "3746e28c4c8a5355ca14f8b60ea168fb829a6b9deea3d254e94e47a0f3db1d96"
+      },
+      "after": {
+        "bytes": 1073770,
+        "sha256": "c9591be1c92d14ce46f36e507baecf405b766d81a747e5ad97ffc62b035ad440"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "bytes": 7548,
+        "sha256": "de8ae611b6b210cfdc21d170d8a8d5ba64c389719225878375cc2953e7588bdd"
+      },
+      "after": {
+        "bytes": 7847,
+        "sha256": "ee4209e4e08cf235a74dcb1d96dd29fb3598ea2e07842f146bb6d1837466d40e"
+      }
+    },
+    {
+      "path": "scripts/pass17/verify-market-output-adapters.mjs",
+      "before": {
+        "bytes": 14894,
+        "sha256": "a7e2a3688c7581d3f62f1617cebb29d932c377f25edd308a520cba0557ac5cb1"
+      },
+      "after": {
+        "bytes": 13669,
+        "sha256": "12a655d50c0e617c95b03ebfd0cb2273d2c749103a331e5b4d7938bf46a5040a"
+      }
+    },
+    {
+      "path": "scripts/pass18/verify-audit-lens-output-adapters.mjs",
+      "before": {
+        "bytes": 19950,
+        "sha256": "c9757c29db320af55a82b282099424579656b00541b2245999fdeb9dcccf7170"
+      },
+      "after": {
+        "bytes": 18654,
+        "sha256": "e25afb7b2269f8b5591d6f0812cbf6ea206bfea8080d7f8636ece55ac6a50000"
+      }
+    }
+  ],
+  "removed": [],
+  "truthBoundary": "The diff and 2700 synthetic rows prove source/adapter behavior only. They do not prove model hallucination rate, current providers, human review, rendered PDF, staging or LIVE execution. Canonical matrix remains 0/2700."
+}

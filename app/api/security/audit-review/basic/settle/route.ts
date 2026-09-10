@@ -1,0 +1,13 @@
+import { invokeLazyRouteHandler } from "@/lib/server/lazy-route-dispatch";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+export async function POST(request: Request) {
+  return invokeLazyRouteHandler({
+    method: "POST",
+    request,
+    load: () => import("@/lib/server/lazy-route-modules/security--audit-review--basic--settle"),
+    unavailableError: "route_temporarily_unavailable",
+  });
+}

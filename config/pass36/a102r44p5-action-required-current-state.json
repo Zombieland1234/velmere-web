@@ -1,0 +1,84 @@
+{
+  "completed": {
+    "browserMatrix": "57/57 browser checks; 29 screenshots; PL/EN/DE desktop, PL mobile, four-tab Shield popup; 0 console/page/http/request failures",
+    "commercialBoundary": "9/9 locale-tier objects explicitly bound",
+    "exactLinuxRuntime": "Node 24.18.0 / npm 11.16.0 / Playwright 1.60.0 / Chromium 148.0.7778.96",
+    "exactLockMigration": "formal R44P4 lock to exact npm 11.16.0 lock",
+    "fullESLintFinalCandidate": "100/100 partitions; 3481 files; 0 errors; 0 warnings; 0 process failures",
+    "fullTypeScriptPreBuild": "18/18 partitions; 160/160 roots; 1539 transitive; 178 tooling; 0 diagnostics",
+    "officialToolExecutions": "200/200 inherited and hash-bound from R44P4",
+    "postBuildTypeScript": "18/18 partitions; 301/301 roots; 1680 transitive; 178 tooling; 0 diagnostics",
+    "productionSmoke": "Webpack 55/55 assertions and 16/16 HTTP results; Turbopack 55/55 and 16/16",
+    "routeAstRegistry": "254 files / 317 method exports; project TypeScript 5.9.3 exact AST reparse",
+    "turbopackBuild": "PASS exact Node 24.18.0 / npm 11.16.0; compile+generate; output contract; source immutable",
+    "webpackBuild": "PASS exact Node 24.18.0 / npm 11.16.0; compile+generate; output contract; source immutable"
+  },
+  "externalBlockers": [
+    "exact Windows final-byte retest",
+    "staging credentials and disposable tenants",
+    "provider-rights approvals",
+    "real customer cohorts and independent adjudication"
+  ],
+  "generatedAt": "2026-08-02T18:45:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "localClosure": {
+    "browser": {
+      "checks": 57,
+      "failed": 0,
+      "fixtureOnly": true,
+      "passed": 57,
+      "screenshots": 29
+    },
+    "builds": {
+      "turbopack": "PASS",
+      "webpack": "PASS"
+    },
+    "credit": "LOCAL_LINUX_EXACT_BUILD_BROWSER_CREDIT_ONLY",
+    "exactRuntime": {
+      "chromium": "148.0.7778.96",
+      "node": "24.18.0",
+      "npm": "11.16.0",
+      "playwright": "1.60.0"
+    },
+    "forbiddenCredit": [
+      "Windows",
+      "staging",
+      "provider",
+      "real-customer",
+      "LIVE",
+      "sale",
+      "independent-assurance"
+    ],
+    "platform": "linux-x64 local/CI evidence only",
+    "smoke": {
+      "turbopack": "PASS_55_ASSERTIONS_16_RESULTS",
+      "webpack": "PASS_55_ASSERTIONS_16_RESULTS"
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P4_ACTION_REQUIRED_OFFICIAL_TOOLCHAIN_200_EXECUTIONS_SEMGREP_MIGRATION_AND_AUTOMATED_AUDIT_EVIDENCE_BINDING_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "local": 1,
+    "stagingAndExternal": "4-7",
+    "totalRange": "6-9",
+    "windows": 1
+  },
+  "requiredCurrentCheckpoint": [
+    "regenerate final R44P5 source manifest and authority after route AST registry migration",
+    "repeat final-byte lint/typecheck/build/smoke/browser after the final source freeze",
+    "clean-unpack",
+    "deterministic SOURCE and MATERIALS 2/2"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P5_ACTION_REQUIRED_EXACT_NPM_11_16_LOCKFILE_MIGRATION_LINUX_BUILD_BROWSER_AND_DEPENDENCY_GRAPH_CLOSURE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p5.action-required-current-state.v1",
+  "skuDecisions": {
+    "Advanced": "PILOT_ONLY_PAID_INFORMATIONAL",
+    "Basic": "GO_FREE_INFORMATIONAL_PILOT",
+    "HumanReviewedAudit": "NOT_FOR_SALE",
+    "Pro": "PILOT_ONLY_PAID_INFORMATIONAL"
+  },
+  "truthBoundary": "R44P5 now has exact Linux dependency, dual-build, production-smoke and fixture-browser evidence. It grants no exact Windows, staging, current-provider, real-customer, independent-assurance, LIVE or sale credit.",
+  "worldClassProven": false
+}

@@ -1,0 +1,10 @@
+import type { SolidityCompilerAstEvidence, SolidityCompilerAstSourceFile } from "./solidity-compiler-ast-runtime.mjs";
+export const AUDIT_COMPILER_DEPLOYMENT_BINDING_SCHEMA: "velmere.pass36.a102r44p39.audit-compiler-deployment-binding.v1";
+export const AUDIT_EIP1967_PROXY_BINDING_SCHEMA: "velmere.pass36.a102r44p39.audit-eip1967-proxy-binding.v1";
+export const EIP1967_IMPLEMENTATION_SLOT: string;
+export type AuditCompilerDeploymentBinding = Record<string, unknown> & { schemaVersion: typeof AUDIT_COMPILER_DEPLOYMENT_BINDING_SCHEMA; status: "EXACT_MATCH" | "MATCH_AFTER_SOLIDITY_METADATA_STRIP" | "MISMATCH" | "BLOCKED"; bindingSha256: string; blockers: string[] };
+export type AuditEip1967ProxyBinding = Record<string, unknown> & { schemaVersion: typeof AUDIT_EIP1967_PROXY_BINDING_SCHEMA; status: "BOUND_LOCAL_EIP1967_SNAPSHOT" | "BLOCKED"; proxyBindingSha256: string; blockers: string[] };
+export function buildAuditCompilerDeploymentBinding(input: { evidence: SolidityCompilerAstEvidence; sourceFiles: SolidityCompilerAstSourceFile[]; sourcePath: string; contractName: string; deployedRuntimeBytecode: string; chainId?: string | null; address?: string | null; blockNumber?: number | null; evidenceClass?: string }): AuditCompilerDeploymentBinding;
+export function verifyAuditCompilerDeploymentBinding(value: unknown): value is AuditCompilerDeploymentBinding;
+export function buildAuditEip1967ProxyBinding(input: { implementationBinding: AuditCompilerDeploymentBinding; proxyAddress: string; implementationAddress: string; implementationSlot?: string; rawImplementationStorageWord: string; proxyRuntimeBytecode: string; chainId?: string | null; blockNumber?: number | null; evidenceClass?: string }): AuditEip1967ProxyBinding;
+export function verifyAuditEip1967ProxyBinding(value: unknown): value is AuditEip1967ProxyBinding;

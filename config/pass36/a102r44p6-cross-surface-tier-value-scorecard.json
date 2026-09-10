@@ -1,0 +1,440 @@
+{
+  "audit": {
+    "cases": 50,
+    "officialToolProcesses": 200,
+    "packetRows": 450,
+    "tierDeltas": {
+      "advancedEvidenceFamiliesEqualPro": 50,
+      "advancedEvidenceFamiliesGreaterThanPro": 0,
+      "advancedFindingsEqualPro": 29,
+      "advancedFindingsGreaterThanPro": 21,
+      "advancedMaterialSetDifferentFromPro": 50,
+      "proEvidenceFamiliesGreaterThanBasic": 50,
+      "proFindingsEqualBasic": 25,
+      "proFindingsGreaterThanBasic": 25
+    },
+    "tiers": {
+      "advanced": {
+        "allClaimsFailClosed": true,
+        "allOutputsDistinct": true,
+        "averageConfidence": 90.0,
+        "averageContradictions": 0.14,
+        "averageEvidenceFamilies": 4.0,
+        "averageEvidenceRows": 4.0,
+        "averageFindings": 1.72,
+        "caseCount": 50,
+        "evidenceFamilies": [
+          "build_reproduction",
+          "compiler_metadata",
+          "pattern_analysis",
+          "static_analysis"
+        ],
+        "locales": {
+          "de": 50,
+          "en": 50,
+          "pl": 50
+        },
+        "materialAdditionFamilies": [
+          "abstention_and_claim_boundary",
+          "all_tool_signals",
+          "contradiction_register",
+          "expanded_evidence_scenarios"
+        ],
+        "maximumEvidenceFamilies": 4,
+        "maximumFindings": 5,
+        "minimumEvidenceFamilies": 4,
+        "minimumFindings": 0,
+        "packetRows": 150
+      },
+      "basic": {
+        "allClaimsFailClosed": true,
+        "allOutputsDistinct": true,
+        "averageConfidence": 78.0,
+        "averageContradictions": 0.88,
+        "averageEvidenceFamilies": 1.42,
+        "averageEvidenceRows": 1.42,
+        "averageFindings": 0.52,
+        "caseCount": 50,
+        "evidenceFamilies": [
+          "compiler_metadata",
+          "pattern_analysis",
+          "static_analysis"
+        ],
+        "locales": {
+          "de": 50,
+          "en": 50,
+          "pl": 50
+        },
+        "materialAdditionFamilies": [
+          "bounded_official_tool_summary",
+          "limitations",
+          "next_safe_check",
+          "source_bound_identity"
+        ],
+        "maximumEvidenceFamilies": 3,
+        "maximumFindings": 3,
+        "minimumEvidenceFamilies": 1,
+        "minimumFindings": 0,
+        "packetRows": 150
+      },
+      "pro": {
+        "allClaimsFailClosed": true,
+        "allOutputsDistinct": true,
+        "averageConfidence": 86.0,
+        "averageContradictions": 0.56,
+        "averageEvidenceFamilies": 4.0,
+        "averageEvidenceRows": 4.0,
+        "averageFindings": 1.3,
+        "caseCount": 50,
+        "evidenceFamilies": [
+          "build_reproduction",
+          "compiler_metadata",
+          "pattern_analysis",
+          "static_analysis"
+        ],
+        "locales": {
+          "de": 50,
+          "en": 50,
+          "pl": 50
+        },
+        "materialAdditionFamilies": [
+          "four_official_tool_receipts",
+          "full_evidence_table",
+          "remediation_map",
+          "severity_rationale"
+        ],
+        "maximumEvidenceFamilies": 4,
+        "maximumFindings": 4,
+        "minimumEvidenceFamilies": 4,
+        "minimumFindings": 0,
+        "packetRows": 150
+      }
+    },
+    "truth": {
+      "advancedDecision": "BLOCKED_PUBLIC_SALE_INCREMENTAL_EVIDENCE_AND_ADJUDICATION",
+      "advancedEvidenceGap": "Advanced uses the same four evidence families as Pro in 50/50 cases; value comes from synthesis/methodology, not new independent evidence.",
+      "basicDecision": "GO_FREE_INFORMATIONAL_PILOT",
+      "independentAdjudications": 0,
+      "proDecision": "PILOT_ONLY_PAID_INFORMATIONAL",
+      "realCustomerOutcomes": 0,
+      "realDeployedAuditsVerified": 0
+    }
+  },
+  "brainAngelRisk": {
+    "cases": 360,
+    "channelProjections": 1800,
+    "decision": "LOCAL_SAFETY_MATRIX_PASS_REAL_MODEL_EVAL_BLOCKED",
+    "decisionCounts": {
+      "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+      "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+      "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+      "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+      "REJECT_EVASION_OR_CONCEALMENT": 24,
+      "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+      "REJECT_INPUT_CONTRACT": 24,
+      "REJECT_SECURITY_POLICY": 144,
+      "REJECT_UNCALIBRATED_PROBABILITY": 24
+    },
+    "mutationKilled": 5760,
+    "mutations": 5760,
+    "realEvalRows": 0,
+    "realRequired": 300
+  },
+  "browser": {
+    "checksPassed": 57,
+    "checksRequired": 57,
+    "consoleErrors": 0,
+    "currentProviderCredit": 0,
+    "decision": "PASS_LOCAL_FIXTURE_UI_ONLY",
+    "failedRequests": 0,
+    "fixtureOnly": true,
+    "httpErrors": 0,
+    "hydrationErrors": 0,
+    "pageErrors": 0,
+    "screenshotsProduced": 29,
+    "screenshotsRequired": 29,
+    "stagingCredit": 0
+  },
+  "evidenceBindings": {
+    "brainAngelRiskReceipt": {
+      "path": "config/pass36/a88-test-receipt.json",
+      "sha256": "d4d923985e8baa35f861f985cd3be9d76a11e886181ae16d4babc9b0ef200a33"
+    },
+    "browserAcceptance": {
+      "path": "MATERIALS/evidence/PASS35_A45_BROWSER_ACCEPTANCE.json",
+      "sha256": "ebbeccdc8bc51b59f49618bcaacb17ceab8577e68247d1bbea27c2110288ad97"
+    },
+    "impactWhaleReceipt": {
+      "path": "config/pass36/a87-test-receipt.json",
+      "sha256": "8b803a77b81db8144448a45d278c156f81c383792fe54d6f06c88b8a6c527e9b"
+    },
+    "officialToolAuditPackets": {
+      "bytes": 2245575,
+      "path": "MATERIALS/evidence/official-tool-audit-packets.jsonl",
+      "sha256": "72c43208ebdb48c3c50ba74579eb83ca0845139a82e516394662cf1c8aef32e2"
+    },
+    "officialToolPdfVerification": {
+      "path": "MATERIALS/evidence/OFFICIAL_TOOL_PDF_VERIFICATION.json",
+      "sha256": "bed3fb5dcbfbe1f18bd31a9c75f2d4a9cd004ffae753ca42adca50f914a868a3"
+    },
+    "officialToolTierSummary": {
+      "path": "MATERIALS/evidence/OFFICIAL_TOOL_TIER_PACKET_SUMMARY.json",
+      "sha256": "0cfce220f81089c8126f72ad5df6e0f1b0bdc57e1ee541a9d7a6c0d9e7a90fd7"
+    },
+    "parentMaterialsZip": {
+      "bytes": 35676612,
+      "name": "VELMERE_PASS36_A102R44P5_ACTION_REQUIRED_EXACT_NPM_11_16_LOCKFILE_MIGRATION_LINUX_BUILD_BROWSER_AND_DEPENDENCY_GRAPH_CLOSURE_NO_LIVE_CREDIT_MATERIALS.zip",
+      "sha256": "825b1ff2450d97c42d16002ea297b00790d70e3167370b2c8eb3f954614cdf0c"
+    },
+    "parentSourceZip": {
+      "bytes": 53993967,
+      "name": "VELMERE_PASS36_A102R44P5_ACTION_REQUIRED_EXACT_NPM_11_16_LOCKFILE_MIGRATION_LINUX_BUILD_BROWSER_AND_DEPENDENCY_GRAPH_CLOSURE_NO_LIVE_CREDIT_SOURCE_ONLY.zip",
+      "sha256": "268a5853b1134cb5fe0ecd6cdfdb2265f124ddf513c9593fb0977cec11e39b84"
+    },
+    "realMarketsReceipt": {
+      "path": "config/pass36/a86-test-receipt.json",
+      "sha256": "e1808128675e4fb1ffb28abee41e23ab28dacfc89a09b6b44115077ab0576177"
+    },
+    "shieldProMapReceipt": {
+      "path": "config/pass36/a85-test-receipt.json",
+      "sha256": "f72de4db59f4c72202034decbd9c82716056e75295926b6e7fec0cbdef6e69ea"
+    },
+    "shieldReceipt": {
+      "path": "config/pass36/a84-test-receipt.json",
+      "sha256": "6893934d6c27dd61832b93aa3ff702b5622b11d536523d5ff701f846fc5d7cef"
+    }
+  },
+  "generatedAt": "2026-08-02T20:30:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "marketImpactWhaleWatch": {
+    "assetDenominator": 318,
+    "marketImpactReadiness": {
+      "advanced": {
+        "coveragePercent": 77.04,
+        "functionalReadyOffline": 245,
+        "productionEligible": 0,
+        "unavailable": 73
+      },
+      "basic": {
+        "coveragePercent": 96.54,
+        "functionalReadyOffline": 307,
+        "productionEligible": 0,
+        "unavailable": 11
+      },
+      "pro": {
+        "coveragePercent": 91.19,
+        "functionalReadyOffline": 290,
+        "productionEligible": 0,
+        "unavailable": 28
+      }
+    },
+    "realEvidenceRowsVerified": 0,
+    "realizedSlippageRows": 0,
+    "signedLabelRows": 0,
+    "whaleWatchReadiness": {
+      "advanced": {
+        "coveragePercent": 26.73,
+        "functionalReadyOffline": 85,
+        "productionEligible": 0,
+        "unavailable": 233
+      },
+      "basic": {
+        "coveragePercent": 72.33,
+        "functionalReadyOffline": 230,
+        "productionEligible": 0,
+        "unavailable": 88
+      },
+      "pro": {
+        "coveragePercent": 47.17,
+        "functionalReadyOffline": 150,
+        "productionEligible": 0,
+        "unavailable": 168
+      }
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P5_ACTION_REQUIRED_EXACT_NPM_11_16_LOCKFILE_MIGRATION_LINUX_BUILD_BROWSER_AND_DEPENDENCY_GRAPH_CLOSURE_NO_LIVE_CREDIT",
+  "pdf": {
+    "activeContentDocuments": 0,
+    "blankPages": 0,
+    "decision": {
+      "advanced": "PILOT_ONLY_VALUE_GAP_NO_HUMAN_REVIEW",
+      "basic": "GO_FREE_TECHNICAL_PDF_PILOT",
+      "pro": "PILOT_ONLY"
+    },
+    "documentsExecuted": 150,
+    "documentsPassed": 150,
+    "documentsRequired": 150,
+    "edgeTouchPages": 0,
+    "failed": 0,
+    "fontEmbeddedDocuments": 150,
+    "pagesExecuted": 700,
+    "pagesRequired": 700,
+    "paidReleaseCredit": false,
+    "realCustomerPdfCredit": 0,
+    "toUnicodeDocuments": 150,
+    "toolTierPdfBindingChecks": 4418,
+    "toolTierPdfBindingFailed": 0
+  },
+  "productionApproved": false,
+  "realMarkets": {
+    "currentQuoteVerified": 0,
+    "decision": {
+      "advanced": "NOT_FOR_PUBLIC_SALE",
+      "basic": "PILOT_ONLY_EMPTY_STATE_AND_REFERENCE",
+      "pro": "NOT_FOR_PUBLIC_SALE"
+    },
+    "fieldRows": 5830,
+    "instrumentDenominator": 583,
+    "mutationKilled": 31482,
+    "mutations": 31482,
+    "offlineReadiness": {
+      "advanced": {
+        "coveragePercent": 47.51,
+        "evidenceWithheld": 306,
+        "functionalReadyOffline": 277,
+        "paidDelivered": 0,
+        "productionEligible": 0
+      },
+      "basic": {
+        "coveragePercent": 86.79,
+        "evidenceWithheld": 77,
+        "functionalReadyOffline": 506,
+        "paidDelivered": 0,
+        "productionEligible": 0
+      },
+      "pro": {
+        "coveragePercent": 61.58,
+        "evidenceWithheld": 224,
+        "functionalReadyOffline": 359,
+        "paidDelivered": 0,
+        "productionEligible": 0
+      }
+    },
+    "productionBrowserVerified": 0,
+    "realEvidenceRowsVerified": 0,
+    "rightsApproved": 0,
+    "tierPackets": 1749
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P6_ACTION_REQUIRED_CROSS_SURFACE_TIER_VALUE_TRUTH_AND_REAL_DATA_READINESS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p6.cross-surface-tier-value-scorecard.v1",
+  "shield": {
+    "assetDenominator": 318,
+    "decision": {
+      "advanced": "NOT_FOR_PUBLIC_SALE",
+      "basic": "PILOT_ONLY_FREE_REFERENCE",
+      "pro": "NOT_FOR_PUBLIC_SALE"
+    },
+    "mutationKilled": 11448,
+    "mutations": 11448,
+    "offlineReadiness": {
+      "advanced": {
+        "coveragePercent": 39.62,
+        "functionalReadyOffline": 126,
+        "productionEligible": 0,
+        "unavailable": 192
+      },
+      "basic": {
+        "coveragePercent": 75.79,
+        "functionalReadyOffline": 241,
+        "productionEligible": 0,
+        "unavailable": 77
+      },
+      "pro": {
+        "coveragePercent": 48.74,
+        "functionalReadyOffline": 155,
+        "productionEligible": 0,
+        "unavailable": 163
+      }
+    },
+    "productionEligibleAssets": 0,
+    "realProviderAssetsVerified": 0,
+    "rightsApprovedAssets": 0,
+    "stateCounts": {
+      "AVAILABLE": 6122,
+      "CONFLICTED": 178,
+      "FAILED": 205,
+      "RATE_LIMITED": 207,
+      "STALE": 379,
+      "UNAVAILABLE": 0
+    },
+    "tierPackets": 954
+  },
+  "shieldProMap": {
+    "assetDenominator": 318,
+    "bindingCounts": {
+      "CONFLICT": 30,
+      "EXACT_MULTI_SOURCE": 200,
+      "MISSING": 30,
+      "SINGLE_SOURCE": 58
+    },
+    "decision": {
+      "advanced": "NOT_FOR_PUBLIC_SALE",
+      "basic": "LOCAL_REFERENCE_ONLY",
+      "pro": "NOT_FOR_PUBLIC_SALE"
+    },
+    "depthCounts": {
+      "AVAILABLE": 224,
+      "CONFLICTED": 32,
+      "STALE": 32,
+      "UNAVAILABLE": 30
+    },
+    "mutationKilled": 15264,
+    "mutations": 15264,
+    "offlineReadiness": {
+      "advanced": {
+        "paidDelivered": 0,
+        "shieldMapCoveragePercent": 9.12,
+        "shieldMapFunctionalReadyOffline": 29,
+        "shieldProCoveragePercent": 29.25,
+        "shieldProFunctionalReadyOffline": 93
+      },
+      "basic": {
+        "paidDelivered": 0,
+        "shieldMapCoveragePercent": 75.79,
+        "shieldMapFunctionalReadyOffline": 241,
+        "shieldProCoveragePercent": 75.79,
+        "shieldProFunctionalReadyOffline": 241
+      },
+      "pro": {
+        "paidDelivered": 0,
+        "shieldMapCoveragePercent": 20.13,
+        "shieldMapFunctionalReadyOffline": 64,
+        "shieldProCoveragePercent": 34.91,
+        "shieldProFunctionalReadyOffline": 111
+      }
+    },
+    "realCasesVerified": 0,
+    "realEntitlementsVerified": 0,
+    "rightsApprovedAssets": 0,
+    "tierPackets": 954
+  },
+  "worldClassAssessment": {
+    "remainingCheckpointEstimate": {
+      "central": 6,
+      "range": "5-8",
+      "tracks": [
+        "exact Windows final-byte",
+        "staging/RLS/Stripe TEST",
+        "provider rights/current data",
+        "real customer cohorts",
+        "independent adjudication/final release"
+      ]
+    },
+    "strongest": [
+      "official-tool audit evidence and PDF integrity",
+      "fail-closed provider/data states",
+      "local browser correctness",
+      "mutation-test depth"
+    ],
+    "weakest": [
+      "current provider evidence",
+      "commercial rights",
+      "real customer utility",
+      "independent adjudication",
+      "Advanced incremental evidence over Pro"
+    ]
+  },
+  "worldClassProven": false
+}

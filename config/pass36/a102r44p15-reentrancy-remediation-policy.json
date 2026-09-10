@@ -1,0 +1,139 @@
+{
+  "decision": "ACTION_REQUIRED",
+  "externalResult": {
+    "analyzerClass": "STRUCTURED_TOKEN_CONTROL_FLOW_V3_STATE_AWARE_NOT_COMPILER_AST",
+    "analyzerSha256": "16e51259f81553e0b80d62136ee43157b3db4020792e4664d92b69372ecc1f8d",
+    "baselineRecall": 0.710145,
+    "categoryDelta": {
+      "access_control": {
+        "baselineRecall": 0.444444,
+        "currentRecall": 0.888889,
+        "delta": 0.444445
+      },
+      "arithmetic": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "bad_randomness": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "denial_of_service": {
+        "baselineRecall": 0.333333,
+        "currentRecall": 1.0,
+        "delta": 0.666667
+      },
+      "front_running": {
+        "baselineRecall": 0.25,
+        "currentRecall": 1.0,
+        "delta": 0.75
+      },
+      "other": {
+        "baselineRecall": 0.666667,
+        "currentRecall": 0.666667,
+        "delta": 0.0
+      },
+      "reentrancy": {
+        "baselineRecall": 0.857143,
+        "currentRecall": 1.0,
+        "delta": 0.142857
+      },
+      "short_addresses": {
+        "baselineRecall": 0.0,
+        "currentRecall": 1.0,
+        "delta": 1.0
+      },
+      "time_manipulation": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "unchecked_low_level_calls": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      }
+    },
+    "currentControlFlagRate": 0,
+    "currentRecall": 0.956522,
+    "reentrancyRecall": 1.0
+  },
+  "fixedDenominators": {
+    "externalCases": 69,
+    "externalControls": 12,
+    "externalReentrancyCases": 7,
+    "localGeneralizationAssertions": 98,
+    "localSourceParityAssertions": 107,
+    "sourceAuditDeclarationChecks": 5
+  },
+  "generatedAt": "2026-08-04T00:00:00.000Z",
+  "materialBindings": {
+    "artifactZip": {
+      "bytes": 96870,
+      "path": "external/R44P15_REENTRANCY_FINAL_ANALYZER_EVIDENCE.zip",
+      "sha256": "e38f88cede8ba72dafe1e01e440f89fff87ceff461a153747c391c07a7bad2d3"
+    },
+    "independentVerification": {
+      "bytes": 486,
+      "path": "external/packaged-evidence/R44P15_INDEPENDENT_EVIDENCE_VERIFICATION.json",
+      "sha256": "53c1bdd3240647a89f0fd3a89c47ac97bc8dbc2a2aa9972ea4814f9f4b93ee79"
+    },
+    "ledger": {
+      "bytes": 98965,
+      "path": "external/packaged-evidence/R44P15_EXTERNAL_ACCURACY_REMEDIATION_LEDGER.json",
+      "sha256": "d4779aa0d6b35e318014769749d821c88fef576f3fbe52a1ab4c715d7954d957"
+    },
+    "summary": {
+      "bytes": 416,
+      "path": "external/packaged-evidence/R44P15_EXTERNAL_ACCURACY_REMEDIATION_SUMMARY.json",
+      "sha256": "9e04636dee746971c091768fb44a1c1964b20b9d6aeaa7c5f1dd28b94bf1a919"
+    }
+  },
+  "objective": "Raise structured reentrancy recall on the exact external denominator without reintroducing control false alerts or replacing mandatory compiler/dynamic/human lanes.",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P14_ACTION_REQUIRED_WEAK_CATEGORY_RECALL_CONTROL_FALSE_ALERT_SUPPRESSION_AND_PRODUCT_ANALYZER_INTEGRATION_NO_LIVE_CREDIT",
+  "requiredSignals": [
+    "reentrancy_order",
+    "reentrancy_modifier_callback"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P15_ACTION_REQUIRED_REENTRANCY_RECALL_SOURCE_AUDIT_DECLARATION_BOUNDARY_AND_FINAL_BYTE_REGRESSION_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p15.reentrancy-remediation-policy.v2",
+  "sourceAuthorityBoundary": {
+    "classification": "MATERIALS_ONLY_GENERATED_EVIDENCE",
+    "generatedDiagnosticsRoot": ".velmere",
+    "includedInSourceAuthority": false,
+    "negativeDiscovery": "Route verification and segmented build logs previously caused source-authority drift until the generated diagnostics root was explicitly excluded."
+  },
+  "supportedInteractionForms": [
+    "legacy_call_value",
+    "modern_call_value",
+    "send",
+    "transfer",
+    "token_transfer",
+    "typed_modifier_callback"
+  ],
+  "suppressionRequirements": [
+    "checks_effects_interactions",
+    "explicit_non_reentrant_modifier",
+    "bounded_lock_guard",
+    "local_or_memory_assignment_not_persistent_state"
+  ],
+  "truthBoundary": {
+    "businessLogicCoverage": false,
+    "commercialRightsApproved": false,
+    "customerCredit": false,
+    "externalLabeledRecallBaseline": true,
+    "externalToolLaneMandatory": true,
+    "formalPrecision": false,
+    "independentAdjudication": false,
+    "independentDatasetDesign": true,
+    "liveCredit": false,
+    "modernProtocolRepresentativeness": false,
+    "paidTierCredit": false,
+    "pathFeasibilityCredit": false,
+    "severityCalibration": false,
+    "structuredTokenAnalyzerNotCompilerAst": true,
+    "worldClassProven": false
+  }
+}

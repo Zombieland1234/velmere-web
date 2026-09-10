@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "velmere.pass21.gate-policy.v1",
+  "purpose": "Verify provider-rights registry, fail-closed merchant/legal registry, explicit RLS classification and expanded PL/EN/DE without repeating heavy runtime gates.",
+  "truthBoundary": "PASS21 static gates prove registry completeness, fail-closed behavior, locale/source contracts and classification. They do not grant provider rights, complete merchant identity, create RLS policies, provide legal approval, staging or LIVE proof.",
+  "heavyExecutionRequiresExplicitFlag": true,
+  "levels": {
+    "quick": {
+      "maxExpectedSeconds": 900,
+      "commands": [
+        "node scripts/pass21/audit-runner-contract.mjs",
+        "node scripts/pass14/verify-visual-freeze.mjs",
+        "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+        "node scripts/pass15/verify-lazy-route-shells.mjs",
+        "node scripts/pass16/verify-worldclass-corpus.mjs",
+        "node scripts/pass16/verify-worldclass-output-contract.mjs",
+        "node scripts/pass16/test-worldclass-output-scorer.mjs",
+        "node scripts/pass20/verify-data-license-eligibility.mjs",
+        "node scripts/pass20/test-data-license-boundaries.mjs",
+        "node scripts/pass21/audit-provider-rights-registry.mjs",
+        "node scripts/pass21/audit-merchant-legal-readiness.mjs",
+        "node scripts/pass21/audit-i18n-release-readiness.mjs",
+        "node scripts/pass14/verify-migration-versions.mjs",
+        "node scripts/pass14/verify-retired-fixture-routes.mjs",
+        "node scripts/pass14/audit-database-contract.mjs",
+        "node scripts/pass21/verify-rls-classification.mjs",
+        "node scripts/pass21/test-provider-legal-rls-boundaries.mjs",
+        "node scripts/pass21/audit-clean-source.mjs",
+        "node scripts/pass21/audit-current-product-readiness.mjs"
+      ]
+    },
+    "domain": {
+      "maxExpectedSeconds": 1800,
+      "domains": {
+        "market-product": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs"
+        ],
+        "audit-lens-product": [
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs"
+        ],
+        "brain-angel-product": [
+          "node scripts/pass19/verify-brain-angel-output-adapters.mjs",
+          "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs"
+        ],
+        "all-product-adapters": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass19/verify-brain-angel-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs",
+          "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs"
+        ],
+        "data-commercialization": [
+          "node scripts/pass20/verify-data-license-eligibility.mjs",
+          "node scripts/pass20/test-data-license-boundaries.mjs"
+        ],
+        "i18n-release": [
+          "node scripts/check-i18n.mjs",
+          "node scripts/pass20/audit-i18n-release-readiness.mjs"
+        ],
+        "product-contract": [
+          "node scripts/pass16/verify-worldclass-corpus.mjs",
+          "node scripts/pass16/verify-worldclass-output-contract.mjs",
+          "node scripts/pass16/test-worldclass-output-scorer.mjs"
+        ],
+        "build": [
+          "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+          "node scripts/pass15/profile-lazy-build-surface.mjs",
+          "node scripts/pass15/verify-lazy-route-shells.mjs",
+          "node scripts/pass14/profile-build-graph.mjs"
+        ],
+        "database": [
+          "node scripts/pass14/verify-migration-versions.mjs",
+          "node scripts/pass14/audit-database-contract.mjs"
+        ],
+        "visual-freeze": [
+          "node scripts/pass14/verify-visual-freeze.mjs"
+        ],
+        "source": [
+          "node scripts/pass20/audit-clean-source.mjs"
+        ],
+        "provider-legal-rls": [
+          "node scripts/pass21/audit-provider-rights-registry.mjs",
+          "node scripts/pass21/audit-merchant-legal-readiness.mjs",
+          "node scripts/pass14/audit-database-contract.mjs",
+          "node scripts/pass21/verify-rls-classification.mjs",
+          "node scripts/pass21/audit-i18n-release-readiness.mjs",
+          "node scripts/pass21/test-provider-legal-rls-boundaries.mjs"
+        ]
+      }
+    },
+    "milestone": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 4200,
+      "commands": [
+        "npm run gate:quick",
+        "npm run gate:domain -- --domain all-product-adapters",
+        "npm run gate:domain -- --domain data-commercialization",
+        "npm run gate:domain -- --domain i18n-release",
+        "npm run typecheck",
+        "npm run lint",
+        "npm test"
+      ]
+    },
+    "release": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 10800,
+      "commands": [
+        "npm ci",
+        "npm audit --audit-level=high",
+        "npm run gate:milestone -- --allow-heavy",
+        "npm run build:webpack",
+        "npm run build:turbopack"
+      ]
+    }
+  },
+  "cadence": {
+    "quick": "Once after the complete PASS21 provider/legal/RLS/i18n wave.",
+    "domain": "Rerun only the changed domain during remediation.",
+    "milestone": "Exactly once with exact Node 24.18.0/npm 11.16.0 and dependency cache.",
+    "release": "Once for the source-bound production candidate before browser/WCAG/PDF proof.",
+    "canonicalMatrix": "Provider/model/reviewer/render-bound 2700 outputs only after build, legal/provider rights and runtime surfaces are frozen."
+  },
+  "forbiddenShortcuts": [
+    "Do not count 7750 prepared requirement cells as provider coverage.",
+    "Do not count synthetic eligible packets as commercial license grants.",
+    "Do not count static critical translations as native-speaker or browser overflow proof.",
+    "Do not clear 42 legal placeholders without final seller data and legal review.",
+    "Do not release paid output without verified rights, freshness, source-family floor and server entitlement.",
+    "Do not rerun unchanged heavy gates.",
+    "Do not raise staging/LIVE percentages from fixtures or static checks.",
+    "Do not mark provider rights verified without a reviewed evidence file and SHA-256.",
+    "Do not fabricate merchant address, registration or tax data.",
+    "Do not count RLS classification as an implemented policy or tenant-isolation proof."
+  ]
+}

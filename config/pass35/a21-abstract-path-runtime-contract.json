@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "velmere.pass35.a21-abstract-path-runtime-contract.v1",
+  "passId": "PASS35_A21",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "zeroBudget": 80
+  },
+  "baselineA20": {
+    "canonical": 45.3,
+    "zeroBudget": 86
+  },
+  "progressDeltaVsA20": {
+    "canonicalPercentagePoints": 1.2,
+    "zeroBudgetPercentagePoints": 0.8
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 5.8,
+    "zeroBudgetPercentagePoints": 6.8
+  },
+  "canonicalWeightedPlanningPercent": 46.5,
+  "canonicalStrictDonePercent": 14,
+  "canonicalCounts": {
+    "DONE": 6,
+    "PARTIAL": 28,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 86.8,
+  "zeroBudgetCoreDenominator": 53,
+  "zeroBudgetCounts": {
+    "DONE": 40,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "families": 12,
+    "cases": 192,
+    "enabled": 96,
+    "remediated": 96,
+    "frozen": {
+      "total": 72,
+      "tp": 36,
+      "fn": 0,
+      "tn": 36,
+      "fp": 0,
+      "recall": 1,
+      "precision": 1,
+      "specificity": 1,
+      "f1": 1
+    },
+    "mutations": 2304,
+    "mutation": {
+      "killed": 2304,
+      "total": 2304,
+      "matchRate": 1,
+      "failedSamples": []
+    },
+    "runtimeIntegritySha256": "sha256:594237ed0735dc17c711cb63fbc0789298978f2c398cc5cc80476dbebba732b7",
+    "receiptSha256": "sha256:7a1dea6d35ede8d91c6f90e4378481b2d8aa5174ce13a84357bf8dcad50d5dcf"
+  },
+  "supportedConstraintDomain": [
+    "constant folding",
+    "calldata word equality and ranges",
+    "caller equality",
+    "call value equality and ranges",
+    "timestamp and block-number ranges",
+    "constant storage-slot equality and ranges"
+  ],
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "liveClaimed": false,
+  "truthBoundary": "PASS35 A21 is the only canonical current status. Canonical roadmap is 46.5% weighted / 14% strict across 43 workstreams, up 1.2 pp from A20 and 5.8 pp from A16. Zero-budget functional core is 86.8% across 53 capabilities, up 0.8 pp from A20 and 6.8 pp from A16. A21 locally closes the declared bounded A06 abstract-path implementation with supported constraint feasibility and reachable-risk path receipts. Full SMT completeness, real protocols, exploitability review, official analyzers, staging, sale, LIVE, customer outcomes and independent assurance remain unclaimed."
+}

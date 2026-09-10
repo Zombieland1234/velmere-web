@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "velmere.pass35.a25-exact-test-evidence-runtime-contract.v1",
+  "passId": "PASS35_A25",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "strict": 9.3,
+    "zeroBudget": 80
+  },
+  "baselineA24": {
+    "canonical": 50,
+    "strict": 20.9,
+    "zeroBudget": 88.7
+  },
+  "progressDeltaVsA24": {
+    "canonicalPercentagePoints": 1.2,
+    "strictPercentagePoints": 2.4,
+    "zeroBudgetPercentagePoints": 0.5
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 10.5,
+    "strictPercentagePoints": 14,
+    "zeroBudgetPercentagePoints": 9.2
+  },
+  "canonicalWeightedPlanningPercent": 51.2,
+  "canonicalStrictDonePercent": 23.3,
+  "canonicalCounts": {
+    "DONE": 10,
+    "PARTIAL": 24,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 89.2,
+  "zeroBudgetCoreDenominator": 65,
+  "zeroBudgetCounts": {
+    "DONE": 52,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "correct": 72,
+      "accuracy": 1,
+      "unsafeEligible": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "total": 2304,
+      "killed": 2304,
+      "survived": 0,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:7fc300afb32199cb9a1734688a25f089ccf9e66ddf8b58fad2688f21ad0e5dc5",
+    "receiptSha256": "sha256:987d167d4b88ab5c2e2f2fb4e41f610d646d30e07d50d348bbb8941fbe901a79"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "officialForgeExecuted": false,
+  "compiledEvmExecutionProven": false,
+  "realCustomerCase": false,
+  "truthBoundary": "PASS35 A25 is the only canonical current status. Canonical roadmap is 51.2% weighted / 23.3% strict across 43 workstreams, up 1.2 pp weighted and 2.4 pp strict from A24, and 10.5 pp weighted from A16. Zero-budget functional core is 89.2% across 65 capabilities, up 0.5 pp from A24 and 9.2 pp from A16. A25 locally closes the declared bounded A07 exact-test evidence registry, assertion, coverage, isolation, repeatability and mutation implementation. Official Forge/solc, compiled EVM equivalence, real customer tests, staging, sale, customer outcomes and independent assurance remain unclaimed."
+}

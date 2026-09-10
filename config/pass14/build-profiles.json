@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "velmere.pass14.build-profiles.v1",
+  "purpose": "Explicit build-resource profiles. A profile changes compiler resources only; it never turns a failed build into PASS.",
+  "profiles": {
+    "conservative": {
+      "cpus": 1,
+      "webpackMemoryOptimizations": true,
+      "parallelServerCompiles": false,
+      "description": "Lowest memory pressure; slowest diagnostic fallback."
+    },
+    "balanced": {
+      "cpus": 2,
+      "webpackMemoryOptimizations": false,
+      "parallelServerCompiles": false,
+      "description": "Default milestone/release profile after route-graph reduction."
+    },
+    "throughput": {
+      "cpus": 4,
+      "webpackMemoryOptimizations": false,
+      "parallelServerCompiles": true,
+      "description": "Use only on a measured high-memory runner."
+    }
+  },
+  "defaultProfile": "balanced",
+  "requiredComparison": [
+    "Run one sharded/static graph profile first.",
+    "Run Webpack and Turbopack once per release candidate using the same source SHA.",
+    "If balanced fails from memory, retry conservative; do not repeatedly rerun unchanged builds."
+  ]
+}

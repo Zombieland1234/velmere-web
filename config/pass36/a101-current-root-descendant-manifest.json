@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "velmere.pass36.a101.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+  "parentDescendantManifestDigestSha256": "0019d129dbd5d8d15388630034f19b24e1337a7126276a42d8b8300034b9edb2",
+  "generatedAt": "2026-07-29T10:30:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A101_LOCAL_HARDENING_NO_PASS_CREDIT",
+  "payload": {
+    "fileCount": 4786,
+    "byteLength": 116472179,
+    "pathSetSha256": "7236e78b38b89c9f90960a930b1c69821e7e8c53a16967f15ebaf160cf71e5fa",
+    "aggregateSha256": "ad49050a4fc34ca9bda6f8bbdf6611722e464d451d42d23729c50bf9166c6127"
+  },
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a97r1PassCredit": false,
+    "a98PassCredit": false,
+    "a99PassCredit": false,
+    "a100PassCredit": false,
+    "a101PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "sloErrorBudgetVendorExitRecoveryBoundaryImplemented": true,
+    "boundaryAssertions": 94,
+    "fixtureScenarios": 15,
+    "realSloWindows": 0,
+    "realVendorExitRuns": 0,
+    "realCredentialRevocationProbes": 0,
+    "realAlternateServiceProbeSets": 0,
+    "realPrimaryRestoreConfirmations": 0,
+    "productionSloProven": false,
+    "continuousMonitoringProven": false,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0,
+      "localExecutableCasesPrepared": 19
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    },
+    "stripePayments": {
+      "requiredRealTestLifecycle": 1,
+      "realTestLifecycleVerified": 0,
+      "realFullRefundsVerified": 0,
+      "realWebhookReplayRuns": 0,
+      "realReconciliationRuns": 0,
+      "productionPayments": 0
+    },
+    "backupRestoreRollbackProviderLoss": {
+      "requiredRealLifecycle": 1,
+      "realBackups": 0,
+      "realRestores": 0,
+      "realRestoredRlsCasesRequired": 19,
+      "realRestoredRlsCasesPassed": 0,
+      "realDeploymentRollbacks": 0,
+      "realProviderOutages": 0,
+      "realRestoreCleanupConfirmations": 0
+    },
+    "incidentLifecycle": {
+      "requiredRealLifecycle": 1,
+      "realIncidentRuns": 0,
+      "realAlertDeliveries": 0,
+      "realOnCallAcknowledgements": 0,
+      "realKillSwitchActivations": 0,
+      "realCustomerNoticeDeliveries": 0,
+      "realRecoveryValidations": 0,
+      "realClosedIncidents": 0
+    },
+    "sloVendorExitRecovery": {
+      "requiredRealLifecycle": 1,
+      "realSloWindows": 0,
+      "realVendorExitRuns": 0,
+      "realCredentialRevocationProbes": 0,
+      "realAlternateServiceProbeSets": 0,
+      "realPrimaryRestoreConfirmations": 0,
+      "productionSloProven": false,
+      "continuousMonitoringProven": false
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "cb4a5473d11cd6fc5601c8adcf3696dedfa3f00a41df11d8ff30175cb0f9a37d"
+}

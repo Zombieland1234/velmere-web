@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "velmere.pass36.a72.download-response-boundary-policy.v1",
+  "revisionId": "VELMERE_PASS36_A72R0_DOWNLOAD_RESPONSE_AND_CONTENT_DISPOSITION_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A71R0_RELEASE_SIGNATURE_AND_TRUST_ANCHOR_BOUNDARY_HARDENING",
+  "requirements": {
+    "singleCentralContentDispositionBuilder": true,
+    "crlfAndControlCharactersRejected": true,
+    "bidiControlsRejected": true,
+    "pathSeparatorsRemoved": true,
+    "windowsReservedNamesAvoided": true,
+    "asciiFallbackAndRfc5987FilenameStarRequired": true,
+    "rfc5987SpecialCharactersStrictlyEncoded": true,
+    "mediaKindControlsExtensionAndContentType": true,
+    "filenameAndHeaderBudgetsEnforced": true,
+    "noDirectDynamicContentDispositionTemplates": true
+  },
+  "coveredProductionFiles": 11,
+  "coveredContentDispositionAssignments": 12,
+  "exactFinalByteBuildExecuted": false,
+  "criticalOfflineGatePassed": false,
+  "realStagingExecuted": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "A72 proves one local response-download filename and Content-Disposition boundary for covered production routes. It does not prove browser behavior across all clients, production CDN behavior, real account delivery, staging, LIVE or sale readiness."
+}

@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "velmere.pass35.flagship-candidate-plan.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "status": "ENGINEERING_CANDIDATE_FROZEN_NOT_FG00_APPROVED",
+  "fg00Approved": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "selectedProductCellId": null,
+  "engineeringCandidateProductCellId": "audit_evm_pro_automated_review",
+  "engineeringDecision": {
+    "decision": "FOCUS_LOCAL_ENGINEERING_ON_ONE_CELL",
+    "reason": "Audit EVM Pro has the most complete existing intake, account/case binding, legacy billing mapping, evidence packet, private delivery, review orchestration and fail-closed entitlement base. This is an engineering sequencing decision only, not demand proof or executive FG00 approval.",
+    "alternativesConsidered": [
+      "shield_pro_terminal_analysis",
+      "real_markets_pro_cross_asset_analysis",
+      "lens_pro_evidence_pdf"
+    ],
+    "whyNotApprovedFlagship": [
+      "no_signed_owner_decision",
+      "no_observed_icp_workflow",
+      "no_willingness_to_pay_threshold",
+      "no_customer_outcome_baseline",
+      "no_continue_pivot_kill_signature"
+    ]
+  },
+  "scopeHypothesis": {
+    "region": "EU",
+    "language": "en",
+    "chain": "ethereum",
+    "contractScope": "verified-source EVM contracts and repositories with reproducible compiler inputs",
+    "channel": "web",
+    "icp": "small and mid-size EVM protocol teams preparing a deployment or material upgrade",
+    "buyer": "technical founder, security lead or protocol operator",
+    "jobToBeDone": "identify and prioritize material contract risks with reproducible evidence before deployment or external manual audit",
+    "currentWorkflowBaseline": "manual tool runs plus ad-hoc review or an external audit queue",
+    "primaryOutcomeHypothesis": "reduce time to a correctly prioritized material-risk remediation plan without increasing false-safe conclusions",
+    "paidIntentThreshold": null,
+    "customerOutcomeMde": null,
+    "truthBoundary": "All scope, outcome and buyer fields are engineering hypotheses until signed FG00 discovery evidence exists."
+  },
+  "commercialTruth": {
+    "customerFacingNameBeforeFullStack": "Automated Security Evidence Review",
+    "fullAuditClaimAllowed": false,
+    "certifiedSafeClaimAllowed": false,
+    "humanReviewedClaimAllowed": false,
+    "visiblePriceMayAuthorizePurchase": false,
+    "requiredUiState": "UNAVAILABLE_NOT_FOR_SALE",
+    "allowedClaims": [
+      "automated prescreen",
+      "evidence-first review",
+      "missing-proof map",
+      "permissions and control review when evidence exists"
+    ],
+    "forbiddenClaims": [
+      "full smart-contract audit",
+      "certified safe",
+      "human verified",
+      "production proven",
+      "independently certified",
+      "guaranteed secure"
+    ]
+  },
+  "purchaseWorthinessGates": {
+    "PWG01_REAL_INPUT": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "real customer-supplied verified source or exact deployed bytecode binding",
+        "non-synthetic provider/analyzer receipts"
+      ]
+    },
+    "PWG02_RIGHTS": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "signed commercial tool/data rights",
+        "customer terms for source and report processing"
+      ]
+    },
+    "PWG03_TIER_DELTA": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "preregistered Pro improvement over Basic/current workflow",
+        "customer-significant MDE"
+      ]
+    },
+    "PWG04_QUALITY": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "blind frozen real corpus",
+        "severity-weighted recall/FPR and confidence interval"
+      ]
+    },
+    "PWG05_TRACEABILITY": {
+      "status": "PARTIAL_LOCAL",
+      "requiredEvidence": [
+        "claim-to-source/analyzer/config/raw-output binding on real cases",
+        "exact deployed bytecode coverage"
+      ]
+    },
+    "PWG06_ACTIONABILITY": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "blind remediation usefulness review",
+        "customer comprehension and action completion"
+      ]
+    },
+    "PWG07_DELIVERY": {
+      "status": "PARTIAL_LOCAL",
+      "requiredEvidence": [
+        "real staging account-bound case, PDF and retry delivery",
+        "SLA and outage behavior"
+      ]
+    },
+    "PWG08_SECURITY_PRIVACY": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "real multi-account RLS staging",
+        "independent app/API/cloud retest"
+      ]
+    },
+    "PWG09_COMMERCIAL_PROTECTION": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "no-charge/stop-sell staging proof",
+        "refund/support/capacity reconciliation"
+      ]
+    },
+    "PWG10_CUSTOMER_PROOF": {
+      "status": "BLOCKED",
+      "requiredEvidence": [
+        "controlled paid cohort 1",
+        "out-of-time cohort 2 and retention/outcome evidence"
+      ]
+    }
+  },
+  "auditMethodExit": {
+    "requiredControls": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+      "A12"
+    ],
+    "advancedOnlyControls": [
+      "A13",
+      "A15 independent second sample"
+    ],
+    "minimumRealCorpus": {
+      "contracts": 50,
+      "historicalMaterialFindingsOrReplays": 50,
+      "benignControls": 50,
+      "remediationRetests": 50
+    },
+    "requiredExecutionFamilies": [
+      "source-bytecode reproducibility",
+      "static semantic family 1",
+      "static semantic family 2 or justified independent equivalent",
+      "symbolic/path analysis where applicable",
+      "property/fuzz/invariant",
+      "fork/replay where dependencies exist",
+      "economic/adversarial analysis",
+      "dependency/license/vulnerability mapping"
+    ],
+    "currentExecutableStackStatus": "A01_A05_LOCAL_PLUS_A4_TOOL_ADAPTERS_FIXTURE_PROVEN_REAL_TOOLCHAIN_BLOCKED"
+  },
+  "localExecutionPlan": [
+    {
+      "order": 1,
+      "id": "FCP01",
+      "status": "DONE_LOCAL",
+      "work": "SOURCE_ONLY package-scoped self-verification"
+    },
+    {
+      "order": 2,
+      "id": "FCP02",
+      "status": "DONE_LOCAL",
+      "work": "single engineering candidate and fail-closed commercial truth contract"
+    },
+    {
+      "order": 3,
+      "id": "FCP03",
+      "status": "DONE_LOCAL",
+      "work": "inventory active audit capabilities and enforce one exact fail-closed per-case execution envelope"
+    },
+    {
+      "order": 4,
+      "id": "FCP04",
+      "status": "DONE_LOCAL_PARTIAL",
+      "work": "implement deterministic local A01-A05 engine: identity, supplied bytecode comparison, preliminary threat model, privilege map and two local heuristic static lanes"
+    },
+    {
+      "order": 4.5,
+      "id": "FCP04B",
+      "status": "DONE_LOCAL_ADAPTER_CONTRACTS_ONLY",
+      "work": "implement pinned compiler, provider RPC and Slither adapter contracts; fixture execution proves fail-closed orchestration, not real analyzer credit"
+    },
+    {
+      "order": 4.6,
+      "id": "FCP04C",
+      "status": "NEXT_BLOCKED_TOOLCHAIN",
+      "work": "install/hash-pin official solc and Slither, execute a real provider-bound verified-source case, then add independent static family 2"
+    },
+    {
+      "order": 5,
+      "id": "FCP05",
+      "status": "BLOCKED_EXTERNAL",
+      "work": "real frozen corpus, independent labels, rights and staging"
+    },
+    {
+      "order": 6,
+      "id": "FCP06",
+      "status": "BLOCKED_EXTERNAL",
+      "work": "blind tier-value benchmark and customer cohorts"
+    }
+  ],
+  "invalidationTriggers": [
+    "product cell or scope change",
+    "tier or price change",
+    "analyzer/model/config change",
+    "customer terms or provider rights change",
+    "security incident",
+    "evidence expiry",
+    "FG00 decision selects another cell"
+  ],
+  "truthBoundary": "A4 adds executable pinned compiler, provider RPC and Slither adapter contracts with fixture receipts only. It does not select the business flagship, authorize checkout, execute official tools on real cases or create staging/LIVE/customer/independent evidence."
+}

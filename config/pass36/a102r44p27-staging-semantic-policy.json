@@ -1,0 +1,118 @@
+{
+  "artifactPolicy": {
+    "duplicatesForbidden": true,
+    "exactSemanticArtifactBijectionRequired": true,
+    "maximumArtifactBytes": 16777216,
+    "maximumArtifacts": 256,
+    "maximumTotalBytes": 134217728,
+    "relativePathsOnly": true,
+    "supportingArtifactsAllowed": false,
+    "symlinksForbidden": true
+  },
+  "environmentClass": "DISPOSABLE_TEST",
+  "revisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p27.staging-semantic-policy.v1",
+  "tracks": {
+    "BACKUP_RESTORE_10": {
+      "required": 10,
+      "requiredCaseIds": [
+        "backup-created",
+        "backup-signature-verified",
+        "independent-backup-verifier",
+        "isolated-restore",
+        "restored-rls19",
+        "deployment-rollback",
+        "deployment-roll-forward",
+        "provider-loss-simulation",
+        "credential-revocation",
+        "restore-cleanup"
+      ]
+    },
+    "INCIDENT_8": {
+      "required": 8,
+      "requiredCaseIds": [
+        "independent-alert",
+        "acknowledgement",
+        "kill-switch",
+        "paid-delivery-block",
+        "safe-mode",
+        "customer-communication-pl-en-de",
+        "recovery",
+        "dual-controlled-closure"
+      ]
+    },
+    "RLS_19": {
+      "required": 19,
+      "requiredCaseIds": [
+        "owner-read-own",
+        "owner-write-own",
+        "owner-list-own",
+        "owner-download-own",
+        "owner-delete-own",
+        "owner-revoke-own",
+        "owner-session-revoked-deny",
+        "cross-tenant-read-deny",
+        "cross-tenant-write-deny",
+        "cross-tenant-list-deny",
+        "cross-tenant-download-deny",
+        "cross-tenant-delete-deny",
+        "cross-tenant-backup-deny",
+        "operator-read-assigned",
+        "operator-list-assigned",
+        "operator-download-assigned",
+        "operator-write-deny",
+        "operator-delete-deny",
+        "operator-cross-tenant-deny"
+      ]
+    },
+    "STORAGE_KMS_EMAIL_10": {
+      "required": 10,
+      "requiredCaseIds": [
+        "private-object",
+        "signed-url-short-lived",
+        "wrong-account-denied",
+        "kms-context-bound",
+        "ciphertext-at-rest",
+        "disposable-email-recipient",
+        "provider-delivery-not-inbox-proof",
+        "cleanup-success-path",
+        "cleanup-failure-path",
+        "secrets-redacted"
+      ]
+    },
+    "STRIPE_TEST_12": {
+      "required": 12,
+      "requiredCaseIds": [
+        "checkout-created",
+        "signed-webhook",
+        "payment-intent-bound",
+        "entitlement-active",
+        "duplicate-idempotent",
+        "reorder-safe",
+        "replay-rejected",
+        "refund-accepted",
+        "refund-webhook",
+        "entitlement-revoked",
+        "reconciliation-pass",
+        "dead-letter-requeue-controlled"
+      ]
+    },
+    "TIMEBOUND_72H_3": {
+      "minimumElapsedMs": 259200000,
+      "required": 3,
+      "requiredCaseIds": [
+        "observation-a",
+        "observation-b",
+        "observation-c"
+      ]
+    }
+  },
+  "truthBoundary": {
+    "allTracksRequiredForStagingCredit": true,
+    "fixtureSemanticPassGrantsExternalCredit": false,
+    "providerReportedEmailDeliveryIsNotInboxProof": true,
+    "rawArtifactsRequired": true,
+    "timeBoundTrackCannotBeClockAccelerated": true,
+    "trustedSignatureRequired": true
+  }
+}

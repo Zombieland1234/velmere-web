@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "velmere.pass35.audit-a7-execution-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "productCellId": "audit_evm_pro_automated_review",
+  "status": "LOCAL_FORK_REPLAY_EVIDENCE_BENCHMARKED_NATIVE_FORK_REAL_PROVIDER_BLOCKED",
+  "sellEnabled": false,
+  "paidDeliveryAllowed": false,
+  "fullAuditClaimAllowed": false,
+  "controls": {
+    "A09_FORK_REPLAY_EXACT_STATE_ADAPTER": {
+      "state": "IMPLEMENTED_LOCAL_FORK_REPLAY_EVIDENCE_BENCHMARKED_NATIVE_FORK_REAL_PROVIDER_MISSING",
+      "paths": [
+        "scripts/pass35/audit-fork-replay-adapter.mjs",
+        "scripts/pass35/run-audit-a7-fork-replay-case.mjs",
+        "scripts/pass35/test-audit-a7-fork-replay-adapter.mjs",
+        "lib/security/pass35-a27-fork-replay-evidence-runtime.mjs",
+        "config/pass35/a27-fork-replay-evidence-policy.json",
+        "config/pass35/a27-fork-replay-evidence-runtime-contract.json",
+        "scripts/pass35/test-a27-fork-replay-evidence.mjs"
+      ],
+      "fixtureReceiptPath": "fixtures/pass35/audit-a7/PASS35_A7_FORK_REPLAY_SYNTHETIC_RECEIPT.json",
+      "realExecutionCredit": false,
+      "capabilities": [
+        "exact chain/block/target/source/runtime/deployment binding",
+        "snapshot pre/post state roots and isolation binding",
+        "ordered transaction sequence and state-root continuity",
+        "status/log/return/state-diff assertions",
+        "critical/high assertion and state-key coverage",
+        "dependency code/state/balance snapshot coverage",
+        "isolated deterministic repeated replay",
+        "192-case frozen benchmark and 2304-mutation gate"
+      ],
+      "missing": [
+        "official native fork runner",
+        "real non-loopback provider and commercial rights",
+        "real verified source/deployment receipt chain",
+        "historical exploit or customer workflow replay",
+        "independent rerun and benchmark adjudication"
+      ]
+    },
+    "A08_FOUNDRY_INVARIANT_TARGET": {
+      "state": "PREPARED_HASHED_TARGET_NOT_COMPILED_NOT_EXECUTED",
+      "paths": [
+        "config/pass35/a08-foundry-invariant-plan.json",
+        "fixtures/pass35/audit-a7/forge-invariant-project/foundry.toml",
+        "fixtures/pass35/audit-a7/forge-invariant-project/src/A7InvariantToken.sol",
+        "fixtures/pass35/audit-a7/forge-invariant-project/test/A7InvariantToken.invariant.t.sol"
+      ],
+      "realExecutionCredit": false,
+      "capabilities": [
+        "four model invariant IDs mapped to Solidity invariant functions",
+        "Foundry configuration and target files cryptographically inventoried",
+        "explicit compile/execution/equivalence hard stops"
+      ],
+      "missing": [
+        "official solc and Forge execution",
+        "real target adaptation and actor/handler coverage",
+        "implementation-model equivalence",
+        "coverage/corpus adequacy and mutation score on compiled EVM"
+      ]
+    }
+  },
+  "mutationEvidence": {
+    "requiredVariants": 7,
+    "killedVariants": 7,
+    "variants": [
+      "WRONG_CHAIN",
+      "WRONG_BLOCK_HASH",
+      "PRE_STATE_DRIFT",
+      "POST_STATE_DRIFT",
+      "TX_FAILURE",
+      "ASSERTION_FAILURE",
+      "DROP_TRANSACTION"
+    ],
+    "mayUnlockPaidDelivery": false
+  },
+  "hardStops": {
+    "fixtureMaySatisfyA09": false,
+    "fixtureRelabelMayCreateRealCase": false,
+    "preparedInvariantTargetMaySatisfyA08": false,
+    "stateRootBindingAloneMayProveExploitability": false,
+    "mutationDetectionMayUnlockPaidDelivery": false,
+    "officialToolMissingMeansRealCreditZero": true
+  },
+  "runtimeBoundary": {
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "observedNodeDuringA7": "22.16.0",
+    "observedNpmDuringA7": "10.9.2",
+    "exactRuntimeProof": false,
+    "officialSolcAvailable": false,
+    "officialSlitherAvailable": false,
+    "officialSemgrepAvailable": false,
+    "officialForgeAvailable": false,
+    "officialForkRunnerAvailable": false,
+    "realProviderAvailable": false
+  },
+  "truthBoundary": "A27 verifies a case-bound fork/replay evidence contract over exact chain/block/snapshot identity, transaction sequencing, pre/post state-root continuity, assertions, state-diff and dependency coverage, isolated deterministic replays and mutation evidence. It does not execute an official native fork runner, use a real public-network provider, reproduce a historical exploit or customer workflow, prove commercial provider rights, provide an independent rerun or unlock paid delivery."
+}

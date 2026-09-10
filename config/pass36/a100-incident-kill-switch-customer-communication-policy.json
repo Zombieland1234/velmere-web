@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "velmere.pass36.a100.incident-kill-switch-customer-communication-policy.v1",
+  "revisionId": "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A99R0_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_AND_RESTORED_RLS_TRUTH_BOUNDARY",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "localPassCredit": false,
+  "requiredA99Decision": "VERIFIED_STAGING_BACKUP_RESTORE_ROLLBACK_PROVIDER_FAILOVER",
+  "runtime": { "node": "24.18.0", "npm": "11.16.0" },
+  "incidentSafety": {
+    "stateOrder": ["ready", "open", "contained", "recovering", "resolved", "closed"],
+    "alertDeliverySlaSeconds": 60,
+    "acknowledgementSlaSeconds": 300,
+    "killSwitchRequiredBeforeCustomerNotice": true,
+    "paidDeliveryBlockRequired": true,
+    "safeModes": ["degraded_safe", "read_only_safe"],
+    "requiredPlaybookActions": ["triage", "containment", "customer_notice", "recovery_validation", "closure_review"],
+    "releaseAndCloseDualControlRequired": true,
+    "phishingResistantMfaRequired": true,
+    "failureKeepsOrRestoresContainment": true
+  },
+  "communicationSafety": {
+    "locales": ["pl", "en", "de"],
+    "customerFieldsAreTemplateOwned": true,
+    "crossLocaleFactParityRequired": true,
+    "falseSafetyClaimsForbidden": true,
+    "rawCustomerIdentifiersForbidden": true,
+    "maximumMessageCharacters": 1200,
+    "dataLossAssessmentValues": ["NOT_ASSESSED", "NO_EVIDENCE_OBSERVED", "CONFIRMED_IMPACT"]
+  },
+  "localDenominators": {
+    "boundaryAssertions": 110,
+    "fixtureScenarios": 11,
+    "realIncidentRuns": 0,
+    "realAlertDeliveries": 0,
+    "realOnCallAcknowledgements": 0,
+    "realKillSwitchActivations": 0,
+    "realCustomerNoticeDeliveries": 0,
+    "realRecoveryValidations": 0,
+    "realClosedIncidents": 0
+  },
+  "truthBoundary": "A100R0 locally hardens an incident lifecycle with exact source/environment identity, ordered state transitions, independent alert observation, phishing-resistant on-call acknowledgement, kill-switch and paid-delivery containment, PL/EN/DE customer-safe notices with cross-locale fact parity, required playbook evidence, validated recovery, dual-controlled release and closure, append-only journal and emergency containment after every post-mutation failure. Local fixtures grant no real incident, alert, acknowledgement, customer communication, production SLA, legal sufficiency, LIVE, customer or sale credit.",
+  "promotion": { "globalDecision": "NO_GO", "live": false, "saleEnabled": false, "productionApproved": false, "worldClassProven": false, "stagingCredit": false }
+}

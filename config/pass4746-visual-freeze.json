@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.pass4746.visual-freeze.v1",
+  "baselinePass": 4744,
+  "excludedBackendRoutes": [
+    "app/api/angel/route.ts",
+    "app/api/market-integrity/advanced-click-runtime/route.ts",
+    "app/api/market-integrity/angel/route.ts",
+    "app/api/market-integrity/brain/route.ts",
+    "app/api/market-integrity/real-markets/route.ts",
+    "app/api/market-integrity/report/route.ts",
+    "app/api/market-integrity/vlm/route.ts",
+    "app/api/search/lens-report/route.ts",
+    "app/api/search/route.ts",
+    "app/api/security/audit-watch/pro-pdf/route.ts",
+    "app/api/security/audit-watch/pro-pdf/token/route.ts",
+    "app/api/security/audit-watch/route.ts",
+    "app/api/internal/workers/durable-computation-operations/route.ts"
+  ],
+  "excludedDecomposedRoutes": [
+    "app/api/angel/route.ts",
+    "app/api/market-integrity/advanced-click-runtime/route.ts",
+    "app/api/market-integrity/angel/route.ts",
+    "app/api/market-integrity/brain/route.ts",
+    "app/api/market-integrity/real-markets/route.ts",
+    "app/api/market-integrity/report/route.ts",
+    "app/api/market-integrity/vlm/route.ts",
+    "app/api/search/lens-report/route.ts",
+    "app/api/search/route.ts",
+    "app/api/security/audit-watch/pro-pdf/route.ts",
+    "app/api/security/audit-watch/pro-pdf/token/route.ts",
+    "app/api/security/audit-watch/route.ts",
+    "app/api/internal/workers/durable-computation-operations/route.ts"
+  ],
+  "fileCount": 796,
+  "aggregateSha256": "acbdc7e9c5afb095a80317de322907350f1616590ce0778ad42fb4fcdf98819f",
+  "uiFrozen": true,
+  "rule": "All app/components/public/styles files except explicitly changed backend API routes must remain bit-identical to PASS4740."
+}

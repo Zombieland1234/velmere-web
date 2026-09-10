@@ -1,0 +1,357 @@
+{
+  "schemaVersion": "velmere.pass36.a84.shield-full-catalog-tier-matrix-policy.v1",
+  "revisionId": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER",
+  "parentRevisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "deterministicEpoch": "2026-07-27T18:00:00.000Z",
+  "inputs": {
+    "corpus": {
+      "path": "evaluation/pass16/worldclass-base-corpus.json",
+      "sha256": "00acdd2019c03abba0a5ea596de242915d16deb5108b41aeac436f34a21e7d3b"
+    },
+    "publicProviderRuntime": {
+      "path": "config/pass35/public-provider-runtime-contract.json",
+      "sha256": "01bf4b46a0f5b87b64483f5f2184d832e425ea912840e4e37775a66fa538547b"
+    },
+    "marketExecution": {
+      "path": "config/pass35/a14-market-execution-contract.json",
+      "sha256": "172548406c74deccab594f86d86376209e66e7e3785162604456f233c43271d5"
+    },
+    "snapshotRuntime": {
+      "path": "config/pass35/a15-imported-snapshot-runtime-contract.json",
+      "sha256": "127223b4356351de15fa2276782c67b4229d7c7b0aa2f12ea1bd6e1cb9aa24f4"
+    },
+    "productTierContract": {
+      "path": "config/pass35/product-tier-content-contract.json",
+      "sha256": "0ba7e57c91b241de716a3f98ed2328d68d4030cd341f7639f19a0f0f3638d102"
+    }
+  },
+  "fieldIds": [
+    "spot_quote",
+    "market_cap",
+    "volume_24h",
+    "kline_1h",
+    "kline_24h",
+    "kline_7d",
+    "kline_30d"
+  ],
+  "providerFamilies": [
+    "binance",
+    "mexc",
+    "coinbase",
+    "kraken"
+  ],
+  "popupSections": [
+    "overview",
+    "analysis",
+    "market_impact",
+    "whale_watch"
+  ],
+  "tierRequirements": {
+    "basic": {
+      "minimumProviderFamilies": 1,
+      "requiredFields": [
+        "spot_quote",
+        "market_cap",
+        "volume_24h"
+      ],
+      "maximumStaleFields": 1,
+      "unresolvedConflictAllowed": true,
+      "minimumEvidenceFamilies": 5,
+      "minimumMaterialFields": 3
+    },
+    "pro": {
+      "minimumProviderFamilies": 2,
+      "requiredFields": [
+        "spot_quote",
+        "market_cap",
+        "volume_24h",
+        "kline_1h",
+        "kline_24h",
+        "kline_7d",
+        "kline_30d"
+      ],
+      "maximumStaleFields": 0,
+      "unresolvedConflictAllowed": false,
+      "minimumEvidenceFamilies": 10,
+      "minimumMaterialFields": 15
+    },
+    "advanced": {
+      "minimumProviderFamilies": 3,
+      "requiredFields": [
+        "spot_quote",
+        "market_cap",
+        "volume_24h",
+        "kline_1h",
+        "kline_24h",
+        "kline_7d",
+        "kline_30d"
+      ],
+      "maximumStaleFields": 0,
+      "unresolvedConflictAllowed": false,
+      "minimumEvidenceFamilies": 10,
+      "minimumMaterialFields": 23
+    }
+  },
+  "fixtureCatalog": {
+    "generatedAssetRoots": 320,
+    "quoteSymbols": [
+      "USD",
+      "USDT"
+    ],
+    "providerSlices": {
+      "binance": 0,
+      "mexc": 40,
+      "coinbase": 80,
+      "kraken": 120
+    }
+  },
+  "realIntakeIndex": {
+    "path": "config/pass36/a84-shield-real-full-catalog-intake.json",
+    "sha256": "d0f76f001eb4d04d1faa3b3f8771fc584e95d22516999a851834f3fd554e4493"
+  },
+  "mutationFamilies": [
+    "field_state_promotion",
+    "freshness_timestamp_rewrite",
+    "provider_family_duplication",
+    "required_field_drop",
+    "tier_label_substitution",
+    "decision_promotion",
+    "popup_fact_addition",
+    "popup_section_promotion",
+    "sale_flag_promotion",
+    "live_flag_promotion",
+    "rights_flag_promotion",
+    "packet_identity_substitution"
+  ],
+  "closedByA84": [
+    {
+      "gapId": "A84-GAP-01",
+      "severity": "P0",
+      "title": "Shield full-catalog evaluation could prune failed or unsupported assets",
+      "closure": "Every active catalog asset remains in the denominator with one Basic, Pro and Advanced packet."
+    },
+    {
+      "gapId": "A84-GAP-02",
+      "severity": "P0",
+      "title": "Not every provider listing and required field had a terminal state",
+      "closure": "A84 requires one terminal row for every listing multiplied by every declared field family."
+    },
+    {
+      "gapId": "A84-GAP-03",
+      "severity": "P0",
+      "title": "Quote, market cap and volume could be presented without a shared asset identity",
+      "closure": "All field rows bind canonicalAssetId, listingId, provider family and exact packet identity."
+    },
+    {
+      "gapId": "A84-GAP-04",
+      "severity": "P0",
+      "title": "Stale provider data could count as fresh tier evidence",
+      "closure": "Stale observations are separately classified and cannot satisfy required fresh-field floors."
+    },
+    {
+      "gapId": "A84-GAP-05",
+      "severity": "P0",
+      "title": "Provider conflicts lacked an explicit paid-tier stop condition",
+      "closure": "Pro and Advanced reject unresolved conflict while Basic may only disclose it as bounded context."
+    },
+    {
+      "gapId": "A84-GAP-06",
+      "severity": "P1",
+      "title": "Provider-family independence could be inflated by duplicate listings",
+      "closure": "Tier readiness counts unique provider families rather than listing count."
+    },
+    {
+      "gapId": "A84-GAP-07",
+      "severity": "P0",
+      "title": "Missing quote or kline results could disappear from coverage percentages",
+      "closure": "Failed, rate-limited and unavailable results remain explicit terminal rows and blockers."
+    },
+    {
+      "gapId": "A84-GAP-08",
+      "severity": "P0",
+      "title": "Basic Pro and Advanced had no single full-catalog monotonicity proof",
+      "closure": "A84 verifies that stricter tiers cannot become ready when a lower tier for the same asset is blocked."
+    },
+    {
+      "gapId": "A84-GAP-09",
+      "severity": "P1",
+      "title": "Four popup tabs could drift from the same field evidence",
+      "closure": "Overview, Analysis, Market Impact and Whale Watch projections bind exact source field IDs and add no facts."
+    },
+    {
+      "gapId": "A84-GAP-10",
+      "severity": "P0",
+      "title": "Basic could expose paid Market Impact or Whale Watch depth",
+      "closure": "Basic popup keeps Market Impact and Whale Watch unavailable regardless of fixture coverage."
+    },
+    {
+      "gapId": "A84-GAP-11",
+      "severity": "P0",
+      "title": "Offline functional readiness could be mistaken for production eligibility",
+      "closure": "Every packet fixes productionEligible, provider rights, browser, LIVE and sale credit at zero or false."
+    },
+    {
+      "gapId": "A84-GAP-12",
+      "severity": "P0",
+      "title": "A fixed fifty-case benchmark could be mislabeled as the complete provider catalog",
+      "closure": "A84 executes a separate 318-asset full-catalog fixture and keeps real dynamic intake distinct."
+    },
+    {
+      "gapId": "A84-GAP-13",
+      "severity": "P1",
+      "title": "No cryptographic aggregate linked observation rows to tier packets",
+      "closure": "Every observation and packet is individually hashed and the complete runtime has one aggregate SHA-256."
+    },
+    {
+      "gapId": "A84-GAP-14",
+      "severity": "P0",
+      "title": "Re-signed field and tier promotion mutations were not tested at full denominator",
+      "closure": "A84 re-seals and rejects twelve semantic mutation families for every tier packet."
+    },
+    {
+      "gapId": "A84-GAP-15",
+      "severity": "P1",
+      "title": "Provider outage, quota and schema failure states were not jointly represented",
+      "closure": "The ledger includes AVAILABLE, STALE, CONFLICTED, FAILED, RATE_LIMITED and UNAVAILABLE terminal classes."
+    },
+    {
+      "gapId": "A84-GAP-16",
+      "severity": "P0",
+      "title": "Real full-catalog evidence lacked an intake denominator",
+      "closure": "A84 defines a fail-closed intake for provider catalogs, field snapshots, rights, browser and customer labels."
+    },
+    {
+      "gapId": "A84-GAP-17",
+      "severity": "P0",
+      "title": "A84 could be promoted without exact A80 candidate binding",
+      "closure": "All A84 results explicitly remain unbound to a verified A80 candidate and ineligible for promotion."
+    },
+    {
+      "gapId": "A84-GAP-18",
+      "severity": "P1",
+      "title": "Current public network execution could be inferred from injected Response fixtures",
+      "closure": "Execution mode is recorded as INJECTED_FIXTURE and currentPublicNetworkExecuted remains false."
+    },
+    {
+      "gapId": "A84-GAP-19",
+      "severity": "P1",
+      "title": "Material field and evidence-family floors could be bypassed by page or claim filler",
+      "closure": "Tier decisions recompute material fields and evidence families from resolved field states."
+    },
+    {
+      "gapId": "A84-GAP-20",
+      "severity": "P0",
+      "title": "Packet identity substitution could survive after re-sealing",
+      "closure": "Packet ID must equal the exact canonical asset and tier tuple and is revalidated after every mutation."
+    },
+    {
+      "gapId": "A84-GAP-21",
+      "severity": "P1",
+      "title": "Current package metadata still pointed selected execution fields at a prior pass",
+      "closure": "Current pass, completion-program and patch metadata are bound to A84 through the current release authority."
+    },
+    {
+      "gapId": "A84-GAP-22",
+      "severity": "P1",
+      "title": "A83 descendant verifier recomputed frozen A83 payload against a legal A84 child tree",
+      "closure": "Historical descendant verification preserves the frozen payload and verifies an exact hash-linked child chain to the current revision."
+    },
+    {
+      "gapId": "A84-GAP-23",
+      "severity": "P1",
+      "title": "A83 product verifier hardcoded A83 as the permanently current source",
+      "closure": "The verifier now validates the A83 plane while resolving current source, program and active pass through current authority."
+    },
+    {
+      "gapId": "A84-GAP-24",
+      "severity": "P1",
+      "title": "A82 descendant verifier stopped at A83 and rejected later legal descendants",
+      "closure": "A reusable descendant-chain verifier now walks every exact manifest link through A84 and future declared children."
+    },
+    {
+      "gapId": "A84-GAP-25",
+      "severity": "P1",
+      "title": "A82 matrix verifier hardcoded the A83 program and active revision",
+      "closure": "Current program, authority and active identity are resolved dynamically while the frozen A82 evidence plane remains exact."
+    },
+    {
+      "gapId": "A84-GAP-26",
+      "severity": "P1",
+      "title": "A81 descendant verifier treated A83 as the terminal lineage node",
+      "closure": "A81 lineage is verified as an ordered digest chain A81 through the current descendant without recomputing historical payloads."
+    },
+    {
+      "gapId": "A84-GAP-27",
+      "severity": "P1",
+      "title": "A81 matrix verifier hardcoded A83 current and remaining-pass counters",
+      "closure": "The verifier reads the current completion program and derives the remaining denominator from the authoritative current pass."
+    },
+    {
+      "gapId": "A84-GAP-28",
+      "severity": "P1",
+      "title": "A80 release admission and descendant verifiers hardcoded A83 as current",
+      "closure": "A80 admission still enforces exact prerequisites while current source identity and descendant lineage are resolved through authority."
+    },
+    {
+      "gapId": "A84-GAP-29",
+      "severity": "P1",
+      "title": "A79 build/browser verifiers mixed historical A79 identity with a hardcoded A83 current source",
+      "closure": "A79 keeps its frozen policy and receipts but verifies current source exactness and authority without a hardcoded terminal pass."
+    },
+    {
+      "gapId": "A84-GAP-30",
+      "severity": "P1",
+      "title": "A57 current truth and approved-change ledger did not recognize A84",
+      "closure": "A57 current-source truth is authority-bound and the protected hardening ledger explicitly records the A84 pass without changing protected UI/assets/engine bytes."
+    },
+    {
+      "gapId": "A84-GAP-31",
+      "severity": "P1",
+      "title": "No reusable exact descendant-chain primitive existed, causing repeated supersession regressions",
+      "closure": "One shared verifier validates manifest digest, parent revision, parent digest, no-promotion claims and final current authority for every descendant link."
+    },
+    {
+      "gapId": "A84-GAP-32",
+      "severity": "P1",
+      "title": "Canonical current-status test required the roadmap to start with literal A83 text",
+      "closure": "Roadmap precedence is verified against the authoritative current revision ID, while the A32 canonical section remains mandatory."
+    },
+    {
+      "gapId": "A84-GAP-33",
+      "severity": "P1",
+      "title": "A63 staging orchestrator verifier hardcoded A83 as the current source",
+      "closure": "A63 preserves its frozen staging policy but validates current source through the current release authority and active pass."
+    },
+    {
+      "gapId": "A84-GAP-34",
+      "severity": "P1",
+      "title": "A59 budget verifier required A83 as the current source",
+      "closure": "A59 now verifies that it remains the declared budget parent while accepting the authority-bound current descendant."
+    },
+    {
+      "gapId": "A84-GAP-35",
+      "severity": "P1",
+      "title": "A46 protected-integrity verifier required the hardening ledger source to remain A83",
+      "closure": "A46 validates the hardening ledger against the current authority-bound source revision while preserving all 1073 protected rows."
+    },
+    {
+      "gapId": "A84-GAP-36",
+      "severity": "P1",
+      "title": "A77 clean-root verifier required A83 for authority, active pass and completion program",
+      "closure": "A77 keeps its frozen genesis and governance truth while resolving every current identity field from the authoritative mirror."
+    },
+    {
+      "gapId": "A84-GAP-37",
+      "severity": "P1",
+      "title": "A78 descendant verifier hardcoded A83 and reduced the current-root gate to 23/30",
+      "closure": "A78 now uses the shared exact descendant chain and current-authority verifier; only genuine dependency/runtime blockers remain."
+    }
+  ],
+  "descendantManifestPath": "config/pass36/a84-current-root-descendant-manifest.json",
+  "parentDescendantManifestPath": "config/pass36/a83-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a84-current-root-descendant-manifest.json"
+  ],
+  "truthBoundary": "A84 proves a deterministic injected full-catalog Shield denominator, terminal field accounting, tier monotonicity, popup evidence parity and semantic mutation resistance. It does not prove current public-network snapshots, provider rights, exact A80, production browser behavior, customer value, staging, LIVE or sale."
+}

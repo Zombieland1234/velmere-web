@@ -1,0 +1,316 @@
+{
+  "schemaVersion": "velmere.pass4825.install-script-quarantine-evidence.v1",
+  "generatedAt": "2026-07-17T13:14:00.544Z",
+  "source": {
+    "packageJsonSha256": "b39e56e6b326e2345b648cc15883cc460a0f0cdbdfb4f2ce9f2c6157ca64c5c9",
+    "lockfileSha256": "1e7acc6b4c854051231c664345722c0c1f9f148aae11cf485f2a0239d1db76de",
+    "policySha256": "d0561a64c32ea8cc61a3c4e8bf2ffb4390c4036b7b2ed7f74f9e57f4f897f354",
+    "allowlistSha256": "007a2b73081f790519e22e2930f3ca7f4f375b96d3e2429cc776151b0163bb30"
+  },
+  "acquisition": {
+    "contentAddressedArchivePersistence": true,
+    "packageManagerInstallExecuted": false,
+    "lifecycleScriptsExecuted": false,
+    "exactRegistryArchivesFetched": 8
+  },
+  "entries": [
+    {
+      "packagePath": "node_modules/@parcel/watcher",
+      "name": "@parcel/watcher",
+      "version": "2.5.6",
+      "resolved": "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.5.6.tgz",
+      "integrity": "sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/8daa7285bee7e10bebce179007afcf07108c1b8ce9dbe5081f3db319d5453648.tgz",
+      "tarballSha256": "8daa7285bee7e10bebce179007afcf07108c1b8ce9dbe5081f3db319d5453648",
+      "tarballBytes": 34609,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "287b0a3346201d109888d06361d94c1284e8aba7251459a3edcbb3c503adb7ba",
+      "archivePackageLicense": "MIT",
+      "lifecycleScripts": {
+        "install": "node scripts/build-from-source.js"
+      },
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [
+        {
+          "path": "scripts/build-from-source.js",
+          "present": true,
+          "sha256": "39bdd080cc8067ddf56f3513f3449ee15310750be047baeee83b5611cc8794d7",
+          "bytes": 285
+        }
+      ],
+      "licenseFilePath": "package/LICENSE",
+      "licenseFileSha256": "5cfba9d5711264d45a2431a53c79f597cef12720cc7c764db2602daa92d0bd2a",
+      "licenseFileBytes": 1077,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "6402f1cdd1318fb203c56049b717f95894e5ea44cceb49ad7542f6300726ade5"
+    },
+    {
+      "packagePath": "node_modules/@reown/appkit",
+      "name": "@reown/appkit",
+      "version": "1.8.19",
+      "resolved": "https://registry.npmjs.org/@reown/appkit/-/appkit-1.8.19.tgz",
+      "integrity": "sha512-wB+xatkRbOy0AY1cZxxtcKzzPk3l3CTFulDbaISLVmZI6ZnQrOFuLnYc285zGsC6DB4d6bmwYUh89zcMLa4PvQ==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab.tgz",
+      "tarballSha256": "e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab",
+      "tarballBytes": 191706,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "4dfdebda4864f4a0a6dacd2b8eb027c98d81b0d5b7b3823cfa669956da28ffa3",
+      "archivePackageLicense": "SEE LICENSE IN LICENSE.md",
+      "lifecycleScripts": {
+        "postinstall": "node scripts/appkit-version-check.js"
+      },
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [
+        {
+          "path": "scripts/appkit-version-check.js",
+          "present": true,
+          "sha256": "c0cee122dbe4fd506a71c0530206068f35df89c748ccdf23854b9e11ceba4d0a",
+          "bytes": 6752
+        }
+      ],
+      "licenseFilePath": "package/LICENSE.md",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb",
+      "licenseFileBytes": 19971,
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "79fba4f0f2b00213712729a32b375c9353a6c25c9f08ba27229eb4a170850f30"
+    },
+    {
+      "packagePath": "node_modules/@swc/core",
+      "name": "@swc/core",
+      "version": "1.15.41",
+      "resolved": "https://registry.npmjs.org/@swc/core/-/core-1.15.41.tgz",
+      "integrity": "sha512-03nQq/082QRJJiOvp3FGbgxTGyyxMxohPTjhk/W9bD2J0tk4ukITI7goOhOO2WbaHn/lsPmo/zf8+DIXhwpgYQ==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/af115710dba2e6f04dc6f86f39bfdcf4b228e95de8a1b1b0e71df40b5acaf72a.tgz",
+      "tarballSha256": "af115710dba2e6f04dc6f86f39bfdcf4b228e95de8a1b1b0e71df40b5acaf72a",
+      "tarballBytes": 25994,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "b3d842cbe819388357d43da0e79eab9538d09a9e81e9ae4f88bce64e95970550",
+      "archivePackageLicense": "Apache-2.0",
+      "lifecycleScripts": {
+        "postinstall": "node postinstall.js"
+      },
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [
+        {
+          "path": "postinstall.js",
+          "present": true,
+          "sha256": "5da0f556c5702eaf4c4b66283f03aeccbd8db3d4b730866741ca23c799614a87",
+          "bytes": 6857
+        }
+      ],
+      "licenseFilePath": "package/LICENSE",
+      "licenseFileSha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91",
+      "licenseFileBytes": 10836,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "e917668b3d47ecbc59761cf342056faaec3f9bdeb8f5dbb5122ba2e36d061d89"
+    },
+    {
+      "packagePath": "node_modules/esbuild",
+      "name": "esbuild",
+      "version": "0.28.1",
+      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.1.tgz",
+      "integrity": "sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5.tgz",
+      "tarballSha256": "eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5",
+      "tarballBytes": 34131,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "d55d1d19fcc5b6079e4a71dd4111340c79c682bc36835ac7058a0c364c7db58a",
+      "archivePackageLicense": "MIT",
+      "lifecycleScripts": {
+        "postinstall": "node install.js"
+      },
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [
+        {
+          "path": "install.js",
+          "present": true,
+          "sha256": "612294e278914443bdcf81cb17f54afec34dbdd2ebd999a6ee187912320cc315",
+          "bytes": 11773
+        }
+      ],
+      "licenseFilePath": "package/LICENSE.md",
+      "licenseFileSha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "licenseFileBytes": 1069,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "f4b485711a7b8eb37699467f9d96a91dd555d58f491629e578dc90c3a9af87dc"
+    },
+    {
+      "packagePath": "node_modules/fsevents",
+      "name": "fsevents",
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/e17ade950c193fe09adfc7915fe29ac26166c8782d00e7c3879e7e9de02c5428.tgz",
+      "tarballSha256": "e17ade950c193fe09adfc7915fe29ac26166c8782d00e7c3879e7e9de02c5428",
+      "tarballBytes": 22066,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "80914b12dba592ca926d9e6aae0bf6fdc35d871f756a9b34804b98944fac4506",
+      "archivePackageLicense": "MIT",
+      "lifecycleScripts": {},
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [],
+      "licenseFilePath": "package/LICENSE",
+      "licenseFileSha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1",
+      "licenseFileBytes": 1133,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "e5791c3275b2d41ea114ff5c1f5cac6a9e8485c2f6790fbe255220c248e976aa"
+    },
+    {
+      "packagePath": "node_modules/sharp",
+      "name": "sharp",
+      "version": "0.34.5",
+      "resolved": "https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz",
+      "integrity": "sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/460712506f9df808cf25bc2ba15be828bfa9179bd31b6ca47a9db624980026c3.tgz",
+      "tarballSha256": "460712506f9df808cf25bc2ba15be828bfa9179bd31b6ca47a9db624980026c3",
+      "tarballBytes": 119719,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "e6be69319929151be3aa240bf1485f25a3477cb6d2286f92510b9fceb3cbef26",
+      "archivePackageLicense": "Apache-2.0",
+      "lifecycleScripts": {
+        "install": "node install/check.js || npm run build"
+      },
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [
+        {
+          "path": "install/check.js",
+          "present": true,
+          "sha256": "31fd360ede9ff3e80d643faff6c4570d0b2b5c621dc421b6c4086dfe86ce981f",
+          "bytes": 383
+        }
+      ],
+      "licenseFilePath": "package/LICENSE",
+      "licenseFileSha256": "73ba74dfaa520b49a401b5d21459a8523a146f3b7518a833eea5efa85130bf68",
+      "licenseFileBytes": 10273,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "40f1cb6445acaa5d2ee50684fb68ff938fbadb0dcacbe455eacf59a2a35eda12"
+    },
+    {
+      "packagePath": "node_modules/tsx/node_modules/fsevents",
+      "name": "fsevents",
+      "version": "2.3.3",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/c77e7a5d5ff31dd7acea7c44d4a0455e0528cdacbd24a8cb6c82b66d239b587e.tgz",
+      "tarballSha256": "c77e7a5d5ff31dd7acea7c44d4a0455e0528cdacbd24a8cb6c82b66d239b587e",
+      "tarballBytes": 22808,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "500839fcc76f6c5efcb454e6614b23c26775e75e1140619fff9ca64c291aec2b",
+      "archivePackageLicense": "MIT",
+      "lifecycleScripts": {},
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [],
+      "licenseFilePath": "package/LICENSE",
+      "licenseFileSha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1",
+      "licenseFileBytes": 1133,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "4759097af1b03f219768043b12985e3e361a6975fc2fb44ac7f30ae7d1cf00a7"
+    },
+    {
+      "packagePath": "node_modules/unrs-resolver",
+      "name": "unrs-resolver",
+      "version": "1.12.2",
+      "resolved": "https://registry.npmjs.org/unrs-resolver/-/unrs-resolver-1.12.2.tgz",
+      "integrity": "sha512-dmlRxBJJayXjqTwC+JtF1HhJmgf3ftQ3YejFcZrf4+KKtJv0qDsK1pjqaaVjG7wJ5NJ6UVP1OqRMQ71Z4C3rxQ==",
+      "archiveCachePath": "config/supply-chain-install-script-archive-cas-pass4825/22203fe39b7626e2679fa74d6c2e9985e52b5cbf79ed27f8dc0439b3255c9778.tgz",
+      "tarballSha256": "22203fe39b7626e2679fa74d6c2e9985e52b5cbf79ed27f8dc0439b3255c9778",
+      "tarballBytes": 11371,
+      "packageJsonPath": "package/package.json",
+      "packageJsonSha256": "3ef3f74675fe31a88dc490e4136178a5fd8f96142df0c565d66be9a894543adf",
+      "archivePackageLicense": "MIT",
+      "lifecycleScripts": {
+        "postinstall": "node postinstall.js"
+      },
+      "dangerousLifecycleReasons": [],
+      "referencedFiles": [
+        {
+          "path": "postinstall.js",
+          "present": true,
+          "sha256": "446a0aeed55eeb28eadd9ac31f0b71654265aba8ca5a99dbc22dab0b26a02469",
+          "bytes": 156
+        }
+      ],
+      "licenseFilePath": null,
+      "licenseFileSha256": null,
+      "licenseFileBytes": 0,
+      "customLicenseId": null,
+      "integrityVerified": true,
+      "executedDuringInspection": false,
+      "normalizedEvidenceSha256": "7df2d6f9f1a77e29b90365ebf17717002b33ec093fd73528692a5310c727d231"
+    }
+  ],
+  "casInventory": [
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/22203fe39b7626e2679fa74d6c2e9985e52b5cbf79ed27f8dc0439b3255c9778.tgz",
+      "package": "unrs-resolver@1.12.2",
+      "kind": "install-script-tarball",
+      "sha256": "22203fe39b7626e2679fa74d6c2e9985e52b5cbf79ed27f8dc0439b3255c9778",
+      "bytes": 11371
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/460712506f9df808cf25bc2ba15be828bfa9179bd31b6ca47a9db624980026c3.tgz",
+      "package": "sharp@0.34.5",
+      "kind": "install-script-tarball",
+      "sha256": "460712506f9df808cf25bc2ba15be828bfa9179bd31b6ca47a9db624980026c3",
+      "bytes": 119719
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/8daa7285bee7e10bebce179007afcf07108c1b8ce9dbe5081f3db319d5453648.tgz",
+      "package": "@parcel/watcher@2.5.6",
+      "kind": "install-script-tarball",
+      "sha256": "8daa7285bee7e10bebce179007afcf07108c1b8ce9dbe5081f3db319d5453648",
+      "bytes": 34609
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/af115710dba2e6f04dc6f86f39bfdcf4b228e95de8a1b1b0e71df40b5acaf72a.tgz",
+      "package": "@swc/core@1.15.41",
+      "kind": "install-script-tarball",
+      "sha256": "af115710dba2e6f04dc6f86f39bfdcf4b228e95de8a1b1b0e71df40b5acaf72a",
+      "bytes": 25994
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/c77e7a5d5ff31dd7acea7c44d4a0455e0528cdacbd24a8cb6c82b66d239b587e.tgz",
+      "package": "fsevents@2.3.3",
+      "kind": "install-script-tarball",
+      "sha256": "c77e7a5d5ff31dd7acea7c44d4a0455e0528cdacbd24a8cb6c82b66d239b587e",
+      "bytes": 22808
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab.tgz",
+      "package": "@reown/appkit@1.8.19",
+      "kind": "install-script-tarball",
+      "sha256": "e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab",
+      "bytes": 191706
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/e17ade950c193fe09adfc7915fe29ac26166c8782d00e7c3879e7e9de02c5428.tgz",
+      "package": "fsevents@2.3.2",
+      "kind": "install-script-tarball",
+      "sha256": "e17ade950c193fe09adfc7915fe29ac26166c8782d00e7c3879e7e9de02c5428",
+      "bytes": 22066
+    },
+    {
+      "path": "config/supply-chain-install-script-archive-cas-pass4825/eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5.tgz",
+      "package": "esbuild@0.28.1",
+      "kind": "install-script-tarball",
+      "sha256": "eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5",
+      "bytes": 34131
+    }
+  ],
+  "casInventorySha256": "3498d4afeca1bce9c9e59af877d511aecd81dabad58786d7d2e085b67cddaacd",
+  "evidenceSha256": "acd5a5652dd7fdcce8693af1c2bb944d56fb5157cfb45ff86419c41aef4e092b"
+}

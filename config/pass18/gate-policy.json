@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "velmere.pass18.gate-policy.v1",
+  "purpose": "Complete coherent output-adapter waves with cheap source, database and boundary controls. Run one exact-runtime milestone only after all six adapters and the implementation SHA are frozen.",
+  "truthBoundary": "Quick/domain gates verify source, routing, visual freeze, corpus contracts and deterministic synthetic adapter simulations. Synthetic fixtures never count as detector precision/recall, real human review, rendered customer PDF, provider, staging or LIVE proof. Milestone/release remain blocked without exact Node 24.18.0/npm 11.16.0 and the dependency cache.",
+  "heavyExecutionRequiresExplicitFlag": true,
+  "levels": {
+    "quick": {
+      "maxExpectedSeconds": 360,
+      "commands": [
+        "node scripts/pass18/audit-runner-contract.mjs",
+        "node scripts/pass14/verify-visual-freeze.mjs",
+        "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+        "node scripts/pass15/verify-lazy-route-shells.mjs",
+        "node scripts/pass16/verify-worldclass-corpus.mjs",
+        "node scripts/pass16/verify-worldclass-output-contract.mjs",
+        "node scripts/pass16/test-worldclass-output-scorer.mjs",
+        "node scripts/pass17/test-market-output-adapter-boundaries.mjs",
+        "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs",
+        "node scripts/pass14/verify-migration-versions.mjs",
+        "node scripts/pass14/verify-retired-fixture-routes.mjs",
+        "node scripts/pass14/audit-database-contract.mjs",
+        "node scripts/pass14/audit-i18n-semantic-parity.mjs",
+        "node scripts/pass18/audit-clean-source.mjs"
+      ]
+    },
+    "domain": {
+      "maxExpectedSeconds": 900,
+      "domains": {
+        "market-product": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs"
+        ],
+        "audit-lens-product": [
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs"
+        ],
+        "product-contract": [
+          "node scripts/pass16/verify-worldclass-corpus.mjs",
+          "node scripts/pass16/verify-worldclass-output-contract.mjs",
+          "node scripts/pass16/test-worldclass-output-scorer.mjs"
+        ],
+        "build": [
+          "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+          "node scripts/pass15/profile-lazy-build-surface.mjs",
+          "node scripts/pass15/verify-lazy-route-shells.mjs",
+          "node scripts/pass14/profile-build-graph.mjs"
+        ],
+        "database": [
+          "node scripts/pass14/verify-migration-versions.mjs",
+          "node scripts/pass14/audit-database-contract.mjs"
+        ],
+        "visual-freeze": [
+          "node scripts/pass14/verify-visual-freeze.mjs"
+        ],
+        "i18n": [
+          "npm run check:i18n",
+          "node scripts/pass14/audit-i18n-semantic-parity.mjs"
+        ],
+        "source": [
+          "node scripts/pass18/audit-clean-source.mjs"
+        ]
+      }
+    },
+    "milestone": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 2400,
+      "commands": [
+        "npm run gate:quick",
+        "npm run typecheck",
+        "npm run lint",
+        "npm test"
+      ]
+    },
+    "release": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 10800,
+      "commands": [
+        "npm ci",
+        "npm audit --audit-level=high",
+        "npm run gate:milestone -- --allow-heavy",
+        "npm run build:webpack",
+        "npm run build:turbopack"
+      ]
+    }
+  },
+  "cadence": {
+    "quick": "Once after a coherent source wave, never after every file.",
+    "domain": "One domain simulation after a complete adapter wave; do not repeat unchanged domains.",
+    "milestone": "Once after Brain + Angel adapters, translations and provider/license cells are frozen and exact runtime/cache is restored.",
+    "release": "Once for the source-bound production candidate before browser/WCAG/PDF proof.",
+    "worldclassMatrix": "Do not generate provider-bound 2700 outputs until all six adapters and runtime surfaces are frozen."
+  },
+  "forbiddenShortcuts": [
+    "Do not count 1800 synthetic adapter simulations as canonical customer outputs.",
+    "Do not count expected fixture labels as detector precision or recall.",
+    "Do not count a synthetic review object as real-human Advanced authority.",
+    "Do not count canonical payload hash parity as rendered browser PDF parity.",
+    "Do not release paid output without verified commercial rights and server entitlement.",
+    "Do not rerun unchanged heavy gates.",
+    "Do not raise staging/LIVE percentages from fixtures, static checks or inherited receipts."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "LIVE": false,
+  "assertionsRemoved": 0,
+  "change": {
+    "disableGpuAdded": false,
+    "exactChromiumRemains": "148.0.7778.96",
+    "headfulModeAdded": false,
+    "headlessRemains": true,
+    "ignoredDefaultArg": "--enable-features=CDPScreenshotNewSurface",
+    "otherDefaultArgumentsRetained": true,
+    "playwrightRemains": "1.60.0",
+    "routeOrAssertionRemoved": false,
+    "scope": "QA_HARNESS_ONLY"
+  },
+  "denominatorCollapse": false,
+  "denominators": {
+    "evidenceChecksAfter": 584,
+    "evidenceChecksBefore": 584,
+    "popupTabsAfter": 4,
+    "popupTabsBefore": 4,
+    "removed": 0,
+    "routeRowsAfter": 56,
+    "routeRowsBefore": 56,
+    "scenarioChecksAfter": 57,
+    "scenarioChecksBefore": 57,
+    "screenshotsAfter": 29,
+    "screenshotsBefore": 29
+  },
+  "findingId": "R44P30-P1-CHROMIUM-CDP-SCREENSHOT-SURFACE",
+  "globalDecision": "NO_GO",
+  "negativeEvidence": {
+    "exactChromiumBrowserClosedDuringScreenshot": true,
+    "fullPageCaptureSucceededWithoutNewSurface": true,
+    "negativeRunsReceiveReleaseCredit": false
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "reason": "Exact Chromium 148.0.7778.96 repeatedly closed or hung during full-page screenshots of complex customer routes when Playwright enabled CDPScreenshotNewSurface. A bounded diagnostic proved the same pages capture successfully when only that default feature flag is omitted.",
+  "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p30.chromium-full-page-screenshot-backend-migration.v1",
+  "testsDeleted": 0,
+  "truthBoundary": {
+    "exactBrowserRetestRequired": true,
+    "liveCredit": false,
+    "productBehaviorChanged": false,
+    "providerCredit": false,
+    "saleCredit": false
+  }
+}

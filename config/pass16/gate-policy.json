@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "velmere.pass16.gate-policy.v1",
+  "purpose": "Large product-engineering waves with deterministic cheap controls during implementation, one source-bound milestone proof, and one final world-class output matrix after all six surfaces are frozen.",
+  "truthBoundary": "Quick/domain gates verify source, corpus and contracts only. Milestone needs exact installed dependencies. The 2700-row matrix remains NOT_EXECUTED until product adapters, build and runtime are frozen. Offline fixtures never prove staging or LIVE.",
+  "heavyExecutionRequiresExplicitFlag": true,
+  "levels": {
+    "quick": {
+      "maxExpectedSeconds": 180,
+      "commands": [
+        "node scripts/pass16/audit-runner-contract.mjs",
+        "node scripts/pass14/verify-visual-freeze.mjs",
+        "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+        "node scripts/pass15/profile-lazy-build-surface.mjs",
+        "node scripts/pass15/verify-lazy-route-shells.mjs",
+        "node scripts/pass16/verify-worldclass-corpus.mjs",
+        "node scripts/pass16/verify-worldclass-output-contract.mjs",
+        "node scripts/pass16/test-worldclass-output-scorer.mjs",
+        "node scripts/pass16/audit-current-product-readiness.mjs",
+        "node scripts/pass14/profile-build-graph.mjs",
+        "node scripts/pass14/verify-migration-versions.mjs",
+        "node scripts/pass14/verify-retired-fixture-routes.mjs",
+        "node scripts/pass14/audit-database-contract.mjs",
+        "node scripts/pass14/audit-i18n-semantic-parity.mjs",
+        "node scripts/pass16/audit-clean-source.mjs"
+      ]
+    },
+    "domain": {
+      "maxExpectedSeconds": 300,
+      "domains": {
+        "product": [
+          "node scripts/pass16/verify-worldclass-corpus.mjs",
+          "node scripts/pass16/verify-worldclass-output-contract.mjs",
+          "node scripts/pass16/test-worldclass-output-scorer.mjs",
+          "node scripts/pass16/audit-current-product-readiness.mjs"
+        ],
+        "build": [
+          "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+          "node scripts/pass15/profile-lazy-build-surface.mjs",
+          "node scripts/pass15/verify-lazy-route-shells.mjs",
+          "node scripts/pass14/profile-build-graph.mjs"
+        ],
+        "database": [
+          "node scripts/pass14/verify-migration-versions.mjs",
+          "node scripts/pass14/audit-database-contract.mjs"
+        ],
+        "visual-freeze": [
+          "node scripts/pass14/verify-visual-freeze.mjs"
+        ],
+        "i18n": [
+          "npm run check:i18n",
+          "node scripts/pass14/audit-i18n-semantic-parity.mjs"
+        ],
+        "source": [
+          "node scripts/pass16/audit-clean-source.mjs"
+        ]
+      }
+    },
+    "milestone": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 2400,
+      "commands": [
+        "npm run gate:quick",
+        "npm run typecheck",
+        "npm run lint",
+        "npm test"
+      ]
+    },
+    "release": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 10800,
+      "commands": [
+        "npm ci",
+        "npm audit --audit-level=high",
+        "npm run gate:milestone -- --allow-heavy",
+        "npm run build:webpack",
+        "npm run build:turbopack"
+      ]
+    }
+  },
+  "cadence": {
+    "quick": "Once after a coherent product wave, not after every file.",
+    "domain": "Once after completing an entire product/build/database/i18n/source domain.",
+    "milestone": "Once after exact runtime/cache is restored and PASS16 implementation is frozen.",
+    "release": "Once for the source-bound production candidate before browser/WCAG/PDF proof.",
+    "worldclassMatrix": "Generate all 2700 outputs once after six surfaces are frozen; after fixes rerun failed slices, then one final full matrix."
+  },
+  "forbiddenShortcuts": [
+    "Do not count the prepared 300-case corpus as executed outputs.",
+    "Do not count historical PASS4640 rows as PASS16 canonical results.",
+    "Do not count static lazy-boundary checks as successful build.",
+    "Do not rerun unchanged heavy gates.",
+    "Do not release Pro/Advanced without source, freshness, license, entitlement and human-authority gates where required.",
+    "Do not raise staging/LIVE percentages from offline fixtures or inherited receipts."
+  ]
+}

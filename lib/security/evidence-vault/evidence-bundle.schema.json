@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Velmere Institutional Evidence Bundle",
+  "type": "object",
+  "required": ["schemaVersion", "bundleId", "generatedAt", "formalProofs", "merkle", "timestamp", "risk"],
+  "properties": {
+    "schemaVersion": { "const": "velmere.institutional-evidence-bundle.v1" },
+    "bundleId": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourceCommit": { "type": "string" },
+    "sourceRootSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "formalProofs": { "type": "array" },
+    "merkle": {
+      "type": "object",
+      "required": ["algorithm", "leafOrdering", "rootSha256", "leaves"],
+      "properties": {
+        "algorithm": { "const": "SHA-256" },
+        "leafOrdering": { "const": "UTF8_BYTEWISE_ASCENDING_V1" },
+        "rootSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "leaves": { "type": "array" }
+      }
+    },
+    "timestamp": {
+      "type": "object",
+      "required": ["protocol", "status", "messageImprintSha256"],
+      "properties": {
+        "protocol": { "const": "RFC3161" },
+        "status": { "enum": ["NOT_REQUESTED", "REQUESTED", "VERIFIED", "FAILED"] },
+        "messageImprintSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "tsaUrl": { "type": "string" },
+        "tokenBase64": { "type": "string" },
+        "genTime": { "type": "string", "format": "date-time" },
+        "policyOid": { "type": "string" },
+        "serialNumber": { "type": "string" }
+      }
+    },
+    "risk": { "type": "object" }
+  }
+}
+
+To jest dokładnie to, co znajduje się w przygotowanym ZIP-ie. Paczka Phase 3 zawiera również regression harness i odpowiadające im kontrakty Solidity.

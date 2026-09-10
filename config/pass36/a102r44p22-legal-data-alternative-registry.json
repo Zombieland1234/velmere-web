@@ -1,0 +1,168 @@
+{
+  "decision": "NO_GO",
+  "generatedAt": "2026-08-06T00:00:00.000Z",
+  "globalTruthBoundary": {
+    "legalAdviceProvided": false,
+    "providerRightsApproved": false,
+    "publicPaidDataEnabled": false,
+    "realTimeClaimsRequireRealTimeEvidence": true,
+    "referenceDataMustBeLabeledReference": true,
+    "sourcesMayReplaceOnlyNamedFields": true,
+    "wholeProductZeroingForbidden": true
+  },
+  "reviewClass": "OFFICIAL_SOURCE_REVIEWED_NOT_COUNSEL_OR_PROVIDER_APPROVED",
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.legal-data-alternative-registry.v1",
+  "sources": [
+    {
+      "candidateFields": [
+        "block",
+        "transaction",
+        "transaction_receipt",
+        "logs",
+        "contract_code",
+        "storage",
+        "token_transfer_events"
+      ],
+      "commercialStatus": "SELF_HOSTED_PROTOCOL_DATA_ENGINEERING_AND_LEGAL_REVIEW_REQUIRED",
+      "fallback": "Run an owned or contractually approved node; preserve exact block and receipt provenance.",
+      "id": "ethereum_self_hosted_json_rpc",
+      "notEquivalentTo": [
+        "market_price",
+        "centralized_exchange_order_book",
+        "verified_entity_label"
+      ],
+      "officialUrl": "https://ethereum.org/developers/docs/apis/json-rpc/",
+      "safeUse": [
+        "internal_analysis",
+        "on_chain_evidence",
+        "derived_metrics"
+      ],
+      "sourceClass": "PUBLIC_BLOCKCHAIN_DIRECT"
+    },
+    {
+      "candidateFields": [
+        "company_submissions",
+        "filing_history",
+        "xbrl_companyfacts"
+      ],
+      "commercialStatus": "PUBLIC_API_FAIR_ACCESS_AND_ATTRIBUTION_REVIEW_REQUIRED",
+      "fallback": "Cache only under an approved retention policy and show filing dates and accession provenance.",
+      "id": "sec_edgar_data_apis",
+      "notEquivalentTo": [
+        "real_time_quote",
+        "executable_price",
+        "exchange_order_book"
+      ],
+      "officialUrl": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "operationalLimits": [
+        "identified_user_agent",
+        "moderated_requests",
+        "maximum_10_requests_per_second"
+      ],
+      "safeUse": [
+        "reference_fundamentals",
+        "filing_evidence"
+      ],
+      "sourceClass": "PUBLIC_REGULATOR_DATA"
+    },
+    {
+      "candidateFields": [
+        "euro_reference_fx_rate",
+        "reference_rate_date"
+      ],
+      "commercialStatus": "REFERENCE_INFORMATION_ONLY_REUSE_REVIEW_REQUIRED",
+      "fallback": "Label as delayed/reference and never use for execution, slippage, or guaranteed valuation.",
+      "id": "ecb_reference_fx",
+      "notEquivalentTo": [
+        "transaction_rate",
+        "real_time_fx_quote",
+        "executable_price"
+      ],
+      "officialUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "safeUse": [
+        "reference_fx_normalization"
+      ],
+      "sourceClass": "PUBLIC_REGULATOR_DATA"
+    },
+    {
+      "candidateFields": [
+        "energy_supply",
+        "energy_demand",
+        "production",
+        "inventories",
+        "reference_prices",
+        "outages"
+      ],
+      "commercialStatus": "FREE_OPEN_DATA_SUBJECT_TO_API_TERMS_AND_REUSE_POLICY",
+      "fallback": "Use for clearly dated fundamentals only; keep market-price panels separate.",
+      "id": "eia_open_energy_data",
+      "notEquivalentTo": [
+        "exchange_futures_quote",
+        "real_time_order_book"
+      ],
+      "officialUrl": "https://www.eia.gov/opendata/",
+      "safeUse": [
+        "commodity_fundamentals",
+        "macro_context"
+      ],
+      "sourceClass": "PUBLIC_REGULATOR_DATA"
+    },
+    {
+      "candidateFields": [
+        "order_book_snapshot",
+        "portfolio_snapshot",
+        "entity_label_assertion",
+        "provider_export"
+      ],
+      "commercialStatus": "CONSENT_SCOPE_RETENTION_AND_PROVENANCE_REQUIRED",
+      "fallback": "Hash, timestamp, scope, redact, expire, and label as user-supplied.",
+      "id": "user_supplied_signed_snapshot",
+      "notEquivalentTo": [
+        "independent_provider_truth",
+        "verified_entity_label"
+      ],
+      "officialUrl": null,
+      "safeUse": [
+        "bounded_analysis_with_consent"
+      ],
+      "sourceClass": "USER_SUPPLIED"
+    },
+    {
+      "candidateFields": [
+        "crypto_quote",
+        "market_cap",
+        "volume"
+      ],
+      "commercialStatus": "BLOCKED_PENDING_APPROPRIATE_COMMERCIAL_PLAN_OR_AGREEMENT",
+      "fallback": "Hide the field or replace with owned/on-chain/reference data; do not infer rights from public access.",
+      "id": "coinpaprika_public_api",
+      "notEquivalentTo": [
+        "rights_approved_paid_delivery"
+      ],
+      "officialUrl": "https://coinpaprika.com/api-terms-of-use/",
+      "safeUse": [
+        "internal_diagnostic_only_under_current_evidence"
+      ],
+      "sourceClass": "EXTERNAL_PROVIDER"
+    },
+    {
+      "candidateFields": [
+        "crypto_quote",
+        "bid_ask",
+        "trade_volume"
+      ],
+      "commercialStatus": "BLOCKED_PENDING_WRITTEN_PERMISSION_OR_APPROVED_AGREEMENT",
+      "fallback": "Hide the field or replace with owned/on-chain/reference data; do not infer rights from public access.",
+      "id": "coinbase_market_data",
+      "notEquivalentTo": [
+        "rights_approved_display_or_redistribution"
+      ],
+      "officialUrl": "https://www.coinbase.com/legal/market_data",
+      "safeUse": [
+        "internal_diagnostic_only_under_current_evidence"
+      ],
+      "sourceClass": "EXTERNAL_PROVIDER"
+    }
+  ]
+}

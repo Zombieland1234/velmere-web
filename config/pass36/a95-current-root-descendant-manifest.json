@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "velmere.pass36.a95.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A95R0_STAGING_SUBJECT_REBIND_ENVIRONMENT_ISOLATION_AND_ZERO_MUTATION_PREFLIGHT",
+  "parentRevisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "parentDescendantManifestDigestSha256": "14d06030b0865d24cc88129f2b40774cc21ccb5a91cd70b4e189f7c7208dba07",
+  "generatedAt": "2026-07-29T00:45:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A95_LOCAL_HARDENING_NO_PASS_CREDIT",
+  "payload": {
+    "fileCount": 4669,
+    "byteLength": 115231993,
+    "pathSetSha256": "6d2706f361d692ee615fe7946ed4e7f733953b124eee60ae55af5050a5d80970",
+    "aggregateSha256": "4aa7d11ac8fded08b2517064903faa6f41dab50e87f5ce0b8c9fdfb782e165cd"
+  },
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "stagingSubjectAdmissionImplemented": true,
+    "stagingExecuted": false,
+    "realStagesVerified": 0,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "5af195bbb2ace7fb49fbf86cb48de620c88d30e08de3337c29675cfd24f5d971"
+}

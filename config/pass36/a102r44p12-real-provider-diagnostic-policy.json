@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p12.real-provider-diagnostic-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P12_ACTION_REQUIRED_REAL_PUBLIC_PROVIDER_DIAGNOSTIC_15_ASSET_TWO_PROVIDER_IDENTITY_FRESHNESS_CONFLICT_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "evidenceClass": "REAL_NETWORK_PUBLIC_ENDPOINT_DIAGNOSTIC_NO_COMMERCIAL_RIGHTS_CREDIT",
+  "assets": ["BTC", "ETH", "SOL", "XRP", "ADA", "DOGE", "LINK", "AVAX", "BNB", "UNI", "ARB", "XTZ", "ALGO", "APT", "POL"],
+  "providers": ["COINPAPRIKA", "COINBASE_EXCHANGE"],
+  "denominator": {
+    "assets": 15,
+    "providerRows": 30,
+    "availableAssets": 15,
+    "providerAvailableRows": 30,
+    "conflictedAssets": 0,
+    "failedAssets": 0
+  },
+  "thresholds": {
+    "maximumAvailableCrossProviderPriceDriftPct": 5,
+    "maximumRawBodyBytes": 8388608,
+    "maximumLedgerBytes": 1048576,
+    "maximumSummaryBytes": 65536
+  },
+  "externalEvidence": {
+    "githubRunId": 30845073911,
+    "githubHeadSha": "0efd5c134f962b2820cf1871cef9408fec591f1f",
+    "githubArtifactId": 8868329596,
+    "githubArtifactZipBytes": 77197,
+    "githubArtifactZipSha256": "90caa9611e97bc538c42dea01324ea837031efb1bdcd92477d8fbb4f1632f9f5",
+    "ledgerPath": "evidence/R44P12_REAL_PROVIDER_DIAGNOSTIC_LEDGER.json",
+    "ledgerBytes": 45162,
+    "ledgerSha256": "40afdbbd089c8d798650cc78e86f874eea0e1f721a7052f96dddf300733649d7",
+    "summaryPath": "evidence/R44P12_REAL_PROVIDER_DIAGNOSTIC_SUMMARY.json",
+    "summaryBytes": 236,
+    "summarySha256": "ff3405ccc1698e68e44c47ed772032e3fa2dc517260056ace3beff425442b893",
+    "independentVerificationPath": "R44P12_INDEPENDENT_EVIDENCE_VERIFICATION.json",
+    "independentVerificationBytes": 179,
+    "independentVerificationSha256": "9155dbdb69e4f8c6a999caf3a4cf8f7cb7c4ce29b1dfafb4bbba7bdd9248928b"
+  },
+  "truthBoundary": {
+    "realNetworkObservationCredit": 30,
+    "shieldFullCatalogCredit": 0,
+    "shieldProMapFullCatalogCredit": 0,
+    "realMarketsFullCatalogCredit": 0,
+    "rightsApprovedCommercialUse": false,
+    "redistributionApproved": false,
+    "pdfExportApproved": false,
+    "aiRagUseApproved": false,
+    "customerDeliveryCredit": false,
+    "paidTierCredit": false,
+    "stagingCredit": false,
+    "liveCredit": false,
+    "productionApproved": false
+  }
+}

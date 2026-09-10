@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "velmere.pass35.a26-fuzz-invariant-evidence-policy.v1",
+  "passId": "PASS35_A26",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "SYNTHETIC_OFFLINE",
+    "GENERATED_BENCHMARK"
+  ],
+  "criticalities": [
+    "CRITICAL",
+    "HIGH",
+    "MEDIUM",
+    "LOW"
+  ],
+  "thresholds": {
+    "criticalInvariantCoverage": 1,
+    "highInvariantCoverage": 1,
+    "mediumInvariantCoverage": 0.8,
+    "stateKeyCoverage": 0.9,
+    "minimumDistinctSeeds": 8,
+    "minimumCampaignRuns": 8,
+    "mutationKillRate": 0.95,
+    "maximumShrinkRatio": 0.5,
+    "minimumReplayDeterminism": 1,
+    "maxFlakyRuns": 0,
+    "requireTargetBinding": true,
+    "requireRunnerBinding": true,
+    "requireCorpusBinding": true,
+    "requireModelBinding": true
+  },
+  "benchmark": {
+    "families": [
+      "CRITICAL_INVARIANT_COVERAGE",
+      "HIGH_INVARIANT_COVERAGE",
+      "STATE_KEY_COVERAGE",
+      "SEED_DIVERSITY",
+      "CORPUS_BINDING",
+      "TARGET_BINDING",
+      "RUNNER_BINDING",
+      "MODEL_BINDING",
+      "TRACE_REPLAY",
+      "SHRINK_MINIMIZATION",
+      "MUTATION_SCORE",
+      "INVARIANT_REGISTRY_COMPLETENESS"
+    ],
+    "mutationTypes": [
+      "schema_invalid",
+      "input_class_relabel",
+      "target_digest_invalid",
+      "duplicate_invariant",
+      "missing_critical_coverage",
+      "state_coverage_drop",
+      "seed_diversity_drop",
+      "corpus_binding_break",
+      "runner_binding_break",
+      "replay_break",
+      "shrink_quality_drop",
+      "mutation_score_drop"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "A26 verifies a case-bound fuzz/invariant evidence contract over invariant registries, target/model/corpus/runner bindings, seed diversity, state-space coverage, deterministic replay, counterexample shrinking and mutation results. It does not execute official Foundry/Echidna, compile Solidity, prove implementation-model equivalence, establish real customer-case coverage, provide independent adjudication or unlock paid delivery."
+}

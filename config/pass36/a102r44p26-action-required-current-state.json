@@ -1,0 +1,90 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": false,
+    "backupRestore": false,
+    "browser57": false,
+    "exactWindows": false,
+    "externalStaging": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "incident": false,
+    "pdf150": false,
+    "rls19": false,
+    "semanticEvidenceMechanism": false,
+    "sourceAuthority": false,
+    "staticPolicy": false,
+    "storageKmsEmail": false,
+    "stripeTest": false,
+    "timebound72h": false,
+    "trustedEvidenceMechanism": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "APPROVED_EXTERNAL_SIGNING_KEY",
+    "REAL_EXTERNAL_RECEIPT_DIRECTORY",
+    "EXACT_RUNTIME_CACHE_BUNDLE",
+    "EXACT_WINDOWS",
+    "TWO_DISPOSABLE_EXTERNAL_TENANTS",
+    "RLS_19_OF_19",
+    "STRIPE_TEST_LIFECYCLE",
+    "PRIVATE_STORAGE_KMS_EMAIL",
+    "BACKUP_RESTORE",
+    "INCIDENT_DRILL",
+    "REAL_72_HOUR_WINDOW"
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "exactRuntimeBridgePolicy": true,
+    "rawArtifactBinding": true,
+    "replayNonceBoundary": true,
+    "selfSignedEvidenceRejected": true,
+    "semanticStagingDenominators": true,
+    "trustedExternalEvidence": true
+  },
+  "newFindings": [
+    {
+      "id": "R44P26-P0-SELF-SIGNED-EXTERNAL-EVIDENCE",
+      "severity": "P0",
+      "status": "FIXED",
+      "summary": "R44P25 trusted a public key embedded in the same envelope. Any actor could self-sign arbitrary claims. R44P26 requires an out-of-band pinned trust policy."
+    },
+    {
+      "id": "R44P26-P0-SIGNED-METADATA-NOT-SEMANTIC-EVIDENCE",
+      "severity": "P0",
+      "status": "FIXED_MECHANISM_NO_EXTERNAL_CREDIT",
+      "summary": "A valid signature did not prove exact RLS, Stripe, storage, backup, incident or 72-hour denominators. R44P26 verifies exact semantic rows and raw artifacts."
+    },
+    {
+      "id": "R44P26-P1-REPLAY-NONCE",
+      "severity": "P1",
+      "status": "FIXED_MECHANISM",
+      "summary": "Evidence nonces are checked against an external replay register; duplicate nonce/evidence ID is rejected."
+    },
+    {
+      "id": "R44P26-P1-EXTERNAL-TRUST-ANCHOR-MISSING",
+      "severity": "P1",
+      "status": "OPEN_EXTERNAL",
+      "summary": "Production trust policy intentionally contains zero keys. External evidence remains blocked until an independently approved key is admitted."
+    },
+    {
+      "id": "R44P26-P1-EXACT-RUNTIME-BUNDLE-MISSING",
+      "severity": "P1",
+      "status": "OPEN_EXTERNAL",
+      "summary": "Exact Node/npm archive and lockfile-complete cache bundle are pinned but not present in this execution environment."
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p26.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

@@ -1,0 +1,37 @@
+{
+  "decision": "NO_GO",
+  "flags": {
+    "LIVE": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "implementedTracks": [
+    "r44p27-authority-fork-reconciliation",
+    "dual-control-trust-anchor",
+    "evidence-quarantine",
+    "fail-closed-72h-watchdog",
+    "active-credential-hygiene"
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "remainingTracks": [
+    "exact-current-child-release",
+    "exact-windows",
+    "two-provider-tenants",
+    "stripe-test-12",
+    "storage-kms-email-10",
+    "backup-restore-10",
+    "incident-8",
+    "real-72h-3",
+    "provider-rights-318-583",
+    "independent-review",
+    "customer-outcomes"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p29.world-class-completion-program.v1"
+}

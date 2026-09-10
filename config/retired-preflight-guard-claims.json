@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "velmere.retired-preflight-guard-claims.v1",
+  "claims": {
+    "PASS214_AI_BRAIN_SOURCE_COVERAGE_MATRIX_DELTA": {
+      "retiredAtPass": 4727,
+      "originalPath": "lib/launch/master-build-progress-delta-pass214.ts",
+      "archivePath": "archive/pass4727/history-banks/lib/launch/master-build-progress-delta-pass214.ts",
+      "sourceSha256": "c6cbaea6267583d98525d5a93e195e2388daa239b41fde44629707885935d3f8",
+      "markers": [
+        "velmerePass214ProgressDeltas",
+        "PASS214_AI_BRAIN_SOURCE_COVERAGE_MATRIX_DELTA"
+      ],
+      "markersSha256": "921b3cd8f53b09f86a0fa8060c1639f9489c7bbc56b3d943f0f6960a2b88b21f",
+      "policy": "retired-source-marker-claim-only-no-runtime-import"
+    }
+  }
+}

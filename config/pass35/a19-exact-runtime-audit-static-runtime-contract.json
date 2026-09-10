@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "velmere.pass35.a19-exact-runtime-audit-static-runtime-contract.v1",
+  "passId": "PASS35_A19",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonicalWeightedPlanningPercent": 40.7,
+    "zeroBudgetWeightedPlanningPercent": 80
+  },
+  "baselineA18": {
+    "canonicalWeightedPlanningPercent": 43,
+    "zeroBudgetWeightedPlanningPercent": 83.3
+  },
+  "progressDeltaVsA18": {
+    "canonicalPercentagePoints": 1.2,
+    "zeroBudgetPercentagePoints": 1.8
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 3.5,
+    "zeroBudgetPercentagePoints": 5.1
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "liveClaimed": false,
+  "exactRuntime": {
+    "bootstrapContractReady": true,
+    "exactRuntimeProven": false,
+    "evaluationPath": "artifacts/pass35/PASS35_A19_EXACT_RUNTIME_BOOTSTRAP_EVALUATION.json",
+    "expectedNode": "24.18.0",
+    "expectedNpm": "11.16.0",
+    "observedNode": "22.16.0",
+    "observedNpm": "10.9.2",
+    "blockerCount": 12
+  },
+  "auditStaticBenchmark": {
+    "families": 15,
+    "cases": 240,
+    "vulnerable": 120,
+    "remediated": 120,
+    "frozenTest": 90,
+    "mutations": 2880,
+    "frozenRecall": 1,
+    "frozenSpecificity": 1,
+    "frozenPrecision": 1,
+    "frozenF1": 1,
+    "mutationKillRate": 1,
+    "paidGateEligible": false,
+    "independentExternalFamily": false,
+    "runtimeIntegritySha256": "031125d452649073fd3c0521734656681176a5ab6fc89a79309ed42e7e8269f1",
+    "receiptSha256": "sha256:76747c50f9da6954caf6731e6f3d3f87d91140e40187da21a1e74a51bbf391cb"
+  },
+  "canonicalWeightedPlanningPercent": 44.2,
+  "canonicalStrictDonePercent": 9.3,
+  "canonicalCounts": {
+    "DONE": 4,
+    "PARTIAL": 30,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 85.1,
+  "zeroBudgetCoreDenominator": 47,
+  "zeroBudgetCounts": {
+    "DONE": 34,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "truthBoundary": "PASS35 A19 is the only canonical current status. Canonical roadmap is 44.2% weighted / 9.3% strict across 43 workstreams, up 1.2 pp from A18 and 3.5 pp from A16. Zero-budget functional core is 85.1% across 47 capabilities, up 1.8 pp from A18 and 5.1 pp from A16. A19 locally closes a fail-closed exact-runtime bootstrap contract and the defined automated Basic audit prescreen with a 15-family frozen synthetic benchmark. Actual exact Node/npm execution, official analyzers, real contracts, staging, sale, LIVE, customer outcomes and independent assurance remain unclaimed."
+}

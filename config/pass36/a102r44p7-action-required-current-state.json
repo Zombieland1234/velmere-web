@@ -1,0 +1,43 @@
+{
+  "completed": {
+    "advancedIncrementalEvidence": "Advanced evidence-family count increased from 4 to 7 in 50/50 cases without adding a human-review claim",
+    "blindAdjudicationReadiness": "50 blind packets, restricted answer key and two-reviewer template; independent decisions remain 0/50",
+    "compilerArtifactDiff": "50 exact solc artifact profiles with ABI/function and bytecode measurements",
+    "crossToolConsensus": "50 deterministic cross-tool profiles; 12 cases with multi-tool theme consensus and 39 with at least one single-tool theme requiring adjudication",
+    "customerCopyTruth": "PL/EN/DE scorecard now states seven Advanced evidence families versus four in Pro; independent adjudication and customer outcomes remain zero",
+    "localVerification": "2862/2862 Advanced value/binding checks; PDF QA 150/150",
+    "pdfRegeneration": "150/150 PDFs, 700 pages, dedicated R44P7 verifier, and 50/50 Advanced PDFs include all four required Advanced markers",
+    "remediationDelta": "24 risk-to-mitigation pairs with resolved/persistent/introduced theme and severity-weight deltas"
+  },
+  "generatedAt": "2026-08-02T22:40:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P6_ACTION_REQUIRED_CROSS_SURFACE_TIER_VALUE_TRUTH_AND_REAL_DATA_READINESS_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "central": 5,
+    "local": 1,
+    "range": "4-7",
+    "stagingAndExternal": "3-6"
+  },
+  "requiredNext": [
+    "exact Windows final-byte retest on R44P7",
+    "obtain two independent blind reviewers for 50/50 packets",
+    "rights-approved deployed-contract pilot",
+    "current rights-approved provider pilot for Shield/Real Markets",
+    "staging RLS/Stripe TEST/storage/email closure"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P7_ACTION_REQUIRED_ADVANCED_INCREMENTAL_EVIDENCE_REMEDIATION_DELTA_AND_ADJUDICATION_READINESS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p7.action-required-current-state.v1",
+  "skuDecisions": {
+    "AuditAdvanced": "PILOT_ONLY_PAID_INFORMATIONAL_INCREMENTAL_EVIDENCE_CLOSED_ADJUDICATION_OPEN",
+    "AuditBasic": "GO_FREE_INFORMATIONAL_PILOT",
+    "AuditPro": "PILOT_ONLY_PAID_INFORMATIONAL",
+    "PdfAdvanced": "PILOT_ONLY_INCREMENTAL_EVIDENCE_CLOSED_ADJUDICATION_OPEN",
+    "PdfBasic": "GO_FREE_TECHNICAL_PDF_PILOT",
+    "PdfPro": "PILOT_ONLY"
+  },
+  "truthBoundary": "Advanced now has three deterministic evidence families beyond Pro on 50 project-owned fixtures. Independent adjudication, deployed-contract evidence, customer outcomes, exact Windows, staging, LIVE and public-sale proof remain absent.",
+  "worldClassProven": false
+}

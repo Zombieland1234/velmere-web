@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "velmere.pass35.a18-tier-value-runtime-contract.v1",
+  "passId": "PASS35_A18",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonicalWeightedPlanningPercent": 40.7,
+    "zeroBudgetWeightedPlanningPercent": 80
+  },
+  "baselineA17": {
+    "canonicalWeightedPlanningPercent": 41.9,
+    "zeroBudgetWeightedPlanningPercent": 82.1
+  },
+  "progressDeltaVsA17": {
+    "canonicalPercentagePoints": 1.1,
+    "zeroBudgetPercentagePoints": 1.2
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 2.3,
+    "zeroBudgetPercentagePoints": 3.3
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "liveClaimed": false,
+  "tierValueBenchmark": {
+    "cases": 350,
+    "outputs": 1050,
+    "comparisons": 700,
+    "blindComparisons": 700,
+    "mutations": 5600,
+    "structuralPassRate": 1,
+    "blindSelectionAccuracy": 1,
+    "mutationKillRate": 1,
+    "noSilentTierDowngrade": true,
+    "noPageCountOnlyUpgrade": true,
+    "customerPurchaseWorthinessProven": false,
+    "runtimeIntegritySha256": "sha256:98c4e0657ba5283c3aa98ec9dec88c05b74505d40c4ddf435f8f2893fd7ef435",
+    "receiptSha256": "sha256:4e6f52af8cad7906855ac9b667be3fae8197faaa9375c8edc600ab0f0728f262"
+  },
+  "canonicalWeightedPlanningPercent": 43,
+  "canonicalStrictDonePercent": 9.3,
+  "canonicalCounts": {
+    "DONE": 4,
+    "PARTIAL": 29,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 1
+  },
+  "zeroBudgetWeightedPlanningPercent": 83.3,
+  "zeroBudgetCoreDenominator": 45,
+  "zeroBudgetCounts": {
+    "DONE": 31,
+    "PARTIAL": 13,
+    "NOT_DONE": 1
+  },
+  "truthBoundary": "PASS35 A18 is the only canonical current status. Canonical roadmap is 43% weighted / 9.3% strict across 43 workstreams, up 1.1 pp from A17 and 2.3 pp from A16. Zero-budget functional core is 83.3% across 45 capabilities, up 1.2 pp from A17 and 3.3 pp from A16. A18 locally closes executable structural tier-value benchmarking, blind tier ordering, filler/downgrade mutation defense and no-charge enforcement. Real customer labels, willingness-to-pay, current provider evidence, staging, sale, LIVE and independent assurance remain unclaimed."
+}

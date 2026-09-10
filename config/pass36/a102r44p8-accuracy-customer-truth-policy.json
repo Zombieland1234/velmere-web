@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p8.accuracy-customer-truth-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P8_ACTION_REQUIRED_ACCURACY_CUSTOMER_TRUTH_PDF_CONFIDENCE_CONSENSUS_AND_SYNTHETIC_DATA_BOUNDARY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P7_ACTION_REQUIRED_ADVANCED_INCREMENTAL_EVIDENCE_REMEDIATION_DELTA_AND_ADJUDICATION_READINESS_NO_LIVE_CREDIT",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "denominators": {
+    "cases": 50,
+    "riskCases": 24,
+    "controlCases": 24,
+    "ambiguousOrBenignCases": 2,
+    "packetRows": 450,
+    "pdfDocuments": 150,
+    "pdfPages": 700,
+    "officialToolProcesses": 200,
+    "localDeploymentReproductions": 50,
+    "blindReviewBundlesWithFullNeutralSource": 50,
+    "independentAdjudications": 0,
+    "realCustomerPdfs": 0,
+    "realProviderShield": 0,
+    "realProviderRealMarkets": 0
+  },
+  "customerTruthRules": {
+    "pdfCoverageDerivedFrom": "evidenceTable/officialToolReceiptRefs",
+    "numericConfidenceAllowed": false,
+    "noSignalAgreementScoreAllowed": false,
+    "advancedHumanReviewIncluded": false,
+    "rawToolDeltaMayBeCalledRemediationEffectiveness": false,
+    "syntheticReadinessMayBeCalledRealCoverage": false
+  },
+  "accuracyTruth": {
+    "projectDesignedPrimaryThemeBenchmark": "regression_only_not_independent_accuracy",
+    "independentGroundTruthCredit": 0,
+    "realProtocolAccuracyCredit": 0,
+    "worldClassAuditorCredit": 0
+  },
+  "skuDecisions": {
+    "AuditBasic": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BYTE_BROWSER_RETEST",
+    "AuditPro": "CONTROLLED_BETA_ONLY_WITH_100_PERCENT_MANUAL_QA",
+    "AuditAdvanced": "NOT_FOR_SALE",
+    "PdfBasic": "TECHNICALLY_REGENERATED_NOT_FOR_CUSTOMER_DELIVERY",
+    "PdfPro": "TECHNICALLY_REGENERATED_NOT_FOR_CUSTOMER_DELIVERY",
+    "PdfAdvanced": "TECHNICALLY_REGENERATED_NOT_FOR_CUSTOMER_DELIVERY",
+    "ShieldBasic": "REFERENCE_DEMO_ONLY",
+    "ShieldPro": "NOT_FOR_SALE",
+    "ShieldAdvanced": "NOT_FOR_SALE",
+    "ShieldMap": "REFERENCE_DEMO_ONLY",
+    "RealMarketsBasic": "REFERENCE_DEMO_ONLY",
+    "RealMarketsPro": "NOT_FOR_SALE",
+    "RealMarketsAdvanced": "NOT_FOR_SALE"
+  },
+  "truthBoundary": "R44P8 repairs customer-facing PDF tool coverage, removes tier-priced numeric confidence, distinguishes NO_SIGNAL from agreement, removes active customer-facing human-review promises, prepares neutral full-source blind bundles, adds project-designed semantic-rule regression coverage and binds local Anvil deployment reproduction. It does not prove independent accuracy, false-negative closure on real protocols, real customer value, real provider coverage, LIVE or sale readiness."
+}

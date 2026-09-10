@@ -1,0 +1,797 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p16.approved-current-source-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P15_ACTION_REQUIRED_REENTRANCY_RECALL_SOURCE_AUDIT_DECLARATION_BOUNDARY_AND_FINAL_BYTE_REGRESSION_NO_LIVE_CREDIT",
+  "parentManifestPath": "_velmere/PASS36_A102R44P15_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "99bca65e559d8d78dee9163f9b4b82ddd4bf46ed2b5e8a573aa904340b8a475c",
+  "parentManifestEntry": {
+    "path": "_velmere/PASS36_A102R44P15_SOURCE_ONLY_MANIFEST.json",
+    "byteLength": 1231692,
+    "sha256": "99bca65e559d8d78dee9163f9b4b82ddd4bf46ed2b5e8a573aa904340b8a475c",
+    "mode": 420
+  },
+  "selfExcludedPath": "config/pass36/a102r44p16-approved-current-source-changes.json",
+  "sourceManifestExcludedPath": "_velmere/PASS36_A102R44P16_SOURCE_ONLY_MANIFEST.json",
+  "addedCount": 15,
+  "modifiedCount": 45,
+  "deletedCount": 0,
+  "added": [
+    {
+      "path": "config/pass36/a102r44p16-a88-input-hash-migration.json",
+      "byteLength": 3322,
+      "sha256": "bb7c90602aaec05b180b99c03591248a38be4400a953b5d7b10ec3c83e8a9d84",
+      "mode": 420
+    },
+    {
+      "path": "config/pass36/a102r44p16-action-required-current-state.json",
+      "byteLength": 9409,
+      "sha256": "58a898b2a846968270a5a32b35d72c299e624098690ee38641096d68a3125b41",
+      "mode": 420
+    },
+    {
+      "path": "config/pass36/a102r44p16-current-sku-truth-policy.json",
+      "byteLength": 4609,
+      "sha256": "fb80dd423b449eeb4f8cde4f7097ce8aeeda8268386745b683d0b1403ef9de4c",
+      "mode": 420
+    },
+    {
+      "path": "config/pass36/a102r44p16-route-ast-registry-migration.json",
+      "byteLength": 3027,
+      "sha256": "215cb54a8130f362f32f9abc300e2da21370d3e2f8c143854254c117e539cf92",
+      "mode": 420
+    },
+    {
+      "path": "lib/commerce/vlm-current-sku-truth.ts",
+      "byteLength": 8501,
+      "sha256": "3d0b739ccd705d809a277adf8566274ac6ab0c7218dfebb2fb0c17a56fc5b806",
+      "mode": 420
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p16-analysis-queue-migration.mjs",
+      "byteLength": 6704,
+      "sha256": "27e57fde98f911abb493cf277eecb246f8a4624be9e97df2e008525e8b282808",
+      "mode": 493
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p16-current-sku-truth.mjs",
+      "byteLength": 13795,
+      "sha256": "b727c06b010ecaa230e36efd599c971032fd46ede2dd4a14b7cfab243f64257b",
+      "mode": 493
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p16-a88-input-hash-migration.mjs",
+      "byteLength": 5021,
+      "sha256": "59caa950dc1cf861569f390d911262be068a7427dd029355ec624ca41f0e8c2a",
+      "mode": 493
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p16-approved-source-changes.mjs",
+      "byteLength": 3926,
+      "sha256": "fe01acca6d1375fc6a18775d533a156591f481a67ae0950bf55636dd118cbc16",
+      "mode": 493
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p16-route-ast-registry-migration.mjs",
+      "byteLength": 3162,
+      "sha256": "04f41c8047dd66e845fde4ee3eccad639f9b114ea08ad73a649849d5baf6ee6f",
+      "mode": 493
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p16-source-authority.mjs",
+      "byteLength": 5034,
+      "sha256": "6fb98f6fdd83b55a1586a372673387f2c51559cc270b41e0f07f676ec0d941c6",
+      "mode": 493
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p16-static-policy.mjs",
+      "byteLength": 3538,
+      "sha256": "5df3c644ccc1d6948ceb6ad44c7cbe4c0266484307a1d83a87d38095caa7bf88",
+      "mode": 493
+    },
+    {
+      "path": "supabase/migrations/20260804000002_a102r44p16_analysis_queue_sku_truth.sql",
+      "byteLength": 4237,
+      "sha256": "9279594bc7efa8e043634f87fb5fd230769eb660b4792c0c1c5f805f2892bcca",
+      "mode": 420
+    },
+    {
+      "path": "tests/pass36/a102r44p16-current-sku-runtime.ts",
+      "byteLength": 7950,
+      "sha256": "4cef36c9947687b9dcfafa23b8c9176aec2edb01e689ad58a43a900a3df26a63",
+      "mode": 420
+    },
+    {
+      "path": "VELMERE_A102R44P16_PATCH.txt",
+      "byteLength": 2007,
+      "sha256": "0f971e2112da383da0e0f5073898aa66161c1ad57ce37d6fe49f5cb3257f21be",
+      "mode": 420
+    }
+  ],
+  "modified": [
+    {
+      "path": "app/api/checkout/vlm-service/route.ts",
+      "parent": {
+        "byteLength": 25391,
+        "mode": 420,
+        "path": "app/api/checkout/vlm-service/route.ts",
+        "sha256": "a8647aa6e740a4566859f1c23d600bafd3b05ed108835c778de0a2cdca359a70"
+      },
+      "current": {
+        "path": "app/api/checkout/vlm-service/route.ts",
+        "byteLength": 25993,
+        "sha256": "f9bc56a947e0bcc61146c81eaa79c5f457baa111ec4976302a7e4da62197c546",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/checkout/VelmereCheckoutFlowClient.tsx",
+      "parent": {
+        "byteLength": 59320,
+        "mode": 420,
+        "path": "components/checkout/VelmereCheckoutFlowClient.tsx",
+        "sha256": "18c970a8b87fcdb249c9ec7be645773355343fc051e984d5124fa4d533cee041"
+      },
+      "current": {
+        "path": "components/checkout/VelmereCheckoutFlowClient.tsx",
+        "byteLength": 59842,
+        "sha256": "95f66d47ca84ac9614f632bd90032ea0081c3e7ea70e5d7cc5a0be96802a3c78",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/checkout/VlmServiceCheckoutSuccessClient.tsx",
+      "parent": {
+        "byteLength": 24537,
+        "mode": 420,
+        "path": "components/checkout/VlmServiceCheckoutSuccessClient.tsx",
+        "sha256": "4bcdd7654d2fb5deed5cf46845750771a73a7b34b7e4f5bfc0065e68d550c561"
+      },
+      "current": {
+        "path": "components/checkout/VlmServiceCheckoutSuccessClient.tsx",
+        "byteLength": 24910,
+        "sha256": "e294360e2941fa37c760c2219b263e063399ce99ac8fab92b2fef17392ca4597",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/market-integrity/asset-detail/paid-access.ts",
+      "parent": {
+        "byteLength": 14010,
+        "mode": 420,
+        "path": "components/market-integrity/asset-detail/paid-access.ts",
+        "sha256": "af5409250f7318eae208b03b56b82c4988457bf7f1429eeccfec952714963e30"
+      },
+      "current": {
+        "path": "components/market-integrity/asset-detail/paid-access.ts",
+        "byteLength": 13622,
+        "sha256": "a2f1b80662dc3edac91f9b08905538e076aa21feab247a81619e78d1ca30336a",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/market-integrity/AssetDetailModal.tsx",
+      "parent": {
+        "byteLength": 313901,
+        "mode": 420,
+        "path": "components/market-integrity/AssetDetailModal.tsx",
+        "sha256": "9bdd6e980b96db927d33fc49cb5af1d448daf503109c08c47face744a85587a0"
+      },
+      "current": {
+        "path": "components/market-integrity/AssetDetailModal.tsx",
+        "byteLength": 313739,
+        "sha256": "ec9face868901cea752dac3ecbfd1c5e42eaea2711093a2319b27b85312266d6",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass15/route-export-ast-registry.json",
+      "parent": {
+        "byteLength": 144694,
+        "mode": 384,
+        "path": "config/pass15/route-export-ast-registry.json",
+        "sha256": "8885d92be2a3eb12d8e695ce65db8a7c39fe8c88aa8ce3423a0e39c0229f9050"
+      },
+      "current": {
+        "path": "config/pass15/route-export-ast-registry.json",
+        "byteLength": 144672,
+        "sha256": "0d770081788498ade6e5755a5b520a51154bc0ef3fad9fcddc6e790c3f82f2c3",
+        "mode": 384
+      }
+    },
+    {
+      "path": "lib/account/audit-account-messages.ts",
+      "parent": {
+        "byteLength": 32468,
+        "mode": 420,
+        "path": "lib/account/audit-account-messages.ts",
+        "sha256": "add00d8258a9f3b4346a2eb2c7b733abe6b744892e2f7525ff1a319fce2badfb"
+      },
+      "current": {
+        "path": "lib/account/audit-account-messages.ts",
+        "byteLength": 33629,
+        "sha256": "77459328e4b149ff8d3eddc1bb3d4874c00bdda1c96a9b652b733fcfde1ffa31",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/angel-evidence-context.ts",
+      "parent": {
+        "byteLength": 25372,
+        "mode": 420,
+        "path": "lib/ai/angel-evidence-context.ts",
+        "sha256": "d78ad5922bd1ed76c326966b89ab0bfe32719f17d391608e7f3d1375b2c59d02"
+      },
+      "current": {
+        "path": "lib/ai/angel-evidence-context.ts",
+        "byteLength": 25310,
+        "sha256": "99607140ac5a0c4ce576e80f6e786f2519e34e971634d4b3e176ac0181e08239",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/angel-route-policy.ts",
+      "parent": {
+        "byteLength": 24575,
+        "mode": 420,
+        "path": "lib/ai/angel-route-policy.ts",
+        "sha256": "73f380f6efa88cb43b5ee1a96995d3ea0782dc7d5ae0a5ebbdf15140f4e70432"
+      },
+      "current": {
+        "path": "lib/ai/angel-route-policy.ts",
+        "byteLength": 24737,
+        "sha256": "28928fa49c69a05e1fe218ffea6d8bd6eb7e7edac1a304419dcc55c46a5d1520",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/audit-output-regression.ts",
+      "parent": {
+        "byteLength": 15910,
+        "mode": 420,
+        "path": "lib/ai/audit-output-regression.ts",
+        "sha256": "ffcd6e6169b908bb417934f4bcf302f5b88bd4e917a9e642b82dec80d45345d6"
+      },
+      "current": {
+        "path": "lib/ai/audit-output-regression.ts",
+        "byteLength": 15911,
+        "sha256": "5277d398754810b10b816491563a2ab94edb4dcde7b2be2d8125a28b297bd533",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/claim-proof-firewall.ts",
+      "parent": {
+        "byteLength": 13187,
+        "mode": 420,
+        "path": "lib/ai/claim-proof-firewall.ts",
+        "sha256": "c896871f883748c0ebaa4dc5a6e8a6297575363330d9db9b2d12444bb0b7716d"
+      },
+      "current": {
+        "path": "lib/ai/claim-proof-firewall.ts",
+        "byteLength": 13594,
+        "sha256": "efa57c10556410bcbecda7a228711743c7fbfacc312c575033f152bc03339267",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/customer-release-gate.ts",
+      "parent": {
+        "byteLength": 10594,
+        "mode": 420,
+        "path": "lib/ai/customer-release-gate.ts",
+        "sha256": "ba2e1fed956bf4e8099a649ea7dfec7091f2b4e8d28e1e87206d6435d1d56df8"
+      },
+      "current": {
+        "path": "lib/ai/customer-release-gate.ts",
+        "byteLength": 10668,
+        "sha256": "f8292fe877134b61981d5a16f24d714202ae59d3949cd40cd3e15ab5fcdc3954",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/live-output-audit-harness.ts",
+      "parent": {
+        "byteLength": 13671,
+        "mode": 420,
+        "path": "lib/ai/live-output-audit-harness.ts",
+        "sha256": "73e108b51a30fd9636e801207b4d14e89499cd1a34668dafef3529a1a0adca28"
+      },
+      "current": {
+        "path": "lib/ai/live-output-audit-harness.ts",
+        "byteLength": 13836,
+        "sha256": "6be354b2d5130711a763ad138509b7df1076e385e8755825c14d8054ef1f8028",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/live-output-quality-ledger.ts",
+      "parent": {
+        "byteLength": 15555,
+        "mode": 420,
+        "path": "lib/ai/live-output-quality-ledger.ts",
+        "sha256": "7094617a651cc4add2af98a2ea5cfa84f170bda7dfb4afbab7a838b471a09ac6"
+      },
+      "current": {
+        "path": "lib/ai/live-output-quality-ledger.ts",
+        "byteLength": 15824,
+        "sha256": "2d1ddf54f884c3364f8d88b843aaea83a3d95fc7dc3dbed9051731548a9297cb",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/paid-tier-policy.ts",
+      "parent": {
+        "byteLength": 955,
+        "mode": 420,
+        "path": "lib/ai/paid-tier-policy.ts",
+        "sha256": "2b26be3d9d4fcd77ebef8dd11fe966ace106f5303ccd5c43073617f5b8b1e37b"
+      },
+      "current": {
+        "path": "lib/ai/paid-tier-policy.ts",
+        "byteLength": 1824,
+        "sha256": "363e79b3351676b7e7de08a016bb55af9c1f8b1ccf9cb606872d0188b24e39e2",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/premium-output-gate.ts",
+      "parent": {
+        "byteLength": 14175,
+        "mode": 420,
+        "path": "lib/ai/premium-output-gate.ts",
+        "sha256": "6942ee3e03e41dc035fed1eabea6e617e53ab8127b2a084088e134a8ed4f5203"
+      },
+      "current": {
+        "path": "lib/ai/premium-output-gate.ts",
+        "byteLength": 14192,
+        "sha256": "a7afff122eea044d8b2e1e040b344f61a80ab1076ba9dead937f3347f9a406c0",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/production-replay-gate.ts",
+      "parent": {
+        "byteLength": 12899,
+        "mode": 420,
+        "path": "lib/ai/production-replay-gate.ts",
+        "sha256": "c3fc8e05769b389538a4e44813dbf466f11f127f6072dca65ab7ebfc8e2d8b9f"
+      },
+      "current": {
+        "path": "lib/ai/production-replay-gate.ts",
+        "byteLength": 12869,
+        "sha256": "dda2dfc815b5323b99ba87def91e50e223326d9cd71a518dbfcb0dbe8e7a74ea",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/release-trace-ledger.ts",
+      "parent": {
+        "byteLength": 14990,
+        "mode": 420,
+        "path": "lib/ai/release-trace-ledger.ts",
+        "sha256": "77bdfade9ff1154b6a423f4897b852f11c931b06ed2f9afdf576d267417efb3b"
+      },
+      "current": {
+        "path": "lib/ai/release-trace-ledger.ts",
+        "byteLength": 15072,
+        "sha256": "a349ec50772812c872f9575a3ee1053120d75ff08b1c5b0f2de0fbcbb1999910",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/runtime-output-firewall.ts",
+      "parent": {
+        "byteLength": 18735,
+        "mode": 420,
+        "path": "lib/ai/runtime-output-firewall.ts",
+        "sha256": "5da723dff653297f6ffd9d4b49ed5039be17702c0906dfbcc48e3a0cbeb3fc0e"
+      },
+      "current": {
+        "path": "lib/ai/runtime-output-firewall.ts",
+        "byteLength": 18933,
+        "sha256": "1d8ce76d1bce31695355cd807bdc768a22ec43dbbbf34d9447f76220199c5a93",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/worldclass-live-output-payment-qa.ts",
+      "parent": {
+        "byteLength": 14267,
+        "mode": 420,
+        "path": "lib/ai/worldclass-live-output-payment-qa.ts",
+        "sha256": "008694922feba7c4c68bcad9cd51b0f086e5499db32cf02ab322fcf5a1f0afab"
+      },
+      "current": {
+        "path": "lib/ai/worldclass-live-output-payment-qa.ts",
+        "byteLength": 14396,
+        "sha256": "a0a93dcb62f84d4e1be8aa4434a5235a5079c844390fd30bb813d0bbd2389ce3",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/worldclass-output-contract.ts",
+      "parent": {
+        "byteLength": 11552,
+        "mode": 420,
+        "path": "lib/ai/worldclass-output-contract.ts",
+        "sha256": "10decd49fc3d6d86619323d53dcce34556d582aeacd6cf5f9268e573ca529e3c"
+      },
+      "current": {
+        "path": "lib/ai/worldclass-output-contract.ts",
+        "byteLength": 11547,
+        "sha256": "2c698d29fe4ec6b35e1528bf4d695afc3a0003e4b589bf271486b0f83ac58ceb",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/worldclass-output-payment-qa.ts",
+      "parent": {
+        "byteLength": 14432,
+        "mode": 420,
+        "path": "lib/ai/worldclass-output-payment-qa.ts",
+        "sha256": "8eac705602ee126d0aabe78260dec2bb226d4d492f587157acfc6f7032b617d1"
+      },
+      "current": {
+        "path": "lib/ai/worldclass-output-payment-qa.ts",
+        "byteLength": 14363,
+        "sha256": "8fd7161b7d400773fa912fe20151c8ac39a955c495b73d29907883464bf7605b",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/commerce/advanced-paid-smoke.ts",
+      "parent": {
+        "byteLength": 4360,
+        "mode": 420,
+        "path": "lib/commerce/advanced-paid-smoke.ts",
+        "sha256": "404ef9e5a215afa87c892db2c9114d96716c0f55421424818c3313f17ad2c292"
+      },
+      "current": {
+        "path": "lib/commerce/advanced-paid-smoke.ts",
+        "byteLength": 3649,
+        "sha256": "09b742c25189e45714d546a1abecaa6d969881bbcfd069c5ba03dc9f52aa15bb",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/commerce/vlm-advanced-only-access-policy.ts",
+      "parent": {
+        "byteLength": 8132,
+        "mode": 420,
+        "path": "lib/commerce/vlm-advanced-only-access-policy.ts",
+        "sha256": "055b82df45d62fab3526d234165361eb16a5ac8db9f679865b1a00f022c8da6a"
+      },
+      "current": {
+        "path": "lib/commerce/vlm-advanced-only-access-policy.ts",
+        "byteLength": 8949,
+        "sha256": "4d924d1b77760cc8395199ac9a1473deeb5fd4c242b3290c318046ce5da1565b",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/commerce/vlm-paid-access.ts",
+      "parent": {
+        "byteLength": 19611,
+        "mode": 420,
+        "path": "lib/commerce/vlm-paid-access.ts",
+        "sha256": "10eb6de404b57aca2c8dacf38c1fae9a89f58b6730ce8edbce2d3089634ee560"
+      },
+      "current": {
+        "path": "lib/commerce/vlm-paid-access.ts",
+        "byteLength": 8395,
+        "sha256": "b3be09f83680c66dafc5c165a449760c117643a38523e7528d1238a95d5c74b2",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+      "parent": {
+        "byteLength": 4929,
+        "mode": 420,
+        "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+        "sha256": "e883caaeb274a538f63afd1b2573feef2264d601f8fe95f23fe01c92fc365c33"
+      },
+      "current": {
+        "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+        "byteLength": 4242,
+        "sha256": "2c2d9ba50213f45c4e717638983ba20ce12990a682382e2a60904448fa18ab49",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/db/schema.sql",
+      "parent": {
+        "byteLength": 169980,
+        "mode": 420,
+        "path": "lib/db/schema.sql",
+        "sha256": "262fad37b4db16b50dab0533ce0205a6392e7f0cfe49e3ce4f24a4395ec6cc40"
+      },
+      "current": {
+        "path": "lib/db/schema.sql",
+        "byteLength": 170126,
+        "sha256": "366a8b8f900e3896214048cf4b3ab960c4a3a97f16dd36f780b93f41db977b91",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/db/supabase-query-capability-registry.ts",
+      "parent": {
+        "byteLength": 8522,
+        "mode": 420,
+        "path": "lib/db/supabase-query-capability-registry.ts",
+        "sha256": "5fa05d441981cfa63c12d179159255c5b8a2c14f6bef8b6ef1c4975c05006ce9"
+      },
+      "current": {
+        "path": "lib/db/supabase-query-capability-registry.ts",
+        "byteLength": 8604,
+        "sha256": "f108c76642288983c51478cff6649224280895386a45697fae13d482635f6948",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/top1-vlm-brain-source-router.ts",
+      "parent": {
+        "byteLength": 8813,
+        "mode": 420,
+        "path": "lib/market-integrity/top1-vlm-brain-source-router.ts",
+        "sha256": "1b0ab9f2f6a948fa8441ca711de3268f0f34c14b2ec278102a5c9018808d1a1a"
+      },
+      "current": {
+        "path": "lib/market-integrity/top1-vlm-brain-source-router.ts",
+        "byteLength": 9051,
+        "sha256": "5c3de2fa5fa4019be7d18ff6b2b38154bacc4c783e7433e9f71f4cb6a4581b0b",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/worldclass-report-commercial-policy.ts",
+      "parent": {
+        "byteLength": 17452,
+        "mode": 420,
+        "path": "lib/market-integrity/worldclass-report-commercial-policy.ts",
+        "sha256": "27f08afc471abdce131101e7b698057e576c4f790d12cbd2c98be2de20d19168"
+      },
+      "current": {
+        "path": "lib/market-integrity/worldclass-report-commercial-policy.ts",
+        "byteLength": 17431,
+        "sha256": "7e3b8193a8d559fe9ea9a2e2a8dbc297e731d5d984d63d09b9c2cd73bc8e6f53",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/audit-commercial-sku-truth.ts",
+      "parent": {
+        "byteLength": 4157,
+        "mode": 420,
+        "path": "lib/security/audit-commercial-sku-truth.ts",
+        "sha256": "c04b2eb4d8a07987a51b900945d1be8f5d99d26cebb6e7090174752475daf82e"
+      },
+      "current": {
+        "path": "lib/security/audit-commercial-sku-truth.ts",
+        "byteLength": 4400,
+        "sha256": "f816fc9bc08ee58d42164df7aa342307ef09b6ef2562ca5128c83b223634e704",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/audit-customer-report-pipeline.ts",
+      "parent": {
+        "byteLength": 23769,
+        "mode": 420,
+        "path": "lib/security/audit-customer-report-pipeline.ts",
+        "sha256": "1be56b06e50c980dc3f1932247de5a2bbbe33aec7b50d47ff6987a00d1934c00"
+      },
+      "current": {
+        "path": "lib/security/audit-customer-report-pipeline.ts",
+        "byteLength": 24021,
+        "sha256": "1834fcad5f632abb365798301c5cf0f056fea8a73f52527b27f0345c48731eac",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/audit-tier-contract.ts",
+      "parent": {
+        "byteLength": 11564,
+        "mode": 420,
+        "path": "lib/security/audit-tier-contract.ts",
+        "sha256": "1f8b5ed81b59dbed99f8f76cedd11daff58d5928653ca6ee3663f0e523b65032"
+      },
+      "current": {
+        "path": "lib/security/audit-tier-contract.ts",
+        "byteLength": 11658,
+        "sha256": "b1c0203af48ac3c4753ebb595c1e61aa9be5079dc798f26080ccd0ce4789d07b",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/audit-watch-post-handler.ts",
+      "parent": {
+        "byteLength": 39156,
+        "mode": 420,
+        "path": "lib/security/audit-watch-post-handler.ts",
+        "sha256": "052f1ad8e1c9adf19e06862066a8ec66791aceda31e467fb606c6d04628f7e64"
+      },
+      "current": {
+        "path": "lib/security/audit-watch-post-handler.ts",
+        "byteLength": 39719,
+        "sha256": "1e96da9b5aa79ac687bd4caa9387965aeae4102938ea981c9cb0fe29aea5ccc9",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/audit-watch-response-boundary-helpers.ts",
+      "parent": {
+        "byteLength": 2736,
+        "mode": 420,
+        "path": "lib/security/audit-watch-response-boundary-helpers.ts",
+        "sha256": "f4676913ac07e89972d2022f46eda3c0408dfec0b25a44f4d9275240e06ba601"
+      },
+      "current": {
+        "path": "lib/security/audit-watch-response-boundary-helpers.ts",
+        "byteLength": 2991,
+        "sha256": "a67143c5be6e5dae9dd97d8d4c285a65d4c60044f8720055df4bba740877e72d",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/customer-safe-audit-timeline.ts",
+      "parent": {
+        "byteLength": 7249,
+        "mode": 420,
+        "path": "lib/security/customer-safe-audit-timeline.ts",
+        "sha256": "66ee20040d12d5b737fcc15982eeb2aa3ba6671d103fae4a3a9a272055027d5f"
+      },
+      "current": {
+        "path": "lib/security/customer-safe-audit-timeline.ts",
+        "byteLength": 7306,
+        "sha256": "1e0f4a10863d7566a01d8907eb8527ee3ef69716ee432daee6fe6013e9efc764",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/customer-safe-report-route.ts",
+      "parent": {
+        "byteLength": 6493,
+        "mode": 420,
+        "path": "lib/security/customer-safe-report-route.ts",
+        "sha256": "f01903129eba0f10f0858420b08ce89d98969dca28699c8d31646fbb91ef2f0c"
+      },
+      "current": {
+        "path": "lib/security/customer-safe-report-route.ts",
+        "byteLength": 6499,
+        "sha256": "84211da35b6f44abb08ffb42c2223a557b3236e8cad1def8a2d43343ac66b1ec",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+      "parent": {
+        "byteLength": 25324,
+        "mode": 420,
+        "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+        "sha256": "d69a7d127197717b9f3055b67202d3a508d858f9b9e105daa59fdd2ffd53aa60"
+      },
+      "current": {
+        "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+        "byteLength": 26035,
+        "sha256": "90ada1d8b46ca8bc5b8fc647d9cb67f14a64c3d8bf54566a3bda3c2066965e88",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/security-trust-copy.ts",
+      "parent": {
+        "byteLength": 13120,
+        "mode": 420,
+        "path": "lib/security/security-trust-copy.ts",
+        "sha256": "7067a36ea9bd49dd7c0d34c7bf2f3dc8c1961902547bb66ab161d5127e3d835e"
+      },
+      "current": {
+        "path": "lib/security/security-trust-copy.ts",
+        "byteLength": 13274,
+        "sha256": "349db6af9e3de8edec571b5d01aa175ceb89cf1ff228479fad42a716b97c8b04",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/security/vlm-audit-product.ts",
+      "parent": {
+        "byteLength": 35452,
+        "mode": 420,
+        "path": "lib/security/vlm-audit-product.ts",
+        "sha256": "1ae3f3186affe2e64cf2a426341e0ba204dad5cc077e16d6b73284ba3c912bb1"
+      },
+      "current": {
+        "path": "lib/security/vlm-audit-product.ts",
+        "byteLength": 35308,
+        "sha256": "a4b3b5ccc4bc1858dc34f9dbcc54054a6cf2801c611fa61f4fe9a3b7c3038d22",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/server/vlm-service-verify-handler.ts",
+      "parent": {
+        "byteLength": 23007,
+        "mode": 420,
+        "path": "lib/server/vlm-service-verify-handler.ts",
+        "sha256": "38e2b85e6e103d8657e95b437df54d1ac5ea5011b2e05e23ac7530bdeec3e37f"
+      },
+      "current": {
+        "path": "lib/server/vlm-service-verify-handler.ts",
+        "byteLength": 23580,
+        "sha256": "6a6e400af41e1da5fc174454481dd6e0299c233b480fb3ea09f5a64e68e17787",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ui/customer-safe-status-surface.ts",
+      "parent": {
+        "byteLength": 28650,
+        "mode": 420,
+        "path": "lib/ui/customer-safe-status-surface.ts",
+        "sha256": "5a3040faea83d9b344401b127fb5864ce6f40f42cea65a53bd060dc75383c3a0"
+      },
+      "current": {
+        "path": "lib/ui/customer-safe-status-surface.ts",
+        "byteLength": 28779,
+        "sha256": "4324107f1973ab86b5a225fd74d30c11133ff6ad1827f39d344f115d2364a2e5",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ui/runtime-ux-binding.ts",
+      "parent": {
+        "byteLength": 17357,
+        "mode": 420,
+        "path": "lib/ui/runtime-ux-binding.ts",
+        "sha256": "cb3542ece9cc55a46c5612cb33ce7c8cd4783b45ff753da3f47a5d48f6fd4c65"
+      },
+      "current": {
+        "path": "lib/ui/runtime-ux-binding.ts",
+        "byteLength": 18090,
+        "sha256": "7165aeea0ba9502c0fd5309ace8cc61dbad9d4288f35ada79f7a0dc32115a27d",
+        "mode": 420
+      }
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "parent": {
+        "byteLength": 135,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "ad9aa0721695c150906e2853bd71a739638b7f3cd27b57ec8f6b82cf9bf18b60"
+      },
+      "current": {
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "byteLength": 116,
+        "sha256": "6483aa915692233a94ebbb166d6333a8c01cbd9c9813af55d0613e88d875b156",
+        "mode": 420
+      }
+    },
+    {
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "parent": {
+        "byteLength": 1958164,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "b0cd2c0e5d423083ee71e87bfe7130bc47436480ee01d00049cbe22b1848c530"
+      },
+      "current": {
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "byteLength": 1963191,
+        "sha256": "307b6686d0d8c5f53f0d4480a942869be87d795d067ba65453cc63ca19f2dba0",
+        "mode": 420
+      }
+    }
+  ],
+  "deleted": [],
+  "removedTests": 0,
+  "denominatorCollapse": false,
+  "truthBoundary": {
+    "approvalClass": "LOCAL_SINGLE_OPERATOR_CHANGE_LEDGER_NOT_EXTERNAL_DUAL_CONTROL",
+    "historicalEvidenceRewritten": false,
+    "sourceDeletionAllowed": false,
+    "liveCredit": false,
+    "saleCredit": false
+  }
+}

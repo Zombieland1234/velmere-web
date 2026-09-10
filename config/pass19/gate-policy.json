@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "velmere.pass19.gate-policy.v1",
+  "purpose": "Complete all six output adapters with cheap source/database/boundary gates. Run one exact-runtime milestone only after PASS19 implementation SHA is frozen.",
+  "truthBoundary": "Quick/domain gates verify source, routing, visual freeze, corpus contracts and 2700 deterministic synthetic adapter simulations. They do not count as provider/model/reviewer/render-bound outputs, hallucination benchmarks, staging or LIVE proof. Milestone/release require exact Node 24.18.0/npm 11.16.0 and dependency cache.",
+  "heavyExecutionRequiresExplicitFlag": true,
+  "levels": {
+    "quick": {
+      "maxExpectedSeconds": 420,
+      "commands": [
+        "node scripts/pass19/audit-runner-contract.mjs",
+        "node scripts/pass14/verify-visual-freeze.mjs",
+        "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+        "node scripts/pass15/verify-lazy-route-shells.mjs",
+        "node scripts/pass16/verify-worldclass-corpus.mjs",
+        "node scripts/pass16/verify-worldclass-output-contract.mjs",
+        "node scripts/pass16/test-worldclass-output-scorer.mjs",
+        "node scripts/pass17/test-market-output-adapter-boundaries.mjs",
+        "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs",
+        "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs",
+        "node scripts/pass14/verify-migration-versions.mjs",
+        "node scripts/pass14/verify-retired-fixture-routes.mjs",
+        "node scripts/pass14/audit-database-contract.mjs",
+        "node scripts/pass14/audit-i18n-semantic-parity.mjs",
+        "node scripts/pass19/audit-clean-source.mjs"
+      ]
+    },
+    "domain": {
+      "maxExpectedSeconds": 1200,
+      "domains": {
+        "market-product": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs"
+        ],
+        "audit-lens-product": [
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs"
+        ],
+        "brain-angel-product": [
+          "node scripts/pass19/verify-brain-angel-output-adapters.mjs",
+          "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs"
+        ],
+        "all-product-adapters": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass19/verify-brain-angel-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs",
+          "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs"
+        ],
+        "product-contract": [
+          "node scripts/pass16/verify-worldclass-corpus.mjs",
+          "node scripts/pass16/verify-worldclass-output-contract.mjs",
+          "node scripts/pass16/test-worldclass-output-scorer.mjs"
+        ],
+        "build": [
+          "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+          "node scripts/pass15/profile-lazy-build-surface.mjs",
+          "node scripts/pass15/verify-lazy-route-shells.mjs",
+          "node scripts/pass14/profile-build-graph.mjs"
+        ],
+        "database": [
+          "node scripts/pass14/verify-migration-versions.mjs",
+          "node scripts/pass14/audit-database-contract.mjs"
+        ],
+        "visual-freeze": [
+          "node scripts/pass14/verify-visual-freeze.mjs"
+        ],
+        "i18n": [
+          "npm run check:i18n",
+          "node scripts/pass14/audit-i18n-semantic-parity.mjs"
+        ],
+        "source": [
+          "node scripts/pass19/audit-clean-source.mjs"
+        ]
+      }
+    },
+    "milestone": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 3000,
+      "commands": [
+        "npm run gate:quick",
+        "npm run gate:domain -- --domain all-product-adapters",
+        "npm run typecheck",
+        "npm run lint",
+        "npm test"
+      ]
+    },
+    "release": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 10800,
+      "commands": [
+        "npm ci",
+        "npm audit --audit-level=high",
+        "npm run gate:milestone -- --allow-heavy",
+        "npm run build:webpack",
+        "npm run build:turbopack"
+      ]
+    }
+  },
+  "cadence": {
+    "quick": "Once after a coherent source wave, never after every file.",
+    "domain": "Run all-product-adapters once after PASS19 is frozen; rerun only a changed domain during fixes.",
+    "milestone": "Exactly once after all six adapters, translations/provider cells and exact runtime/cache are available.",
+    "release": "Once for the source-bound production candidate before browser/WCAG/PDF proof.",
+    "worldclassMatrix": "Provider/model/reviewer/render-bound 2700 outputs only after build, providers and runtime surfaces are frozen."
+  },
+  "forbiddenShortcuts": [
+    "Do not count 2700 synthetic simulations as canonical customer outputs.",
+    "Do not count safe-refusal fixtures as a measured model safety rate.",
+    "Do not count deterministic text generation as hallucination benchmarking.",
+    "Do not claim human authority from Brain or Angel.",
+    "Do not persist raw prompts, answers, tool payloads, provider payloads or sensitive user data in receipts.",
+    "Do not release paid output without commercial rights and server entitlement.",
+    "Do not rerun unchanged heavy gates.",
+    "Do not raise staging/LIVE percentages from fixtures or static checks."
+  ]
+}

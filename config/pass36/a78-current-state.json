@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "velmere.pass36.a78.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+  "generatedAt": "2026-07-27T09:00:00.000Z",
+  "decision": "PASS_LOCAL_BOOTSTRAP_HARDENING_BLOCKED_EXACT_ARTIFACTS",
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "localImplementation": {
+    "isolatedEnvironment": true,
+    "systemPathInherited": false,
+    "parentSecretsInherited": false,
+    "runtimeTreeParityRequired": true,
+    "directRateLimitDenialResponse": true,
+    "a77GenesisImmutable": true,
+    "a78DescendantManifestRequired": true,
+    "routeDispatchHashesRebound": true,
+    "productionSecurityDbAssertions": 100,
+    "durableRateLimitProductionViolations": 0
+  },
+  "exactInputs": {
+    "runtime": false,
+    "dependencies": false,
+    "browser": false,
+    "lockPathsCovered": 81,
+    "lockPathsRequired": 827,
+    "lockPathsMissing": 746
+  },
+  "currentRoot": {
+    "diagnosticNonExactLocalDependencies": {
+      "status": "PASS_ADVISORY_WRONG_NODE_RUNTIME",
+      "passed": 30,
+      "required": 30,
+      "sourceImmutable": true,
+      "credit": false,
+      "purpose": "diagnostic_only_to_expose_semantic_failures"
+    },
+    "sourceOnlyWithoutNodeModules": {
+      "status": "BLOCKED",
+      "passed": 24,
+      "required": 30,
+      "blocked": 6,
+      "sourceImmutable": true,
+      "semanticProductFailuresAfterDependencyDiagnostic": 0
+    },
+    "exactCredit": false,
+    "exactNodeRequired": "24.18.0",
+    "observedNode": "22.16.0"
+  },
+  "claims": {
+    "exactRuntimeVerified": false,
+    "dependencyBundleVerified": false,
+    "browserBundleVerified": false,
+    "exactFinalByteBuildExecuted": false,
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A79",
+    "title": "Exact final-byte build and browser acceptance",
+    "status": "BLOCKED_UNTIL_A78_EXACT_ARTIFACTS"
+  },
+  "truthBoundary": "A78 proves local admission logic, isolation, runtime-tree parity enforcement, descendant lineage and direct durable denial behavior. It does not verify missing physical runtime/dependency/browser artifacts and grants no exact build, staging, LIVE or sale credit."
+}

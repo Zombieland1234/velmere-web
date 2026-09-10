@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "velmere.pass36.a86.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+  "parentRevisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+  "parentDescendantManifestDigestSha256": "57694315d503f1ffa12dcd7d9b6528dfc3a6a610c14fe743b1f46876eefe640c",
+  "generatedAt": "2026-07-27T20:30:00.000Z",
+  "payload": {
+    "fileCount": 4505,
+    "byteLength": 112348366,
+    "pathSetSha256": "261a605cf68dbbd28ca44ec56956c6ab6f37596a395b0886b45982652b2688b4",
+    "aggregateSha256": "b177431c3e0242c1729a131cae4583480b5461e58744d7b19d81df729caf2e15"
+  },
+  "exclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a86-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "realMarketsCrossAssetMatrixImplemented": true,
+    "totalInstruments": 583,
+    "fieldRows": 5830,
+    "tierPackets": 1749,
+    "channelProjections": 6996,
+    "semanticMutations": 31482,
+    "mutationKilled": 31482,
+    "realEvidenceRowsVerified": 0,
+    "currentProviderEvidenceRows": 0,
+    "rightsApprovedRows": 0,
+    "productionBrowserRows": 0,
+    "customerValueLabeledRows": 0,
+    "paidDeliveredPackets": 0,
+    "exactA80CandidateBound": false,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "manifestDigestSha256": "33ee1d35306a26b6d9cf17939d7d7d24cb735db09de44c55a7ec67f0ad2e63d7"
+}

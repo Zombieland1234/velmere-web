@@ -1,0 +1,1442 @@
+{
+  "schemaVersion": "velmere.pass14.build-graph-profile.v1",
+  "generatedAt": "2026-07-20T05:50:23.697Z",
+  "sourceDigest": "014d6b39bb970bffbfccdd53955e90e1010c1a4c88772e4addb2bea5a8eb3ae0",
+  "truthBoundary": "Static local-import graph. It estimates compile pressure and does not replace a Webpack/Turbopack trace or successful production build.",
+  "summary": {
+    "analyzedFiles": 1449,
+    "analyzedBytes": 19488067,
+    "entrypoints": 303,
+    "apiRoutes": 237,
+    "pageEntries": 66,
+    "fixtureBlockedRoutes": 0,
+    "serverRoutesImportingClientCode": 0,
+    "unresolvedLocalImports": 0,
+    "cssFiles": 11,
+    "cssBytes": 3313284
+  },
+  "topEntrypointsByTransitiveBytes": [
+    {
+      "entry": "app/api/internal/workers/durable-computation-promotion/route.ts",
+      "type": "api-route",
+      "directImports": 15,
+      "transitiveFiles": 465,
+      "transitiveBytes": 6987098,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/internal/workers/durable-computation-operations/route.ts",
+      "type": "api-route",
+      "directImports": 10,
+      "transitiveFiles": 445,
+      "transitiveBytes": 6635708,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/market-intelligence/route.ts",
+      "type": "api-route",
+      "directImports": 17,
+      "transitiveFiles": 333,
+      "transitiveBytes": 5365870,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/vlm/route.ts",
+      "type": "api-route",
+      "directImports": 11,
+      "transitiveFiles": 304,
+      "transitiveBytes": 4802436,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/report/route.ts",
+      "type": "api-route",
+      "directImports": 57,
+      "transitiveFiles": 286,
+      "transitiveBytes": 4529993,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/brain/route.ts",
+      "type": "api-route",
+      "directImports": 16,
+      "transitiveFiles": 268,
+      "transitiveBytes": 4223325,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/analyze/route.ts",
+      "type": "api-route",
+      "directImports": 16,
+      "transitiveFiles": 258,
+      "transitiveBytes": 4097213,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/account-operations/[operation]/route.ts",
+      "type": "api-route",
+      "directImports": 29,
+      "transitiveFiles": 210,
+      "transitiveBytes": 3266811,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 34,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/entitlement-artifact-delivery-ledger/route.ts",
+      "type": "api-route",
+      "directImports": 13,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3137150,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/advanced-value-audit/route.ts",
+      "type": "api-route",
+      "directImports": 12,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3135676,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/premium-evidence-bridge/route.ts",
+      "type": "api-route",
+      "directImports": 11,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3135249,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/advanced-cta-entitlement-contract/route.ts",
+      "type": "api-route",
+      "directImports": 11,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3134746,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/tier-commercial-value-contract/route.ts",
+      "type": "api-route",
+      "directImports": 11,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3134098,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/supply-filing-provenance-lock/route.ts",
+      "type": "api-route",
+      "directImports": 11,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3133948,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/real-markets-sec-companyfacts-hydrator/route.ts",
+      "type": "api-route",
+      "directImports": 12,
+      "transitiveFiles": 183,
+      "transitiveBytes": 3133916,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/liquidation-replay-store/route.ts",
+      "type": "api-route",
+      "directImports": 12,
+      "transitiveFiles": 177,
+      "transitiveBytes": 2967067,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/liquidation-snapshot-ledger/route.ts",
+      "type": "api-route",
+      "directImports": 12,
+      "transitiveFiles": 177,
+      "transitiveBytes": 2965703,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/liquidity-intelligence/route.ts",
+      "type": "api-route",
+      "directImports": 8,
+      "transitiveFiles": 167,
+      "transitiveBytes": 2899587,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/tier-180-output-matrix/route.ts",
+      "type": "api-route",
+      "directImports": 10,
+      "transitiveFiles": 166,
+      "transitiveBytes": 2893728,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/tier-proof/route.ts",
+      "type": "api-route",
+      "directImports": 9,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2885616,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/report-evidence/route.ts",
+      "type": "api-route",
+      "directImports": 9,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2885606,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/risk-calibration/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2885297,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/tier-depth-scenario-parity/route.ts",
+      "type": "api-route",
+      "directImports": 9,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2885235,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/historical-backfill/route.ts",
+      "type": "api-route",
+      "directImports": 8,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2885216,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/consensus/route.ts",
+      "type": "api-route",
+      "directImports": 6,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2885156,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/historical-range-window/route.ts",
+      "type": "api-route",
+      "directImports": 8,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2884944,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/provider-methodology/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2884711,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/macro-chart-integrity/route.ts",
+      "type": "api-route",
+      "directImports": 8,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2884660,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/data-provenance/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2884645,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/observability/route.ts",
+      "type": "api-route",
+      "directImports": 6,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2884204,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/ui-proof-strip/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2883930,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/window-reconciliation/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2883858,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/institutional-router/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2883814,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/freshness-drift-sentinel/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2883751,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/provider-closeout-runtime/route.ts",
+      "type": "api-route",
+      "directImports": 7,
+      "transitiveFiles": 165,
+      "transitiveBytes": 2883694,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/search/lens-report/route.ts",
+      "type": "api-route",
+      "directImports": 32,
+      "transitiveFiles": 231,
+      "transitiveBytes": 2672174,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 7,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-watch/route.ts",
+      "type": "api-route",
+      "directImports": 2,
+      "transitiveFiles": 163,
+      "transitiveBytes": 2609373,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/customer-export-download/route.ts",
+      "type": "api-route",
+      "directImports": 23,
+      "transitiveFiles": 141,
+      "transitiveBytes": 2368288,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/angel/route.ts",
+      "type": "api-route",
+      "directImports": 19,
+      "transitiveFiles": 151,
+      "transitiveBytes": 1908429,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/continuity/refresh/route.ts",
+      "type": "api-route",
+      "directImports": 3,
+      "transitiveFiles": 141,
+      "transitiveBytes": 1835675,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-watch/pro-pdf/route.ts",
+      "type": "api-route",
+      "directImports": 12,
+      "transitiveFiles": 123,
+      "transitiveBytes": 1826972,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/account/customer-artifact/route.ts",
+      "type": "api-route",
+      "directImports": 12,
+      "transitiveFiles": 162,
+      "transitiveBytes": 1816347,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/admin/security/advanced-audit-release/route.ts",
+      "type": "api-route",
+      "directImports": 13,
+      "transitiveFiles": 125,
+      "transitiveBytes": 1806025,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-review/pro/settle/route.ts",
+      "type": "api-route",
+      "directImports": 8,
+      "transitiveFiles": 125,
+      "transitiveBytes": 1802211,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-watch/pro-pdf/token/route.ts",
+      "type": "api-route",
+      "directImports": 9,
+      "transitiveFiles": 120,
+      "transitiveBytes": 1798901,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-advanced-manual-review/route.ts",
+      "type": "api-route",
+      "directImports": 6,
+      "transitiveFiles": 115,
+      "transitiveBytes": 1745951,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/[locale]/account/page.tsx",
+      "type": "page-entry",
+      "directImports": 6,
+      "transitiveFiles": 110,
+      "transitiveBytes": 1681472,
+      "clientBoundaryFiles": 9,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/angel/stream/route.ts",
+      "type": "api-route",
+      "directImports": 6,
+      "transitiveFiles": 132,
+      "transitiveBytes": 1591435,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/angel/route.ts",
+      "type": "api-route",
+      "directImports": 17,
+      "transitiveFiles": 130,
+      "transitiveBytes": 1576529,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 6,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-runtime-build-readiness-type-safety-sweep/route.ts",
+      "type": "api-route",
+      "directImports": 4,
+      "transitiveFiles": 101,
+      "transitiveBytes": 1541020,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-provider-conflict-arbitration-matrix/route.ts",
+      "type": "api-route",
+      "directImports": 25,
+      "transitiveFiles": 99,
+      "transitiveBytes": 1482384,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/search/route.ts",
+      "type": "api-route",
+      "directImports": 2,
+      "transitiveFiles": 133,
+      "transitiveBytes": 1413539,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-risk-formula-evidence-weighting-contract/route.ts",
+      "type": "api-route",
+      "directImports": 17,
+      "transitiveFiles": 94,
+      "transitiveBytes": 1400383,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/[locale]/search/page.tsx",
+      "type": "page-entry",
+      "directImports": 2,
+      "transitiveFiles": 128,
+      "transitiveBytes": 1392298,
+      "clientBoundaryFiles": 5,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-source-freshness-recheck-orchestrator/route.ts",
+      "type": "api-route",
+      "directImports": 10,
+      "transitiveFiles": 93,
+      "transitiveBytes": 1373001,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/security/audit-case-vault-private-delivery-ledger/route.ts",
+      "type": "api-route",
+      "directImports": 8,
+      "transitiveFiles": 99,
+      "transitiveBytes": 1360158,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/[locale]/admin/security/audit-inbox/page.tsx",
+      "type": "page-entry",
+      "directImports": 3,
+      "transitiveFiles": 110,
+      "transitiveBytes": 1348011,
+      "clientBoundaryFiles": 2,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/api/market-integrity/real-markets/route.ts",
+      "type": "api-route",
+      "directImports": 2,
+      "transitiveFiles": 103,
+      "transitiveBytes": 1287161,
+      "clientBoundaryFiles": 0,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/[locale]/real-markets/page.tsx",
+      "type": "page-entry",
+      "directImports": 2,
+      "transitiveFiles": 86,
+      "transitiveBytes": 1197955,
+      "clientBoundaryFiles": 6,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    },
+    {
+      "entry": "app/[locale]/market-integrity/cross-asset/page.tsx",
+      "type": "page-entry",
+      "directImports": 2,
+      "transitiveFiles": 86,
+      "transitiveBytes": 1197063,
+      "clientBoundaryFiles": 6,
+      "serverOnlyFiles": 0,
+      "dynamicImports": 5,
+      "serverRouteImportsClientCode": false
+    }
+  ],
+  "topSharedModules": [
+    {
+      "file": "lib/network/fetch-with-deadline.ts",
+      "entrypointCount": 222,
+      "bytes": 6290,
+      "client": false,
+      "importedByDirectFiles": 81
+    },
+    {
+      "file": "lib/security/cryptographic-digest.ts",
+      "entrypointCount": 219,
+      "bytes": 5099,
+      "client": false,
+      "importedByDirectFiles": 116
+    },
+    {
+      "file": "lib/network/safe-egress.ts",
+      "entrypointCount": 209,
+      "bytes": 21519,
+      "client": false,
+      "importedByDirectFiles": 13
+    },
+    {
+      "file": "lib/network/brokered-egress.ts",
+      "entrypointCount": 209,
+      "bytes": 19024,
+      "client": false,
+      "importedByDirectFiles": 36
+    },
+    {
+      "file": "lib/security/durable-rate-limit.ts",
+      "entrypointCount": 193,
+      "bytes": 13265,
+      "client": false,
+      "importedByDirectFiles": 20
+    },
+    {
+      "file": "lib/security/production-rate-limit-adapter.ts",
+      "entrypointCount": 193,
+      "bytes": 4179,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/security/api-guard.ts",
+      "entrypointCount": 170,
+      "bytes": 16807,
+      "client": false,
+      "importedByDirectFiles": 145
+    },
+    {
+      "file": "lib/db/supabase-config.ts",
+      "entrypointCount": 165,
+      "bytes": 1195,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/security/canonical-json.ts",
+      "entrypointCount": 163,
+      "bytes": 981,
+      "client": false,
+      "importedByDirectFiles": 66
+    },
+    {
+      "file": "lib/runtime/secure-runtime-id.ts",
+      "entrypointCount": 135,
+      "bytes": 819,
+      "client": false,
+      "importedByDirectFiles": 7
+    },
+    {
+      "file": "lib/db/supabase.ts",
+      "entrypointCount": 125,
+      "bytes": 4669,
+      "client": false,
+      "importedByDirectFiles": 41
+    },
+    {
+      "file": "lib/auth/supabase-auth-cookies.ts",
+      "entrypointCount": 125,
+      "bytes": 2629,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/risk-types.ts",
+      "entrypointCount": 111,
+      "bytes": 9208,
+      "client": false,
+      "importedByDirectFiles": 117
+    },
+    {
+      "file": "lib/market-integrity/provider-evidence-contract.ts",
+      "entrypointCount": 111,
+      "bytes": 5166,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/market-integrity/refresh-contract.ts",
+      "entrypointCount": 111,
+      "bytes": 366,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/security/upstash-rest-atomic.ts",
+      "entrypointCount": 110,
+      "bytes": 5889,
+      "client": false,
+      "importedByDirectFiles": 8
+    },
+    {
+      "file": "lib/market-integrity/top1-risk-foundation.ts",
+      "entrypointCount": 109,
+      "bytes": 23172,
+      "client": false,
+      "importedByDirectFiles": 91
+    },
+    {
+      "file": "lib/market-integrity/customer-report-source-binding.ts",
+      "entrypointCount": 104,
+      "bytes": 25548,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/market-integrity/provider-evidence-receipt.ts",
+      "entrypointCount": 104,
+      "bytes": 22633,
+      "client": false,
+      "importedByDirectFiles": 23
+    },
+    {
+      "file": "lib/db/bounded-supabase-rpc.ts",
+      "entrypointCount": 104,
+      "bytes": 7570,
+      "client": false,
+      "importedByDirectFiles": 10
+    },
+    {
+      "file": "lib/db/supabase-service-rest.ts",
+      "entrypointCount": 102,
+      "bytes": 2898,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/db/supabase-rpc-runtime-governor.ts",
+      "entrypointCount": 98,
+      "bytes": 7011,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/db/supabase-rpc-operation-registry.ts",
+      "entrypointCount": 97,
+      "bytes": 19071,
+      "client": false,
+      "importedByDirectFiles": 46
+    },
+    {
+      "file": "lib/security/api-error-envelope.ts",
+      "entrypointCount": 85,
+      "bytes": 5892,
+      "client": false,
+      "importedByDirectFiles": 85
+    },
+    {
+      "file": "lib/market-integrity/market-memory.ts",
+      "entrypointCount": 82,
+      "bytes": 8649,
+      "client": false,
+      "importedByDirectFiles": 16
+    },
+    {
+      "file": "lib/market-integrity/risk-engine-model.ts",
+      "entrypointCount": 81,
+      "bytes": 27315,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/market-integrity/risk-engine-profile.ts",
+      "entrypointCount": 81,
+      "bytes": 20693,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/risk-engine-velocity.ts",
+      "entrypointCount": 81,
+      "bytes": 12224,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/market-integrity/risk-engine-liquidity-supply.ts",
+      "entrypointCount": 81,
+      "bytes": 11539,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/market-integrity/data-backbone.ts",
+      "entrypointCount": 81,
+      "bytes": 8232,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/market-integrity/risk-engine-microstructure-contract.ts",
+      "entrypointCount": 81,
+      "bytes": 7516,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/market-integrity/risk-engine.ts",
+      "entrypointCount": 81,
+      "bytes": 6717,
+      "client": false,
+      "importedByDirectFiles": 8
+    },
+    {
+      "file": "lib/market-integrity/risk-uncertainty-envelope.ts",
+      "entrypointCount": 81,
+      "bytes": 4633,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/market-integrity/risk-engine-context.ts",
+      "entrypointCount": 81,
+      "bytes": 3228,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/market-integrity/risk-model-binding.ts",
+      "entrypointCount": 81,
+      "bytes": 2513,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/market-integrity/market-row-delivery-gate.ts",
+      "entrypointCount": 79,
+      "bytes": 34621,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/market-integrity/coingecko.ts",
+      "entrypointCount": 79,
+      "bytes": 16093,
+      "client": false,
+      "importedByDirectFiles": 77
+    },
+    {
+      "file": "lib/security/payment-webhook-guard.ts",
+      "entrypointCount": 79,
+      "bytes": 10992,
+      "client": false,
+      "importedByDirectFiles": 66
+    },
+    {
+      "file": "lib/market-integrity/market-row-evidence-payload.ts",
+      "entrypointCount": 79,
+      "bytes": 1247,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/market-integrity/market-row-types.ts",
+      "entrypointCount": 79,
+      "bytes": 707,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/durable-idempotency-store.ts",
+      "entrypointCount": 72,
+      "bytes": 9498,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/auth/account-session.ts",
+      "entrypointCount": 68,
+      "bytes": 16052,
+      "client": false,
+      "importedByDirectFiles": 38
+    },
+    {
+      "file": "lib/auth/auth-session-family.ts",
+      "entrypointCount": 68,
+      "bytes": 14299,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/risk-score-availability.ts",
+      "entrypointCount": 64,
+      "bytes": 1424,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/security-operator-assertion.ts",
+      "entrypointCount": 58,
+      "bytes": 12440,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/market-integrity/dexscreener.ts",
+      "entrypointCount": 58,
+      "bytes": 6902,
+      "client": false,
+      "importedByDirectFiles": 62
+    },
+    {
+      "file": "lib/market-integrity/goplus.ts",
+      "entrypointCount": 58,
+      "bytes": 3270,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/security/security-event-ledger.ts",
+      "entrypointCount": 56,
+      "bytes": 5914,
+      "client": false,
+      "importedByDirectFiles": 13
+    },
+    {
+      "file": "lib/security/security-event-append-adapter.ts",
+      "entrypointCount": 56,
+      "bytes": 5032,
+      "client": false,
+      "importedByDirectFiles": 11
+    },
+    {
+      "file": "lib/security/export-redaction-policy.ts",
+      "entrypointCount": 56,
+      "bytes": 4203,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/privacy-fingerprint.ts",
+      "entrypointCount": 56,
+      "bytes": 1489,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/security/security-event-contract.ts",
+      "entrypointCount": 56,
+      "bytes": 960,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/ai/evidence-normalization.ts",
+      "entrypointCount": 52,
+      "bytes": 9424,
+      "client": false,
+      "importedByDirectFiles": 26
+    },
+    {
+      "file": "lib/security/audit-watch.ts",
+      "entrypointCount": 47,
+      "bytes": 19164,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/audit-review-flow.ts",
+      "entrypointCount": 47,
+      "bytes": 13532,
+      "client": false,
+      "importedByDirectFiles": 42
+    },
+    {
+      "file": "lib/commerce/vlm-paid-access.ts",
+      "entrypointCount": 46,
+      "bytes": 17018,
+      "client": false,
+      "importedByDirectFiles": 22
+    },
+    {
+      "file": "lib/products/types.ts",
+      "entrypointCount": 44,
+      "bytes": 4029,
+      "client": false,
+      "importedByDirectFiles": 33
+    },
+    {
+      "file": "lib/market-integrity/defillama-adapter.ts",
+      "entrypointCount": 43,
+      "bytes": 14135,
+      "client": false,
+      "importedByDirectFiles": 50
+    },
+    {
+      "file": "lib/security/audit-source-spine.ts",
+      "entrypointCount": 40,
+      "bytes": 14661,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/market-integrity/top1-advanced-human-review-signoff-gate.ts",
+      "entrypointCount": 40,
+      "bytes": 9759,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/provider-methodology-registry.ts",
+      "entrypointCount": 39,
+      "bytes": 26910,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/security/audit-source-quorum-runtime.ts",
+      "entrypointCount": 39,
+      "bytes": 20404,
+      "client": false,
+      "importedByDirectFiles": 16
+    },
+    {
+      "file": "lib/security/advanced-audit-release-envelope.ts",
+      "entrypointCount": 39,
+      "bytes": 19920,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/audit-provider-intelligence.ts",
+      "entrypointCount": 39,
+      "bytes": 19844,
+      "client": false,
+      "importedByDirectFiles": 16
+    },
+    {
+      "file": "lib/market-integrity/chart-overlay-reconciler.ts",
+      "entrypointCount": 39,
+      "bytes": 16241,
+      "client": false,
+      "importedByDirectFiles": 12
+    },
+    {
+      "file": "lib/market-integrity/chart-quality.ts",
+      "entrypointCount": 39,
+      "bytes": 3468,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/audit-provider-budget.ts",
+      "entrypointCount": 39,
+      "bytes": 2985,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/market-integrity/source-sync-contract.ts",
+      "entrypointCount": 39,
+      "bytes": 2843,
+      "client": false,
+      "importedByDirectFiles": 23
+    },
+    {
+      "file": "lib/market-integrity/institutional-source-router.ts",
+      "entrypointCount": 38,
+      "bytes": 24453,
+      "client": false,
+      "importedByDirectFiles": 7
+    },
+    {
+      "file": "lib/market-integrity/historical-backfill-orchestrator.ts",
+      "entrypointCount": 38,
+      "bytes": 21995,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/risk-calibration-kernel.ts",
+      "entrypointCount": 38,
+      "bytes": 21970,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/market-integrity/historical-range-window-ledger.ts",
+      "entrypointCount": 38,
+      "bytes": 21949,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/data-provenance-ledger.ts",
+      "entrypointCount": 38,
+      "bytes": 20711,
+      "client": false,
+      "importedByDirectFiles": 7
+    },
+    {
+      "file": "lib/market-integrity/provider-closeout-runtime.ts",
+      "entrypointCount": 38,
+      "bytes": 19150,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/market-integrity/operator-action-queue.ts",
+      "entrypointCount": 38,
+      "bytes": 18123,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/market-integrity/report-evidence-capsule.ts",
+      "entrypointCount": 38,
+      "bytes": 17843,
+      "client": false,
+      "importedByDirectFiles": 13
+    },
+    {
+      "file": "lib/market-integrity/macro-chart-integrity-gate.ts",
+      "entrypointCount": 38,
+      "bytes": 16555,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/macro-gap-receipt.ts",
+      "entrypointCount": 38,
+      "bytes": 16091,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/market-integrity/runtime-parity-queue.ts",
+      "entrypointCount": 38,
+      "bytes": 15410,
+      "client": false,
+      "importedByDirectFiles": 10
+    },
+    {
+      "file": "lib/market-integrity/source-freshness-drift-sentinel.ts",
+      "entrypointCount": 38,
+      "bytes": 15151,
+      "client": false,
+      "importedByDirectFiles": 6
+    },
+    {
+      "file": "lib/market-integrity/tier-evidence-parity.ts",
+      "entrypointCount": 38,
+      "bytes": 14518,
+      "client": false,
+      "importedByDirectFiles": 8
+    },
+    {
+      "file": "lib/market-integrity/ui-proof-strip.ts",
+      "entrypointCount": 38,
+      "bytes": 10602,
+      "client": false,
+      "importedByDirectFiles": 7
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-anti-cherry-pick.ts",
+      "entrypointCount": 37,
+      "bytes": 46398,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-policy.ts",
+      "entrypointCount": 37,
+      "bytes": 42735,
+      "client": false,
+      "importedByDirectFiles": 5
+    },
+    {
+      "file": "lib/security/audit-provider-runtime-client.ts",
+      "entrypointCount": 37,
+      "bytes": 39545,
+      "client": false,
+      "importedByDirectFiles": 28
+    },
+    {
+      "file": "lib/commerce/vlm-entitlement-ledger.ts",
+      "entrypointCount": 37,
+      "bytes": 31368,
+      "client": false,
+      "importedByDirectFiles": 13
+    },
+    {
+      "file": "lib/market-integrity/liquidation-long-short-proof.ts",
+      "entrypointCount": 37,
+      "bytes": 23028,
+      "client": false,
+      "importedByDirectFiles": 30
+    },
+    {
+      "file": "lib/market-integrity/derivatives-squeeze-proof.ts",
+      "entrypointCount": 37,
+      "bytes": 21878,
+      "client": false,
+      "importedByDirectFiles": 32
+    },
+    {
+      "file": "lib/market-integrity/cross-provider-window-reconciliation.ts",
+      "entrypointCount": 37,
+      "bytes": 16930,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/commerce/vlm-paid-access-server.ts",
+      "entrypointCount": 37,
+      "bytes": 5733,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/market-integrity/binance-orderbook.ts",
+      "entrypointCount": 37,
+      "bytes": 5230,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-types.ts",
+      "entrypointCount": 37,
+      "bytes": 3507,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/commerce/paid-access-boundary.ts",
+      "entrypointCount": 37,
+      "bytes": 1912,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/security/portable-hmac-sha256.ts",
+      "entrypointCount": 37,
+      "bytes": 1719,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-public-checkpoint.ts",
+      "entrypointCount": 36,
+      "bytes": 49678,
+      "client": false,
+      "importedByDirectFiles": 7
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-observability-incident.ts",
+      "entrypointCount": 36,
+      "bytes": 45546,
+      "client": false,
+      "importedByDirectFiles": 2
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-chaos-recovery.ts",
+      "entrypointCount": 36,
+      "bytes": 45523,
+      "client": false,
+      "importedByDirectFiles": 3
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-staging-e2e.ts",
+      "entrypointCount": 36,
+      "bytes": 38384,
+      "client": false,
+      "importedByDirectFiles": 4
+    },
+    {
+      "file": "lib/worldclass/commercial-cohort-privacy-abuse-audit.ts",
+      "entrypointCount": 36,
+      "bytes": 37613,
+      "client": false,
+      "importedByDirectFiles": 1
+    },
+    {
+      "file": "lib/market-integrity/tier-depth-scenario-parity.ts",
+      "entrypointCount": 36,
+      "bytes": 36599,
+      "client": false,
+      "importedByDirectFiles": 4
+    }
+  ],
+  "serverRoutesImportingClientCode": [],
+  "fixtureBlockedRouteEntries": [],
+  "cssPressure": [
+    {
+      "file": "app/globals.css",
+      "bytes": 3035742,
+      "lines": 103350
+    },
+    {
+      "file": "app/styles/asset-popup-foundation.css",
+      "bytes": 106421,
+      "lines": 2408
+    },
+    {
+      "file": "app/styles/asset-popup-ownership.css",
+      "bytes": 96800,
+      "lines": 2343
+    },
+    {
+      "file": "app/styles/audit-one-screen.css",
+      "bytes": 20772,
+      "lines": 699
+    },
+    {
+      "file": "app/styles/shield-pro-terminal.css",
+      "bytes": 20408,
+      "lines": 546
+    },
+    {
+      "file": "app/styles/asset-popup-geometry.css",
+      "bytes": 13180,
+      "lines": 242
+    },
+    {
+      "file": "app/styles/asset-popup-resize.css",
+      "bytes": 7468,
+      "lines": 160
+    },
+    {
+      "file": "app/styles/shield-risk-surface.css",
+      "bytes": 5196,
+      "lines": 233
+    },
+    {
+      "file": "app/styles/global-header.css",
+      "bytes": 3695,
+      "lines": 151
+    },
+    {
+      "file": "app/styles/audit-account-handoff.css",
+      "bytes": 2152,
+      "lines": 80
+    },
+    {
+      "file": "app/styles/markets-cleanup.css",
+      "bytes": 1450,
+      "lines": 29
+    }
+  ],
+  "unresolvedLocalImports": []
+}

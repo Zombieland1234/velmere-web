@@ -1,0 +1,436 @@
+{
+  "schemaVersion": "velmere.p42.current-lock-lifecycle-inventory.v1",
+  "revision": "P42_V16_CURRENT_LOCK_LIFECYCLE_QUARANTINE_ACTION_PINNING",
+  "generatedAt": "2026-08-14T11:05:00.000Z",
+  "parentRoot": "R44P46",
+  "checkpoint": "P42",
+  "mode": "STATIC_LOCK_AND_ARCHIVE_INSPECTION_NO_EXECUTION",
+  "requiredTargets": [
+    "windows-x64",
+    "linux-x64-glibc"
+  ],
+  "bindings": {
+    "packageJson": {
+      "path": "package.json",
+      "sha256": "fd254fbfef215cbfd93e0f5cb04a7e84864dea998c0cfce0fc0f9227fac372ec",
+      "byteLength": 135168
+    },
+    "packageLock": {
+      "path": "package-lock.json",
+      "sha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+      "byteLength": 354803
+    }
+  },
+  "packageJsonAllowScriptsObserved": {
+    "@parcel/watcher@2.6.0": false,
+    "@reown/appkit@1.8.17-wc-circular-dependencies-fix.0": false,
+    "@swc/core@1.15.47": false,
+    "esbuild@0.28.1": false,
+    "fsevents@2.3.2": false,
+    "fsevents@2.3.3": false
+  },
+  "rootLifecycle": {
+    "preinstall": "node scripts/verify-runtime-contract.mjs",
+    "ownedByVelmere": true,
+    "executionApproved": true
+  },
+  "denominator": {
+    "dependencyRowsTotal": 6,
+    "targetApplicableDependencyRows": 4,
+    "targetApplicableDependencyRowsWithExactCurrentArchiveEvidence": 4,
+    "targetApplicableDependencyExecutionApproved": 0
+  },
+  "dependencyLifecycleRows": [
+    {
+      "packagePath": "node_modules/@parcel/watcher",
+      "name": "@parcel/watcher",
+      "version": "2.6.0",
+      "resolved": "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.6.0.tgz",
+      "integrity": "sha512-7FNeNl8NCE7aINx7WXiKQrPYZWC/hvrTsmk6zmxbI7LTXE7hVek/n8AfVgpe2y82zl3w0HvCHN0bVKMBoJcC0w==",
+      "licenseFromLock": "MIT",
+      "optional": false,
+      "dev": false,
+      "osRules": [],
+      "cpuRules": [],
+      "hasInstallScript": true,
+      "targetApplicability": {
+        "windows-x64": true,
+        "linux-x64-glibc": true
+      },
+      "applicableToAnyRequiredTarget": true,
+      "targetPlatformPackages": {
+        "windows-x64": {
+          "required": true,
+          "lockPath": "node_modules/@parcel/watcher-win32-x64",
+          "presentInLock": true,
+          "expectedVersion": "2.6.0",
+          "observedVersion": "2.6.0",
+          "versionMatches": true
+        },
+        "linux-x64-glibc": {
+          "required": true,
+          "lockPath": "node_modules/@parcel/watcher-linux-x64-glibc",
+          "presentInLock": true,
+          "expectedVersion": "2.6.0",
+          "observedVersion": "2.6.0",
+          "versionMatches": true
+        }
+      },
+      "exactCurrentArchiveEvidence": true,
+      "archiveEvidence": {
+        "path": "config/p42/p42-lifecycle-archive-cas/ab42807be3df24a12d01e31568a7e61def1a4bee636a7c60a397319eff677e95.tgz",
+        "sha256": "ab42807be3df24a12d01e31568a7e61def1a4bee636a7c60a397319eff677e95",
+        "byteLength": 34902,
+        "integrityTokenVerified": "sha512-7FNeNl8NCE7aINx7WXiKQrPYZWC/hvrTsmk6zmxbI7LTXE7hVek/n8AfVgpe2y82zl3w0HvCHN0bVKMBoJcC0w==",
+        "sriVerified": true,
+        "archiveSha256": "ab42807be3df24a12d01e31568a7e61def1a4bee636a7c60a397319eff677e95",
+        "archiveByteLength": 34902,
+        "packageJsonPath": "package/package.json",
+        "packageJsonSha256": "b1fad194cd1597d84446a821f32969dd61f12f6a148e5a9c94958271978dc0e0",
+        "manifestName": "@parcel/watcher",
+        "manifestVersion": "2.6.0",
+        "manifestLicense": "MIT",
+        "manifestMatchesLockTuple": true,
+        "lifecycleScripts": {
+          "install": "node scripts/build-from-source.js"
+        },
+        "referencedScriptFiles": [
+          {
+            "lifecycle": "install",
+            "path": "scripts/build-from-source.js",
+            "present": true,
+            "byteLength": 300,
+            "sha256": "e97ada845f9423f9d1a02284bef36ff1e8f648141897c94d7b10edeb38f96b47"
+          }
+        ],
+        "networkCapableStaticIndicators": [],
+        "processExecutionStaticIndicators": [
+          "child_process",
+          "spawn\\s*\\("
+        ],
+        "buildFromSourceEnvironmentGatePresent": true,
+        "licenseFilePath": "package/LICENSE",
+        "licenseFileSha256": "5cfba9d5711264d45a2431a53c79f597cef12720cc7c764db2602daa92d0bd2a",
+        "licenseFileByteLength": 1077,
+        "archiveExecutedDuringInspection": false
+      },
+      "executionApproved": false,
+      "executionState": "QUARANTINED_NOT_AUTHORIZED"
+    },
+    {
+      "packagePath": "node_modules/@reown/appkit",
+      "name": "@reown/appkit",
+      "version": "1.8.17-wc-circular-dependencies-fix.0",
+      "resolved": "https://registry.npmjs.org/@reown/appkit/-/appkit-1.8.17-wc-circular-dependencies-fix.0.tgz",
+      "integrity": "sha512-7JjEp+JNxRUDOa7CxOCbUbG8uYVo38ojc9FN/fuzJuJADUzKDaH287MLV9qI1ZyQyXA8qXvhXRqjtw+3xo2/7A==",
+      "licenseFromLock": "SEE LICENSE IN LICENSE.md",
+      "optional": false,
+      "dev": false,
+      "osRules": [],
+      "cpuRules": [],
+      "hasInstallScript": true,
+      "targetApplicability": {
+        "windows-x64": true,
+        "linux-x64-glibc": true
+      },
+      "applicableToAnyRequiredTarget": true,
+      "targetPlatformPackages": {
+        "windows-x64": {
+          "required": false,
+          "lockPath": null,
+          "presentInLock": true,
+          "versionMatches": true
+        },
+        "linux-x64-glibc": {
+          "required": false,
+          "lockPath": null,
+          "presentInLock": true,
+          "versionMatches": true
+        }
+      },
+      "exactCurrentArchiveEvidence": true,
+      "archiveEvidence": {
+        "path": "config/p42/p42-lifecycle-archive-cas/4ac4a47d0813b92618b20e44c7e225ac0d60d2b5baf216cb6a33350a07d40ce3.tgz",
+        "sha256": "4ac4a47d0813b92618b20e44c7e225ac0d60d2b5baf216cb6a33350a07d40ce3",
+        "byteLength": 185191,
+        "integrityTokenVerified": "sha512-7JjEp+JNxRUDOa7CxOCbUbG8uYVo38ojc9FN/fuzJuJADUzKDaH287MLV9qI1ZyQyXA8qXvhXRqjtw+3xo2/7A==",
+        "sriVerified": true,
+        "archiveSha256": "4ac4a47d0813b92618b20e44c7e225ac0d60d2b5baf216cb6a33350a07d40ce3",
+        "archiveByteLength": 185191,
+        "packageJsonPath": "package/package.json",
+        "packageJsonSha256": "0a339317bddc3824bd9a8a07df699614a7ef2830fef4afaa8ce1681a772e9db4",
+        "manifestName": "@reown/appkit",
+        "manifestVersion": "1.8.17-wc-circular-dependencies-fix.0",
+        "manifestLicense": "SEE LICENSE IN LICENSE.md",
+        "manifestMatchesLockTuple": true,
+        "lifecycleScripts": {
+          "postinstall": "node scripts/appkit-version-check.js"
+        },
+        "referencedScriptFiles": [
+          {
+            "lifecycle": "postinstall",
+            "path": "scripts/appkit-version-check.js",
+            "present": true,
+            "byteLength": 6752,
+            "sha256": "c0cee122dbe4fd506a71c0530206068f35df89c748ccdf23854b9e11ceba4d0a"
+          }
+        ],
+        "networkCapableStaticIndicators": [
+          "npm\\s+install"
+        ],
+        "processExecutionStaticIndicators": [],
+        "buildFromSourceEnvironmentGatePresent": false,
+        "licenseFilePath": "package/LICENSE.md",
+        "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb",
+        "licenseFileByteLength": 19971,
+        "archiveExecutedDuringInspection": false
+      },
+      "executionApproved": false,
+      "executionState": "QUARANTINED_NOT_AUTHORIZED"
+    },
+    {
+      "packagePath": "node_modules/@swc/core",
+      "name": "@swc/core",
+      "version": "1.15.47",
+      "resolved": "https://registry.npmjs.org/@swc/core/-/core-1.15.47.tgz",
+      "integrity": "sha512-FbsO5JcfOjfH38W/rohBRBweJeERsAuIP4f377lmkmxTcq9exjtx4SkRuZY5CdfhR2CBVwDIJegBpJDffwNsOg==",
+      "licenseFromLock": "Apache-2.0",
+      "optional": false,
+      "dev": false,
+      "osRules": [],
+      "cpuRules": [],
+      "hasInstallScript": true,
+      "targetApplicability": {
+        "windows-x64": true,
+        "linux-x64-glibc": true
+      },
+      "applicableToAnyRequiredTarget": true,
+      "targetPlatformPackages": {
+        "windows-x64": {
+          "required": true,
+          "lockPath": "node_modules/@swc/core-win32-x64-msvc",
+          "presentInLock": true,
+          "expectedVersion": "1.15.47",
+          "observedVersion": "1.15.47",
+          "versionMatches": true
+        },
+        "linux-x64-glibc": {
+          "required": true,
+          "lockPath": "node_modules/@swc/core-linux-x64-gnu",
+          "presentInLock": true,
+          "expectedVersion": "1.15.47",
+          "observedVersion": "1.15.47",
+          "versionMatches": true
+        }
+      },
+      "exactCurrentArchiveEvidence": true,
+      "archiveEvidence": {
+        "path": "config/p42/p42-lifecycle-archive-cas/023f6fcceee1b1939e688edb6411e9d8f6d5a6826b518dfc634271130f6c8cf9.tgz",
+        "sha256": "023f6fcceee1b1939e688edb6411e9d8f6d5a6826b518dfc634271130f6c8cf9",
+        "byteLength": 25038,
+        "integrityTokenVerified": "sha512-FbsO5JcfOjfH38W/rohBRBweJeERsAuIP4f377lmkmxTcq9exjtx4SkRuZY5CdfhR2CBVwDIJegBpJDffwNsOg==",
+        "sriVerified": true,
+        "archiveSha256": "023f6fcceee1b1939e688edb6411e9d8f6d5a6826b518dfc634271130f6c8cf9",
+        "archiveByteLength": 25038,
+        "packageJsonPath": "package/package.json",
+        "packageJsonSha256": "ca2a9d1bc237cefbb2d915f26343097a9bc44ef3e4068f8738c9257fa96bd2c7",
+        "manifestName": "@swc/core",
+        "manifestVersion": "1.15.47",
+        "manifestLicense": "Apache-2.0",
+        "manifestMatchesLockTuple": true,
+        "lifecycleScripts": {
+          "postinstall": "node postinstall.js"
+        },
+        "referencedScriptFiles": [
+          {
+            "lifecycle": "postinstall",
+            "path": "postinstall.js",
+            "present": true,
+            "byteLength": 6857,
+            "sha256": "5da0f556c5702eaf4c4b66283f03aeccbd8db3d4b730866741ca23c799614a87"
+          }
+        ],
+        "networkCapableStaticIndicators": [
+          "download",
+          "https?://",
+          "npm\\s+install"
+        ],
+        "processExecutionStaticIndicators": [
+          "child_process"
+        ],
+        "buildFromSourceEnvironmentGatePresent": false,
+        "licenseFilePath": "package/LICENSE",
+        "licenseFileSha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91",
+        "licenseFileByteLength": 10836,
+        "archiveExecutedDuringInspection": false
+      },
+      "executionApproved": false,
+      "executionState": "QUARANTINED_NOT_AUTHORIZED"
+    },
+    {
+      "packagePath": "node_modules/esbuild",
+      "name": "esbuild",
+      "version": "0.28.1",
+      "resolved": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.1.tgz",
+      "integrity": "sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==",
+      "licenseFromLock": "MIT",
+      "optional": false,
+      "dev": true,
+      "osRules": [],
+      "cpuRules": [],
+      "hasInstallScript": true,
+      "targetApplicability": {
+        "windows-x64": true,
+        "linux-x64-glibc": true
+      },
+      "applicableToAnyRequiredTarget": true,
+      "targetPlatformPackages": {
+        "windows-x64": {
+          "required": true,
+          "lockPath": "node_modules/@esbuild/win32-x64",
+          "presentInLock": true,
+          "expectedVersion": "0.28.1",
+          "observedVersion": "0.28.1",
+          "versionMatches": true
+        },
+        "linux-x64-glibc": {
+          "required": true,
+          "lockPath": "node_modules/@esbuild/linux-x64",
+          "presentInLock": true,
+          "expectedVersion": "0.28.1",
+          "observedVersion": "0.28.1",
+          "versionMatches": true
+        }
+      },
+      "exactCurrentArchiveEvidence": true,
+      "archiveEvidence": {
+        "path": "config/p42/p42-lifecycle-archive-cas/eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5.tgz",
+        "sha256": "eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5",
+        "byteLength": 34131,
+        "integrityTokenVerified": "sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==",
+        "sriVerified": true,
+        "archiveSha256": "eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5",
+        "archiveByteLength": 34131,
+        "packageJsonPath": "package/package.json",
+        "packageJsonSha256": "d55d1d19fcc5b6079e4a71dd4111340c79c682bc36835ac7058a0c364c7db58a",
+        "manifestName": "esbuild",
+        "manifestVersion": "0.28.1",
+        "manifestLicense": "MIT",
+        "manifestMatchesLockTuple": true,
+        "lifecycleScripts": {
+          "postinstall": "node install.js"
+        },
+        "referencedScriptFiles": [
+          {
+            "lifecycle": "postinstall",
+            "path": "install.js",
+            "present": true,
+            "byteLength": 11773,
+            "sha256": "612294e278914443bdcf81cb17f54afec34dbdd2ebd999a6ee187912320cc315"
+          }
+        ],
+        "networkCapableStaticIndicators": [
+          "download",
+          "fetch\\s*\\(",
+          "https?://",
+          "https\\.get",
+          "npm\\s+install"
+        ],
+        "processExecutionStaticIndicators": [
+          "child_process"
+        ],
+        "buildFromSourceEnvironmentGatePresent": false,
+        "licenseFilePath": "package/LICENSE.md",
+        "licenseFileSha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "licenseFileByteLength": 1069,
+        "archiveExecutedDuringInspection": false
+      },
+      "executionApproved": false,
+      "executionState": "QUARANTINED_NOT_AUTHORIZED"
+    },
+    {
+      "packagePath": "node_modules/fsevents",
+      "name": "fsevents",
+      "version": "2.3.2",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
+      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
+      "licenseFromLock": "MIT",
+      "optional": true,
+      "dev": false,
+      "osRules": [
+        "darwin"
+      ],
+      "cpuRules": [],
+      "hasInstallScript": true,
+      "targetApplicability": {
+        "windows-x64": false,
+        "linux-x64-glibc": false
+      },
+      "applicableToAnyRequiredTarget": false,
+      "targetPlatformPackages": {
+        "windows-x64": {
+          "required": false,
+          "lockPath": null,
+          "presentInLock": true,
+          "versionMatches": true
+        },
+        "linux-x64-glibc": {
+          "required": false,
+          "lockPath": null,
+          "presentInLock": true,
+          "versionMatches": true
+        }
+      },
+      "exactCurrentArchiveEvidence": false,
+      "archiveEvidence": null,
+      "executionApproved": false,
+      "executionState": "QUARANTINED_NOT_AUTHORIZED"
+    },
+    {
+      "packagePath": "node_modules/tsx/node_modules/fsevents",
+      "name": "fsevents",
+      "version": "2.3.3",
+      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+      "licenseFromLock": "MIT",
+      "optional": true,
+      "dev": true,
+      "osRules": [
+        "darwin"
+      ],
+      "cpuRules": [],
+      "hasInstallScript": true,
+      "targetApplicability": {
+        "windows-x64": false,
+        "linux-x64-glibc": false
+      },
+      "applicableToAnyRequiredTarget": false,
+      "targetPlatformPackages": {
+        "windows-x64": {
+          "required": false,
+          "lockPath": null,
+          "presentInLock": true,
+          "versionMatches": true
+        },
+        "linux-x64-glibc": {
+          "required": false,
+          "lockPath": null,
+          "presentInLock": true,
+          "versionMatches": true
+        }
+      },
+      "exactCurrentArchiveEvidence": false,
+      "archiveEvidence": null,
+      "executionApproved": false,
+      "executionState": "QUARANTINED_NOT_AUTHORIZED"
+    }
+  ],
+  "creditBoundary": {
+    "archiveBytesInspected": true,
+    "archiveCodeExecuted": false,
+    "dependencyLifecycleExecutionAuthorized": false,
+    "npmCiWithoutIgnoreScriptsAuthorized": false,
+    "semanticOrBuildClosure": false
+  },
+  "integritySha256": "9a3c7b91c1c31163d0df0d6fa7d5e04e949e3d4d2033497fb80d3565364e67fb"
+}

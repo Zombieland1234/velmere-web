@@ -1,0 +1,167 @@
+{
+  "status": "PASS_A102R30_CHART_PROVIDER_CADENCE_CANONICAL_SESSION_EVIDENCE_TRUTH_NO_PROMOTION",
+  "checks": 26,
+  "passed": 26,
+  "failed": 0,
+  "falseDuplicateRegressionClosed": true,
+  "localizedSessionCopyAuthority": false,
+  "referenceCanClaimVerifiedSource": false,
+  "exactBrowserCredit": false,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "rows": [
+    {
+      "id": "session.crypto.Crypto",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.stock-copy-not-authority.Crypto",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.crypto.Kryptoaktywa",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.stock-copy-not-authority.Kryptoaktywa",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.crypto.Kryptowährung",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.stock-copy-not-authority.Kryptowährung",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.mixed-canonical-venue",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "session.legacy-canonical-venue",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cadence.real-markets-4h-is-provider-hourly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cadence.shield-4h-is-aggregated-4h",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cadence.real-markets-1m-is-monthly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cadence.shield-1m-range-is-daily",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "precision.stock-4h-no-false-duplicates",
+      "passed": true,
+      "detail": {
+        "score": 100,
+        "duplicateCount": 0,
+        "gapCount": 0,
+        "largeOpenGaps": 0
+      }
+    },
+    {
+      "id": "precision.old-stock-4h-would-false-duplicate",
+      "passed": true,
+      "detail": {
+        "score": 0,
+        "duplicateCount": 36,
+        "gapCount": 0,
+        "largeOpenGaps": 0
+      }
+    },
+    {
+      "id": "precision.crypto-1m-no-false-duplicates",
+      "passed": true,
+      "detail": {
+        "score": 100,
+        "duplicateCount": 0,
+        "gapCount": 0,
+        "largeOpenGaps": 0
+      }
+    },
+    {
+      "id": "precision.old-crypto-1m-would-false-duplicate",
+      "passed": true,
+      "detail": {
+        "score": 0,
+        "duplicateCount": 43,
+        "gapCount": 0,
+        "largeOpenGaps": 0
+      }
+    },
+    {
+      "id": "evidence.reference-not-live",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "evidence.last-known-distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "evidence.partial-distinct",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "evidence.live-requires-live-state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "evidence.sparse-cannot-live",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "ui.no-local-production-ready-state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "ui.no-visible-checkpoint-jargon",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "ui.evidence-mode-centralized",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "action-ledger.canonical-surface",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "action-ledger.localized-copy-not-authority",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

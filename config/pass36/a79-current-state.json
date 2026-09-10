@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "velmere.pass36.a79.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "generatedAt": "2026-07-27T10:30:00.000Z",
+  "decision": "PASS_LOCAL_BUILD_BROWSER_ADMISSION_HARDENING_BLOCKED_A78_EXACT_ARTIFACTS",
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "closedLocalAdmissionGaps": {
+    "count": 11,
+    "dynamicExactLoopbackOnly": true,
+    "systemNpmForbidden": true,
+    "shellExecutionForbidden": true,
+    "parentSecretEnvironmentForbidden": true,
+    "sourceExactPathSetRequired": true,
+    "staleBrowserArtifactsRemoved": true,
+    "browserRowsExact": 36,
+    "screenshotsExact": 19,
+    "popupTabsExact": 4,
+    "sourceRuntimeBrowserBuildBindingsRequired": true,
+    "firstPartyRequestFailuresFatal": true,
+    "spawnedServerLivenessRequired": true
+  },
+  "a78PhysicalInputs": {
+    "runtimeVerified": false,
+    "dependenciesVerified": false,
+    "browserVerified": false,
+    "lockPathsCovered": 81,
+    "lockPathsRequired": 827,
+    "lockPathsMissing": 746
+  },
+  "exactExecution": {
+    "exactBuildExecuted": false,
+    "exactBrowserExecuted": false,
+    "webpackExecutedOnA79": false,
+    "turbopackExecutedOnA79": false,
+    "productionRuntimeExecutedOnA79": false,
+    "playwrightExecutedOnA79": false,
+    "screenshotParityExecutedOnA79": false,
+    "credit": false
+  },
+  "claims": {
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A80",
+    "title": "Frozen local release candidate",
+    "status": "BLOCKED_UNTIL_A78_AND_A79_EXACT_EXECUTION"
+  },
+  "truthBoundary": "A79 proves the local fail-closed runner and evidence-verifier boundaries. It does not prove unavailable physical exact inputs or any build, browser, staging, LIVE, sale or world-class outcome.",
+  "currentRootGate": {
+    "status": "BLOCKED_EXACT_RUNTIME_AND_DEPENDENCIES",
+    "passed": 24,
+    "required": 30,
+    "failedSemanticProductChecks": 0,
+    "blockedByMissingZodSuites": 5,
+    "blockedByMissingTypeScriptAstPreflightSuites": 1,
+    "availableNode": "22.16.0",
+    "requiredNode": "24.18.0",
+    "sourceImmutable": true
+  },
+  "finalLocalRegression": {
+    "a37": "22/22",
+    "a38": "327/327",
+    "a39": "35/35",
+    "a40": "30/30",
+    "a41": "193/193",
+    "a46": "791/791",
+    "a57": "1138/1138",
+    "routeDispatch": "1320/1320",
+    "publicPaths": "160/160",
+    "staticControlPlane": "567/567",
+    "productTiers": "186/186",
+    "zeroBudget": "439/439",
+    "sourceAudit": {
+      "codeFiles": 2740,
+      "syntaxErrors": 0,
+      "localImports": 6828,
+      "missingLocalImports": 0,
+      "cssModuleReferences": 758,
+      "missingCssModuleClasses": 0
+    }
+  }
+}

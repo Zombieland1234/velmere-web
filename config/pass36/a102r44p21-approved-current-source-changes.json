@@ -1,0 +1,199 @@
+{
+  "addedCount": 12,
+  "changes": [
+    {
+      "after": {
+        "byteLength": 675,
+        "mode": 420,
+        "path": "VELMERE_A102R44P21_PATCH.txt",
+        "sha256": "db9390fad6ac7bfef7bfb6844930834f85684769a6badee5ec1944917a3b24d3"
+      },
+      "change": "ADDED",
+      "path": "VELMERE_A102R44P21_PATCH.txt"
+    },
+    {
+      "after": {
+        "byteLength": 138,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "14c1e6560b1854745c2ac4f4c4b905f22159da9e5816c0e1c705acb5b82809ea"
+      },
+      "before": {
+        "byteLength": 137,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "1d9f9cbfe12f0d8205af1a2fe0f09a0a18b60126017ee6dec66a54382b453dd4"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "after": {
+        "byteLength": 1978814,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "f59a47fbf7f073f13ed5ea2fddd4d10def3903dc83fdb140a090ebaeb255723f"
+      },
+      "before": {
+        "byteLength": 1976845,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "772183e1d0c2b97f194d5580590d6e276a0732bcad9c64becd37208565e00909"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "after": {
+        "byteLength": 1245607,
+        "mode": 420,
+        "path": "_velmere/PASS36_A102R44P20_SOURCE_ONLY_MANIFEST.json",
+        "sha256": "0d63489ce34d6ff0999742dbfc146ee295b1c9834665b3a14542118a3147e46a"
+      },
+      "change": "ADDED",
+      "path": "_velmere/PASS36_A102R44P20_SOURCE_ONLY_MANIFEST.json"
+    },
+    {
+      "after": {
+        "byteLength": 3937,
+        "mode": 420,
+        "path": "app/api/checkout/vlm-service/readiness/route.ts",
+        "sha256": "73f75eb5f184572037a0204e54553c95a141f0522d925079b20cd480c7809b15"
+      },
+      "before": {
+        "byteLength": 1914,
+        "mode": 420,
+        "path": "app/api/checkout/vlm-service/readiness/route.ts",
+        "sha256": "8f7ac6389a066ea1809e34eae0ffe137fa5b021a6db2aff784ca57b95484c724"
+      },
+      "change": "MODIFIED",
+      "path": "app/api/checkout/vlm-service/readiness/route.ts"
+    },
+    {
+      "after": {
+        "byteLength": 2079,
+        "mode": 420,
+        "path": "config/pass36/a102r44p21-action-required-current-state.json",
+        "sha256": "112feceded157ac6cbd6fd9cf34afc793660d3ca1525c1a8cf3049bd1d6167c3"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p21-action-required-current-state.json"
+    },
+    {
+      "after": {
+        "byteLength": 2536,
+        "mode": 420,
+        "path": "config/pass36/a102r44p21-field-level-commercial-readiness-policy.json",
+        "sha256": "dcba52924fff8a803d9d61376469759cd1494bd6efd5c3169bfe012796779ca6"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p21-field-level-commercial-readiness-policy.json"
+    },
+    {
+      "after": {
+        "byteLength": 1558,
+        "mode": 420,
+        "path": "config/pass36/a102r44p21-parent-package-binding.json",
+        "sha256": "7068e450bab9de51f11a295d4376eef49441bbca8fe114ae5bd006f25a9707f2"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p21-parent-package-binding.json"
+    },
+    {
+      "after": {
+        "byteLength": 16659,
+        "mode": 420,
+        "path": "lib/commerce/vlm-commercial-readiness.ts",
+        "sha256": "c3615e081b528522de7fe31952d83393719dca5be9c2475a93eb07dd5dbaec7a"
+      },
+      "before": {
+        "byteLength": 8476,
+        "mode": 420,
+        "path": "lib/commerce/vlm-commercial-readiness.ts",
+        "sha256": "3e6b38630e880063e19f225242d34a48874a85ced3c7bcbf02682f2b7c71ae18"
+      },
+      "change": "MODIFIED",
+      "path": "lib/commerce/vlm-commercial-readiness.ts"
+    },
+    {
+      "after": {
+        "byteLength": 3323,
+        "mode": 420,
+        "path": "lib/commerce/vlm-current-commercial-evidence.ts",
+        "sha256": "7c798f7488cbe9dc6095ecb9ce7be8a3ecc37e39f3ff091d3b774fa1d9d74002"
+      },
+      "change": "ADDED",
+      "path": "lib/commerce/vlm-current-commercial-evidence.ts"
+    },
+    {
+      "after": {
+        "byteLength": 30445,
+        "mode": 420,
+        "path": "lib/commerce/vlm-field-level-readiness.ts",
+        "sha256": "3e10fadcc8edbf783c19f7628f0882c3fa040ce8de23fcbc0d73739a37882d16"
+      },
+      "change": "ADDED",
+      "path": "lib/commerce/vlm-field-level-readiness.ts"
+    },
+    {
+      "after": {
+        "byteLength": 1814,
+        "mode": 493,
+        "path": "scripts/pass36/build-a102r44p21-field-commercial-readiness-matrix.mjs",
+        "sha256": "1e6a569e2da49ba39e2f6a45dd46540b9f3433ca28d4c05bada85e7bd350d113"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/build-a102r44p21-field-commercial-readiness-matrix.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 12349,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p21-field-commercial-readiness.mjs",
+        "sha256": "c6f108fc133fa63b79dd8450f89f8c094e05e180b9cf2edc07e757a31c39853e"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p21-field-commercial-readiness.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5191,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p21-approved-source-changes.mjs",
+        "sha256": "935cba2a63e8fefd69d9d6161ce0ad60f02df4ac2ab4aaf2046eb8c95a957e94"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p21-approved-source-changes.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5244,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p21-source-authority.mjs",
+        "sha256": "13faf720ba502b49271ebbcf57e570e528809e78f4f966659721d746e3706d1e"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p21-source-authority.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4018,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p21-static-policy.mjs",
+        "sha256": "c7a72bd9594038eaebf289c67ce48d2b94cbd389171c7c88060af5d1a100b2e3"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p21-static-policy.mjs"
+    }
+  ],
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "historyMutations": 0,
+  "modifiedCount": 4,
+  "parentManifestPath": "_velmere/PASS36_A102R44P20_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "0d63489ce34d6ff0999742dbfc146ee295b1c9834665b3a14542118a3147e46a",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P20_ACTION_REQUIRED_CURRENT_BYTE_DUAL_BUILD_BROWSER_PDF_AND_BASIC_FREE_PRO_ADVANCED_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P21_ACTION_REQUIRED_FIELD_LEVEL_DATA_PROVENANCE_MODULAR_SALE_READINESS_AND_LEGAL_ALTERNATIVE_ROUTING_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p21.approved-current-source-changes.v1"
+}

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "velmere.pass35.a15-imported-snapshot-runtime-contract.v2",
+  "passId": "PASS35_A15",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "visualChangesMade": false,
+  "snapshotEvidenceBundle": {
+    "fixtureExecution": {
+      "assertions": 9
+    },
+    "controls": [
+      "payload_hash_binding",
+      "metadata_hash_binding",
+      "provider_and_dataset_binding",
+      "freshness_classification",
+      "stale_state",
+      "tamper_rejection",
+      "file_import_not_live"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "securitiesQuoteHistory": {
+    "fixtureExecution": {
+      "instrumentDenominator": 120,
+      "basicFunctionalReady": 100,
+      "proFunctionalReady": 80,
+      "advancedFunctionalReady": 60,
+      "explicitUnavailableBasic": 20,
+      "explicitUnavailablePro": 40,
+      "explicitUnavailableAdvanced": 60,
+      "snapshotBundles": 162,
+      "assertions": 16
+    },
+    "controls": [
+      "full_catalog_denominator",
+      "quote_normalization",
+      "history_normalization",
+      "provider_family_floors",
+      "history_depth_floors",
+      "explicit_unavailable",
+      "tamper_rejection"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "corporateActionsCalendar": {
+    "fixtureExecution": {
+      "instrumentDenominator": 120,
+      "reconciled": 60,
+      "conflicted": 10,
+      "singleSource": 40,
+      "noActions": 10,
+      "calendarCovered": 120,
+      "proAdjustmentEligible": 110,
+      "advancedProvenanceEligible": 60,
+      "assertions": 15
+    },
+    "controls": [
+      "two_family_action_reconciliation",
+      "conflict_isolation",
+      "single_source_disclosure",
+      "calendar_coverage",
+      "no_action_state",
+      "tamper_rejection"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "realMarketsTierRuntime": {
+    "fixtureExecution": {
+      "instrumentDenominator": 120,
+      "packetCount": 360,
+      "basicFunctionalReady": 100,
+      "proFunctionalReady": 80,
+      "advancedFunctionalReady": 60,
+      "normalizationEligible": 100,
+      "assertions": 16
+    },
+    "controls": [
+      "canonical_tier_packets",
+      "cross_asset_fx_normalization",
+      "calendar_and_action_binding",
+      "provider_family_floors",
+      "explicit_unavailable",
+      "no_billing_unlock",
+      "tamper_rejection"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "orderBookImportReplay": {
+    "fixtureExecution": {
+      "assetDenominator": 60,
+      "basicFunctionalReady": 60,
+      "proFunctionalReady": 60,
+      "advancedFunctionalReady": 60,
+      "replayPairs": 180,
+      "assertions": 8
+    },
+    "controls": [
+      "bounded_hash_bound_import",
+      "crossed_book_quarantine",
+      "multi_venue_aggregation",
+      "notional_execution",
+      "two_snapshot_replay",
+      "full_denominator",
+      "tamper_rejection"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "whaleEvidenceImport": {
+    "fixtureExecution": {
+      "assetDenominator": 100,
+      "basicFunctionalReady": 80,
+      "proFunctionalReady": 80,
+      "advancedFunctionalReady": 80,
+      "explicitUnavailable": 20,
+      "snapshotBundles": 6,
+      "assertions": 7
+    },
+    "controls": [
+      "binding_holder_transfer_label_import",
+      "two_family_binding",
+      "full_denominator",
+      "tier_evidence_floors",
+      "explicit_unavailable",
+      "tamper_rejection"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "ledgerDenominatorBridge": {
+    "fixtureExecution": {
+      "shieldAssetDenominator": 50,
+      "realMarketsInstrumentDenominator": 120,
+      "shieldBasic": 48,
+      "shieldPro": 43,
+      "shieldAdvanced": 29,
+      "realMarketsBasic": 100,
+      "realMarketsPro": 80,
+      "realMarketsAdvanced": 60,
+      "assertions": 15
+    },
+    "controls": [
+      "every_asset_counted",
+      "every_job_terminal",
+      "duplicate_rejection",
+      "orphan_state_rejection",
+      "shield_tier_projection",
+      "real_markets_tier_projection",
+      "tamper_rejection"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "zeroBudgetWeightedPlanningPercent": 82.1,
+  "canonicalWeightedPlanningPercent": 41.9,
+  "canonicalStrictDonePercent": 9.3,
+  "sellEnabled": false,
+  "paidDeliveryEligible": false,
+  "liveClaimed": false,
+  "truthBoundary": "A15 proves local non-visual import, normalization, replay and full-denominator tier projection from hash-bound public-data exports. It does not prove current public internet retrieval, rights, continuous freshness, staging, customer value or sale."
+}

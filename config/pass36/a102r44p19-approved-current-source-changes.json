@@ -1,0 +1,181 @@
+{
+  "added": [
+    {
+      "byteLength": 1360,
+      "mode": 420,
+      "path": "VELMERE_A102R44P19_PATCH.txt",
+      "sha256": "0e523fc9f5c31ba727cd06a1eec11b56cf385dfaf16ef711bf2aa4f170b3d058"
+    },
+    {
+      "byteLength": 1240924,
+      "mode": 420,
+      "path": "_velmere/PASS36_A102R44P18_SOURCE_ONLY_MANIFEST.json",
+      "sha256": "9d0bb386ae794349ca6007a028d6fe1aa0744bb7b8fc8570121a28c31de25de5"
+    },
+    {
+      "byteLength": 3422,
+      "mode": 420,
+      "path": "config/pass36/a102r44p19-a88-input-hash-migration.json",
+      "sha256": "117cf5bb300692cd4022c53f634e461d1df1c73b6c15f8e14457fdecdc67546d"
+    },
+    {
+      "byteLength": 3419,
+      "mode": 420,
+      "path": "config/pass36/a102r44p19-action-required-current-state.json",
+      "sha256": "33a118f5414015df89ebacd8e6d249f2ceac0a86955dc3e5a96e583162b49760"
+    },
+    {
+      "byteLength": 3738,
+      "mode": 420,
+      "path": "config/pass36/a102r44p19-basic-free-pro-advanced-commercial-readiness-policy.json",
+      "sha256": "52f4c8adcbb684e96dd6a1ee4b89d46dd83291d2198001f8925772d4f7ab5606"
+    },
+    {
+      "byteLength": 1577,
+      "mode": 420,
+      "path": "config/pass36/a102r44p19-parent-package-binding.json",
+      "sha256": "75cee66ec067733b57e61b95f2ad61cf3ccec63fb455d188601590a0fd610dce"
+    },
+    {
+      "byteLength": 8476,
+      "mode": 420,
+      "path": "lib/commerce/vlm-commercial-readiness.ts",
+      "sha256": "3e6b38630e880063e19f225242d34a48874a85ced3c7bcbf02682f2b7c71ae18"
+    },
+    {
+      "byteLength": 1449,
+      "mode": 420,
+      "path": "scripts/pass36/build-a102r44p19-commercial-readiness-matrix.mjs",
+      "sha256": "ed1b2121e5b5ef95b49a8384e993ea60ce682ef773a8e61add0c985e43049984"
+    },
+    {
+      "byteLength": 6529,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p19-commercial-readiness.mjs",
+      "sha256": "128f9c7d875d128174eea0ee4e92b24d0d37f9917eeb3a04c2cd725d5a7e026e"
+    },
+    {
+      "byteLength": 3468,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p19-a88-input-hash-migration.mjs",
+      "sha256": "ada592da68616dc934214f472a92bc8eed48314eca0fd40e5b92ec2a7bc14f0d"
+    },
+    {
+      "byteLength": 4314,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p19-approved-source-changes.mjs",
+      "sha256": "d907aa13c97759299c1e2a156c4b801808bdb18b5f6b64f1211f56ea8809fd94"
+    },
+    {
+      "byteLength": 5445,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p19-source-authority.mjs",
+      "sha256": "0f851d578f876a6e9e6285ad45e351ad7858c773524df36071c0d957ee4bf765"
+    },
+    {
+      "byteLength": 5507,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p19-static-policy.mjs",
+      "sha256": "b809290e8b4a3fa3fe63d60bae844c481a845bec1d47efdc004b99048b58f7ff"
+    }
+  ],
+  "addedCount": 13,
+  "approvedReason": "Permanent Basic-free guarantee, explicit Pro/Advanced GO_PAID-after-evidence targets, one cross-surface readiness gate engine, customer-truth updates and formal A88 hash migration. No checkout, charge, public price, sale, LIVE or provider-rights credit is granted.",
+  "deleted": [],
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "historyPreserved": true,
+  "modified": [
+    {
+      "current": {
+        "byteLength": 145,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "4ca73b3e7aa4879faeace12bb44555bbaf43da70d14bc5fde89b445bd9b252fe"
+      },
+      "parent": {
+        "byteLength": 133,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "96478c81040dbed2a206a70cf202540135dc0ebd3c25b95e350327242fb430a2"
+      },
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "current": {
+        "byteLength": 1975351,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "b140b0ca58aa1757acfaadda3a63f0ed144ca1c7925958743372666ae49a3ab1"
+      },
+      "parent": {
+        "byteLength": 1970508,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "2f8650a95b0e917613dc64401624928c3cdcb66f9a0c8d11738e7204188f694e"
+      },
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "current": {
+        "byteLength": 9418,
+        "mode": 420,
+        "path": "lib/commerce/vlm-current-sku-truth.ts",
+        "sha256": "2b563bb84650f1f8c7825eb71098f84429c8785414d273fe629ae51a409a556c"
+      },
+      "parent": {
+        "byteLength": 8501,
+        "mode": 420,
+        "path": "lib/commerce/vlm-current-sku-truth.ts",
+        "sha256": "3d0b739ccd705d809a277adf8566274ac6ab0c7218dfebb2fb0c17a56fc5b806"
+      },
+      "path": "lib/commerce/vlm-current-sku-truth.ts"
+    },
+    {
+      "current": {
+        "byteLength": 4663,
+        "mode": 420,
+        "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+        "sha256": "7d15c03ca6b993104ebb630255cede4d8b6c98c79d54f7189dc9d716546d2254"
+      },
+      "parent": {
+        "byteLength": 4242,
+        "mode": 420,
+        "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+        "sha256": "2c2d9ba50213f45c4e717638983ba20ce12990a682382e2a60904448fa18ab49"
+      },
+      "path": "lib/commerce/vlm-tier-presentation-policy.ts"
+    },
+    {
+      "current": {
+        "byteLength": 26163,
+        "mode": 420,
+        "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+        "sha256": "13ca2e5c42ee28709f91f561a9b80b8d0570d5d47bb0684cada3d378d4aa2fe2"
+      },
+      "parent": {
+        "byteLength": 26157,
+        "mode": 420,
+        "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+        "sha256": "b2705e106ea62da1d29a4feaa840d1b907f2d39159d03b0f836d0545d2701989"
+      },
+      "path": "lib/security/risk-formula-evidence-weighting-contract.ts"
+    }
+  ],
+  "modifiedCount": 5,
+  "parentFilesRewritten": false,
+  "parentManifestEntry": {
+    "byteLength": 1240924,
+    "mode": 420,
+    "path": "_velmere/PASS36_A102R44P18_SOURCE_ONLY_MANIFEST.json",
+    "sha256": "9d0bb386ae794349ca6007a028d6fe1aa0744bb7b8fc8570121a28c31de25de5"
+  },
+  "parentManifestPath": "_velmere/PASS36_A102R44P18_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "9d0bb386ae794349ca6007a028d6fe1aa0744bb7b8fc8570121a28c31de25de5",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P18_ACTION_REQUIRED_OFFICIAL_PROVIDER_RIGHTS_FAIL_CLOSED_CUSTOMER_DELIVERY_COINPAPRIKA_COINBASE_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P19_ACTION_REQUIRED_BASIC_ALWAYS_FREE_PRO_ADVANCED_SALE_READINESS_AND_CROSS_SURFACE_COMMERCIAL_GATE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p19.approved-current-source-changes.v1",
+  "selfExcludedPath": "config/pass36/a102r44p19-approved-current-source-changes.json",
+  "sourceManifestExcludedPath": "_velmere/PASS36_A102R44P19_SOURCE_ONLY_MANIFEST.json"
+}

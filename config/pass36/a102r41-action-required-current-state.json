@@ -1,0 +1,1102 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T10:25:32+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "inputParentCheckpoint": {
+    "revisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+    "observedOuterSourceArchiveFileName": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT_SOURCE_ONLY(1).zip",
+    "canonicalInternalSourceArchiveFileName": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT_SOURCE_ONLY.zip",
+    "sourceArchiveByteLength": 127383149,
+    "sourceArchiveSha256": "2ad24f729083bfd31ef22969dda7a9895f7898764f07d79cdb6da9a1bb38bc16",
+    "embeddedPackageManifestRawSha256": "54462e5a872fbaf87c4c89a3b0fe891c42edf9786a819d9f08c083a5f12b04b6",
+    "embeddedPackageManifestDigestSha256": "cb7dbd7334dec461a77b347f562fe4cf7c8abb0dc59c30ec53172aba8b289dd6",
+    "descendantManifestDigestSha256": "70e421274d421f299da37ded54e09a4a46833ec8d1c588ae2fbaa97307b578be",
+    "outerNameDriftObserved": true,
+    "promotionStoppedAtIntake": true
+  },
+  "findings": [
+    {
+      "id": "A102R41-P0-01",
+      "severity": "P0_RELEASE_AUTHORITY",
+      "status": "LOCALLY_FIXED_VALID_DESCENDANT_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass36/a102r41-historical-descendant-sparse-edge-ledger.json",
+        "scripts/pass36/historical-descendant-chain-lib.mjs"
+      ],
+      "failureCondition": "The historical chain contained an undeclared A102R36 to A102R38 internal revision gap while the external R37R4 archive was evidence-only.",
+      "remediation": "Admit exactly one byte-bound, self-digested historical edge; forbid fabricated R37 authority, wildcard edges, history rewrites and promotion.",
+      "positiveTest": "Exact R36/R38 raw and canonical manifest hashes plus external R37R4 identity are accepted.",
+      "negativeTest": "Missing, tampered, wildcard, duplicate, fabricated-R37 and promotion variants are rejected.",
+      "remainingTruthBoundary": "R37R4 remains external evidence only and never defines source authority.",
+      "requiredRetest": "Full historical descendant chain and clean-unpack A58-first verification."
+    },
+    {
+      "id": "A102R41-P0-02",
+      "severity": "P0_SECURITY",
+      "status": "LOCALLY_FIXED_STAGING_RETEST_REQUIRED",
+      "affectedFiles": [
+        "supabase/migrations/20260801000001_a102r41_entitlement_revocation_ledger_rls_fail_closed.sql"
+      ],
+      "failureCondition": "Entitlement revocation ledger access was not protected by an explicit fail-closed RLS policy.",
+      "remediation": "Enable and force RLS, revoke broad grants, and expose no client policy.",
+      "positiveTest": "Migration contract passes 18/18 local assertions.",
+      "negativeTest": "Static verifier rejects any anon/authenticated grant or client policy.",
+      "remainingTruthBoundary": "Real two-tenant staging replay remains 0/19 and requires TEST Supabase credentials.",
+      "requiredRetest": "A96 exact 19/19 on disposable staging after applying the migration."
+    },
+    {
+      "id": "A102R41-P0-03",
+      "severity": "P0_EVIDENCE_AUTHORITY",
+      "status": "LOCALLY_FIXED_NO_REAL_CREDIT",
+      "affectedFiles": [
+        "lib/worldclass/pass36-real-evidence-physical-boundary.mjs",
+        "scripts/pass36/test-a102r41-real-intake-self-assertion-denial.ts"
+      ],
+      "failureCondition": "Local intake objects could self-assert external status without a signed physical receipt.",
+      "remediation": "Derive all A82-A88 real credit solely from separately signed, physically read external receipts.",
+      "positiveTest": "Physical receipt binding contract passes 9/9 and denial matrix passes 14/14.",
+      "negativeTest": "Self-asserted, missing, malformed or locally generated evidence receives zero real credit.",
+      "remainingTruthBoundary": "All real denominators remain zero.",
+      "requiredRetest": "A82-A88 real provider/customer executions when lawful external evidence exists."
+    },
+    {
+      "id": "A102R41-P0-04",
+      "severity": "P0_COMMAND_EXECUTION",
+      "status": "CONTAINED_BLOCKED_PLATFORM_BROKER",
+      "affectedFiles": [
+        "lib/security/external-command-boundary.ts",
+        "lib/security/audit-a02-solc-reproduction.ts"
+      ],
+      "failureCondition": "A renamed interpreter or unpinned execution mode could execute inline code, and direct child termination did not contain descendant processes.",
+      "remediation": "Require an exact semantic native profile and fail closed on every platform until a pinned process-tree containment broker exists.",
+      "positiveTest": "Containment and strict tool-spec contract passes 11/11 with zero child execution credit.",
+      "negativeTest": "Renamed interpreter, unknown mode, extra keys, missing native path and broker absence are rejected.",
+      "remainingTruthBoundary": "Official solc and every external signer/publisher execution remain blocked.",
+      "requiredRetest": "Pinned Windows Job Object and POSIX process-group broker plus timeout descendant-sentinel tests."
+    },
+    {
+      "id": "A102R41-P1-05",
+      "severity": "P1_PRIVACY_AUTHORITY",
+      "status": "CONTAINED_DURABLE_WORKFLOW_BLOCKED",
+      "affectedFiles": [
+        "app/api/market-integrity/account-operations/[operation]/route.ts",
+        "components/account/AuditAccountMessagesClient.tsx",
+        "lib/security/account-operation-redirects.mjs"
+      ],
+      "failureCondition": "Eight unauthenticated GET endpoints accepted 152 URL proof fields and could leak identifiers to providers, browser history, referrers and logs.",
+      "remediation": "Return fixed 405 for GET before provider import, remove redirects/UI URLs, and expose only an authenticated POST fail-closed skeleton.",
+      "positiveTest": "Account-operation privacy containment passes 55/55 with zero provider calls.",
+      "negativeTest": "URL proofs, cross-origin POST and reflected identifiers receive no authority credit.",
+      "remainingTruthBoundary": "Zero durable account-operation evidence workflows are implemented.",
+      "requiredRetest": "Authenticated server-owned durable workflow and staging tenant replay."
+    },
+    {
+      "id": "A102R41-P1-06",
+      "severity": "P1_PAYMENT_PRIVACY",
+      "status": "CONTAINED_NOT_FOR_SALE",
+      "affectedFiles": [
+        "app/api/checkout/vlm-service/route.ts",
+        "lib/commerce/vlm-paid-access-client.ts"
+      ],
+      "failureCondition": "A future sale toggle would expose flow/session/context identifiers through URLs, Stripe metadata, responses and sessionStorage; one checkout path could not complete its binding.",
+      "remediation": "Stop checkout with fixed 503 before body/provider access; keep paid state memory-only and purge historical browser keys.",
+      "positiveTest": "Checkout/browser-storage containment passes 15/15 and A102R5 regression passes 26/26 with zero Stripe calls.",
+      "negativeTest": "No URL identifier, provider call, localStorage/sessionStorage write or sale retry path is emitted.",
+      "remainingTruthBoundary": "Durable opaque HttpOnly server flow and real Stripe TEST lifecycle remain unimplemented.",
+      "requiredRetest": "Formal A73/A96 denominator migration, durable flow implementation and disposable Stripe TEST lifecycle."
+    },
+    {
+      "id": "A102R41-P1-07",
+      "severity": "P1_RELEASE_INTEGRITY",
+      "status": "LOCALLY_HARDENED_A80R1_STILL_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/a80-release-candidate-freeze-lib.mjs",
+        "scripts/pass36/test-a80-frozen-local-release-candidate-admission.mjs"
+      ],
+      "failureCondition": "A80 accepted absent equal A60 hashes, omitted physical source-authority failure from admission, and could project output through a reparse point.",
+      "remediation": "Require valid equal source digests, include physical authority in admission, derive sourceUnchanged, and reject realpath/reparse output re-entry.",
+      "positiveTest": "A80 adversarial admission passes 41/41.",
+      "negativeTest": "Missing hashes, source-authority mismatch and reparse output are rejected.",
+      "remainingTruthBoundary": "Two-phase hash-bound 2/2 packaging and A58-first clean-unpack remain mandatory.",
+      "requiredRetest": "A80R1 controller on final frozen bytes."
+    },
+    {
+      "id": "A102R41-P2-08",
+      "severity": "P2_SUPPLY_CHAIN",
+      "status": "LOCAL_PREFLIGHT_VERIFIED_NO_FINAL_BUILD_CREDIT",
+      "affectedFiles": [
+        "config/pass36/a102r41-a78-lockfile-denominator-migration.json"
+      ],
+      "failureCondition": "The stale A78 denominator stated 827 lock paths although the exact current lock contract contains 654.",
+      "remediation": "Record a formal 827 to 654 denominator migration with zero removed current tests and negative collapse checks.",
+      "positiveTest": "Migration verifier passes 24/24; npm ci --ignore-scripts --no-audit --no-fund, npm ls, audit, signatures, SBOM and license preflight checks are locally green.",
+      "negativeTest": "Denominator collapse, removed rows and lock/SRI drift are rejected.",
+      "remainingTruthBoundary": "Lifecycle scripts were not executed; four installed lifecycle packages and six lockfile-flagged rows still require review. Any source change invalidates final-byte evidence.",
+      "requiredRetest": "Complete lifecycle review, normal exact npm ci, then A78R1 through A80R1 on the final frozen R41 payload."
+    },
+    {
+      "id": "A102R41-P0-09",
+      "severity": "P0_RELEASE_INTEGRITY",
+      "status": "FAIL_CLOSED_MECHANISM_FIXED_NO_A80R1_CREDIT",
+      "affectedFiles": [
+        "scripts/pass36/a80r1-two-phase-release-controller-lib.mjs",
+        "scripts/pass36/a80r1-two-phase-release-controller.mjs"
+      ],
+      "failureCondition": "Self-authored receipt JSON and self-declared signer rows could have been mistaken for physical A80R1 prerequisites.",
+      "remediation": "Bind stable raw receipt bytes to the source and force phase 1 blocked until per-receipt physical validators and independent cryptographic signature verification exist.",
+      "positiveTest": "A80R1 and mode-migration mechanism harness requires 36/36 while synthetic receipts remain blocked.",
+      "negativeTest": "Unknown CLI success flags, duplicate JSON keys, stale source bindings, one or duplicate signers, digest tamper and promotion claims are rejected.",
+      "remainingTruthBoundary": "A77R1-A80R1 credit remains 0/4; independent dual control is absent.",
+      "requiredRetest": "End-to-end physical receipt validators, two independent trusted signatures, 2/2 packages and clean-unpack on frozen bytes."
+    },
+    {
+      "id": "A102R41-P1-10",
+      "severity": "P1_ARCHIVE_SECURITY",
+      "status": "PARTIALLY_HARDENED_FD_NOFOLLOW_RACE_TEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/package-a102r41-deterministic.mjs",
+        "scripts/pass36/verify-a102r41-clean-unpack.mjs",
+        "scripts/pass36/verify-a102r41-final-packages.mjs"
+      ],
+      "failureCondition": "Hand-crafted SOURCE paths, duplicate manifest keys, Windows device/ADS names, excluded-file mutations and archive read substitution were insufficiently rejected.",
+      "remediation": "Use strict JSON, portable Windows path rules, full extracted-tree snapshots, wx extraction, separated work roots and before/after identity checks. A descriptor-bound no-follow read plus adversarial swap test remains required for full TOCTOU closure.",
+      "positiveTest": "Package boundary harness passes 36/36 after a formal 17-to-36 migration with all 17 checks retained, 19 added and zero removed.",
+      "negativeTest": "Duplicate keys, invalid UTF-8, forbidden SOURCE paths and ADS/device/trailing-name/prefix collisions are rejected; concurrent swap/restore rejection is not yet proven.",
+      "remainingTruthBoundary": "No full TOCTOU/source-substitution closure is claimed until FD/fstat/no-follow binding and swap tests pass. Package integrity remains local only.",
+      "requiredRetest": "Descriptor-bound package reads, adversarial swap test, deterministic SOURCE/MATERIALS 2/2, strict final verifier and exact clean-unpack A58-first."
+    },
+    {
+      "id": "A102R41-P1-11",
+      "severity": "P1_DENOMINATOR_AUTHORITY",
+      "status": "LOCALLY_FIXED_FREEZE_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass36/a102r41-source-mode-denominator-migration.json",
+        "config/pass36/a102r41-cross-platform-source-mode-policy.json",
+        "config/pass36/a58-release-integrity-policy.json"
+      ],
+      "failureCondition": "The working R41 mode policy counted 46 executable entrypoints while twelve new shebang entrypoints were omitted.",
+      "remediation": "Migrate from the frozen R40 denominator 35 to the complete R41 denominator 58 with 23 additions and zero removals.",
+      "positiveTest": "Mode migration and exact allowlist are bound by the R41 authority verifier.",
+      "negativeTest": "Denominator collapse, removed frozen paths, undeclared shebang paths and digest tamper are rejected.",
+      "remainingTruthBoundary": "Changing any executable path or mode invalidates descendant and package evidence.",
+      "requiredRetest": "Rebuild approved ledger and descendant, then run A58 on clean unpack."
+    },
+    {
+      "id": "A102R41-P1-12",
+      "severity": "P1_SECRET_BOUNDARY",
+      "status": "LOCALLY_CONTAINED_RETEST_REQUIRED",
+      "affectedFiles": [
+        "lib/security/sanitized-child-process-boundary.mjs",
+        "scripts/pass36/test-a102r41-sanitized-child-process-boundary.mjs"
+      ],
+      "failureCondition": "Ambient credentials and provider tokens could be inherited by child processes or persisted from raw stdout/stderr.",
+      "remediation": "Build a minimal child environment allowlist, reject secret additions, redact token patterns and persist sanitized output only.",
+      "positiveTest": "Sanitized child-process boundary requires 11/11 assertions.",
+      "negativeTest": "Ambient secret inheritance, explicit secret addition and raw token persistence are rejected.",
+      "remainingTruthBoundary": "No external-command execution credit is granted; a pinned process-tree broker remains required.",
+      "requiredRetest": "Run the 11-row boundary on frozen bytes and through every release child-process wrapper."
+    },
+    {
+      "id": "A102R41-P1-13",
+      "severity": "P1_RELEASE_PORTABILITY",
+      "status": "LOCALLY_FIXED_PORTABLE_REPARSE_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/portable-symlink-negative-fixture.mjs",
+        "scripts/pass36/test-a102r41-a80r1-two-phase-release-controller.mjs"
+      ],
+      "failureCondition": "The Windows receipt-symlink negative test conditionally passed when file-symlink creation returned EPERM.",
+      "remediation": "Require a physically created symlink or unprivileged directory junction and actual non-regular-file rejection; fixture creation failure now fails the test.",
+      "positiveTest": "A portable reparse object is physically created and rejected by the receipt reader.",
+      "negativeTest": "The former permission-dependent pass branch is absent and cannot preserve the denominator without exercising rejection.",
+      "remainingTruthBoundary": "A local reparse test is not external dual-control or A80R1 credit.",
+      "requiredRetest": "Run the migrated 36-row A80R1 mechanism harness on Windows and clean unpack."
+    },
+    {
+      "id": "A102R41-P1-14",
+      "severity": "P1_RELEASE_INTEGRITY",
+      "status": "LOCALLY_FIXED_FULL_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass35/a42-dev-runtime-cache-recovery.json",
+        "config/pass36/a102r41-a42-critical-rebaseline.json",
+        "scripts/pass36/verify-a102r41-a42-critical-rebaseline.mjs"
+      ],
+      "failureCondition": "The retained A42 critical-file contract still named R40 hashes after the R41 authority and source-audit byte changes.",
+      "remediation": "Rebaseline exactly four approved changed rows while retaining the 76-file denominator; record formal 3-to-4 row and 18-to-33 verifier migrations with zero removals.",
+      "positiveTest": "Verify exact parent/current bytes, all 76 critical files and the self-digested four-row evidence document.",
+      "negativeTest": "Reject row-denominator collapse, any removed row and evidence self-digest tampering.",
+      "remainingTruthBoundary": "Critical-file integrity is local source evidence only and grants no build, browser, staging, LIVE or sale credit.",
+      "requiredRetest": "Run the 33-row R41 A42 verifier inside the frozen 28-stage regression."
+    },
+    {
+      "id": "A102R41-P2-15",
+      "severity": "P2_PRIVACY_EVIDENCE",
+      "status": "LOCALLY_FIXED_FULL_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/package-a102r41-deterministic.mjs",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs"
+      ],
+      "failureCondition": "Successful packaging and A60 receipts persisted absolute local runtime/output paths and raw spawn error messages.",
+      "remediation": "Persist canonical file identities and stable path classes only; redact absolute commands and reduce child failures to bounded stable codes.",
+      "positiveTest": "Package and A60 outputs retain byte/hash provenance without an absolute user path.",
+      "negativeTest": "Receipt scans reject local-path, secret-name and raw-error disclosure.",
+      "remainingTruthBoundary": "Redaction does not convert local execution into independent or production evidence.",
+      "requiredRetest": "Run targeted lint, package boundary, final package verifier and A60 preflight/execution receipt scan."
+    },
+    {
+      "id": "A102R41-P0-16",
+      "severity": "P0_RELEASE_TRUTH",
+      "status": "LOCALLY_FIXED_FULL_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass35/current-revision.json",
+        "scripts/pass36/build-a102r41-authority-files.mjs",
+        "scripts/pass36/verify-a102r41-action-required-authority.mjs"
+      ],
+      "failureCondition": "The current-revision plane retained stale A79 denominators of 36 browser rows and 19 screenshots while the current source contract requires 56 and 29.",
+      "remediation": "Reconcile the current-revision plane to 56 browser rows, 29 screenshots and four popup tabs; bind these values inside an existing strengthened authority assertion without lowering any denominator.",
+      "positiveTest": "Current authority accepts exactly 56/29/4 on the R41 plane.",
+      "negativeTest": "Any stale current-revision denominator makes the current-identity authority assertion fail.",
+      "remainingTruthBoundary": "Correct denominators do not count as executed browser rows or screenshots.",
+      "requiredRetest": "Run authority 46/46, A60/A79 harnesses and final browser evidence verification."
+    },
+    {
+      "id": "A102R41-P1-17",
+      "severity": "P1_RELEASE_IMMUTABILITY",
+      "status": "LOCALLY_FIXED_FULL_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "config/pass36/a60-harness-test-receipt.json"
+      ],
+      "failureCondition": "The A60 harness overwrote a source-tracked receipt after authority freeze, changing 73 bytes while preserving the path set.",
+      "remediation": "Emit the live harness result only on stdout for the external frozen runner; retain the historical source receipt as immutable static evidence.",
+      "positiveTest": "The current A60 harness passes 36/36 without changing current-source bytes; the source-tracked historical 32/32 receipt remains static evidence and is not rewritten.",
+      "negativeTest": "The stale 73-byte payload drift was rejected before frozen regression stage one and received no PASS credit.",
+      "remainingTruthBoundary": "A green harness is not an exact build/browser receipt and gives no A79, A80, LIVE or sale credit.",
+      "requiredRetest": "Rebuild approved changes and descendant, then run the full 28-stage frozen regression and actual A60 attempt on identical bytes."
+    },
+    {
+      "id": "A102R41-P1-18",
+      "severity": "P1_NEGATIVE_EVIDENCE",
+      "status": "LOCALLY_FIXED_FULL_CLEAN_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/verify-a102r41-clean-unpack.mjs",
+        "scripts/pass36/test-a102r41-package-portability-and-parser.mjs",
+        "config/pass36/a102r41-package-boundary-denominator-migration.json"
+      ],
+      "failureCondition": "A rejected clean-unpack could leave only partial logs, persist a local path in negative evidence, and lacked focused tamper/missing/reparse/nested/dependency postcondition tests.",
+      "remediation": "Write one no-clobber bounded FAIL receipt, redact local roots from all persisted child output, and add nineteen unique hardening checks while retaining all prior seventeen checks.",
+      "positiveTest": "Package boundary passes 36/36 and its formal migration verifier passes 20/20 with retained=17, added=19 and removed=0.",
+      "negativeTest": "Tamper, missing packaged bytes, forbidden .env, reparse, wrong A58 failure set, wrong nested schema/status, dependency changes and receipt overwrite are rejected.",
+      "remainingTruthBoundary": "Windows Job Object process-tree containment remains blocked and final clean-unpack must still run on the final SOURCE archive.",
+      "requiredRetest": "Run the 36-row package boundary in the frozen regression and the 17-step A58-first clean-unpack on the final deterministic SOURCE."
+    },
+    {
+      "id": "A102R41-P0-19",
+      "severity": "P0_RELEASE_AUTHORITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_AND_A60_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "config/pass36/a102r41-a60-stage-authority-migration.json",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs"
+      ],
+      "failureCondition": "A60 treated the frozen A57-through-A102R35 protected-integrity test as authority for later approved current bytes, so the exact run stopped at 1119 of 1138 without reaching either build.",
+      "remediation": "Preserve the historical A57 test and hashes byte-for-byte, retain the thirteen-stage denominator, and replace only the stale current-use stage with strict validation of the current A58 45/38/7 nonblocking integrity contract.",
+      "positiveTest": "The stage-authority migration verifier passes 20/20; A60 accepts only the exact A58 schema, revision, status, summary and seven-row historical failure set with blockingFailed=0.",
+      "negativeTest": "The historical A57 script remains physically equal to the parent package; denominator collapse, duplicate stages, history rewrite and a status-only fake A58 are rejected.",
+      "remainingTruthBoundary": "The failed first exact attempt is superseded and gives no build/browser/A79/A80 credit; the final frozen bytes require a new full regression and A60 run.",
+      "requiredRetest": "Rebuild approved ledger and descendant, rerun 28/28 frozen regression, then rerun exact A60 through both builds, runtime smoke and browser evidence verification."
+    },
+    {
+      "id": "A102R41-P0-20",
+      "severity": "P0_EXACT_WINDOWS_BUILD",
+      "status": "LOCALLY_FIXED_FULL_BUILD_RETEST_REQUIRED",
+      "affectedFiles": [
+        "lib/build/segmented-build-integrity.mjs",
+        "scripts/deployment/test-segmented-build-integrity.mjs",
+        "scripts/deployment/test-orphan-build-lock-recovery.mjs",
+        "config/pass36/a102r41-windows-segmented-build-lock-denominator-migration.json",
+        "scripts/pass36/verify-a102r41-windows-segmented-build-lock-migration.mjs"
+      ],
+      "failureCondition": "The exclusive segmented-build lock rejected win32 before either exact production build could start, making A60 stop at build-webpack after npm ci, lint, typecheck, A58 and A59 had passed.",
+      "remediation": "Allow only Linux and Windows, retain an O_EXCL/O_RDWR descriptor, bind bigint fstat/lstat identity and owner token, reject final/intermediate junctions and make Windows capability limits explicit. Keep orphan recovery Linux-only and grant no Windows ACL, directory-fsync or crash-durability credit.",
+      "positiveTest": "Windows lock integrity passes 81/81, Windows orphan recovery fails closed 34/34, and the formal 57-to-78 Linux / 81 Windows migration verifier passes 46/46 with zero removed rows.",
+      "negativeTest": "Six simultaneous contenders yield one owner and five blocked processes; token tamper, path replacement, final/intermediate junctions and Windows stale-lock recovery are rejected while the stale lock remains blocking.",
+      "remainingTruthBoundary": "Windows ACL ownership, native handle-relative reparse resistance, directory-entry fsync, crash durability, orphan recovery and Job Object process-tree containment remain unproven and receive zero external security credit.",
+      "requiredRetest": "Rebuild current authority on final bytes, rerun 28/28 frozen regression, package/clean-unpack, then rerun exact A60 through Webpack, Turbopack, production runtime and browser stages."
+    },
+    {
+      "id": "A102R41-P0-21",
+      "severity": "P0_BUILD_SOURCE_AUTHORITY",
+      "status": "LOCALLY_FIXED_FINAL_DUAL_BUILD_RETEST_REQUIRED",
+      "affectedFiles": [
+        "next.config.mjs",
+        "config/pass36/a102r41-next-tracing-and-build-receipt-denominator-migration.json",
+        "scripts/pass36/verify-a102r41-next-tracing-root-and-build-receipt.mjs"
+      ],
+      "failureCondition": "Next detected an ambient ancestor package-lock outside SOURCE_ONLY, selected that directory as the tracing root, and emitted a nested standalone layout that failed the exact output contract after both Webpack phases had passed.",
+      "remediation": "Derive outputFileTracingRoot from the canonical directory containing next.config.mjs so an ancestor lockfile cannot redefine source or standalone tracing authority.",
+      "positiveTest": "The tracing/root verifier passes 26/26 while a real ancestor lockfile is present; subsequent diagnostic Webpack and Turbopack both pass compile, generate, exact BUILD_ID and standalone output contracts without the ancestor-root warning.",
+      "negativeTest": "The verifier requires physical ancestor-lock presence, exact canonical project-root equality and file-URL derivation; any process-cwd or ancestor-derived root is rejected.",
+      "remainingTruthBoundary": "Diagnostic dual builds preceded the final roadmap/authority freeze and are superseded; final identical-byte A60 and clean-package execution remain mandatory.",
+      "requiredRetest": "Run Webpack and Turbopack inside A60 on the final clean-unpacked SOURCE and verify no ancestor-root warning or nested standalone path."
+    },
+    {
+      "id": "A102R41-P2-22",
+      "severity": "P2_PRIVACY_EVIDENCE",
+      "status": "LOCALLY_FIXED_FINAL_RECEIPT_SCAN_REQUIRED",
+      "affectedFiles": [
+        "lib/build/segmented-build-compat.mjs",
+        "scripts/deployment/test-segmented-build-compat.mjs",
+        "config/pass36/a102r41-next-tracing-and-build-receipt-denominator-migration.json"
+      ],
+      "failureCondition": "The Webpack proxy compatibility bridge persisted absolute local source and target paths into segmented-build receipts.",
+      "remediation": "Report only output-root-relative source/target paths and set rawAbsolutePathDisclosed=false.",
+      "positiveTest": "Compatibility contract formally migrates 6 to 8 assertions with six retained, two added and zero removed; the combined tracing/receipt verifier passes 26/26.",
+      "negativeTest": "Absolute source/target receipt paths and any missing no-disclosure marker fail the new rows; diagnostic Webpack/Turbopack receipt and log scans found zero local user paths.",
+      "remainingTruthBoundary": "Path redaction is privacy hygiene only and grants no build, browser, release, staging, LIVE or sale credit.",
+      "requiredRetest": "Scan every final A60 build/log/browser receipt and the final MATERIALS tree for absolute local roots before packaging."
+    },
+    {
+      "id": "A102R41-P1-23",
+      "severity": "P1_WINDOWS_TEST_PORTABILITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/deployment/test-build-watchdog-boundaries.mjs"
+      ],
+      "failureCondition": "The standalone bootstrap assertion compared a native Windows path directly with a forward-slash suffix and failed before exercising the remaining watchdog contract.",
+      "remediation": "Canonicalize only the assertion's separator representation before exact suffix comparison; retain the same file requirement and 29-row denominator.",
+      "positiveTest": "Deployment watchdog boundary passes 29/29 on exact Windows Node and the standalone bootstrap remains mandatory.",
+      "negativeTest": "Generic .next and parent-directory outputs remain rejected; no assertion was removed, skipped or weakened.",
+      "remainingTruthBoundary": "A fixture contract is not a production build, watchdog containment or Windows Job Object receipt.",
+      "requiredRetest": "Run source audit, full frozen regression and final A60 production-smoke preflight on identical bytes."
+    },
+    {
+      "id": "A102R41-P1-24",
+      "severity": "P1_DENOMINATOR_AUTHORITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass35/a42-dev-runtime-cache-recovery.json",
+        "config/pass36/a102r41-a42-critical-rebaseline.json",
+        "scripts/pass36/verify-a102r41-a42-critical-rebaseline.mjs",
+        "scripts/pass36/run-a102r41-frozen-local-regression.mjs"
+      ],
+      "failureCondition": "P0-21 changed critical next.config.mjs after the four-row A42 rebaseline, so retaining 4/33 would leave one critical current hash stale.",
+      "remediation": "Formally migrate changed critical rows 4 to 5 and verifier assertions 33 to 38, retaining all prior rows and adding exact parent/current/contract checks for next.config.mjs.",
+      "positiveTest": "A42 verifies all 76 critical paths, five approved changed rows and 38/38 assertions.",
+      "negativeTest": "Row collapse, removed-row metadata and self-digest tamper remain rejected; removed rows and removed verifier assertions are both zero.",
+      "remainingTruthBoundary": "Critical hash closure is local source evidence and grants no final build, browser, staging, LIVE or sale credit.",
+      "requiredRetest": "Run A42 38/38 inside the 28-stage frozen regression on the final authority payload."
+    },
+    {
+      "id": "A102R41-P0-25",
+      "severity": "P0_BUILD_ROUTE_CONTRACT",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_AND_FINAL_DUAL_BUILD_RETEST_REQUIRED",
+      "affectedFiles": [
+        "app/api/checkout/vlm-service/route.ts",
+        "lib/commerce/vlm-paid-checkout-containment.ts",
+        "scripts/pass36/test-a102r41-paid-checkout-containment-and-browser-storage.ts"
+      ],
+      "failureCondition": "The checkout Next route exported PASS36_PAID_CHECKOUT_CONTAINMENT, a non-route symbol forbidden by the generated Next route-module contract. Pre-build TypeScript had no generated route type for that module, so frozen regression reached TypeScript only after diagnostic build output existed and correctly rejected the export.",
+      "remediation": "Move the containment constant to a server library, import it into the route and focused test, and leave the route module with only Next-supported exports.",
+      "positiveTest": "The checkout containment remains 15/15 and the physical generated-types run passes 18/18 partitions over 300/300 roots, 1677 transitive first-party files and zero diagnostics.",
+      "negativeTest": "The preserved failed regression receipt contains the exact generated route-type diagnostic; restoring the non-route export makes the generated Next validator reject the module.",
+      "remainingTruthBoundary": "The successful generated-types run preceded final roadmap/authority edits and is diagnostic only; it grants no final build, browser, A79R1, A80R1, LIVE or sale credit.",
+      "requiredRetest": "Run TypeScript again inside final frozen regression and after both final clean-package builds inside A60."
+    },
+    {
+      "id": "A102R41-P1-26",
+      "severity": "P1_DENOMINATOR_AND_BUILD_GATE_AUTHORITY",
+      "status": "LOCALLY_FIXED_FINAL_A60_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "config/pass36/a102r41-a60-post-build-typescript-denominator-migration.json",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass36/verify-a102r41-a60-post-build-typescript-denominator-migration.mjs",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass36/run-a102r41-frozen-local-regression.mjs"
+      ],
+      "failureCondition": "A60 typechecked only before either build, when tsconfig discovered 159 source roots; it had no mandatory stage for the 141 route/type roots generated by the dual production builds.",
+      "remediation": "Formally migrate A60 from 13 to 14 stages with all 13 retained and one post-build-typecheck added. Preserve the 159-root pre-build profile and require exact 300/300 coverage after both builds, with 159 retained, 141 added and zero removed.",
+      "positiveTest": "The migration verifier passes 35/35 on the physical 300-root profile and A60 validates fresh TypeScript receipts at both 159/159 pre-build and 300/300 post-build denominators.",
+      "negativeTest": "Stage collapse to 13, root collapse to 158 or 299, partial generated output, covered/configured mismatch, stale receipt, diagnostics, skips and timeout increases are rejected.",
+      "remainingTruthBoundary": "A formal denominator and local generated-types pass are not final dual-build/browser evidence; clean-unpacked exact A60 remains mandatory.",
+      "requiredRetest": "Rebuild authority, pass full frozen regression, then execute all 14 A60 stages on the same final clean-unpacked SOURCE bytes."
+    },
+    {
+      "id": "A102R41-P1-27",
+      "severity": "P1_ROUTE_AST_AUTHORITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass15/route-export-ast-registry.json",
+        "app/api/checkout/vlm-service/route.ts"
+      ],
+      "failureCondition": "The P0-25 route edit correctly made the source-bound AST registry stale, and frozen regression attempt 04 stopped at route-dispatch before accepting a registry whose checkout row no longer matched physical bytes.",
+      "remediation": "Rebuild the complete route AST registry with exact project TypeScript on current bytes while preserving the 254-file and 317-method denominators.",
+      "positiveTest": "The rebuilt registry has exact parser provenance and route dispatch passes 1480/1480 while lazy route shells pass 176/176.",
+      "negativeTest": "The preserved failed attempt proves a stale per-route byteLength/SHA row is rejected before route counts can receive credit.",
+      "remainingTruthBoundary": "AST registry closure is local source evidence only and grants no production build, browser, LIVE or sale credit.",
+      "requiredRetest": "Rebuild descendant authority and rerun the full 28-stage frozen regression on the registry-bound final bytes."
+    },
+    {
+      "id": "A102R41-P1-28",
+      "severity": "P1_EXACT_HARNESS_RECEIPT_VALIDATION",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_CLEAN_PACKAGE_AND_A60_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass36/verify-a102r41-a60-post-build-typescript-denominator-migration.mjs"
+      ],
+      "failureCondition": "Final A60 attempt 04 completed pre-build TypeScript successfully at 18/18, 159/159 and zero diagnostics, but the receipt validator asked strict-json for an invalid 128 MiB maximum even though the shared bounded parser permits at most 16 MiB. A60 correctly failed the stage output contract and started no build.",
+      "remediation": "Use the shared parser's allowed 16 MiB ceiling, which remains far above the bounded TypeScript receipt, and strengthen the existing migration assertion to reject the invalid 128 MiB call site without increasing any timeout or execution budget.",
+      "positiveTest": "The physical failed-attempt TypeScript artifact parses under the 16 MiB ceiling and satisfies the 159/159, 1536-transitive, 175-tooling and zero-diagnostic contract.",
+      "negativeTest": "The preserved A60 receipt records strict_json_max_bytes_invalid, exit 1, buildId null, sourceUnchanged=true and zero build/browser credit; the verifier rejects reintroduction of 128 MiB.",
+      "remainingTruthBoundary": "A corrected local receipt parser grants no build/browser credit until full clean-package A60 is rerun from stage one.",
+      "requiredRetest": "Rebuild authority, rerun 28/28, deterministic package 2/2, clean-unpack 17/17 and all 14 A60 stages."
+    },
+    {
+      "id": "A102R41-P0-29",
+      "severity": "P0_PRODUCTION_RUNTIME_OUTPUT_AUTHORITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_CLEAN_PACKAGE_AND_A60_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass36/verify-a102r41-a60-post-build-typescript-denominator-migration.mjs"
+      ],
+      "failureCondition": "A60 final05 passed its first ten stages, including both production builds and post-build TypeScript 300/300, then looked for .next/BUILD_ID even though the source-owned build authority permits only mode-specific .next-pass25-* outputs. The generic alias was absent and the production server correctly did not start.",
+      "remediation": "Select the canonical Turbopack runtime output in policy, read its exact BUILD_ID from .next-pass25-turbopack/BUILD_ID, forbid a generic .next alias, and pass the same mode, distDir and build ID to production next start.",
+      "positiveTest": "Both canonical build outputs and the 300-root TypeScript artifact remained present; static harness and migration checks require the exact canonical runtime path and environment binding.",
+      "negativeTest": "The preserved attempt05 receipt records ten passed stages, a79_next_build_id_missing, buildId null, no server/browser stages and sourceUnchanged=true; any return to .next/BUILD_ID is rejected.",
+      "remainingTruthBoundary": "Canonical runtime selection is not a runtime or browser PASS until next start, smoke and all 56/29 browser evidence rows execute on the clean package.",
+      "requiredRetest": "Rebuild authority, rerun 28/28, package 2/2, clean-unpack 17/17 and final A60 14/14 including production next start."
+    },
+    {
+      "id": "A102R41-P0-30",
+      "severity": "P0_RUNTIME_SMOKE_AUTHORITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_CLEAN_PACKAGE_AND_A60_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "config/pass36/a102r41-a60-runtime-smoke-denominator-migration.json",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/deployment/run-production-smoke.mjs",
+        "scripts/pass36/verify-a102r41-a60-runtime-smoke-denominator-migration.mjs",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs"
+      ],
+      "failureCondition": "A60 final06 passed its first eleven stages, including both builds, post-build TypeScript 300/300 and production next start, but its current-use runtime-smoke stage still invoked the historical fifteen-target A42 development probe. Six rows failed under the canonical production-origin/no-provider boundary, and no browser row executed.",
+      "remediation": "Preserve the historical A42 harness byte-for-byte and its fifteen-target denominator, retain the complete fourteen-stage A60 denominator, and migrate only current use to the stronger source-owned production smoke with exactly 55 unique assertions, 16 unique HTTP results and a disclosed simulated TLS reverse proxy.",
+      "positiveTest": "The production smoke physically passed 55/55 assertions and 16/16 unique results on the canonical Turbopack output without ambient secrets; the formal migration verifier passes 23/23.",
+      "negativeTest": "The preserved final06 receipt records eleven passed stages, six stale-smoke failures, sourceUnchanged=true and browserRowsExecuted=0; the verifier rejects 54 assertions, 15 results, duplicate identities, historical deletion/hash rewrite, skips or timeout increases.",
+      "remainingTruthBoundary": "Simulated TLS and local standalone execution are not real TLS, browser, staging, LIVE or sale evidence; the entire clean-package A60 must be repeated from stage one.",
+      "requiredRetest": "Rebuild authority, rerun 28/28, deterministic package 2/2, clean-unpack 17/17 and final A60 14/14 with production smoke 55/55, results 16/16 and browser 56/29."
+    },
+    {
+      "id": "A102R41-P0-31",
+      "severity": "P0_BROWSER_EVIDENCE_TRUTH_AND_DENOMINATOR_AUTHORITY",
+      "status": "LOCALLY_FIXED_FULL_REGRESSION_CLEAN_PACKAGE_AND_A60_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass35/a45-browser-qa-fixture.mjs",
+        "scripts/pass35/a45-browser-http-evidence.mjs",
+        "scripts/pass35/test-a45-browser-qa-fixture.mjs",
+        "scripts/pass35/test-a45-exact-runtime-browser-acceptance.mjs",
+        "scripts/a45-browser-acceptance.mjs",
+        "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "scripts/a60-browser-evidence-verifier.mjs",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/a60-package-evidence.mjs",
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "config/pass36/a102r41-a60-browser-fixture-evidence-denominator-migration.json",
+        "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass36/run-a102r41-frozen-local-regression.mjs",
+        "scripts/pass36/verify-a102r41-clean-unpack.mjs",
+        "scripts/pass36/test-a102r41-package-portability-and-parser.mjs"
+      ],
+      "failureCondition": "A60 final07 passed twelve of fourteen stages and executed all 56 browser rows on unchanged bytes, but its disabled local-reference boundary left 313 generic 503 console events, zero of 57 browser scenarios passed, only 28 of 29 screenshots existed and zero of four popup tabs passed. The receipt captured no per-endpoint HTTP identity, so a precise endpoint diagnosis is not claimed.",
+      "remediation": "Generate a no-clobber, deterministic, independently byte-bound local-reference fixture under artifacts; intercept anonymous auth, non-durable profile, Shield, Real Markets and icon presentation families with explicit no-provider/no-real-data/no-LIVE/no-sale truth; collect redacted HTTP 4xx/5xx responses; and make verifier iteration denominator-stable for every expected row and screenshot.",
+      "positiveTest": "The fixture boundary passes 28/28, the A45 static contract passes 64/64 and the formal migration verifier passes 38/38. It retains 56 route rows, 57 scenarios, 29 screenshots, four popup tabs and fourteen A60 stages while migrating browser evidence verification from 520 to 584 checks with 520 retained, 64 added and zero removed.",
+      "negativeTest": "A substituted fixture with its receipt SHA updated, a popup 503, a missing screenshot and zero required fixture usage are each rejected at the same 24-check adversarial probe denominator; path escape, reparse components, overwrite, unsafe LIVE claims and invented Real Markets candles are rejected.",
+      "remainingTruthBoundary": "The fixture grants local rendering/failure-state/browser mechanics credit only. It is not current provider truth, durable auth/profile storage, commercial-rights evidence, staging, real customer data, LIVE reliability, paid value or sale readiness.",
+      "requiredRetest": "Rebuild authority, rerun 28/28 frozen regression, deterministic SOURCE 2/2, clean-unpack 17/17 and all 14 A60 stages with browser 57/57, screenshots 29/29 and evidence verifier 584/584 on identical bytes."
+    },
+    {
+      "id": "A102R41-P1-32",
+      "severity": "P1_RELEASE_IMMUTABILITY_AND_CURRENT_TEST_BINDING",
+      "status": "LOCALLY_FIXED_FULL_AUTHORITY_AND_REGRESSION_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass36/test-a79-exact-final-byte-build-browser-evidence-binding.mjs",
+        "scripts/pass36/verify-a79-exact-final-byte-build-browser-evidence-binding.mjs",
+        "config/pass36/a79-test-receipt.json"
+      ],
+      "failureCondition": "The A79 adversarial harness still rewrote a source-tracked receipt. When invoked before the post-P0-31 authority rebuild it changed that receipt from 54/54 PASS to 52/54 FAIL, creating a current-source byte drift and a circular recovery dependency.",
+      "remediation": "Remove the SOURCE write from the harness, retain the deterministic 54-row expected receipt as immutable source input, and make the existing 18-check A79 verifier execute the harness live and require canonical equality with that expected receipt.",
+      "positiveTest": "After final authority reconstruction, the live A79 harness must pass 54/54, emit stdout only, remain byte-identical to the immutable expected receipt, and leave the complete current-source fingerprint unchanged.",
+      "negativeTest": "A stale authority result, expected-receipt tamper, live/static mismatch or reintroduced writeFileSync to the tracked A79 receipt makes the existing verifier test:pass predicate fail without reducing either denominator.",
+      "remainingTruthBoundary": "A green A79 adversarial harness proves only local admission controls. It does not grant an exact build, exact browser, A80R1, staging, LIVE, production or sale credit.",
+      "requiredRetest": "Rebuild approved changes and descendant authority, run A79 54/54 plus verifier 18/18 on frozen bytes, then execute the complete 28-stage regression and final clean-package A60."
+    },
+    {
+      "id": "A102R41-P1-33",
+      "severity": "P1_FIXTURE_GENERATION_FILESYSTEM_CONTAINMENT_AND_NO_CLOBBER",
+      "status": "LOCALLY_FIXED_TARGETED_SUBCASES_PASS_FULL_REGRESSION_AND_WINDOWS_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass35/a45-browser-qa-fixture.mjs",
+        "scripts/pass35/test-a45-browser-qa-fixture.mjs",
+        "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs"
+      ],
+      "failureCondition": "Fixture generation previously relied on recursive parent creation and late containment checks, so a pre-existing Windows junction/reparse component could redirect creation outside the artifact root and a normal write could clobber an existing target.",
+      "remediation": "Create every parent component individually, lstat and realpath each component, require a canonical relative path, open the leaf with create-new semantics, write through the descriptor, fsync, close, and independently load and compare the final bytes.",
+      "positiveTest": "The fixture contract passes 28/28; its retained reparse-component row executes both load and generation rejection and proves the outside directory remains byte-unchanged.",
+      "negativeTest": "Traversal, absolute paths, NFKC drift, reserved Windows names, an existing target, symlink/junction components, unsafe truth claims and invented market candles are rejected without clobber.",
+      "remainingTruthBoundary": "Node on Windows exposes no handle-relative openat primitive, so a hostile concurrent directory-entry swap remains uncredited; fixture closure grants no provider, current-data, staging, LIVE or sale credit.",
+      "requiredRetest": "Run fixture 28/28, migration 38/38, frozen regression 28/28, clean-unpack and final A60 on a new physical artifact root."
+    },
+    {
+      "id": "A102R41-P0-34",
+      "severity": "P0_BROWSER_RECEIPT_SEMANTIC_PNG_AND_HARNESS_VERIFIER_AUTHORITY",
+      "status": "LOCALLY_FIXED_TARGETED_SUBCASES_PASS_FULL_CHROMIUM_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/a45-browser-acceptance.mjs",
+        "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "scripts/a60-browser-evidence-verifier.mjs",
+        "scripts/a60-package-evidence.mjs",
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs"
+      ],
+      "failureCondition": "A forged receipt could set row.ok or popup.ok while structured selector, CSP, navigation, focus, zoom, layout, request or modal evidence contradicted it; the harness and verifier used different security-header criteria, popup-only failure was omitted from failures, ignored console matching was substring-based, and shallow PNG checks could accept corrupt payloads.",
+      "remediation": "Derive route and popup truth independently from structured fields, require row.ok to equal the derived result, bind complete non-truncated collectors and exact expected RSC aborts, anchor the sole ignored-console advisory, include popup failures, require exact verifier denominator and identity, and validate PNG chunk ordering, CRC, compression, filters and dimensions with a table-driven CRC.",
+      "positiveTest": "The retained migration row executes 16/16 semantic-and-PNG subcases, including one valid route, eight route mutations, four popup mutations and three PNG cases; the formal migration remains 38/38 and verifier authority remains exactly 584 checks with identity SHA-256 21ae399b4bc46252ed02f29946019e2e97544ac0afb2bd9d5c48ca0412702ea3.",
+      "negativeTest": "Selector/CSP/hydration/focus/overflow/navigation/origin/ignored-request forgery, popup URL/bounds/console/request faults, IDAT CRC corruption and IEND CRC corruption are rejected without trusting supplied PASS flags.",
+      "remainingTruthBoundary": "These are synthetic verifier probes until all 57 physical browser scenarios and 29 screenshots pass on final exact Chromium bytes; no customer, provider, LIVE or sale credit is granted.",
+      "requiredRetest": "Run A45 64/64, migration 38/38, exact Chromium browser 57/57, screenshots 29/29 and verifier 584/584 on the frozen clean package."
+    },
+    {
+      "id": "A102R41-P0-35",
+      "severity": "P0_BROWSER_AND_CHILD_PROCESS_EVIDENCE_PRIVACY_AND_BOUNDED_COLLECTION",
+      "status": "LOCALLY_FIXED_TARGETED_SUBCASES_PASS_FINAL_LOG_AND_BROWSER_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass35/a45-browser-http-evidence.mjs",
+        "scripts/a45-browser-acceptance.mjs",
+        "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/a60-package-evidence.mjs",
+        "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs"
+      ],
+      "failureCondition": "Raw URL digests, query names, external hostnames, browser error text, navigation targets and unbounded collections could disclose or oracle credentials, account/customer/email/session identifiers, local user paths or provider detail; child stderr and stdout were persisted and hashed without a semantic privacy or failure policy.",
+      "remediation": "Use sanitized-endpoint-only URL digests, NFKC sensitive segment/key tokenization, external-origin redaction, no error-text persistence, URL/text/query/event caps, fail-closed truncation, sanitized final URLs, bounded broken-image evidence, minimal child environments, secret/local-path scans and typed stderr policies before any PASS or evidence packaging.",
+      "positiveTest": "Eight fixed privacy/budget subcases pass inside a retained migration row; caps are URL 16384 characters, text input 32768 characters, retained text 8192 bytes, query keys 32 and each browser collector 60 events. Known npm and Next advisories are exact typed policies rather than ignored stderr.",
+      "negativeTest": "Credentialed URLs, Unicode-lookalike sensitive keys, external private origins, more than 32 query keys, oversized text, appended ignored-console bait, unapproved stderr and secret/local-user-path output fail closed.",
+      "remainingTruthBoundary": "Endpoint detail is deliberately reduced and rejected logs remain negative local evidence; this grants no rights, real-provider, customer, staging, LIVE or paid-value credit.",
+      "requiredRetest": "Run targeted privacy cases, full lint/typecheck, scan every final A60 log/receipt/MATERIALS file for secrets and local user paths, and repeat exact browser verification."
+    },
+    {
+      "id": "A102R41-P0-36",
+      "severity": "P0_A60_RECEIPT_STAGE_PROCESS_RUNTIME_AND_EVIDENCE_PACKAGE_AUTHORITY",
+      "status": "LOCALLY_FIXED_SYNTHETIC_VALIDATORS_PASS_FINAL_A60_AND_PACKAGE_RETEST_REQUIRED",
+      "affectedFiles": [
+        "next.config.mjs",
+        "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "VELMERE_RUN_A60_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE.cmd",
+        "VELMERE_RUN_A79_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE.cmd",
+        "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "scripts/pass36/test-a79-exact-final-byte-build-browser-evidence-binding.mjs",
+        "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/a60-browser-evidence-verifier.mjs",
+        "scripts/a60-package-evidence.mjs",
+        "scripts/pass36/strict-json-cli.mjs",
+        "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs"
+      ],
+      "failureCondition": "The nested A60 contract could overwrite the parent canonical receipt; receipt writes could truncate an existing Windows reparse leaf; decision fields, stage rows, commands, timing, logs, verifier denominator, cleanup, runtime identity and package paths could be internally contradictory; environment/path checks were Windows-case-sensitive; port timeout was treated as closure; and package artifacts used ordinary duplicate-key JSON parsing.",
+      "remediation": "Give forced tests unique fixed-shape receipt paths, make all receipts create-new only, derive one decision-failure ledger, recompute exact ordered stages/commands/output/timing/log safety, normalize Windows environment keys and physical runtime paths, require three ECONNREFUSED cleanup probes, bind the actual server before and after browser through a per-run build-embedded SHA header, parse artifacts with duplicate-key rejection, snapshot every input once, require the exact 59-path plan and deterministic ZIP 2/2 readback.",
+      "positiveTest": "Sixteen fixed stage/log subcases and eight path-set subcases pass inside retained formal rows. Evidence authority is 4 core artifacts + 26 logs + 29 screenshots = 59 paths with path-set SHA-256 748873f54fb9fe4c10946f1f55e13fc9f8ccabec30ba28758735d102be60eba9; formal A60 remains 36 checks and migration remains 38 checks.",
+      "negativeTest": "Missing, duplicate, reordered or extra stages; nonzero exit, signal, command/output/timing/log substitution; observed path alias, missing log, missing/extra/duplicate/reordered/renamed/unsafe package paths; receipt clobber; duplicate JSON keys; wrong runtime header; unapproved stderr; and timeout-based cleanup proof are rejected.",
+      "remainingTruthBoundary": "No final A60 path or evidence ZIP has yet received current-byte credit (0/59 and 0/2). Windows lacks handle-relative openat and a hostile local process able to read the isolated process environment remains outside credited containment. Exact local success will still not prove staging, production services, LIVE or sale readiness.",
+      "requiredRetest": "Rebuild authority, pass A79 54/54 and verifier 18/18, frozen regression 28/28, deterministic SOURCE 2/2, clean-unpack 17/17, A60 14/14 with two runtime probes and three cleanup probes, browser 57/57, verifier 584/584, evidence paths 59/59 and evidence ZIP 2/2."
+    },
+    {
+      "id": "A102R41-P2-37",
+      "severity": "P2_FULL_FROZEN_REGRESSION_LINT_GATE_CLOSURE",
+      "status": "LOCALLY_FIXED_TARGETED_LINT_PASS_FULL_FROZEN_REGRESSION_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+        "scripts/pass35/a45-browser-http-evidence.mjs",
+        "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs",
+        "scripts/pass36/verify-a102r41-action-required-authority.mjs",
+        "scripts/pass36/verify-a79-exact-final-byte-build-browser-evidence-binding.mjs"
+      ],
+      "failureCondition": "The first frozen regression after the P0-36 hardening passed 26 stages, then full partitioned ESLint completed all 98 partitions but only 93 passed: thirteen errors across six changed files. TypeScript stage 28 correctly did not execute and packaging remained forbidden; the complete source fingerprint stayed unchanged.",
+      "remediation": "Remove useless initial assignments through expression-valued fail-closed helpers, replace control-character regular expressions with explicit Unicode code-point predicates, construct ANSI stripping without a control-code regex literal, and remove unnecessary quote escapes without adding rule disables, skips or denominator changes.",
+      "positiveTest": "Exact Node syntax checks pass for all six remediated files and direct project ESLint over the exact six-file set exits zero with no stdout or stderr diagnostics.",
+      "negativeTest": "The failed 28-stage attempt is retained as negative evidence with required=28, executed=27, passed=26, failedStage=eslint, partitions=98, passedPartitions=93, lintErrors=13, warnings=0, processFailures=0 and sourceImmutable=true; it receives no regression or packaging credit.",
+      "remainingTruthBoundary": "Targeted lint success does not replace the complete 98-partition lint, 18-partition TypeScript or full 28-stage frozen regression. All remain required on the new final digest before packaging.",
+      "requiredRetest": "Rebuild authority and rerun the full frozen regression from stage one, requiring 28/28, ESLint 98/98 with zero errors/warnings, TypeScript 18/18 and identical source before/after."
+    },
+    {
+      "id": "A102R41-P1-38",
+      "severity": "P1_CLEAN_UNPACK_HIDDEN_TEST_ARTIFACT_MUTATION",
+      "status": "LOCALLY_FIXED_A45_STATIC_64_OF_64_STDOUT_ONLY_FULL_FREEZE_PACKAGE_AND_CLEAN_RETEST_REQUIRED",
+      "affectedFiles": [
+        "scripts/pass35/test-a45-exact-runtime-browser-acceptance.mjs",
+        "scripts/pass36/verify-a102r41-action-required-authority.mjs",
+        "scripts/pass36/verify-a102r41-clean-unpack.mjs"
+      ],
+      "failureCondition": "Clean-unpack final06 passed all 17 child stages, including its independent frozen regression 28/28, but the A58-first authority path invoked the A45 static test in clean-source and that test created artifacts/pass35/a45/PASS35_A45_CONTRACT_TEST.json (222 bytes). Complete-tree comparison correctly changed from 5544 to 5545 files and denied sourceImmutable and cleanExtractImmutable.",
+      "remediation": "Make the A45 static contract test stdout-only, retain its exact 64-check denominator, leave explicit diagnostics writing to the separate opt-in diagnostics command, and strengthen the existing authority state-security row to reject writeFileSync, mkdirSync or the historical receipt path in this harness.",
+      "positiveTest": "The exact A45 static test passes 64/64 with exit zero while the pre-existing historical artifact SHA remains byte-identical before and after; the harness source contains no direct filesystem write or historical receipt path.",
+      "negativeTest": "The failed clean receipt is retained with steps 17/17 PASS, nested regression 28/28 PASS, source before 5544 files, source after 5545 files, unexpected artifact bytes 222, sourceImmutable=false and zero A77R1-A80R1 credit.",
+      "remainingTruthBoundary": "A stdout-only targeted harness does not itself prove clean immutability. The entire authority, frozen regression, deterministic SOURCE 2/2 and a new 17-step clean-unpack must be repeated on the descendant bytes.",
+      "requiredRetest": "Rebuild authority and descendant, rerun 28/28, package SOURCE 2/2, use a new clean receipt and extraction root, require 17/17 plus nested 28/28, sourceImmutable=true and cleanExtractImmutable=true."
+    },
+    {
+      "id": "A102R41-P1-39",
+      "severity": "P1_SANITIZED_CHILD_DENOMINATOR_TRUTH_RECONCILIATION",
+      "status": "LOCALLY_FIXED_PHYSICAL_11_OF_11_NO_DENOMINATOR_INFLATION_FULL_RETEST_REQUIRED",
+      "affectedFiles": [
+        "config/pass36/a102r41-action-required-current-state.json",
+        "config/pass36/a102r41-world-class-completion-program.json",
+        "scripts/pass36/build-a102r41-authority-files.mjs",
+        "scripts/pass36/verify-a102r41-action-required-authority.mjs",
+        "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+      ],
+      "failureCondition": "The generated current-state claimed sanitizedChildProcessChecks=12 although the immutable test implementation and the physical clean-unpack step execute exactly 11 checks. No formal migration or twelfth unique assertion existed.",
+      "remediation": "Reconcile the current-state, completion program, authority verifier and roadmap to the physically observed 11-check denominator; preserve the prior overclaim as rejected negative metadata and add no synthetic assertion.",
+      "positiveTest": "The sanitized-child harness physically reports checks=11, passed=11, failed=0 with all NO_GO flags unchanged, and clean-unpack binds that exact denominator.",
+      "negativeTest": "The authority verifier now rejects sanitizedChildProcessChecks=12 or any value other than 11; finding count and existing-gate mapping remain exact without score improvement.",
+      "remainingTruthBoundary": "Eleven local sanitized-child assertions do not prove native Windows process-tree containment, production secret custody, staging or external execution safety.",
+      "requiredRetest": "Rebuild authority and rerun the physical sanitized-child harness inside both frozen regression and clean-unpack; require 11/11 and zero sensitive output."
+    }
+  ],
+  "localImplementation": {
+    "currentSourceAuthorityChecks": 46,
+    "releaseSourceBindingSurfaces": 6,
+    "historicalSparseEdgeLedgerChecks": 11,
+    "historicalInnerChainExpectedChecksAfterR41": 415,
+    "a80HistoricalReportExpectedChecksAfterR41": 426,
+    "rlsRemediationChecks": 18,
+    "physicalEvidenceBoundaryChecks": 9,
+    "realIntakeSelfAssertionDenialChecks": 14,
+    "sanitizedChildProcessChecks": 11,
+    "sanitizedChildProcessChecksPriorRejectedClaim": 12,
+    "externalCommandContainmentChecks": 11,
+    "accountOperationPrivacyChecks": 55,
+    "checkoutContainmentChecks": 15,
+    "paidEntitlementBrowserBoundaryChecks": 26,
+    "a80AdmissionChecks": 41,
+    "a80r1MechanismChecks": 36,
+    "packagePortabilityAndParserChecks": 36,
+    "a60StageAuthorityMigrationChecks": 20,
+    "a60PostBuildTypeScriptMigrationChecks": 35,
+    "a60RuntimeSmokeMigrationChecks": 23,
+    "a60BrowserFixtureEvidenceMigrationChecks": 38,
+    "a60BrowserFixtureEvidenceMigrationStrengthenedExistingRows": 4,
+    "a45BrowserFixtureChecks": 28,
+    "a45BrowserFixtureReparseOperationsCovered": 2,
+    "a45StaticBrowserContractChecks": 64,
+    "a60BrowserEvidenceVerifierChecksBefore": 520,
+    "a60BrowserEvidenceVerifierChecksAfter": 584,
+    "a60HarnessChecks": 36,
+    "a79HarnessChecks": 54,
+    "a79VerifierChecks": 18,
+    "a79SourceTrackedReceiptWrites": 0,
+    "a79LiveStaticCanonicalEqualityRequired": true,
+    "failedFrozenRegressionAttemptsRetained": 1,
+    "failedFrozenRegressionRequiredStages": 28,
+    "failedFrozenRegressionExecutedStages": 27,
+    "failedFrozenRegressionPassedStages": 26,
+    "failedFrozenRegressionStage": "eslint",
+    "failedFrozenRegressionEslintPartitions": 98,
+    "failedFrozenRegressionEslintPassedPartitions": 93,
+    "failedFrozenRegressionLintErrors": 13,
+    "failedFrozenRegressionLintWarnings": 0,
+    "failedFrozenRegressionProcessFailures": 0,
+    "failedFrozenRegressionSourceImmutable": true,
+    "targetedLintRemediationFiles": 6,
+    "targetedLintRemediationExitCode": 0,
+    "failedCleanUnpackAttemptsRetained": 1,
+    "failedCleanUnpackRequiredSteps": 17,
+    "failedCleanUnpackPassedSteps": 17,
+    "failedCleanUnpackNestedRegressionPassedStages": 28,
+    "failedCleanUnpackSourceFilesBefore": 5544,
+    "failedCleanUnpackSourceFilesAfter": 5545,
+    "failedCleanUnpackUnexpectedArtifactBytes": 222,
+    "failedCleanUnpackSourceImmutable": false,
+    "failedCleanUnpackCleanExtractImmutable": false,
+    "a45StaticSourceTrackedReceiptWrites": 0,
+    "a45StaticStdoutOnly": true,
+    "browserSemanticAndPngSubcases": 16,
+    "browserPngIntegritySubcases": 3,
+    "browserHttpPrivacyAndBudgetSubcases": 8,
+    "a60StageSequenceAndLogBindingSubcases": 16,
+    "a60EvidencePathSetSubcases": 8,
+    "browserEvidenceCollectorRetainedLimit": 60,
+    "browserHttpUrlCharacterLimit": 16384,
+    "browserHttpTextInputCharacterLimit": 32768,
+    "browserHttpTextRetainedByteLimit": 8192,
+    "browserHttpQueryKeyLimit": 32,
+    "a60EvidencePackageCorePathsRequired": 4,
+    "a60EvidencePackageLogPathsRequired": 26,
+    "a60EvidencePackageScreenshotPathsRequired": 29,
+    "a60EvidencePackageTotalPathsRequired": 59,
+    "a60EvidencePackagePathSetSha256": "748873f54fb9fe4c10946f1f55e13fc9f8ccabec30ba28758735d102be60eba9",
+    "a60EvidencePackageDeterministicBuildsRequired": 2,
+    "a60EvidencePackagePathsVerified": 0,
+    "a60EvidencePackageDeterministicBuildsExecuted": 0,
+    "a60BrowserVerifierCheckIdentitySha256": "21ae399b4bc46252ed02f29946019e2e97544ac0afb2bd9d5c48ca0412702ea3",
+    "a60RuntimeProbeObservationsRequired": 2,
+    "a60RuntimeProbeObservationsVerified": 0,
+    "a60PortClosureRefusalProbesRequired": 3,
+    "a60PortClosureRefusalProbesVerified": 0,
+    "a60CanonicalReceiptCreateNewOnly": true,
+    "a60ForcedTestReceiptIsolated": true,
+    "a60StrictArtifactJsonParsing": true,
+    "windowsHandleRelativeOpenCredit": false,
+    "frozenLocalRegressionStageDenominator": 28,
+    "a60Attempt04PreBuildTypecheckPartitionsPassed": 18,
+    "a60Attempt04PreBuildTypecheckRootFilesCovered": 159,
+    "a60Attempt04PreBuildTypecheckTransitiveFirstPartyFiles": 1536,
+    "a60Attempt04PreBuildTypecheckDiagnostics": 0,
+    "a60Attempt04BuildsExecuted": 0,
+    "a60Attempt04BrowserRowsExecuted": 0,
+    "a60Attempt05StagesPassedBeforeRuntimePointerFailure": 10,
+    "a60Attempt05PostBuildTypecheckRootFilesCovered": 300,
+    "a60Attempt05PostBuildTypecheckDiagnostics": 0,
+    "a60Attempt05ProductionServerStarted": false,
+    "a60Attempt05BrowserRowsExecuted": 0,
+    "a60Attempt06StagesPassedBeforeStaleSmokeFailure": 11,
+    "a60Attempt06NextStartReady": true,
+    "a60Attempt06BrowserRowsExecuted": 0,
+    "a60Final07StagesPassedBeforeBrowserFailure": 12,
+    "a60Final07BrowserRowsExecuted": 56,
+    "a60Final07BrowserRowsPassed": 0,
+    "a60Final07BrowserScenarioChecksPassed": 0,
+    "a60Final07BrowserScenarioChecksRequired": 57,
+    "a60Final07ScreenshotsProduced": 28,
+    "a60Final07PopupTabsPassed": 0,
+    "a60Final07GenericConsole503Events": 313,
+    "a60Final07EndpointIdentityCaptured": false,
+    "a60Final07SourceUnchanged": true,
+    "a60RuntimeSmokeHistoricalTargets": 15,
+    "a60RuntimeSmokeUniqueAssertions": 55,
+    "a60RuntimeSmokeUniqueResults": 16,
+    "diagnosticProductionSmokeAssertionsPassed": 55,
+    "diagnosticProductionSmokeResultsPassed": 16,
+    "diagnosticProductionSmokeRealTlsCredit": false,
+    "a60CanonicalRuntimeMode": "turbopack",
+    "a60CanonicalRuntimeDistDir": ".next-pass25-turbopack",
+    "a60GenericNextAliasAuthority": false,
+    "a60StageDenominator": 14,
+    "a60StageHistoricalTestsDeleted": 0,
+    "typescriptPreBuildRootDenominator": 159,
+    "typescriptPostDualBuildRootDenominator": 300,
+    "typescriptPostDualBuildGeneratedRootsAdded": 141,
+    "typescriptGeneratedRootFilesRemoved": 0,
+    "diagnosticGeneratedTypecheckPartitionsPassed": 18,
+    "diagnosticGeneratedTypecheckRootFilesCovered": 300,
+    "diagnosticGeneratedTypecheckTransitiveFirstPartyFiles": 1677,
+    "diagnosticGeneratedTypecheckDiagnostics": 0,
+    "routeAstRegistryFiles": 254,
+    "routeAstRegistryMethodExports": 317,
+    "routeDispatchChecks": 1480,
+    "lazyRouteChecks": 176,
+    "windowsSegmentedBuildIntegrityChecks": 81,
+    "windowsOrphanRecoveryFailClosedChecks": 34,
+    "windowsBuildLockMigrationChecks": 46,
+    "windowsBuildLockAclOwnershipCredit": false,
+    "windowsBuildLockDirectoryFsyncCredit": false,
+    "windowsBuildLockOrphanRecoveryCredit": false,
+    "nextTracingAndReceiptVerifierChecks": 26,
+    "segmentedBuildCompatChecks": 8,
+    "ancestorLockPhysicallyIgnoredAsAuthority": true,
+    "diagnosticWebpackPreFreezePassed": true,
+    "diagnosticTurbopackPreFreezePassed": true,
+    "windowsBuildWatchdogBoundaryChecks": 29,
+    "a42CriticalRebaselineChecks": 38,
+    "a42CriticalChangedRows": 5,
+    "sourceModeExecutablePathDenominator": 58,
+    "exactNodeVersion": "24.18.0",
+    "exactNpmVersion": "11.16.0",
+    "exactChromiumVersion": "148.0.7778.96",
+    "exactPlaywrightRevision": 1223,
+    "exactInputPreflightLocalOnly": true,
+    "exactFinalByteBuildBrowserCredit": false,
+    "externalCommandExecutionCredit": false,
+    "durableAccountOperationWorkflowsImplemented": 0,
+    "durableOpaqueCheckoutFlowImplemented": false,
+    "realStripeTestLifecycles": 0,
+    "a79BrowserRowsRequired": 56,
+    "a79ScreenshotsRequired": 29,
+    "popupTabsRequired": 4,
+    "legacyA57CurrentPreflightEligible": false,
+    "currentAuthorityPayloadExactRequired": true,
+    "normalLifecycleReviewedNpmCiExecuted": false
+  },
+  "creditBoundary": {
+    "localSecurityRepairsMayReceiveLocalTestCredit": true,
+    "exactWindowsInputPreflightMayReceiveLocalCredit": true,
+    "exactFinalByteBuildBrowserCredit": false,
+    "externalCommandExecutionCredit": false,
+    "stagingCredit": false,
+    "realProviderCredit": false,
+    "rightsCredit": false,
+    "legalDpoCredit": false,
+    "independentAssuranceCredit": false,
+    "customerCredit": false,
+    "paidSkuCredit": false,
+    "liveCredit": false
+  },
+  "realDenominators": {
+    "formalOpenEntries": 31,
+    "a77r1ToA80r1": {
+      "verified": 0,
+      "required": 4
+    },
+    "exactChrome148PlaywrightRevision1223": {
+      "verified": 0,
+      "required": 1
+    },
+    "exactWindowsNode24_18_0Npm11_16_0": {
+      "verified": 0,
+      "required": 1
+    },
+    "a102ObservationWindows": {
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200
+    },
+    "stagingStages": {
+      "verified": 0,
+      "required": 10
+    },
+    "realRls": {
+      "verified": 0,
+      "required": 19
+    },
+    "stripeTestLifecycle": {
+      "verified": 0,
+      "required": 1
+    },
+    "providerRights": {
+      "verified": 0,
+      "required": 21
+    },
+    "legalDpoSignedDecisions": {
+      "verified": 0,
+      "required": 20
+    },
+    "officialAuditToolRuns": {
+      "verified": 0,
+      "required": 200
+    },
+    "crossAudits": {
+      "verified": 0,
+      "required": 20
+    },
+    "realCustomerPdfs": {
+      "verified": 0,
+      "required": 50
+    },
+    "shield": {
+      "verified": 0,
+      "required": 318
+    },
+    "shieldProMap": {
+      "verified": 0,
+      "required": 318
+    },
+    "realMarkets": {
+      "verified": 0,
+      "required": 583
+    },
+    "brainAngelRiskRealEval": {
+      "verified": 0,
+      "required": 300
+    },
+    "customerCohorts": {
+      "verified": 0,
+      "required": 2
+    },
+    "realStorageMutations": {
+      "verified": 0,
+      "required": 2,
+      "cases": [
+        "private_object_success_cleanup",
+        "private_object_failure_cleanup"
+      ]
+    },
+    "realKmsCalls": {
+      "verified": 0,
+      "required": 1
+    },
+    "realEmails": {
+      "verified": 0,
+      "required": 1,
+      "inboxProofCredited": false
+    },
+    "realCleanupConfirmations": {
+      "verified": 0,
+      "required": 2,
+      "cases": [
+        "success_path",
+        "failure_path"
+      ]
+    },
+    "independentAssurance": {
+      "verified": 0,
+      "required": 1
+    },
+    "contractCases": {
+      "verified": 0,
+      "required": 50
+    },
+    "sourceBytecodeReproduction": {
+      "verified": 0,
+      "required": 50
+    },
+    "realTierOutputs": {
+      "verified": 0,
+      "required": 150
+    },
+    "marketImpact": {
+      "verified": 0,
+      "required": 318
+    },
+    "whaleWatch": {
+      "verified": 0,
+      "required": 318
+    },
+    "alternateProviderProbes": {
+      "verified": 0,
+      "required": 10
+    },
+    "a114PostStagingRegression": {
+      "verified": 0,
+      "required": 1
+    },
+    "a115FinalSkuLegalClaimsClosure": {
+      "verified": 0,
+      "required": 1
+    },
+    "a116IndependentFinalRelease": {
+      "verified": 0,
+      "required": 1
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    }
+  },
+  "planningEstimate": {
+    "minimum": 13,
+    "mostLikely": 25,
+    "withRevisionsAndRetests": 46
+  },
+  "nextExecutionOrder": [
+    "Freeze the final A102R41 source payload and rerun exact Node/npm lint, pre-build 159-root typecheck, Webpack, Turbopack, post-build 300-root typecheck, production smoke and exact Chromium browser evidence on unchanged bytes.",
+    "Execute A80R1 two-phase deterministic SOURCE and MATERIALS 2/2 packaging, clean-unpack with A58 as the literal first child, and external final verification.",
+    "Implement and stage-test a pinned process-tree broker, durable server-owned account operations and durable opaque HttpOnly checkout flow before any paid execution.",
+    "Use disposable TEST staging and lawful external evidence for A95-A116; keep every unavailable denominator at zero."
+  ],
+  "truthBoundary": "A102R41 records local security, privacy, evidence-authority and exact Windows input-preflight repairs that require a final physical descendant verification. It grants no exact final-byte build/browser, A77R1-A80R1, staging, provider-rights, legal/DPO, independent assurance, real-data, customer, LIVE, production or sale credit.",
+  "generatedAtSemantics": "Authority metadata recording time only; not a source freeze, execution receipt, elapsed-time observation or promotion timestamp.",
+  "findingCount": 39,
+  "openEntryMigration": {
+    "parentOpenEntries": 31,
+    "newFormalProgramEntriesAdded": 0,
+    "entriesClosed": 0,
+    "currentOpenEntries": 31,
+    "reason": "The thirty-nine R41 findings refine existing A77R1-A116 gates and do not create duplicate scored program entries.",
+    "findingToExistingGate": {
+      "A102R41-P0-01": "A77R1",
+      "A102R41-P0-02": "A96",
+      "A102R41-P0-03": "A105-A113",
+      "A102R41-P0-04": "A79R1_A111",
+      "A102R41-P1-05": "A96",
+      "A102R41-P1-06": "A97",
+      "A102R41-P1-07": "A80R1",
+      "A102R41-P2-08": "A78R1",
+      "A102R41-P0-09": "A80R1",
+      "A102R41-P1-10": "A80R1",
+      "A102R41-P1-11": "A77R1_A80R1",
+      "A102R41-P1-12": "A78R1_A79R1",
+      "A102R41-P1-13": "A80R1",
+      "A102R41-P1-14": "A79R1_A80R1",
+      "A102R41-P2-15": "A79R1_A80R1",
+      "A102R41-P0-16": "A79R1",
+      "A102R41-P1-17": "A79R1_A80R1",
+      "A102R41-P1-18": "A80R1",
+      "A102R41-P0-19": "A79R1",
+      "A102R41-P0-20": "A79R1_A80R1",
+      "A102R41-P0-21": "A79R1_A80R1",
+      "A102R41-P2-22": "A79R1_A80R1",
+      "A102R41-P1-23": "A79R1",
+      "A102R41-P1-24": "A79R1_A80R1",
+      "A102R41-P0-25": "A79R1_A80R1",
+      "A102R41-P1-26": "A79R1_A80R1",
+      "A102R41-P1-27": "A79R1_A80R1",
+      "A102R41-P1-28": "A79R1_A80R1",
+      "A102R41-P0-29": "A79R1_A80R1",
+      "A102R41-P0-30": "A79R1_A80R1",
+      "A102R41-P0-31": "A79R1_A80R1",
+      "A102R41-P1-32": "A79R1_A80R1",
+      "A102R41-P1-33": "A79R1_A80R1",
+      "A102R41-P0-34": "A79R1_A80R1",
+      "A102R41-P0-35": "A79R1_A80R1",
+      "A102R41-P0-36": "A79R1_A80R1",
+      "A102R41-P2-37": "A79R1_A80R1",
+      "A102R41-P1-38": "A77R1_A80R1",
+      "A102R41-P1-39": "A77R1_A80R1"
+    },
+    "scoreImprovementClaimed": false
+  }
+}

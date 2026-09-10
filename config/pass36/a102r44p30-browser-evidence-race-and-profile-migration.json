@@ -1,0 +1,60 @@
+{
+  "assertionsRemoved": 0,
+  "browserDenominators": {
+    "popupRowsAfter": 1,
+    "popupRowsBefore": 1,
+    "removed": 0,
+    "routeRowsAfter": 56,
+    "routeRowsBefore": 56,
+    "scenarioChecksAfter": 57,
+    "scenarioChecksBefore": 57,
+    "screenshotsAfter": 29,
+    "screenshotsBefore": 29,
+    "verifierChecksAfter": 584,
+    "verifierChecksBefore": 584
+  },
+  "collectorMigration": {
+    "after": "ATOMIC_COLLECTOR_SNAPSHOT",
+    "before": "SEPARATE_MUTABLE_ITEMS_AND_SUMMARY_READS",
+    "checksRemoved": 0,
+    "collectorsPerPopup": 7,
+    "collectorsPerRoute": 7,
+    "eventRowsRemoved": 0
+  },
+  "denominatorCollapse": false,
+  "findingIds": [
+    "R44P30-P1-BROWSER-COLLECTOR-RACE",
+    "R44P30-P1-ANONYMOUS-PROFILE-EXPECTATION"
+  ],
+  "globalDecision": "NO_GO",
+  "live": false,
+  "migrationDigestSha256": "d7d63f96098868fe9d81b5d08b19e7c6c0a055decd884e688b88527974e55848",
+  "negativeEvidence": {
+    "browserPassed": 57,
+    "browserScenarios": 57,
+    "creditGranted": false,
+    "failureIds": [
+      "fixture-required-usage",
+      "row-ok:en\\0desktop\\0home",
+      "row-ok:de\\0desktop\\0shield-map"
+    ],
+    "verifierChecks": 584,
+    "verifierPassed": 581
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "profileMigration": {
+    "anonymousProfileExpectedAfter": "EXACT_ZERO",
+    "anonymousProfileExpectedBefore": "POSITIVE",
+    "positiveFamiliesAfter": 4,
+    "positiveFamiliesBefore": 5,
+    "reason": "useProfile is auth-gated by authReady && authenticated; anonymous browser QA must not call /api/profile.",
+    "requestCounterRetained": true,
+    "zeroFamiliesAfter": 1
+  },
+  "reason": "A 57/57 browser run exposed verifier-only failures because asynchronous requestfailed events could update retained items between separate items and summary reads, and because a legacy fixture policy required an anonymous profile request that the current auth gate correctly prevents.",
+  "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p30.browser-evidence-race-and-profile-migration.v1",
+  "scoreCredit": false,
+  "testsDeleted": 0
+}

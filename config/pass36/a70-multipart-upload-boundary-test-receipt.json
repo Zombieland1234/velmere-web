@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "velmere.pass36.a70.multipart-upload-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A70R0_MULTIPART_UPLOAD_AND_PASSIVE_ATTACHMENT_TRUST_BOUNDARY_HARDENING",
+  "total": 42,
+  "passed": 42,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "multipart_boundary_unquoted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "multipart_boundary_quoted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "urlencoded_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "missing_boundary_rejected",
+      "pass": true,
+      "detail": "contact_upload_boundary_invalid"
+    },
+    {
+      "id": "oversized_boundary_rejected",
+      "pass": true,
+      "detail": "contact_upload_boundary_invalid"
+    },
+    {
+      "id": "content_type_crlf_rejected",
+      "pass": true,
+      "detail": "contact_upload_content_type_invalid"
+    },
+    {
+      "id": "json_content_type_rejected",
+      "pass": true,
+      "detail": "contact_upload_content_type_invalid"
+    },
+    {
+      "id": "clean_form_fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "duplicate_field_rejected",
+      "pass": true,
+      "detail": "contact_upload_duplicate_field"
+    },
+    {
+      "id": "unknown_field_rejected",
+      "pass": true,
+      "detail": "contact_upload_unknown_field"
+    },
+    {
+      "id": "file_in_text_field_rejected",
+      "pass": true,
+      "detail": "contact_upload_text_field_type_invalid"
+    },
+    {
+      "id": "string_attachment_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_type_invalid"
+    },
+    {
+      "id": "field_control_rejected",
+      "pass": true,
+      "detail": "contact_upload_text_field_control_character"
+    },
+    {
+      "id": "oversized_text_rejected",
+      "pass": true,
+      "detail": "contact_upload_text_field_too_large"
+    },
+    {
+      "id": "filename_path_stripped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "filename_bidi_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_name_invalid"
+    },
+    {
+      "id": "filename_no_extension_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_name_invalid"
+    },
+    {
+      "id": "passive_pdf_accepted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "pdf_active_javascript_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_active_content"
+    },
+    {
+      "id": "pdf_open_action_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_active_content"
+    },
+    {
+      "id": "pdf_missing_eof_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_structure_invalid"
+    },
+    {
+      "id": "pdf_trailing_payload_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_structure_invalid"
+    },
+    {
+      "id": "pdf_extension_mismatch_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_media_mismatch"
+    },
+    {
+      "id": "structured_png_accepted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "png_crc_tamper_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_structure_invalid"
+    },
+    {
+      "id": "png_trailing_payload_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_structure_invalid"
+    },
+    {
+      "id": "png_dimension_bomb_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_dimensions_invalid"
+    },
+    {
+      "id": "structured_jpeg_accepted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "jpeg_trailing_payload_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_structure_invalid"
+    },
+    {
+      "id": "jpeg_dimension_bomb_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_dimensions_invalid"
+    },
+    {
+      "id": "attachment_size_limit_rejected",
+      "pass": true,
+      "detail": "contact_upload_attachment_too_large"
+    },
+    {
+      "id": "route_imports_upload_boundary",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "route_validates_content_type",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "route_validates_form_entries",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "route_validates_passive_bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "route_no_legacy_signature_only",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "route_no_direct_form_get",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "idempotency_after_form_validation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "provider_uses_safe_filename",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "receipt_uses_content_digest",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "response_does_not_expose_digest",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

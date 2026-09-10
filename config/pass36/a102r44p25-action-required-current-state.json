@@ -1,0 +1,95 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": false,
+    "browser57": false,
+    "cleanUnpack": false,
+    "exactWindows": false,
+    "externalStaging": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "pdf150": false,
+    "postBuildTypeScript": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "sourceAuthority": false,
+    "staticPolicy": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "EXACT_WINDOWS",
+    "TWO_DISPOSABLE_EXTERNAL_TENANTS",
+    "RLS_19_OF_19",
+    "STRIPE_TEST_LIFECYCLE",
+    "PRIVATE_OBJECT_STORAGE",
+    "EXTERNAL_KMS",
+    "TRANSACTIONAL_EMAIL",
+    "INDEPENDENT_BACKUP_RESTORE",
+    "INDEPENDENT_REVIEW",
+    "CUSTOMER_OUTCOMES",
+    "PROVIDER_RIGHTS_318_583"
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "authorityForkReconciled": true,
+    "currentReleasePointersReconciled": true,
+    "exactWindowsAdmissionPrepared": true,
+    "parentExactLinuxReleaseEvidenceBound": true,
+    "signedExternalEvidenceVerifierPrepared": true,
+    "stagingAdmissionPrepared": true
+  },
+  "newFindings": [
+    {
+      "id": "R44P25-P0-AUTHORITY-FORK",
+      "severity": "P0",
+      "status": "CLOSED_BY_EXPLICIT_PARENT_SELECTION",
+      "summary": "Two sibling R44P24 archives existed. Exact Linux closure is selected; sibling merge and credit are forbidden."
+    },
+    {
+      "id": "R44P25-P0-STALE-CURRENT-RELEASE-POINTER",
+      "severity": "P0",
+      "status": "FIXED",
+      "summary": "Current release pointers referenced base A102R44 rather than the active R44P24 lineage."
+    },
+    {
+      "id": "R44P25-P1-PARENT-CREDIT-TRANSFER",
+      "severity": "P1",
+      "status": "CLOSED_FAIL_CLOSED",
+      "summary": "Parent exact release evidence is recorded but cannot transfer to changed R44P25 bytes."
+    },
+    {
+      "id": "R44P25-P1-STAGING-SECRETS-ADMISSION",
+      "severity": "P1",
+      "status": "IMPLEMENTED_LOCAL_NO_EXTERNAL_CREDIT",
+      "summary": "Admission checks test-only classification and never records raw secrets."
+    },
+    {
+      "id": "R44P25-P1-EXACT-WINDOWS-HANDOFF",
+      "severity": "P1",
+      "status": "IMPLEMENTED_NOT_EXECUTED",
+      "summary": "Exact Windows admission contract and PowerShell handoff are prepared; no Windows credit."
+    }
+  ],
+  "parentEvidence": {
+    "creditTransferredToChild": false,
+    "exactLinuxRelease": true,
+    "exactWindowsRelease": false,
+    "releaseLedgerSha256": "cda7860bf64f369ab0fd4cc24cc9fc90399a8253fd6fbff5958ae75aa0acce5e",
+    "sourceArchiveSha256": "4f8b084aebdd376de6073f4b269d2b0a1b36b3c1682d289155b0091f5a936c57"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p25.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

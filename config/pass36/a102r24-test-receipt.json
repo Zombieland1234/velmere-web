@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "velmere.pass36.a102r24.shared-catalog-reference-truth-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R24_ACTION_REQUIRED_SHARED_CATALOG_REFERENCE_TRUTH_REMOTE_SEARCH_AND_REFRESH_FLICKER_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R23_ACTION_REQUIRED_KLINE_MODE_LOCAL_REFERENCE_DETAIL_ICON_REQUEST_AND_DEV_PREFETCH_STORM_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T00:52:00.000Z",
+  "status": "PASS_A102R24_SHARED_CATALOG_REFERENCE_TRUTH_REMOTE_SEARCH_AND_REFRESH_FLICKER_BOUNDARY_NO_REAL_CREDIT",
+  "checksPassed": 54,
+  "checksFailed": 0,
+  "sharedConcurrentNetworkCalls": 1,
+  "sharedResolvedCacheNetworkCalls": 0,
+  "sharedCacheTtlMs": 15000,
+  "shieldSinglePageCatalogFetchRemaining": 0,
+  "remoteSearchAllowedInReferenceMode": false,
+  "referenceAggregateMetricsPublished": false,
+  "referenceRiskScorePublished": false,
+  "productionReferenceRows": 0,
+  "realProviderRightsApproved": 0,
+  "realBrowserRows": 0,
+  "exactBuildBrowserCredit": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "rows": [
+    {
+      "id": "identity.active",
+      "passed": true
+    },
+    {
+      "id": "identity.package",
+      "passed": true
+    },
+    {
+      "id": "identity.package-nested",
+      "passed": true
+    },
+    {
+      "id": "identity.parent",
+      "passed": true
+    },
+    {
+      "id": "identity.authority",
+      "passed": true
+    },
+    {
+      "id": "identity.authority-parent",
+      "passed": true
+    },
+    {
+      "id": "truth.no-go",
+      "passed": true
+    },
+    {
+      "id": "truth.live-false",
+      "passed": true
+    },
+    {
+      "id": "truth.sale-false",
+      "passed": true
+    },
+    {
+      "id": "truth.production-false",
+      "passed": true
+    },
+    {
+      "id": "truth.worldclass-false",
+      "passed": true
+    },
+    {
+      "id": "catalog.cache-ttl",
+      "passed": true
+    },
+    {
+      "id": "catalog.clear-export",
+      "passed": true
+    },
+    {
+      "id": "catalog.fetch-export",
+      "passed": true
+    },
+    {
+      "id": "catalog.concurrent-dedup",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "id": "catalog.concurrent-results",
+      "passed": true
+    },
+    {
+      "id": "catalog.result-clone",
+      "passed": true
+    },
+    {
+      "id": "catalog.resolved-cache-hit",
+      "passed": true,
+      "details": 1
+    },
+    {
+      "id": "catalog.complete-live",
+      "passed": true
+    },
+    {
+      "id": "catalog.clear-forces-refresh",
+      "passed": true,
+      "details": 2
+    },
+    {
+      "id": "catalog.abort-does-not-duplicate-or-cancel-shared-fetch",
+      "passed": true,
+      "details": 3
+    },
+    {
+      "id": "catalog.surviving-waiter-resolves",
+      "passed": true
+    },
+    {
+      "id": "shield.shared-full-catalog",
+      "passed": true
+    },
+    {
+      "id": "shield.single-page-fetch-removed",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-mode",
+      "passed": true
+    },
+    {
+      "id": "shield.remote-search-live-only",
+      "passed": true
+    },
+    {
+      "id": "shield.remote-search-clears",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-subtitle",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-metric-copy",
+      "passed": true
+    },
+    {
+      "id": "shield.last-view-retained",
+      "passed": true
+    },
+    {
+      "id": "shield.refresh-without-empty-flicker",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-change-withheld",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-cap-withheld",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-volume-withheld",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-active-withheld",
+      "passed": true
+    },
+    {
+      "id": "shield.reference-meta-explicit",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.reference-mode",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.reference-subtitle",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.reference-proofs",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.pl-live-copy-scoped",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.en-live-copy-scoped",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.de-live-copy-scoped",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.unscoped-zero-synthetic-removed",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.last-view-retained",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.refresh-without-empty-flicker",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.reference-cap-withheld",
+      "passed": true
+    },
+    {
+      "id": "shield-pro.reference-gauge-withheld",
+      "passed": true
+    },
+    {
+      "id": "shield-pro-retry-clears-cache",
+      "passed": true
+    },
+    {
+      "id": "a42.current-hashes-exact",
+      "passed": true
+    },
+    {
+      "id": "a42.denominator-71",
+      "passed": true
+    },
+    {
+      "id": "a58.current",
+      "passed": true
+    },
+    {
+      "id": "a58.parent",
+      "passed": true
+    },
+    {
+      "id": "a58.descendant",
+      "passed": true
+    },
+    {
+      "id": "a58.archive",
+      "passed": true
+    }
+  ]
+}

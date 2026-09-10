@@ -1,0 +1,259 @@
+{
+  "schemaVersion": "velmere.pass35.a33.visual-merge-policy.v1",
+  "revisionId": "VELMERE_PASS35_A33_VISUAL_INTEGRATION_CANDIDATE",
+  "baseEngine": {
+    "release": "PASS35_A32",
+    "sourceZip": "VELMERE_PASS35_A32_SOURCE_ONLY.zip",
+    "canonicalWeightedPercent": 59.3,
+    "canonicalStrictPercent": 39.5,
+    "zeroBudgetWeightedPercent": 91.9
+  },
+  "visualSource": {
+    "archive": "VELMERE_VISUAL_SOURCE_CLEAN.zip"
+  },
+  "truthBoundary": {
+    "visualIntegrationOnly": true,
+    "canonicalPercentChanged": false,
+    "exactRuntimeExecuted": false,
+    "browserE2EExecuted": false,
+    "productionReadyClaimAllowed": false,
+    "sellEnabled": false,
+    "globalDecision": "NO_GO"
+  },
+  "protectedEngine": {
+    "prefixes": [
+      "app/api",
+      "lib/security",
+      "lib/commerce",
+      "components/auth",
+      "components/checkout",
+      "components/security",
+      "components/wallet",
+      "db",
+      "supabase"
+    ],
+    "fileCount": 490,
+    "baseDigest": "9bb5e5a23b6cab0a7e8b6bf98d9aeb9deccb878ee751220aa31ee8cbe4898552",
+    "mergedDigest": "9bb5e5a23b6cab0a7e8b6bf98d9aeb9deccb878ee751220aa31ee8cbe4898552",
+    "byteIdentical": true
+  },
+  "packageIdentity": {
+    "packageJsonBaseSha256": "8d44183b8ab5507110d83be07bf31d52aceb9a8c963340dbe9f64362dbb70b74",
+    "packageJsonMergedSha256": "8d44183b8ab5507110d83be07bf31d52aceb9a8c963340dbe9f64362dbb70b74",
+    "packageLockBaseSha256": "59e7cc6b110e7448d89ce96745c7a0c39eed50d261f92c82520438eb7b2e31e4",
+    "packageLockMergedSha256": "59e7cc6b110e7448d89ce96745c7a0c39eed50d261f92c82520438eb7b2e31e4"
+  },
+  "requiredVisualFiles": [
+    {
+      "path": "app/[locale]/atelier/page.tsx",
+      "sha256": "4d5739ed10becdd9ee1580dd6ea6b4ef7111112475873f0a0e19d97dfedd93ac",
+      "size": 1682
+    },
+    {
+      "path": "app/[locale]/intelligence/page.tsx",
+      "sha256": "af3b7b86082d13c0cb5ed813970983150b6981edf0083778b12165003cbacb1f",
+      "size": 4219
+    },
+    {
+      "path": "app/[locale]/research-lab/page.tsx",
+      "sha256": "f5d3dea47a3f202bc48ba7b7a87767cfc1c3c253f4afee29025ee0240b4339e6",
+      "size": 12528
+    },
+    {
+      "path": "app/[locale]/risk-methodology/page.tsx",
+      "sha256": "e84abcab62501291028c4ebdaf3ae095b217ddb325b7d5d5314f1b99443bf0d1",
+      "size": 632
+    },
+    {
+      "path": "components/atelier/AtelierPage.tsx",
+      "sha256": "a2f181d14d18979c8825f39eed4c08275080134a7103322a98759c2032001d5c",
+      "size": 37598
+    },
+    {
+      "path": "components/atelier/AtelierInteractiveGlobe.tsx",
+      "sha256": "54b46d36200d4a5a1e3abb161b250212e160720d42d8c41995b9dbb9518599dc",
+      "size": 13807
+    },
+    {
+      "path": "components/intelligence/IntelligencePage.tsx",
+      "sha256": "d4a36b9a56200521209a4ea0de53acbe3ba9a10b159f38121b119d718ecdf0ab",
+      "size": 67742
+    },
+    {
+      "path": "components/intelligence/IntelligenceHero3D.tsx",
+      "sha256": "e0c5e0fff42a4d10f5d47f666668d239847e3671656bf5cf512478d356f255e7",
+      "size": 13057
+    },
+    {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "sha256": "c36f17ec7688d31992b31a9e23f02a3b9b594f34e48122049b9b3addb731cf2e",
+      "size": 41142
+    },
+    {
+      "path": "components/ui/PremiumAmbientGlobe.tsx",
+      "sha256": "fd9a560e95936183e0006b4fcdfdff6f25598315420e2027bedd1a7ddca44cc4",
+      "size": 8583
+    },
+    {
+      "path": "components/motion/VlmMotionScene.tsx",
+      "sha256": "e5dea1b8f7bf2c87b2008bb8cdb54d53ca97855cd672957f4fc979dd88823cb1",
+      "size": 5894
+    },
+    {
+      "path": "components/motion-atelier/MotionAtelier.tsx",
+      "sha256": "65fff4e853b43103796da5e8c935af7a8f47d772e8c41dc4360150ed35e0ec2f",
+      "size": 10797
+    },
+    {
+      "path": "public/images/atelier/earth-blue-marble-5400.jpg",
+      "sha256": "dc059529b8ed1cfcdd59747a7c3f259c93c1322bf88ca1ec8bab1dd71fcc57f5",
+      "size": 1692239
+    },
+    {
+      "path": "public/images/atelier/earth-night-lights-3600.jpg",
+      "sha256": "d87de751a264e4f8ff69c68de5dab9606daee87a6f15ae743c93200743bd7ec1",
+      "size": 779638
+    },
+    {
+      "path": "public/images/atelier/world-dotted-points.json",
+      "sha256": "f70f911ddad8dd7577b538844d55a106e90f7f061b2f452d2e08f01743fc6da2",
+      "size": 66317
+    },
+    {
+      "path": "lib/market-integrity/vlm-analysis.ts",
+      "sha256": "ac129df2a6af160ae07b0f21a44244f9a7edb29cb5f1fbae52b2b5183d973f05",
+      "size": 11704
+    }
+  ],
+  "mergeInventory": {
+    "addedCount": 68,
+    "changedCount": 16,
+    "removedCount": 0,
+    "addedFiles": [
+      "app/[locale]/atelier/page.tsx",
+      "app/[locale]/intelligence/page.tsx",
+      "app/[locale]/risk-methodology/page.tsx",
+      "components/atelier/AtelierAnimationLab.tsx",
+      "components/atelier/AtelierInteractiveGlobe.tsx",
+      "components/atelier/AtelierNetworkMap.tsx",
+      "components/atelier/AtelierPage.tsx",
+      "components/atelier/AtelierThreeGlobe.tsx",
+      "components/home/NeuralAtelier3D.tsx",
+      "components/intelligence/AngelEvidenceChapter.module.css",
+      "components/intelligence/AngelEvidenceChapter.tsx",
+      "components/intelligence/IntelligenceDepthSections.tsx",
+      "components/intelligence/IntelligenceFlagshipSections.module.css",
+      "components/intelligence/IntelligenceFlagshipSections.tsx",
+      "components/intelligence/IntelligenceHero3D.tsx",
+      "components/intelligence/IntelligenceInteractive.tsx",
+      "components/intelligence/IntelligenceLuxury.module.css",
+      "components/intelligence/IntelligenceMotion.tsx",
+      "components/intelligence/IntelligencePage.module.css",
+      "components/intelligence/IntelligencePage.tsx",
+      "components/intelligence/IntelligenceResearchVault.tsx",
+      "components/intelligence/IntelligenceVisuals.tsx",
+      "components/intelligence/RiskMethodologyModal.tsx",
+      "components/market-integrity/AssetIntelligenceTabs.module.css",
+      "components/market-integrity/AssetIntelligenceTabs.tsx",
+      "components/market-integrity/analysis/AnalysisTab.tsx",
+      "components/motion-atelier/MotionAtelier.module.css",
+      "components/motion-atelier/MotionAtelier.tsx",
+      "components/motion/VelmereAnalysisMarks.module.css",
+      "components/motion/VelmereAnalysisMarks.tsx",
+      "components/motion/VlmAnimationLab.module.css",
+      "components/motion/VlmAnimationLab.tsx",
+      "components/motion/VlmMotionScene.module.css",
+      "components/motion/VlmMotionScene.tsx",
+      "components/research/ResearchLabExperience.module.css",
+      "components/research/ResearchLabExperience.tsx",
+      "components/ui/PremiumAmbientGlobe.tsx",
+      "config/pass35/a33-visual-merge.json",
+      "lib/intelligence/angel-evidence-content.ts",
+      "lib/intelligence/intelligence-content.ts",
+      "lib/intelligence/intelligence-depth-content.ts",
+      "lib/intelligence/intelligence-flagship-content.ts",
+      "lib/intelligence/intelligence-tier-matrix.ts",
+      "lib/intelligence/public-intelligence-metrics.ts",
+      "lib/market-integrity/market-instrument-search.ts",
+      "lib/market-integrity/vlm-analysis.ts",
+      "public/fonts/velmere/cormorant-garamond-latin-ext-italic.woff2",
+      "public/fonts/velmere/cormorant-garamond-latin-ext.woff2",
+      "public/fonts/velmere/cormorant-garamond-latin-italic.woff2",
+      "public/fonts/velmere/cormorant-garamond-latin.woff2",
+      "public/fonts/velmere/jetbrains-mono-latin-ext.woff2",
+      "public/fonts/velmere/jetbrains-mono-latin.woff2",
+      "public/fonts/velmere/manrope-latin-ext.woff2",
+      "public/fonts/velmere/manrope-latin.woff2",
+      "public/images/atelier/earth-blue-marble-2048.jpg",
+      "public/images/atelier/earth-blue-marble-5400.jpg",
+      "public/images/atelier/earth-clouds-1024.png",
+      "public/images/atelier/earth-night-lights-2048.jpg",
+      "public/images/atelier/earth-night-lights-3600.jpg",
+      "public/images/atelier/earth-normal-2048.jpg",
+      "public/images/atelier/earth-specular-2048.jpg",
+      "public/images/atelier/world-orthographic-land-v6.svg",
+      "public/images/atelier/world-orthographic-land-v6.webp",
+      "public/market-logos/jup.svg",
+      "public/wallets/coinbase.svg",
+      "public/wallets/ledger.svg",
+      "public/wallets/okx.svg",
+      "public/wallets/walletconnect.svg"
+    ],
+    "changedFiles": [
+      "app/[locale]/research-lab/page.tsx",
+      "app/globals.css",
+      "components/Navbar.tsx",
+      "components/home/NeuralBrainVisual.tsx",
+      "components/market-integrity/ShieldMapCommandClient.tsx",
+      "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "components/search/VelmereIntelligenceSearchClient.tsx",
+      "messages/de.json",
+      "messages/en.json",
+      "messages/pl.json",
+      "public/market-logos/dax.svg",
+      "public/market-logos/qqq.svg",
+      "public/market-logos/spy.svg",
+      "public/market-logos/xrp.svg",
+      "public/wallets/metamask.svg",
+      "public/wallets/phantom.svg"
+    ],
+    "removedFiles": [],
+    "copiedCount": 272,
+    "patchedCount": 10
+  },
+  "guardrails": {
+    "forbiddenDirectoriesInSource": [
+      "node_modules",
+      ".next",
+      ".git"
+    ],
+    "forbiddenLegacyImportFragments": [
+      "pass2024",
+      "pass4740-paid-access"
+    ],
+    "shieldProRequiredFragment": "readJsonResponseBounded",
+    "shieldProForbiddenFragment": ".json()",
+    "requiredNavbarRoutes": [
+      "/intelligence",
+      "/atelier"
+    ],
+    "requiredLocales": [
+      "pl",
+      "en",
+      "de"
+    ],
+    "sourcePdfCount": 0
+  },
+  "css": {
+    "path": "app/globals.css",
+    "sha256": "cf135524e0891f3c052ce65fe0430e4875435fd66224d6fe236dec65db026e85",
+    "size": 3518280
+  },
+  "observedEnvironment": {
+    "node": "22.16.0",
+    "npm": "10.9.2",
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "npmCi": "BLOCKED_DNS_AND_EXACT_RUNTIME"
+  }
+}

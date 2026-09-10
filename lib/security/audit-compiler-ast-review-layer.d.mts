@@ -1,0 +1,44 @@
+import type { SolidityCompilerAstEvidence, SolidityCompilerAstSourceFile } from "./solidity-compiler-ast-runtime.mjs";
+
+export const AUDIT_COMPILER_AST_REVIEW_LAYER_SCHEMA: "velmere.pass36.a102r44p39.audit-compiler-ast-review-layer.v2";
+export type AuditCompilerAstReviewFinding = {
+  referenceSeed: string;
+  ruleId: string;
+  severity: "critical" | "high" | "medium" | "low" | "informational";
+  title: string;
+  description: string;
+  safeRemediation: string;
+  sourcePath: string;
+  line: number;
+  astNodeId: number | null;
+  excerpt: string;
+  limitations: string[];
+  confidenceState: "NOT_CALIBRATED";
+  compilerBacked: true;
+  reviewPriorityOnly: true;
+  legacyCompilerBounded: boolean;
+  broadArithmeticCoverageProven: false;
+  exploitabilityProven: false;
+  independentReview: false;
+};
+export type AuditCompilerAstReviewLayer = {
+  schemaVersion: typeof AUDIT_COMPILER_AST_REVIEW_LAYER_SCHEMA;
+  status: "ACCEPTED_LOCAL_COMPILER_AST_REVIEW_LAYER" | "REJECTED_INVALID_COMPILER_AST_EVIDENCE";
+  accepted: boolean;
+  evidenceSha256: string | null;
+  analyzerId: string | null;
+  analyzerClass: string | null;
+  compilerVersion: string | null;
+  sourceBundleSha256: string | null;
+  verificationChecks: Array<{ id: string; ok: boolean; detail?: unknown }>;
+  failedChecks: Array<{ id: string; ok: boolean; detail?: unknown }>;
+  findings: AuditCompilerAstReviewFinding[];
+  findingCount: number;
+  deploymentBinding: { status: string; bindingSha256: string } | null;
+  proxyBinding: { status: string; proxyBindingSha256: string } | null;
+  creditBoundary: Record<string, boolean>;
+  truthBoundary: string;
+  reviewLayerSha256: string;
+};
+export function buildAuditCompilerAstReviewLayer(input: { evidence: SolidityCompilerAstEvidence | null | undefined; sourceFiles: SolidityCompilerAstSourceFile[]; deploymentBinding?: Record<string, unknown> | null; proxyBinding?: Record<string, unknown> | null }): AuditCompilerAstReviewLayer;
+export function verifyAuditCompilerAstReviewLayer(value: unknown): value is AuditCompilerAstReviewLayer;

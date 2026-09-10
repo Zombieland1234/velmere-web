@@ -1,0 +1,746 @@
+{
+  "schemaVersion": "velmere.pass36.a64.historical-control-metadata-recovery.v1",
+  "revisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+  "parentRevisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+  "sourceArchive": {
+    "fileName": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE_SOURCE_ONLY(1).zip",
+    "byteLength": 47054566,
+    "sha256": "31d36618b4182fa317b20887db25a102da63858ff60ec84f6bd0103ea30d2f1b"
+  },
+  "historicalAnchor": {
+    "path": "_velmere/PASS35_A44_SOURCE_ONLY_MANIFEST.json",
+    "byteLength": 996236,
+    "sha256": "48913594a9e0791f58dd621ced4a5f1d6c830af3218ecf8fa288abce12d70a3f",
+    "declaredManifestSha256": "644d99335e9d89c1e657a7e2a6bf6f7e4e4571bcf933bf28e5c3719a5c4e3cce",
+    "revisionId": "VELMERE_PASS35_A44_VISUAL_MASTER_ENGINE_BINDING",
+    "fileCount": 4208
+  },
+  "restoredCount": 103,
+  "controlPlaneRestoredCount": 96,
+  "supplementalOnlyRestoredCount": 7,
+  "rows": [
+    {
+      "path": "artifacts/pass35/PASS35_A17_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 10616,
+      "sha256": "7419583547e61c740252524096229d33cefe9157a2b87a2927be029427b1c966",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A17_PACKET_PDF_CORPUS_MANIFEST.json",
+      "bytes": 37227,
+      "sha256": "df526865e18b17c2fad2dfc0dd838a3dd2915df43f5b320a19be1059d37099d6",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A17_PACKET_PDF_QA_RECEIPT.json",
+      "bytes": 64148,
+      "sha256": "e0fda5677e3db80ec8a8af5a27b9fc7873079c51334651e679c9fe74949fe0a9",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A17_PACKET_PDF_RASTER_QA_RECEIPT.json",
+      "bytes": 52462,
+      "sha256": "a8b27eb557a0fad09855d792b88f164267721cdcfffb8a9d555729be5182c9bb",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A18_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 10751,
+      "sha256": "54cf4edd62fbabc7d05ea3b57dae60c8b9618dcccaab8fcf86a100a5e4432993",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A18_TIER_VALUE_BENCHMARK_RECEIPT.json",
+      "bytes": 2041,
+      "sha256": "a2a0c41e1f908b5b40c2e063c900f6bc082a32cdad94ab1912c06122f5457153",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A18_TIER_VALUE_BENCHMARK_RUNTIME.json",
+      "bytes": 13698998,
+      "sha256": "a9a6553f3a2065000b5284af6fd64a66939cea850d29381c006d14ca5b5d3000",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A19_AUDIT_STATIC_BENCHMARK_RECEIPT.json",
+      "bytes": 2650,
+      "sha256": "39237d2907a92ce1a77e5fbfd1351c12dc533321f4e991cc6da61375469254d3",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A19_AUDIT_STATIC_BENCHMARK_RUNTIME.json",
+      "bytes": 1207649,
+      "sha256": "d65c30a59cc40333f6832a5953df013b9e50f22317c5352b0d7842cddfce0eb2",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A19_EXACT_RUNTIME_BOOTSTRAP_EVALUATION.json",
+      "bytes": 3124,
+      "sha256": "f973b1b9298c2760c49b4f15741adb88c4a26689eeba81c36f037f09cfde98b4",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A19_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 11042,
+      "sha256": "758bc133251ac50fb0a8f13f534311aab58096a9013803d9b38cd507bfb3cf64",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A20_CASE_BOUND_DEPENDENCY_BENCHMARK.json",
+      "bytes": 1575,
+      "sha256": "fd36b5ac58a960aca138c6fcf913581fbb83fa2ac6d2db5fe6f565a562552ea6",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A20_CASE_BOUND_DEPENDENCY_RECEIPT.json",
+      "bytes": 1704,
+      "sha256": "1223c387927052e89338d119041215c9b300bd1ae45b4d497e8da9cea6f3f692",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A20_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 11192,
+      "sha256": "1d64f40e5b1d9457308b94429d9a5d40563a247f1e97afc0b33ac3bda6888858",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A21_ABSTRACT_PATH_BENCHMARK.json",
+      "bytes": 1645,
+      "sha256": "49eaf55056f8103ae38019c1bbe4b89c67e3b7646009a9775e39606071b2d1d1",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A21_ABSTRACT_PATH_RECEIPT.json",
+      "bytes": 1785,
+      "sha256": "b472da47f416cc5233b8faddd9e00402350a137ad287446b2287bf048c2384b1",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A21_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 11463,
+      "sha256": "8ad9e8cfffec19332a3d8731bf450edf12e8f5d0340c1922a354da38c3dc0d66",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A22_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 11742,
+      "sha256": "18929df4e6f4480ccd3cb8dc51e9c7bfdee9a2d20b633f567a5a217e311cacd1",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A22_SEVERITY_TRIAGE_BENCHMARK.json",
+      "bytes": 551057,
+      "sha256": "e2086dd1c379ec5953f351d099a942e462116347296f67ca90106df706a6a0d3",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A22_SEVERITY_TRIAGE_RECEIPT.json",
+      "bytes": 2179,
+      "sha256": "aa7b13cf02906cce37c54cdcbc0e466140511e8b79c9ca3df6fea6bcbd2aa1c4",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A23_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 12022,
+      "sha256": "b07d85aa4dfdbeee80a722a4ec1e3f57ce0444280f224dfe344876d8aeec0a2d",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A23_REMEDIATION_CLOSURE_BENCHMARK.json",
+      "bytes": 476576,
+      "sha256": "e2ac7c430326c42912e5c70bcc5819645064ae8bd83893301f813e9d6a425309",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A23_REMEDIATION_CLOSURE_RECEIPT.json",
+      "bytes": 2422,
+      "sha256": "aeed9bf667c752c91c4f5b1b5c2cf083f6da5b9561d7fac5afc523b1db66c920",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A24_MONITORING_LIFECYCLE_BENCHMARK.json",
+      "bytes": 647045,
+      "sha256": "959635e2a8786a079806e38e811575e888e27b4d0f45cff33ed88e5cd33204b5",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A24_MONITORING_LIFECYCLE_RECEIPT.json",
+      "bytes": 2120,
+      "sha256": "836d0d94503e3984860ac06f490dc458620a9ce2dced18d13b4bd2b90bc61da0",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A24_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 12949,
+      "sha256": "95b655b87121ac0cbe62354c7ed799c4872706ea5ccce0f31ca9bed8c974b44e",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A25_EXACT_TEST_EVIDENCE_BENCHMARK.json",
+      "bytes": 593207,
+      "sha256": "1f01773d888fce76a00b9ca4ca033fc64819ab0405d5bc4d1cd9b1a71f0662bb",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A25_EXACT_TEST_EVIDENCE_RECEIPT.json",
+      "bytes": 2030,
+      "sha256": "bcad321200aa6ebd2c96f331c72a068efd516ea333d790a7801b4ced8ff80adb",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A25_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 13425,
+      "sha256": "ff12b7e5e0c46fe0d5e1d6fcf4796a299038c825223fc766d0bb088dd06aff3f",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A26_FUZZ_INVARIANT_EVIDENCE_BENCHMARK.json",
+      "bytes": 589261,
+      "sha256": "fc791be1518f5f8be4d2ddfc63b8607bd893b8aaa356abcd52b427cc7b7580b4",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A26_FUZZ_INVARIANT_EVIDENCE_RECEIPT.json",
+      "bytes": 2227,
+      "sha256": "1139b6b0d3f8a0d1840d98cdddafa104670b41d8ae273fbbd909f49137621825",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A26_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 13701,
+      "sha256": "6da8580414c8fe5a8e18469d51ca58d00c3925de5e485b62cdde39e835537dc2",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A27_FORK_REPLAY_EVIDENCE_BENCHMARK.json",
+      "bytes": 596318,
+      "sha256": "ee047bac02c41d42065f2cdd62e7fa6d85c9f9f2044d00ace9f81a8e15ce87b0",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A27_FORK_REPLAY_EVIDENCE_RECEIPT.json",
+      "bytes": 2290,
+      "sha256": "82f99b80b42e7353498a9b89cf1c843861679569c23431054a13e6567e86a74a",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A27_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 13986,
+      "sha256": "3fedf5750afe2d6f7b7f9ae090f8fcf9d712bcf8307ad577b2742351fdbc1581",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARK.json",
+      "bytes": 595972,
+      "sha256": "3e8fb0c440a54f690dcfe06068efa944017d42ca320910757c9f66b9277dce4d",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE_RECEIPT.json",
+      "bytes": 2499,
+      "sha256": "8f49e38c7fc9fb5dd1deb6370b4a58a9ec60795f2265dce8a75dce89620aabc8",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A28_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 14274,
+      "sha256": "c2dac42a4e4580896d2b8fb5d0cf1188730b7c0cebb6c45102b29b8d4c2d10bc",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A29_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 14566,
+      "sha256": "2ca61e6fc6342d6d7c824a8a01ee76f23486a945bae958aa19f6365058605447",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS_BENCHMARK.json",
+      "bytes": 79949,
+      "sha256": "2969a5d4d83e954ac3d1c3d29bda9693d3c95aa87cf35c2723a2a37197228339",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS_RECEIPT.json",
+      "bytes": 2504,
+      "sha256": "004bd178e7ab9624617588390c3acc9c24fbad9413cf360c1a0a603145990bef",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A30_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 14835,
+      "sha256": "4660b7faca7da5eb23738c887e5bc8586b3d07713a1387bfd9d50022133fb573",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A30_THREAT_MODEL_BENCHMARK.json",
+      "bytes": 89048,
+      "sha256": "09c41d386f4bf64718fb6586b4394c52caaba72984bc6cfe26b95923b49d43bd",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A30_THREAT_MODEL_RECEIPT.json",
+      "bytes": 2609,
+      "sha256": "2711faf586d6f31eb95e7450405f8b11decadbbc79a2a8ce79c1e0e642e07294",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A31_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 15117,
+      "sha256": "0a95c45f5551a1ef1ad2099134272d0f9b0495b944be9f291d4825bb44866c94",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A31_PRIVILEGE_CONTROL_BENCHMARK.json",
+      "bytes": 83538,
+      "sha256": "b4f8c45fb5cec0c1a486842bdd734fbede6df4098d8be45926013047b6aa5eed",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A31_PRIVILEGE_CONTROL_RECEIPT.json",
+      "bytes": 2703,
+      "sha256": "0bea4bf5fe98e7205697c3cc87af3ce082e7dd371193ad167ba4bb2b1acec8aa",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A32_NONDESTRUCTIVE_REGRESSION_RECEIPT.json",
+      "bytes": 15393,
+      "sha256": "d9d0015eb93cc5b110a733c9e2a0730f7c07201f09b33441866e03dfa41f19d6",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A32_REPORT_DELIVERY_BENCHMARK.json",
+      "bytes": 596638,
+      "sha256": "1e687efdae72792729ca35531c3f6495e1e83b014b0739357c9067e4965fa7de",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/pass35/PASS35_A32_REPORT_DELIVERY_RECEIPT.json",
+      "bytes": 2551,
+      "sha256": "6306c5dda29acf393da943ab0a5cc34d6808c482f0641539fc5cd38394105eb7",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A10_MARKET_RUNTIME_COVERAGE.md",
+      "bytes": 1945,
+      "sha256": "c3c0778d82f512fb8872e92f210c3a2ce504781a96b3a0d5d891d9d4224b3d28",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/release/PASS35_A10_MARKET_RUNTIME_COVERAGE_SUMMARY.json",
+      "bytes": 502,
+      "sha256": "354498fc07dc29a0f7336226956d4a11f542f085044439bf2e57fa04e1c72d13",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/release/PASS35_A10_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 846,
+      "sha256": "a8c84f0a3e3fbad1fcefeab90e34bc619b2f582341bffdede355a02c969a83e3",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A10_ZERO_BUDGET_ROADMAP.md",
+      "bytes": 10007,
+      "sha256": "5e0f866de0795134b940e617ec472e0c008117ea77cb4aca085274a60e3e2674",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": false
+    },
+    {
+      "path": "artifacts/release/PASS35_A11_MARKET_IMPACT_WHALE_TIER_CONTRACT.md",
+      "bytes": 7425,
+      "sha256": "f2315f7f7f641f96cc254ba5afb4312c2b091c5e462acefd4414911006025535",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A11_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1084,
+      "sha256": "42ae66607e129d6d3f36117405db3bc00c31ca0c4f76744b9c21c12108f6a475",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A12_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 983,
+      "sha256": "50bcf51a813271974186878982964e74ebfc36e0d746da924f71b55eaaa8226e",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A12_PUBLIC_PROVIDER_RUNTIME.md",
+      "bytes": 1097,
+      "sha256": "c913776d866777c80e8dd0f5a2acc9a3454b0ca393004fa8e37e0bb7f20f1456",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A13_FUNCTIONAL_RUNTIME.md",
+      "bytes": 1366,
+      "sha256": "9778b4a3a3d9a661a5154db070b190b7bc78bc3f064994abe70afa99b6df7da5",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A13_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1288,
+      "sha256": "59bc0932fff6a72c43d5f164d1838217edcedd0e4f20a92cd6f526e850350e4d",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A14_MARKET_EXECUTION.md",
+      "bytes": 1391,
+      "sha256": "8dd1871ac5a68b34a34f8722820a04d456b1015e950d47f0a9de587c0d33ecf9",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A14_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1928,
+      "sha256": "8e0ec5d2cb68bb25b73fd6d5018cecd28bcf3b0f1bd8ed1f287cc6b98b0d9706",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A15_IMPORTED_SNAPSHOT_RUNTIME.md",
+      "bytes": 1665,
+      "sha256": "081db93eb97036884751679f9da78ca5bca5aab0f31c27f4ae60c95c3e81c723",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A15_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2414,
+      "sha256": "8cd0811800103a17ce216c8251b7ce9dd4f9c4041574b5b5502bc7ad4cf88ad5",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A16_CANONICAL_RISK_RUNTIME.md",
+      "bytes": 1733,
+      "sha256": "b1a6e8d05224b07eee42f838538a59b041457a0117f1b8b1733ba4bdcc3ed6b1",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A16_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2008,
+      "sha256": "a58af3c1c0df2d1700f51e16abbcfb5d7658f6284cad90116beb4e2d2928eeef",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A17_EVIDENCE_DECISION_RUNTIME.md",
+      "bytes": 1874,
+      "sha256": "5dc4c5a92c094d584c793be0aa2c164ab50d78119dae645ff546f73453928956",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A17_EVIDENCE_QUALITY_RUNTIME.json",
+      "bytes": 335099,
+      "sha256": "1abcec18b42e6186ee92dcd88e3a51889d2e5c1cddb74e2a73eed3be4c90d9be",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A17_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2421,
+      "sha256": "4c3f6ddc1a83bb03df41343aa92be371764445f385ae31a0f2ed8054bb8e1178",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A17_RISK_CALIBRATION_RUNTIME.json",
+      "bytes": 86511,
+      "sha256": "c6ad686ee8485f2b72879fea89dad847f48dc186938c3d0f36d8adb2abb3262c",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A18_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1880,
+      "sha256": "28e43a7ebeb84963643eb1e1af323f41000bb2746f932bd7b926b100c7bb29dd",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A18_TIER_VALUE_BENCHMARK.md",
+      "bytes": 1506,
+      "sha256": "00b895888816e2a0b1fdf9360e742271804a0d706da35bddbcf68ac66f0aace9",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A19_EXACT_RUNTIME_AUDIT_STATIC_BENCHMARK.md",
+      "bytes": 1764,
+      "sha256": "4d137c29f6e64dd6e3e9928aa2aaf50114b908782747e15beec16f80f9154f4e",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A19_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2239,
+      "sha256": "369a15af36d935672d336b9bb2d7e7c1c5e16bf91f0f7cef3de0d16db0ac744c",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A20_CASE_BOUND_DEPENDENCY.md",
+      "bytes": 1079,
+      "sha256": "86f76150aa1c4a0edc4dedd2bfc1e8c526f06ef85560c6b51a044a1585fb6749",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A20_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1981,
+      "sha256": "d2a5b3853c78fb116c7308b3c55d48284ec467bfae6b1bc1148ec74093d26151",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A21_ABSTRACT_PATH.md",
+      "bytes": 1067,
+      "sha256": "9b9b126db82dbd3935da5eaf11669dc2ba4f91b183fe8f7a46574d4922e237c6",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A21_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1972,
+      "sha256": "9f1ef1106d81a63861ed0be27faeb1c080466fdf99e572d5770754839e878323",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A22_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2725,
+      "sha256": "afa377ec5653fb5dc65c2e43153a03c1bfaabec0e238afd50c31ae099b230473",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A22_SEVERITY_TRIAGE.md",
+      "bytes": 1953,
+      "sha256": "ae29e11bbabdbeae788df380d276646a58ae95fe626ad3ce2b876a7bf34410da",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A23_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2169,
+      "sha256": "e8d6c94334785e8dc406fa34a6fef0c9819d32eddd5c7bea71ad789a0c19a911",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A23_REMEDIATION_CLOSURE.md",
+      "bytes": 1120,
+      "sha256": "0fffc0951a0f86710757bd51addbeeb2263fbbfe9b3554016065585124a68994",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A24_MONITORING_LIFECYCLE.md",
+      "bytes": 1190,
+      "sha256": "6dcb7c023db543c5fa802ee067ea641968bfffb5f7202244626c0a9c76ffaa18",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A24_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2037,
+      "sha256": "5d736e8ea788e0e3704e667164402af66aeb8f41bcbd62cf94ae19a52145f330",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A25_EXACT_TEST_EVIDENCE.md",
+      "bytes": 1206,
+      "sha256": "d8245231ed38bc43dec3eeef67a9c454cbc43f74a6f2e56e0dff8cb901df51c8",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A25_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1983,
+      "sha256": "5e0a82bbd80361866c3cb325565e2c6b088f894d5ff1c06fb15775db6d587d4a",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A26_FUZZ_INVARIANT_EVIDENCE.md",
+      "bytes": 1142,
+      "sha256": "9581abf6ce38f954faa11b45243b37bd264d0379644d4b8240880cb90079003a",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A26_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1986,
+      "sha256": "d9f57161bca3042da060f592e7ecef447442631bb076a6bc4208a9f064b3718c",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A27_FORK_REPLAY_EVIDENCE.md",
+      "bytes": 1227,
+      "sha256": "4254687d71cb3cb2b9de7307445bcf50df6329efc7d60abec84bab14ffd350db",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A27_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2074,
+      "sha256": "c14f44a69cfd2112b13a5f49c867507dff4068defb2745bf2ef3e856bb11339d",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE.md",
+      "bytes": 1326,
+      "sha256": "4f7d7a69ca9206e12664b0fcbe60405338294657f3f5a9313ff45986f857ca38",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A28_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2166,
+      "sha256": "8ed808eb109cd2af5211844137968bca25cc51b17f2bcc3ff102519c543f92b3",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A29_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2130,
+      "sha256": "7fffc480cfd747612d6107d4059808cf81cc82ee5ec5c4724dc33bac50c0c151",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS.md",
+      "bytes": 1294,
+      "sha256": "3b8feb6fb1a6b31ade5bd747d4ecb49c66e2b7c20f5bba41473137f795207e96",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A30_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2076,
+      "sha256": "fcf857958ec152e9f32cb982e930e03393de1f597ccaba4524e3d44cd1528aae",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A30_THREAT_MODEL.md",
+      "bytes": 1230,
+      "sha256": "cede244a1f13030112bba17cea0a7b4c1eebe0992a7cc36d67981f0f49770870",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A31_PRIVILEGE_CONTROL.md",
+      "bytes": 1294,
+      "sha256": "4d3c5ff87d3e428521608190c6a098e4a715b12fb697786ccdb17af371545937",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A31_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2119,
+      "sha256": "e5c4d808011f9a656ec359c3a838319a3ab5fa7441822f36eadce942c6234800",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A32_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 2155,
+      "sha256": "c425ba2aa5d5057353a6c26ce7e3df34faf570739dbc29a6c18241f1d378859d",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A32_REPORT_DELIVERY.md",
+      "bytes": 1198,
+      "sha256": "207412819b2120bcccaa65d7cb323b93646ace903cdfdcf40a5997174dc6ff25",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A9_PRODUCT_ROADMAP_SUMMARY.json",
+      "bytes": 1012,
+      "sha256": "8978ac9812eed7d0f26ffe487e3db91fb82cf2675b48bad8c255de8dece8e374",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A9_PRODUCT_TIER_CONTRACT.md",
+      "bytes": 34199,
+      "sha256": "19bdbf56789bd3a3a6b9e4e5189fa345669a9eabff6bc1abc0c2bd143abf4a6a",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    },
+    {
+      "path": "artifacts/release/PASS35_A9_ZERO_BUDGET_ROADMAP.md",
+      "bytes": 13193,
+      "sha256": "3b85fcefbe4c7dd17c072edd69bc4ef1f44f8ecb67eb45976bd5e7baa572d390",
+      "a44Role": "CURRENT_CONTROL_METADATA",
+      "controlPlaneRequired": true
+    }
+  ],
+  "truthBoundary": "Restored bytes are copied exactly from the supplied A53 SOURCE_ONLY archive and match the validated historical A44 manifest. This closes local historical control-metadata completeness only; it is not current runtime, staging, LIVE, customer, legal, or sale evidence.",
+  "receiptSha256": "d48775d253f0cb6223be45ab34493667728fa348408790fd60bb8c8b0286938a"
+}

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "velmere.pass36.a66.audit-tool-execution-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A66R0_AUDIT_TOOL_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "total": 26,
+  "passed": 26,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "solc_fixture_executes_through_shared_boundary",
+      "pass": true
+    },
+    {
+      "id": "solc_boundary_id_recorded",
+      "pass": true
+    },
+    {
+      "id": "solc_version_args_digest_recorded",
+      "pass": true
+    },
+    {
+      "id": "solc_compile_args_digest_recorded",
+      "pass": true
+    },
+    {
+      "id": "solc_isolated_working_directory_recorded",
+      "pass": true
+    },
+    {
+      "id": "solc_environment_noninheritance_recorded",
+      "pass": true
+    },
+    {
+      "id": "solc_fixture_remains_not_paid",
+      "pass": true
+    },
+    {
+      "id": "solc_receipt_is_deterministic",
+      "pass": true
+    },
+    {
+      "id": "explicit_solc_sized_input_budget_supported",
+      "pass": true
+    },
+    {
+      "id": "default_two_mib_input_budget_preserved",
+      "pass": true
+    },
+    {
+      "id": "input_budget_upper_bound_enforced",
+      "pass": true
+    },
+    {
+      "id": "input_budget_lower_bound_enforced",
+      "pass": true
+    },
+    {
+      "id": "tampered_compiler_entrypoint_rejected",
+      "pass": true
+    },
+    {
+      "id": "absolute_hash_bound_fixture_entrypoint_supported",
+      "pass": true
+    },
+    {
+      "id": "symlink_compiler_entrypoint_rejected",
+      "pass": true
+    },
+    {
+      "id": "writable_compiler_entrypoint_rejected",
+      "pass": true
+    },
+    {
+      "id": "compiler_stderr_secret_not_exposed",
+      "pass": true
+    },
+    {
+      "id": "compiler_nonzero_exit_fails_closed",
+      "pass": true
+    },
+    {
+      "id": "audit_adapter_uses_shared_boundary",
+      "pass": true
+    },
+    {
+      "id": "audit_adapter_has_no_direct_child_process_import",
+      "pass": true
+    },
+    {
+      "id": "audit_adapter_uses_empty_environment_allowlist",
+      "pass": true
+    },
+    {
+      "id": "audit_adapter_uses_isolated_boundary_cwd",
+      "pass": true
+    },
+    {
+      "id": "audit_adapter_binds_interpreter_entrypoint",
+      "pass": true
+    },
+    {
+      "id": "audit_adapter_bounds_large_standard_json",
+      "pass": true
+    },
+    {
+      "id": "shared_boundary_supports_explicit_input_limit",
+      "pass": true
+    },
+    {
+      "id": "only_shared_boundary_imports_child_process_in_lib",
+      "pass": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CU">
+  <defs>
+    <radialGradient id="g" cx="28%" cy="18%" r="82%">
+      <stop offset="0" stop-color="#f7e7b7" stop-opacity="0.95"/>
+      <stop offset="0.44" stop-color="#121821" stop-opacity="0.96"/>
+      <stop offset="1" stop-color="#05070a"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#g)"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="16.5" fill="none" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#fff7d6" letter-spacing="-.5">CU</text>
+</svg>

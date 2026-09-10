@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p39.audit-integration-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P39_ACTION_REQUIRED_AUDIT_PACKET_PARITY_BYTECODE_PROXY_BINDING_AND_EXTERNAL_ACCURACY_REGISTRY_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "testCycle": "2/3",
+  "packetDenominator": {
+    "cases": 16,
+    "tiersPerCase": 3,
+    "packets": 48,
+    "targetedPdfDocuments": 48,
+    "expectedPdfPages": 96
+  },
+  "protocolHoldout": {
+    "classification": "LOCAL_HISTORICAL_MULTI_FILE_PROTOCOL_HOLDOUT_NOT_INDEPENDENT",
+    "expectedRiskSignals": 6,
+    "expectedControlAbsence": 5
+  },
+  "deploymentBinding": {
+    "sourceToRuntimeBytecode": true,
+    "metadataStrippedComparison": true,
+    "providerRetrievalRequiredForRealChainCredit": true
+  },
+  "proxyBinding": {
+    "standard": "EIP-1967",
+    "slot": "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+    "providerRetrievalRequiredForRealChainCredit": true
+  },
+  "tierParity": {
+    "sameFindingIds": true,
+    "sameSeverity": true,
+    "sameConfidenceState": true,
+    "tierChangesOnlyDepth": true,
+    "advancedNotForSale": true
+  },
+  "externalAccuracy": {
+    "singleOverallAccuracyForbidden": true,
+    "r44p13RetainedDiagnosticOnly": true,
+    "currentAnalyzerDirectExternalCredit": false
+  },
+  "truthBoundary": "R44P39 proves targeted local packet parity and supplied bytecode/proxy consistency. It does not prove RPC retrieval, real-protocol accuracy, independent ground truth, customer value, sale readiness or LIVE readiness."
+}

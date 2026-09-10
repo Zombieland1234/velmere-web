@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.official-tool-readiness-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P2_ACTION_REQUIRED_AUTOMATED_INFORMATIONAL_SKU_PDF_POSIX_TOOL_BOUNDARY_AND_OFFICIAL_TOOLCHAIN_ADMISSION_NO_LIVE_CREDIT",
+  "requiredRuntime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "tools": [
+    {
+      "id": "solc",
+      "environmentVariable": "VELMERE_OFFICIAL_SOLC_PATH",
+      "candidatePaths": [
+        "/usr/local/bin/solc",
+        "/usr/bin/solc"
+      ],
+      "requiredVersion": "0.8.24",
+      "officialArtifact": "solc-linux-amd64-v0.8.24+commit.e11b9ed9",
+      "officialSha256": "fb03a29a517452b9f12bcf459ef37d0a543765bb3bbc911e70a87d6a37c30d5f",
+      "artifactIdentityPinned": true
+    },
+    {
+      "id": "slither",
+      "environmentVariable": "VELMERE_OFFICIAL_SLITHER_PATH",
+      "candidatePaths": [
+        "/usr/local/bin/slither",
+        "/usr/bin/slither"
+      ],
+      "requiredVersion": "0.11.5",
+      "officialArtifact": null,
+      "officialSha256": null,
+      "artifactIdentityPinned": false
+    },
+    {
+      "id": "semgrep",
+      "environmentVariable": "VELMERE_OFFICIAL_SEMGREP_PATH",
+      "candidatePaths": [
+        "/usr/local/bin/semgrep",
+        "/usr/bin/semgrep"
+      ],
+      "requiredVersion": "1.129.0",
+      "officialArtifact": null,
+      "officialSha256": null,
+      "artifactIdentityPinned": false
+    },
+    {
+      "id": "forge",
+      "environmentVariable": "VELMERE_OFFICIAL_FORGE_PATH",
+      "candidatePaths": [
+        "~/.foundry/bin/forge",
+        "/usr/local/bin/forge",
+        "/usr/bin/forge"
+      ],
+      "requiredVersion": "1.2.3",
+      "officialArtifact": null,
+      "officialSha256": null,
+      "artifactIdentityPinned": false
+    }
+  ],
+  "truthBoundary": {
+    "pathLookupIsAuthority": false,
+    "fixtureExecutionIsOfficialCredit": false,
+    "binaryPresenceIsExecutionCredit": false,
+    "requiredOfficialExecutions": 200,
+    "currentOfficialExecutionCredit": 0,
+    "discoveryReceiptIsAdmissionCredit": false
+  },
+  "authority": {
+    "discoveryOnly": true,
+    "admissionPolicyPath": "config/pass36/a102r44p2-official-audit-toolchain-admission.json",
+    "executionPlanningPolicyPath": "config/pass36/a102r44p2-official-toolchain-policy.json"
+  }
+}

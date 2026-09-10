@@ -1,0 +1,1583 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p45.scorecard.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "boundary": "Directional proof-weighted scores, not certification. AI_SIMULATED cannot increase external proof, LIVE, sale or world-class status.",
+  "project": {
+    "previousProofWeightedOverall": 55.0,
+    "currentProofWeightedOverall": 55.3,
+    "delta": 0.3,
+    "internalClosure": 67.4,
+    "externalEvidenceClosure": 6.2,
+    "why": "Only Audit interaction-ordering accuracy/review-noise evidence improved. Data rights, real customers, real reviewers, staging and provider outcomes remain unchanged.",
+    "realCustomerProof": 0,
+    "realWillingnessToPay": 0,
+    "independentReviewersCompleted": 0,
+    "independentReviewersRequired": 2
+  },
+  "products": [
+    {
+      "name": "Audit Basic",
+      "previousQuality": 68.12,
+      "currentQuality": 69.22,
+      "deltaQuality": 1.1,
+      "releaseReadiness": 76.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 49,
+      "decision": "FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 84,
+          "current": 85,
+          "delta": 1,
+          "why": "Context-qualified compiler-AST analysis and deterministic evidence were added."
+        },
+        "Security Quality": {
+          "previous": 78,
+          "current": 79,
+          "delta": 1,
+          "why": "Eight unsafe suppression lookalikes remain alerts in the 13-case adversarial set."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 68,
+          "current": 71,
+          "delta": 3,
+          "why": "Public control candidates moved from 2 alerts to 0 while supported SmartBugs detection stayed 22/22; diagnostic, not formal FPR."
+        },
+        "AI Customer Score": {
+          "previous": null,
+          "current": 74.4,
+          "delta": null,
+          "why": "New targeted 24-session AI panel; no comparable prior targeted baseline."
+        },
+        "AI Reviewer Score": {
+          "previous": null,
+          "current": 88.5,
+          "delta": null,
+          "why": "New blinded-role deterministic panel: 180 assessments, no unresolved AI FN/FP candidate; severity/business-logic review remains."
+        },
+        "Tier Value": {
+          "previous": 80,
+          "current": 80,
+          "delta": 0,
+          "why": "Basic free prescreen value unchanged."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No real participants."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No independent reviewers."
+        },
+        "Operational Readiness": {
+          "previous": 75.3,
+          "current": 76.0,
+          "delta": 0.7,
+          "why": "Targeted analyzer stress passed locally; no production-load credit."
+        },
+        "Legal/Data Rights": {
+          "previous": 60,
+          "current": 60,
+          "delta": 0,
+          "why": "No new legal or data-rights evidence."
+        },
+        "Free Release Readiness": {
+          "previous": 75.3,
+          "current": 76.0,
+          "delta": 0.7,
+          "why": "Reduced diagnostic review noise; external blockers remain."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "Basic remains free."
+        },
+        "World-Class Evidence": {
+          "previous": 49,
+          "current": 49,
+          "delta": 0,
+          "why": "External evidence cap unchanged."
+        }
+      }
+    },
+    {
+      "name": "Audit Pro",
+      "previousQuality": 70.39,
+      "currentQuality": 71.74,
+      "deltaQuality": 1.35,
+      "releaseReadiness": 74.3,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 24,
+      "worldClassEvidence": 49,
+      "decision": "INVITATION_ONLY_BETA_MANUAL_QA",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 86,
+          "current": 87,
+          "delta": 1,
+          "why": "Same analyzer repair plus richer evidence path."
+        },
+        "Security Quality": {
+          "previous": 80,
+          "current": 81,
+          "delta": 1,
+          "why": "Unsafe lookalike regression strengthened."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 69,
+          "current": 72,
+          "delta": 3,
+          "why": "Diagnostic control alerts reduced without loss on the supported public subset."
+        },
+        "AI Customer Score": {
+          "previous": null,
+          "current": 74.4,
+          "delta": null,
+          "why": "New targeted AI customer panel; no real customer credit."
+        },
+        "AI Reviewer Score": {
+          "previous": null,
+          "current": 88.5,
+          "delta": null,
+          "why": "New 12-role/180-assessment panel; not independent human review."
+        },
+        "Tier Value": {
+          "previous": 68,
+          "current": 69,
+          "delta": 1,
+          "why": "Lower review noise can reduce manual triage cost, but accuracy delta over Basic remains unproven."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No real beta participants."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "Manual QA staff and two reviewers not proven."
+        },
+        "Operational Readiness": {
+          "previous": 73.8,
+          "current": 74.3,
+          "delta": 0.5,
+          "why": "Local analyzer stress passed; production queue not tested."
+        },
+        "Legal/Data Rights": {
+          "previous": 48,
+          "current": 48,
+          "delta": 0,
+          "why": "No liability/reviewer-operation legal closure."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "Not a free tier."
+        },
+        "Paid Sale Readiness": {
+          "previous": 24,
+          "current": 24,
+          "delta": 0,
+          "why": "No human/customer/payment evidence; remains invitation-only."
+        },
+        "World-Class Evidence": {
+          "previous": 49,
+          "current": 49,
+          "delta": 0,
+          "why": "Independent evidence remains zero."
+        }
+      }
+    },
+    {
+      "name": "Audit Advanced",
+      "previousQuality": 67.39,
+      "currentQuality": 68.04,
+      "deltaQuality": 0.65,
+      "releaseReadiness": 63.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 7,
+      "worldClassEvidence": 46.64,
+      "decision": "NOT_FOR_SALE",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 85,
+          "current": 86,
+          "delta": 1,
+          "why": "Context analysis improved."
+        },
+        "Security Quality": {
+          "previous": 80,
+          "current": 81,
+          "delta": 1,
+          "why": "Suppression boundary hardened."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 68,
+          "current": 70,
+          "delta": 2,
+          "why": "Diagnostic control alert reduction only."
+        },
+        "AI Customer Score": {
+          "previous": null,
+          "current": 70.0,
+          "delta": null,
+          "why": "AI customers still see expectation mismatch around professional assurance."
+        },
+        "AI Reviewer Score": {
+          "previous": null,
+          "current": 82.0,
+          "delta": null,
+          "why": "AI panel repeatedly escalates business logic/severity to human review."
+        },
+        "Tier Value": {
+          "previous": 42,
+          "current": 41,
+          "delta": -1,
+          "why": "Advanced still lacks material reviewer-led value over Pro."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No real users."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "0/2 independent reviewers."
+        },
+        "Operational Readiness": {
+          "previous": 63,
+          "current": 63,
+          "delta": 0,
+          "why": "No team/reviewer operation added."
+        },
+        "Legal/Data Rights": {
+          "previous": 25,
+          "current": 25,
+          "delta": 0,
+          "why": "Professional liability/SLA review absent."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "Not free."
+        },
+        "Paid Sale Readiness": {
+          "previous": 8,
+          "current": 7,
+          "delta": -1,
+          "why": "Business-logic escalation reinforces NOT_FOR_SALE."
+        },
+        "World-Class Evidence": {
+          "previous": 46.64,
+          "current": 46.64,
+          "delta": 0.0,
+          "why": "No external reviewer proof."
+        }
+      }
+    },
+    {
+      "name": "PDF Basic",
+      "previousQuality": 80.11,
+      "currentQuality": 80.11,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 92.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 49.0,
+      "decision": "FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 92,
+          "current": 92,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 91,
+          "current": 91,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 74,
+          "current": 74,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 75,
+          "current": 75,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 75,
+          "current": 75,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 90,
+          "current": 90,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 72,
+          "current": 72,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 92,
+          "current": 92,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 49,
+          "current": 49,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "PDF Pro",
+      "previousQuality": 80.41,
+      "currentQuality": 80.41,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 91.5,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 27,
+      "worldClassEvidence": 49.0,
+      "decision": "INVITATION_ONLY_BETA_MANUAL_QA",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 93,
+          "current": 93,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 92,
+          "current": 92,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 77,
+          "current": 77,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 72,
+          "current": 72,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 89,
+          "current": 89,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 68,
+          "current": 68,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 27,
+          "current": 27,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 49,
+          "current": 49,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "PDF Advanced",
+      "previousQuality": 80.01,
+      "currentQuality": 80.01,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 82.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 8,
+      "worldClassEvidence": 47.5,
+      "decision": "NOT_FOR_SALE",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 93,
+          "current": 93,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 92,
+          "current": 92,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 77,
+          "current": 77,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 74,
+          "current": 74,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 74,
+          "current": 74,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 43,
+          "current": 43,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 79,
+          "current": 79,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 55,
+          "current": 55,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 8,
+          "current": 8,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 47.5,
+          "current": 47.5,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Browser Basic",
+      "previousQuality": 83.26,
+      "currentQuality": 83.26,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 93.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 49.0,
+      "decision": "FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 94,
+          "current": 94,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 91,
+          "current": 91,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 72,
+          "current": 72,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 78,
+          "current": 78,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 78,
+          "current": 78,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 91,
+          "current": 91,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 65,
+          "current": 65,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 93,
+          "current": 93,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 49,
+          "current": 49,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Browser Pro",
+      "previousQuality": 83.26,
+      "currentQuality": 83.26,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 86.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 18,
+      "worldClassEvidence": 47.0,
+      "decision": "NOT_FOR_SALE",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 94,
+          "current": 94,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 91,
+          "current": 91,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 72,
+          "current": 72,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 74,
+          "current": 74,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 61,
+          "current": 61,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 82,
+          "current": 82,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 58,
+          "current": 58,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 18,
+          "current": 18,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 47,
+          "current": 47,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Browser Advanced",
+      "previousQuality": 83.26,
+      "currentQuality": 83.26,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 78.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 8,
+      "worldClassEvidence": 44.0,
+      "decision": "NOT_FOR_SALE",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 93,
+          "current": 93,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 90,
+          "current": 90,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 70,
+          "current": 70,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 73,
+          "current": 73,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 72,
+          "current": 72,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 38,
+          "current": 38,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 72,
+          "current": 72,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 50,
+          "current": 50,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 8,
+          "current": 8,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 44,
+          "current": 44,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Shield",
+      "previousQuality": 54.17,
+      "currentQuality": 54.17,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 71.98,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 12.0,
+      "decision": "REFERENCE_ONLY_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 79,
+          "current": 79,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 78,
+          "current": 78,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 8,
+          "current": 8,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 62,
+          "current": 62,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 60,
+          "current": 60,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 66,
+          "current": 66,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 52,
+          "current": 52,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 10,
+          "current": 10,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 71.98,
+          "current": 71.98,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 12,
+          "current": 12,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Shield Pro",
+      "previousQuality": 55.21,
+      "currentQuality": 55.21,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 77.06,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 3,
+      "worldClassEvidence": 0.0,
+      "decision": "NOT_FOR_SALE",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 82,
+          "current": 82,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 78,
+          "current": 78,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 5,
+          "current": 5,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 58,
+          "current": 58,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 57,
+          "current": 57,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 42,
+          "current": 42,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 45,
+          "current": 45,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 5,
+          "current": 5,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 3,
+          "current": 3,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Shield Map",
+      "previousQuality": 64.17,
+      "currentQuality": 64.17,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 73.6,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 20.0,
+      "decision": "DEMO_ONLY_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 81,
+          "current": 81,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 12,
+          "current": 12,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 64,
+          "current": 64,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 62,
+          "current": 62,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 49,
+          "current": 49,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 48,
+          "current": 48,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 8,
+          "current": 8,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 73.6,
+          "current": 73.6,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 20,
+          "current": 20,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Real Markets",
+      "previousQuality": 53.26,
+      "currentQuality": 53.26,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 70.43,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 10.91,
+      "decision": "REFERENCE_ONLY_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 77,
+          "current": 77,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 74,
+          "current": 74,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 8,
+          "current": 8,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 58,
+          "current": 58,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 57,
+          "current": 57,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 55,
+          "current": 55,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 43,
+          "current": 43,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 8,
+          "current": 8,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 70.43,
+          "current": 70.43,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 10.91,
+          "current": 10.91,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Market Impact",
+      "previousQuality": 53.06,
+      "currentQuality": 53.06,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 71.98,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 22.22,
+      "decision": "SIMULATION_ONLY_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 78,
+          "current": 78,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 35,
+          "current": 35,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 66,
+          "current": 66,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 63,
+          "current": 63,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 58,
+          "current": 58,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 50,
+          "current": 50,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 18,
+          "current": 18,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 71.98,
+          "current": 71.98,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 22.22,
+          "current": 22.22,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Whale Watch",
+      "previousQuality": 64.17,
+      "currentQuality": 64.17,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 73.6,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 24.0,
+      "decision": "ONCHAIN_FACTS_ONLY_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 78,
+          "current": 78,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 75,
+          "current": 75,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 30,
+          "current": 30,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 68,
+          "current": 68,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 65,
+          "current": 65,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 58,
+          "current": 58,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 50,
+          "current": 50,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 16,
+          "current": 16,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 73.6,
+          "current": 73.6,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 28,
+          "current": 28,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Angel",
+      "previousQuality": 74.0,
+      "currentQuality": 74.0,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 81.0,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 25.0,
+      "decision": "INFORMATIONAL_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 82,
+          "current": 82,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 82,
+          "current": 82,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 45,
+          "current": 45,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 74,
+          "current": 74,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 76,
+          "current": 76,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 64,
+          "current": 64,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 58,
+          "current": 58,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 45,
+          "current": 45,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 81,
+          "current": 81,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 22.73,
+          "current": 22.73,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    },
+    {
+      "name": "Risk Indicator",
+      "previousQuality": 57.8,
+      "currentQuality": 57.8,
+      "deltaQuality": 0.0,
+      "releaseReadiness": 72.58,
+      "externalHumanProof": 0,
+      "externalReviewerProof": 0,
+      "paidSaleReadiness": 0,
+      "worldClassEvidence": 22.73,
+      "decision": "DESCRIPTIVE_ONLY_FREE_ACTION_REQUIRED",
+      "dimensions": {
+        "Engineering Quality": {
+          "previous": 79,
+          "current": 79,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Security Quality": {
+          "previous": 80,
+          "current": 80,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Data/Accuracy Quality": {
+          "previous": 38,
+          "current": 38,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Customer Score": {
+          "previous": 70,
+          "current": 70,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "AI Reviewer Score": {
+          "previous": 68,
+          "current": 68,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Tier Value": {
+          "previous": 54,
+          "current": 54,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Human Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "External Reviewer Proof": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Operational Readiness": {
+          "previous": 52,
+          "current": 52,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Legal/Data Rights": {
+          "previous": 40,
+          "current": 40,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "Free Release Readiness": {
+          "previous": 72.58,
+          "current": 72.58,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        },
+        "Paid Sale Readiness": {
+          "previous": 0,
+          "current": 0,
+          "delta": 0,
+          "why": "No product-related change in R44P45."
+        },
+        "World-Class Evidence": {
+          "previous": 22.73,
+          "current": 22.73,
+          "delta": 0.0,
+          "why": "No product-related change in R44P45."
+        }
+      }
+    }
+  ]
+}

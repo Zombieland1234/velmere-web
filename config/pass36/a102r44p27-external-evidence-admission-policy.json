@@ -1,0 +1,37 @@
+{
+  "envelope": {
+    "futureSkewMs": 30000,
+    "maximumAgeMs": 600000,
+    "maximumLifetimeMs": 600000
+  },
+  "environmentClass": "DISPOSABLE_TEST",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "replayJournal": {
+    "atomicCommitRequired": true,
+    "journalOutsideSourceRequired": true,
+    "maximumEntries": 100000,
+    "maximumEntryBytes": 131072,
+    "maximumLockWaitMs": 10000,
+    "orphanTemporaryFilesFailClosed": true,
+    "required": true,
+    "singleWriterLockRequired": true,
+    "storeRawEvidenceIdOrNonce": false,
+    "tamperFailsClosed": true,
+    "unexpectedFilesFailClosed": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p27.external-evidence-admission-policy.v1",
+  "sourceBinding": {
+    "exactSha256Required": true,
+    "providedAtRuntime": true,
+    "selfReferenceForbidden": true
+  },
+  "truthBoundary": {
+    "durableAdmissionIsNotStagingCredit": true,
+    "liveCredit": false,
+    "saleCredit": false,
+    "semanticPassIsNotIndependentReview": true,
+    "stagingCredit": false,
+    "validSignatureIsNotSemanticProof": true
+  }
+}

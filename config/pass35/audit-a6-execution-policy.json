@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "velmere.pass35.audit-a6-execution-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "productCellId": "audit_evm_pro_automated_review",
+  "status": "LOCAL_FORGE_ADAPTER_AND_MODEL_FUZZ_PROVEN_REAL_EVM_TOOLCHAIN_BLOCKED",
+  "sellEnabled": false,
+  "paidDeliveryAllowed": false,
+  "fullAuditClaimAllowed": false,
+  "controls": {
+    "A07_FORGE_EXACT_TEST_ADAPTER": {
+      "state": "ADAPTER_IMPLEMENTED_FIXTURE_CONTRACT_PROVEN_REAL_FORGE_MISSING",
+      "paths": [
+        "scripts/pass35/audit-forge-adapter.mjs",
+        "scripts/pass35/run-audit-a6-forge-case.mjs",
+        "scripts/pass35/test-audit-a6-forge-adapter.mjs"
+      ],
+      "fixtureProjectPath": "fixtures/pass35/audit-a6/forge-project",
+      "realExecutionCredit": false,
+      "capabilities": [
+        "project inventory and source-bundle hash",
+        "Forge executable/version/entrypoint binding",
+        "JSON test result normalization",
+        "pass/fail/skip/gas receipt",
+        "output-path and fixture relabeling protection"
+      ],
+      "missing": [
+        "official Forge binary and exact binary hash",
+        "official pinned solc execution",
+        "real customer contract project and test provenance",
+        "coverage/branch/state metrics",
+        "provider-bound source-to-bytecode receipt",
+        "independent rerun and benchmark"
+      ]
+    },
+    "A08_LOCAL_MODEL_FUZZ_INVARIANTS": {
+      "state": "IMPLEMENTED_LOCAL_MODEL_FUZZ_NOT_EVM_NOT_BENCHMARKED",
+      "paths": [
+        "lib/security/audit-a08-model-fuzz.ts",
+        "scripts/pass35/run-audit-a6-a08-case.ts",
+        "scripts/pass35/test-audit-a6-a08-model-fuzz.ts"
+      ],
+      "realExecutionCredit": false,
+      "capabilities": [
+        "deterministic seeded operation generation",
+        "ERC20 accounting state model",
+        "supply/balance/authorization invariant checks",
+        "reproducible operation trace digest",
+        "three mutation-killing checks"
+      ],
+      "missing": [
+        "compiled Solidity/EVM execution",
+        "Foundry or Echidna invariant harness on real target",
+        "coverage and corpus adequacy",
+        "reentrancy/external-call/storage/environment model",
+        "real case benchmark and independent adjudication"
+      ]
+    }
+  },
+  "syntheticReceipts": [
+    "fixtures/pass35/audit-a6/PASS35_A6_FORGE_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a6/PASS35_A6_A08_MODEL_FUZZ_SYNTHETIC_RECEIPT.json"
+  ],
+  "hardStops": {
+    "fixtureMaySatisfyA07": false,
+    "modelFuzzMayClaimEvmExecution": false,
+    "mutationDetectionMayUnlockPaidDelivery": false,
+    "adapterPresenceMayUnlockPaidDelivery": false,
+    "customerLabelMayUpgradeLocalEvidence": false,
+    "officialToolMissingMeansRealCreditZero": true
+  },
+  "runtimeBoundary": {
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "observedNodeDuringA6": "22.16.0",
+    "observedNpmDuringA6": "10.9.2",
+    "exactRuntimeProof": false,
+    "officialSolcAvailable": false,
+    "officialSlitherAvailable": false,
+    "officialSemgrepAvailable": false,
+    "officialForgeAvailable": false,
+    "networkAcquisitionAvailable": false
+  },
+  "truthBoundary": "A6 proves a fail-closed Forge adapter contract and a deterministic local model-fuzz/invariant lane with mutation detection. It does not prove official Forge/solc execution, deployed EVM equivalence, customer-case test coverage, real fuzzing, paid readiness, staging, LIVE, benchmark or independent review."
+}

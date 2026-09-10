@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "velmere.pass36.a81.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A81R0_CANONICAL_BASIC_PRO_ADVANCED_MEGA_MATRIX_ORCHESTRATOR",
+  "parentRevisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+  "parentDescendantManifestDigestSha256": "6eb769e2851cbe2c19895aaa1551afdbc0d27db4f608e0ef36d966bbe22e9324",
+  "generatedAt": "2026-07-27T13:00:00.000Z",
+  "payload": {
+    "fileCount": 4422,
+    "byteLength": 111360249,
+    "pathSetSha256": "0c1d7293f00118ad74934b185a8b870df8463512d47ec654e2dbde03d137b7bb",
+    "aggregateSha256": "463b0d64fd2a47424f01358df894f75a9cb8cb1a9c6f4d1de358729be2a76062"
+  },
+  "exclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a81-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "canonicalMegaMatrixImplemented": true,
+    "canonicalProviderBoundOutputsExecuted": false,
+    "exactA80CandidateBound": false,
+    "customerPurchaseWorthinessProven": false,
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "manifestDigestSha256": "5b6f6c65b29ae328bb98a516df3bdadab7814c27f2f95758f50d3ba524f956d3"
+}

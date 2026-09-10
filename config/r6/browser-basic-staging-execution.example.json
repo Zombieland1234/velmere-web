@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "velmere.r6.browser-basic-staging-execution-config.v1",
+  "create": {
+    "method": "POST",
+    "path": "/api/search/lens-report?format=pdf&tier=basic",
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+      "REPLACE_WITH_OWNER_AUTHORIZED_CURRENT_REQUEST": true
+    },
+    "artifactIdJsonPointer": "/artifactId"
+  },
+  "accountArtifact": {
+    "listPath": "/api/account/customer-artifact?format=json&limit=50",
+    "jsonPathTemplate": "/api/account/customer-artifact?id={artifactId}&format=json",
+    "previewPathTemplate": "/api/account/customer-artifact?id={artifactId}&format=pdf&disposition=preview",
+    "downloadPathTemplate": "/api/account/customer-artifact?id={artifactId}&format=pdf&disposition=download",
+    "listArtifactIdJsonPointer": "/artifacts/*/artifactId"
+  },
+  "expected": {
+    "createStatuses": [200, 201, 202],
+    "ownerReadStatuses": [200],
+    "crossAccountDeniedStatuses": [403, 404],
+    "requirePreviewDownloadByteParity": true,
+    "requireNoStore": true
+  }
+}

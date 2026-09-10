@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.durable-computation-deployment-policy.v1",
+  "sourcePass": 4749,
+  "route": "/api/internal/workers/durable-computation-operations?action=run",
+  "cronSchedule": "*/15 * * * *",
+  "maxDurationSeconds": 30,
+  "budgets": {
+    "limit": 8,
+    "concurrency": 2,
+    "leaseSeconds": 180,
+    "perSubjectLimit": 2,
+    "globalCostLimit": 48,
+    "perSubjectCostLimit": 16,
+    "maxClaimedPayloadBytes": 4194304
+  },
+  "retention": {
+    "completedDays": 30,
+    "deadLetterDays": 90,
+    "cleanupLimit": 500
+  },
+  "circuitBreaker": {
+    "expiredLeaseCount": 25,
+    "oldestLeaseAgeSeconds": 900,
+    "heartbeatFailureCount": 3
+  },
+  "requiredEnvironment": [
+    "SUPABASE_URL|NEXT_PUBLIC_SUPABASE_URL",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "MARKET_INTEGRITY_CRON_SECRET|CRON_SECRET",
+    "VELMERE_DURABLE_PAYLOAD_KEYS_JSON",
+    "VELMERE_DURABLE_PAYLOAD_ACTIVE_KEY_ID"
+  ],
+  "truth": {
+    "stagingReadyIsNotStagingProven": true,
+    "productionReadyIsNotLiveProven": true,
+    "secretValuesMayBeEmitted": false
+  }
+}

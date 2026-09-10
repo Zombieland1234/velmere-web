@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "velmere.pass35.a29-upgrade-deployment-operations-runtime-contract.v1",
+  "passId": "PASS35_A29",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "strict": 9.3,
+    "zeroBudget": 80
+  },
+  "baselineA28": {
+    "canonical": 54.7,
+    "strict": 30.2,
+    "zeroBudget": 90.5
+  },
+  "progressDeltaVsA28": {
+    "canonicalPercentagePoints": 1.1,
+    "strictPercentagePoints": 2.4,
+    "zeroBudgetPercentagePoints": 0.4
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 15.1,
+    "strictPercentagePoints": 23.3,
+    "zeroBudgetPercentagePoints": 10.9
+  },
+  "canonicalWeightedPlanningPercent": 55.8,
+  "canonicalStrictDonePercent": 32.6,
+  "canonicalCounts": {
+    "DONE": 14,
+    "PARTIAL": 20,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 90.9,
+  "zeroBudgetCoreDenominator": 77,
+  "zeroBudgetCounts": {
+    "DONE": 64,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "accuracy": 1,
+      "correct": 72,
+      "total": 72,
+      "unsafeEligible": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "killed": 2304,
+      "total": 2304,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:b75d6a6a0cc37bfcddca4f034a1fa7d8a4273891753e78f41a3aecc225f760b7",
+    "receiptSha256": "sha256:94485f07f1b960c0bbdb5a66eb308f66307bb6505a41ffaef3b50ebdf72c4985"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "currentOnChainStateVerified": false,
+  "realMultisigTimelockExecuted": false,
+  "productionUpgradeExecuted": false,
+  "qualifiedHumanReviewed": false,
+  "independentRerun": false,
+  "truthBoundary": "PASS35 A29 is the only canonical current status. Canonical roadmap is 55.8% weighted / 32.6% strict across 43 workstreams, up 1.1 pp weighted and 2.4 pp strict from A28, and 15.1 pp weighted from A16. Zero-budget functional core is 90.9% across 77 capabilities, up 0.4 pp from A28 and 10.9 pp from A16. A29 locally closes the declared bounded A11 proxy-slot, authorization, multisig, timelock, initializer, storage-layout, upgrade-simulation, rollback-limit, pause/emergency, key-management, compromise-scenario, operations-replay and mutation-evidence implementation. Current on-chain configuration, real custody and operational drills, qualified review, staging, sale, outcomes and independent assurance remain unclaimed."
+}

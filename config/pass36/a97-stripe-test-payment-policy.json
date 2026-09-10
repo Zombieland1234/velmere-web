@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.pass36.a97.stripe-test-payment-policy.v1",
+  "revisionId": "VELMERE_PASS36_A97R0_STRIPE_TEST_RUNTIME_RECEIPT_REFUND_REPLAY_AND_RECONCILIATION_CONTROL",
+  "parentRevisionId": "VELMERE_PASS36_A96R0_RLS_19_CASE_EXECUTABLE_REPLAY_AND_CUSTOMER_ARTIFACT_USER_CLIENT_BOUNDARY",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "canonicalCompletedThrough": 89,
+  "localPassCredit": false,
+  "globalDecision": "NO_GO",
+  "liveProven": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "controls": [
+    "signed webhook event livemode is checked against server-owned runtime payment authority before event claim",
+    "Stripe webhook requires strict application/json and rejects compressed content",
+    "VLM paid entitlement requires complete paid Checkout Session plus succeeded exact PaymentIntent",
+    "session and PaymentIntent bind exact amount, amount received, currency, livemode, product, product cell, context and account",
+    "server success verification uses the same receipt verifier as signed webhook delivery",
+    "receipt mutations cannot promote test/live mode, price, identity or entitlement"
+  ],
+  "localDenominators": {
+    "runtimePositiveCases": 1,
+    "runtimeNegativeCases": 8,
+    "receiptPositiveCases": 1,
+    "receiptMutationFamilies": 25,
+    "ingressProviderSpyAssertions": 14,
+    "blockedIngressDurableClaims": 0,
+    "handlerReceiptPreflightAssertions": 8,
+    "entitlementWritesAfterBlockedReceipt": 0
+  },
+  "realDenominators": {
+    "stripeTestPaymentLifecycle": 0,
+    "fullRefunds": 0,
+    "webhookReplayRuns": 0,
+    "reconciliationRuns": 0,
+    "productionPayments": 0
+  },
+  "truthBoundary": "A97R0 proves local fail-closed payment mode and receipt binding contracts. It does not prove a real Stripe TEST charge, refund, webhook delivery, reconciliation, staging, customer value, LIVE or sale readiness."
+}

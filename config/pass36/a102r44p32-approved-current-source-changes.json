@@ -1,0 +1,280 @@
+{
+  "addedCount": 16,
+  "changes": [
+    {
+      "after": {
+        "byteLength": 1360,
+        "mode": 420,
+        "path": "VELMERE_A102R44P32_PATCH.txt",
+        "sha256": "12f28f00af5476d9c7e281da4ddf9c5a1a5d756239bbb2f24d8917e4e30b337e"
+      },
+      "change": "ADDED",
+      "path": "VELMERE_A102R44P32_PATCH.txt"
+    },
+    {
+      "after": {
+        "byteLength": 124,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "f009a61bf62dc79ceab389fb1b111ac675884fa48d0d083b21c13def86acef2e"
+      },
+      "before": {
+        "byteLength": 139,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "f9c50151d075b3e2afc105afe84d71a61d290aca424d5cf6650513c25a28d108"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "after": {
+        "byteLength": 2037421,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "5922ccdf7a91f0f16d5954652a74348e099c53dbccffa31200d66a9b79735712"
+      },
+      "before": {
+        "byteLength": 2033381,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "529568502e91d26bf2aa1fb11b4e4f732c37d52ae8d4d24e09212d312360ae07"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "after": {
+        "byteLength": 1292594,
+        "mode": 420,
+        "path": "_velmere/PASS36_A102R44P31_SOURCE_ONLY_MANIFEST.json",
+        "sha256": "1dae92c5e85eb8772d8c2d6fcb4028c90dc8eee2bd3adb86f2c6ff32962c02f6"
+      },
+      "change": "ADDED",
+      "path": "_velmere/PASS36_A102R44P31_SOURCE_ONLY_MANIFEST.json"
+    },
+    {
+      "after": {
+        "byteLength": 29679,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "9886eb16bd3cec9e543f2ed4c2a66668517236db6b5d94feae79395643cb47ff"
+      },
+      "before": {
+        "byteLength": 29403,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "6883f12ccf600aca6e7f1e7a29506f79bffc954113539b90f085da4e2644f530"
+      },
+      "change": "MODIFIED",
+      "path": "config/current-release.json"
+    },
+    {
+      "after": {
+        "byteLength": 32481,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "4d65a8a4b4978f909036ef001db6c1a68d3d09b80beafe6f52de85353f04ee8f"
+      },
+      "before": {
+        "byteLength": 32220,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "3bfb88d7b97029603b80256593de4f91e893b117777c15c310e7657a0f58331d"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass35/current-revision.json"
+    },
+    {
+      "after": {
+        "byteLength": 3107,
+        "mode": 420,
+        "path": "config/pass36/a102r44p32-action-required-current-state.json",
+        "sha256": "7360caf715b6ba272a1a939fa0981ae14edece1cbf966001a3fb02ac419070ad"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p32-action-required-current-state.json"
+    },
+    {
+      "after": {
+        "byteLength": 3191,
+        "mode": 420,
+        "path": "config/pass36/a102r44p32-local-durable-stripe-lifecycle-policy.json",
+        "sha256": "943340912de4058de81911ab8ffbeb3fd25d52fc1c948ebc503dcf403277b873"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p32-local-durable-stripe-lifecycle-policy.json"
+    },
+    {
+      "after": {
+        "byteLength": 1338,
+        "mode": 420,
+        "path": "config/pass36/a102r44p32-local-stripe-attempt-ledger.json",
+        "sha256": "c2d912ff8931cc9f0c89d8ff99eed523c0bb4d7bc0a5c9bb3f9233998308fba4"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p32-local-stripe-attempt-ledger.json"
+    },
+    {
+      "after": {
+        "byteLength": 75646,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "58b2965d5884b46c5c10e2d9bf6e738bd06cd6a56e2ccf6c01af9642d410bcbf"
+      },
+      "before": {
+        "byteLength": 75375,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "99f1d01f06a1cf23c84db504bc671b06784aef2dab6e21ef21c0df663d3cd14a"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass36/current-release-authority.json"
+    },
+    {
+      "after": {
+        "byteLength": 664,
+        "mode": 420,
+        "path": "scripts/pass36/external/r44p32/README_TRUTH_BOUNDARY.md",
+        "sha256": "99dce98221ff52b57f01066ce80ca73b5891af73a96787e1c2cfbf0b62aeceaa"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/external/r44p32/README_TRUTH_BOUNDARY.md"
+    },
+    {
+      "after": {
+        "byteLength": 5089,
+        "mode": 493,
+        "path": "scripts/pass36/external/r44p32/execute_local_stripe_lifecycle.py",
+        "sha256": "eff5a7fdbf2aec3a36d174f666628aa7a3017f3a15860c74fe9554501d7e6ac3"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/external/r44p32/execute_local_stripe_lifecycle.py"
+    },
+    {
+      "after": {
+        "byteLength": 4565,
+        "mode": 493,
+        "path": "scripts/pass36/external/r44p32/local_stripe_api_fixture.py",
+        "sha256": "d60fc2406884afd3ecf3294dcfa85ca86c6ed0c282491d16f57b37c78cf01d09"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/external/r44p32/local_stripe_api_fixture.py"
+    },
+    {
+      "after": {
+        "byteLength": 40686,
+        "mode": 493,
+        "path": "scripts/pass36/external/r44p32/run_local_stripe_lifecycle.py",
+        "sha256": "282689860c39f7e092ffa071b4138274b52f65c94651206f2c1acdde45c2a903"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/external/r44p32/run_local_stripe_lifecycle.py"
+    },
+    {
+      "after": {
+        "byteLength": 8916,
+        "mode": 493,
+        "path": "scripts/pass36/external/r44p32/verify_local_stripe_lifecycle.py",
+        "sha256": "3caf8c08c236e34457beaddb3253cc14656f671f2d391bc52bd23481be0bc754"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/external/r44p32/verify_local_stripe_lifecycle.py"
+    },
+    {
+      "after": {
+        "byteLength": 4082,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p32-local-stripe-evidence-tamper.mjs",
+        "sha256": "8bb93404b14ba8b7052956564d3f0e0f84127c46be1a247b1d722c1ab7157304"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p32-local-stripe-evidence-tamper.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5642,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p32-approved-current-source-changes.mjs",
+        "sha256": "45457d19a588ca07de505f8e6d034004f4d2e82270d2b0c4b25ec54915beccc2"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p32-approved-current-source-changes.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3133,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p32-current-release-pointers.mjs",
+        "sha256": "9245c4bf59350b2e27bbc72165e5b082141c257caa9a807748a06f730c5039f6"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p32-current-release-pointers.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 10040,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p32-local-stripe-evidence.mjs",
+        "sha256": "bbd2f75a0a675fa1e72905ea7d6456abca2d32b97528afbef19ce1ef830d1f6c"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p32-local-stripe-evidence.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 7050,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p32-source-authority.mjs",
+        "sha256": "bafed97d79d0175783ef7d309c2c2f73c74a35b3ede4b74269b471262d0c2d3d"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p32-source-authority.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4677,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p32-static-policy.mjs",
+        "sha256": "723db0b4eee030cd5d6ed217e6d957c29bc878b2caefeb19ffb52875bdca7b75"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p32-static-policy.mjs"
+    }
+  ],
+  "decision": "APPROVED_ACTION_REQUIRED_NO_PROMOTION",
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "historyMutations": 0,
+  "modifiedCount": 5,
+  "parentManifestPath": "_velmere/PASS36_A102R44P31_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "1dae92c5e85eb8772d8c2d6fcb4028c90dc8eee2bd3adb86f2c6ff32962c02f6",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "requiredAddedFiles": [
+    "VELMERE_A102R44P32_PATCH.txt",
+    "config/pass36/a102r44p32-action-required-current-state.json",
+    "config/pass36/a102r44p32-local-durable-stripe-lifecycle-policy.json",
+    "config/pass36/a102r44p32-local-stripe-attempt-ledger.json",
+    "scripts/pass36/verify-a102r44p32-source-authority.mjs",
+    "scripts/pass36/verify-a102r44p32-approved-current-source-changes.mjs",
+    "scripts/pass36/verify-a102r44p32-static-policy.mjs",
+    "scripts/pass36/verify-a102r44p32-current-release-pointers.mjs",
+    "scripts/pass36/verify-a102r44p32-local-stripe-evidence.mjs",
+    "scripts/pass36/test-a102r44p32-local-stripe-evidence-tamper.mjs",
+    "scripts/pass36/external/r44p32/local_stripe_api_fixture.py",
+    "scripts/pass36/external/r44p32/run_local_stripe_lifecycle.py",
+    "scripts/pass36/external/r44p32/verify_local_stripe_lifecycle.py",
+    "scripts/pass36/external/r44p32/execute_local_stripe_lifecycle.py",
+    "scripts/pass36/external/r44p32/README_TRUTH_BOUNDARY.md"
+  ],
+  "requiredModifiedFiles": [
+    "VELMERE_ACTIVE_PASS.txt",
+    "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+    "config/pass36/current-release-authority.json",
+    "config/current-release.json",
+    "config/pass35/current-revision.json"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p32.approved-source-changes.v1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "velmere.pass35.a20-case-bound-dependency-runtime-contract.v1",
+  "passId": "PASS35_A20",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "zeroBudget": 80
+  },
+  "baselineA19": {
+    "canonical": 44.2,
+    "zeroBudget": 85.1
+  },
+  "progressDeltaVsA19": {
+    "canonicalPercentagePoints": 1.1,
+    "zeroBudgetPercentagePoints": 0.9
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 4.6,
+    "zeroBudgetPercentagePoints": 6
+  },
+  "canonicalWeightedPlanningPercent": 45.3,
+  "canonicalStrictDonePercent": 11.6,
+  "canonicalCounts": {
+    "DONE": 5,
+    "PARTIAL": 29,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 86,
+  "zeroBudgetCoreDenominator": 50,
+  "zeroBudgetCounts": {
+    "DONE": 37,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "families": 10,
+    "cases": 200,
+    "vulnerable": 100,
+    "remediated": 100,
+    "frozen": {
+      "total": 80,
+      "tp": 40,
+      "fn": 0,
+      "tn": 40,
+      "fp": 0,
+      "recall": 1,
+      "precision": 1,
+      "specificity": 1,
+      "f1": 1
+    },
+    "mutations": 2400,
+    "mutation": {
+      "killed": 2400,
+      "total": 2400,
+      "killRate": 1,
+      "failedSamples": []
+    },
+    "runtimeIntegritySha256": "sha256:048522de92743a0b25f52bb95e8f3464d470a1bfbaa84492421076b2bc1a2b96",
+    "receiptSha256": "sha256:23a0b0dda32618abfe42be5a682c97e1d0dd659bab3714ed33af9d3d59c694c7"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "liveClaimed": false,
+  "truthBoundary": "PASS35 A20 is the only canonical current status. Canonical roadmap is 45.3% weighted / 11.6% strict across 43 workstreams, up 1.1 pp from A19 and 4.6 pp from A16. Zero-budget functional core is 86% across 50 capabilities, up 0.9 pp from A19 and 6 pp from A16. A20 locally closes the declared A12 case-bound dependency, SPDX-license and advisory-mapping implementation with a frozen generated benchmark. Real contracts, current/complete advisories, legal conclusions, official analyzers, staging, sale, LIVE, customer outcomes and independent assurance remain unclaimed."
+}

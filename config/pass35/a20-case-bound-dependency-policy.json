@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "velmere.pass35.a20-case-bound-dependency-policy.v1",
+  "passId": "PASS35_A20",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "limits": {
+    "maxFiles": 256,
+    "maxTotalBytes": 4194304,
+    "maxImportsPerFile": 128,
+    "maxAdvisories": 1024
+  },
+  "licensePolicy": {
+    "allowed": [
+      "MIT",
+      "Apache-2.0",
+      "BSD-2-Clause",
+      "BSD-3-Clause",
+      "ISC",
+      "UNLICENSED"
+    ],
+    "forbiddenForCommercialBundle": [
+      "AGPL-3.0-only",
+      "AGPL-3.0-or-later",
+      "GPL-3.0-only",
+      "GPL-3.0-or-later"
+    ],
+    "missingIsFinding": true,
+    "invalidIsFinding": true
+  },
+  "benchmark": {
+    "families": [
+      "UNRESOLVED_IMPORT",
+      "PATH_TRAVERSAL_IMPORT",
+      "IMPORT_CYCLE",
+      "MISSING_SPDX",
+      "INVALID_SPDX",
+      "FORBIDDEN_LICENSE",
+      "DUPLICATE_PACKAGE_VERSION",
+      "ADVISORY_SOURCE_HASH_MATCH",
+      "ADVISORY_PACKAGE_VERSION_MATCH",
+      "EXPECTED_DIGEST_MISMATCH"
+    ],
+    "variantsPerClass": 10,
+    "expectedCases": 200,
+    "expectedVulnerable": 100,
+    "expectedRemediated": 100,
+    "expectedFrozen": 80,
+    "mutationTypes": [
+      "line_endings",
+      "file_order",
+      "comment_decoy",
+      "whitespace",
+      "unrelated_file",
+      "import_alias",
+      "path_separator",
+      "advisory_order",
+      "metadata_order",
+      "source_reorder",
+      "paired_security_flip",
+      "digest_tamper"
+    ],
+    "expectedMutations": 2400
+  },
+  "thresholds": {
+    "minimumFrozenRecall": 1,
+    "minimumFrozenSpecificity": 1,
+    "minimumFrozenPrecision": 1,
+    "minimumMutationKillRate": 1
+  },
+  "truthBoundary": "This policy defines a local case-bound dependency/license/advisory engine and a generated frozen benchmark. It does not prove that an advisory registry is complete or current, does not constitute legal advice, and does not authorize paid audit delivery without real case inputs, official tooling, reviewer adjudication and staging evidence."
+}

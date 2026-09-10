@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "velmere.pass35.a45.exact-runtime-browser-acceptance.v1",
+  "revisionId": "VELMERE_PASS35_A45_EXACT_RUNTIME_BROWSER_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A44_VISUAL_MASTER_ENGINE_BINDING",
+  "truthBoundary": "A45 adds an exact-runtime and browser acceptance harness only. It does not change the A44 visual master, protected engine, API, auth, data, stop-sell or product claims.",
+  "expectedRuntime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "baseUrl": "http://127.0.0.1:4173",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "locales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "suffix": "",
+      "selector": "[data-pass318-public-storefront-focus=\"home\"]"
+    },
+    {
+      "id": "browser",
+      "suffix": "/search",
+      "selector": "[data-pass453-unified-intelligence-handoff=\"true\"]"
+    },
+    {
+      "id": "shield",
+      "suffix": "/market-integrity",
+      "selector": "[data-pass2356-shield-realmarkets-parity=\"true\"]"
+    },
+    {
+      "id": "shield-pro",
+      "suffix": "/shield-pro",
+      "selector": "[data-pass4608-shield-pro]"
+    },
+    {
+      "id": "shield-map",
+      "suffix": "/shield-map",
+      "selector": "[data-pass1983-shield-map-command-screen]"
+    },
+    {
+      "id": "real-markets",
+      "suffix": "/real-markets",
+      "selector": "[data-pass1413-real-markets-polish]"
+    },
+    {
+      "id": "audits",
+      "suffix": "/security/audits",
+      "selector": "[data-pass4609-audit-clean]"
+    },
+    {
+      "id": "audit-sample",
+      "suffix": "/security/audits/sample",
+      "selector": "[data-audit-sample-report]"
+    },
+    {
+      "id": "audit-registry",
+      "suffix": "/security/audits/registry",
+      "selector": "[data-pass1894-audit-registry-page]"
+    },
+    {
+      "id": "account",
+      "suffix": "/account",
+      "selector": "main.velmere-public-page"
+    },
+    {
+      "id": "auth",
+      "suffix": "/login",
+      "selector": "[data-pass2005-auth-form]"
+    },
+    {
+      "id": "trust-center",
+      "suffix": "/trust-center",
+      "selector": "[data-velmere-trust-center=\"truth-boundary\"]"
+    },
+    {
+      "id": "atelier",
+      "suffix": "/atelier",
+      "selector": "[data-atelier-page=\"regional-craft-network\"]"
+    },
+    {
+      "id": "intelligence",
+      "suffix": "/intelligence",
+      "selector": "[data-intelligence-page=\"velmere-evidence-intelligence\"]"
+    }
+  ],
+  "browserBudgets": {
+    "routeTimeoutMs": 90000,
+    "maximumHorizontalOverflowPx": 4,
+    "maximumConsoleErrorsPerRoute": 0,
+    "maximumPageErrorsPerRoute": 0,
+    "minimumBodyHeightPx": 180
+  },
+  "requiredPopupTabs": [
+    "overview",
+    "analysis",
+    "market-impact",
+    "whale-watch"
+  ]
+}

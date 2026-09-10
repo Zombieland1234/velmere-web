@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "velmere.p42.github-action-full-commit-pins.v1",
+  "revision": "P42_V16_CURRENT_LOCK_LIFECYCLE_QUARANTINE_ACTION_PINNING_V2",
+  "generatedAt": "2026-08-14T11:20:00.000Z",
+  "parentRoot": "R44P46",
+  "checkpoint": "P42",
+  "policy": "FULL_40_HEX_COMMIT_REQUIRED_NO_MOVING_TAG_EXECUTION",
+  "pins": {
+    "actions/checkout": {
+      "sha": "11d5960a326750d5838078e36cf38b85af677262",
+      "tagHint": "v4",
+      "purpose": "read-only source checkout"
+    },
+    "actions/setup-node": {
+      "sha": "49933ea5288caeca8642d1e84afbd3f7d6820020",
+      "tagHint": "v4",
+      "purpose": "exact Node 24.18.0 setup"
+    },
+    "actions/upload-artifact": {
+      "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "tagHint": "v4",
+      "purpose": "always-uploaded failure/PASS evidence"
+    }
+  },
+  "integritySha256": "9bceebef93e03b5199ddcc946bacd87c10e74bdbd8a92b5399a3e45e01c51b68"
+}

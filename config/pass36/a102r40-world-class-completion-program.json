@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "velmere.pass36.a102r40.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T06:01:00+02:00",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "formalOpenEntries": 31,
+  "planningEstimate": {
+    "minimumCheckpoints": 10,
+    "mostLikelyCheckpoints": 22,
+    "withRevisionsRetestsLegalProviderCustomer": 38
+  },
+  "a102r40": {
+    "currentSourceAuthorityChecks": 37,
+    "releaseSourceBindingSurfaces": 6,
+    "legacyA57ManifestDeclaredFiles": 4584,
+    "legacyA57ManifestCurrentExpectedFilesObserved": 5458,
+    "legacyA57CurrentPreflightEligible": false,
+    "currentAuthorityPayloadExactRequired": true,
+    "a63ExactNpmCliProcessExecPath": true,
+    "freshExactWindowsBuildBrowserCredit": false,
+    "passCredit": false,
+    "a79BrowserRowsRequired": 56,
+    "a79ScreenshotsRequired": 29,
+    "historical36Row19ScreenshotCredit": false,
+    "a58AuthorityVerifierStatusBound": true,
+    "a58ExecutablePathDenominator": 35,
+    "authorityVerifierChecks": 40,
+    "localRegressionStages": 20,
+    "localRegressionSourcePayloadComparedBeforeAfter": true,
+    "stalePreFinalSourceArchiveRejected": true,
+    "approvedChangeLedgerReceiptCycleRemoved": true
+  },
+  "hardExitGates": [
+    {
+      "id": "A77R1_A80R1",
+      "verified": 0,
+      "required": 4,
+      "status": "OPEN"
+    },
+    {
+      "id": "EXACT_WINDOWS_NODE_NPM",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "EXACT_CHROME_PLAYWRIGHT",
+      "verified": 0,
+      "required": 1,
+      "status": "OPEN"
+    },
+    {
+      "id": "A102_OBSERVATIONS",
+      "verified": 0,
+      "required": 3,
+      "status": "OPEN_MINIMUM_72H"
+    },
+    {
+      "id": "STAGING",
+      "verified": 0,
+      "required": 10,
+      "status": "OPEN"
+    },
+    {
+      "id": "RLS",
+      "verified": 0,
+      "required": 19,
+      "status": "OPEN"
+    },
+    {
+      "id": "PROVIDER_RIGHTS",
+      "verified": 0,
+      "required": 21,
+      "status": "OPEN"
+    },
+    {
+      "id": "LEGAL_DPO",
+      "verified": 0,
+      "required": 20,
+      "status": "OPEN"
+    },
+    {
+      "id": "REAL_AUDITS",
+      "verified": 0,
+      "required": 50,
+      "status": "OPEN"
+    },
+    {
+      "id": "OFFICIAL_AUDIT_TOOLS",
+      "verified": 0,
+      "required": 200,
+      "status": "OPEN"
+    },
+    {
+      "id": "REAL_CUSTOMER_PDFS",
+      "verified": 0,
+      "required": 50,
+      "status": "OPEN"
+    },
+    {
+      "id": "BRAIN_ANGEL_RISK",
+      "verified": 0,
+      "required": 300,
+      "status": "OPEN"
+    },
+    {
+      "id": "CUSTOMER_COHORTS",
+      "verified": 0,
+      "required": 2,
+      "status": "OPEN"
+    }
+  ],
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    }
+  },
+  "nextExecutionOrder": [
+    "Freeze A102R40 and run current-source-authority validation on a clean Windows extraction.",
+    "Run exact Node 24.18.0/npm 11.16.0 offline bootstrap, lint, typecheck, Webpack, Turbopack, 55/55 unique smokes and parity on unchanged bytes.",
+    "Run exact Chrome for Testing 148.0.7778.96 / Playwright revision 1223 with PL/EN/DE desktop/mobile evidence.",
+    "Close A77R1-A80R1, staging, RLS, rights, legal, real product matrices and customer-value gates before sale."
+  ],
+  "truthBoundary": "A102R40 closes a real local exact-release source-binding failure. It proves the preflight and authority contract, not a fresh exact Windows build, browser, staging, rights, legal approval, real-data accuracy, customer value, LIVE or sale readiness.",
+  "passes": [
+    {
+      "passNumber": 77,
+      "revisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+      "status": "LOCAL_CONSTRUCTION_ONLY_EXTERNAL_GOVERNANCE_OPEN",
+      "credit": false
+    },
+    {
+      "passNumber": 78,
+      "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+      "status": "LOCAL_BOOTSTRAP_HARDENING_BLOCKED_EXACT_ARTIFACTS",
+      "credit": false
+    },
+    {
+      "passNumber": 79,
+      "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+      "status": "DONE_LOCAL_ADMISSION_HARDENING_BLOCKED_A78_EXACT_ARTIFACTS",
+      "credit": false
+    },
+    {
+      "passNumber": 80,
+      "revisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+      "status": "LOCAL_ADMISSION_ONLY_BLOCKED_A79_EXACT_EXECUTION",
+      "credit": false
+    }
+  ]
+}

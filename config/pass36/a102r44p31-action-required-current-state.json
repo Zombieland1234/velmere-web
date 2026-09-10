@@ -1,0 +1,101 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "browser57": false,
+    "exactWindows": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "pdf150": false,
+    "postBuildTypeScript": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "currentExternalEvidence": {
+    "artifactZipSha256": "62e8e43148394703772fa446a4985513bcf4659e614d8b4adf0854b79c84ac7c",
+    "classification": "EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL_ONLY",
+    "deterministicTarSha256": "66fa1ca6f35ada786f3c78ee2778495ddfbefee52867c6bdc50d9fcb9794ec61",
+    "executed": 10,
+    "failed": 0,
+    "githubRunId": "31228486644",
+    "independentChecks": 35,
+    "passed": 10,
+    "required": 10,
+    "sigstoreBundleSha256": "29c8664ba078e3649b1311fe37524e0091e8180f879f05c004ddf7af32e8f341",
+    "truthBoundary": {
+      "awsCredit": false,
+      "currentChildExactReleaseCredit": false,
+      "customerCredit": false,
+      "externalCiLocalstackStorageKmsEmail": true,
+      "externalProviderStagingCredit": false,
+      "liveCredit": false,
+      "productionEmailCredit": false,
+      "productionKmsCredit": false,
+      "productionStorageCredit": false,
+      "retainedParentExactLinuxReleaseOnly": true,
+      "saleCredit": false,
+      "sesCredit": false
+    }
+  },
+  "externalBlockers": [
+    "EXACT_WINDOWS",
+    "STRIPE_TEST_12_OF_12",
+    "REAL_OBJECT_STORAGE_AND_EXTERNAL_KMS",
+    "TRANSACTIONAL_EMAIL_PROVIDER_AND_INBOX_PROOF",
+    "BACKUP_RESTORE_10_OF_10",
+    "INCIDENT_8_OF_8",
+    "REAL_72H_WINDOW_3_OF_3",
+    "RIGHTS_APPROVED_SHIELD_318",
+    "RIGHTS_APPROVED_REAL_MARKETS_583",
+    "TWO_INDEPENDENT_REVIEWERS",
+    "ANGEL_RISK_300_INDEPENDENT_EVALS",
+    "CUSTOMER_COHORTS_AND_WILLINGNESS_TO_PAY"
+  ],
+  "externalCredits": {
+    "awsStorageKms": false,
+    "backupRestoreProvider": false,
+    "incidentDrill": false,
+    "localstackStorageKmsEmail10": true,
+    "real72hWindow": false,
+    "sesEmail": false,
+    "stripeTest": false,
+    "supabaseRls": false
+  },
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "exactParentSourceBinding": true,
+    "exactTenCaseSemanticDenominator": true,
+    "externalCiLocalstackKms": true,
+    "externalCiLocalstackS3": true,
+    "externalCiMailpitSmtpAndInboxObservation": true,
+    "failedAttemptRetention": true,
+    "independentSemanticVerifier": true,
+    "physicalPerCaseArtifacts": true,
+    "sigstoreGithubOidcAttestation": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "retainedParentEvidence": {
+    "classification": "RETAINED_PARENT_EVIDENCE_ONLY",
+    "notCurrentChildReleaseCredit": true,
+    "parentBrowser57": true,
+    "parentBrowserEvidence584": true,
+    "parentExactLinuxRelease": true,
+    "parentExternalCiPostgresRls19": true,
+    "parentPdf150": true,
+    "parentScreenshots29": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p31.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

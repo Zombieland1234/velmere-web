@@ -1,0 +1,98 @@
+{
+  "decision": "NO_GO",
+  "globalTruth": {
+    "live": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "localEvidence": {
+    "angel": {
+      "assertions": 1083,
+      "coins": 15,
+      "failed": 0,
+      "locales": 3,
+      "passed": 1083,
+      "rejectedProviderCalls": 0,
+      "tiers": 3
+    },
+    "brainAngelRisk": {
+      "mutationAssertions": 5760,
+      "realUnseenEvalCredit": 0,
+      "syntheticCases": 360
+    },
+    "compilerAst": {
+      "assertions": 64,
+      "failed": 0,
+      "metamorphicCompilerRuns": 4,
+      "passed": 64,
+      "protocolPairs": 6,
+      "protocolVariants": 12
+    },
+    "foundry": {
+      "fuzzCampaigns": 3,
+      "invariantCampaigns": 4,
+      "passed": 16,
+      "tests": 16
+    },
+    "pdf": {
+      "activeContent": 0,
+      "advanced": 50,
+      "basic": 50,
+      "blankPages": 0,
+      "customerSemanticsDocuments": 150,
+      "documents": 150,
+      "externalUriActions": 0,
+      "neutralSourceDocuments": 150,
+      "noNumericTierConfidenceDocuments": 150,
+      "noPublicCommerceDocuments": 150,
+      "pages": 700,
+      "pro": 50
+    },
+    "realMarkets": {
+      "denominator": 583,
+      "realCurrentDataCredit": 0,
+      "rightsApprovedCredit": 0
+    },
+    "shield": {
+      "denominator": 318,
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0
+    },
+    "shieldProMap": {
+      "denominator": 318,
+      "realProviderCredit": 0,
+      "rightsApprovedCredit": 0
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "remainingCheckpointEstimate": {
+    "central": 7,
+    "range": [
+      6,
+      10
+    ]
+  },
+  "remainingExternalBlockers": [
+    "EXACT_WINDOWS_FINAL_BYTE_BUILD_BROWSER",
+    "RIGHTS_APPROVED_REAL_CONTRACT_CORPUS",
+    "TWO_INDEPENDENT_REVIEWERS_AND_GROUND_TRUTH",
+    "RIGHTS_APPROVED_SHIELD_PROVIDER",
+    "RIGHTS_APPROVED_REAL_MARKETS_PROVIDER",
+    "DISPOSABLE_STAGING_RLS_STRIPE_STORAGE_EMAIL",
+    "REAL_CUSTOMER_COHORTS_AND_WILLINGNESS_TO_PAY"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p11.action-required-current-state.v1",
+  "skuDecisions": {
+    "auditAdvanced": "NOT_FOR_SALE",
+    "auditBasic": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_RETEST",
+    "auditPro": "CONTROLLED_INVITATION_ONLY_BETA_WITH_MANDATORY_MANUAL_QA",
+    "realMarketsAdvanced": "NOT_FOR_SALE",
+    "realMarketsBasic": "REFERENCE_DEMO_ONLY",
+    "realMarketsPro": "NOT_FOR_SALE",
+    "shieldBasic": "REFERENCE_DEMO_ONLY",
+    "shieldMap": "REFERENCE_DEMO_ONLY",
+    "shieldPro": "NOT_FOR_SALE"
+  }
+}

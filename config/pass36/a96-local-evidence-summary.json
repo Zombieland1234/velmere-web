@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "velmere.pass36.a96.local-evidence-summary.v1",
+  "revisionId": "VELMERE_PASS36_A96R0_RLS_19_CASE_EXECUTABLE_REPLAY_AND_CUSTOMER_ARTIFACT_USER_CLIENT_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A95R0_STAGING_SUBJECT_REBIND_ENVIRONMENT_ISOLATION_AND_ZERO_MUTATION_PREFLIGHT",
+  "generatedAt": "2026-07-29T02:30:00.000Z",
+  "localResults": {
+    "adversarialChecks": 21,
+    "adversarialPassed": 21,
+    "verifierChecks": 24,
+    "verifierPassed": 24,
+    "sqlCasesPrepared": 19,
+    "ownerCasesPrepared": 13,
+    "operatorCasesPrepared": 6,
+    "realCasesExecuted": 0,
+    "realCasesPassed": 0,
+    "fixtureRunnerSourceUnchanged": true,
+    "customerArtifactUserClientBoundary": true,
+    "serviceRoleCustomerRouteReadAllowed": false
+  },
+  "blocked": {
+    "exactA77R1ToA80R1": true,
+    "a95ReadyAdmission": true,
+    "genuinePsql": true,
+    "disposableDatabase": true,
+    "twoTenantAccounts": true,
+    "realRls19Of19": true,
+    "apiTenantReplay": true
+  },
+  "claims": {
+    "a96PassCredit": false,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "sourceBindings": {
+    "policyPath": "config/pass36/a96-rls-tenant-isolation-policy.json",
+    "sqlPath": "tests/staging/pass36/a96-rls-19-case-replay.sql",
+    "matrixPath": "config/pass23/rls-staging-case-matrix.json",
+    "runnerPath": "scripts/pass36/a96-rls-tenant-isolation.mjs",
+    "testPath": "scripts/pass36/test-a96-rls-tenant-isolation.mjs",
+    "verifierPath": "scripts/pass36/verify-a96-rls-tenant-isolation.mjs"
+  },
+  "truthBoundary": "Compact SOURCE_ONLY evidence for local implementation only. Full logs and any future real database receipt belong in MATERIALS and do not grant LIVE or sale credit.",
+  "integritySha256": "a8d90cb5de41b78adc3faf52db2cfa51a26c110d5d08ddfdabcadc0d7979510c"
+}

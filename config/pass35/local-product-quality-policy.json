@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "velmere.pass35.local-product-quality-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "mode": "synthetic_local_quality_only",
+  "inputs": {
+    "pass16Corpus": "evaluation/pass16/worldclass-base-corpus.json",
+    "pass17Summary": "evaluation/pass17/market-adapter-simulation-summary.json",
+    "pass18Summary": "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+    "readinessDashboard": "_velmere/pass35/PASS35_READINESS_DASHBOARD.json",
+    "productCellCatalog": "config/pass35/product-cell-catalog.json",
+    "pdfReceipt": "artifacts/pass35/local-product-quality/PASS35_LOCAL_PDF_QA_RECEIPT.json"
+  },
+  "outputs": {
+    "currentReceipt": "_velmere/pass35/PASS35_LOCAL_PRODUCT_QUALITY_RECEIPT.json"
+  },
+  "pass16": {
+    "schemaVersion": "velmere.pass16.worldclass-corpus.v1",
+    "baseCases": 300,
+    "casesPerSurface": 50,
+    "requiredSurfaces": [
+      "shield",
+      "real_markets",
+      "smart_contract_audit",
+      "lens_pdf"
+    ],
+    "requiredTiers": [
+      "basic",
+      "pro",
+      "advanced"
+    ],
+    "requiredLocales": [
+      "pl",
+      "en",
+      "de"
+    ]
+  },
+  "pass17": {
+    "schemaVersion": "velmere.pass17.market-adapter-verification.v1",
+    "fixtures": 100,
+    "matrixRows": 900,
+    "contractPass": 900,
+    "deterministicPass": 900,
+    "lineagePass": 900,
+    "differentiationGroups": 300,
+    "localeChecks": 300,
+    "requiredTruthMarkers": [
+      "deterministic synthetic adapter simulations",
+      "not the 900 canonical provider-bound product outputs",
+      "do not change 0/2700 canonical execution status"
+    ]
+  },
+  "pass18": {
+    "schemaVersion": "velmere.pass18.audit-lens-adapter-simulation-summary.v1",
+    "baseCases": 100,
+    "auditCases": 50,
+    "lensCases": 50,
+    "matrixRows": 900,
+    "contractPass": 900,
+    "deterministicPass": 900,
+    "lineagePass": 900,
+    "differentiationGroups": 300,
+    "localeGroups": 300,
+    "advancedAuditBlocked": 150,
+    "canonicalExternalOutputs": 0,
+    "renderedBrowserPdfOutputs": 0,
+    "requiredTruthMarkers": [
+      "deterministic adapter behavior",
+      "synthetic contract and report fixtures",
+      "never count as detector precision/recall",
+      "Advanced smart-contract outputs remain blocked without a real-human approved review receipt"
+    ]
+  },
+  "releaseBoundary": {
+    "dashboardSchemaVersion": "velmere.pass35.readiness-dashboard.v1",
+    "catalogSchemaVersion": "velmere.pass35.product-cell-catalog.v1",
+    "globalDecision": "NO_GO",
+    "promotionAllowed": false,
+    "externalVerifiedCredit": 0,
+    "productCells": 30,
+    "sellEnabledCells": 0
+  },
+  "pdfReceipt": {
+    "schemaVersion": "velmere.pass35.local-pdf-qa-receipt.v1",
+    "mode": "synthetic_offline_renderer_qa",
+    "status": "PASS",
+    "required": true,
+    "pdfCount": 150,
+    "totalPages": 700,
+    "byTier": {
+      "Basic": 50,
+      "Pro": 50,
+      "Advanced": 50
+    },
+    "pageCountByTier": {
+      "Basic": 2,
+      "Pro": 4,
+      "Advanced": 8
+    },
+    "requiredBoundaries": {
+      "synthetic": true,
+      "offline": true,
+      "notLive": true,
+      "notForSale": true,
+      "investmentRecommendation": false,
+      "productionEntitlementBypassed": false
+    },
+    "requiredSourceMode": "missing",
+    "requiredSourceConfidence": 0,
+    "commercialUseAllowed": false,
+    "bannedDirectionalLanguageAbsent": true,
+    "syntheticMarkersPresent": true
+  },
+  "decision": {
+    "pass": "PASS_LOCAL_SYNTHETIC_QUALITY_NO_PROMOTION",
+    "fail": "FAIL_CLOSED_LOCAL_PRODUCT_QUALITY",
+    "externalCreditOnPass": 0,
+    "promotionAllowedOnPass": false,
+    "sellEnabledOnPass": false
+  },
+  "truthBoundary": "This policy verifies deterministic local synthetic product behavior and PDF renderer QA only. A PASS grants zero external evidence credit, authorizes no sale or production promotion, supplies no real-human review, and is not LIVE, customer, provider, legal, benchmark, detector-accuracy or investment-advice proof."
+}

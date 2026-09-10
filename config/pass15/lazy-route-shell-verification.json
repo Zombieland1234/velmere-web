@@ -1,0 +1,1187 @@
+{
+  "schemaVersion": "velmere.pass15.lazy-route-shell-verification.v1",
+  "generatedAt": "2026-08-03T17:24:05.323Z",
+  "truthBoundary": "Static source/import verification with a hash-bound TypeScript AST route export registry. Exact AST reparse and runtime parity require the exact A78R1/A79R1 toolchain, production build and E2E.",
+  "summary": {
+    "routes": 16,
+    "checks": 176,
+    "passed": 176,
+    "failed": 0,
+    "eagerBytesBefore": 23306289,
+    "eagerBytesAfter": 59333,
+    "eagerByteReduction": 23246956,
+    "routeAstRegistryFiles": 254,
+    "routeAstRegistryExactCredit": true
+  },
+  "failures": [],
+  "checks": [
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "908161adfcb7fe113fecaeeefbd879e2e485d8bb04dd03256471a0dce995884f",
+        "actual": "908161adfcb7fe113fecaeeefbd879e2e485d8bb04dd03256471a0dce995884f"
+      }
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1835675,
+        "after": 3663
+      }
+    },
+    {
+      "name": "app/api/market-integrity/continuity/refresh/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 141,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "1edb0f60c3ba4d3bb100b3d149f838cc5fa0a9b00c93ad760dad96bddd241bfb",
+        "actual": "1edb0f60c3ba4d3bb100b3d149f838cc5fa0a9b00c93ad760dad96bddd241bfb"
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1826972,
+        "after": 3656
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 123,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "ef47594f7c7a77be3f86dfd4e22b1b751686901bd2b67f61e503742f8ac6ced9",
+        "actual": "ef47594f7c7a77be3f86dfd4e22b1b751686901bd2b67f61e503742f8ac6ced9"
+      }
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1816347,
+        "after": 3652
+      }
+    },
+    {
+      "name": "app/api/account/customer-artifact/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 162,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "PATCH",
+          "POST",
+          "PUT"
+        ],
+        "actual": [
+          "PATCH",
+          "POST",
+          "PUT"
+        ]
+      }
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "PATCH",
+          "POST",
+          "PUT"
+        ],
+        "actual": [
+          "PATCH",
+          "POST",
+          "PUT"
+        ]
+      }
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "87c66d6f34593e3fe3c3bc487e172070942d791b37582f46704312ee8335ff7d",
+        "actual": "87c66d6f34593e3fe3c3bc487e172070942d791b37582f46704312ee8335ff7d"
+      }
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1806025,
+        "after": 4283
+      }
+    },
+    {
+      "name": "app/api/admin/security/advanced-audit-release/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 125,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "10dd228b29f0ed8b6fce3b8ac4b4c83dbf4c0b984ede61121d241ffe791fe790",
+        "actual": "10dd228b29f0ed8b6fce3b8ac4b4c83dbf4c0b984ede61121d241ffe791fe790"
+      }
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1802211,
+        "after": 3663
+      }
+    },
+    {
+      "name": "app/api/security/audit-review/pro/settle/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 125,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "f8530506e79eec86ca42cab2478b06cd103283a2e772fc4c53f7e8a079786ffc",
+        "actual": "f8530506e79eec86ca42cab2478b06cd103283a2e772fc4c53f7e8a079786ffc"
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1798901,
+        "after": 3625
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/pro-pdf/token/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 120,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "65952d86b44b1d23288fe921f0799fe52f1ccfb746cd65d9213c70fc607d53ed",
+        "actual": "65952d86b44b1d23288fe921f0799fe52f1ccfb746cd65d9213c70fc607d53ed"
+      }
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1591435,
+        "after": 3601
+      }
+    },
+    {
+      "name": "app/api/angel/stream/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 132,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/angel/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/angel/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/angel/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "4b756fccdcc994d2f16f92924656d0a2010c8f683badf44b71b8296160bc366d",
+        "actual": "4b756fccdcc994d2f16f92924656d0a2010c8f683badf44b71b8296160bc366d"
+      }
+    },
+    {
+      "name": "app/api/angel/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/angel/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1576529,
+        "after": 3593
+      }
+    },
+    {
+      "name": "app/api/angel/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 130,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/search/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/search/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/search/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/search/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/search/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/search/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/search/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "d4e085e37c862bcfcc41ab0af0e9509b97f3bb27483464eaf1791d5e340fa832",
+        "actual": "d4e085e37c862bcfcc41ab0af0e9509b97f3bb27483464eaf1791d5e340fa832"
+      }
+    },
+    {
+      "name": "app/api/search/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/search/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/search/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1408373,
+        "after": 3632
+      }
+    },
+    {
+      "name": "app/api/search/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 132,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET",
+          "POST"
+        ],
+        "actual": [
+          "GET",
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET",
+          "POST"
+        ],
+        "actual": [
+          "GET",
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44",
+        "actual": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44"
+      }
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1165212,
+        "after": 3937
+      }
+    },
+    {
+      "name": "app/api/admin/security/audit-messages/operator-actions/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 94,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "7aa28d7618a0c0061acfe8e68e422ba6a9cafe6b07c8a012d960ddb8b44de886",
+        "actual": "7aa28d7618a0c0061acfe8e68e422ba6a9cafe6b07c8a012d960ddb8b44de886"
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1140619,
+        "after": 3591
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/support-handoff/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 86,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "01fd7a94fbe58dc5f7ecd1a7d2647d023a6a1fd460dc8068e17dbd07d79a6cfb",
+        "actual": "01fd7a94fbe58dc5f7ecd1a7d2647d023a6a1fd460dc8068e17dbd07d79a6cfb"
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1137517,
+        "after": 3661
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/route-health/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 86,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET",
+          "POST"
+        ],
+        "actual": [
+          "GET",
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET",
+          "POST"
+        ],
+        "actual": [
+          "GET",
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "4aeddacfd32f1f9e39422af889ff44d4fd4ec4ba9c698023eec10241e01bb70b",
+        "actual": "4aeddacfd32f1f9e39422af889ff44d4fd4ec4ba9c698023eec10241e01bb70b"
+      }
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1127751,
+        "after": 3852
+      }
+    },
+    {
+      "name": "app/api/account/audit-messages/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 86,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/ai/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/ai/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/ai/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/ai/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "POST"
+        ],
+        "actual": [
+          "POST"
+        ]
+      }
+    },
+    {
+      "name": "app/api/ai/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/ai/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/ai/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "e9bdccb4bd49c123345d02b45015e3b340f3e0b84ec3340e497c7114117e2b21",
+        "actual": "e9bdccb4bd49c123345d02b45015e3b340f3e0b84ec3340e497c7114117e2b21"
+      }
+    },
+    {
+      "name": "app/api/ai/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/ai/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/ai/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1124851,
+        "after": 3590
+      }
+    },
+    {
+      "name": "app/api/ai/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 98,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "40cdf9ee2160ffbee09d1c8d26f54a8754e1e931de86ce7f168bbb5b5ed54e22",
+        "actual": "40cdf9ee2160ffbee09d1c8d26f54a8754e1e931de86ce7f168bbb5b5ed54e22"
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1107646,
+        "after": 3665
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/delivery-receipt/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 84,
+        "after": 2
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:shell_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:handler_exists",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:shell_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:handler_methods",
+      "ok": true,
+      "detail": {
+        "expected": [
+          "GET"
+        ],
+        "actual": [
+          "GET"
+        ]
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:lazy_loader",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:handler_no_route_config",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:handler_hash",
+      "ok": true,
+      "detail": {
+        "expected": "8a721907ce558845fe261548d93241c7112056ddfda8c37972534b55c50a1435",
+        "actual": "8a721907ce558845fe261548d93241c7112056ddfda8c37972534b55c50a1435"
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:no_old_relative_lib_import",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:profiled",
+      "ok": true
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:eager_bytes_reduced",
+      "ok": true,
+      "detail": {
+        "before": 1040225,
+        "after": 3669
+      }
+    },
+    {
+      "name": "app/api/security/audit-watch/customer-safe-report/route.ts:eager_files_reduced",
+      "ok": true,
+      "detail": {
+        "before": 77,
+        "after": 2
+      }
+    }
+  ]
+}

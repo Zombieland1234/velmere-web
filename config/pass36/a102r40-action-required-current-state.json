@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "velmere.pass36.a102r40.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T06:01:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "inputParentCheckpoint": {
+    "revisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+    "sourceArchiveFileName": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT_SOURCE_ONLY.zip",
+    "sourceArchiveByteLength": 126023744,
+    "sourceArchiveSha256": "a855164ce042c9b0c9fe8a765eabbe06e165bc13f6dccb5db08f821e11be2995",
+    "parentDescendantManifestSha256": "c3db28f398991befe3399d8fa6018e00f8710e6406cbf7a1536701ae30cb156d"
+  },
+  "findings": [
+    {
+      "id": "A102R40-GAP-01",
+      "severity": "P0_RELEASE_INTEGRITY",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "A60/A62 exact execution preflight remained bound to the stale A57 manifest subset",
+      "resolution": "A single current-source authority validator now resolves all active authority mirrors and recomputes the complete canonical current payload before and after execution."
+    },
+    {
+      "id": "A102R40-GAP-02",
+      "severity": "P0_BUILD_BROWSER",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "A79 build/browser evidence verifier rejected current source and could not bind A102R39 bytes",
+      "resolution": "A79 now validates current descendant-manifest identity and full payload rather than 4584 stale A57 rows; missing, extra, changed, symlinked and mode-drifted rows fail closed."
+    },
+    {
+      "id": "A102R40-GAP-03",
+      "severity": "P0_STAGING",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "A63 staging journal and resume envelopes used the stale A57 manifest digest",
+      "resolution": "A63 now binds every envelope and source-drift check to the current descendant manifest SHA and recomputed current payload."
+    },
+    {
+      "id": "A102R40-GAP-04",
+      "severity": "P0_RELEASE_CANDIDATE",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "A80 release-candidate seal described the stale A57 file set instead of the current source authority",
+      "resolution": "A80 candidate admission now requires a passing current-source authority validation and records current file count plus aggregate SHA-256."
+    },
+    {
+      "id": "A102R40-GAP-05",
+      "severity": "P1_RUNTIME_PORTABILITY",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "A63 queried npm through the system npm/npm.cmd shim",
+      "resolution": "A63 now invokes the exact npm CLI with process.execPath, shell=false and a minimal environment."
+    },
+    {
+      "id": "A102R40-GAP-06",
+      "severity": "P1_AUTHORITY_COHERENCE",
+      "status": "LOCALLY_FIXED",
+      "title": "Active package and authority planes retained A102R33/A102R36 roadmap pointers",
+      "resolution": "Top-level package, nested package, current-revision, compatibility, authority roadmap plane and A58 pointers now agree on A102R40."
+    },
+    {
+      "id": "A102R40-GAP-07",
+      "severity": "P1_RELEASE_SCHEMA",
+      "status": "LOCALLY_FIXED",
+      "title": "A58 archiveManifestSchemaVersion remained A102R38 while its contract was A102R39",
+      "resolution": "Both schema fields and archive path are reconciled to A102R40 and verified together."
+    },
+    {
+      "id": "A102R40-GAP-08",
+      "severity": "P0_RELEASE",
+      "status": "OPEN_BLOCKED_ENVIRONMENT",
+      "title": "Fresh exact Windows runtime, dual build, corrected smokes and exact Chrome are still unexecuted on A102R40",
+      "resolution": "Run the exact chain on unchanged A102R40 bytes; local preflight hardening is not execution credit."
+    },
+    {
+      "id": "A102R40-GAP-09",
+      "severity": "P1_BROWSER_DENOMINATOR",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "A79 retained a 36-row/19-screenshot denominator after A45 expanded to 14 routes",
+      "resolution": "The exact matrix now derives 56 browser rows and 29 screenshots from the current 14-route A45 contract; the smaller historical denominator cannot receive credit."
+    },
+    {
+      "id": "A102R40-GAP-10",
+      "severity": "P1_RELEASE_INTEGRITY",
+      "status": "LOCALLY_FIXED",
+      "title": "A58 still expected the A102R39 authority status and a 23-path executable denominator after A102R40 expanded the policy to 35 paths",
+      "resolution": "A58 now binds the exact A102R40 authority verifier status and 35-path mode denominator; current-source preflight adversarial tests reject either drift."
+    },
+    {
+      "id": "A102R40-GAP-11",
+      "severity": "P0_RELEASE_INTEGRITY",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "The first A102R40 SOURCE_ONLY archive was built before the final A58/current-state fixes",
+      "resolution": "The stale archive is rejected as a non-authoritative attempt. Final SOURCE_ONLY must be rebuilt twice from the post-fix tree and clean-unpacked again."
+    },
+    {
+      "id": "A102R40-GAP-12",
+      "severity": "P1_TEST_INTEGRITY",
+      "status": "LOCALLY_FIXED",
+      "title": "The local regression receipt declared sourceImmutable without comparing the source payload before and after its 20 stages",
+      "resolution": "The regression builder now computes canonical current-source payloads before and after all stages and fails if any byte, path or canonical mode changes."
+    },
+    {
+      "id": "A102R40-GAP-13",
+      "severity": "P1_DENOMINATOR_TRUTH",
+      "status": "LOCALLY_FIXED",
+      "title": "The A102R40 authority denominator was reported as 38 although the current verifier executes 40 checks",
+      "resolution": "The receipt, verifier, reports and roadmap use the physical 40-check denominator; stale 38/38 claims are rejected."
+    },
+    {
+      "id": "A102R40-GAP-14",
+      "severity": "P1_RECEIPT_CYCLE",
+      "status": "LOCALLY_FIXED",
+      "title": "The self-generated local regression receipt participated in its own approved-change diff lifecycle",
+      "resolution": "The local receipt is excluded from the approved-change ledger and is independently bound by the descendant manifest SHA and final package manifest."
+    }
+  ],
+  "localImplementation": {
+    "currentSourceAuthorityChecks": 37,
+    "releaseSourceBindingSurfaces": 6,
+    "legacyA57DeclaredFiles": 4584,
+    "legacyA57ExpectedCurrentFilesObserved": 5458,
+    "legacyA57CurrentPreflightEligible": false,
+    "currentAuthorityPayloadExactRequired": true,
+    "currentAuthorityMirrorsBound": [
+      "VELMERE_ACTIVE_PASS",
+      "package",
+      "current-revision",
+      "compatibility",
+      "current-release-authority",
+      "A58",
+      "current-descendant",
+      "completion-program"
+    ],
+    "a60CurrentSourceBound": true,
+    "a62CurrentSourceBound": true,
+    "a63CurrentSourceBound": true,
+    "a78CurrentSourceBound": true,
+    "a79CurrentSourceBound": true,
+    "a80CurrentSourceBound": true,
+    "a63ExactNpmCliProcessExecPath": true,
+    "a63SystemNpmShimRemaining": false,
+    "freshExactWindowsRun": false,
+    "a79BrowserRowsRequired": 56,
+    "a79ScreenshotsRequired": 29,
+    "a79HistoricalBrowserRowsRejected": 36,
+    "a79HistoricalScreenshotsRejected": 19,
+    "authorityVerifierChecks": 40,
+    "localRegressionStages": 20,
+    "localRegressionSourcePayloadComparedBeforeAfter": true,
+    "stalePreFinalSourceArchiveRejected": true,
+    "approvedChangeLedgerSelfExcludedReceiptBoundElsewhere": true
+  },
+  "creditBoundary": {
+    "a102PassCredit": false,
+    "exactBuildBrowserCreditOnA102R40": false,
+    "localPreflightIsExecutionCredit": false,
+    "windowsExactRuntimeCredit": false,
+    "stagingCredit": false,
+    "liveCredit": false,
+    "saleCredit": false
+  },
+  "realDenominators": {
+    "formalOpenEntries": 31,
+    "a77r1ToA80r1": {
+      "verified": 0,
+      "required": 4
+    },
+    "exactChrome148PlaywrightRevision1223": {
+      "verified": 0,
+      "required": 1
+    },
+    "exactWindowsNode24_18_0Npm11_16_0": {
+      "verified": 0,
+      "required": 1
+    },
+    "a102ObservationWindows": {
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200
+    },
+    "stagingStages": {
+      "verified": 0,
+      "required": 10
+    },
+    "realRls": {
+      "verified": 0,
+      "required": 19
+    },
+    "stripeTestLifecycle": {
+      "verified": 0,
+      "required": 1
+    },
+    "providerRights": {
+      "verified": 0,
+      "required": 21
+    },
+    "legalDpoSignedDecisions": {
+      "verified": 0,
+      "required": 20
+    },
+    "realAudits": {
+      "verified": 0,
+      "required": 50
+    },
+    "officialAuditToolRuns": {
+      "verified": 0,
+      "required": 200
+    },
+    "crossAudits": {
+      "verified": 0,
+      "required": 20
+    },
+    "realCustomerPdfs": {
+      "verified": 0,
+      "required": 50
+    },
+    "shield": {
+      "verified": 0,
+      "required": 318
+    },
+    "shieldProMap": {
+      "verified": 0,
+      "required": 318
+    },
+    "realMarkets": {
+      "verified": 0,
+      "required": 583
+    },
+    "marketImpactWhaleWatch": {
+      "verified": 0,
+      "required": 318
+    },
+    "brainAngelRiskRealEval": {
+      "verified": 0,
+      "required": 300
+    },
+    "customerCohorts": {
+      "verified": 0,
+      "required": 2
+    },
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realCleanupConfirmations": 0
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    }
+  },
+  "planningEstimate": {
+    "minimum": 10,
+    "mostLikely": 22,
+    "withRevisionsAndRetests": 38
+  },
+  "nextExecutionOrder": [
+    "Freeze A102R40 and run current-source-authority validation on a clean Windows extraction.",
+    "Run exact Node 24.18.0/npm 11.16.0 offline bootstrap, lint, typecheck, Webpack, Turbopack, 55/55 unique smokes and parity on unchanged bytes.",
+    "Run exact Chrome for Testing 148.0.7778.96 / Playwright revision 1223 with PL/EN/DE desktop/mobile evidence.",
+    "Close A77R1-A80R1, staging, RLS, rights, legal, real product matrices and customer-value gates before sale."
+  ],
+  "truthBoundary": "A102R40 closes a real local exact-release source-binding failure. It proves the preflight and authority contract, not a fresh exact Windows build, browser, staging, rights, legal approval, real-data accuracy, customer value, LIVE or sale readiness."
+}

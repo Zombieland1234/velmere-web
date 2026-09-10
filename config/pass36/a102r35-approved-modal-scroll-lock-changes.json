@@ -1,0 +1,276 @@
+{
+  "schemaVersion": "velmere.pass36.a102r35.approved-modal-scroll-lock-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R35_ACTION_REQUIRED_MODAL_SCROLL_LOCK_PENDING_RESTORE_RAPID_REOPEN_AND_NESTED_OWNER_RACE_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R34_ACTION_REQUIRED_DIALOG_TOP_LAYER_ESCAPE_TAB_OUTSIDE_POINTER_AND_NESTED_RETURN_OWNERSHIP_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T08:20:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "fileCount": 29,
+  "approvedFiles": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "changeType": "MODIFIED",
+      "parentByteLength": 23675,
+      "parentSha256": "47838dfb06d02ef6bf889bb3e680c74ad0f78b1f291827b5fbb009c37faf3f18",
+      "currentByteLength": 24812,
+      "currentSha256": "bf060d9f5173e5d76da2f3ffc9bd53090915670157b5d67cbb5f779f7924fbd6",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "README.md",
+      "changeType": "MODIFIED",
+      "parentByteLength": 43243,
+      "parentSha256": "852bc5308abbbce53ffe2730e6139c24650d6c6f0d0d74b69eeb231738165865",
+      "currentByteLength": 44380,
+      "currentSha256": "81564851b5c27938cf8bf6751c6f8fd52212529f3fc965ef513edbdb0336ecd7",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "VELMERE_A102R35_PATCH.txt",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 285,
+      "currentSha256": "5a0247b197a4648dd154e0d65b57ddded963ff58dc8a411fb323b376fcee81dd",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "changeType": "MODIFIED",
+      "parentByteLength": 135,
+      "parentSha256": "58e641dc48fb7b5155989ceb07b836451be27b5d3d1f6d81926903cbe6d635f7",
+      "currentByteLength": 132,
+      "currentSha256": "b91e9744f3f1cbf68889e81da9c48f6025245ed7015cdcb092d4578324880076",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1799332,
+      "parentSha256": "ca8c73a000edcabb3e1f868f135adb2cb3edc7e8ad3a166526e2244f250430c4",
+      "currentByteLength": 1800469,
+      "currentSha256": "ae91837430839eff166a954f6d579cc1230f3689da08126fc3e58fb25376c615",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "components/ui/useModalScrollLock.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 8277,
+      "parentSha256": "ab4934e79966a3f663daf76ca521cba8b92bfaa226f703ebb826209f61edb7c1",
+      "currentByteLength": 8946,
+      "currentSha256": "c178e9cb7b5b7242b8900daeb77313c551b1430b5b0d56644e56a058293c12cf",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/current-release.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 27625,
+      "parentSha256": "3d2834e7559b83e7c89d9cd47b2dce0144edff403a4a914b5346f4025c22f208",
+      "currentByteLength": 27613,
+      "currentSha256": "9acc353974ceeaf0439761082042464488fdcfcc8e347136230a6203be60ff9d",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 15875,
+      "parentSha256": "f172d67d13e7dc3e9cd60ef09a7a7061bc93267d97a81fbd10c98f089d8131b4",
+      "currentByteLength": 16181,
+      "currentSha256": "9067a585362a1c427fcf7b77ed84217a83d8784e0d31c3697ef81abcec27a791",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass35/a57r1-hardening-integrity.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 479396,
+      "parentSha256": "811aa98da3e866163b1f3d6780140753eb61ab6dcddb9489cac6785f8cf3d178",
+      "currentByteLength": 479871,
+      "currentSha256": "9cff727e825c5132f1f06c34d8d9f19c091d0a40e723d8eaa13dd5b98d079fd2",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 29068,
+      "parentSha256": "04d89ffa6687103759d8c3cb92d44dd037091ec3795b7e5addcd9bd1226878a3",
+      "currentByteLength": 29056,
+      "currentSha256": "9a93060553362956604d510780c16f8d31eee3065dfaf2e08d30694d46f9eec5",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r35-action-required-current-state.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 19180,
+      "currentSha256": "b57e82581dcbee8460f34713bdcacd4fd32de29e0aec205c504e2bd9b688ee9a",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r35-local-regression-receipt.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 21954,
+      "currentSha256": "f2d1571c382b6e624c134e334270bd73dd0707e9e070a33cb258725a4e630676",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r35-test-receipt.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 608,
+      "currentSha256": "d5557be876f2c28ca9c3c6bd57dacf2929937667892ebcab787e43e1d10329c4",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r35-world-class-completion-program.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 13417,
+      "currentSha256": "e0910cde19d63c5a35a45484c020353696ace57e6def95a1bf57cf713f09ee54",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass36/a58-release-integrity-policy.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 3321,
+      "parentSha256": "bdd1345710a93bc206c15cfabbfda775480bc770a738e61388b3838249cb33fa",
+      "currentByteLength": 3249,
+      "currentSha256": "d327399515251b0ad9d7da2101c04702bded312387625952f61ef906a93e6e8d",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 61556,
+      "parentSha256": "05e3ebc2fac42dc4baf787a40c82e392159c364915439a3add1dfdb7673945ca",
+      "currentByteLength": 61585,
+      "currentSha256": "60feb47c8e0950719cbe571cf77e3b2eeb668281712bf8e1ea4090277e41b2f5",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "lib/ui/modal-scroll-lock-policy.ts",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2786,
+      "currentSha256": "e43d13440b60b9f9afae89d319a8ce4985f1a511f19987be1e1bf571e750353f",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "package.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 107628,
+      "parentSha256": "81574fa7709b546946ed2ccf58b54b49b5fa9f57ef7a98e7eb7ee3048c5ce667",
+      "currentByteLength": 107765,
+      "currentSha256": "f6d74c03db217a7d64302b895bba1c4ae1a76a56afef29f7f2e8988ec5664b90",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass35/build-a57r1-hardening-integrity.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 22962,
+      "parentSha256": "7663d6693fdf74943b543bba0c9ae67c1856c8c07d035ad1427ded9642856021",
+      "currentByteLength": 23051,
+      "currentSha256": "9e3534dc1ebb288a3f89ed705776e07f96a74ee5054801a06119ab1867caffc6",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/a102r35-source-boundary.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3814,
+      "currentSha256": "e9c1159d7ffc4e5658a500e1f2e21cf80fb3c822e02ddff867d6ab2fab533146",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/build-a102r35-current-root-descendant-manifest.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2413,
+      "currentSha256": "4b034c9229289efad3aa2a1da40a74fc007f7a91e327c9dc242ca7a19ef04726",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/build-a102r35-local-regression-receipt.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 8234,
+      "currentSha256": "09acfe1aff1f15837c3c645595716f0175932ca6fb95cbcfa37f2cdf0bcbb615",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/package-a102r35-deterministic.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 24766,
+      "currentSha256": "fc45c19e43419bd9478901dad67a3b330980ecbf518ea7dcd7af6f67086d959d",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/test-a102r35-modal-scroll-lock-rapid-reopen-restore-race.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 5197,
+      "currentSha256": "7e39c4aaea1bb44c003547eb6921a9992e39596ff935ba93362603aeee0f4192",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r35-action-required-authority.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 6335,
+      "currentSha256": "fa5c8b188a568fc0d52bafa4642744dbc528789f07e2f39750a922c8eae14aaa",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r35-approved-modal-scroll-lock-changes.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1863,
+      "currentSha256": "51b6f96edeeab6e387b54d602d94bedd99b3dc92738e9a01bfc6fd99f432c15e",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r35-current-root-descendant.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1609,
+      "currentSha256": "38578e10bb4267a83794bb275c93b8db828a0367818db3c94825dfd310171978",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r35-final-packages.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 7293,
+      "currentSha256": "60c5e6d462853bc96ad6b47aee037c94437d40c18f682c70431cc70fc49fcc87",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r35-local-regression-receipt.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1969,
+      "currentSha256": "92eee5c4c5ad7c100d5da0798f498903677d75ce9e3949a880ecdd924ac541e7",
+      "reason": "A102R35 modal scroll-lock rapid-reopen restore race hardening or authority/release rebaseline"
+    }
+  ],
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

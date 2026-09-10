@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "velmere.pass36.a102r13.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R13_ACTION_REQUIRED_OPERATIONAL_LOG_CLIENT_ERROR_PAYMENT_PROVIDER_IDENTIFIER_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R12_ACTION_REQUIRED_ADMIN_PRODUCT_DRAFT_LOCAL_STORAGE_CROSS_ACCOUNT_AND_STRICT_JSON_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T06:56:00.000Z",
+  "status": "PASS_A102R13_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 22,
+  "executedStages": 22,
+  "passedStages": 22,
+  "failedStages": 0,
+  "stages": [
+    {
+      "sequence": 1,
+      "id": "01-r13",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 817,
+      "stdoutSha256": "2fa77869660c971dddeef3721534c6e164c907720af0cdbee77d79cf745b559e",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 2,
+      "id": "02-r5",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 1301,
+      "stdoutSha256": "808193f52091ebb96ee9205529e3c577368ff8cebfd99fe37d9aff9695b933ac",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 3,
+      "id": "03-r6",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 2847,
+      "stdoutSha256": "adc436bb8b2f96f125b80f0ece20002d4e93c4f312723a59c809f31c9f08b545",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 4,
+      "id": "04-r7",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 5297,
+      "stdoutSha256": "84cf0800f07329ac9c4eff20408969a546a913af7c0573dbb7418d05316403b3",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 5,
+      "id": "05-r8",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 6777,
+      "stdoutSha256": "6575667efcf2c995c716f2da22452df3eff60b484b9fab7c9e5febc9f0eb71e5",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 6,
+      "id": "06-r9",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 5889,
+      "stdoutSha256": "0de86eb90c3afbfa1162c5157adfbc68b329766799b081ee72948999ce1a1939",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 7,
+      "id": "07-r10",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 106,
+      "stdoutSha256": "f8af07140ab645a2d906fc47a105a605d255004e97cbb87dc0795235142b84d2",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 8,
+      "id": "08-r11",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 131,
+      "stdoutSha256": "eb4648f5529cc7534882776ddf78eabe9734f2866692cd0622943f7e1a647639",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 9,
+      "id": "09-r12",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 516,
+      "stdoutSha256": "f5d964eef100123eef0289c69af92b636d87fc9c4c98c4c67a61350f462fd38f",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 10,
+      "id": "10-a73",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 6488,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 11,
+      "id": "11-api-body",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 526,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 12,
+      "id": "12-malformed",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 118,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 13,
+      "id": "13-mega",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 2569,
+      "stdoutSha256": "295086d33ff1c0a666733d058cb1b809cd63c230e7c02b67daa249bf2373f7f1",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 14,
+      "id": "14-route",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 232,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 15,
+      "id": "15-tamper",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 234,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 16,
+      "id": "16-lazy",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 234,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 17,
+      "id": "17-a59",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 15779,
+      "stdoutSha256": "b9635b4a94d3dd8b77ef2ea8d7c4fcd029fd3a66e100bf75b732ca0d31066d38",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 18,
+      "id": "18-tiers",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 132,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 19,
+      "id": "19-zero",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 255,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 20,
+      "id": "20-approved",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 5851,
+      "stdoutSha256": "1b30c00889e8b10b5eba36e452035a24cd949c1ed5966e1f2f7b757b7d574f95",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 21,
+      "id": "21-a57",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 258,
+      "stdoutSha256": "e954fb2b56d5db7bced3ebb0b3a2674513e0492aec27dda30c9020c71e6793c2",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "sequence": 22,
+      "id": "22-source",
+      "exitCode": 0,
+      "passed": true,
+      "stdoutByteLength": 206,
+      "stdoutSha256": "b884f2c15e1b701ec86fc13797f8993d03f720093a747e6914034f8a580576b7",
+      "stderrByteLength": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "keyDenominators": {
+    "a102r13Checks": 38,
+    "activeConsoleSinks": 3,
+    "a102r5Checks": 26,
+    "a102r6Checks": 30,
+    "a102r7Checks": 43,
+    "a102r8Checks": 41,
+    "a102r9Checks": 38,
+    "a102r10Checks": 59,
+    "a102r11Checks": 43,
+    "a102r12Checks": 29,
+    "a73Checks": 57,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeDispatchTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "a59Checks": 77,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439,
+    "a57Checks": 1138,
+    "a57ProtectedRows": 1073
+  },
+  "sourceAudit": {
+    "filesRead": 5022,
+    "bytesRead": 119068612,
+    "codeFiles": 3095,
+    "syntaxErrors": 0,
+    "localImports": 7411,
+    "missingLocalImports": 0,
+    "cssModuleReferences": 758,
+    "missingCssModuleClasses": 0
+  },
+  "deferredFinalLineageVerifiers": [
+    {
+      "id": "A88R1",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    },
+    {
+      "id": "A89",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    }
+  ],
+  "environmentBlockers": [
+    {
+      "id": "exact-node-npm-official-provenance",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "exact-chromium-148-0-7778-96-rev1223",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "browser-console-pl-en-de-desktop-mobile",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "production-log-pipeline-retention-access-deletion",
+      "available": false,
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "browserConsoleRows": 0,
+    "productionLogPipelineRows": 0,
+    "stagingRuns": 0,
+    "providerRightsApprovals": 0,
+    "legalDpoApprovals": 0,
+    "customerCohorts": 0,
+    "a102ObservationRuns": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false,
+    "completedThrough": 89
+  },
+  "truthBoundary": "A102R13 proves local static/behavioral redaction and centralized sink wiring only. It does not prove production browser consoles, log transport/retention/access/deletion, legal/DPO approval, exact build/browser, staging, LIVE or sale readiness."
+}

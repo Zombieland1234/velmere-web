@@ -1,0 +1,90 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": true,
+    "authority": true,
+    "browser57": false,
+    "dynamicScorecard": true,
+    "exactWindows": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "pdf150": false,
+    "psychologyMatrix": true,
+    "sourceAudit": false,
+    "staticPolicy": true,
+    "targetedTypeScript": true,
+    "topologyContract": true,
+    "turbopack": false,
+    "webpack": false
+  },
+  "dynamicScoring": {
+    "allRowsRecalculated": true,
+    "beforeAfterDeltaRequired": true,
+    "copyPreviousPercentagesForbidden": true,
+    "gateCount": 85,
+    "newGateMayLowerScore": true,
+    "scoreRows": 17
+  },
+  "globalDecision": "NO_GO",
+  "nextPass": "A102R44P35 cycle 2/3: module quality, UX psychology, Angel, Risk, Market Impact and Whale Watch implementation; full regression at A102R44P36.",
+  "openExternalDenominators": {
+    "angelIndependentEvals": "0/300",
+    "exactWindows": "NOT_RUN",
+    "independentReviewers": "0/2",
+    "realCustomerPsychologyParticipants": 0,
+    "realStripeTest": "0/12",
+    "rightsApprovedRealMarkets": "0/583",
+    "rightsApprovedShield": "0/318",
+    "riskCalibrationWindows": 0
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P33_ACTION_REQUIRED_EXTERNAL_CI_STRIPE_MOCK_PROTOCOL12_SIGSTORE_OIDC_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "productTopology": {
+    "canonicalRows": 17,
+    "legacyThirtyRowCurrentCredit": false,
+    "standaloneRows": 8,
+    "tieredRows": 9
+  },
+  "productionApproved": false,
+  "psychologyMatrix": {
+    "customerProven": false,
+    "measurementDomains": 13,
+    "personas": 30,
+    "realParticipants": 0,
+    "rows": 540,
+    "stepsPerPersona": 18
+  },
+  "remainingLargePasses": {
+    "central": 6,
+    "realisticMax": 10,
+    "realisticMin": 6
+  },
+  "retainedParentEvidence": {
+    "ancestorExactLinuxRelease": true,
+    "classification": "RETAINED_PARENT_EVIDENCE_ONLY",
+    "notCurrentChildFullRegressionCredit": true,
+    "parentExternalStripeMockProtocol12": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p34.action-required-current-state.v1",
+  "targetedCycle": {
+    "currentPointerChecks": "12/12",
+    "dynamicScoreChecks": "13/13",
+    "fullRegressionExecuted": false,
+    "psychologyChecks": "10/10",
+    "stages": "6/6",
+    "staticPolicyChecks": "34/34",
+    "status": "PASS_R44P34_TARGETED_CYCLE_1_OF_3",
+    "targetedTypeScriptFiles": "3/3",
+    "topologyChecks": "13/13",
+    "typescriptVersion": "5.9.3"
+  },
+  "testCycle": {
+    "current": 1,
+    "fullRegressionCurrentPassExecuted": false,
+    "fullRegressionDueAt": "A102R44P36",
+    "total": 3
+  },
+  "worldClassProven": false
+}

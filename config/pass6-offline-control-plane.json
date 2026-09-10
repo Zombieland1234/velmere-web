@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "velmere.pass6.offline-control-plane.v1",
+  "liveSchedulesEnabled": false,
+  "mode": "offline_fail_closed",
+  "reason": "Historical scheduled GET endpoints performed mutations with one shared bearer. They remain disabled until a POST-only scheduler uses per-route rotating credentials, body binding, single-use nonces and durable replay protection.",
+  "requiredBeforeShadowLive": [
+    "configure a distinct current 32+ byte worker secret for every route scope",
+    "retain a bounded previous key only during a documented rotation window",
+    "invoke mutation endpoints with POST and bounded JSON",
+    "bind method, path and canonical body digest to the worker envelope",
+    "atomically consume a durable nonce before side effects",
+    "run staging replay, outage and duplicate-delivery tests",
+    "restore only schedules whose receipts pass the shadow-live gate"
+  ],
+  "prohibitedClaims": [
+    "LIVE scheduler ready",
+    "production worker identity proven",
+    "multi-instance replay tested"
+  ]
+}

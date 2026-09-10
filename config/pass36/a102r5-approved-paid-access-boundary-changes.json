@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "velmere.pass36.a102r5.approved-paid-access-boundary-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R5_ACTION_REQUIRED_SERVER_ACCOUNT_ENTITLEMENT_BROWSER_BEARER_AND_PERSISTENT_PAID_ACCESS_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "entries": [
+    {
+      "path": "components/checkout/VlmServiceCheckoutSuccessClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 24519,
+      "historicalSha256": "b4d113ca59368dc4479924ac07d7517a09de482116c25f316160c1e56deafb76",
+      "currentByteLength": 24838,
+      "currentSha256": "4ee8450b0db177b66950c706f32850fda623617250476a2699f6bd18c4636b96",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/market-integrity/AssetDetailModal.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 314116,
+      "historicalSha256": "b4c90f9dae728278f0ce023b4a46e7fb81da6dc0870ce556dd7033c5ae10d549",
+      "currentByteLength": 313948,
+      "currentSha256": "64b189713920c6d2b9b4e9e3cf67ada007bf2d7134f74b2e8d1c3d8a03d72610",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/market-integrity/CrossAssetCollapseRadarPanel.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 256785,
+      "historicalSha256": "916393758fb482891b7dff03522d4237381decacbe2c288698a0dcce78b20124",
+      "currentByteLength": 256648,
+      "currentSha256": "9141817c5e000aa51adb889d2094d7070adde686b2bff3f9e05d2897ad463618",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/market-integrity/asset-detail/paid-access.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 14172,
+      "historicalSha256": "78485cce661c094f409a8fb9568e98f567dce053faa2a1e61d818e4fbe069a6a",
+      "currentByteLength": 14010,
+      "currentSha256": "af5409250f7318eae208b03b56b82c4988457bf7f1429eeccfec952714963e30",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 254109,
+      "historicalSha256": "4f39930212eb1a86ae762f682df51259e3d5a99bf17d4cc0e3250fa469498ece",
+      "currentByteLength": 253735,
+      "currentSha256": "5e76ebd3d0370069942d65d010143b8196e37410bc74b27af02d135669289aa5",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/commerce/vlm-advanced-only-access-policy.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 8496,
+      "historicalSha256": "9efdf0aa3dece7e220634627cfeb6e718faa7ee6230b216ef5afe8f4582f808c",
+      "currentByteLength": 8132,
+      "currentSha256": "055b82df45d62fab3526d234165361eb16a5ac8db9f679865b1a00f022c8da6a",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/commerce/vlm-entitlement-ledger.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 32627,
+      "historicalSha256": "cbdbcf902b6f315dac7d7e605023097619cfc161ed1352c7c13b0341c313c61c",
+      "currentByteLength": 35913,
+      "currentSha256": "e84901b507386c99d1deb32932a37e064dc34c1eb6bbab833870bbf51926e518",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/commerce/vlm-paid-access-client.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 12398,
+      "historicalSha256": "89ff11ebb05428d63d2da17dbdfd609d18650a43d34ce4c6f8dd316e8422d132",
+      "currentByteLength": 14199,
+      "currentSha256": "82fe8a7bb47e6655ad7ba22ba29491dd690dc804e62072afc883ee67f29af3e1",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/commerce/vlm-paid-surface-guard.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 5724,
+      "historicalSha256": "f3321e8452c7c544eff4048c42f880707b60e46a523da8356ebe1f59a1637929",
+      "currentByteLength": 5651,
+      "currentSha256": "0e3ba4b14c51d0b1ce55909994dddc8880627149576a2839ab9df8f50c55ccdd",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 45524,
+      "historicalSha256": "3536259a86d23f9a9a4c4edc6ae705e36a2bace92f23f9e421dbc3b1b9591833",
+      "currentByteLength": 45233,
+      "currentSha256": "a98730b23bfef15a37d33f3322a85a3629a60022f5b142ae7acda74c92681398",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/security/audit-customer-report-pipeline.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 23584,
+      "historicalSha256": "dd122351efa0da5882fa4e8e03f0c06e476a8847f7b3943cb5d1a1f308aa4c57",
+      "currentByteLength": 23769,
+      "currentSha256": "5a53e8d03590da67b09ae17ccdcdb596fff4c52b5c6bde5cacb2233bc384bb2d",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/security/audit-watch-server-helpers.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 4598,
+      "historicalSha256": "b9d193d13905b3037e35a53c8132e989b2688e8cd618665933b14d5b98779e9b",
+      "currentByteLength": 4285,
+      "currentSha256": "acd50359efa45d3caccc793e309e2c64b39771e858b7719c01f76ad40704613e",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/report.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 40469,
+      "historicalSha256": "3db7da2b01d52c77bd7869c1339a14491e99e37427b169b2e1d4f8671cc4f2be",
+      "currentByteLength": 40170,
+      "currentSha256": "f262e778c2bf0b13bb8d1d251651ddb29144133f9379680d916537b3d36bfe06",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-report-assembler.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 10302,
+      "historicalSha256": "83573160cd7bb819fd624b6b514d6bad148723f3112d5cf6a948b5b955b3f117",
+      "currentByteLength": 10337,
+      "currentSha256": "b6c9d0f8ac7349efbb3361215446215aef234ff4a522cc7ea670e601889c02cd",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/server/vlm-service-verify-handler.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 23396,
+      "historicalSha256": "1f70020f92c89d4b08bc8b2559ac6f3dc616115c5dd51ec3627a1d6bafdcef43",
+      "currentByteLength": 23007,
+      "currentSha256": "38e2b85e6e103d8657e95b437df54d1ac5ea5011b2e05e23ac7530bdeec3e37f",
+      "reason": "Remove browser bearer-token authority and bind paid delivery to signed account sessions plus exact server entitlement ledger records.",
+      "requiredLocalTest": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "parentBytesRewritten": false
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "browserBearerTokenIssued": false,
+    "browserPaidHeaderAuthority": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger binds exact A102R4-to-A102R5 current descendant byte changes for the paid-access boundary. It does not rewrite frozen historical receipts and grants no durable-staging, Stripe, exact-build/browser, LIVE or sale credit."
+}

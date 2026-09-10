@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.historical-descendant-sparse-edge-ledger.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "edgeCount": 1,
+  "edges": [
+    {
+      "parent": {
+        "revisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+        "path": "config/pass36/a102r36-current-root-descendant-manifest.json",
+        "rawSha256": "843d66a0184fdb095a94245010575fa206fa4f565c539ef0271a8821520c71ec",
+        "manifestDigestSha256": "dc5fb4fe1bfbfe3e9c8c04eea96b9f416ca63bc9b73799e9a6993654fda8f87e"
+      },
+      "child": {
+        "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+        "path": "config/pass36/a102r38-current-root-descendant-manifest.json",
+        "rawSha256": "f70520a4e6eb8b3d453769daab67682311a4ea97dea0a18ce33a8b25175e254b",
+        "manifestDigestSha256": "363eca391415039d1f0e3df57830eac14b641160035f100e5317c832a6d0bf3c"
+      },
+      "absentInternalRevisionNumbers": [
+        37
+      ],
+      "externalCheckpoint": {
+        "revisionId": "VELMERE_PASS36_A102R37R4_ACTION_REQUIRED_DUAL_LOCAL_BUILD_PARITY_DIAGNOSTIC_BROWSER57_PASS_EXACT_CHROME_WINDOWS_STAGING_PENDING_NO_LIVE_CREDIT",
+        "sourceArchiveFileName": "VELMERE_PASS36_A102R37R4_ACTION_REQUIRED_DUAL_LOCAL_BUILD_PARITY_DIAGNOSTIC_BROWSER57_PASS_EXACT_CHROME_WINDOWS_STAGING_PENDING_NO_LIVE_CREDIT_SOURCE_ONLY(2).zip",
+        "sourceArchiveByteLength": 49999759,
+        "sourceArchiveSha256": "da02611bc1baba82927df003889de1125b38d1d65ee0317128a4e2a6fecdec1e",
+        "sourcePayloadFileCount": 5414,
+        "sourcePayloadByteLength": 122435425,
+        "sourceTreeSha256": "5b0a53eb29b8ea770314520f71f27f2867611fc01b3a8cb6c41a46f0830ba757",
+        "materialsArchiveFileName": "VELMERE_PASS36_A102R37R4_ACTION_REQUIRED_DUAL_LOCAL_BUILD_PARITY_DIAGNOSTIC_BROWSER57_PASS_EXACT_CHROME_WINDOWS_STAGING_PENDING_NO_LIVE_CREDIT_MATERIALS(2).zip",
+        "materialsArchiveByteLength": 793725,
+        "materialsArchiveSha256": "b2b5e236f2b494fe18025daa35404ae5754cf07cd21caa07ccf74b6116af3e88",
+        "observedInternalSourceAuthorityRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+        "classification": "EXTERNAL_EVIDENCE_CHECKPOINT_OVER_A102R36_SOURCE_BYTES_NOT_INTERNAL_SOURCE_AUTHORITY"
+      },
+      "externalPackageMayDefineSourceAuthority": false,
+      "fabricateMissingManifestForbidden": true,
+      "rewriteHistoricalManifestForbidden": true,
+      "passCredit": false,
+      "live": false,
+      "saleEnabled": false,
+      "productionApproved": false,
+      "worldClassProven": false
+    }
+  ],
+  "wildcardEdgesAllowed": false,
+  "additionalEdgesAllowed": false,
+  "historicalManifestRewriteAllowed": false,
+  "passCredit": false,
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "ledgerDigestSha256": "7c8170a2bf5805dd6773843bb2458db6fcffc268344cc3ba76466951cf297be8"
+}

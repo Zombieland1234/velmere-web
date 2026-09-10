@@ -1,0 +1,3420 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p39.dynamic-scorecard.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P39_ACTION_REQUIRED_AUDIT_PACKET_PARITY_BYTECODE_PROXY_BINDING_AND_EXTERNAL_ACCURACY_REGISTRY_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P38_ACTION_REQUIRED_COMPILER_AST_IR_LOCAL_GENERALIZATION24_METAMORPHIC7_AND_AUDIT_ACCURACY_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "testCycle": "2/3",
+  "status": "ACTION_REQUIRED_DYNAMIC_REBASELINE_CYCLE_2_OF_3",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "method": {
+    "statusCreditBps": {
+      "PASS": 10000,
+      "RUNTIME_TESTED": 9000,
+      "STATICALLY_TESTED": 7000,
+      "RETAINED_PARENT_EVIDENCE": 6000,
+      "RETAINED_PARENT": 6000,
+      "PARTIAL": 5000,
+      "PENDING": 0,
+      "MISSING": 0,
+      "BLOCKED": 0,
+      "NOT_RUN": 0
+    },
+    "quality": "R44P37 proof-weighted score plus current-child targeted compiler-AST gates. Parent full-release gates are retained parent evidence only for changed Audit surfaces.",
+    "releaseReadiness": "Weighted non-customer operational/product gates, capped at 90 without exact Windows.",
+    "worldClassEvidence": "0.5 accuracy + 0.3 data + 0.2 customer proof; capped below 50 while real customer proof is zero.",
+    "independentProofWeighted": "R44P36 independent score with a bounded maximum +15 point release/customer-truth repair; data, accuracy and customer proof are not promoted."
+  },
+  "summary": {
+    "products": 17,
+    "productsWithMovement": 6,
+    "productsWithoutMovement": 11,
+    "realCustomerParticipants": 0,
+    "customerProofProductsAboveZero": 0,
+    "currentChildFullReleaseCredit": false,
+    "currentAnalyzerExternalAccuracyCredit": false
+  },
+  "products": [
+    {
+      "productId": "audit-basic",
+      "name": "Audit Basic",
+      "productClass": "AUDIT",
+      "tier": "BASIC",
+      "previousDynamicQuality": 59.82,
+      "dynamicQuality": 62.22,
+      "deltaDynamicQuality": 2.4,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 0.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 59.45,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 46.0,
+      "independentProofWeightedAfter": 49,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 35,
+        "accuracySemanticTruth": 22,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [
+        {
+          "gateId": "full-eslint",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "semantic-typescript",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "source-audit",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "dual-build-smoke",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "browser-current-byte",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "pdf-current-byte",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "audit-semantic-generalization",
+          "before": "MISSING",
+          "after": "PARTIAL",
+          "evidence": "solc 0.8.24 compiler AST/storage-layout/IR: 24 local pairs, 7 transforms, 336/336 target evaluations; no independent or real-protocol ground truth."
+        },
+        {
+          "gateId": "compiler-ast-input-boundary",
+          "before": "MISSING",
+          "after": "PASS",
+          "evidence": "Exact source/compiler binding, malformed/tampered/wrong-source rejection."
+        },
+        {
+          "gateId": "compiler-ast-repeatability",
+          "before": "MISSING",
+          "after": "PASS",
+          "evidence": "Two full local runs; identical aggregate digest; 672 compiler runs."
+        },
+        {
+          "gateId": "compiler-ast-audit-adapter",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "Fail-closed active Audit adapter; NOT_CALIBRATED findings; tamper and wrong-source rejection."
+        }
+      ],
+      "openBlockers": [
+        "audit-semantic-generalization",
+        "exact-windows",
+        "independent-reviewers",
+        "manual-qa-operation",
+        "real-customer-proof",
+        "real-protocol-ground-truth",
+        "willingness-to-pay"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P38 targeted source authority and exact manifest required and verified at freeze."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "STATICALLY_TESTED",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "audit-semantic-generalization",
+          "dimension": "accuracySemanticTruth",
+          "weight": 10,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PARTIAL",
+          "evidence": "solc 0.8.24 compiler AST/storage-layout/IR: 24 local pairs, 7 transforms, 336/336 target evaluations; no independent or real-protocol ground truth."
+        },
+        {
+          "id": "independent-reviewers",
+          "dimension": "accuracySemanticTruth",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/2 independent qualified reviewers."
+        },
+        {
+          "id": "manual-qa-operation",
+          "dimension": "operations",
+          "weight": 5,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No staffed, SLA-bound manual QA operation proven."
+        },
+        {
+          "id": "compiler-ast-input-boundary",
+          "dimension": "securityPrivacy",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PASS",
+          "evidence": "Exact source/compiler binding, malformed/tampered/wrong-source rejection."
+        },
+        {
+          "id": "compiler-ast-repeatability",
+          "dimension": "technology",
+          "weight": 3,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PASS",
+          "evidence": "Two full local runs; identical aggregate digest; 672 compiler runs."
+        },
+        {
+          "id": "compiler-ast-audit-adapter",
+          "dimension": "accuracySemanticTruth",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "RUNTIME_TESTED",
+          "evidence": "Fail-closed active Audit adapter; NOT_CALIBRATED findings; tamper and wrong-source rejection."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 68.45,
+      "closedGates": [
+        {
+          "gateId": "compiler-packet-parity",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "16 compiler-backed cases projected to 48 Basic/Pro/Advanced packets with invariant finding identity, severity and NOT_CALIBRATED confidence."
+        },
+        {
+          "gateId": "local-source-runtime-bytecode-binding",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "Exact and metadata-stripped source/compiler runtime binding plus mismatch rejection; supplied bytes only, no RPC credit."
+        },
+        {
+          "gateId": "multi-file-protocol-holdout",
+          "before": "MISSING",
+          "after": "PARTIAL",
+          "evidence": "Historical local multi-file holdout: 6/6 expected signals and 5/5 controls. Developer-owned and not independent ground truth."
+        }
+      ],
+      "reasonForNoMovement": null
+    },
+    {
+      "productId": "audit-pro",
+      "name": "Audit Pro",
+      "productClass": "AUDIT",
+      "tier": "PRO",
+      "previousDynamicQuality": 60.64,
+      "dynamicQuality": 63.44,
+      "deltaDynamicQuality": 2.8,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 0.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 59.45,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 47.71,
+      "independentProofWeightedAfter": 49,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 40,
+        "accuracySemanticTruth": 25,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [
+        {
+          "gateId": "full-eslint",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "semantic-typescript",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "source-audit",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "dual-build-smoke",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "browser-current-byte",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "pdf-current-byte",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "audit-semantic-generalization",
+          "before": "MISSING",
+          "after": "PARTIAL",
+          "evidence": "solc 0.8.24 compiler AST/storage-layout/IR: 24 local pairs, 7 transforms, 336/336 target evaluations; no independent or real-protocol ground truth."
+        },
+        {
+          "gateId": "compiler-ast-input-boundary",
+          "before": "MISSING",
+          "after": "PASS",
+          "evidence": "Exact source/compiler binding, malformed/tampered/wrong-source rejection."
+        },
+        {
+          "gateId": "compiler-ast-repeatability",
+          "before": "MISSING",
+          "after": "PASS",
+          "evidence": "Two full local runs; identical aggregate digest; 672 compiler runs."
+        },
+        {
+          "gateId": "compiler-ast-audit-adapter",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "Fail-closed active Audit adapter; NOT_CALIBRATED findings; tamper and wrong-source rejection."
+        }
+      ],
+      "openBlockers": [
+        "audit-semantic-generalization",
+        "exact-windows",
+        "independent-reviewers",
+        "manual-qa-operation",
+        "real-customer-proof",
+        "real-protocol-ground-truth",
+        "willingness-to-pay"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P38 targeted source authority and exact manifest required and verified at freeze."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "STATICALLY_TESTED",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "audit-semantic-generalization",
+          "dimension": "accuracySemanticTruth",
+          "weight": 10,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PARTIAL",
+          "evidence": "solc 0.8.24 compiler AST/storage-layout/IR: 24 local pairs, 7 transforms, 336/336 target evaluations; no independent or real-protocol ground truth."
+        },
+        {
+          "id": "independent-reviewers",
+          "dimension": "accuracySemanticTruth",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/2 independent qualified reviewers."
+        },
+        {
+          "id": "manual-qa-operation",
+          "dimension": "operations",
+          "weight": 5,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No staffed, SLA-bound manual QA operation proven."
+        },
+        {
+          "id": "compiler-ast-input-boundary",
+          "dimension": "securityPrivacy",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PASS",
+          "evidence": "Exact source/compiler binding, malformed/tampered/wrong-source rejection."
+        },
+        {
+          "id": "compiler-ast-repeatability",
+          "dimension": "technology",
+          "weight": 3,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PASS",
+          "evidence": "Two full local runs; identical aggregate digest; 672 compiler runs."
+        },
+        {
+          "id": "compiler-ast-audit-adapter",
+          "dimension": "accuracySemanticTruth",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "RUNTIME_TESTED",
+          "evidence": "Fail-closed active Audit adapter; NOT_CALIBRATED findings; tamper and wrong-source rejection."
+        }
+      ],
+      "saleDecision": "INVITATION_ONLY_BETA_MANUAL_QA",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 68.45,
+      "closedGates": [
+        {
+          "gateId": "compiler-packet-parity",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "16 compiler-backed cases projected to 48 Basic/Pro/Advanced packets with invariant finding identity, severity and NOT_CALIBRATED confidence."
+        },
+        {
+          "gateId": "local-source-runtime-bytecode-binding",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "Exact and metadata-stripped source/compiler runtime binding plus mismatch rejection; supplied bytes only, no RPC credit."
+        },
+        {
+          "gateId": "multi-file-protocol-holdout",
+          "before": "MISSING",
+          "after": "PARTIAL",
+          "evidence": "Historical local multi-file holdout: 6/6 expected signals and 5/5 controls. Developer-owned and not independent ground truth."
+        }
+      ],
+      "reasonForNoMovement": null
+    },
+    {
+      "productId": "audit-advanced",
+      "name": "Audit Advanced",
+      "productClass": "AUDIT",
+      "tier": "ADVANCED",
+      "previousDynamicQuality": 59.94,
+      "dynamicQuality": 62.14,
+      "deltaDynamicQuality": 2.2,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 0.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 57.8,
+      "customerProof": 0,
+      "worldClassEvidence": 46.64,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 43.14,
+      "independentProofWeightedAfter": 46.64,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 42,
+        "accuracySemanticTruth": 20,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [
+        {
+          "gateId": "full-eslint",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "semantic-typescript",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "source-audit",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "dual-build-smoke",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "browser-current-byte",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "pdf-current-byte",
+          "before": "PASS",
+          "after": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "gateId": "audit-semantic-generalization",
+          "before": "MISSING",
+          "after": "PARTIAL",
+          "evidence": "solc 0.8.24 compiler AST/storage-layout/IR: 24 local pairs, 7 transforms, 336/336 target evaluations; no independent or real-protocol ground truth."
+        },
+        {
+          "gateId": "compiler-ast-input-boundary",
+          "before": "MISSING",
+          "after": "PASS",
+          "evidence": "Exact source/compiler binding, malformed/tampered/wrong-source rejection."
+        },
+        {
+          "gateId": "compiler-ast-repeatability",
+          "before": "MISSING",
+          "after": "PASS",
+          "evidence": "Two full local runs; identical aggregate digest; 672 compiler runs."
+        },
+        {
+          "gateId": "compiler-ast-audit-adapter",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "Fail-closed active Audit adapter; NOT_CALIBRATED findings; tamper and wrong-source rejection."
+        }
+      ],
+      "openBlockers": [
+        "audit-semantic-generalization",
+        "exact-windows",
+        "independent-reviewers",
+        "manual-qa-operation",
+        "real-customer-proof",
+        "real-protocol-ground-truth",
+        "willingness-to-pay"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P38 targeted source authority and exact manifest required and verified at freeze."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PASS",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "R44P37 full current-byte evidence retained only; R44P38 cycle 1/3 did not rerun full project release."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "STATICALLY_TESTED",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "audit-semantic-generalization",
+          "dimension": "accuracySemanticTruth",
+          "weight": 10,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PARTIAL",
+          "evidence": "solc 0.8.24 compiler AST/storage-layout/IR: 24 local pairs, 7 transforms, 336/336 target evaluations; no independent or real-protocol ground truth."
+        },
+        {
+          "id": "independent-reviewers",
+          "dimension": "accuracySemanticTruth",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/2 independent qualified reviewers."
+        },
+        {
+          "id": "manual-qa-operation",
+          "dimension": "operations",
+          "weight": 5,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No staffed, SLA-bound manual QA operation proven."
+        },
+        {
+          "id": "compiler-ast-input-boundary",
+          "dimension": "securityPrivacy",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PASS",
+          "evidence": "Exact source/compiler binding, malformed/tampered/wrong-source rejection."
+        },
+        {
+          "id": "compiler-ast-repeatability",
+          "dimension": "technology",
+          "weight": 3,
+          "beforeStatus": "MISSING",
+          "afterStatus": "PASS",
+          "evidence": "Two full local runs; identical aggregate digest; 672 compiler runs."
+        },
+        {
+          "id": "compiler-ast-audit-adapter",
+          "dimension": "accuracySemanticTruth",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "RUNTIME_TESTED",
+          "evidence": "Fail-closed active Audit adapter; NOT_CALIBRATED findings; tamper and wrong-source rejection."
+        }
+      ],
+      "saleDecision": "NOT_FOR_SALE",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 68.45,
+      "closedGates": [
+        {
+          "gateId": "compiler-packet-parity",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "16 compiler-backed cases projected to 48 Basic/Pro/Advanced packets with invariant finding identity, severity and NOT_CALIBRATED confidence."
+        },
+        {
+          "gateId": "local-source-runtime-bytecode-binding",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "Exact and metadata-stripped source/compiler runtime binding plus mismatch rejection; supplied bytes only, no RPC credit."
+        },
+        {
+          "gateId": "multi-file-protocol-holdout",
+          "before": "MISSING",
+          "after": "PARTIAL",
+          "evidence": "Historical local multi-file holdout: 6/6 expected signals and 5/5 controls. Developer-owned and not independent ground truth."
+        }
+      ],
+      "reasonForNoMovement": null
+    },
+    {
+      "productId": "pdf-basic",
+      "name": "PDF Basic",
+      "productClass": "PDF",
+      "tier": "BASIC",
+      "previousDynamicQuality": 79.26,
+      "dynamicQuality": 79.76,
+      "deltaDynamicQuality": 0.5,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 86.67,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 90,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 38.86,
+      "independentProofWeightedAfter": 53.86,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 30,
+        "accuracySemanticTruth": 30,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "real-customer-pdfs"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "pdf-semantic-parity",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83 exact packet/PDF replay, 450/450 documents, deterministic semantic/material verification."
+        },
+        {
+          "id": "real-customer-pdfs",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/50 real customer PDFs."
+        },
+        {
+          "id": "secure-delivery",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "RETAINED_PARENT",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "Local durable account-bound delivery/refund/revocation evidence retained; external staging still open."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 90,
+      "closedGates": [
+        {
+          "gateId": "targeted-compiler-packet-pdf",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "48 targeted packet PDFs, 96 pages, tier depth and NOT_CALIBRATED customer truth verified. Not the full active customer corpus."
+        }
+      ],
+      "reasonForNoMovement": null
+    },
+    {
+      "productId": "pdf-pro",
+      "name": "PDF Pro",
+      "productClass": "PDF",
+      "tier": "PRO",
+      "previousDynamicQuality": 79.26,
+      "dynamicQuality": 79.96,
+      "deltaDynamicQuality": 0.7,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 86.67,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 90,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 41.0,
+      "independentProofWeightedAfter": 56.0,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 34,
+        "accuracySemanticTruth": 32,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "real-customer-pdfs"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "pdf-semantic-parity",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83 exact packet/PDF replay, 450/450 documents, deterministic semantic/material verification."
+        },
+        {
+          "id": "real-customer-pdfs",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/50 real customer PDFs."
+        },
+        {
+          "id": "secure-delivery",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "RETAINED_PARENT",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "Local durable account-bound delivery/refund/revocation evidence retained; external staging still open."
+        }
+      ],
+      "saleDecision": "INVITATION_ONLY_BETA_MANUAL_QA",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 90,
+      "closedGates": [
+        {
+          "gateId": "targeted-compiler-packet-pdf",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "48 targeted packet PDFs, 96 pages, tier depth and NOT_CALIBRATED customer truth verified. Not the full active customer corpus."
+        }
+      ],
+      "reasonForNoMovement": null
+    },
+    {
+      "productId": "pdf-advanced",
+      "name": "PDF Advanced",
+      "productClass": "PDF",
+      "tier": "ADVANCED",
+      "previousDynamicQuality": 79.26,
+      "dynamicQuality": 79.76,
+      "deltaDynamicQuality": 0.5,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 86.67,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 90,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 38.0,
+      "independentProofWeightedAfter": 53.0,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 36,
+        "accuracySemanticTruth": 30,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "real-customer-pdfs"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "pdf-semantic-parity",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83 exact packet/PDF replay, 450/450 documents, deterministic semantic/material verification."
+        },
+        {
+          "id": "real-customer-pdfs",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/50 real customer PDFs."
+        },
+        {
+          "id": "secure-delivery",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "RETAINED_PARENT",
+          "afterStatus": "RETAINED_PARENT_EVIDENCE",
+          "evidence": "Local durable account-bound delivery/refund/revocation evidence retained; external staging still open."
+        }
+      ],
+      "saleDecision": "NOT_FOR_SALE",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 90,
+      "closedGates": [
+        {
+          "gateId": "targeted-compiler-packet-pdf",
+          "before": "MISSING",
+          "after": "RUNTIME_TESTED",
+          "evidence": "48 targeted packet PDFs, 96 pages, tier depth and NOT_CALIBRATED customer truth verified. Not the full active customer corpus."
+        }
+      ],
+      "reasonForNoMovement": null
+    },
+    {
+      "productId": "browser-basic",
+      "name": "Browser Basic",
+      "productClass": "BROWSER",
+      "tier": "BASIC",
+      "previousDynamicQuality": 82.91,
+      "dynamicQuality": 82.91,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 93.48,
+        "legalClaims": 100.0,
+        "operations": 25.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 90,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 22.14,
+      "independentProofWeightedAfter": 37.14,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 30,
+        "accuracySemanticTruth": 25,
+        "uxPsychology": 82,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "browser-evidence-parity",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A45/A60 current-byte parity: 57/57 and 584/584."
+        },
+        {
+          "id": "accessibility-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current browser matrix includes mobile, keyboard/focus/ESC and accessibility contracts; no real accessibility cohort."
+        },
+        {
+          "id": "provider-failure-ux",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PARTIAL",
+          "evidence": "Local fail-closed states tested; real provider outage/recovery drill remains missing."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 90,
+      "closedGates": [],
+      "reasonForNoMovement": "Compiler packet structures were tested, but no active current-child Browser route or browser matrix was executed; Browser quality does not move."
+    },
+    {
+      "productId": "browser-pro",
+      "name": "Browser Pro",
+      "productClass": "BROWSER",
+      "tier": "PRO",
+      "previousDynamicQuality": 82.91,
+      "dynamicQuality": 82.91,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 93.48,
+        "legalClaims": 100.0,
+        "operations": 25.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 90,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 21.57,
+      "independentProofWeightedAfter": 36.57,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 30,
+        "accuracySemanticTruth": 25,
+        "uxPsychology": 82,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "browser-evidence-parity",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A45/A60 current-byte parity: 57/57 and 584/584."
+        },
+        {
+          "id": "accessibility-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current browser matrix includes mobile, keyboard/focus/ESC and accessibility contracts; no real accessibility cohort."
+        },
+        {
+          "id": "provider-failure-ux",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PARTIAL",
+          "evidence": "Local fail-closed states tested; real provider outage/recovery drill remains missing."
+        }
+      ],
+      "saleDecision": "NOT_FOR_SALE",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 90,
+      "closedGates": [],
+      "reasonForNoMovement": "Compiler packet structures were tested, but no active current-child Browser route or browser matrix was executed; Browser quality does not move."
+    },
+    {
+      "productId": "browser-advanced",
+      "name": "Browser Advanced",
+      "productClass": "BROWSER",
+      "tier": "ADVANCED",
+      "previousDynamicQuality": 82.91,
+      "dynamicQuality": 82.91,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 93.48,
+        "legalClaims": 100.0,
+        "operations": 25.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 90,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 19.57,
+      "independentProofWeightedAfter": 34.57,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 30,
+        "accuracySemanticTruth": 22,
+        "uxPsychology": 82,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "browser-evidence-parity",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A45/A60 current-byte parity: 57/57 and 584/584."
+        },
+        {
+          "id": "accessibility-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current browser matrix includes mobile, keyboard/focus/ESC and accessibility contracts; no real accessibility cohort."
+        },
+        {
+          "id": "provider-failure-ux",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PARTIAL",
+          "evidence": "Local fail-closed states tested; real provider outage/recovery drill remains missing."
+        }
+      ],
+      "saleDecision": "NOT_FOR_SALE",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 90,
+      "closedGates": [],
+      "reasonForNoMovement": "Compiler packet structures were tested, but no active current-child Browser route or browser matrix was executed; Browser quality does not move."
+    },
+    {
+      "productId": "shield",
+      "name": "Shield",
+      "productClass": "DATA_MODULE",
+      "tier": null,
+      "previousDynamicQuality": 54.17,
+      "dynamicQuality": 54.17,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 40.0,
+        "accuracySemanticTruth": 0.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 71.98,
+      "customerProof": 0,
+      "worldClassEvidence": 12.0,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 28.57,
+      "independentProofWeightedAfter": 41.75,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 5,
+        "accuracySemanticTruth": 15,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "rights-approved-coverage",
+        "real-asset-accuracy"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "shield-onchain-core",
+          "dimension": "dataProvenance",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "A84 current fixture/on-chain truth contract passes; customer-facing unavailable states are fail-closed."
+        },
+        {
+          "id": "rights-approved-coverage",
+          "dimension": "dataProvenance",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/318 rights-approved/current production coverage."
+        },
+        {
+          "id": "real-asset-accuracy",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No full current real-asset accuracy outcome set."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 71.98,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "shield-pro",
+      "name": "Shield Pro",
+      "productClass": "DATA_MODULE",
+      "tier": null,
+      "previousDynamicQuality": 55.21,
+      "dynamicQuality": 55.21,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 0.0,
+        "accuracySemanticTruth": null,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 77.06,
+      "customerProof": 0,
+      "worldClassEvidence": 0.0,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 27.14,
+      "independentProofWeightedAfter": 39.5,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 0,
+        "accuracySemanticTruth": 10,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "real-order-book",
+        "paid-value-proof"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "terminal-core",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Shield Pro/Map A85 current executable contract passes."
+        },
+        {
+          "id": "real-order-book",
+          "dimension": "dataProvenance",
+          "weight": 14,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/318 current rights-approved order books."
+        },
+        {
+          "id": "paid-value-proof",
+          "dimension": "customerProof",
+          "weight": 8,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paying/customer-outcome cohorts."
+        }
+      ],
+      "saleDecision": "NOT_FOR_SALE",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 77.06,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "shield-map",
+      "name": "Shield Map",
+      "productClass": "DATA_MODULE",
+      "tier": null,
+      "previousDynamicQuality": 64.17,
+      "dynamicQuality": 64.17,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 0.0,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 73.6,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 27.14,
+      "independentProofWeightedAfter": 40.75,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 5,
+        "accuracySemanticTruth": 10,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "signed-label-coverage",
+        "correction-sla"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "unclassified-fail-closed",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "Unverified labels remain UNCLASSIFIED and transfer is not promoted to trade."
+        },
+        {
+          "id": "signed-label-coverage",
+          "dimension": "dataProvenance",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/318 current externally governed signed-label coverage."
+        },
+        {
+          "id": "correction-sla",
+          "dimension": "operations",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No external correction/dispute SLA outcome evidence."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 73.6,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "real-markets",
+      "name": "Real Markets",
+      "productClass": "DATA_MODULE",
+      "tier": null,
+      "previousDynamicQuality": 53.26,
+      "dynamicQuality": 53.26,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 36.36,
+        "accuracySemanticTruth": 0.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 70.43,
+      "customerProof": 0,
+      "worldClassEvidence": 10.91,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 25.71,
+      "independentProofWeightedAfter": 40.71,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 5,
+        "accuracySemanticTruth": 10,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "rights-approved-realtime",
+        "cross-source-accuracy"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "reference-derived-core",
+          "dimension": "dataProvenance",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "A86 current reference/derived state machine and fail-closed contract pass."
+        },
+        {
+          "id": "rights-approved-realtime",
+          "dimension": "dataProvenance",
+          "weight": 14,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/583 rights-approved current market feed coverage."
+        },
+        {
+          "id": "cross-source-accuracy",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "MISSING",
+          "evidence": "No real multi-provider accuracy/outcome corpus."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 70.43,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "market-impact",
+      "name": "Market Impact",
+      "productClass": "DATA_MODULE",
+      "tier": null,
+      "previousDynamicQuality": 53.06,
+      "dynamicQuality": 53.06,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 0.0,
+        "accuracySemanticTruth": 44.44,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 71.98,
+      "customerProof": 0,
+      "worldClassEvidence": 22.22,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 26.43,
+      "independentProofWeightedAfter": 41.43,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 5,
+        "accuracySemanticTruth": 15,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "real-order-book-input",
+        "predicted-vs-realized"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "simulation-truth",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "A87 current Market Impact truth boundary passes; outputs remain simulation/snapshot only."
+        },
+        {
+          "id": "real-order-book-input",
+          "dimension": "dataProvenance",
+          "weight": 10,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No current multi-venue L2 corpus."
+        },
+        {
+          "id": "predicted-vs-realized",
+          "dimension": "accuracySemanticTruth",
+          "weight": 10,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 realized-slippage outcome cohorts."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 71.98,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "whale-watch",
+      "name": "Whale Watch",
+      "productClass": "DATA_MODULE",
+      "tier": null,
+      "previousDynamicQuality": 64.17,
+      "dynamicQuality": 64.17,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 0.0,
+        "accuracySemanticTruth": 100.0,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 73.6,
+      "customerProof": 0,
+      "worldClassEvidence": 49,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 29.29,
+      "independentProofWeightedAfter": 44.0,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 10,
+        "accuracySemanticTruth": 20,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "verified-label-coverage",
+        "monitoring-sla"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "transfer-not-trade",
+          "dimension": "accuracySemanticTruth",
+          "weight": 8,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "A87 current Whale Watch transfer-not-trade and provenance boundaries pass."
+        },
+        {
+          "id": "verified-label-coverage",
+          "dimension": "dataProvenance",
+          "weight": 10,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No current full-denominator verified label coverage."
+        },
+        {
+          "id": "monitoring-sla",
+          "dimension": "operations",
+          "weight": 8,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No external continuous monitoring/alert/correction SLA evidence."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 73.6,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "angel",
+      "name": "Angel",
+      "productClass": "ANGEL",
+      "tier": null,
+      "previousDynamicQuality": 72.35,
+      "dynamicQuality": 72.35,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": null,
+        "accuracySemanticTruth": 45.45,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 79.41,
+      "customerProof": 0,
+      "worldClassEvidence": 22.73,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 30.0,
+      "independentProofWeightedAfter": 45.0,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 10,
+        "accuracySemanticTruth": 25,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "independent-evals",
+        "real-user-comprehension"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "grounding-abstention",
+          "dimension": "accuracySemanticTruth",
+          "weight": 10,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "A88 current Angel grounding, contradiction, abstention and next-safe-check contracts pass."
+        },
+        {
+          "id": "independent-evals",
+          "dimension": "accuracySemanticTruth",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0/300 independent real/mixed Angel evaluations."
+        },
+        {
+          "id": "real-user-comprehension",
+          "dimension": "customerProof",
+          "weight": 8,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 moderated human comprehension participants."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 79.41,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    },
+    {
+      "productId": "risk-indicator",
+      "name": "Risk Indicator",
+      "productClass": "RISK",
+      "tier": null,
+      "previousDynamicQuality": 57.8,
+      "dynamicQuality": 57.8,
+      "deltaDynamicQuality": 0.0,
+      "dimensionScores": {
+        "technology": 100.0,
+        "securityPrivacy": 100.0,
+        "dataProvenance": 0.0,
+        "accuracySemanticTruth": 45.45,
+        "uxPsychology": 91.67,
+        "legalClaims": 100.0,
+        "operations": 0.0,
+        "customerProof": 0.0
+      },
+      "releaseReadiness": 72.58,
+      "customerProof": 0,
+      "worldClassEvidence": 22.73,
+      "worldClassCapReason": "WORLD_CLASS_EVIDENCE_CAPPED_BELOW_50_WITH_ZERO_REAL_CUSTOMER_PROOF",
+      "independentProofWeightedBefore": 27.86,
+      "independentProofWeightedAfter": 42.75,
+      "independentProofDimensionsAfter": {
+        "technology": 85,
+        "securityPrivacy": 78,
+        "dataProvenance": 10,
+        "accuracySemanticTruth": 15,
+        "uxPsychology": 68,
+        "legalClaims": 70,
+        "operations": 55,
+        "customerProof": 0
+      },
+      "changedGates": [],
+      "openBlockers": [
+        "exact-windows",
+        "real-customer-proof",
+        "willingness-to-pay",
+        "calibration-window",
+        "outcome-labels"
+      ],
+      "gates": [
+        {
+          "id": "canonical-product-identity",
+          "dimension": "technology",
+          "weight": 5,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "R44P34/R44P35 canonical 17-product topology retained and reverified."
+        },
+        {
+          "id": "current-source-authority",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 exact manifest 6241/6241; bytewise builder/verifier comparator aligned."
+        },
+        {
+          "id": "full-eslint",
+          "dimension": "technology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 full ESLint: 3788 files, 0 errors, 0 warnings."
+        },
+        {
+          "id": "semantic-typescript",
+          "dimension": "technology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Exact TypeScript 5.9.3 pre/post build: 0 diagnostics; 161/303 configured roots."
+        },
+        {
+          "id": "source-audit",
+          "dimension": "securityPrivacy",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "R44P37 source audit: 0 syntax, 0 unresolved, 0 undeclared package imports."
+        },
+        {
+          "id": "dual-build-smoke",
+          "dimension": "technology",
+          "weight": 8,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Webpack and Turbopack build plus 55/55 + 16/16 HTTP smoke each."
+        },
+        {
+          "id": "browser-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 7,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "Current-byte browser 57/57, screenshots 29/29, popup 4/4, evidence 584/584."
+        },
+        {
+          "id": "pdf-current-byte",
+          "dimension": "uxPsychology",
+          "weight": 6,
+          "beforeStatus": "PENDING",
+          "afterStatus": "PASS",
+          "evidence": "A83: 450/450 PDFs, 2100/2100 pages; exact replay and external format QA."
+        },
+        {
+          "id": "psychology30-persona",
+          "dimension": "uxPsychology",
+          "weight": 5,
+          "beforeStatus": "PENDING",
+          "afterStatus": "STATICALLY_TESTED",
+          "evidence": "Expanded to 50 deterministic personas x 24 steps = 1200 rows; real participants remain 0."
+        },
+        {
+          "id": "exact-windows",
+          "dimension": "operations",
+          "weight": 4,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "Exact Windows has not been executed on identical R44P37 SOURCE."
+        },
+        {
+          "id": "real-customer-proof",
+          "dimension": "customerProof",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 real participants; simulated personas grant zero customer proof."
+        },
+        {
+          "id": "willingness-to-pay",
+          "dimension": "customerProof",
+          "weight": 6,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "0 paid customer cohorts and 0 validated willingness-to-pay observations."
+        },
+        {
+          "id": "legal-claims-fail-closed",
+          "dimension": "legalClaims",
+          "weight": 5,
+          "beforeStatus": "PARTIAL",
+          "afterStatus": "PASS",
+          "evidence": "Advanced human-review/payment/sign-off contradiction removed; LIVE/sale remain fail-closed."
+        },
+        {
+          "id": "descriptive-nonprobabilistic",
+          "dimension": "accuracySemanticTruth",
+          "weight": 10,
+          "beforeStatus": "PASS",
+          "afterStatus": "PASS",
+          "evidence": "Risk Indicator remains descriptive, split into technical/market/data-quality dimensions."
+        },
+        {
+          "id": "calibration-window",
+          "dimension": "accuracySemanticTruth",
+          "weight": 12,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No preregistered real calibration window."
+        },
+        {
+          "id": "outcome-labels",
+          "dimension": "dataProvenance",
+          "weight": 8,
+          "beforeStatus": "MISSING",
+          "afterStatus": "MISSING",
+          "evidence": "No independent real outcome labels."
+        }
+      ],
+      "saleDecision": "FREE_ACTION_REQUIRED",
+      "saleEnabled": false,
+      "publicCheckoutAllowed": false,
+      "previousReleaseReadiness": 72.58,
+      "reasonForNoMovement": "R44P39 work is limited to Audit packet integration, local bytecode/proxy binding and targeted PDF projection; unrelated standalone product gates did not close.",
+      "closedGates": []
+    }
+  ],
+  "truthBoundary": "R44P39 moves only Audit and targeted PDF engineering. Browser and standalone products do not move without active current-child evidence. Customer proof remains zero. Historical external SmartBugs evidence is retained as diagnostic-only and is not direct current-analyzer accuracy credit.",
+  "customerProofPolicy": {
+    "realParticipants": 0,
+    "simulatedPersonasGrantCredit": false,
+    "customerProofCap": 0
+  }
+}

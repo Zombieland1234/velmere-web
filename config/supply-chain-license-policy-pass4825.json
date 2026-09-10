@@ -1,0 +1,424 @@
+{
+  "schemaVersion": "velmere.supply-chain-license-policy.pass4825.v1",
+  "generatedAt": "2026-07-17T13:14:03.369Z",
+  "source": {
+    "packageJsonSha256": "b39e56e6b326e2345b648cc15883cc460a0f0cdbdfb4f2ce9f2c6157ca64c5c9",
+    "lockfileSha256": "1e7acc6b4c854051231c664345722c0c1f9f148aae11cf485f2a0239d1db76de",
+    "evidenceSha256": "1d9b279dc26b402e8da9e4c5f08ffc917bbc337e1df34caf074c5972cb40b583"
+  },
+  "rules": {
+    "exactNameVersionRegistryEvidenceRequiredWhenLockLicenseMissing": true,
+    "distIntegrityAndTarballMustMatchLock": true,
+    "allEvidenceBytesMustRehashFromSourceBoundCasOffline": true,
+    "archivePackageIdentityLicenseAndLifecycleMustBeParsedOffline": true,
+    "unknownLicenseBlocksCodeOnlyPromotion": true,
+    "unlicensedDependencyBlocksCodeOnlyPromotion": true,
+    "directReviewLicenseBlocksCodeOnlyPromotion": true,
+    "transitiveReviewLicenseRequiresNoticeAndLegalReview": true,
+    "evidenceIsNotLegalAdvice": true
+  },
+  "summary": {
+    "lockPackagePathCount": 821,
+    "uniquePackageSpecCount": 784,
+    "lockLicenseMissingSpecCount": 78,
+    "exactRegistryEvidenceCount": 78,
+    "remainingUnknownLicenseCount": 0,
+    "customRestrictedLicenseCount": 20,
+    "licenseEvidenceArchiveCount": 98,
+    "licenseEvidenceCasFileCount": 196,
+    "directCustomRestrictedLicenseCount": 1,
+    "reviewLicenseCount": 15,
+    "directReviewLicenseCount": 0,
+    "acceptedLicenseCount": 749,
+    "publicRegistryResolvedCount": 784,
+    "privateRegistryResolvedCount": 0,
+    "codeOnlyLicenseEvidenceGatePassed": true,
+    "unrestrictedCommercialLicenseGatePassed": false
+  },
+  "licenseExpressionCounts": {
+    "(Apache-2.0 AND MIT)": 1,
+    "0BSD": 2,
+    "Apache-2.0": 50,
+    "Apache-2.0 AND LGPL-3.0-or-later": 3,
+    "Apache-2.0 AND LGPL-3.0-or-later AND MIT": 1,
+    "Apache-2.0 AND MIT": 11,
+    "BlueOak-1.0.0": 2,
+    "BSD-2-Clause": 8,
+    "BSD-3-Clause": 13,
+    "CC-BY-4.0": 1,
+    "CC0-1.0": 1,
+    "ISC": 26,
+    "LGPL-3.0-or-later": 10,
+    "MIT": 633,
+    "MPL-2.0": 1,
+    "Python-2.0": 1,
+    "SEE LICENSE IN LICENSE.md": 20
+  },
+  "reviewPackages": [
+    {
+      "package": "@img/sharp-libvips-darwin-arm64@1.2.4",
+      "name": "@img/sharp-libvips-darwin-arm64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-darwin-x64@1.2.4",
+      "name": "@img/sharp-libvips-darwin-x64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linux-arm@1.2.4",
+      "name": "@img/sharp-libvips-linux-arm",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linux-arm64@1.2.4",
+      "name": "@img/sharp-libvips-linux-arm64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linux-ppc64@1.2.4",
+      "name": "@img/sharp-libvips-linux-ppc64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linux-riscv64@1.2.4",
+      "name": "@img/sharp-libvips-linux-riscv64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linux-s390x@1.2.4",
+      "name": "@img/sharp-libvips-linux-s390x",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linux-x64@1.2.4",
+      "name": "@img/sharp-libvips-linux-x64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linuxmusl-arm64@1.2.4",
+      "name": "@img/sharp-libvips-linuxmusl-arm64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-libvips-linuxmusl-x64@1.2.4",
+      "name": "@img/sharp-libvips-linuxmusl-x64",
+      "version": "1.2.4",
+      "license": "LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-wasm32@0.34.5",
+      "name": "@img/sharp-wasm32",
+      "version": "0.34.5",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later AND MIT",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-win32-arm64@0.34.5",
+      "name": "@img/sharp-win32-arm64",
+      "version": "0.34.5",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-win32-ia32@0.34.5",
+      "name": "@img/sharp-win32-ia32",
+      "version": "0.34.5",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "@img/sharp-win32-x64@0.34.5",
+      "name": "@img/sharp-win32-x64",
+      "version": "0.34.5",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    },
+    {
+      "package": "caniuse-lite@1.0.30001797",
+      "name": "caniuse-lite",
+      "version": "1.0.30001797",
+      "license": "CC-BY-4.0",
+      "classification": "review",
+      "exactDirect": false,
+      "source": "package-lock"
+    }
+  ],
+  "unknownPackages": [],
+  "customRestrictedPackages": [
+    {
+      "package": "@reown/appkit-common@1.8.19",
+      "name": "@reown/appkit-common",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-controllers@1.8.19",
+      "name": "@reown/appkit-controllers",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-pay@1.8.19",
+      "name": "@reown/appkit-pay",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-polyfills@1.8.19",
+      "name": "@reown/appkit-polyfills",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-scaffold-ui@1.8.19",
+      "name": "@reown/appkit-scaffold-ui",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-ui@1.8.19",
+      "name": "@reown/appkit-ui",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-utils@1.8.19",
+      "name": "@reown/appkit-utils",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit-wallet@1.8.19",
+      "name": "@reown/appkit-wallet",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@reown/appkit@1.8.19",
+      "name": "@reown/appkit",
+      "version": "1.8.19",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-Reown-Community-2025",
+      "licenseFileSha256": "8a0365510187692533107783261ccc4c0e7cc2b23d3003a7d153a4665d72b2eb"
+    },
+    {
+      "package": "@walletconnect/core@2.23.10",
+      "name": "@walletconnect/core",
+      "version": "2.23.10",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/core@2.23.7",
+      "name": "@walletconnect/core",
+      "version": "2.23.7",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/ethereum-provider@2.23.10",
+      "name": "@walletconnect/ethereum-provider",
+      "version": "2.23.10",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": true,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/sign-client@2.23.10",
+      "name": "@walletconnect/sign-client",
+      "version": "2.23.10",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/sign-client@2.23.7",
+      "name": "@walletconnect/sign-client",
+      "version": "2.23.7",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/types@2.23.10",
+      "name": "@walletconnect/types",
+      "version": "2.23.10",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/types@2.23.7",
+      "name": "@walletconnect/types",
+      "version": "2.23.7",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/universal-provider@2.23.10",
+      "name": "@walletconnect/universal-provider",
+      "version": "2.23.10",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/universal-provider@2.23.7",
+      "name": "@walletconnect/universal-provider",
+      "version": "2.23.7",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/utils@2.23.10",
+      "name": "@walletconnect/utils",
+      "version": "2.23.10",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    },
+    {
+      "package": "@walletconnect/utils@2.23.7",
+      "name": "@walletconnect/utils",
+      "version": "2.23.7",
+      "license": "SEE LICENSE IN LICENSE.md",
+      "classification": "blocked",
+      "exactDirect": false,
+      "source": "package-lock",
+      "customLicenseId": "LicenseRef-WalletConnect-Community-2025",
+      "licenseFileSha256": "1cb6f8cfe21f54ab1105105717eaa2ba08343037a2a9c41dfd5ab09e3ce270fc"
+    }
+  ],
+  "limitations": [
+    "Registry metadata and SPDX classification are technical evidence, not legal advice.",
+    "Notice-file aggregation and counsel review remain required for a public commercial distribution.",
+    "Custom Reown/WalletConnect licenses remain resolved evidence, not unrestricted-license approval.",
+    "Archive inspection does not claim that package contents are free of malicious behavior."
+  ],
+  "policySha256": "0ae5a9232b1ff5221e1e2bdf9d7a1322633bacf9946acd24ce35b8ecf3542651"
+}

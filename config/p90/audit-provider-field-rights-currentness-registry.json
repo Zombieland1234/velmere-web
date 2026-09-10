@@ -1,0 +1,707 @@
+{
+  "schemaVersion": "velmere.p90.audit-provider-field-rights-currentness-registry.v1",
+  "revisionId": "P90R1_AUDIT_PROVIDER_FIELD_RIGHTS_CURRENTNESS_FAIL_CLOSED",
+  "capturedAt": "2026-08-20T00:00:00.000Z",
+  "reverifyBy": "2026-09-03T00:00:00.000Z",
+  "reviewClass": "ENGINEERING_PRIMARY_SOURCE_REVIEW_NOT_LEGAL_ADVICE_NOT_PROVIDER_APPROVAL",
+  "truthBoundary": "Technical evidence readiness never grants customer display, paid-tier, PDF-export or retention rights. Only a current, hash-bound, uniquely matched provider decision with explicit legal approval and every required purpose allowed may contribute to commercial readiness.",
+  "rawTermsStoredInSource": false,
+  "rawTermsDocumentHashAvailable": false,
+  "globalState": {
+    "internalDiagnosticProviders": 6,
+    "customerDeliveryApprovedProviders": 0,
+    "paidTierApprovedProviders": 0,
+    "pdfExportApprovedProviders": 0,
+    "derivedRetentionApprovedProviders": 0,
+    "saleEnabled": false,
+    "live": false
+  },
+  "requiredPurposesByTier": {
+    "basic": [
+      "customerDerivedDisplayAllowed",
+      "pdfDerivedExportAllowed",
+      "derivedEvidenceRetentionAllowed"
+    ],
+    "pro": [
+      "customerDerivedDisplayAllowed",
+      "paidTierAllowed",
+      "pdfDerivedExportAllowed",
+      "derivedEvidenceRetentionAllowed"
+    ],
+    "advanced": [
+      "customerDerivedDisplayAllowed",
+      "paidTierAllowed",
+      "pdfDerivedExportAllowed",
+      "derivedEvidenceRetentionAllowed"
+    ]
+  },
+  "sources": {
+    "etherscan_api_terms_2026": {
+      "sourceId": "etherscan_api_terms_2026",
+      "title": "Etherscan API Terms of Service",
+      "url": "https://etherscan.io/apiterms",
+      "officialDomain": "etherscan.io",
+      "sourceClass": "OFFICIAL_PROVIDER_API_TERMS",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": "2026-06-15",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "The API licence is plan-scoped and intended for integration into an application.",
+        "The terms restrict commercial provision, resale and commercial exploitation of API content without prior consent.",
+        "Commercial customer delivery of API-derived audit content is not treated as approved without written permission or a signed applicable agreement.",
+        "Current source/ABI may remain in the private evidence lane; raw redistribution is not permitted by this engineering classification."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "b66a2fef9621ca6041abcdf43a8f692deaef6b65fba4168b4c2d04a0553eacb5",
+      "observationSha256": "cbbedc6d3d9ea2854c0fa19a73649c0fb2d71dbd5c45dd978b2aa535c546aa12"
+    },
+    "dexscreener_api_terms": {
+      "sourceId": "dexscreener_api_terms",
+      "title": "DEX Screener API Terms and Conditions",
+      "url": "https://docs.dexscreener.com/api/api-terms-and-conditions",
+      "officialDomain": "docs.dexscreener.com",
+      "sourceClass": "OFFICIAL_PROVIDER_API_TERMS",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": "2023-08-18",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "The official terms state that API Services may be used for commercial and non-commercial purposes subject to the agreement.",
+        "The terms prohibit unauthorized resale or making API Services available to third parties.",
+        "Velmère still requires a reviewed use classification, current plan binding and attribution/retention decision before customer delivery."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "88e0764325b4dd1ffa5744561470a746ed766ed3a22c4695beb8eb60b725b4fe",
+      "observationSha256": "d869de115cc03fd005efc630072e3d6c6bace92bd3c81b997e7c7a9e0df7a39e"
+    },
+    "goplus_security_api_page": {
+      "sourceId": "goplus_security_api_page",
+      "title": "GoPlus Security API",
+      "url": "https://www.gopluslabs.io/en/security-api",
+      "officialDomain": "www.gopluslabs.io",
+      "sourceClass": "OFFICIAL_PROVIDER_PRODUCT_PAGE",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": null,
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "The official product page describes the Security API as open and license-free for Web3 developers and users.",
+        "The page publishes free and paid packages and usage limits.",
+        "This marketing/product statement is not by itself a reviewed customer-delivery, PDF-export, retention or paid-tier licence decision."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "ebfb0da744faf31539b2b1be86db1984ac56a1204b9d11dff294432ba87ae041",
+      "observationSha256": "2fe8a385df864b1770dd6e8295f9885457437671f9bbb448bbea6716082339c1"
+    },
+    "goplus_api_overview": {
+      "sourceId": "goplus_api_overview",
+      "title": "GoPlus API Overview",
+      "url": "https://docs.gopluslabs.io/reference/api-overview",
+      "officialDomain": "docs.gopluslabs.io",
+      "sourceClass": "OFFICIAL_PROVIDER_DOCUMENTATION",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": null,
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "The documentation describes free, real-time, dynamic and automated security-detecting APIs.",
+        "The Token Security API is described as open and permissionless.",
+        "Exact commercial display, retention, attribution and redistribution conditions remain unapproved in Velmère until a reviewed terms record is bound."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "01a8f6f10eec595873468a6e3cb85ad49b3ef261be2a3f751d414dfc80d23603",
+      "observationSha256": "dafe2dbb89ee81d88a0e6f2b74fb5b8dd55dca329fb1224e25d52d998f946825"
+    },
+    "honeypot_api_terms": {
+      "sourceId": "honeypot_api_terms",
+      "title": "Honeypot.is API Terms and Conditions",
+      "url": "https://docs.honeypot.is/terms",
+      "officialDomain": "docs.honeypot.is",
+      "sourceClass": "OFFICIAL_PROVIDER_API_TERMS",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": "2023-12-05",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "The terms prohibit resale, leasing or sublicensing of the API or its components.",
+        "The terms restrict making API functionality available to third parties and prohibit use for a primarily competing product or service.",
+        "Velmère customer delivery and paid-tier use remain blocked without explicit reviewed permission."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "56d2e214b426d1d8d6dd53fcc783884145123d332d217f9640093db86fe4257c",
+      "observationSha256": "3673e2c4bdcc9f5d077f6f7e72e927f22b66804caeee53e086776e232b90ee21"
+    },
+    "coingecko_api_terms_2025": {
+      "sourceId": "coingecko_api_terms_2025",
+      "title": "CoinGecko API Terms of Service",
+      "url": "https://www.coingecko.com/en/api_terms",
+      "officialDomain": "www.coingecko.com",
+      "sourceClass": "OFFICIAL_PROVIDER_API_TERMS",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": "2025-09-05",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "The API licence is plan-scoped and permits integration into applications subject to the selected plan and API terms.",
+        "The terms permit charging for products that integrate the API but prohibit resale or redistribution of API access or raw data.",
+        "The terms require attribution and impose cache/storage conditions."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "650929ee6963dd802cf11c2fda2aaece1f4bc42a3f901690daed6f85e58366ce",
+      "observationSha256": "a1e83775ab0fab5d17bcde81ed1fa6b28fec14da023e34201e978ab2b609ebe0"
+    },
+    "coingecko_commercial_license_2026": {
+      "sourceId": "coingecko_commercial_license_2026",
+      "title": "CoinGecko commercial and custom licence explanation",
+      "url": "https://support.coingecko.com/hc/en-us/articles/16760512207257-What-Are-the-Differences-Between-Commercial-and-Custom-Licenses",
+      "officialDomain": "support.coingecko.com",
+      "sourceClass": "OFFICIAL_PROVIDER_SUPPORT_ARTICLE",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": "2026-05-25",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "Standard commercial licences are described for specified plans and permit monetizing an application that integrates CoinGecko data.",
+        "Attribution is required and raw data resale or redistribution is prohibited under the standard commercial licence.",
+        "The active Velmère plan, attribution implementation and storage/retention fit are not yet bound to an approved receipt."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "444261f64dd2bb2be677798a353cc94b1291642d8dcda88e633afbb5a24df168",
+      "observationSha256": "433bb23b89f3c28c7bddd9e0ee6a26412e1170a7f687ab8e9a5c0b0c8f209110"
+    },
+    "sourcify_api_v2_2026": {
+      "sourceId": "sourcify_api_v2_2026",
+      "title": "Sourcify API v2 documentation",
+      "url": "https://docs.sourcify.dev/docs/api/index.html",
+      "officialDomain": "docs.sourcify.dev",
+      "sourceClass": "OFFICIAL_PROVIDER_API_DOCUMENTATION",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": null,
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "API v1 is disabled and the supported lookup API is v2 under sourcify.dev/server.",
+        "GET /v2/contract/{chainId}/{address} returns minimal verification metadata by default.",
+        "Submitting source grants Sourcify and the Argot Collective a licence for verification, archival and public inspection; this is not treated as a downstream Velmère commercial redistribution grant."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "9cdb7b2c510a56cdd6a48d2c09f7b05ee858156e4bfeb0f97919374c4c767afd",
+      "observationSha256": "b599ed64505c38e6a57d60b5e45342256fe66e3be4e64ea7eeda1ee112092fe2"
+    },
+    "sourcify_exact_match_2026": {
+      "sourceId": "sourcify_exact_match_2026",
+      "title": "Sourcify Exact Match vs Match",
+      "url": "https://docs.sourcify.dev/docs/exact-match-vs-match/",
+      "officialDomain": "docs.sourcify.dev",
+      "sourceClass": "OFFICIAL_PROVIDER_VERIFICATION_DOCUMENTATION",
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "observedLastUpdated": null,
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "facts": [
+        "An exact match binds deployed bytecode to recompilation output and source-integrity metadata subject to documented exclusions such as libraries and immutables.",
+        "A verification match is not a security assessment and does not prove absence of vulnerabilities or current exploitability.",
+        "Velmère requests only the minimal lookup object and does not request or redistribute raw source, ABI, metadata or bytecode in this lane."
+      ],
+      "rawDocumentStored": false,
+      "rawDocumentSha256": null,
+      "captureMethod": "OFFICIAL_PRIMARY_SOURCE_READ_ONLY_ENGINEERING_REVIEW",
+      "sourceLocationSha256": "a4c5ea1b96e090f87793318a1d7f15121e33c8d0454102e1ebdce465914539a0",
+      "observationSha256": "2137a24699a7ef48a3abff61e3d22fcf7807db6cd25b0a7c744bc6c2ea1b6890"
+    }
+  },
+  "providers": [
+    {
+      "providerId": "etherscan-v2",
+      "providerFamily": "block_explorer",
+      "technicalState": "PRODUCTION_CODE_PRESENT",
+      "currentPlanEvidence": "API_KEY_OR_SUBSCRIPTION_NOT_BOUND_TO_A_REVIEWED_APP_LICENSE",
+      "engineeringClassification": "COMMERCIAL_CUSTOMER_OUTPUT_BLOCKED_PENDING_WRITTEN_CONSENT",
+      "legalApprovalStatus": "NOT_APPROVED",
+      "requiredPlanOrConsent": "PRIOR_WRITTEN_CONSENT_OR_SIGNED_APPLICABLE_COMMERCIAL_AGREEMENT",
+      "attributionRequired": null,
+      "sourceIds": [
+        "etherscan_api_terms_2026"
+      ],
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "fields": [
+        {
+          "fieldId": "audit.verified_source_presence",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "historical_verification",
+          "currentnessMode": "provider_lookup_at_retrieval",
+          "customerCurrentnessEligible": true,
+          "customerLabelRequirement": "Historical verification record observed at retrieval; not current runtime or safety."
+        },
+        {
+          "fieldId": "audit.compiler_settings",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "historical_compilation_metadata",
+          "currentnessMode": "provider_lookup_at_retrieval",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Compiler settings require a separate current deployment binding."
+        },
+        {
+          "fieldId": "audit.proxy_metadata",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "provider_reported_metadata",
+          "currentnessMode": "transport_observed_not_chain_current",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Provider metadata is not current proxy state."
+        },
+        {
+          "fieldId": "audit.static_finding_evidence_reference",
+          "rawOrDerived": "derived_digest_reference",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "derived_digest_reference",
+          "currentnessMode": "bounded_private_source_receipt",
+          "customerCurrentnessEligible": true,
+          "customerLabelRequirement": "Digest-bound source evidence; raw source remains private."
+        }
+      ],
+      "rights": {
+        "internalDiagnosticAllowed": true,
+        "customerDerivedDisplayAllowed": false,
+        "paidTierAllowed": false,
+        "pdfDerivedExportAllowed": false,
+        "derivedEvidenceRetentionAllowed": false,
+        "rawRedistributionAllowed": false,
+        "aiRagAllowed": false
+      },
+      "blockers": [
+        "commercial_api_content_use_restricted_without_consent",
+        "current_subscription_licence_not_bound",
+        "legal_review_not_completed",
+        "raw_terms_document_hash_unavailable",
+        "customer_delivery_not_approved",
+        "paid_tier_not_approved",
+        "pdf_export_not_approved",
+        "derived_evidence_retention_not_approved"
+      ],
+      "decisionSha256": "5283199da7596219b986be3010e35165b0ecf5b59f5843201e1f0f03b82fb2e6",
+      "currentness": {
+        "mode": "retrieval_snapshot",
+        "maxAgeSeconds": 900,
+        "maxFutureSkewSeconds": 120,
+        "allowedTimestampProvenance": [
+          "provider",
+          "retrieval_snapshot"
+        ]
+      }
+    },
+    {
+      "providerId": "dexscreener-api",
+      "providerFamily": "dex_market",
+      "technicalState": "PRODUCTION_CODE_PRESENT",
+      "currentPlanEvidence": "FREE_OR_PAID_API_PLAN_NOT_BOUND_TO_CURRENT_AUDIT_USE",
+      "engineeringClassification": "COMMERCIAL_USE_TEXT_PRESENT_BUT_VELMERE_USE_REVIEW_PENDING",
+      "legalApprovalStatus": "NOT_APPROVED",
+      "requiredPlanOrConsent": "OWNER_OR_LEGAL_REVIEW_PLUS_PLAN_AND_NO_RESALE_CLASSIFICATION",
+      "attributionRequired": false,
+      "sourceIds": [
+        "dexscreener_api_terms"
+      ],
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "fields": [
+        {
+          "fieldId": "audit.dex_pair_identity",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "current_provider_snapshot",
+          "currentnessMode": "transport_observed_not_source_timestamped",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Pair identity requires source timestamp and venue/session binding."
+        },
+        {
+          "fieldId": "audit.liquidity_snapshot",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "indicative_provider_snapshot",
+          "currentnessMode": "transport_observed_not_source_timestamped",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Indicative snapshot only; not executable liquidity."
+        },
+        {
+          "fieldId": "audit.liquidity_risk_driver",
+          "rawOrDerived": "derived_analysis",
+          "tiers": [
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "derived_analysis",
+          "currentnessMode": "input_currentness_unbound",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Derived risk driver withheld until input timestamps and rights are bound."
+        }
+      ],
+      "rights": {
+        "internalDiagnosticAllowed": true,
+        "customerDerivedDisplayAllowed": false,
+        "paidTierAllowed": false,
+        "pdfDerivedExportAllowed": false,
+        "derivedEvidenceRetentionAllowed": false,
+        "rawRedistributionAllowed": false,
+        "aiRagAllowed": false
+      },
+      "blockers": [
+        "active_plan_not_bound",
+        "customer_delivery_and_retention_classification_pending",
+        "legal_review_not_completed",
+        "raw_terms_document_hash_unavailable",
+        "customer_delivery_not_approved",
+        "paid_tier_not_approved",
+        "pdf_export_not_approved",
+        "derived_evidence_retention_not_approved"
+      ],
+      "decisionSha256": "284be67d07c041c543a2d1f93f3b4a8aaaa06bfb4d0971575853e5c80339cafe",
+      "currentness": {
+        "mode": "provider_timestamp_required",
+        "maxAgeSeconds": 180,
+        "maxFutureSkewSeconds": 120,
+        "allowedTimestampProvenance": [
+          "provider",
+          "chain_block"
+        ]
+      }
+    },
+    {
+      "providerId": "goplus-token-security",
+      "providerFamily": "contract_risk",
+      "technicalState": "PRODUCTION_CODE_PRESENT",
+      "currentPlanEvidence": "FREE_OR_PAID_PACKAGE_NOT_BOUND_TO_CURRENT_AUDIT_USE",
+      "engineeringClassification": "OPEN_LICENSE_FREE_CLAIM_PRESENT_TERMS_AND_DELIVERY_REVIEW_PENDING",
+      "legalApprovalStatus": "NOT_APPROVED",
+      "requiredPlanOrConsent": "REVIEWED_TERMS_OR_PROVIDER_CONFIRMATION_FOR_CUSTOMER_DELIVERY_RETENTION_AND_PDF",
+      "attributionRequired": null,
+      "sourceIds": [
+        "goplus_security_api_page",
+        "goplus_api_overview"
+      ],
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "fields": [
+        {
+          "fieldId": "audit.security_flags",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "provider_security_signal",
+          "currentnessMode": "transport_observed_not_source_timestamped",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Advisory provider signal; not a current safety determination."
+        },
+        {
+          "fieldId": "audit.tax_flags",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "provider_security_signal",
+          "currentnessMode": "transport_observed_not_source_timestamped",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Advisory provider signal; not an executable tax quote."
+        },
+        {
+          "fieldId": "audit.honeypot_flag_goplus",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "provider_security_signal",
+          "currentnessMode": "transport_observed_not_source_timestamped",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Advisory provider signal; not exploitability proof."
+        }
+      ],
+      "rights": {
+        "internalDiagnosticAllowed": true,
+        "customerDerivedDisplayAllowed": false,
+        "paidTierAllowed": false,
+        "pdfDerivedExportAllowed": false,
+        "derivedEvidenceRetentionAllowed": false,
+        "rawRedistributionAllowed": false,
+        "aiRagAllowed": false
+      },
+      "blockers": [
+        "product_page_claim_not_a_complete_terms_decision",
+        "customer_delivery_and_retention_terms_not_bound",
+        "legal_review_not_completed",
+        "raw_terms_document_hash_unavailable",
+        "customer_delivery_not_approved",
+        "paid_tier_not_approved",
+        "pdf_export_not_approved",
+        "derived_evidence_retention_not_approved"
+      ],
+      "decisionSha256": "0dc56b79774ae49e27f511481e8c095da2c770e50465404282b9ebfe37d4306f",
+      "currentness": {
+        "mode": "retrieval_snapshot",
+        "maxAgeSeconds": 300,
+        "maxFutureSkewSeconds": 120,
+        "allowedTimestampProvenance": [
+          "provider",
+          "retrieval_snapshot"
+        ]
+      }
+    },
+    {
+      "providerId": "honeypot-is",
+      "providerFamily": "contract_simulation",
+      "technicalState": "PRODUCTION_CODE_PRESENT",
+      "currentPlanEvidence": "PUBLIC_OR_PREMIUM_API_ACCESS_NOT_BOUND_TO_PERMISSION",
+      "engineeringClassification": "THIRD_PARTY_FUNCTIONALITY_AND_COMPETITION_RESTRICTIONS_CUSTOMER_USE_BLOCKED",
+      "legalApprovalStatus": "NOT_APPROVED",
+      "requiredPlanOrConsent": "EXPLICIT_WRITTEN_PERMISSION_AND_NON_COMPETITION_USE_CLASSIFICATION",
+      "attributionRequired": null,
+      "sourceIds": [
+        "honeypot_api_terms"
+      ],
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "fields": [
+        {
+          "fieldId": "audit.passive_honeypot_summary",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "provider_simulation_summary",
+          "currentnessMode": "transport_observed_not_source_timestamped",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Passive provider summary; not a Velmère replay."
+        },
+        {
+          "fieldId": "audit.passive_simulation_risk",
+          "rawOrDerived": "derived_analysis",
+          "tiers": [
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "derived_analysis",
+          "currentnessMode": "input_currentness_unbound",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Derived risk withheld until source timestamp and method are bound."
+        }
+      ],
+      "rights": {
+        "internalDiagnosticAllowed": true,
+        "customerDerivedDisplayAllowed": false,
+        "paidTierAllowed": false,
+        "pdfDerivedExportAllowed": false,
+        "derivedEvidenceRetentionAllowed": false,
+        "rawRedistributionAllowed": false,
+        "aiRagAllowed": false
+      },
+      "blockers": [
+        "third_party_functionality_restriction",
+        "competition_clause_requires_review",
+        "commercial_customer_output_not_authorized",
+        "legal_review_not_completed",
+        "raw_terms_document_hash_unavailable",
+        "customer_delivery_not_approved",
+        "paid_tier_not_approved",
+        "pdf_export_not_approved",
+        "derived_evidence_retention_not_approved"
+      ],
+      "decisionSha256": "974eca4511672f534dcf8c1c976fad4e944bdb9fc635314e973ad74ba9a06eea",
+      "currentness": {
+        "mode": "retrieval_snapshot",
+        "maxAgeSeconds": 300,
+        "maxFutureSkewSeconds": 120,
+        "allowedTimestampProvenance": [
+          "provider",
+          "retrieval_snapshot"
+        ]
+      }
+    },
+    {
+      "providerId": "coingecko-search",
+      "providerFamily": "market_metadata",
+      "technicalState": "PRODUCTION_CODE_PRESENT",
+      "currentPlanEvidence": "CURRENT_CREDENTIAL_PLAN_AND_COMMERCIAL_LICENSE_NOT_BOUND",
+      "engineeringClassification": "STANDARD_COMMERCIAL_LICENSE_POSSIBLE_PLAN_ATTRIBUTION_AND_STORAGE_BINDING_NOT_PROVEN",
+      "legalApprovalStatus": "NOT_APPROVED",
+      "requiredPlanOrConsent": "BOUND_ELIGIBLE_PLAN_PLUS_ATTRIBUTION_STORAGE_AND_RETENTION_REVIEW",
+      "attributionRequired": true,
+      "sourceIds": [
+        "coingecko_api_terms_2025",
+        "coingecko_commercial_license_2026"
+      ],
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "fields": [
+        {
+          "fieldId": "audit.market_metadata_candidate",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "reference_metadata",
+          "currentnessMode": "search_result_identity_unverified",
+          "customerCurrentnessEligible": false,
+          "customerLabelRequirement": "Reference candidate only; not exact asset identity."
+        },
+        {
+          "fieldId": "audit.market_identity_limitation",
+          "rawOrDerived": "derived_limitation",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "derived_limitation",
+          "currentnessMode": "retrieval_current",
+          "customerCurrentnessEligible": true,
+          "customerLabelRequirement": "Customer-safe limitation may be shown as a limitation only."
+        }
+      ],
+      "rights": {
+        "internalDiagnosticAllowed": true,
+        "customerDerivedDisplayAllowed": false,
+        "paidTierAllowed": false,
+        "pdfDerivedExportAllowed": false,
+        "derivedEvidenceRetentionAllowed": false,
+        "rawRedistributionAllowed": false,
+        "aiRagAllowed": false
+      },
+      "blockers": [
+        "active_plan_not_bound",
+        "attribution_not_bound",
+        "storage_and_retention_fit_not_approved",
+        "search_identity_is_not_exact",
+        "legal_review_not_completed",
+        "raw_terms_document_hash_unavailable",
+        "customer_delivery_not_approved",
+        "paid_tier_not_approved",
+        "pdf_export_not_approved",
+        "derived_evidence_retention_not_approved"
+      ],
+      "decisionSha256": "d1fadbb68248bb385215ca47857089364d6fb6a11be24a1f0b8bd0c5bf53e155",
+      "currentness": {
+        "mode": "retrieval_snapshot",
+        "maxAgeSeconds": 3600,
+        "maxFutureSkewSeconds": 120,
+        "allowedTimestampProvenance": [
+          "provider",
+          "retrieval_snapshot"
+        ]
+      }
+    },
+    {
+      "providerId": "sourcify-v2",
+      "providerFamily": "source_verification",
+      "technicalState": "PRODUCTION_CODE_PRESENT_P90_MINIMAL_LOOKUP_ONLY",
+      "currentPlanEvidence": "PUBLIC_LOOKUP_ACCESS_PRESENT_DOWNSTREAM_COMMERCIAL_RIGHTS_NOT_BOUND",
+      "engineeringClassification": "TECHNICAL_EXACT_MATCH_LANE_AVAILABLE_CUSTOMER_RIGHTS_WITHHELD",
+      "legalApprovalStatus": "NOT_APPROVED",
+      "requiredPlanOrConsent": "REVIEWED_DOWNSTREAM_DISPLAY_PDF_RETENTION_AND_ATTRIBUTION_DECISION",
+      "attributionRequired": null,
+      "sourceIds": [
+        "sourcify_api_v2_2026",
+        "sourcify_exact_match_2026"
+      ],
+      "capturedAt": "2026-08-20T00:00:00.000Z",
+      "reverifyBy": "2026-09-03T00:00:00.000Z",
+      "fields": [
+        {
+          "fieldId": "audit.sourcify_verification_class",
+          "rawOrDerived": "derived",
+          "tiers": [
+            "basic",
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "historical_verification",
+          "currentnessMode": "provider_verified_at_historical_plus_retrieval_time",
+          "customerCurrentnessEligible": true,
+          "customerLabelRequirement": "Historical source-verification status as observed at retrieval; not current runtime or security."
+        },
+        {
+          "fieldId": "audit.sourcify_verification_reference",
+          "rawOrDerived": "derived_digest_reference",
+          "tiers": [
+            "pro",
+            "advanced"
+          ],
+          "semanticClass": "derived_digest_reference",
+          "currentnessMode": "retrieval_bound_reference",
+          "customerCurrentnessEligible": true,
+          "customerLabelRequirement": "Digest reference only; raw source, ABI, metadata and bytecode remain excluded."
+        }
+      ],
+      "rights": {
+        "internalDiagnosticAllowed": true,
+        "customerDerivedDisplayAllowed": false,
+        "paidTierAllowed": false,
+        "pdfDerivedExportAllowed": false,
+        "derivedEvidenceRetentionAllowed": false,
+        "rawRedistributionAllowed": false,
+        "aiRagAllowed": false
+      },
+      "blockers": [
+        "downstream_commercial_display_rights_not_bound",
+        "pdf_export_and_derived_retention_not_approved",
+        "attribution_requirement_unbound",
+        "legal_review_not_completed",
+        "raw_terms_document_hash_unavailable",
+        "customer_delivery_not_approved",
+        "paid_tier_not_approved"
+      ],
+      "decisionSha256": "aeca65f35d2a93224e2acd499ac58e65fc6b333b46020313de2927620f5fa459",
+      "currentness": {
+        "mode": "retrieval_snapshot",
+        "maxAgeSeconds": 3600,
+        "maxFutureSkewSeconds": 120,
+        "allowedTimestampProvenance": [
+          "provider",
+          "retrieval_snapshot"
+        ]
+      }
+    }
+  ],
+  "registrySha256": "1d99445a5d8283d4de6e2e4130430116986b9c86fff40ea9e9f2926fed07744b"
+}

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "velmere.pass35.a48.staging-tenant-isolation.contract.v1",
+  "revisionId": "VELMERE_PASS35_A48_STAGING_TENANT_ISOLATION_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A47_ACCEPTANCE_EVIDENCE_INTAKE_TRIAGE",
+  "requiredA47Decision": "VERIFIED_LOCAL_ACCEPTANCE",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_THIS_USES_DISPOSABLE_STAGING_ACCOUNTS_AND_DATABASE",
+  "requiredEnvironment": [
+    "VELMERE_A48_STAGING_BASE_URL",
+    "VELMERE_A48_TENANT_A_EMAIL",
+    "VELMERE_A48_TENANT_A_PASSWORD",
+    "VELMERE_A48_TENANT_B_EMAIL",
+    "VELMERE_A48_TENANT_B_PASSWORD",
+    "VELMERE_STAGING_DATABASE_URL",
+    "VELMERE_A48_CONFIRM"
+  ],
+  "requiredChecks": [
+    "precondition-a47-verified",
+    "runtime-exact",
+    "staging-url-safety",
+    "database-structural-preflight",
+    "database-rls-19-of-19",
+    "anonymous-session",
+    "tenant-a-signin",
+    "tenant-b-signin",
+    "distinct-account-identities",
+    "tenant-a-profile-roundtrip",
+    "tenant-a-profile-restored",
+    "tenant-b-profile-isolation",
+    "artifact-lists-disjoint",
+    "tenant-a-cannot-read-tenant-b-artifact",
+    "tenant-b-cannot-read-tenant-a-artifact",
+    "tenant-a-session-revoked",
+    "tenant-b-session-survives",
+    "source-fingerprint-unchanged",
+    "evidence-redaction"
+  ],
+  "rlsPolicyCaseMatrix": {
+    "path": "config/pass23/rls-staging-case-matrix.json",
+    "requiredCases": 19,
+    "requiredExecuted": 19,
+    "requiredPassed": 19,
+    "structuralPreflightAloneMayPass": false
+  },
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "stagingSafety": {
+    "httpsRequired": true,
+    "localhostAllowedOnlyInFixture": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "staging",
+      "preview",
+      "vercel.app",
+      "pages.dev",
+      "netlify.app"
+    ]
+  },
+  "truthBoundary": "A48 proves only one disposable staging run with two supplied test accounts, the deployed structural RLS preflight, API-level cross-tenant isolation for profiles and customer artifacts, and session revocation. It does not prove payments, email, object storage, backups, continuous LIVE reliability, provider rights, customer value, independent assurance or sale readiness.",
+  "integrity": {
+    "a47ContractSha256": "5115d551015152503d4137e350006ccf51d9b3b1d178590387773592fcb90527",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

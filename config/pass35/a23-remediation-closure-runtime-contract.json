@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "velmere.pass35.a23-remediation-closure-runtime-contract.v1",
+  "passId": "PASS35_A23",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "zeroBudget": 80
+  },
+  "baselineA22": {
+    "canonical": 47.7,
+    "zeroBudget": 87.5
+  },
+  "progressDeltaVsA22": {
+    "canonicalPercentagePoints": 1.1,
+    "zeroBudgetPercentagePoints": 0.6
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 8.1,
+    "zeroBudgetPercentagePoints": 8.1
+  },
+  "canonicalWeightedPlanningPercent": 48.8,
+  "canonicalStrictDonePercent": 18.6,
+  "canonicalCounts": {
+    "DONE": 8,
+    "PARTIAL": 26,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 88.1,
+  "zeroBudgetCoreDenominator": 59,
+  "zeroBudgetCounts": {
+    "DONE": 46,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "families": 12,
+    "cases": 192,
+    "closable": 96,
+    "blocked": 96,
+    "development": 72,
+    "validation": 48,
+    "frozen": {
+      "closureAccuracy": 1,
+      "closureWilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      },
+      "unsafeClosureSuppression": 1,
+      "suppressionWilson95": {
+        "lower": 0.903581,
+        "upper": 1
+      },
+      "unsafeClosures": 0,
+      "falseBlocks": 0
+    },
+    "mutations": 2304,
+    "mutation": {
+      "killed": 2304,
+      "total": 2304,
+      "killRate": 1,
+      "wilson95": {
+        "lower": 0.998335,
+        "upper": 1
+      }
+    },
+    "runtimeIntegritySha256": "sha256:d1acb14f752e4f69a53e9934f15d12cfbabb12500f5b58dd16655fff97bf583e",
+    "receiptSha256": "sha256:0a066ec91f11800734e21f11e3441da43d42cee2d93601bb33431f04c6eab0b5"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "signedClosureClaimed": false,
+  "realFixClaimed": false,
+  "liveClaimed": false,
+  "truthBoundary": "PASS35 A23 is the only canonical current status. Canonical roadmap is 48.8% weighted / 18.6% strict across 43 workstreams, up 1.1 pp from A22 and 8.1 pp from A16. Zero-budget functional core is 88.1% across 59 capabilities, up 0.6 pp from A22 and 8.1 pp from A16. A23 locally closes the declared bounded A15 patch-impact, retest applicability, regression and post-triage closure implementation. Real vulnerabilities, official tool execution, qualified signed closure, staging, sale, LIVE, customer outcomes and independent assurance remain unclaimed."
+}

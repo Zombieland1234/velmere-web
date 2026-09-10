@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "velmere.pass36.a73.cookie-session-boundary-policy.v1",
+  "revisionId": "VELMERE_PASS36_A73R0_COOKIE_SESSION_AND_AUTH_FLOW_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A72R0_DOWNLOAD_RESPONSE_AND_CONTENT_DISPOSITION_TRUST_BOUNDARY_HARDENING",
+  "requirements": {
+    "singleCentralCookieSerializerAndParser": true,
+    "closedCookieProfiles": true,
+    "duplicateCookieShadowingRejected": true,
+    "cookieHeaderAndValueBudgetsEnforced": true,
+    "controlCharactersAndMalformedPercentEncodingRejected": true,
+    "productionSecureAndHttpOnlyRequired": true,
+    "exactPathAndSameSiteProfilesRequired": true,
+    "clearCookiesRequireMaxAgeZeroAndEpochExpires": true,
+    "signedCookiePayloadsUseStrictJsonBoundary": true,
+    "duplicateAndDangerousSignedJsonKeysRejected": true,
+    "canonicalBase64UrlAndSignatureShapeRequired": true,
+    "authFlowAndRecoveryTtlChronologyEnforced": true,
+    "supabaseSessionExpiryStrictlyValidated": true,
+    "manualCookieSerializersAndParsersForbidden": true,
+    "paidDepthRequiresVerifiedEntitlementPath": true
+  },
+  "coveredProductionAuthModules": 5,
+  "closedCookieProfiles": 7,
+  "distinctCookieNames": 6,
+  "exactFinalByteBuildExecuted": false,
+  "criticalOfflineGatePassed": false,
+  "realAuthProviderFlowExecuted": false,
+  "realStagingExecuted": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "A73 proves one local cookie serialization, duplicate-shadowing rejection and signed auth-flow payload boundary for the covered account, Supabase, session-family and recovery cookies. It does not prove production browser cookie behavior, real OAuth, real Supabase session rotation, staging, LIVE or sale readiness.",
+  "coveredPaidDepthTruthSurfaces": 2
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "velmere.pass36.a102r9.approved-system-clipboard-privacy-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R8_ACTION_REQUIRED_CHECKOUT_PII_AUDIT_CASE_AND_PDF_ACTIVITY_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T01:30:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "components/account/MarketActionReportsInboxClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R8_ACTION_REQUIRED_CHECKOUT_PII_AUDIT_CASE_AND_PDF_ACTIVITY_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 195921,
+      "historicalSha256": "16e15188c259182a4770adc0cf1e6bc08c5bfb861250df8a76a96bc77be593bc",
+      "currentByteLength": 196026,
+      "currentSha256": "56640a41db6919f58879e7015660488f347d8e6256bf9606c72cbb1ed062e883",
+      "reason": "Replace twelve full private account/download/release JSON clipboard exports with bounded redacted summaries that omit vault, route, digest, checksum, access-token and download-session authority.",
+      "requiredLocalTest": "PASS_A102R9_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_AND_ADMIN_EXPORT_REDACTION_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/admin/OrderAdminTimelineConsole.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R8_ACTION_REQUIRED_CHECKOUT_PII_AUDIT_CASE_AND_PDF_ACTIVITY_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 32651,
+      "historicalSha256": "8bc53a3d30f3990e9f5524ba448f09f355ff6eb1df7c163c23d1dc715e790000",
+      "currentByteLength": 32862,
+      "currentSha256": "c1ebe12a03b93e4947f02ebbed6bf1f3bf596b6ac60e21eaf34c2d98a5ac14de",
+      "reason": "Replace raw admin support packet clipboard export and preview with a redacted counts-and-status summary that omits order, case, receipt, provider and product identifiers.",
+      "requiredLocalTest": "PASS_A102R9_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_AND_ADMIN_EXPORT_REDACTION_NO_PROMOTION",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "lib/security/browser-system-clipboard.ts",
+      "purpose": "Central secure-context, byte-bounded, no-fallback system clipboard boundary producing redacted private-account and admin-support summaries only."
+    },
+    {
+      "path": "scripts/pass36/test-a102r9-system-clipboard-private-export-boundary.ts",
+      "purpose": "Static and runtime adversarial proof that private account/download/session and admin operational identifiers cannot enter the system clipboard."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "privateAccountIdentifiersCopiedToSystemClipboard": false,
+    "downloadSessionOrAccessAuthorityCopiedToSystemClipboard": false,
+    "adminOrderCaseReceiptIdentifiersCopiedToSystemClipboard": false,
+    "rawClipboardFallbackImplemented": false,
+    "secureContextRequired": true,
+    "clipboardPayloadByteBounded": true,
+    "browserClipboardPersistenceControlledByVelmere": false,
+    "realBrowserClipboardMatrixExecuted": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger binds exact A102R8-to-A102R9 production-file changes that remove raw private account, download-session/access and admin operational identifiers from system clipboard exports. The operating-system clipboard remains external to Velmere and cannot be made durable, revocable or private by this local code. No exact build, real browser/OS clipboard, staging, LIVE or sale credit is granted."
+}

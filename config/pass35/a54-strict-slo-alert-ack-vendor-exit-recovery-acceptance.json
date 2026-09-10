@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "velmere.pass35.a54.strict-slo-alert-ack-vendor-exit-recovery-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A54_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE",
+  "requiredA52RevisionId": "VELMERE_PASS35_A52_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION_ACCEPTANCE",
+  "requiredA52Decision": "VERIFIED_STAGING_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_A54_MUTATES_ONLY_DISPOSABLE_STAGING_AND_REQUIRES_AUTOMATIC_PRIMARY_RESTORE",
+  "requiredEnvironment": [
+    "VELMERE_A54_STAGING_BASE_URL",
+    "VELMERE_A54_SLO_QUERY_URL",
+    "VELMERE_A54_ALERT_TRIGGER_URL",
+    "VELMERE_A54_ALERT_OBSERVER_URL",
+    "VELMERE_A54_ONCALL_ACK_URL",
+    "VELMERE_A54_VENDOR_CONTROL_URL",
+    "VELMERE_A54_VENDOR_OBSERVER_URL",
+    "VELMERE_A54_SERVICE_PROBE_URL",
+    "VELMERE_A54_PRIMARY_CREDENTIAL_PROBE_URL",
+    "VELMERE_A54_TELEMETRY_BEARER_SECRET",
+    "VELMERE_A54_ALERT_TRIGGER_BEARER_SECRET",
+    "VELMERE_A54_ALERT_OBSERVER_BEARER_SECRET",
+    "VELMERE_A54_ACK_ACTOR_BEARER_SECRET",
+    "VELMERE_A54_VENDOR_CONTROL_BEARER_SECRET",
+    "VELMERE_A54_VENDOR_OBSERVER_BEARER_SECRET",
+    "VELMERE_A54_SERVICE_PROBE_BEARER_SECRET",
+    "VELMERE_A54_PRIMARY_CREDENTIAL_SECRET",
+    "VELMERE_A54_A52_EVIDENCE_MANIFEST_SHA256",
+    "VELMERE_A54_EXPECTED_SOURCE_MANIFEST_SHA256",
+    "VELMERE_A54_PROJECT_CLASS",
+    "VELMERE_A54_CONFIRM"
+  ],
+  "requiredChecks": [
+    "exclusive-run-lock-acquired",
+    "source-manifest-valid",
+    "source-manifest-external-anchor",
+    "precondition-a52-evidence-bound",
+    "runtime-exact",
+    "confirmation-token",
+    "url-safety",
+    "observer-origins-independent",
+    "secret-boundary",
+    "dns-target-safety",
+    "telemetry-response-bound",
+    "slo-window-current-and-bounded",
+    "slo-count-algebra-valid",
+    "slo-availability-consistent",
+    "slo-availability-target",
+    "slo-percentiles-valid",
+    "slo-p95-target",
+    "slo-p99-target",
+    "error-budget-within-limit",
+    "telemetry-source-bound",
+    "baseline-provider-healthy",
+    "alert-triggered",
+    "alert-delivered-by-independent-observer",
+    "alert-delivery-timeline-and-sla",
+    "oncall-acknowledged-by-distinct-actor",
+    "acknowledgement-timeline-and-sla",
+    "vendor-exit-requested",
+    "vendor-exit-observer-bound",
+    "primary-traffic-zero",
+    "primary-credential-revoked-and-cache-purged",
+    "alternate-provider-independent",
+    "vendor-exit-timeline-and-sla",
+    "revoked-primary-credential-rejected",
+    "service-probes-complete-and-bound",
+    "service-probe-schema-valid",
+    "service-availability-floor",
+    "service-latency-floor",
+    "service-freshness-floor",
+    "vendor-restored-in-finally",
+    "postcondition-healthy",
+    "source-fingerprint-unchanged",
+    "evidence-redaction"
+  ],
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "minimumWindowSeconds": 900,
+    "maximumWindowSeconds": 1800,
+    "maximumWindowAgeSeconds": 180,
+    "maximumClockSkewSeconds": 2,
+    "minimumSamples": 50,
+    "maximumSamples": 1000000,
+    "availabilityTolerancePct": 0.05,
+    "availabilityTargetPct": 99,
+    "p95MaximumMs": 1500,
+    "p99MaximumMs": 3000,
+    "maximumErrorBudgetConsumedPct": 100,
+    "alertDeliverySlaSeconds": 60,
+    "acknowledgementSlaSeconds": 300,
+    "vendorExitSlaSeconds": 120,
+    "minimumServiceProbes": 10,
+    "serviceAvailabilityFloorPct": 90,
+    "serviceP95MaximumMs": 2000,
+    "serviceFreshnessMaximumSeconds": 120,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "polling": {
+    "alertPollIntervalMs": 1000,
+    "ackPollIntervalMs": 1000,
+    "vendorPollIntervalMs": 1000,
+    "serviceProbeIntervalMs": 1000
+  },
+  "recovery": {
+    "restoreAttempts": 3,
+    "restoreRetryDelayMs": 1000
+  },
+  "stagingSafety": {
+    "httpsRequired": true,
+    "localhostAllowedOnlyInFixture": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "staging",
+      "preview",
+      "vercel.app",
+      "pages.dev",
+      "netlify.app"
+    ]
+  },
+  "bridgeSafety": {
+    "minimumSecretLength": 32,
+    "projectClass": "disposable_staging",
+    "allSecretsMustBeDistinct": true,
+    "independentObserverOriginsRequired": true
+  },
+  "telemetrySafety": {
+    "allowedWindowClasses": [
+      "bounded_staging",
+      "disposable_staging"
+    ],
+    "allowedHealthStates": [
+      "healthy",
+      "recovered"
+    ],
+    "allowedExitStates": [
+      "alternate_active",
+      "primary_disabled"
+    ],
+    "allowedRestoreStates": [
+      "primary_active",
+      "healthy"
+    ]
+  },
+  "truthBoundary": "A54 locally hardens and can execute one bounded disposable-staging SLO, independently observed alert delivery, distinct on-call acknowledgement, credential-revocation probe, multi-domain vendor-exit and compensating primary restore. It still does not prove a production SLO, contractual SLA, continuous monitoring, production vendor exit, independent organizational assurance, customer outcomes or sale readiness.",
+  "integrity": {
+    "a53ContractPath": "config/pass35/a53-measured-slo-alert-ack-vendor-exit-acceptance.json",
+    "a53ContractSha256": "e8b078dbd3513886431fe38fa33d32bc816cb1378887db47ac089514fe35fe0d",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

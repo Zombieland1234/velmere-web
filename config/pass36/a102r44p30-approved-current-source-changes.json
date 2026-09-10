@@ -1,0 +1,569 @@
+{
+  "addedCount": 19,
+  "changes": [
+    {
+      "after": {
+        "byteLength": 2499,
+        "mode": 420,
+        "path": "VELMERE_A102R44P30_PATCH.txt",
+        "sha256": "8f57bbdc1797de842d4cde2767c3e5336ae5836610c8d0cfdfa04625e82e8ff8"
+      },
+      "change": "ADDED",
+      "path": "VELMERE_A102R44P30_PATCH.txt"
+    },
+    {
+      "after": {
+        "byteLength": 129,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "7c979129f677681e39634396ab654db12c10a1be614c4b42b9bd7106da8e3713"
+      },
+      "before": {
+        "byteLength": 160,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "0d53c116358a294d72945e297e9a992348df41b2883a2dd5e1ba34c380539568"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "after": {
+        "byteLength": 2024540,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "24b352658f900e01879c18bf10c64be2bccf9fd27625fd8d926c35c9fa646641"
+      },
+      "before": {
+        "byteLength": 2019845,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "121b584ea64ce3868b073b24909cf76f93bfffcd39a7c810ad4b01bd3c4b7be8"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "after": {
+        "byteLength": 1284749,
+        "mode": 420,
+        "path": "_velmere/PASS36_A102R44P29_SOURCE_ONLY_MANIFEST.json",
+        "sha256": "0b36773c6c9cb683d3404763cd3dd220bf9e7a0b9c6bcd5f7c1c0062e691cf69"
+      },
+      "change": "ADDED",
+      "path": "_velmere/PASS36_A102R44P29_SOURCE_ONLY_MANIFEST.json"
+    },
+    {
+      "after": {
+        "byteLength": 29126,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "1b24177f259b0323e6d2460e41baf9e146645fd9cc1b651b12ee166f70fde4e4"
+      },
+      "before": {
+        "byteLength": 29133,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "1a7dec591677b98f18cad355db7dff513290f9a91668bbe6ad23f882de720510"
+      },
+      "change": "MODIFIED",
+      "path": "config/current-release.json"
+    },
+    {
+      "after": {
+        "byteLength": 31898,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "33f7ea707492360e56156346cc7750cc9b41b15c1764050fa745ba9a115245a5"
+      },
+      "before": {
+        "byteLength": 31905,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "a02c9b3f8bd09b8512afe64d59ea3e0d8d5cd113c0c1b12761a8b4f5aebd8b40"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass35/current-revision.json"
+    },
+    {
+      "after": {
+        "byteLength": 3402,
+        "mode": 420,
+        "path": "config/pass36/a102r44p30-action-required-current-state.json",
+        "sha256": "80232ad20c7644b7f7983b8e51932180aa01ef1344a2d821880774e578ed6bcb"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p30-action-required-current-state.json"
+    },
+    {
+      "after": {
+        "byteLength": 2363,
+        "mode": 420,
+        "path": "config/pass36/a102r44p30-browser-evidence-race-and-profile-migration.json",
+        "sha256": "247149d81b5a05d699837e13652a95fa4e301d025e43efdea9a8fd5d03ee1ea4"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p30-browser-evidence-race-and-profile-migration.json"
+    },
+    {
+      "after": {
+        "byteLength": 2000,
+        "mode": 420,
+        "path": "config/pass36/a102r44p30-chromium-full-page-screenshot-backend-migration.json",
+        "sha256": "32fa8975579e248581a119e74e1d3109dab719b2bd22003d9aeb7a66aecc80a2"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p30-chromium-full-page-screenshot-backend-migration.json"
+    },
+    {
+      "after": {
+        "byteLength": 1458,
+        "mode": 420,
+        "path": "config/pass36/a102r44p30-eslint-batching-migration.json",
+        "sha256": "649bceb704961a7693422832de83ad3ac82a96db2d7f823de19ba66e942b0d01"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p30-eslint-batching-migration.json"
+    },
+    {
+      "after": {
+        "byteLength": 9398,
+        "mode": 420,
+        "path": "config/pass36/a102r44p30-inherited-eslint-cleanup-migration.json",
+        "sha256": "3dc0e51629ec32deda771f817056e11caf977bea4636ea4071b8058349db76ca"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p30-inherited-eslint-cleanup-migration.json"
+    },
+    {
+      "after": {
+        "byteLength": 1679,
+        "mode": 420,
+        "path": "config/pass36/a102r44p30-runtime-package-input-policy.json",
+        "sha256": "d4f1fee5605a58b98ad05318c7b54b7146c6b6584ea5f1e96f4611433ca16988"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p30-runtime-package-input-policy.json"
+    },
+    {
+      "after": {
+        "byteLength": 5771,
+        "mode": 420,
+        "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "sha256": "101abbb1603b01739c813f227f51c2e468cabfd226de21abc7da072b06ea1e4e"
+      },
+      "before": {
+        "byteLength": 5562,
+        "mode": 420,
+        "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "sha256": "f70d56f31734c232166ee9df7714f82dd3ea3ea3ebe99d5fe25e77014dd6f441"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json"
+    },
+    {
+      "after": {
+        "byteLength": 74532,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "9b4beb8882951cdbce3369c90c59ec2097c12213a20bd92b2d9c24f3d379a5fe"
+      },
+      "before": {
+        "byteLength": 74603,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "6626bcaabd6ecbd383da530654e3daa5da1b06284b062b6ddf25856cf76ef740"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass36/current-release-authority.json"
+    },
+    {
+      "after": {
+        "byteLength": 26994,
+        "mode": 493,
+        "path": "scripts/a45-browser-acceptance.mjs",
+        "sha256": "11dc5878bdaff5fd08686354da6981d02e169299837fb76c4d3220d080c23bd6"
+      },
+      "before": {
+        "byteLength": 25449,
+        "mode": 493,
+        "path": "scripts/a45-browser-acceptance.mjs",
+        "sha256": "9486939061718be6f3ebcd3151a5eee4b00c3b5867570bbb55a6e997378ba4c6"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/a45-browser-acceptance.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4787,
+        "mode": 420,
+        "path": "scripts/a60-browser-evidence-verifier.mjs",
+        "sha256": "a11d550d603e889b1a8829ccb81087b6a467f22ac008157ca2c088cb61ca4dca"
+      },
+      "before": {
+        "byteLength": 4690,
+        "mode": 420,
+        "path": "scripts/a60-browser-evidence-verifier.mjs",
+        "sha256": "9951bab61e6372162f9f08f609089886c4c84435429b6091d5d5865aa056c168"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/a60-browser-evidence-verifier.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 2852,
+        "mode": 420,
+        "path": "scripts/pass13/eslint-partition-plan.mjs",
+        "sha256": "ba288151db52fc9b56b40f08103b5e6a917c4643a534837b55532d2aaf3f217b"
+      },
+      "before": {
+        "byteLength": 2852,
+        "mode": 420,
+        "path": "scripts/pass13/eslint-partition-plan.mjs",
+        "sha256": "165d8907bfa642e7129befc7a4a73507a6fd79fb1079a38ef2f5ba5164d668bd"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass13/eslint-partition-plan.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3768,
+        "mode": 420,
+        "path": "scripts/pass36/a102r44p25-external-evidence-lib.mjs",
+        "sha256": "3f9d2cb84fa69f8a520c80be0d93699fa785ab81650b1b2eb7d0d945a7d91044"
+      },
+      "before": {
+        "byteLength": 3689,
+        "mode": 420,
+        "path": "scripts/pass36/a102r44p25-external-evidence-lib.mjs",
+        "sha256": "2464a2f5d1b9652e2060a669d2a86bca14e32946d11e95bc22db4b64108cd383"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p25-external-evidence-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 2359,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs",
+        "sha256": "71e1648f9625cd0bf6435a7522a1a49e7c1d6fecbcb0f8040dd62e257bd7083c"
+      },
+      "before": {
+        "byteLength": 2364,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs",
+        "sha256": "8112ca6bbe99db2b8810b675f531dc444f0066f163255c3db774cf83ddf74bb7"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3497,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs",
+        "sha256": "a8f09fee80cd775812194f6c72aa4f840550d582bf39f46cc3e284b5cc26b7c9"
+      },
+      "before": {
+        "byteLength": 3529,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs",
+        "sha256": "af53e59978d3c15d11c491989bd289a176ad5f9b726fb5d7f5dfbe6a9cd32dc7"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4886,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs",
+        "sha256": "6f9ab82c8f5f1534bc1c125e7a7c32e41f2a4888bb2a98e8e4e4baa15edb4af9"
+      },
+      "before": {
+        "byteLength": 4812,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs",
+        "sha256": "755f3a9241842d31cb711cad9e8c45019a510d0ebe18e586469a01dec89f2243"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 17709,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+        "sha256": "b275e41c1c0be151191d0c0ddce0b630891797b55b04f8dbe77d5c5194bf660f"
+      },
+      "before": {
+        "byteLength": 17618,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+        "sha256": "a4bf66f0fa2f2167f5391394d58c4fbb6eafe2b0dcb73a4caa16928587ad6675"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 10454,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+        "sha256": "5233eba7d1019c35f2bbe3af378f27f3787335a74cce5be9acef37d386f5a715"
+      },
+      "before": {
+        "byteLength": 10462,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+        "sha256": "6bb96e562b1aa1ce306fa9ddbd480eb5fff6e9f135e1daadbc23435fd2c5def0"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 10512,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+        "sha256": "a123d411b88739c0adc8173c44c91a407b3c26afaef570e934201b47e96b17f8"
+      },
+      "before": {
+        "byteLength": 10519,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+        "sha256": "0bea8a56492b54faf5d1b959171e299ac4fe212bd11641e421ec6260467f01b6"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5536,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+        "sha256": "e6d7f7fa62f0d8d5fb3ea91bd67ed8676370612dc63f740e2e35c8d422fd64ca"
+      },
+      "before": {
+        "byteLength": 5561,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+        "sha256": "2a25173ee3cf6fe62271ee439a5c897fc0784b9835b0f9fd3df54de4251c0902"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 55347,
+        "mode": 420,
+        "path": "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "sha256": "43600d062488cee461c43c943ef43480863b7f0b8dfb5a82b4450842d70b1ec8"
+      },
+      "before": {
+        "byteLength": 55113,
+        "mode": 420,
+        "path": "scripts/pass36/a79-exact-build-browser-lib.mjs",
+        "sha256": "807976bf3ebb8cdc23e0528f5c06cb72b5f4348e3ae865b375b8cf5bc1bfc5c4"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/a79-exact-build-browser-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4519,
+        "mode": 493,
+        "path": "scripts/pass36/aggregate-a102r44p30-eslint-shards.mjs",
+        "sha256": "142e64dac5ad93ca5416a80ecdbc0566215bc40ddd89d56b21955e52ab8e7cb1"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/aggregate-a102r44p30-eslint-shards.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 8074,
+        "mode": 493,
+        "path": "scripts/pass36/run-a102r44p30-persistent-eslint-shard.mjs",
+        "sha256": "06c29ead9e8f55c502db507b8dc43a791311205e847693b09cef4b3f8808f251"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/run-a102r44p30-persistent-eslint-shard.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3443,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+        "sha256": "f58b5e396b2d84b30fa3426bb47deaae10dabca95275786b9caabead283a213f"
+      },
+      "before": {
+        "byteLength": 3442,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+        "sha256": "b3cad05d90772a1475b6969d553ac766c4a0084ac750e7e7ba2983724ef5b0b2"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3581,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p30-browser-evidence-race-and-profile-migration.mjs",
+        "sha256": "f3be12c7390e1cacb74a5e23cc2977b616e9ece90b41bd6366eea90c0651b4e7"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p30-browser-evidence-race-and-profile-migration.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 2520,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p30-chromium-full-page-screenshot-backend-migration.mjs",
+        "sha256": "21d8c2e6eac32ccf45e25b3028a56630dea5efdcfe6eab27b10b5e31fbfa38b9"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p30-chromium-full-page-screenshot-backend-migration.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4494,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p30-eslint-batching-migration.mjs",
+        "sha256": "5015ae6a47c4d3fcea2834816c476493d3dfe87dd27b55f73093698be6ed6907"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p30-eslint-batching-migration.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3105,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p30-inherited-eslint-cleanup-migration.mjs",
+        "sha256": "5641323d806803964bb40f06de3e09c7ccb66d229c628fe70369ea405953e283"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p30-inherited-eslint-cleanup-migration.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 2109,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p30-runtime-package-input-binding.mjs",
+        "sha256": "19f354d7c2d1759fc81e42116cc964d622dec77cbfcf28764d8c691b4c133e16"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p30-runtime-package-input-binding.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 7425,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs",
+        "sha256": "3c9f71503df50d2b1a996f0531e500a970f739d33b3fac50fa1a1f22e3d31b7d"
+      },
+      "before": {
+        "byteLength": 7482,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs",
+        "sha256": "6a23eb5771629bbf49a09df477e9046a6d8769d10a341507934e6ddfa0c2b389"
+      },
+      "change": "MODIFIED",
+      "path": "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5591,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p30-approved-current-source-changes.mjs",
+        "sha256": "c6f72451112752f21b567f035a21b6edfcfe591f85b1bfa316f7acc1243ad33c"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p30-approved-current-source-changes.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 1515,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p30-current-release-pointers.mjs",
+        "sha256": "b443bb43c9a09ca56cd6bcaa70838fd1b7085b539cefe78f2b8dfbb061f4be67"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p30-current-release-pointers.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5052,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p30-source-authority.mjs",
+        "sha256": "5f3f3af402d4b677543a4a7519c6c7977f4a5aedfd9ebc8d33184c5d8cd8c656"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p30-source-authority.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3751,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p30-static-policy.mjs",
+        "sha256": "be88df0d19eb3bb4422789ead1abd8e41adfb9f4f0ebfc7757b8c59ec94f395b"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p30-static-policy.mjs"
+    }
+  ],
+  "decision": "APPROVED_ACTION_REQUIRED_NO_PROMOTION",
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "historyMutations": 10,
+  "modifiedCount": 20,
+  "parentManifestPath": "_velmere/PASS36_A102R44P29_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "0b36773c6c9cb683d3404763cd3dd220bf9e7a0b9c6bcd5f7c1c0062e691cf69",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "requiredAddedFiles": [
+    "VELMERE_A102R44P30_PATCH.txt",
+    "_velmere/PASS36_A102R44P29_SOURCE_ONLY_MANIFEST.json",
+    "config/pass36/a102r44p30-action-required-current-state.json",
+    "config/pass36/a102r44p30-browser-evidence-race-and-profile-migration.json",
+    "config/pass36/a102r44p30-chromium-full-page-screenshot-backend-migration.json",
+    "config/pass36/a102r44p30-eslint-batching-migration.json",
+    "config/pass36/a102r44p30-inherited-eslint-cleanup-migration.json",
+    "config/pass36/a102r44p30-runtime-package-input-policy.json",
+    "scripts/pass36/aggregate-a102r44p30-eslint-shards.mjs",
+    "scripts/pass36/run-a102r44p30-persistent-eslint-shard.mjs",
+    "scripts/pass36/test-a102r44p30-browser-evidence-race-and-profile-migration.mjs",
+    "scripts/pass36/test-a102r44p30-chromium-full-page-screenshot-backend-migration.mjs",
+    "scripts/pass36/test-a102r44p30-eslint-batching-migration.mjs",
+    "scripts/pass36/test-a102r44p30-inherited-eslint-cleanup-migration.mjs",
+    "scripts/pass36/test-a102r44p30-runtime-package-input-binding.mjs",
+    "scripts/pass36/verify-a102r44p30-approved-current-source-changes.mjs",
+    "scripts/pass36/verify-a102r44p30-current-release-pointers.mjs",
+    "scripts/pass36/verify-a102r44p30-source-authority.mjs",
+    "scripts/pass36/verify-a102r44p30-static-policy.mjs"
+  ],
+  "requiredModifiedFiles": [
+    "VELMERE_ACTIVE_PASS.txt",
+    "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+    "config/current-release.json",
+    "config/pass35/current-revision.json",
+    "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+    "config/pass36/current-release-authority.json",
+    "scripts/a45-browser-acceptance.mjs",
+    "scripts/a60-browser-evidence-verifier.mjs",
+    "scripts/pass13/eslint-partition-plan.mjs",
+    "scripts/pass36/a102r44p25-external-evidence-lib.mjs",
+    "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs",
+    "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs",
+    "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs",
+    "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+    "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+    "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+    "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+    "scripts/pass36/a79-exact-build-browser-lib.mjs",
+    "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+    "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p30.approved-source-changes.v1"
+}

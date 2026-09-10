@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "velmere.pass36.a102r38.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "generatedAt": "2026-08-01T04:00:00+02:00",
+  "status": "PASS_A102R38_LOCAL_EVIDENCE_UNIQUENESS_AND_AUTHORITY_REGRESSION_ACTION_REQUIRED_NO_FRESH_BUILD_BROWSER_CREDIT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 13,
+  "executedStages": 13,
+  "passedStages": 13,
+  "failedStages": 0,
+  "stages": [
+    {
+      "id": "a102r38-evidence",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r38-production-smoke-evidence-uniqueness.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "9e6f6321fb61192ae00dae1b98c1d062865d7945dc07cb0a6b22f3c7c89fb840",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 946,
+      "stderrBytes": 0
+    },
+    {
+      "id": "production-smoke-contract",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/deployment/test-production-smoke-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "3717d0eb692fc9f81c70ad1eff3cbb8eca56df1db30c4d5246cfbb26e386a8a4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 191,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r36-parent",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r36-eslint-runner-portability.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a540ec4df9ba950f5a8e22bf93b78a2c535ed160855a338bd560f50fe0afbb47",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5451,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a42-rebaseline",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r38-a42-critical-rebaseline.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a68128736c0d718ce3c5a4300a82be55f7877fdda5767d566589e970f84f8a25",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 170,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a42-contract",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-a42-dev-runtime-cache-recovery.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "14fa340ad7d954478fc6fc34020357e0f6b53c48bbfd4606e708594218586703",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 52,
+      "stderrBytes": 0
+    },
+    {
+      "id": "dev-bootstrap",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/velmere-dev-bootstrap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "3083444139c643fca346313c292561a5089ddb024d646d21ea5eceb37e5c6db8",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1029,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-dispatch",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-route-dispatch-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-tamper",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/test-route-dispatch-manifest-tamper.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy-routes",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-lazy-route-shells.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product-tiers",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-product-tier-content-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero-budget",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-zero-budget-functional-roadmap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit-generated-next-types",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r38-source-audit-generated-next-types.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a464bad3df513561d8c890c3793ba7074639140488651771369d6eb878209acf",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 231,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/a44-source-integrity-audit.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "faf87cd63d0d68f9d7ce5cfbfe317876ec8385d44672a03332b840e9ab1283d6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0
+    }
+  ],
+  "keyDenominators": {
+    "a102r38EvidenceChecks": 46,
+    "productionSmokeContractChecks": 82,
+    "parentA102r36Checks": 39,
+    "expectedSmokeAssertions": 55,
+    "uniqueSmokeAssertions": 55,
+    "expectedSmokeResults": 16,
+    "uniqueSmokeResults": 16,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439,
+    "sourceAuditGeneratedNextTypesChecks": 11
+  },
+  "sourceAudit": {
+    "filesRead": 5434,
+    "codeFiles": 3350,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "localClosure": {
+    "exactAssertionIdentitySet": true,
+    "exactResultIdentitySet": true,
+    "duplicatesFailClosed": true,
+    "missingExtraReorderedInvalidFailClosed": true,
+    "sourceAuthorityReconciled": true,
+    "sourceImmutable": true
+  },
+  "historicalCorrection": {
+    "r37r4SmokeRows": 55,
+    "r37r4UniqueAssertions": 52,
+    "r37r4ResultRows": 17,
+    "r37r4UniqueResults": 16,
+    "r37r4Smoke55Of55Credit": false
+  },
+  "environmentBlockers": [
+    {
+      "id": "fresh_exact_windows_node_npm",
+      "requiredNode": "24.18.0",
+      "requiredNpm": "11.16.0",
+      "credit": false
+    },
+    {
+      "id": "fresh_webpack_turbopack_smoke_parity",
+      "credit": false
+    },
+    {
+      "id": "exact_chrome_playwright",
+      "credit": false
+    },
+    {
+      "id": "a77r1_to_a80r1_0_of_4",
+      "credit": false
+    },
+    {
+      "id": "staging_rights_legal_customers",
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "freshWebpackBuildCredit": false,
+    "freshTurbopackBuildCredit": false,
+    "freshProductionSmokeCredit": false,
+    "exactBrowserCredit": false,
+    "a102ObservationRuns": 0,
+    "stagingStages": 0,
+    "providerRights": 0,
+    "legalDecisions": 0,
+    "customerCohorts": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Local evidence-cardinality, runner wiring, authority coherence and static regression only. No fresh exact build, browser, Windows, staging, rights, legal, customer, LIVE or sale credit."
+}

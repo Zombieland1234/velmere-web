@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "velmere.pass18.diff-from-pass17.v1",
+  "generatedAt": "2026-07-20T09:10:00Z",
+  "baseArtifact": {
+    "name": "VELMERE_PASS17_SHIELD_REAL_MARKETS_ADAPTER_SAFE_SOURCE.zip",
+    "sha256": "ade9dc2bedf5442ef879d5861057c3990b9f9dafbc5a6425af8f1e48081808ab"
+  },
+  "scope": "Source/evidence diff excluding generated .velmere diagnostics/gates/builds, package manifest, verification and this diff report.",
+  "summary": {
+    "newFiles": 16,
+    "changedFiles": 7,
+    "removedFiles": 0,
+    "newBytes": 1620043,
+    "changedCurrentBytes": 475702,
+    "changedPreviousBytes": 474689
+  },
+  "new": [
+    {
+      "path": "config/pass18/audit-lens-output-adapter-policy.json",
+      "bytes": 2382,
+      "sha256": "85853a597cbaad2ea8e7de4caaa37386c12d0e75b3be99d5fce979e2eae7ea31"
+    },
+    {
+      "path": "config/pass18/gate-policy.json",
+      "bytes": 4787,
+      "sha256": "e832477b00bbe991357a4f6f51084fd0f1d33190f5df81fe9c2b8596457af1cf"
+    },
+    {
+      "path": "config/pass18/typescript-syntax-scan.json",
+      "bytes": 447,
+      "sha256": "0874d7d83b234b64b4b4006650233252023d1443582da3a807a6ca2fe1f9fb21"
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+      "bytes": 438789,
+      "sha256": "e27aeba3c477fc253f77f9fcb39e5229a973893049debcb56dea585e227c39e7"
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+      "bytes": 1507,
+      "sha256": "6e867f36bfe4819e3b2130de4cf4fa36ba759afc87dc2f3b370bfc300c892f66"
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-evidence-fixtures.json",
+      "bytes": 1073770,
+      "sha256": "3746e28c4c8a5355ca14f8b60ea168fb829a6b9deea3d254e94e47a0f3db1d96"
+    },
+    {
+      "path": "lib/worldclass/audit-lens-output-adapter.d.ts",
+      "bytes": 1329,
+      "sha256": "a5b7fbfe0cf541bb0a163ce8a31e2dde7b545607121c036c43423ca7c226f70a"
+    },
+    {
+      "path": "lib/worldclass/audit-lens-output-adapter.mjs",
+      "bytes": 29811,
+      "sha256": "439faaab636f32d633fd351b68f4e89e9f7a6a78dcbc9b5617b944ba8dc75ac7"
+    },
+    {
+      "path": "scripts/pass18/audit-clean-source.mjs",
+      "bytes": 11971,
+      "sha256": "4c63c0088bafd9bd19f567a5e931bf4bc29cc7cda44d07990cdcff76831ca810"
+    },
+    {
+      "path": "scripts/pass18/audit-current-product-readiness.mjs",
+      "bytes": 8094,
+      "sha256": "366360d963b8bc6eeb8e52c71a923a68de8aae34580d821f35f037e63784d033"
+    },
+    {
+      "path": "scripts/pass18/audit-runner-contract.mjs",
+      "bytes": 2279,
+      "sha256": "8a3aa1cb98fcbafbd8435ec57539659af138349eca6e5631eb29488da97defcb"
+    },
+    {
+      "path": "scripts/pass18/run-gate.mjs",
+      "bytes": 5617,
+      "sha256": "4738b15a01173325c7c994ac4660baa84fe37fa81978d0c92697485e45932a47"
+    },
+    {
+      "path": "scripts/pass18/run-typescript-syntax-scan.mjs",
+      "bytes": 2987,
+      "sha256": "a0ef907a71c25e711789717e11565ffd80ec3936783d1fa9430dd20a38e84631"
+    },
+    {
+      "path": "scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs",
+      "bytes": 11610,
+      "sha256": "9ede498f897484ba637e91f173a863e9d9f82bd8ef86ce1571382f7260373d36"
+    },
+    {
+      "path": "scripts/pass18/verify-audit-lens-output-adapters.mjs",
+      "bytes": 19950,
+      "sha256": "c9757c29db320af55a82b282099424579656b00541b2245999fdeb9dcccf7170"
+    },
+    {
+      "path": "supabase/migrations/20260720000004_5003_worldclass_audit_lens_adapter_evidence.sql",
+      "bytes": 4713,
+      "sha256": "01e1913b350ea973f498b5cb6a058825787ba7379d8bbbfcce92fd490f14c72f"
+    }
+  ],
+  "changed": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "before": {
+        "bytes": 1636,
+        "sha256": "13cc75130760ccc255eee6b4efc2861a63252d8cf5056de0595419c5a8095173"
+      },
+      "after": {
+        "bytes": 1822,
+        "sha256": "8c3857f95cef73a2f0ed5c909ee8f6b89f5fba0b3a0f3b6cc59f854aaca55721"
+      }
+    },
+    {
+      "path": "README.md",
+      "before": {
+        "bytes": 617,
+        "sha256": "f331a3b0a00874b0fcd1676e2d15a0333164a2dcef696a4e00932b30a3404c0b"
+      },
+      "after": {
+        "bytes": 914,
+        "sha256": "6d12760395d8f2d40ff14ba0f8314501950bd9f31dd30b8bf84b766c574c92c1"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "before": {
+        "bytes": 668,
+        "sha256": "a468c03fb79c8a26e3e06237dba5d4694e96af03e5a8a24994c1929b0be229e0"
+      },
+      "after": {
+        "bytes": 686,
+        "sha256": "76d59ae9ccba55324b6780a2f521ce5da8cb97765d9cd5a96403e4b4b1c14e00"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 448548,
+        "sha256": "1fb5b8989e4384ed78faef48b14f7d13942bf73a271615116ff4a31ab40b95c2"
+      },
+      "after": {
+        "bytes": 448548,
+        "sha256": "3689b023a9a92dc4dbd5f3dd2e120fb7ca69d94e852fa4f346bc41a8202ccc62"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1290,
+        "sha256": "59a3f8e137fe57450f9d8de8203959368c2979d8cd175ebd7501dd70edb070f5"
+      },
+      "after": {
+        "bytes": 1290,
+        "sha256": "d6b08c8b026ad567efa38a4bfb82e4715a6ca04d08bf32ac6a34105364fc331c"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "bytes": 7253,
+        "sha256": "dac02f27e8a1e9be376aa52402e0740272a3fe0af970fd70396b447ec3978ff8"
+      },
+      "after": {
+        "bytes": 7548,
+        "sha256": "de8ae611b6b210cfdc21d170d8a8d5ba64c389719225878375cc2953e7588bdd"
+      }
+    },
+    {
+      "path": "scripts/pass17/verify-market-output-adapters.mjs",
+      "before": {
+        "bytes": 14677,
+        "sha256": "d2c7feddefe4eb304e1aa3f729a79a635ac8bfbd4124cd8767ffbc05f6f48407"
+      },
+      "after": {
+        "bytes": 14894,
+        "sha256": "a7e2a3688c7581d3f62f1617cebb29d932c377f25edd308a520cba0557ac5cb1"
+      }
+    }
+  ],
+  "removed": [],
+  "truthBoundary": "Diff and 900 synthetic PASS18 rows do not prove detector precision/recall, real-human review, rendered PDF, provider, staging or LIVE execution. Canonical matrix remains 0/2700."
+}

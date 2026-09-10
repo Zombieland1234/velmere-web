@@ -1,0 +1,75 @@
+{
+  "acceptedAttempt": {
+    "artifactBytes": 39768,
+    "artifactId": "9014198185",
+    "artifactZipSha256": "e29c86c3c9166e27a5884f2a14f4d53b8d3773c9db5709abecf20130ac6457c4",
+    "classification": "EXTERNAL_CI_STRIPE_MOCK_PROTOCOL_ONLY",
+    "headSha": "fc59592b20863c8b3074ead156a5b9b0220604ff",
+    "independentVerifier": "170/170",
+    "label": "FINAL_CURRENT_PARENT_BOUND",
+    "liveCredit": false,
+    "mergeSha": "e53a27fa4ef68074f6f7ad9584dc2e96be71a6d0",
+    "parentBinding": {
+      "aggregateSha256": "7ae273adc609b7d48894434f56ec8d99d622ac37088d897160ba3607573f8216",
+      "manifestSha256": "d2e7c5cb646686e6aba652f219ae11ec542f216ae7d27cc8095a62440e23a872",
+      "revisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT"
+    },
+    "protocolCases": "12/12",
+    "realStripeTestCredit": false,
+    "runId": "31232247515",
+    "saleCredit": false,
+    "sigstoreOidc": true
+  },
+  "denominatorReduced": false,
+  "failedAttemptsPreserved": true,
+  "failedOrSupersededAttempts": [
+    {
+      "byteLength": 452,
+      "credit": false,
+      "filename": "r44p33-stripe-test-admission-blocked.zip",
+      "label": "STRIPE_TEST_SECRET_ADMISSION_BLOCKED",
+      "reason": "No GitHub Stripe test-mode secrets; zero provider requests.",
+      "runId": "31232247532",
+      "sha256": "ab2dd47b0bb7f1068ad7c79685ece12745df55491c50eb5fe704a4697b61979e"
+    },
+    {
+      "byteLength": 9587,
+      "credit": false,
+      "filename": "r44p32-external-stripe-mock-run1-readiness-failure.zip",
+      "label": "STRIPE_MOCK_READINESS_AUTH_SHAPE",
+      "reason": "Initial readiness probe used an incompatible credential shape.",
+      "runId": null,
+      "sha256": "b968e743558e4533d7956b09526fffb5c9db4dfb20929d4bf4d126cf60361574"
+    },
+    {
+      "byteLength": 9587,
+      "credit": false,
+      "filename": "r44p32-external-stripe-mock-patch-preimage-failure.zip",
+      "label": "RUNNER_PATCH_PREIMAGE_MISMATCH",
+      "reason": "Deterministic patch refused stale preimage instead of silently changing unknown bytes.",
+      "runId": null,
+      "sha256": "dffab1408a50ebdc63780ff3558f9495d95373da59698cabf619bc674a39782f"
+    },
+    {
+      "byteLength": 21877,
+      "credit": false,
+      "filename": "r44p32-external-stripe-mock-run2-execution-failure.zip",
+      "label": "STRIPE_MOCK_REFUND_SCHEMA_STALE_ASSUMPTION",
+      "reason": "11/12 passed; refund schema failed because stripe-mock returns hardcoded fields and cannot prove real refund behavior.",
+      "runId": null,
+      "sha256": "ab1202a2dc84e364ea32236db7b2cce00d95b2e1f1cc3456fd782568c3d5bf79"
+    },
+    {
+      "byteLength": 39975,
+      "credit": false,
+      "filename": "r44p32-external-ci-stripe-mock-final-success.zip",
+      "label": "SUCCESS_STALE_PARENT_BINDING",
+      "reason": "Protocol passed but evidence was bound to R44P31, not canonical R44P32; no current-parent credit.",
+      "runId": "31232147565",
+      "sha256": "3b30ba9a62337ec48931c3f03eb909f88969b6b57cd5f7bbd4f36f59602bca68"
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P33_ACTION_REQUIRED_EXTERNAL_CI_STRIPE_MOCK_PROTOCOL12_SIGSTORE_OIDC_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p33.external-ci-attempt-ledger.v1"
+}

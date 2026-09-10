@@ -1,0 +1,173 @@
+{
+  "batch_id": "PASS2961_2975_MEGA_ZERO_SKIP_PRODUCT_LAUNCH_CLOSURE_BATCH",
+  "created_at": "2026-06-28T16:58:33.413828+00:00",
+  "test_policy": "No npm run/build/typecheck/verify/playwright/provider/payment/pdf/ai execution in this pass; all checks are prepared for final runner.",
+  "source_workdir": "/mnt/data/velmere_pass2945_2960_work",
+  "passes": [
+    {
+      "pass_id": "PASS2961",
+      "slug": "MARKET_DATA_ANOMALY_ICON_IDENTITY_CLOSURE",
+      "description": "Market data anomaly detection, icon/original provider identity, stale/empty/chart mismatch closure",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 520,
+      "p1": 3380,
+      "matrix_csv": "VELMERE_PASS2961_MARKET_DATA_ANOMALY_ICON_IDENTITY_CLOSURE_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2962",
+      "slug": "VISUAL_UX_REGRESSION_SCREEN_CONTRACTS",
+      "description": "Screen-first visual contracts for modal/table/chart/header/globe/checkout layout with no-scroll and mobile safe-area rules",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 520,
+      "p1": 3380,
+      "matrix_csv": "VELMERE_PASS2962_VISUAL_UX_REGRESSION_SCREEN_CONTRACTS_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2963",
+      "slug": "CART_WALLET_CHECKOUT_REBUILD_CONTRACTS",
+      "description": "Cart/wallet/checkout rebuilt contract pack: identity, payment proof, drawer layering, slow animation, click-through blocker guard",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1560,
+      "p1": 2340,
+      "matrix_csv": "VELMERE_PASS2963_CART_WALLET_CHECKOUT_REBUILD_CONTRACTS_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2964",
+      "slug": "AI_ANGEL_BRAIN_MULTILINGUAL_EVAL_PACK",
+      "description": "AI Angel/Brain PL/EN/DE eval pack, anti-hallucination, prompt firewall, source discipline, tier boundary",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 520,
+      "p1": 3380,
+      "matrix_csv": "VELMERE_PASS2964_AI_ANGEL_BRAIN_MULTILINGUAL_EVAL_PACK_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2965",
+      "slug": "SEARCH_RESOLVER_SYMBOL_IDENTITY_GOLDEN_SET",
+      "description": "Search/browser resolver golden set: exact match, symbol collisions, token/stock separation, BTC/AAPL/NVDA/ETH/USDT fixtures",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 520,
+      "p1": 3380,
+      "matrix_csv": "VELMERE_PASS2965_SEARCH_RESOLVER_SYMBOL_IDENTITY_GOLDEN_SET_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2966",
+      "slug": "CHART_TRADINGVIEW_ORDERBOOK_LIQUIDITY_CONTRACTS",
+      "description": "Chart/TradingView-level interaction contracts, orderbook/liquidity/squeeze surfaces, timeframe and skeleton fallback",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 520,
+      "p1": 3380,
+      "matrix_csv": "VELMERE_PASS2966_CHART_TRADINGVIEW_ORDERBOOK_LIQUIDITY_CONTRACTS_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2967",
+      "slug": "PDF_PROVENANCE_SIGNED_RECEIPT_GOLDEN_FIXTURES",
+      "description": "PDF/report provenance, signed receipt, preview/download hash parity, paid tier value, source citations, locale parity",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1040,
+      "p1": 2860,
+      "matrix_csv": "VELMERE_PASS2967_PDF_PROVENANCE_SIGNED_RECEIPT_GOLDEN_FIXTURES_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2968",
+      "slug": "BILLING_SUBSCRIPTION_REFUND_REMEDY_CLOSURE",
+      "description": "Billing/subscription/refund/remedy/chargeback entitlement lifecycle closure with no client-only unlock",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1560,
+      "p1": 2340,
+      "matrix_csv": "VELMERE_PASS2968_BILLING_SUBSCRIPTION_REFUND_REMEDY_CLOSURE_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2969",
+      "slug": "SECURITY_PRIVACY_ABUSE_RUNTIME_POLICY_PACK",
+      "description": "Security/privacy/abuse policy pack: CSP, XSS, CSRF, rate-limit, bot abuse, PII/secret redaction, admin escalation",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1560,
+      "p1": 2340,
+      "matrix_csv": "VELMERE_PASS2969_SECURITY_PRIVACY_ABUSE_RUNTIME_POLICY_PACK_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2970",
+      "slug": "COMMUNITY_SQUARE_MODERATION_SAFETY_TRUST_GATE",
+      "description": "Square/community/account moderation, public read/gated publish, anti-spam, appeals, trust and safety proof pack",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1040,
+      "p1": 2860,
+      "matrix_csv": "VELMERE_PASS2970_COMMUNITY_SQUARE_MODERATION_SAFETY_TRUST_GATE_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2971",
+      "slug": "FASHION_ECOMMERCE_IMPORT_PRODUCT_OPS_GATE",
+      "description": "Fashion/ecommerce/import product ops: Printful/Tapstitch style import, sizes, descriptions, image path, price, inventory, legal copy",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 780,
+      "p1": 3120,
+      "matrix_csv": "VELMERE_PASS2971_FASHION_ECOMMERCE_IMPORT_PRODUCT_OPS_GATE_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2972",
+      "slug": "ADMIN_OPERATOR_SUPPORT_CONSOLE_HANDOFF_GATE",
+      "description": "Admin/operator/support console handoff, dual-control, case queues, SLA, audit mutation, customer communication proof",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 780,
+      "p1": 3120,
+      "matrix_csv": "VELMERE_PASS2972_ADMIN_OPERATOR_SUPPORT_CONSOLE_HANDOFF_GATE_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2973",
+      "slug": "LEGAL_REGULATORY_COPY_POLICY_EU_LAUNCH_GATE",
+      "description": "Legal/regulatory/copy policy for EU launch: disclaimers, privacy, terms, no investment advice, no FOMO, age-safe copy",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1040,
+      "p1": 2860,
+      "matrix_csv": "VELMERE_PASS2973_LEGAL_REGULATORY_COPY_POLICY_EU_LAUNCH_GATE_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2974",
+      "slug": "PERFORMANCE_ACCESSIBILITY_MOBILE_PRODUCTION_BUDGET",
+      "description": "Performance/accessibility/mobile production budget: Core Web Vitals, keyboard, ARIA, touch, hydration, bundle and graceful degrade",
+      "surfaces": 260,
+      "rows": 4160,
+      "p0": 520,
+      "p1": 3640,
+      "matrix_csv": "VELMERE_PASS2974_PERFORMANCE_ACCESSIBILITY_MOBILE_PRODUCTION_BUDGET_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    },
+    {
+      "pass_id": "PASS2975",
+      "slug": "LAUNCH_COMMAND_CENTER_ZERO_SKIP_FINAL_HANDOFF",
+      "description": "Launch command center, zero-skip final handoff, go/no-go scoreboard, final test plan digest, remaining blockers ledger",
+      "surfaces": 260,
+      "rows": 3900,
+      "p0": 1300,
+      "p1": 2600,
+      "matrix_csv": "VELMERE_PASS2975_LAUNCH_COMMAND_CENTER_ZERO_SKIP_FINAL_HANDOFF_MATRIX.csv",
+      "status": "PREPARED_NOT_EXECUTED"
+    }
+  ]
+}

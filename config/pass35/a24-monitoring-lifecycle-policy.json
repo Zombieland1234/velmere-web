@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "velmere.pass35.a24-monitoring-lifecycle-policy.v1",
+  "passId": "PASS35_A24",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "ruleTypes": [
+    "ADMIN_CHANGE",
+    "PROXY_UPGRADE",
+    "PAUSE_STATE",
+    "SUPPLY_CHANGE",
+    "LIQUIDITY_DROP",
+    "ORACLE_DEVIATION"
+  ],
+  "requiredRuleTypes": [
+    "ADMIN_CHANGE",
+    "PROXY_UPGRADE",
+    "PAUSE_STATE",
+    "SUPPLY_CHANGE",
+    "LIQUIDITY_DROP",
+    "ORACLE_DEVIATION"
+  ],
+  "lifecycleStates": [
+    "NO_INCIDENT",
+    "DETECTED",
+    "ALERT_DELIVERED",
+    "ACKNOWLEDGED",
+    "RESPONDING",
+    "COMMUNICATED",
+    "RESOLVED",
+    "CLOSED_LOCAL"
+  ],
+  "severityOrder": [
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "CRITICAL"
+  ],
+  "workflow": {
+    "deliveryReceiptRequired": true,
+    "acknowledgementRequired": true,
+    "requiredActionsMustPass": true,
+    "customerCommunicationMustBeSentWhenRequired": true,
+    "postConditionReceiptsRequired": true,
+    "partialIncidentClosureForbidden": true,
+    "lateDeliveryBlocksClosure": true,
+    "lateAcknowledgementBlocksClosure": true
+  },
+  "hardStops": {
+    "liveMonitoringActive": false,
+    "liveAlertDeliveryClaimed": false,
+    "realIncidentClaimed": false,
+    "paidGateEligible": false,
+    "sellEnabled": false,
+    "promotionAllowed": false
+  },
+  "benchmark": {
+    "families": [
+      "ADMIN_CHANGE_ALERT",
+      "PROXY_UPGRADE_ALERT",
+      "PAUSE_STATE_ALERT",
+      "SUPPLY_CHANGE_ALERT",
+      "LIQUIDITY_DROP_ALERT",
+      "ORACLE_DEVIATION_ALERT",
+      "DUPLICATE_EVENT_DEDUP",
+      "OUT_OF_ORDER_EVENT_ORDERING",
+      "ALERT_DELIVERY_SLA",
+      "ACKNOWLEDGEMENT_SLA",
+      "PLAYBOOK_ACTION_COMPLETENESS",
+      "CUSTOMER_COMMUNICATION_COMPLETENESS"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304,
+    "mutationTypes": [
+      "schema_invalid",
+      "input_class_invalid",
+      "case_ref_invalid",
+      "target_address_invalid",
+      "runtime_digest_invalid",
+      "duplicate_rule_id",
+      "event_id_duplicate",
+      "event_source_digest_invalid",
+      "event_target_mismatch",
+      "event_time_invalid",
+      "playbook_root_digest_invalid",
+      "customer_handoff_digest_invalid"
+    ]
+  },
+  "truthBoundary": "A24 may prove deterministic local event evaluation, deduplication, ordering, incident lifecycle completeness and SLA enforcement over generated/offline cases only. It cannot claim a live monitoring provider, delivered production alerts, real on-call response, real customer communication, SLA performance, paid lifecycle coverage or incident prevention."
+}

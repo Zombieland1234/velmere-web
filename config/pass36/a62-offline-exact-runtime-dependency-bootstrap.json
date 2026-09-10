@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "velmere.pass36.a62.offline-exact-runtime-dependency-bootstrap.v2",
+  "revisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+  "parentRevisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+  "activeAcceptanceRevisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+  "exactBuildAcceptanceRevisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+  "expectedRuntime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "sourceManifestPath": "config/pass36/a102r44-current-root-descendant-manifest.json",
+  "packageLock": {
+    "path": "package-lock.json",
+    "sha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+    "expectedRemotePackages": 654,
+    "denominatorMigrationPath": "config/pass36/a102r41-a78-lockfile-denominator-migration.json"
+  },
+  "dependencyBundle": {
+    "schemaVersion": "velmere.pass36.a62.dependency-bundle.v1",
+    "manifestPath": "A62_DEPENDENCY_BUNDLE_MANIFEST.json",
+    "budgets": {
+      "maximumArchiveBytes": 1610612736,
+      "maximumEntries": 5000,
+      "maximumTotalUncompressedBytes": 2147483648,
+      "maximumSingleFileBytes": 268435456
+    }
+  },
+  "decisions": {
+    "verifiedInputs": "VERIFIED_EXACT_RUNTIME_DEPENDENCY_AND_BROWSER_INPUTS",
+    "verifiedBootstrap": "VERIFIED_LOCAL_OFFLINE_EXACT_BOOTSTRAP",
+    "blocked": "BLOCKED_RUNTIME_OR_DEPENDENCY_ARTIFACTS",
+    "rejected": "REJECTED_INTEGRITY",
+    "actionRequired": "ACTION_REQUIRED"
+  },
+  "promotionConditions": {
+    "officialNodeArchiveHashRequired": true,
+    "bundledNpmExactVersionRequired": true,
+    "packageLockExactHashRequired": true,
+    "everyRemotePackageTarballRequired": true,
+    "tarballSriRequired": true,
+    "offlineNpmCiRequired": true,
+    "a60VerifiedDecisionRequired": true,
+    "sourceUnchangedRequired": true,
+    "saleEnabled": false,
+    "liveProven": false,
+    "playwrightBrowserBundleRequired": true,
+    "browserBundleExternalSha256Required": true,
+    "browserLaunchSmokeRequired": true
+  },
+  "truthBoundary": "A62 can verify an exact official Node 24.18.0 archive for Windows x64 or Linux x64, its bundled npm 11.16.0, a complete lockfile-bound dependency tarball bundle, and an externally SHA-256-anchored Playwright Chromium bundle. It then prepares a no-network npm cache, proves a real browser launch, and invokes A60. It does not reconstruct missing artifacts, prove browser provenance beyond the supplied external anchor and launch test, prove staging or LIVE, or enable sale.",
+  "runtimeProfiles": {
+    "linux-x64": {
+      "archiveType": "tar.xz",
+      "fileName": "node-v24.18.0-linux-x64.tar.xz",
+      "sha256": "55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742",
+      "expectedRoot": "node-v24.18.0-linux-x64",
+      "nodeRelativePath": "bin/node",
+      "npmCliRelativePath": "lib/node_modules/npm/bin/npm-cli.js",
+      "pathDirectoryRelativePath": "bin",
+      "npmCommandRelativePath": "bin/npm",
+      "maximumArchiveBytes": 134217728,
+      "maximumEntries": 10000,
+      "maximumTotalBytes": 536870912,
+      "maximumSingleFileBytes": 268435456,
+      "allowedSymlinks": [
+        "node-v24.18.0-linux-x64/bin/npm",
+        "node-v24.18.0-linux-x64/bin/npx",
+        "node-v24.18.0-linux-x64/bin/corepack"
+      ]
+    },
+    "win32-x64": {
+      "archiveType": "zip",
+      "fileName": "node-v24.18.0-win-x64.zip",
+      "sha256": "0ae68406b42d7725661da979b1403ec9926da205c6770827f33aac9d8f26e821",
+      "expectedRoot": "node-v24.18.0-win-x64",
+      "nodeRelativePath": "node.exe",
+      "npmCliRelativePath": "node_modules/npm/bin/npm-cli.js",
+      "pathDirectoryRelativePath": ".",
+      "npmCommandRelativePath": "npm.cmd",
+      "maximumArchiveBytes": 134217728,
+      "maximumEntries": 10000,
+      "maximumTotalBytes": 536870912,
+      "maximumSingleFileBytes": 268435456,
+      "allowedSymlinks": []
+    }
+  },
+  "browserBundle": {
+    "schemaVersion": "velmere.pass36.a62.playwright-browser-bundle.v1",
+    "manifestPath": "A62_PLAYWRIGHT_BROWSER_BUNDLE_MANIFEST.json",
+    "playwrightVersion": "1.60.0",
+    "browserName": "chromium",
+    "browserVersion": "148.0.7778.96",
+    "browserRevision": "1223",
+    "rootDirectory": "ms-playwright",
+    "budgets": {
+      "maximumArchiveBytes": 2147483648,
+      "maximumEntries": 20000,
+      "maximumTotalUncompressedBytes": 4294967296,
+      "maximumSingleFileBytes": 1073741824
+    }
+  },
+  "historicalA57ManifestPath": "config/pass35/a57-source-manifest.json",
+  "currentSourceAuthorityPath": "config/pass36/current-release-authority.json",
+  "currentSourceRevisionId": "VELMERE_PASS36_A102R44_ACTION_REQUIRED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF_NO_LIVE_CREDIT",
+  "currentSourceParentRevisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT"
+}

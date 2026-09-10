@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "velmere.pass25.diff-from-pass24.v1",
+  "generatedAt": "2026-07-20T16:14:40.960398+00:00",
+  "baseArtifact": {
+    "name": "VELMERE_PASS24_EXACT_RUNTIME_MILESTONE_GATE_SAFE_SOURCE.zip",
+    "sha256": "334700d8a09b5197885d392a1017b8214b612838ed228a0cb3d61e71bfeeaf77",
+    "filesCompared": 3325
+  },
+  "currentArtifactRole": "PASS25_PREBUILD_CONFIGURATION_CLOSURE_SAFE_SOURCE",
+  "summary": {
+    "new": 11,
+    "changed": 16,
+    "deleted": 0,
+    "unchanged": 3309,
+    "currentFilesCompared": 3336
+  },
+  "newFiles": [
+    "config/pass24/package-payload-manifest.json",
+    "config/pass25/build-profile-policy.json",
+    "config/pass25/prebuild-budget.json",
+    "lib/build/build-profile.mjs",
+    "lib/build/build-watchdog-policy.mjs",
+    "scripts/pass25/audit-prebuild-readiness.mjs",
+    "scripts/pass25/common.mjs",
+    "scripts/pass25/run-build-watchdog.mjs",
+    "scripts/pass25/run-gate.mjs",
+    "scripts/pass25/test-build-watchdog-boundaries.mjs",
+    "scripts/pass25/verify-build-profile-contract.mjs"
+  ],
+  "changedFiles": [
+    "CLEAN_SAFE_README.md",
+    "README.md",
+    "VELMERE_RUN_FULL_CHECK.ps1",
+    "evaluation/pass17/market-adapter-output-index.jsonl",
+    "evaluation/pass17/market-adapter-simulation-summary.json",
+    "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+    "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+    "evaluation/pass18/audit-lens-evidence-fixtures.json",
+    "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+    "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+    "evaluation/pass19/brain-angel-evidence-fixtures.json",
+    "next.config.mjs",
+    "package.json",
+    "scripts/pass23/audit-runner-contract.mjs",
+    "scripts/worldclass/common-implementation-digest.mjs",
+    "tsconfig.json"
+  ],
+  "deletedFiles": [],
+  "truthBoundary": "Compares clean source payloads. Excludes CLEAN_SAFE_VERIFICATION.json, the current PASS25 payload manifest/current diff, local diagnostics, dependencies and build outputs."
+}

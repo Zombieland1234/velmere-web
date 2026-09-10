@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "velmere.pass36.a76.current-release-roadmap-regulatory-truth-authority-test.v1",
+  "revisionId": "VELMERE_PASS36_A76R0_CURRENT_REVISION_ROADMAP_AND_REGULATORY_PERIMETER_TRUTH_AUTHORITY",
+  "counts": {
+    "total": 44,
+    "passed": 44,
+    "failed": 0
+  },
+  "validatorChecks": 75,
+  "mutationScenarios": 43,
+  "checks": [
+    {
+      "id": "valid_bundle_all_checks_pass",
+      "pass": true,
+      "detail": {
+        "total": 75,
+        "failed": []
+      }
+    },
+    {
+      "id": "reject_current_source_drift",
+      "pass": true,
+      "detail": [
+        "authority:current-source"
+      ]
+    },
+    {
+      "id": "reject_authority_revision_drift",
+      "pass": true,
+      "detail": [
+        "authority:revision"
+      ]
+    },
+    {
+      "id": "reject_parent_drift",
+      "pass": true,
+      "detail": [
+        "authority:parent"
+      ]
+    },
+    {
+      "id": "reject_wrong_authority_path",
+      "pass": true,
+      "detail": [
+        "authority:path"
+      ]
+    },
+    {
+      "id": "reject_canonical_metric_rewrite",
+      "pass": true,
+      "detail": [
+        "planes:canonical",
+        "truth:separate-revisions"
+      ]
+    },
+    {
+      "id": "reject_metric_inflation",
+      "pass": true,
+      "detail": [
+        "planes:metrics"
+      ]
+    },
+    {
+      "id": "reject_acceptance_fixture_as_real",
+      "pass": true,
+      "detail": [
+        "planes:acceptance"
+      ]
+    },
+    {
+      "id": "reject_a61_false_recovery",
+      "pass": true,
+      "detail": [
+        "planes:a61"
+      ]
+    },
+    {
+      "id": "reject_a63_false_execution",
+      "pass": true,
+      "detail": [
+        "planes:a63"
+      ]
+    },
+    {
+      "id": "reject_duplicate_pointer",
+      "pass": true,
+      "detail": [
+        "pointers:unique",
+        "pointers:roadmap-class"
+      ]
+    },
+    {
+      "id": "reject_legacy_pointer_authoritative",
+      "pass": true,
+      "detail": [
+        "pointers:legacy-class",
+        "pointers:none-authoritative"
+      ]
+    },
+    {
+      "id": "reject_mirror_pointer_authoritative",
+      "pass": true,
+      "detail": [
+        "pointers:mirror-class",
+        "pointers:none-authoritative"
+      ]
+    },
+    {
+      "id": "reject_unclassified_legacy_pointer",
+      "pass": true,
+      "detail": [
+        "pointers:legacy-class"
+      ]
+    },
+    {
+      "id": "reject_authority_live_claim",
+      "pass": true,
+      "detail": [
+        "claims:closed"
+      ]
+    },
+    {
+      "id": "reject_authority_sale_claim",
+      "pass": true,
+      "detail": [
+        "claims:closed"
+      ]
+    },
+    {
+      "id": "reject_authority_world_class_claim",
+      "pass": true,
+      "detail": [
+        "claims:closed"
+      ]
+    },
+    {
+      "id": "reject_pass_count_shrink",
+      "pass": true,
+      "detail": [
+        "program:pass-count",
+        "program:pass-contiguous"
+      ]
+    },
+    {
+      "id": "reject_duplicate_pass",
+      "pass": true,
+      "detail": [
+        "program:pass-unique",
+        "program:pass-contiguous",
+        "program:revision-prefix"
+      ]
+    },
+    {
+      "id": "reject_noncontiguous_pass",
+      "pass": true,
+      "detail": [
+        "program:pass-contiguous",
+        "program:revision-prefix"
+      ]
+    },
+    {
+      "id": "reject_bad_revision_prefix",
+      "pass": true,
+      "detail": [
+        "program:revision-prefix"
+      ]
+    },
+    {
+      "id": "reject_missing_exit_evidence",
+      "pass": true,
+      "detail": [
+        "program:titles"
+      ]
+    },
+    {
+      "id": "reject_direct_sale_pass",
+      "pass": true,
+      "detail": [
+        "program:no-direct-promotion"
+      ]
+    },
+    {
+      "id": "reject_hidden_gap_rule",
+      "pass": true,
+      "detail": [
+        "program:living-rules"
+      ]
+    },
+    {
+      "id": "reject_frozen_percent_rule",
+      "pass": true,
+      "detail": [
+        "program:living-rules"
+      ]
+    },
+    {
+      "id": "reject_fixture_promotion",
+      "pass": true,
+      "detail": [
+        "program:fixture-boundary"
+      ]
+    },
+    {
+      "id": "reject_absolute_security_claim",
+      "pass": true,
+      "detail": [
+        "program:per-sku"
+      ]
+    },
+    {
+      "id": "reject_program_sale_claim",
+      "pass": true,
+      "detail": [
+        "program:claims-closed"
+      ]
+    },
+    {
+      "id": "reject_program_world_class_claim",
+      "pass": true,
+      "detail": [
+        "program:claims-closed"
+      ]
+    },
+    {
+      "id": "reject_legal_item_removed",
+      "pass": true,
+      "detail": [
+        "legal:count"
+      ]
+    },
+    {
+      "id": "reject_legal_duplicate",
+      "pass": true,
+      "detail": [
+        "legal:unique",
+        "legal:core-coverage"
+      ]
+    },
+    {
+      "id": "reject_silent_legal_approval",
+      "pass": true,
+      "detail": [
+        "legal:review-required"
+      ]
+    },
+    {
+      "id": "reject_weak_legal_evidence",
+      "pass": true,
+      "detail": [
+        "legal:evidence"
+      ]
+    },
+    {
+      "id": "reject_non_https_legal_source",
+      "pass": true,
+      "detail": [
+        "legal:official-source"
+      ]
+    },
+    {
+      "id": "reject_legal_no_block_effect",
+      "pass": true,
+      "detail": [
+        "legal:blocks"
+      ]
+    },
+    {
+      "id": "reject_mirror_source_drift",
+      "pass": true,
+      "detail": [
+        "mirror:source"
+      ]
+    },
+    {
+      "id": "reject_mirror_sale",
+      "pass": true,
+      "detail": [
+        "mirror:truth"
+      ]
+    },
+    {
+      "id": "reject_legacy_pointer_unclassified",
+      "pass": true,
+      "detail": [
+        "legacy:classification"
+      ]
+    },
+    {
+      "id": "reject_legacy_pointer_as_current",
+      "pass": true,
+      "detail": [
+        "legacy:classification"
+      ]
+    },
+    {
+      "id": "reject_legacy_a32_binding_drift",
+      "pass": true,
+      "detail": [
+        "legacy:a32"
+      ]
+    },
+    {
+      "id": "reject_active_pass_drift",
+      "pass": true,
+      "detail": [
+        "active:exact"
+      ]
+    },
+    {
+      "id": "reject_package_authority_drift",
+      "pass": true,
+      "detail": [
+        "package:authority"
+      ]
+    },
+    {
+      "id": "reject_old_readme_current_claim",
+      "pass": true,
+      "detail": [
+        "readme:current",
+        "readme:legacy"
+      ]
+    },
+    {
+      "id": "reject_roadmap_without_a76",
+      "pass": true,
+      "detail": [
+        "roadmap:header"
+      ]
+    }
+  ]
+}

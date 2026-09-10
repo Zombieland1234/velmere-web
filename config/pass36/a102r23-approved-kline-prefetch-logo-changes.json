@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "velmere.pass36.a102r23.approved-kline-prefetch-logo-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R23_ACTION_REQUIRED_KLINE_MODE_LOCAL_REFERENCE_DETAIL_ICON_REQUEST_AND_DEV_PREFETCH_STORM_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R22_ACTION_REQUIRED_LOCAL_DEV_RUNTIME_DATA_REFERENCE_ICON_AND_CONTINUOUS_ROUTE_TRANSITION_RECOVERY_NO_REAL_CREDIT",
+  "approvedFiles": [
+    {
+      "path": "lib/market-integrity/local-development-market-reference.ts",
+      "parentPresent": true,
+      "parentByteLength": 5569,
+      "parentSha256": "379852f23ee5def1998331243088da78a7f85edf9e0026e2ea26fa0374042617",
+      "currentByteLength": 9092,
+      "currentSha256": "2f2c2f5f9269fcc1133bee4d3449bfd12cec37cbd364c7fe9568b6961eee678b",
+      "changeType": "modified"
+    },
+    {
+      "path": "lib/market-integrity/kline-route-handler.ts",
+      "parentPresent": true,
+      "parentByteLength": 10384,
+      "parentSha256": "e465e70782d5bbff4e586494d8a33f8c8af2dc05b72033c5b4455795fc0038fe",
+      "currentByteLength": 10792,
+      "currentSha256": "33831e92f83586f24351f9f84b326e0cb0477138e23607abe3231b12b1535fb3",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "parentPresent": true,
+      "parentByteLength": 54767,
+      "parentSha256": "361c7d49ca4d4a7f5021a9305aa0e8ab2bea56fdbf84de11b6a2850bab70f108",
+      "currentByteLength": 55811,
+      "currentSha256": "f492fbf4c72f49aab507893448b6a71cbc18062b81e3d11a1400547d55ec40c5",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/ui/VelmereRouteTransition.tsx",
+      "parentPresent": true,
+      "parentByteLength": 13170,
+      "parentSha256": "a285c59a8c19c61471000f8dfc5e947a20530b90b0f579ada2d5207b239b01f6",
+      "currentByteLength": 14492,
+      "currentSha256": "455f948a8fce6a398d4ca322c4de3de21a57547e3e66d32c4c67d37d68f41402",
+      "changeType": "modified"
+    },
+    {
+      "path": "lib/market-integrity/asset-logo-resolver.ts",
+      "parentPresent": true,
+      "parentByteLength": 23169,
+      "parentSha256": "fa71162c2f9bd64c794975edf5de03580bf7d36a589fc6f16d031c63323af61e",
+      "currentByteLength": 23386,
+      "currentSha256": "7fe7cdc2c5ebf9fafdb9bf0110ac14d703191a6b05cb66e233cdb1064e1c0133",
+      "changeType": "modified"
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "parentPresent": true,
+      "parentByteLength": 15116,
+      "parentSha256": "fb87c0c655962858fde33f4f17d0553c153c5a5f357b38dd68ecbed33f85a99a",
+      "currentByteLength": 15385,
+      "currentSha256": "5c9b0aeb516b47212830d82e85cee93c15c24918cf2e270101cc4b501ec2102e",
+      "changeType": "modified"
+    },
+    {
+      "path": "README.md",
+      "parentPresent": true,
+      "parentByteLength": 28239,
+      "parentSha256": "962973e2fc45440ce82b883cfc0545b33faa9ffa0c62745051026d3115b43a42",
+      "currentByteLength": 30154,
+      "currentSha256": "7c364eee1abcd61aae01e0964831a6ceb41dba20bcc5983fc28c66d00ed120ab",
+      "changeType": "modified"
+    },
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "parentPresent": true,
+      "parentByteLength": 10636,
+      "parentSha256": "c26e01199f000c36d8bf63a02bb2ea2371e7359991081754aabbf27e71ec5c18",
+      "currentByteLength": 11561,
+      "currentSha256": "95cf5b0e154cb9e5a4b1209b647b9f2dd466e5182e07ec422a6309f68cb73d40",
+      "changeType": "modified"
+    }
+  ],
+  "fileCount": 8,
+  "truthBoundary": "Exact approved local kline, Shield Pro mode, route transition, development logo request, A42 bootstrap and human handoff changes only. No real provider, browser, build, LIVE or sale credit."
+}

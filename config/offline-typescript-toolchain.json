@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "velmere.offline-typescript-toolchain.v1",
+  "generatedAt": "2026-07-13T00:00:00.000Z",
+  "purpose": "Repository-local offline TypeScript transpilation and test execution only; not production runtime and not exact-build evidence.",
+  "packages": [
+    {
+      "name": "ts-node",
+      "version": "10.9.2",
+      "license": "MIT",
+      "licenseFile": ".velmere/offline-toolchain/node_modules/ts-node/LICENSE"
+    },
+    {
+      "name": "typescript",
+      "version": "5.8.3",
+      "license": "Apache-2.0",
+      "licenseFile": ".velmere/offline-toolchain/node_modules/typescript/LICENSE.txt",
+      "thirdPartyNotice": ".velmere/offline-toolchain/node_modules/typescript/ThirdPartyNoticeText.txt"
+    }
+  ],
+  "fileCount": 532,
+  "totalBytes": 27446253,
+  "aggregateSha256": "78dd564e2b31a831b45d8ed39028a756bed4b5da813fe2eb77cf83f742ac8531",
+  "productionDependency": false,
+  "exactCheckpointClaimed": false
+}

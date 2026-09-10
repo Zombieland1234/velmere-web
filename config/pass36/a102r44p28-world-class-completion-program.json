@@ -1,0 +1,34 @@
+{
+  "decision": "NO_GO",
+  "flags": {
+    "LIVE": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "implementedTracks": [
+    "external-ci-postgres-rls-19",
+    "sigstore-oidc-attestation",
+    "external-semantic-artifact-verification"
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "remainingTracks": [
+    "supabase-two-tenant-rls",
+    "stripe-test-12",
+    "storage-kms-email-10",
+    "backup-restore-10",
+    "incident-8",
+    "real-72h-3",
+    "exact-current-child-release",
+    "exact-windows",
+    "provider-rights-318-583",
+    "independent-review-and-customer-outcomes"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p28.world-class-completion-program.v1"
+}

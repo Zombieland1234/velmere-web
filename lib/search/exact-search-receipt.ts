@@ -1,0 +1,11 @@
+export type Pass579SearchCandidate = { id?: string | null; symbol?: string | null; name?: string | null; title?: string | null };
+export type Pass579ExactSearchReceipt = { version: "exact-search-receipt"; normalizedQuery: string; selectedKey: string | null; match: "exact_symbol" | "exact_id" | "exact_name" | "ranked_fallback" | "missing"; exact: boolean; candidateCount: number; boundary: string };
+export function normalizePass579SearchKey(value: unknown) { return String(value ?? "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase().replace(/[^a-z0-9:$./_-]+/g, " ").replace(/\s+/g, " "); }
+export function buildPass579ExactSearchReceipt<T extends Pass579SearchCandidate>(query: string, candidates: readonly T[]): { selected: T | null; receipt: Pass579ExactSearchReceipt } {
+  const normalizedQuery = normalizePass579SearchKey(query); const boundary = "Exact symbol, identifier and full-name matches always outrank fuzzy suggestions. Ranked fallback remains visibly non-exact.";
+  if (!normalizedQuery) return { selected: null, receipt: { version: "exact-search-receipt", normalizedQuery, selectedKey: null, match: "missing", exact: false, candidateCount: candidates.length, boundary } };
+  const rows = candidates.map((candidate) => ({ candidate, id: normalizePass579SearchKey(candidate.id), symbol: normalizePass579SearchKey(candidate.symbol), name: normalizePass579SearchKey(candidate.name ?? candidate.title) }));
+  const exactSymbol = rows.find((row) => row.symbol && row.symbol === normalizedQuery); const exactId = rows.find((row) => row.id && row.id === normalizedQuery); const exactName = rows.find((row) => row.name && row.name === normalizedQuery); const rankedFallback = rows[0]; const winner = exactSymbol ?? exactId ?? exactName ?? rankedFallback ?? null;
+  const match = exactSymbol ? "exact_symbol" : exactId ? "exact_id" : exactName ? "exact_name" : rankedFallback ? "ranked_fallback" : "missing";
+  return { selected: winner?.candidate ?? null, receipt: { version: "exact-search-receipt", normalizedQuery, selectedKey: winner ? winner.symbol || winner.id || winner.name || null : null, match, exact: match.startsWith("exact_"), candidateCount: candidates.length, boundary } };
+}

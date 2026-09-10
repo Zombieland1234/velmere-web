@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.a78-lockfile-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "classification": "FORMAL_STALE_POLICY_DENOMINATOR_CORRECTION_NO_SCORE_CREDIT",
+  "reason": "The immutable A102R40 input package-lock.json already has SHA-256 6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b and 654 lockfile-bound remote package rows. A62/A78 retained a stale hash and 827-row declaration from older bytes. This migration aligns policy to the unchanged current-source lockfile; it does not delete dependencies or tests and grants no exact bootstrap, build, browser, staging, LIVE or sale credit.",
+  "packageLock": {
+    "path": "package-lock.json",
+    "inputA102R40Sha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+    "currentSha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+    "sourceBytesChangedByMigration": false,
+    "stalePolicySha256": "542d0d10654125ff54015b4b619ee8c926cbcc0dec361fb5c1a723578b0d1401",
+    "staleDeclaredDenominator": 827,
+    "correctedDenominator": 654,
+    "delta": -173,
+    "scoreBefore": null,
+    "scoreAfter": null,
+    "scoreImprovementClaimed": false
+  },
+  "frozenInputEvidence": {
+    "manifestPath": "_velmere/PASS36_A102R40_SOURCE_ONLY_MANIFEST.json",
+    "manifestFileSha256": "54462e5a872fbaf87c4c89a3b0fe891c42edf9786a819d9f08c083a5f12b04b6",
+    "manifestSelfSha256": "cb7dbd7334dec461a77b347f562fe4cf7c8abb0dc59c30ec53172aba8b289dd6",
+    "a62PolicyBytes": 4829,
+    "a62PolicySha256": "fb74b3ded6b4b0964e82c3502e36255a9ce8261f58b1524d05fa0b82a0f80e8a",
+    "a78PolicyBytes": 3430,
+    "a78PolicySha256": "ca35950195e8a28e84f7fad2dd5578975510a2c8ed31cc04bc34023fee37f1cc",
+    "a78TestBytes": 5905,
+    "a78TestSha256": "951eb72e61d2ac185b7057bada4acd7ce6a32318c045e740c6a6acc1352a0ce6"
+  },
+  "testInventory": {
+    "frozenInputTestPaths": 816,
+    "frozenInputTestPathSetSha256": "a2e373cd2a5795f1448b114616efbaa03236b718a25c9c36d779e8eda465be52",
+    "removedForScore": 0,
+    "minimumCurrentTestPaths": 820,
+    "requiredNewNegativeTests": [
+      "lock-denominator-collapse-rejected",
+      "lock-hash-drift-rejected",
+      "browser-revision-drift-rejected",
+      "all-frozen-test-paths-retained"
+    ]
+  },
+  "verifierPath": "scripts/pass36/verify-a102r41-a78-lockfile-denominator-migration.mjs",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

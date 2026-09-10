@@ -1,0 +1,411 @@
+{
+  "schemaVersion": "velmere.pass23.native-language-review-checklist.v1",
+  "truthBoundary": "The translation wave is a model-assisted draft. Static parity and zero identical values do not replace native-speaker review, legal-language review, brand voice approval or browser rendering checks.",
+  "status": "PENDING_NATIVE_REVIEW",
+  "locales": {
+    "pl": {
+      "requiredReviewerRole": "native_polish_editor",
+      "status": "PENDING",
+      "reviewerIdHash": null,
+      "reviewedAt": null,
+      "receiptSha256": null
+    },
+    "de": {
+      "requiredReviewerRole": "native_german_editor",
+      "status": "PENDING",
+      "reviewerIdHash": null,
+      "reviewedAt": null,
+      "receiptSha256": null
+    }
+  },
+  "namespaces": [
+    {
+      "namespace": "Ai",
+      "translatedValues": 3,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "AmuCore",
+      "translatedValues": 13,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "Archive",
+      "translatedValues": 14,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "BajakProtocol",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "BajakProtocolLab",
+      "translatedValues": 9,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "Cart",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "Checkout",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "CheckoutReadiness",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "CybersecurityStack",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "Lookbook",
+      "translatedValues": 12,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "LuxuryActionModal",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "Nav",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "Newsletter",
+      "translatedValues": 6,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "PrimeFieldSimulation",
+      "translatedValues": 8,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "PrimeFormula",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "ProductLaunchChecklist",
+      "translatedValues": 11,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "Shop",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "SideActionPanel",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "SizeGuide",
+      "translatedValues": 9,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmAccessHeroVisual",
+      "translatedValues": 15,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmActionBar",
+      "translatedValues": 3,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmBasicPro",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmContractRegistry",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmCybersecurity",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmDashboardPanels",
+      "translatedValues": 11,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmHowToBuy",
+      "translatedValues": 4,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmHowToBuySidePanel",
+      "translatedValues": 9,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmLaunchDashboard",
+      "translatedValues": 2,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmLaunchScenario",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmLaunchSwapPreview",
+      "translatedValues": 11,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmModeSwitch",
+      "translatedValues": 1,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmProTerminal",
+      "translatedValues": 15,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmProtocolLabSidePanel",
+      "translatedValues": 3,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmProtocolLabTabs",
+      "translatedValues": 4,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmProtocolLabTeaser",
+      "translatedValues": 3,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmRoadmap",
+      "translatedValues": 10,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmSecurity",
+      "translatedValues": 11,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmStatus",
+      "translatedValues": 7,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmSupply",
+      "translatedValues": 14,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmSwapSidePanel",
+      "translatedValues": 9,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmTokenomics",
+      "translatedValues": 11,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmTradeModal",
+      "translatedValues": 7,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": true
+    },
+    {
+      "namespace": "VlmUtility",
+      "translatedValues": 8,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmVisual",
+      "translatedValues": 6,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmWalletModal",
+      "translatedValues": 13,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "VlmWalletSidePanel",
+      "translatedValues": 14,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    },
+    {
+      "namespace": "WalletButton",
+      "translatedValues": 3,
+      "polishStatus": "PENDING",
+      "germanStatus": "PENDING",
+      "brandVoiceStatus": "PENDING",
+      "legalReviewRequired": false
+    }
+  ],
+  "requiredChecks": [
+    "semantic_accuracy",
+    "native_fluency",
+    "brand_voice",
+    "terminology_consistency",
+    "placeholder_integrity",
+    "legal_claim_safety",
+    "gender_and_case_consistency",
+    "screen_reader_clarity"
+  ],
+  "translatedValues": 300,
+  "staticStatus": "PASS_DRAFT_COMPLETE_NATIVE_REVIEW_PENDING"
+}

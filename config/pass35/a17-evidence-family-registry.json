@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "velmere.pass35.a17.evidence-family-registry.v1",
+  "passId": "PASS35_A17",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "rules": [
+    {
+      "surfaceId": "shield",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "market_quote",
+        "chain_identity"
+      ]
+    },
+    {
+      "surfaceId": "shield",
+      "tier": "pro",
+      "floor": 2,
+      "families": [
+        "market_quote",
+        "order_book",
+        "chain_contract"
+      ]
+    },
+    {
+      "surfaceId": "shield",
+      "tier": "advanced",
+      "floor": 3,
+      "families": [
+        "market_quote",
+        "order_book",
+        "chain_contract",
+        "whale_flow",
+        "historical_snapshot"
+      ]
+    },
+    {
+      "surfaceId": "shield_pro",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "shield_basic_packet"
+      ]
+    },
+    {
+      "surfaceId": "shield_pro",
+      "tier": "pro",
+      "floor": 2,
+      "families": [
+        "market_quote",
+        "order_book",
+        "chain_contract"
+      ]
+    },
+    {
+      "surfaceId": "shield_pro",
+      "tier": "advanced",
+      "floor": 3,
+      "families": [
+        "market_quote",
+        "order_book",
+        "chain_contract",
+        "historical_replay"
+      ]
+    },
+    {
+      "surfaceId": "real_markets",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "asset_class_quote"
+      ]
+    },
+    {
+      "surfaceId": "real_markets",
+      "tier": "pro",
+      "floor": 2,
+      "families": [
+        "quote_history",
+        "corporate_actions_calendar",
+        "fx_reference"
+      ]
+    },
+    {
+      "surfaceId": "real_markets",
+      "tier": "advanced",
+      "floor": 3,
+      "families": [
+        "quote_history",
+        "corporate_actions_calendar",
+        "fx_reference",
+        "portfolio_regime_stress"
+      ]
+    },
+    {
+      "surfaceId": "audit_evm",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "source_bytecode_identity",
+        "chain_state"
+      ]
+    },
+    {
+      "surfaceId": "audit_evm",
+      "tier": "pro",
+      "floor": 3,
+      "families": [
+        "source_bytecode",
+        "static_analysis",
+        "exact_tests",
+        "fuzz_invariants",
+        "fork_replay",
+        "chain_state"
+      ]
+    },
+    {
+      "surfaceId": "audit_evm",
+      "tier": "advanced",
+      "floor": 5,
+      "families": [
+        "source_bytecode",
+        "static_analysis",
+        "path_analysis",
+        "exact_tests",
+        "fuzz_invariants",
+        "fork_replay",
+        "economic_adversarial",
+        "monitoring"
+      ]
+    },
+    {
+      "surfaceId": "pdf_delivery",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "canonical_ui_packet"
+      ]
+    },
+    {
+      "surfaceId": "pdf_delivery",
+      "tier": "pro",
+      "floor": 2,
+      "families": [
+        "canonical_ui_packet",
+        "material_evidence_index"
+      ]
+    },
+    {
+      "surfaceId": "pdf_delivery",
+      "tier": "advanced",
+      "floor": 3,
+      "families": [
+        "canonical_ui_packet",
+        "material_evidence_index",
+        "proof_capsule"
+      ]
+    },
+    {
+      "surfaceId": "market_impact",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "order_book_l2"
+      ]
+    },
+    {
+      "surfaceId": "market_impact",
+      "tier": "pro",
+      "floor": 2,
+      "families": [
+        "order_book_l2_primary",
+        "order_book_l2_independent",
+        "quote_conversion"
+      ]
+    },
+    {
+      "surfaceId": "market_impact",
+      "tier": "advanced",
+      "floor": 3,
+      "families": [
+        "order_book_l2_primary",
+        "order_book_l2_independent",
+        "order_book_l2_third",
+        "full_lineage"
+      ]
+    },
+    {
+      "surfaceId": "whale_watch",
+      "tier": "basic",
+      "floor": 1,
+      "families": [
+        "holder_distribution"
+      ]
+    },
+    {
+      "surfaceId": "whale_watch",
+      "tier": "pro",
+      "floor": 2,
+      "families": [
+        "holder_distribution",
+        "transfer_history",
+        "verified_wallet_labels"
+      ]
+    },
+    {
+      "surfaceId": "whale_watch",
+      "tier": "advanced",
+      "floor": 3,
+      "families": [
+        "holder_distribution",
+        "transfer_history",
+        "verified_wallet_labels",
+        "market_impact_exit_stress"
+      ]
+    }
+  ],
+  "truthBoundary": "Families are explicit engineering evidence lanes. They do not claim that a current provider, analyzer, reviewer or customer observation exists."
+}

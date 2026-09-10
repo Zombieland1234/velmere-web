@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "velmere.pass36.a101.slo-error-budget-vendor-exit-recovery-policy.v1",
+  "revisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "localPassCredit": false,
+  "purpose": "Fail-closed local boundary for current measured SLO, strict error-budget algebra, independent vendor-exit observation, revoked-primary credential proof, bounded alternate-provider service probes and compensating primary restore.",
+  "slo": {
+    "targetAvailabilityPercent": 99,
+    "minimumWindowSeconds": 900,
+    "maximumWindowSeconds": 1800,
+    "maximumWindowAgeSeconds": 180,
+    "maximumClockSkewSeconds": 2,
+    "minimumSamples": 50,
+    "maximumSamples": 1000000,
+    "availabilityTolerancePercentagePoints": 0.05,
+    "p95MillisecondsMaximum": 1500,
+    "p99MillisecondsMaximum": 3000,
+    "freshnessP95SecondsMaximum": 120,
+    "errorBudgetConsumedPercentMaximum": 100,
+    "strictNativeNumberTypes": true,
+    "countAlgebraRequired": true,
+    "independentTelemetryFamilyRequired": true
+  },
+  "vendorExit": {
+    "maximumSeconds": 120,
+    "primaryTrafficPercentRequired": 0,
+    "primaryCredentialActiveRequired": false,
+    "primaryCachePurgedRequired": true,
+    "alternateActiveRequired": true,
+    "independenceDimensions": 6,
+    "dualControlRequired": true,
+    "webauthnRequired": true,
+    "credentialProbeStatusAllowed": [401, 403]
+  },
+  "alternateServiceProbes": {
+    "minimum": 10,
+    "maximum": 100,
+    "minimumAvailabilityPercent": 90,
+    "p95MillisecondsMaximum": 2000,
+    "freshnessSecondsMaximum": 120,
+    "uniqueSampleIdsRequired": true,
+    "exactAlternateProviderBindingRequired": true,
+    "independentObserverRequired": true
+  },
+  "recovery": {
+    "primaryRestoreAttempts": 3,
+    "primaryTrafficPercentRequired": 100,
+    "alternateTrafficPercentRequired": 0,
+    "primaryCredentialActiveRequired": true,
+    "cacheWarmRequired": true,
+    "serviceHealthyRequired": true,
+    "finalPrimaryBaselineRequired": true,
+    "unconfirmedRestoreDecision": "RECOVERY_REQUIRED"
+  },
+  "localDenominators": {
+    "boundaryAssertions": 94,
+    "fixtureScenarios": 15,
+    "realSloWindows": 0,
+    "realVendorExitRuns": 0,
+    "realCredentialRevocationProbes": 0,
+    "realAlternateServiceProbeSets": 0,
+    "realPrimaryRestoreConfirmations": 0
+  },
+  "promotion": {
+    "exactReleaseCredit": false,
+    "stagingCredit": false,
+    "productionSloProven": false,
+    "continuousMonitoringProven": false,
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "gaps": [
+    {
+      "id": "A101-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Bind one current 900-1800 second telemetry window to exact source, environment and independent telemetry family; reject stale, future, coerced or algebraically inconsistent metrics."
+    },
+    {
+      "id": "A101-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Recompute availability and error-budget consumption from exact integer counters; reported metrics cannot self-authorize SLO credit."
+    },
+    {
+      "id": "A101-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require an alternate provider independent across provider, vendor, account, failure domain, control plane and credential before a vendor-exit drill can begin."
+    },
+    {
+      "id": "A101-GAP-04",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require zero primary traffic, revoked primary credential, purged cache and independently observed alternate activation within 120 seconds."
+    },
+    {
+      "id": "A101-GAP-05",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Prove the old primary credential is rejected with 401/403 by an independent observer before vendor-exit success credit."
+    },
+    {
+      "id": "A101-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Execute at least ten unique alternate-provider probes with exact provider identity, request/observation chronology, payload binding, availability, latency and freshness floors."
+    },
+    {
+      "id": "A101-GAP-07",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Every post-mutation path must attempt primary restore up to three times and verify a healthy final baseline; otherwise return RECOVERY_REQUIRED."
+    },
+    {
+      "id": "A101-GAP-08",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "SLO, provider-independence and dual-control failures must execute zero vendor mutations."
+    },
+    {
+      "id": "A101-GAP-09",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Record the bounded lifecycle in an append-only hash-chained journal without raw credentials, provider secrets or customer identifiers."
+    },
+    {
+      "id": "A101-GAP-10",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute one complete current disposable-staging SLO and vendor-exit/recovery run on exact A77R1-A80R1 frozen bytes with real telemetry, distinct provider failure domains, credential rejection, alternate probes and confirmed primary restoration."
+    }
+  ]
+}

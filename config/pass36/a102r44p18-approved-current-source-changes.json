@@ -1,0 +1,233 @@
+{
+  "added": [
+    {
+      "byteLength": 1500,
+      "mode": 420,
+      "path": "VELMERE_A102R44P18_PATCH.txt",
+      "sha256": "b0e5ddc965d76d9050712b5420c379d121fe8748b3b83891e61d73fd227a2661"
+    },
+    {
+      "byteLength": 1941,
+      "mode": 420,
+      "path": "config/pass36/a102r44p18-action-required-current-state.json",
+      "sha256": "9a62e15a43e2c1a58dad8d29eade105aee300faa4a57edd7a1081b8edcb7bb64"
+    },
+    {
+      "byteLength": 7767,
+      "mode": 420,
+      "path": "config/pass36/a102r44p18-official-provider-rights-decision-matrix.json",
+      "sha256": "514adbb929e0959eaeef1aa0ca6fe0137651772fa02f6f3e392243857191954b"
+    },
+    {
+      "byteLength": 1610,
+      "mode": 420,
+      "path": "config/pass36/a102r44p18-parent-package-binding.json",
+      "sha256": "353c99965ea6e116006b8ac9d2d6515e1c72c7d5ebd547aa41ac4dc58d64a909"
+    },
+    {
+      "byteLength": 561,
+      "mode": 420,
+      "path": "lib/compliance/provider-delivery-rights-gate.d.ts",
+      "sha256": "c068f74efb46f02fbe8d77c146824a9523bd0f90a6f4ffc64b4097c8a7f9dc5f"
+    },
+    {
+      "byteLength": 5319,
+      "mode": 420,
+      "path": "lib/compliance/provider-delivery-rights-gate.mjs",
+      "sha256": "6b25979b58886cc27ad2a8614e363deeb2a7fb2b04e7cbbf5f92372ba7f3f67a"
+    },
+    {
+      "byteLength": 1982,
+      "mode": 420,
+      "path": "lib/market-integrity/provider-rights-public-summary.ts",
+      "sha256": "0a4952c1c507e08454cb7edb0d1fa13622391fdb720c1f6de10976c782b1b7f4"
+    },
+    {
+      "byteLength": 3350,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p18-market-output-rights-boundary.mjs",
+      "sha256": "bb62344060bd1626d5174a4a2d2db586a45e745fa7da38b66e02f8e416bddc14"
+    },
+    {
+      "byteLength": 5328,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p18-provider-rights-gate.mjs",
+      "sha256": "df5bfd4d1393ac7316f57a84b28d9d7f00ddc761adcf6b82eb8720f107a7171c"
+    },
+    {
+      "byteLength": 3468,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p18-approved-source-changes.mjs",
+      "sha256": "933e01374f59777b64daae8c867111e6d75d10047bd11c5b6130c16da2575c33"
+    },
+    {
+      "byteLength": 4818,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p18-source-authority.mjs",
+      "sha256": "3b517fcc610bd79db5af15dd36b8c467ec3d94725e9398b8e8d15f70f8dd69c8"
+    },
+    {
+      "byteLength": 3579,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p18-static-policy.mjs",
+      "sha256": "853acd7d819595f1723ae2433e510d3cebeca903aff9fd73297e145e6b594f18"
+    }
+  ],
+  "addedCount": 12,
+  "approvedReason": "Official provider terms/plan engineering review, canonical digest hardening, authoritative rights-matrix integration and fail-closed customer/paid delivery enforcement. Missing or self-asserted rights cannot grant output. No provider approval or legal signature is fabricated.",
+  "deleted": [],
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "modified": [
+    {
+      "current": {
+        "byteLength": 133,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "96478c81040dbed2a206a70cf202540135dc0ebd3c25b95e350327242fb430a2"
+      },
+      "parent": {
+        "byteLength": 144,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "25092f81a070ffb17ff7227681a78c4ed86720223a0d33ffd052f9528840774b"
+      },
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "current": {
+        "byteLength": 1970508,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "2f8650a95b0e917613dc64401624928c3cdcb66f9a0c8d11738e7204188f694e"
+      },
+      "parent": {
+        "byteLength": 1965591,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "6f8152b0cfeef696f88227b540d9fa6cebdc70674a45dd503feb070f63726442"
+      },
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "current": {
+        "byteLength": 13838,
+        "mode": 420,
+        "path": "config/pass21/provider-commercial-rights-registry.json",
+        "sha256": "808cebffe79543f8aa6da86a6f8e218eaa49aa8bff3c488856d8bc6e6dee6c05"
+      },
+      "parent": {
+        "byteLength": 13249,
+        "mode": 420,
+        "path": "config/pass21/provider-commercial-rights-registry.json",
+        "sha256": "13f98966563c683ede63d19c1f961f986b6229a33998e788a790ffcdb7445661"
+      },
+      "path": "config/pass21/provider-commercial-rights-registry.json"
+    },
+    {
+      "current": {
+        "byteLength": 687,
+        "mode": 420,
+        "path": "lib/server/real-markets-route-modules/provider-contract.ts",
+        "sha256": "00a07c41063ad1ffb609dbb48ef9e4c79feb5376f11336e4a089d60226c99b99"
+      },
+      "parent": {
+        "byteLength": 511,
+        "mode": 420,
+        "path": "lib/server/real-markets-route-modules/provider-contract.ts",
+        "sha256": "9ebaecfa184e8b6f65a01dcfc3ced150185058068ed7fde6462883889e3f12ce"
+      },
+      "path": "lib/server/real-markets-route-modules/provider-contract.ts"
+    },
+    {
+      "current": {
+        "byteLength": 1869,
+        "mode": 420,
+        "path": "lib/worldclass/market-output-adapter.d.ts",
+        "sha256": "06829d3293cacca977c4ec30d35e612885815619fee567a5491fc009459bdad0"
+      },
+      "parent": {
+        "byteLength": 1390,
+        "mode": 420,
+        "path": "lib/worldclass/market-output-adapter.d.ts",
+        "sha256": "8305290295de3dc0d8d8e2497df2b7c70da5c85bc9ad76da5f6c9f6ffd9dd9b1"
+      },
+      "path": "lib/worldclass/market-output-adapter.d.ts"
+    },
+    {
+      "current": {
+        "byteLength": 24905,
+        "mode": 420,
+        "path": "lib/worldclass/market-output-adapter.mjs",
+        "sha256": "e0eaa111708da259dffa09e4bebf6921daf87a3eeeac218b4adc7f3a161f29fd"
+      },
+      "parent": {
+        "byteLength": 23041,
+        "mode": 420,
+        "path": "lib/worldclass/market-output-adapter.mjs",
+        "sha256": "e88f06cd76933727bde69de7280adfca9a6d539acce2df5d6fa1e007007cfc43"
+      },
+      "path": "lib/worldclass/market-output-adapter.mjs"
+    },
+    {
+      "current": {
+        "byteLength": 122393,
+        "mode": 420,
+        "path": "package.json",
+        "sha256": "6899d8827bc8314a8a7f683cd6f0bfae37299e99fe73baf69a4bc53484caa1d7"
+      },
+      "parent": {
+        "byteLength": 122128,
+        "mode": 420,
+        "path": "package.json",
+        "sha256": "9fa271f6f6cdc22f7e8761f11b1c1d2ab20bc7e8da9f3bd543836e22e602fc0d"
+      },
+      "path": "package.json"
+    },
+    {
+      "current": {
+        "byteLength": 6409,
+        "mode": 420,
+        "path": "scripts/pass17/test-market-output-adapter-boundaries.mjs",
+        "sha256": "c231b8a041285ab06900d7b307267f0f707d2161522b3348149eb8bf7e32e0d5"
+      },
+      "parent": {
+        "byteLength": 6376,
+        "mode": 420,
+        "path": "scripts/pass17/test-market-output-adapter-boundaries.mjs",
+        "sha256": "e64ea76d4ece27a96adb488ecebae6210f1bd6642481b6db9afa87223b2b6b64"
+      },
+      "path": "scripts/pass17/test-market-output-adapter-boundaries.mjs"
+    },
+    {
+      "current": {
+        "byteLength": 13850,
+        "mode": 420,
+        "path": "scripts/pass17/verify-market-output-adapters.mjs",
+        "sha256": "544b4e746a6592a4ce917cfee2b9e1c0a1d6bbeb5e33d85d1ae04126be9be692"
+      },
+      "parent": {
+        "byteLength": 13772,
+        "mode": 420,
+        "path": "scripts/pass17/verify-market-output-adapters.mjs",
+        "sha256": "ec1c9ca53d95fe053f0e364f4ee3c71da0d47609f101c7d327e82b21dde77cc4"
+      },
+      "path": "scripts/pass17/verify-market-output-adapters.mjs"
+    }
+  ],
+  "modifiedCount": 9,
+  "parentManifestEntry": {
+    "byteLength": 1238088,
+    "mode": 420,
+    "path": "_velmere/PASS36_A102R44P17_SOURCE_ONLY_MANIFEST.json",
+    "sha256": "59284738fcfa269533419c345fbbe0789c443a7f485c9050036394e30acf9bc7"
+  },
+  "parentManifestPath": "_velmere/PASS36_A102R44P17_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "59284738fcfa269533419c345fbbe0789c443a7f485c9050036394e30acf9bc7",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P18_ACTION_REQUIRED_OFFICIAL_PROVIDER_RIGHTS_FAIL_CLOSED_CUSTOMER_DELIVERY_COINPAPRIKA_COINBASE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p18.approved-current-source-changes.v1",
+  "selfExcludedPath": "config/pass36/a102r44p18-approved-current-source-changes.json",
+  "sourceManifestExcludedPath": "_velmere/PASS36_A102R44P18_SOURCE_ONLY_MANIFEST.json"
+}

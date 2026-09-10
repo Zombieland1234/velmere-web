@@ -1,0 +1,126 @@
+{
+  "commonAncestorRevisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "mergeDecisions": {
+    "applicationRedactions": [
+      "components/launch/AdminAuditWriteApiPanel.tsx",
+      "components/launch/AdminMutationAuditPanel.tsx",
+      "lib/security/market-integrity-cron-auth.ts"
+    ],
+    "durableReplayFilesPreserved": [
+      "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+      "scripts/pass36/test-a102r44p27-admission-journal.mjs",
+      "scripts/pass36/test-a102r44p27-concurrent-admission.mjs",
+      "scripts/pass36/test-a102r44p27-envelope-hardening.mjs",
+      "scripts/pass36/test-a102r44p27-external-evidence-import.mjs"
+    ],
+    "explicitlyNotImported": [
+      "package.json",
+      "config/pass36/current-release-authority.json",
+      "config/current-release.json",
+      "config/pass35/current-revision.json",
+      "VELMERE_ACTIVE_PASS.txt",
+      "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    ],
+    "importedAsR44P29Paths": [
+      "config/pass36/a102r44p29-trust-anchor-policy.json",
+      "config/pass36/a102r44p29-evidence-quarantine-policy.json",
+      "config/pass36/a102r44p29-72h-watchdog-policy.json",
+      "scripts/pass36/a102r44p29-trust-anchor-lib.mjs",
+      "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+      "scripts/pass36/a102r44p29-72h-watchdog-lib.mjs",
+      "scripts/pass36/test-a102r44p29-dual-control-trust-anchor.mjs",
+      "scripts/pass36/test-a102r44p29-evidence-quarantine.mjs",
+      "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+      "scripts/pass36/test-a102r44p29-active-credential-literal-hygiene.mjs"
+    ],
+    "importedOriginalPaths": [
+      "config/pass36/a102r44p27-trust-anchor-policy.json",
+      "config/pass36/a102r44p27-evidence-quarantine-policy.json",
+      "config/pass36/a102r44p27-72h-watchdog-policy.json",
+      "scripts/pass36/a102r44p27-trust-anchor-lib.mjs",
+      "scripts/pass36/a102r44p27-evidence-quarantine-lib.mjs",
+      "scripts/pass36/a102r44p27-72h-watchdog-lib.mjs",
+      "scripts/pass36/test-a102r44p27-dual-control-trust-anchor.mjs",
+      "scripts/pass36/test-a102r44p27-evidence-quarantine.mjs",
+      "scripts/pass36/test-a102r44p27-72h-watchdog.mjs",
+      "scripts/pass36/test-a102r44p27-active-credential-literal-hygiene.mjs"
+    ]
+  },
+  "parentR44P28": {
+    "aggregateSha256": "49ff87b520be77840222f724a541650283ed5d3c958cd437e7326a92b2101e1e",
+    "manifestSha256": "4a57ea62ebbdc5422fe47cfe5a2f8b6b247442efa4b083f043e7872ca13f7cd1",
+    "sourceZipSha256": "478f5e612043a583856fe077d4ed13661cee29fe1a55a3c2df852b981775e9c8"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "physicalDiff": {
+    "addedInSibling": [
+      "config/pass36/a102r44p27-72h-watchdog-policy.json",
+      "config/pass36/a102r44p27-evidence-quarantine-policy.json",
+      "config/pass36/a102r44p27-trust-anchor-policy.json",
+      "scripts/pass36/a102r44p27-72h-watchdog-lib.mjs",
+      "scripts/pass36/a102r44p27-evidence-quarantine-lib.mjs",
+      "scripts/pass36/a102r44p27-trust-anchor-lib.mjs",
+      "scripts/pass36/test-a102r44p27-72h-watchdog.mjs",
+      "scripts/pass36/test-a102r44p27-active-credential-literal-hygiene.mjs",
+      "scripts/pass36/test-a102r44p27-dual-control-trust-anchor.mjs",
+      "scripts/pass36/test-a102r44p27-evidence-quarantine.mjs"
+    ],
+    "modifiedInSibling": [
+      "VELMERE_ACTIVE_PASS.txt",
+      "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "components/launch/AdminAuditWriteApiPanel.tsx",
+      "components/launch/AdminMutationAuditPanel.tsx",
+      "config/current-release.json",
+      "config/pass35/current-revision.json",
+      "config/pass36/a102r44p27-action-required-current-state.json",
+      "config/pass36/a102r44p27-approved-current-source-changes.json",
+      "config/pass36/a102r44p27-world-class-completion-program.json",
+      "config/pass36/current-release-authority.json",
+      "lib/security/market-integrity-cron-auth.ts",
+      "package.json",
+      "scripts/pass36/verify-a102r44p27-approved-current-source-changes.mjs",
+      "scripts/pass36/verify-a102r44p27-current-release-pointers.mjs",
+      "scripts/pass36/verify-a102r44p27-source-authority.mjs",
+      "scripts/pass36/verify-a102r44p27-static-policy.mjs"
+    ],
+    "removedInSibling": [
+      "VELMERE_A102R44P27_PATCH.txt",
+      "config/pass36/a102r44p27-external-evidence-admission-policy.json",
+      "config/pass36/a102r44p27-external-evidence-trust-policy.json",
+      "config/pass36/a102r44p27-staging-semantic-policy.json",
+      "scripts/pass36/a102r44p27-admission-race-worker.mjs",
+      "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+      "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+      "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+      "scripts/pass36/test-a102r44p27-admission-journal.mjs",
+      "scripts/pass36/test-a102r44p27-concurrent-admission.mjs",
+      "scripts/pass36/test-a102r44p27-envelope-hardening.mjs",
+      "scripts/pass36/test-a102r44p27-external-evidence-import.mjs"
+    ]
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p29.r44p27-fork-reconciliation.v1",
+  "selectedLineage": {
+    "aggregateSha256": "3643fce7cdd54b9f2e0180356f0677c6e4b66856138ae0c3216fdf6440b30287",
+    "continuedByR44P28": true,
+    "manifestSha256": "2fbae8adc5d2c1e22c4ca0feedd8a03de2e62eaa5081c2ab805edd2d755472af",
+    "r44p27RevisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+    "sourceZipSha256": "3f4eb80c39a9deb6484d47d2515ad01df3ca802ef6965a49eb8f15f365023f86"
+  },
+  "siblingLineage": {
+    "aggregateSha256": "a79d2d79aee41f9b0e2a30eab479812654b34af30445dc18a27f454462166315",
+    "manifestSha256": "74805c03eaf63cee0a35558c5aa23da4b85d36e18cfdb519669f5fda1a769fb2",
+    "mayBecomeParent": false,
+    "r44p27RevisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DUAL_CONTROL_TRUST_ANCHOR_EVIDENCE_QUARANTINE_AND_REAL_TIME_72H_WATCHDOG_NO_LIVE_CREDIT",
+    "silentMergeForbidden": true,
+    "sourceZipSha256": "383816e58a15a1508567941de550c5c058f9537ad2258651c05c6bc4b127977a"
+  },
+  "truthBoundary": {
+    "exactReleaseCredit": false,
+    "forkResolved": true,
+    "liveCredit": false,
+    "saleCredit": false,
+    "siblingEvidencePromoted": false,
+    "stagingCredit": false
+  }
+}

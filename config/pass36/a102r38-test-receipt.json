@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "velmere.pass36.a102r38.test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "generatedAt": "2026-08-01T05:10:00+02:00",
+  "status": "PASS_A102R38_TARGETED_AND_STATIC_REGRESSION_ACTION_REQUIRED_NO_EXACT_BUILD_BROWSER_CREDIT",
+  "checks": 46,
+  "passed": 46,
+  "failed": 0,
+  "productionSmokeContractChecks": 82,
+  "productionSmokeContractPassed": 82,
+  "parentA102R36PortabilityChecks": 39,
+  "a42CriticalVerifierChecks": 45,
+  "a42CriticalFilesPassed": 76,
+  "a42ContractChecks": 126,
+  "routeAstRegistryChecks": 1021,
+  "routeAstRegistryFiles": 254,
+  "routeAstMethodExports": 316,
+  "routeDispatchChecks": 1480,
+  "routeDispatchPassed": 1480,
+  "routeTamperChecks": 7,
+  "lazyRouteChecks": 176,
+  "sourceAuditGeneratedNextTypesChecks": 11,
+  "localRegressionStages": 13,
+  "localRegressionStagesPassed": 13,
+  "sourceAudit": {
+    "filesRead": 5434,
+    "codeFiles": 3350,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "toolchainTruth": {
+    "routeAstParser": "DIAGNOSTIC_EXTERNAL_ONLY_TYPESCRIPT_5_8_3",
+    "routeAstExactCredit": false,
+    "availableNode": "22.16.0",
+    "availableNpm": "10.9.2",
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "officialArtifactDnsResolved": false,
+    "localNpmCacheContentEntries": 0,
+    "freshDependencyInstallExecuted": false,
+    "freshWebpackBuildExecuted": false,
+    "freshTurbopackBuildExecuted": false,
+    "freshExactChromeExecuted": false
+  },
+  "promotion": {
+    "a102PassCredit": false,
+    "exactBuildBrowserCreditOnA102R38": false,
+    "r37r4BuildsRetainedAsHistoricalDiagnosticEvidenceOnly": true,
+    "r37r4Smoke55Of55ClaimRetained": false,
+    "r37r4SmokeUniqueCredit": {
+      "passed": 52,
+      "required": 55
+    },
+    "windowsExactRuntimeCredit": false,
+    "stagingCredit": false,
+    "liveCredit": false,
+    "saleCredit": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "velmere.customer-facing-sku-truth.v2",
+  "revisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "findingConfidence": {
+    "publicValue": "NOT_CALIBRATED",
+    "numericTierConfidenceAllowed": false
+  },
+  "reviewStatus": {
+    "publicValue": "AUTOMATED_UNREVIEWED",
+    "humanReviewClaimAllowed": false
+  },
+  "adjudicationStatus": {
+    "publicValue": "NOT_PERFORMED"
+  },
+  "tiers": {
+    "basic": {
+      "customerDecision": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_RETEST",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false
+    },
+    "pro": {
+      "customerDecision": "CONTROLLED_INVITATION_ONLY_BETA",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false,
+      "manualQaRequired": true
+    },
+    "advanced": {
+      "customerDecision": "NOT_FOR_SALE",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false,
+      "independentCertification": false
+    }
+  },
+  "customerStatusNormalization": {
+    "human_review_queued": "analysis_queue",
+    "human_review_processing": "analysis_processing",
+    "human_review_completed": "analysis_completed",
+    "operator_signoff_pending": "analysis_verification_pending",
+    "human_review": "analysis_processing",
+    "human_review_queue": "analysis_queue",
+    "advanced_human_review": "advanced_analysis_unavailable",
+    "mark_human_review": "mark_manual_qa"
+  },
+  "forbiddenCustomerClaims": [
+    "independent certification",
+    "guaranteed secure",
+    "human reviewed",
+    "operator signoff included",
+    "live provider coverage"
+  ],
+  "legacyCompatibility": {
+    "allowedInternally": true,
+    "customerVisible": false,
+    "migrationState": "PARTIAL_COMPATIBILITY_ONLY",
+    "truthBoundary": "Legacy identifiers may be read for historical records but must be normalized before customer output."
+  }
+}

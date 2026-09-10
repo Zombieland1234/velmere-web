@@ -1,0 +1,98 @@
+{
+  "classification": "EXTERNAL_CI_STRIPE_MOCK_PROTOCOL_ONLY",
+  "evidence": {
+    "artifactIndexPath": "evidence/R44P32_ARTIFACT_INDEX.json",
+    "deterministicTarBytes": 5067,
+    "deterministicTarFilename": "r44p32-external-ci-stripe-mock-evidence.tar.gz",
+    "deterministicTarSha256": "bf862a3e7b7977fc1bfa877deab3235fb8ec66f01b49b0e6359d3706df443b1f",
+    "independentVerifierChecks": 170,
+    "independentVerifierPath": "R44P32_INDEPENDENT_EXTERNAL_CI_VERIFICATION.json",
+    "ledgerPath": "evidence/R44P32_EXTERNAL_CI_STRIPE_MOCK_LEDGER.json",
+    "requiredCaseIds": [
+      "checkout-schema",
+      "signed-webhook",
+      "paymentintent-binding",
+      "entitlement-activation",
+      "duplicate-idempotency",
+      "event-reorder",
+      "replay-denial",
+      "refund-schema",
+      "refund-webhook",
+      "entitlement-revocation",
+      "reconciliation",
+      "controlled-dead-letter-requeue"
+    ],
+    "runnerCorrectionPath": "evidence/R44P32_EXTERNAL_RUNNER_CORRECTION.json",
+    "runnerIdentityPath": "evidence/R44P32_EXTERNAL_RUNNER_IDENTITY.json",
+    "runnerSnapshotSha256": "ae301ddf746f1974ce3ea730642dbd07f854ef01ac957b7ef853a52a8d7f1721",
+    "serviceImage": "stripe/stripe-mock:v0.202.0",
+    "serviceImageId": "sha256:88b6c6a538aa0df74a2d6cb71485e7184f3d72b6187aa177e450146b1796a554",
+    "sigstoreBundleFilename": "r44p32-external-ci-stripe-mock-evidence.sigstore.json",
+    "sigstoreBundleSha256": "b5207481405ee738fe46acefeba29af91e6768b02d787d4f64e17a4191e73b61",
+    "verifierSnapshotSha256": "01db598141ea153caf2968bbeb55f84b7db4da2610e0d40925770c0c9c085296"
+  },
+  "expectedParentSource": {
+    "aggregateSha256": "7ae273adc609b7d48894434f56ec8d99d622ac37088d897160ba3607573f8216",
+    "manifestPath": "_velmere/PASS36_A102R44P32_SOURCE_ONLY_MANIFEST.json",
+    "manifestSha256": "d2e7c5cb646686e6aba652f219ae11ec542f216ae7d27cc8095a62440e23a872",
+    "revisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+    "sourceArchiveSha256": "70d8d2e14f339f5167c631b751e0292ee4e23247dcf8a6a3ad5ce2ff92184793"
+  },
+  "github": {
+    "artifactBytes": 39768,
+    "artifactId": "9014198185",
+    "artifactName": "r44p32-external-ci-stripe-mock-sigstore-evidence",
+    "artifactZipSha256": "e29c86c3c9166e27a5884f2a14f4d53b8d3773c9db5709abecf20130ac6457c4",
+    "headBranch": "r44p32-stripe-test-admission-20260808",
+    "headSha": "fc59592b20863c8b3074ead156a5b9b0220604ff",
+    "mergeSha": "e53a27fa4ef68074f6f7ad9584dc2e96be71a6d0",
+    "pullRequest": 19,
+    "repository": "Zombieland1234/velmere1",
+    "runAttempt": "1",
+    "runId": "31232247515",
+    "workflowPath": ".github/workflows/r44p32-external-ci-stripe-mock-protocol.yml",
+    "workflowSan": "https://github.com/Zombieland1234/velmere1/.github/workflows/r44p32-external-ci-stripe-mock-protocol.yml@refs/pull/19/merge",
+    "workflowSha256": "455a7dcca8049f31673166ef4c8fcaade1df610ce260fb3ac1983c0a3fa4d056"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P33_ACTION_REQUIRED_EXTERNAL_CI_STRIPE_MOCK_PROTOCOL12_SIGSTORE_OIDC_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p33.external-stripe-mock-policy.v1",
+  "security": {
+    "inclusionPromiseRequired": true,
+    "inclusionProofRequired": true,
+    "liveStripePrefixesForbidden": [
+      "sk_live_",
+      "pk_live_"
+    ],
+    "maxLeafCertificateLifetimeSeconds": 900,
+    "privateKeyMaterialForbidden": true,
+    "rfc3161TimestampRequired": true,
+    "singleTlogEntryRequired": true
+  },
+  "semanticContract": {
+    "deadLetterRequeueSingleUse": true,
+    "duplicateEventIdWithDifferentPayloadMustBeDenied": true,
+    "rawWebhookPayloadStorageForbidden": true,
+    "rawWebhookSecretStorageForbidden": true,
+    "refundSchemaIsStripeMockSchemaOnly": true,
+    "requiredAmountMinor": 4900,
+    "requiredCurrencyForLocalProtocol": "eur",
+    "requiredDenominator": 12,
+    "stripeMockMayReturnHardcodedCurrencyOrLivemode": true,
+    "terminalRefundMustBlockLateCompletionReactivation": true
+  },
+  "truthBoundary": {
+    "currentChildExactReleaseCredit": false,
+    "customerCredit": false,
+    "externalCiCredit": true,
+    "liveCredit": false,
+    "realPaymentMethodCredit": false,
+    "realRefundCredit": false,
+    "realStripeHostedCheckoutCredit": false,
+    "realStripeTestCredit": false,
+    "realStripeWebhookDeliveryCredit": false,
+    "saleCredit": false,
+    "stagingCredit": false,
+    "stripeMockProtocolCredit": true
+  }
+}

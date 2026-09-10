@@ -1,0 +1,2345 @@
+{
+  "schemaVersion": "velmere.pass36.a102r9.local-regression-receipt.v2",
+  "revisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R8_ACTION_REQUIRED_CHECKOUT_PII_AUDIT_CASE_AND_PDF_ACTIVITY_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T01:30:00.000Z",
+  "phase": "FINAL",
+  "status": "PASS_A102R9_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "summary": {
+    "executedPassRows": 18,
+    "passedRows": 18,
+    "failedRows": 0,
+    "groupedRunnerRows": 3,
+    "deferredFinalLineageRows": 2,
+    "environmentBlockedRows": 3
+  },
+  "groupRuns": [
+    {
+      "id": "regression_core",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r9-clean-unpack-tail.mjs",
+        "--group",
+        "regression_core"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": null,
+      "expectedStatus": "PASS_A102R9_CLEAN_UNPACK_GROUP_REGRESSION_CORE_NO_PROMOTION",
+      "observedStatus": "PASS_A102R9_CLEAN_UNPACK_GROUP_REGRESSION_CORE_NO_PROMOTION",
+      "checks": 10,
+      "passed": 10,
+      "failed": 0,
+      "stdoutBytes": 46698,
+      "stdoutSha256": "088e174813bdd6a47c69dd5c8dd6729124d61ae08a0520203de3e2f7cd2b8cc4",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "groupPassed": true
+    },
+    {
+      "id": "regression_extended_a",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r9-clean-unpack-tail.mjs",
+        "--group",
+        "regression_extended_a"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": null,
+      "expectedStatus": "PASS_A102R9_CLEAN_UNPACK_GROUP_REGRESSION_EXTENDED_A_NO_PROMOTION",
+      "observedStatus": "PASS_A102R9_CLEAN_UNPACK_GROUP_REGRESSION_EXTENDED_A_NO_PROMOTION",
+      "checks": 4,
+      "passed": 4,
+      "failed": 0,
+      "stdoutBytes": 3992,
+      "stdoutSha256": "5e6095988ae86a2f92eb3dabfeb504469dd9ee2d0c0ea60b38107639b2354c5a",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "groupPassed": true
+    },
+    {
+      "id": "regression_extended_b1",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r9-clean-unpack-tail.mjs",
+        "--group",
+        "regression_extended_b1"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "spawnError": null,
+      "expectedStatus": "PASS_A102R9_CLEAN_UNPACK_GROUP_REGRESSION_EXTENDED_B1_NO_PROMOTION",
+      "observedStatus": "PASS_A102R9_CLEAN_UNPACK_GROUP_REGRESSION_EXTENDED_B1_NO_PROMOTION",
+      "checks": 4,
+      "passed": 4,
+      "failed": 0,
+      "stdoutBytes": 20240,
+      "stdoutSha256": "f0b52a8686568583b100904a5df25ca12252ed7086a2d46c741bcd925090587f",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "groupPassed": true
+    }
+  ],
+  "results": [
+    {
+      "id": "a102r9_system_clipboard_private_export",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_A102R9_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_AND_ADMIN_EXPORT_REDACTION_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "0de86eb90c3afbfa1162c5157adfbc68b329766799b081ee72948999ce1a1939",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5889,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 38,
+        "passed": 38,
+        "failed": 0,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "a102r8_checkout_customer_browser_privacy",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "5f0804efc004b8bdc646834bf7b7e3f31b596ba03a08b401efc9da69541bc27f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6777,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 41,
+        "passed": 41,
+        "failed": 0,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "a102r6_private_account_browser_state",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_A102R6_PRIVATE_ACCOUNT_EPHEMERAL_SERVER_CONFIRMED_BOUNDARY_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "adc436bb8b2f96f125b80f0ece20002d4e93c4f312723a59c809f31c9f08b545",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 2847,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 30,
+        "passed": 30,
+        "failed": 0,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "a102r5_paid_boundary",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "passed": true,
+      "stdoutSha256": "5c5404bc9b7d69b8ddda529cdac613f05064081429189b181088540ace7acb85",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 812,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 26,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "vlm_verify_preflight",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "537e93419e3187f07d9e821dc148c2d278ab518f74bf53995b860b8320d57596",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 94,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_cookie",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6488,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": [
+          {
+            "id": "boundary_id_exact",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "closed_profile_count",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "profile_paths_exact",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "profile_same_site_exact",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "set_cookie_core_attributes",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "set_cookie_no_domain",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "nonproduction_secure_absent",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "production_secure_required",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "clear_cookie_exact",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "control_value_rejected",
+            "pass": true,
+            "detail": "cookie_value_invalid"
+          },
+          {
+            "id": "oversized_value_rejected",
+            "pass": true,
+            "detail": "cookie_value_too_large:2048"
+          },
+          {
+            "id": "negative_max_age_rejected",
+            "pass": true,
+            "detail": "cookie_max_age_invalid:-1"
+          },
+          {
+            "id": "excessive_max_age_rejected",
+            "pass": true,
+            "detail": "cookie_max_age_invalid:601"
+          },
+          {
+            "id": "legacy_profile_clear_only",
+            "pass": true,
+            "detail": "cookie_clear_profile_required:session_family_legacy_clear"
+          },
+          {
+            "id": "unique_cookie_read",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "duplicate_cookie_shadowing_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "duplicate_cookie_read_fails_closed",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "cookie_candidate_detected_on_duplicate",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "malformed_percent_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "oversized_cookie_header_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "cookie_header_control_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "strict_signed_payload_valid",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "strict_signed_duplicate_key_rejected",
+            "pass": true,
+            "detail": "strict_json_duplicate_key:ok"
+          },
+          {
+            "id": "strict_signed_proto_rejected",
+            "pass": true,
+            "detail": "strict_json_forbidden_key:__proto__"
+          },
+          {
+            "id": "noncanonical_base64url_rejected",
+            "pass": true,
+            "detail": "cookie_signed_payload_encoding_invalid"
+          },
+          {
+            "id": "account_cookie_roundtrip",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "account_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "session_family_roundtrip",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "session_family_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "session_family_candidate_duplicate",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "auth_flow_roundtrip",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "auth_flow_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "signed_flow_duplicate_json_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "recovery_grant_roundtrip",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "recovery_grant_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "supabase_access_roundtrip",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "supabase_refresh_roundtrip",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "supabase_duplicate_access_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "supabase_nan_expiry_rejected",
+            "pass": true,
+            "detail": "supabase_session_expiry_invalid"
+          },
+          {
+            "id": "supabase_fractional_expiry_rejected",
+            "pass": true,
+            "detail": "supabase_session_expiry_invalid"
+          },
+          {
+            "id": "covered:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_manual_cookie_parse:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_signed_json_parse:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_manual_cookie_parse:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_signed_json_parse:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_manual_cookie_parse:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_signed_json_parse:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_manual_cookie_parse:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_signed_json_parse:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_manual_cookie_parse:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_signed_json_parse:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "no_manual_set_cookie_serializers",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "central_profile_names_match_exports",
+            "pass": true,
+            "detail": null
+          }
+        ],
+        "assertions": null,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "a73_verifier",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "97c7fd174c7a0f3171c078855a0433226186dfba66bf2ca0aecf7d38da8fbe87",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 7679,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": [
+          {
+            "id": "revision:policy",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "revision:state",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "revision:current",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "revision:active",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "current:a73",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "current:a72-retained",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:central",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:duplicates",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:budgets",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:encoding",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:attributes",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:clear",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:strict-json",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:canonical-signing",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:ttl",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:no-manual",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:paid-depth",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "policy:coverage",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:id",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:profiles",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:duplicate",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:header-budget",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:value-budget",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:control",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:secure",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:no-domain",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:clear-expiry",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:strict-json",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "boundary:canonical-base64",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-parse:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-serializer:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-signed-json-parse:lib/auth/account-session.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-parse:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-serializer:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-signed-json-parse:lib/auth/auth-session-family.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-parse:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-serializer:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-signed-json-parse:lib/auth/password-recovery-grant.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-parse:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-serializer:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-signed-json-parse:lib/auth/supabase-auth-flow-state.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-parse:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-manual-serializer:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "covered:no-signed-json-parse:lib/auth/supabase-auth-cookies.ts",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "migration:account",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "migration:family",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "migration:recovery",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "migration:flow",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "migration:supabase",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "migration:expiry",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "paid-depth:lens-products",
+            "pass": true,
+            "detail": 2
+          },
+          {
+            "id": "paid-depth:shield-map-basic",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:all-pass",
+            "pass": true,
+            "detail": {
+              "total": 57,
+              "passed": 57,
+              "failed": 0
+            }
+          },
+          {
+            "id": "test:duplicate_cookie_shadowing_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:oversized_cookie_header_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:strict_signed_duplicate_key_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:strict_signed_proto_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:account_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:session_family_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:signed_flow_duplicate_json_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:recovery_grant_duplicate_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:supabase_nan_expiry_rejected",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "test:no_manual_set_cookie_serializers",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "package:test",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "package:verify",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "package:metadata",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "truth:no-real-auth",
+            "pass": true,
+            "detail": null
+          },
+          {
+            "id": "truth:no-release-credit",
+            "pass": true,
+            "detail": null
+          }
+        ],
+        "assertions": null,
+        "passed": 73,
+        "failed": 0,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "a89_red_team",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "8ffc2295d83e75033c4f2e34421767eb0c2d9b6365d3297ffa5f62caf878e5a7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 41989,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": [
+          {
+            "id": "callback:google-code-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "mode": "code",
+              "code": "code-123",
+              "tokenHash": null,
+              "otpType": null,
+              "providerError": null
+            }
+          },
+          {
+            "id": "callback:state-mismatch",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_state_mismatch"
+            }
+          },
+          {
+            "id": "callback:intent-mismatch",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_intent_mismatch"
+            }
+          },
+          {
+            "id": "callback:locale-mismatch",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_locale_mismatch"
+            }
+          },
+          {
+            "id": "callback:duplicate-state",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_query_contract_invalid"
+            }
+          },
+          {
+            "id": "callback:unknown-param",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_query_contract_invalid"
+            }
+          },
+          {
+            "id": "callback:mode-confusion",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_mode_confusion"
+            }
+          },
+          {
+            "id": "callback:provider-denied",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "mode": "error",
+              "code": null,
+              "tokenHash": null,
+              "otpType": null,
+              "providerError": "access_denied"
+            }
+          },
+          {
+            "id": "callback:recovery-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "mode": "otp",
+              "code": null,
+              "tokenHash": "otp-token",
+              "otpType": "recovery",
+              "providerError": null
+            }
+          },
+          {
+            "id": "callback:recovery-email-change-confusion",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "callback_otp_type_mismatch"
+            }
+          },
+          {
+            "id": "callback:email-change-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "mode": "otp",
+              "code": null,
+              "tokenHash": "otp-token",
+              "otpType": "email_change",
+              "providerError": null
+            }
+          },
+          {
+            "id": "callback:confirmation-invite-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "mode": "otp",
+              "code": null,
+              "tokenHash": "otp-token",
+              "otpType": "invite",
+              "providerError": null
+            }
+          },
+          {
+            "id": "secret-separation:ready",
+            "passed": true,
+            "detail": {
+              "schemaVersion": "velmere.pass36.a89.auth-secret-separation.v1",
+              "productionLike": false,
+              "minimumBytes": 32,
+              "rows": [
+                {
+                  "id": "account_session",
+                  "env": "VELMERE_ACCOUNT_SESSION_SECRET_CURRENT",
+                  "configured": true,
+                  "byteLength": 48,
+                  "strong": true,
+                  "requiredFor": [
+                    "account_cookie"
+                  ]
+                },
+                {
+                  "id": "session_family",
+                  "env": "VELMERE_AUTH_SESSION_FAMILY_SECRET_CURRENT",
+                  "configured": true,
+                  "byteLength": 48,
+                  "strong": true,
+                  "requiredFor": [
+                    "session_rotation",
+                    "cross_device_revocation"
+                  ]
+                },
+                {
+                  "id": "auth_flow",
+                  "env": "VELMERE_AUTH_FLOW_SECRET_CURRENT",
+                  "configured": true,
+                  "byteLength": 48,
+                  "strong": true,
+                  "requiredFor": [
+                    "oauth",
+                    "email_change",
+                    "recovery_flow"
+                  ]
+                },
+                {
+                  "id": "password_recovery_grant",
+                  "env": "VELMERE_PASSWORD_RECOVERY_GRANT_SECRET_CURRENT",
+                  "configured": true,
+                  "byteLength": 48,
+                  "strong": true,
+                  "requiredFor": [
+                    "password_update"
+                  ]
+                },
+                {
+                  "id": "trusted_account_header",
+                  "env": "VELMERE_TRUSTED_ACCOUNT_HEADER_HMAC_SECRET_CURRENT",
+                  "configured": true,
+                  "byteLength": 48,
+                  "strong": true,
+                  "requiredFor": [
+                    "server_to_server_account_identity"
+                  ]
+                },
+                {
+                  "id": "privacy_fingerprint",
+                  "env": "VELMERE_SECURITY_FINGERPRINT_SECRET",
+                  "configured": true,
+                  "byteLength": 48,
+                  "strong": true,
+                  "requiredFor": [
+                    "stable_private_fingerprints"
+                  ]
+                }
+              ],
+              "reusedPairs": [],
+              "accountSessionReady": true,
+              "oauthReady": true,
+              "recoveryReady": true,
+              "fullProductionReady": true,
+              "failClosedRequired": false,
+              "boundary": "Production auth keys are purpose-separated. A key reused across account sessions, flow state, session families, recovery grants, trusted headers or privacy fingerprints is not production-ready."
+            }
+          },
+          {
+            "id": "secret-separation:reuse-rejected",
+            "passed": true,
+            "detail": [
+              {
+                "left": "account_session",
+                "right": "auth_flow"
+              }
+            ]
+          },
+          {
+            "id": "trusted-header:valid",
+            "passed": true,
+            "detail": {
+              "accountId": "server:test-account",
+              "displayName": "Service Account",
+              "handle": "@service",
+              "email": "service@example.com",
+              "provider": "server",
+              "sessionSource": "header"
+            }
+          },
+          {
+            "id": "trusted-header:method-bound",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trusted-header:path-bound",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trusted-header:stale-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trusted-header:replay-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trusted-header:raw-account-id-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trusted-header:legacy-static-bearer-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "recovery-grant:issued-cookie",
+            "passed": true,
+            "detail": "velmere_password_recovery_grant=eyJzY2hlbWFWZXJz"
+          },
+          {
+            "id": "recovery-grant:first-consume",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "recovery-grant:replay-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "recovery-grant:family-bound",
+            "passed": true,
+            "detail": false
+          },
+          {
+            "id": "request-body:exact-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "keys": [
+                "email",
+                "locale"
+              ]
+            }
+          },
+          {
+            "id": "request-body:unknown-rejected",
+            "passed": true,
+            "detail": [
+              "role"
+            ]
+          },
+          {
+            "id": "request-query:exact-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "values": {
+                "id": "abc",
+                "format": "json"
+              }
+            }
+          },
+          {
+            "id": "request-query:duplicate-rejected",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "duplicate_query_parameter",
+              "response": {}
+            }
+          },
+          {
+            "id": "request-query:unknown-rejected",
+            "passed": true,
+            "detail": {
+              "ok": false,
+              "code": "unknown_query_parameter",
+              "response": {}
+            }
+          },
+          {
+            "id": "consent:granular",
+            "passed": true,
+            "detail": {
+              "version": "2026-07-28",
+              "decidedAt": "2026-07-28T00:00:00.000Z",
+              "necessary": true,
+              "analytics": true,
+              "marketing": false
+            }
+          },
+          {
+            "id": "consent:unknown-key-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "consent:type-coercion-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trust-intake:authorized-valid",
+            "passed": true,
+            "detail": {
+              "ok": true,
+              "privateRecord": {
+                "schemaVersion": "velmere.pass36.a89.public-trust-intake-boundary.v1",
+                "recordId": "484602f76247ba7bbe50e3fdb23e693b7d5b65059d63fce1f3f8bc142f468e4a",
+                "evidenceType": "finding_acknowledgement",
+                "authorizationBasis": "active_bug_bounty",
+                "subjectId": "protocol.case-001",
+                "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "issuedAt": "2026-07-28T00:00:00.000Z",
+                "embargoUntil": null,
+                "publicDisclosureAllowed": true,
+                "contactFingerprint": "trust-contact_ab497228da70da528cfcdc25",
+                "rawContactStored": false,
+                "externalAcceptanceVerified": false,
+                "accreditedCertification": false
+              },
+              "publicProjection": {
+                "schemaVersion": "velmere.pass36.a89.public-trust-intake-boundary.v1",
+                "recordId": "484602f76247ba7bbe50e3fdb23e693b7d5b65059d63fce1f3f8bc142f468e4a",
+                "evidenceType": "finding_acknowledgement",
+                "authorizationBasis": "active_bug_bounty",
+                "subjectId": "protocol.case-001",
+                "artifactSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "issuedAt": "2026-07-28T00:00:00.000Z",
+                "publicationState": "eligible_after_independent_verification",
+                "externallyAccepted": false,
+                "accreditedCertification": false
+              }
+            }
+          },
+          {
+            "id": "trust-intake:no-authorization-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trust-intake:client-acceptance-promotion-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trust-intake:fake-certification-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trust-intake:secret-rejected",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "id": "trust-center:20-section-denominator",
+            "passed": true,
+            "detail": {
+              "schemaVersion": "velmere.pass36.a89.public-trust-intake-boundary.v1",
+              "mandatorySections": 20,
+              "sectionIds": [
+                "methodology",
+                "scope_and_limitations",
+                "public_audit_registry",
+                "validated_findings",
+                "remediation_confirmations",
+                "retest_confirmations",
+                "cross_audit_benchmark",
+                "false_positive_duplicate_dispute_ledger",
+                "responsible_disclosure",
+                "safe_harbor_and_authorization",
+                "provider_and_data_rights",
+                "model_and_ai_limitations",
+                "risk_calibration",
+                "pdf_and_report_integrity",
+                "security_and_privacy",
+                "sbom_and_supply_chain",
+                "accessibility",
+                "corrections_and_supersession",
+                "independent_assurance",
+                "legal_and_contact"
+              ],
+              "implementedPublicSections": 0,
+              "externallyAcceptedFindings": 0,
+              "remediationConfirmations": 0,
+              "retestConfirmations": 0,
+              "rightsApprovedRecords": 0,
+              "legalApprovals": 0,
+              "sellEnabled": false,
+              "boundary": "The intake contract cannot create an externally accepted finding, accredited certificate, provider right or legal approval. Those states require externally supplied, independently verified evidence."
+            }
+          },
+          {
+            "id": "production:scripts/pass36/historical-descendant-chain-lib.mjs",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "intermediate-patch-unique",
+                "patchRevision: true"
+              ],
+              "excludes": []
+            }
+          },
+          {
+            "id": "production:lib/auth/supabase-auth-flow.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateSupabaseAuthCallbackContract",
+                "consumePasswordRecoveryGrant"
+              ],
+              "excludes": [
+                "verifyPasswordRecoveryGrant(request"
+              ]
+            }
+          },
+          {
+            "id": "production:app/api/auth/callback/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "issuePasswordRecoveryGrantCookie",
+                "await issuePasswordRecoveryGrantCookie"
+              ],
+              "excludes": [
+                "buildPasswordRecoveryGrantCookie"
+              ]
+            }
+          },
+          {
+            "id": "production:app/api/auth/session/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactObjectKeys",
+                "allowMissingOrigin: !productionLike()"
+              ],
+              "excludes": []
+            }
+          },
+          {
+            "id": "production:app/api/auth/oauth/google/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactObjectKeys",
+                "isProductionLikeEnvironment"
+              ],
+              "excludes": [
+                "process.env.NODE_ENV !== \"production\""
+              ]
+            }
+          },
+          {
+            "id": "production:app/api/auth/recovery/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactObjectKeys",
+                "isProductionLikeEnvironment"
+              ],
+              "excludes": [
+                "process.env.NODE_ENV !== \"production\""
+              ]
+            }
+          },
+          {
+            "id": "production:app/api/auth/email-change/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactObjectKeys",
+                "isProductionLikeEnvironment"
+              ],
+              "excludes": [
+                "process.env.NODE_ENV!==\"production\""
+              ]
+            }
+          },
+          {
+            "id": "production:app/api/profile/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactObjectKeys",
+                ").strict()",
+                "!isProductionLikeEnvironment()"
+              ],
+              "excludes": [
+                "allowMissingOrigin: true"
+              ]
+            }
+          },
+          {
+            "id": "production:lib/server/lazy-route-modules/account--audit-messages.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactSearchParams",
+                "validateExactObjectKeys",
+                "!isProductionLikeEnvironment()"
+              ],
+              "excludes": [
+                "allowMissingOrigin: true"
+              ]
+            }
+          },
+          {
+            "id": "production:lib/server/lazy-route-modules/account--customer-artifact.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactSearchParams",
+                "invalid_artifact_format",
+                "invalid_limit"
+              ],
+              "excludes": []
+            }
+          },
+          {
+            "id": "production:app/api/security/audit-case/status/route.ts",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "validateExactSearchParams"
+              ],
+              "excludes": [
+                "x-velmere-account-id\""
+              ]
+            }
+          },
+          {
+            "id": "production:supabase/migrations/20260728000001_a89_password_recovery_grant_ledger.sql",
+            "passed": true,
+            "detail": {
+              "includes": [
+                "velmere_issue_password_recovery_grant",
+                "velmere_consume_password_recovery_grant",
+                "enable row level security"
+              ],
+              "excludes": []
+            }
+          },
+          {
+            "id": "matrix:denominator",
+            "passed": true,
+            "detail": {
+              "cases": 192,
+              "families": 16
+            }
+          },
+          {
+            "id": "matrix:zero-mismatch",
+            "passed": true,
+            "detail": []
+          },
+          {
+            "id": "mutation:strict-envelope",
+            "passed": true,
+            "detail": {
+              "generated": 768,
+              "killed": 768
+            }
+          }
+        ],
+        "assertions": null,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "api_body_stream",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 526,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 37,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "malformed_json",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 118,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 112,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "mega4800",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "7823368831215cfc15ed0531dbf174081579ebe67ad55b9fc45892137d26ca1e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1662,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 61,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "route_dispatch",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": 1480,
+        "assertions": null,
+        "passed": 1480,
+        "failed": 0,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "route_dispatch_tamper",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": 7,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "lazy_routes",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": 176,
+        "assertions": null,
+        "passed": 176,
+        "failed": 0,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "a59",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_STATIC_BUDGET_RECOVERY",
+      "passed": true,
+      "stdoutSha256": "069407ba884dd4c3153bf13c39a6b3f39b17dfb7ca043b6bf201d598e8d470e0",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 15792,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": [
+          {
+            "id": "build-graph-profiler-exit",
+            "ok": true,
+            "detail": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          {
+            "id": "entrypoint-budget",
+            "ok": true,
+            "detail": {
+              "actual": 145,
+              "limit": 148
+            }
+          },
+          {
+            "id": "api-route-budget",
+            "ok": true,
+            "detail": {
+              "actual": 78,
+              "limit": 82
+            }
+          },
+          {
+            "id": "aggregate-css-budget",
+            "ok": true,
+            "detail": {
+              "actual": 2915681,
+              "limit": 3400000
+            }
+          },
+          {
+            "id": "server-client-boundary",
+            "ok": true,
+            "detail": 0
+          },
+          {
+            "id": "local-import-boundary",
+            "ok": true,
+            "detail": 0
+          },
+          {
+            "id": "globals-css-budget",
+            "ok": true,
+            "detail": {
+              "actual": 2212158,
+              "limit": 3100000
+            }
+          },
+          {
+            "id": "retired-root-shell:app/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/browser/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/search/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/shield/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/market-integrity/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/shield-pro/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/shield-map/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-root-shell:app/real-markets/page.tsx",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/investigator/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/klines/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/market-intelligence/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/markets/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/real-markets/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/search/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/vlm/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/search/bridge/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/search/lens-report/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/search/lens-route/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/search/live-preview/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/search/token-metadata/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/vlm/access-policy/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/vlm/keys/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/vlm/verify/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/real-markets/catalog/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/real-markets/provider-contract/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "retired-api-shell:app/api/market-integrity/real-markets/search/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-present:app/api/market-integrity/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-runtime:app/api/market-integrity/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-dynamic:app/api/market-integrity/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-lazy:app/api/market-integrity/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-present:app/api/search/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-runtime:app/api/search/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-dynamic:app/api/search/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-lazy:app/api/search/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-present:app/api/market-integrity/vlm/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-runtime:app/api/market-integrity/vlm/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-dynamic:app/api/market-integrity/vlm/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-lazy:app/api/market-integrity/vlm/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-present:app/api/market-integrity/real-markets/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-runtime:app/api/market-integrity/real-markets/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-dynamic:app/api/market-integrity/real-markets/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "dispatcher-lazy:app/api/market-integrity/real-markets/[operation]/route.ts",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "route-dispatch-exit",
+            "ok": true,
+            "detail": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          {
+            "id": "route-dispatch-paths",
+            "ok": true,
+            "detail": {
+              "groups": 5,
+              "routesPreserved": 160,
+              "publicPathsUnique": 160,
+              "checks": 1480,
+              "passed": 1480,
+              "failed": 0,
+              "netNextEntrypointReduction": 155,
+              "routeAstRegistryFiles": 254,
+              "routeAstRegistryExactCredit": false
+            }
+          },
+          {
+            "id": "route-dispatch-failures",
+            "ok": true,
+            "detail": {
+              "groups": 5,
+              "routesPreserved": 160,
+              "publicPathsUnique": 160,
+              "checks": 1480,
+              "passed": 1480,
+              "failed": 0,
+              "netNextEntrypointReduction": 155,
+              "routeAstRegistryFiles": 254,
+              "routeAstRegistryExactCredit": false
+            }
+          },
+          {
+            "id": "api-inventory-exit",
+            "ok": true,
+            "detail": {
+              "exitCode": 0,
+              "stderr": "",
+              "stdout": "{\n  \"ok\": true,\n  \"passId\": \"pass4659-canonical-api-surface-registry-v1\",\n  \"routeCount\": 265,\n  \"controlPlaneCount\": 0,\n  \"counts\": {\n    \"control_plane\": 0,\n    \"machine_webhook\": 11,\n    \"admin_operator\": 27,\n    \"authenticated_customer\": 15,\n    \"public_product\": 212,\n    \"unclassified\": 0\n  },\n  \"mutatingRouteCount\": 76,\n  \"boundedMutatingRouteCount\": 76,\n  \"unboundedMutatingRouteCount\": 0,\n  \"boundedMutatingCoveragePercent\": 100,\n  \"allMutatingBodyHandlingCounts\": {\n    \"stream_bounded\": 69,\n    \"body_rejected\": 7\n  },\n  \"mutatingProductRouteCount\": 76,\n  \"boundedMutatingProductRouteCount\": 76,\n  \"unboundedMutatingProductRouteCount\": 0,\n  \"mutatingBodyHandlingCounts\": {\n    \"stream_bounded\": 69,\n    \"body_rejected\": 7\n  },\n  \"boundedCoveragePercent\": 100,\n  \"assertions\": 107\n}\n"
+            }
+          },
+          {
+            "id": "api-logical-operation-parity",
+            "ok": true,
+            "detail": 265
+          },
+          {
+            "id": "api-mutating-body-coverage",
+            "ok": true,
+            "detail": {
+              "ok": true,
+              "passId": "pass4659-canonical-api-surface-registry-v1",
+              "routeCount": 265,
+              "controlPlaneCount": 0,
+              "counts": {
+                "control_plane": 0,
+                "machine_webhook": 11,
+                "admin_operator": 27,
+                "authenticated_customer": 15,
+                "public_product": 212,
+                "unclassified": 0
+              },
+              "mutatingRouteCount": 76,
+              "boundedMutatingRouteCount": 76,
+              "unboundedMutatingRouteCount": 0,
+              "boundedMutatingCoveragePercent": 100,
+              "allMutatingBodyHandlingCounts": {
+                "stream_bounded": 69,
+                "body_rejected": 7
+              },
+              "mutatingProductRouteCount": 76,
+              "boundedMutatingProductRouteCount": 76,
+              "unboundedMutatingProductRouteCount": 0,
+              "mutatingBodyHandlingCounts": {
+                "stream_bounded": 69,
+                "body_rejected": 7
+              },
+              "boundedCoveragePercent": 100,
+              "assertions": 107
+            }
+          },
+          {
+            "id": "css-receipt-revision",
+            "ok": true,
+            "detail": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY"
+          },
+          {
+            "id": "css-files-covered",
+            "ok": true,
+            "detail": {
+              "receipt": 24,
+              "profile": 24
+            }
+          },
+          {
+            "id": "css-parser-clean",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "css-used-identifier-safety",
+            "ok": true,
+            "detail": null
+          },
+          {
+            "id": "css-real-reduction",
+            "ok": true,
+            "detail": {
+              "cssFiles": 24,
+              "beforeBytes": 4329038,
+              "afterBytes": 2915681,
+              "savedBytes": 1413357,
+              "removedRules": 3636,
+              "removedSerializedBytes": 831407,
+              "usedIdentifierViolations": 0,
+              "parseErrorsBefore": 0,
+              "parseErrorsAfter": 0,
+              "exactDuplicateGroupsRemoved": 2,
+              "exactDuplicateRulesRemoved": 2,
+              "exactDuplicateBytesRemoved": 430
+            }
+          },
+          {
+            "id": "css-exact-dedup-status",
+            "ok": true,
+            "detail": "PASS_A39_CSS_EXACT_DUPLICATES_REMOVED"
+          },
+          {
+            "id": "css-exact-dedup-closed",
+            "ok": true,
+            "detail": {
+              "removedBytes": 430,
+              "duplicateGroups": 2,
+              "duplicateExtras": 2
+            }
+          },
+          {
+            "id": "css-exact-dedup-binding",
+            "ok": true,
+            "detail": {
+              "receipt": {
+                "cssFiles": 24,
+                "beforeBytes": 4329038,
+                "afterBytes": 2915681,
+                "savedBytes": 1413357,
+                "removedRules": 3636,
+                "removedSerializedBytes": 831407,
+                "usedIdentifierViolations": 0,
+                "parseErrorsBefore": 0,
+                "parseErrorsAfter": 0,
+                "exactDuplicateGroupsRemoved": 2,
+                "exactDuplicateRulesRemoved": 2,
+                "exactDuplicateBytesRemoved": 430
+              },
+              "dedup": {
+                "removedBytes": 430,
+                "duplicateGroups": 2,
+                "duplicateExtras": 2
+              }
+            }
+          },
+          {
+            "id": "css-final-byte-binding",
+            "ok": true,
+            "detail": {
+              "mismatches": 0
+            }
+          },
+          {
+            "id": "css-profile-byte-parity",
+            "ok": true,
+            "detail": {
+              "calculated": 2915681,
+              "profile": 2915681,
+              "receipt": 2915681
+            }
+          },
+          {
+            "id": "css-removed-identifiers-recomputed-unused",
+            "ok": true,
+            "detail": []
+          },
+          {
+            "id": "proxy-alias:/",
+            "ok": true,
+            "detail": "/pl"
+          },
+          {
+            "id": "proxy-alias:/browser",
+            "ok": true,
+            "detail": "/pl/search"
+          },
+          {
+            "id": "proxy-alias:/search",
+            "ok": true,
+            "detail": "/pl/search"
+          },
+          {
+            "id": "proxy-alias:/shield",
+            "ok": true,
+            "detail": "/pl/market-integrity"
+          },
+          {
+            "id": "proxy-alias:/market-integrity",
+            "ok": true,
+            "detail": "/pl/market-integrity"
+          },
+          {
+            "id": "proxy-alias:/shield-pro",
+            "ok": true,
+            "detail": "/pl/shield-pro"
+          },
+          {
+            "id": "proxy-alias:/shield-map",
+            "ok": true,
+            "detail": "/pl/shield-map"
+          },
+          {
+            "id": "proxy-alias:/real-markets",
+            "ok": true,
+            "detail": "/pl/real-markets"
+          },
+          {
+            "id": "a59-retained-as-budget-parent",
+            "ok": true,
+            "detail": {
+              "sourceRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+              "buildGraphBudgetRecoveryRevisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY"
+            }
+          },
+          {
+            "id": "acceptance-remains-a57",
+            "ok": true,
+            "detail": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE"
+          },
+          {
+            "id": "truth-boundary-sale-live",
+            "ok": true,
+            "detail": {
+              "saleEnabled": false,
+              "liveProven": false
+            }
+          }
+        ],
+        "assertions": null,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "product_tiers",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_PRODUCT_TIER_CONTENT_CONTRACT",
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": 186,
+        "assertions": null,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "zero_budget",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": "PASS_ZERO_BUDGET_FUNCTIONAL_ROADMAP",
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": 439,
+        "assertions": null,
+        "passed": null,
+        "failed": null,
+        "filesRead": null,
+        "codeFiles": null,
+        "syntaxErrors": null,
+        "missingLocalImports": null,
+        "missingCssModuleClasses": null
+      }
+    },
+    {
+      "id": "source_audit",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "e2b6d3bfebea5d175e048475ebc7c1523b445bd57c53be510583c3687798d188",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0,
+      "metrics": {
+        "checks": null,
+        "assertions": null,
+        "passed": null,
+        "failed": null,
+        "filesRead": 4954,
+        "codeFiles": 3051,
+        "syntaxErrors": 0,
+        "missingLocalImports": 0,
+        "missingCssModuleClasses": 0
+      }
+    }
+  ],
+  "deferredFinalLineageVerifiers": [
+    {
+      "id": "a88r1_final_descendant_verifier",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    },
+    {
+      "id": "a89_final_descendant_verifier",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    }
+  ],
+  "environmentBlockers": [
+    {
+      "id": "exact_node_npm_project_dependencies",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Node 24.18.0 / npm 11.16.0 with genuine project node_modules",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "exact_playwright_chromium",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Chromium 148.0.7778.96 revision 1223",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "real_system_clipboard_privacy_and_staging_inputs",
+      "classification": "BLOCKED_EXTERNAL",
+      "required": "real Chrome/Edge/Firefox/Android operating-system clipboard payload observation, user warning, staging, rights, legal and observers",
+      "available": false,
+      "credit": false
+    }
+  ],
+  "keyDenominators": {
+    "a102r9SystemClipboardBoundaryChecks": 38,
+    "a102r8CheckoutCustomerBrowserPrivacyChecks": 41,
+    "a102r6PrivateAccountBrowserStateChecks": 30,
+    "a102r6LegacyPrivateStorageKeysPurged": 16,
+    "a102r5PaidBoundaryChecks": 26,
+    "vlmVerifyPositiveCases": 1,
+    "vlmVerifyNegativeCases": 5,
+    "a73Checks": 57,
+    "a73VerifierChecks": 73,
+    "a89Checks": 54,
+    "a89VerifierMinimumChecks": 156,
+    "a89Cases": 192,
+    "a89MutationsKilled": 768,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "a59Checks": 77,
+    "routeDispatchChecks": 1480,
+    "routeDispatchTamperChecks": 7,
+    "routeRoutes": 160,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439
+  },
+  "sourceAudit": {
+    "filesRead": 4954,
+    "codeFiles": 3051,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "realEvidence": {
+    "a102ObservationRuns": 0,
+    "browserRows": 0,
+    "systemClipboardBrowserRows": 0,
+    "browserStoragePrivacyRows": 0,
+    "durableServerCheckoutDraftRows": 0,
+    "durableServerAuditBookmarkRows": 0,
+    "durableServerPdfActivityReceiptRows": 0,
+    "stagingStages": 0,
+    "providerRights": 0,
+    "legalDpo": 0,
+    "customerCohorts": 0,
+    "independentAssurance": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  }
+}

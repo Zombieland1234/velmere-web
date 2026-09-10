@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "velmere.preflight-domain-snapshot-manifest.v1",
+  "generatedAt": "2026-07-18T00:00:00.000Z",
+  "policy": {
+    "sourceHashValidationRequired": true,
+    "staleSnapshotIsBlocking": true,
+    "guardReadsUseSnapshotContent": true,
+    "directReadMetricExcludesSnapshotBackedFiles": true,
+    "domainKernelMigrationAware": true,
+    "activeDomainKernelContractsMayBeSnapshotBacked": true,
+    "routeAdapterDecompositionAware": true,
+    "activeOrSignedQuarantineSourceRequired": true,
+    "quarantineFilesAndEntriesSchemasSupported": true,
+    "contentAddressedPass6RecoveryRequiredWhenPresent": true,
+    "transactionalRefreshRequired": true
+  },
+  "snapshotCount": 7,
+  "sourceFileCount": 909,
+  "sourceBytes": 7529596,
+  "sourceAggregateSha256": "f99dc5c296972170e3056d16d5afdfbf6a8ee3bcc44bbc98fbe0c1d768271d0a",
+  "snapshots": [
+    {
+      "name": "documentation-contracts",
+      "path": "config/preflight-snapshots/documentation-contracts.json.gz",
+      "fileCount": 31,
+      "totalBytes": 56581,
+      "filesSha256": "e8b6daf5060c3c39c4ae95c06dfecda78fbd0c99281a4b4c15af89b3099a5095",
+      "uncompressedBytes": 63253,
+      "uncompressedSha256": "32884721d5c2e48497e9f54bb5e6f106fbeee011f94553a28c4caf2866524867",
+      "compressedBytes": 21311,
+      "compressedSha256": "01c49e65d2f3a18828f526d2a90a915bda768fba8fe3f3f71c90d2060385a2ed"
+    },
+    {
+      "name": "domain-kernel-wave10-contracts",
+      "path": "config/preflight-snapshots/domain-kernel-wave10-contracts.json.gz",
+      "fileCount": 39,
+      "totalBytes": 202246,
+      "filesSha256": "02699e755a394a8d54b63d07dfaa398847e35d7f4150bf03680fabdf7b38c978",
+      "uncompressedBytes": 215703,
+      "uncompressedSha256": "84a604e0119af40d0d87bf60e56231df011b86b25a5d008387389076f077f87c",
+      "compressedBytes": 25656,
+      "compressedSha256": "0d1358035af68ce4ef8be8a113095c6d80f69ce3a3724be7049b9b0ff4c472bd"
+    },
+    {
+      "name": "historical-lib-ai",
+      "path": "config/preflight-snapshots/historical-lib-ai.json.gz",
+      "fileCount": 121,
+      "totalBytes": 369343,
+      "filesSha256": "dfbb3ee2812f994eb258544778f5e84c5713ded2a9cd0bab581eb5249472ed9a",
+      "uncompressedBytes": 404118,
+      "uncompressedSha256": "8fb6c8282804804fdfbb087f8933c9ba9b5df98a0a10323314388aa417a9c160",
+      "compressedBytes": 71467,
+      "compressedSha256": "c4b3273db5bc91604f686998d1f5c2e081ed13f2cf9bde810c6bda88dc35c17c"
+    },
+    {
+      "name": "historical-lib-market-integrity",
+      "path": "config/preflight-snapshots/historical-lib-market-integrity.json.gz",
+      "fileCount": 252,
+      "totalBytes": 2581006,
+      "filesSha256": "9ba14e679b2ee23edd075ab9ca25ebad2b1393766a9d93c873e8a532315840f9",
+      "uncompressedBytes": 2759465,
+      "uncompressedSha256": "d2378237afe5453a3d51647f33aef18ba64a8f1285553a3f5818d97a368bd145",
+      "compressedBytes": 476828,
+      "compressedSha256": "6829297232ac055f180d46f2433a6aa5809e42a5b7c9c970cca40b42d40bf2f9"
+    },
+    {
+      "name": "historical-lib-other",
+      "path": "config/preflight-snapshots/historical-lib-other.json.gz",
+      "fileCount": 193,
+      "totalBytes": 1657603,
+      "filesSha256": "40de8fdfd8ebcf6123b472dbd105edbfbaa94c22183492ee5a20b64197a1c198",
+      "uncompressedBytes": 1773631,
+      "uncompressedSha256": "5ed7b633205eac141adf3167fac8006ef33ebefa41f0f4c12d0070a158538b63",
+      "compressedBytes": 226363,
+      "compressedSha256": "35063eb14eb9ffe3ba70ae4634c86a2e6fcfb37ce65060bdcfa8a6467349c4ea"
+    },
+    {
+      "name": "historical-lib-security",
+      "path": "config/preflight-snapshots/historical-lib-security.json.gz",
+      "fileCount": 159,
+      "totalBytes": 2487001,
+      "filesSha256": "3ff9862c656523bb328ccd23dd3946a6777768624d05dfd11424ab5a0a2796a1",
+      "uncompressedBytes": 2613762,
+      "uncompressedSha256": "8989cdf17360e6b686920a77a231dcc96dd1b8ab5a3023e02f2ffd6a710adfbe",
+      "compressedBytes": 399173,
+      "compressedSha256": "1d796cb8f933a24bf39ff2ce4c401fe6efe5382e36cecfd32702e113080cb1a2"
+    },
+    {
+      "name": "tests-contracts",
+      "path": "config/preflight-snapshots/tests-contracts.json.gz",
+      "fileCount": 114,
+      "totalBytes": 179720,
+      "filesSha256": "ad65d5245f7ba629d2f2202d87c165595fb8af3fb66a2c2d6970fc5840512055",
+      "uncompressedBytes": 207350,
+      "uncompressedSha256": "1cc6b3868298ec92f8714ed37546bd1171442a60d0c05fb8ebae368b080a2e20",
+      "compressedBytes": 40144,
+      "compressedSha256": "db64bb740a4589b78d55f80fbb92e103f71362e25d8d396267daa7cb530064c9"
+    }
+  ],
+  "manifestSha256": "3539f31afd4d293533c1b37e95d8289cd9d39c9dbbcf2dd3046c4d6110874d38",
+  "sourceTotalBytes": 7533500
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "velmere.pass4825.active-token-clone-baseline-pin.v1",
+  "baselineId": "PASS4824_WORLDCLASS_EXPANSION",
+  "expectedDirectoryName": "VELMERE_PASS4824_WORLDCLASS_EXPANSION",
+  "scope": [
+    "app",
+    "components",
+    "lib"
+  ],
+  "normalization": {
+    "identifiers": "normalized",
+    "stringAndRegexLiterals": "normalized",
+    "numericLiterals": "normalized",
+    "exactFunctionMinimumTokens": 60,
+    "partialWindowTokens": 100,
+    "partialWindowStride": 50
+  },
+  "inventory": {
+    "fileManifestSha256": "0b58c0511692f6972e006ceed29945c684e23c03c8a16ec76764aa018cf53f47",
+    "fileCount": 1427,
+    "sourceByteLength": 15741324,
+    "functionCount": 4782,
+    "analyzedTokenCount": 1116823,
+    "exactFunctionGroupCount": 110,
+    "partialWindowGroupCount": 264,
+    "exactFunctionExtraTokens": 25218,
+    "partialWindowExtraTokens": 58700,
+    "exactFileDuplicateGroupCount": 1,
+    "allowedExactFileDuplicateGroupCount": 1,
+    "unexpectedExactFileDuplicateGroupCount": 0
+  },
+  "limitations": [
+    "This pin authenticates expected baseline bytes only when the containing PASS4825 source-tree digest is trusted.",
+    "The baseline intentionally contains residual normalized clone debt; it is a regression reference, not a zero-duplication claim."
+  ],
+  "pinSha256": "1bbccc98e6b55254ee33aabbc94871ad82944f844507be645d8155f62a7d0c07"
+}

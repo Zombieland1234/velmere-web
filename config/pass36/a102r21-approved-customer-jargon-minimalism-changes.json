@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "velmere.pass36.a102r21.approved-customer-jargon-minimalism-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R21_ACTION_REQUIRED_CUSTOMER_ACCESSIBILITY_AND_OPERATOR_CHECKPOINT_JARGON_MINIMALISM_BOUNDARY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R20_ACTION_REQUIRED_SINGLE_CURRENT_AUTHORITY_README_HISTORY_LABEL_STALE_POINTER_AND_PLANNING_ESTIMATE_COHERENCE_MINIMALISM_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T22:20:00.000Z",
+  "parentArchive": {
+    "fileName": "VELMERE_PASS36_A102R20_ACTION_REQUIRED_SINGLE_CURRENT_AUTHORITY_README_HISTORY_LABEL_STALE_POINTER_AND_PLANNING_ESTIMATE_COHERENCE_MINIMALISM_NO_REAL_CREDIT_SOURCE_ONLY.zip",
+    "byteLength": 122109003,
+    "sha256": "dbb3abed8c2047960ddf288c09430a83d440abb4e235a8d6fdc20aed0e472fb1"
+  },
+  "approvedChanges": [
+    {
+      "path": "app/proof/market-integrity/[publicProofId]/page.tsx",
+      "parentByteLength": 5332,
+      "parentSha256": "2526f3262122f23ff552e2ae69bf898729c977674222dc29fb88fe5583d3fb2d",
+      "byteLength": 5305,
+      "sha256": "d888baecebf41956b502840b1ae8fae6f6b0ab8050d1a595f9d1ebce3bb39711",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/account/AuditAccountMessagesClient.tsx",
+      "parentByteLength": 134666,
+      "parentSha256": "0a9acd8f5581b8e98e5a4607d46690aa7c6f75e3ebb9eb557734baf646895d7a",
+      "byteLength": 133913,
+      "sha256": "86d651f8f24bbaec3129fe922bfd0736f31f2b33e409fed027adecedf475392d",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/account/MarketActionReportsInboxClient.tsx",
+      "parentByteLength": 196033,
+      "parentSha256": "2c3f00827387756ce1c192fd06da24ae76f750927cc9a2ffdfa4a07724c4151a",
+      "byteLength": 195997,
+      "sha256": "670dd00fa39d09d11f4a5fa93d00708e54cb831c9043819d35780f17ddf7a031",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/admin/VlmProductBrainEditor.tsx",
+      "parentByteLength": 52087,
+      "parentSha256": "01145896e7e49eb230e074105209ee490a5d4a85d0bbe596368f7c93a8c73477",
+      "byteLength": 52076,
+      "sha256": "4b40a1bc8b827d914b08be4b7d2e290e7799179f3a66ccb6d7768055b8180a09",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/admin/VlmProductCustomerPreview.tsx",
+      "parentByteLength": 21417,
+      "parentSha256": "d8ac50c37ee9149e30bd575fb6fb501341efe7ee6c03fe4d29f771ba12d3d308",
+      "byteLength": 21384,
+      "sha256": "aa594adc2e863032c1acf2aeabd6885d2d1dc7d5f537576ab706ea390f6b9830",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/admin/VlmProductPublishDecisionModal.tsx",
+      "parentByteLength": 34212,
+      "parentSha256": "463e0b8606df4e4cac5415f318d44f3a5eb1e6500e557eb165bcfe06a56e4369",
+      "byteLength": 34185,
+      "sha256": "ebc604b55f64dedf282865e21f9aaf33ad6331dd603399957634dc366f4fb888",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/checkout/VelmereCheckoutFlowClient.tsx",
+      "parentByteLength": 59374,
+      "parentSha256": "1d989ff13999d834bcd6914a3ee6eb4d82eff16007de03ba820dd0a610f88110",
+      "byteLength": 59332,
+      "sha256": "bb72d7be905528df56279bca19d17b70ab39a2ef0061e1adc1c0ddb9294bee05",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "parentByteLength": 254839,
+      "parentSha256": "060bc3734ced6f75962518d6e2747ee776a7ad7d1dd1e7dfe9f681547ad9a6eb",
+      "byteLength": 254803,
+      "sha256": "35f61ec5d26f5a3cc7c202e33ee28b74133008823bc85ab5c2805038fdc4dea1",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/DeliveryReceiptPacketPage.tsx",
+      "parentByteLength": 11046,
+      "parentSha256": "b4d9e4acf318bf715e0743eac3e538e9b213b8fc9fe582c2300a8807d77bf9b7",
+      "byteLength": 11037,
+      "sha256": "bf40411c612b7c9962ced081e694fb2c06346072bc68d2c5ca0f510e49115390",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityAuditAdminInbox.tsx",
+      "parentByteLength": 17009,
+      "parentSha256": "06bbe185891711e62e1dcd02deffb8adf9906a5d7944cd86ca914b6c1396f573",
+      "byteLength": 16967,
+      "sha256": "6a51450babae30f5580995bd0655da9d9175cf93ac88890a91560bc9e4941a0f",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityAuditExportPage.tsx",
+      "parentByteLength": 9230,
+      "parentSha256": "f9afc83527af1738598f9e29be1335f72c01b2b1e2ba6129f2d75872b58c127e",
+      "byteLength": 9189,
+      "sha256": "5cd84d23408821c3aae31dd6893c11330cd73efc7b1d30b81dfa0db5f066f52b",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityAuditOperatorActionsClient.tsx",
+      "parentByteLength": 15228,
+      "parentSha256": "3c1b55879524a374825d12dac93f63a9e6dcae9091aa4c96ff22c6b756b41791",
+      "byteLength": 15210,
+      "sha256": "6f98cd0bcad2b1c7d7bbf0f3d45f80f386b92eb0dd624c7692a8ae047fbf5d38",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityAuditReportPage.tsx",
+      "parentByteLength": 17314,
+      "parentSha256": "bd1fb0effc1cfb220a1a480f5397afe4b35f34b0fba245ef9be5ac5e553e7156",
+      "byteLength": 17305,
+      "sha256": "2b66fa7f583ef17abe0d3b1aad9339876d59373f3ecf1bef7450f62f38380369",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityLinkedRequestDrawer.tsx",
+      "parentByteLength": 33344,
+      "parentSha256": "991512315b4b8b7afd1dd27d759358b4e43db63203c873378054b212509bc31c",
+      "byteLength": 33319,
+      "sha256": "7df4ebe839584b1d2201f4ecfff04785cab0fe14d56e6a4ac46840f95e5e3292",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityPaymentEvidenceLiveRowsClient.tsx",
+      "parentByteLength": 14038,
+      "parentSha256": "99e537a91edd77483eebba2d276dfda21243c3db6742f93120d37cfbf1d5c5fa",
+      "byteLength": 14038,
+      "sha256": "8a568c14c2589b0b6288db802c00cc1456835c51be44f6b24a9a7700a66d4950",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/security/SecurityPaymentReplayBoard.tsx",
+      "parentByteLength": 10097,
+      "parentSha256": "cd0005afcaaac83db51c388d77ab6f81c23f475e232dca9acd262e19498c52c1",
+      "byteLength": 10049,
+      "sha256": "a66d00d2cfe13122a6824e0fd490f81b4525638f34507316db9c70832524923e",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/square/VelmereSquareClient.tsx",
+      "parentByteLength": 60702,
+      "parentSha256": "1c20802f28060ef530f16be31fc986ee405c246b7ebeec2f0f6688116fdcf53f",
+      "byteLength": 60685,
+      "sha256": "3766f728d2c4af018f672db5f5ca49babbfd2f788ea7d4b5ffad280833cdb856",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    },
+    {
+      "path": "components/status/RuntimeScreenshotChecklistPanel.tsx",
+      "parentByteLength": 7816,
+      "parentSha256": "61273263dfae9cb4bc71ee5e824fbe305b47cdb9db9d489517badf9cb8d2eddf",
+      "byteLength": 7679,
+      "sha256": "ff7d843f1b2ded7cbfb5a384d5caf75c6863c3d1ec267d98c7335480e09ce927",
+      "reason": "remove checkpoint identifiers from confirmed rendered, accessibility or operator copy while preserving behavior and proof markers"
+    }
+  ],
+  "claims": {
+    "changedApplicationSurfaceFiles": 18,
+    "applicationSurfaceFiles": 1833,
+    "parentApplicationSurfaceAggregateSha256": "c32e0a04f4eed273df473166dbc3ac0d4e56008e21f96461f30981cd54c6e835",
+    "applicationSurfaceAggregateSha256": "aa5360d32981793e965fa037237866d620ceb4e55cb8e765f86bc3394ee3c789",
+    "parentQuotedPassLiteralCandidates": 200,
+    "classifiedParentCandidates": 200,
+    "visibleOrAccessibilityQuotedCandidatesRemoved": 39,
+    "internalQuotedCandidatesRetained": 161,
+    "currentQuotedPassLiteralCandidates": 161,
+    "currentQuotedPassLiteralCandidateFiles": 8,
+    "renderedAccessibilityOperatorCheckpointTokensRemoved": 125,
+    "confirmedVisibleAccessibilityCheckpointTokensRemaining": 0,
+    "apiProofIdentifiersChanged": 0,
+    "domEvidenceAttributeContractsChanged": 0,
+    "unmountedVerifierContractsChanged": 0,
+    "realBrowserRowsExecuted": 0,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Approved changes are limited to confirmed rendered, accessibility and operator copy in 18 application files. Internal API proof identities, data-pass evidence attributes and unmounted verifier contracts are preserved. Static reachability is not exact browser proof."
+}

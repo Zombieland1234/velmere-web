@@ -1,0 +1,469 @@
+{
+  "schemaVersion": "velmere.pass36.a86.real-markets-cross-asset-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+  "generatedAt": "2026-07-27T20:30:00.000Z",
+  "status": "PASS_A86_LOCAL_CROSS_ASSET_MATRIX_NO_PROMOTION",
+  "summary": {
+    "checks": 30,
+    "passed": 30,
+    "failed": 0
+  },
+  "catalog": {
+    "catalogRows": 553,
+    "syntheticIndexRows": 30,
+    "totalInstruments": 583,
+    "classCounts": {
+      "stock": 263,
+      "etf": 86,
+      "real_estate": 53,
+      "fx": 80,
+      "commodity": 68,
+      "index": 30,
+      "crypto": 3
+    },
+    "staticReferenceRows": 553,
+    "liveDataRows": 0,
+    "rightsApprovedRows": 0
+  },
+  "denominators": {
+    "instruments": 583,
+    "fieldRows": 5830,
+    "tierPackets": 1749,
+    "channelProjections": 6996,
+    "semanticMutations": 31482,
+    "mutationKilled": 31482
+  },
+  "readiness": {
+    "basic": {
+      "functionalReadyOffline": 506,
+      "evidenceWithheld": 77,
+      "paidDelivered": 0,
+      "productionEligible": 0
+    },
+    "pro": {
+      "functionalReadyOffline": 359,
+      "evidenceWithheld": 224,
+      "paidDelivered": 0,
+      "productionEligible": 0
+    },
+    "advanced": {
+      "functionalReadyOffline": 277,
+      "evidenceWithheld": 306,
+      "paidDelivered": 0,
+      "productionEligible": 0
+    }
+  },
+  "httpStatusCounts": {
+    "200": 506,
+    "403": 636,
+    "424": 607
+  },
+  "runtimeIntegritySha256": "c63ab8cd9d5e350ba6f2618b919a8f5f243af84d1b719dcfa27b2acb39fba107",
+  "realIntake": {
+    "decision": "BLOCKED_REAL_MARKETS_CROSS_ASSET_EVIDENCE",
+    "requiredInstrumentDenominator": 583,
+    "supportedInstrumentDenominator": 583,
+    "denominatorValid": true,
+    "rows": 0,
+    "unavailableOrBlockedInstruments": 583,
+    "categoryCounts": {
+      "stock": 0,
+      "etf": 0,
+      "real_estate": 0,
+      "fx": 0,
+      "commodity": 0,
+      "index": 0,
+      "crypto": 0
+    },
+    "fullyVerified": 0,
+    "currentQuoteVerified": 0,
+    "rightsApproved": 0,
+    "productionBrowserVerified": 0,
+    "customerValueLabeled": 0
+  },
+  "exactA80CandidateBound": false,
+  "currentProviderEvidenceVerified": false,
+  "providerRightsApproved": false,
+  "productionBrowserExecuted": false,
+  "customerValueProven": false,
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "runtime:verified",
+      "passed": true,
+      "detail": {
+        "instruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "mutationKilled": 31482
+      }
+    },
+    {
+      "id": "runtime:revision",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER"
+    },
+    {
+      "id": "catalog:denominator",
+      "passed": true,
+      "detail": {
+        "catalogRows": 553,
+        "syntheticIndexRows": 30,
+        "totalInstruments": 583,
+        "classCounts": {
+          "stock": 263,
+          "etf": 86,
+          "real_estate": 53,
+          "fx": 80,
+          "commodity": 68,
+          "index": 30,
+          "crypto": 3
+        },
+        "staticReferenceRows": 553,
+        "liveDataRows": 0,
+        "rightsApprovedRows": 0
+      }
+    },
+    {
+      "id": "catalog:classes",
+      "passed": true,
+      "detail": {
+        "stock": 263,
+        "etf": 86,
+        "real_estate": 53,
+        "fx": 80,
+        "commodity": 68,
+        "index": 30,
+        "crypto": 3
+      }
+    },
+    {
+      "id": "catalog:static-only",
+      "passed": true,
+      "detail": {
+        "catalogRows": 553,
+        "syntheticIndexRows": 30,
+        "totalInstruments": 583,
+        "classCounts": {
+          "stock": 263,
+          "etf": 86,
+          "real_estate": 53,
+          "fx": 80,
+          "commodity": 68,
+          "index": 30,
+          "crypto": 3
+        },
+        "staticReferenceRows": 553,
+        "liveDataRows": 0,
+        "rightsApprovedRows": 0
+      }
+    },
+    {
+      "id": "denominator:field-rows",
+      "passed": true,
+      "detail": {
+        "instruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "mutationKilled": 31482
+      }
+    },
+    {
+      "id": "denominator:packets",
+      "passed": true,
+      "detail": {
+        "instruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "mutationKilled": 31482
+      }
+    },
+    {
+      "id": "denominator:channels",
+      "passed": true,
+      "detail": {
+        "instruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "mutationKilled": 31482
+      }
+    },
+    {
+      "id": "denominator:mutations",
+      "passed": true,
+      "detail": {
+        "instruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "mutationKilled": 31482
+      }
+    },
+    {
+      "id": "readiness:monotonic",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 506,
+          "evidenceWithheld": 77,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 359,
+          "evidenceWithheld": 224,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 277,
+          "evidenceWithheld": 306,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "delivery:no-paid",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 506,
+          "evidenceWithheld": 77,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 359,
+          "evidenceWithheld": 224,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 277,
+          "evidenceWithheld": 306,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "http:three-states",
+      "passed": true,
+      "detail": {
+        "200": 506,
+        "403": 636,
+        "424": 607
+      }
+    },
+    {
+      "id": "packets:unique",
+      "passed": true,
+      "detail": 1749
+    },
+    {
+      "id": "packets:three-tiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:four-channels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:crypto-comparison-only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:corporate-actions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:entitlement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:evidence-withheld",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invariants:zero",
+      "passed": true,
+      "detail": {
+        "duplicateInstrumentIds": 0,
+        "duplicatePacketIds": 0,
+        "missingAssetClasses": 0,
+        "countCoherenceFailures": 0,
+        "tierMonotonicityFailures": 0,
+        "channelParityFailures": 0,
+        "semanticUnitFailures": 0,
+        "corporateActionApplicabilityFailures": 0,
+        "cryptoScopeFailures": 0,
+        "truthBoundaryFailures": 0,
+        "mutationSurvivors": 0
+      }
+    },
+    {
+      "id": "determinism:runtime",
+      "passed": true,
+      "detail": {
+        "first": "c63ab8cd9d5e350ba6f2618b919a8f5f243af84d1b719dcfa27b2acb39fba107",
+        "second": "c63ab8cd9d5e350ba6f2618b919a8f5f243af84d1b719dcfa27b2acb39fba107"
+      }
+    },
+    {
+      "id": "real:blocked",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_MARKETS_CROSS_ASSET_EVIDENCE",
+        "requiredInstrumentDenominator": 583,
+        "supportedInstrumentDenominator": 583,
+        "denominatorValid": true,
+        "rows": 0,
+        "unavailableOrBlockedInstruments": 583,
+        "categoryCounts": {
+          "stock": 0,
+          "etf": 0,
+          "real_estate": 0,
+          "fx": 0,
+          "commodity": 0,
+          "index": 0,
+          "crypto": 0
+        },
+        "fullyVerified": 0,
+        "currentQuoteVerified": 0,
+        "rightsApproved": 0,
+        "productionBrowserVerified": 0,
+        "customerValueLabeled": 0
+      }
+    },
+    {
+      "id": "real:full-denominator-blocked",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_MARKETS_CROSS_ASSET_EVIDENCE",
+        "requiredInstrumentDenominator": 583,
+        "supportedInstrumentDenominator": 583,
+        "denominatorValid": true,
+        "rows": 0,
+        "unavailableOrBlockedInstruments": 583,
+        "categoryCounts": {
+          "stock": 0,
+          "etf": 0,
+          "real_estate": 0,
+          "fx": 0,
+          "commodity": 0,
+          "index": 0,
+          "crypto": 0
+        },
+        "fullyVerified": 0,
+        "currentQuoteVerified": 0,
+        "rightsApproved": 0,
+        "productionBrowserVerified": 0,
+        "customerValueLabeled": 0
+      }
+    },
+    {
+      "id": "policy:gaps",
+      "passed": true,
+      "detail": 39
+    },
+    {
+      "id": "state:canonical",
+      "passed": true,
+      "detail": {
+        "schemaVersion": "velmere.pass36.a86.current-state.v1",
+        "revisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+        "parentRevisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+        "decision": "NO_GO",
+        "weightedPercent": 59.3,
+        "strictPercent": 39.5,
+        "zeroBudgetPercent": 91.9,
+        "localMatrixImplemented": true,
+        "totalInstruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "basicFunctionalReadyOffline": 506,
+        "proFunctionalReadyOffline": 359,
+        "advancedFunctionalReadyOffline": 277,
+        "realEvidenceRowsVerified": 0,
+        "currentProviderEvidenceRows": 0,
+        "rightsApprovedRows": 0,
+        "productionBrowserRows": 0,
+        "customerValueLabeledRows": 0,
+        "legalRegulatoryDecisionDenominator": 20,
+        "legalRegulatoryDecisionsSigned": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false,
+        "nextPass": "A87_MARKET_IMPACT_AND_WHALE_WATCH_TIER_MATRIX",
+        "closedGaps": 39,
+        "remainingPlannedPasses": 30
+      }
+    },
+    {
+      "id": "policy:mutations",
+      "passed": true,
+      "detail": [
+        "asset_class_substitution",
+        "quote_state_promotion",
+        "history_state_promotion",
+        "calendar_state_promotion",
+        "corporate_action_silence",
+        "normalization_unit_substitution",
+        "correction_state_promotion",
+        "provider_quorum_promotion",
+        "tier_substitution",
+        "decision_promotion",
+        "blocker_drop",
+        "http_status_substitution",
+        "channel_fact_addition",
+        "facts_digest_substitution",
+        "rights_promotion",
+        "browser_promotion",
+        "live_sale_promotion",
+        "crypto_scope_substitution"
+      ]
+    },
+    {
+      "id": "policy:intake-hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "production:catalog-truth-fields",
+      "passed": true,
+      "detail": "lib/server/real-markets-route-modules/catalog.ts"
+    },
+    {
+      "id": "production:catalog-count-coherence",
+      "passed": true,
+      "detail": "lib/market-integrity/cross-asset-runtime-normalizers.ts"
+    },
+    {
+      "id": "production:exhaustive-category-mapping",
+      "passed": true,
+      "detail": "lib/market-integrity/cross-asset-runtime-normalizers.ts"
+    }
+  ],
+  "truthBoundary": "A86 proves a complete local cross-asset packet, tier, channel and semantic-mutation matrix over a static 553-row reference catalog plus 30 explicit synthetic index fixtures. It does not prove current quotes, histories, provider rights, production browsers, customer value, exact A80, staging, LIVE or sale."
+}

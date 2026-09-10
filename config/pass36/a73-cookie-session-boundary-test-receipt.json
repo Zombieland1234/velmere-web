@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "velmere.pass36.a73.cookie-session-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A73R0_COOKIE_SESSION_AND_AUTH_FLOW_TRUST_BOUNDARY_HARDENING",
+  "counts": {
+    "total": 57,
+    "passed": 57,
+    "failed": 0
+  },
+  "coveredProductionFiles": 5,
+  "profiles": 7,
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "closed_profile_count",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "profile_paths_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "profile_same_site_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "set_cookie_core_attributes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "set_cookie_no_domain",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "nonproduction_secure_absent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "production_secure_required",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "clear_cookie_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "control_value_rejected",
+      "pass": true,
+      "detail": "cookie_value_invalid"
+    },
+    {
+      "id": "oversized_value_rejected",
+      "pass": true,
+      "detail": "cookie_value_too_large:2048"
+    },
+    {
+      "id": "negative_max_age_rejected",
+      "pass": true,
+      "detail": "cookie_max_age_invalid:-1"
+    },
+    {
+      "id": "excessive_max_age_rejected",
+      "pass": true,
+      "detail": "cookie_max_age_invalid:601"
+    },
+    {
+      "id": "legacy_profile_clear_only",
+      "pass": true,
+      "detail": "cookie_clear_profile_required:session_family_legacy_clear"
+    },
+    {
+      "id": "unique_cookie_read",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "duplicate_cookie_shadowing_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "duplicate_cookie_read_fails_closed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "cookie_candidate_detected_on_duplicate",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "malformed_percent_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "oversized_cookie_header_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "cookie_header_control_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "strict_signed_payload_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "strict_signed_duplicate_key_rejected",
+      "pass": true,
+      "detail": "strict_json_duplicate_key:ok"
+    },
+    {
+      "id": "strict_signed_proto_rejected",
+      "pass": true,
+      "detail": "strict_json_forbidden_key:__proto__"
+    },
+    {
+      "id": "noncanonical_base64url_rejected",
+      "pass": true,
+      "detail": "cookie_signed_payload_encoding_invalid"
+    },
+    {
+      "id": "account_cookie_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "account_duplicate_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "session_family_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "session_family_duplicate_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "session_family_candidate_duplicate",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "auth_flow_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "auth_flow_duplicate_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "signed_flow_duplicate_json_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "recovery_grant_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "recovery_grant_duplicate_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_access_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_refresh_roundtrip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_duplicate_access_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_nan_expiry_rejected",
+      "pass": true,
+      "detail": "supabase_session_expiry_invalid"
+    },
+    {
+      "id": "supabase_fractional_expiry_rejected",
+      "pass": true,
+      "detail": "supabase_session_expiry_invalid"
+    },
+    {
+      "id": "covered:lib/auth/account-session.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_manual_cookie_parse:lib/auth/account-session.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_signed_json_parse:lib/auth/account-session.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/auth/auth-session-family.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_manual_cookie_parse:lib/auth/auth-session-family.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_signed_json_parse:lib/auth/auth-session-family.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/auth/password-recovery-grant.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_manual_cookie_parse:lib/auth/password-recovery-grant.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_signed_json_parse:lib/auth/password-recovery-grant.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/auth/supabase-auth-flow-state.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_manual_cookie_parse:lib/auth/supabase-auth-flow-state.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_signed_json_parse:lib/auth/supabase-auth-flow-state.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/auth/supabase-auth-cookies.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_manual_cookie_parse:lib/auth/supabase-auth-cookies.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_signed_json_parse:lib/auth/supabase-auth-cookies.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "no_manual_set_cookie_serializers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "central_profile_names_match_exports",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

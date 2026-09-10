@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.a66-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P2_ACTION_REQUIRED_AUTOMATED_INFORMATIONAL_SKU_PDF_POSIX_TOOL_BOUNDARY_AND_OFFICIAL_TOOLCHAIN_ADMISSION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P1_ACTION_REQUIRED_PRODUCT_REALITY_WAVE1_NON_MUTATING_ADAPTER_PDF_VISUAL_FREEZE_AND_PAID_GATE_PATCH_NO_LIVE_CREDIT",
+  "historicalReceiptPath": "config/pass36/a66-audit-tool-execution-boundary-test-receipt.json",
+  "historicalReceiptSha256": "65586be2e5baa1fb7f64d4b606a879e96cd1b7c79e91217908beaf82e6fe748c",
+  "historicalTestSourceSha256": "ef331788019d7573e4aa826622813627d7acc0de42f91cbd92835555ba034f0a",
+  "currentTestPath": "scripts/pass36/test-a66-audit-tool-execution-boundary.mjs",
+  "currentTestSha256": "c966d04f17c3d240fc6eab27edc80ebb884199ce84e50931e98e4903eafe9949",
+  "oldDenominator": 26,
+  "newDenominator": 27,
+  "retainedChecks": 26,
+  "addedChecks": 1,
+  "removedChecks": 0,
+  "addedCheckIds": [
+    "audit_adapter_declares_execution_profile"
+  ],
+  "reason": "The current source preserves all 26 historical assertion IDs and adds the previously uncounted execution-profile assertion. The migration verifier is intentionally static and deterministic; the current 27/27 executable gate is run separately by the R44P2 aggregate verifier so denominator proof cannot hang or self-credit through a nested execution.",
+  "creditBoundary": {
+    "fixtureExecutionCredit": true,
+    "officialToolExecutionCredit": false,
+    "liveCredit": false,
+    "saleCredit": false
+  },
+  "currentExecutionGate": {
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "scripts/pass36/test-a66-audit-tool-execution-boundary.mjs"
+    ],
+    "expectedTotal": 27,
+    "expectedPassed": 27,
+    "expectedFailed": 0,
+    "creditBoundary": "A successful local fixture gate is not an official solc/slither/semgrep/forge execution and grants no sale or LIVE credit."
+  }
+}

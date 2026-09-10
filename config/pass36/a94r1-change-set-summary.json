@@ -1,0 +1,5596 @@
+{
+  "schemaVersion": "velmere.pass36.a94r1.change-set-summary.v1",
+  "revisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "baselineSourceArchiveSha256": "418941ff6e821f24400335e7f5e959ed0fd772b9d7257fd6ed8c0bf900ab4ca1",
+  "comparisonBoundary": "Both trees use the A94R1 SOURCE_ONLY hygiene/exclusion profile. The output file and descendant manifest are excluded from their own comparisons.",
+  "counts": {
+    "baselineFiles": 4579,
+    "currentFilesBeforeSummary": 4618,
+    "added": 39,
+    "modified": 381,
+    "deleted": 0,
+    "totalChangedPaths": 420,
+    "categoryCounts": {
+      "governance_and_config": 18,
+      "production_code": 209,
+      "tests_and_verifiers": 181,
+      "styles": 9,
+      "supply_chain": 3
+    }
+  },
+  "added": [
+    {
+      "path": "config/pass36/a94r1-action-required-current-state.json",
+      "category": "governance_and_config",
+      "byteLength": 5140,
+      "sha256": "3b92b336c48eb1023227e43755e6e3d7611bad90304e60b2391b9abe173dbf71"
+    },
+    {
+      "path": "config/pass36/a94r1-local-evidence-summary.json",
+      "category": "governance_and_config",
+      "byteLength": 5580,
+      "sha256": "50e87b0e6519fa2a25830da3daab463b6b07440fc3c94763b459a187b1ab5f50"
+    },
+    {
+      "path": "config/pass36/a94r1-world-class-completion-program.json",
+      "category": "governance_and_config",
+      "byteLength": 15942,
+      "sha256": "d47aa82ed0f707883cea9aeb34289189516765500333343ee02cf4757ee2c941"
+    },
+    {
+      "path": "lib/build/sanitized-build-environment.mjs",
+      "category": "production_code",
+      "byteLength": 1979,
+      "sha256": "f69b35615e6ef30dd8590db592115b022f6f6c8d5bac54d09143a45fa6bfce53"
+    },
+    {
+      "path": "lib/build/segmented-build-integrity.mjs",
+      "category": "production_code",
+      "byteLength": 18233,
+      "sha256": "21280f5b3dccf4951213fc9cfe83026e345cb487c9c4fd0a546e6aa67e9f3688"
+    },
+    {
+      "path": "lib/checkout/runtime-payment-authority.ts",
+      "category": "production_code",
+      "byteLength": 3586,
+      "sha256": "a13059c6be5ebeca0b773379eee56cf9f8bfd9a46a97d5293990611f4f1970f5"
+    },
+    {
+      "path": "lib/products/product-image-boundary.ts",
+      "category": "production_code",
+      "byteLength": 647,
+      "sha256": "66738bdb1d2e77d06cb5cf20e1249cc10c63842b2ade4b62c2c1e20c9bc62ade"
+    },
+    {
+      "path": "lib/security/api-edge-boundary.ts",
+      "category": "production_code",
+      "byteLength": 9648,
+      "sha256": "ae9d9c8af07da0d7ffd05ce53bc8f5e9820ae3b86f848ac978e8dbb55eb58d83"
+    },
+    {
+      "path": "lib/security/ascii-control-characters.ts",
+      "category": "production_code",
+      "byteLength": 5805,
+      "sha256": "bdeef8e52a809a5fffe29d3a21298a7ce442469e598a9978dc1ac610bffaabe7"
+    },
+    {
+      "path": "lib/security/internal-worker-mutation-boundary.ts",
+      "category": "production_code",
+      "byteLength": 3466,
+      "sha256": "a14f073bd577f52ff875c93e43acaf989288c489ccd0212019b44b0b4d8f6d25"
+    },
+    {
+      "path": "lib/security/public-security-status.ts",
+      "category": "production_code",
+      "byteLength": 1318,
+      "sha256": "835b26f2200c4ea787f77928544bcfa9e024059f39feb4d7da5b36e41a4063c4"
+    },
+    {
+      "path": "scripts/deployment/production-smoke-network.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 5091,
+      "sha256": "7cdfb720cdeb1db8e0ba4e857b8c70c204069469f9e0273f1237447082e3ca46"
+    },
+    {
+      "path": "scripts/deployment/test-sanitized-build-environment.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 1789,
+      "sha256": "6099f3eb051be5099d9aba83c0a1153a09c69cde5d7162491c4b3a6476827e66"
+    },
+    {
+      "path": "scripts/deployment/test-segmented-build-integrity.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 15456,
+      "sha256": "40ada98311a53aabf31298c83a67968d2980ee05c3b7375dff70afbb6e35cc87"
+    },
+    {
+      "path": "scripts/deployment/verify-segmented-build-lock-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 2041,
+      "sha256": "cb9e46b76b74a94eb8c788c56e9025afb3539737e15b53d5af085e8dd0dce81a"
+    },
+    {
+      "path": "scripts/pass15/rebaseline-route-dispatch-manifest.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 3491,
+      "sha256": "3d190b54bd458b3710ab9e0cd2dcfb6b0d57e3b26fbb2b1ab2ff6d30e24b26df"
+    },
+    {
+      "path": "scripts/pass15/test-route-dispatch-manifest-tamper.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 2574,
+      "sha256": "674314f7027bba5027f9d46104d5ed1c1972e221473882094bc949e2cf0e28b1"
+    },
+    {
+      "path": "scripts/pass36/a59-external-receipt-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 4110,
+      "sha256": "2c4516519b57d3957003eca763e4a7756258648a55074807dc9636156ed59ea4"
+    },
+    {
+      "path": "scripts/pass36/a94r1-source-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 10637,
+      "sha256": "d1817e8164305dd55c81b82054ff3d2fb3fc87ca71401f8c6d45b5657852a018"
+    },
+    {
+      "path": "scripts/pass36/build-a94r1-action-required-descendant.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 2807,
+      "sha256": "ea6651bc990da31625c01abf0204aa7dfaacc82a68bbe93f61a542f69a12868a"
+    },
+    {
+      "path": "scripts/pass36/repair-a90-a59-tailwind-apply.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 1198,
+      "sha256": "246d69f119f731e085db3c1a9bd643d7c958321f4a24d1d8f5e02b2d32d112bd"
+    },
+    {
+      "path": "scripts/pass36/test-a59-external-receipt-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 5117,
+      "sha256": "ba3287925662f6386cb44221427bc311e883bc13fef3d5e2b7de1ad346051399"
+    },
+    {
+      "path": "scripts/pass36/test-a90-provider-route-budgets.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 9390,
+      "sha256": "f803e88b6b364668fabf1ab404d6f7268327b465f9a2bf526883d788bcc7b950"
+    },
+    {
+      "path": "scripts/pass36/test-a91-contact-route-behavior.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 6759,
+      "sha256": "719b75a9c77165ac105cfb46d64182b0a9f699802e5a366239ecd014a0400745"
+    },
+    {
+      "path": "scripts/pass36/test-a91-durable-file-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 4124,
+      "sha256": "8a4f5e5257b20215c64836fab10135b01b2b98c4c8e7d4fa4aac8cd3e7848d57"
+    },
+    {
+      "path": "scripts/pass36/test-a91-request-content-boundaries.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 7517,
+      "sha256": "4dd90a2b367e1d2198d11b94393557224e0e66475838c4d5fce137eb6a13a6bc"
+    },
+    {
+      "path": "scripts/pass36/test-a94-css-parser-corruption-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 6750,
+      "sha256": "b54ceb354f3a3a3602c22272b59b2db98ea5792445df8fa1949a3d6021b378ae"
+    },
+    {
+      "path": "scripts/pass36/test-a94r1-source-clean-boundary.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 6037,
+      "sha256": "030a30e502617ee7ad514450de2c4de32493e153ac2f115734d16a9a05f69f65"
+    },
+    {
+      "path": "scripts/pass36/test-historical-descendant-sparse-checkpoint.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 7055,
+      "sha256": "ab4096e85bef6e979fb988cf91fa5274e6b18e8de4204f5f197dcf755b60348d"
+    },
+    {
+      "path": "scripts/pass36/verify-a94r1-action-required-authority.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 7604,
+      "sha256": "88db3734677d81cd23f44ddc35723e1c76c3eb041409528a9d29124f98b22a20"
+    },
+    {
+      "path": "scripts/pass36/verify-a94r1-clean-unpack.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 35647,
+      "sha256": "24ba445cf9b6a671ebd1cbb363ed011da978b837df0bf1049a2c890087fc1386"
+    },
+    {
+      "path": "scripts/pass6/test-critical-offline-gate-checkpoint-truth.mjs",
+      "category": "tests_and_verifiers",
+      "byteLength": 7876,
+      "sha256": "d8df5586c073aa4d6c8160d93d3592f2a7b1007f0844a8b6c425df21a4f1c421"
+    },
+    {
+      "path": "tests/accessibility/a94-focus-locale-metadata.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 8436,
+      "sha256": "08b6f2eefc728c5de9d6ea1bb4bc6df23ce0825b1ffa20f56125dc654129b4d3"
+    },
+    {
+      "path": "tests/security/a90-a92-runtime-boundaries.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 6620,
+      "sha256": "2ccfbc0ce0fb0a26bf0d588706d0ff556dd679507769c1f83b1f220b3008abc7"
+    },
+    {
+      "path": "tests/security/a90-api-edge-boundary.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 4876,
+      "sha256": "51f61ed1674fe36e91ef1c5cb9dd8f2a9e701a37444e8b32d3bdfadcfe4db1be"
+    },
+    {
+      "path": "tests/security/a91-product-image-boundary.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 886,
+      "sha256": "e6ce4387ae65e96c396cb5af962054fa7b4d5d93a7ec389d7db09e92201dd6da"
+    },
+    {
+      "path": "tests/security/a91-raster-container-boundary.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 1136,
+      "sha256": "cd55328f8b291f18e37b7cb6baef9ad8636cd949153ae57652d2012a38bb37ca"
+    },
+    {
+      "path": "tests/security/a94-analysis-client-boundary.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 1752,
+      "sha256": "bea2277bc2a24b4860b8028b40d0f035bdd2648fbb27e79b1c5b2fc1e4ac5491"
+    },
+    {
+      "path": "tests/security/a94-denominator-truth-boundary.test.ts",
+      "category": "tests_and_verifiers",
+      "byteLength": 2721,
+      "sha256": "2c27bed45b95602aec2b89dd282afd9d4089cef4655b8cebf0a49f7a2968bdf0"
+    }
+  ],
+  "modified": [
+    {
+      "path": "app/[locale]/layout.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2253,
+        "sha256": "896e27214fa65fbf6b8a80d52cd23bcc7cb0dbf95950267c7fa4fa77519ed947",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2809,
+        "sha256": "4287468544c71f2bddc0c30257d2e20bf7de40bf092519879a004e291032a45c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/[locale]/security/audits/customer-report/[id]/page.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2523,
+        "sha256": "b0c00c6df118441a9689d453c56dacd4788fbb74d15a9a61e853583703054f2b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2516,
+        "sha256": "b84dac79b382345779eaf48881c43ff49929bd55f0275ad2b7256e1a1498a9e7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/api/checkout/route.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 20494,
+        "sha256": "632622024ec915e3cde1bb10ac1ec219247bf6656eb9e9711494ddcedec9f852",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21041,
+        "sha256": "0fe9502c6adf39f383b96d81737979229aa53f6d9810d101b170a685a53bdf3b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/api/checkout/vlm-service/route.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 22666,
+        "sha256": "e8b21988bc7eca7597e1df748380bc34fae6bf98fb049dfd4024355dd0a7153a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22784,
+        "sha256": "6822327fa1a4698cd24b5c9463a63c33f30c5e342eab50f89c6ec1126993b536",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/api/contact/message/route.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10956,
+        "sha256": "4851bcb15d97a18d1d0acfa3e2627541d2faf78d439dabf88f3551ae1c801858",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11054,
+        "sha256": "d20c243ed857ce360ac0f0887ba762ecb926d591b1e72526e0e2adc6fadf31e2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/api/security/audit-case/status/route.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4049,
+        "sha256": "1775be572723205f29995b367a9d820066b2b51c294b0bfb51b2a05032ec2fc1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4047,
+        "sha256": "fe69c5c86de0bb4b8f814006d1c1fe8b20387c54b303f48a94dd39baadffb217",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/api/square/posts/route.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 12483,
+        "sha256": "8cf103ac879caf1cc431b35e7c65f170cf893e7a72661f620e6ef93d28868c70",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12645,
+        "sha256": "e49c975ee57538d1a18a87663a6c77fb822396e25242709c999a48cb0fc90f1d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/globals.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 2211131,
+        "sha256": "c238a8f6c1916d0f317c0441b6196b9f3812da387b39dbbbf4e43b8757c6c96f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2212158,
+        "sha256": "6e9f860904c2c3b72414373bbb70ede2dccba33bf304a994fd8565a267bfe33d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/layout.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1240,
+        "sha256": "dad2c2fdce1f3b4e667ce08d916d9a63b5b617a61f0b20a243f25cf250ebce19",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1503,
+        "sha256": "ea0f99403229cf371214cf028944f57d785d9b017ceec7471b0264680ea4acf9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/styles/asset-popup-foundation.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 94607,
+        "sha256": "7c3f297798df908d686423a40a7320ce1f70eade539fbbb7a24da1bb1203dfe5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 94617,
+        "sha256": "8b36a62c0af4c493a5bf18e3bfeef0c06f1238d1014ffb1ceb03d801130dcb78",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/styles/asset-popup-ownership.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 82907,
+        "sha256": "3a883d227de85c64b06dddf7dadf6d71b065eabc02b59b936d006035b974000f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 82909,
+        "sha256": "93d13323be5264e504ccd742edf0e1916092cfd3f994767078f294ad41bbc0cb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "app/styles/premium-ui.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 61214,
+        "sha256": "9792e33685d045164fcde0747e001d90b335a1e71ec27ae86a78285717eff65e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 61225,
+        "sha256": "a1350903de14e3c4f8c0072049a75437080fecb8e21a42d7099e2234a24a5409",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/account/AuditAccountMessagesClient.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 135897,
+        "sha256": "b4d7ea95e89a50ae762c8994d0b2bd3a2d7a90c99199147121575b47e7a23b5e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 135932,
+        "sha256": "d6bc54b8ee56e062b538844c8d1aa59f71e5d4e0ae1ba317128b750381c00dfb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/atelier/AtelierInteractiveGlobe.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13785,
+        "sha256": "2b525950e8a638a2c7cb0fa111868332e0ef6ce526f09e9bb5473ea10ecca5e7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13820,
+        "sha256": "3bbf64e72a278a1b40394500de7c9daf35bc27ed4d515d13779260fa8ee13918",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/atelier/AtelierThreeGlobe.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 44714,
+        "sha256": "d2c532a3867ebd5b4bd89912b93fc668bc130296f55eb5d8cb4d6c9ce4cffce0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 44749,
+        "sha256": "eff008d4786f23310ce187e06e02ffd559bceea1a34ee6edf04f3f0bb8c5d709",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/auth/AuthGate.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14436,
+        "sha256": "f2c396bf0420284f622c50e7b5a6e736e0c1ecbd434be1fc77517c094e6d6e0e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14471,
+        "sha256": "6dc185522e021d95ee92bd147c5bc712a15175a0c385540acefb2dcac103dc12",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/auth/LoginSecurityVisual.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8943,
+        "sha256": "ec80cf786288215c8bb7bd0b8d8637611fa6a6cd2e34d9ae5dee2a948835220a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9198,
+        "sha256": "a0afb015a423bc14a63f997153791e1a4329317c106254384166a22148448243",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/checkout/VelmereCheckoutFlowClient.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 58202,
+        "sha256": "ea3d1f61c7fbeba4e7944098f49e584a74baf94fe13fdd3bbf5c50acdee7e95e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 58272,
+        "sha256": "dd01890f34f7113aa037d38fdb187c7ff82ab89ae1beb7131015dcb2bf4eb20e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/contact/FloatingMailWidget.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 11364,
+        "sha256": "528dc2b05653cf318b2642ce6cd65cc08a1ee8553e2b0408b6085e4272fd4dbf",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14752,
+        "sha256": "eca23be7c6f6e1bd4b8e0c3cfa239997a6daac6c927a7711d6fae4ab2833edb8",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/home/NeuralBrainVisual.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14714,
+        "sha256": "722f6581337aa2132a939c1fe877a0d3b5151acea208f4ab39fec149b9954763",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14749,
+        "sha256": "644390c4f24259ff700558553c031125f4a7175c001de279305be791504bcffd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/intelligence/IntelligenceFlagshipSections.module.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 49461,
+        "sha256": "6eab12cd849d40572418e705def72ce0f115537449bf7b7d62ac61fcea722d53",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 49463,
+        "sha256": "5b0ad0f8daad29ab874bf018d892292a26e69f841671ae9c25ccd89b461d3d6f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/intelligence/IntelligenceLuxury.module.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 115352,
+        "sha256": "003f0e235b22b41894719893b253f05235296a0b391ff99f910067bc9419b17b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 115356,
+        "sha256": "9e593fee9041afd6a288a9430ed66242b83bdec497f6f0f6b8f9205aab3cc739",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/intelligence/IntelligencePage.module.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 114179,
+        "sha256": "3397a0ceb363a99b1b9c6c5e569005e3be16cd256c6831b38f01ae147b4b4844",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 114191,
+        "sha256": "f854fb0211298d07f0c8b1d49b004959f155cb4a7b8555f22284fa08ba5e9bb4",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/market-integrity/analysis/AnalysisTab.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 28617,
+        "sha256": "76bdb7e278d30962c7e451ceb246e9b06cd80f4a5bf429c0ec792b8e7356fc6c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 30727,
+        "sha256": "090840ad557c86dd53b641590b9c710fa69f05f6947ad53d105af0c5c056b3e1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/market-integrity/asset-detail/market-intelligence-client-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 29740,
+        "sha256": "4b9003c8061a480aa528356703f9d506f2d228433090300ae43f88b332ec8a7c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 29758,
+        "sha256": "b3c71c58f3530d7aa33aeedacb9313f504784d716e81d79797dff6b0127ac000",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/market-integrity/asset-detail/paid-access.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13975,
+        "sha256": "f3fd2e36dffdd63986e9a3c8fd32f26f43f7021c9ae420f753648d6d5ab9d7d5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14172,
+        "sha256": "78485cce661c094f409a8fb9568e98f567dce053faa2a1e61d818e4fbe069a6a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 79422,
+        "sha256": "f6eb59676d8a5a6db04f26dfbe7abfaca91ae55c0caf86d996fe2a894420c000",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 79495,
+        "sha256": "2568ab29c8c6d594ec4a1dcc1a3779e30490ccae51645b32854b141ee8507fce",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/motion-atelier/MotionAtelier.module.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 21638,
+        "sha256": "71148d77a58b07f47447ccd4abbcb518385cbdc8da573b3c78d1c9912f42bb51",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21645,
+        "sha256": "33ba218ae0ecfde92bf29b84da6fa008df8e8e4d39ebe67c478df468c57ded38",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/research/ResearchLabExperience.module.css",
+      "category": "styles",
+      "before": {
+        "byteLength": 15022,
+        "sha256": "963a4eedaa3cd8aefbbe42f042b7ba4b90fc1bb6eab9d799b5a38948b9f95366",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15023,
+        "sha256": "b62e8f5560eef23dc551ae84f23e83204501be703d6f4dcd7ac8c0e157271d18",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 254037,
+        "sha256": "0b3f81eec0aef70f0d0068b7c442457d1039b19b0b4e280bf1bc0519f8bc4b9e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 254109,
+        "sha256": "4f39930212eb1a86ae762f682df51259e3d5a99bf17d4cc0e3250fa469498ece",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/security/SecurityLinkedRequestDrawer.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 32485,
+        "sha256": "9204ac41bfa3fd72d6594ad23b5a7438acccad8962a3d114c9ac1881e4471572",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 33344,
+        "sha256": "991512315b4b8b7afd1dd27d759358b4e43db63203c873378054b212509bc31c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "components/vlm/VlmSelectedSystems.tsx",
+      "category": "production_code",
+      "before": {
+        "byteLength": 23369,
+        "sha256": "c9b781505c4c85ea015da0b582441a7298fe183b14061ed4dd559511628bec6a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 23389,
+        "sha256": "9904cf73a85c3320556028a8592403ed995d4126f9dc479de81ddfcd2f36a9eb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/current-release.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 18326,
+        "sha256": "48283fe046c72365395adefdb853f5d54570d123b76e6b0ac90bc60bca9571b4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18299,
+        "sha256": "b4b0577f5c3da749dc88dd674b12295e8a3f00de1cd623ca2b68e5db62304fa4",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass15/route-dispatch-manifest.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 114284,
+        "sha256": "b49ac722482dab192946981054547375aebf9c86b6d73349e65667fa5d8bcb0d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 114194,
+        "sha256": "42d913f0d26552560b9a2b3b1f497be20c6ccc8ce4ed9eedfc9a47877fb54d53",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass35/a48-staging-tenant-isolation.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 2628,
+        "sha256": "a254c45a53d491edae8b6f61ae356a853c55e95bc6259f1e804c00bdd0872f7b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2871,
+        "sha256": "ac9d61fd979d069c4bbe4f0291a41e1455aa880713e0e97b2fb00fc098f87282",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 17442,
+        "sha256": "560ad4b1baa7d0913f58d5e3e6307f0bcbf6a12bd5012fd7beadfa2bb638f06f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17622,
+        "sha256": "bf18cc152ae163a8416aee5222a40eb081f7d71dc64e5ec9935b3a60aeeb7e1e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a58-release-integrity-policy.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 1445,
+        "sha256": "2d5bb1d708ed6f23ee549ca9148ca98c50fde9c9476f6e1793e8595fb2ed8d71",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2424,
+        "sha256": "36cdb9a2398d3cae9949d072988b2c6c51c8483e23066340f39da64b95ca8050",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a59-css-compaction-receipt.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 1976675,
+        "sha256": "6582287ffc00f8b8f2b23713a337b6f990f9d7e085a51c134920c4d6302666f0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1976675,
+        "sha256": "c9cc24925e9c3dfff818735063319bc94fca821fd8a4de4693ec0cf652343929",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a84-current-state.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 3070,
+        "sha256": "6d652b48563ba8919f0cd6811948f588af4036af6aabc1f7d19902ed9aacfada",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3144,
+        "sha256": "f5ce719bf3ecb3ed48a34be62637ed10c2473a1c45a36d18b6ee6cc67de9192e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a84-shield-full-catalog-tier-matrix-policy.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 14787,
+        "sha256": "b2eb4f9f2cc7e845a6589bff809965e7144a03568f9cc5642918207cca5a74e0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14787,
+        "sha256": "95bbe8a4bfc01ff5507404e0c7cc80be62eba1ddd18f6f0492d5d7c551deacf1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a84-shield-real-full-catalog-intake.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 640,
+        "sha256": "066b94577c6ac855046101949c67e2055319e95b436ad8bed60f3b3c297bd3f2",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 710,
+        "sha256": "d0f76f001eb4d04d1faa3b3f8771fc584e95d22516999a851834f3fd554e4493",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a85-shield-pro-map-full-depth-policy.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 13179,
+        "sha256": "23e2f87b434050fb78853ea4249153a0bf42f4d881216f5f5a1d50a1708a18ac",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13179,
+        "sha256": "1808f68ac4c90d2b99ce09d5daed6ca58850d74a52275e0bc0dd878e364a2b72",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a86-real-markets-cross-asset-policy.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 16183,
+        "sha256": "441547a0a54c6e2112881de0c92e5a9237f89005717018267fbb83157c9512dd",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16183,
+        "sha256": "6dd03da74b0ecc2d0fbc84d0081b39505a1c8895e07bb73515cb13b69e0f3cef",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/a89-test-receipt.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 41989,
+        "sha256": "8ffc2295d83e75033c4f2e34421767eb0c2d9b6365d3297ffa5f62caf878e5a7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1787,
+        "sha256": "4d0e4f6beafe8411d306a805b1dc6a678dd5ec0031c5a45c51c063d5b166b97e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 19821,
+        "sha256": "20cf861c0bca7cc7e2fdad4cee854e67cdeac9113a8f824aa525f2b9e09c79cd",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20582,
+        "sha256": "5f2ec1e145f282af47a02879bf36a62ac6b1703533d2d8e585761d054695e795",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "eslint.config.mjs",
+      "category": "supply_chain",
+      "before": {
+        "byteLength": 1967,
+        "sha256": "dd74a3acaf2413cb8e269390a47c6cf3040a996fc4edbda9fdc1a32046c72565",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2140,
+        "sha256": "5ecebc9833f3c310da91bd2f20ab13834ad4c8e67e2dbf88104790eb19ce9977",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "evaluation/pass36/a85-real-shield-pro-map-intake.json",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 656,
+        "sha256": "d611dbe80766c20fe937e4736698c84c41400d55ab110c97c4ef0e2c8efffe81",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 726,
+        "sha256": "8c7f485c56e5669e2800ab5dfd97afa7560e4e325facc9096c4bdb79efefef65",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "evaluation/pass36/a86-real-markets-intake.json",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 828,
+        "sha256": "db167020d095f7e99c5fcfbb87e0407d023aa2fbaeb3e61083c1ba15ea86aa1d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 947,
+        "sha256": "0937abb7e98e0b261f7201058e16f74f645a66141ed0361f97310ef233f8332d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "evaluation/rerun-audit-compact.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4963,
+        "sha256": "b72865bbb09bd76ba268064fc0fc6539eb6cc65c8680a6343e0e157bfb43e087",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4956,
+        "sha256": "8a855a995b37da154c3dac8632a384fb1a25115922fda9d6a7d734a4e0f51ecd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "evaluation/run-one-audit.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6029,
+        "sha256": "38df31920b4e0d9cbdfe4da12534cbea2b9be55ab8697d966b45d9fc5302f36b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6024,
+        "sha256": "adccd3f931320c35b5aa5c0bdd36ba515aab8095ea3fcbfffb967a1ae5a5cb4c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "evaluation/run-one-vlm.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3724,
+        "sha256": "dd4aceb0149f56fdef2c6306a2dbb221b89db09d1dc9f90ccb37f1d78eaf345f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3719,
+        "sha256": "de8eda96866e6f2bee7a2106989724a8873a10f68aee78431d0a00302427dc5d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "evaluation/run-pass4640-regression.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 12374,
+        "sha256": "d0c79c1ea82b2f0c5d1fa23a06475ef145372c448e48a9db9243957a6bb35eef",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12360,
+        "sha256": "b571055f75fdc3accd9d63f592fcf53e5868c011a18b2bb0e37e550396315cf7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/admin/ai-input-policy.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1645,
+        "sha256": "826c14cbc23d7ea0c81d8563fff7cb49644d7216bbfe457f924d254d8154d647",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1721,
+        "sha256": "5d33eb150b6c814f54263f3d5a87332e861effa7439b889321e210f94c770db0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/ai/angel-evidence-context.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 25369,
+        "sha256": "06ae030b2a95f8c6c8e76304704e709018997771aa0a87828d7f5a23c036adc3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25372,
+        "sha256": "d78ad5922bd1ed76c326966b89ab0bfe32719f17d391608e7f3d1375b2c59d02",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/ai/paid-tier-policy.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 964,
+        "sha256": "de5b98bb31d545b4eb2e95ba9d95a8b85afae1c1d856faff7fed1c4a78beb901",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 955,
+        "sha256": "2b26be3d9d4fcd77ebef8dd11fe966ace106f5303ccd5c43073617f5b8b1e37b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/ai/vlm-brain.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 71406,
+        "sha256": "01162199e41ecd1f498f3c60681ae0e6dd813ce947edea0ba61755ceeb006dab",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 71390,
+        "sha256": "88fbf5563132938dfcb74d76c1690fd19ee81928e77e46a4a159b1b0c13ae4e3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/ai/vlm-security.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 18811,
+        "sha256": "458b524fb05d5788289f8ab958850c9fb2516ea4f2f0e1ccda8cca83f39568d4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18747,
+        "sha256": "823101b8b0df49e81b699521cb1ba95cbc6fc19102ecad9ef22fa654dfefa1a9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/auth/auth-session-family.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14127,
+        "sha256": "fd0cb97e0e9f9ca1b11b380addf8be0aaf4cf84e09ef64b808b580833fbce1bc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14197,
+        "sha256": "2a49489e6192108227795e14be033dadbc10066bd0f721ca753f0b20783e3280",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/auth/customer-auth-fetch.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2420,
+        "sha256": "04abb0a73c909ba840bb71bb0f348deac07ff2d7b9f50dc81f744a2e9f22fd6f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2498,
+        "sha256": "2e21158a19089ae1060231ed0c94de270d9d01e0ebd94e14ca9f1a68c4cc7ca9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/auth/password-recovery-grant.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8234,
+        "sha256": "ec77a440a273b5c1edf9bcb35ab057d51c9b141200e8fa64626b799f1e577b71",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8332,
+        "sha256": "76b33c6dc7f24d30960ce72d1f4478b4192c2dca315c7e876ddfa68af5051cf2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/auth/supabase-auth-flow-state.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5290,
+        "sha256": "e2facf1707a5bacfd8b338e486ab6d4d807cd240555bc847d96ecd138a2a0425",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5388,
+        "sha256": "b1b77fedfd4c3fcef9eecd44d62171e9c45744c58844e8afb03c71b1fc251b41",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/checkout/config.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1574,
+        "sha256": "e588e05822edb6d0be355c39533aef979ceed8d5a88ba58aa73ae9971c6b3680",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1866,
+        "sha256": "a490bd6f0b087f595b2db20ceec409f13e01f23b9513bbd6b96846346b003aec",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/checkout/readiness.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 3947,
+        "sha256": "5ff97ca4c9765ea0c3f3d0be3caf79e9cf0bbbccdb45eba7bcab94716afde73d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4321,
+        "sha256": "23e1d434ecccb05b998372500c42844a1e067fa9e036ccd5b59acc70774771d6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/checkout/stripe-blik-readiness.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7827,
+        "sha256": "46f4fbe51ed8c0da6378486c3fbcb37924219357c094d012ff0a30eb739ff372",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7883,
+        "sha256": "cb84676565eaae537b5c2f5a05a2bf6dbd0b456491e8b29335fa811ea946837e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/commerce/vlm-advanced-only-access-policy.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8525,
+        "sha256": "9b236671084ec9b38d26497e7054b0ca86f10c802cb92cf63504a626dc481544",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8496,
+        "sha256": "9efdf0aa3dece7e220634627cfeb6e718faa7ee6230b216ef5afe8f4582f808c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/db/supabase-service-rest.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 3328,
+        "sha256": "82ddcf5c4310fb741860482dbaddc2767764d3c85dddcb18fd07d5ffec27fe65",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3322,
+        "sha256": "2adeab095c04d52a4e0253aaa600feeeeae441491ea768a8f386988d6aa86de1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/importers/printful-importer.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2744,
+        "sha256": "2eeacc733df644177a9441907af2fe5e82f869f1d2e7a17bd60b2845785b97c0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2735,
+        "sha256": "ad60f594fa7b26b093cacd4101b2f6fa0f58bf13dea99f57845b24f48e524a71",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/jobs/durable-computation-alert-delivery.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10777,
+        "sha256": "5a7fbd40457fb069838dcb9c020a6f7cfcfd61e10c3e7d27e3b6786468afd8de",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10761,
+        "sha256": "1b8c8c7fee6ecb2a95ddf7862df883d5156e7699486d446624ad7d5e70af96d5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/jobs/durable-computation-cycle.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6862,
+        "sha256": "9ead37cd462336ebae31b20ce5104fdc2881c4fac81117faf7e5622d2b6005a5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6863,
+        "sha256": "b028579b8e72c876f21b34333ae2c3115a8cb7b003029feb96559d34a5276625",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/architecture-dark-matter-guard.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7861,
+        "sha256": "3ea49b245a8c100d3cf60c84f7e50a3c6ca7a92214f049ea67e0704d94000fe2",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7860,
+        "sha256": "721932a501af684f5665156930c642cbddb05da8b28ac71d0c7038a5bebcade7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/browser-runtime-qa.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5796,
+        "sha256": "ee7b842edc42d805ada5cd315818192f360a5f3edaa01afb051deb96ababb95e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5872,
+        "sha256": "d1c7c8d38512d2308e96282cf7a62988773ae29fb8e26bd5e6fc4a99c5662536",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/customer-report-layout-model.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14750,
+        "sha256": "9bde99614d7382d78d847975586c08085f90e6668414c47354fecd3008816610",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14799,
+        "sha256": "a89c52b9a184b4dbce9b79e9cea3843964eb7cf4c3523eecda167ad54509faa3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/customer-source-sync.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 12087,
+        "sha256": "1f398ac52854458986bf7f17388bc7aa5f663c62d6ab792277abcb4fc2a89592",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12162,
+        "sha256": "f0ad2c7113409f8eaa9f5cfef173e5506f6c48db255d5ae34ce40b50abe6e2f1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/dependency-reality-build-input-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7183,
+        "sha256": "1ff242548fe5610c0d395a6e8b006452d86872d79d8af3355e5727697b7cd678",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7156,
+        "sha256": "9f5059a01ee3ae03b28015e233ccd0d85eb9d924c24b18de06c4227f0080fd68",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-account-vault-retrieval-contract.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13462,
+        "sha256": "092866d78a3aebda5082ae8baaf0aa0f6a81d5e9f3f5776c643ad286d0089773",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13555,
+        "sha256": "942ec4ba6dc8ddb78f7b52505db3310496c8d16aef5df94a1ba33a62fd75fd97",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-admin-override-dual-control-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15636,
+        "sha256": "c32b48e232ccb9b3a8634b451ea16c7e24e63b9ed3a57a2b21b893a6fda29953",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15729,
+        "sha256": "476ee37db132fe3486bf053b0c2f56b78c3c5f76742d4b42629d3fea7706dc9f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-artifact-delivery-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13733,
+        "sha256": "ce9ea1ed7bc49dad3aae8fba3c321e5c2c8f43692244bf6306db22b5f0313eef",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13826,
+        "sha256": "e4e796fdb83dee333591ff681cdfa226c064bfd2e3208a10664cdc70707d1265",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-artifact-watermark-share-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13666,
+        "sha256": "12f3d03021db6226ceaab8f2186b0ef26cdde73265054da7ef13b9832bf23513",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13759,
+        "sha256": "839ed22145461a3fa4320bafc052ae22767ff1d5c3c81904a54000fa13652f4f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-evidence-export-dispute-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15006,
+        "sha256": "b0a3d726199297f2580e4785b5c46f5ccf670809469b78c979364d6cbae6728b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15099,
+        "sha256": "ac7e94c40c8c1b0ada215707e076e84744c110546c1ac1bc43b863e4a265faa0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-incident-response-disclosure-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13657,
+        "sha256": "32609c14939b3cbdbb26f0c36406f161b2669928a35d8e05a1622487cb33478f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13750,
+        "sha256": "307ed40cbeb4aa855f40d9d8deb13654947b1decc90868e3dcf78f657f1f56cf",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-receipt-replay-parity.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 12943,
+        "sha256": "84d4567fd4543c18cd3ce15771074b8a58f20bf2368d5cd4024b6bc6e867c226",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13036,
+        "sha256": "c6e706e98666cfe56d89312be0a900e196a816087136e848de6ef070d6be651e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-retention-erasure-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16324,
+        "sha256": "5b89eb691f08b3a2b6c9a1acbd3004786cf029d2b7641fd6ca0177de9bebced4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16417,
+        "sha256": "11aaa4986b1941cc8c1204413587cfe8ffaf4e0fa7fa1daf3987260c8864cbc9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-revocation-chargeback-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16004,
+        "sha256": "476157a487f928b2d5cc653ac4ad461dfeb2927daba9292bed8c0f52d1c443c6",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16097,
+        "sha256": "71a6f9b3711daba7d7ea241714e505af76e3cd3fd1fc9c58ea782ae29e7ea1f2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/entitlement-session-device-anomaly-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14048,
+        "sha256": "4c4d4956126000b64a9a9b15c380522e2fb2422a295b6ccdbf77fb8796064261",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14141,
+        "sha256": "3c37b7c98602d36800a9011a37d9b2a41e730903b498b4e0713c0343010adf4c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/pass35-public-securities-quote-history-runtime.mjs",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5961,
+        "sha256": "800eaf4f642b2f88465d8ec2b8bad2b6e99eff24b6c0d458c639ec597c3e82ac",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5958,
+        "sha256": "49bc58eb8dc99d839f6f5486db06ef17310a70c091b6547e5a559bcc53cd274a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/provider-evidence-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 23065,
+        "sha256": "d9d2596840ecc238a007a0f55ae9cb57a876a9ea3ea2624105de276eedf3d205",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 23064,
+        "sha256": "346c78ee6609726509b66b3b195c8c8ff08a5fcb2f949f04e295b5fe17920345",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/provider-evidence-receipt.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 22633,
+        "sha256": "41799749a041fc06410bc952c5a48c73de855c3ff79c01247ff74c3d758f0b46",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22619,
+        "sha256": "1b3bf1b2296ba41708b7f478d3ff75adaa6402a256320b85487089dc072b2107",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/provider-quorum-reconciliation.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 21216,
+        "sha256": "590d618cea955da26b64416045df06c723af0dbabe2d6a83d7cdbe54e72f2ca4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21215,
+        "sha256": "92f05ac96387412f732ee0e720ec30a9e67076e032462684a83a9927ed1b3053",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/real-market-vlm-adapter.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 54175,
+        "sha256": "7009a2b00bc722e8bab7f4e73c4e5ccdc1e91c5880d21761d5196710e2c8f80f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 54174,
+        "sha256": "5100822c386628792cd4e54509628f0814e4ed276875c0368cd7ccf54195d021",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/real-markets-catalog.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 3396,
+        "sha256": "3e77ecf010ee3a4fe43bed8f08e962d7c74e2d47a13749bd9a69a07f26a2b732",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3395,
+        "sha256": "4c36094fc7e3b1119f2b8e32703325e718f711419f2f364456c82e9dbcb0f7d5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/release-transparency-witness-rollback-resolution.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13543,
+        "sha256": "ada85de29e7296f59e483145c77ef696fd9062ce63dfd446ba15064b71b46a10",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13531,
+        "sha256": "7d2df503f303e7637c50f88a963a025defd79adf1cf296b1f75bd67e7ebaa294",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/runtime-premium-evidence-hydrator.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15640,
+        "sha256": "8c55c04636861168bb21b74d744056c27efe6064a88e7d1d24ab42f6b8296592",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15573,
+        "sha256": "803e74d961840b796bc6664623d7c2ae0fc80246851d871c137a7348f7c6ef27",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/runtime-receipt-capture-store.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15321,
+        "sha256": "181371de2317020776c7827978b65b0f8d39bf53a579c9cfa95d4c3e103a9bf9",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15414,
+        "sha256": "6763c672e9379760d8f275e772421d99a4e8087bae43f20c244b2e9adf610c23",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/shield-map-query-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4078,
+        "sha256": "19552f1144f4ff5870b9434cf0627a27f881b8bb68fc575e2a9f15ee65011303",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4121,
+        "sha256": "0ffc52ad15bf5d0fdbce6f00a82fafa1a955713250d8c4d7180049329478997e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/surface-runtime-resilience.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9152,
+        "sha256": "6d2cf20fc7fadafb70731a49c977fb72a1a883a126c6baea6caf6c2252322cc3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9228,
+        "sha256": "409bae770c6b132cad29b3a001504d18d20efe3fa9c9e1cd4072e399976c42d4",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/top1-advanced-human-review-signoff-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9759,
+        "sha256": "c1ab93fdbb4a250fa8eb946bf4d2663da5efe77554f44384d63baa29a6778c73",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9742,
+        "sha256": "4c7143e27c6fbc6555f8743851468ad2aa0a733c4005023accf2f51cd2d003bc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/top1-advanced-review-replay-audit-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 11317,
+        "sha256": "1c757a92995619e0fe1984ad1fab9f4abcb051eabd63c6f7e574471848ee5e0b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11300,
+        "sha256": "1996dd351c2e9275a3434262ab8b963590438290d20e7f4fbd64751d118f2d3b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/top1-community-source-upgrade-moderation-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10872,
+        "sha256": "f26dd6ff4ed9d0c6053da42e5601a2e0faf978e431a9db07aa9c74f492a1f95d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10851,
+        "sha256": "1511165f0fa455985def864dc6d88db05845281e5a88dfcc7cb55ee6abf2b205",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/top1-source-poisoning-ssrf-firewall.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 11949,
+        "sha256": "c54b5b92162b04dee72c61058dfecd14723930e999db8e4dea92b092f2e54676",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12043,
+        "sha256": "a78298953d71316179806ecc698423b40eda8d09b0b1bcc56476e754c884c943",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/universal-asset-identity.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13463,
+        "sha256": "b5dd93079532ad086cd426b10231bd31d0b38be5b5ea54c01cff0dff52e56815",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13459,
+        "sha256": "3cc99904259e31787d670a3ed59884ce12083773700f4d235f9b671eb2ad95bd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/market-integrity/vlm-analysis.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 11704,
+        "sha256": "ac129df2a6af160ae07b0f21a44244f9a7edb29cb5f1fbae52b2b5183d973f05",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15920,
+        "sha256": "4fd736d27ec9df3ea3fe356040e6b1c50ca1e575a57cc83c84b4191ce5de6da7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/network/brokered-egress.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 19006,
+        "sha256": "eb00c68d4ca65b834d4199a0f3b3b7fdc788af1f5f54961bcd728ca198094d32",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 19000,
+        "sha256": "a73d05648e3dc7347efe6d64f305f14c4c7a012243e0563e8892d68001512dd0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/network/fetch-with-deadline.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7136,
+        "sha256": "3f2a8b917dfe2a724a536f18ac4574b8e95bd1551a6fd1fc15ce2c95827d308c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7213,
+        "sha256": "41ff44078b35fe5a3844681d35e49eeca6d9adbb6498088100c044f92a7c6949",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/network/safe-egress.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 21510,
+        "sha256": "885f200931028dfa2a3aefff8efb2e1e2f3cb6e57c36c80b5c21faf8112fe125",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21507,
+        "sha256": "260a5615ada405a31b87f197137ebfb70daec78753b543ec94158e31f02dadee",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/orders/fulfilment-incident-case-store.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5842,
+        "sha256": "181c532f5698ef5f8f360048bf9e0f878c07ca2fea45ccaa67882120eeaed7a1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5841,
+        "sha256": "f2d29fc37b755a17bb0d6f3006b3b9286b8d963a0029fc64424b477fbd796a17",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/payments/stripe-webhook/handlers/commerce-checkout.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10918,
+        "sha256": "600b367b64973f4f71cee59832ebb069eff6398e60307cb91366b99f9bb49b1a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10942,
+        "sha256": "0e5e4cb702f228954903e4de6f121d651576fda1aa699e1983f92aae2b41c04a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/payments/stripe-webhook/handlers/terminal-events.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15858,
+        "sha256": "af78b479ab909f82d439711f8ce9b1b90cd746d1b591f85cb56174675ee18255",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16833,
+        "sha256": "52db41faaa74ae61f92a48beeffcf449e448dd6d5ba057b85ca7ca2694a432ab",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/payments/stripe-webhook/vlm-terminal-binding.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4337,
+        "sha256": "b6fd30cdf7a071951725c2b722820ee0c7cb1fc2b19107801fd01e00c9d636d3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5192,
+        "sha256": "3cce71b6c7412b83ceb234407d8a39f08a60293bf7ea6e1919f3e2a5d35eeca5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/products/product-db-readthrough.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8507,
+        "sha256": "8d66c7ec7e1661e1e126347f98e57f3a3c372d0282b170cb2a987ee14229f8c9",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9022,
+        "sha256": "fbdb169a556a1c38a2a722f4e00fdf953f9c1da5bcddc7b305449bae594f8940",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/products/product-publish-audit-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9229,
+        "sha256": "33d3f9983cb4807f614584283515c7030505a41c56d01ade18fd8771c25f29ab",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9228,
+        "sha256": "51eeb15533352873719b6644575bc055df43632b0fda6733a2c28a89d2de4baa",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/reporting/account-customer-artifact-pdf-blob.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8327,
+        "sha256": "bdc26b3c5deedbc25491891bf57a4cdf3696c617d1188701076e34ed648004a7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8330,
+        "sha256": "6242510295e671409bb46efcc90ef4432ea32286b4015d8d20572723a93d189a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/reporting/account-customer-artifact-snapshot.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 11265,
+        "sha256": "b7b622a52320b395d1736beba3485605cfee72753e42aefca48c35f0e025601e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11358,
+        "sha256": "0fb8607f09650c583c42a53b875385f10513231b9b7443b21c90fabbe4893055",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/reporting/account-customer-artifact-store.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 22167,
+        "sha256": "ba7fa7dd4d12ae481b6e94859aecfafc98293d18e8099b842ebe67bcf601940f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22170,
+        "sha256": "1cf59469577305f0571f61adbbcd23dc3e588b1edaf0ac3c40c7c0abc0489853",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/reporting/canonical-customer-artifact.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5669,
+        "sha256": "0505b7c538bef5a37026203ac2ebf30d17afc2b44516d9616b21aae72f637883",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5762,
+        "sha256": "239cb10cca49ce6ecabcca7d087f1e6cb9cc1b15224fd50ae42597a93b0c1dfb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/search/lens-render-token.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14682,
+        "sha256": "53276045d29754c6bed00c56112e3a4b6cba09a4f257c25029f7bbd1bd979995",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14759,
+        "sha256": "8dc45d2bf4d7ace555db3a84d6f293e3015baa7b4d76da179042c08cd43ce8e5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/admin-replay-audit-link.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5065,
+        "sha256": "c1f50f3a78aff259495faccf87f47aa89e889f7c7f40a274df6ae4fe40a37aba",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5064,
+        "sha256": "7a4f9e6b95bc3587d86ae18f912304d6109a365ce40497b807f4c89032a3a465",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/advanced-audit-release-envelope.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 19920,
+        "sha256": "34a7c8d7f5482d21957ec251689e4b416b8f2bc87b3f4daf308af5647d422d03",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20003,
+        "sha256": "ddaaa5dad67aaa79c9ffd10882ee0688aef14c6e6ff197b2b42648c39db88b02",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/advanced-audit-release-store.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 17818,
+        "sha256": "4b2a6495c97db8c1ff899a1c51fd3892adf50259c0c7ac6a51604742adffef4d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17901,
+        "sha256": "dff46099de6e58feead586254f3dbae794e7328588440e55f52812b4e6feed7a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/advanced-manual-review-queue.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10962,
+        "sha256": "d697a5d8c8e98b73eadeabb3e1b75122f3970bc1295578343f417ad70be15c9a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11034,
+        "sha256": "1ec43939c0bdd8982579862ebae4ce35a6ff7a57ab6e5b0f203f1260bf179937",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/advanced-operator-console-merge.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 23977,
+        "sha256": "e7954e232646f84877895b56a41317a07f448d10c3e5e3400e0a7ba028b44383",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 24049,
+        "sha256": "46ff096183fc01288490e09816e878268472eca050339c9e7cc7f0259ea92ad6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/api-abuse-shield.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8431,
+        "sha256": "934d5fd9100252a8921cb5f74a2426d72bbe2f599e35392754fa345dbf1ce995",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8593,
+        "sha256": "58c3dc65b4e8be9b9cbac4373f58374af1c610780d9489dbeb3da2a1e30a9cde",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/api-contract-response-envelope-hardening.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 18092,
+        "sha256": "e2d559717aa9d11642bb150f93f37a4475834895f9b147346d80ea1cd5a59441",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18155,
+        "sha256": "0d65349237e225ee4d98a9e45e032ae16026bc65c7b2cdbe09fe154a6369cdec",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/api-error-envelope.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5892,
+        "sha256": "b0d3fecd1ef8941109ae09a4334d06b962c18846c4dbd5d52c51089324372be2",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5934,
+        "sha256": "4c75ef33c4f5afd6e78b70e1b98a035a6bdf0a33ba83e82a4fad301b05681c42",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/api-guard.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 18522,
+        "sha256": "89b8a8cda5453a4472b86b60d042c9cd041ee10e6defb1ffa49cb63f7f53d031",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 19111,
+        "sha256": "fef17f8e203ae3cf53233ab0bf4a7e16f321c956c69b09345199fc484a98aeb5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-a01-a05-engine.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 42457,
+        "sha256": "851a8724c310bcca54f37528224e28a95884434200bbe19b1c0b58200a8d6d18",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 42456,
+        "sha256": "a65575477f6af61cd8decc5622566ad0e0162e6308c104470f82ba70c8652345",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-account-customer-snapshot.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16042,
+        "sha256": "66e9cc6fe574665f02d95bf2c5b0514312eb34870df4d20ebc1b54e25a6d8d72",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16125,
+        "sha256": "650d2db723b2ad14f63a8468a331a902701fc3e65352d5905943de20f3588e58",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-case-vault-private-delivery-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 24849,
+        "sha256": "2c00f1634944069a91cdfc9ae6e48ed5d621636e16c4250b43ad6c7d3a953543",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 24921,
+        "sha256": "a9422055c50c1836c435a500cfe963d30024af8226301ea1eb25c954a4734143",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-customer-report-pipeline.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 23501,
+        "sha256": "4533cd4a36fc15b346e350e97015c6b0dca942b60fdfe045aa419fb72c287c4a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 23584,
+        "sha256": "dd122351efa0da5882fa4e8e03f0c06e476a8847f7b3943cb5d1a1f308aa4c57",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-customer-safe-report-migration.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2372,
+        "sha256": "416459714e39e4b1cf9974910933ef171ca3c851aa64a63d671449d2259a147e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2455,
+        "sha256": "c4acaccdead9f0130921c7660447cbe39ff3cb01f9ddf8fab8fe72d5f0310637",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-event-schema.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8692,
+        "sha256": "e10fecf856f44e5d20dafc91f06972ca8bbf0b4279ac3e257e63359a0a9be594",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8758,
+        "sha256": "76db06a20c23d4659a814808e64af3c921b6c74439da08421ea6c8d41e92c96d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-evidence-qa-release-gate-matrix.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 26314,
+        "sha256": "bbcb1740527dbdf28fde660a855e14d53cfb464671544fee100b1d0a1c8d86f5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 26386,
+        "sha256": "7f32fbff4ed34dc149370463f55f09105e0e0160f664b9e5f350c159afe81202",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-evidence-receipt-packet.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8342,
+        "sha256": "1f9758de8d3e5cc0a6f2651e1dae177f533d6ac5060d99db6fb63a4656e0998e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8425,
+        "sha256": "76ddaac95d228869aacb39ea2975fc37229481735259a4761cf86827d6de030d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-intake-case-vault.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 42331,
+        "sha256": "fa4724f27f5be4d3a838a7050ffed53c5cc11fed903c5fd2ca3cb05980da2576",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 42434,
+        "sha256": "4eac20ed4aa4c32d3a735453bb55fb6f4f58da80dda1bad9d47b7d213ec104ae",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-liquidity-holder-lock-risk.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 20011,
+        "sha256": "360b0d8ecfbc3b346c9bebe97cc8051550a936a26e837d78dc391abe1c345c95",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20077,
+        "sha256": "c0c5d3b880ba24fc4df51bef247376fa27537c80894298af76d7818ad8c51ac7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-permission-parser.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 21448,
+        "sha256": "c1a742b3a9dc94affd8b140f959483db1886bbe98470be48aa3d0fb82cf7c16f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21513,
+        "sha256": "7be6bd6bb0b0fbfa2f93144554fcf1c28ba0fb4b6d08d1ba88a2e28aac52cb5d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-public-source-receipts.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13600,
+        "sha256": "1205858cca5da483f7f29595ddf29d98c86cb45b82903cefac709b99e6c5f765",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13695,
+        "sha256": "a21da8f3963d55dbf14e83bf542e3df1dabe4e67c55ef185a8827d2296535591",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-report-assembler.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 24247,
+        "sha256": "23970130d177693e09103f88bbeea96e0bf2e30b9f13719452edb397babef3a3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 24319,
+        "sha256": "1592120be048f1f96f08d971fe826376ccb97ab09999d1e4926d51ea21a84f71",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-report-customer-projection.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5140,
+        "sha256": "82091a51417bd24c76a9fd9567028560c42c7f66c3624d4aeb71a5048d71d997",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5223,
+        "sha256": "7c86e80471ea4f7a8d5ddce0cc9e98cb0ac42f1835eed75351262621f9374de6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-report-snapshot-store.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 19263,
+        "sha256": "54ba87cd93859b59fb7f51d4cbd8e678417e7ef5366d9bffd67fa30becb93756",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 19346,
+        "sha256": "39d7d18f73aea0dbdebe9ec7dfe243151df791933e72fca4edd195ac50eadadb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-review-orchestration.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 19234,
+        "sha256": "50c63255b9159d95ea3e3d8657f3c147cca7308b67301053a6318a9ce111783b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 19317,
+        "sha256": "9f6a8b8d396f16204060ae19d72df91dda2884a13812ff2aade023f96e0229a7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/audit-versioned-recheck-receipt.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 12072,
+        "sha256": "944a2950418b396045fd82c979b24089c0f80309061ee86c559136f77f179e41",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12144,
+        "sha256": "ae0928b481832dc127c0c256818f83c57970265a4ed11a1af2f9ba8d6412ddb7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/auth-callback-contract.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 3944,
+        "sha256": "9f543d401e7846d9e1be8b50042cb71a4df31b1a895ec67a188022d5d1056cc8",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4010,
+        "sha256": "007c1ae362ef1c0869197607a5359e90541944aebbc27305a71651a8755f8f49",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/client-request-idempotency.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7583,
+        "sha256": "9bd3b58c366073f5ee02149501d4f45c4a19964b3d4c8d766e6bfe705be8532c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7649,
+        "sha256": "a1de654600140177467bdfecd41e9d86a3239e6ce3a8c8bd7fd632951da7064d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/contract-source-abi-extraction.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 32536,
+        "sha256": "ed3748883af01c331841c908175db22ad04618e33f0bc1936c6b8c6f82f45ba5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 32627,
+        "sha256": "919a9e27c7289cfbe783d873d7e7b5bcf496ff5bf5587e31ade6f4bdde102961",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/cookie-session-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8568,
+        "sha256": "705d6d825c79cdf3d9647e3192a000f26870cd48f66cc0efeaef2770043ff6d7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8634,
+        "sha256": "cabbf2ea54c0e8722e11011e62900619a507b803db103d623e19de91fe9eb65b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/customer-route-health.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7612,
+        "sha256": "981a7a07c0f275c5092634420c7924d6bb50b41550df738010b507d30328fdc7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7611,
+        "sha256": "2dc788991f18fcf0ac79500270b3a6ff69c5fee2eff7de49eed4525343464150",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/customer-safe-audit-layout.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6778,
+        "sha256": "15de49cd3841a834ace6100af958825fa0ff50b3b0f603f136a3fee2091b1f0d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6834,
+        "sha256": "a5fa37d0ba76c4980e8e43b4b806ef45f80402364670479ba01f5e8f9669838d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/customer-safe-delivery-decision.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15256,
+        "sha256": "0e3543bab89fb3f478648f939a55bfda24118be4a9d7ac4545f6a8b727ded1a2",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15328,
+        "sha256": "4926ee00c20ebd6963a909c55398ecb40bfce14190b6a634fc60a3de33fa496c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/customer-safe-pdf-data-leak-guard.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 17200,
+        "sha256": "00604a0ae653c3ac90a189e8f8312819fc0d7bf06c8626ffe2dbb52b773f530f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17272,
+        "sha256": "48a59d1bf587255fcf7b6a31ea10848deacf028cd9c816dc41a7a3befa9b9278",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/customer-support-handoff-packet.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10930,
+        "sha256": "665bbafaa8d03eda2bfca2bd80730fae4280368aaab7aa6092d5f416bbbb41ce",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10929,
+        "sha256": "5c314b9129b72bc3128771cf4ea75fbfa92deb7bf4eef90471de2c37f1176eb9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/delivery-receipt-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16328,
+        "sha256": "ddc16779362005051423aba88ec55c7d28bc405732936553074b316381a46c87",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16327,
+        "sha256": "0dd9289050b77e819e6583470c0bebbf56c413e588060870e317ec5d4894eb40",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/delivery-receipt-packet.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10939,
+        "sha256": "48f0fd6d6cc6ec550c0e902fba03e96d752735ff8ac32c2312c9ea2b7a617124",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10938,
+        "sha256": "5e09820baa6a7ac1ea1033b98ef762d77c86585a2240353f806ad13f08881e5a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/download-response-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6896,
+        "sha256": "7b24ca4528b3ca61fc5f1ae9cc0cfdf7f68956d4685a38e5f303c5ada4849945",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6983,
+        "sha256": "87b2a7fb6f9793f3375908f2c3a641b08b2fd0396c0c644ad8a0673bc3f01581",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/durable-file-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9558,
+        "sha256": "593c91c56fb26ae1aafe746ca4fb55fa5fd020b454a151c3c6f99e224dc5d304",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12321,
+        "sha256": "10881b92e137c827ee767fdd409939481cebbfb5a8956c16479600ec9a8d72aa",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/durable-payment-evidence-store.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 11221,
+        "sha256": "367b0839574e3657ceea21a59e96f64b6926ff43ba6d20c45536a13c30410a6e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11220,
+        "sha256": "c2222cf64ac21d0e0038de6259e7c7fa358babb8c32ff176b1d70a6e3861ea19",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/durable-rate-limit.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13265,
+        "sha256": "92add0747cb56a2d45084eb47dcdb01f39f8d910b5ac388c54b0c9f1111705d6",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15315,
+        "sha256": "b565b7b252208f926dca4f432b800a9ae62db925c306a0f4539d8d9b85f8df08",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/evidence-narrative-claim-ledger-explainability.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 22880,
+        "sha256": "3ff69a2bde0d4445049d485fc062f8d4b22a07a7af38d750df35a8a51992d094",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22952,
+        "sha256": "e35d1db5e213a51d7c9b94116aa7c6e22c520985a886da8d8ee0351e0886a721",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/expensive-route-concurrency-budget.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8975,
+        "sha256": "3b7051da3cd076502e120d9d1a1db49ce109849de2c2db11b1436e98ba073bd1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9205,
+        "sha256": "47c6b915f1e1470f399b15c2bacd3bd1da36ec22c2e8cfa27b6d880b801d7b73",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/export-redaction-policy.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4203,
+        "sha256": "37ab2d15efd1a2385281a8173e495d19e7432c21005da1b96ef8d0475578ff53",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4201,
+        "sha256": "29bf47f8647c98f60d93c3d8969d87707351d6224f813a4ee2c6e7b08c162756",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/external-command-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8894,
+        "sha256": "bebacbd791eb453cef15218d8af2e1257a7c207058e0780cc097dd9ce63d9ae1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8912,
+        "sha256": "b56ace004c20d4686396e02034ec4a7b87e040e671a61779f1e3b60116b59734",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/file-content-signatures.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 5113,
+        "sha256": "cc902c5aced359afb48f40f66ab9c6f41a12c5dab1069a2016efeaed786a5044",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9073,
+        "sha256": "97456dd94e035d8c795c17573a381dff098bb20a7fbde7cbeb32dbc4d543ec4e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/final-delivery-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8108,
+        "sha256": "1098394d8e4ba23fb518010e7f6e8c6cbc75bb75d9e267db2a9450af33d68baa",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8107,
+        "sha256": "fd1489b768aaec8be7457778d20c29c1c4f1d78dc242697f7e029160b28944e2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/holder-liquidity-depth-evidence.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 30730,
+        "sha256": "fb356c44d26df3a110aa8ab492e6bdfe4ab99023543dc39e612d2186f665f166",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 30802,
+        "sha256": "9ccc96e32700bd527539cda68a3c00801189d897096651d1442d02fe8de0806b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/linked-request-drawer.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 12724,
+        "sha256": "9d3fe7aa8d6c15f6f707116a6194d69f64794a6a6f2e6b298dd63aba3f23c5eb",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12723,
+        "sha256": "09c8bc6f23df558968f3f4b51fc2256d91ffa5ed24c5191bb50a77dc28bc9afd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/multipart-upload-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16352,
+        "sha256": "334e1d5a32ff54d0293a6db0cc4b0562d19cd7e490f4d5f08f8080dc18a9395a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18014,
+        "sha256": "9b052bf24114747162bb6789cddf63c6f51aab535d5fc5f86d6007ce6329a24e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/navigation-redirect-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9113,
+        "sha256": "8d6f30d1c528b6b17e19134cc0c4dbba6cfbaa11152e6ff67f490a4b2f96bf49",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9151,
+        "sha256": "415c5d4b8892afd99778b9a90d7bec7844bc1484a09d38ee1aed17b4179eba4c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/pass35-a19-audit-static-benchmark-runtime.mjs",
+      "category": "production_code",
+      "before": {
+        "byteLength": 25746,
+        "sha256": "6baef1555c0f2438ddd3147db8b07b00379f49221e51520d2e828b0046e7f5ea",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25733,
+        "sha256": "376c0d62724295ae0d1eb2b96dd7596b9cbac176093196b13fff76f129e8a221",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/pass35-a20-case-bound-dependency-runtime.mjs",
+      "category": "production_code",
+      "before": {
+        "byteLength": 19069,
+        "sha256": "5b63d110c842259079a8c4f509c38ce6680b0c624cadbcdd8d26292a3553180d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 19061,
+        "sha256": "c2120513eff04c0815bb15bf6839bd355f73a96affd1f28d701f1f79a1bc2861",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/pass35-a21-abstract-path-runtime.mjs",
+      "category": "production_code",
+      "before": {
+        "byteLength": 34495,
+        "sha256": "322f597d3f3080ee677f5be83a7796143713349de215b738ab102121a6d8c537",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 34489,
+        "sha256": "528913548ded639e4e05b11f2b946a2043273ba60624a750fefde964fa68d96f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/pass35-a22-severity-triage-runtime.mjs",
+      "category": "production_code",
+      "before": {
+        "byteLength": 36445,
+        "sha256": "bae0c45024bcfd3851f59616f12c435e19c7d7931038b6c1abe94f27eff19b86",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 36437,
+        "sha256": "62b5ba496550c8d1139fe28f3bc68f74fa97d986687bd3e166d8b84078bb8de7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/payment-evidence-redacted-details.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6427,
+        "sha256": "3ed4e347355c89babab51fa33c5d61e6622c1731709df321ff0edf792a97969b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6422,
+        "sha256": "79d2795a51cb2f8407ddad239c6bfca53e4f41173ed8db78499c462156ccd76e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/payment-runtime-evidence.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6831,
+        "sha256": "7d9c29dc38b7f766cd5f712fe6b43dd05ae69e7e1adc4d62f2e3a16b6684c837",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6830,
+        "sha256": "a3aadbe1f427cf43564d87307365da899dc287ca3edcc246310ebb01fbcb4bda",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/payment-webhook-guard.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10992,
+        "sha256": "fb19c6ddebbc8af6ac266654e4cb13cecf7ed7ffbd90f0a094fff5b94ba7ea95",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13549,
+        "sha256": "d84a7d7c99b2f92ecdd721624cc9b851fa907503ce77a4496964e2b1a512692b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/premium-pro-pdf-template-contract.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 27372,
+        "sha256": "fad57e2744a97d7c9a77c8c8ea0e531bdc7827e1e6c2fead40cf28df52b522a9",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 27444,
+        "sha256": "c1d460f5ed93b41fe5b11bcf9e2e7fbc602def0c01bbebcef7f53eb48f5825df",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/privacy-redaction-pii-boundary-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 17967,
+        "sha256": "df15e85f4842e3c9a0b77049fb6ab7ca3aa9fc82a558ee29134473536e0a5eba",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18039,
+        "sha256": "afa97bd4151193ee033841d3c385ea5f8efd95dd6216fb5cdcda8147ab25bea6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/pro-audit-pdf/customer-safe-renderer.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 26248,
+        "sha256": "37a0ccd4dffbba41476cb52d01db1e605b782e3097828a982b4937f4800a94e7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 26288,
+        "sha256": "d2685f35e25a7091ce2b9baedb7ccc4873364fb000a494708b60a353bf2c9999",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/pro-audit-pdf/render-pro-audit-pdf.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 45963,
+        "sha256": "f4be364de08cce96b4144ee1bff25bc4cc147c970059a13cea5bd380e2a03816",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 46003,
+        "sha256": "f7f289107a4a3a9ca1f189dce8cabab06fb074b8117a4793c0b0ab216cd470e2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/production-rate-limit-adapter.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4179,
+        "sha256": "acdad494692307e4c4fb7e2abb3c76a930a26eecf3ce443b73bbaccd91ddf534",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4245,
+        "sha256": "5961ea467945a52f706e573cafdee5af069d68a168c959e9f16af226ce788522",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/provider-conflict-arbitration-matrix.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 23538,
+        "sha256": "7987f3abeb08bb10759ecda61d1628787126476a57dafbca0819a4f1e8368e06",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 23610,
+        "sha256": "01f76ba863d68cc0d1696cb8d2ce4380c04459b17abae3787506b46b23f92296",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/public-private-route-lockdown.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 33480,
+        "sha256": "5e60e0c2506d1dad809f9764babcf9c781e1c75a8eb3a170c662a92c84ddfb0b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 33572,
+        "sha256": "5ac2cac1998c2e322b94eb8597cfb99a548d2fcda1bbc59c1f14860bede2c33c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/public-trust-intake-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6853,
+        "sha256": "616b330437b03c09f19bfd988ff2edce94e2e9848fccc4b4e7362b968c501f6c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6919,
+        "sha256": "a86a08e01738a853662b5edf5581b1beff8ba1eab66f99c55e19ba935c0007c3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/real-provider-adapter-hardening.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 25075,
+        "sha256": "6aeaa2412e201e2045f756ab18dc004622eed73f35ecdf897bb28fe777778caa",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25147,
+        "sha256": "7d608fa5e21dd4175b49aeb3fcd6a2122411a9853a460093973f611aca60ed28",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/receipt-route-health.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9894,
+        "sha256": "ad088b1f01abfecd217f95384e0b0687203ec8cecf56d0738fbe563842cf5e8d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9893,
+        "sha256": "2f47b12576214d15cd1e89cbdcca20476567a5fd08edc4be44f86e845de67b55",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/risk-calibration-golden-fixture-harness.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 21483,
+        "sha256": "a9168b24ffe592d615b7b228c2a171cac45fbe3403c39f52ca62867c7c645b21",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21555,
+        "sha256": "05846074618450bd4c87e860a4ac4f477bd2d0aedc1d50189a34d3025b6487cf",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/risk-formula-evidence-weighting-contract.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 25252,
+        "sha256": "759046c2607e435a85a098d5f1c34dfe5a5ef15ce1b8f00f11663739d81d0837",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25324,
+        "sha256": "d69a7d127197717b9f3055b67202d3a508d858f9b9e105daa59fdd2ffd53aa60",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/route-health-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 17312,
+        "sha256": "657252dbbcb993aa6e543bf943b0c2d1fc59f4738cbea4e58ee940e113563fe3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17311,
+        "sha256": "909356832040ddeb526a448c1a64353c43e1deb60d5d580f5399401860a70103",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/runtime-build-readiness-type-safety-sweep.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 20445,
+        "sha256": "8db340d67629f62d563e61edda693b9b103c25d6bf853f4f622d78e42f23a6b9",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20517,
+        "sha256": "9afcf6515e0e7a2697bd83b87ce6eeb73c221ea5f62461f5aff5031641ba306a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/runtime-replay-artifact-storage-adapter.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16758,
+        "sha256": "0d7d407cece292a1b142fc4e749d67dada73333064b605015aa2b3c623f3a616",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16830,
+        "sha256": "fe1e2bd88ad132f08891c2010b4f2b0b153bd769758a14461daf3426006d9c3c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/security-operator-assertion.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 12440,
+        "sha256": "2976c5d8c7634732b22fa129a5892ee8bbc886008239dd75f71a946adf2f66bc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12523,
+        "sha256": "957b1e075a72dca9c5f7580921cd218f9733bcf1314aca7a4e06931253d9b8c4",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/security-runtime-qa.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9792,
+        "sha256": "599a326ce9590ccbfb543e8948eb04d5054218d90a9e6f1cfd95dce7a2c9f698",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9851,
+        "sha256": "784b74b931c7f70da37132cbb59f5f0ad9e4d98897c6006b441be42c1b52302d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/server-payment-account-delivery-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 22055,
+        "sha256": "bbefe7ab83586cb5cb7d49d2ff22eb623d4a2916063eaa43bee0a31e2a8f1bb1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22127,
+        "sha256": "b46b0ea4cabfdee9cb9a72c0a2f72fc60663060359fafb91b2e6c5481978f7b8",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/source-freshness-recheck-orchestrator.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 21149,
+        "sha256": "59d9dfdd39bfb0fb524bc4f91186958ab47086faa770531cf02b86791447f2a6",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21221,
+        "sha256": "ad83fe1ab00b2f931bf12d60bb2d237487fc0a69be5335c6337cb62667338a40",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/supabase-release-evidence-board-migration-rls-gate.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 16866,
+        "sha256": "e32cc8a6320ceced1425c30d569048ddae55633219db43676a6f51955d72e5de",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16938,
+        "sha256": "8aa10a2ba1ae941201700f59f00ec09ef778b4c1600aa96ed481a00e92e408c7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/supabase-rls-account-delivery-production-lock.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 18214,
+        "sha256": "312829bf781bd6cfcced02d5eef90607ee7abc5d11a82b12b1cee739ce3b303a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18286,
+        "sha256": "5a82b1e914594236d69049d9597219c6f37f27186ec2ab2f31271a8df491375e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/support-handoff-event-ledger.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 15166,
+        "sha256": "596a850f2481e58fb5816fe2ca28b5a475d64cae710b16d686d3b2dd5f9c95a3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15124,
+        "sha256": "9c00847bb3a3ac0f3e8c1edf8e5483251e392b3c6c79baeaf8ba65e192d90e11",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/trusted-account-header-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7232,
+        "sha256": "f3a594d07ae70b2b7397f0c9b62e456aa9894401be5ceb870ac67c5c655d005c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7489,
+        "sha256": "4a37945f8f0d60c64170f805152f946d01efa4b42528e968a928125d5bc73a23",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/security/wallet-consent-boundary.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4960,
+        "sha256": "c251e82a18d71d5ba033041162dde7ac95846648e455fabdbbd016549903d9d7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5026,
+        "sha256": "9c18a6b0081ef4fe85c65fe8eafbec5c0874caa7e51ffab1c6fd9d091882a6ae",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/auth-security-alerts.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1582,
+        "sha256": "8a8ce1c6de21c7dcece390f451582793680ac0b3f34d6d40379044ce4d60556e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1686,
+        "sha256": "9975255635352421fbf62d21edc1e036b1fe9589aff639dbabbc42798266fbfd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/durable-computation-alerts.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1937,
+        "sha256": "394c7b654daf189f1cd97ebd67eb1a8c742c8880a3b312774f07626cce29e98a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2203,
+        "sha256": "93e5c0b87f03239fc880a7233237f3928c9e7dac6360eced891db15263ba78da",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/fulfilment-incident-outbox.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2300,
+        "sha256": "7887d191e3cf90d809cde6ef20f5de26534618f12d774de9079ec916ec7af36b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2615,
+        "sha256": "2c001e0accc04b2753ba75033feec3b29de158e6e10519eb49c0cfbd17073a05",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/fulfilment-provider-sync.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2340,
+        "sha256": "2701e641bf35a58e59ccea4ca786e7d68b0583a9886fe147460cb73c2fe449a8",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2778,
+        "sha256": "6a879ca801eb919d9a175af78f86edb4431caf9c9f4676dc245c873ddc7f8605",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/internal-worker-route-modules/stripe-webhook-reconciliation.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2222,
+        "sha256": "85ba67fb1a74e91f266efd446f7d14299e4729b1e83ed12cfa7bb310aaae3942",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2415,
+        "sha256": "1ccbe5cab50ce4389142c0c0bf2139a0bcf8670af1695984f0a495454e1b9ae3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/lazy-route-modules/admin--security--advanced-audit-release.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 23931,
+        "sha256": "e49638571f76e31d27a83fdaabe5bd04bc0a6218dcba4a502fb78c9a65587231",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 24026,
+        "sha256": "87c66d6f34593e3fe3c3bc487e172070942d791b37582f46704312ee8335ff7d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/lazy-route-modules/angel--stream.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8993,
+        "sha256": "c463af6564e9c05a20ed5b0d3b0261a30e283748cbcbb4bf12c6d4cc5a1a989a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9218,
+        "sha256": "65952d86b44b1d23288fe921f0799fe52f1ccfb746cd65d9213c70fc607d53ed",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf--token.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 8379,
+        "sha256": "05572972c69e3b5f5983a1a9c45dff5678485dd87ffe2dff9633268145b05ca1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8475,
+        "sha256": "f8530506e79eec86ca42cab2478b06cd103283a2e772fc4c53f7e8a079786ffc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/lazy-route-modules/security--audit-watch--support-handoff.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 10459,
+        "sha256": "ccbb17edda512fd7c1ca4ece749b113809e4a026485f583169bd32598bf626ab",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10458,
+        "sha256": "7aa28d7618a0c0061acfe8e68e422ba6a9cafe6b07c8a012d960ddb8b44de886",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/angel.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 14272,
+        "sha256": "bb1cf808b1dfe2e37c41a998ed9471a3c0b2ecf1bc3b2fb48fccf351356de324",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14358,
+        "sha256": "482f11e583da06da0f07576e272f0de70cf76900e167859b9cfde44d9548f798",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/brain.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 6431,
+        "sha256": "be5dd4a94a4e054260340b41014beb7b729b6b9cdf47d97b64615cae0898617d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6462,
+        "sha256": "b11a33dcdb252d3eb14668a269f2cbe06b8e7e4ff4b4fefb6e58ece4cfe67dec",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 39929,
+        "sha256": "2d0b6afae58c76d8be8bd2bfe10aaedbe6be02d62df763d2c414f8952364d3e0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 39909,
+        "sha256": "62d40ac001be575ffc42c035c07a7a2ac2486141bee0961c83bcfbfaa13355ca",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/probe.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 17999,
+        "sha256": "96da9ed3d8dc7ade2c8170541f7bb50a1639d2bd5f26798799befed47707f017",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17998,
+        "sha256": "5cdc10b74dae7f06bebe11adb148da1763ba31dc32b9d104e53b62484498665a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/risk-calibration.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 4545,
+        "sha256": "6e1af69c2be46badc38d6d541fff9ac0aa8caffc78010d8cf56fbd133fe8235c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7883,
+        "sha256": "d1c7aae43cd5323bc8d67bdf4af58d279a58672d806cfc6b8e35dc98fe45530b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/venue-health.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2593,
+        "sha256": "3c1c9b30b292ebe8f85ef85a6d4a13776ebe8fcf837e123e9a071f72d4b44d49",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4866,
+        "sha256": "b1cd167aec2289ca78c8ae0f7c066d0f4d31e9d3e6f0a71d6c13f217507d73f0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/route-registries/internal-workers.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1473,
+        "sha256": "82f9b0113080a99e3ea7d71039dfe462e9ecd6d901c2dbe8f1862267ddabe1a1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1438,
+        "sha256": "5b36a4a0710f79e7a7ff17281fac622ecf1616136db98f7b1b3f94892f098146",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/security-route-modules/abuse-shield.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 3181,
+        "sha256": "3f88db418836e9ed11ae39a16cea81edafa8bfa042e7435323a71f9a0cb38c44",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 634,
+        "sha256": "a46d32c20ae9f97745bd0e2c7d4941035d7a268f186d34ac6ee2f886161dd1c6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-intake.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 7198,
+        "sha256": "673acdaec6cf4881bf75ae69addc24e5871feb72c75ce719c9fc76c0de70650c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7294,
+        "sha256": "74bf46aa540b19abef41194601551e7a26302a76ff9c40c2fb617b8cd50cf019",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-public-private-route-lockdown.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1703,
+        "sha256": "19dc9fdb0b82f14c684fdd24a8a03c0c9dbd07c4ac007af6c34f95fc3d3285b0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1788,
+        "sha256": "68339946a24c4235eeac8a3807e340bf6635cfa7e870baebe378b753cc6f6df1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/security-route-modules/operations-checklist.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2222,
+        "sha256": "9ab5406985e63d27f1d865c55cbdefbcae3b0e711c95d501de4de0d798bff72f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 670,
+        "sha256": "cd710bec97a5a6b42244ff12474f0450679947d9febf72e4f41cd9317b2eff4f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/security-route-modules/readiness.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2369,
+        "sha256": "4c0f6cec2dfc3b4e3ebd402901cc9ebae1474f0633b152a49ae8e8a3c56c7b39",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 629,
+        "sha256": "7ab90c46a62c51e6357714fe3f9620aed2f1a9545fbcc917db0bb73e7536ea78",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/server/security-route-modules/trust.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 1441,
+        "sha256": "d04b9ed1fcb1f29f0cc8182ebae8d58ac9a1afe8fed10f7fa3ad3bc972cce058",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 912,
+        "sha256": "75cdffe03a2f939bc54397c9ab7483dfc6c77c696b2274e2afb95cbc450c1b56",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/stripe/server.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 317,
+        "sha256": "78273d7a9ad63638d11598a5a81848ec734d77a3eb437a23a9bfa9d998062e54",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 587,
+        "sha256": "e1ce8ebb1eea488793eb845b4e40d709edb985fa42539ccc13496547154c2843",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/wallet/mobile-deeplinks.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 2008,
+        "sha256": "a5a6a713b5e4c1fe097dd429944b4b4ddf30c952801a46030524645722f3eb6d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2096,
+        "sha256": "241cce2515af13f566f36c475ac6c45168ea1974c977dc03ed0b721a20fc7149",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a81-canonical-mega-matrix-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 45275,
+        "sha256": "3274b010a0e7d4e85f3f61c6a2893f75e97d9d1fa76149a962baed8046dae0ab",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 46003,
+        "sha256": "2cb5fbc7a2683c136a32a0476ce2bf7b060b955311c87965097a16466d55848a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a82-audit-real-contract-matrix-runtime.mjs",
+      "category": "production_code",
+      "before": {
+        "byteLength": 13775,
+        "sha256": "de3740dfc78558e82c6342097ca64d4ab9937d8c8ef56cbe53e40e8f81e04efd",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13776,
+        "sha256": "43588ce42ddc35d56b30b845004b4de205f7965a2000342ec305faffde23f476",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a83-browser-lens-pdf-real-packet-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 24136,
+        "sha256": "82397ec975c3ba3b7cd90bfee9bd6f2e991a272f583f6fe4b10b5c74a2ef2c1d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 27978,
+        "sha256": "90b640ea8f0ea9a71344ac064cc94d567fff427ff790d3cee7808e01f4c37443",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a84-shield-full-catalog-tier-matrix-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 33945,
+        "sha256": "ef568bd68314b9fe6b74e3eb68ade4711c1df9e8153f11e31ec09788c39d9e55",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 35548,
+        "sha256": "6c6a321ce8411ddb00492539c66387f0506a448cc9eae3f8f28453e73298693a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a85-shield-pro-map-full-depth-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 32553,
+        "sha256": "18378dd45a528c7657e539dd182c2c976394782fcc0e7828d0a7290a9f6453eb",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 32633,
+        "sha256": "9d78f88935e862be2df8d6580cf70843ba35279945127aab4f3be771b52d3888",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a86-real-markets-cross-asset-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 36172,
+        "sha256": "310d3b24865c0ebe0e5eb61b324cbb415d5526cfe1aecfae3bf2c5492df01e35",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 37327,
+        "sha256": "15fc5f4732510c1c6277820d0c2a759c0c16bbac9a7887b87c29e8bcd7b07ba5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a87-market-impact-whale-watch-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 40203,
+        "sha256": "65226bf9dff6d1df0b37574a05dd5873fc6bcd2f8ed5b019338b5ad6b7914383",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 41011,
+        "sha256": "bf9bbf4266c04b1dbd57c9d3528a074e9e8c089f374bd58935082c4ac0fa6213",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "lib/worldclass/pass36-a88-brain-angel-risk-eval-runtime.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 22957,
+        "sha256": "b68250a0767ccf2ea4dffa65f54fbc432263c98bbc28dbc8fc35d0b2d1d8ef4b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22969,
+        "sha256": "f593cfb367682bc96e680b235ea5be783d397baac1d40606670e528a3e264416",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "package-lock.json",
+      "category": "supply_chain",
+      "before": {
+        "byteLength": 446918,
+        "sha256": "542d0d10654125ff54015b4b619ee8c926cbcc0dec361fb5c1a723578b0d1401",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 350158,
+        "sha256": "3b45b2e8fcd86d245a69476887c4912da0e0788cbd6791aed89afb7900a1cfae",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "package.json",
+      "category": "supply_chain",
+      "before": {
+        "byteLength": 67061,
+        "sha256": "bd204d8797a757e5452d812a859bb7afd32f5f256c046f00c061dc2a7ef14c27",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 67963,
+        "sha256": "3a55b5c37c49b6f01300d6c80a34bbd96ddcc6b1d6b8661dc5048c8b7aec6c03",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "proxy.ts",
+      "category": "production_code",
+      "before": {
+        "byteLength": 9450,
+        "sha256": "ce16392bdd96e2515790ab1fd003b2150dc7e719b0f08ff4d58e91975675e196",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10996,
+        "sha256": "48fc812e79428c5d60a35211e10a2b3c13e62a365b7b7ca9d55027a6ec096384",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a42-runtime-diagnostics.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 14400,
+        "sha256": "1067677af498fba76a88d195e4cf11b3c287069d86a8e9a36ff9e6406242cec8",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14396,
+        "sha256": "3e137557b33677d4fdac21aa472c4aedc99ee0ab2a8780646b733c9b6f39e8ed",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a44-source-integrity-audit.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7182,
+        "sha256": "67634ce3710374540b816bb7ae6b0ec3cac48ab0feb2bf965a2c77b9d81e0768",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7252,
+        "sha256": "02f3040ce0af9f9c5cac81cd0612c691b96f6e1411db6a9fc97b58cf526ebc89",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a45-browser-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 12324,
+        "sha256": "ac473a0dfcbbd6ca080ec5b1df8fcbdd0f2ea3ee37b58ef99a20a6eed2bd5c7b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12360,
+        "sha256": "02142aeb8bce34f18bbcda81719c940022187f9476d29fb7ff95d2de40175ac6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a45-exact-runtime-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7159,
+        "sha256": "8c0cb6f1fa042533e20f936d3bb05873b0ab296aa14e6a4adfcbd2ab2b255c03",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7229,
+        "sha256": "1771f2c8a73020c4bb41bd4f70ef106a968f66d139289ff5542ceefb3a43b54d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a46-data-plane-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 13740,
+        "sha256": "71b4c5ca5518e9812d06e6e63099963d67d0a796ec80ad1f6818fa8228d9e002",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13991,
+        "sha256": "b3db99008c511be581f536366ab5c1474843935b418c700328f1ebc8bab9d8b8",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a46-exact-data-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6342,
+        "sha256": "d5f94de4cf2236a6f293e289abd410b6f111ba23297401fab200e6c72e93b727",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6412,
+        "sha256": "2ef6d9ea9abae354f4956127ac41ebc3999d04a099198c37ee99e49d2bb9eaf2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a48-staging-tenant-isolation.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 18752,
+        "sha256": "06c841398ef5ddcf47f66688d2bb74fd546d2f71ef35df50de9a2ea9a2c6bdb0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20652,
+        "sha256": "1f54e0e3f262570f2590175f52be26acc3ec8a14e1dd5968b47f09de5799485e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a49-stripe-payment-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 28369,
+        "sha256": "3f491e55f7aa71fe782e0a5580b3fa674d32bdfd0e7d4039fd7c10cae6f652e9",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 28327,
+        "sha256": "be826fb362f7c3c36b249a4cabe596558e237ac9771d0da4dd3729c86d648d59",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a50-email-storage-kms-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 27977,
+        "sha256": "d69bda14ee936bbd6bda4b6fd40a75c549d5e7c16d2d5c1d8bfd3cc0c89fc569",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 27838,
+        "sha256": "61cf034f13b23d20c49ea816a4c025a691344a8324ad5335e62ecfd94e9d2005",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a54-strict-slo-alert-ack-vendor-exit-recovery-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 48952,
+        "sha256": "c464fd50a70a172002b5f3727f055c962585dd336d0413419917ce91b0634d1e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 48994,
+        "sha256": "8ef4d21c43c0d48426f052d868bca82aa5618ba11984d0245f7d1cd7b1081f61",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a55-independent-retest-legal-customer-release-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 28212,
+        "sha256": "f86800b3ab456bbedada7d0f485e4b9ca16f354331b680d9b86a230e331db883",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 28247,
+        "sha256": "2ad209cd21d759903724cf4df032c28f8d144fe03c992daf33b56da247c8f2cb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a56-out-of-time-slo-vendor-exit-observation-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 39705,
+        "sha256": "20145d47916a28feb73848b88668c1aac0ae6179738a699a31cec0f24b179073",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 39740,
+        "sha256": "430f7a160dbef64ab77ab6f71ec97eb8f3663c4d98048c0f7b0d27c9a7436172",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a57-controlled-canary-kill-switch-rollback-telemetry-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 57079,
+        "sha256": "2a26418f7fef486fae71819d34e34b4cd7eab61790992f57e31c59f3374d2426",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 57265,
+        "sha256": "91383062ff65d6b4937963dd55b6388e9f34e0ebc9b0cb1bbb9f04da0596017b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11338,
+        "sha256": "e88569befeba1b6f8e559e234c6ba5b6a3c002c918c39a771781d07c9998b26f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11408,
+        "sha256": "2ab54b54cb557fcd37f31eea248f28a4ee552c89a378b9373fc40fe0da7a83fe",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/deployment/run-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 14713,
+        "sha256": "3cccd675d8f129630e6a60546205b0112510c28194861742baad117666edd32d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14950,
+        "sha256": "24d7b1f28d5e175d0a1479165c3070a87478d3a10c2697abaf1d87b74fb2b185",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/deployment/run-production-smoke.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11568,
+        "sha256": "1fd8dc315925eecf839ec73ed14f1ed2c9af64d390adc8c74a62bc26e6ea6ad5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10933,
+        "sha256": "e4f884bde199f53423f9b80df96fe506f72699c9725d4685650b7217642bd8b5",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/deployment/run-segmented-build.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 12829,
+        "sha256": "5cb54857f779d403c61dec69647fab99e3e5804660508bb3f2cb4bdb79d4cc9c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18500,
+        "sha256": "f5a9a201ece8783bb1235965e36fe01db274a67ca743845e983292b7835fbc7d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/deployment/test-production-smoke-contract.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1329,
+        "sha256": "2cac69bd79a237ac875df0b102b44ea90e01d8166e94e28067509f3a9492aa08",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10332,
+        "sha256": "412a6a8ecc4e8c7386101e44929004fe255f88a32f87e173ddaed9618b830302",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/current-route-contract.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2702,
+        "sha256": "af7f29f3bcf5573cf8d9f460df3fd2129a09dc2904388623be177de16eab1506",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2698,
+        "sha256": "fbb9d146970b31c616394d790aba7c906a6f1382ebb91473294c055539ceab1a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4671-stage-runner.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5832,
+        "sha256": "09ae03d59edb1010ebc43d3fee7fc03cdd89ff5940a7fefdc67121b2ed6b69f4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5867,
+        "sha256": "704fba0b83f0bd92cf74c22f1c615ed4d458fc37f86aa8e8d95bdd13363cf789",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4683-operational-safety.cjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2171,
+        "sha256": "1fe94be084d09958b139b14ce266f9e16e68ff699ad43ccfe50547880609ee3c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2379,
+        "sha256": "fff9a3cc06048cd7b6a6f9ab532c9c3a7e7f6d9504bee294b496d81259d9c2da",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4691-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1986,
+        "sha256": "d13391d3169752eaf8844632605cb0bfcef94a23661fbe6090917c36373ad560",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2021,
+        "sha256": "4baa2fd03121b49a30c63ae8fe80bd31d05a8a23974293bf1b03b50f6efaf40b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4692-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1986,
+        "sha256": "b465cf21301923953e68f2e9b633a5255a4e9a3d1e1df0b3a596c5de8bdf74f0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2021,
+        "sha256": "2cc4f82149a4cfc2bcdf54b4a0adf68369e33febd73db93d7cc88adad974d02b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4693-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1986,
+        "sha256": "42d9d6a5e5954209d4a685bbbfdc5cb2478584903ab12dee2a9dc4b5f33a6225",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2021,
+        "sha256": "13244f77598553aae32581d9c68c0a525d8b9c941975c7dcf775bb64e47e76de",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4694-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1986,
+        "sha256": "fc99f90ac00af3dadc7a25c24925ca0e16886ca8d237c97d98b7f9c80cfb7a41",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2021,
+        "sha256": "1fae8c932a8b182b812a1da455ecac3c44c31ce9fc62af2b907aaeb84c140e67",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/pass4695-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1986,
+        "sha256": "30e6b7d892e44a5cd4def13892feaac7ad574170020e05b516ef46994ae566c9",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2021,
+        "sha256": "b72f3fe7b34a616a1a29f9c8bad2d130d582b869d2500df3f6f94ffac25d5ed2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/lib/started-server-smoke.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11412,
+        "sha256": "d22886afccbf5561ed54159ded843fc4d3772f171531d2c98af629eeda8f3b91",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11482,
+        "sha256": "cb0bf56e04c0f96d963ba1134d5433768b7c250085433ff1a88d4b67e59fddd7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass11/audit-full-tree.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 15514,
+        "sha256": "c363e07feb5630dd72eb9eb77cba8d49c3fcfb80480548eabb83019fb2ae09c6",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15584,
+        "sha256": "292ebce04c8c77bcdb09e3d7518135d079022097e94d7bb8bf00184c69f89acb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass11/audit-offline-install-coverage.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8082,
+        "sha256": "c0aff4e438e504466103711bedd90cfa3ed2ccc3044dc2fb3d05e7c93b5e1f78",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8152,
+        "sha256": "2af3476a1a23df77e377203b02f239deb6eb05743aad48094d38ed8511294201",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass11/offline-ts-loader.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5677,
+        "sha256": "fc723f562da55662b54fd1d214cce38b29e430f8709921b93af09e65bc80982c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5747,
+        "sha256": "152775d20c6725736ab9f82c0ce9383b129498e572b86ce992b75b144def31d6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass12/audit-full-tree.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 15514,
+        "sha256": "69d06f2eaa7a87c0f9784e1a160dcc9e783002d9d36402194c7b51e80ceb5507",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15584,
+        "sha256": "867239e97e8f672abbb0d5437470efd20f4b7fadad0554b33d228b839c435d6b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass12/audit-offline-install-coverage.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8082,
+        "sha256": "82400f625d3a42bd583fb94774614467243218dc9f5f280bc1c55f15badcfae1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8152,
+        "sha256": "d055beb4945738220c31ecbc9764c0f04321a9a63dc7dacc0583b38adbea2545",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass13/audit-full-tree.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 15707,
+        "sha256": "b1d7689ebdab5c557eb192f4ab219b4c6c35003288cd8ce4f363a187daa7996b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 15777,
+        "sha256": "d99a57b756ddc88c8826156e8a39be81c49744a8d14aed1ec0ad4117fda9742a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass13/run-partitioned-eslint.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2770,
+        "sha256": "f622b848d222b87e29bc66b4cee65599cc0e8abca662a16491b9572ef794cb31",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3250,
+        "sha256": "02edcb2ccdd47b2a125950ae1ec7ebc33a3c2f8d45a64b244e848009d6ce2a85",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass14/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 12008,
+        "sha256": "25e019e76d24b47092f4a650f6f668b93d8bcdee865a2f277812a087a4a30299",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12043,
+        "sha256": "fdc8ebd61cc540294e26b7136ea31368194cf8d3752eaeea943e29df61780463",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass14/audit-i18n-semantic-parity.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3186,
+        "sha256": "2d5b67f35b712ae7e8c4a55a442800ad6beb1ebce9854de937a41b8a351de141",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3185,
+        "sha256": "e9dcb0f672c6cdc255bf990544a186313e2093e568c4c70c2132dd62f0558a2f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass14/profile-build-graph.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 9007,
+        "sha256": "cf6993275126094357601375c09bcaca91706ea9c6e9de3ec138fc6f97460e1b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9042,
+        "sha256": "057618fe685b36d19e5ee33222ea92d095da12289b964b6c16472020865b98b1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass14/run-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7073,
+        "sha256": "abd2eb9ad4231008eb66fe8e9a0f366e4059b34d10c302e8c850ca45fba82a72",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7143,
+        "sha256": "7c730c63e9f5b19ee310a37511012b0e719005e22e39c70295806ac6bfbccb2f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass15/run-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7073,
+        "sha256": "47a60bb38eb84d11e2c870d5572177c8e35c5e2c178cf53375141aace5779edc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7143,
+        "sha256": "27e3d933062a1cb1463eea5dab3ff49af1d1927d3c405fbcb6bddc0b2effaa91",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass15/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2987,
+        "sha256": "316656f492b8c04a2dab93a00db9da01341f0483829b5db458bf02533602c5bc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3057,
+        "sha256": "275f8f12316e369db164261e07800cfbeab894b54f911876f398876037013d03",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass15/verify-route-dispatch-consolidation.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8400,
+        "sha256": "36a81fda2ef77f145297b8fa53bf015d8039fbb7ee0c549d18e6cf2616e9ec82",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8899,
+        "sha256": "430a45955494bb6d5c43020581842e15d33c59e64e3e73925f9943dbcc961129",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass16/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "db80fd8256c7c20d38f4655036faf1cebdc04fd7085da99a742b410e20b69b65",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "b1b045aa7569b9d1a60a0dd5b3e0c29a0f1fe2be52dfd32cf0235778f9350b88",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass16/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2987,
+        "sha256": "2f5e443f370b81ac8a9d84b37a666a267e2dc84c267392a70b504c5cbfbd0b7a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3057,
+        "sha256": "2edf99151bd397a40765449ffc456c1ea09c03647baa4e8b0fad717b7d88f21d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass17/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "86f9ab02353111cc26a68f784bf2c1184b929fa23e5e01a82e69a184cf91cccf",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "5941196bf068f56798f873f2529d565f10e06630056ef0391fcec6beb2838adf",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass17/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3062,
+        "sha256": "55187fe9aa24d19f9023af3e38b574f07c4fa82f6c85bc55858a8a35bef5631d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3132,
+        "sha256": "9fc3ec125784397d24e613f86a3b9639f1887b0a1b935de6b39f06514abb53e9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass18/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "4c63c0088bafd9bd19f567a5e931bf4bc29cc7cda44d07990cdcff76831ca810",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "33361361e72483d833f1ae862d44f9fb405c3a957e511ff6959e417f3467b462",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass18/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2987,
+        "sha256": "a0ef907a71c25e711789717e11565ffd80ec3936783d1fa9430dd20a38e84631",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3057,
+        "sha256": "46a16a73680c53c77e1833755bf1e62f8d3645054c14f4922e73512f8033f141",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass18/verify-audit-lens-output-adapters.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 18654,
+        "sha256": "e25afb7b2269f8b5591d6f0812cbf6ea206bfea8080d7f8636ece55ac6a50000",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18646,
+        "sha256": "17d8229da78792d75013adfa04cd43f9f1531717f3e5f89c9399a92adb4a913b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass19/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "408020058e804ac0aec11220f83593e2672147ec5ad3b666986851ccbb4db805",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "b28a722af332e183e34155e19b6168c245e81a24cf2d2027c2438685f67e5c72",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass19/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2987,
+        "sha256": "e5c25934be14e9322ee759b2856574c12cc3ee6defaba75ef26da76a098e02a5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3057,
+        "sha256": "0833aebfcd916fc8eddc12ac624e31b8af32d56f28e0819803debeca92004ce8",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass20/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "59c64367a44ec59b850abf13a68a20b59b24851ee915f92d23200016460bc7f2",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "10e38eb5dab054efc0ed6b6a27541e2b757eb5cb4b301f8ee22d57a80138a5fd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass20/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2989,
+        "sha256": "a64d71d5c61e8202a95866c7e1228f9a15139d3be01bafaf2666cb96713daaca",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3059,
+        "sha256": "46254c65e93253808c8bb1b757a9b395b861f15c72c8e457eddb502bd39ef5f1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass20/test-data-license-boundaries.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6035,
+        "sha256": "92b03db32ef433602778ee5e6f61e1da7670d34d981e3948d6f471a97c3b74f1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6033,
+        "sha256": "1fae116d1bdb2e3acb54c15270dfe4f2e611f770f99587146fadbb0992e15122",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass21/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "7fb03dd01c8d590db0703664cb6f039e241b4455ab1b14cf64ec61a260af7ad0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "e5d95fe85de5a8bb39d2b2ba35e9759c62baf796afb565aacdbb960f9bb6b9f0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass21/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2989,
+        "sha256": "29256f208b0b6d406d44830e96cb0323c54705b06b27725d0bcba8103789d19c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3059,
+        "sha256": "c45d265ed5f7a1e31309578718b29b65adc32b93bd05eab03b707b728b60204a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass22/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11971,
+        "sha256": "eb6683c31f6f10728fbfaea9227f30721a75b0dd0739359fecb2f7294b18efc0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 12006,
+        "sha256": "f11f7006489e64c5bcf36443ba888d1de1b3f3c59f339f52f9c6703ecbc789cd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass22/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2866,
+        "sha256": "f4f8b8d692ed1bf6c9fd33713c05e6071a05939abb66c09ebe94255d3d758223",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2936,
+        "sha256": "0bc78bdd2f225c69316ce45e6fde42d2ae937836a9c333e8eed1a57b368e4b32",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass23/audit-clean-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 13166,
+        "sha256": "865d383eaea2df5741c8e4dd34ce2b8d0ac67a06cc984add472c7d36935d57c4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13201,
+        "sha256": "1382179bfeed6b77dbc3b6c0db815d4680bde52cf030560ca3097e1d590c4962",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass23/run-typescript-syntax-scan.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2986,
+        "sha256": "3b4efa97064e12be1dc04968ffe9768f388bca8f57d7412b3ea5128399f30616",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3056,
+        "sha256": "663682d15b14e560bdbec8b5be9c635582398f8186372cf79d95db5ad1d9e039",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass24/runtime-lib.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11691,
+        "sha256": "8f7960dd3b6beb1b112a8ca39a6d2bd66065cf1a43f0aadd286a8a528ad51f7b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11726,
+        "sha256": "540e4351effcd4773b51f6db98befb4fefa477bfda6737f46258f760b1b6abff",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass25/run-build-watchdog.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 13051,
+        "sha256": "db37f3babeebeadefb6b345fb24863bd0429735ef9caa4eb2fe2482053e6b797",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13191,
+        "sha256": "71a5b0850c3ecbb97657ecec62014ebb81bbc67c11be1d304717bab8869442f2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass25/run-gate.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4079,
+        "sha256": "c50f0bea26e47dcfbd638e46367b3127e98688d5412bdc2d5f83cd5aa333812b",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4114,
+        "sha256": "36412aec74eb60fdcc525ca9965cbc5d106fbc6cfd10d1bb2d92c0658d52a3ec",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/benchmark-review-evidence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 22251,
+        "sha256": "292495185b41b48de62875b2e0a71d81f76b97fa99bb18cf6a51cd378ee5fcdf",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22244,
+        "sha256": "783292127c53db0cd506a147cd834b6fadc777fe6780a8231f329c438325d32a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a20-case-bound-dependency-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 17013,
+        "sha256": "fc5d8bdbb06091a4e4ce898a72375439dd3477898a7e79ad7210f2d3256709cd",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17049,
+        "sha256": "ac8ea1c916730323b3563097001ddc94afd95d91fc4e258176de989e9372d33e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a21-abstract-path-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 21210,
+        "sha256": "fa3f063a189534cef6412b94cb6f35b5a11aa827825b62b1275e85e0c6aa7448",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21246,
+        "sha256": "e5b0044bee5995283ab3cb0631b582a1573ef68ec70f0629bc01b0c14d0647c7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a22-severity-triage-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 21653,
+        "sha256": "c4944669f58cff92d8ee521890ea1d0668eef78dcdcdf84e76fbd9fca776a649",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21688,
+        "sha256": "c24016cc60233f41b7415926600b14f89a923e297ca6ad74820b4b5b0cd0368e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a23-remediation-closure-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 21885,
+        "sha256": "4baed48337f103d054a37318820f469c74d665ffb9dd89131d3a18f664c512a1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21920,
+        "sha256": "514d6e9167cfd2353afff517450c9cafdaf161f733042935336e095afb1cf049",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a24-monitoring-lifecycle-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 20624,
+        "sha256": "9e0c5a385fb59eca37553f4dd5288b9db64c58bd1a7f265ed03d35b5323fb036",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20660,
+        "sha256": "7346400fe87f2d17912efe951ac7f2a77f57b464ea2031670133f03fedb21ede",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a25-exact-test-evidence-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 21297,
+        "sha256": "bd1ad392ce093a079b6782e69b51c9788612931955e77437445ff90ffcd4b7a8",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 21333,
+        "sha256": "3c97b0c50950966d3f3dfd32bb491a9e697d601ac664a43d722141689925e1fe",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a26-fuzz-invariant-evidence-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 20926,
+        "sha256": "795a78e3bc30d8cd39d3fa72500e243a2b2aede7edb6a07d4f4e6ef47a29d1fc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20962,
+        "sha256": "f88ccb29315661ebb0c013cd240e03e00677ed45d3d0d08609df99cf61ec8f9d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a27-fork-replay-evidence-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 25362,
+        "sha256": "04b6e38e9b92b866ad63fde498cce4897d76c54273f5dd42c74286b966910305",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25397,
+        "sha256": "49877ecce8c20658d51f2d859b84b38cd831fab0cd02812f7de70cdf22387ca3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a28-economic-adversarial-evidence-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 25836,
+        "sha256": "7010726a4f50ae5ceb92fe5cc8a627715acd9ece086d8d42d88839f94d41f304",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25871,
+        "sha256": "dcd2e85abb5ffb21e5e3d3af01728f2db6bfdce5e4f988027f49d16a8f9c9c67",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a29-upgrade-deployment-operations-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 25278,
+        "sha256": "085a088e975f4a3a4bcf57fe68c6ad182dc71175d72dc46fd771ca983ffd67f5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25313,
+        "sha256": "55b2971995b1a5374a7a57138c072160cc46c7d3b3dce8b95153df7f2722e8df",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a30-threat-model-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 24859,
+        "sha256": "8f1f8e7da6e38a7177773c7e59b111205a56acbc884d25b8a16f5cd15916759e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 24894,
+        "sha256": "4218da6dcad9dd06954ae918eee232e36fd1667e9487c7c10ef8b49de7352f9b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a31-privilege-control-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 25100,
+        "sha256": "bdf0fdbb7900ddbccafa751f1ed2ae7a69b6ac31e6d812f5859cf7e792cb4501",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 25135,
+        "sha256": "0bb6295d669b460a1b8ef6efa9c6bc43faa5d275bea5336d93a64763c001e0d3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-a32-report-delivery-roadmap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 22789,
+        "sha256": "5c4c9ed25880709fe9c217f4182fbd376c6bf83a094b3d707857cbffbcffaf32",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22825,
+        "sha256": "e3cb0506f0229ece76b09ecc0c4592ea4d16614a40b7972649d4f1be5c5a11a1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/build-release-manifests.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6184,
+        "sha256": "16f7743ed90cac961d62a55d93f0a64a2349c36e6be4de73baa3b8ffb5e8e471",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6177,
+        "sha256": "0da042c14fa358aaf6adc3e1d91fae9337783567bf1a3a2bf375789ad6808dae",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/generate-local-pdf-corpus.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 14367,
+        "sha256": "2dd693f528ce9fe16555f1344cea5c0ea307adc94ce7087cd4db52733ea57d67",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 14385,
+        "sha256": "9cb2ceb6de462185d52b7be751f6ea39ace41a545145371da915f3a3f5b46f79",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/package-source-and-evidence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 18669,
+        "sha256": "78609785de8edb0613198660af4e6c3972aba8bad452b8f602eb6eae2dc4f812",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 18832,
+        "sha256": "96b37c5d9df23d18cd5df85f83b8ef3e451c77af5bb42c6e721ce20d303dc1ed",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/test-a36-active-visual-runtime-wiring.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8595,
+        "sha256": "6048a6fafb68bb99c15e75a27d4aec75015f08dac2d48fe0f5217d26393edbe0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8593,
+        "sha256": "87fa5c066d4dd69193c1c4cde80e005a95dc50e5f3a838d634411f7666d2d091",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/test-a42-windows-dev-runtime-recovery.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5239,
+        "sha256": "3fe61548a6cca8de9a6618b1ae733324134fb5d77730158c3a7f0a7cc7f62280",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5237,
+        "sha256": "87b444f2f0105473616c186ac55bdbe2ec878be5a61a8e84f933cbcea0320050",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/test-a48-staging-tenant-isolation.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5668,
+        "sha256": "04b17778273d21e4fa5714dd7c0409ecb4d3d465c5feac95fd5a64452e655474",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6477,
+        "sha256": "128c65d552d87b7b3c7d5c9050e00e4d594ecb86346f088324465503056915a0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/test-source-package-self-verification.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10610,
+        "sha256": "49f51d0a3c1e7679bfe4da495f8207a897a8c54baab3167f32e2eb3cc82c5ebc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11048,
+        "sha256": "29cdd0d7be7daa645a8c7dd12e8ea2f712fdbfd6556b4f115f72233f42864018",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/verify-control-plane.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 129077,
+        "sha256": "b05ea2387566b96480aec90357d05a5deffc23244fc2b97a9664308c92f284fe",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 129069,
+        "sha256": "64fe0f7c8c2c7e2891eabed323f827f1869fa022b127222afb19a2d824444ef9",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass35/verify-local-product-quality.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 24622,
+        "sha256": "ebb3ec7ac70765adb76378bfb51c7428d0028ace0d80fe97fef1dffc4b9e8913",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 24693,
+        "sha256": "b33b5e3624bd8aeac286366406459933841eb8a1a5d2d06bb6cb90b9a86eb49b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/a77-clean-root-migration-lib.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 16993,
+        "sha256": "1ff7da3f1167b03a077b24e53c5a71c61c075b7201c4833b8f72687371e309b4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17098,
+        "sha256": "89ed58a0010381d0e986167949ea5e12319f15ad5eee06ee7529517b8633f3cc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/build-a78-current-root-descendant-manifest.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1953,
+        "sha256": "c54c92490146e9738e5d9fa3505ff6c782d7a2e27a498c6d19060a971ecceebd",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1923,
+        "sha256": "eb335868aca3a92e9393397ea86321c9367186c7f65ac2a198b60220168bb8b7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/compact-a59-css.py",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10579,
+        "sha256": "34ec592ae619af0ebe6ab173acdc3507b2bc6548e6e4b3390cea96c7ef7cc6e6",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8441,
+        "sha256": "5be6ea1dae840e66bc9df89b2562bfd4aa732b55431644b0064cd5b9996d3ecc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/historical-descendant-chain-lib.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8437,
+        "sha256": "e436c28e1668a8f2777de861d49cf7454271da9555d1e8f07000f93860cec5b6",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13683,
+        "sha256": "4b6424ab000d3d902fc1eb759eeec6eaefbc2a5ec4ca5f46b2bce292fb177461",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a58-release-integrity.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2824,
+        "sha256": "db998fa072f092f4e8bad1d05db677c97a3a20042c42f2bf108d896a7390e45d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 16875,
+        "sha256": "4406878d833404287ba89b05177fc91dcf05b623f1363a686990d9513a99b9f2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a59-build-graph-route-css-budget-recovery.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 9583,
+        "sha256": "0326ea83ab55b1cb4db8a9a5a5bca353340f4a5dc449233cae9aa24d80cca572",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9848,
+        "sha256": "8226a58910ce48f97618c485605415f4210c1f8291b688f6ccb1d50fae8183d1",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4880,
+        "sha256": "02a32587c34bc1ea35b82926fb5fbdc2e02b15d5585894e83465f4c35622d52f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4915,
+        "sha256": "57e63b68e2472de153c3d3320fabb325ef158ae38d1aabd3c111bf714344cd2b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a61-historical-artifact-recovery.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10978,
+        "sha256": "3cc0dacfd245fe403bbb9a315563c9305e7c2825ab3bdfbfe0c0f9f1bf3994de",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11013,
+        "sha256": "eea2a0ba711e07800501546a5ee39ba87d4adbddd93cc1ba603838927be448dd",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a63-staging-program-orchestrator.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8219,
+        "sha256": "846be215564cabcf36b72431ea538a8ae23a13338dd799e2473dc9a36d3bed11",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 8209,
+        "sha256": "9fac32e2a615e603483eaa5236ac5e1ca7ed09a36184e92c7e9d7617b55e7b08",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a78-exact-runtime-lockfile-browser-bootstrap.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5920,
+        "sha256": "9a1b0a155919399a6b51ef3478d07dda8cac4c2f97318ef5dadb406ee07d8f19",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5905,
+        "sha256": "951eb72e61d2ac185b7057bada4acd7ce6a32318c045e740c6a6acc1352a0ce6",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a79-exact-final-byte-build-browser-evidence-binding.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11502,
+        "sha256": "02dbe52639580d4968cc322fb34ae8730de5df2f0b4c4de3ce03553553ed878f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11537,
+        "sha256": "6cd743678b458c3ecd2e9633cab3feeed8164a74538db3d2074fb8c8659b3362",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a83-browser-lens-pdf-real-packet-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4863,
+        "sha256": "de5c7b21b93f79602e2257c1c899845dca70a0460a08e168113c3e6d1650150e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4912,
+        "sha256": "2bbefa35e87e9fc3d4c8f46431c3d2c19c6897a2d51bd396d93777bd19304d74",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a84-shield-full-catalog-tier-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6930,
+        "sha256": "4c439ac218700e15db02ccd1935cf75c28f92a7a238bd0dbd737196450282e85",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7107,
+        "sha256": "2a7367f23ea92316c9ef19398839e75d0436cc4e74c9ae462cc27d901a8b4fea",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a85-shield-pro-map-full-depth-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7126,
+        "sha256": "b219fc40eda76008e77a78868a2b14818d38cc5a04e35f4a6ab33249362b4e7a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7293,
+        "sha256": "4818e2df4555711b3af8ba5a9dc4d117a50c4cd32c048929d21d0a1244a09f3a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a86-real-markets-cross-asset-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6983,
+        "sha256": "bfcf414956c94a895a5ac3f0ec83d4082b8fa92ca2dcb20ac39c9909128b02de",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7178,
+        "sha256": "feb61c1a50e9587e9b34a8c664c6d3525ec0a15b3dbd28c23500e7e7bb3c040e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a87-market-impact-whale-watch-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7265,
+        "sha256": "49697373840caeaacc2c151f2609f126689eec3e2c6a0028de0653e87707a01c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7215,
+        "sha256": "3628cde0634a3b3b809a4111ae891a8d5ab95ce396824a2f68228865ff6bc371",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a88-brain-angel-risk-eval.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 9711,
+        "sha256": "b69ffc5ec0d203eadd454898174c86f538e4bbcb6f2c9f4b8f569d681aec5c16",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9734,
+        "sha256": "b14632592132ce79d53529697610ef04394f6d37084226444edd84e3f75b7366",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a88r1-route-preflight.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 9841,
+        "sha256": "09e85ee7d43d265ddba3bd7d4e02e0da3f07b3021b6648fa904cd30cffee58d2",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9860,
+        "sha256": "6af88b499a27cc65f303c85a7f5a9ea00437f3e1d4f80ba521dd182f2220d2bc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a88r1-semantic-route-privacy-pdf.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 11167,
+        "sha256": "7f0c0cb39ffa86001367600e873df60dc9cb6f0079880d5008d0796a53470d3c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 11125,
+        "sha256": "2e26a85f26d49669b993c96f75e9c97c99599b5e1d35d6e750307f01c14b30cc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a89-account-auth-tenant-privacy-red-team.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 21901,
+        "sha256": "821ec4a447076bb8c363531ffb1cb1a2c63ce7c2c93e3aa0a65973ff0423008f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22482,
+        "sha256": "786c58fdcced3919ca98206db335e7cdc4a15be0cad28fb5675dd2ff7930286f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a58-release-integrity.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8406,
+        "sha256": "41e721b843af3ff187d2a1cdd8c23af41baba0a06941807ace11cafbb62c47d5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22580,
+        "sha256": "afc23f13fc5522a4cb74cc140d25354199e5568fe673b83ecea30960780e58d0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a59-build-graph-route-css-budget-recovery.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1771,
+        "sha256": "2c9bea5813a955c4300e3c93d4df701b0a04475d8705fa43964b470a2545078f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1786,
+        "sha256": "5a87b15015f728d42321d4b3480267ef76e92b2b6318d2921dbc3aabd1f9fc43",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a64-historical-control-metadata-recovery.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 1649,
+        "sha256": "3bb28f1091bc75c931aca233b524fc78ec5fa29166e5051365e2cec2f47a0009",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1685,
+        "sha256": "a139ac5419c881d0692b858810dfe77c2aa78de5479c23af4b4b49109cc0f257",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a81-canonical-mega-matrix-orchestrator.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6258,
+        "sha256": "944e71dcc10c5abbe50ede27c56e5b31daf7f35d33a4185cd352b05a6c1baa1e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6314,
+        "sha256": "c9af81261a2c2356cd439f19efb2089e0a705ee11274b78e9402b59f081ac27c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a81-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4144,
+        "sha256": "f0a045db9b1aee44e455992aacd7a52f483858de840dc8d668c3a91a1a6fc431",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4179,
+        "sha256": "b2e2e421aa130a1f46e5c90c258f124e6db3f618a544e2775ed93752c505052f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a82-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3932,
+        "sha256": "4af116eab63df4525641e92262320d94739a88c1c89f9efb8de33a793f9a144d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3968,
+        "sha256": "35b1a0577241bb408b4cc31a89c450702051b0ccecea740c7c8e35bf827bbd7a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a83-browser-lens-pdf-real-packet-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10680,
+        "sha256": "3458635fe8ac79ee9f2d8744f1adac13b1c005e6a56608cc2da2a7349c6cdb1f",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10736,
+        "sha256": "c4b63644d5208e4c090c6ccdda3cd48789cefaf4026e023db1c750e47170e074",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a83-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4240,
+        "sha256": "dfb06dbb8fd961f4037c578bf507b019347adfb137b36087623a0dd0aa1dc6ca",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4276,
+        "sha256": "109287ed8bd8a173ba98922ad7fd89e64ee38fa76794f1ae07ac2c770ed879fe",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a83-current-root-descendant.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3147,
+        "sha256": "ca6e4a57d1c43fcac3689361d90fa459712eacdd0ee083abbb18bfad82cf7d4d",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3106,
+        "sha256": "1b6425a42ba433d1bad832f1ae4ab175aaf24b358eb17ac236eac735c55f785d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a84-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4309,
+        "sha256": "977c87f9ed8c4f003a6385a2afa493003425956e3bb94677cd6b2c2f825a43b4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4345,
+        "sha256": "0e80cd3ca0cd1879954602f315ccafb11665d53428c5b94c5b115ecde098891e",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a85-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5021,
+        "sha256": "3b7d77e6efb54f630c0e2a31bacac24eea7ded8eb17f9c69065ee62c53f8bb62",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5057,
+        "sha256": "ecee797389d9b3e56a02bf51c98a7e68c1968748278db51740b87f6adc21df1f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a86-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6589,
+        "sha256": "c5f315f09e1b88169e57eafea9708ff7d3116bcad585b57c28b007c3efa281ab",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6624,
+        "sha256": "51318c89751554b9adccf20a9fd5925e7ce0a37a6834290a532db495b9f07d6d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a86-real-markets-cross-asset-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5760,
+        "sha256": "94e84d1fcdbd8fd1b2fb77fc7d1e86955cf4f95699742f4033cf1677f9d7bf70",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5917,
+        "sha256": "fcc41a59cce4bff29cb44ad3a11d3947f58df2bbc9ac20d310c1e92a3a143bca",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a87-clean-unpack-sequence.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6955,
+        "sha256": "74ef14b8d46cbb7270384bb6c6d6bf21cd0c00afcb00d2c1b29b1eb1c0062e19",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6990,
+        "sha256": "5060367c422fa346d875d242cd4ce80dba2153673109aa19d54bf7cbbc45e3f7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a87-market-impact-whale-watch-matrix.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4822,
+        "sha256": "b6f0ba588128b5b8c0c6a2b9a1e628ddfb208aeb256ac5ba4002d01a61401f57",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4812,
+        "sha256": "b9b9371bb6db47a87303859ae4040e1f6adcff8a5afb64d7f6b1d1d26442fcc2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a88-brain-angel-risk-eval.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4588,
+        "sha256": "71ad93922ee6aef9fdec60756e418acec0237f22a30bca5b227940a1fa3ff5e4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 4631,
+        "sha256": "12e1f5f01d391c4ef30fb93ea59c4b47c24232d40557ed9426707d792165c890",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a88r1-pdf-evidence-summary.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 4005,
+        "sha256": "85327d53db24ea726484a339ecf344590b1f3767fd73b48d2c4a99d553a13f59",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3794,
+        "sha256": "df198eb7370b7f8c1d17c0a19c8f4514ac867accb6a25dce957eb9bd2c4967a0",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a88r1-semantic-route-privacy-pdf.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 8606,
+        "sha256": "658f162d6da3f7d5703ad99cc0c5974089cfb94e084abb809dc6cd5d3b6372d9",
+        "mode": "100755"
+      },
+      "after": {
+        "byteLength": 8643,
+        "sha256": "58d404acf9368651d227430e0f3cc313e979d6cb12f98f60afaf94ae4797f811",
+        "mode": "100755"
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a89-account-auth-tenant-privacy-red-team.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7382,
+        "sha256": "574c802fc1d822faa88b2ea63af6f560fe7c5a783f4939ee3a0f126438724356",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7544,
+        "sha256": "ad8a3c314cd4d23eb6d9333629a922f539084a2fbc080afab0ab921d032d9832",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass4666-next-build.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10266,
+        "sha256": "c090e914bb684db778c17a69e510c78275ece7b6a44b79e2dcdb66528c208ddc",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 10301,
+        "sha256": "429c016b2c483e2e7eecdadfc3c249e56f42ed9f03938cd8c31cf838f0970405",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass4825/test-csp-proxy-runtime.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10548,
+        "sha256": "02f184738d9b6136cc33c74c43593c96f784e2f1a680ea8557fe10c1fd0d641c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 13248,
+        "sha256": "b2410baab99dd1399c1b4f3934e6dce67f7ea2d7d0373300ef0dda3219aca5c2",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass4992/supply-chain-release.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 34398,
+        "sha256": "9c49da79a6e1339a712dca949ef2bdaed2874e05fe41951f730a26530d2fd1a7",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 34393,
+        "sha256": "fadefbfa124803a8444d69dceb28eb2a25290841073e8a4dc97c285f98076415",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass6/run-critical-offline-gate.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 13868,
+        "sha256": "303b76ee01bee7e12fbd23d1ad704573a8811648b50c06240b1ae531e7185659",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22923,
+        "sha256": "956317744111e116a653d89e0b8f2d8c0cbc2fef20c14bdfe9270010828263fc",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/pass6/test-worker-mutation-envelope.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 10708,
+        "sha256": "c47824c7a3b4f34b5190f725a59d2b8746642bc380c235afd0365ed62b4a4299",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 17081,
+        "sha256": "0bc70aca50c524104b8a53ec009ad04da2f7033e150692c5210c6b8ed21cd5aa",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/preflight/context.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 36012,
+        "sha256": "6494d0f2362310454ab65d09819d3f95912b0b2f1331eb7d5ab749840b7a2e7c",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 36040,
+        "sha256": "d28165e1ddc8a60898e1181036747a08f68369a40e8658e69bfb2cf8ddcfde67",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/preflight/phase-evidence-providers-01a.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 22082,
+        "sha256": "c729ae8421a717c33b93d845836356b62ef0cffc754bc96d64593409af459922",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 22081,
+        "sha256": "9e26811b9e37a211f848e135a4e69a3c7001dd69e8b00ea159770bb0c2f62f81",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/preflight/phase-security-operations-01a.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 23423,
+        "sha256": "78d5042b643e2790cb81658bc266963bd7fb9f305aade6c517dd1ddff27dcb08",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 23417,
+        "sha256": "76b5c314d461f4a26638181f0d05fca1122d2f9462cb73503d8edcae2cacd9b3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/release/test-package-full-source.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3041,
+        "sha256": "33e3a7ce31f3b8515e29c8d51d91c6356b1ac2e8d7e55ebc67e23221bd651fc3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3035,
+        "sha256": "a69958ec831741af7566e51ce07f51c7eeb88f5ee7ea81201d2cdff60d87726c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/smoke-owner-production-blockers.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2504,
+        "sha256": "05bdbb4e93946d69f96e4133fcf52dabfbf86579fcf9c92d306630bde7b3316e",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2539,
+        "sha256": "b744b25a0b4101489c128a85837fb67ad9be37d1921a86718bf831f4e2a2606f",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/test-pass4659-api-surface-and-body-boundary.ts",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 20358,
+        "sha256": "57b8f08a39dcbc34e568713ee5b0868ad961ca74a9f8a372d75f19575179f95a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 20750,
+        "sha256": "50e43f4c8d4b756b8641ca24ee02867b59bc9f99695c95e65480cd7d5a140b3d",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/velmere-clean-install-build-doctor.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2584,
+        "sha256": "ac03836cdaadae41443f5b0f5e78d86318abdaaacd2fd536836406366867f4c3",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2619,
+        "sha256": "f637817526ba2bf1830cff636a0cb6d359ddeee78a1b9022eeb1e679768aa171",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/velmere-env-safe-boot-probe.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2599,
+        "sha256": "c17c1606bd9a02f54f5cc5b71fa8455bf6dd1c2149dc27a2e90a132d22ef1cd1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2597,
+        "sha256": "d1015b0a8394631a73948982b75ab435e9368641b7294fca694c293fdd82972b",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/velmere-owner-runtime-proof-runner.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 7244,
+        "sha256": "358facd547d9757d3f0fe17d257ce8ff21cb76d8f6573e68429ab14510c60123",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 7221,
+        "sha256": "a6683e00164c52b49767f8a40dc0d6fc01416c91ad7c6bf5dd61a5e197cc18cb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/velmere-performance-lighthouse-guard.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2097,
+        "sha256": "8a065721ca5c3636c262bc9f5d644f7e2124ddfa827f498fb9de3e6c6e562fd5",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2094,
+        "sha256": "a7681f5837763d83c5910ef77307ded7a486410e11e5f7a7ca9978faedb1f255",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/velmere-trust-copy-autofix-planner.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3115,
+        "sha256": "99a2b2307c13b28c86cbb43c2520ea3c3002eed8fb640f858ca1846720bfc9c0",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3112,
+        "sha256": "93ddc51020c88c7c10e28821e96634e2bcbf888d1f3a45a0ed99526816e006a3",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/velmere-vercel-deployment-proof-parser.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 2023,
+        "sha256": "ded3f6e4340bef2f82ca323b40dd373b74383bde34fa2494a1d556b27aef7809",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 2016,
+        "sha256": "7570bdefeb8b440552236275bc85c0cfb07a975c11f010e55b58fcbe0a5a3695",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/verify-ai-risk-brain-scenarios.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 9108,
+        "sha256": "4f2400761caad462dcc18db6f8a9ba1377a77be1ed61b494356d736dc689fb5a",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 9178,
+        "sha256": "97eb81d91b3e021f42c7f68ec52ca8dc3e5d60e520c47fff8f02cb7b86a2fc5c",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/verify-market-integrity-no-truncation.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 6018,
+        "sha256": "58454e35b0467478c4b3621b4d9ce6fbd8c6cad24221160d17605232fbf5ddfe",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 6016,
+        "sha256": "e90ed35ee2eab57513deee52f85818a14e5cb4778d66f5ca7781d0906d63aacb",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/verify-release-candidate-attestation.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5130,
+        "sha256": "9025f66c2590a769316229797b7ed05bb2c9d85997fe83cddd74ef49dc269135",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5113,
+        "sha256": "c1adc6fe29d4e5b2babe76a4c0bf562b800b1c40171ab668168cb9ecedda7fe7",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/verify-release-proof-package.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5758,
+        "sha256": "e99542056e45e0e1dee17a20fe73081c8a79bdaef2ae0c7cd1e9bb9f2011da51",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5734,
+        "sha256": "5107c3111eab2e8e17a767db2cecbaa7f03fa2a60efea8634a0d374b839a0d41",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/verify-release-transparency-log.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 5159,
+        "sha256": "cf09b830a12e5768c96af42c21f0e207bd474f855a6313c6b10344b51b1f8bb1",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 5053,
+        "sha256": "4c3bb6a97719be654760974bf106b6bbb06024f39fd0a4200123f35c82e714ae",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "scripts/verify-release-trust-checkpoint.mjs",
+      "category": "tests_and_verifiers",
+      "before": {
+        "byteLength": 3841,
+        "sha256": "73dbf77d48c920961fc0ff7200040a9ec39ec8eb1b2117ecca67ee513a628a18",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 3821,
+        "sha256": "184122f465df04dfbcddee89daf879163c91809dad575e3cc84b6d861e021d3a",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 82,
+        "sha256": "93860167fb2c6ec3a0fb68cb716b64277aed4c3115b6448601813133e2d9f8be",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 64,
+        "sha256": "5bd90d69d034f8fc330acdfa4aa2f25f42d1b71a8903c92327ba239a2b611848",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "category": "governance_and_config",
+      "before": {
+        "byteLength": 1585093,
+        "sha256": "3a8645f28cb0e333ef2cd30157419e15702d2ccb2b877dd601dc7a5740db34d4",
+        "mode": "100644"
+      },
+      "after": {
+        "byteLength": 1592346,
+        "sha256": "f7557642a6db306b5f57630e13b14e777f25417c9d47dcfd3cc468912a6bed36",
+        "mode": "100644"
+      }
+    }
+  ],
+  "deleted": [],
+  "changeSetDigestSha256": "504c22a69f48ee85ace93a31d0ef70c92116ab4346b9cf04e2ef84d5de987c76"
+}

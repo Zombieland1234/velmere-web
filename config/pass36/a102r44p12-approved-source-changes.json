@@ -1,0 +1,395 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p12.approved-source-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P12_ACTION_REQUIRED_REAL_PUBLIC_PROVIDER_DIAGNOSTIC_15_ASSET_TWO_PROVIDER_IDENTITY_FRESHNESS_CONFLICT_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "parentManifest": {
+    "path": "_velmere/PASS36_A102R44P11_SOURCE_MANIFEST.json",
+    "byteLength": 1215632,
+    "sha256": "59e7be36cffdffeb4b45ead7b57daae0073f38642d3b56db208da941f62a21f1"
+  },
+  "exclusions": [
+    "config/pass36/a102r44p12-approved-source-changes.json",
+    "_velmere/PASS36_A102R44P12_SOURCE_MANIFEST.json",
+    "_velmere/PASS36_A102R44P11_SOURCE_MANIFEST.json"
+  ],
+  "approvalPolicy": {
+    "exactAllowlistRequired": true,
+    "deletionsAllowed": false,
+    "generatedPathsAllowed": false,
+    "historicalRevisionFilesMutable": false,
+    "evidenceCannotOverwriteSource": true
+  },
+  "counts": {
+    "added": 23,
+    "modified": 6,
+    "deleted": 0,
+    "total": 29
+  },
+  "expectedAdded": [
+    "VELMERE_A102R44P12_PATCH.txt",
+    "config/pass36/a102r44p12-a60-typescript-root-denominator-migration.json",
+    "config/pass36/a102r44p12-action-required-current-state.json",
+    "config/pass36/a102r44p12-browser-process-isolation-and-verifier-identity-migration.json",
+    "config/pass36/a102r44p12-browser-verifier-check-identities.json",
+    "config/pass36/a102r44p12-real-provider-diagnostic-policy.json",
+    "config/pass36/a102r44p12-turbopack-rss-budget-migration.json",
+    "lib/market-integrity/r44p12-real-provider-diagnostic-boundary.ts",
+    "scripts/pass36/a102r44p12-real-provider-diagnostic-lib.mjs",
+    "scripts/pass36/build-a102r44p12-approved-source-changes.mjs",
+    "scripts/pass36/build-a102r44p12-source-manifest.mjs",
+    "scripts/pass36/test-a102r44p12-browser-process-isolation.mjs",
+    "scripts/pass36/test-a102r44p12-real-provider-diagnostic-boundary.ts",
+    "scripts/pass36/test-a102r44p12-real-provider-diagnostic-tamper.mjs",
+    "scripts/pass36/verify-a102r44p12-a60-typescript-root-denominator-migration.mjs",
+    "scripts/pass36/verify-a102r44p12-approved-source-changes.mjs",
+    "scripts/pass36/verify-a102r44p12-browser-process-isolation-and-verifier-identity-migration.mjs",
+    "scripts/pass36/verify-a102r44p12-clean-unpack.mjs",
+    "scripts/pass36/verify-a102r44p12-independent-final-audit.mjs",
+    "scripts/pass36/verify-a102r44p12-real-provider-diagnostic.mjs",
+    "scripts/pass36/verify-a102r44p12-source-authority.mjs",
+    "scripts/pass36/verify-a102r44p12-static-policy.mjs",
+    "scripts/pass36/verify-a102r44p12-turbopack-rss-budget-migration.mjs"
+  ],
+  "expectedModified": [
+    "VELMERE_ACTIVE_PASS.txt",
+    "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+    "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+    "scripts/a45-browser-acceptance.mjs",
+    "scripts/deployment/run-segmented-build.mjs",
+    "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs"
+  ],
+  "changeSetSha256": "99bdc8d40f1deed5aff70448f097db66843649fb9cf814196aeb1df5d4a0fa5b",
+  "changes": [
+    {
+      "status": "ADDED",
+      "path": "VELMERE_A102R44P12_PATCH.txt",
+      "after": {
+        "path": "VELMERE_A102R44P12_PATCH.txt",
+        "byteLength": 4788,
+        "sha256": "589248734e3e253aa5ace0deab23b57f4f6ed9e3ae972b590d5ed61f88824c28",
+        "mode": 420
+      }
+    },
+    {
+      "status": "MODIFIED",
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "before": {
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "byteLength": 829,
+        "sha256": "e882f5a080f415d42678fc821a3fa362487a2e3eae62ed3cae3d33c59907da03",
+        "mode": 420
+      },
+      "after": {
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "byteLength": 1187,
+        "sha256": "14394a7f56326a65c82c7707ff0a4095c559fc7f2a9cfd4f76a4d6c66cd7b546",
+        "mode": 420
+      }
+    },
+    {
+      "status": "MODIFIED",
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "before": {
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "byteLength": 1937663,
+        "sha256": "d55da431568ae791e33841477c9e2dca93d2bd138a50f326cf84638e5ae2aa29",
+        "mode": 420
+      },
+      "after": {
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "byteLength": 1946284,
+        "sha256": "1a52ae87dc6c3dddb9c10597a94572eef934a96d78b8be1cde8a072f5e644300",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "config/pass36/a102r44p12-a60-typescript-root-denominator-migration.json",
+      "after": {
+        "path": "config/pass36/a102r44p12-a60-typescript-root-denominator-migration.json",
+        "byteLength": 2500,
+        "sha256": "c3af476ef1f9c475fa6cbaaacc273953286c3c3d9e7f2688e6f4eacef8bd0689",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "config/pass36/a102r44p12-action-required-current-state.json",
+      "after": {
+        "path": "config/pass36/a102r44p12-action-required-current-state.json",
+        "byteLength": 5100,
+        "sha256": "29b8b72ccf139c0dc2b5b377d344a3572024a33b95cac469bf6b5e041de65531",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "config/pass36/a102r44p12-browser-process-isolation-and-verifier-identity-migration.json",
+      "after": {
+        "path": "config/pass36/a102r44p12-browser-process-isolation-and-verifier-identity-migration.json",
+        "byteLength": 3545,
+        "sha256": "4b2e539d46c9216b682cbe3236f377515bebab47345431d58fd1135287808dc3",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "config/pass36/a102r44p12-browser-verifier-check-identities.json",
+      "after": {
+        "path": "config/pass36/a102r44p12-browser-verifier-check-identities.json",
+        "byteLength": 33909,
+        "sha256": "9af3a4be011d936268919282c65fb46d4ed608d5af7d1eba64462ccfae5720e8",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "config/pass36/a102r44p12-real-provider-diagnostic-policy.json",
+      "after": {
+        "path": "config/pass36/a102r44p12-real-provider-diagnostic-policy.json",
+        "byteLength": 2427,
+        "sha256": "f9fa2b43ed557728afa099a99ad9b3af5b228b6804a3f24274e7a3733bcb13c8",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "config/pass36/a102r44p12-turbopack-rss-budget-migration.json",
+      "after": {
+        "path": "config/pass36/a102r44p12-turbopack-rss-budget-migration.json",
+        "byteLength": 5188,
+        "sha256": "f0e88e6a6c88dd3f0b1d0bbb6aa555f245a19c51a6b92a4136c5e5b3f490ecae",
+        "mode": 420
+      }
+    },
+    {
+      "status": "MODIFIED",
+      "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+      "before": {
+        "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "byteLength": 5081,
+        "sha256": "90ba3d0f28706ad398abd131231d6770e4b19947f9bef8d411bbd2742548a534",
+        "mode": 420
+      },
+      "after": {
+        "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "byteLength": 5562,
+        "sha256": "f70d56f31734c232166ee9df7714f82dd3ea3ea3ebe99d5fe25e77014dd6f441",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "lib/market-integrity/r44p12-real-provider-diagnostic-boundary.ts",
+      "after": {
+        "path": "lib/market-integrity/r44p12-real-provider-diagnostic-boundary.ts",
+        "byteLength": 3102,
+        "sha256": "70b654c58aba580141e19a4a29cb34c704ecae5cc4ed4f074f358ec856de3908",
+        "mode": 420
+      }
+    },
+    {
+      "status": "MODIFIED",
+      "path": "scripts/a45-browser-acceptance.mjs",
+      "before": {
+        "path": "scripts/a45-browser-acceptance.mjs",
+        "byteLength": 24827,
+        "sha256": "1eb6223ac3620e06c2dd0c488b1095ff8bcc915fd35bcb6428fdc633dd7c735a",
+        "mode": 420
+      },
+      "after": {
+        "path": "scripts/a45-browser-acceptance.mjs",
+        "byteLength": 25449,
+        "sha256": "9486939061718be6f3ebcd3151a5eee4b00c3b5867570bbb55a6e997378ba4c6",
+        "mode": 493
+      }
+    },
+    {
+      "status": "MODIFIED",
+      "path": "scripts/deployment/run-segmented-build.mjs",
+      "before": {
+        "path": "scripts/deployment/run-segmented-build.mjs",
+        "byteLength": 19462,
+        "sha256": "eaa7faad8865d69309e42b4296fa39d1767ad3346b2c535db3e945e54f793ce4",
+        "mode": 420
+      },
+      "after": {
+        "path": "scripts/deployment/run-segmented-build.mjs",
+        "byteLength": 19462,
+        "sha256": "51967ceab295b94a5722fcc4b40b4190c6ff9be47bf95871966a11991b980df6",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/a102r44p12-real-provider-diagnostic-lib.mjs",
+      "after": {
+        "path": "scripts/pass36/a102r44p12-real-provider-diagnostic-lib.mjs",
+        "byteLength": 10875,
+        "sha256": "6977d9d0fa12955d2984ac028269c3f54381fb27393194dc612bf47b943dd9cb",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/build-a102r44p12-approved-source-changes.mjs",
+      "after": {
+        "path": "scripts/pass36/build-a102r44p12-approved-source-changes.mjs",
+        "byteLength": 7371,
+        "sha256": "55a09de213b08bbbdce5a8f45971cb0b0ed2f8c64256e1d9fc052256c5684758",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/build-a102r44p12-source-manifest.mjs",
+      "after": {
+        "path": "scripts/pass36/build-a102r44p12-source-manifest.mjs",
+        "byteLength": 3386,
+        "sha256": "10011496febca9c4c221ea78af232c24f26382977e334bfde9c83f8e803975b9",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/test-a102r44p12-browser-process-isolation.mjs",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p12-browser-process-isolation.mjs",
+        "byteLength": 2478,
+        "sha256": "ffb6074836bbdcadcdc1a0a7600186edcfcdfd06594dde3864da483f725290c0",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/test-a102r44p12-real-provider-diagnostic-boundary.ts",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p12-real-provider-diagnostic-boundary.ts",
+        "byteLength": 3307,
+        "sha256": "6ac609f41cec8565fdbde9795126e53bd570353712eef951c6697a90ca7f15bb",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/test-a102r44p12-real-provider-diagnostic-tamper.mjs",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p12-real-provider-diagnostic-tamper.mjs",
+        "byteLength": 4733,
+        "sha256": "8ae220a2b0134b554df75c538d3017bbf3f4cbc217cc9dc1d6ed0cd02fa41e1f",
+        "mode": 493
+      }
+    },
+    {
+      "status": "MODIFIED",
+      "path": "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+      "before": {
+        "path": "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "byteLength": 21101,
+        "sha256": "3d1ea40bbf19769a85b12b2855a1ec974b4e8281dcd62f18e862ab8617393df3",
+        "mode": 420
+      },
+      "after": {
+        "path": "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+        "byteLength": 21155,
+        "sha256": "6f085c2ceaaab8615209ba89e2a854008615cc2f4eb4d79bece6faf974ca5da6",
+        "mode": 420
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-a60-typescript-root-denominator-migration.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-a60-typescript-root-denominator-migration.mjs",
+        "byteLength": 6855,
+        "sha256": "cdcc3a098544e0424ae30b5a6a616b68659ccfaefb34f29506211789ef370c57",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-approved-source-changes.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-approved-source-changes.mjs",
+        "byteLength": 4907,
+        "sha256": "e2b28cf20fc8eeb2b9c4383fd118d1652a1145651af43b4098e839c250cc4f59",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-browser-process-isolation-and-verifier-identity-migration.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-browser-process-isolation-and-verifier-identity-migration.mjs",
+        "byteLength": 9933,
+        "sha256": "aea24cc198651b2d3c96e6c48fcf54cf1834bf5cc6df3173de60020b7f8274da",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-clean-unpack.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-clean-unpack.mjs",
+        "byteLength": 3533,
+        "sha256": "85123d739dcbe044ff12e7d56fd4e385652b35f6ef1bcda1ec581546e56c3088",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-independent-final-audit.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-independent-final-audit.mjs",
+        "byteLength": 7302,
+        "sha256": "cfbc6a505d63d2e243e96f4332545dc788db13467dcdcc0d98aefb560e9b7134",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-real-provider-diagnostic.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-real-provider-diagnostic.mjs",
+        "byteLength": 583,
+        "sha256": "e57a9393f551df69898cc46538c55fc6119131fac15d899b917f65aa17459a90",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-source-authority.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-source-authority.mjs",
+        "byteLength": 5574,
+        "sha256": "57480a3df8f8ecf5da71069086362cb44a16aca60fbc3ab0d9cfa53dfa26058f",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-static-policy.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-static-policy.mjs",
+        "byteLength": 11243,
+        "sha256": "60553129af1fcb66bb3118603e2f70622d692d873bb585a65260839c3f6974fb",
+        "mode": 493
+      }
+    },
+    {
+      "status": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p12-turbopack-rss-budget-migration.mjs",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p12-turbopack-rss-budget-migration.mjs",
+        "byteLength": 11468,
+        "sha256": "7d58105918ef85c5e1bab6a81e6cde598e294b770c15d4649c6f1086fa8a86bf",
+        "mode": 493
+      }
+    }
+  ],
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

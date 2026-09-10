@@ -1,0 +1,29 @@
+{
+  "creditBoundary": {
+    "historicalPassRewritten": false,
+    "liveCredit": false,
+    "saleCredit": false,
+    "securityRegressionCredit": false
+  },
+  "currentPolicy": {
+    "byteLength": 8949,
+    "currentReason": "invitation_only_beta_account_required",
+    "path": "lib/commerce/vlm-advanced-only-access-policy.ts",
+    "sha256": "4d924d1b77760cc8395199ac9a1473deeb5fd4c242b3290c318046ce5da1565b"
+  },
+  "denominatorCollapse": false,
+  "historicalTest": {
+    "byteLength": 8848,
+    "expectedReason": "account_session_required",
+    "path": "scripts/pass36/test-a102r5-paid-entitlement-browser-secret-boundary.ts",
+    "sha256": "044ab64f2b75afa3e01df0b0e3cc7c354ad874d646ddebd5767e14cbe0a21f0d"
+  },
+  "historyRewritten": false,
+  "newDenominator": 21,
+  "oldDenominator": 21,
+  "removedAssertions": 0,
+  "retainedAssertions": 21,
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.paid-entitlement-reason-migration.v1",
+  "semanticDecision": "BOTH_REASONS_FAIL_CLOSED_THE_NEW_REASON_ALSO_CONVEYS_INVITATION_ONLY_PRODUCT_TRUTH"
+}

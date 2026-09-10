@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "velmere.pass36.a67.network-egress-trust-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A67R0_NETWORK_EGRESS_CREDENTIAL_AND_SAME_ORIGIN_TRUST_BOUNDARY_HARDENING",
+  "total": 36,
+  "passed": 36,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "same_origin_root_path_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_query_allowed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_scheme_relative_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_absolute_https_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_backslash_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_control_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_url_object_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_wrapper_executes_relative",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_wrapper_forces_redirect_error",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_wrapper_preserves_method",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_wrapper_rejects_external_before_fetch",
+      "pass": true,
+      "detail": "same_origin_relative_request_required"
+    },
+    {
+      "id": "external_rejection_makes_no_network_call",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "same_origin_wrapper_rejects_redirect_override",
+      "pass": true,
+      "detail": "same_origin_redirect_policy_must_be_error"
+    },
+    {
+      "id": "redirect_override_makes_no_network_call",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_config_is_origin_only",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_brokered_request_returns_response",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_broker_target_exact",
+      "pass": true,
+      "detail": {
+        "target": "https://a67-project.supabase.co/rest/v1/velmere_a67?select=id",
+        "method": "GET",
+        "redirect": "manual",
+        "apikey": true,
+        "authorization": true,
+        "operation": "pass4825-brokered-egress-v1:configured_origin:supabase:supabase_service_rest",
+        "maxRequestBytes": 1048576,
+        "maxResponseBytes": 8388608
+      }
+    },
+    {
+      "id": "supabase_service_headers_bound",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_operation_bound",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_request_budget_bound",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_response_budget_bound",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_config_path_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_config_url_credentials_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_production_http_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "deadline_primitive_defines_same_origin_wrapper",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "deadline_primitive_rejects_redirect_follow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_adapter_uses_configured_origin_broker",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "supabase_adapter_bounds_request_and_response",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "active_real_markets_uses_same_origin_wrapper",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "current_real_markets_uses_same_origin_wrapper",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "admin_import_uses_same_origin_wrapper",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "angel_local_uses_deadline_primitive",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "angel_remote_retains_safe_egress",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "safe_egress_retains_dns_and_socket_pinning",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "brokered_configured_origin_retains_policy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "single_raw_fetch_primitive_inventory",
+      "pass": true,
+      "detail": [
+        "lib/network/fetch-with-deadline.ts"
+      ]
+    }
+  ]
+}

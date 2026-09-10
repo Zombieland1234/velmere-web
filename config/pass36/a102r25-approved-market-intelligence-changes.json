@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "velmere.pass36.a102r25.approved-market-intelligence-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R25_ACTION_REQUIRED_LOCAL_REFERENCE_MARKET_INTELLIGENCE_SHORT_CIRCUIT_WITHHELD_BACKOFF_AND_RETRY_TRUTH_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R24_ACTION_REQUIRED_SHARED_CATALOG_REFERENCE_TRUTH_REMOTE_SEARCH_AND_REFRESH_FLICKER_RECOVERY_NO_REAL_CREDIT",
+  "fileCount": 12,
+  "approvedFiles": [
+    {
+      "path": "components/market-integrity/asset-detail/contract.ts",
+      "parentPresent": true,
+      "parentByteLength": 1274,
+      "parentSha256": "a0dc1ab30ad6facf66c8b7d6e10735e2af32361ebb809b5451c09fded83940ce",
+      "currentByteLength": 1298,
+      "currentSha256": "7383e7b711e8e78b57ab331ca4aba9938a7d9a779669d4cece9c45adb739810c",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/AssetDetailModal.tsx",
+      "parentPresent": true,
+      "parentByteLength": 313254,
+      "parentSha256": "da9d24e2d7f5c93dcc8b0a1e6820e1b538ee96f734f5b863a0a56adbe8462010",
+      "currentByteLength": 313409,
+      "currentSha256": "93a529535c3706f737abaefa422815e40d43bec81012c8845e0fd53c6dd04231",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+      "parentPresent": true,
+      "parentByteLength": 81985,
+      "parentSha256": "4d9e0796edd4d8a7ddb715f8e9ef770a15f806759c98546fd707d3fcdf193a50",
+      "currentByteLength": 82138,
+      "currentSha256": "ab5777a2112d1f88432236670d7df04e6e3955a2211414337e7ff06137ed572d",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "parentPresent": true,
+      "parentByteLength": 58533,
+      "parentSha256": "a51afd1af086044b3ede2a99860b6da635b663640b4baca53ab7a526a391bdb9",
+      "currentByteLength": 58686,
+      "currentSha256": "e586e5b65857138d3e3b09b2a308f3c621fe8c69fa00a5b0f19e1f92529f9036",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/asset-detail/market-intelligence-client-runtime.ts",
+      "parentPresent": true,
+      "parentByteLength": 30572,
+      "parentSha256": "f10656f6dcb03a3b53911f0f5c2ad94ca8beae0ae0c65adb5af728fa552d48be",
+      "currentByteLength": 32184,
+      "currentSha256": "75beab1e6fcbfc48bd84fc3fb483ca6f738481e55302bfff437299d678ac36a8",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/AssetIntelligenceTabs.tsx",
+      "parentPresent": true,
+      "parentByteLength": 35319,
+      "parentSha256": "b9b530c3564ccefca6b8088631a8e494e711cecff66f2a73c75ffdcef2265f04",
+      "currentByteLength": 36141,
+      "currentSha256": "91b22424f06a90141f1474bffd5962c7ba55d0f895ad824ee53ae68de82e2d43",
+      "changeType": "modified"
+    },
+    {
+      "path": "scripts/pass35/build-a57r1-hardening-integrity.mjs",
+      "parentPresent": true,
+      "parentByteLength": 21032,
+      "parentSha256": "085f43890958d832fa95ec756a41bd5687b19dbb55edab4d89e57ff36a0c9780",
+      "currentByteLength": 21448,
+      "currentSha256": "aeb829bcd363a0fb6da99dd3548de98bcb4163fe16cacea9ffd5e3261953151d",
+      "changeType": "modified"
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "parentPresent": true,
+      "parentByteLength": 15385,
+      "parentSha256": "ddf7285d8e314d0fb67e916f41868dd33d8efd87ce0bb9eead9869e196fd714c",
+      "currentByteLength": 15385,
+      "currentSha256": "7f9a7df5c301c6c0aede8c7efe9eda2e452cc2f72cb85b851474498a654bf955",
+      "changeType": "modified"
+    },
+    {
+      "path": "package.json",
+      "parentPresent": true,
+      "parentByteLength": 97911,
+      "parentSha256": "84f038f60ff7ba0b9f6d3c12bbae463618613199a904babfa08c8fe45b934e69",
+      "currentByteLength": 99152,
+      "currentSha256": "ab1be69947a53fe964443fc62deaa4a3fac48bef558c225fc98548869eb7164d",
+      "changeType": "modified"
+    },
+    {
+      "path": "README.md",
+      "parentPresent": true,
+      "parentByteLength": 32039,
+      "parentSha256": "778b2b6cff99249f5b34157d3c0322c5450072d6b0c325d77a526b06a60f8226",
+      "currentByteLength": 33107,
+      "currentSha256": "031dd2bae1f323d835ca8b879795ef564c37f158f4e35ecb63a71988e8cd3e94",
+      "changeType": "modified"
+    },
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "parentPresent": true,
+      "parentByteLength": 12471,
+      "parentSha256": "55d8879c6ac844ad0a0f6140a7c75b0ba9a0fcb2965f458de23639292e06183e",
+      "currentByteLength": 13539,
+      "currentSha256": "d07a95888f668f7e432a80dbcf6593da1384612a613f4b9cd7a1c0636ea867e0",
+      "changeType": "modified"
+    },
+    {
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "parentPresent": true,
+      "parentByteLength": 1796452,
+      "parentSha256": "a67f1148a1a9ff8fac48c15b4f4338b626eb11ee515d48f389fc45a5044fb8a7",
+      "currentByteLength": 1797939,
+      "currentSha256": "4e05d21c9decad660b66f22f0eb2273eb376f9c356c034333750284c41c4f9da",
+      "changeType": "modified"
+    }
+  ],
+  "truthBoundary": "A102R25 prevents local-development reference assets from calling the Market Intelligence endpoint, carries an explicit local_reference state from Shield and Shield Pro into the asset modal, shows a terminal localized withheld state without meaningless retry, and extends bounded client-side backoff for genuine 424 withheld responses. Production receives no local-reference short circuit or synthetic Market Impact/Whale Watch payload. It does not grant current market data, provider rights, exact build/browser, staging, LIVE, sale, production or world-class credit."
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "velmere.pass35.benchmark-review-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "status": "FAIL_CLOSED_EXTERNAL_EVIDENCE_ONLY",
+  "benchmark": {
+    "gateId": "HG04",
+    "requiredRows": 2700,
+    "requiredSplitIds": ["train", "validation", "test"],
+    "ttlDays": 90
+  },
+  "nativeReview": {
+    "gateId": "HG10",
+    "requiredCases": 300,
+    "requiredLocales": ["pl", "en", "de"],
+    "ttlDays": 30
+  },
+  "maxClockSkewMinutes": 5,
+  "maxInputBytes": 67108864,
+  "allowedSignatureSchemes": ["https://", "sigstore://", "kms://", "urn:"],
+  "truthBoundary": "This policy validates a supplied external evidence package. It never creates benchmark rows, native-review cases, reviewer identities, signatures, labels or proof. Structural test fixtures are never canonical evidence. Any missing, stale, fixture, synthetic, local, unsigned, overlapping or unbound input receives zero credit."
+}

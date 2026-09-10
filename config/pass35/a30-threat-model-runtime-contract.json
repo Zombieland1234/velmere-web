@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "velmere.pass35.a30-threat-model-runtime-contract.v1",
+  "passId": "PASS35_A30",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "strict": 9.3,
+    "zeroBudget": 80
+  },
+  "baselineA29": {
+    "canonical": 55.8,
+    "strict": 32.6,
+    "zeroBudget": 90.9
+  },
+  "progressDeltaVsA29": {
+    "canonicalPercentagePoints": 1.2,
+    "strictPercentagePoints": 2.3,
+    "zeroBudgetPercentagePoints": 0.4
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 16.3,
+    "strictPercentagePoints": 25.6,
+    "zeroBudgetPercentagePoints": 11.3
+  },
+  "canonicalWeightedPlanningPercent": 57,
+  "canonicalStrictDonePercent": 34.9,
+  "canonicalCounts": {
+    "DONE": 15,
+    "PARTIAL": 19,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 91.3,
+  "zeroBudgetCoreDenominator": 80,
+  "zeroBudgetCounts": {
+    "DONE": 67,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "accuracy": 1,
+      "correct": 72,
+      "total": 72,
+      "unsafeEligible": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "killed": 2304,
+      "total": 2304,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:f7ce0084c89283bbf5eddb1e89e4558aa238d70f3f2d4b131133fae69fe55a92",
+    "receiptSha256": "sha256:e3d5278ca5ed8c860a71d8e96666015a30bdd35d092785ed450366d42d690e6a"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "protocolSpecificAssumptionsHumanValidated": false,
+  "businessLogicHumanReviewed": false,
+  "realArchitectureWorkshopExecuted": false,
+  "everyRealWorldThreatModeled": false,
+  "independentRerun": false,
+  "truthBoundary": "PASS35 A30 is the only canonical current status. Canonical roadmap is 57% weighted / 34.9% strict across 43 workstreams, up 1.2 pp weighted and 2.3 pp strict from A29, and 16.3 pp weighted from A16. Zero-budget functional core is 91.3% across 80 capabilities, up 0.4 pp from A29 and 11.3 pp from A16. A30 locally closes the declared bounded A03 component/asset/actor, trust-boundary, data-flow, entry-point, assumption, invariant, abuse-case, attack-path, mitigation, residual-risk, coverage, replay and mutation-evidence implementation. Human architecture review, real protocol assumptions, business-logic adjudication, staging, sale, outcomes and independent assurance remain unclaimed."
+}

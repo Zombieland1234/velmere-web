@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "velmere.pass35.audit-a01-a05-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "productCellId": "audit_evm_pro_automated_review",
+  "status": "LOCAL_EXECUTABLE_A01_A10_A15_A17_PARTIAL_PLUS_EXTERNAL_ADAPTERS_NOT_PAID_ELIGIBLE",
+  "enginePath": "lib/security/audit-a01-a05-engine.ts",
+  "runnerPath": "scripts/pass35/run-audit-a01-a05-case.ts",
+  "testPath": "scripts/pass35/test-audit-a01-a05-engine.ts",
+  "syntheticFixturePath": "fixtures/pass35/audit-a01-a05/synthetic-risky-upgradeable.json",
+  "syntheticReceiptPath": "fixtures/pass35/audit-a01-a05/PASS35_A3_A01_A05_SYNTHETIC_RECEIPT.json",
+  "controls": {
+    "A01": {
+      "implementation": "source bundle, ABI, compiler configuration, target and provenance structural binding",
+      "localState": "EXECUTABLE",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "real customer/provider input",
+        "commercial rights",
+        "independent provenance verification"
+      ]
+    },
+    "A02": {
+      "implementation": "supplied bytecode verifier plus pinned solc standard-json adapter with tool/version/hash, immutable and metadata binding",
+      "localState": "EXECUTABLE_ADAPTER_FIXTURE_PROVEN_REAL_SOLC_NOT_RUN",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "official pinned solc execution",
+        "real provider-bound deployed bytecode receipt",
+        "real verified source and exact libraries",
+        "independent reproduction"
+      ]
+    },
+    "A03": {
+      "implementation": "case-bound threat-model evidence with architecture, component/asset/actor, trust-boundary/data-flow, entry-point, assumption/invalidation, invariant, abuse-case, attack-path/mitigation, residual-risk and coverage controls",
+      "localState": "IMPLEMENTED_LOCAL_CASE_BOUND_THREAT_MODEL_EVIDENCE_BENCHMARKED_HUMAN_REVIEW_MISSING",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "rights-approved real protocol architecture",
+        "reviewer-led architecture workshop",
+        "protocol-specific assumption validation",
+        "manual business-logic and unmodeled-threat adjudication"
+      ]
+    },
+    "A04": {
+      "implementation": "case-bound privilege and authorization evidence with role/principal state, selector-permission, role-admin, proxy authority, multisig/timelock delegation, separation-of-duties, escalation, lifecycle, hidden-surface, replay and mutation controls",
+      "localState": "IMPLEMENTED_LOCAL_CASE_BOUND_PRIVILEGE_AUTHORIZATION_EVIDENCE_BENCHMARKED_ONCHAIN_REVIEW_MISSING",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "rights-approved current on-chain role holders",
+        "real proxy/admin slots and operational multisig/timelock state",
+        "qualified manual authorization-path and hidden-business-logic review",
+        "independent rerun"
+      ]
+    },
+    "A05": {
+      "implementation": "two separate local lanes: source semantic structure and ABI/push-aware bytecode opcode analysis",
+      "localState": "TWO_LOCAL_HEURISTIC_LANES_EXECUTABLE",
+      "paidGateEligible": false,
+      "independentExternalFamilies": 0,
+      "missingForExit": [
+        "official Slither real execution",
+        "official Semgrep real execution or signed independent equivalent",
+        "real frozen benchmark",
+        "false-positive adjudication",
+        "path feasibility and exploitability review",
+        "independent rerun"
+      ],
+      "externalAdapterFamilies": 2,
+      "externalAdapterState": "SLITHER_AND_SEMGREP_ADAPTERS_FIXTURE_PROVEN_REAL_TOOLS_NOT_INSTALLED"
+    },
+    "A06": {
+      "implementation": "push-aware EVM decoding, structural CFG and bounded abstract stack/path execution with supported equality/range constraint pruning",
+      "localState": "LOCAL_BOUNDED_ABSTRACT_FEASIBILITY_BENCHMARKED_NOT_FULL_SMT",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "full SMT/path-complete solver execution",
+        "memory, keccak storage and inter-contract state",
+        "real protocol corpus",
+        "official analyzer equivalence",
+        "qualified exploitability adjudication",
+        "independent rerun"
+      ]
+    },
+    "A07": {
+      "implementation": "case-bound exact behavior/assertion registry with coverage, isolation, repeatability and mutation-score evidence, plus fail-closed Forge adapter binding",
+      "localState": "IMPLEMENTED_LOCAL_EXACT_TEST_EVIDENCE_BENCHMARKED_OFFICIAL_FORGE_NOT_RUN",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "official Forge and pinned solc execution",
+        "real customer test suite and provenance",
+        "compiled EVM/source-bytecode equivalence",
+        "independent rerun",
+        "real coverage and failure evidence"
+      ]
+    },
+    "A08": {
+      "implementation": "case-bound fuzz/invariant registry with exact target/model/corpus/runner binding, seed and state coverage, deterministic replay, shrinking and mutation evidence",
+      "localState": "IMPLEMENTED_LOCAL_FUZZ_INVARIANT_EVIDENCE_BENCHMARKED_OFFICIAL_ENGINES_NOT_RUN",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "official Foundry/Echidna execution",
+        "compiled EVM and implementation-model equivalence",
+        "real customer invariant corpus",
+        "independent adjudication",
+        "real coverage and counterexample evidence"
+      ]
+    },
+    "A09": {
+      "implementation": "case-bound fork/replay evidence registry with exact chain/block/snapshot/transaction/dependency bindings, state-root continuity, assertion/state-diff coverage, isolated deterministic replay and mutation evidence",
+      "localState": "IMPLEMENTED_LOCAL_FORK_REPLAY_EVIDENCE_BENCHMARKED_NATIVE_FORK_REAL_PROVIDER_NOT_RUN",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "official native fork runner execution",
+        "real non-loopback provider and commercial rights",
+        "real verified deployment/source chain",
+        "historical exploit or customer workflow replay",
+        "independent rerun and adjudication"
+      ]
+    },
+    "A10": {
+      "implementation": "case-bound economic-adversarial evidence registry with exact target/methodology/A27-replay bindings, five scenario families, evidence and prerequisite coverage, sensitivity, uncertainty, dependency-DAG, deterministic model and mutation evidence",
+      "localState": "IMPLEMENTED_LOCAL_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARKED_REAL_DATA_OFFICIAL_REPLAY_REVIEW_MISSING",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "rights-approved current venue/oracle/governance inputs",
+        "official forked-EVM replay correlation",
+        "real exploitability and realized-outcome validation",
+        "qualified independent adjudication"
+      ]
+    },
+    "A15": {
+      "implementation": "finding-to-patch remediation/retest evidence-chain adapter requiring A05/A07/A08/A09/A10 receipts",
+      "localState": "LOCAL_RETEST_CHAIN_FIXTURE_PROVEN_SIGNED_CLOSURE_MISSING",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "real finding and patch",
+        "real retests",
+        "reviewer attestation",
+        "independent signed closure"
+      ]
+    },
+    "A17": {
+      "implementation": "six-rule post-audit monitoring and incident/customer handoff contract",
+      "localState": "LOCAL_MONITORING_HANDOFF_PROVEN_LIVE_ALERTING_MISSING",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "live provider",
+        "alert delivery",
+        "on-call acknowledgement",
+        "incident drill",
+        "customer communication evidence"
+      ]
+    },
+    "A11": {
+      "implementation": "case-bound upgrade/deployment-operations evidence with exact proxy slots, authorization, multisig/timelock, initializer/storage safety, simulation/rollback, emergency and key-management controls",
+      "localState": "IMPLEMENTED_LOCAL_UPGRADE_DEPLOYMENT_OPERATIONS_EVIDENCE_BENCHMARKED_ONCHAIN_DRILL_REVIEW_MISSING",
+      "paidGateEligible": false,
+      "missingForExit": [
+        "current on-chain proxy/admin and role evidence",
+        "real multisig/timelock and hardware-key custody proof",
+        "controlled staging upgrade/rollback/incident drill",
+        "qualified independent review"
+      ]
+    }
+  },
+  "hardStops": {
+    "sellEnabled": false,
+    "fullAuditClaimAllowed": false,
+    "humanReviewedClaimAllowed": false,
+    "fixtureMayReceiveExternalCredit": false,
+    "localHeuristicMayUnlockPaidDelivery": false,
+    "bytecodeVerifierMayClaimCompilerExecution": false
+  },
+  "truthBoundary": "A7 adds a local A09 fork/replay adapter contract with exact state binding and seven killed mutations, plus a hashed but unexecuted Foundry invariant target for A08. Official solc/Forge/Slither/Semgrep/fork execution, real provider/customer cases, compiled EVM fuzz, benchmark quality, sale authorization and human/independent review remain unproven.",
+  "runnerBoundaryTestPath": "scripts/pass35/test-audit-a01-a05-runner-boundaries.mjs",
+  "dataIsolation": {
+    "syntheticOutputPrefix": "fixtures/pass35/audit-a01-a05/",
+    "customerOutputPrefix": ".velmere/private-audit-cases/",
+    "activeArtifactSyntheticReceiptAllowed": false,
+    "customerReceiptAllowedInSourcePackage": false
+  },
+  "a4PolicyPath": "config/pass35/audit-a4-execution-policy.json",
+  "a4SyntheticReceiptPaths": [
+    "fixtures/pass35/audit-a4/PASS35_A4_CHAIN_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a4/PASS35_A4_SOLC_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a4/PASS35_A4_SLITHER_SYNTHETIC_RECEIPT.json"
+  ],
+  "a5PolicyPath": "config/pass35/audit-a5-execution-policy.json",
+  "a5SyntheticReceiptPaths": [
+    "fixtures/pass35/audit-a5/PASS35_A5_SEMGREP_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a5/PASS35_A5_A06_SYNTHETIC_RECEIPT.json"
+  ],
+  "a6PolicyPath": "config/pass35/audit-a6-execution-policy.json",
+  "a6SyntheticReceiptPaths": [
+    "fixtures/pass35/audit-a6/PASS35_A6_FORGE_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a6/PASS35_A6_A08_MODEL_FUZZ_SYNTHETIC_RECEIPT.json"
+  ],
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL"
+}

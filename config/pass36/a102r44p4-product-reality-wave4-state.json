@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p4.product-reality-wave4-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P4_ACTION_REQUIRED_OFFICIAL_TOOLCHAIN_200_EXECUTIONS_SEMGREP_MIGRATION_AND_AUTOMATED_AUDIT_EVIDENCE_BINDING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P3_ACTION_REQUIRED_CURRENT_BYTE_SHIELD_PRO_REAL_MARKETS_AND_MULTILINGUAL_AI_MATRIX_CLOSURE_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T09:36:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "localEvidence": {
+    "officialToolchain": {
+      "status": "PASS_200_ACTUAL_OFFICIAL_TOOL_PROCESSES_LOCAL_CI_ONLY",
+      "fixtureCases": 50,
+      "completedExecutions": 200,
+      "findingsExecutions": 58,
+      "toolErrors": 0,
+      "byTool": {
+        "forge": {
+          "completed": 50,
+          "executed": 50,
+          "findings": 0,
+          "toolError": 0
+        },
+        "semgrep": {
+          "completed": 50,
+          "executed": 50,
+          "findings": 16,
+          "toolError": 0
+        },
+        "slither": {
+          "completed": 50,
+          "executed": 50,
+          "findings": 42,
+          "toolError": 0
+        },
+        "solc": {
+          "completed": 50,
+          "executed": 50,
+          "findings": 0,
+          "toolError": 0
+        }
+      }
+    },
+    "toolVersions": {
+      "solc": "0.8.24",
+      "slither": "0.11.5",
+      "semgrep": "1.130.0",
+      "forge": "1.2.3"
+    },
+    "exactWindows": {
+      "status": "NOT_RUN",
+      "requiredNode": "24.18.0",
+      "requiredNpm": "11.16.0"
+    },
+    "officialToolPdfs": {
+      "status": "PASS_150_TECHNICAL_PDFS_LOCAL_FIXTURE_ONLY",
+      "documents": 150,
+      "pages": 700,
+      "basic": 50,
+      "pro": 50,
+      "advanced": 50,
+      "packetRows": 450,
+      "officialToolExecutionsBound": 200,
+      "pdfQaFailures": 0,
+      "activeContentDocuments": 0,
+      "blankPages": 0,
+      "fontEmbeddedDocuments": 150,
+      "toUnicodeDocuments": 150,
+      "bindingChecks": 4418,
+      "bindingFailed": 0,
+      "realCustomerPdfCredit": 0,
+      "packetFileSha256": "72c43208ebdb48c3c50ba74579eb83ca0845139a82e516394662cf1c8aef32e2",
+      "packetSummarySha256": "0cfce220f81089c8126f72ad5df6e0f1b0bdc57e1ee541a9d7a6c0d9e7a90fd7",
+      "pdfManifestSha256": "4a2eef8d656ea531214b7a3e62cebcc06577851c68325361e0ef5e48d8617f11",
+      "pdfVerificationSha256": "e7df244584324dfd373cd631c5f460e5e4bd82ae9d99f6b5047f26988351fb58",
+      "bindingReceiptSha256": "291bc5421016cad3aed851ea203e65e8aed677b21d8ba674299439e1cb17ca83",
+      "deterministicGeneration": "2_OF_2_BYTE_IDENTICAL"
+    },
+    "sourceDiagnostics": {
+      "observedNode": "22.16.0",
+      "observedNpm": "10.9.2",
+      "jsonFilesParsed": 1212,
+      "jsonFailures": 0,
+      "pythonFilesParsed": 52,
+      "pythonSyntaxFailures": 0,
+      "nodeSyntaxFilesChecked": 1496,
+      "nodeSyntaxFailures": 0,
+      "routeDispatchPassed": 1480,
+      "routeDispatchFailed": 0,
+      "lazyRoutesPassed": 176,
+      "lazyRoutesFailed": 0,
+      "visualFreezePassed": 20,
+      "visualFreezeFailed": 0,
+      "projectTypeScriptSourceAudit": "BLOCKED_PROJECT_DEPENDENCIES_NOT_INSTALLED",
+      "supersededPartialSemgrepHarnessRemoved": true
+    },
+    "officialArtifactVerification": {
+      "status": "PASS_34_OF_34",
+      "artifactSha256": "3727858b943df088af0d3aa71a2851461e8484712f6ec8ab92778fe5c3674b26",
+      "receiptSha256": "43c8fcb3520195f55728abc744927c0c27da328451ebb281d0eab57d10592cbd",
+      "workflowRunId": 30741096878,
+      "draftUnmerged": true
+    }
+  },
+  "auditSkuDecisions": {
+    "basic": {
+      "decision": "GO_FREE_INFORMATIONAL_PILOT",
+      "saleEnabled": false,
+      "officialToolFamiliesRequired": 0
+    },
+    "pro": {
+      "decision": "PILOT_ONLY_PAID_INFORMATIONAL",
+      "saleEnabled": false,
+      "officialToolFamiliesExecuted": 4,
+      "realAccuracyCredit": 0,
+      "customerValueCredit": 0
+    },
+    "advanced": {
+      "decision": "PILOT_ONLY_PAID_INFORMATIONAL",
+      "saleEnabled": false,
+      "automated": true,
+      "humanReviewed": false,
+      "independentlyCertified": false,
+      "officialToolFamiliesExecuted": 4,
+      "realAccuracyCredit": 0,
+      "customerValueCredit": 0
+    },
+    "humanReviewedAudit": {
+      "decision": "NOT_FOR_SALE",
+      "available": false
+    }
+  },
+  "realDenominators": {
+    "rightsApprovedRealAudits": {
+      "completed": 0,
+      "required": 50
+    },
+    "officialToolExecutions": {
+      "completed": 200,
+      "required": 200
+    },
+    "independentAdjudications": {
+      "completed": 0,
+      "required": 50
+    },
+    "realCustomerPdfs": {
+      "completed": 0,
+      "required": 50
+    },
+    "exactWindows": {
+      "completed": 0,
+      "required": 1
+    },
+    "staging": {
+      "completed": 0,
+      "required": 10
+    },
+    "technicalOfficialToolPdfs": {
+      "completed": 150,
+      "required": 150
+    }
+  },
+  "openBlockers": [
+    "Exact Windows Node 24.18.0/npm 11.16.0, genuine npm ci, full project TypeScript, Webpack, Turbopack and browser matrix must run on unchanged R44P4 bytes.",
+    "The 50 cases are project-owned synthetic benchmarks, not rights-approved deployed-contract audits.",
+    "No independent labels, deployed bytecode/source reproduction or real customer PDF outcomes exist.",
+    "No disposable staging/provider/tenant/payment/restore evidence exists."
+  ],
+  "truthBoundary": "R44P4 closes 200/200 actual official-tool processes, 450 automated informational tier packets and 150/150 technical PDFs (700 pages) on project-owned fixture inputs. It does not close real deployed-contract accuracy, independent adjudication, real customers, Windows, staging, provider, LIVE or sale denominators.",
+  "remainingCheckpointEstimate": {
+    "localProduct": 0,
+    "exactWindows": 1,
+    "stagingAndExternal": "4-7"
+  }
+}

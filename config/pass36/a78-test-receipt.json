@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "velmere.pass36.a78.exact-runtime-lockfile-browser-bootstrap-test.v1",
+  "revisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "status": "PASS_A78_STATIC_AND_ADVERSARIAL",
+  "generatedAt": "2026-07-27T09:00:00.000Z",
+  "assertions": 36,
+  "policyChecks": 9,
+  "lockPackages": 827,
+  "localCasCovered": 81,
+  "localCasMissing": 746,
+  "isolatedEnvironment": true,
+  "runtimeMutationDetection": true,
+  "directDenialResponse": true,
+  "descendantLineage": true,
+  "physicalExactInputsSupplied": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "A78 hardens and verifies the current-root exact runtime/dependency/browser admission mechanism. Local CAS coverage, compatible runtimes, system Chromium, synthetic fixtures or source-level contracts do not receive exact bootstrap credit. VERIFIED requires physical hash-matching Node 24.18.0/npm 11.16.0, every one of 827 lockfile-bound tarballs, an externally anchored platform-exact Playwright 1.60.0 Chromium bundle, isolated no-secret execution, unchanged runtime tree, 30/30 current-root gate and VERIFIED A60."
+}

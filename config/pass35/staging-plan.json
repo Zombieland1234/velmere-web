@@ -1,0 +1,420 @@
+{
+  "schemaVersion": "velmere.pass35.staging-plan.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "status": "PREPARED_NOT_EXECUTED",
+  "sameArtifactPromotionRequired": true,
+  "localhostCountsAsStaging": false,
+  "services": [
+    {
+      "id": "identity_database",
+      "kind": "supabase",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "card_blik_payments",
+      "kind": "stripe_test",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "market_data_primary",
+      "kind": "provider_test_or_contractual",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "market_data_failover",
+      "kind": "independent_provider",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "model_provider",
+      "kind": "ai_provider",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "transactional_email",
+      "kind": "email_provider",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "private_artifact_storage",
+      "kind": "object_storage",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    },
+    {
+      "id": "key_management",
+      "kind": "kms",
+      "required": true,
+      "configured": false,
+      "secretRef": null
+    }
+  ],
+  "requiredJourneys": [
+    "two_account_cross_tenant_rls",
+    "account_recovery_and_session_revocation",
+    "card_sca_3ds_blik_payment_lifecycle",
+    "refund_dispute_and_reconciliation",
+    "provider_outage_and_failover",
+    "canonical_packet_ui_pdf_parity",
+    "backup_restore_and_rollback",
+    "kill_switch_and_customer_communication",
+    "measured_slo_alert_ack_vendor_exit",
+    "strict_slo_alert_ack_vendor_exit_recovery",
+    "out_of_time_slo_vendor_exit_observation"
+  ],
+  "executedReceipts": [],
+  "promotionAllowed": false,
+  "a48": {
+    "revisionId": "VELMERE_PASS35_A48_STAGING_TENANT_ISOLATION_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_LOCAL_ACCEPTANCE",
+    "scope": [
+      "two_account_cross_tenant_rls",
+      "profile_isolation",
+      "private_artifact_isolation",
+      "session_revocation"
+    ],
+    "paymentsIncluded": false
+  },
+  "a49": {
+    "revisionId": "VELMERE_PASS35_A49_STRIPE_TEST_PAYMENT_REFUND_RECONCILIATION_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_TENANT_ISOLATION",
+    "scope": [
+      "stripe_test_payment_intent",
+      "full_refund",
+      "signed_checkout_webhook",
+      "signed_refund_webhook",
+      "entitlement_refund_idempotency",
+      "webhook_reconciliation_aggregate"
+    ],
+    "testModeOnly": true,
+    "liveModeAllowed": false,
+    "saleEnabled": false
+  },
+  "a50": {
+    "revisionId": "VELMERE_PASS35_A50_TRANSACTIONAL_EMAIL_PRIVATE_STORAGE_KMS_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_PAYMENT_REFUND_RECONCILIATION",
+    "scope": [
+      "private_supabase_storage_bucket",
+      "two_tenant_storage_rls",
+      "kms_envelope_encryption",
+      "short_lived_signed_url",
+      "transactional_email_delivery",
+      "cleanup_and_redaction"
+    ],
+    "productionKmsClaimAllowed": false,
+    "productionEmailClaimAllowed": false,
+    "saleEnabled": false
+  },
+  "a51": {
+    "revisionId": "VELMERE_PASS35_A51_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_EMAIL_STORAGE_KMS",
+    "scope": [
+      "bounded_application_state_backup",
+      "checksum_verification",
+      "disposable_restore",
+      "database_storage_digest_parity",
+      "rls_tenant_isolation_revalidation",
+      "deployment_rollback_forward_restore",
+      "primary_provider_outage_failover",
+      "cleanup_and_redaction"
+    ],
+    "productionBackupClaimAllowed": false,
+    "productionRollbackClaimAllowed": false,
+    "providerSlaClaimAllowed": false,
+    "saleEnabled": false
+  },
+  "a52": {
+    "revisionId": "VELMERE_PASS35_A52_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_BACKUP_RESTORE_ROLLBACK_PROVIDER_FAILOVER",
+    "scope": [
+      "incident_open",
+      "alert_delivery",
+      "oncall_acknowledgement",
+      "ack_sla",
+      "kill_switch",
+      "paid_delivery_block",
+      "safe_mode",
+      "customer_investigating_notice",
+      "playbook_evidence",
+      "recovery",
+      "kill_switch_release",
+      "customer_resolution_notice",
+      "incident_close"
+    ],
+    "productionIncidentResponseClaimAllowed": false,
+    "realSlaClaimAllowed": false,
+    "saleEnabled": false
+  },
+  "a53": {
+    "revisionId": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION",
+    "scope": [
+      "bounded_slo_window",
+      "availability_latency_error_budget",
+      "delivered_alert_telemetry",
+      "oncall_ack_telemetry",
+      "primary_vendor_exit",
+      "alternate_provider_service_probes",
+      "primary_vendor_restore",
+      "cleanup_and_redaction"
+    ],
+    "productionSloClaimAllowed": false,
+    "contractualSlaClaimAllowed": false,
+    "productionVendorExitClaimAllowed": false,
+    "saleEnabled": false
+  },
+  "a54": {
+    "revisionId": "VELMERE_PASS35_A54_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "supersedes": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE",
+    "requiredPrecondition": "VERIFIED_STAGING_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION",
+    "scope": [
+      "strict_fail_fast_preflight",
+      "externally_anchored_source_and_a52_evidence",
+      "current_bounded_slo_schema",
+      "independent_alert_observer",
+      "distinct_oncall_ack_actor",
+      "multi_domain_vendor_exit",
+      "revoked_primary_credential_negative_probe",
+      "ten_bound_service_probes",
+      "durable_run_journal",
+      "compensating_restore_finally"
+    ],
+    "productionSloClaimAllowed": false,
+    "contractualSlaClaimAllowed": false,
+    "productionVendorExitClaimAllowed": false,
+    "independentAssuranceClaimAllowed": false,
+    "saleEnabled": false
+  },
+  "a55": {
+    "revisionId": "VELMERE_PASS35_A55_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY",
+    "scope": [
+      "independent_security_retest",
+      "data_provider_rights_review",
+      "payments_retest",
+      "operations_retest",
+      "legal_customer_communication_review",
+      "dual_control_canary_preparation_attestation"
+    ],
+    "productionApprovalAllowed": false,
+    "saleEnabled": false
+  },
+  "a56": {
+    "revisionId": "VELMERE_PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPrecondition": "VERIFIED_STAGING_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE",
+    "scope": [
+      "minimum_three_a54_runs",
+      "minimum_72_hour_observation_span",
+      "minimum_24_hour_run_gap",
+      "frozen_source_identity",
+      "independent_run_observer_signatures",
+      "multiple_observer_organizations",
+      "multiple_alternate_provider_failure_domains",
+      "dual_control_aggregate_attestation"
+    ],
+    "continuousMonitoringClaimAllowed": false,
+    "productionSloClaimAllowed": false,
+    "contractualSlaClaimAllowed": false,
+    "controlledCanaryExecuted": false,
+    "saleEnabled": false
+  },
+  "a57": {
+    "revisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+    "status": "PREPARED_NOT_EXECUTED",
+    "requiredPreconditions": [
+      "VERIFIED_STAGING_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE",
+      "VERIFIED_STAGING_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION"
+    ],
+    "scope": [
+      "bounded_test_only_canary",
+      "maximum_25_participants",
+      "maximum_10_stripe_test_transactions",
+      "independent_service_support_payment_outcome_security_telemetry",
+      "strict_stop_rules",
+      "immediate_kill_switch",
+      "compensating_rollback_finally",
+      "support_refund_outcome_evidence",
+      "source_immutability_and_journal"
+    ],
+    "productionPaymentsClaimAllowed": false,
+    "productionApprovalAllowed": false,
+    "liveClaimAllowed": false,
+    "saleEnabled": false
+  },
+  "legacyCandidateBinding": {
+    "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+    "historicalOnly": true,
+    "authoritativeForCurrentStaging": false
+  },
+  "currentStagingSubject": {
+    "revisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+    "parentRevisionId": "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+    "authorityPath": "config/pass36/current-release-authority.json",
+    "admissionPolicyPath": "config/pass36/a95-staging-subject-admission-policy.json",
+    "rlsExecutionPolicyPath": "config/pass36/a96-rls-tenant-isolation-policy.json",
+    "descendantManifestPath": "config/pass36/a101-current-root-descendant-manifest.json",
+    "sourcePackageManifestPath": "_velmere/PASS36_A101R0_SOURCE_ONLY_MANIFEST.json",
+    "exactA77R1ToA80R1Required": true,
+    "exactReleaseVerified": false,
+    "a95AdmissionReady": false,
+    "stagingCreditAllowed": false,
+    "realRlsCasesPassed": 0,
+    "requiredRlsCases": 19,
+    "realStagesVerified": 0,
+    "requiredStages": 10,
+    "truthBoundary": "A101R0 is current source authority; exact A77R1-A80R1 and real A95-A101 staging remain mandatory before any staging, LIVE or sale credit.",
+    "legacyCandidateAuthoritative": false,
+    "paymentExecutionPolicyPath": "config/pass36/a97-stripe-test-payment-policy.json",
+    "paymentOperatorAssertionPolicyPath": "config/pass36/a97r1-payment-operator-assertion-policy.json",
+    "emailStorageKmsExecutionPolicyPath": "config/pass36/a98-email-storage-kms-boundary-policy.json",
+    "backupRestoreRollbackProviderLossPolicyPath": "config/pass36/a99-backup-restore-rollback-provider-loss-policy.json",
+    "incidentKillSwitchCommunicationPolicyPath": "config/pass36/a100-incident-kill-switch-customer-communication-policy.json",
+    "sloVendorExitRecoveryPolicyPath": "config/pass36/a101-slo-error-budget-vendor-exit-recovery-policy.json"
+  },
+  "a96": {
+    "revisionId": "VELMERE_PASS36_A96R0_RLS_19_CASE_EXECUTABLE_REPLAY_AND_CUSTOMER_ARTIFACT_USER_CLIENT_BOUNDARY",
+    "status": "LOCAL_IMPLEMENTATION_GREEN_REAL_NOT_EXECUTED",
+    "requiredPreconditions": [
+      "A95_READY_FOR_BOUNDED_STAGING_PROGRAM_NOT_EXECUTED",
+      "EXACT_PSQL_AND_DB_HOST_BINDING",
+      "TWO_DISPOSABLE_TENANTS"
+    ],
+    "requiredCases": 19,
+    "realCasesExecuted": 0,
+    "realCasesPassed": 0,
+    "stagingCredit": false
+  },
+  "a97": {
+    "revisionId": "VELMERE_PASS36_A97R0_STRIPE_TEST_RUNTIME_RECEIPT_REFUND_REPLAY_AND_RECONCILIATION_CONTROL",
+    "status": "LOCAL_IMPLEMENTATION_GREEN_REAL_NOT_EXECUTED",
+    "requiredPreconditions": [
+      "A77R1_A80R1_EXACT_RELEASE",
+      "A95_CURRENT_STAGING_SUBJECT_ADMITTED",
+      "A96_REAL_RLS_19_OF_19"
+    ],
+    "scope": [
+      "stripe_test_payment",
+      "full_refund",
+      "signed_webhook_replay",
+      "reorder_and_idempotency",
+      "entitlement_revocation",
+      "aggregate_reconciliation"
+    ],
+    "realPaymentLifecycle": 0,
+    "realRefunds": 0,
+    "realReconciliationRuns": 0,
+    "stagingCredit": false,
+    "saleEnabled": false
+  },
+  "a97r1": {
+    "revisionId": "VELMERE_PASS36_A97R1_SCOPED_PAYMENT_OPERATOR_ASSERTIONS_DUAL_CONTROL_AND_SINGLE_USE_REQUEUE",
+    "status": "LOCAL_IMPLEMENTATION_GREEN_REAL_NOT_EXECUTED",
+    "requiredPreconditions": [
+      "A77R1_A80R1_EXACT_RELEASE",
+      "A95_CURRENT_STAGING_SUBJECT_ADMITTED",
+      "A96_REAL_RLS_19_OF_19",
+      "REAL_IDP_RECENT_AUTH_WEBAUTHN",
+      "DURABLE_ASSERTION_LEDGER"
+    ],
+    "scope": [
+      "scoped_payment_reconciliation",
+      "body_bound_operator_assertion",
+      "single_use_durable_consumption",
+      "independent_owner_requeue_approval"
+    ],
+    "realOperatorReauthCeremonies": 0,
+    "realDurableAssertionConsumptions": 0,
+    "realStripeRequeues": 0,
+    "stagingCredit": false,
+    "saleEnabled": false
+  },
+  "a98": {
+    "revisionId": "VELMERE_PASS36_A98R0_EMAIL_STORAGE_KMS_ORIGIN_CONTEXT_CLEANUP_AND_DELIVERY_TRUTH_BOUNDARY",
+    "status": "LOCAL_IMPLEMENTATION_GREEN_REAL_NOT_EXECUTED",
+    "requiredPreconditions": [
+      "A77R1_A80R1_EXACT_RELEASE",
+      "A95_CURRENT_STAGING_SUBJECT_ADMITTED",
+      "A96_REAL_RLS_19_OF_19",
+      "A97_VERIFIED_STAGING_PAYMENT_REFUND_RECONCILIATION"
+    ],
+    "scope": [
+      "private_storage",
+      "same_origin_signed_url",
+      "external_kms_wrap_unwrap",
+      "transactional_email",
+      "finally_cleanup"
+    ],
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realCleanupConfirmations": 0,
+    "stagingCredit": false,
+    "saleEnabled": false
+  },
+  "a99": {
+    "revisionId": "VELMERE_PASS36_A99R0_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_AND_RESTORED_RLS_TRUTH_BOUNDARY",
+    "policyPath": "config/pass36/a99-backup-restore-rollback-provider-loss-policy.json",
+    "boundaryAssertions": 78,
+    "fixtureScenarios": 8,
+    "realBackups": 0,
+    "realRestores": 0,
+    "realRestoredRlsCasesPassed": 0,
+    "realDeploymentRollbacks": 0,
+    "realProviderOutages": 0,
+    "realRestoreCleanupConfirmations": 0,
+    "stagingCredit": false,
+    "passCredit": false
+  },
+  "a100": {
+    "revisionId": "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+    "policyPath": "config/pass36/a100-incident-kill-switch-customer-communication-policy.json",
+    "boundaryAssertions": 110,
+    "fixtureScenarios": 11,
+    "realIncidentRuns": 0,
+    "realAlertDeliveries": 0,
+    "realOnCallAcknowledgements": 0,
+    "realKillSwitchActivations": 0,
+    "realCustomerNoticeDeliveries": 0,
+    "realRecoveryValidations": 0,
+    "realClosedIncidents": 0,
+    "stagingCredit": false,
+    "passCredit": false
+  },
+  "a101": {
+    "revisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+    "policyPath": "config/pass36/a101-slo-error-budget-vendor-exit-recovery-policy.json",
+    "boundaryAssertions": 94,
+    "fixtureScenarios": 15,
+    "realSloWindows": 0,
+    "realVendorExitRuns": 0,
+    "realCredentialRevocationProbes": 0,
+    "realAlternateServiceProbeSets": 0,
+    "realPrimaryRestoreConfirmations": 0,
+    "productionSloProven": false,
+    "continuousMonitoringProven": false,
+    "stagingCredit": false,
+    "passCredit": false
+  }
+}

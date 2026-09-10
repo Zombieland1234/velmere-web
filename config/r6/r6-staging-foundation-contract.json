@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "velmere.r6.staging-foundation-contract.v1",
+  "candidate": "R6",
+  "environment": "OWNER_AUTHORIZED_NON_PRODUCTION",
+  "requiredRuntime": {
+    "node": "v24.18.0",
+    "npm": "11.16.0",
+    "exactSourceTransportVerified": true,
+    "billingAutoUpgrade": false
+  },
+  "requiredIdentities": {
+    "serviceRoleServerOnly": true,
+    "accountAJwt": true,
+    "accountBJwt": true,
+    "jwtSubjectIsTenantAuthority": true,
+    "clientBodyAccountOverrideForbidden": true
+  },
+  "requiredPhases": [
+    "migrations_apply_and_schema_inventory",
+    "two_account_authentication",
+    "rls_owner_read_write",
+    "cross_account_denial",
+    "durable_write_and_same_account_readback",
+    "restart_or_new_process_readback",
+    "rollback_and_idempotency",
+    "bounded_concurrency",
+    "database_backup_restore",
+    "storage_manifest_restore",
+    "post_restore_rls_and_ownership",
+    "account_export",
+    "account_delete_or_erasure_in_disposable_tenant",
+    "deployed_http_customer_route",
+    "structured_secret_safe_receipt"
+  ],
+  "requiredReceiptFields": [
+    "sourceCommitOrTransportDigest",
+    "packageLockSha256",
+    "runtimeIdentity",
+    "environmentIdHash",
+    "accountAHash",
+    "accountBHash",
+    "migrationSetDigest",
+    "rlsPolicyInventoryDigest",
+    "writeReadbackArtifactDigest",
+    "crossAccountDenialStatus",
+    "backupDigest",
+    "restoreDigest",
+    "postRestoreOwnershipStatus",
+    "exportDigest",
+    "erasureResidualScanStatus",
+    "httpRouteReceipt",
+    "redactionScanStatus"
+  ],
+  "secretProhibitions": [
+    "service_role_key",
+    "jwt",
+    "refresh_token",
+    "database_password",
+    "api_key",
+    "private_key",
+    "raw_customer_private_content"
+  ],
+  "sharedRowsUnlockedWhenPassed": [
+    "browser-basic",
+    "browser-pro",
+    "browser-advanced",
+    "risk-indicator",
+    "audit-basic",
+    "audit-pro",
+    "audit-advanced",
+    "shield-pro-basic",
+    "shield-pro-pro",
+    "shield-pro-advanced"
+  ],
+  "creditBoundary": {
+    "contractTestIsStagingCredit": false,
+    "pgliteOnlyIsSupabaseAuthCredit": false,
+    "oneAccountIsRlsCredit": false,
+    "backupWithoutRestoreIsRestoreCredit": false,
+    "http200OnlyIsCustomerFinalCredit": false,
+    "allRequiredPhasesAndReceiptsRequired": true
+  }
+}

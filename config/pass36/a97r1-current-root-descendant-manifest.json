@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "velmere.pass36.a97r1.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A97R1_SCOPED_PAYMENT_OPERATOR_ASSERTIONS_DUAL_CONTROL_AND_SINGLE_USE_REQUEUE",
+  "parentRevisionId": "VELMERE_PASS36_A97R0_STRIPE_TEST_RUNTIME_RECEIPT_REFUND_REPLAY_AND_RECONCILIATION_CONTROL",
+  "parentDescendantManifestDigestSha256": "056a848acba5506c394ec5b2f4fde828d102847bd1906ddac7658537eea81359",
+  "generatedAt": "2026-07-29T05:45:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A97R1_LOCAL_HARDENING_NO_PASS_CREDIT",
+  "payload": {
+    "fileCount": 4723,
+    "byteLength": 115715776,
+    "pathSetSha256": "3c0316e673c0c28f211dfb53a9b290016a9699dba16cfec3d1b154c6f95ce3a9",
+    "aggregateSha256": "7166ecf65e0bf1a419dacf485205ae6c19e869b138d033cb6a5b946386fa0751"
+  },
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a97r1PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "stripeRuntimeReceiptControlImplemented": true,
+    "paymentOperatorAssertionControlImplemented": true,
+    "behavioralAssertions": 44,
+    "realOperatorReauthCeremonies": 0,
+    "realDurableAssertionConsumptions": 0,
+    "realStripeRequeues": 0,
+    "realStripeTestLifecycle": false,
+    "realRefunds": 0,
+    "realReconciliationRuns": 0,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0,
+      "localExecutableCasesPrepared": 19
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    },
+    "stripePayments": {
+      "requiredRealTestLifecycle": 1,
+      "realTestLifecycleVerified": 0,
+      "realFullRefundsVerified": 0,
+      "realWebhookReplayRuns": 0,
+      "realReconciliationRuns": 0,
+      "productionPayments": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "0641ccf40a501678e7f7aac1ae15bec4fa2ad6753c14a22d68d8453fbdf60c86"
+}

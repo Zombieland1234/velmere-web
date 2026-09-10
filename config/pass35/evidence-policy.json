@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "velmere.pass35.evidence-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "states": ["DRAFT", "VALID", "EXPIRING", "EXPIRED", "REVOKED", "SUPERSEDED", "QUARANTINED"],
+  "requiredBinding": [
+    "releaseSha256",
+    "sourceSha256",
+    "artifactSha256",
+    "configSha256",
+    "runtime",
+    "environment",
+    "productCellId",
+    "controlId",
+    "author",
+    "signer",
+    "issuedAt",
+    "expiresAt",
+    "invalidationTriggers"
+  ],
+  "ttlDays": {
+    "vulnerability_dependency_secret": 7,
+    "browser_pdf_wcag": 30,
+    "data_provider_rights_price_config": 30,
+    "model_prompt_risk": 30,
+    "live_outcome_gtm_retention": 30,
+    "external_benchmark_moat": 90,
+    "vendor_exit_concentration": 90,
+    "iam_rls_security": 90,
+    "legal_privacy_dpa": 180,
+    "restore_incident_rollback": 90,
+    "independent_audit": 90
+  },
+  "gateScoring": {
+    "gateOutcomesAreBinary": true,
+    "readinessScoreIsWeighted": true,
+    "mixedClassGateIdsForbidden": true,
+    "applicabilityMode": "signed_per_cell_denominator",
+    "signedNotApplicableGivesPoints": false,
+    "signedNotApplicableExcludedFromCellDenominator": true,
+    "unsignedNotApplicable": "FAIL"
+  },
+  "selfHashRule": "Archive hash and organizational signature are detached external records. No package may claim to contain its own final archive hash.",
+  "fixtureIsolationRequired": true,
+  "fixtureEvidenceMayUseCanonicalPaths": false
+}

@@ -1,0 +1,87 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "browser57": false,
+    "exactWindows": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "pdf150": false,
+    "postBuildTypeScript": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "currentLocalStripeEvidenceContract": {
+    "classification": "LOCAL_DISPOSABLE_STRIPE_API_FIXTURE_AND_WEBHOOK_LEDGER_ONLY",
+    "finalSourceBoundExecutionStoredInMaterials": true,
+    "independentVerifierChecks": 45,
+    "realStripeTestCredentialsAvailable": false,
+    "realStripeTestFullLifecycleCredit": false,
+    "required": 12
+  },
+  "externalBlockers": [
+    "REAL_STRIPE_TEST_12_OF_12",
+    "EXACT_WINDOWS",
+    "REAL_OBJECT_STORAGE_AND_EXTERNAL_KMS",
+    "TRANSACTIONAL_EMAIL_PROVIDER_AND_INBOX_PROOF",
+    "BACKUP_RESTORE_10_OF_10",
+    "INCIDENT_8_OF_8",
+    "REAL_72H_WINDOW_3_OF_3",
+    "RIGHTS_APPROVED_SHIELD_318",
+    "RIGHTS_APPROVED_REAL_MARKETS_583",
+    "TWO_INDEPENDENT_REVIEWERS",
+    "ANGEL_RISK_300_INDEPENDENT_EVALS",
+    "CUSTOMER_COHORTS_AND_WILLINGNESS_TO_PAY"
+  ],
+  "externalCredits": {
+    "backupRestoreProvider": false,
+    "incidentDrill": false,
+    "real72hWindow": false,
+    "realObjectStorageKmsEmailProvider": false,
+    "realStripeHostedCheckout": false,
+    "realStripeTest12": false,
+    "realStripeWebhookDelivery": false,
+    "supabaseRls": false
+  },
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "durableSqliteEventLedger": true,
+    "eventReorderDeadLettering": true,
+    "exactPaymentIntentAmountCurrencyMetadataBinding": true,
+    "idempotentDuplicateHandling": true,
+    "immutableSqliteEvidenceSnapshots": true,
+    "independentVerifier": true,
+    "localStripeApiProtocolFixture": true,
+    "payloadReplayMismatchDenial": true,
+    "providerReconciliation": true,
+    "realLocalHttpWebhookServer": true,
+    "realStripeCredentialAdmissionFailClosed": true,
+    "refundEntitlementRevocation": true,
+    "singleUseDeadLetterRequeue": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "retainedParentEvidence": {
+    "classification": "RETAINED_PARENT_EVIDENCE_ONLY",
+    "notCurrentChildReleaseCredit": true,
+    "parentBrowser57": true,
+    "parentBrowserEvidence584": true,
+    "parentExactLinuxRelease": true,
+    "parentExternalCiLocalstackStorageKmsEmail10": true,
+    "parentExternalCiPostgresRls19": true,
+    "parentPdf150": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p32.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

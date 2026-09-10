@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "velmere.pass36.a89.public-trust-intake-index.v1",
+  "revisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "status": "LOCAL_INTAKE_CONTRACT_ONLY_NO_EXTERNAL_CREDIT",
+  "authorizationBases": [
+    "public_contest",
+    "active_bug_bounty",
+    "written_permission"
+  ],
+  "evidenceTypes": [
+    "finding_acknowledgement",
+    "remediation_confirmation",
+    "retest_confirmation",
+    "rights_record",
+    "correction_request",
+    "safe_harbor_scope"
+  ],
+  "requiredPublicSections": [
+    "methodology",
+    "scope_and_limitations",
+    "public_audit_registry",
+    "validated_findings",
+    "remediation_confirmations",
+    "retest_confirmations",
+    "cross_audit_benchmark",
+    "false_positive_duplicate_dispute_ledger",
+    "responsible_disclosure",
+    "safe_harbor_and_authorization",
+    "provider_and_data_rights",
+    "model_and_ai_limitations",
+    "risk_calibration",
+    "pdf_and_report_integrity",
+    "security_and_privacy",
+    "sbom_and_supply_chain",
+    "accessibility",
+    "corrections_and_supersession",
+    "independent_assurance",
+    "legal_and_contact"
+  ],
+  "currentEvidence": {
+    "privateIntakeRecordsVerified": 0,
+    "publicSectionsImplemented": 0,
+    "projectsCompleted": 0,
+    "externallyAcceptedMediumOrHigh": 0,
+    "confirmedRemediations": 0,
+    "successfulRetests": 0,
+    "rightsApprovedRecords": 0,
+    "legalApprovals": 0
+  },
+  "claimBoundary": {
+    "mayClaimAccreditedCertification": false,
+    "mayClaimEthereumCertifiedAuditor": false,
+    "mayClaimPriorAuditWasWrongWithoutExternalConfirmation": false,
+    "publicCrossAuditSuperiorityClaimAllowed": false
+  },
+  "responsibleDisclosure": {
+    "authorizationRequired": true,
+    "localForkOnlyForExploitDemonstration": true,
+    "mainnetFundMovementForbidden": true,
+    "embargoRequired": true
+  },
+  "saleEnabled": false,
+  "truthBoundary": "The A89 intake contract structures private evidence and public projection but cannot itself create an accepted finding, certificate, provider right, legal approval or sale claim."
+}

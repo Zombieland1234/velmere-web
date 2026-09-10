@@ -1,0 +1,68 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "browser57": false,
+    "exactWindows": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "pdf150": false,
+    "postBuildTypeScript": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "stagingCustomerLifecycle": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "EXACT_WINDOWS",
+    "DISPOSABLE_STAGING_RLS",
+    "STRIPE_TEST_PROVIDER_WEBHOOKS",
+    "PRIVATE_OBJECT_STORAGE_AND_KMS",
+    "INDEPENDENT_REVIEW",
+    "CUSTOMER_OUTCOMES"
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "completeTypeScriptWorkerOutput": true,
+    "nextEnvBeforeAfterDigest": true,
+    "releaseSingleWriterLock": true,
+    "retainedLocalCustomerLifecycleAssertions": 63,
+    "workerOutputTestBytesMinimum": 1048576
+  },
+  "newFindings": [
+    {
+      "id": "R44P24-P1-TYPESCRIPT-WORKER-OUTPUT-TRUNCATION",
+      "severity": "P1",
+      "status": "FIXED_LOCALLY"
+    },
+    {
+      "id": "R44P24-P1-RELEASE-COMPETING-WRITERS",
+      "severity": "P1",
+      "status": "FIXED_LOCALLY"
+    },
+    {
+      "id": "R44P24-P1-NEXT-ENV-MUTATION-DIAGNOSTICS",
+      "severity": "P1",
+      "status": "FIXED_LOCALLY"
+    },
+    {
+      "id": "R44P24-P1-HISTORICAL-TEST-LINT-PORTABILITY",
+      "severity": "P1",
+      "status": "FIXED_WITH_FORMAL_MIGRATION"
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P23_ACTION_REQUIRED_LOCAL_DISPOSABLE_CUSTOMER_LIFECYCLE_REFUND_REVOCATION_DELETE_AND_DURABLE_DELIVERY_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p24.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

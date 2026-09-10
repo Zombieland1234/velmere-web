@@ -1,0 +1,100 @@
+{
+  "dimensions": [
+    "technology",
+    "securityPrivacy",
+    "dataProvenance",
+    "accuracySemanticTruth",
+    "uxPsychology",
+    "legalClaims",
+    "operations",
+    "customerProof"
+  ],
+  "movementRules": {
+    "copyPreviousPercentageWithoutRecalculationForbidden": true,
+    "newGateMayLowerScore": true,
+    "scoreBeforeAfterDeltaRequired": true,
+    "unrelatedWorkCannotMoveProductScore": true,
+    "zeroDeltaRequiresReason": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "productClassWeights": {
+    "ANGEL": {
+      "accuracySemanticTruth": 25,
+      "customerProof": 5,
+      "dataProvenance": 10,
+      "legalClaims": 10,
+      "operations": 5,
+      "securityPrivacy": 20,
+      "technology": 10,
+      "uxPsychology": 15
+    },
+    "AUDIT": {
+      "accuracySemanticTruth": 25,
+      "customerProof": 10,
+      "dataProvenance": 10,
+      "legalClaims": 10,
+      "operations": 5,
+      "securityPrivacy": 15,
+      "technology": 15,
+      "uxPsychology": 10
+    },
+    "BROWSER": {
+      "accuracySemanticTruth": 5,
+      "customerProof": 10,
+      "dataProvenance": 10,
+      "legalClaims": 5,
+      "operations": 5,
+      "securityPrivacy": 20,
+      "technology": 20,
+      "uxPsychology": 25
+    },
+    "DATA_MODULE": {
+      "accuracySemanticTruth": 20,
+      "customerProof": 5,
+      "dataProvenance": 25,
+      "legalClaims": 5,
+      "operations": 5,
+      "securityPrivacy": 15,
+      "technology": 15,
+      "uxPsychology": 10
+    },
+    "PDF": {
+      "accuracySemanticTruth": 10,
+      "customerProof": 10,
+      "dataProvenance": 10,
+      "legalClaims": 10,
+      "operations": 5,
+      "securityPrivacy": 15,
+      "technology": 20,
+      "uxPsychology": 20
+    },
+    "RISK": {
+      "accuracySemanticTruth": 30,
+      "customerProof": 5,
+      "dataProvenance": 15,
+      "legalClaims": 10,
+      "operations": 5,
+      "securityPrivacy": 15,
+      "technology": 10,
+      "uxPsychology": 10
+    }
+  },
+  "releaseRules": {
+    "currentChildFullRegressionRequiredAtCycle3": true,
+    "customerProofCannotUseSyntheticFixtures": true,
+    "cycle1Or2ReleaseReadinessCapPct": 79,
+    "exactWindowsCapPct": 90,
+    "saleEnabledRequiresPaidReadiness100AndExternalPaymentAndCustomerProof": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P35_ACTION_REQUIRED_STANDALONE_DECISION_SUPPORT_ANGEL_RISK_IMPACT_WHALE_AND_PSYCHOLOGY30_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p35.dynamic-scoring-policy.v1",
+  "statusCreditBps": {
+    "BLOCKED": 0,
+    "MISSING": 0,
+    "PARTIAL": 5000,
+    "PASS": 10000,
+    "RETAINED_PARENT_EVIDENCE": 6000,
+    "STATICALLY_TESTED": 7000
+  },
+  "truthBoundary": "Scores are recomputed at cycle 2/3 from current targeted gates. They do not claim full current-byte release, real customer proof, provider rights, or world-class accuracy."
+}

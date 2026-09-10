@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "velmere.pass36.a102r36.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R35_ACTION_REQUIRED_MODAL_SCROLL_LOCK_PENDING_RESTORE_RAPID_REOPEN_AND_NESTED_OWNER_RACE_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T10:00:00.000Z",
+  "status": "PASS_A102R36_LOCAL_PORTABILITY_REGRESSION_ACTION_REQUIRED_NO_EXACT_WINDOWS_LINT_BUILD_BROWSER_CREDIT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 9,
+  "executedStages": 9,
+  "passedStages": 9,
+  "failedStages": 0,
+  "stages": [
+    {
+      "id": "a102r36",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r36-eslint-runner-portability.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "324d60b66f1374029d9e94eb62b1d64aac7718b5cfec6621f615dfb547717081",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5013,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r35-parent",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r35-modal-scroll-lock-rapid-reopen-restore-race.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "d5557be876f2c28ca9c3c6bd57dacf2929937667892ebcab787e43e1d10329c4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 608,
+      "stderrBytes": 0
+    },
+    {
+      "id": "dev-bootstrap",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/velmere-dev-bootstrap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "8d08dc2ff86f2d98965d704d0ed50871e2d0d594298579d066e890c2f12ccaf9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1015,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-dispatch",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-route-dispatch-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-tamper",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/test-route-dispatch-manifest-tamper.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy-routes",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-lazy-route-shells.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product-tiers",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-product-tier-content-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero-budget",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-zero-budget-functional-roadmap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/a44-source-integrity-audit.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "5a0246ba4d4605b58a9edf05610b77009986583544893df449e3d24999eb8e8b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0
+    }
+  ],
+  "keyDenominators": {
+    "a102r36PortabilityChecks": 38,
+    "a102r35ParentChecks": 24,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439,
+    "realProjectLintFilesObserved": 3307,
+    "realProjectLintPartitionsRequired": 95,
+    "realProjectLintPartitionsPassed": 0
+  },
+  "sourceAudit": {
+    "filesRead": 5401,
+    "codeFiles": 3327,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "localClosure": {
+    "processExecPath": true,
+    "shellFalse": true,
+    "genuineEslintBin": true,
+    "directShimExecutionsRemaining": 0,
+    "sharedFailureReportedOnce": true,
+    "stderrAndExitPreserved": true,
+    "sourceImmutable": true
+  },
+  "environmentBlockers": [
+    {
+      "id": "exact_windows_node_npm",
+      "requiredNode": "24.18.0",
+      "requiredNpm": "11.16.0",
+      "credit": false
+    },
+    {
+      "id": "project_dependency_install",
+      "detail": "internal registry lacks required lockfile packages and public registry timed out",
+      "credit": false
+    },
+    {
+      "id": "real_project_lint_0_of_95",
+      "credit": false
+    },
+    {
+      "id": "typecheck_build_runtime_browser",
+      "credit": false
+    },
+    {
+      "id": "a77r1_to_a80r1_0_of_4",
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "windowsLintPartitionsPassed": 0,
+    "windowsLintPartitionsRequired": 95,
+    "typecheckDiagnosticsCredit": false,
+    "webpackBuildCredit": false,
+    "turbopackBuildCredit": false,
+    "productionNextStartCredit": false,
+    "browserRows": 0,
+    "browserRowsRequired": 54,
+    "providerRights": 0,
+    "realObservationRuns": 0,
+    "stagingStages": 0,
+    "legalDecisions": 0,
+    "customerCohorts": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Local runner portability and source-bound static regression only. No real exact Windows full-project lint, typecheck, build, browser, staging, rights, legal, customer, LIVE or sale credit."
+}

@@ -1,0 +1,129 @@
+{
+  "status": "PASS_A102R27_PROVIDER_SYMBOL_CHART_IDENTITY_NO_PROMOTION",
+  "checks": 20,
+  "passed": 20,
+  "failed": 0,
+  "providerSymbolRequestAuthority": true,
+  "aliasCacheCollisions": 0,
+  "realBrowserRows": 0,
+  "exactReleaseCredit": false,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "results": [
+    {
+      "id": "helper.provider-venue-separates-cache",
+      "passed": true,
+      "detail": {
+        "k1": "v2:SAP.DE:SAP:15M:STOCK:XETRA:STOCK:XETRA:PARTIAL_NOT_LIVE",
+        "k2": "v2:SAP:SAP:15M:STOCK:NYSE:STOCK:NYSE:PARTIAL_NOT_LIVE"
+      }
+    },
+    {
+      "id": "helper.exact-identity-stable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "helper.versioned-key",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "helper.provider-symbol-stock-url",
+      "passed": true,
+      "detail": "/api/market-integrity/real-markets?symbols=SAP.DE&range=15m&detail=1"
+    },
+    {
+      "id": "helper.display-symbol-not-authority",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "helper.provider-symbol-crypto-url",
+      "passed": true,
+      "detail": "/api/market-integrity/klines?symbol=BTCUSDT&range=15m"
+    },
+    {
+      "id": "runtime.no-alias-key-collision",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runtime.exact-key-stable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runtime.exact-identity-dedup",
+      "passed": true,
+      "detail": [
+        "/api/market-integrity/real-markets?symbols=SAP.DE&range=15m&detail=1",
+        "/api/market-integrity/real-markets?symbols=SAP&range=15m&detail=1"
+      ]
+    },
+    {
+      "id": "runtime.exact-results",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runtime.alias-separate-request",
+      "passed": true,
+      "detail": [
+        "/api/market-integrity/real-markets?symbols=SAP.DE&range=15m&detail=1",
+        "/api/market-integrity/real-markets?symbols=SAP&range=15m&detail=1"
+      ]
+    },
+    {
+      "id": "runtime.request-symbols-exact",
+      "passed": true,
+      "detail": [
+        "/api/market-integrity/real-markets?symbols=SAP.DE&range=15m&detail=1",
+        "/api/market-integrity/real-markets?symbols=SAP&range=15m&detail=1"
+      ]
+    },
+    {
+      "id": "runtime.cache-exact-only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runtime.invalidate-exact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runtime.invalidate-does-not-cross-alias",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "static.identity-effect-dependencies",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "static.provider-symbol-tracked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "static.provider-symbol-authority",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "static.venue-keyed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "static-state-keyed",
+      "passed": true,
+      "detail": null
+    }
+  ]
+}

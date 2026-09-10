@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "velmere.pass21.merchant-legal-profile.v1",
+  "truthBoundary": "This registry prevents incomplete merchant data from being rendered as final legal identity. Missing fields block commercial checkout. It is not legal approval.",
+  "profile": {
+    "legalName": null,
+    "countryCode": "DE",
+    "supportEmail": null,
+    "legalForm": null,
+    "fullServiceAddress": null,
+    "commercialRegister": null,
+    "registrationNumber": null,
+    "vatId": null,
+    "taxId": null,
+    "phone": null,
+    "returnAddress": null,
+    "competentSupervisoryAuthority": null,
+    "consumerDisputeResolutionStatement": null
+  },
+  "operationalPolicies": {
+    "processorRegisterApproved": false,
+    "retentionScheduleApproved": false,
+    "shippingRegionsApproved": false,
+    "shippingRatesApproved": false,
+    "returnsProcessApproved": false,
+    "privacyPolicyApproved": false,
+    "termsApproved": false,
+    "taxHandlingApproved": false,
+    "fulfilmentApproved": false,
+    "legalReviewApproved": false
+  },
+  "commerceStatus": "NO_GO"
+}

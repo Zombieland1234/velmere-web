@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "velmere.pass4825.browser-pixel-baseline-pin.v1",
+  "evidenceClass": "source_bound_exact_pass4824_browser_pixel_baseline_pin",
+  "sourcePass": "pass4824",
+  "comparisonToolchain": {
+    "identify": {
+      "binaryByteLength": 14656,
+      "binarySha256": "sha256:9c47b9e24bfcf60e05ef327ea432742623ceb08d7a34e7356f38522447731e02",
+      "versionFirstLine": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org",
+      "versionOutputSha256": "sha256:584872918f0933359b45f5a6bf5f1d5e874d73d5e2696b814effd290f3db549f"
+    },
+    "compare": {
+      "binaryByteLength": 14656,
+      "binarySha256": "sha256:c452c6fc7e16cd67e95320f8e7a7280d2cc107dcd2732bdbcc98514434a9d7fa",
+      "versionFirstLine": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org",
+      "versionOutputSha256": "sha256:584872918f0933359b45f5a6bf5f1d5e874d73d5e2696b814effd290f3db549f"
+    }
+  },
+  "engines": {
+    "webpack": {
+      "baselineDirectory": "artifacts/pass4824/local-browser-smoke-webpack",
+      "screenshotCount": 20,
+      "pathSetSha256": "sha256:8d2eba6f58bdf748088e832f23660ac7dca150faedc49af5b1f2a00b483cee2f",
+      "inventorySha256": "sha256:051bcbf13b38fe65415cda83fc53b39848161fe1299c44925a3d3522999cb8d0",
+      "entries": [
+        {
+          "name": "desktop-en-account.png",
+          "dimensions": "1440x6535",
+          "byteLength": 2457272,
+          "sha256": "sha256:ee599362d5f7f0f53c3f1e2b95e4fa377660e12c1122a893529926d4a9b6c7d8"
+        },
+        {
+          "name": "desktop-en-community.png",
+          "dimensions": "1440x3245",
+          "byteLength": 549605,
+          "sha256": "sha256:101fe81fdfd26442fabbbe168a2523673ff149da4152c8d5e83e1cc79629fc63"
+        },
+        {
+          "name": "desktop-en-contact.png",
+          "dimensions": "1440x1898",
+          "byteLength": 412882,
+          "sha256": "sha256:824f4ab1e31da845a2cfcf30fbfcb84e23cba682dd50c0fd9523e9b630424ea4"
+        },
+        {
+          "name": "desktop-en-market-integrity.png",
+          "dimensions": "1440x1890",
+          "byteLength": 456137,
+          "sha256": "sha256:39d741bb246f8a24c20faa58bdf82fdea9086bc731b6b8611bd7db01419b8bc7"
+        },
+        {
+          "name": "desktop-en-real-markets.png",
+          "dimensions": "1440x4733",
+          "byteLength": 845813,
+          "sha256": "sha256:20eb334fa0d5767172ad3cb16a0973e9250f089a2241036f1d1c3b02b4a7b73d"
+        },
+        {
+          "name": "desktop-en-search.png",
+          "dimensions": "1440x1898",
+          "byteLength": 367442,
+          "sha256": "sha256:0bac7929ef9898313842917ecedd276e1fe0a39e36be7841d71dec0d19d12432"
+        },
+        {
+          "name": "desktop-en-security.png",
+          "dimensions": "1440x3988",
+          "byteLength": 900770,
+          "sha256": "sha256:0b322cf220a63c2cfa7e7121c36ebbe716c9f7ad3136d7c06e275da4f0e41a1f"
+        },
+        {
+          "name": "desktop-en-shield-pro.png",
+          "dimensions": "1440x1898",
+          "byteLength": 408296,
+          "sha256": "sha256:a62b159918d4d7acaa14351e191974be36288a69b9bf4c6e7140fd959e883110"
+        },
+        {
+          "name": "desktop-en-shop.png",
+          "dimensions": "1440x3064",
+          "byteLength": 727215,
+          "sha256": "sha256:c05bcd6c6e350206c53baee5ddeeb6f1775d88e8bc600d2693ed20986d000ff0"
+        },
+        {
+          "name": "desktop-en.png",
+          "dimensions": "1440x1894",
+          "byteLength": 456387,
+          "sha256": "sha256:c8863fa5df153f03eb9701a7bea2164f03a0b7841fdee255918c387e5101e990"
+        },
+        {
+          "name": "mobile-en-account.png",
+          "dimensions": "399x11906",
+          "byteLength": 1665132,
+          "sha256": "sha256:6967a4e00407c6430fd8d819be203ef58145b4d42b03554d83053ee8c564f507"
+        },
+        {
+          "name": "mobile-en-community.png",
+          "dimensions": "399x6805",
+          "byteLength": 472922,
+          "sha256": "sha256:0a8a4052a10704f9273b76a8e970068a2423db464540a4553bfb905ace9393ee"
+        },
+        {
+          "name": "mobile-en-contact.png",
+          "dimensions": "399x3888",
+          "byteLength": 328244,
+          "sha256": "sha256:f6fc1260e7f2fa8f7405f17cad0535f31cc445b386f8dc1daf7c14a7a242afa6"
+        },
+        {
+          "name": "mobile-en-market-integrity.png",
+          "dimensions": "399x3921",
+          "byteLength": 333462,
+          "sha256": "sha256:26d5b7c48d23a71be4124cbabbfc3c4e7620e0b68fca8e1311f53a783cffa522"
+        },
+        {
+          "name": "mobile-en-real-markets.png",
+          "dimensions": "399x12602",
+          "byteLength": 662353,
+          "sha256": "sha256:9adf3a508a9de64be5be53f29305c9007d930b3a892555ca54064654ab0bd427"
+        },
+        {
+          "name": "mobile-en-search.png",
+          "dimensions": "399x4066",
+          "byteLength": 369810,
+          "sha256": "sha256:911ed992ad0788c0faaa8d0ae8c21c3b988d9d6449f72700474c66851111e57c"
+        },
+        {
+          "name": "mobile-en-security.png",
+          "dimensions": "399x8916",
+          "byteLength": 889876,
+          "sha256": "sha256:c65bc0ff363984220a7c9b540f5f1357e0ba5bad9c960d1f9d1baccb1d9c7cc1"
+        },
+        {
+          "name": "mobile-en-shield-pro.png",
+          "dimensions": "399x3222",
+          "byteLength": 300873,
+          "sha256": "sha256:33c81c5b3c5d567f5bf3607ec1a30a3018b27ba5cfdb221afafa1c55d5aed75e"
+        },
+        {
+          "name": "mobile-en-shop.png",
+          "dimensions": "399x6110",
+          "byteLength": 563002,
+          "sha256": "sha256:651e8bc3d94e9cf5a94cd643216d2f9e87fa05b19ca1ab017d3f7c82502d8ebb"
+        },
+        {
+          "name": "mobile-en.png",
+          "dimensions": "399x3917",
+          "byteLength": 332730,
+          "sha256": "sha256:a4decdfe039a3498dc5e4e9eb87e570e888b2979319ff2e3dcf2f32ca08726aa"
+        }
+      ],
+      "enginePinSha256": "sha256:c8c8f7b18567dd7d5fa4a408883819818e9de6f64bdc1ef3b87e557b94486264"
+    },
+    "turbopack": {
+      "baselineDirectory": "artifacts/pass4824/local-browser-smoke-turbopack",
+      "screenshotCount": 20,
+      "pathSetSha256": "sha256:8d2eba6f58bdf748088e832f23660ac7dca150faedc49af5b1f2a00b483cee2f",
+      "inventorySha256": "sha256:613624533b4a1b0d2ecbe1f8cbb2b063bd129e05af0ff88010c65a83deba3b83",
+      "entries": [
+        {
+          "name": "desktop-en-account.png",
+          "dimensions": "1440x5970",
+          "byteLength": 2420338,
+          "sha256": "sha256:f5b9ddf734fd50acbe8d2e22f54c14bbf0fb4aa11fd5642643b29a79b09bd4ba"
+        },
+        {
+          "name": "desktop-en-community.png",
+          "dimensions": "1440x3004",
+          "byteLength": 511403,
+          "sha256": "sha256:12e64c64f52046e20b87797545326f500430b75e4d1c415f0203e333de944ab2"
+        },
+        {
+          "name": "desktop-en-contact.png",
+          "dimensions": "1440x1898",
+          "byteLength": 408314,
+          "sha256": "sha256:f7094c63b2a0655243191108a6a9e7832d6a276b65156b27d3933dadc99d4815"
+        },
+        {
+          "name": "desktop-en-market-integrity.png",
+          "dimensions": "1440x1656",
+          "byteLength": 437824,
+          "sha256": "sha256:393d1c5df041b629c4a50110ed7338a0c45c800507ac675bcfc8088fb230f837"
+        },
+        {
+          "name": "desktop-en-real-markets.png",
+          "dimensions": "1440x4442",
+          "byteLength": 817445,
+          "sha256": "sha256:e4e35317472f22668498fed869bb444cb9c0a9d978ecebbbff311b9c61d49020"
+        },
+        {
+          "name": "desktop-en-search.png",
+          "dimensions": "1440x1656",
+          "byteLength": 337948,
+          "sha256": "sha256:8c2a001f6a9a0f4cb677dcc8ca987c0c7ef0f4c9ab09a0f1f677c8fcf2a2dcf1"
+        },
+        {
+          "name": "desktop-en-security.png",
+          "dimensions": "1440x3747",
+          "byteLength": 902373,
+          "sha256": "sha256:ad78098a1cdb9e16752cf65b3a115e7d7e6f5d6b6fe58e2aea057cf6ba106e0e"
+        },
+        {
+          "name": "desktop-en-shield-pro.png",
+          "dimensions": "1440x1656",
+          "byteLength": 283373,
+          "sha256": "sha256:f27a17f5715c9ea8cf16c1f2ad1b26fcf64e8e5e384cc2ed2f656f104fc64062"
+        },
+        {
+          "name": "desktop-en-shop.png",
+          "dimensions": "1440x2831",
+          "byteLength": 690690,
+          "sha256": "sha256:144fa4bb8043965ab00327c27a1d2f17bb6f7df396e49941aa1aa597c20cfc2c"
+        },
+        {
+          "name": "desktop-en.png",
+          "dimensions": "1440x1898",
+          "byteLength": 456199,
+          "sha256": "sha256:00f9ef9cc57193d22ecc2f624574e1b11eb1c4b8a28ab6b099eb9969fbf2a82c"
+        },
+        {
+          "name": "mobile-en-account.png",
+          "dimensions": "390x10526",
+          "byteLength": 1568135,
+          "sha256": "sha256:acea2ab9b7a2d505b70f932516b8629e43a4052eec8b51d477de420b1d57ee34"
+        },
+        {
+          "name": "mobile-en-community.png",
+          "dimensions": "390x6548",
+          "byteLength": 432933,
+          "sha256": "sha256:474af57af1f2bc4a0ff2e5fda340534c8c71462d6279138a6cb5aeacd9eda478"
+        },
+        {
+          "name": "mobile-en-contact.png",
+          "dimensions": "399x3888",
+          "byteLength": 320441,
+          "sha256": "sha256:035121e390ec823c4ca91bd6f44ae21c0c8a6b6bd5c8c0ff97915ed63caa3545"
+        },
+        {
+          "name": "mobile-en-market-integrity.png",
+          "dimensions": "390x3664",
+          "byteLength": 307192,
+          "sha256": "sha256:9adbc0304f568a98e482c7c2f0d004fc88781f1751a5fc2bd1e30a5631ec48a0"
+        },
+        {
+          "name": "mobile-en-real-markets.png",
+          "dimensions": "390x12090",
+          "byteLength": 617413,
+          "sha256": "sha256:948b2f9860e9c267ace3bfa160568148a0baaba26a77fa8f9a999576295c5bc3"
+        },
+        {
+          "name": "mobile-en-search.png",
+          "dimensions": "390x3809",
+          "byteLength": 334389,
+          "sha256": "sha256:89d472600bc8ea104707073e5738eb0df76062802ddf948275546fa97c8ba046"
+        },
+        {
+          "name": "mobile-en-security.png",
+          "dimensions": "399x8918",
+          "byteLength": 877556,
+          "sha256": "sha256:ff3b10d57c3a1aae833d0f1ff2aef03d37ae23a36a6a1058b1935c2f87ef92d4"
+        },
+        {
+          "name": "mobile-en-shield-pro.png",
+          "dimensions": "399x3222",
+          "byteLength": 292914,
+          "sha256": "sha256:10d2e4a45d3e1c87114d37e547e652e68074e2d129567bae8fb7e88507bdd007"
+        },
+        {
+          "name": "mobile-en-shop.png",
+          "dimensions": "399x6113",
+          "byteLength": 569060,
+          "sha256": "sha256:689b0e99d09c9f0eba9df6cc416eb0a2b966d365f000139902327c985ba757b5"
+        },
+        {
+          "name": "mobile-en.png",
+          "dimensions": "399x3921",
+          "byteLength": 333462,
+          "sha256": "sha256:26d5b7c48d23a71be4124cbabbfc3c4e7620e0b68fca8e1311f53a783cffa522"
+        }
+      ],
+      "enginePinSha256": "sha256:3c04370710a72d73461cd39ae3e0e5bd547dca156c9b0f1cabfe40a6805a9e83"
+    }
+  },
+  "baselineSetSha256": "sha256:15e70b09d5c867c984b776270b9cdc2088bddde6300d4b139293a033e15971ad",
+  "regenerationPolicy": "manual_review_required; changing this pin changes the PASS4825 source-tree digest and invalidates build/browser receipts",
+  "checksumSha256": "sha256:cb347e48ec1acdbd6c1116bde5be0d165988565be900a4564116814a613c7409"
+}
+

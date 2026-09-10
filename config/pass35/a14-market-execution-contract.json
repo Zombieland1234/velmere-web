@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "velmere.pass35.a14-market-execution-contract.v1",
+  "passId": "PASS35_A14",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "visualChangesMade": false,
+  "fullCatalogExecutionLedger": {
+    "fixtureExecution": {
+      "activeAssets": 50,
+      "scheduledJobs": 597,
+      "accountedRows": 597,
+      "available": 404,
+      "unavailable": 36,
+      "stale": 67,
+      "failed": 47,
+      "rateLimited": 43,
+      "availableCoverageBps": 6767,
+      "basicFunctionalAssets": 48,
+      "proFunctionalAssets": 43,
+      "advancedFunctionalAssets": 29,
+      "assertions": 12
+    },
+    "controls": [
+      "every_scheduled_job_accounted",
+      "explicit_terminal_state",
+      "duplicate_result_rejected",
+      "orphan_result_rejected",
+      "stale_reclassified",
+      "per_role_provider_asset_coverage",
+      "tamper_verification"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "publicSecuritiesCatalog": {
+    "providers": [
+      "nasdaq_trader",
+      "sec_edgar"
+    ],
+    "fixtureExecution": {
+      "instruments": 460,
+      "equities": 408,
+      "etfs": 52,
+      "reconciledIdentities": 280,
+      "assertions": 13
+    },
+    "controls": [
+      "bounded_response",
+      "cache",
+      "test_issue_filter",
+      "identity_reconciliation",
+      "schema_quarantine",
+      "explicit_zero_quote_coverage",
+      "tamper_verification"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "marketImpactFullDenominator": {
+    "fixtureExecution": {
+      "assetDenominator": 80,
+      "basicFunctionalReady": 70,
+      "proFunctionalReady": 60,
+      "advancedFunctionalReady": 40,
+      "basicProductionEligible": 0,
+      "proProductionEligible": 0,
+      "advancedProductionEligible": 0,
+      "explicitUnavailable": 10,
+      "tierPackets": 210,
+      "assertions": 11
+    },
+    "controls": [
+      "all_active_assets_counted",
+      "execution_ledger_binding",
+      "provider_family_floor",
+      "valid_tier_packet",
+      "fixture_vs_production_state_split",
+      "explicit_unavailable",
+      "tamper_verification"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "whaleBindingResolver": {
+    "fixtureExecution": {
+      "assetDenominator": 150,
+      "exactConsensus": 90,
+      "singleSource": 30,
+      "conflicts": 15,
+      "missing": 15,
+      "exactCoverageBps": 6000,
+      "downstreamBasic": 90,
+      "downstreamPro": 60,
+      "downstreamAdvanced": 30,
+      "assertions": 11
+    },
+    "controls": [
+      "all_active_assets_counted",
+      "two_independent_family_consensus",
+      "single_source_not_promoted",
+      "conflicts_explicit",
+      "missing_explicit",
+      "no_symbol_only_inference",
+      "tamper_verification"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED"
+  },
+  "zeroBudgetWeightedPlanningPercent": 82.1,
+  "canonicalWeightedPlanningPercent": 41.9,
+  "canonicalStrictDonePercent": 9.3,
+  "sellEnabled": false,
+  "paidDeliveryEligible": false,
+  "liveClaimed": false,
+  "truthBoundary": "A14 proves local, non-visual market execution accounting and denominator logic. It does not prove current public internet, quote/order-book/chain observations, provider rights, staging, customer value, payment readiness or LIVE."
+}

@@ -1,0 +1,305 @@
+{
+  "schemaVersion": "velmere.pass36.a102r22.runtime-data-transition-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R22_ACTION_REQUIRED_LOCAL_DEV_RUNTIME_DATA_REFERENCE_ICON_AND_CONTINUOUS_ROUTE_TRANSITION_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R21_ACTION_REQUIRED_CUSTOMER_ACCESSIBILITY_AND_OPERATOR_CHECKPOINT_JARGON_MINIMALISM_BOUNDARY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T21:45:00.000Z",
+  "status": "PASS_A102R22_LOCAL_DEV_RUNTIME_DATA_TRANSITION_BOUNDARY_NO_REAL_CREDIT",
+  "checksPassed": 71,
+  "checksFailed": 0,
+  "localDevelopmentReferenceRows": 25,
+  "productionReferenceRows": 0,
+  "realProviderRightsApproved": 0,
+  "realBrowserRows": 0,
+  "exactBuildBrowserCredit": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "rows": [
+    {
+      "id": "identity.active-pass",
+      "passed": true
+    },
+    {
+      "id": "identity.package-pass",
+      "passed": true
+    },
+    {
+      "id": "identity.package-authority",
+      "passed": true
+    },
+    {
+      "id": "identity.package-nested-current",
+      "passed": true
+    },
+    {
+      "id": "identity.package-parent",
+      "passed": true
+    },
+    {
+      "id": "identity.authority-revision",
+      "passed": true
+    },
+    {
+      "id": "identity.authority-parent",
+      "passed": true
+    },
+    {
+      "id": "identity.current-source",
+      "passed": true
+    },
+    {
+      "id": "truth.no-go",
+      "passed": true
+    },
+    {
+      "id": "truth.live-false",
+      "passed": true
+    },
+    {
+      "id": "truth.sale-false",
+      "passed": true
+    },
+    {
+      "id": "truth.production-false",
+      "passed": true
+    },
+    {
+      "id": "truth.world-class-false",
+      "passed": true
+    },
+    {
+      "id": "a42.stale-consolidated-shells-not-required",
+      "passed": true
+    },
+    {
+      "id": "a42.current-operation-dispatch-required",
+      "passed": true
+    },
+    {
+      "id": "a42.locale-market-integrity-required",
+      "passed": true
+    },
+    {
+      "id": "a42.locale-shield-pro-required",
+      "passed": true
+    },
+    {
+      "id": "a42.locale-real-markets-required",
+      "passed": true
+    },
+    {
+      "id": "a42.route-transition-required",
+      "passed": true
+    },
+    {
+      "id": "a42.local-reference-required",
+      "passed": true
+    },
+    {
+      "id": "a42.hashes-subset-of-required",
+      "passed": true
+    },
+    {
+      "id": "a42.current-hashes-exact",
+      "passed": true
+    },
+    {
+      "id": "bootstrap.current-authority-read",
+      "passed": true
+    },
+    {
+      "id": "bootstrap.current-source-authority-check",
+      "passed": true
+    },
+    {
+      "id": "bootstrap.no-historical-a42-current-identity-lock",
+      "passed": true
+    },
+    {
+      "id": "bootstrap.historical-contract-labelled",
+      "passed": true
+    },
+    {
+      "id": "proxy.fonts-public-prefix",
+      "passed": true
+    },
+    {
+      "id": "proxy.public-assets-centralized",
+      "passed": true
+    },
+    {
+      "id": "transition.committed-path-marker",
+      "passed": true
+    },
+    {
+      "id": "transition.long-safety-timeout",
+      "passed": true
+    },
+    {
+      "id": "transition.path-commit-observed",
+      "passed": true
+    },
+    {
+      "id": "transition.surface-commit-gate",
+      "passed": true
+    },
+    {
+      "id": "transition.above-fold-images-gated",
+      "passed": true
+    },
+    {
+      "id": "transition.layout-settle-gated",
+      "passed": true
+    },
+    {
+      "id": "transition.route-prefetch",
+      "passed": true
+    },
+    {
+      "id": "transition.pointer-intent-prefetch",
+      "passed": true
+    },
+    {
+      "id": "transition.idle-core-prewarm",
+      "passed": true
+    },
+    {
+      "id": "transition.veil-painted-before-push",
+      "passed": true
+    },
+    {
+      "id": "transition.old-premature-timeout-removed",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-nonempty",
+      "passed": true,
+      "details": 25
+    },
+    {
+      "id": "data.dev-reference-demo-labelled",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-risk-withheld",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-score-not-published",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-rights-blocker-retained",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-fixed-time",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-symbols-unique",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-price-finite",
+      "passed": true
+    },
+    {
+      "id": "data.dev-reference-sparkline-bounded",
+      "passed": true
+    },
+    {
+      "id": "data.production-reference-disabled",
+      "passed": true
+    },
+    {
+      "id": "markets.dev-reference-wired",
+      "passed": true
+    },
+    {
+      "id": "markets.dev-reference-nonproduction-only",
+      "passed": true
+    },
+    {
+      "id": "markets.dev-reference-truth-label",
+      "passed": true
+    },
+    {
+      "id": "markets.dev-reference-not-live-freshness",
+      "passed": true
+    },
+    {
+      "id": "markets.production-failure-remains-503",
+      "passed": true
+    },
+    {
+      "id": "markets.dev-fallback-before-production-fail",
+      "passed": true
+    },
+    {
+      "id": "markets.real-provider-fallback-retained",
+      "passed": true
+    },
+    {
+      "id": "rights.provider-rights-fail-closed-retained",
+      "passed": true
+    },
+    {
+      "id": "rights.no-dev-reference-authority-in-egress",
+      "passed": true
+    },
+    {
+      "id": "icons.brand-unavailable-204",
+      "passed": true
+    },
+    {
+      "id": "icons.brand-fallback-header",
+      "passed": true
+    },
+    {
+      "id": "icons.remote-unavailable-204",
+      "passed": true
+    },
+    {
+      "id": "icons.remote-fallback-header",
+      "passed": true
+    },
+    {
+      "id": "icons.brand-no-noisy-502",
+      "passed": true
+    },
+    {
+      "id": "logos.dev-local-mapping-helper",
+      "passed": true
+    },
+    {
+      "id": "logos.production-canonical-dev-local-policy",
+      "passed": true
+    },
+    {
+      "id": "logos.local-crypto-resolution-retained",
+      "passed": true
+    },
+    {
+      "id": "logos.local-brand-resolution-retained",
+      "passed": true
+    },
+    {
+      "id": "a58.current-checkpoint",
+      "passed": true
+    },
+    {
+      "id": "a58.parent-checkpoint",
+      "passed": true
+    },
+    {
+      "id": "a58.current-descendant-path",
+      "passed": true
+    },
+    {
+      "id": "a58.archive-manifest-path",
+      "passed": true
+    }
+  ]
+}

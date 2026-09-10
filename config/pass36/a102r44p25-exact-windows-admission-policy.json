@@ -1,0 +1,36 @@
+{
+  "creditBoundary": {
+    "exactWindowsExecuted": false,
+    "liveCredit": false,
+    "runnerPrepared": true,
+    "saleCredit": false
+  },
+  "required": {
+    "arch": "x64",
+    "browserEvidenceChecks": 584,
+    "browserRows": 57,
+    "chromium": "148.0.7778.96",
+    "chromiumRevision": 1223,
+    "eslint": "10.8.0",
+    "next": "16.2.12",
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "platform": "win32",
+    "playwright": "1.60.0",
+    "popupTabs": 4,
+    "screenshots": 29,
+    "typescript": "5.9.3"
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "rules": {
+    "a58FirstChildRequired": true,
+    "cleanUnpackRequired": true,
+    "freshBuildsRequired": true,
+    "liveKeysForbidden": true,
+    "outputOutsideSourceRequired": true,
+    "powershellExecutionPolicyBypassForbidden": true,
+    "productionPaymentsForbidden": true,
+    "sourceMutationForbidden": true
+  },
+  "schemaVersion": "velmere.pass36.a102r44p25.exact-windows-admission-policy.v1"
+}

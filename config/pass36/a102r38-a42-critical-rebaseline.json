@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "velmere.pass36.a102r38.a42-critical-rebaseline.v1",
+  "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "generatedAt": "2026-08-01T04:20:00+02:00",
+  "a42RevisionId": "VELMERE_PASS35_A42_DEV_RUNTIME_CACHE_RECOVERY",
+  "criticalFileDenominator": 76,
+  "inputA102R37R4SourceTreeSha256": "5b0a53eb29b8ea770314520f71f27f2867611fc01b3a8cb6c41a46f0830ba757",
+  "inputA102R37R4SourceTreeEvidencePathExternal": "source/A102R37R4_STAGE8_SOURCE_TREE.json",
+  "rebaselinedRows": [
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "classification": "A102R38_AUTHORITY_POINTER_CHANGE",
+      "priorA42ExpectedSha256": "cbc333b0be8075575d6898541059bb2826a8c71d82623527ee01845acfd6b1fc",
+      "inputA102R37R4ByteLength": 129,
+      "inputA102R37R4Sha256": "cbc333b0be8075575d6898541059bb2826a8c71d82623527ee01845acfd6b1fc",
+      "currentByteLength": 143,
+      "currentSha256": "257e0882773a9139b4cf1ca62522095cb00468aec510e2e132ac06420e2b6473"
+    },
+    {
+      "path": "components/ui/useDialogFocusBoundary.ts",
+      "classification": "INHERITED_A102R37R4_STAGE8_DRIFT",
+      "priorA42ExpectedSha256": "ff88b152b253fc0fe2bd1778bbc475a1348e610f16837686e4795a41a9bd786d",
+      "inputA102R37R4ByteLength": 9835,
+      "inputA102R37R4Sha256": "a595f9647b93200af54c0530cc353b7ec70ecc027878c206454685dcfa9b33c1",
+      "currentByteLength": 9835,
+      "currentSha256": "a595f9647b93200af54c0530cc353b7ec70ecc027878c206454685dcfa9b33c1"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "classification": "A102R38_AUTHORITY_POINTER_CHANGE",
+      "priorA42ExpectedSha256": "7d34343128aa28ff9d51262dbf77264d3a5c7cbb6bdf544c39ccf1a1634e5f0f",
+      "inputA102R37R4ByteLength": 61956,
+      "inputA102R37R4Sha256": "7d34343128aa28ff9d51262dbf77264d3a5c7cbb6bdf544c39ccf1a1634e5f0f",
+      "currentByteLength": 63123,
+      "currentSha256": "c5043c59bad1e242c7f95d3c0f95e0e5b771b474392bb5eb74ef6f4734ed670a"
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/brand-icon.ts",
+      "classification": "INHERITED_A102R37R4_STAGE8_DRIFT",
+      "priorA42ExpectedSha256": "da9e0ae41194e2fbf55148bcc72b29c499072031cec99745181552427d6b10aa",
+      "inputA102R37R4ByteLength": 3504,
+      "inputA102R37R4Sha256": "13b46925977b1ec5e8980e34d92cfae1f142b26cb6c4df3a31000d2baa7ccd29",
+      "currentByteLength": 3504,
+      "currentSha256": "13b46925977b1ec5e8980e34d92cfae1f142b26cb6c4df3a31000d2baa7ccd29"
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/icon.ts",
+      "classification": "INHERITED_A102R37R4_STAGE8_DRIFT",
+      "priorA42ExpectedSha256": "65414268f3630be99460642e138daddcd9662006fcf8ae7eb6a246b684df569e",
+      "inputA102R37R4ByteLength": 3900,
+      "inputA102R37R4Sha256": "1ae6b490a63f43916592882136063e4ebe4eea1fbd622f3b5a273e99c09ca312",
+      "currentByteLength": 3900,
+      "currentSha256": "1ae6b490a63f43916592882136063e4ebe4eea1fbd622f3b5a273e99c09ca312"
+    },
+    {
+      "path": "next.config.mjs",
+      "classification": "INHERITED_A102R37R4_STAGE8_DRIFT",
+      "priorA42ExpectedSha256": "1bc5befb1672373ffffb01803af90460b58378b2046c13ad263623aab13c3d12",
+      "inputA102R37R4ByteLength": 3702,
+      "inputA102R37R4Sha256": "e622f263651a7d6ee0f67535beb01013498e08661a32d7a2f49421e09cf96c11",
+      "currentByteLength": 3702,
+      "currentSha256": "e622f263651a7d6ee0f67535beb01013498e08661a32d7a2f49421e09cf96c11"
+    },
+    {
+      "path": "package-lock.json",
+      "classification": "INHERITED_A102R37R4_STAGE8_DRIFT",
+      "priorA42ExpectedSha256": "03e0f07a0da9be378e9f0cb75f25afd619530b9f3ee5f1b9ce4d8b6083408219",
+      "inputA102R37R4ByteLength": 350213,
+      "inputA102R37R4Sha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+      "currentByteLength": 350213,
+      "currentSha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b"
+    },
+    {
+      "path": "package.json",
+      "classification": "A102R38_AUTHORITY_POINTER_CHANGE",
+      "priorA42ExpectedSha256": "13d9f54e361f3a60445cc1beb3745222e94e5b97fbaacc57a0e24c9e0dcac581",
+      "inputA102R37R4ByteLength": 108900,
+      "inputA102R37R4Sha256": "6124fc24430239438b12b1330acdda55c88c8ef4c68453de76228092fbf82f99",
+      "currentByteLength": 110455,
+      "currentSha256": "52ff1d5f1ea093bdd79876eef1cad3d386158b2db2db29524fc23574a93d923c"
+    },
+    {
+      "path": "scripts/a44-source-integrity-audit.mjs",
+      "classification": "A102R38_SOURCE_AUDIT_CONTRACT_CHANGE",
+      "priorA42ExpectedSha256": "4ed3bdae518b1b1779818906741ca81ffa2296d7f3daa79df742a3fcf4238166",
+      "inputA102R37R4ByteLength": 7416,
+      "inputA102R37R4Sha256": "4ed3bdae518b1b1779818906741ca81ffa2296d7f3daa79df742a3fcf4238166",
+      "currentByteLength": 7560,
+      "currentSha256": "e6ecc630587cf9f7720dc0b9ee6f6bea020d4114a475f006c151568f92d26eaf"
+    },
+    {
+      "path": "scripts/pass35/test-a42-dev-runtime-cache-recovery.mjs",
+      "classification": "A102R38_TEST_CONTRACT_CHANGE",
+      "priorA42ExpectedSha256": "a106d003d6b3bdd18b50923a952e25cda05db3652aa814aba25cc7af684dcf09",
+      "inputA102R37R4ByteLength": 21051,
+      "inputA102R37R4Sha256": "a106d003d6b3bdd18b50923a952e25cda05db3652aa814aba25cc7af684dcf09",
+      "currentByteLength": 21369,
+      "currentSha256": "ac115f238b18de5300fabc63a33f31d4c700730b4a6f542f4f73fb275d39bebb"
+    }
+  ],
+  "inheritedStage8Rows": 5,
+  "a102r38AuthorityRows": 5,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "truthBoundary": "Exact local A42 critical-file admission rebaseline only. It restores dev-bootstrap source coherence but grants no dependency install, Next runtime, browser, Windows, staging, LIVE or sale credit.",
+  "testContractRows": 1,
+  "sourceAuditContractRows": 1
+}

@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "velmere.pass36.a102r36.test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R35_ACTION_REQUIRED_MODAL_SCROLL_LOCK_PENDING_RESTORE_RAPID_REOPEN_AND_NESTED_OWNER_RACE_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T09:45:00.000Z",
+  "status": "PASS_A102R36_ESLINT_RUNNER_PORTABILITY_LOCAL_NO_EXACT_WINDOWS_OR_FULL_LINT_CREDIT",
+  "checks": 38,
+  "failed": 0,
+  "runtime": {
+    "node": "v24.11.1",
+    "executable": "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "rows": [
+    {
+      "id": "genuine-package-identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "genuine-eslint-bin-path",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "exact-process-exec-path-resolved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "eslint-cli-sha256-bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "direct-eslint-version-smoke",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "direct-invocation-exact-node",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "direct-invocation-shell-false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "direct-invocation-real-cli-first-argument",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "path-with-spaces-and-shell-metacharacters",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "partitioned-positive-exit-zero",
+      "passed": true,
+      "detail": {
+        "stderr": ""
+      }
+    },
+    {
+      "id": "partitioned-positive-ok",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "exact-file-and-partition-denominator",
+      "passed": true,
+      "detail": {
+        "fileCount": 74,
+        "partitionCount": 3
+      }
+    },
+    {
+      "id": "partitioned-3-of-3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "exact-file-denominator-covered",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "zero-lint-and-process-failures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "source-before-after-identical",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "receipt-exact-node-shell-false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invalid-config-negative-exit-one",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invalid-config-single-process-failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invalid-config-not-lint-errors",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invalid-config-process-classification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invalid-config-exit-code-preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invalid-config-stderr-preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "lint-error-negative-exit-one",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "lint-error-full-denominator-no-process-failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "one-real-lint-error-counted-once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "real-lint-message-bound-to-file",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "path-set-mismatch-negative-exit-one",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "path-set-mismatch-stops-shared-failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "path-set-mismatch-classification",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "missing-eslint-negative",
+      "passed": true,
+      "detail": {
+        "observed": "eslint_package_missing"
+      }
+    },
+    {
+      "id": "wrong-package-name-negative",
+      "passed": true,
+      "detail": {
+        "observed": "eslint_package_name_mismatch"
+      }
+    },
+    {
+      "id": "wrong-bin-mapping-negative",
+      "passed": true,
+      "detail": {
+        "observed": "eslint_package_bin_unexpected:dist/other.js"
+      }
+    },
+    {
+      "id": "symlink-cli-negative",
+      "passed": true,
+      "detail": {
+        "observed": "eslint_cli_symlink_forbidden"
+      }
+    },
+    {
+      "id": "partitioned-runner-no-eslint-shim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "suppression-runner-no-eslint-shim",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "partitioned-runner-shared-runtime-boundary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "suppression-runner-shared-runtime-boundary",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "truthBoundary": {
+    "exactWindowsExecution": false,
+    "exactNode24180Execution": false,
+    "realProjectEslintExecution": false,
+    "fullProjectLint95Of95": false,
+    "buildBrowserCredit": false,
+    "live": false,
+    "saleEnabled": false
+  }
+}

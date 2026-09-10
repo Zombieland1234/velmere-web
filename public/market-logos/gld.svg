@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gold GLD">
+  <defs>
+    <linearGradient id="gold-bar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="35%" stop-color="#F59E0B"/>
+      <stop offset="70%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <radialGradient id="gold-glow" cx="30%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </radialGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#1C1917" stroke="#78350F" stroke-width="1.5"/>
+  <path fill="url(#gold-glow)" d="M12 24 L20 16 L44 16 L52 24 L44 48 L20 48 Z"/>
+  <path fill="url(#gold-bar)" d="M20 16 L44 16 L52 24 L28 24 Z" opacity="0.9"/>
+  <path fill="#FEF08A" d="M12 24 L28 24 L20 48 L12 24 Z" opacity="0.75"/>
+  <text x="34" y="38" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="900" fill="#451A03" letter-spacing="0.05em">GLD</text>
+</svg>

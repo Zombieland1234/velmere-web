@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "velmere.pass26.runtime-cache-bundle-policy.v1",
+  "nodeArchive": {
+    "fileName": "node-v24.18.0-linux-x64.tar.xz",
+    "sha256": "55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742",
+    "officialUrl": "https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64.tar.xz"
+  },
+  "requiredBundlePaths": [
+    "runtime/node-v24.18.0-linux-x64.tar.xz",
+    "npm-cache/_cacache",
+    "package-lock.json",
+    "lockfile-target-manifest.json",
+    "runtime-policy.json",
+    "PASS26_RUNTIME_CACHE_BUNDLE_MANIFEST.json"
+  ],
+  "targetEligibleArchives": 682,
+  "truthBoundary": "A bundle is valid only when the official runtime archive hash matches and every target-eligible lockfile archive is present with exact integrity. CI success is not staging or LIVE proof."
+}

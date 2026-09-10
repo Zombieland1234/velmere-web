@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "velmere.pass36.a94r2.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "parentDescendantManifestDigestSha256": "00ed3f8f09095ba0defbd1d0c56d716c18c55307493cf756054fc1fc9b7a4aba",
+  "generatedAt": "2026-07-28T22:30:00Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A94_PARTIAL_PLUS_A94R2_LOCAL_CLOSURES",
+  "payload": {
+    "fileCount": 4649,
+    "byteLength": 115096507,
+    "pathSetSha256": "3201beb300f46002b40e5d104845f7478790716463c7af9e243f9fdf08cc8180",
+    "aggregateSha256": "18efa7456db8f439d7ab2f1e2131f0d7400a09bf8f02f1818652bbb1d108a351"
+  },
+  "exclusions": [
+    ".git/",
+    ".velmere/",
+    ".next/",
+    ".next-*",
+    ".turbo/",
+    "_velmere/",
+    "artifacts/",
+    "coverage/",
+    "node_modules/",
+    ".env*",
+    "*.log EXCEPT fixtures/pass35/a42/windows-global-json-crash.log",
+    "*.db",
+    "*.sqlite",
+    "*.sqlite3",
+    "config/pass36/a94r2-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "exactFinalByteBuildExecuted": false,
+    "currentRoot30Of30PassedOnFinalBytes": false,
+    "browserExecuted": false,
+    "stagingExecuted": false,
+    "realDataProven": false,
+    "providerRightsApproved": false,
+    "legalApproved": false,
+    "customerValueProven": false,
+    "independentlyAssured": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "14d06030b0865d24cc88129f2b40774cc21ccb5a91cd70b4e189f7c7208dba07"
+}

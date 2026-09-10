@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "velmere.pass18.audit-lens-output-adapter-policy.v1",
+  "supportedSurfaces": [
+    "smart_contract_audit",
+    "lens_pdf"
+  ],
+  "supportedTiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "supportedLocales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "smartContractAudit": {
+    "minimumAnalyzerFamilies": {
+      "basic": 1,
+      "pro": 2,
+      "advanced": 2
+    },
+    "allowedLicenseStatus": {
+      "basic": [
+        "verified",
+        "display_only"
+      ],
+      "pro": [
+        "verified"
+      ],
+      "advanced": [
+        "verified"
+      ]
+    },
+    "requiresEntitlement": {
+      "basic": false,
+      "pro": true,
+      "advanced": true
+    },
+    "advancedRequiresRealHumanReview": true,
+    "allowedHumanAuthorityKinds": [
+      "real_human"
+    ],
+    "allowedReviewStatuses": [
+      "approved"
+    ],
+    "severityOrder": [
+      "none",
+      "informational",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "minimumFindingEvidenceLocations": 1,
+    "minimumFindingFamiliesForHighOrCritical": 2,
+    "cleanControlLanguage": "No confirmed finding in the bounded evidence packet is not a safety certificate."
+  },
+  "lensPdf": {
+    "minimumSourceFamilies": {
+      "basic": 1,
+      "pro": 2,
+      "advanced": 2
+    },
+    "allowedLicenseStatus": {
+      "basic": [
+        "verified",
+        "display_only"
+      ],
+      "pro": [
+        "verified"
+      ],
+      "advanced": [
+        "verified"
+      ]
+    },
+    "requiresEntitlement": {
+      "basic": false,
+      "pro": true,
+      "advanced": true
+    },
+    "requiredChannels": [
+      "preview",
+      "download",
+      "account_copy"
+    ],
+    "minimumPages": {
+      "basic": 2,
+      "pro": 4,
+      "advanced": 8
+    },
+    "paidBlockingMissingFields": [
+      "second_source",
+      "chart_data",
+      "source_manifest",
+      "render_receipt",
+      "canonical_identity"
+    ],
+    "canonicalHashAlgorithm": "sha256-stable-json-v1",
+    "transportWrapperMayDiffer": true
+  },
+  "truthBoundary": "PASS18 verifies deterministic adapter behavior on synthetic contract and report fixtures. Fixture labels and simulated human-review states never count as detector precision/recall, rendered customer PDF, provider, reviewer, staging or LIVE proof. Advanced smart-contract outputs remain blocked without a real-human approved review receipt."
+}

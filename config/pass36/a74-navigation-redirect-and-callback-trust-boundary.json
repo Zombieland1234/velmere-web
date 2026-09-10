@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "velmere.pass36.a74.navigation-redirect-boundary-policy.v1",
+  "revisionId": "VELMERE_PASS36_A74R0_NAVIGATION_REDIRECT_AND_CALLBACK_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A73R0_COOKIE_SESSION_AND_AUTH_FLOW_TRUST_BOUNDARY_HARDENING",
+  "requirements": {
+    "singleCentralNavigationRedirectBoundary": true,
+    "productionCanonicalOriginMustBeExplicit": true,
+    "requestHostCannotDefineProductionCallbackOrigin": true,
+    "internalReturnPathsMustBeRootRelative": true,
+    "schemeRelativeAndEncodedSeparatorPathsRejected": true,
+    "controlBidiAndFragmentPayloadsRejected": true,
+    "authReturnPathsClosedAllowlist": true,
+    "paidReturnPathsCannotLoopIntoSuccessOrLogin": true,
+    "sameOriginBrowserRedirectsExactOrigin": true,
+    "stripeCheckoutExactHostAndPath": true,
+    "supabaseOAuthExactConfiguredOriginAndPath": true,
+    "credentialsAndUnexpectedPortsRejected": true,
+    "queryCountAndByteBudgetsEnforced": true,
+    "unvalidatedPayloadLocationAssignForbidden": true
+  },
+  "coveredProductionFiles": 9,
+  "redirectProfiles": 4,
+  "exactFinalByteBuildExecuted": false,
+  "productionBrowserNavigationExecuted": false,
+  "realAuthProviderFlowExecuted": false,
+  "realStripeCheckoutRedirectExecuted": false,
+  "realStagingExecuted": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "A74 proves a local centralized callback, internal-return, Supabase OAuth and Stripe Checkout navigation boundary for the covered server and browser paths. It does not prove production browser behavior, real OAuth, real Stripe Checkout, staging, LIVE or sale readiness."
+}

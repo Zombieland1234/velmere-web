@@ -1,0 +1,301 @@
+{
+  "schemaVersion": "velmere.pass36.a102r6.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R6_ACTION_REQUIRED_PRIVATE_ACCOUNT_BROWSER_STATE_LOCAL_STORAGE_CLIENT_FALLBACK_AND_DURABLE_VAULT_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R5_ACTION_REQUIRED_SERVER_ACCOUNT_ENTITLEMENT_BROWSER_BEARER_AND_PERSISTENT_PAID_ACCESS_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-29T20:56:00.000Z",
+  "phase": "FINAL",
+  "status": "PASS_A102R6_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "summary": {
+    "executedPassRows": 16,
+    "passedRows": 16,
+    "failedRows": 0,
+    "deferredFinalLineageRows": 2,
+    "environmentBlockedRows": 3
+  },
+  "results": [
+    {
+      "id": "a102r6_private_account_browser_state",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_A102R6_PRIVATE_ACCOUNT_EPHEMERAL_SERVER_CONFIRMED_BOUNDARY_NO_PROMOTION",
+      "observedStatus": "PASS_A102R6_PRIVATE_ACCOUNT_EPHEMERAL_SERVER_CONFIRMED_BOUNDARY_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "adc436bb8b2f96f125b80f0ece20002d4e93c4f312723a59c809f31c9f08b545",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 2847,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r5_paid_boundary",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "observedStatus": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "passed": true,
+      "stdoutSha256": "65ff0d4c431c9964407139e495c0b5209b357dc3a6aca5acb681fc1a96da4c81",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 812,
+      "stderrBytes": 0
+    },
+    {
+      "id": "vlm_verify_preflight",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "537e93419e3187f07d9e821dc148c2d278ab518f74bf53995b860b8320d57596",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 94,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_cookie",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6488,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_verifier",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "97c7fd174c7a0f3171c078855a0433226186dfba66bf2ca0aecf7d38da8fbe87",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 7679,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a89_red_team",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+      "observedStatus": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "8ffc2295d83e75033c4f2e34421767eb0c2d9b6365d3297ffa5f62caf878e5a7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 41989,
+      "stderrBytes": 0
+    },
+    {
+      "id": "api_body_stream",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 526,
+      "stderrBytes": 0
+    },
+    {
+      "id": "malformed_json",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS",
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 118,
+      "stderrBytes": 0
+    },
+    {
+      "id": "mega4800",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "7823368831215cfc15ed0531dbf174081579ebe67ad55b9fc45892137d26ca1e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1662,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route_dispatch",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route_dispatch_tamper",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS",
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy_routes",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a59",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_STATIC_BUDGET_RECOVERY",
+      "observedStatus": "PASS_STATIC_BUDGET_RECOVERY",
+      "passed": true,
+      "stdoutSha256": "12524b8e467818def7055695bce1d247d985004bcb0c60f8200ccf05f5a8a6eb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 15789,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product_tiers",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_PRODUCT_TIER_CONTENT_CONTRACT",
+      "observedStatus": "PASS_PRODUCT_TIER_CONTENT_CONTRACT",
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero_budget",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_ZERO_BUDGET_FUNCTIONAL_ROADMAP",
+      "observedStatus": "PASS_ZERO_BUDGET_FUNCTIONAL_ROADMAP",
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source_audit",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "3cff6d62cd13eb26ebb2a03c38113e954d7f920694370886a4681372185f923d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0,
+      "metrics": {
+        "filesRead": 4899,
+        "bytesRead": 117626620,
+        "codeFiles": 3013,
+        "syntaxErrors": 0,
+        "localImports": 7291,
+        "missingLocalImports": 0,
+        "cssModuleReferences": 758,
+        "missingCssModuleClasses": 0
+      }
+    }
+  ],
+  "deferredFinalLineageVerifiers": [
+    {
+      "id": "a88r1_final_descendant_verifier",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    },
+    {
+      "id": "a89_final_descendant_verifier",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    }
+  ],
+  "environmentBlockers": [
+    {
+      "id": "exact_node_npm_project_dependencies",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Node 24.18.0 / npm 11.16.0 with genuine project node_modules",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "exact_playwright_chromium",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Chromium 148.0.7778.96 revision 1223",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "real_staging_external_inputs",
+      "classification": "BLOCKED_EXTERNAL",
+      "required": "real two-account durable Account Vault, RLS, IdP/WebAuthn, providers, rights, legal and observers",
+      "available": false,
+      "credit": false
+    }
+  ],
+  "keyDenominators": {
+    "a102r6PrivateAccountBrowserStateChecks": 30,
+    "a102r6LegacyPrivateStorageKeysPurged": 16,
+    "a102r5PaidBoundaryChecks": 26,
+    "vlmVerifyPositiveCases": 1,
+    "vlmVerifyNegativeCases": 5,
+    "a73Checks": 57,
+    "a73VerifierChecks": 73,
+    "a89Checks": 54,
+    "a89VerifierMinimumChecks": 156,
+    "a89Cases": 192,
+    "a89MutationsKilled": 768,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "a59Checks": 77,
+    "routeDispatchChecks": 1480,
+    "routeDispatchTamperChecks": 7,
+    "routeRoutes": 160,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439
+  },
+  "sourceAudit": {
+    "filesRead": 4899,
+    "codeFiles": 3013,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "realEvidence": {
+    "a102ObservationRuns": 0,
+    "browserRows": 0,
+    "stagingStages": 0,
+    "realDurableAccountVaultRuns": 0,
+    "providerRights": 0,
+    "legalDpo": 0,
+    "customerCohorts": 0,
+    "independentAssurance": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "schemaVersion": "velmere.pass36.a61.historical-artifact-recovery-test.v1",
+  "revisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+  "status": "PASS_A61_SAFE_RECOVERY_INTAKE",
+  "summary": {
+    "checks": 37,
+    "passed": 37,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "blocked-no-input-exit",
+      "ok": true
+    },
+    {
+      "id": "blocked-no-input-decision",
+      "ok": true
+    },
+    {
+      "id": "metadata-no-credit",
+      "ok": true
+    },
+    {
+      "id": "direct-readonly-exit",
+      "ok": true
+    },
+    {
+      "id": "direct-readonly-decision",
+      "ok": true
+    },
+    {
+      "id": "direct-readonly-no-install",
+      "ok": true
+    },
+    {
+      "id": "direct-install-exit",
+      "ok": true
+    },
+    {
+      "id": "direct-install-decision",
+      "ok": true
+    },
+    {
+      "id": "direct-install-count",
+      "ok": true
+    },
+    {
+      "id": "direct-install-alpha-bytes",
+      "ok": true
+    },
+    {
+      "id": "direct-install-beta-bytes",
+      "ok": true
+    },
+    {
+      "id": "archive-readonly-exit",
+      "ok": true
+    },
+    {
+      "id": "archive-readonly-decision",
+      "ok": true
+    },
+    {
+      "id": "archive-prefix-match",
+      "ok": true
+    },
+    {
+      "id": "archive-install-exit",
+      "ok": true
+    },
+    {
+      "id": "archive-install-decision",
+      "ok": true
+    },
+    {
+      "id": "archive-anchor-bound",
+      "ok": true
+    },
+    {
+      "id": "wrong-same-size-rejected-exit",
+      "ok": true
+    },
+    {
+      "id": "wrong-same-size-rejected-decision",
+      "ok": true
+    },
+    {
+      "id": "wrong-same-size-hash-error",
+      "ok": true
+    },
+    {
+      "id": "wrong-archive-anchor-exit",
+      "ok": true
+    },
+    {
+      "id": "wrong-archive-anchor-decision",
+      "ok": true
+    },
+    {
+      "id": "wrong-archive-anchor-error",
+      "ok": true
+    },
+    {
+      "id": "partial-exit",
+      "ok": true
+    },
+    {
+      "id": "partial-decision",
+      "ok": true
+    },
+    {
+      "id": "partial-count",
+      "ok": true
+    },
+    {
+      "id": "real-policy-schema",
+      "ok": true
+    },
+    {
+      "id": "real-policy-two-artifacts",
+      "ok": true
+    },
+    {
+      "id": "real-policy-pass6-anchor",
+      "ok": true
+    },
+    {
+      "id": "real-policy-pass5-anchor",
+      "ok": true
+    },
+    {
+      "id": "a61-retained-as-historical-intake",
+      "ok": true
+    },
+    {
+      "id": "current-no-false-recovery-credit",
+      "ok": true
+    },
+    {
+      "id": "real-targets-not-fabricated",
+      "ok": true
+    },
+    {
+      "id": "windows-runner-present",
+      "ok": true
+    },
+    {
+      "id": "critical-triage-no-semantic-failure",
+      "ok": true
+    },
+    {
+      "id": "critical-triage-exact-byte-denominator",
+      "ok": true
+    },
+    {
+      "id": "critical-triage-runtime-blocked-separated",
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "saleEnabled": false,
+  "liveProven": false
+}

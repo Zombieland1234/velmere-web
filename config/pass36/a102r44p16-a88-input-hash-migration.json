@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p16.a88-input-hash-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P15_ACTION_REQUIRED_REENTRANCY_RECALL_SOURCE_AUDIT_DECLARATION_BOUNDARY_AND_FINAL_BYTE_REGRESSION_NO_LIVE_CREDIT",
+  "reason": "A88 and A88R1 behavior denominators remain intact, but later legal revisions changed three input files. Historical policies and receipts remain immutable; current-byte verification uses this explicit migration instead of rewriting old hashes.",
+  "denominators": {
+    "a88ChecksRetained": 61,
+    "a88ChecksRemoved": 0,
+    "a88r1SemanticChecksRetained": 56,
+    "a88r1SemanticChecksRemoved": 0,
+    "a88r1RouteChecksRetained": 143,
+    "a88r1RouteChecksRemoved": 0
+  },
+  "rows": [
+    {
+      "id": "a88-advice-boundary",
+      "historicalPolicyPath": "config/pass36/a88-brain-angel-risk-eval-policy.json",
+      "inputKey": "adviceBoundary",
+      "path": "lib/ai/vlm-advice-boundary.ts",
+      "historicalSha256": "8aef189203293f1edc512982907eac1da30230c561f1bebaf2fb8e2c6efe61ba",
+      "currentSha256": "84f58c65a2d250ea7f372f50d1818e694e8aee9919e0db6728810687b1723f5a",
+      "currentReason": "Later probability-order and multilingual safety hardening; A88 current behavior remains 5760/5760 mutation kills with no paid/LIVE promotion."
+    },
+    {
+      "id": "a88r1-tier-presentation",
+      "historicalPolicyPath": "config/pass36/a88r1-semantic-route-privacy-pdf-policy.json",
+      "inputKey": "tierPresentationPolicy",
+      "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+      "historicalSha256": "e883caaeb274a538f63afd1b2573feef2264d601f8fe95f23fe01c92fc365c33",
+      "currentSha256": "2c2d9ba50213f45c4e717638983ba20ce12990a682382e2a60904448fa18ab49",
+      "currentReason": "R44P16 canonical SKU truth: Basic free prescreen, Pro invitation-only controlled beta, Advanced NOT_FOR_SALE, no public prices or checkout."
+    },
+    {
+      "id": "a88r1-intelligence-consumer",
+      "historicalPolicyPath": "config/pass36/a88r1-semantic-route-privacy-pdf-policy.json",
+      "inputKey": "intelligencePresentationConsumer",
+      "path": "app/[locale]/intelligence/page.tsx",
+      "historicalSha256": "42e378782c1c4d7f118f0d023a4c7c5b77f5ffa1603d968055909302088d1160",
+      "currentSha256": "cbafb7978f4d9910cf4bbe0982a02f0f0383769dd3749915dcb3dbcd3c89a772",
+      "currentReason": "Later customer-truth and runtime UI work; no A88R1 route/privacy denominator was removed."
+    }
+  ],
+  "observedCurrentRuns": {
+    "a88": { "status": "FAIL_A88_BRAIN_ANGEL_RISK_EVAL", "checks": 61, "passed": 60, "failed": 1, "staleHashOnly": true },
+    "a88r1Route": { "status": "PASS_A88R1_ROUTE_PREFLIGHT_PROVIDER_ZERO_BEFORE_BOUNDARY", "checks": 143, "passed": 143, "failed": 0, "providerCallsOnBlockedCases": 0 },
+    "a88r1Semantic": { "status": "FAIL_A88R1_SEMANTIC_ROUTE_PRIVACY_PDF", "checks": 56, "passed": 53, "failed": 3, "staleHashOnly": true }
+  },
+  "creditBoundary": {
+    "historicalReceiptsRewritten": false,
+    "denominatorReduced": false,
+    "realModelExecutionCredit": false,
+    "independentAdjudicationCredit": false,
+    "stagingCredit": false,
+    "saleCredit": false,
+    "liveCredit": false
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "schemaVersion": "velmere.pass36.a87.market-impact-whale-watch-policy.v1",
+  "revisionId": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER",
+  "parentRevisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+  "deterministicEpoch": "2026-07-27T21:30:00.000Z",
+  "inputs": {
+    "a84Policy": {
+      "path": "config/pass36/a84-shield-full-catalog-tier-matrix-policy.json",
+      "sha256": "95bbe8a4bfc01ff5507404e0c7cc80be62eba1ddd18f6f0492d5d7c551deacf1"
+    },
+    "tierContract": {
+      "path": "config/pass35/market-impact-whale-tier-contract.json",
+      "sha256": "39e53e1a2f32c5a2b6d0925c880f1c919f7d5a22374ecb2f6515098def8af264"
+    },
+    "marketImpactEngine": {
+      "path": "lib/market-integrity/market-impact-engine.ts",
+      "sha256": "149e9f11a281aa168335335bdbc354a3298d9b15b7ab82f5e6eda3b4194a0d0e"
+    },
+    "whaleWatchEngine": {
+      "path": "lib/market-integrity/whale-watch-engine.ts",
+      "sha256": "dbaa32feb1134c6eb4c2fa7e6bd8e71d187f2366af1c5e2cba459ed4af672a99"
+    },
+    "tierRuntime": {
+      "path": "lib/market-integrity/market-impact-whale-tier-runtime.ts",
+      "sha256": "88189eb06bd1e061635ac661969583e90e3791d0fe847209099b76af22d601cf"
+    },
+    "productionRoute": {
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "sha256": "37ec62d32992f23694120bed0beadf490151b923049f89a6a874b2c2c913b44b"
+    }
+  },
+  "realIntakeIndex": {
+    "path": "config/pass36/a87-real-evidence-index.json",
+    "sha256": "2172528b32929dfd8bb1003a7fca55b8a07bee5b5d5ac61f7e97cf140f74d847"
+  },
+  "tierRequirements": {
+    "market_impact": {
+      "basic": {
+        "minimumVenues": 1,
+        "minimumProviderFamilies": 1,
+        "minimumScenarios": 5,
+        "minimumReplayPairs": 1
+      },
+      "pro": {
+        "minimumVenues": 2,
+        "minimumProviderFamilies": 2,
+        "minimumScenarios": 5,
+        "minimumReplayPairs": 1
+      },
+      "advanced": {
+        "minimumVenues": 3,
+        "minimumProviderFamilies": 3,
+        "minimumScenarios": 5,
+        "minimumReplayPairs": 1
+      }
+    },
+    "whale_watch": {
+      "basic": {
+        "minimumProviderFamilies": 1,
+        "minimumHolderCoveragePercent": 20,
+        "minimumLabelCoveragePercent": 0,
+        "minimumClusterCoveragePercent": 0,
+        "requireTransfers": false,
+        "requireExitStress": false
+      },
+      "pro": {
+        "minimumProviderFamilies": 2,
+        "minimumHolderCoveragePercent": 20,
+        "minimumLabelCoveragePercent": 30,
+        "minimumClusterCoveragePercent": 0,
+        "requireTransfers": true,
+        "requireExitStress": false
+      },
+      "advanced": {
+        "minimumProviderFamilies": 3,
+        "minimumHolderCoveragePercent": 20,
+        "minimumLabelCoveragePercent": 30,
+        "minimumClusterCoveragePercent": 20,
+        "requireTransfers": true,
+        "requireExitStress": true
+      }
+    }
+  },
+  "mutationFamilies": [
+    "tier_swap",
+    "surface_swap",
+    "asset_identity_swap",
+    "source_result_digest_swap",
+    "source_tier_digest_swap",
+    "analysis_decision_promotion",
+    "delivery_decision_promotion",
+    "http_status_promotion",
+    "blocker_removal",
+    "evidence_count_inflation",
+    "provider_quorum_inflation",
+    "binding_or_replay_promotion",
+    "evidence_digest_swap",
+    "projection_adds_fact",
+    "projection_source_swap",
+    "paid_gate_enable",
+    "live_enable",
+    "sale_enable"
+  ],
+  "closedByA87": [
+    {
+      "gapId": "A87-GAP-01",
+      "severity": "P0",
+      "title": "Silent analysis-depth downgrade",
+      "closure": "Explicit invalid depth is rejected instead of silently becoming Basic."
+    },
+    {
+      "gapId": "A87-GAP-02",
+      "severity": "P1",
+      "title": "Silent locale fallback",
+      "closure": "Explicit invalid locale is rejected fail-closed."
+    },
+    {
+      "gapId": "A87-GAP-03",
+      "severity": "P1",
+      "title": "Silent surface fallback",
+      "closure": "Explicit invalid analysis surface is rejected fail-closed."
+    },
+    {
+      "gapId": "A87-GAP-04",
+      "severity": "P0",
+      "title": "Silent evidence-mode fallback",
+      "closure": "Explicit invalid evidence mode is rejected before access or evidence work."
+    },
+    {
+      "gapId": "A87-GAP-05",
+      "severity": "P0",
+      "title": "Client-selected market-impact policy",
+      "closure": "Trusted ingress supplies evidence only; client policy overrides are forbidden."
+    },
+    {
+      "gapId": "A87-GAP-06",
+      "severity": "P0",
+      "title": "Client-selected Whale Watch policy",
+      "closure": "Whale policy overrides are forbidden and server floors remain authoritative."
+    },
+    {
+      "gapId": "A87-GAP-07",
+      "severity": "P1",
+      "title": "Client labels accepted in server-owned mode",
+      "closure": "Server-owned mode rejects wallet-label artifacts from the client."
+    },
+    {
+      "gapId": "A87-GAP-08",
+      "severity": "P0",
+      "title": "Separate Market Impact and Whale denominators",
+      "closure": "Both surfaces use the same 318-asset denominator inherited from A84."
+    },
+    {
+      "gapId": "A87-GAP-09",
+      "severity": "P0",
+      "title": "Missing terminal packet per tier and surface",
+      "closure": "Every asset receives exactly six packets or the runtime fails."
+    },
+    {
+      "gapId": "A87-GAP-10",
+      "severity": "P1",
+      "title": "Order-book replay not bound",
+      "closure": "Each available market packet binds a second-snapshot replay digest."
+    },
+    {
+      "gapId": "A87-GAP-11",
+      "severity": "P0",
+      "title": "Simulation confused with realized execution",
+      "closure": "Realized-slippage comparison count remains zero and blocks production credit."
+    },
+    {
+      "gapId": "A87-GAP-12",
+      "severity": "P0",
+      "title": "Symbol-only Whale identity",
+      "closure": "Whale readiness requires exact chain/address binding state."
+    },
+    {
+      "gapId": "A87-GAP-13",
+      "severity": "P0",
+      "title": "Unsigned label promotion",
+      "closure": "Label and cluster coverage derives only from verified registry artifacts."
+    },
+    {
+      "gapId": "A87-GAP-14",
+      "severity": "P1",
+      "title": "Holder exit stress detached from depth",
+      "closure": "Advanced Whale readiness requires exit stress linked to Advanced-local Market Impact depth."
+    },
+    {
+      "gapId": "A87-GAP-15",
+      "severity": "P1",
+      "title": "Flow windows not evidence-bound",
+      "closure": "24h/7d/30d flows receive a dedicated digest and exact three-window denominator."
+    },
+    {
+      "gapId": "A87-GAP-16",
+      "severity": "P0",
+      "title": "Blocked state promotion after resealing",
+      "closure": "34344 resealed semantic mutations must all be rejected."
+    },
+    {
+      "gapId": "A87-GAP-17",
+      "severity": "P1",
+      "title": "Cross-channel fact drift",
+      "closure": "API/UI/popup/PDF projections bind the same source packet and add no facts."
+    },
+    {
+      "gapId": "A87-GAP-18",
+      "severity": "P0",
+      "title": "Fixture packet could appear paid-ready",
+      "closure": "All fixture packets retain rights, realized-execution, monitoring, LIVE and sale blockers."
+    },
+    {
+      "gapId": "A87-GAP-19",
+      "severity": "P1",
+      "title": "No explicit real-evidence intake",
+      "closure": "A separate 318-row rights/books/slippage/binding/whale/monitoring intake is fail-closed."
+    },
+    {
+      "gapId": "A87-GAP-20",
+      "severity": "P1",
+      "title": "Tier readiness non-monotonicity",
+      "closure": "Pro requires Basic and Advanced requires Pro for each surface and asset."
+    },
+    {
+      "gapId": "A87-GAP-21",
+      "severity": "P0",
+      "title": "Historical A86 payload recomputed against A87",
+      "closure": "A86 verification now preserves the frozen A86 descendant and verifies the exact A86-to-current chain instead of recomputing A86 against A87 bytes."
+    },
+    {
+      "gapId": "A87-GAP-22",
+      "severity": "P1",
+      "title": "Missing A87 completion-program remainder binding",
+      "closure": "The completion program now records remainingAfterA87=29 and historical A83 verifies the live program algebra without a stale fixed horizon."
+    },
+    {
+      "gapId": "A87-GAP-23",
+      "severity": "P0",
+      "title": "Current hardening receipt remained bound to A86",
+      "closure": "The A57R1 hardening receipt is rebuilt on A87 bytes and its sourceRevisionId must equal the current authority."
+    },
+    {
+      "gapId": "A87-GAP-24",
+      "severity": "P0",
+      "title": "Approved hardening change ledger stopped at A86",
+      "closure": "A87 is an explicit approved hardening revision and all 1073 protected rows are recomputed."
+    },
+    {
+      "gapId": "A87-GAP-25",
+      "severity": "P0",
+      "title": "Route-dispatch handler hash stale after ingress hardening",
+      "closure": "The Market Intelligence handler size and SHA-256 are rebound in the route-dispatch manifest and verified 1320/1320."
+    },
+    {
+      "gapId": "A87-GAP-26",
+      "severity": "P1",
+      "title": "Roadmap source precedence remained A86",
+      "closure": "The canonical living roadmap starts with A87 and retains all historical A76-A86/A32 sections."
+    },
+    {
+      "gapId": "A87-GAP-27",
+      "severity": "P1",
+      "title": "A85 completion evidence denominator stale",
+      "closure": "A85 completion evidence is reconciled to its final 30/30 gap ledger."
+    },
+    {
+      "gapId": "A87-GAP-28",
+      "severity": "P1",
+      "title": "A84 authority denominator stale",
+      "closure": "The A84 Shield plane is reconciled to its final 37/37 gap ledger."
+    },
+    {
+      "gapId": "A87-GAP-29",
+      "severity": "P1",
+      "title": "A86 current-revision denominator stale",
+      "closure": "The A86 Real Markets plane is reconciled to its final 39/39 gap ledger."
+    },
+    {
+      "gapId": "A87-GAP-30",
+      "severity": "P1",
+      "title": "Completion program schema remained labeled A86",
+      "closure": "The A87 program uses an A87 schema identity while preserving the mandatory A76-A116 range."
+    },
+    {
+      "gapId": "A87-GAP-31",
+      "severity": "P0",
+      "title": "Package current-pass and completion-program pointers remained A86",
+      "closure": "Package metadata now points to A87, the A87 patch note and the A87 completion program."
+    },
+    {
+      "gapId": "A87-GAP-32",
+      "severity": "P1",
+      "title": "Missing one-shot A87 operator runner and patch note",
+      "closure": "A bounded A87 runner and explicit patch note are included for reproducible execution and truth-boundary review."
+    },
+    {
+      "gapId": "A87-GAP-33",
+      "severity": "P1",
+      "title": "A87 closed-gap denominator not propagated consistently",
+      "closure": "Policy, current state, current authority, current revision and completion evidence all bind the same 33/33 denominator."
+    }
+  ],
+  "productionAssertions": [
+    {
+      "id": "strict-depth",
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "includes": [
+        "analysis_depth_invalid",
+        "value === \"basic\" || value === \"pro\" || value === \"advanced\""
+      ],
+      "excludes": [
+        "value === \"advanced\" ? \"advanced\" : value === \"pro\" ? \"pro\" : \"basic\""
+      ]
+    },
+    {
+      "id": "strict-routing-inputs",
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "includes": [
+        "locale_invalid",
+        "analysis_surface_invalid",
+        "evidence_mode_invalid"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "policy-override-block",
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "includes": [
+        "client_market_impact_policy_override_forbidden",
+        "client_whale_policy_override_forbidden"
+      ],
+      "excludes": [
+        "policy: trustedWhale.policy"
+      ]
+    },
+    {
+      "id": "server-owned-label-block",
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "includes": [
+        "parsed.value.walletLabelArtifacts !== undefined",
+        "client_supplied_evidence_forbidden_in_server_owned_mode"
+      ],
+      "excludes": []
+    }
+  ],
+  "descendantManifestPath": "config/pass36/a87-current-root-descendant-manifest.json",
+  "parentDescendantManifestPath": "config/pass36/a86-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass36/a87-current-root-descendant-manifest.json",
+    "config/pass35/a57-source-manifest.json",
+    "_velmere/PASS35_SOURCE_ONLY_MANIFEST.json"
+  ],
+  "truthBoundary": "A87 proves a common 318-asset local fixture denominator, semantic tier gates, replay and holder/transfer/label bindings. It does not prove current public order books, realized fills, commercial data rights, continuous monitoring, customer value, LIVE or sale readiness."
+}

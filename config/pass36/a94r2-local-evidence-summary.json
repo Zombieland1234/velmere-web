@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "velmere.pass36.a94r2.local-evidence-summary.v1",
+  "revisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "generatedAt": "2026-07-28T22:30:00Z",
+  "bindings": {
+    "targetedLocalTestSummary": {
+      "path": "A94R2/TEST_RESULTS/A94R2_TARGETED_LOCAL_TEST_SUMMARY.json",
+      "byteLength": 6333,
+      "sha256": "fdaa2db0e4eebf549831ce69916355c838e480dcf7d06a6475a35499e9a69af9"
+    },
+    "crossSurfaceValueReceipt": {
+      "path": "A94R2/TEST_RESULTS/A94R2_CROSS_SURFACE_VALUE_TRUTH_RECEIPT.json",
+      "byteLength": 27106,
+      "sha256": "a509ca2fa9be2b1ce00257283d849dfc3c9add717d10f4f02d765c6cf785fadb"
+    },
+    "retainedPdfVerification": {
+      "path": "A94R2/TEST_RESULTS/A94R2_RETAINED_PDF_EVIDENCE_VERIFICATION.json",
+      "byteLength": 451,
+      "sha256": "42da93c841b25328a09914f4871128b8965c621e40bff4ab83739b8f6ebad40e"
+    },
+    "retainedPdfQaReceipt": {
+      "path": "A94R2/PDF_QA/A94R2_RETAINED_PHYSICAL_PDF_QA_RECEIPT.json",
+      "byteLength": 4012,
+      "sha256": "b3b9aa366727dcf4a2e8995ac6a65f625ba61b78438a0b2051eeb31b85ee4609"
+    },
+    "retainedPdfQaDetails": {
+      "path": "A94R2/PDF_QA/A94R2_RETAINED_PHYSICAL_PDF_QA_DETAILS.json",
+      "byteLength": 416876,
+      "sha256": "5a1883ba1f819460603e355ed623a883e55bdc78aebf5d47f470d20d2502be3e"
+    },
+    "retainedPdfContactSheet": {
+      "path": "A94R2/PDF_QA/A94R2_PDF_SAMPLE_CONTACT_SHEET.png",
+      "byteLength": 270165,
+      "sha256": "e2ec0c2e340bf3ccd0adffc2e72872b7a3a3a714ef00e65a03158e5e47433df0"
+    },
+    "cssInputParity": {
+      "path": "A94R2/TEST_RESULTS/A94R2_CSS_INPUT_PARITY.json",
+      "byteLength": 805,
+      "sha256": "19aa7325d6ee8b1ce210ed1e60311107a824cafc44d76b9bd7f3d0695dee35c5"
+    }
+  },
+  "localResults": {
+    "routeAstFiles": 254,
+    "routeAstMethodExports": 316,
+    "routeAstVerifierChecks": 1021,
+    "routeDispatchChecks": 1480,
+    "routeDispatchPaths": 160,
+    "lazyRouteChecks": 176,
+    "orphanBuildLockAssertions": 26,
+    "realOrphanRecoveries": 0,
+    "crossSurfaceChecks": 32,
+    "crossSurfaceSemanticMutationsKilled": 16,
+    "retainedPdfBindingChecks": 19,
+    "retainedPdfs": 450,
+    "retainedPdfPages": 2100,
+    "sourceAuditSyntaxErrors": 0,
+    "sourceAuditMissingImports": 0,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439,
+    "sourceAuditFilesPreDescendant": 4655,
+    "sourceAuditCodeFiles": 2873,
+    "sourceAuditLocalImports": 7069,
+    "sourceAuditMissingCssModuleClasses": 0,
+    "changeSetAdded": 28,
+    "changeSetModified": 17,
+    "changeSetDeleted": 0,
+    "pythonBytecodeCachesPackaged": 0
+  },
+  "blocked": {
+    "exactTailwind3419Rerun": true,
+    "exactNodeArchiveProvenance": true,
+    "dependencyCas827Of827": true,
+    "exactChromium": true,
+    "exactProjectTypeScriptAstReparse": true,
+    "a94r2CurrentRoot30Of30": true,
+    "a94r2DualBuild": true,
+    "a94r2BrowserMatrix": true
+  },
+  "claims": {
+    "a90ToA94PassCredit": false,
+    "exactToolchainCredit": false,
+    "exactBuildCredit": false,
+    "browserCredit": false,
+    "stagingCredit": false,
+    "realDataCredit": false,
+    "rightsCredit": false,
+    "legalCredit": false,
+    "customerValueCredit": false,
+    "independentAssuranceCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Compact SOURCE_ONLY binding to A94R2 MATERIALS. It proves only the listed local receipts and physical synthetic PDF evidence; full replay requires MATERIALS and exact external closure remains blocked.",
+  "sourceBindings": {
+    "changeSetPath": "config/pass36/a94r2-change-set-summary.json",
+    "routeAstRegistryPath": "config/pass15/route-export-ast-registry.json",
+    "crossSurfacePolicyPath": "config/pass36/a94r2-cross-surface-value-truth-policy.json",
+    "pdfSummaryPath": "config/pass36/a94r2-retained-pdf-evidence-summary.json"
+  },
+  "integritySha256": "49327526cc40d053bf48b2855aebff9ef2e90f53259fa4d876bced52a3685075"
+}

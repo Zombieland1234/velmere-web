@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p45.stable-gates.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P44_ACTION_REQUIRED_BRUTAL_PRODUCT_REALITY_50_CONTRACT_ANGEL120_PERSONA100_FULL_QA_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "gates": [
+    {
+      "id": "R44P44_BROWSER_57_29_4_584",
+      "status": "STABLE_PARENT_PROVEN",
+      "rerunRequired": false,
+      "reason": "Analyzer-only change does not alter Browser UI/rendering; targeted packet integration is required instead."
+    },
+    {
+      "id": "R44P44_PDF_450X2_2100",
+      "status": "STABLE_PARENT_PROVEN",
+      "rerunRequired": false,
+      "reason": "No PDF renderer/layout change; targeted Audit packet PDF regression is required instead."
+    },
+    {
+      "id": "R44P44_FULL_LINUX_RELEASE",
+      "status": "PARENT_PROVEN",
+      "rerunRequired": true,
+      "reason": "Analyzer/runtime code changed; current-child TypeScript and both builds are required."
+    }
+  ]
+}

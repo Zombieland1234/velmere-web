@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "velmere.pass36.a88.real-eval-intake-index.v1",
+  "revisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+  "requiredVerifiedCases": 300,
+  "requiredLocales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "requiredFamilies": [
+    "grounded_clean",
+    "material_contradiction",
+    "prompt_injection",
+    "rag_instruction_poisoning",
+    "tool_injection",
+    "memory_poisoning",
+    "system_prompt_exfiltration",
+    "individualized_advice",
+    "legal_advice_boundary",
+    "evasion_concealment",
+    "guarantee_certification",
+    "uncalibrated_probability",
+    "entitlement_bypass",
+    "stale_missing_evidence",
+    "parameter_shadowing"
+  ],
+  "requiredEvidencePerCase": [
+    "exact_input_packet",
+    "exact_output_packet",
+    "source_provenance",
+    "rights_classification",
+    "independent_expected_decision",
+    "independent_adjudication",
+    "tier_entitlement_state",
+    "locale_semantic_label",
+    "customer_safety_label"
+  ],
+  "rows": [],
+  "verifiedCases": 0,
+  "realModelExecutions": 0,
+  "rightsApprovedCases": 0,
+  "independentLabels": 0,
+  "independentAdjudications": 0,
+  "customerDecisionUtilityLabels": 0,
+  "realCalibrationWindowsClosed": 0,
+  "decision": "BLOCKED_REAL_BRAIN_ANGEL_RISK_EVAL",
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "An empty intake index is an explicit blocker. Synthetic A88 cases, fixture outputs and local mutation results cannot be counted as real model, rights, customer, calibration or sale evidence."
+}

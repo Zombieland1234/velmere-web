@@ -1,0 +1,922 @@
+{
+  "assets": [
+    {
+      "assetId": "btc-bitcoin",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.033022,
+      "name": "Bitcoin",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 1,
+      "symbol": "BTC",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "eth-ethereum",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.019232,
+      "name": "Ethereum",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 2,
+      "symbol": "ETH",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "usdt-tether",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.018597,
+      "name": "Tether",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 3,
+      "symbol": "USDT",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "bnb-binance-coin",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.023714,
+      "name": "BNB",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 4,
+      "symbol": "BNB",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "hype-hyperliquid",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.025756,
+      "name": "Hyperliquid",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 10,
+      "symbol": "HYPE",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "doge-dogecoin",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.000383,
+      "name": "Dogecoin",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 11,
+      "symbol": "DOGE",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "usds-usds",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 4.7e-05,
+      "name": "Usds",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 12,
+      "symbol": "USDS",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "leo-leo-token",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "LEO Token",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 13,
+      "symbol": "LEO",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "zec-zcash",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.008081,
+      "name": "Zcash",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 16,
+      "symbol": "ZEC",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "wbtc-wrapped-bitcoin",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Wrapped Bitcoin",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "FAILED"
+      ],
+      "rank": 18,
+      "symbol": "WBTC",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "cbbtc-coinbase-wrapped-btc",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Coinbase Wrapped BTC",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 22,
+      "symbol": "CBBTC",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "weth-weth",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "WETH",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 25,
+      "symbol": "WETH",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "cc-canton-network",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Canton Network",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 26,
+      "symbol": "CC",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "usd1-usd1",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.013754,
+      "name": "USD1",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 28,
+      "symbol": "USD1",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "susds-susds",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "sUSDS",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 35,
+      "symbol": "SUSDS",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "shib-shiba-inu",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.093961,
+      "name": "Shiba Inu",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 36,
+      "symbol": "SHIB",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "pyusd-paypal-usd",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "PayPal USD",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "FAILED"
+      ],
+      "rank": 37,
+      "symbol": "PYUSD",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "sui-sui",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.007452,
+      "name": "Sui",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 38,
+      "symbol": "SUI",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "cro-cryptocom-chain",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.004064,
+      "name": "Cronos",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 40,
+      "symbol": "CRO",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "uni-uniswap",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.010681,
+      "name": "Uniswap",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 41,
+      "symbol": "UNI",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "near-near-protocol",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.173324,
+      "name": "Near Protocol",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 42,
+      "symbol": "NEAR",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "ondo-ondo",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.145576,
+      "name": "Ondo",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 45,
+      "symbol": "ONDO",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "paxg-pax-gold",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.025961,
+      "name": "PAX Gold",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 46,
+      "symbol": "PAXG",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "susde-ethena-staked-usde",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Ethena Staked USDe",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 48,
+      "symbol": "SUSDE",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "aave-new",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.014032,
+      "name": "Aave",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 51,
+      "symbol": "AAVE",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "mnt-mantle",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Mantle",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 52,
+      "symbol": "MNT",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "usdd-usdd",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "USDD",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 55,
+      "symbol": "USDD",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "pepe-pepe",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.195344,
+      "name": "Pepe",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 56,
+      "symbol": "PEPE",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "wld-worldcoin",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.078712,
+      "name": "Worldcoin",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 59,
+      "symbol": "WLD",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "eth-ethereum-token",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Binance-Peg Ethereum Token",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 61,
+      "symbol": "WETH",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "jst-just",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "JUST",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 62,
+      "symbol": "JST",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "etc-ethereum-classic",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.174103,
+      "name": "Ethereum Classic",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 63,
+      "symbol": "ETC",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "aster-aster",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.133719,
+      "name": "Aster",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 64,
+      "symbol": "ASTER",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "jitosol-jito-staked-sol",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.060079,
+      "name": "Jito Staked SOL",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 66,
+      "symbol": "JITOSOL",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "reth-rocket-pool-eth",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Rocket Pool ETH",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 67,
+      "symbol": "RETH",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "wbnb-wrapped-bnb",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Wrapped BNB",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 68,
+      "symbol": "WBNB",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "pump-pumpfun",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.476071,
+      "name": "Pump.fun",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 72,
+      "symbol": "PUMP",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "rseth-rseth",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Kelp DAO Restaked ETH",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 73,
+      "symbol": "RSETH",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "algo-algorand",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.016335,
+      "name": "Algorand",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 74,
+      "symbol": "ALGO",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "jlp-jupiter-perpetuals-liquidity-provider-token",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Jupiter Perpetuals Liquidity Provider Token",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 75,
+      "symbol": "JLP",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "gt-gatechain-token",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "GateToken",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 79,
+      "symbol": "GT",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "qnt-quant",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.302941,
+      "name": "Quant",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 82,
+      "symbol": "QNT",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "rndr-render-token",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.044381,
+      "name": "Render",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 83,
+      "symbol": "RENDER",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "gho-gho",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "GHO",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 87,
+      "symbol": "GHO",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "fil-filecoin",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.102813,
+      "name": "Filecoin",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 89,
+      "symbol": "FIL",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "usd0-usual-usd",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Usual USD",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 91,
+      "symbol": "USD0",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "stable-stable",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Stable",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "NO_MATCHING_USD_PAIR"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ],
+      "rank": 92,
+      "symbol": "STABLE",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "arb-arbitrum",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.167592,
+      "name": "Arbitrum",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 93,
+      "symbol": "ARB",
+      "terminalState": "AVAILABLE"
+    },
+    {
+      "assetId": "lit-lighter",
+      "availableProviderRows": 1,
+      "crossProviderDriftPct": null,
+      "name": "Lighter",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "FAILED"
+      ],
+      "rank": 97,
+      "symbol": "LIT",
+      "terminalState": "PARTIAL"
+    },
+    {
+      "assetId": "inj-injective-protocol",
+      "availableProviderRows": 2,
+      "crossProviderDriftPct": 0.104545,
+      "name": "Injective Protocol",
+      "providerIdentityClasses": [
+        "EXACT_PROVIDER_ID_AND_SYMBOL",
+        "SYMBOL_USD_PAIR_ONLY"
+      ],
+      "providerStates": [
+        "AVAILABLE",
+        "AVAILABLE"
+      ],
+      "rank": 100,
+      "symbol": "INJ",
+      "terminalState": "AVAILABLE"
+    }
+  ],
+  "crossSurface": {
+    "angelRisk": "REFERENCE_CONTEXT_ONLY_NOT_DECISION_AUTHORITY",
+    "marketImpact": "BLOCKED_CURRENT_ORDER_BOOK_AND_REALIZED_SLIPPAGE",
+    "realMarketsAdvanced": "BLOCKED_RIGHTS_AND_CUSTOMER_VALUE",
+    "realMarketsBasic": "REFERENCE_DIAGNOSTIC_ONLY",
+    "realMarketsPro": "BLOCKED_RIGHTS_AND_CATALOG",
+    "shieldBasic": "REFERENCE_DIAGNOSTIC_ONLY",
+    "shieldMap": "REFERENCE_DIAGNOSTIC_ONLY",
+    "shieldPro": "BLOCKED_RIGHTS_DEPTH_AND_ENTITLEMENT",
+    "whaleWatch": "BLOCKED_CURRENT_TRANSFER_AND_SIGNED_LABEL_EVIDENCE"
+  },
+  "denominator": {
+    "assets": 50,
+    "availableProviderRows": 79,
+    "conflicted": 0,
+    "failedOrRateLimited": 0,
+    "oneProviderAvailable": 21,
+    "providerRows": 100,
+    "twoProviderAvailable": 29
+  },
+  "evidenceClass": "REAL_NETWORK_DETERMINISTIC_50_ASSET_DIAGNOSTIC_NO_COMMERCIAL_RIGHTS_CREDIT",
+  "externalEvidence": {
+    "artifactBytes": 115867,
+    "artifactFilename": "r44p17-50-asset-public-diagnostic-evidence.zip",
+    "artifactSha256": "999b7055ba2aa4b34dbcbac3bdf05a55ac900da552769ba9fd4083130026f60b",
+    "githubArtifactDigest": "sha256:999b7055ba2aa4b34dbcbac3bdf05a55ac900da552769ba9fd4083130026f60b",
+    "ledgerBytes": 93704,
+    "ledgerPath": "evidence/R44P17_50_ASSET_PUBLIC_DIAGNOSTIC_LEDGER.json",
+    "ledgerSha256": "bcb4f13fadfde1904a60f612c9264f0acec0c8d507ac3f2b66a43e1468987a43",
+    "summaryBytes": 297,
+    "summaryPath": "evidence/R44P17_50_ASSET_PUBLIC_DIAGNOSTIC_SUMMARY.json",
+    "summarySha256": "47e1d420e5db63a3d00565700085c2bf3180df73338ac0349c09a982a3b805a5",
+    "verificationBytes": 304,
+    "verificationPath": "R44P17_INDEPENDENT_EVIDENCE_VERIFICATION.json",
+    "verificationSha256": "5c06d50373325a6bd1e58bb4d493012679da67358a1503c6a2bcae1c45e03de8"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "providers": [
+    "COINPAPRIKA",
+    "COINBASE_EXCHANGE"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p17.real-provider-diagnostic-policy.v1",
+  "selection": {
+    "assets": 50,
+    "candidatePool": 100,
+    "nonCherryPicked": true,
+    "providerRows": 100,
+    "seed": "velmere-r44p17-50-asset-v1",
+    "unavailableProviderRowsRemainInDenominator": true
+  },
+  "truthBoundary": {
+    "aiRagRightsApproved": false,
+    "cacheRightsApproved": false,
+    "continuousFreshnessCredit": false,
+    "customerDeliveryCredit": false,
+    "displayRightsApproved": false,
+    "fullRealMarkets583Credit": false,
+    "fullShield318Credit": false,
+    "liveCredit": false,
+    "paidTierCredit": false,
+    "pdfExportRightsApproved": false,
+    "productionApproved": false,
+    "realNetworkDiagnosticCredit": true,
+    "redistributionRightsApproved": false,
+    "retentionRightsApproved": false,
+    "stagingCredit": false
+  }
+}

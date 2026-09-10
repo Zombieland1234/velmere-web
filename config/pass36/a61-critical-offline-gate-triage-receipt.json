@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "velmere.pass36.a61.critical-offline-gate-triage.v1",
+  "revisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+  "status": "BLOCKED_NO_SEMANTIC_FAILURE_CREDIT",
+  "currentEnvironmentRun": {
+    "generatedAt": "2026-07-26T18:02:37.715Z",
+    "runtime": {
+      "node": "v22.16.0",
+      "platform": "linux",
+      "arch": "x64",
+      "exactNodeRequired": "v24.18.0",
+      "exactNodeRuntime": false,
+      "genuineRuntimePackages": {
+        "next/server": false,
+        "@supabase/supabase-js": false,
+        "stripe": false
+      },
+      "genuineRuntimePackagesAvailable": false
+    },
+    "sourceImmutable": true,
+    "gateStatus": "BLOCKED"
+  },
+  "summary": {
+    "suites": 30,
+    "passed": 22,
+    "failed": 8,
+    "exactByteBlocked": 2,
+    "runtimeDependencyBlocked": 6,
+    "semanticOrUnknownFailed": 0
+  },
+  "failedSuites": [
+    {
+      "id": "real_markets_receipt_integrity",
+      "classification": "BLOCKED_RUNTIME_DEPENDENCY",
+      "reason": "zod_or_genuine_runtime_package_unavailable",
+      "exitCode": 1,
+      "failureTailSha256": "728932019ae62715d33b5946e49d91e8a825f3be2b3ffe65d3000f4fc5823e5f"
+    },
+    {
+      "id": "market_risk_delivery_gate",
+      "classification": "BLOCKED_RUNTIME_DEPENDENCY",
+      "reason": "zod_or_genuine_runtime_package_unavailable",
+      "exitCode": 1,
+      "failureTailSha256": "728932019ae62715d33b5946e49d91e8a825f3be2b3ffe65d3000f4fc5823e5f"
+    },
+    {
+      "id": "legacy_live_publication_truth",
+      "classification": "BLOCKED_RUNTIME_DEPENDENCY",
+      "reason": "zod_or_genuine_runtime_package_unavailable",
+      "exitCode": 1,
+      "failureTailSha256": "728932019ae62715d33b5946e49d91e8a825f3be2b3ffe65d3000f4fc5823e5f"
+    },
+    {
+      "id": "preflight_snapshot_recovery",
+      "classification": "BLOCKED_EXACT_HISTORICAL_BYTES",
+      "reason": "missing_exact_pass6_orphan_quarantine",
+      "exitCode": 1,
+      "failureTailSha256": "b8cbceb85130df1ce55aff2919b28bc7efaf70a1bfeece0163f7631bc3cf68dd"
+    },
+    {
+      "id": "retired_preflight_source_registry",
+      "classification": "BLOCKED_EXACT_HISTORICAL_BYTES",
+      "reason": "missing_exact_vlm_pass5_release_manifest",
+      "exitCode": 1,
+      "failureTailSha256": "bb8bb1696ad8764eb71b9386f6442c0faff7ae4898c0b3d0c2482ab308ad080c"
+    },
+    {
+      "id": "control_plane_boundaries",
+      "classification": "BLOCKED_RUNTIME_DEPENDENCY",
+      "reason": "zod_or_genuine_runtime_package_unavailable",
+      "exitCode": 1,
+      "failureTailSha256": "df761332db827b11be5de1484f3b670b91de2eec54c3cf94f21a5111b6ab989b"
+    },
+    {
+      "id": "worker_mutation_envelope",
+      "classification": "BLOCKED_RUNTIME_DEPENDENCY",
+      "reason": "zod_or_genuine_runtime_package_unavailable",
+      "exitCode": 1,
+      "failureTailSha256": "592a1b91a641234651e44899fea44afef92a96ad967a28a630350048b62570d8"
+    },
+    {
+      "id": "production_security_db_hardening",
+      "classification": "BLOCKED_RUNTIME_DEPENDENCY",
+      "reason": "typescript_package_unavailable",
+      "exitCode": 1,
+      "failureTailSha256": "529bd18ff01d747ec8031bb53483309b97107a0531833b23ddb1fd7740d1756f"
+    }
+  ],
+  "exactRuntimeCredit": false,
+  "criticalGate30Of30Credit": false,
+  "historicalA57R1ResultNotReplayedHere": "28/30 was recorded under exact Node 24.18.0/npm 11.16.0 with genuine packages; this A61 compatibility run is not substituted for that historical result.",
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A missing dependency or exact historical byte is BLOCKED, not a semantic product PASS or FAIL. Only an exact-runtime rerun with genuine packages and both exact artifacts installed may grant 30/30 credit."
+}

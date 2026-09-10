@@ -1,0 +1,546 @@
+{
+  "schemaVersion": "velmere.pass36.a87.market-impact-whale-watch-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER",
+  "generatedAt": "2026-07-27T21:30:00.000Z",
+  "status": "PASS_A87_LOCAL_COMMON_DENOMINATOR_NO_PROMOTION",
+  "summary": {
+    "checks": 31,
+    "passed": 31,
+    "failed": 0
+  },
+  "denominators": {
+    "activeAssets": 318,
+    "surfaces": 2,
+    "tierPackets": 1908,
+    "channelProjections": 7632,
+    "marketImpactVenueSnapshots": 1042,
+    "marketImpactReplayPairs": 308,
+    "whaleHolderRows": 4600,
+    "whaleTransferRows": 7200,
+    "walletLabelArtifacts": 1200,
+    "semanticMutations": 34344,
+    "mutationKilled": 34344
+  },
+  "readiness": {
+    "market_impact": {
+      "basic": {
+        "functionalReadyOffline": 307,
+        "unavailable": 11,
+        "productionEligible": 0
+      },
+      "pro": {
+        "functionalReadyOffline": 290,
+        "unavailable": 28,
+        "productionEligible": 0
+      },
+      "advanced": {
+        "functionalReadyOffline": 245,
+        "unavailable": 73,
+        "productionEligible": 0
+      }
+    },
+    "whale_watch": {
+      "basic": {
+        "functionalReadyOffline": 230,
+        "unavailable": 88,
+        "productionEligible": 0
+      },
+      "pro": {
+        "functionalReadyOffline": 150,
+        "unavailable": 168,
+        "productionEligible": 0
+      },
+      "advanced": {
+        "functionalReadyOffline": 85,
+        "unavailable": 233,
+        "productionEligible": 0
+      }
+    }
+  },
+  "runtimeIntegritySha256": "d3905daccbc089f35af69ad09e56bd244ab5948daab14131aafe4e0b52cf0ea3",
+  "realIntake": {
+    "decision": "BLOCKED_REAL_MARKET_IMPACT_WHALE_EVIDENCE",
+    "rows": 0,
+    "fullyVerified": 0,
+    "rightsApproved": 0,
+    "currentBooks": 0,
+    "realizedSlippage": 0,
+    "exactBindings": 0,
+    "currentHolderTransferLabels": 0,
+    "monitoringWindows": 0,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "exactA80CandidateBound": false,
+  "currentProviderEvidenceVerified": false,
+  "providerRightsApproved": false,
+  "productionBrowserExecuted": false,
+  "realizedExecutionValidated": false,
+  "continuousMonitoringExecuted": false,
+  "customerValueProven": false,
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "runtime:verified",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "runtime:revision",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER"
+    },
+    {
+      "id": "denominator:assets",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "denominator:surfaces",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "denominator:packets",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "denominator:channels",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "denominator:mutations",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "market:readiness",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 307,
+          "unavailable": 11,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 290,
+          "unavailable": 28,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 245,
+          "unavailable": 73,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "whale:readiness",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 230,
+          "unavailable": 88,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 150,
+          "unavailable": 168,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 85,
+          "unavailable": 233,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "readiness:monotonic",
+      "passed": true,
+      "detail": {
+        "market_impact": {
+          "basic": {
+            "functionalReadyOffline": 307,
+            "unavailable": 11,
+            "productionEligible": 0
+          },
+          "pro": {
+            "functionalReadyOffline": 290,
+            "unavailable": 28,
+            "productionEligible": 0
+          },
+          "advanced": {
+            "functionalReadyOffline": 245,
+            "unavailable": 73,
+            "productionEligible": 0
+          }
+        },
+        "whale_watch": {
+          "basic": {
+            "functionalReadyOffline": 230,
+            "unavailable": 88,
+            "productionEligible": 0
+          },
+          "pro": {
+            "functionalReadyOffline": 150,
+            "unavailable": 168,
+            "productionEligible": 0
+          },
+          "advanced": {
+            "functionalReadyOffline": 85,
+            "unavailable": 233,
+            "productionEligible": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "market:replay",
+      "passed": true,
+      "detail": 308
+    },
+    {
+      "id": "market:no-realized",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "whale:bindings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "whale:evidence",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      }
+    },
+    {
+      "id": "packets:unique",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:coverage",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:no-paid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invariants:zero",
+      "passed": true,
+      "detail": {
+        "duplicatePacketIds": 0,
+        "missingAssets": 0,
+        "tierMonotonicityFailures": 0,
+        "packetSemanticFailures": 0,
+        "projectionParityFailures": 0,
+        "truthBoundaryFailures": 0,
+        "mutationSurvivors": 0
+      }
+    },
+    {
+      "id": "mutations:families",
+      "passed": true,
+      "detail": {
+        "tier_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "surface_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "asset_identity_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "source_result_digest_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "source_tier_digest_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "analysis_decision_promotion": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "delivery_decision_promotion": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "http_status_promotion": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "blocker_removal": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "evidence_count_inflation": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "provider_quorum_inflation": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "binding_or_replay_promotion": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "evidence_digest_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "projection_adds_fact": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "projection_source_swap": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "paid_gate_enable": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "live_enable": {
+          "killed": 1908,
+          "survived": 0
+        },
+        "sale_enable": {
+          "killed": 1908,
+          "survived": 0
+        }
+      }
+    },
+    {
+      "id": "determinism:runtime",
+      "passed": true,
+      "detail": {
+        "first": "d3905daccbc089f35af69ad09e56bd244ab5948daab14131aafe4e0b52cf0ea3",
+        "second": "d3905daccbc089f35af69ad09e56bd244ab5948daab14131aafe4e0b52cf0ea3"
+      }
+    },
+    {
+      "id": "real:blocked",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_MARKET_IMPACT_WHALE_EVIDENCE",
+        "rows": 0,
+        "fullyVerified": 0,
+        "rightsApproved": 0,
+        "currentBooks": 0,
+        "realizedSlippage": 0,
+        "exactBindings": 0,
+        "currentHolderTransferLabels": 0,
+        "monitoringWindows": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "real:zero",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_MARKET_IMPACT_WHALE_EVIDENCE",
+        "rows": 0,
+        "fullyVerified": 0,
+        "rightsApproved": 0,
+        "currentBooks": 0,
+        "realizedSlippage": 0,
+        "exactBindings": 0,
+        "currentHolderTransferLabels": 0,
+        "monitoringWindows": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "policy:gaps",
+      "passed": true,
+      "detail": 33
+    },
+    {
+      "id": "policy:mutations",
+      "passed": true,
+      "detail": 18
+    },
+    {
+      "id": "policy:intake-hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "production:strict-depth",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/market-intelligence.ts"
+    },
+    {
+      "id": "production:strict-routing-inputs",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/market-intelligence.ts"
+    },
+    {
+      "id": "production:policy-override-block",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/market-intelligence.ts"
+    },
+    {
+      "id": "production:server-owned-label-block",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/market-intelligence.ts"
+    },
+    {
+      "id": "state:canonical",
+      "passed": true,
+      "detail": {
+        "schemaVersion": "velmere.pass36.a87.current-state.v1",
+        "revisionId": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER",
+        "parentRevisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+        "decision": "NO_GO",
+        "closedGaps": 33,
+        "activeAssets": 318,
+        "tierPackets": 1908,
+        "semanticMutations": 34344,
+        "realEvidenceRows": 0,
+        "legalRegulatoryDecisionDenominator": 20,
+        "legalRegulatoryDecisionsSigned": 0,
+        "providerRightsApproved": false,
+        "realizedExecutionValidated": false,
+        "continuousMonitoringExecuted": false,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false,
+        "worldClassProven": false,
+        "finalLocalEvidence": {
+          "a87TestChecks": 31,
+          "a87VerifierChecks": 19,
+          "a87DescendantChecks": 19,
+          "cleanUnpackGroups": 39,
+          "cleanUnpackPassed": 39,
+          "cleanUnpackFailed": 0,
+          "currentRootSuites": 30,
+          "currentRootPassed": 24,
+          "currentRootBlocked": 6,
+          "currentRootSemanticFailures": 0,
+          "sourceImmutable": true,
+          "a57AcceptanceChecks": 1138,
+          "protectedIntegrityRows": 1073,
+          "routeDispatchChecks": 1320,
+          "staticControlPlaneChecks": 567,
+          "sourceAuditFilesRead": 4527,
+          "sourceAuditCodeFiles": 2793,
+          "sourceAuditSyntaxErrors": 0,
+          "sourceAuditLocalImports": 6896,
+          "sourceAuditMissingImports": 0
+        }
+      }
+    }
+  ],
+  "truthBoundary": "A87 proves a common 318-asset local fixture denominator, semantic tier gates, replay and holder/transfer/label bindings. It does not prove current public order books, realized fills, commercial data rights, continuous monitoring, customer value, LIVE or sale readiness."
+}

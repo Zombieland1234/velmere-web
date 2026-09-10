@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.pass36.a102r40.a42-critical-rebaseline.v1",
+  "revisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T06:02:00+02:00",
+  "criticalFileDenominator": 76,
+  "rebaselinedRows": [
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "classification": "A102R40_CURRENT_SOURCE_AUTHORITY_AND_EXACT_PREFLIGHT_POINTER_REBASELINE",
+      "parentByteLength": 133,
+      "parentSha256": "2e5dd536ee02d2f4954231ced694b877db19542bc493e4ecd169d5ebea7d4b3f",
+      "currentByteLength": 142,
+      "currentSha256": "c88e3b922f4e37bf6e3685e44ebc4aa8abe5667d79221e4f5e6005eca0b92b84"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "classification": "A102R40_CURRENT_SOURCE_AUTHORITY_AND_EXACT_PREFLIGHT_POINTER_REBASELINE",
+      "parentByteLength": 63740,
+      "parentSha256": "279d996cc564c3a7d06e63fee6c256f24bbf9f026f4fd4d9486f199188e09c8b",
+      "currentByteLength": 64377,
+      "currentSha256": "a3cfa579679e415fad46ec73b96585f497eab0347e377fc83eef6992e12a6b01"
+    },
+    {
+      "path": "package.json",
+      "classification": "A102R40_CURRENT_SOURCE_AUTHORITY_AND_EXACT_PREFLIGHT_POINTER_REBASELINE",
+      "parentByteLength": 111699,
+      "parentSha256": "7278946cc7cbe36eee91f5a20278cadd4baf2443225ca13d661416332d085867",
+      "currentByteLength": 112338,
+      "currentSha256": "b9870ae40d621c19e1d46db68ae2f6029cfe28eecb8fb739e128d50d7be1ed7e"
+    }
+  ],
+  "rebaselinedRowCount": 3,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "truthBoundary": "Exact current critical-file bytes and hashes only; no fresh Windows runtime, dual build, exact browser, staging, LIVE or sale credit."
+}

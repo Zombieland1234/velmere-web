@@ -1,0 +1,26 @@
+{
+  "addedPaths": 0,
+  "changedPathIds": [
+    "app/styles/audit-one-screen.css"
+  ],
+  "changedPaths": 1,
+  "currentBaseline": {
+    "byteLength": 3352,
+    "path": "config/pass36/a102r44p22-current-visual-freeze-baseline.json",
+    "sha256": "9d7b82ccfa53a1c03482d86051575abb7d3f6de51d16334e38cf8294e3a28cb1"
+  },
+  "denominatorCollapse": false,
+  "historyRewritten": false,
+  "newDenominator": 12,
+  "oldDenominator": 12,
+  "parentBaseline": {
+    "byteLength": 3779,
+    "path": "config/pass36/a102r44p1-current-visual-freeze-baseline.json",
+    "sha256": "eb1c87990776b82f6fcee6b49129b33b0e1d29c3cc939328ea1a6cf8e4079b48"
+  },
+  "reason": "Secure preview modal adds intentional CSS while all other frozen visual paths remain byte-identical.",
+  "removedPaths": 0,
+  "retainedPaths": 11,
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.visual-freeze-migration.v1"
+}

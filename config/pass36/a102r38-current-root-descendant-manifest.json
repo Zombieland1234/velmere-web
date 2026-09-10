@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "velmere.pass36.a102r38.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "parentDescendantManifestDigestSha256": "dc5fb4fe1bfbfe3e9c8c04eea96b9f416ca63bc9b73799e9a6993654fda8f87e",
+  "generatedAt": "2026-08-01T04:00:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A102R38_PRODUCTION_SMOKE_EVIDENCE_UNIQUENESS_AND_SOURCE_AUTHORITY_RECONCILIATION_LOCAL_ONLY_NO_FORMAL_PASS_CREDIT",
+  "payload": {
+    "fileCount": 5434,
+    "byteLength": 122585963,
+    "pathSetSha256": "88e2a01121773fac95bbf88fa9b1f8ac5805089e4f0a27253c30e10e9aa2bb0e",
+    "aggregateSha256": "ddc256c56b31dce2525d649bcb459f16edbedeaf531511efd58436a6870ecf98"
+  },
+  "localRegressionReceiptSha256": "ae6f7c375aa5bbc5b419aee5024e0f2f31fe0cd90cebade4cc52d03e936ec3ab",
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a98PassCredit": false,
+    "a99PassCredit": false,
+    "a100PassCredit": false,
+    "a101PassCredit": false,
+    "a102PassCredit": false,
+    "a103PassCredit": false,
+    "a104PassCredit": false,
+    "a105PassCredit": false,
+    "a106PassCredit": false,
+    "a107PassCredit": false,
+    "a108PassCredit": false,
+    "a109PassCredit": false,
+    "a110PassCredit": false,
+    "a111PassCredit": false,
+    "a112PassCredit": false,
+    "a113PassCredit": false,
+    "a114PassCredit": false,
+    "a115PassCredit": false,
+    "a116PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "a102r38EvidenceChecks": 46,
+    "productionSmokeContractChecks": 82,
+    "expectedSmokeAssertions": 55,
+    "uniqueSmokeAssertions": 55,
+    "expectedSmokeResults": 16,
+    "uniqueSmokeResults": 16,
+    "sourceAuthorityReconciled": true,
+    "historicalR37R4UniqueAssertions": 52,
+    "historicalR37R4Smoke55Of55Credit": false,
+    "formalRemainingEntries": 31,
+    "planningMinimum": 12,
+    "planningMostLikely": 24,
+    "planningWithRevisions": 40,
+    "realBrowserRows": 0,
+    "stagingCredit": false,
+    "exactBuildBrowserCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "formalOpenEntries": 31,
+    "a77r1ToA80r1": {
+      "verified": 0,
+      "required": 4
+    },
+    "exactChrome148PlaywrightRevision1223": {
+      "verified": 0,
+      "required": 1
+    },
+    "exactWindowsNode24_18_0Npm11_16_0": {
+      "verified": 0,
+      "required": 1
+    },
+    "a102ObservationWindows": {
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200
+    },
+    "stagingStages": {
+      "verified": 0,
+      "required": 10
+    },
+    "realRls": {
+      "verified": 0,
+      "required": 19
+    },
+    "stripeTestLifecycle": {
+      "verified": 0,
+      "required": 1
+    },
+    "providerRights": {
+      "verified": 0,
+      "required": 21
+    },
+    "legalDpoSignedDecisions": {
+      "verified": 0,
+      "required": 20
+    },
+    "realAudits": {
+      "verified": 0,
+      "required": 50
+    },
+    "officialAuditToolRuns": {
+      "verified": 0,
+      "required": 200
+    },
+    "crossAudits": {
+      "verified": 0,
+      "required": 20
+    },
+    "realCustomerPdfs": {
+      "verified": 0,
+      "required": 50
+    },
+    "shield": {
+      "verified": 0,
+      "required": 318
+    },
+    "shieldProMap": {
+      "verified": 0,
+      "required": 318
+    },
+    "realMarkets": {
+      "verified": 0,
+      "required": 583
+    },
+    "marketImpactWhaleWatch": {
+      "verified": 0,
+      "required": 318
+    },
+    "brainAngelRiskRealEval": {
+      "verified": 0,
+      "required": 300
+    },
+    "customerCohorts": {
+      "verified": 0,
+      "required": 2
+    },
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realCleanupConfirmations": 0
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    }
+  },
+  "manifestDigestSha256": "363eca391415039d1f0e3df57830eac14b641160035f100e5317c832a6d0bf3c"
+}

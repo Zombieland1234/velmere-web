@@ -1,0 +1,51 @@
+{
+  "completed": {
+    "auditPlanCopy": "internal NOT_FOR_SALE enum no longer leaks into desktop/mobile audit pricing; localized copy is rendered",
+    "auditTierValue": "450/450 packets analysed; Basic/Pro/Advanced deltas measured across 50 cases and PL/EN/DE",
+    "browserAssessment": "57/57 inherited R44P5 local fixture rows and 29 screenshots assessed; no final-byte R44P6 browser credit",
+    "localRegression": "authority 9/9; product value 35/35; ESLint 100/100 over 3483 files; TypeScript 18/18 over 160 roots; source audit 5684 files with zero syntax/import failures",
+    "pdfValue": "150/150 technical PDFs; 700 pages; 4418/4418 tool-tier-PDF binding checks",
+    "publicTruthScorecard": "audit page scorecard changed from marketing percentages to evidence-labelled PL/EN/DE metrics",
+    "realMarketsValue": "583-instrument readiness quantified; current real evidence remains 0/583",
+    "shieldProMapValue": "318-asset depth/map readiness quantified; Advanced map offline coverage 29/318",
+    "shieldValue": "318-asset fixture readiness quantified by tier; current-provider credit remains 0"
+  },
+  "generatedAt": "2026-08-02T20:30:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P5_ACTION_REQUIRED_EXACT_NPM_11_16_LOCKFILE_MIGRATION_LINUX_BUILD_BROWSER_AND_DEPENDENCY_GRAPH_CLOSURE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "central": 6,
+    "local": 1,
+    "range": "5-8",
+    "stagingAndExternal": "4-7"
+  },
+  "requiredNext": [
+    "exact Windows final-byte retest on R44P6",
+    "current rights-approved provider evidence for Shield/Shield Pro/Real Markets",
+    "real customer cohorts and willingness-to-pay",
+    "independent adjudication of audit findings",
+    "staging RLS/Stripe TEST/storage/email operational closure"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P6_ACTION_REQUIRED_CROSS_SURFACE_TIER_VALUE_TRUTH_AND_REAL_DATA_READINESS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p6.action-required-current-state.v1",
+  "skuDecisions": {
+    "AuditAdvanced": "BLOCKED_PUBLIC_SALE_INCREMENTAL_EVIDENCE_AND_ADJUDICATION",
+    "AuditBasic": "GO_FREE_INFORMATIONAL_PILOT",
+    "AuditPro": "PILOT_ONLY_PAID_INFORMATIONAL",
+    "PdfAdvanced": "PILOT_ONLY_VALUE_GAP_NO_HUMAN_REVIEW",
+    "PdfBasic": "GO_FREE_TECHNICAL_PDF_PILOT",
+    "PdfPro": "PILOT_ONLY",
+    "RealMarketsAdvanced": "NOT_FOR_PUBLIC_SALE",
+    "RealMarketsBasic": "PILOT_ONLY_EMPTY_STATE_AND_REFERENCE",
+    "RealMarketsPro": "NOT_FOR_PUBLIC_SALE",
+    "ShieldAdvanced": "NOT_FOR_PUBLIC_SALE",
+    "ShieldBasic": "PILOT_ONLY_FREE_REFERENCE",
+    "ShieldPro": "NOT_FOR_PUBLIC_SALE",
+    "ShieldProMap": "NOT_FOR_PUBLIC_SALE"
+  },
+  "truthBoundary": "R44P6 proves cross-surface structural value and exposes paid-tier evidence gaps. It does not create current provider data, customer outcomes, rights, independent adjudication, Windows, staging, LIVE or sale credit.",
+  "worldClassProven": false
+}

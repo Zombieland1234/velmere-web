@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "velmere.pass22.gate-policy.v1",
+  "purpose": "Verify fail-closed provider-rights evidence, owner/operator RLS source policies, merchant/legal blockers, expanded PL/EN/DE and the 2700 synthetic adapter contract without repeating heavy runtime gates.",
+  "truthBoundary": "PASS22 quick/domain gates prove deterministic static and synthetic contracts only. They do not grant provider rights, complete merchant identity, execute migrations, prove multi-user tenant isolation, render customer PDFs, provide build/browser/staging or LIVE evidence.",
+  "heavyExecutionRequiresExplicitFlag": true,
+  "levels": {
+    "quick": {
+      "maxExpectedSeconds": 1200,
+      "commands": [
+        "node scripts/pass22/audit-runner-contract.mjs",
+        "node scripts/pass14/verify-visual-freeze.mjs",
+        "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+        "node scripts/pass15/verify-lazy-route-shells.mjs",
+        "node scripts/pass16/verify-worldclass-corpus.mjs",
+        "node scripts/pass16/verify-worldclass-output-contract.mjs",
+        "node scripts/pass16/test-worldclass-output-scorer.mjs",
+        "node scripts/pass20/verify-data-license-eligibility.mjs",
+        "node scripts/pass20/test-data-license-boundaries.mjs",
+        "node scripts/pass21/audit-provider-rights-registry.mjs",
+        "node scripts/pass22/verify-provider-rights-evidence.mjs",
+        "node scripts/pass22/test-provider-rights-runtime.mjs",
+        "node scripts/pass21/audit-merchant-legal-readiness.mjs",
+        "node scripts/check-i18n.mjs",
+        "node scripts/pass22/audit-i18n-release-readiness.mjs",
+        "node scripts/pass14/verify-migration-versions.mjs",
+        "node scripts/pass14/verify-retired-fixture-routes.mjs",
+        "node scripts/pass14/audit-database-contract.mjs",
+        "node scripts/pass22/verify-owner-operator-rls.mjs",
+        "node scripts/pass22/test-provider-rights-rls-boundaries.mjs",
+        "node scripts/pass22/run-typescript-syntax-scan.mjs",
+        "node scripts/pass22/audit-clean-source.mjs",
+        "node scripts/pass22/audit-current-product-readiness.mjs"
+      ]
+    },
+    "domain": {
+      "maxExpectedSeconds": 2400,
+      "domains": {
+        "market-product": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs"
+        ],
+        "audit-lens-product": [
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs"
+        ],
+        "brain-angel-product": [
+          "node scripts/pass19/verify-brain-angel-output-adapters.mjs",
+          "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs"
+        ],
+        "all-product-adapters": [
+          "node scripts/pass17/verify-market-output-adapters.mjs",
+          "node scripts/pass18/verify-audit-lens-output-adapters.mjs",
+          "node scripts/pass19/verify-brain-angel-output-adapters.mjs",
+          "node scripts/pass17/test-market-output-adapter-boundaries.mjs",
+          "node scripts/pass18/test-audit-lens-output-adapter-boundaries.mjs",
+          "node scripts/pass19/test-brain-angel-output-adapter-boundaries.mjs"
+        ],
+        "provider-legal-rls-i18n": [
+          "node scripts/pass22/verify-provider-rights-evidence.mjs",
+          "node scripts/pass22/test-provider-rights-runtime.mjs",
+          "node scripts/pass21/audit-merchant-legal-readiness.mjs",
+          "node scripts/pass22/verify-owner-operator-rls.mjs",
+          "node scripts/pass22/test-provider-rights-rls-boundaries.mjs",
+          "node scripts/check-i18n.mjs",
+          "node scripts/pass22/audit-i18n-release-readiness.mjs"
+        ],
+        "data-commercialization": [
+          "node scripts/pass20/verify-data-license-eligibility.mjs",
+          "node scripts/pass20/test-data-license-boundaries.mjs",
+          "node scripts/pass22/verify-provider-rights-evidence.mjs",
+          "node scripts/pass22/test-provider-rights-runtime.mjs"
+        ],
+        "product-contract": [
+          "node scripts/pass16/verify-worldclass-corpus.mjs",
+          "node scripts/pass16/verify-worldclass-output-contract.mjs",
+          "node scripts/pass16/test-worldclass-output-scorer.mjs"
+        ],
+        "build": [
+          "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+          "node scripts/pass15/profile-lazy-build-surface.mjs",
+          "node scripts/pass15/verify-lazy-route-shells.mjs"
+        ]
+      }
+    },
+    "milestone": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 5400,
+      "commands": [
+        "npm run gate:quick",
+        "npm run gate:domain -- --domain all-product-adapters",
+        "npm run gate:domain -- --domain provider-legal-rls-i18n",
+        "npm run typecheck",
+        "npm run lint",
+        "npm test"
+      ]
+    },
+    "release": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 14400,
+      "commands": [
+        "npm ci",
+        "npm audit --audit-level=high",
+        "npm run gate:milestone -- --allow-heavy",
+        "npm run build:webpack",
+        "npm run build:turbopack"
+      ]
+    }
+  }
+}

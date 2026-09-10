@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "velmere.pass36.a102r8.approved-checkout-customer-browser-privacy-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R8_ACTION_REQUIRED_CHECKOUT_PII_AUDIT_CASE_AND_PDF_ACTIVITY_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T00:00:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "components/checkout/VelmereCheckoutFlowClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 59337,
+      "historicalSha256": "364dcf5f8bc35ac872a6ef61d13b07bc676da8280aa576df14b16af3a40b8056",
+      "currentByteLength": 59075,
+      "currentSha256": "234d2f881cb3b9ca137259b66d8a2fad8c0e1e32e81157e176a07292745e6ace",
+      "reason": "Remove persistent checkout PII drafts and make copy explicit that data remains only in memory during the current checkout.",
+      "requiredLocalTest": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/security/audit-case-client-registry.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 3753,
+      "historicalSha256": "06bc504a90740995dea37221ea717efc38810e1c13e339e8d18d06745ed57e8a",
+      "currentByteLength": 3931,
+      "currentSha256": "95e9347454e22203d21292bc0cc71396a2722bfdf2cab2c53c00e7df1cab509a",
+      "reason": "Replace localStorage audit case reference persistence with bounded current-tab memory and purge legacy rows without reading or migration.",
+      "requiredLocalTest": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/account/AuditCasesPortalClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 52862,
+      "historicalSha256": "d3d14fe23a273424d9df624449e3bd7894ccc23f38b554ace829c21d2ab6b062",
+      "currentByteLength": 52588,
+      "currentSha256": "ef02b1cbfc8bb1b95618c60dafdd79fb7cfde4fa5969a2b3d845a2303e2702a9",
+      "reason": "Remove cross-tab storage-event synchronization for audit case references; retain same-tab custom-event refresh only.",
+      "requiredLocalTest": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/market-integrity/pdf-a4-download-receipt.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 9384,
+      "historicalSha256": "40f4cac46c311341a2e803da853bf7b4bf42038bb960e1ef3df52d224916ac37",
+      "currentByteLength": 9681,
+      "currentSha256": "19bf19596ceb082323e20e1ecc8a1b7e34870f3bffa8e3c8c73f3d2bb8fdbeee",
+      "reason": "Replace localStorage PDF activity receipt persistence with bounded current-tab memory and purge legacy metadata without reading or migration.",
+      "requiredLocalTest": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 253735,
+      "historicalSha256": "5e76ebd3d0370069942d65d010143b8196e37410bc74b27af02d135669289aa5",
+      "currentByteLength": 253771,
+      "currentSha256": "bde8b88b6926661f6173616de00187d28f450dbf6d9d87271073069e1c04c275",
+      "reason": "Rename PDF receipt handling from persisted to current-tab recorded semantics.",
+      "requiredLocalTest": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/search/lens-locale-copy.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 10270,
+      "historicalSha256": "a713eb85c482af23787116aa948dfb05a9170f82444ac4ce87c8bcb3cb84f413",
+      "currentByteLength": 10403,
+      "currentSha256": "445030d5cd97a9559837093e4a8fff979e7ee995ca3272f3ba003f261839c2a0",
+      "reason": "Correct PL/EN/DE customer copy to state that PDF receipt history exists only in current-tab memory.",
+      "requiredLocalTest": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "lib/commerce/checkout-browser-privacy.ts",
+      "purpose": "Remove legacy locale checkout PII drafts without reading or migration and expose no browser persistence authority."
+    },
+    {
+      "path": "scripts/pass36/test-a102r8-checkout-customer-browser-privacy-boundary.ts",
+      "purpose": "Static and runtime adversarial proof for checkout PII, audit case references and PDF activity metadata browser-persistence closure."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "checkoutPiiPersistedInBrowserStorage": false,
+    "auditCaseRefsPersistedInBrowserStorage": false,
+    "pdfActivityMetadataPersistedInBrowserStorage": false,
+    "legacyBrowserRowsReadOrMigrated": false,
+    "currentTabMemoryOnly": true,
+    "durableServerCheckoutDraftProven": false,
+    "durableServerAuditBookmarkProven": false,
+    "durableServerPdfReceiptProven": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger binds exact A102R7-to-A102R8 production-file changes that remove persistent browser storage authority for checkout PII, audit case references and PDF activity metadata. It does not rewrite frozen historical receipts and grants no exact build, real browser, durable server storage, staging, LIVE or sale credit."
+}

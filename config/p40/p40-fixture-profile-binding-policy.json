@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "velmere.p40.fixture-profile-binding-policy.v1",
+  "revision": "P40_V16_A85_CANONICAL_REPLAY_SOURCE_DIFFERENTIAL_FIXTURE_PROFILE_BASELINE",
+  "generatedAt": "2026-08-14T06:30:00.000Z",
+  "state": "IMPLEMENTED_SOURCE_POLICY_FAIL_CLOSED",
+  "releaseState": "NO_GO",
+  "parentRoot": "R44P46",
+  "authorityV16Sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9",
+  "parentP39SourceAggregateSha256": "f8caeb6d43dcc509d234d58c5e98780babe476755046fc6a92e13e2b44a79968",
+  "topology": {
+    "productFamilies": 11,
+    "customerFacingRows": 17,
+    "internalProfiles": 33,
+    "exactNodeBoundFixtureProfilesTarget": 27,
+    "browserPdfOpenProfiles": 6
+  },
+  "runtimeBindings": {
+    "audit": {
+      "campaignFamily": "A82_AUDIT",
+      "runtime": {
+        "path": "artifacts/pass36/a82/PASS36_A82_FIXTURE_RUNTIME.json",
+        "byteLength": 539784,
+        "sha256": "d62d9b6648169b2ff9af60abb358ed2c2f3c0f1fb9eb1a4fe81b4d27f1eb700f"
+      },
+      "exactNodeCampaignRuntimeSha256": "d62d9b6648169b2ff9af60abb358ed2c2f3c0f1fb9eb1a4fe81b4d27f1eb700f",
+      "exactNodeCampaignReceiptSha256": "30604df6552b60574e23165fd1706f3872c22e283366a9e417b3d387921b519f",
+      "selector": "cases[].tiers[tier]",
+      "canonicalA85PolicyBound": true
+    },
+    "shield": {
+      "campaignFamily": "A84_SHIELD",
+      "runtime": {
+        "path": "artifacts/pass36/a84/PASS36_A84_SHIELD_FULL_CATALOG_RUNTIME.json",
+        "byteLength": 10324243,
+        "sha256": "1c10ffb21ce2e31cf0b7d4e9bac7ecf8fbe8bc01df52d6bff38df816b7eefe82"
+      },
+      "exactNodeCampaignRuntimeSha256": "1c10ffb21ce2e31cf0b7d4e9bac7ecf8fbe8bc01df52d6bff38df816b7eefe82",
+      "exactNodeCampaignReceiptSha256": "6893934d6c27dd61832b93aa3ff702b5622b11d536523d5ff701f846fc5d7cef",
+      "selector": "packets[tier]",
+      "canonicalA85PolicyBound": true
+    },
+    "shield-pro": {
+      "campaignFamily": "A85_SHIELD_PRO_MAP",
+      "runtime": {
+        "path": "artifacts/pass36/a85/PASS36_A85_SHIELD_PRO_MAP_FULL_DEPTH_RUNTIME.json",
+        "byteLength": 1958244,
+        "sha256": "551b34089a3f901b5919da3684b8bda199ca7d160acafca2e0606b2d210823de"
+      },
+      "exactNodeCampaignRuntimeSha256": "551b34089a3f901b5919da3684b8bda199ca7d160acafca2e0606b2d210823de",
+      "exactNodeCampaignReceiptSha256": "f72de4db59f4c72202034decbd9c82716056e75295926b6e7fec0cbdef6e69ea",
+      "selector": "packets[tier].terminal+entitlement",
+      "canonicalA85PolicyBound": true
+    },
+    "shield-map": {
+      "campaignFamily": "A85_SHIELD_PRO_MAP",
+      "runtime": {
+        "path": "artifacts/pass36/a85/PASS36_A85_SHIELD_PRO_MAP_FULL_DEPTH_RUNTIME.json",
+        "byteLength": 1958244,
+        "sha256": "551b34089a3f901b5919da3684b8bda199ca7d160acafca2e0606b2d210823de"
+      },
+      "exactNodeCampaignRuntimeSha256": "551b34089a3f901b5919da3684b8bda199ca7d160acafca2e0606b2d210823de",
+      "exactNodeCampaignReceiptSha256": "f72de4db59f4c72202034decbd9c82716056e75295926b6e7fec0cbdef6e69ea",
+      "selector": "packets[tier].map+entitlement",
+      "canonicalA85PolicyBound": true
+    },
+    "real-markets": {
+      "campaignFamily": "A86_REAL_MARKETS",
+      "runtime": {
+        "path": "artifacts/pass36/a86/PASS36_A86_REAL_MARKETS_CROSS_ASSET_RUNTIME.json",
+        "byteLength": 10496508,
+        "sha256": "ba53032416a198f5525ad470ce18344520b44a674197716729499c03a353d88b"
+      },
+      "exactNodeCampaignRuntimeSha256": "ba53032416a198f5525ad470ce18344520b44a674197716729499c03a353d88b",
+      "exactNodeCampaignReceiptSha256": "e1808128675e4fb1ffb28abee41e23ab28dacfc89a09b6b44115077ab0576177",
+      "selector": "packets[tier]",
+      "canonicalA85PolicyBound": true
+    },
+    "market-impact": {
+      "campaignFamily": "A87_MARKET_IMPACT_WHALE_WATCH",
+      "runtime": {
+        "path": "artifacts/pass36/a87/PASS36_A87_MARKET_IMPACT_WHALE_RUNTIME.json",
+        "byteLength": 7702593,
+        "sha256": "db95479c5d3ecde7f369952e05e51952700e200487e4e4f4261717666ac58ce8"
+      },
+      "exactNodeCampaignRuntimeSha256": "db95479c5d3ecde7f369952e05e51952700e200487e4e4f4261717666ac58ce8",
+      "exactNodeCampaignReceiptSha256": "a3d7df46b57f4fa77b2b22ac7f8a935588eef9f6ae1b3f438ba2dbc710b2b747",
+      "selector": "packets[surface=market_impact,tier]",
+      "canonicalA85PolicyBound": true
+    },
+    "whale-watch": {
+      "campaignFamily": "A87_MARKET_IMPACT_WHALE_WATCH",
+      "runtime": {
+        "path": "artifacts/pass36/a87/PASS36_A87_MARKET_IMPACT_WHALE_RUNTIME.json",
+        "byteLength": 7702593,
+        "sha256": "db95479c5d3ecde7f369952e05e51952700e200487e4e4f4261717666ac58ce8"
+      },
+      "exactNodeCampaignRuntimeSha256": "db95479c5d3ecde7f369952e05e51952700e200487e4e4f4261717666ac58ce8",
+      "exactNodeCampaignReceiptSha256": "a3d7df46b57f4fa77b2b22ac7f8a935588eef9f6ae1b3f438ba2dbc710b2b747",
+      "selector": "packets[surface=whale_watch,tier]",
+      "canonicalA85PolicyBound": true
+    },
+    "angel": {
+      "campaignFamily": "A88_BRAIN_ANGEL_RISK",
+      "runtime": {
+        "path": "artifacts/pass36/a88/PASS36_A88_BRAIN_ANGEL_RISK_EVAL_RUNTIME.json",
+        "byteLength": 1306165,
+        "sha256": "49a773d345eccc3230faddc0c700e5062e7cdd0312745eea38d8634c2f3eb2d7"
+      },
+      "exactNodeCampaignRuntimeSha256": "49a773d345eccc3230faddc0c700e5062e7cdd0312745eea38d8634c2f3eb2d7",
+      "exactNodeCampaignReceiptSha256": "d4d923985e8baa35f861f985cd3be9d76a11e886181ae16d4babc9b0ef200a33",
+      "selector": "packets[surface=angel,tier]",
+      "canonicalA85PolicyBound": true
+    },
+    "risk-indicator": {
+      "campaignFamily": "A88_BRAIN_ANGEL_RISK",
+      "runtime": {
+        "path": "artifacts/pass36/a88/PASS36_A88_BRAIN_ANGEL_RISK_EVAL_RUNTIME.json",
+        "byteLength": 1306165,
+        "sha256": "49a773d345eccc3230faddc0c700e5062e7cdd0312745eea38d8634c2f3eb2d7"
+      },
+      "exactNodeCampaignRuntimeSha256": "49a773d345eccc3230faddc0c700e5062e7cdd0312745eea38d8634c2f3eb2d7",
+      "exactNodeCampaignReceiptSha256": "d4d923985e8baa35f861f985cd3be9d76a11e886181ae16d4babc9b0ef200a33",
+      "selector": "packets[surface=risk,tier]",
+      "canonicalA85PolicyBound": true
+    }
+  },
+  "browserPdfBoundary": {
+    "a83Runtime": {
+      "path": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_FIXTURE_RUNTIME.json",
+      "byteLength": 1688,
+      "sha256": "625a2e083339801d64128765b2df39c63db2a7cedae8b1142d935684dee0bb28"
+    },
+    "a83Manifest": {
+      "path": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_CORPUS_MANIFEST.json",
+      "byteLength": 2443040,
+      "sha256": "aff8898b602973e7fedde6282d993a02be11388a301d5db88d0fc0198992b284"
+    },
+    "manifestEntries": 450,
+    "historicalSyntheticPhysicalPdfs": 450,
+    "currentP40IndependentReplay": false,
+    "currentP40BrowserRuns": 0,
+    "externalFontRequiredAndUnavailable": true,
+    "profileCredit": "NO_CONTEXT_SPECIFIC_PHYSICAL_FIXTURE_OUTPUT"
+  },
+  "creditRules": {
+    "exactNodeBoundInternalFixtureProfile": "Requires exact P39 Node 24.18.0 runtime hash parity and a deterministic family/context subset digest.",
+    "customerOutput": "Never inferred from an internal fixture runtime.",
+    "sourceRights": "Never inferred from source presence or fixture provider names.",
+    "materialValue": "Never inferred from field count or context execution.",
+    "release": "Requires exact Windows/dependency/build/Browser/PDF and all V16 gates."
+  },
+  "truthBoundary": "P40 may bind exact Node 24.18.0 internal fixture runtime bytes to individual V16 execution contexts. It must not call those receipts customer outputs, current data, rights approval, material value, Browser/PDF closure, GO_INTERNAL or sale readiness.",
+  "integritySha256": "26b3e0051761c0859f6ad32dd675f3e7f80d1287724701672018bc1980c6262d"
+}

@@ -1,0 +1,371 @@
+{
+  "schemaVersion": "velmere.pass36.a79.exact-final-byte-build-browser-evidence-binding-test.v1",
+  "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+  "generatedAt": "2026-07-27T10:30:00.000Z",
+  "status": "PASS_A79_LOCAL_ADMISSION_AND_ADVERSARIAL",
+  "summary": {
+    "checks": 54,
+    "passed": 54,
+    "failed": 0
+  },
+  "exactBuildExecuted": false,
+  "exactBrowserExecuted": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "policy-revision",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING"
+    },
+    {
+      "id": "policy-parent",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING"
+    },
+    {
+      "id": "policy-denominators",
+      "passed": true,
+      "detail": {
+        "schemaVersion": "velmere.pass36.a79.exact-final-byte-build-browser-evidence-binding.v1",
+        "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+        "parentRevisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+        "supersededMechanismRevisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+        "deterministicEpoch": "2026-07-27T10:30:00.000Z",
+        "sourceManifestPath": "config/pass36/a102r41-current-root-descendant-manifest.json",
+        "descendantManifestPath": "config/pass36/a79-current-root-descendant-manifest.json",
+        "parentDescendantManifestPath": "config/pass36/a78-current-root-descendant-manifest.json",
+        "expectedRuntime": {
+          "node": "24.18.0",
+          "npm": "11.16.0"
+        },
+        "browserContractPath": "config/pass35/a45-exact-runtime-browser-acceptance.json",
+        "a60PolicyPath": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+        "requiredBrowserRows": 56,
+        "requiredScreenshots": 29,
+        "requiredPopupTabs": 4,
+        "descendantManifestExclusions": [
+          "config/pass36/a79-current-root-descendant-manifest.json",
+          "config/pass35/a57-source-manifest.json"
+        ],
+        "closedByA79": [
+          "external_or_non_loopback_browser_base_url",
+          "system_npm_or_shell_command_execution",
+          "parent_secret_environment_inheritance",
+          "undeclared_active_source_file_not_in_manifest",
+          "stale_browser_artifact_reuse",
+          "incomplete_or_duplicate_browser_route_matrix",
+          "cross_origin_or_redirected_final_browser_url",
+          "unbound_browser_receipt_to_source_runtime_browser_and_build",
+          "popup_screenshot_without_declared_digest",
+          "tampered_or_structurally_invalid_screenshot",
+          "preexisting_server_port_confusion"
+        ],
+        "promotionConditions": {
+          "a78ExactToolchainVerifiedRequired": true,
+          "exactNodeAndNpmPathsRequired": true,
+          "isolatedEnvironmentRequired": true,
+          "systemShellForbidden": true,
+          "systemNpmForbidden": true,
+          "dynamicExactLoopbackPortRequired": true,
+          "spawnedServerMustRemainAlive": true,
+          "sourceExactPathSetRequired": true,
+          "staleBrowserArtifactsRemovedBeforeRun": true,
+          "webpackAndTurbopackRequired": true,
+          "productionRuntimeRequired": true,
+          "browserMatrixExactRequired": true,
+          "screenshotDigestAndPngStructureRequired": true,
+          "sourceRuntimeBrowserBuildBindingsRequired": true,
+          "sourceUnchangedRequired": true,
+          "saleEnabled": false,
+          "liveProven": false
+        },
+        "decisions": {
+          "verified": "VERIFIED_LOCAL_EXACT_FINAL_BYTE_BUILD_RUNTIME_BROWSER_EVIDENCE_BOUND",
+          "blocked": "BLOCKED_A78_EXACT_TOOLCHAIN_ARTIFACTS",
+          "actionRequired": "ACTION_REQUIRED_EXACT_BUILD_BROWSER",
+          "rejected": "REJECTED_BUILD_BROWSER_EVIDENCE_INTEGRITY"
+        },
+        "truthBoundary": "A79 closes local exact-build and browser-evidence admission bypasses. Local adversarial tests prove the verifier and runner boundaries only. Exact build/browser credit still requires physical A78 runtime, 654/654 current lockfile rows and platform-exact Playwright Chromium, followed by real Webpack, Turbopack, next start and Playwright execution on unchanged final bytes. A79 does not prove staging, provider rights, customer value, LIVE or sale readiness.",
+        "historicalA57ManifestPath": "config/pass35/a57-source-manifest.json",
+        "currentSourceAuthorityPath": "config/pass36/current-release-authority.json",
+        "currentSourceRevisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+        "currentSourceParentRevisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT"
+      }
+    },
+    {
+      "id": "policy-no-live-sale",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "loopback-valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "next-rsc-abort-accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "next-rsc-navigation-not-ignored",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "next-rsc-cross-origin-not-ignored",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "loopback-https-valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "loopback-external",
+      "passed": true,
+      "detail": "a79_base_url_exact_loopback_required"
+    },
+    {
+      "id": "loopback-ftp",
+      "passed": true,
+      "detail": "a79_base_url_http_or_https_required"
+    },
+    {
+      "id": "loopback-localhost",
+      "passed": true,
+      "detail": "a79_base_url_exact_loopback_required"
+    },
+    {
+      "id": "loopback-credentials",
+      "passed": true,
+      "detail": "a79_base_url_credentials_forbidden"
+    },
+    {
+      "id": "loopback-path",
+      "passed": true,
+      "detail": "a79_base_url_origin_only_required"
+    },
+    {
+      "id": "loopback-query",
+      "passed": true,
+      "detail": "a79_base_url_origin_only_required"
+    },
+    {
+      "id": "loopback-low-port",
+      "passed": true,
+      "detail": "a79_base_url_port_invalid"
+    },
+    {
+      "id": "environment-valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "environment-secret-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "environment-node-options-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-valid",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "browser-duplicate-row-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-external-final-url-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-binding-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-popup-digest-required",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-screenshot-tamper-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "source-current-authority-exact",
+      "passed": true,
+      "detail": {
+        "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+        "passed": true
+      }
+    },
+    {
+      "id": "runner-marker:a79_external_base_url_override_forbidden",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:VELMERE_A79_NPM_CLI_PATH",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:VELMERE_A79_RUNTIME_ROOT",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:reserveLoopbackPort",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:spawned_server_exited",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:shell: false",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:--offline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:--ignore-scripts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:validateCurrentSourceAuthorityExact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:runtimeInstanceSha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:browserExecutableSha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:readBuildId",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-no-system-npm-command",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "runner-no-windows-shell",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-marker:normalizeLoopbackBaseUrl",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-marker:runtimeInstanceSha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-marker:browserExecutableSha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-marker:firstPartyFailures",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-marker:screenshotSha256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "browser-marker:browser-acceptance.v2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "verifier-central-validation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "forced-preflight-exit",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "id": "forced-receipt-present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "forced-decision",
+      "passed": true,
+      "detail": "BLOCKED_EXACT_PREFLIGHT"
+    },
+    {
+      "id": "forced-zero-mutation",
+      "passed": true,
+      "detail": {
+        "requiredStages": 14,
+        "executedStages": 0,
+        "passedStages": 0,
+        "failedStages": 0,
+        "mutationStarted": false,
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "id": "forced-zero-stages",
+      "passed": true,
+      "detail": {
+        "requiredStages": 14,
+        "executedStages": 0,
+        "passedStages": 0,
+        "failedStages": 0,
+        "mutationStarted": false,
+        "sourceUnchanged": true
+      }
+    },
+    {
+      "id": "forced-source-unchanged",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "id": "manifest-byte-unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A79 closes local exact-build and browser-evidence admission bypasses. Local adversarial tests prove the verifier and runner boundaries only. Exact build/browser credit still requires physical A78 runtime, 654/654 current lockfile rows and platform-exact Playwright Chromium, followed by real Webpack, Turbopack, next start and Playwright execution on unchanged final bytes. A79 does not prove staging, provider rights, customer value, LIVE or sale readiness."
+}

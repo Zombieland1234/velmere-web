@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p10.independent-final-audit.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P9_ACTION_REQUIRED_INDEPENDENT_FINAL_AUDIT_SEMANTIC_GENERALIZATION_SKU_TRUTH_AND_REAL_LOCAL_E2E_NO_LIVE_CREDIT",
+  "globalTruth": {
+    "decision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "scope": [
+    "clean source manifest and generated-artifact exclusion",
+    "metamorphic structured-token generalization closure",
+    "customer-facing numeric tier-confidence removal",
+    "active human-review copy migration to analysis verification/manual QA",
+    "legacy status compatibility with non-customer-facing normalization",
+    "independent final audit and deterministic packaging"
+  ],
+  "creditBoundary": {
+    "fixtureIsRealProviderEvidence": false,
+    "localIntegrationIsCustomerEvidence": false,
+    "structuredTokenAnalysisIsCompilerAst": false,
+    "localE2EIsStaging": false,
+    "independentReviewPerformed": false,
+    "saleCredit": false,
+    "liveCredit": false,
+    "legacyIdentifierMigrationComplete": false,
+    "compilerAstCredit": false,
+    "exactWindowsCredit": false
+  },
+  "skuTruth": {
+    "basic": {
+      "customerDecision": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_RETEST",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false
+    },
+    "pro": {
+      "customerDecision": "CONTROLLED_INVITATION_ONLY_BETA",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false,
+      "manualQaRequired": true
+    },
+    "advanced": {
+      "customerDecision": "NOT_FOR_SALE",
+      "publicCheckoutAllowed": false,
+      "price": null,
+      "humanReviewIncluded": false,
+      "independentCertification": false
+    }
+  },
+  "requiredChecks": {
+    "metamorphicCases": 48,
+    "transformationsPerCase": 9,
+    "metamorphicAssertions": 432,
+    "localIntegrationAssertions": 14,
+    "independentAuditRequired": true,
+    "cleanUnpackRequired": true,
+    "deterministicSourceBuilds": 2,
+    "deterministicMaterialsBuilds": 2,
+    "activeCopyTruthAssertions": 26
+  }
+}

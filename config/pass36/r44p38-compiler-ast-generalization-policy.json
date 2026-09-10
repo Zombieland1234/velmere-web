@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p38.compiler-ast-generalization-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P38_ACTION_REQUIRED_COMPILER_AST_IR_LOCAL_GENERALIZATION24_METAMORPHIC7_AND_AUDIT_ACCURACY_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P37_ACTION_REQUIRED_AUTHORITY_RELEASE_TRUTH_TYPESCRIPT_AND_EVIDENCE_REPAIR_TEST_CYCLE_0_OF_3_NO_LIVE_CREDIT",
+  "testCycle": "1/3",
+  "compiler": {
+    "package": "solc",
+    "version": "0.8.24",
+    "longVersion": "0.8.24+commit.e11b9ed9.Emscripten.clang",
+    "artifactZipSha256": "4fd47da6c32e0f51334ab4548897e3cabca3e17828731c60c2d61cf04ca8afe2",
+    "closureTarSha256": "22c6fa11c389d07b057c304b40d184659e82d29e54cf6a7f2d5d8e38cec94b4c"
+  },
+  "denominator": {
+    "casePairs": 24,
+    "disclosedTuningPairs": 16,
+    "localDeveloperHoldoutPairs": 8,
+    "signalFamilies": 16,
+    "metamorphicTransforms": 7,
+    "targetSignalEvaluations": 336,
+    "minimumCompilerRuns": 336
+  },
+  "requiredTransforms": [
+    "baseline",
+    "comment_and_string_decoys",
+    "whitespace_reflow",
+    "renamed_identifiers",
+    "reversed_conditions",
+    "internal_wrapper",
+    "inheritance_split_file"
+  ],
+  "requiredEvidence": [
+    "compiler-ast",
+    "storage-layout",
+    "ir-sample",
+    "bytecode-hash",
+    "source-identity",
+    "case-receipts",
+    "aggregate-digest"
+  ],
+  "failClosed": {
+    "compilerErrorsReject": true,
+    "sourceIdentityMismatchReject": true,
+    "tamperedEvidenceReject": true,
+    "wrongSourceReject": true,
+    "numericConfidenceForbidden": true
+  },
+  "creditBoundary": {
+    "localCompilerAstCredit": true,
+    "localSyntheticGeneralizationCredit": true,
+    "independentGroundTruthCredit": false,
+    "realProtocolAccuracyCredit": false,
+    "exploitabilityCredit": false,
+    "independentReviewerCredit": false,
+    "customerCredit": false,
+    "paidSaleCredit": false,
+    "liveCredit": false,
+    "worldClassCredit": false
+  },
+  "truthBoundary": "This policy validates a bounded compiler-backed local benchmark. The eight holdout pairs are developer-created and are not independent ground truth.",
+  "historicalPass16Rebaseline": {
+    "physicalFiles": 50,
+    "supportedPairs": 18,
+    "unsupportedPairs": 7,
+    "primaryRuleRiskFiles": 18,
+    "primaryRuleControlFiles": 18,
+    "independentGroundTruthCredit": false,
+    "unseenRealProtocolCredit": false
+  }
+}

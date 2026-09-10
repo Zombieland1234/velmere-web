@@ -1,0 +1,679 @@
+/* Final bounded UI ownership fixes. Kept separate from historical minified sheets. */
+.velmere-lens-command-center[data-browser-search-shell="single-outline-no-ambient-card"] {
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.velmere-lens-command-center[data-browser-search-shell="single-outline-no-ambient-card"] .velmere-lens-search-shell {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+body.audit-v4610-global-header-owner header[data-audit-header="simplified"] {
+  border-bottom-color: rgba(255, 255, 255, 0.09) !important;
+  background: #060709 !important;
+  background-image: none !important;
+  color: #f5f3ed !important;
+  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.34) !important;
+}
+
+body.audit-v4610-global-header-owner header[data-audit-header="simplified"] [data-velmere-header-brand],
+body.audit-v4610-global-header-owner header[data-audit-header="simplified"] [data-velmere-header-actions] {
+  color: #f5f3ed !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .velmere-lens-command-center[data-browser-search-shell="single-outline-no-ambient-card"] * {
+    scroll-behavior: auto !important;
+  }
+}
+
+.velmere-asset-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.velmere-asset-logo.velmere-asset-logo-compact {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+.velmere-asset-logo.velmere-asset-logo-large {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+}
+
+.velmere-asset-logo img {
+  border-radius: 50% !important;
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* All asset logos (stocks, indices, ETFs, commodities, FX, forex, crypto): preserve full vibrant authentic brand colors */
+.velmere-asset-logo img,
+.velmere-asset-logo[data-asset-class] img {
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}
+
+.velmere-asset-logo-fallback {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.velmere-asset-logo[data-logo-loaded="true"] .velmere-asset-logo-fallback {
+  display: none !important;
+}
+
+
+
+/* Center Real Markets Mini Chart */
+.realmarkets-chart-cell-pass2333,
+.realmarkets-chart-cell-pass4502 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.realmarkets-chart-cell-pass4502 svg {
+  margin: 0 auto !important;
+}
+
+
+/* Security Audit search input - subtle grey border, no blending, no murky grey on focus */
+.audit-v4609-intake {
+  border: 1px solid rgba(0, 0, 0, 0.14) !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.audit-v4609-intake:hover {
+  border-color: rgba(0, 0, 0, 0.24) !important;
+}
+
+.audit-v4609-intake:focus-within,
+.audit-v4609-intake label:focus-within,
+.audit-v4609-intake input:focus,
+.audit-v4609-intake input:focus-visible {
+  outline: none !important;
+  background: #ffffff !important;
+  border-color: rgba(200, 169, 106, 0.55) !important;
+  box-shadow: 0 0 0 1px rgba(200, 169, 106, 0.25), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.audit-v4609-intake[data-valid="true"],
+.audit-v4609-intake[data-staged="true"] {
+  border-color: rgba(200, 169, 106, 0.45) !important;
+  box-shadow: 0 0 0 1px rgba(200, 169, 106, 0.15), 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.audit-v4609-intake label {
+  background: transparent !important;
+}
+
+.audit-v4609-intake input {
+  color: #171512 !important;
+  background: transparent !important;
+}
+
+.audit-v4609-intake input::placeholder {
+  color: rgba(23, 21, 18, 0.38) !important;
+}
+
+.audit-v4609-intake > button {
+  background: #111113 !important;
+  color: #f5f0e8 !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.2s ease !important;
+}
+
+.audit-v4609-intake > button:hover:not(:disabled) {
+  background: #c8a96a !important;
+  color: #000000 !important;
+}
+
+.audit-v4609-intake > button:disabled {
+  background: rgba(0, 0, 0, 0.06) !important;
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Comparison Modal Overlay and Centered Box */
+.audit-v4609-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10020 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  animation: vlmFadeIn 0.2s ease both !important;
+}
+
+.audit-v4609-comparison {
+  width: min(1000px, 94vw) !important;
+  max-height: min(840px, calc(100svh - 48px)) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 20px !important;
+  background: #090c0f !important;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8) !important;
+  animation: vlmScaleIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+.audit-v4609-comparison > header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 24px 28px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.audit-v4609-comparison > header span {
+  display: block !important;
+  color: rgba(212, 175, 55, 0.8) !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+.audit-v4609-comparison > header h2 {
+  margin: 6px 0 0 !important;
+  font-family: var(--font-serif, Georgia, serif) !important;
+  font-size: clamp(24px, 2.5vw, 32px) !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  letter-spacing: -0.02em !important;
+}
+
+.audit-v4609-comparison > header p {
+  margin: 4px 0 0 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 13px !important;
+}
+
+.audit-v4609-comparison > header button {
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 50% !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+
+.audit-v4609-comparison > header button:hover {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.audit-v4609-table-wrap {
+  overflow-y: auto !important;
+  max-height: calc(840px - 140px) !important;
+  padding: 8px 0 !important;
+}
+
+.audit-v4609-table-head,
+.audit-v4609-table-row {
+  display: grid !important;
+  grid-template-columns: minmax(280px, 1.4fr) repeat(3, minmax(140px, 1fr)) !important;
+  align-items: center !important;
+}
+
+.audit-v4609-table-head {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 2 !important;
+  background: #0d1014 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 14px 28px !important;
+}
+
+.audit-v4609-table-head > span {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+}
+
+.audit-v4609-table-head > strong {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  font-family: var(--font-serif, Georgia, serif) !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+}
+
+.audit-v4609-table-head small {
+  margin-top: 4px !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 10px !important;
+  color: rgba(212, 175, 55, 0.8) !important;
+}
+
+.audit-v4609-table-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 14px 28px !important;
+}
+
+.audit-v4609-table-row:last-child {
+  border-bottom: 0 !important;
+}
+
+.audit-v4609-table-row > span {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13px !important;
+}
+
+.audit-v4609-table-row > div {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-size: 12px !important;
+}
+
+@keyframes vlmFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes vlmScaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* World-class clean A4 sheet styling */
+.vlm-browser-a4-sheet {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  padding: 3rem 3.5rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45) !important;
+  max-width: 54rem !important;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+.vlm-browser-a4-head {
+  border-bottom: 2px solid #1a1a1a !important;
+  padding-bottom: 1.5rem !important;
+  margin-bottom: 2rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
+
+.vlm-browser-a4-head h2 {
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: #000000 !important;
+  margin: 0.3rem 0 !important;
+}
+
+.vlm-browser-a4-head b {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #c59f4e !important;
+}
+
+.vlm-browser-a4-summary {
+  background: #fbfbfb !important;
+  border: 1px solid #e8e8e8 !important;
+  border-left: 4px solid #c59f4e !important;
+  border-radius: 8px !important;
+  padding: 1.25rem 1.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.vlm-browser-a4-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 8px !important;
+  padding: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  background: #fafafa !important;
+}
+
+.vlm-browser-a4-grid span {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+}
+
+.vlm-browser-a4-grid span strong {
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #666666 !important;
+}
+
+.vlm-browser-a4-grid span b {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+}
+
+.vlm-browser-a4-proof-passport,
+.vlm-browser-a4-legal-note {
+  border: 1px solid #eaeaea !important;
+  border-radius: 8px !important;
+  padding: 1rem 1.25rem !important;
+  margin-bottom: 1.5rem !important;
+  background: #fdfdfd !important;
+}
+
+.vlm-browser-a4-signature {
+  border-top: 1px solid #e0e0e0 !important;
+  padding-top: 1.5rem !important;
+  margin-top: 2.5rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 0.85rem !important;
+  color: #777777 !important;
+}
+
+
+/* Real Markets Table Grid Polish: Align Columns, Center Metrics, Align Chart */
+html body main.realmarkets-page-pass2319 .realmarkets-worldclass-pass2355 .realmarkets-pass578-grid.realmarkets-pass618-grid,
+html body main.realmarkets-page-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid,
+html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid,
+html body .realmarkets-pass578-grid.realmarkets-pass618-grid,
+.realmarkets-pass578-grid.realmarkets-pass618-grid {
+  grid-template-columns: minmax(12rem, 1.6fr) minmax(5.2rem, 0.75fr) repeat(3, minmax(3.8rem, 0.55fr)) minmax(6.5rem, 0.85fr) minmax(5.2rem, 0.72fr) minmax(7.2rem, 0.95fr) minmax(7.6rem, 1.0fr) !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  html body main.realmarkets-page-pass2319 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  html body main.realmarkets-page-pass2319 .realmarkets-worldclass-pass2355 .realmarkets-pass578-grid.realmarkets-pass618-grid,
+  html body main.realmarkets-page-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid,
+  html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid,
+  html body .realmarkets-pass578-grid.realmarkets-pass618-grid {
+    grid-template-columns: minmax(8.6rem, 1.15fr) minmax(4.6rem, 0.62fr) repeat(3, minmax(3.2rem, 0.45fr)) minmax(6.4rem, 0.85fr) minmax(4.4rem, 0.6fr) minmax(6.8rem, 0.9fr) minmax(7.4rem, 1.0fr) !important;
+    gap: 0.45rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+[data-pass2819-contained-overflow="realmarkets-desktop-table"] {
+  overflow-x: auto !important;
+  scrollbar-width: thin !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.realmarkets-sort-header-cell {
+  width: 100% !important;
+}
+.realmarkets-sort-header-cell.justify-end {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+.realmarkets-sort-header-cell.justify-center {
+  justify-content: center !important;
+  text-align: center !important;
+}
+.realmarkets-sort-header-cell.justify-start {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(2),
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(3),
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(4),
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(5),
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(6),
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(7) {
+  text-align: right !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+
+/* Compensate for header sort icon so data row numbers align strictly under the header text */
+[data-testid="realmarkets-row"] > :nth-child(2),
+[data-testid="realmarkets-row"] > :nth-child(3),
+[data-testid="realmarkets-row"] > :nth-child(4),
+[data-testid="realmarkets-row"] > :nth-child(5),
+[data-testid="realmarkets-row"] > :nth-child(6),
+[data-testid="realmarkets-row"] > :nth-child(7) {
+  padding-right: 1.05rem !important;
+}
+
+html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(8),
+html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid > .realmarkets-risk-cell-pass4600,
+html body .realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(8),
+html body .realmarkets-pass578-grid.realmarkets-pass618-grid > .realmarkets-risk-cell-pass4600,
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :nth-child(8) {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+.realmarkets-risk-cell-pass4600 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.realmarkets-risk-cell-pass4600 > button,
+[data-velmere-risk-history-trigger="verified-customer-projection-only"] {
+  max-width: 100% !important;
+  overflow: visible !important;
+  white-space: nowrap !important;
+}
+
+html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid > :last-child,
+html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid > .realmarkets-chart-cell-pass2333,
+html body .realmarkets-worldclass-pass2319 .realmarkets-pass578-grid.realmarkets-pass618-grid > .realmarkets-chart-cell-pass4502,
+html body .realmarkets-pass578-grid.realmarkets-pass618-grid > :last-child,
+html body .realmarkets-pass578-grid.realmarkets-pass618-grid > .realmarkets-chart-cell-pass2333,
+.realmarkets-pass578-grid.realmarkets-pass618-grid > :last-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+}
+
+.realmarkets-chart-cell-pass2333,
+.realmarkets-chart-cell-pass4502 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.realmarkets-chart-cell-pass4502 svg {
+  margin: 0 auto !important;
+}
+
+/* Monochrome Luxury Styling for Risk indicators in tables */
+.velmere-risk-pill,
+[data-risk-pill],
+[class*="risk-pill"],
+[class*="risk-badge"] {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #f0ede6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Shield & Shield Pro table row click cursor & polish */
+.shield-table-row-clickable,
+[data-shield-row] {
+  cursor: pointer !important;
+  transition: background 0.2s ease, border-color 0.2s ease !important;
+}
+
+.shield-table-row-clickable:hover,
+[data-shield-row]:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Shimmer Loading Skeleton for Modal Charts */
+.vlm-chart-loading-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+}
+
+.vlm-chart-loading-shimmer::after {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.04) 20%,
+    rgba(255, 255, 255, 0.08) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: vlmShimmer 2s infinite;
+  content: '';
+}
+
+@keyframes vlmShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Browser Ambient Luxury Shield - Authentic 1:1 shield.jpg Animation (Dimmed Ambient Background) */
+.browser-ambient-globe {
+  position: absolute !important;
+  z-index: 0 !important;
+  top: 3.5rem !important;
+  right: max(2.5rem, calc((100vw - 86rem) / 2 + 3.5rem)) !important;
+  width: 440px !important;
+  height: 440px !important;
+  opacity: 0.48 !important;
+  filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.2)) drop-shadow(0 0 50px rgba(30, 80, 220, 0.14)) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+@media (max-width: 1280px) {
+  .browser-ambient-globe {
+    top: 3rem !important;
+    right: 1.5rem !important;
+    width: 380px !important;
+    height: 380px !important;
+    opacity: 0.42 !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .browser-ambient-globe {
+    top: 2rem !important;
+    right: 1rem !important;
+    width: 320px !important;
+    height: 320px !important;
+    opacity: 0.35 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .browser-ambient-globe {
+    top: 1rem !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: 280px !important;
+    height: 280px !important;
+    opacity: 0.22 !important;
+  }
+}
+
+/* Shield Table Mini-Chart High Visibility & Crisp Parity */
+.shield-page-pass2356 .shield-mini-chart-pass2382,
+.shield-chart-cell-pass4502 svg {
+  overflow: visible !important;
+}
+
+.shield-page-pass2356 .shield-mini-chart-pass2382 path,
+.shield-page-pass2356 .shield-mini-chart-pass2382 polyline,
+.shield-chart-cell-pass4502 svg path,
+.shield-chart-cell-pass4502 svg polyline {
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Shield Table 1024px-1279px Desktop Grid Fit & Responsive Overflow Protection */
+.shield-page-pass2356 .shield-table-shell-pass2382 {
+  overflow-x: auto !important;
+  scrollbar-width: thin !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .shield-desktop-grid-head-pass4577,
+  .shield-desktop-grid-row-pass4577 {
+    grid-template-columns: minmax(11rem, 1.25fr) minmax(4.8rem, 0.65fr) repeat(4, minmax(3.8rem, 0.48fr)) minmax(5.4rem, 0.65fr) minmax(5.4rem, 0.65fr) minmax(4.8rem, 0.58fr) minmax(7.5rem, 0.85fr) !important;
+  }
+  .shield-grid-cell-pass4577 {
+    padding: 0.95rem 0.25rem !important;
+    font-size: 0.68rem !important;
+  }
+}
+
+

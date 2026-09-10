@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "velmere.worldclass-gates.v1",
+  "baselineSource": "VELMERE_PASS26_WORLDCLASS_18_GATES_V3.csv",
+  "baselineScore": 33.75,
+  "gates": [
+    {
+      "gateId": "G01",
+      "name": "Hermetyczna tożsamość źródła",
+      "weight": 4.0,
+      "baselineStatus": "STATIC-PROVEN",
+      "baselineCoefficient": 0.55,
+      "baselineContribution": 2.2
+    },
+    {
+      "gateId": "G02",
+      "name": "Exact runtime i hermetyczny install",
+      "weight": 5.0,
+      "baselineStatus": "BLOCKED",
+      "baselineCoefficient": 0.1,
+      "baselineContribution": 0.5
+    },
+    {
+      "gateId": "G03",
+      "name": "Semantic TypeScript, ESLint i pełne testy",
+      "weight": 5.0,
+      "baselineStatus": "BLOCKED",
+      "baselineCoefficient": 0.1,
+      "baselineContribution": 0.5
+    },
+    {
+      "gateId": "G04",
+      "name": "Dual build i minimalny runtime",
+      "weight": 5.0,
+      "baselineStatus": "BLOCKED",
+      "baselineCoefficient": 0.1,
+      "baselineContribution": 0.5
+    },
+    {
+      "gateId": "G05",
+      "name": "Browser E2E i journey coverage",
+      "weight": 3.0,
+      "baselineStatus": "PREPARED",
+      "baselineCoefficient": 0.25,
+      "baselineContribution": 0.75
+    },
+    {
+      "gateId": "G06",
+      "name": "WCAG 2.2 AA",
+      "weight": 4.0,
+      "baselineStatus": "PREPARED",
+      "baselineCoefficient": 0.25,
+      "baselineContribution": 1.0
+    },
+    {
+      "gateId": "G07",
+      "name": "PDF i customer artifact jako produkt",
+      "weight": 5.0,
+      "baselineStatus": "PREPARED",
+      "baselineCoefficient": 0.25,
+      "baselineContribution": 1.25
+    },
+    {
+      "gateId": "G08",
+      "name": "Web/API security",
+      "weight": 7.0,
+      "baselineStatus": "STATIC-PROVEN",
+      "baselineCoefficient": 0.55,
+      "baselineContribution": 3.85
+    },
+    {
+      "gateId": "G09",
+      "name": "AI/VLM/Angel security",
+      "weight": 6.0,
+      "baselineStatus": "SYNTHETIC-PROVEN",
+      "baselineCoefficient": 0.65,
+      "baselineContribution": 3.9
+    },
+    {
+      "gateId": "G10",
+      "name": "Kalibracja ryzyka i confidence",
+      "weight": 6.0,
+      "baselineStatus": "PREPARED",
+      "baselineCoefficient": 0.25,
+      "baselineContribution": 1.5
+    },
+    {
+      "gateId": "G11",
+      "name": "Realne dane i prawa providerów",
+      "weight": 10.0,
+      "baselineStatus": "PREPARED",
+      "baselineCoefficient": 0.25,
+      "baselineContribution": 2.5
+    },
+    {
+      "gateId": "G12",
+      "name": "Jakość audytów i wartość tierów",
+      "weight": 7.0,
+      "baselineStatus": "SYNTHETIC-PROVEN",
+      "baselineCoefficient": 0.65,
+      "baselineContribution": 4.55
+    },
+    {
+      "gateId": "G13",
+      "name": "IAM, RLS, KMS i izolacja tenantów",
+      "weight": 7.0,
+      "baselineStatus": "STATIC-PROVEN",
+      "baselineCoefficient": 0.55,
+      "baselineContribution": 3.85
+    },
+    {
+      "gateId": "G14",
+      "name": "Payments, entitlement, legal i privacy",
+      "weight": 7.0,
+      "baselineStatus": "PREPARED",
+      "baselineCoefficient": 0.25,
+      "baselineContribution": 1.75
+    },
+    {
+      "gateId": "G15",
+      "name": "Supply chain i provenance",
+      "weight": 5.0,
+      "baselineStatus": "STATIC-PROVEN",
+      "baselineCoefficient": 0.55,
+      "baselineContribution": 2.75
+    },
+    {
+      "gateId": "G16",
+      "name": "Reliability, DR i observability",
+      "weight": 6.0,
+      "baselineStatus": "IMPLEMENTED",
+      "baselineCoefficient": 0.4,
+      "baselineContribution": 2.4
+    },
+    {
+      "gateId": "G17",
+      "name": "Niezależna walidacja",
+      "weight": 5.0,
+      "baselineStatus": "MISSING",
+      "baselineCoefficient": 0.0,
+      "baselineContribution": 0.0
+    },
+    {
+      "gateId": "G18",
+      "name": "Kontrolowane LIVE cohorts",
+      "weight": 3.0,
+      "baselineStatus": "MISSING",
+      "baselineCoefficient": 0.0,
+      "baselineContribution": 0.0
+    }
+  ]
+}

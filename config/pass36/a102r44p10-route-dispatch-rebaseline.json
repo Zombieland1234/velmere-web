@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p10.route-dispatch-rebaseline.v2",
+  "revisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P9_ACTION_REQUIRED_INDEPENDENT_FINAL_AUDIT_SEMANTIC_GENERALIZATION_SKU_TRUTH_AND_REAL_LOCAL_E2E_NO_LIVE_CREDIT",
+  "routeDenominatorBefore": 160,
+  "routeDenominatorAfter": 160,
+  "changedRoutes": 3,
+  "changedFields": 6,
+  "removedRoutes": 0,
+  "addedRoutes": 0,
+  "methodExportChanges": 0,
+  "beforeManifestSha256": "3f435f532bd8c2c9085ff8e09a47a6b1825941a866e9dab39e52896696007706",
+  "afterManifestSha256": "5f24c3fbf83b9e662909097583b369d73e13ab0b7d4d21c1417ea85aa2728137",
+  "currentManifestSha256": "5f24c3fbf83b9e662909097583b369d73e13ab0b7d4d21c1417ea85aa2728137",
+  "routeAstRegistrySha256": "243c62bb488bacf848372fe3692befc379468c24acccebddc0427fcab8d9a614",
+  "lazyRouteManifestBeforeSha256": "3fe7ee3862cdb8984aed8149621c7a899d25c578a02c513cc7295e4253dd6cd8",
+  "lazyRouteManifestAfterSha256": "d68300e454facd69bc88a0bdc44361b98b06c9ddc2a896c8be0ce6f3f1fb8293",
+  "lazyProfileBeforeSha256": "79c7d697a569b4c231b7ce6ee7ef02fd9dd40e29d4e8f9669f1befc11106fa41",
+  "lazyProfileAfterSha256": "79c7d697a569b4c231b7ce6ee7ef02fd9dd40e29d4e8f9669f1befc11106fa41",
+  "parser": {
+    "source": "PROJECT_DEPENDENCY",
+    "version": "5.9.3",
+    "moduleSha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+    "moduleByteLength": 9112572,
+    "exactToolchainCreditEligible": true,
+    "pathDisclosure": "node_modules/typescript/lib/typescript.js",
+    "mode": "100644"
+  },
+  "changes": [
+    {
+      "group": "marketIntegrity",
+      "operation": "advanced-review-state",
+      "publicPath": "/api/market-integrity/advanced-review-state",
+      "handlerModule": "lib/server/market-integrity-route-modules/advanced-review-state.ts",
+      "changedFields": [
+        "handlerSha256",
+        "handlerBytes"
+      ],
+      "before": {
+        "methods": [
+          "GET"
+        ],
+        "handlerSha256": "ae56f32cdddb4f9431445dea01f8f91c42f35a7bbee640f85bd7d10438b0871c",
+        "handlerBytes": 3283
+      },
+      "after": {
+        "methods": [
+          "GET"
+        ],
+        "handlerSha256": "bd689484eb4df6b66e8cb45a4c68d4273ac0667338c83bf80711ea15e99a0f18",
+        "handlerBytes": 3349
+      }
+    },
+    {
+      "group": "marketIntegrity",
+      "operation": "report",
+      "publicPath": "/api/market-integrity/report",
+      "handlerModule": "lib/server/market-integrity-route-modules/report.ts",
+      "changedFields": [
+        "handlerSha256",
+        "handlerBytes"
+      ],
+      "before": {
+        "methods": [
+          "GET"
+        ],
+        "handlerSha256": "f262e778c2bf0b13bb8d1d251651ddb29144133f9379680d916537b3d36bfe06",
+        "handlerBytes": 40170
+      },
+      "after": {
+        "methods": [
+          "GET"
+        ],
+        "handlerSha256": "51712c4eb9fa26718ec194fa3a3f03da350168a29a51eef6bf101cb6da53774f",
+        "handlerBytes": 40164
+      }
+    },
+    {
+      "group": "security",
+      "operation": "audit-report-assembler",
+      "publicPath": "/api/security/audit-report-assembler",
+      "handlerModule": "lib/server/security-route-modules/audit-report-assembler.ts",
+      "changedFields": [
+        "handlerSha256",
+        "handlerBytes"
+      ],
+      "before": {
+        "methods": [
+          "GET"
+        ],
+        "handlerSha256": "b6c9d0f8ac7349efbb3361215446215aef234ff4a522cc7ea670e601889c02cd",
+        "handlerBytes": 10337
+      },
+      "after": {
+        "methods": [
+          "GET"
+        ],
+        "handlerSha256": "dd705d38dbe01d574fb750f91bb9670b4acdb16d815539730c5053b6b71e1c9f",
+        "handlerBytes": 10371
+      }
+    }
+  ],
+  "lazyChanges": [
+    {
+      "route": "app/api/angel/route.ts",
+      "change": "rebound_current_ast_and_bytes",
+      "changedFields": [
+        "handlerSha256",
+        "handlerBytes"
+      ]
+    }
+  ],
+  "truthBoundary": {
+    "reason": "Customer-truth and analysis-queue changes altered current handler bytes; routes and exported methods are retained.",
+    "denominatorCollapseAllowed": false,
+    "routeCreditRequiresFull1480Retest": true,
+    "lazyCreditRequiresFull176Retest": true,
+    "liveCredit": false
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "velmere.pass17.diff-from-pass16.v1",
+  "generatedAt": "2026-07-20T08:25:00Z",
+  "baseArtifact": {
+    "name": "VELMERE_PASS16_WORLDCLASS_300_2700_EVALUATION_SAFE_SOURCE.zip",
+    "sha256": "0679446578cbad50a775fd2d23fac10a32420554146e0a21933f8d10dcd12665"
+  },
+  "scope": "Source/evidence diff excluding generated .velmere diagnostics/gates, package manifest, verification and this diff report.",
+  "summary": {
+    "newFiles": 17,
+    "changedFiles": 4,
+    "removedFiles": 0,
+    "newBytes": 868456,
+    "changedCurrentBytes": 10174,
+    "changedPreviousBytes": 9473
+  },
+  "new": [
+    {
+      "path": "config/pass17/gate-policy.json",
+      "bytes": 4322,
+      "sha256": "4cd2e83814381b5081dcca72c226b880f765e1346b54378ece1a67b45f2a22ee"
+    },
+    {
+      "path": "config/pass17/market-output-adapter-policy.json",
+      "bytes": 2741,
+      "sha256": "fdbdcfe2b991b4fcba80b6bef255b95557c4e917c3c63735c1677ffcc07a96f9"
+    },
+    {
+      "path": "config/pass17/typescript-syntax-scan.json",
+      "bytes": 447,
+      "sha256": "373a16fba16dfce07fefe6768c55ff68a0063281759a01398cf03d15ff7bf72c"
+    },
+    {
+      "path": "docs/productization/PASS17_SHIELD_REAL_MARKETS_ADAPTER_PLAN.md",
+      "bytes": 1189,
+      "sha256": "05f4e998678b86c08e6bfa538fd11dc12d8b3c6b81e547c01d52430542755bd9"
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "bytes": 448548,
+      "sha256": "1fb5b8989e4384ed78faef48b14f7d13942bf73a271615116ff4a31ab40b95c2"
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-simulation-summary.json",
+      "bytes": 1290,
+      "sha256": "59a3f8e137fe57450f9d8de8203959368c2979d8cd175ebd7501dd70edb070f5"
+    },
+    {
+      "path": "evaluation/pass17/market-evidence-fixtures.json",
+      "bytes": 330702,
+      "sha256": "f2d4458e4541f629901de919e68d692e583203e8a2c5ecccf9e9ab5616e815be"
+    },
+    {
+      "path": "lib/worldclass/market-output-adapter.d.ts",
+      "bytes": 1390,
+      "sha256": "8305290295de3dc0d8d8e2497df2b7c70da5c85bc9ad76da5f6c9f6ffd9dd9b1"
+    },
+    {
+      "path": "lib/worldclass/market-output-adapter.mjs",
+      "bytes": 23041,
+      "sha256": "e88f06cd76933727bde69de7280adfca9a6d539acce2df5d6fa1e007007cfc43"
+    },
+    {
+      "path": "scripts/pass17/audit-clean-source.mjs",
+      "bytes": 11971,
+      "sha256": "86f9ab02353111cc26a68f784bf2c1184b929fa23e5e01a82e69a184cf91cccf"
+    },
+    {
+      "path": "scripts/pass17/audit-current-product-readiness.mjs",
+      "bytes": 6696,
+      "sha256": "c76c7bb11f7b3942872a2d73379c821d2b720dbe2c33274d78e3f6fe8a8644d4"
+    },
+    {
+      "path": "scripts/pass17/audit-runner-contract.mjs",
+      "bytes": 2279,
+      "sha256": "de217d8b3f30e466aded324331f5ff485214a0cd83290fdf699f8c16be105d82"
+    },
+    {
+      "path": "scripts/pass17/run-gate.mjs",
+      "bytes": 5617,
+      "sha256": "79aaf3d300253d3a1d2ea9fef1d4b5252adf0096a13a270c1abea7095cbdc84f"
+    },
+    {
+      "path": "scripts/pass17/run-typescript-syntax-scan.mjs",
+      "bytes": 2987,
+      "sha256": "c37c6ce7f5b69b813ece6750b42dbbcd3e3ccdcf2a8483ab455638b72465d510"
+    },
+    {
+      "path": "scripts/pass17/test-market-output-adapter-boundaries.mjs",
+      "bytes": 6376,
+      "sha256": "e64ea76d4ece27a96adb488ecebae6210f1bd6642481b6db9afa87223b2b6b64"
+    },
+    {
+      "path": "scripts/pass17/verify-market-output-adapters.mjs",
+      "bytes": 14677,
+      "sha256": "d2c7feddefe4eb304e1aa3f729a79a635ac8bfbd4124cd8767ffbc05f6f48407"
+    },
+    {
+      "path": "supabase/migrations/20260720000003_5002_worldclass_market_adapter_evidence.sql",
+      "bytes": 4183,
+      "sha256": "88e0117c08dde6c85c4c5d2815fc0288a2da137d400caed2c6a32536a901bfc2"
+    }
+  ],
+  "changed": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "before": {
+        "bytes": 1295,
+        "sha256": "61a2741b7fd3f33b0be59e07dc60f1d5608f6a41c43038690810cf14d38632b8"
+      },
+      "after": {
+        "bytes": 1636,
+        "sha256": "13cc75130760ccc255eee6b4efc2861a63252d8cf5056de0595419c5a8095173"
+      }
+    },
+    {
+      "path": "README.md",
+      "before": {
+        "bytes": 570,
+        "sha256": "88822c00f6ab5f01143d9aa7416612b7507619194aa9aefecd4295ab2a813326"
+      },
+      "after": {
+        "bytes": 617,
+        "sha256": "f331a3b0a00874b0fcd1676e2d15a0333164a2dcef696a4e00932b30a3404c0b"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "before": {
+        "bytes": 634,
+        "sha256": "bd6bc179d3d2cd4c5082ac34f10a19c40a89e5576d29aca6377ea81b74f1d42d"
+      },
+      "after": {
+        "bytes": 668,
+        "sha256": "a468c03fb79c8a26e3e06237dba5d4694e96af03e5a8a24994c1929b0be229e0"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "bytes": 6974,
+        "sha256": "a3556b2dc19cae2069f3f475e5b97c81de3635f6d91ef4ee5f120b8b25de04fb"
+      },
+      "after": {
+        "bytes": 7253,
+        "sha256": "dac02f27e8a1e9be376aa52402e0740272a3fe0af970fd70396b447ec3978ff8"
+      }
+    }
+  ],
+  "removed": [],
+  "truthBoundary": "Diff presence is not provider execution proof. The 900 adapter rows are synthetic simulations and canonical product outputs remain 0/2700."
+}

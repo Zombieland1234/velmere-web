@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "velmere.pass4781.visual-layout-freeze.v1",
+  "sourceCheckpoint": 4780,
+  "scope": [
+    "app excluding app/api and five logic-only files",
+    "components after reversible removal of seven runtime-unreachable historical components",
+    "public",
+    "styles"
+  ],
+  "excludedLogicOnlyFiles": [
+    "app/proof/market-integrity/[publicProofId]/page.tsx",
+    "app/proof/market-integrity/[publicProofId]/verify/page.tsx",
+    "app/proof/market-integrity/[publicProofId]/audit-trail/page.tsx",
+    "components/security/SecurityAuditWatchPage.tsx",
+    "app/[locale]/admin/import-products/page.tsx"
+  ],
+  "baselineFileCount": 525,
+  "baselineAggregateSha256": "efa71e8a7ef1321a1da75a6c885dac5923ef1953d8c242386493dc76b49de276",
+  "excludedRenderSurfaces": {
+    "app/proof/market-integrity/[publicProofId]/page.tsx": {
+      "marker": "    <main",
+      "suffixSha256": "727fb81abb8208c0163ba1ea20ee794889d8103dd936344795ec1f57bf806a87",
+      "suffixBytes": 2690
+    },
+    "app/proof/market-integrity/[publicProofId]/verify/page.tsx": {
+      "marker": "    <main",
+      "suffixSha256": "2ac6718c61db6761b5d1482bc4073df6586ecd2e0a12d905637c90b744972ca2",
+      "suffixBytes": 1713
+    },
+    "app/proof/market-integrity/[publicProofId]/audit-trail/page.tsx": {
+      "marker": "    <main",
+      "suffixSha256": "69107cabdbb973c4702322ae1cff561f874e0677467d7ac7d35526ab80084fb5",
+      "suffixBytes": 1818
+    },
+    "components/security/SecurityAuditWatchPage.tsx": {
+      "marker": "    <main\n      className=\"audit-redesign-pass4471",
+      "suffixSha256": "af14cbf9c8f2a03c1d3e537afd344993402f4d85cce95c2938d01cd3605a178e",
+      "suffixBytes": 63932
+    },
+    "app/[locale]/admin/import-products/page.tsx": {
+      "marker": "    <main className=\"min-h-[100dvh] bg-velmere-black text-white\">\n      <LuxurySection className=\"py-28 md:py-36\">",
+      "suffixSha256": "3a25db2876283ac9759fb7bf2efc7fcc394ebab1f13cb98c8f9477facad6b59e",
+      "suffixBytes": 25125
+    }
+  },
+  "rule": "Reachable customer-facing layout is unchanged. Seven runtime-unreachable historical components were moved to reversible archive. Five files changed only digest logic and must preserve their JSX render suffixes."
+}

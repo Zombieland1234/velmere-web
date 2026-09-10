@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "velmere.pass25.build-profile-policy.v1",
+  "nextVersion": "16.2.7",
+  "nodeVersion": "24.18.0",
+  "npmVersion": "11.16.0",
+  "defaultProfile": "balanced",
+  "profiles": {
+    "conservative": {
+      "cpus": 1,
+      "webpackBuildWorker": false,
+      "webpackMemoryOptimizations": true,
+      "workerThreads": false,
+      "parallelServerCompiles": false,
+      "parallelServerBuildTraces": false
+    },
+    "balanced": {
+      "cpus": 2,
+      "webpackBuildWorker": false,
+      "webpackMemoryOptimizations": true,
+      "workerThreads": false,
+      "parallelServerCompiles": false,
+      "parallelServerBuildTraces": false
+    },
+    "throughput": {
+      "cpus": 4,
+      "webpackBuildWorker": true,
+      "webpackMemoryOptimizations": false,
+      "workerThreads": false,
+      "parallelServerCompiles": true,
+      "parallelServerBuildTraces": true
+    }
+  },
+  "buildOutputs": {
+    "webpack": ".next-pass25-webpack",
+    "turbopack": ".next-pass25-turbopack"
+  },
+  "cacheModes": ["cold", "warm"],
+  "truthBoundary": "This policy validates deterministic build configuration and output separation. It does not prove a successful Next.js build."
+}

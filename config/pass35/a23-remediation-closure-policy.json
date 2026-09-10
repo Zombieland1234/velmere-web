@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "velmere.pass35.a23-remediation-closure-policy.v1",
+  "passId": "PASS35_A23",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "closureSeverityMaximum": "INFORMATIONAL",
+  "blockingRegressionSeverities": [
+    "HIGH",
+    "CRITICAL"
+  ],
+  "minimumEvidenceFamiliesPerRetest": 2,
+  "minimumCoverageDeltaForBehavioralControls": 0,
+  "requiredControlsByFindingFamily": {
+    "ACCESS_CONTROL_BYPASS": [
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A14"
+    ],
+    "REENTRANCY_STATE_ORDERING": [
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A14"
+    ],
+    "SUPPLY_ACCOUNTING_BREAK": [
+      "A05",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A14"
+    ],
+    "ORACLE_MANIPULATION": [
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A14"
+    ],
+    "UPGRADE_AUTHORIZATION": [
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A09",
+      "A11",
+      "A14"
+    ],
+    "DEPENDENCY_VULNERABILITY": [
+      "A05",
+      "A07",
+      "A08",
+      "A12",
+      "A14"
+    ],
+    "DENIAL_OF_SERVICE": [
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A14"
+    ],
+    "UNCHECKED_EXTERNAL_CALL": [
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A14"
+    ],
+    "BRIDGE_MESSAGE_VALIDATION": [
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A14"
+    ],
+    "SIGNATURE_REPLAY": [
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A14"
+    ],
+    "STORAGE_COLLISION": [
+      "A02",
+      "A05",
+      "A06",
+      "A07",
+      "A09",
+      "A11",
+      "A14"
+    ],
+    "LIQUIDITY_DRAIN": [
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A14"
+    ]
+  },
+  "behavioralControls": [
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A10"
+  ],
+  "benchmark": {
+    "families": [
+      "ACCESS_CONTROL_BYPASS",
+      "REENTRANCY_STATE_ORDERING",
+      "SUPPLY_ACCOUNTING_BREAK",
+      "ORACLE_MANIPULATION",
+      "UPGRADE_AUTHORIZATION",
+      "DEPENDENCY_VULNERABILITY",
+      "DENIAL_OF_SERVICE",
+      "UNCHECKED_EXTERNAL_CALL",
+      "BRIDGE_MESSAGE_VALIDATION",
+      "SIGNATURE_REPLAY",
+      "STORAGE_COLLISION",
+      "LIQUIDITY_DRAIN"
+    ],
+    "variantsPerFamily": 8,
+    "expectedCases": 192,
+    "expectedClosable": 96,
+    "expectedBlocked": 96,
+    "expectedDevelopment": 72,
+    "expectedValidation": 48,
+    "expectedFrozen": 72,
+    "mutationTypes": [
+      "reorder_retests",
+      "duplicate_retest",
+      "remove_required_retest",
+      "tamper_post_receipt",
+      "unchanged_source",
+      "unchanged_bytecode",
+      "drop_affected_component",
+      "add_high_regression",
+      "reopen_post_triage",
+      "cycle_patch_graph",
+      "tamper_integrity",
+      "paired_closure_flip"
+    ],
+    "expectedMutations": 2304
+  },
+  "thresholds": {
+    "minimumFrozenClosureAccuracy": 0.98,
+    "minimumFrozenUnsafeClosureSuppression": 1,
+    "minimumMutationKillRate": 0.99,
+    "maximumUnsafeClosures": 0,
+    "maximumFalseBlocksOnClosableCases": 0
+  },
+  "hardStops": {
+    "syntheticBenchmarkMayUnlockPaid": false,
+    "localClosureMayClaimRealFix": false,
+    "localClosureMayReplaceQualifiedReview": false,
+    "localClosureMayEnableAdvancedDelivery": false,
+    "localClosureMayClaimIndependentRetest": false,
+    "localClosureMayClaimCustomerValue": false
+  },
+  "truthBoundary": "A23 implements a deterministic evidence-bound remediation and retest closure contract for a declared local scope. It verifies exact pre/post subject bindings, patch impact coverage, family-derived retest applicability, regression findings, post-patch A14 triage, supersession and invalidation. The generated benchmark proves implementation consistency only. It does not prove a real vulnerability was fixed, does not replace official analyzers or qualified review, and cannot unlock paid delivery, signed closure, LIVE, customer value or independent assurance."
+}

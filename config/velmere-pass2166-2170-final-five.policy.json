@@ -1,0 +1,78 @@
+{
+  "pass": "PASS2166-2170",
+  "name": "Topka final 5 percent closer policy",
+  "honestActualCeilingUntilRuntimeReceipts": 89.9999,
+  "projectedIfAllRuntimeReceiptsPass": "95.4-96.0",
+  "noFake100Rule": true,
+  "scanTargets": [
+    "app",
+    "components",
+    "content",
+    "messages",
+    "lib"
+  ],
+  "publicHypeTerms": [
+    {
+      "term": "100%",
+      "safeReplacement": "release-candidate ready when all receipts pass",
+      "severity": "owner_review"
+    },
+    {
+      "term": "guaranteed profit",
+      "safeReplacement": "risk-aware informational analysis",
+      "severity": "blocker"
+    },
+    {
+      "term": "ROI",
+      "safeReplacement": "risk scenario / market context",
+      "severity": "owner_review"
+    },
+    {
+      "term": "certified",
+      "safeReplacement": "documented / receipt-backed",
+      "severity": "owner_review"
+    },
+    {
+      "term": "safest",
+      "safeReplacement": "risk-controlled / evidence-backed",
+      "severity": "owner_review"
+    },
+    {
+      "term": "best in the world",
+      "safeReplacement": "world-class target / benchmark-driven",
+      "severity": "owner_review"
+    },
+    {
+      "term": "topka \u015bwiata",
+      "safeReplacement": "world-class target / benchmark-driven",
+      "severity": "owner_review"
+    }
+  ],
+  "visualReceiptMinimums": {
+    "routes": 10,
+    "interactions": 20,
+    "viewports": [
+      "mobile",
+      "desktop"
+    ]
+  },
+  "performanceBudgets": {
+    "maxInitialJsKb": 250,
+    "maxRouteJsKb": 350,
+    "lcpMsMobile": 2500,
+    "inpMs": 200,
+    "cls": 0.1,
+    "imageOverKbReview": 350
+  },
+  "acceptanceDomains": [
+    "runtime",
+    "commerce",
+    "legal",
+    "visual",
+    "performance",
+    "security",
+    "observability",
+    "trust",
+    "innovation"
+  ]
+}

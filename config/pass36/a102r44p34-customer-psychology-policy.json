@@ -1,0 +1,41 @@
+{
+  "customerProof": {
+    "customerProven": false,
+    "realParticipants": 0,
+    "staticMatrixNeverCountsAsCustomerProof": true
+  },
+  "ethics": {
+    "darkPatternsForbidden": true,
+    "fakeScarcityForbidden": true,
+    "hiddenLimitationsForbidden": true,
+    "manipulativeFearCopyForbidden": true,
+    "paidTierCannotChangeUnderlyingTruth": true
+  },
+  "fullRuntimeDueAt": "A102R44P36",
+  "measurementDomains": [
+    "tenSecondValueUnderstanding",
+    "resultComprehension",
+    "limitationComprehension",
+    "cognitiveLoad",
+    "factVsDerivedVsSimulation",
+    "riskClarity",
+    "nextActionClarity",
+    "priceFairness",
+    "errorRecoveryTrust",
+    "dataControlTrust",
+    "purchaseIntent",
+    "refundIntent",
+    "falseSafetyRisk"
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P33_ACTION_REQUIRED_EXTERNAL_CI_STRIPE_MOCK_PROTOCOL12_SIGSTORE_OIDC_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "personas": 30,
+  "revisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "rows": 540,
+  "schemaVersion": "velmere.pass36.a102r44p34.customer-psychology-policy.v1",
+  "stepsPerPersona": 18,
+  "testCycle": {
+    "current": 1,
+    "total": 3
+  },
+  "truthBoundary": "R44P34 creates and statically verifies the expanded psychology matrix. It does not claim real-person comprehension, purchase intent, refund rate or customer-proven value."
+}

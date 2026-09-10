@@ -1,0 +1,974 @@
+{
+  "schemaVersion": "velmere.pass35.current-status-register.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "evaluatedAt": "2026-07-23T20:20:00.000Z",
+  "canonicalCurrentTruth": true,
+  "globalDecision": "NO_GO",
+  "promotionAllowed": false,
+  "sellEnabledCount": 0,
+  "externalVerifiedEvidence": "0/3074",
+  "statusPrecedence": [
+    "this register",
+    "A32 roadmap current-status section",
+    "machine-generated readiness dashboard",
+    "A31 and earlier addenda as historical implementation notes only",
+    "base roadmap as target requirements"
+  ],
+  "allowedStatuses": [
+    "DONE",
+    "PARTIAL",
+    "BLOCKED_EXTERNAL",
+    "NOT_DONE"
+  ],
+  "rows": [
+    {
+      "id": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "domain": "SOURCE",
+      "status": "DONE",
+      "doneEvidence": [
+        "SOURCE_ONLY/EVIDENCE_HISTORY split",
+        "portable source-package manifests",
+        "detached receipt v2 verifier",
+        "two extraction paths verified in A4"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL",
+      "nextAction": "Repeat after every final-byte change.",
+      "sellImpact": "Does not enable sale; it only proves local package coherence."
+    },
+    {
+      "id": "SRC02_EXACT_RUNTIME_NODE_NPM",
+      "domain": "SOURCE",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "Runtime contract pins Node 24.18.0 and npm 11.16.0",
+        "A19 official Node 24.18.0 Linux x64 archive SHA-256 pinned to 55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742",
+        "A19 npm 11.16.0 intake requires registry integrity and registry-signature verification",
+        "A19 exact command matrix covers npm ci, typecheck, lint, full PASS35 tests, Webpack/Turbopack builds and smokes, and pre/post source immutability",
+        "A19 exact-runtime bootstrap mutation suite 31/31 PASS"
+      ],
+      "missing": [
+        "actual Node 24.18.0 archive in execution environment",
+        "actual npm 11.16.0 archive plus verified registry integrity/signature",
+        "complete exact-runtime command execution on final source bytes",
+        "hash-bound clean-machine logs"
+      ],
+      "blocker": "TOOLCHAIN_ARCHIVES_AND_EXACT_EXECUTION_UNAVAILABLE_IN_CURRENT_ENVIRONMENT",
+      "nextAction": "Supply the pinned runtime archives, verify their upstream integrity, then execute the complete A19 matrix on frozen final bytes without source mutation.",
+      "sellImpact": "A19 upgrades exact runtime from pin-only NOT_DONE to a fail-closed executable bootstrap contract; production-ready and SR00 promotion remain blocked until actual execution passes."
+    },
+    {
+      "id": "SRC03_INDEPENDENT_PACKAGE_VERIFY",
+      "domain": "SOURCE",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "Verifier and empty-by-default trust anchor policy exist"
+      ],
+      "missing": [
+        "independent clean-machine verifier",
+        "organizational signature",
+        "independent signature"
+      ],
+      "blocker": "EXTERNAL_SIGNERS_REQUIRED",
+      "nextAction": "Two authorized parties verify and sign detached archive hashes.",
+      "sellImpact": "Blocks release promotion, not local development."
+    },
+    {
+      "id": "PC00_PRODUCT_CELL_CATALOG",
+      "domain": "CATALOG",
+      "status": "DONE",
+      "doneEvidence": [
+        "30 product-cell records",
+        "legacy SKU mappings",
+        "sellEnabled=false for every cell",
+        "server and UI stop-sell",
+        "A9 non-visual tier-content contract covers 5 surfaces x 3 tiers and separates Advanced Automated from optional Human Review"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL",
+      "nextAction": "Keep catalog synchronized with exact SKU/readiness changes.",
+      "sellImpact": "Prevents accidental charge; does not make any cell sell-ready."
+    },
+    {
+      "id": "FG00_FLAGSHIP_DECISION",
+      "domain": "GOVERNANCE",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "Audit EVM Pro is documented as engineering recommendation",
+        "signed decision verifier exists"
+      ],
+      "missing": [
+        "observed ICP workflow",
+        "paid-intent evidence",
+        "signed flagship contract",
+        "continue/pivot/kill decision"
+      ],
+      "blocker": "CUSTOMER_DISCOVERY_AND_SIGNED_DECISION_REQUIRED",
+      "nextAction": "Execute discovery and sign exactly one flagship product-cell decision.",
+      "sellImpact": "Global portfolio scale remains capped and NO_GO."
+    },
+    {
+      "id": "ORG00_OWNERSHIP_CAPACITY",
+      "domain": "GOVERNANCE",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "18-control RACI/capacity verifier exists"
+      ],
+      "missing": [
+        "named responsible/accountable/backup owners",
+        "budgets",
+        "capacity",
+        "conflict declarations",
+        "trusted signatures"
+      ],
+      "blocker": "ORGANIZATIONAL_DECISION_REQUIRED",
+      "nextAction": "Complete and sign ORG00 control records.",
+      "sellImpact": "Affected gates cannot pass without owners/capacity."
+    },
+    {
+      "id": "LEGAL01_APPLICABILITY_TERMS",
+      "domain": "LEGAL",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "26-field legal intake and fail-closed matrix exist"
+      ],
+      "missing": [
+        "Legal/DPO signed applicability",
+        "consumer terms",
+        "privacy decisions",
+        "financial-regulatory perimeter"
+      ],
+      "blocker": "LEGAL_DPO_REVIEW_REQUIRED",
+      "nextAction": "Obtain signed jurisdiction/product decisions and customer terms.",
+      "sellImpact": "Blocks commercial release and public claims."
+    },
+    {
+      "id": "DATA01_PROVIDER_RIGHTS",
+      "domain": "DATA",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "21-provider rights denominator and read-only intake exist"
+      ],
+      "missing": [
+        "current commercial rights",
+        "display/export/PDF permissions",
+        "derived-data/RAG rights",
+        "provider exit evidence"
+      ],
+      "blocker": "PROVIDER_CONTRACTS_REQUIRED",
+      "nextAction": "Bind signed rights records to each offered field and product-cell.",
+      "sellImpact": "Blocks Real Markets, Shield, PDF and AI paid delivery."
+    },
+    {
+      "id": "SEC01_LOCAL_SECURITY_CONTROLS",
+      "domain": "SECURITY",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "central entitlement stop-sell",
+        "path/output helper hardening",
+        "fixture isolation",
+        "static/offline RLS and security contracts"
+      ],
+      "missing": [
+        "real multi-account staging RLS",
+        "independent application/API/cloud retest",
+        "zero open Critical/High evidence",
+        "real secret/KMS rotation drill"
+      ],
+      "blocker": "STAGING_AND_INDEPENDENT_RETEST_REQUIRED",
+      "nextAction": "Run real staging tenant-isolation and independent security review.",
+      "sellImpact": "Blocks production-ready state."
+    },
+    {
+      "id": "PAY01_PAYMENT_ENTITLEMENT_REFUND",
+      "domain": "PAYMENTS",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "no-readiness/no-charge invariant",
+        "SKU/account/surface binding",
+        "local lifecycle contracts"
+      ],
+      "missing": [
+        "Stripe/BLIK staging matrix",
+        "webhook reorder/replay tests on real test services",
+        "refund/reconciliation evidence",
+        "controlled live canary"
+      ],
+      "blocker": "REAL_PAYMENT_STAGING_REQUIRED",
+      "nextAction": "Execute full staging lifecycle and reconciliation.",
+      "sellImpact": "Blocks charging customers."
+    },
+    {
+      "id": "OPS01_STAGING_RLS_SERVICES",
+      "domain": "OPERATIONS",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "19-item staging plan and intake verifier exist"
+      ],
+      "missing": [
+        "real Supabase accounts",
+        "real provider/model/payment/email/storage integrations",
+        "19/19 staging receipts"
+      ],
+      "blocker": "REAL_SERVICES_AND_SECRETS_REQUIRED",
+      "nextAction": "Provision isolated staging and execute all K0 journeys.",
+      "sellImpact": "Blocks production readiness and live canary."
+    },
+    {
+      "id": "OPS02_OBSERVABILITY_DR_ROLLBACK",
+      "domain": "OPERATIONS",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "runbooks and local control contracts exist"
+      ],
+      "missing": [
+        "measured SLOs",
+        "alert delivery proof",
+        "backup restore",
+        "rollback and vendor-exit drills"
+      ],
+      "blocker": "REAL_ENVIRONMENT_EXECUTION_REQUIRED",
+      "nextAction": "Execute restore/rollback/provider-loss drills in staging.",
+      "sellImpact": "Blocks production-ready claim."
+    },
+    {
+      "id": "AUD01_A01_IDENTITY_CHAIN_BINDING",
+      "domain": "AUDIT",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "source/ABI/compiler/provenance validation",
+        "provider-bound JSON-RPC receipt adapter",
+        "local fixture contract tests"
+      ],
+      "missing": [
+        "real non-loopback provider execution",
+        "commercial rights",
+        "real verified deployment/source case"
+      ],
+      "blocker": "REAL_PROVIDER_CASE_REQUIRED",
+      "nextAction": "Execute one real provider-bound contract case and bind source/deployment receipts.",
+      "sellImpact": "Audit Basic/Pro cannot claim real execution yet."
+    },
+    {
+      "id": "AUD02_A02_COMPILER_REPRODUCTION",
+      "domain": "AUDIT",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "pinned solc standard-json adapter",
+        "link-reference fail-closed",
+        "immutable binding",
+        "metadata stripping"
+      ],
+      "missing": [
+        "official solc binary execution",
+        "binary hash",
+        "real compiler settings/libraries",
+        "real deployed bytecode match"
+      ],
+      "blocker": "OFFICIAL_SOLC_AND_REAL_CASE_REQUIRED",
+      "nextAction": "Run official pinned solc on a verified-source provider-bound case.",
+      "sellImpact": "Blocks source-to-bytecode reproducibility claim."
+    },
+    {
+      "id": "AUD03_A03_THREAT_MODEL",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound exact chain/block/source/runtime/deployment/architecture/A29 receipt bindings",
+        "complete component, critical-asset and actor registries with evidence digests",
+        "trust-boundary, data-flow and state-changing entry-point access coverage",
+        "protocol/market/oracle/governance/dependency/operations assumption registry with invalidation triggers",
+        "critical/high asset invariants bound to component and test receipts",
+        "abuse-case preconditions, entry points, affected boundaries and target assets",
+        "acyclic attack-step paths, tested mitigations, residual risk and explicit limitations",
+        "exact coverage denominators and deterministic local replay",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A03_THREAT_MODEL_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A30 contract against a rights-approved real protocol architecture, conduct a reviewer-led workshop, validate protocol-specific assumptions and independently adjudicate business logic and unmodeled threats.",
+      "sellImpact": "Completes the declared local A03 evidence-integrity implementation only; Audit Pro/Advanced remain blocked by real architecture evidence, qualified human review and remaining external gates."
+    },
+    {
+      "id": "AUD04_A04_PRIVILEGE_CONTROL",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound exact chain/block/source/runtime/deployment/A29/A30/role-state bindings",
+        "role definitions and principal identity/current-state evidence with holder receipts",
+        "complete privileged selector to required-role and authorization coverage",
+        "acyclic role-admin graph with explicit default-admin control",
+        "proxy implementation/admin authority and upgrade-role binding",
+        "multisig/timelock delegation with direct-bypass prohibition",
+        "separation-of-duties rules and runtime conflict evaluation",
+        "bounded privilege-escalation paths with prerequisites and mitigations",
+        "grant/revoke/renounce/emergency-revoke/admin-recovery lifecycle evidence",
+        "hidden delegatecall/arbitrary-call/assembly/fallback privileged surface mapping",
+        "deterministic local privilege replay and coverage denominators",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A04_PRIVILEGE_AUTHORIZATION_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A31 contract against current rights-approved on-chain role holders, proxy/admin slots, real multisig/timelock state and operational custody; then obtain qualified manual authorization-path and hidden-business-logic review plus an independent rerun.",
+      "sellImpact": "Completes the declared local A04 evidence-integrity implementation only; Audit Pro/Advanced remain blocked by real chain state, manual review and external gates."
+    },
+    {
+      "id": "AUD05_A05_LOCAL_STATIC_LANES",
+      "domain": "AUDIT",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "two deterministic local heuristic lanes",
+        "raw-output digests",
+        "false paid eligibility blocked",
+        "A19 15-family Solidity structural prescreen benchmark: 240 balanced vulnerable/remediated cases",
+        "A19 disjoint development/validation/frozen split with frozen recall, specificity, precision and F1 all 1.0 for declared local patterns",
+        "A19 2880/2880 mutation campaign covering comment/string decoys, formatting, renaming, helpers and paired remediation flips"
+      ],
+      "missing": [
+        "real independently labeled contract corpus",
+        "false-positive adjudication on real protocols",
+        "official external analyzer family execution",
+        "independent rerun and failure-domain review"
+      ],
+      "blocker": "REAL_CORPUS_EXTERNAL_FAMILIES_AND_INDEPENDENT_ADJUDICATION_REQUIRED",
+      "nextAction": "Run the frozen A19 scanner and official pinned analyzer families on rights-approved real contracts with blind independent labels and disagreement adjudication.",
+      "sellImpact": "The local Basic prescreen implementation is benchmarked for its declared synthetic scope, but A05 paid credit and full-audit claims remain blocked."
+    },
+    {
+      "id": "AUD06_A05_SLITHER_ADAPTER",
+      "domain": "AUDIT",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "Slither version/hash/config/input/raw-output adapter",
+        "fixture execution and mutation tests"
+      ],
+      "missing": [
+        "official Slither installation",
+        "real case execution",
+        "independent benchmark"
+      ],
+      "blocker": "OFFICIAL_TOOL_UNAVAILABLE",
+      "nextAction": "Run pinned official Slither on the same real case.",
+      "sellImpact": "External family credit remains zero."
+    },
+    {
+      "id": "AUD07_A05_SEMGREP_ADAPTER",
+      "domain": "AUDIT",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "Semgrep executable/ruleset/target/raw-output binding adapter",
+        "fixture execution and mutation tests"
+      ],
+      "missing": [
+        "official Semgrep installation",
+        "real case execution",
+        "independent ruleset benchmark",
+        "failure-domain independence decision"
+      ],
+      "blocker": "OFFICIAL_TOOL_UNAVAILABLE",
+      "nextAction": "Run pinned official Semgrep and document independence/equivalence.",
+      "sellImpact": "Second adapter exists, but second validated family credit remains zero."
+    },
+    {
+      "id": "AUD08_A06_BOUNDED_CFG_PATH",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "push-aware EVM decoder and structural CFG",
+        "bounded abstract stack interpreter",
+        "constant folding and supported symbolic variables",
+        "calldata/caller/call-value/block/storage equality and range constraints",
+        "constant and contradictory branch pruning",
+        "reachable risk-opcode path prerequisites",
+        "dynamic-jump and truncation fail-closed states",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A06_IMPLEMENTATION",
+      "nextAction": "Execute the A21 receipt model on rights-approved real bytecode, compare with an official solver-backed analyzer and obtain qualified exploitability adjudication.",
+      "sellImpact": "Completes the declared local bounded A06 implementation only; Audit Pro remains blocked by official analyzers, real cases, A07-A10 evidence, reviewer adjudication, staging and benchmark gates."
+    },
+    {
+      "id": "AUD09_A07_EXACT_TESTS",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound exact behavior registry and target/compiler/runtime identity",
+        "required success and revert outcomes with exact selectors",
+        "required assertion registry and per-execution assertion results",
+        "critical/high/medium behavior coverage floors",
+        "declared branch and state-transition coverage accounting",
+        "baseline-state reset and cross-test isolation receipts",
+        "deterministic repeat-result and flaky-test budget",
+        "exact runner executable/version/config/raw-output binding",
+        "mutation registry and minimum mutation kill-rate gate",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A07_EXACT_TEST_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A25 evidence contract with pinned official Forge and solc against one provider-bound verified real contract, bind exact coverage and raw receipts, then obtain an independent rerun.",
+      "sellImpact": "Completes the declared local A07 evidence-integrity and coverage implementation only; Audit Pro remains blocked by official Forge/solc execution, real customer-case tests, EVM equivalence, independent rerun and the remaining external gates."
+    },
+    {
+      "id": "AUD10_A08_FUZZ_INVARIANTS",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound invariant/component/criticality/property registry",
+        "exact source/runtime/compiler/model/corpus/runner binding",
+        "critical and high invariant coverage floors",
+        "declared state-key coverage accounting",
+        "minimum campaign-run and distinct-seed floors",
+        "deterministic trace replay and zero-flaky-run gate",
+        "counterexample receipt and shrink-quality gate",
+        "mutation registry and mutation kill-rate gate",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A08_FUZZ_INVARIANT_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A26 evidence contract with pinned official Foundry and/or Echidna against one provider-bound compiled real contract, prove implementation-model equivalence, preserve raw corpus/seed/coverage receipts and obtain independent adjudication.",
+      "sellImpact": "Completes the declared local A08 evidence-integrity implementation only; Audit Pro remains blocked by official engines, compiled-EVM execution, real-case equivalence, independent adjudication and remaining external gates."
+    },
+    {
+      "id": "AUD11_A09_FORK_REPLAY",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound exact chain, block, contract, source/runtime/deployment and provider-rights receipt bindings",
+        "snapshot pre/post state-root and isolation receipt binding",
+        "ordered transaction sequence with status, return-data, log and state-diff digests",
+        "pre-to-post state-root continuity for every transaction",
+        "critical/high assertion and state-key coverage floors",
+        "complete dependency code/state/balance snapshot coverage",
+        "minimum isolated replay-run floor and deterministic repeated results",
+        "mutation registry and mutation kill-rate gate",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A09_FORK_REPLAY_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A27 evidence contract with a pinned official native fork runner against one rights-approved provider-bound verified deployment, replay a historical exploit or real customer workflow, preserve exact raw receipts and obtain an independent rerun.",
+      "sellImpact": "Completes the declared local A09 evidence-integrity implementation only; Audit Pro remains blocked by official native fork execution, real provider rights/data, historical or customer replay, independent adjudication and remaining external gates."
+    },
+    {
+      "id": "AUD12_A10_ECONOMIC_ADVERSARIAL",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound exact target, block, source/runtime/deployment, methodology, model-config and A27 replay bindings",
+        "five mandatory scenario families: oracle manipulation, MEV sandwich, liquidity drain, governance takeover and privileged-key compromise",
+        "independent evidence-family and attack-prerequisite registries with critical/high coverage floors",
+        "sorted monotonic sensitivity grids and bounded lower/central/upper loss estimates",
+        "acyclic scenario-dependency graph and unresolved-conflict fail-closed gate",
+        "bounded correlation to local A27 replay receipts without official-fork claim",
+        "deterministic repeated model-output and mutation-score gates",
+        "strict no-exploit, no-realized-loss and no-probability claim boundary",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A10_ECONOMIC_ADVERSARIAL_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A28 contract on current rights-approved venue, oracle, governance, privilege and state inputs; correlate it with an official forked-EVM replay of a real provider-bound case and obtain qualified independent adjudication.",
+      "sellImpact": "Completes the declared local A10 evidence-integrity implementation only; Audit Pro remains blocked by real rights-approved inputs, official replay correlation, exploitability validation, qualified review and remaining external gates."
+    },
+    {
+      "id": "AUD13_A11_UPGRADE_DEPLOYMENT_OPS",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "case-bound exact target, block, source/runtime/deployment, architecture and A28 evidence bindings",
+        "proxy/admin/implementation/beacon slot evidence and authorization policy binding",
+        "unique-owner multisig quorum and timelock delay/role/bypass gates",
+        "initializer protection, UUPS UUID validation and storage-layout compatibility",
+        "upgrade simulation, bounded rollback plan and explicit no-guarantee boundary",
+        "pause/emergency council, independent unpause approval and incident runbook evidence",
+        "key rotation/recovery controls and three compromise-response scenarios",
+        "critical/high operations assertion coverage and deterministic local replay",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A11_UPGRADE_DEPLOYMENT_OPERATIONS_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute the A29 contract against current on-chain proxy/admin slots, real multisig/timelock configuration, hardware-key custody and a controlled staging upgrade/rollback drill; obtain qualified independent review.",
+      "sellImpact": "Completes the declared local A11 evidence-integrity implementation only; Audit Pro remains blocked by current on-chain evidence, real operational drills, qualified review, staging and remaining external gates."
+    },
+    {
+      "id": "AUD14_A12_DEPENDENCY_LICENSE_CVE",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "Velmere repository SBOM and supply-chain controls",
+        "A20 case-bound source/import dependency graph with traversal, unresolved and cycle controls",
+        "A20 file-level SPDX mapping plus allowed/forbidden/missing/invalid states",
+        "A20 package identity/version conflict mapping and hash-bound advisory registry matching",
+        "A20 exact source-digest expectations and tamper-evident report receipt",
+        "A20 200-case frozen benchmark and 2400/2400 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_A12_IMPLEMENTATION",
+      "nextAction": "Execute the frozen A20 A12 runtime on rights-approved real contracts using a current independently maintained advisory registry, then obtain legal and reviewer adjudication.",
+      "sellImpact": "A12 local implementation is complete, but paid Audit Pro remains blocked by real case execution, advisory completeness/freshness, official analyzers, reviewer adjudication, rights and staging."
+    },
+    {
+      "id": "AUD15_A13_MANUAL_REVIEW",
+      "domain": "AUDIT",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "review queue and release gate are fail-closed"
+      ],
+      "missing": [
+        "qualified reviewer",
+        "conflict declaration",
+        "business-logic review",
+        "second-auditor sample"
+      ],
+      "blocker": "QUALIFIED_HUMAN_REVIEWER_REQUIRED",
+      "nextAction": "Contract and calibrate reviewer pool with backup capacity.",
+      "sellImpact": "Blocks Advanced and limits Pro assurance."
+    },
+    {
+      "id": "AUD16_A14_SEVERITY_TRIAGE",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "finding schema separates severity, confidence, evidence and limitations",
+        "evidence-bound deterministic severity features and hard caps",
+        "path-feasibility and critical-justification enforcement",
+        "asset-at-risk and single-user to cross-protocol blast-radius classification",
+        "evidence-bound attack-chain graph with cycle rejection",
+        "two frozen scoring profiles with visible disagreement and uncertainty caps",
+        "192-case frozen benchmark and 2304 mutation campaign",
+        "zero false or unjustified Critical findings in the generated benchmark"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A14_TRIAGE_IMPLEMENTATION",
+      "nextAction": "Run the A22 triage receipt on blinded real findings, obtain at least two qualified independent adjudicators, measure agreement/confidence intervals and bind exploitability review to exact protocol evidence.",
+      "sellImpact": "Completes the declared local A14 triage implementation only; paid findings remain blocked by real analyzer receipts, real protocol corpus, qualified adjudication, staging, customer value and independent assurance."
+    },
+    {
+      "id": "AUD17_A15_REMEDIATION_RETEST",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "fail-closed finding-to-patch evidence-chain adapter",
+        "exact original/patched source and runtime-bytecode separation",
+        "family-derived A02-A14 retest applicability matrix",
+        "patch-impact graph covers every affected component and rejects cycles",
+        "distinct pre/post receipt binding and evidence-family floors",
+        "behavioral coverage non-regression and surviving-finding rejection",
+        "new High/Critical regression finding rejection",
+        "post-patch A14 triage must be Suppressed or Informational",
+        "supersession and invalidation triggers bound to closure receipt",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A15_REMEDIATION_CLOSURE_IMPLEMENTATION",
+      "nextAction": "Execute the A23 closure contract on a real rights-approved finding and exact patch using official applicable analyzers, then obtain qualified reviewer attestation and an independent signed retest.",
+      "sellImpact": "Completes the declared local A15 closure contract only; customer finding closure and Advanced delivery remain blocked by real execution, reviewer signatures, independent retest, staging and customer proof."
+    },
+    {
+      "id": "AUD18_A16_REPORT_DELIVERY",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "exact canonical packet/facts/findings/source revision/report schema bindings",
+        "complete applicable analyzer receipt index with raw/normalized/tool-method digests and local claim boundaries",
+        "FACT/FINDING/INFERENCE/ASSUMPTION/LIMITATION/NOT_TESTED taxonomy and section-to-claim references",
+        "critical report section and required tier-field coverage with Pro-to-Advanced leakage prevention",
+        "sensitive-finding redaction and separate private-lane references",
+        "server-authorized account/case/tier entitlement binding",
+        "4-page Pro and 8-page Advanced machine-sealed artifact integrity",
+        "one-time expiring download token, replay rejection and delivery audit trail",
+        "correction supersession, old-download revocation, invalidation triggers and immutable history",
+        "scope/limitation/not-tested/false-safety comprehension acknowledgement contract",
+        "PII/secret minimization plus retention/delete/export/backup-expiry controls",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A16_REPORT_DELIVERY_EVIDENCE_IMPLEMENTATION",
+      "nextAction": "Execute A32 against complete real analyzer receipts in multi-account staging, prove cross-tenant isolation and account-bound delivery, conduct customer comprehension and willingness-to-pay evaluation, and obtain qualified/independent signed review where required.",
+      "sellImpact": "Completes the declared local A16 evidence-integrity and private-delivery implementation only; Audit Pro/Advanced remain blocked by real analyzer execution, staging, customer value and external gates."
+    },
+    {
+      "id": "AUD19_A17_MONITORING",
+      "domain": "AUDIT",
+      "status": "DONE",
+      "doneEvidence": [
+        "six required A17 rule families and exact target/audit/report bindings",
+        "canonical event validation and deterministic block/log/time ordering",
+        "duplicate chain/tx/log/type identity suppression",
+        "structured threshold evaluation for admin, proxy, pause, supply, liquidity and oracle events",
+        "hash-bound triggered-rule and incident receipts",
+        "alert delivery SLA and acknowledgement SLA gates",
+        "required playbook-action completion gate",
+        "required customer-communication completion gate",
+        "post-condition and all-or-nothing local incident closure",
+        "192-case frozen benchmark and 2304 mutation campaign"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL_FOR_DECLARED_BOUNDED_A17_MONITORING_LIFECYCLE_IMPLEMENTATION",
+      "nextAction": "Deploy the A24 rule and lifecycle contract with a rights-approved live monitoring provider in isolated staging, prove delivered alerts and on-call acknowledgements, execute one pause/upgrade response drill and bind real customer communication receipts.",
+      "sellImpact": "Completes the declared local A17 event and incident-lifecycle implementation only; full lifecycle monitoring and paid delivery remain blocked by live provider execution, rights, staging, real acknowledgements/actions/communications and independent review."
+    },
+    {
+      "id": "PDF01_LOCAL_CORPUS_QA",
+      "domain": "PDF",
+      "status": "DONE",
+      "doneEvidence": [
+        "150 deterministic PDFs",
+        "50 Basic/50 Pro/50 Advanced",
+        "700 pages",
+        "3359/3359 verifier + zero visible truncation and duplicate-period markers",
+        "blank/edge raster checks"
+      ],
+      "missing": [],
+      "blocker": "NONE_LOCAL",
+      "nextAction": "Retain as renderer regression corpus.",
+      "sellImpact": "Proves layout/contract only; gives zero customer-value or live credit."
+    },
+    {
+      "id": "PDF02_REAL_TIER_VALUE",
+      "domain": "PDF",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "tier page-count and fail-closed contracts",
+        "A9 exact 2/4/8-page content contract bound to the same canonical packet as UI",
+        "A16 exact 21-packet / 126-channel identity and facts parity including 2/4/8-page PDF projections",
+        "A17 physical canonical packet PDFs for all 21 surface/tier cells: Basic 2, Pro 4, Advanced 8 pages; 98 total pages; exact packet/facts/claim set binding",
+        "A17 PDF verifier rejects packet hash, facts hash, claim-set, page-count, safety-boundary and byte-digest mismatch",
+        "A18 PDF Delivery Basic-to-Pro and Pro-to-Advanced structural value is included in the blinded 350-case/700-comparison program and page-count-only filler is mutation-killed"
+      ],
+      "missing": [
+        "current real canonical packets",
+        "live provider families",
+        "blind Basic-to-Pro-to-Advanced customer outcome benchmark",
+        "customer comprehension and willingness-to-pay"
+      ],
+      "blocker": "REAL_DATA_AND_CUSTOMER_BENCHMARK_REQUIRED",
+      "nextAction": "Run the same A17 physical PDF delivery and A18 blind value contract on current rights-approved packets with customer comprehension and willingness-to-pay labels.",
+      "sellImpact": "PDF functional delivery is locally complete, but Pro/Advanced remain not for sale until real evidence and purchase-worthiness pass."
+    },
+    {
+      "id": "MKT01_SHIELD_REAL_DATA",
+      "domain": "SHIELD",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "offline product logic",
+        "fail-closed provider states",
+        "synthetic 50-case matrix",
+        "A9 exact Shield and Shield Pro Basic/Pro/Advanced analysis-field contract",
+        "A10 dynamic active-provider catalog denominator and exact Basic/Pro/Advanced field-cell coverage evaluator",
+        "A11 Market Impact tier packets and MEXC order-book adapter are available to Shield canonical analysis",
+        "A12 keyless Binance/MEXC/Coinbase/Kraken catalog runtime with retry, cache, shared inflight, quota budget and schema quarantine",
+        "A12 fixture run normalized 1013 active listings into 318 canonical assets without fixed-50 denominator",
+        "A13 full-catalog scheduler creates budgeted spot quote, klines and order-book jobs for every active listing",
+        "A13 scheduler fixture covers 80 normalized assets / 319 active listings / 957 target jobs without fixed-50 denominator",
+        "A14 full-catalog execution ledger accounts for every scheduled quote/kline/order-book job with explicit terminal states",
+        "A14 fixture ledger accounts 597/597 jobs; missing, stale, failed and rate-limited outcomes remain in the denominator",
+        "A15 hash-bound snapshot evidence bundles allow complete provider exports to be imported with payload/source/time binding and tamper/freshness checks",
+        "A15 imported bundle mode keeps FILE_IMPORT separate from PUBLIC_NETWORK_EXPORT and never grants automatic LIVE or paid credit",
+        "A15 hash-bound snapshot bundles separate PUBLIC_NETWORK_EXPORT, FILE_IMPORT and fixture evidence with payload/provider/dataset/time binding",
+        "A15 ledger-denominator bridge counts 50/50 crypto assets and projects functional readiness Basic 48 / Pro 43 / Advanced 29 without pruning failed or unavailable jobs",
+        "A17 cross-surface Basic/Pro/Advanced decision packets bind Shield, Real Markets, Market Impact and Whale Watch source packets with zero added facts and fail-closed missing-surface/contradiction/freshness/rights rules",
+        "A18 surface-specific Basic-to-Pro and Pro-to-Advanced structural value gates require >=8 new material fields, >=2 new evidence families, >=1 new scenario, no filler and no safety regression"
+      ],
+      "missing": [
+        "current provider snapshots imported or fetched for the complete active catalog",
+        "field observations for every declared Shield field cell or explicit unavailable state",
+        "continuous refresh/cache monitoring",
+        "browser/staging proof",
+        "tier outcome benchmark"
+      ],
+      "blocker": "CURRENT_FULL_CATALOG_SNAPSHOTS_AND_STAGING_REQUIRED",
+      "nextAction": "Export or fetch current public provider snapshots, import through A15 bundles and rerun the complete Shield denominator with no pruning.",
+      "sellImpact": "Shield paid cells remain disabled."
+    },
+    {
+      "id": "MKT02_REAL_MARKETS",
+      "domain": "REAL_MARKETS",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "cross-asset adapters and intentional 424/withheld behavior",
+        "synthetic product matrix",
+        "A9 exact Real Markets Basic/Pro/Advanced analysis-field contract and provider-supported catalog denominator",
+        "A10 runtime denominator excludes stale/degraded/halted/delisted listings and measures all required field cells",
+        "A11 four-provider Market Impact runtime and tier packet projection can feed Real Markets where order-book data is applicable",
+        "A12 resilient public crypto catalog execution contract can feed the dynamic Real Markets denominator",
+        "A13 first non-crypto runtime: ECB daily FX CSV + Bank of Canada Valet FX JSON",
+        "A13 local HTTP execution reconciles 4 FX pairs; 4 Basic and 3 Pro eligible, Advanced correctly blocked by three-family quorum",
+        "A14 public securities catalog runtime parses Nasdaq-listed/other-listed symbol directories and SEC ticker/exchange associations",
+        "A14 local HTTP fixture reconciles 460 US instruments: 408 equities, 52 ETFs and 280 two-family identities; quote coverage remains explicitly zero",
+        "A15 public securities quote/history runtime binds imported Stooq-compatible history and public quote JSON to the A14 identity catalog",
+        "A15 fixture coverage retains 120 instruments: 80 Basic/Pro/Advanced functional-ready offline and 40 explicit unavailable",
+        "A15 securities runtime counts 120/120 instruments and produces quote/history readiness Basic 100 / Pro 80 / Advanced 60 from 162 hash-bound snapshot bundles",
+        "A15 corporate-actions/calendar runtime classifies 60 reconciled, 10 conflicted, 40 single-source and 10 no-action instruments with 120/120 calendar coverage",
+        "A15 Real Markets runtime produces 360 canonical tier packets with Basic 100 / Pro 80 / Advanced 60 and 100 cross-asset normalized instruments",
+        "A15 ledger bridge retains all 120 securities in the Real Markets denominator",
+        "A16 120-instrument cross-asset portfolio, five-regime classification and six-scenario stress runtime",
+        "A17 cross-surface Basic/Pro/Advanced decision packets bind Shield, Real Markets, Market Impact and Whale Watch source packets with zero added facts and fail-closed missing-surface/contradiction/freshness/rights rules",
+        "A18 surface-specific Basic-to-Pro and Pro-to-Advanced structural value gates require >=8 new material fields, >=2 new evidence families, >=1 new scenario, no filler and no safety regression"
+      ],
+      "missing": [
+        "current public-network or freshly exported securities quote/history/actions/calendar receipts",
+        "commodity/REIT/index runtime",
+        "continuous correction propagation",
+        "staging/customer proof"
+      ],
+      "blocker": "CURRENT_SECURITIES_DATA_AND_STAGING_REQUIRED",
+      "nextAction": "Import fresh quote/history/action/calendar snapshots for the current full securities catalog and run the same 360-packet denominator against current bytes.",
+      "sellImpact": "Real Markets Pro/Advanced remain disabled."
+    },
+    {
+      "id": "AI01_BRAIN_ANGEL",
+      "domain": "AI",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "evidence kernel",
+        "grounding/provenance fields",
+        "abstention and safe-next-check contracts",
+        "tier entitlement controls",
+        "A16 exact canonical packet/facts parity across API/UI/preview/PDF/Brain/Angel for 7 surfaces x 3 tiers",
+        "A17 evidence-family registry for all 21 cells and evidence-quality/contradiction runtime",
+        "A17 63 Brain/Angel/PDF guarded decisions preserve exact source claim sets and abstain on material contradictions, stale provenance, rights withdrawal or tier-floor failure",
+        "A18 blind tier-ordering and decision-utility benchmark covers all 7 surfaces with no tier labels exposed to the scorer",
+        "A18 unsafe non-abstention, invented-claim and silent-downgrade mutations are rejected before any charge or paid delivery"
+      ],
+      "missing": [
+        "frozen unseen real eval",
+        "prompt-injection/RAG/tool red team",
+        "real provider rights",
+        "customer decision-utility labels",
+        "staging and customer outcome"
+      ],
+      "blocker": "REAL_EVAL_RIGHTS_AND_STAGING_REQUIRED",
+      "nextAction": "Execute the A18 contract on unseen real packet outputs, then add prompt-injection/RAG/tool red-team and customer decision-utility adjudication.",
+      "sellImpact": "Brain/Angel Pro/Advanced remain not for sale."
+    },
+    {
+      "id": "RISK01_BASIC_RANKING",
+      "domain": "RISK",
+      "status": "DONE",
+      "doneEvidence": [
+        "deterministic evidence ranking truth boundary",
+        "formula/components/missing-input handling",
+        "probability claim prohibited"
+      ],
+      "missing": [],
+      "blocker": "NONE_FOR_BASIC_BOUNDARY",
+      "nextAction": "Keep Basic explicitly non-probabilistic.",
+      "sellImpact": "Can support free informational use after real input/provider proof, not paid probability claims."
+    },
+    {
+      "id": "RISK02_PRO_ADVANCED_CALIBRATION",
+      "domain": "RISK",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "calibration protocol and local invariants",
+        "A16 temporal split, Brier/log-loss/ECE metrics, segment/regime reports and 100 frozen prospective prediction receipts",
+        "A17 true ECE/MCE, Brier Skill, calibration intercept/slope, Wilson intervals, immutable thresholds and 100 sealed prospective receipts",
+        "A17 frozen synthetic validation ECE 0.04542424 and calibration slope 0.91905342; 38 closed / 62 open prospective windows at evaluation time"
+      ],
+      "missing": [
+        "real temporal outcome dataset",
+        "closed preregistered real observation window",
+        "second real regime/cohort",
+        "human override outcome evaluation",
+        "independent adjudication"
+      ],
+      "blocker": "REAL_OUTCOME_DATA_AND_OBSERVATION_WINDOW_REQUIRED",
+      "nextAction": "Run the frozen A17 protocol on real outcomes without changing thresholds after seeing results.",
+      "sellImpact": "Risk Pro/Advanced remain disabled; probability and prospective-performance claims forbidden."
+    },
+    {
+      "id": "BENCH01_CANONICAL_CORPUS",
+      "domain": "BENCHMARK",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "2700-row structural verifier",
+        "300 native-review structural verifier",
+        "A18 executable frozen synthetic tier-value corpus: 350 cases / 1050 outputs / 700 blind upgrade comparisons",
+        "A18 5600-mutation campaign with 100% kill rate for filler, missing incremental value, unsafe output, invented claims and silent downgrade",
+        "A18 Wilson 95% confidence intervals for structural pass, blind selection and mutation kill rates",
+        "A19 local audit corpus: 240 source cases / 15 vulnerability families / balanced remediation pairs / 2880 mutations",
+        "A19 frozen split metrics and per-family Wilson intervals are machine-bound in the benchmark receipt"
+      ],
+      "missing": [
+        "2700 real independently labeled rows",
+        "real disjoint train/validation/test execution",
+        "300 qualified human review cases",
+        "customer outcome and willingness-to-pay labels",
+        "independent adjudication and rerun"
+      ],
+      "blocker": "REAL_CORPUS_CUSTOMER_LABELS_AND_INDEPENDENT_ADJUDICATION_REQUIRED",
+      "nextAction": "Execute the A18 tier-value and A19 audit-detection contracts on real rights-approved cases with blind independent/customer labels.",
+      "sellImpact": "A18 closes the executable structural benchmark harness only; real tier-value and top-tier claims remain blocked."
+    },
+    {
+      "id": "LIVE01_CONTROLLED_COHORTS",
+      "domain": "LIVE",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "two-cohort evidence schema and verifier"
+      ],
+      "missing": [
+        "controlled cohort 1",
+        "out-of-time cohort 2",
+        "retention/outcome/support/refund telemetry",
+        "stop-rule evidence"
+      ],
+      "blocker": "REAL_CUSTOMERS_AND_OBSERVATION_WINDOW_REQUIRED",
+      "nextAction": "After K0/K1, run controlled live cohorts with kill switches.",
+      "sellImpact": "Blocks customer-proven, top-tier and market-leader claims."
+    },
+    {
+      "id": "ASSURE01_INDEPENDENT_ASSURANCE",
+      "domain": "ASSURANCE",
+      "status": "BLOCKED_EXTERNAL",
+      "doneEvidence": [
+        "four-report structural verifier and conflict requirements"
+      ],
+      "missing": [
+        "independent security report",
+        "data/AI/audit/accessibility/payment review",
+        "signed retests"
+      ],
+      "blocker": "INDEPENDENT_QUALIFIED_REVIEWERS_REQUIRED",
+      "nextAction": "Commission independent reviews on frozen artifact and exact scope.",
+      "sellImpact": "Blocks top-tier/world-class claim."
+    },
+    {
+      "id": "MKT03_MARKET_IMPACT",
+      "domain": "MARKET_IMPACT",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "multi-venue order-book normalization",
+        "Binance/MEXC/Coinbase/Kraken adapters",
+        "notional execution grid",
+        "depth bands",
+        "five stress scenarios",
+        "Basic/Pro/Advanced tier packet runtime",
+        "60-asset deterministic regression and tamper tests",
+        "A12 active catalog discovery can enumerate order-book targets across four public exchanges",
+        "A12 retry/cache/rate-limit/schema-quarantine control plane is mutation-tested",
+        "A13 full-catalog target scheduler plans order books for all 80 normalized fixture assets and 319 active listings under provider budgets",
+        "A14 full-denominator Market Impact runtime retains all 80 fixture assets; functional readiness Basic 70 / Pro 60 / Advanced 40 and 10 explicit unavailable",
+        "A14 verifies 210 tier packets while production eligibility remains 0 because all books are fixture evidence",
+        "A15 order-book import/replay validates L2 snapshots, quarantines crossed books, aggregates three independent venues and performs notional execution plus sequence-bound two-snapshot replay",
+        "A15 fixture covers 60/60 assets at Basic/Pro/Advanced functional floors with 180 replay pairs while paid/LIVE flags remain false",
+        "A15 order-book replay validates hash-bound L2 snapshots, quarantines crossed books, aggregates three venues and executes notional grids",
+        "A15 fixture covers 60/60 assets at Basic/Pro/Advanced floors with 180 sequence-bound venue replay pairs",
+        "A17 cross-surface Basic/Pro/Advanced decision packets bind Shield, Real Markets, Market Impact and Whale Watch source packets with zero added facts and fail-closed missing-surface/contradiction/freshness/rights rules",
+        "A18 surface-specific Basic-to-Pro and Pro-to-Advanced structural value gates require >=8 new material fields, >=2 new evidence families, >=1 new scenario, no filler and no safety regression"
+      ],
+      "missing": [
+        "current public-network or freshly exported order books for the full eligible denominator",
+        "realized slippage comparison",
+        "continuous refresh/outage receipts",
+        "staging/customer outcome proof"
+      ],
+      "blocker": "CURRENT_ORDER_BOOKS_REALIZED_EXECUTION_AND_STAGING_REQUIRED",
+      "nextAction": "Import current multi-venue L2 exports through A15 and compare simulation with observed fills where available.",
+      "sellImpact": "Market Impact paid tiers remain disabled until real evidence floors and publication gates pass."
+    },
+    {
+      "id": "MKT04_WHALE_WATCH",
+      "domain": "WHALE_WATCH",
+      "status": "PARTIAL",
+      "doneEvidence": [
+        "holder concentration and coverage",
+        "cryptographically verified wallet-label registry",
+        "24h/7d/30d category flows",
+        "exchange/treasury/bridge/liquidity/mint/burn analysis",
+        "holder exit stress bound to Market Impact",
+        "Basic/Pro/Advanced tier packet runtime",
+        "60-asset deterministic regression and tamper tests",
+        "A12 signed asset-binding end-to-end provider pipeline",
+        "A12 Etherscan token info/top holders/token transfers plus Alchemy transfers",
+        "A12 Etherscan transfer fallback survives Alchemy outage",
+        "A12 signed wallet-label merge produces 3 tier packets with tamper protection",
+        "A13 supported-token denominator counts all 120 active fixture crypto assets rather than only configured tokens",
+        "A13 exact bindings: 60/120; tier eligibility Basic 60 / Pro 40 / Advanced 20; every unbound token is explicit UNAVAILABLE",
+        "A14 multi-source binding resolver counts 150/150 assets: 90 exact consensus, 30 single-source, 15 conflicts and 15 missing",
+        "Only two-family exact chain/address consensus emits a token binding; conflict and missing states are explicit and feed the existing Whale denominator",
+        "A15 hash-bound Whale evidence import accepts token bindings, holder sets, transfers and wallet labels from multiple public source families",
+        "A15 fixture counts 100/100 assets with 80 Basic/Pro/Advanced functional-ready offline and 20 explicit unavailable",
+        "A15 Whale evidence bundles bind token mappings, holders, transfers and verified labels to exact payload hashes and provider families",
+        "A15 fixture counts 100/100 assets with 80 Basic/Pro/Advanced functional-ready and 20 explicit unavailable",
+        "A17 cross-surface Basic/Pro/Advanced decision packets bind Shield, Real Markets, Market Impact and Whale Watch source packets with zero added facts and fail-closed missing-surface/contradiction/freshness/rights rules",
+        "A18 surface-specific Basic-to-Pro and Pro-to-Advanced structural value gates require >=8 new material fields, >=2 new evidence families, >=1 new scenario, no filler and no safety regression"
+      ],
+      "missing": [
+        "current full-denominator token binding/holder/transfer/label bundles",
+        "continuous label maintenance and alert delivery",
+        "current Market Impact binding for exit stress",
+        "staging/customer outcome proof"
+      ],
+      "blocker": "CURRENT_WHALE_EVIDENCE_MONITORING_AND_STAGING_REQUIRED",
+      "nextAction": "Import current explorer and label exports through A15, preserve unresolved assets in the denominator and execute continuous revalidation.",
+      "sellImpact": "Whale Watch Pro/Advanced remain disabled until real evidence and coverage floors pass."
+    }
+  ],
+  "truthBoundary": "PASS35 A32 is the only canonical current status. Canonical roadmap is 59.3% weighted / 39.5% strict across 43 workstreams, up 1.2 pp weighted and 2.3 pp strict from A31, and 18.6 pp weighted from A16. Zero-budget functional core is 91.9% across 86 capabilities, up 0.3 pp from A31 and 11.9 pp from A16. A32 locally closes bounded report assembly, claim taxonomy, receipt index, tier scope, redaction, account-bound delivery, artifact integrity, one-time download, supersession, comprehension and privacy controls. Real analyzer execution, staging tenant isolation, customer comprehension/value, qualified signatures, LIVE and sale remain unclaimed.",
+  "productTierSpecification": {
+    "status": "DONE_LOCAL_SPECIFICATION",
+    "surfaces": 7,
+    "tiers": 21,
+    "visualChangesMade": false,
+    "contractPath": "config/pass35/product-tier-content-contract.json"
+  },
+  "zeroBudgetFunctionalTrack": {
+    "targetPercent": 100,
+    "currentWeightedPlanningPercent": 91.9,
+    "coreDenominator": 86,
+    "done": 73,
+    "partial": 12,
+    "notDone": 1,
+    "optionalExternalExcluded": 2,
+    "roadmapPath": "config/pass35/zero-budget-functional-roadmap.json",
+    "runtimeCoverageContractPath": "config/pass35/market-runtime-coverage-contract.json",
+    "marketImpactWhaleContractPath": "config/pass35/market-impact-whale-tier-contract.json",
+    "publicProviderRuntimeContractPath": "config/pass35/public-provider-runtime-contract.json",
+    "a13FunctionalRuntimeContractPath": "config/pass35/a13-functional-runtime-contract.json",
+    "a14MarketExecutionContractPath": "config/pass35/a14-market-execution-contract.json",
+    "a15ImportedSnapshotContractPath": "config/pass35/a15-imported-snapshot-runtime-contract.json",
+    "a16CanonicalRiskContractPath": "config/pass35/a16-canonical-risk-runtime-contract.json",
+    "a17EvidenceDecisionContractPath": "config/pass35/a17-evidence-decision-runtime-contract.json",
+    "a18TierValuePolicyPath": "config/pass35/a18-tier-value-benchmark-policy.json",
+    "a18TierValueContractPath": "config/pass35/a18-tier-value-runtime-contract.json",
+    "a19ExactRuntimePolicyPath": "config/pass35/a19-exact-runtime-bootstrap-policy.json",
+    "a19AuditStaticPolicyPath": "config/pass35/a19-audit-static-benchmark-policy.json",
+    "a19RuntimeContractPath": "config/pass35/a19-exact-runtime-audit-static-runtime-contract.json",
+    "a20CaseBoundDependencyPolicyPath": "config/pass35/a20-case-bound-dependency-policy.json",
+    "a20CaseBoundDependencyContractPath": "config/pass35/a20-case-bound-dependency-runtime-contract.json",
+    "a21AbstractPathPolicyPath": "config/pass35/a21-abstract-path-policy.json",
+    "a21AbstractPathContractPath": "config/pass35/a21-abstract-path-runtime-contract.json",
+    "a22SeverityTriagePolicyPath": "config/pass35/a22-severity-triage-policy.json",
+    "a22SeverityTriageContractPath": "config/pass35/a22-severity-triage-runtime-contract.json",
+    "a23RemediationClosurePolicyPath": "config/pass35/a23-remediation-closure-policy.json",
+    "a23RemediationClosureContractPath": "config/pass35/a23-remediation-closure-runtime-contract.json",
+    "a24MonitoringLifecyclePolicyPath": "config/pass35/a24-monitoring-lifecycle-policy.json",
+    "a24MonitoringLifecycleContractPath": "config/pass35/a24-monitoring-lifecycle-runtime-contract.json",
+    "a25ExactTestEvidencePolicyPath": "config/pass35/a25-exact-test-evidence-policy.json",
+    "a25ExactTestEvidenceContractPath": "config/pass35/a25-exact-test-evidence-runtime-contract.json",
+    "a26FuzzInvariantEvidencePolicyPath": "config/pass35/a26-fuzz-invariant-evidence-policy.json",
+    "a26FuzzInvariantEvidenceContractPath": "config/pass35/a26-fuzz-invariant-evidence-runtime-contract.json",
+    "a27ForkReplayEvidencePolicyPath": "config/pass35/a27-fork-replay-evidence-policy.json",
+    "a27ForkReplayEvidenceContractPath": "config/pass35/a27-fork-replay-evidence-runtime-contract.json",
+    "a28EconomicAdversarialEvidencePolicyPath": "config/pass35/a28-economic-adversarial-evidence-policy.json",
+    "a28EconomicAdversarialEvidenceContractPath": "config/pass35/a28-economic-adversarial-evidence-runtime-contract.json",
+    "a29UpgradeDeploymentOperationsPolicyPath": "config/pass35/a29-upgrade-deployment-operations-policy.json",
+    "a29UpgradeDeploymentOperationsContractPath": "config/pass35/a29-upgrade-deployment-operations-runtime-contract.json",
+    "a30ThreatModelPolicyPath": "config/pass35/a30-threat-model-policy.json",
+    "a30ThreatModelContractPath": "config/pass35/a30-threat-model-runtime-contract.json",
+    "a31PrivilegeControlPolicyPath": "config/pass35/a31-privilege-control-policy.json",
+    "a31PrivilegeControlContractPath": "config/pass35/a31-privilege-control-runtime-contract.json",
+    "a32ReportDeliveryPolicyPath": "config/pass35/a32-report-delivery-policy.json",
+    "a32ReportDeliveryContractPath": "config/pass35/a32-report-delivery-runtime-contract.json"
+  },
+  "visualFreeze": {
+    "status": "PASS",
+    "baselineFiles": 512,
+    "mismatches": 0,
+    "owner": "CODEX_FRONTEND_WORKSTREAM",
+    "baselinePath": "config/pass35/a9-visual-freeze-baseline.json"
+  }
+}
+

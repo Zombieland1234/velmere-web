@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "velmere.pass36.a102r14.approved-source-recovery-browser-shield-handoff-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R14_ACTION_REQUIRED_SOURCE_PACKAGE_UPLOAD_RECOVERY_AND_BROWSER_SHIELD_HANDOFF_SESSION_STORAGE_QUERY_TIER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R13_ACTION_REQUIRED_OPERATIONAL_LOG_CLIENT_ERROR_PAYMENT_PROVIDER_IDENTIFIER_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T08:40:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "lib/market-integrity/browser-shield-orbit-handoff.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R13_ACTION_REQUIRED_OPERATIONAL_LOG_CLIENT_ERROR_PAYMENT_PROVIDER_IDENTIFIER_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 6761,
+      "historicalSha256": "0408983a8584a83d971d4371f091da42bd47f71a82e21553d298a30d8461694f",
+      "currentByteLength": 3619,
+      "currentSha256": "f8b614373bbd173046e79406136b1da2570ee3d30ded155518d6e3dd0ba7fac2",
+      "reason": "Remove browser-persistent analytical handoff authority and navigation disclosure; preserve only canonical asset identity and require a fresh target scan.",
+      "requiredLocalTest": "PASS_A102R14_BROWSER_SHIELD_HANDOFF_PRIVACY_LOCAL_ONLY",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R13_ACTION_REQUIRED_OPERATIONAL_LOG_CLIENT_ERROR_PAYMENT_PROVIDER_IDENTIFIER_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 254831,
+      "historicalSha256": "4007bd8f9dd8b9e362d78621fea33db03e084e77e74a599958ce06c5a7417929",
+      "currentByteLength": 254839,
+      "currentSha256": "060bc3734ced6f75962518d6e2747ee776a7ad7d1dd1e7dfe9f681547ad9a6eb",
+      "reason": "Remove browser-persistent analytical handoff authority and navigation disclosure; preserve only canonical asset identity and require a fresh target scan.",
+      "requiredLocalTest": "PASS_A102R14_BROWSER_SHIELD_HANDOFF_PRIVACY_LOCAL_ONLY",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "scripts/pass36/test-a102r14-browser-shield-handoff-boundary.ts",
+      "purpose": "48-check Browser-to-Shield handoff privacy and fresh-scan boundary."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "truncatedUploadPromoted": false,
+    "exactDeterministicRebuildRecovered": true,
+    "browserSessionStoragePacketWritten": false,
+    "browserSessionStoragePacketRead": false,
+    "customerQueryInHandoffUrl": false,
+    "tierInHandoffUrl": false,
+    "sourceClaimsInHandoffUrl": false,
+    "canonicalAssetIdentityOnly": true,
+    "targetFreshScanRequired": true,
+    "realBrowserRowsExecuted": 0,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "The ledger binds exact A102R13-to-A102R14 changes and exact source-package recovery. Local tests do not prove real browser history/referrer behavior, account switching, exact builds, staging, provider rights, legal/DPO, LIVE or sale readiness."
+}

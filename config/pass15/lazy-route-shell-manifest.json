@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "velmere.pass15.lazy-route-shells.v1",
+  "truthBoundary": "Static lazy boundary transformation for the heaviest remaining non-parameterized API routes. Runtime parity requires build and E2E.",
+  "routes": [
+    {
+      "route": "app/api/account/audit-messages/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/account--audit-messages.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "routeConfig": [
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1127751,
+      "beforeEagerFiles": 86,
+      "handlerSha256": "4aeddacfd32f1f9e39422af889ff44d4fd4ec4ba9c698023eec10241e01bb70b",
+      "handlerBytes": 13469,
+      "shellSha256": "467923b1781c55d7bc21a65a7ef3e64d5fd868675dd1774a77f9bee13ba55eb8",
+      "shellBytes": 586
+    },
+    {
+      "route": "app/api/account/customer-artifact/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/account--customer-artifact.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1816347,
+      "beforeEagerFiles": 162,
+      "handlerSha256": "ef47594f7c7a77be3f86dfd4e22b1b751686901bd2b67f61e503742f8ac6ced9",
+      "handlerBytes": 13037,
+      "shellSha256": "283543c824886cb560fd38ad3e5e80691b9efcbc4b407ed4b537bbd7d4ee738a",
+      "shellBytes": 386
+    },
+    {
+      "route": "app/api/admin/security/advanced-audit-release/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/admin--security--advanced-audit-release.ts",
+      "methods": [
+        "PATCH",
+        "POST",
+        "PUT"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1806025,
+      "beforeEagerFiles": 125,
+      "handlerSha256": "87c66d6f34593e3fe3c3bc487e172070942d791b37582f46704312ee8335ff7d",
+      "handlerBytes": 24026,
+      "shellSha256": "b7d3dc7cb86003dfb3441d8aee22add17e4c1ac68ac4ff0a05757f917f45c3ec",
+      "shellBytes": 1017
+    },
+    {
+      "route": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1165212,
+      "beforeEagerFiles": 94,
+      "handlerSha256": "f7d3720c252a26fd8d4eee77b34696e105ce00b1bceeef466c41b28f096cfdbf",
+      "handlerBytes": 8423,
+      "shellSha256": "2f5473db1fe1c8833fad09443abdf95b4184b94425cbc6d2670c0e97aeff313c",
+      "shellBytes": 671
+    },
+    {
+      "route": "app/api/ai/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/ai.ts",
+      "methods": [
+        "POST"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";"
+      ],
+      "beforeEagerBytes": 1124851,
+      "beforeEagerFiles": 98,
+      "handlerSha256": "e9bdccb4bd49c123345d02b45015e3b340f3e0b84ec3340e497c7114117e2b21",
+      "handlerBytes": 4430,
+      "shellSha256": "95ad43ae17cf8ce151f54c3868faeed4f8b1b15e6d5fb88dd0e361bcca3b6946",
+      "shellBytes": 324
+    },
+    {
+      "route": "app/api/angel/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/angel.ts",
+      "methods": [
+        "POST"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";"
+      ],
+      "beforeEagerBytes": 1576529,
+      "beforeEagerFiles": 130,
+      "handlerSha256": "4b756fccdcc994d2f16f92924656d0a2010c8f683badf44b71b8296160bc366d",
+      "handlerBytes": 58056,
+      "shellSha256": "cfb671dc669906c593707818bc9afcb26473da2e858b029dbdf5070998382a90",
+      "shellBytes": 327
+    },
+    {
+      "route": "app/api/angel/stream/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/angel--stream.ts",
+      "methods": [
+        "POST"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";"
+      ],
+      "beforeEagerBytes": 1591435,
+      "beforeEagerFiles": 132,
+      "handlerSha256": "65952d86b44b1d23288fe921f0799fe52f1ccfb746cd65d9213c70fc607d53ed",
+      "handlerBytes": 9218,
+      "shellSha256": "2c86c91b9ece922a978046d8aa2038e5d0f08a4a3b11dbfe75592e437ad01efa",
+      "shellBytes": 335
+    },
+    {
+      "route": "app/api/market-integrity/continuity/refresh/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/market-integrity--continuity--refresh.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1835675,
+      "beforeEagerFiles": 141,
+      "handlerSha256": "908161adfcb7fe113fecaeeefbd879e2e485d8bb04dd03256471a0dce995884f",
+      "handlerBytes": 2357,
+      "shellSha256": "9dfb16230aefbea2f51b83758f7838e5a4f60ed3dbcde1ce25b06fe9845dc3d0",
+      "shellBytes": 397
+    },
+    {
+      "route": "app/api/search/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/search.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1408373,
+      "beforeEagerFiles": 132,
+      "handlerSha256": "d4e085e37c862bcfcc41ab0af0e9509b97f3bb27483464eaf1791d5e340fa832",
+      "handlerBytes": 307,
+      "shellSha256": "572ef6bebe95e8fec0989e32df1024536628a59a4bafe1620f5f416fe0c1b157",
+      "shellBytes": 366
+    },
+    {
+      "route": "app/api/security/audit-review/pro/settle/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-review--pro--settle.ts",
+      "methods": [
+        "POST"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1802211,
+      "beforeEagerFiles": 125,
+      "handlerSha256": "10dd228b29f0ed8b6fce3b8ac4b4c83dbf4c0b984ede61121d241ffe791fe790",
+      "handlerBytes": 8513,
+      "shellSha256": "cb52d5e5090490455623ceb45c6d27b3263435a94b97847c4a54e340a3ff7071",
+      "shellBytes": 397
+    },
+    {
+      "route": "app/api/security/audit-watch/customer-safe-report/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--customer-safe-report.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1040225,
+      "beforeEagerFiles": 77,
+      "handlerSha256": "8a721907ce558845fe261548d93241c7112056ddfda8c37972534b55c50a1435",
+      "handlerBytes": 6443,
+      "shellSha256": "1eeca6faf5d670af36534e62c9735ba957f1df342a846a3fd88979e13b76707d",
+      "shellBytes": 403
+    },
+    {
+      "route": "app/api/security/audit-watch/delivery-receipt/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--delivery-receipt.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1107646,
+      "beforeEagerFiles": 84,
+      "handlerSha256": "40cdf9ee2160ffbee09d1c8d26f54a8754e1e931de86ce7f168bbb5b5ed54e22",
+      "handlerBytes": 3920,
+      "shellSha256": "a8781b910abd909399d705792c5f72b5c966c47939eefa0b371f56cb36481ff5",
+      "shellBytes": 399
+    },
+    {
+      "route": "app/api/security/audit-watch/paid-preview/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--paid-preview.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 44205,
+      "beforeEagerFiles": 6,
+      "handlerSha256": "d77c5780510f245e961a9ecf69435cf69582cd26a164516464dfc90b6d0c1367",
+      "handlerBytes": 3857,
+      "shellSha256": "aae6f7ae9e05d9b1bf65baf7d7359f2249b9c29d0235efd4d4a50dac7e08203c",
+      "shellBytes": 414
+    },
+    {
+      "route": "app/api/security/audit-watch/pro-pdf/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1826972,
+      "beforeEagerFiles": 123,
+      "handlerSha256": "1edb0f60c3ba4d3bb100b3d149f838cc5fa0a9b00c93ad760dad96bddd241bfb",
+      "handlerBytes": 12860,
+      "shellSha256": "32c5c27b60d4f7973edaf3fe03aa22fab53edf603e04d110a0b872a799592907",
+      "shellBytes": 390
+    },
+    {
+      "route": "app/api/security/audit-watch/pro-pdf/token/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf--token.ts",
+      "methods": [
+        "POST"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";"
+      ],
+      "beforeEagerBytes": 1798901,
+      "beforeEagerFiles": 120,
+      "handlerSha256": "f8530506e79eec86ca42cab2478b06cd103283a2e772fc4c53f7e8a079786ffc",
+      "handlerBytes": 8475,
+      "shellSha256": "395fca4811bbd67b906f304d77ec4874a61eb65774a2fc8ffd8b2ac6744faf1c",
+      "shellBytes": 359
+    },
+    {
+      "route": "app/api/security/audit-watch/route-health/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--route-health.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [
+        "export const runtime = \"nodejs\";",
+        "export const dynamic = \"force-dynamic\";"
+      ],
+      "beforeEagerBytes": 1137517,
+      "beforeEagerFiles": 86,
+      "handlerSha256": "01fd7a94fbe58dc5f7ecd1a7d2647d023a6a1fd460dc8068e17dbd07d79a6cfb",
+      "handlerBytes": 7344,
+      "shellSha256": "6c47765a46bc55a7e41b45e84b2630f24b03762c41b00d1e6da04cb3d7629f5a",
+      "shellBytes": 395
+    },
+    {
+      "route": "app/api/security/audit-watch/support-handoff/route.ts",
+      "handlerModule": "lib/server/lazy-route-modules/security--audit-watch--support-handoff.ts",
+      "methods": [
+        "GET"
+      ],
+      "routeConfig": [],
+      "beforeEagerBytes": 1140619,
+      "beforeEagerFiles": 86,
+      "handlerSha256": "7aa28d7618a0c0061acfe8e68e422ba6a9cafe6b07c8a012d960ddb8b44de886",
+      "handlerBytes": 10458,
+      "shellSha256": "834f04272013215846c19b529d8174f2371b1c63f788d46f634d3d87292b3479",
+      "shellBytes": 325
+    }
+  ],
+  "summary": {
+    "routesWrapped": 17,
+    "beforeEagerBytes": 23350494,
+    "supersededDirectShellsRemoved": 0,
+    "methodDiscovery": "HASH_BOUND_TYPESCRIPT_AST_REGISTRY"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "classification": "LOCAL_DISPOSABLE_STRIPE_API_FIXTURE_AND_WEBHOOK_LEDGER_ONLY",
+  "durability": {
+    "deadLetterRequeueLimit": 1,
+    "eventIdAndPayloadHashBindingRequired": true,
+    "immutableBackupSnapshotsRequired": true,
+    "rawWebhookPayloadForbiddenInEvidence": true,
+    "sqliteWalDuringExecution": true,
+    "terminalRefundStateCannotReactivate": true
+  },
+  "execution": {
+    "artifactIndex": "evidence/R44P32_LOCAL_STRIPE_ARTIFACT_INDEX.json",
+    "evidenceSummary": "evidence/R44P32_LOCAL_STRIPE_LIFECYCLE.json",
+    "fixturePath": "scripts/pass36/external/r44p32/local_stripe_api_fixture.py",
+    "independentReport": "R44P32_INDEPENDENT_LOCAL_STRIPE_VERIFICATION.json",
+    "orchestratorPath": "scripts/pass36/external/r44p32/execute_local_stripe_lifecycle.py",
+    "runnerPath": "scripts/pass36/external/r44p32/run_local_stripe_lifecycle.py",
+    "secretScan": "evidence/R44P32_LOCAL_STRIPE_SECRET_SCAN.json",
+    "verifierPath": "scripts/pass36/external/r44p32/verify_local_stripe_lifecycle.py"
+  },
+  "expectedParentSource": {
+    "aggregateSha256": "ae6b7a84e5698aed01e67f5e68c09daa41ce3318c35e612ae5e2fab0ab6aa919",
+    "manifestPath": "_velmere/PASS36_A102R44P31_SOURCE_ONLY_MANIFEST.json",
+    "manifestSha256": "1dae92c5e85eb8772d8c2d6fcb4028c90dc8eee2bd3adb86f2c6ff32962c02f6",
+    "revisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+    "sourceArchiveSha256": "02e9e3950d65c06915c9a17b1f49158d5fe8d11e195da60d20c2bf78d95039f9"
+  },
+  "independentVerifierChecks": 45,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "requiredCaseIds": [
+    "checkout",
+    "signed-webhook",
+    "paymentintent-binding",
+    "entitlement-activation",
+    "duplicate-idempotency",
+    "event-reorder",
+    "replay-denial",
+    "refund",
+    "refund-webhook",
+    "entitlement-revocation",
+    "reconciliation",
+    "controlled-dead-letter-requeue"
+  ],
+  "requiredDenominator": 12,
+  "revisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p32.local-durable-stripe-lifecycle-policy.v1",
+  "security": {
+    "duplicateDifferentPayloadRejected": true,
+    "duplicateSamePayloadIdempotent": true,
+    "exactAmountCurrencyPaymentIntentMetadataBindingRequired": true,
+    "maximumSignatureAgeSeconds": 300,
+    "rawCredentialsForbiddenInEvidence": true,
+    "realTestCredentialsOptionalAndFailClosed": true,
+    "refundRevokesEntitlement": true,
+    "stripeStyleHmacSha256SignatureRequired": true
+  },
+  "truthBoundary": {
+    "customerCredit": false,
+    "liveCredit": false,
+    "localDisposableStripeProtocolFixtureCredit": true,
+    "productionPaymentCredit": false,
+    "realStripeHostedCheckoutCredit": false,
+    "realStripeTestApiCredit": false,
+    "realStripeWebhookDeliveryCredit": false,
+    "retainedParentExactLinuxReleaseOnly": true,
+    "retainedParentExternalStorageKmsEmailOnly": true,
+    "saleCredit": false
+  }
+}

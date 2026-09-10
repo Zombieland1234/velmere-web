@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "velmere.r7.authority-reconciliation-receipt.v1",
+  "status": "PASS_BOUNDED",
+  "candidate": "R7_MERGED_CURRENT_SOURCE",
+  "sourceBindings": {
+    "v4Path": "VELMERE_P101R1_ZERO_EURO_FULL_PRODUCT_ACTIVATION_20_OF_20_AI_VALIDATION_MASTER_OVERRIDE_V4_2026-08-21.txt",
+    "v4Sha256": "a7cf0389fde143b650164c8cdacc5923607eb2eb5d17d27e8a2bc4b8300f3432",
+    "v17Path": "VELMERE_CANONICAL_OWNER_DIRECTIVE_V17_TRUE_TOPOLOGY_AUTOMATED_ADVANCED_CURRENT_WORLD_CLASS_2026-08-17.txt",
+    "v17Sha256": "de7fbd6df651a7a8a8f85054c6e9ac3c2ca530ebfb0d4ccd335dcb99fb658f05",
+    "r5ProgressPath": "artifacts/r5/VELMERE_R5_20_ROW_PROGRESS.json",
+    "r5ProgressSha256": "11f849026e265829cab7e750367f6d13c79f5eb76f60142211a0a1aa7a4cb075",
+    "r6ProgressPath": "artifacts/r6/VELMERE_R6_20_ROW_PROGRESS.json",
+    "r6ProgressSha256": "df67340c5cd0d33aa95f5d27b45fbb0981a2b7f6e041564a801d1f09998f17e4",
+    "r7ProgressPath": "config/r7/r7-20-row-progress.json",
+    "r7ProgressSha256": "313ff805efc6c4fb51eac66710371eea2c47bf31c7aa48e690d0f712222d4781"
+  },
+  "checks": {
+    "allTwentyRowsStillCustomerFinalFalse": true,
+    "allTwentyRowsHaveActiveOwnerAuthorizedGate": true,
+    "noActiveExternalCustomerBlocker": true,
+    "historicalExternalProofPreserved": true,
+    "technicalSecurityRightsRuntimeRequirementsPreserved": true
+  },
+  "customerFinalCredit": false,
+  "truthBoundary": "Authority semantics only; no runtime, staging, Windows, rights or row FINAL credit."
+}

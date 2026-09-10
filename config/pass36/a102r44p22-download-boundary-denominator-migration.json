@@ -1,0 +1,22 @@
+{
+  "addedAssignments": 1,
+  "addedPath": {
+    "byteLength": 3857,
+    "path": "lib/server/lazy-route-modules/security--audit-watch--paid-preview.ts",
+    "sha256": "d77c5780510f245e961a9ecf69435cf69582cd26a164516464dfc90b6d0c1367"
+  },
+  "denominatorCollapse": false,
+  "historyRewritten": false,
+  "newDenominator": 13,
+  "oldDenominator": 12,
+  "parentTest": {
+    "byteLength": 7606,
+    "path": "scripts/pass36/test-a72-download-response-boundary.mjs",
+    "sha256": "39f81b0ba7e48e4bd63d52372e56edc08577fd8f92632e1d89a70c328fe4858e"
+  },
+  "reason": "The separate server-generated preview PDF adds one centralized Content-Disposition response; no legacy assignment was removed.",
+  "removedAssignments": 0,
+  "retainedAssignments": 12,
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.download-boundary-denominator-migration.v1"
+}

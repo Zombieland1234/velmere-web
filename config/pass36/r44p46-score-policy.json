@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.score-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "dimensions": [
+    "Engineering Quality",
+    "Security Quality",
+    "Accuracy/Data Quality",
+    "AI Customer Score",
+    "AI Reviewer Score",
+    "Tier/Entitlement Value",
+    "Operational Readiness",
+    "Legal/Data Rights",
+    "External Customer Proof",
+    "External Reviewer Proof",
+    "Free Release Readiness",
+    "Paid Release Readiness",
+    "World-Class Evidence"
+  ],
+  "binaryInternalClosureUsesOnlyGateRegistry": true,
+  "externalClosureUsesOnlyExternalHumanProofRegistry": true,
+  "numericDimensionScoresRequireReproducibleDenominator": true,
+  "absentReproducibleDenominatorValue": null,
+  "passNumberCreditForbidden": true,
+  "testCountAloneCreditForbidden": true,
+  "AIExternalCreditForbidden": true,
+  "denominatorGamingForbidden": true,
+  "scoreMayDecrease": true,
+  "everyNumericDeltaRequires": [
+    "PREVIOUS",
+    "CURRENT",
+    "DELTA",
+    "REASON",
+    "EVIDENCE"
+  ],
+  "legacyR45QuarantineClass": "LEGACY_DIRECTIONAL_UNREPRODUCIBLE",
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

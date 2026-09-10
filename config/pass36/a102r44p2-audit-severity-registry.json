@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.audit-severity-registry.v1",
+  "severityOrder": [
+    "none",
+    "informational",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "entries": {
+    "ambiguous_control_requires_review": {
+      "severity": "informational",
+      "class": "insufficient_context",
+      "rationale": "The bounded source packet is insufficient to resolve the control."
+    },
+    "external_dependency_trust_requires_context": {
+      "severity": "informational",
+      "class": "insufficient_context",
+      "rationale": "External dependency trust cannot be resolved from the bounded source fragment alone."
+    },
+    "missing_emergency_stop": {
+      "severity": "low",
+      "class": "operational_resilience",
+      "rationale": "Absence of an emergency stop increases incident containment time but does not by itself prove asset loss."
+    },
+    "rounding_to_zero_value_loss": {
+      "severity": "medium",
+      "class": "accounting_integrity",
+      "rationale": "Rounding can destroy user value or create systematic accounting drift."
+    },
+    "tx_origin_authorization": {
+      "severity": "medium",
+      "class": "authorization",
+      "rationale": "tx.origin authorization enables phishing-style call-chain abuse."
+    },
+    "unchecked_low_level_call": {
+      "severity": "medium",
+      "class": "external_call",
+      "rationale": "Unchecked call failure can leave state inconsistent with intended execution."
+    },
+    "unbounded_loop_dos": {
+      "severity": "medium",
+      "class": "availability",
+      "rationale": "Unbounded iteration can make a required operation exceed the block gas limit."
+    },
+    "timestamp_as_randomness": {
+      "severity": "medium",
+      "class": "randomness",
+      "rationale": "Block timestamp is partially controllable and unsuitable as sole randomness."
+    },
+    "predictable_block_randomness": {
+      "severity": "medium",
+      "class": "randomness",
+      "rationale": "Predictable block-derived values can be biased or anticipated by adversaries."
+    },
+    "permit_without_deadline_or_domain": {
+      "severity": "medium",
+      "class": "signature_domain",
+      "rationale": "Missing expiry or domain binding broadens replay and cross-context use."
+    },
+    "mempool_front_run_exposure": {
+      "severity": "medium",
+      "class": "transaction_ordering",
+      "rationale": "Public transaction intent can be copied or reordered before inclusion."
+    },
+    "fee_on_transfer_accounting_mismatch": {
+      "severity": "high",
+      "class": "token_accounting",
+      "rationale": "Nominal transfer amounts can diverge from received balances and break solvency accounting."
+    },
+    "external_call_before_state_update": {
+      "severity": "high",
+      "class": "reentrancy",
+      "rationale": "An external call before effects can re-enter while stale state is authoritative."
+    },
+    "external_hook_before_accounting": {
+      "severity": "high",
+      "class": "reentrancy",
+      "rationale": "A token or receiver hook can re-enter before internal accounting is finalized."
+    },
+    "initializer_replay_or_takeover": {
+      "severity": "high",
+      "class": "initialization",
+      "rationale": "Re-initialization can transfer privileged ownership or reset critical state."
+    },
+    "user_controlled_delegatecall": {
+      "severity": "high",
+      "class": "code_execution",
+      "rationale": "Delegatecall to a user-controlled target executes attacker code in the caller storage context."
+    },
+    "manipulable_spot_oracle": {
+      "severity": "high",
+      "class": "oracle_integrity",
+      "rationale": "A manipulable spot price can corrupt collateral, minting or settlement decisions."
+    },
+    "donation_share_price_manipulation": {
+      "severity": "high",
+      "class": "accounting_integrity",
+      "rationale": "Direct asset donation can distort share price and transfer value between users."
+    },
+    "unrestricted_mint": {
+      "severity": "high",
+      "class": "supply_control",
+      "rationale": "Unrestricted minting can arbitrarily dilute holders or create unbacked supply."
+    },
+    "signature_replay_no_nonce_domain": {
+      "severity": "high",
+      "class": "signature_replay",
+      "rationale": "Missing nonce and domain separation permits replay across calls or contexts."
+    },
+    "upgrade_storage_layout_collision": {
+      "severity": "high",
+      "class": "upgradeability",
+      "rationale": "Storage layout collision can corrupt privileged and user state after upgrade."
+    },
+    "destructive_admin_capability": {
+      "severity": "high",
+      "class": "administrative_control",
+      "rationale": "A privileged destructive path can permanently disable the contract or assets."
+    },
+    "privileged_transfer_bypasses_policy": {
+      "severity": "high",
+      "class": "transfer_policy",
+      "rationale": "A privileged bypass invalidates policy guarantees and can selectively move restricted balances."
+    },
+    "withdrawal_without_solvency_check": {
+      "severity": "high",
+      "class": "solvency",
+      "rationale": "Withdrawals without a solvency invariant can leave liabilities undercollateralized."
+    },
+    "unsafe_governance_quorum": {
+      "severity": "high",
+      "class": "governance",
+      "rationale": "Unsafe quorum rules can allow a small or flash-borrowed voting set to control governance."
+    },
+    "message_domain_not_bound_to_chain_or_sender": {
+      "severity": "high",
+      "class": "cross_chain_replay",
+      "rationale": "Missing chain and sender domain binding permits cross-domain message replay."
+    }
+  },
+  "default": {
+    "severity": "informational",
+    "class": "unclassified",
+    "rationale": "No current policy classification exists; do not infer a stronger severity."
+  },
+  "truthBoundary": "This registry normalizes severity for local benchmark fixtures. It is not detector-quality proof or a guarantee that the same severity applies to a deployed contract without context."
+}

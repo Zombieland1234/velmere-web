@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "velmere.pass36.a64.historical-control-metadata-recovery-policy.v1",
+  "revisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+  "parentRevisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+  "sourceArchive": {
+    "fileName": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE_SOURCE_ONLY(1).zip",
+    "sha256": "31d36618b4182fa317b20887db25a102da63858ff60ec84f6bd0103ea30d2f1b",
+    "maximumArchiveBytes": 268435456,
+    "maximumEntries": 10000,
+    "maximumTotalUncompressedBytes": 1073741824,
+    "maximumSingleFileBytes": 134217728
+  },
+  "historicalAnchor": {
+    "archivePath": "_velmere/PASS35_A44_SOURCE_ONLY_MANIFEST.json",
+    "localPath": "config/pass36/a64-a44-control-metadata-anchor.json",
+    "sha256": "48913594a9e0791f58dd621ced4a5f1d6c830af3218ecf8fa288abce12d70a3f",
+    "declaredManifestSha256": "644d99335e9d89c1e657a7e2a6bf6f7e4e4571bcf933bf28e5c3719a5c4e3cce",
+    "revisionId": "VELMERE_PASS35_A44_VISUAL_MASTER_ENGINE_BINDING"
+  },
+  "receiptPath": "config/pass36/a64-historical-control-metadata-recovery-receipt.json",
+  "expectedSupplementalMetadata": 109,
+  "expectedRestoredMetadata": 103,
+  "expectedControlPlaneRequired": 399,
+  "expectedControlPlaneRestored": 96,
+  "decisions": {
+    "verified": "VERIFIED_LOCAL_HISTORICAL_CONTROL_METADATA_RECOVERY",
+    "blocked": "BLOCKED_HISTORICAL_SOURCE_ARCHIVE_UNAVAILABLE",
+    "rejected": "REJECTED_INTEGRITY"
+  },
+  "truthBoundary": "A64 restores only exact historical control metadata bytes already present in the supplied A53 SOURCE_ONLY archive and hash-bound by the validated A44 manifest. It does not regenerate evidence, update historical conclusions, prove current runtime, staging, LIVE, legal rights, customer value, or enable sale."
+}

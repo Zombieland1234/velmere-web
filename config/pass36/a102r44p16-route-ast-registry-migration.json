@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p16.route-ast-registry-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P15_ACTION_REQUIRED_REENTRANCY_RECALL_SOURCE_AUDIT_DECLARATION_BOUNDARY_AND_FINAL_BYTE_REGRESSION_NO_LIVE_CREDIT",
+  "oldDenominator": 254,
+  "newDenominator": 254,
+  "oldMethodExportCount": 317,
+  "newMethodExportCount": 317,
+  "changedRowCount": 1,
+  "removedRows": [],
+  "addedRows": [],
+  "changes": [
+    {
+      "path": "app/api/checkout/vlm-service/route.ts",
+      "before": {
+        "path": "app/api/checkout/vlm-service/route.ts",
+        "byteLength": 25391,
+        "sha256": "a8647aa6e740a4566859f1c23d600bafd3b05ed108835c778de0a2cdca359a70",
+        "mode": "100644",
+        "methods": [
+          "POST"
+        ],
+        "exportKinds": {
+          "POST": [
+            "function_declaration"
+          ]
+        },
+        "duplicateMethods": [],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "parseDiagnostics": [],
+        "namedReExportCount": 0,
+        "exportStarCount": 0,
+        "astEligible": true
+      },
+      "after": {
+        "path": "app/api/checkout/vlm-service/route.ts",
+        "byteLength": 25993,
+        "sha256": "f9bc56a947e0bcc61146c81eaa79c5f457baa111ec4976302a7e4da62197c546",
+        "mode": "100644",
+        "methods": [
+          "POST"
+        ],
+        "exportKinds": {
+          "POST": [
+            "function_declaration"
+          ]
+        },
+        "duplicateMethods": [],
+        "routeConfig": {
+          "runtime": "\"nodejs\"",
+          "dynamic": "\"force-dynamic\""
+        },
+        "parseDiagnostics": [],
+        "namedReExportCount": 0,
+        "exportStarCount": 0,
+        "astEligible": true
+      }
+    }
+  ],
+  "parentRegistrySha256": "8885d92be2a3eb12d8e695ce65db8a7c39fe8c88aa8ce3423a0e39c0229f9050",
+  "currentRegistrySha256": "0d770081788498ade6e5755a5b520a51154bc0ef3fad9fcddc6e790c3f82f2c3",
+  "parserBoundary": {
+    "source": "DIAGNOSTIC_EXTERNAL_ONLY",
+    "version": "5.8.3",
+    "moduleSha256": "dd17428736a07e1db1a138d8a14295ddb2699ba780ee15038acdd2c6da5373a0",
+    "moduleByteLength": 9066411,
+    "exactToolchainCreditEligible": false,
+    "pathDisclosure": "EXTERNAL_DIAGNOSTIC_MODULE_REDACTED",
+    "mode": "100755"
+  },
+  "exactAstReparseCredit": false,
+  "staticCurrentByteReplayCredit": true,
+  "reason": "The checkout route was changed to enforce the canonical no-public-price/no-public-checkout SKU truth. The current registry was diagnostically reparsed with TypeScript 5.8.3 because the exact project dependency TypeScript 5.9.3 and exact Node 24.18.0 were unavailable in this runtime. No route denominator or HTTP method export was removed.",
+  "truthBoundary": {
+    "exactRouteAstCredit": false,
+    "buildBrowserCredit": false,
+    "saleCredit": false,
+    "liveCredit": false
+  }
+}

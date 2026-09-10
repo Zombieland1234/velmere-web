@@ -1,0 +1,3630 @@
+{
+  "schemaVersion": "velmere.pass4826.strict-risk-input-characterization.v1",
+  "scenarios": [
+    {
+      "id": "btc-deep-market",
+      "input": {
+        "symbol": "BTC",
+        "name": "Bitcoin",
+        "assetClass": "crypto",
+        "currentPrice": 64000,
+        "athPrice": 73700,
+        "marketCap": 1250000000000,
+        "fdv": 1320000000000,
+        "liquidityUsd": 9000000000,
+        "volume24h": 32000000000,
+        "averageVolume7d": 28000000000,
+        "priceChange1h": 0.4,
+        "priceChange6h": 1.2,
+        "priceChange24h": 2.5,
+        "priceChange7d": -3.1,
+        "priceChange14d": 4.5,
+        "priceChange30d": 8.2,
+        "circulatingSupply": 19700000,
+        "maxSupply": 21000000,
+        "sparkline7d": [
+          63000,
+          63500,
+          64000
+        ],
+        "dataSources": [
+          "Binance",
+          "CoinGecko"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "assetClass": "crypto"
+        },
+        "score": 0.15,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:db702877833feed5d43cf8071059942853f337939b72e3d38c3f27322514f086"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 0.15,
+          "lowerBound": 0,
+          "upperBound": 5.11,
+          "halfWidth": 4.96,
+          "precision": "high",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "broad_multi_source_evidence_coverage"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.96,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 4,
+            "weight": 0,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.81,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.81,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.37,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.62,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.37,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 14,
+            "weight": 0,
+            "confidence": 0.77,
+            "evidenceCount": 2,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "clear",
+          "finalVerdict": "Monitor: no high-severity anomaly in attached fields; unresolved limitations remain.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 0.15,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "BTC: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Velocity / pump agent (0/100). Blocked by: vesting/unlock schedule not verified, crypto instrument: holder concentration lane is replaced by issuer/venue/source review, crypto instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+          "escalation": "Monitor: keep automated scan active and resolve missing evidence before stronger conclusions. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "vesting/unlock schedule not verified",
+            "crypto instrument: holder concentration lane is replaced by issuer/venue/source review",
+            "crypto instrument: smart-contract/admin lane is not assumed without a token contract",
+            "KOL/social disclosure data missing",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "low",
+        "badge": "low_detected_risk",
+        "signals": [],
+        "metrics": {
+          "currentPrice": 64000,
+          "athPrice": 73700,
+          "drawdownPercent": 13.16,
+          "marketCap": 1250000000000,
+          "fdv": 1320000000000,
+          "fdvToMarketCapRatio": 1.06,
+          "liquidityUsd": 9000000000,
+          "liquidityToMarketCapPercent": 0.72,
+          "volume24h": 32000000000,
+          "volumeToLiquidityRatio": 3.56,
+          "volumeToMarketCapRatio": 0.03,
+          "priceChange1h": 0.4,
+          "priceChange6h": 1.2,
+          "priceChange24h": 2.5,
+          "priceChange7d": -3.1,
+          "priceChange14d": 4.5,
+          "priceChange30d": 8.2,
+          "circulatingSupply": 19700000,
+          "maxSupply": 21000000
+        },
+        "dataQuality": "live",
+        "chart": {
+          "sevenDay": [
+            63000,
+            63500,
+            64000
+          ]
+        },
+        "aiSummary": "BTC: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Velocity / pump agent (0/100). Blocked by: vesting/unlock schedule not verified, crypto instrument: holder concentration lane is replaced by issuer/venue/source review, crypto instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+        "dataSources": [
+          "Binance",
+          "CoinGecko"
+        ]
+      }
+    },
+    {
+      "id": "meme-parabolic",
+      "input": {
+        "symbol": "PEPE",
+        "name": "Pepe Meme",
+        "assetClass": "crypto",
+        "currentPrice": 0.00002,
+        "athPrice": 0.000025,
+        "marketCap": 8000000000,
+        "fdv": 9000000000,
+        "liquidityUsd": 2000000,
+        "volume24h": 2500000000,
+        "averageVolume7d": 500000000,
+        "priceChange1h": 18,
+        "priceChange6h": 42,
+        "priceChange24h": 120,
+        "priceChange7d": 310,
+        "priceChange30d": 900,
+        "buys24h": 20000,
+        "sells24h": 42000,
+        "top10HolderPercent": 78,
+        "holderCount": 120000,
+        "simulatedSlippage10k": 8,
+        "bidAskImbalancePercent": -45,
+        "orderBookDepthDropPercent": 70,
+        "circulatingSupply": 420000000000000,
+        "totalSupply": 420000000000000,
+        "maxSupply": 420000000000000,
+        "suspiciousContractPrivileges": true,
+        "canBlacklist": true,
+        "canMintNewTokens": true,
+        "sellTaxPercentage": 12,
+        "dataSources": [
+          "DexScreener",
+          "CoinGecko"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "PEPE",
+          "name": "Pepe Meme",
+          "assetClass": "crypto"
+        },
+        "score": 86.55,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:05e55e2e4b7a381fb988fde3f0ce357d5bef487d3e3d692d769d51c2b65cbe9a"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 86.55,
+          "lowerBound": 80.15,
+          "upperBound": 92.95,
+          "halfWidth": 6.4,
+          "precision": "high",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "broad_multi_source_evidence_coverage"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.9,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 86.72,
+            "weight": 0.2,
+            "confidence": 0.9,
+            "evidenceCount": 5
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 30.16,
+            "weight": 0.26,
+            "confidence": 0.9,
+            "evidenceCount": 2
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 31.24,
+            "weight": 0.18,
+            "confidence": 0.9,
+            "evidenceCount": 3
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 20,
+            "weight": 0.2,
+            "confidence": 0.9,
+            "evidenceCount": 1
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 39.96,
+            "weight": 0.16,
+            "confidence": 0.9,
+            "evidenceCount": 4
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 10,
+            "weight": 0,
+            "confidence": 0.9,
+            "evidenceCount": 0
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 86.72,
+            "weight": 0.2,
+            "confidence": 0.9,
+            "evidenceCount": 5,
+            "status": "critical",
+            "verdict": "critical",
+            "evidenceSignalIds": [
+              "rapid_intraday_move",
+              "parabolic_24h_gain",
+              "parabolic_7d_gain",
+              "parabolic_30d_gain",
+              "multi_timeframe_pump"
+            ],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against social/KOL source ledger, holder labels and exit depth. Source mode: live; 2 attached sources; meme profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach social/KOL source ledger, holder labels and liquidity-zone review."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 30.16,
+            "weight": 0.26,
+            "confidence": 0.87,
+            "evidenceCount": 2,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "very_thin_liquidity",
+              "volume_spike"
+            ],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; meme profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach social/KOL source ledger, holder labels and liquidity-zone review."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 31.24,
+            "weight": 0.18,
+            "confidence": 0.9,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "orderbook_depth_collapse",
+              "orderbook_slippage_risk",
+              "orderbook_imbalance"
+            ],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; meme profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 20,
+            "weight": 0.2,
+            "confidence": 0.83,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "holder_concentration"
+            ],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; meme profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 39.96,
+            "weight": 0.16,
+            "confidence": 0.72,
+            "evidenceCount": 4,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "contract_privileges",
+              "high_sell_tax",
+              "mint_risk",
+              "blacklist_risk"
+            ],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; meme profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 14,
+            "weight": 0,
+            "confidence": 0.81,
+            "evidenceCount": 2,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; meme profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach social/KOL source ledger, holder labels and liquidity-zone review."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "critical",
+          "finalVerdict": "Critical review: hard-floor signal or multiple corroborated lanes require manual escalation.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 86.55,
+          "conflictLevel": "low",
+          "requiredReview": true,
+          "summary": "PEPE: critical market-integrity risk; manual review required. Dominant lane: Velocity / pump agent (86.72/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, DEX pair/source routing not verified. Confidence state: confidence supported by attached fields. Meme-profile interpretation requires social/KOL source ledger, holder labels and exit depth.",
+          "escalation": "Escalate: manual forensic review, orderbook depth, holder labels and contract admin review. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Attach social/KOL source ledger, holder labels and liquidity-zone review.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "DEX pair/source routing not verified",
+            "KOL/social disclosure data missing",
+            "meme/social source ledger required",
+            "paid promotion and allocation disclosures unavailable",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "critical",
+        "badge": "critical_market_integrity_risk",
+        "signals": [
+          {
+            "id": "rapid_intraday_move",
+            "severity": "medium",
+            "points": 10,
+            "metrics": {
+              "priceChange1h": 18,
+              "priceChange6h": 42
+            }
+          },
+          {
+            "id": "parabolic_24h_gain",
+            "severity": "critical",
+            "points": 36,
+            "metrics": {
+              "priceChange24h": 120
+            }
+          },
+          {
+            "id": "parabolic_7d_gain",
+            "severity": "critical",
+            "points": 40,
+            "metrics": {
+              "priceChange7d": 310
+            }
+          },
+          {
+            "id": "parabolic_30d_gain",
+            "severity": "critical",
+            "points": 32,
+            "metrics": {
+              "priceChange30d": 900
+            }
+          },
+          {
+            "id": "multi_timeframe_pump",
+            "severity": "critical",
+            "points": 40,
+            "metrics": {
+              "priceChange24h": 120,
+              "priceChange7d": 310,
+              "priceChange30d": 900
+            }
+          },
+          {
+            "id": "very_thin_liquidity",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "liquidityToMarketCapPercent": 0.025,
+              "liquidityUsd": 2000000,
+              "exitDepthReview": "required"
+            }
+          },
+          {
+            "id": "volume_spike",
+            "severity": "high",
+            "points": 19,
+            "metrics": {
+              "volumeToLiquidityRatio": 1250,
+              "turnoverReview": "required"
+            }
+          },
+          {
+            "id": "orderbook_depth_collapse",
+            "severity": "high",
+            "points": 22,
+            "metrics": {
+              "orderBookDepthDropPercent": 70
+            }
+          },
+          {
+            "id": "orderbook_slippage_risk",
+            "severity": "medium",
+            "points": 10,
+            "metrics": {
+              "simulatedSlippage10k": 8
+            }
+          },
+          {
+            "id": "orderbook_imbalance",
+            "severity": "medium",
+            "points": 8,
+            "metrics": {
+              "bidAskImbalancePercent": -45
+            }
+          },
+          {
+            "id": "holder_concentration",
+            "severity": "high",
+            "points": 20,
+            "metrics": {
+              "top10HolderPercent": 78,
+              "walletLabeling": "required"
+            }
+          },
+          {
+            "id": "contract_privileges",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "suspiciousContractPrivileges": true,
+              "canPauseTrading": false,
+              "contractAdminReview": "required"
+            }
+          },
+          {
+            "id": "high_sell_tax",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "buyTaxPercentage": null,
+              "sellTaxPercentage": 12,
+              "highestTransferTax": 12,
+              "taxAsymmetryPercent": null,
+              "transferTaxReview": "required"
+            }
+          },
+          {
+            "id": "mint_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "canMintNewTokens": true,
+              "contractAdminReview": "required"
+            }
+          },
+          {
+            "id": "blacklist_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "canBlacklist": true,
+              "contractAdminReview": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 0.00002,
+          "athPrice": 0.000025,
+          "drawdownPercent": 20,
+          "marketCap": 8000000000,
+          "fdv": 9000000000,
+          "fdvToMarketCapRatio": 1.13,
+          "liquidityUsd": 2000000,
+          "liquidityToMarketCapPercent": 0.025,
+          "volume24h": 2500000000,
+          "volumeToLiquidityRatio": 1250,
+          "volumeToMarketCapRatio": 0.31,
+          "priceChange1h": 18,
+          "priceChange6h": 42,
+          "priceChange24h": 120,
+          "priceChange7d": 310,
+          "priceChange30d": 900,
+          "buySellImbalancePercent": 35.48,
+          "top10HolderPercent": 78,
+          "holderCount": 120000,
+          "sellTaxPercentage": 12,
+          "simulatedSlippage10k": 8,
+          "bidAskImbalancePercent": -45,
+          "circulatingSupply": 420000000000000,
+          "totalSupply": 420000000000000,
+          "maxSupply": 420000000000000
+        },
+        "dataQuality": "live",
+        "chart": {},
+        "aiSummary": "PEPE: critical market-integrity risk; manual review required. Dominant lane: Velocity / pump agent (86.72/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, DEX pair/source routing not verified. Confidence state: confidence supported by attached fields. Meme-profile interpretation requires social/KOL source ledger, holder labels and exit depth.",
+        "dataSources": [
+          "DexScreener",
+          "CoinGecko"
+        ]
+      }
+    },
+    {
+      "id": "stablecoin-depeg",
+      "input": {
+        "symbol": "USDC",
+        "name": "USD Coin stablecoin",
+        "assetClass": "crypto",
+        "currentPrice": 0.91,
+        "athPrice": 1.02,
+        "marketCap": 30000000000,
+        "fdv": 30000000000,
+        "liquidityUsd": 800000000,
+        "volume24h": 5000000000,
+        "averageVolume7d": 4000000000,
+        "priceChange1h": -2,
+        "priceChange6h": -5,
+        "priceChange24h": -9,
+        "priceChange7d": -8,
+        "circulatingSupply": 32000000000,
+        "totalSupply": 32000000000,
+        "top10HolderPercent": 45,
+        "dataSources": [
+          "CoinGecko",
+          "Binance"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "USDC",
+          "name": "USD Coin stablecoin",
+          "assetClass": "crypto"
+        },
+        "score": 42.23,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:db702877833feed5d43cf8071059942853f337939b72e3d38c3f27322514f086"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 42.23,
+          "lowerBound": 27.11,
+          "upperBound": 57.35,
+          "halfWidth": 15.12,
+          "precision": "low",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.87,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 14,
+            "weight": 0.2,
+            "confidence": 0.87,
+            "evidenceCount": 1
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.87,
+            "evidenceCount": 0
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.87,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 11,
+            "weight": 0.2,
+            "confidence": 0.87,
+            "evidenceCount": 1
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.87,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 13,
+            "weight": 0,
+            "confidence": 0.87,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 14,
+            "weight": 0.2,
+            "confidence": 0.71,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "rapid_intraday_move"
+            ],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against peg, issuer and reserve proof. Source mode: live; 2 attached sources; stablecoin profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Verify reserve proof, redemption status, liquidity venues and exchange depth."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.79,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; stablecoin profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Verify reserve proof, redemption status, liquidity venues and exchange depth."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.35,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; stablecoin profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 11,
+            "weight": 0.2,
+            "confidence": 0.7,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "holder_concentration"
+            ],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; stablecoin profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.35,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; stablecoin profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 14,
+            "weight": 0,
+            "confidence": 0.84,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; stablecoin profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Verify reserve proof, redemption status, liquidity venues and exchange depth."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "watch",
+          "finalVerdict": "Watch: limited anomaly pattern; rerun after missing evidence is resolved.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 42.23,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "USDC: detected anomalies require review; current evidence does not support a stronger claim. Dominant lane: Velocity / pump agent (14/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, contract permissions unavailable. Confidence state: confidence supported by attached fields. Stablecoin interpretation requires peg, issuer and reserve proof.",
+          "escalation": "Watch: rerun on the next snapshot and resolve missing sources. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Verify reserve proof, redemption status, liquidity venues and exchange depth.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "contract permissions unavailable",
+            "orderbook depth unavailable",
+            "DEX pair/source routing not verified",
+            "tax settings unavailable",
+            "bid/ask flow counts unavailable",
+            "KOL/social disclosure data missing",
+            "issuer proof missing for stablecoin",
+            "reserve proof missing for stablecoin",
+            "redemption proof missing for stablecoin",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "medium",
+        "badge": "elevated_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "medium",
+            "points": 7,
+            "metrics": {
+              "missingCoreCount": 2,
+              "missingFields": "contract permissions, orderbook depth",
+              "uncertaintyReview": "required"
+            }
+          },
+          {
+            "id": "rapid_intraday_move",
+            "severity": "medium",
+            "points": 14,
+            "metrics": {
+              "pegDeviationPercent": 9,
+              "stablecoinDepegReview": "required"
+            }
+          },
+          {
+            "id": "holder_concentration",
+            "severity": "medium",
+            "points": 11,
+            "metrics": {
+              "top10HolderPercent": 45,
+              "walletLabeling": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 0.91,
+          "athPrice": 1.02,
+          "drawdownPercent": 10.78,
+          "marketCap": 30000000000,
+          "fdv": 30000000000,
+          "liquidityUsd": 800000000,
+          "liquidityToMarketCapPercent": 2.6667,
+          "volume24h": 5000000000,
+          "volumeToLiquidityRatio": 6.25,
+          "volumeToMarketCapRatio": 0.17,
+          "priceChange1h": -2,
+          "priceChange6h": -5,
+          "priceChange24h": -9,
+          "priceChange7d": -8,
+          "top10HolderPercent": 45,
+          "circulatingSupply": 32000000000,
+          "totalSupply": 32000000000
+        },
+        "dataQuality": "live",
+        "chart": {},
+        "aiSummary": "USDC: detected anomalies require review; current evidence does not support a stronger claim. Dominant lane: Velocity / pump agent (14/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, contract permissions unavailable. Confidence state: confidence supported by attached fields. Stablecoin interpretation requires peg, issuer and reserve proof.",
+        "dataSources": [
+          "CoinGecko",
+          "Binance"
+        ]
+      }
+    },
+    {
+      "id": "rwa-thin",
+      "input": {
+        "symbol": "OUSG",
+        "name": "Ondo tokenized US treasuries RWA",
+        "assetClass": "crypto",
+        "currentPrice": 105,
+        "marketCap": 200000000,
+        "fdv": 400000000,
+        "liquidityUsd": 150000,
+        "volume24h": 25000,
+        "averageVolume7d": 30000,
+        "priceChange24h": -1,
+        "priceChange7d": 0.5,
+        "circulatingSupply": 2000000,
+        "totalSupply": 4000000,
+        "top10HolderPercent": 88,
+        "holderCount": 340,
+        "suspiciousContractPrivileges": false,
+        "canMintNewTokens": true,
+        "dataSources": [
+          "CoinGecko"
+        ]
+      },
+      "quality": "partial",
+      "result": {
+        "token": {
+          "symbol": "OUSG",
+          "name": "Ondo tokenized US treasuries RWA",
+          "assetClass": "crypto"
+        },
+        "score": 42.4,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:8320fcbab70fbdad1accd25743b3574ea55f9304db96bd21723cc47b7766147b"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 42.4,
+          "lowerBound": 7.76,
+          "upperBound": 77.04,
+          "halfWidth": 34.64,
+          "precision": "low",
+          "evidenceState": "partial",
+          "outOfDistribution": false,
+          "drivers": [
+            "partial_data_quality",
+            "single_source_dependency",
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.39,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 26.68,
+            "weight": 0.26,
+            "confidence": 0.39,
+            "evidenceCount": 2
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.39,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 32,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 1
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 18,
+            "weight": 0.16,
+            "confidence": 0.39,
+            "evidenceCount": 1
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 61,
+            "weight": 0,
+            "confidence": 0.39,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.4,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against issuer, redemption and custody proof. Source mode: partial; 1 attached source; rwa profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Verify issuer, redemption terms, custody proof and source ledger."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 26.68,
+            "weight": 0.26,
+            "confidence": 0.74,
+            "evidenceCount": 2,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "very_thin_liquidity",
+              "market_volume_stress"
+            ],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: partial; 1 attached source; rwa profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Verify issuer, redemption terms, custody proof and source ledger."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.23,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: partial; 1 attached source; rwa profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 32,
+            "weight": 0.2,
+            "confidence": 0.65,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "holder_concentration"
+            ],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: partial; 1 attached source; rwa profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 18,
+            "weight": 0.16,
+            "confidence": 0.38,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "mint_risk"
+            ],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: partial; 1 attached source; rwa profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 61,
+            "weight": 0,
+            "confidence": 0.69,
+            "evidenceCount": 2,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: partial; 1 attached source; rwa profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Verify issuer, redemption terms, custody proof and source ledger."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "insufficient_data",
+          "finalVerdict": "Prescreen only: evidence is too incomplete for a stronger conclusion.",
+          "dominantAgent": "data",
+          "dataFusionScore": 42.4,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "OUSG: confidence too low. Treat score as prescreen only. Dominant lane: Data quality agent (61/100). Blocked by: partial provider data; confidence capped until live source ledger is corroborated, vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing. Missing data is not evidence of misconduct. RWA interpretation requires issuer, redemption and custody proof.",
+          "escalation": "Watch: rerun on the next snapshot and resolve missing sources. Next action: Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Verify issuer, redemption terms, custody proof and source ledger.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "partial provider data; confidence capped until live source ledger is corroborated",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "orderbook depth unavailable",
+            "price history coverage incomplete",
+            "DEX pair/source routing not verified",
+            "tax settings unavailable",
+            "bid/ask flow counts unavailable",
+            "source ledger has limited corroboration",
+            "KOL/social disclosure data missing",
+            "confidence too low; prescreen only",
+            "issuer proof missing for RWA",
+            "redemption proof missing for RWA",
+            "custody/source proof missing for RWA",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "medium",
+        "badge": "elevated_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "medium",
+            "points": 9,
+            "metrics": {
+              "missingCoreCount": 3,
+              "missingFields": "orderbook depth, price history coverage, independent second source",
+              "uncertaintyReview": "required"
+            }
+          },
+          {
+            "id": "very_thin_liquidity",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "liquidityToMarketCapPercent": 0.075,
+              "liquidityUsd": 150000,
+              "exitDepthReview": "required"
+            }
+          },
+          {
+            "id": "market_volume_stress",
+            "severity": "high",
+            "points": 14,
+            "metrics": {
+              "volumeToMarketCapRatio": 0.000125,
+              "thinExitDepthReview": "required",
+              "redemptionDepthReview": "required"
+            }
+          },
+          {
+            "id": "holder_concentration",
+            "severity": "critical",
+            "points": 32,
+            "metrics": {
+              "top10HolderPercent": 88,
+              "walletLabeling": "required",
+              "holderCount": 340
+            }
+          },
+          {
+            "id": "mint_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "canMintNewTokens": true,
+              "contractAdminReview": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 105,
+          "marketCap": 200000000,
+          "fdv": 400000000,
+          "fdvToMarketCapRatio": 2,
+          "liquidityUsd": 150000,
+          "liquidityToMarketCapPercent": 0.075,
+          "volume24h": 25000,
+          "volumeToLiquidityRatio": 0.17,
+          "volumeToMarketCapRatio": 0,
+          "priceChange24h": -1,
+          "priceChange7d": 0.5,
+          "top10HolderPercent": 88,
+          "holderCount": 340,
+          "circulatingSupply": 2000000,
+          "totalSupply": 4000000
+        },
+        "dataQuality": "partial",
+        "chart": {},
+        "aiSummary": "OUSG: confidence too low. Treat score as prescreen only. Dominant lane: Data quality agent (61/100). Blocked by: partial provider data; confidence capped until live source ledger is corroborated, vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing. Missing data is not evidence of misconduct. RWA interpretation requires issuer, redemption and custody proof.",
+        "dataSources": [
+          "CoinGecko"
+        ]
+      }
+    },
+    {
+      "id": "unknown-empty",
+      "input": {
+        "symbol": "UNKNOWN",
+        "name": "Unknown Token",
+        "assetClass": "unknown",
+        "dataSources": []
+      },
+      "quality": "demo",
+      "result": {
+        "token": {
+          "symbol": "UNKNOWN",
+          "name": "Unknown Token",
+          "assetClass": "unknown"
+        },
+        "score": 48.71,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "unknown",
+          "providerConfigurationDigest": "sha256:34d11de7fbcac6e028601d9344a985b019e484a9c895db80ee2541bc386e3e4a"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 48.71,
+          "lowerBound": 3.71,
+          "upperBound": 93.71,
+          "halfWidth": 45,
+          "precision": "insufficient",
+          "evidenceState": "insufficient",
+          "outOfDistribution": true,
+          "drivers": [
+            "demo_data_not_live_evidence",
+            "no_attached_provider_source",
+            "explicit_insufficient_data_signal",
+            "out_of_distribution_asset_profile"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.1,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.1,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.1,
+            "evidenceCount": 0
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.1,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.1,
+            "evidenceCount": 0
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.1,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 90,
+            "weight": 0,
+            "confidence": 0.1,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.16,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against asset classification and source ledger. Source mode: demo; 0 attached sources; unknown profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Classify the asset from primary sources before interpreting market movement."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.16,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: demo; 0 attached sources; unknown profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Classify the asset from primary sources before interpreting market movement."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.16,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: demo; 0 attached sources; unknown profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.16,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: demo; 0 attached sources; unknown profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.16,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: demo; 0 attached sources; unknown profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 90,
+            "weight": 0,
+            "confidence": 0.2,
+            "evidenceCount": 1,
+            "status": "critical",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: demo; 0 attached sources; unknown profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Classify the asset from primary sources before interpreting market movement."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "insufficient_data",
+          "finalVerdict": "Prescreen only: evidence is too incomplete for a stronger conclusion.",
+          "dominantAgent": "data",
+          "dataFusionScore": 48.71,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "UNKNOWN: confidence too low. Treat score as prescreen only. Dominant lane: Data quality agent (90/100). Blocked by: local sample/fallback data; confidence capped below 30%, circulating supply missing, vesting/unlock schedule not verified, holder concentration unavailable. Missing data is not evidence of misconduct. Unknown asset profile requires asset classification and source ledger.",
+          "escalation": "Watch: rerun on the next snapshot and resolve missing sources. Next action: Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Classify the asset from primary sources before interpreting market movement.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "local sample/fallback data; confidence capped below 30%",
+            "circulating supply missing",
+            "vesting/unlock schedule not verified",
+            "holder concentration unavailable",
+            "holder labels unavailable",
+            "contract address missing",
+            "contract permissions unavailable",
+            "orderbook depth unavailable",
+            "price history coverage incomplete",
+            "liquidity depth unavailable",
+            "DEX pair/source routing not verified",
+            "tax settings unavailable",
+            "bid/ask flow counts unavailable",
+            "OSINT source ledger not attached",
+            "KOL/social disclosure data missing",
+            "confidence too low; prescreen only",
+            "asset profile unknown; classification requires source review",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "medium",
+        "badge": "elevated_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "high",
+            "points": 20,
+            "metrics": {
+              "warnings": 4,
+              "missingCoreCount": 10,
+              "missingFields": "price, market cap or FDV, 24h volume, liquidity depth",
+              "uncertaintyReview": "required"
+            }
+          }
+        ],
+        "metrics": {},
+        "dataQuality": "demo",
+        "chart": {},
+        "aiSummary": "UNKNOWN: confidence too low. Treat score as prescreen only. Dominant lane: Data quality agent (90/100). Blocked by: local sample/fallback data; confidence capped below 30%, circulating supply missing, vesting/unlock schedule not verified, holder concentration unavailable. Missing data is not evidence of misconduct. Unknown asset profile requires asset classification and source ledger.",
+        "dataSources": []
+      }
+    },
+    {
+      "id": "honeypot",
+      "input": {
+        "symbol": "SCAM",
+        "name": "Scam Token",
+        "assetClass": "crypto",
+        "currentPrice": 0.1,
+        "marketCap": 1000000,
+        "fdv": 100000000,
+        "liquidityUsd": 5000,
+        "volume24h": 2000000,
+        "averageVolume7d": 50000,
+        "priceChange24h": 300,
+        "priceChange7d": 800,
+        "circulatingSupply": 10000000,
+        "totalSupply": 1000000000,
+        "top10HolderPercent": 95,
+        "holderCount": 50,
+        "isHoneypot": true,
+        "sellTaxPercentage": 99,
+        "canBlacklist": true,
+        "canMintNewTokens": true,
+        "suspiciousContractPrivileges": true,
+        "simulatedSlippage10k": 95,
+        "bidAskImbalancePercent": -90,
+        "dataSources": [
+          "DexScreener"
+        ]
+      },
+      "quality": "partial",
+      "result": {
+        "token": {
+          "symbol": "SCAM",
+          "name": "Scam Token",
+          "assetClass": "crypto"
+        },
+        "score": 92.72,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:c2183cb073dd856486d88ba1f576a67c57b0d51f3c547d0a9d9240827fe0c9fb"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 92.72,
+          "lowerBound": 58.08,
+          "upperBound": 100,
+          "halfWidth": 34.64,
+          "precision": "low",
+          "evidenceState": "partial",
+          "outOfDistribution": false,
+          "drivers": [
+            "partial_data_quality",
+            "single_source_dependency",
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.39,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 83.2,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 4
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 41.08,
+            "weight": 0.26,
+            "confidence": 0.39,
+            "evidenceCount": 4
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 37.44,
+            "weight": 0.18,
+            "confidence": 0.39,
+            "evidenceCount": 2
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 60.68,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 3
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 82.66,
+            "weight": 0.16,
+            "confidence": 0.39,
+            "evidenceCount": 5
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 61,
+            "weight": 0,
+            "confidence": 0.39,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 83.2,
+            "weight": 0.2,
+            "confidence": 0.54,
+            "evidenceCount": 4,
+            "status": "high",
+            "verdict": "warning",
+            "evidenceSignalIds": [
+              "parabolic_24h_gain",
+              "parabolic_7d_gain",
+              "multi_timeframe_pump",
+              "new_ath_repricing"
+            ],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 41.08,
+            "weight": 0.26,
+            "confidence": 0.81,
+            "evidenceCount": 4,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "thin_liquidity",
+              "low_dex_liquidity",
+              "volume_spike",
+              "wash_trading_risk"
+            ],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 37.44,
+            "weight": 0.18,
+            "confidence": 0.48,
+            "evidenceCount": 2,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "orderbook_slippage_risk",
+              "orderbook_imbalance"
+            ],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 60.68,
+            "weight": 0.2,
+            "confidence": 0.72,
+            "evidenceCount": 3,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "fdv_marketcap_gap",
+              "supply_overhang",
+              "holder_concentration"
+            ],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 82.66,
+            "weight": 0.16,
+            "confidence": 0.67,
+            "evidenceCount": 5,
+            "status": "high",
+            "verdict": "warning",
+            "evidenceSignalIds": [
+              "contract_privileges",
+              "honeypot_risk",
+              "high_sell_tax",
+              "mint_risk",
+              "blacklist_risk"
+            ],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 61,
+            "weight": 0,
+            "confidence": 0.69,
+            "evidenceCount": 2,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "critical",
+          "finalVerdict": "Critical review: hard-floor signal or multiple corroborated lanes require manual escalation.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 92.72,
+          "conflictLevel": "low",
+          "requiredReview": true,
+          "summary": "SCAM: critical market-integrity risk; manual review required. Dominant lane: Velocity / pump agent (83.2/100). Blocked by: partial provider data; confidence capped until live source ledger is corroborated, vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing. Confidence state: confidence limited by missing sources.",
+          "escalation": "Escalate: manual forensic review, orderbook depth, holder labels and contract admin review. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "partial provider data; confidence capped until live source ledger is corroborated",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "price history coverage incomplete",
+            "DEX pair/source routing not verified",
+            "bid/ask flow counts unavailable",
+            "source ledger has limited corroboration",
+            "KOL/social disclosure data missing",
+            "confidence too low; prescreen only",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "critical",
+        "badge": "critical_market_integrity_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "medium",
+            "points": 7,
+            "metrics": {
+              "missingCoreCount": 2,
+              "missingFields": "price history coverage, independent second source",
+              "uncertaintyReview": "required"
+            }
+          },
+          {
+            "id": "parabolic_24h_gain",
+            "severity": "critical",
+            "points": 38,
+            "metrics": {
+              "priceChange24h": 300
+            }
+          },
+          {
+            "id": "parabolic_7d_gain",
+            "severity": "critical",
+            "points": 42,
+            "metrics": {
+              "priceChange7d": 800
+            }
+          },
+          {
+            "id": "multi_timeframe_pump",
+            "severity": "critical",
+            "points": 36,
+            "metrics": {
+              "priceChange24h": 300,
+              "priceChange7d": 800
+            }
+          },
+          {
+            "id": "new_ath_repricing",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "priceChange7d": 800,
+              "drawdownPercent": null
+            }
+          },
+          {
+            "id": "thin_liquidity",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "liquidityToMarketCapPercent": 0.5,
+              "liquidityUsd": 5000,
+              "exitDepthReview": "required"
+            }
+          },
+          {
+            "id": "low_dex_liquidity",
+            "severity": "high",
+            "points": 14,
+            "metrics": {
+              "liquidityUsd": 5000
+            }
+          },
+          {
+            "id": "volume_spike",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "volumeToLiquidityRatio": 400,
+              "turnoverReview": "required",
+              "volumeToAverageRatio": 40,
+              "repricingWithTurnover": true,
+              "volumeToMarketCapRatio": 2
+            }
+          },
+          {
+            "id": "wash_trading_risk",
+            "severity": "high",
+            "points": 20,
+            "metrics": {
+              "volumeToMarketCapRatio": 2,
+              "volumeQualityReview": "required"
+            }
+          },
+          {
+            "id": "fdv_marketcap_gap",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "fdvToMarketCapRatio": 100,
+              "unlockOverhangReview": "required"
+            }
+          },
+          {
+            "id": "supply_overhang",
+            "severity": "critical",
+            "points": 34,
+            "metrics": {
+              "circulatingPercent": 1,
+              "floatOpacityReview": "required",
+              "fdvToMarketCapRatio": 100,
+              "unlockOverhangReview": "required"
+            }
+          },
+          {
+            "id": "orderbook_slippage_risk",
+            "severity": "critical",
+            "points": 30,
+            "metrics": {
+              "simulatedSlippage10k": 95
+            }
+          },
+          {
+            "id": "orderbook_imbalance",
+            "severity": "high",
+            "points": 12,
+            "metrics": {
+              "bidAskImbalancePercent": -90
+            }
+          },
+          {
+            "id": "holder_concentration",
+            "severity": "critical",
+            "points": 32,
+            "metrics": {
+              "top10HolderPercent": 95,
+              "walletLabeling": "required",
+              "holderCount": 50
+            }
+          },
+          {
+            "id": "contract_privileges",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "suspiciousContractPrivileges": true,
+              "canPauseTrading": false,
+              "contractAdminReview": "required"
+            }
+          },
+          {
+            "id": "honeypot_risk",
+            "severity": "critical",
+            "points": 48,
+            "metrics": {
+              "isHoneypot": true,
+              "contractAdminReview": "required"
+            }
+          },
+          {
+            "id": "high_sell_tax",
+            "severity": "critical",
+            "points": 35,
+            "metrics": {
+              "buyTaxPercentage": null,
+              "sellTaxPercentage": 99,
+              "highestTransferTax": 99,
+              "taxAsymmetryPercent": null,
+              "transferTaxReview": "required"
+            }
+          },
+          {
+            "id": "mint_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "canMintNewTokens": true,
+              "contractAdminReview": "required"
+            }
+          },
+          {
+            "id": "blacklist_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "canBlacklist": true,
+              "contractAdminReview": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 0.1,
+          "marketCap": 1000000,
+          "fdv": 100000000,
+          "fdvToMarketCapRatio": 100,
+          "liquidityUsd": 5000,
+          "liquidityToMarketCapPercent": 0.5,
+          "volume24h": 2000000,
+          "volumeToLiquidityRatio": 400,
+          "volumeToMarketCapRatio": 2,
+          "priceChange24h": 300,
+          "priceChange7d": 800,
+          "top10HolderPercent": 95,
+          "holderCount": 50,
+          "sellTaxPercentage": 99,
+          "simulatedSlippage10k": 95,
+          "bidAskImbalancePercent": -90,
+          "circulatingSupply": 10000000,
+          "totalSupply": 1000000000
+        },
+        "dataQuality": "partial",
+        "chart": {},
+        "aiSummary": "SCAM: critical market-integrity risk; manual review required. Dominant lane: Velocity / pump agent (83.2/100). Blocked by: partial provider data; confidence capped until live source ledger is corroborated, vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing. Confidence state: confidence limited by missing sources.",
+        "dataSources": [
+          "DexScreener"
+        ]
+      }
+    },
+    {
+      "id": "stock-largecap",
+      "input": {
+        "symbol": "AAPL",
+        "name": "Apple stock equity",
+        "assetClass": "stock",
+        "currentPrice": 220,
+        "athPrice": 240,
+        "marketCap": 3300000000000,
+        "volume24h": 12000000000,
+        "averageVolume7d": 11000000000,
+        "priceChange1h": 0.1,
+        "priceChange24h": -0.8,
+        "priceChange7d": 2.3,
+        "priceChange30d": 5.2,
+        "sparkline7d": [
+          215,
+          218,
+          220
+        ],
+        "dataSources": [
+          "Yahoo Finance",
+          "Stooq"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "AAPL",
+          "name": "Apple stock equity",
+          "assetClass": "stock"
+        },
+        "score": 12.14,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "stock",
+          "providerConfigurationDigest": "sha256:1110b4fc7d9574a9706c60773e61a5bdc7bc3726c2057e35e91e522a523b9611"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 12.14,
+          "lowerBound": 0,
+          "upperBound": 28.94,
+          "halfWidth": 16.8,
+          "precision": "moderate",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.8,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.8,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 8,
+            "weight": 0.26,
+            "confidence": 0.8,
+            "evidenceCount": 1
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.8,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.8,
+            "evidenceCount": 0
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.8,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 20,
+            "weight": 0,
+            "confidence": 0.8,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.66,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 8,
+            "weight": 0.26,
+            "confidence": 0.63,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "market_volume_stress"
+            ],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.33,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.33,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 20,
+            "weight": 0,
+            "confidence": 0.6,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "clear",
+          "finalVerdict": "Monitor: no high-severity anomaly in attached fields; unresolved limitations remain.",
+          "dominantAgent": "liquidity",
+          "dataFusionScore": 12.14,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "AAPL: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Liquidity / exit agent (8/100). Blocked by: stock instrument: token supply/vesting lanes are not used as risk proof, stock instrument: holder concentration lane is replaced by issuer/venue/source review, stock instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+          "escalation": "Monitor: keep automated scan active and resolve missing evidence before stronger conclusions. Next action: Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "stock instrument: token supply/vesting lanes are not used as risk proof",
+            "stock instrument: holder concentration lane is replaced by issuer/venue/source review",
+            "stock instrument: smart-contract/admin lane is not assumed without a token contract",
+            "KOL/social disclosure data missing",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "low",
+        "badge": "low_detected_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "medium",
+            "points": 5,
+            "metrics": {
+              "warnings": 1
+            }
+          },
+          {
+            "id": "market_volume_stress",
+            "severity": "medium",
+            "points": 8,
+            "metrics": {
+              "volumeToMarketCapRatio": 0.003636,
+              "thinExitDepthReview": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 220,
+          "athPrice": 240,
+          "drawdownPercent": 8.33,
+          "marketCap": 3300000000000,
+          "volume24h": 12000000000,
+          "volumeToMarketCapRatio": 0,
+          "priceChange1h": 0.1,
+          "priceChange24h": -0.8,
+          "priceChange7d": 2.3,
+          "priceChange30d": 5.2
+        },
+        "dataQuality": "live",
+        "chart": {
+          "sevenDay": [
+            215,
+            218,
+            220
+          ]
+        },
+        "aiSummary": "AAPL: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Liquidity / exit agent (8/100). Blocked by: stock instrument: token supply/vesting lanes are not used as risk proof, stock instrument: holder concentration lane is replaced by issuer/venue/source review, stock instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+        "dataSources": [
+          "Yahoo Finance",
+          "Stooq"
+        ]
+      }
+    },
+    {
+      "id": "fx-pair",
+      "input": {
+        "symbol": "EUR/USD",
+        "name": "EURUSD forex",
+        "assetClass": "fx",
+        "currentPrice": 1.08,
+        "volume24h": 100000000000,
+        "priceChange1h": 0.05,
+        "priceChange24h": 0.2,
+        "priceChange7d": -0.5,
+        "sparkline7d": [
+          1.075,
+          1.08,
+          1.081
+        ],
+        "dataSources": [
+          "Yahoo Finance",
+          "Stooq"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "EUR/USD",
+          "name": "EURUSD forex",
+          "assetClass": "fx"
+        },
+        "score": 13.18,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "fx",
+          "providerConfigurationDigest": "sha256:1efdd999ad03c028df13bdd4fd7bd6c5fce44787d9d2d340b8e176fc3205ed17"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 13.18,
+          "lowerBound": 0,
+          "upperBound": 32.62,
+          "halfWidth": 19.44,
+          "precision": "low",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.69,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.69,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.69,
+            "evidenceCount": 0
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.69,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.69,
+            "evidenceCount": 0
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.69,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 31,
+            "weight": 0,
+            "confidence": 0.69,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.53,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.39,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.31,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.31,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.31,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 31,
+            "weight": 0,
+            "confidence": 0.52,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "clear",
+          "finalVerdict": "Monitor: no high-severity anomaly in attached fields; unresolved limitations remain.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 13.18,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "EUR/USD: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Velocity / pump agent (0/100). Blocked by: fx instrument: token supply/vesting lanes are not used as risk proof, fx instrument: holder concentration lane is replaced by issuer/venue/source review, fx instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+          "escalation": "Monitor: keep automated scan active and resolve missing evidence before stronger conclusions. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "fx instrument: token supply/vesting lanes are not used as risk proof",
+            "fx instrument: holder concentration lane is replaced by issuer/venue/source review",
+            "fx instrument: smart-contract/admin lane is not assumed without a token contract",
+            "KOL/social disclosure data missing",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "low",
+        "badge": "low_detected_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "medium",
+            "points": 7,
+            "metrics": {
+              "warnings": 2
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 1.08,
+          "volume24h": 100000000000,
+          "priceChange1h": 0.05,
+          "priceChange24h": 0.2,
+          "priceChange7d": -0.5
+        },
+        "dataQuality": "live",
+        "chart": {
+          "sevenDay": [
+            1.075,
+            1.08,
+            1.081
+          ]
+        },
+        "aiSummary": "EUR/USD: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Velocity / pump agent (0/100). Blocked by: fx instrument: token supply/vesting lanes are not used as risk proof, fx instrument: holder concentration lane is replaced by issuer/venue/source review, fx instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+        "dataSources": [
+          "Yahoo Finance",
+          "Stooq"
+        ]
+      }
+    },
+    {
+      "id": "commodity-drop",
+      "input": {
+        "symbol": "WTI",
+        "name": "WTI crude commodity",
+        "assetClass": "commodity",
+        "currentPrice": 62,
+        "athPrice": 130,
+        "volume24h": 2000000000,
+        "averageVolume7d": 3000000000,
+        "priceChange1h": -2,
+        "priceChange6h": -5,
+        "priceChange24h": -12,
+        "priceChange7d": -22,
+        "priceChange30d": -30,
+        "sparkline7d": [
+          80,
+          74,
+          68,
+          62
+        ],
+        "dataSources": [
+          "Yahoo Finance",
+          "Stooq"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "WTI",
+          "name": "WTI crude commodity",
+          "assetClass": "commodity"
+        },
+        "score": 13.29,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "commodity",
+          "providerConfigurationDigest": "sha256:26c00071946893391f688ec71a2f786a08eb3dd8cae3c9772c775225a6ff8188"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 13.29,
+          "lowerBound": 0,
+          "upperBound": 32.01,
+          "halfWidth": 18.72,
+          "precision": "low",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.72,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.72,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.72,
+            "evidenceCount": 0
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.72,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.72,
+            "evidenceCount": 0
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.72,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 28,
+            "weight": 0,
+            "confidence": 0.72,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.7,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.49,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.31,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.31,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.31,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 28,
+            "weight": 0,
+            "confidence": 0.53,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "clear",
+          "finalVerdict": "Monitor: no high-severity anomaly in attached fields; unresolved limitations remain.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 13.29,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "WTI: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Velocity / pump agent (0/100). Blocked by: commodity instrument: token supply/vesting lanes are not used as risk proof, commodity instrument: holder concentration lane is replaced by issuer/venue/source review, commodity instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+          "escalation": "Monitor: keep automated scan active and resolve missing evidence before stronger conclusions. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "commodity instrument: token supply/vesting lanes are not used as risk proof",
+            "commodity instrument: holder concentration lane is replaced by issuer/venue/source review",
+            "commodity instrument: smart-contract/admin lane is not assumed without a token contract",
+            "KOL/social disclosure data missing",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "low",
+        "badge": "low_detected_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "medium",
+            "points": 7,
+            "metrics": {
+              "warnings": 2
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 62,
+          "athPrice": 130,
+          "drawdownPercent": 52.31,
+          "volume24h": 2000000000,
+          "priceChange1h": -2,
+          "priceChange6h": -5,
+          "priceChange24h": -12,
+          "priceChange7d": -22,
+          "priceChange30d": -30
+        },
+        "dataQuality": "live",
+        "chart": {
+          "sevenDay": [
+            80,
+            74,
+            68,
+            62
+          ]
+        },
+        "aiSummary": "WTI: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Velocity / pump agent (0/100). Blocked by: commodity instrument: token supply/vesting lanes are not used as risk proof, commodity instrument: holder concentration lane is replaced by issuer/venue/source review, commodity instrument: smart-contract/admin lane is not assumed without a token contract, KOL/social disclosure data missing.",
+        "dataSources": [
+          "Yahoo Finance",
+          "Stooq"
+        ]
+      }
+    },
+    {
+      "id": "supply-conflict",
+      "input": {
+        "symbol": "BAD",
+        "name": "Bad Supply",
+        "assetClass": "crypto",
+        "currentPrice": 1,
+        "marketCap": 100000000,
+        "fdv": 200000000,
+        "liquidityUsd": 1000000,
+        "volume24h": 500000,
+        "circulatingSupply": 200,
+        "totalSupply": 100,
+        "maxSupply": 150,
+        "top10HolderPercent": 20,
+        "suspiciousContractPrivileges": false,
+        "isHoneypot": false,
+        "canMintNewTokens": false,
+        "canBlacklist": false,
+        "simulatedSlippage10k": 1,
+        "bidAskImbalancePercent": 0,
+        "dataSources": [
+          "CoinGecko",
+          "DexScreener"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "BAD",
+          "name": "Bad Supply",
+          "assetClass": "crypto"
+        },
+        "score": 17.39,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:05e55e2e4b7a381fb988fde3f0ce357d5bef487d3e3d692d769d51c2b65cbe9a"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 17.39,
+          "lowerBound": 0,
+          "upperBound": 37.07,
+          "halfWidth": 19.68,
+          "precision": "low",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "explicit_insufficient_data_signal"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.68,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.68,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 10,
+            "weight": 0.26,
+            "confidence": 0.68,
+            "evidenceCount": 1
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.68,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.68,
+            "evidenceCount": 0
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.68,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 32,
+            "weight": 0,
+            "confidence": 0.68,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.36,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 10,
+            "weight": 0.26,
+            "confidence": 0.69,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "thin_liquidity"
+            ],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.48,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.68,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.52,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 32,
+            "weight": 0,
+            "confidence": 0.79,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "clear",
+          "finalVerdict": "Monitor: no high-severity anomaly in attached fields; unresolved limitations remain.",
+          "dominantAgent": "liquidity",
+          "dataFusionScore": 17.39,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "BAD: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Liquidity / exit agent (10/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, price history coverage incomplete.",
+          "escalation": "Monitor: keep automated scan active and resolve missing evidence before stronger conclusions. Next action: Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "price history coverage incomplete",
+            "DEX pair/source routing not verified",
+            "tax settings unavailable",
+            "bid/ask flow counts unavailable",
+            "KOL/social disclosure data missing",
+            "supply fields conflict; float ratio requires review",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "low",
+        "badge": "low_detected_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "high",
+            "points": 14,
+            "metrics": {
+              "impossibleNumericInput": false,
+              "supplyConflict": true,
+              "sourceReview": "required",
+              "missingCoreCount": 1,
+              "missingFields": "price history coverage",
+              "uncertaintyReview": "required"
+            }
+          },
+          {
+            "id": "thin_liquidity",
+            "severity": "medium",
+            "points": 10,
+            "metrics": {
+              "liquidityToMarketCapPercent": 1,
+              "liquidityUsd": 1000000,
+              "exitDepthReview": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 1,
+          "marketCap": 100000000,
+          "fdv": 200000000,
+          "fdvToMarketCapRatio": 2,
+          "liquidityUsd": 1000000,
+          "liquidityToMarketCapPercent": 1,
+          "volume24h": 500000,
+          "volumeToLiquidityRatio": 0.5,
+          "volumeToMarketCapRatio": 0.01,
+          "top10HolderPercent": 20,
+          "simulatedSlippage10k": 1,
+          "bidAskImbalancePercent": 0,
+          "circulatingSupply": 200,
+          "totalSupply": 100,
+          "maxSupply": 150
+        },
+        "dataQuality": "live",
+        "chart": {},
+        "aiSummary": "BAD: no high-severity anomaly in attached fields. monitor unresolved limitations. Dominant lane: Liquidity / exit agent (10/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, price history coverage incomplete.",
+        "dataSources": [
+          "CoinGecko",
+          "DexScreener"
+        ]
+      }
+    },
+    {
+      "id": "negative-values",
+      "expectedValidation": "reject",
+      "input": {
+        "symbol": "NEG",
+        "name": "Negative Values",
+        "assetClass": "crypto",
+        "currentPrice": -1,
+        "marketCap": -10,
+        "volume24h": -5,
+        "circulatingSupply": -100,
+        "totalSupply": 100,
+        "top10HolderPercent": 120,
+        "dataSources": [
+          "CoinGecko"
+        ]
+      },
+      "quality": "partial",
+      "legacyResultBeforeStrictBoundary": {
+        "token": {
+          "symbol": "NEG",
+          "name": "Negative Values",
+          "assetClass": "crypto"
+        },
+        "score": 35.71,
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.39,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 0
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.39,
+            "evidenceCount": 0
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.39,
+            "evidenceCount": 0
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 32,
+            "weight": 0.2,
+            "confidence": 0.39,
+            "evidenceCount": 1
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.39,
+            "evidenceCount": 0
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 61,
+            "weight": 0,
+            "confidence": 0.39,
+            "evidenceCount": 1
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 0,
+            "weight": 0.2,
+            "confidence": 0.29,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 0,
+            "weight": 0.26,
+            "confidence": 0.41,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 0,
+            "weight": 0.18,
+            "confidence": 0.23,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 32,
+            "weight": 0.2,
+            "confidence": 0.52,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "holder_concentration"
+            ],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 0,
+            "weight": 0.16,
+            "confidence": 0.23,
+            "evidenceCount": 0,
+            "status": "low",
+            "verdict": "insufficient_data",
+            "evidenceSignalIds": [],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 61,
+            "weight": 0,
+            "confidence": 0.58,
+            "evidenceCount": 2,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "insufficient_data"
+            ],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: partial; 1 attached source; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "insufficient_data",
+          "finalVerdict": "Prescreen only: evidence is too incomplete for a stronger conclusion.",
+          "dominantAgent": "data",
+          "dataFusionScore": 35.71,
+          "conflictLevel": "none",
+          "requiredReview": true,
+          "summary": "NEG: confidence too low. Treat score as prescreen only. Dominant lane: Data quality agent (61/100). Blocked by: partial provider data; confidence capped until live source ledger is corroborated, vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing. Missing data is not evidence of misconduct.",
+          "escalation": "Watch: rerun on the next snapshot and resolve missing sources. Next action: Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "partial provider data; confidence capped until live source ledger is corroborated",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "contract permissions unavailable",
+            "orderbook depth unavailable",
+            "price history coverage incomplete",
+            "liquidity depth unavailable",
+            "DEX pair/source routing not verified",
+            "tax settings unavailable",
+            "bid/ask flow counts unavailable",
+            "source ledger has limited corroboration",
+            "KOL/social disclosure data missing",
+            "impossible numeric input requires source review",
+            "confidence too low; prescreen only",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "medium",
+        "badge": "elevated_risk",
+        "signals": [
+          {
+            "id": "insufficient_data",
+            "severity": "high",
+            "points": 14,
+            "metrics": {
+              "warnings": 1,
+              "impossibleNumericInput": true,
+              "supplyConflict": false,
+              "sourceReview": "required",
+              "missingCoreCount": 5,
+              "missingFields": "liquidity depth, contract permissions, orderbook depth, price history coverage",
+              "uncertaintyReview": "required"
+            }
+          },
+          {
+            "id": "holder_concentration",
+            "severity": "critical",
+            "points": 32,
+            "metrics": {
+              "top10HolderPercent": 120,
+              "walletLabeling": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": -1,
+          "marketCap": -10,
+          "volume24h": -5,
+          "top10HolderPercent": 120,
+          "circulatingSupply": -100,
+          "totalSupply": 100
+        },
+        "dataQuality": "partial",
+        "chart": {},
+        "aiSummary": "NEG: confidence too low. Treat score as prescreen only. Dominant lane: Data quality agent (61/100). Blocked by: partial provider data; confidence capped until live source ledger is corroborated, vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing. Missing data is not evidence of misconduct.",
+        "dataSources": [
+          "CoinGecko"
+        ],
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 35.71,
+          "lowerBound": 1.07,
+          "upperBound": 70.35,
+          "halfWidth": 34.64,
+          "precision": "low",
+          "evidenceState": "partial",
+          "outOfDistribution": false,
+          "drivers": [
+            "partial_data_quality",
+            "single_source_dependency",
+            "explicit_insufficient_data_signal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "low-float-pump",
+      "input": {
+        "symbol": "FLOAT",
+        "name": "Low Float Token",
+        "assetClass": "crypto",
+        "currentPrice": 12,
+        "athPrice": 13,
+        "marketCap": 100000000,
+        "fdv": 4000000000,
+        "liquidityUsd": 300000,
+        "volume24h": 120000000,
+        "averageVolume7d": 10000000,
+        "priceChange1h": 10,
+        "priceChange6h": 35,
+        "priceChange24h": 95,
+        "priceChange7d": 250,
+        "circulatingSupply": 10000000,
+        "totalSupply": 400000000,
+        "maxSupply": 500000000,
+        "top10HolderPercent": 82,
+        "holderCount": 800,
+        "simulatedSlippage10k": 12,
+        "bidAskImbalancePercent": -30,
+        "suspiciousContractPrivileges": false,
+        "isHoneypot": false,
+        "canMintNewTokens": true,
+        "canBlacklist": false,
+        "dataSources": [
+          "DexScreener",
+          "CoinGecko"
+        ]
+      },
+      "quality": "live",
+      "result": {
+        "token": {
+          "symbol": "FLOAT",
+          "name": "Low Float Token",
+          "assetClass": "crypto"
+        },
+        "score": 84.65,
+        "modelBinding": {
+          "schemaVersion": "velmere.risk-model-binding.v1",
+          "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+          "featureSchemaVersion": "velmere.risk-feature-schema.v2",
+          "featureSchemaDigest": "sha256:ea75f0ae60d3d9c9cb52e21fa9fa0933c3f5f26eac972aa7d20a0064841e8bb1",
+          "assetClassCohort": "crypto",
+          "providerConfigurationDigest": "sha256:05e55e2e4b7a381fb988fde3f0ce357d5bef487d3e3d692d769d51c2b65cbe9a"
+        },
+        "uncertainty": {
+          "schemaVersion": "velmere.risk-uncertainty.v1",
+          "method": "deterministic_evidence_sensitivity",
+          "interpretation": "sensitivity_band_not_empirical_confidence_interval",
+          "empiricalCalibrationStatus": "not_available",
+          "probabilityClaimAllowed": false,
+          "pointEstimate": 84.65,
+          "lowerBound": 79.69,
+          "upperBound": 89.61,
+          "halfWidth": 4.96,
+          "precision": "high",
+          "evidenceState": "live_multi_source",
+          "outOfDistribution": false,
+          "drivers": [
+            "broad_multi_source_evidence_coverage"
+          ]
+        },
+        "scoreFormula": "deterministic_continuous_evidence_fusion_v10",
+        "confidence": 0.96,
+        "scoreBreakdown": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump",
+            "score": 75.38,
+            "weight": 0.2,
+            "confidence": 0.96,
+            "evidenceCount": 5
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / volume",
+            "score": 33.72,
+            "weight": 0.26,
+            "confidence": 0.96,
+            "evidenceCount": 3
+          },
+          {
+            "id": "microstructure",
+            "label": "Order book / microstructure",
+            "score": 18,
+            "weight": 0.18,
+            "confidence": 0.96,
+            "evidenceCount": 1
+          },
+          {
+            "id": "holders",
+            "label": "Holders / supply",
+            "score": 53.24,
+            "weight": 0.2,
+            "confidence": 0.96,
+            "evidenceCount": 3
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions",
+            "score": 18,
+            "weight": 0.16,
+            "confidence": 0.96,
+            "evidenceCount": 1
+          },
+          {
+            "id": "data",
+            "label": "Data uncertainty / review pressure",
+            "score": 4,
+            "weight": 0,
+            "confidence": 0.96,
+            "evidenceCount": 0
+          }
+        ],
+        "agentAssessments": [
+          {
+            "id": "velocity",
+            "label": "Velocity / pump agent",
+            "score": 75.38,
+            "weight": 0.2,
+            "confidence": 0.86,
+            "evidenceCount": 5,
+            "status": "high",
+            "verdict": "warning",
+            "evidenceSignalIds": [
+              "rapid_intraday_move",
+              "parabolic_24h_gain",
+              "parabolic_7d_gain",
+              "multi_timeframe_pump",
+              "new_ath_repricing"
+            ],
+            "reasoning": "Checks repricing, drawdown and multi-timeframe momentum against market-integrity evidence. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "liquidity",
+            "label": "Liquidity / exit agent",
+            "score": 33.72,
+            "weight": 0.26,
+            "confidence": 0.92,
+            "evidenceCount": 3,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "thin_liquidity",
+              "volume_spike",
+              "market_volume_stress"
+            ],
+            "reasoning": "Checks thin exit depth and turnover quality against visible liquidity. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Inspect exit depth across DEX pool, CEX orderbook and slippage snapshot. Attach source ledger and verify the highest-scoring lane."
+          },
+          {
+            "id": "microstructure",
+            "label": "Orderbook / microstructure agent",
+            "score": 18,
+            "weight": 0.18,
+            "confidence": 0.58,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "orderbook_slippage_risk"
+            ],
+            "reasoning": "Checks slippage, imbalance and orderbook depth collapse without treating proxies as proof. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Rerun after a live orderbook snapshot and inspect exit depth."
+          },
+          {
+            "id": "holders",
+            "label": "Holder / insider agent",
+            "score": 53.24,
+            "weight": 0.2,
+            "confidence": 0.92,
+            "evidenceCount": 3,
+            "status": "medium",
+            "verdict": "watch",
+            "evidenceSignalIds": [
+              "fdv_marketcap_gap",
+              "supply_overhang",
+              "holder_concentration"
+            ],
+            "reasoning": "Checks float, unlock overhang and concentration proxies without assuming wallet ownership. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Verify unlock schedule, supply source and CEX/team/LP/unknown wallet labels."
+          },
+          {
+            "id": "contract",
+            "label": "Contract / permissions agent",
+            "score": 18,
+            "weight": 0.16,
+            "confidence": 0.63,
+            "evidenceCount": 1,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [
+              "mint_risk"
+            ],
+            "reasoning": "Checks reported mint, pause, blacklist, honeypot and tax fields. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Review contract admin controls against explorer, verified bytecode and audit source."
+          },
+          {
+            "id": "data",
+            "label": "Data quality agent",
+            "score": 14,
+            "weight": 0,
+            "confidence": 0.83,
+            "evidenceCount": 2,
+            "status": "low",
+            "verdict": "clear",
+            "evidenceSignalIds": [],
+            "reasoning": "Treats missing fields and missing evidence ledger as uncertainty, not evidence of misconduct. Source mode: live; 2 attached sources; standard profile.",
+            "nextAction": "Attach OSINT source ledger, verify KOL/social disclosures and rerun before escalation. Attach source ledger and verify the highest-scoring lane."
+          }
+        ],
+        "metaModel": {
+          "version": "velmere-shield-deterministic-fusion-v8",
+          "verdict": "warning",
+          "finalVerdict": "Review required: corroborated anomaly lanes need source-ledger confirmation.",
+          "dominantAgent": "velocity",
+          "dataFusionScore": 84.65,
+          "conflictLevel": "medium",
+          "requiredReview": true,
+          "summary": "FLOAT: anomaly pattern requires review before relying on visible market depth. Dominant lane: Velocity / pump agent (75.38/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, DEX pair/source routing not verified. Confidence state: confidence supported by attached fields.",
+          "escalation": "Review: verify thin exit depth, unlock overhang and source ledger. Next action: Compare repricing with exit depth and source ledger before interpreting momentum. Attach source ledger and verify the highest-scoring lane.",
+          "limitations": [
+            "This output is an anomaly screen, not a legal finding or accusation.",
+            "vesting/unlock schedule not verified",
+            "holder labels for CEX/team/LP/unknown wallets not verified",
+            "contract address missing",
+            "DEX pair/source routing not verified",
+            "tax settings unavailable",
+            "bid/ask flow counts unavailable",
+            "KOL/social disclosure data missing",
+            "manual review required before escalation"
+          ]
+        },
+        "level": "high",
+        "badge": "possible_manipulation_risk",
+        "signals": [
+          {
+            "id": "rapid_intraday_move",
+            "severity": "medium",
+            "points": 11,
+            "metrics": {
+              "priceChange6h": 35
+            }
+          },
+          {
+            "id": "parabolic_24h_gain",
+            "severity": "high",
+            "points": 31,
+            "metrics": {
+              "priceChange24h": 95
+            }
+          },
+          {
+            "id": "parabolic_7d_gain",
+            "severity": "high",
+            "points": 36,
+            "metrics": {
+              "priceChange7d": 250
+            }
+          },
+          {
+            "id": "multi_timeframe_pump",
+            "severity": "critical",
+            "points": 36,
+            "metrics": {
+              "priceChange24h": 95,
+              "priceChange7d": 250
+            }
+          },
+          {
+            "id": "new_ath_repricing",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "priceChange7d": 250,
+              "drawdownPercent": 7.69
+            }
+          },
+          {
+            "id": "thin_liquidity",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "liquidityToMarketCapPercent": 0.3,
+              "liquidityUsd": 300000,
+              "exitDepthReview": "required"
+            }
+          },
+          {
+            "id": "volume_spike",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "volumeToLiquidityRatio": 400,
+              "turnoverReview": "required",
+              "volumeToAverageRatio": 12,
+              "repricingWithTurnover": true,
+              "volumeToMarketCapRatio": 1.2
+            }
+          },
+          {
+            "id": "market_volume_stress",
+            "severity": "medium",
+            "points": 12,
+            "metrics": {
+              "volumeToMarketCapRatio": 1.2,
+              "volumeQualityReview": "required"
+            }
+          },
+          {
+            "id": "fdv_marketcap_gap",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "fdvToMarketCapRatio": 40,
+              "unlockOverhangReview": "required"
+            }
+          },
+          {
+            "id": "supply_overhang",
+            "severity": "critical",
+            "points": 34,
+            "metrics": {
+              "circulatingPercent": 2,
+              "floatOpacityReview": "required",
+              "fdvToMarketCapRatio": 40,
+              "unlockOverhangReview": "required"
+            }
+          },
+          {
+            "id": "orderbook_slippage_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "simulatedSlippage10k": 12
+            }
+          },
+          {
+            "id": "holder_concentration",
+            "severity": "high",
+            "points": 20,
+            "metrics": {
+              "top10HolderPercent": 82,
+              "walletLabeling": "required",
+              "holderCount": 800
+            }
+          },
+          {
+            "id": "mint_risk",
+            "severity": "high",
+            "points": 18,
+            "metrics": {
+              "canMintNewTokens": true,
+              "contractAdminReview": "required"
+            }
+          }
+        ],
+        "metrics": {
+          "currentPrice": 12,
+          "athPrice": 13,
+          "drawdownPercent": 7.69,
+          "marketCap": 100000000,
+          "fdv": 4000000000,
+          "fdvToMarketCapRatio": 40,
+          "liquidityUsd": 300000,
+          "liquidityToMarketCapPercent": 0.3,
+          "volume24h": 120000000,
+          "volumeToLiquidityRatio": 400,
+          "volumeToMarketCapRatio": 1.2,
+          "priceChange1h": 10,
+          "priceChange6h": 35,
+          "priceChange24h": 95,
+          "priceChange7d": 250,
+          "top10HolderPercent": 82,
+          "holderCount": 800,
+          "simulatedSlippage10k": 12,
+          "bidAskImbalancePercent": -30,
+          "circulatingSupply": 10000000,
+          "totalSupply": 400000000,
+          "maxSupply": 500000000
+        },
+        "dataQuality": "live",
+        "chart": {},
+        "aiSummary": "FLOAT: anomaly pattern requires review before relying on visible market depth. Dominant lane: Velocity / pump agent (75.38/100). Blocked by: vesting/unlock schedule not verified, holder labels for CEX/team/LP/unknown wallets not verified, contract address missing, DEX pair/source routing not verified. Confidence state: confidence supported by attached fields.",
+        "dataSources": [
+          "DexScreener",
+          "CoinGecko"
+        ]
+      }
+    }
+  ]
+}

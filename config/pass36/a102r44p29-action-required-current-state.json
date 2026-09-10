@@ -1,0 +1,89 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": true,
+    "browser57": false,
+    "credentialHygiene": true,
+    "dualControlTrust": true,
+    "evidenceQuarantine": true,
+    "exactWindows": false,
+    "externalStaging": false,
+    "forkReconciliation": true,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "live": false,
+    "pdf150": false,
+    "sale": false,
+    "sourceAudit": false,
+    "sourceAuthority": true,
+    "staticPolicy": true,
+    "turbopack": false,
+    "watchdog72h": true,
+    "webpack": false
+  },
+  "externalEvidenceAdmitted": 0,
+  "globalDecision": "NO_GO",
+  "implemented": [
+    "R44P27 sibling fork reconciliation",
+    "dual-control trust admission",
+    "evidence quarantine with independent reviewer",
+    "fail-closed 72h watchdog",
+    "active credential-shaped literal hygiene"
+  ],
+  "independentTimestampAuthorities": 0,
+  "newFindings": [
+    {
+      "id": "R44P29-P0-01",
+      "severity": "P0",
+      "status": "CLOSED_WITH_EXPLICIT_RECONCILIATION",
+      "title": "Two distinct R44P27 authorities existed with the same checkpoint number"
+    },
+    {
+      "id": "R44P29-P1-02",
+      "severity": "P1",
+      "status": "CLOSED_LOCAL",
+      "title": "Dual-control trust, evidence quarantine and 72h watchdog were absent from the canonical durable lineage"
+    },
+    {
+      "id": "R44P29-P1-03",
+      "severity": "P1",
+      "status": "CLOSED_LOCAL",
+      "title": "Active admin preview payloads contained credential-shaped literals"
+    },
+    {
+      "id": "R44P29-P1-04",
+      "severity": "P1",
+      "status": "OPEN",
+      "title": "No production trusted roots or independent timestamp authority exists"
+    },
+    {
+      "id": "R44P29-P1-05",
+      "severity": "P1",
+      "status": "OPEN",
+      "title": "Current child exact release and external staging remain unproven"
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "productionTrustedRoots": 0,
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "retainedParentEvidence": {
+    "classification": "RETAINED_PARENT_EVIDENCE_ONLY",
+    "externalCiPostgresRls19": true,
+    "sigstoreOidcAttestation": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p29.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

@@ -1,0 +1,637 @@
+{
+  "schemaVersion": "velmere.pass35.paid-surface-entitlement-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "generatedAt": "2026-07-28T03:53:25.680Z",
+  "evidenceClass": "STATIC_LEXICAL_IMPORT_AND_CALL_GRAPH_FALLBACK",
+  "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+  "truthBoundary": "AST or dependency-free lexical import/call coverage proves source routing only. Lexical fallback is conservative static evidence, not a full parser. Neither mode is runtime entitlement, payment, staging, or live proof.",
+  "guardPath": "lib/commerce/vlm-paid-surface-guard.ts",
+  "guardBytes": 5724,
+  "guardSha256": "f3321e8452c7c544eff4048c42f880707b60e46a523da8356ebe1f59a1637929",
+  "declaredPolicyIds": [
+    "advanced_click",
+    "angel_analysis",
+    "audit_pdf_download",
+    "audit_pdf_issue",
+    "audit_review",
+    "brain_analysis",
+    "lens_pdf",
+    "market_report",
+    "real_markets_analysis",
+    "vlm_analysis"
+  ],
+  "consumedPolicyIds": [
+    "advanced_click",
+    "angel_analysis",
+    "audit_pdf_download",
+    "audit_pdf_issue",
+    "audit_review",
+    "brain_analysis",
+    "lens_pdf",
+    "market_report",
+    "real_markets_analysis",
+    "vlm_analysis"
+  ],
+  "unconsumedPolicyIds": [],
+  "guardedConsumerCount": 14,
+  "guardConsumers": [
+    {
+      "file": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "bytes": 44539,
+      "sha256": "40eb4a517fe5c949f286a3b2f4698a84f146a4ed96c772d28ad841e4e0c6e891",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "real_markets_analysis"
+      ],
+      "referrers": [
+        "lib/server/market-integrity-route-modules/real-markets.ts"
+      ]
+    },
+    {
+      "file": "lib/market-integrity/vlm-route-analysis.ts",
+      "bytes": 25457,
+      "sha256": "46e2c5c482ba7fa4466ed74dcedda8f96a7fa72ab9a66a27670d0381ddaaabe2",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "vlm_analysis"
+      ],
+      "referrers": [
+        "lib/jobs/durable-computation-executor-registry.ts",
+        "lib/market-integrity/vlm-route-output.ts",
+        "lib/server/market-integrity-route-modules/market-intelligence.ts",
+        "lib/server/market-integrity-route-modules/vlm.ts"
+      ]
+    },
+    {
+      "file": "lib/security/audit-watch-post-handler.ts",
+      "bytes": 39300,
+      "sha256": "d8585d3971b0853f68b7492e14eecbb618f21ae9003e882be73b7da5c9c489a9",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "hasVlmPaidSurfaceServerEntitlement",
+        "verifyVlmPaidSurfaceTokenEntitlement"
+      ],
+      "calledGuardFunctions": [
+        "hasVlmPaidSurfaceServerEntitlement",
+        "verifyVlmPaidSurfaceTokenEntitlement"
+      ],
+      "policyIds": [
+        "audit_review"
+      ],
+      "referrers": [
+        "lib/security/audit-watch-route-orchestrator.ts"
+      ]
+    },
+    {
+      "file": "lib/server/lazy-route-modules/angel.ts",
+      "bytes": 58164,
+      "sha256": "c997a66b5d396b0bfe810c10a9dff8b16fdd79d1d080a861d2c691902dd8345f",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "angel_analysis"
+      ],
+      "referrers": [
+        "app/api/angel/route.ts",
+        "app/api/angel/stream/route.ts"
+      ]
+    },
+    {
+      "file": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf--token.ts",
+      "bytes": 8379,
+      "sha256": "05572972c69e3b5f5983a1a9c45dff5678485dd87ffe2dff9633268145b05ca1",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "audit_pdf_issue"
+      ],
+      "referrers": [
+        "app/api/security/audit-watch/pro-pdf/token/route.ts"
+      ]
+    },
+    {
+      "file": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf.ts",
+      "bytes": 12860,
+      "sha256": "1edb0f60c3ba4d3bb100b3d149f838cc5fa0a9b00c93ad760dad96bddd241bfb",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "verifyVlmPaidSurfaceEntitlementById"
+      ],
+      "calledGuardFunctions": [
+        "verifyVlmPaidSurfaceEntitlementById"
+      ],
+      "policyIds": [
+        "audit_pdf_download"
+      ],
+      "referrers": [
+        "app/api/security/audit-watch/pro-pdf/route.ts",
+        "app/api/security/audit-watch/pro-pdf/token/route.ts"
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/advanced-click-runtime.ts",
+      "bytes": 5706,
+      "sha256": "959efbc805125e2a7a2d5609b293acd37adcf0b459614301688ed16176bc40c4",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "advanced_click"
+      ],
+      "referrers": [
+        "lib/server/route-registries/market-integrity.ts"
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/angel.ts",
+      "bytes": 14272,
+      "sha256": "bb1cf808b1dfe2e37c41a998ed9471a3c0b2ecf1bc3b2fb48fccf351356de324",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "angel_analysis"
+      ],
+      "referrers": [
+        "lib/server/route-registries/market-integrity.ts"
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/brain.ts",
+      "bytes": 6431,
+      "sha256": "be5dd4a94a4e054260340b41014beb7b729b6b9cdf47d97b64615cae0898617d",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "brain_analysis"
+      ],
+      "referrers": [
+        "lib/server/route-registries/market-integrity.ts"
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/report-pdf.ts",
+      "bytes": 4164,
+      "sha256": "83a0e76551cce8e62e41612b7ece714f0007b87bea210de2602d4e0fa6e2925a",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess"
+      ],
+      "policyIds": [],
+      "referrers": [
+        "lib/server/route-registries/market-integrity.ts"
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/report.ts",
+      "bytes": 40469,
+      "sha256": "3db7da2b01d52c77bd7869c1339a14491e99e37427b169b2e1d4f8671cc4f2be",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "market_report"
+      ],
+      "referrers": [
+        "lib/server/route-registries/market-integrity.ts"
+      ]
+    },
+    {
+      "file": "lib/server/search-route-modules/lens-report.ts",
+      "bytes": 33862,
+      "sha256": "3a30497ceec3b5e20f6075aa1a447472edab7c4b3101d62f4dafc3765390b71b",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "lens_pdf"
+      ],
+      "referrers": [
+        "lib/server/route-registries/search.ts"
+      ]
+    },
+    {
+      "file": "lib/server/security-route-modules/audit-advanced-manual-review.ts",
+      "bytes": 5129,
+      "sha256": "bf1eda5e3097c7edb16c5f4713f3917a2cd13252a0d269571797ad0d6fff24ff",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "calledGuardFunctions": [
+        "resolveVlmPaidSurfaceAccess",
+        "toVlmPaidSurfacePaymentRequiredPayload"
+      ],
+      "policyIds": [
+        "audit_review"
+      ],
+      "referrers": [
+        "lib/server/route-registries/security.ts"
+      ]
+    },
+    {
+      "file": "lib/server/security-route-modules/audit-report-assembler.ts",
+      "bytes": 10302,
+      "sha256": "83573160cd7bb819fd624b6b514d6bad148723f3112d5cf6a948b5b955b3f117",
+      "parserMode": "DEPENDENCY_FREE_LEXICAL_FALLBACK",
+      "importedGuardFunctions": [
+        "hasVlmPaidSurfaceServerEntitlement",
+        "verifyVlmPaidSurfaceTokenEntitlement"
+      ],
+      "calledGuardFunctions": [
+        "hasVlmPaidSurfaceServerEntitlement",
+        "verifyVlmPaidSurfaceTokenEntitlement"
+      ],
+      "policyIds": [
+        "audit_review"
+      ],
+      "referrers": [
+        "lib/server/route-registries/security.ts"
+      ]
+    }
+  ],
+  "directResolverImports": [
+    {
+      "file": "app/api/checkout/vlm-service/route.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-paid-access-server",
+          "names": [
+            "hashVlmPaidAccessContext",
+            "isVlmLocalPaidAccessDemoEnabled"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "app/api/checkout/vlm-service/verify/route.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-paid-access-server",
+          "names": [
+            "createVlmPaidAccessToken",
+            "hashVlmPaidAccessContext",
+            "isVlmLocalPaidAccessDemoEnabled"
+          ]
+        },
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "upsertVlmPaidEntitlementFromDemoReceipt",
+            "upsertVlmPaidEntitlementFromStripeSession"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/advanced-paid-smoke.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-advanced-only-access-policy",
+          "names": [
+            "buildVlmAdvancedOnlyPolicySummary"
+          ]
+        },
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "getVlmPaidEntitlementRuntimeMode",
+            "requiresDurableVlmPaidEntitlementLedger"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/stripe-advanced-entitlement-proof.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "getVlmPaidEntitlementRuntimeMode",
+            "requiresDurableVlmPaidEntitlementLedger"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/vlm-advanced-only-access-policy.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/paid-access-boundary",
+          "names": [
+            "hasPass4682ServerEntitlementRecord"
+          ]
+        },
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "VlmPaidAccessEntitlementVerdict",
+            "getVlmPaidEntitlementRuntimeMode",
+            "verifyVlmPaidAccessEntitlement"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/vlm-entitlement-ledger.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-paid-access-server",
+          "names": [
+            "VlmPaidAccessTokenPayload",
+            "hashVlmPaidAccessContext",
+            "verifyVlmPaidAccessToken"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/vlm-entitlement-lifecycle.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "VlmPaidEntitlementRecord",
+            "VlmPaidEntitlementStatus",
+            "findMemoryVlmPaidEntitlementById",
+            "updateMemoryVlmPaidEntitlementStatus"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/vlm-paid-access-server.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/paid-access-boundary",
+          "names": [
+            "validatePass4682PaidAccessTemporalClaims"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/commerce/vlm-paid-surface-guard.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/paid-access-boundary",
+          "names": [
+            "hasPass4682ServerEntitlementRecord"
+          ]
+        },
+        {
+          "module": "@/lib/commerce/vlm-advanced-only-access-policy",
+          "names": [
+            "VlmAccessDepth",
+            "VlmAccessGateVerdict",
+            "VlmAccessPurpose",
+            "VlmAccessSurface",
+            "resolveVlmAdvancedOnlyAccess",
+            "toPaymentRequiredPayload"
+          ]
+        },
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "VlmPaidAccessEntitlementVerdict",
+            "VlmPaidEntitlementByIdVerdict",
+            "verifyVlmPaidAccessEntitlement",
+            "verifyVlmPaidEntitlementById"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/market-integrity/provider-recovery-smoke.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-paid-access-server",
+          "names": [
+            "createVlmPaidAccessToken",
+            "hashVlmPaidAccessContext"
+          ]
+        },
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "upsertVlmPaidEntitlementFromDemoReceipt",
+            "verifyVlmPaidAccessEntitlement"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/payments/stripe-webhook/handlers/terminal-events.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "findVlmPaidEntitlementByStripeBinding"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/payments/stripe-webhook/handlers/vlm-paid-access.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "upsertVlmPaidEntitlementFromStripeSession"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/security/audit-intake-case-vault.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "updateMemoryVlmPaidEntitlementStatus"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/security/server-payment-account-delivery-gate.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "VlmPaidAccessEntitlementVerdict"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/server/lazy-route-modules/admin--security--advanced-audit-release.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "readVlmPaidEntitlementForOperations"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/access.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": true,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-advanced-only-access-policy",
+          "names": [
+            "buildVlmAdvancedOnlyPolicySummary"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-route-modules/advanced-click-runtime.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": true,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-advanced-only-access-policy",
+          "names": [
+            "VlmAccessDepth",
+            "VlmAccessPurpose",
+            "VlmAccessSurface"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/server/market-integrity-vlm-route-modules/access-policy.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": true,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-advanced-only-access-policy",
+          "names": [
+            "buildVlmAdvancedOnlyPolicySummary"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "lib/server/security-route-modules/advanced-entitlement-proof.ts",
+      "allowed": true,
+      "onlyNonAuthorizingSymbols": false,
+      "imports": [
+        {
+          "module": "@/lib/commerce/vlm-entitlement-ledger",
+          "names": [
+            "PASS2223_ADVANCED_ENTITLEMENT_HARDENING_ID",
+            "getVlmPaidEntitlementRuntimeMode"
+          ]
+        }
+      ]
+    }
+  ],
+  "forbiddenDirectResolverImports": [],
+  "status": "STATIC_PROVEN",
+  "rules": [
+    "All paid customer surfaces must call the central guard.",
+    "Direct entitlement resolvers are restricted to commerce internals, payment webhooks, checkout verification, and explicitly listed operator proof paths.",
+    "Product-cell readiness is a separate mandatory gate before PaymentIntent creation.",
+    "No static result may be promoted to staging or live proof."
+  ]
+}

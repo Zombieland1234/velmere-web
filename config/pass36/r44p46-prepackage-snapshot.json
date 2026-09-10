@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.prepackage-snapshot.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "phase": "PREPACKAGE",
+  "sourceFingerprint": "PENDING_FINAL_R46_SOURCE_MANIFEST",
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "internalClosure": "1/26=3.8%",
+  "externalEvidenceClosure": "0/14=0.0%",
+  "proofWeighted": "UNREPRODUCIBLE",
+  "stableParentClosedGates": [],
+  "currentExecutionClosedGates": [
+    "G11"
+  ],
+  "openGateCount": 25,
+  "routeInventory": "137 modules (58 pages, 79 APIs)",
+  "claimInventory": "6037 risky literal occurrences; 575 conservative REMOVE candidates",
+  "knownControllableP0": 0,
+  "controllableP0FinallyProvenZero": false,
+  "knownControllableP1": 7,
+  "packageState": "NOT_RUN",
+  "postpackageMaximumWithoutOtherGateChanges": "2/26=7.7% only if G25 fully closes; G11 PDF is already CLOSED by fresh current execution while G10 Browser remains OPEN/STALE"
+}

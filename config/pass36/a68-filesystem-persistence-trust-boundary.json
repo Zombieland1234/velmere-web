@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "velmere.pass36.a68.filesystem-persistence-trust-boundary.v1",
+  "revisionId": "VELMERE_PASS36_A68R0_FILESYSTEM_PERSISTENCE_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A67R0_NETWORK_EGRESS_CREDENTIAL_AND_SAME_ORIGIN_TRUST_BOUNDARY_HARDENING",
+  "scope": [
+    "provider evidence ledger filesystem persistence",
+    "instrument metadata filesystem cache",
+    "continuity evidence filesystem snapshots",
+    "local product store persistence"
+  ],
+  "requirements": {
+    "singleSharedDurableFileBoundary": true,
+    "productionRootMustBeAbsolute": true,
+    "filesystemRootForbidden": true,
+    "symlinkComponentsForbidden": true,
+    "symlinkTargetsForbidden": true,
+    "groupWorldWritableProductionRootForbidden": true,
+    "safeSingleSegmentFileNames": true,
+    "boundedReadAndWrite": true,
+    "exclusiveTemporaryFile": true,
+    "noFollowOpenWhereSupported": true,
+    "fileAndDirectorySync": true,
+    "atomicRename": true,
+    "exactReadBackDigest": true,
+    "temporaryCleanup": true,
+    "visualChanges": false
+  },
+  "truthBoundary": {
+    "realProductionFilesystemExecuted": false,
+    "distributedLockProven": false,
+    "networkFilesystemSemanticsProven": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "saleEnabled": false,
+    "liveProven": false
+  }
+}

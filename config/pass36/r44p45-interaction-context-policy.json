@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p45.interaction-context-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P44_ACTION_REQUIRED_BRUTAL_PRODUCT_REALITY_50_CONTRACT_ANGEL120_PERSONA100_FULL_QA_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "analyzerRevision": "R44P45_CONTEXT_QUALIFIED_INTERACTION_ORDERING_V3",
+  "boundedPatterns": [
+    {
+      "id": "PRE_AND_POST_CALL_STATE_REVALIDATION_BEFORE_TERMINAL_WRITE",
+      "customerStatus": "BOUNDED_CONTEXT_REVIEW_NOT_CONFIRMED_VULNERABILITY",
+      "humanBusinessLogicReviewRequired": true
+    },
+    {
+      "id": "CHECKED_TEMPORARY_MINT_ALLOWANCE_RECOVERY_AND_BURN",
+      "customerStatus": "BOUNDED_CONTEXT_REVIEW_NOT_CONFIRMED_VULNERABILITY",
+      "humanBusinessLogicReviewRequired": true
+    }
+  ],
+  "unsafeLookalikesMustAlert": [
+    "post-only validation",
+    "write before validation",
+    "unrelated post-check",
+    "missing allowance recovery",
+    "fake burn helper",
+    "extra direct state write",
+    "unchecked callback",
+    "second external call after settlement"
+  ],
+  "formalFalsePositiveRateCredit": false,
+  "formalPrecisionCredit": false,
+  "independentHumanAdjudicationCredit": false,
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

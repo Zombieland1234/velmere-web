@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "pass": "PASS4677",
+  "generatedAt": "2026-07-10T04:02:16.601Z",
+  "invariant": "Concatenating files in importOrder must reproduce the former late-ui-ownership.css byte-for-byte.",
+  "importOrder": [
+    "app/styles/asset-popup-foundation.css",
+    "app/styles/shield-risk-surface.css",
+    "app/styles/asset-popup-geometry.css",
+    "app/styles/shield-pro-terminal.css",
+    "app/styles/audit-one-screen.css",
+    "app/styles/global-header.css",
+    "app/styles/audit-account-handoff.css",
+    "app/styles/asset-popup-resize.css",
+    "app/styles/markets-cleanup.css"
+  ],
+  "finalOwner": "app/styles/asset-popup-ownership.css",
+  "browserScreenshotGate": "executed-pass4687-9of9",
+  "entries": [
+    {
+      "order": 1,
+      "path": "app/styles/asset-popup-foundation.css",
+      "surface": "Shield + Real Markets asset popup foundation",
+      "passRange": "PASS4590..<PASS4606",
+      "components": [
+        "AssetDetailModal"
+      ],
+      "screenshotGate": [
+        "shield-popup-desktop",
+        "real-markets-popup-desktop",
+        "popup-mobile"
+      ],
+      "bytes": 106421,
+      "lines": 2408,
+      "sha256": "589c7733b247df1ca8ebaf9aa6d4ad6d888b9d59f18d6ee01e7cda98a963149a"
+    },
+    {
+      "order": 2,
+      "path": "app/styles/shield-risk-surface.css",
+      "surface": "Shield verified feed and Top 3 risk surface",
+      "passRange": "PASS4606..<PASS4607",
+      "components": [
+        "ShieldClient"
+      ],
+      "screenshotGate": [
+        "shield-desktop",
+        "shield-mobile"
+      ],
+      "bytes": 5196,
+      "lines": 233,
+      "sha256": "728e359d3dfc5e5fd9ffaecbd1ec48c8f9346e2d163f1958ec5292eadd3073a5"
+    },
+    {
+      "order": 3,
+      "path": "app/styles/asset-popup-geometry.css",
+      "surface": "Shield + Real Markets popup canonical geometry",
+      "passRange": "PASS4607..<PASS4608",
+      "components": [
+        "AssetDetailModal"
+      ],
+      "screenshotGate": [
+        "shield-popup-desktop",
+        "real-markets-popup-desktop",
+        "popup-mobile"
+      ],
+      "bytes": 13180,
+      "lines": 242,
+      "sha256": "fdecd257b4469b39d0c4d108b20e4c46afbb365c6253dce3c3b06a1ff486c5ab"
+    },
+    {
+      "order": 4,
+      "path": "app/styles/shield-pro-terminal.css",
+      "surface": "Shield Pro terminal and globe",
+      "passRange": "PASS4608..<PASS4609",
+      "components": [
+        "ShieldProTerminalClient"
+      ],
+      "screenshotGate": [
+        "shield-pro-desktop",
+        "shield-pro-mobile"
+      ],
+      "bytes": 20408,
+      "lines": 546,
+      "sha256": "88ed2ecfec38bb284d9cfadfec6ea757bed43648ad4774d43be5a6959049ef29"
+    },
+    {
+      "order": 5,
+      "path": "app/styles/audit-one-screen.css",
+      "surface": "Public Audit one-screen page",
+      "passRange": "PASS4609..<PASS4610",
+      "components": [
+        "AuditPage",
+        "AuditIntake"
+      ],
+      "screenshotGate": [
+        "audit-desktop",
+        "audit-mobile"
+      ],
+      "bytes": 20772,
+      "lines": 699,
+      "sha256": "1bcb2c2dd160dc3fabb23d6b0175ea1512732a6b5776c6d331b2f936eebe54e4"
+    },
+    {
+      "order": 6,
+      "path": "app/styles/global-header.css",
+      "surface": "Global header and navigation",
+      "passRange": "PASS4610..<PASS4611",
+      "components": [
+        "VelmereHeader"
+      ],
+      "screenshotGate": [
+        "header-desktop",
+        "header-mobile"
+      ],
+      "bytes": 3695,
+      "lines": 151,
+      "sha256": "94e2a9ea2ff471ff7766c5825f1dc0081cf646dfbd9a46ceab525349f4539010"
+    },
+    {
+      "order": 7,
+      "path": "app/styles/audit-account-handoff.css",
+      "surface": "Audit intake and account status handoff",
+      "passRange": "PASS4611..<PASS4617",
+      "components": [
+        "AuditIntake",
+        "AccountAuditStatus"
+      ],
+      "screenshotGate": [
+        "audit-intake-desktop",
+        "audit-intake-mobile"
+      ],
+      "bytes": 2152,
+      "lines": 80,
+      "sha256": "c2b4a927284917b9fbcf1453edefae99be101245d2b3c22fac2ec94c0dc2f52e"
+    },
+    {
+      "order": 8,
+      "path": "app/styles/asset-popup-resize.css",
+      "surface": "User-directed popup resize and unified canvas",
+      "passRange": "PASS4617..<PASS4618",
+      "components": [
+        "AssetDetailModal"
+      ],
+      "screenshotGate": [
+        "shield-popup-desktop",
+        "real-markets-popup-desktop",
+        "popup-mobile"
+      ],
+      "bytes": 7468,
+      "lines": 160,
+      "sha256": "2816d7486f384843aec0cc48fb125de614b497366dd1c97919c8ebab960d88f2"
+    },
+    {
+      "order": 9,
+      "path": "app/styles/markets-cleanup.css",
+      "surface": "Shield + Real Markets public table cleanup",
+      "passRange": "PASS4618..EOF",
+      "components": [
+        "ShieldClient",
+        "RealMarketsClient"
+      ],
+      "screenshotGate": [
+        "shield-desktop",
+        "real-markets-desktop",
+        "markets-mobile"
+      ],
+      "bytes": 1450,
+      "lines": 29,
+      "sha256": "c2a1b4e2acb35aa93277d75f74d89aec6bf4398f42125f95308dbb224ff659be"
+    }
+  ],
+  "browserScreenshotReceipt": "artifacts/pass4687/browser-matrix-receipt.json"
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "velmere.pass20.data-commercialization-policy.v1",
+  "truthBoundary": "This policy and generated matrix define required data, source-family, freshness, license and tier-release contracts. Prepared cells and synthetic eligibility tests never count as provider-bound, staging or LIVE evidence.",
+  "licenseStates": ["verified", "display_only", "restricted", "unknown"],
+  "releaseRules": {
+    "basic": {
+      "allowedLicenseStates": ["verified", "display_only"],
+      "requiresCommercialRights": false,
+      "requiresEntitlement": false,
+      "minimumIndependentFamilies": 1
+    },
+    "pro": {
+      "allowedLicenseStates": ["verified"],
+      "requiresCommercialRights": true,
+      "requiresEntitlement": true,
+      "minimumIndependentFamilies": 2
+    },
+    "advanced": {
+      "allowedLicenseStates": ["verified"],
+      "requiresCommercialRights": true,
+      "requiresEntitlement": true,
+      "minimumIndependentFamilies": 2
+    }
+  },
+  "freshnessSeconds": {
+    "market_realtime": 300,
+    "market_delayed": 1200,
+    "market_session": 1800,
+    "onchain": 1800,
+    "issuer": 86400,
+    "fundamental": 86400,
+    "contract_snapshot": 604800,
+    "audit_snapshot": 604800,
+    "document_snapshot": 86400,
+    "model_fact_packet": 3600,
+    "assistant_context": 3600
+  },
+  "surfaceFields": {
+    "shield": {
+      "basic": ["identity.asset", "market.price", "source.freshness", "risk.summary"],
+      "pro": ["identity.asset", "market.price", "market.change_24h", "market.volume_24h", "market.liquidity_usd", "source.independent_quorum", "source.freshness", "source.commercial_rights", "risk.score", "risk.drivers"],
+      "advanced": ["identity.asset", "market.price", "market.change_24h", "market.volume_24h", "market.liquidity_usd", "source.independent_quorum", "source.freshness", "source.commercial_rights", "risk.score", "risk.drivers", "contract.permissions", "holder.concentration", "risk.contradictions", "risk.provenance_receipt"]
+    },
+    "real_markets": {
+      "basic": ["identity.instrument", "market.price", "market.session_status", "source.freshness"],
+      "pro": ["identity.instrument", "market.price", "market.change_24h", "market.volume_24h", "fundamentals.market_cap_or_notional", "market.session_status", "source.independent_quorum", "source.freshness", "source.commercial_rights", "risk.score"],
+      "advanced": ["identity.instrument", "market.price", "market.change_24h", "market.volume_24h", "fundamentals.market_cap_or_notional", "market.session_status", "source.independent_quorum", "source.freshness", "source.commercial_rights", "risk.score", "fundamentals.issuer", "macro.context", "risk.contradictions", "risk.provenance_receipt"]
+    },
+    "smart_contract_audit": {
+      "basic": ["identity.chain_contract", "contract.bytecode_hash", "audit.summary", "source.freshness"],
+      "pro": ["identity.chain_contract", "contract.bytecode_hash", "contract.compiler", "audit.findings", "audit.severity", "audit.evidence_graph", "audit.false_positive_review", "source.independent_quorum", "source.commercial_rights", "source.freshness"],
+      "advanced": ["identity.chain_contract", "contract.bytecode_hash", "contract.compiler", "audit.findings", "audit.severity", "audit.evidence_graph", "audit.false_positive_review", "audit.manual_review_state", "audit.revalidation_plan", "source.independent_quorum", "source.commercial_rights", "source.freshness", "risk.provenance_receipt"]
+    },
+    "lens_pdf": {
+      "basic": ["lens.query", "lens.summary", "lens.freshness_summary", "source.freshness"],
+      "pro": ["lens.query", "lens.summary", "lens.source_comparison", "lens.claim_atoms", "lens.freshness_summary", "source.independent_quorum", "source.commercial_rights", "source.freshness", "lens.render_payload"],
+      "advanced": ["lens.query", "lens.summary", "lens.source_comparison", "lens.claim_atoms", "lens.freshness_summary", "source.independent_quorum", "source.commercial_rights", "source.freshness", "lens.render_payload", "lens.preview_download_account_parity", "lens.provenance_receipt"]
+    },
+    "vlm_brain": {
+      "basic": ["brain.fact_packet", "brain.claim_bindings", "brain.missing_proof", "source.freshness"],
+      "pro": ["brain.fact_packet", "brain.claim_bindings", "brain.risk_score", "brain.confidence_basis", "brain.missing_proof", "source.independent_quorum", "source.commercial_rights", "source.freshness", "brain.policy_decision"],
+      "advanced": ["brain.fact_packet", "brain.claim_bindings", "brain.risk_score", "brain.confidence_basis", "brain.contradictions", "brain.missing_proof", "source.independent_quorum", "source.commercial_rights", "source.freshness", "brain.policy_decision", "brain.provenance_receipt"]
+    },
+    "angel": {
+      "basic": ["angel.scope", "angel.severity", "angel.confidence", "angel.missing_proof"],
+      "pro": ["angel.scope", "angel.severity", "angel.confidence", "angel.evidence", "angel.missing_proof", "angel.safe_remediation", "angel.next_safe_check", "source.independent_quorum", "source.commercial_rights"],
+      "advanced": ["angel.scope", "angel.severity", "angel.confidence", "angel.evidence", "angel.missing_proof", "angel.safe_remediation", "angel.next_safe_check", "angel.policy_decision", "angel.provenance_receipt", "source.independent_quorum", "source.commercial_rights"]
+    }
+  },
+  "fieldProfiles": {
+    "identity.": {"freshnessClass": "issuer", "sourceFamilies": ["canonical_registry", "issuer_or_chain"]},
+    "market.": {"freshnessClass": "market_realtime", "sourceFamilies": ["primary_market", "independent_market"]},
+    "fundamentals.": {"freshnessClass": "fundamental", "sourceFamilies": ["issuer_filing", "independent_fundamental"]},
+    "macro.": {"freshnessClass": "fundamental", "sourceFamilies": ["official_macro", "independent_macro"]},
+    "contract.": {"freshnessClass": "contract_snapshot", "sourceFamilies": ["chain_rpc", "verified_source_code"]},
+    "holder.": {"freshnessClass": "onchain", "sourceFamilies": ["chain_rpc", "independent_indexer"]},
+    "audit.": {"freshnessClass": "audit_snapshot", "sourceFamilies": ["static_analyzer", "independent_analyzer", "human_reviewer"]},
+    "lens.": {"freshnessClass": "document_snapshot", "sourceFamilies": ["canonical_fact_packet", "independent_evidence"]},
+    "brain.": {"freshnessClass": "model_fact_packet", "sourceFamilies": ["canonical_fact_packet", "independent_evidence"]},
+    "angel.": {"freshnessClass": "assistant_context", "sourceFamilies": ["authorized_context", "independent_evidence"]},
+    "risk.": {"freshnessClass": "model_fact_packet", "sourceFamilies": ["canonical_fact_packet", "independent_evidence"]},
+    "source.": {"freshnessClass": "model_fact_packet", "sourceFamilies": ["source_registry", "license_registry"]}
+  },
+  "advancedSpecialGates": {
+    "smart_contract_audit": ["human_review_approved"],
+    "lens_pdf": ["preview_download_account_parity_verified"]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "nodeArchives": {
+    "linux-x64": {
+      "fileName": "node-v24.18.0-linux-x64.tar.xz",
+      "sha256": "55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742",
+      "signedShasumsUrl": "https://nodejs.org/dist/v24.18.0/SHASUMS256.txt.asc"
+    },
+    "win32-x64": {
+      "fileName": "node-v24.18.0-win-x64.zip",
+      "sha256": "0ae68406b42d7725661da979b1403ec9926da205c6770827f33aac9d8f26e821",
+      "signedShasumsUrl": "https://nodejs.org/dist/v24.18.0/SHASUMS256.txt.asc"
+    }
+  },
+  "required": {
+    "arch": "x64",
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "platform": "linux"
+  },
+  "requiredBundlePaths": [
+    "runtime/node-v24.18.0-linux-x64.tar.xz",
+    "npm-cache/_cacache",
+    "package-lock.json",
+    "lockfile-target-manifest.json",
+    "runtime-policy.json",
+    "PASS26_RUNTIME_CACHE_BUNDLE_MANIFEST.json"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P26_ACTION_REQUIRED_TRUSTED_EXTERNAL_EVIDENCE_SEMANTIC_STAGING_DENOMINATORS_AND_EXACT_RUNTIME_BRIDGE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p26.exact-runtime-bridge-policy.v1",
+  "truthBoundary": {
+    "archivePinIsNotExecutionCredit": true,
+    "bundlePresenceIsNotReleaseCredit": true,
+    "exactExecutionRequired": true,
+    "parentReleaseCreditTransferForbidden": true
+  }
+}

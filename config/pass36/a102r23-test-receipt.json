@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "velmere.pass36.a102r23.kline-prefetch-logo-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R23_ACTION_REQUIRED_KLINE_MODE_LOCAL_REFERENCE_DETAIL_ICON_REQUEST_AND_DEV_PREFETCH_STORM_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R22_ACTION_REQUIRED_LOCAL_DEV_RUNTIME_DATA_REFERENCE_ICON_AND_CONTINUOUS_ROUTE_TRANSITION_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T00:17:00.000Z",
+  "status": "PASS_A102R23_KLINE_MODE_REFERENCE_DETAIL_ICON_AND_PREFETCH_BOUNDARY_NO_REAL_CREDIT",
+  "checksPassed": 54,
+  "checksFailed": 0,
+  "localKlineReferenceBars": 180,
+  "productionKlineReferenceBars": 0,
+  "realProviderRightsApproved": 0,
+  "realBrowserRows": 0,
+  "exactBuildBrowserCredit": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "rows": [
+    {
+      "id": "identity.active",
+      "passed": true
+    },
+    {
+      "id": "identity.package",
+      "passed": true
+    },
+    {
+      "id": "identity.package-nested",
+      "passed": true
+    },
+    {
+      "id": "identity.parent",
+      "passed": true
+    },
+    {
+      "id": "identity.authority",
+      "passed": true
+    },
+    {
+      "id": "identity.authority-parent",
+      "passed": true
+    },
+    {
+      "id": "truth.no-go",
+      "passed": true
+    },
+    {
+      "id": "truth.live-false",
+      "passed": true
+    },
+    {
+      "id": "truth.sale-false",
+      "passed": true
+    },
+    {
+      "id": "truth.production-false",
+      "passed": true
+    },
+    {
+      "id": "truth.worldclass-false",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-mode",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-freshness",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-bars",
+      "passed": true,
+      "details": 180
+    },
+    {
+      "id": "kline.dev-live-withheld",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-delivery-withheld",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-score-withheld",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-rights-blocker",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-fixed-time",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-candles-valid",
+      "passed": true
+    },
+    {
+      "id": "kline.dev-exact-local-id-only",
+      "passed": true
+    },
+    {
+      "id": "kline.production-disabled",
+      "passed": true
+    },
+    {
+      "id": "kline.handler-wired",
+      "passed": true
+    },
+    {
+      "id": "kline.reference-before-provider-resolution",
+      "passed": true
+    },
+    {
+      "id": "kline.reference-header",
+      "passed": true
+    },
+    {
+      "id": "kline.no-store",
+      "passed": true
+    },
+    {
+      "id": "client.mode-live_verified",
+      "passed": true
+    },
+    {
+      "id": "client.mode-live_partial",
+      "passed": true
+    },
+    {
+      "id": "client.mode-last_known_good",
+      "passed": true
+    },
+    {
+      "id": "client.mode-local_reference",
+      "passed": true
+    },
+    {
+      "id": "client.mode-normalization",
+      "passed": true
+    },
+    {
+      "id": "client.reference-render",
+      "passed": true
+    },
+    {
+      "id": "client.pl-reference-label",
+      "passed": true
+    },
+    {
+      "id": "client.en-reference-label",
+      "passed": true
+    },
+    {
+      "id": "client.de-reference-label",
+      "passed": true
+    },
+    {
+      "id": "client.legacy-mode-bug-removed",
+      "passed": true
+    },
+    {
+      "id": "transition.dev-eager-prewarm-disabled",
+      "passed": true
+    },
+    {
+      "id": "transition.save-data-respected",
+      "passed": true
+    },
+    {
+      "id": "transition.slow-network-respected",
+      "passed": true
+    },
+    {
+      "id": "transition.intent-debounce",
+      "passed": true
+    },
+    {
+      "id": "transition.five-route-storm-removed",
+      "passed": true
+    },
+    {
+      "id": "transition.click-bubble-phase",
+      "passed": true
+    },
+    {
+      "id": "transition.capture-hijack-removed",
+      "passed": true
+    },
+    {
+      "id": "transition.safety-retained",
+      "passed": true
+    },
+    {
+      "id": "transition.image-settle-retained",
+      "passed": true
+    },
+    {
+      "id": "transition.path-marker-retained",
+      "passed": true
+    },
+    {
+      "id": "logo.dev-filter",
+      "passed": true
+    },
+    {
+      "id": "logo.dev-api-chain-disabled",
+      "passed": true
+    },
+    {
+      "id": "logo.dev-local-only",
+      "passed": true,
+      "details": []
+    },
+    {
+      "id": "logo.production-remote-chain-retained",
+      "passed": true,
+      "details": [
+        "/api/market-integrity/brand-icon?domain=example.com",
+        "/api/market-integrity/asset-logo?symbol=ZZZZ"
+      ]
+    },
+    {
+      "id": "a58.current",
+      "passed": true
+    },
+    {
+      "id": "a58.parent",
+      "passed": true
+    },
+    {
+      "id": "a58.descendant",
+      "passed": true
+    },
+    {
+      "id": "a58.archive",
+      "passed": true
+    }
+  ]
+}

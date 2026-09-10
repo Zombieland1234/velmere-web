@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "velmere.p47.windows-build-projection-control.v1",
+  "revision": "P47_V16_EXACT_WINDOWS_BUILD_RELEVANT_PROJECTION_TRANSPORT_READY",
+  "parentRoot": "R44P46",
+  "parentCheckpoint": "P46_V16_EXACT_POSIX_SCRIPT_SHELL_SERIALIZED_A60_CURRENT_SOURCE_REBIND",
+  "state": "READY_NOT_EXECUTED_NATIVE_WINDOWS",
+  "globalDecision": "NO_GO",
+  "authority": "V16_BYTE_FOR_BYTE_UNCHANGED",
+  "fullP46SourceBinding": {
+    "fileCount": 6666,
+    "payloadBytes": 196522733,
+    "pathSetSha256": "38eba6c9b7f1761d531bed806cc783d28b540165f199bce385ba6d38842238fa",
+    "sourceAggregateSha256": "c91742b787cb75d8aaabb1eef2f1aef51ab038da6eca3453cc898f393f09d0da",
+    "sourceIdentitySha256": "734ac2ef73d35aab1ccefd9a0c61f0f5bf75c33e12207703aec8bbde0dab8c98"
+  },
+  "projection": {
+    "fileCount": 1597,
+    "payloadBytes": 20952834,
+    "pathSetSha256": "b8d9b3c2753e3f7f0c0b3a6054cf8c254d2a91b9c9c5d8f37310add478ac3f73",
+    "sourceContentAggregateSha256": "83fd00183e9d8a6c5ec1c27dba81ab99679e204b50e8f45f414a45abd2bd21b7"
+  },
+  "transport": {
+    "baseP42UncompressedTarSha256": "1c578ad0287c8090d1af4f7ebbdf2b461ef1d34211b5c3fef71463518f95cc7a",
+    "zstdPatchSha256": "b66d5e6bff4185bb210987d8ee5c79145778d591096d9987cf21ab9d04db31ef",
+    "zstdPatchBytes": 2286590,
+    "parts": 8,
+    "projectionTarSha256": "bc2b9c810cac5762b0c27e8dcbe0be3e3e5c30315bc10114f9711955815a90e0",
+    "projectionTarBytes": 22333440,
+    "localReplay": "2/2_BYTE_IDENTICAL_PASS"
+  },
+  "nativeWindowsRequiredChecks": [
+    "windows-2025",
+    "Node 24.18.0",
+    "npm 11.16.0",
+    "npm ci --ignore-scripts",
+    "npm ls --all",
+    "native Next SWC probe",
+    "semantic TypeScript",
+    "ESLint zero warnings",
+    "Webpack production build",
+    "Turbopack production build",
+    "post-build projection identity"
+  ],
+  "creditBoundary": {
+    "nativeWindowsBuildRelevantProjection": "PENDING",
+    "fullExactWindowsSource": "WITHHELD_NOT_EXECUTED",
+    "browserDistinctSkus": "0/3",
+    "pdfIndependentReplay": "0/1",
+    "physicalCustomerOutputs": "0/17",
+    "materialRequiredDeltas": "0/6",
+    "fieldRights": "0/176",
+    "saleEligible": "0/17"
+  },
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

@@ -1,0 +1,103 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": false,
+    "browser57": false,
+    "cleanUnpack": false,
+    "exactWindows": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "localLifecycleE2E": true,
+    "packageDeterminism": false,
+    "pdf150": false,
+    "personaMatrix": true,
+    "postBuildTypeScript": false,
+    "repeatability": true,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "sourceAuthority": false,
+    "stagingCustomerLifecycle": false,
+    "staticPolicy": true,
+    "targetedSyntax": true,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "EXACT_NODE_24_18_0_NPM_11_16_0_AND_PROJECT_DEPENDENCIES",
+    "EXACT_WINDOWS",
+    "DISPOSABLE_SUPABASE_STAGING_RLS",
+    "STRIPE_TEST_PROVIDER_WEBHOOKS",
+    "PRIVATE_OBJECT_STORAGE_AND_KMS",
+    "TRANSACTIONAL_EMAIL_INBOX_PROOF",
+    "INDEPENDENT_REVIEW",
+    "REAL_CUSTOMER_OUTCOMES",
+    "WILLINGNESS_TO_PAY",
+    "PROVIDER_RIGHTS_318_583",
+    "ANGEL_RISK_300_EVALS",
+    "IMPACT_REALIZED_SLIPPAGE",
+    "WHALE_SIGNED_LABELS"
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "accountDeletionPurgeAndIdentifierRedaction": true,
+    "appendOnlyHashChainLedger": true,
+    "denominatorMigrationChecks": 9,
+    "lifecycleAssertions": 63,
+    "lifecycleFlows": 12,
+    "localDisposableCustomerLifecycle": true,
+    "personaMatrixChecks": 10,
+    "privateFilesystemStorage": true,
+    "refundRevocation": true,
+    "repeatabilityChecks": 8,
+    "ruthlessLifecycleStages": 12,
+    "ruthlessPersonaLifecycleRows": 180,
+    "ruthlessPersonas": 15,
+    "separateWorkerProcess": true,
+    "sessionExpiry": true,
+    "signedOneTimeDownloadTokens": true,
+    "staticPolicyChecks": 31,
+    "staticSecurityBoundaryChecks": 34,
+    "webhookSignatureAndIdempotency": true
+  },
+  "newFindings": [
+    {
+      "id": "R44P23-P0-PAYMENT-AMOUNT-BINDING",
+      "status": "CLOSED_LOCAL",
+      "summary": "Payment success must match the job-bound amount and currency; wrong amount is rejected."
+    },
+    {
+      "id": "R44P23-P0-TERMINAL-ENTITLEMENT-REACTIVATION",
+      "status": "CLOSED_LOCAL",
+      "summary": "Refunded, chargeback-revoked or account-deleted entitlement cannot be reactivated by a later payment event on the same entitlement."
+    },
+    {
+      "id": "R44P23-P1-DELETE-RAW-IDENTIFIERS",
+      "status": "CLOSED_LOCAL",
+      "summary": "Account deletion now purges jobs and artifacts and redacts raw account identifiers from account, session and entitlement records."
+    },
+    {
+      "id": "R44P23-P1-LOCAL-NOT-STAGING",
+      "status": "OPEN_EXTERNAL",
+      "summary": "Filesystem-backed disposable lifecycle proves local runtime behavior only; Supabase RLS, Stripe TEST, object storage, email and rollback remain unproven."
+    },
+    {
+      "id": "R44P23-P1-PAID-PREVIEW-RESPONSE-TYPE-FAIL-CLOSED",
+      "status": "CLOSED_LOCAL",
+      "summary": "Bounded preview JSON fallback now returns an explicit typed fail-closed response instead of an untyped empty object that failed exact TypeScript."
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "revisionId": "VELMERE_PASS36_A102R44P23_ACTION_REQUIRED_LOCAL_DISPOSABLE_CUSTOMER_LIFECYCLE_REFUND_REVOCATION_DELETE_AND_DURABLE_DELIVERY_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p23.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "GO_FREE_TARGET_LOCAL_LIFECYCLE_PROVEN_RELEASE_GATES_PENDING",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_TARGET_EXTERNAL_STAGING_AND_MANUAL_QA_PENDING"
+  },
+  "worldClassProven": false
+}

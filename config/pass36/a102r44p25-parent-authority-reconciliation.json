@@ -1,0 +1,70 @@
+{
+  "decision": "PASS_PARENT_AUTHORITY_RECONCILED_CHILD_STILL_NO_GO",
+  "rejectedSibling": {
+    "codeMergeAllowed": false,
+    "evidenceCreditAllowed": false,
+    "materialsArchive": {
+      "byteLength": 287712,
+      "filename": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_LOCAL_MULTITENANT_ENCRYPTED_RLS19_BACKUP_RESTORE_AND_PROVIDER_LOSS_RECOVERY_NO_LIVE_CREDIT_MATERIALS.zip",
+      "sha256": "f4f5f016d6b6114482344f986b753c619a26111704d62f110721962795dea12a"
+    },
+    "reason": "SIBLING_REVISION_NOT_DESCENDANT_OF_SELECTED_PARENT",
+    "revisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_LOCAL_MULTITENANT_ENCRYPTED_RLS19_BACKUP_RESTORE_AND_PROVIDER_LOSS_RECOVERY_NO_LIVE_CREDIT",
+    "roadmap": {
+      "byteLength": 2008939,
+      "filename": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS36_A102R44P24_ACTION_REQUIRED_LOCAL_MULTITENANT_ENCRYPTED_RLS19_BACKUP_RESTORE_AND_PROVIDER_LOSS_RECOVERY_NO_LIVE_CREDIT.txt",
+      "sha256": "bd1fb4f76b00d4abe502f3304ae13f68687d4800dc6063525fac0c587ef59713"
+    },
+    "sourceArchive": {
+      "byteLength": 61114880,
+      "filename": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_LOCAL_MULTITENANT_ENCRYPTED_RLS19_BACKUP_RESTORE_AND_PROVIDER_LOSS_RECOVERY_NO_LIVE_CREDIT_SOURCE_ONLY.zip",
+      "sha256": "a0a45ad2b900204d1ae308cd68fbaf84faa71e0afec940a1166e5907cea020da"
+    }
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "rules": {
+    "currentChildReleaseCreditRequiresFreshExecution": true,
+    "historicalEvidenceCannotTransferToChildBytes": true,
+    "materialsCannotOverwriteSource": true,
+    "silentSiblingMergeForbidden": true,
+    "singleParentAuthority": true
+  },
+  "schemaVersion": "velmere.pass36.a102r44p25.parent-authority-reconciliation.v1",
+  "selectedParent": {
+    "cleanUnpackReceipt": {
+      "filename": "R44P24_CLEAN_UNPACK_RECEIPT.json",
+      "sha256": "ae33bb344d2852e3e3fc29721dfa8e6e5bc1ec2b92f3a3746c2f8d5c022d2c74"
+    },
+    "detachedReleaseLedger": {
+      "filename": "R44P24_DETACHED_CURRENT_BYTE_RELEASE_LEDGER.json",
+      "sha256": "cda7860bf64f369ab0fd4cc24cc9fc90399a8253fd6fbff5958ae75aa0acce5e"
+    },
+    "finalAuthorityReceipt": {
+      "filename": "R44P24_FINAL_SOURCE_AUTHORITY.json",
+      "sha256": "708ddc8578a7706dc8ebabf0a54f26214568a949feca0679653656d7efdafac2"
+    },
+    "materialsArchive": {
+      "byteLength": 28927114,
+      "filename": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT_MATERIALS.zip",
+      "sha256": "57f2e82cf9bdf40955448aea48432e24e2923442c7a6287bbeb8fd48185fa159"
+    },
+    "roadmap": {
+      "byteLength": 2004868,
+      "filename": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT.txt",
+      "sha256": "60edd89b42ad70d1de40b4cabd3f458a5e44d3a0324cd665ed057e5619d075ad"
+    },
+    "sourceArchive": {
+      "byteLength": 61098676,
+      "filename": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT_SOURCE_ONLY.zip",
+      "sha256": "4f8b084aebdd376de6073f4b269d2b0a1b36b3c1682d289155b0091f5a936c57"
+    },
+    "sourceManifest": {
+      "aggregateSha256": "edb1ffc1e976e04e8d7736dec69bf5429845f09d76ef4f3a1ef004cb2f1acda0",
+      "fileCount": 5990,
+      "path": "_velmere/PASS36_A102R44P24_SOURCE_ONLY_MANIFEST.json",
+      "sha256": "9c18f3816fc4fcdbd50ef473ba62cbde6a70acda18bd1d60d4152b26dc1c48df"
+    }
+  },
+  "selectedParentRevisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "selectionClass": "LATEST_CANONICAL_EXACT_LINUX_RELEASE_CLOSURE"
+}

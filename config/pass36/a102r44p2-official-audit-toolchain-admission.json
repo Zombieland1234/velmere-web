@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p2.official-audit-toolchain-admission.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P2_ACTION_REQUIRED_AUTOMATED_INFORMATIONAL_SKU_PDF_POSIX_TOOL_BOUNDARY_AND_OFFICIAL_TOOLCHAIN_ADMISSION_NO_LIVE_CREDIT",
+  "creditBoundary": "Executable admission proves only exact local tool identity and version. It does not prove a contract execution, detector accuracy, rights, customer value, staging or LIVE status.",
+  "officialExecutionTarget": 200,
+  "tools": [
+    {
+      "toolId": "solc",
+      "environmentVariable": "VELMERE_OFFICIAL_SOLC_PATH",
+      "expectedVersion": "0.8.24",
+      "versionArgs": ["--version"],
+      "expectedExecutableSha256": "fb03a29a517452b9f12bcf459ef37d0a543765bb3bbc911e70a87d6a37c30d5f",
+      "allowedExecutableKinds": ["elf", "pe", "mach_o"],
+      "fixtureMayGrantCredit": false
+    },
+    {
+      "toolId": "slither",
+      "environmentVariable": "VELMERE_OFFICIAL_SLITHER_PATH",
+      "expectedVersion": "0.11.5",
+      "versionArgs": ["--version"],
+      "expectedExecutableSha256": null,
+      "allowedExecutableKinds": ["elf", "pe", "python_entrypoint"],
+      "fixtureMayGrantCredit": false
+    },
+    {
+      "toolId": "semgrep",
+      "environmentVariable": "VELMERE_OFFICIAL_SEMGREP_PATH",
+      "expectedVersion": "1.129.0",
+      "versionArgs": ["--version"],
+      "expectedExecutableSha256": null,
+      "allowedExecutableKinds": ["elf", "pe", "python_entrypoint"],
+      "fixtureMayGrantCredit": false
+    },
+    {
+      "toolId": "forge",
+      "environmentVariable": "VELMERE_OFFICIAL_FORGE_PATH",
+      "expectedVersion": "1.2.3",
+      "versionArgs": ["--version"],
+      "expectedExecutableSha256": null,
+      "allowedExecutableKinds": ["elf", "pe", "mach_o"],
+      "fixtureMayGrantCredit": false
+    }
+  ]
+}

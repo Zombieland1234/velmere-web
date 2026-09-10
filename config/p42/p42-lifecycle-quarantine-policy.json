@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "velmere.p42.lifecycle-quarantine-policy.v2",
+  "revision": "P42_V16_CURRENT_LOCK_LIFECYCLE_QUARANTINE_ACTION_PINNING_V2",
+  "generatedAt": "2026-08-14T11:20:00.000Z",
+  "parentRoot": "R44P46",
+  "checkpoint": "P42",
+  "exactTarget": {
+    "os": "windows-2025",
+    "platform": "win32",
+    "arch": "x64",
+    "node": "v24.18.0",
+    "npm": "11.16.0"
+  },
+  "bindings": {
+    "packageJson": {
+      "path": "package.json",
+      "sha256": "fd254fbfef215cbfd93e0f5cb04a7e84864dea998c0cfce0fc0f9227fac372ec",
+      "byteLength": 135168
+    },
+    "packageLock": {
+      "path": "package-lock.json",
+      "sha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+      "byteLength": 354803
+    },
+    "inventory": {
+      "path": "config/p42/p42-current-lock-lifecycle-inventory.json",
+      "sha256": "d21e3b74680c8a78c4f27a4c4b6ca6291831381ed4fbda4039dcc4d2564c64e9",
+      "byteLength": 16273
+    },
+    "allowlist": {
+      "path": "config/p42/p42-lifecycle-execution-allowlist.json",
+      "sha256": "5396e8530e3812538c81647acdf220d7f60e5f250d3f28bfb42003e1fb935e40",
+      "byteLength": 9140
+    },
+    "actionPins": {
+      "path": "config/p42/p42-github-action-pins.json",
+      "sha256": "041c78a72f28f75ee81def59519941409cbdc764076886ed602de3dc05140e80",
+      "byteLength": 908
+    },
+    "genericQuarantinePolicy": {
+      "path": "config/supply-chain-quarantine-policy.json",
+      "sha256": "8b382007f7dd93e91f3197937c4a93b629a23aa9a614b356efaaa23025228497",
+      "byteLength": 2714
+    },
+    "p42Workflow": {
+      "path": ".github/workflows/p42-exact-windows-node24-lifecycle-quarantine.yml",
+      "sha256": "89c10f0b6b2a673abb87c93feacd34be861436b3375428297fc55ef4e6345222",
+      "byteLength": 2057
+    },
+    "supersededP41Workflow": {
+      "path": ".github/workflows/p41-exact-windows-node24-current-root-closure.yml",
+      "sha256": "eb34fa00c7e26e890c94c88ba3cf597b260b8ca8301dbba3e31f75531ea794c1",
+      "byteLength": 451
+    },
+    "sourceContract": {
+      "path": "scripts/pass4823/typecheck-source-contract.mjs",
+      "sha256": "caf6f3f790e761a107c5b5d766ff0bc478822dc09729937f3499e46992a66fcd",
+      "byteLength": 6569
+    },
+    "inventoryBuilder": {
+      "path": "scripts/pass42/build-p42-lifecycle-inventory.py",
+      "sha256": "a17ac3cf0143e69f6fd43b8f02322ae2d0d3817de8b4a9d25ef3f1ed894a8e20",
+      "byteLength": 16015
+    },
+    "archiveAcquirer": {
+      "path": "scripts/pass42/acquire-p42-lifecycle-evidence.py",
+      "sha256": "b2b3cfd90afc6089656661b91a6f4625e404c794c8d8f901fb5f7fa239c191f7",
+      "byteLength": 7423
+    },
+    "controlBuilder": {
+      "path": "scripts/pass42/build-p42-lifecycle-quarantine-controls.py",
+      "sha256": "0562810feafce3fd84b45003716b543be920154b9b24dd87e4a2a258c6c5b734",
+      "byteLength": 9783
+    },
+    "quarantineVerifier": {
+      "path": "scripts/pass42/verify-p42-lifecycle-quarantine.py",
+      "sha256": "697711e05f15d6b1ae1cfd3451fa4237920a925963d3ab363248d5734f6f9103",
+      "byteLength": 20224
+    },
+    "trustedNativeGuard": {
+      "path": "scripts/runtime/rebuild-trusted-native.mjs",
+      "sha256": "e7b0aa6a1b61af5c3a3659a76e5dcb2b599e9932a277fc419a26a63472a7b3a2",
+      "byteLength": 2848
+    },
+    "nativePlatformProbe": {
+      "path": "scripts/pass42/verify-p42-native-platform-availability.mjs",
+      "sha256": "0977f96c4ef0d7ab554217a2c504fffb2676789c218f43e8f6df78ab941307b7",
+      "byteLength": 4976
+    },
+    "semanticWorkflow": {
+      "path": ".github/workflows/p42-exact-windows-semantic-dual-build.yml",
+      "sha256": "94b8ef5509c5e883c6e9616e95dd36900ddd7f6e58211645b19629775f6c56b4",
+      "byteLength": 1633
+    },
+    "semanticRunner": {
+      "path": "scripts/pass42/run-p42-exact-windows-semantic-dual-build.mjs",
+      "sha256": "de108793dea24bfe855cbfa98a1f7ebe28effec02f8a74f034c43cdda574d5ce",
+      "byteLength": 8242
+    }
+  },
+  "rules": {
+    "dependencyLifecycleDefault": "DENY",
+    "exactTupleApprovalRequired": true,
+    "archiveSriAndShaRequired": true,
+    "staticInspectionNeverExecutesCode": true,
+    "networkFallbackDuringLifecycleForbidden": true,
+    "npmCiMustUseIgnoreScripts": true,
+    "movingGithubActionTagsForbidden": true,
+    "checkoutCredentialsPersisted": false,
+    "semanticBuildRequiresNativePlatformProbe": true,
+    "failureEvidenceAlwaysUploaded": true
+  },
+  "expectedGate": {
+    "dependencyLifecycleExecutionAllowed": false,
+    "npmCiWithoutIgnoreScriptsAllowed": false,
+    "semanticTypecheckLintBuildAllowed": false
+  },
+  "releaseBoundary": {
+    "currentExactWindowsDependencyGraph": "HISTORICAL_LOCK_BOUND_PLUS_CURRENT_MANIFEST_DIFFERENTIAL",
+    "currentExactWindowsLifecycle": "WITHHELD",
+    "currentExactWindowsSemanticDualBuild": "NOT_EXECUTED",
+    "goInternal": false,
+    "goPaid": false
+  },
+  "integritySha256": "fd8169819c6eda62164117b7ce139c8313c365a2be1534a1514eac9de90ccb59"
+}

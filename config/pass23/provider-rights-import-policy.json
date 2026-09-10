@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "velmere.pass23.provider-rights-import-policy.v1",
+  "maxInputBytes": 2097152,
+  "canonicalManifest": "config/pass22/provider-rights-evidence-manifest.json",
+  "candidateDirectory": ".velmere/pass23-intake",
+  "rawDocumentsAllowedInRepository": false,
+  "promotionConfirmation": "I_HAVE_REVIEWED_EXTERNAL_DOCUMENT_HASHES",
+  "truthBoundary": "The importer handles only redacted evidence metadata and hashes. It cannot interpret a contract, grant rights, replace legal review or promote evidence without an explicit confirmation."
+}

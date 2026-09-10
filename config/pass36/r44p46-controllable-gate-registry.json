@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.controllable-gate-registry.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "denominatorPolicy": "Binary, additive, non-shrinking. A gate is CLOSED only when its full closure rule is proven; partial work receives no binary closure credit.",
+  "denominator": 26,
+  "closed": 1,
+  "open": 25,
+  "internalClosurePercent": 3.8,
+  "prepackage": true,
+  "stableParentCredits": [],
+  "currentExecutionCredits": [
+    "G11"
+  ],
+  "invalidatedStableParentCredits": [
+    "G10"
+  ],
+  "resolvedByFreshCurrentExecution": [
+    "G11"
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Authority and supported-scope freeze",
+      "closureRule": "Current SOURCE authority and supported scope are frozen and verified after all changes.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Final R46 authority manifest and supported-scope freeze are pending."
+    },
+    {
+      "id": "G02",
+      "name": "Static quality and dual production build",
+      "closureRule": "Lint, TypeScript, Webpack, Turbopack, post-build TypeScript and smoke pass on exact current bytes.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Exact-current-byte final RC pipeline is pending."
+    },
+    {
+      "id": "G03",
+      "name": "Audit family coverage",
+      "closureRule": "All declared supported detector families have vulnerable, patched, hard-negative and lookalike coverage without denominator gaming.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Broad supported detector-family denominator is incomplete."
+    },
+    {
+      "id": "G04",
+      "name": "Audit accuracy and independent holdout",
+      "closureRule": "Supported regression, validation, a fresh sealed holdout, mutation testing and accuracy metrics meet frozen thresholds with sufficient ground truth.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Current internal detector evidence does not constitute independently sufficient formal ground truth."
+    },
+    {
+      "id": "G05",
+      "name": "Source-to-deployment binding",
+      "closureRule": "Chain/address to runtime bytecode, proxy implementation, compiler/settings, local compile and mismatch classification workflow is complete and exercised.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "No complete current-byte deployment-binding closure receipt."
+    },
+    {
+      "id": "G06",
+      "name": "Security attacker panel",
+      "closureRule": "The full attacker panel passes reproducible tests on current bytes with no controllable P0/P1.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Full current-byte attacker-panel evidence is incomplete."
+    },
+    {
+      "id": "G07",
+      "name": "Account, auth and tenant isolation",
+      "closureRule": "Complete account lifecycle and tenant A/B isolation pass on current bytes.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Whole-lifecycle and all-surface tenant proof are incomplete."
+    },
+    {
+      "id": "G08",
+      "name": "Entitlement, Stripe readiness and paid-data fail-closed",
+      "closureRule": "Internal entitlement/payment readiness suite passes; external Stripe proof remains separate.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Current exact-byte complete internal lifecycle receipt is absent; real Stripe remains external."
+    },
+    {
+      "id": "G09",
+      "name": "Customer-facing claim truth",
+      "closureRule": "Every high-risk public claim is PROVEN, QUALIFIED or removed; unsupported high-risk public claims equal zero.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Conservative current-source inventory retains REMOVE candidates and needs rendered-surface adjudication."
+    },
+    {
+      "id": "G10",
+      "name": "Browser release QA",
+      "closureRule": "Full PL/EN/DE desktop/mobile/browser/error-state QA is stable, repeated and dependency-valid.",
+      "status": "OPEN",
+      "evidenceClass": "STALE",
+      "evidence": [
+        "R44P44 Browser 57/57, screenshots 29 and evidence checks 584/584 remain historical positive evidence.",
+        "R44P46 changes direct CSS-build dependency postcss 8.5.19 -> 8.5.26 and transitive nanoid 3.3.16 -> 3.3.18; the R44P45 analyzer-only stable-parent rationale no longer applies."
+      ],
+      "blocker": "Full exact R46 A60 dual-build/runtime/Browser 57/57, 29 screenshots, 4 popups and 584/584 evidence rerun is required."
+    },
+    {
+      "id": "G11",
+      "name": "PDF release QA",
+      "closureRule": "Complete relevant PDF corpus passes two deterministic runs, semantic/visual/security checks and exact-byte identity.",
+      "status": "CLOSED",
+      "evidenceClass": "TESTED_LOCAL_REAL_EXECUTION",
+      "evidence": [
+        "R44P44 PDF 450 documents x2, 2100 pages and 450/450 byte identity remain retained historical positive evidence.",
+        "R44P46 exact static PDF dependency closure 119 files: postcss/nanoid/tailwind/CSS imports=0 and prohibited npm packages in closure=0.",
+        "Exact current verifier initially failed 25/31 because the compact summary still bound receipt 3da6d48e... while current receipt is 517ad9fb...; negative evidence is retained.",
+        "Fresh R44P46 final-RC receipt c1a56b18d111f437841273598a728c06513e83720893f228e899413881141a07: two disposable clones, 900 retained PDFs, 4200 rendered pages, 8100/8100 semantic mutations per run, 450/450 PDF byte identity, 2100/2100 page-raster identity and 18 retained contact sheets.",
+        "Both initial missing-font generation failures remain retained; exact-hash parent-MATERIALS FontFile2 recovery enabled the passing reruns without copying the font into SOURCE."
+      ],
+      "blocker": null
+    },
+    {
+      "id": "G12",
+      "name": "Angel internal mega-eval",
+      "closureRule": "At least 300 diverse predefined factuality, citation, safety, injection, tenant and multilingual cases meet frozen thresholds.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "No current 300+ exact-case threshold-bound mega-eval closure."
+    },
+    {
+      "id": "G13",
+      "name": "Risk, Whale and Market Impact truth",
+      "closureRule": "Risk remains descriptive, Whale transfer semantics remain factual and Market Impact remains simulation-only across tiers and states.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Complete current-byte cross-surface truth suite is pending."
+    },
+    {
+      "id": "G14",
+      "name": "Privacy, DSAR, cookie and analytics",
+      "closureRule": "Notices, consent, export, deletion, correction, retention, processor mapping and analytics boundaries pass internal tests.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Internal end-to-end DSAR/privacy closure is incomplete; professional legal approval is external."
+    },
+    {
+      "id": "G15",
+      "name": "Storage, KMS, secrets, logging and email",
+      "closureRule": "Private storage, secrets/KMS readiness, redaction and transactional email failure modes pass internally.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Complete current-byte cross-plane receipt is absent; real cloud/provider proof is external."
+    },
+    {
+      "id": "G16",
+      "name": "Backup, restore, rollback and migrations",
+      "closureRule": "Backup integrity, isolated restore, failure modes, deletion semantics and migration/rollback compatibility pass.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "No complete current R46 restore/rollback closure receipt."
+    },
+    {
+      "id": "G17",
+      "name": "Whole active route and API coverage",
+      "closureRule": "All active pages/APIs are classified and exercised for access, failure, locale, privacy and entitlement boundaries.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Inventory exists, but route-level runtime/security/journey coverage is incomplete."
+    },
+    {
+      "id": "G18",
+      "name": "Incident response and kill switches",
+      "closureRule": "Tabletop and independent feature kill-switch tests pass without evidence deletion.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Current full tabletop and kill-switch exercise is pending."
+    },
+    {
+      "id": "G19",
+      "name": "Observability, SLO and alerting readiness",
+      "closureRule": "Redacted telemetry contracts, local metrics, alert trigger/dedup/storm/silence/escalation/recovery tests pass.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "No complete current-byte observability/alerting closure."
+    },
+    {
+      "id": "G20",
+      "name": "Resilience, overload and performance",
+      "closureRule": "Supported concurrency, heap/CPU, queue/backpressure, timeout/retry/provider failure and degraded-mode tests meet frozen budgets.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Concurrent audit and heap soak denominator remains incomplete."
+    },
+    {
+      "id": "G21",
+      "name": "Supply chain, SBOM and build provenance",
+      "closureRule": "Dependency integrity, reachability-aware advisory review, licenses, SBOM and deterministic build receipts pass.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Current final dependency/provenance closure is pending."
+    },
+    {
+      "id": "G22",
+      "name": "Accessibility and i18n",
+      "closureRule": "Every active route/state passes PL/EN/DE and defined accessibility automation; external disabled-user comprehension remains separate.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Whole-route multilingual/accessibility closure is incomplete."
+    },
+    {
+      "id": "G23",
+      "name": "Data rights and provider failure truth",
+      "closureRule": "Field/provider rights registry and all unavailable/stale/conflict/outage modes are internally complete without fake live data.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Rights-approved Shield 0/318 and Real Markets 0/583 remain parent-reported external blockers; internal registry/handoff is incomplete."
+    },
+    {
+      "id": "G24",
+      "name": "External handoff readiness",
+      "closureRule": "Reviewer, customer/WTP, rights, Stripe TEST, staging, DSAR, incident, Windows and independent-eval packets validate at 100% internal handoff readiness.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "One or more required handoff packets or validation receipts are incomplete."
+    },
+    {
+      "id": "G25",
+      "name": "Deterministic canonical packaging and clean unpack",
+      "closureRule": "Exactly SOURCE_ONLY, MATERIALS and CURRENT_STATE_AND_PASS_LEDGER are bound, deterministic, clean-unpacked and verified.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Prepackage snapshot: canonical trio does not yet exist."
+    },
+    {
+      "id": "G26",
+      "name": "No controllable P0/P1 and final RC repetition",
+      "closureRule": "Controllable P0=0, controllable P1=0 and all critical gates repeat on final RC bytes.",
+      "status": "OPEN",
+      "evidenceClass": "NOT_PROVEN",
+      "evidence": [],
+      "blocker": "Open controllable P1 work and incomplete final RC prevent closure."
+    }
+  ]
+}

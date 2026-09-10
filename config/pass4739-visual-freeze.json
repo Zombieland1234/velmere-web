@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "velmere.pass4739.visual-freeze.v1",
+  "baselinePass": 4738,
+  "excludedDecomposedRoutes": [
+    "app/api/angel/route.ts",
+    "app/api/market-integrity/vlm/route.ts",
+    "app/api/search/lens-report/route.ts",
+    "app/api/search/route.ts",
+    "app/api/market-integrity/real-markets/route.ts",
+    "app/api/security/audit-watch/route.ts"
+  ],
+  "fileCount": 802,
+  "aggregateSha256": "01b2fd2580283965546c7bfec3bd5e02a0b34324dc0a98299e43212704d64f8c",
+  "currentAggregateSha256": "01b2fd2580283965546c7bfec3bd5e02a0b34324dc0a98299e43212704d64f8c",
+  "missing": [],
+  "mismatches": [],
+  "uiFrozen": true
+}

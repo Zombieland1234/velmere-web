@@ -1,0 +1,79 @@
+{
+  "assetStressDenominator": {
+    "assetsPerClass": 20,
+    "classes": 7,
+    "nonCryptoSyntheticStressAssets": 120,
+    "realNetworkCryptoAssets": 20,
+    "tierRows": 420,
+    "uniqueAssets": 140
+  },
+  "checkpointClass": "ACTION_REQUIRED",
+  "globalDecision": "NO_GO",
+  "nonNegotiable": {
+    "LIVE": false,
+    "advancedPublicCheckoutAllowed": false,
+    "basicAlwaysFree": true,
+    "basicCheckoutAllowed": false,
+    "basicPublicPrice": null,
+    "cssBlurNeverCountsAsRedaction": true,
+    "fullPaidContentBeforeEntitlementForbidden": true,
+    "integrityReceiptNeverCountsAsSemanticAccuracy": true,
+    "paidPreviewMustBeSeparateArtifact": true,
+    "previewDarkPatternsForbidden": true,
+    "proPublicCheckoutAllowed": false,
+    "productionApproved": false,
+    "providerPublicAccessNeverImpliesCommercialRights": true,
+    "saleEnabled": false,
+    "syntheticNeverCountsAsRealCoverage": true,
+    "worldClassProven": false
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P21_ACTION_REQUIRED_FIELD_LEVEL_DATA_PROVENANCE_MODULAR_SALE_READINESS_AND_LEGAL_ALTERNATIVE_ROUTING_NO_LIVE_CREDIT",
+  "personaDenominator": {
+    "journeyStepsPerPersona": 20,
+    "personas": 15,
+    "rows": 300
+  },
+  "previewContract": {
+    "cacheControl": "no-store",
+    "criticalDetailsWithheld": true,
+    "fullContentIncluded": false,
+    "locales": [
+      "pl",
+      "en",
+      "de"
+    ],
+    "publicCheckoutAllowed": false,
+    "publicPrice": null,
+    "serverEntitlementRequired": true,
+    "serverSideRedaction": true,
+    "signedFullReportLinksRequired": true,
+    "tiers": [
+      "pro",
+      "advanced"
+    ],
+    "watermark": "PREVIEW"
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "riskPolicy": {
+    "advanced": "PROBABILITY_CALIBRATION_AND_INDEPENDENT_REVIEW_REQUIRED",
+    "basic": "DESCRIPTIVE_NONPROBABILISTIC",
+    "leverageRecommendationAllowed": false,
+    "positionSizingAllowed": false,
+    "pro": "PROBABILITY_CALIBRATION_REQUIRED"
+  },
+  "schemaVersion": "velmere.pass36.a102r44p22.ruthless-customer-policy.v1",
+  "statusVocabulary": [
+    "IMPLEMENTED",
+    "STATICALLY_TESTED",
+    "RUNTIME_TESTED",
+    "OFFLINE_PROVEN",
+    "STAGING_PROVEN",
+    "LIVE_PROVEN",
+    "CUSTOMER_PROVEN",
+    "INDEPENDENTLY_REVIEWED",
+    "BLOCKED",
+    "MISSING",
+    "NOT_APPLICABLE"
+  ],
+  "truthBoundary": "R44P22 proves local secure-preview, customer-journey, risk-tier and cross-asset stress contracts. It does not prove exact Windows, staging, LIVE, provider rights, real non-crypto market coverage, customer outcomes, willingness-to-pay or independent review."
+}

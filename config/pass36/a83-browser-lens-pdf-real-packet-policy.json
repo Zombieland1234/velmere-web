@@ -1,0 +1,306 @@
+{
+  "schemaVersion": "velmere.pass36.a83.browser-lens-pdf-real-packet-policy.v1",
+  "revisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "parentRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+  "deterministicEpoch": "2026-07-27T15:30:00.000Z",
+  "fixtureCatalog": {
+    "path": "evaluation/pass36/a83-fixture-packet-catalog.json",
+    "sha256": "214f9c4ba034db2bba5fc8fe30a65044bc823657c4601a08955d2d49a8d3d446"
+  },
+  "realIntakeIndex": {
+    "path": "evaluation/pass36/a83-real-packet-intake-index.json",
+    "sha256": "b591478c60789e226b1494b0c67dbbd40079bc4dc3730ab4c90d954014b3fd3c"
+  },
+  "requiredCaseCount": 50,
+  "caseClasses": {
+    "CRYPTO_TOKEN": 10,
+    "EQUITY_ETF_REIT": 10,
+    "FX_COMMODITY_INDEX": 10,
+    "SMART_CONTRACT": 10,
+    "OSINT_DOCUMENT": 10
+  },
+  "locales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "tiers": [
+    {
+      "depth": "basic",
+      "label": "Basic",
+      "pageCount": 2,
+      "minimumMaterialFields": 8,
+      "minimumEvidenceFamilies": 3
+    },
+    {
+      "depth": "pro",
+      "label": "Pro",
+      "pageCount": 4,
+      "minimumMaterialFields": 16,
+      "minimumEvidenceFamilies": 6
+    },
+    {
+      "depth": "advanced",
+      "label": "Advanced",
+      "pageCount": 8,
+      "minimumMaterialFields": 24,
+      "minimumEvidenceFamilies": 10
+    }
+  ],
+  "channels": [
+    "api",
+    "ui",
+    "preview",
+    "pdf",
+    "brain",
+    "angel"
+  ],
+  "fixtureDenominators": {
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "channelProjections": 2700,
+    "semanticMutations": 8100
+  },
+  "corpusOutput": {
+    "root": "artifacts/pass36/a83/browser-lens-pdf-corpus",
+    "manifestPath": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_CORPUS_MANIFEST.json",
+    "rasterReceiptPath": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_RASTER_QA_RECEIPT.json",
+    "runtimePath": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_FIXTURE_RUNTIME.json",
+    "sourceSummaryPath": "config/pass36/a83-source-evidence-summary.json"
+  },
+  "pdfSecurity": {
+    "a4Only": true,
+    "activeContentForbidden": true,
+    "javascriptForbidden": true,
+    "launchForbidden": true,
+    "remoteActionsForbidden": true,
+    "embeddedFilesForbidden": true,
+    "acroFormForbidden": true,
+    "xfaForbidden": true,
+    "encryptionForbidden": true,
+    "externalUriForbidden": true,
+    "embeddedFontRequired": true,
+    "toUnicodeRequired": true,
+    "deterministicBytesRequired": true,
+    "exactRerenderRequired": true,
+    "safeRelativePathRequired": true
+  },
+  "realPacketRequiredEvidence": [
+    "canonical_packet_and_facts_digest",
+    "provider_family_receipts",
+    "freshness_and_conflict_receipts",
+    "display_export_pdf_and_derived_data_rights",
+    "api_ui_preview_pdf_brain_angel_parity",
+    "browser_download_and_content_disposition_evidence",
+    "account_and_tier_bound_secure_delivery",
+    "accessibility_and_reader_validation",
+    "customer_comprehension_labels",
+    "blind_tier_value_and_willingness_to_pay"
+  ],
+  "realExitCriteria": {
+    "fullyVerifiedCases": 50,
+    "physicalPdfs": 450,
+    "browserRouteChecks": 450,
+    "secureDeliveryChecks": 450,
+    "accessibilityValidatedPdfs": 450,
+    "customerComprehensionLabels": 50,
+    "crossChannelParityFailures": 0,
+    "crossLocaleFactFailures": 0,
+    "unsafePdfFindings": 0
+  },
+  "parentDescendantManifestPath": "config/pass36/a82-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a83-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a83-current-root-descendant-manifest.json"
+  ],
+  "closedByA83": [
+    {
+      "gapId": "A83-GAP-01",
+      "severity": "P0",
+      "title": "Previous PDF corpus selected only one locale per case",
+      "closure": "A83 generates every one of fifty cases in PL, EN and DE for every tier."
+    },
+    {
+      "gapId": "A83-GAP-02",
+      "severity": "P0",
+      "title": "No single physical denominator across Browser Lens and PDF",
+      "closure": "A83 fixes a 450-document, 2100-page denominator without pruning unavailable real packets."
+    },
+    {
+      "gapId": "A83-GAP-03",
+      "severity": "P0",
+      "title": "Cross-locale facts could drift silently",
+      "closure": "All locale variants bind one locale-independent canonical facts digest."
+    },
+    {
+      "gapId": "A83-GAP-04",
+      "severity": "P0",
+      "title": "API UI preview PDF Brain and Angel could add or drop facts",
+      "closure": "Six projections bind exact fact, report and claim-set digests with addedFacts=0."
+    },
+    {
+      "gapId": "A83-GAP-05",
+      "severity": "P0",
+      "title": "PDF bytes were not re-rendered against the exact report",
+      "closure": "Verifier rebuilds every report and requires byte-identical PDF output."
+    },
+    {
+      "gapId": "A83-GAP-06",
+      "severity": "P1",
+      "title": "Tier differentiation could be represented by labels only",
+      "closure": "A83 binds exact 2/4/8 page contracts and monotonic material-field and evidence-family floors."
+    },
+    {
+      "gapId": "A83-GAP-07",
+      "severity": "P0",
+      "title": "Unsafe active PDF content could pass layout-only QA",
+      "closure": "A83 rejects JavaScript, Launch, remote actions, embedded files, forms, XFA, encryption and external URI actions."
+    },
+    {
+      "gapId": "A83-GAP-08",
+      "severity": "P1",
+      "title": "Font and Unicode failures could remain invisible in byte checks",
+      "closure": "Every PDF requires an embedded font and ToUnicode map plus external text extraction."
+    },
+    {
+      "gapId": "A83-GAP-09",
+      "severity": "P1",
+      "title": "A4 page geometry was not bound across all locale-tier combinations",
+      "closure": "Every one of 2100 pages is required to use A4 media dimensions."
+    },
+    {
+      "gapId": "A83-GAP-10",
+      "severity": "P0",
+      "title": "Fixture identity could be confused with current real packet evidence",
+      "closure": "Fixture rows always remain missing-source, offline, not-live and not-for-sale."
+    },
+    {
+      "gapId": "A83-GAP-11",
+      "severity": "P0",
+      "title": "Provider rights and freshness could be inferred from a rendered document",
+      "closure": "Real intake requires separate rights, provider-family, freshness and conflict receipts for all fifty cases."
+    },
+    {
+      "gapId": "A83-GAP-12",
+      "severity": "P0",
+      "title": "Browser preview success could be inferred from local PDF generation",
+      "closure": "Browser, download and Content-Disposition evidence remain separate zero-credit fields."
+    },
+    {
+      "gapId": "A83-GAP-13",
+      "severity": "P0",
+      "title": "Secure customer delivery could be inferred from public fixture files",
+      "closure": "Account, case, tier, one-time download and private-delivery evidence remain mandatory real inputs."
+    },
+    {
+      "gapId": "A83-GAP-14",
+      "severity": "P1",
+      "title": "Accessibility could be claimed from tags or metadata alone",
+      "closure": "A83 separates structural accessibility from external reader and customer comprehension evidence."
+    },
+    {
+      "gapId": "A83-GAP-15",
+      "severity": "P0",
+      "title": "Page count or duplicated copy could masquerade as paid value",
+      "closure": "Real exit requires blind comprehension and willingness-to-pay labels; local page depth grants zero sale credit."
+    },
+    {
+      "gapId": "A83-GAP-16",
+      "severity": "P1",
+      "title": "Locale or tier paths could permit traversal or ambiguous filenames",
+      "closure": "All corpus paths are single-root safe relative PDF paths with deterministic filenames."
+    },
+    {
+      "gapId": "A83-GAP-17",
+      "severity": "P0",
+      "title": "Mutation tests could rely on stale integrity digests",
+      "closure": "A83 reseals every semantic mutation before requiring rejection."
+    },
+    {
+      "gapId": "A83-GAP-18",
+      "severity": "P0",
+      "title": "A locally green physical corpus could enable LIVE or paid claims",
+      "closure": "A83 records zero real packets, zero browser runs, zero secure deliveries, zero comprehension labels and sale disabled."
+    },
+    {
+      "gapId": "A83-GAP-19",
+      "severity": "P0",
+      "title": "Resealed case identity mutation was not independently bound",
+      "closure": "entryId must equal exact caseId:locale:tier and cannot be changed by resealing the record."
+    },
+    {
+      "gapId": "A83-GAP-20",
+      "severity": "P0",
+      "title": "Resealed PDF hash mutation lacked a second artifact binding",
+      "closure": "renderBindingDigest independently binds case, locale, tier, path, PDF hash, bytes, pages and report digest."
+    },
+    {
+      "gapId": "A83-GAP-21",
+      "severity": "P1",
+      "title": "Root source inventory required a manual allowlist update for every new pass",
+      "closure": "A tightly scoped controlled-pass filename policy now classifies A<number> PATCH, RUN and VERIFY root artifacts without accepting arbitrary VELMERE files."
+    },
+    {
+      "gapId": "A83-GAP-22",
+      "severity": "P1",
+      "title": "A82 verifier recomputed a frozen historical payload against the current A83 tree",
+      "closure": "A82 now validates its frozen manifest and the exact A83 child binding without remeasuring historical bytes against the current tree."
+    },
+    {
+      "gapId": "A83-GAP-23",
+      "severity": "P1",
+      "title": "A81 verifier expected A83 inside the A82 child manifest and skipped the exact intermediate lineage",
+      "closure": "A81 now verifies the complete immutable A81 -> A82 -> A83 digest chain before accepting the current authority."
+    },
+    {
+      "gapId": "A83-GAP-24",
+      "severity": "P1",
+      "title": "Historical A80/A81 verifiers loaded the superseded A82 completion-program path",
+      "closure": "Historical verifiers now resolve the active completion program through current-revision authority and validate the A83 revision and remaining-pass denominator."
+    },
+    {
+      "gapId": "A83-GAP-25",
+      "severity": "P1",
+      "title": "The protected 1073-row integrity receipt ended its approved-change ledger at A82",
+      "closure": "A57R1 hardening integrity is rebuilt on A83 bytes and explicitly records A83 as an approved no-promotion change."
+    },
+    {
+      "gapId": "A83-GAP-26",
+      "severity": "P1",
+      "title": "The canonical current-status test required A82 to be the first roadmap section",
+      "closure": "Roadmap precedence now requires A83 first while retaining A82, A81 and canonical A32 historical sections."
+    },
+    {
+      "gapId": "A83-GAP-27",
+      "severity": "P1",
+      "title": "A77 clean-root verifier loaded the superseded A82 completion-program path",
+      "closure": "The A77 verifier now resolves the current completion program through current-revision authority while preserving the frozen A77 genesis and governance state."
+    },
+    {
+      "gapId": "A83-GAP-28",
+      "severity": "P1",
+      "title": "Compatibility metadata underreported the final A83 closed-gap denominator",
+      "closure": "Current revision, authority, state, completion program and roadmap now report the same exact A83 closed-gap denominator."
+    },
+    {
+      "gapId": "A83-GAP-29",
+      "severity": "P0",
+      "title": "Synthetic physical PDFs were mislabeled as a physical customer PDF matrix",
+      "closure": "Truth fields now distinguish localSyntheticPhysicalMatrixExecuted=true from physicalCustomerPdfMatrixExecuted=false and preserve zero customer delivery/comprehension credit."
+    },
+    {
+      "gapId": "A83-GAP-30",
+      "severity": "P1",
+      "title": "Full 2100-page raster QA depended on one sequential process that exceeded bounded execution windows",
+      "closure": "A83 retains the full 450-document/2100-page denominator while using a bounded parallel worker pool and deterministic per-page receipts."
+    },
+    {
+      "gapId": "A83-GAP-31",
+      "severity": "P0",
+      "title": "SOURCE_ONLY verifier required full 450-PDF materials that packaging intentionally quarantined",
+      "closure": "A compact hash-bound source evidence summary now binds the full corpus manifest, raster receipt, runtime and test receipt; SOURCE_ONLY verifies the summary while MATERIALS supports full independent replay."
+    }
+  ],
+  "truthBoundary": "A83 locally verifies a deterministic synthetic cross-locale Browser/Lens/PDF corpus and fail-closed parity contract. It does not prove current provider data, rights, production browser delivery, account-bound access, external accessibility, customer comprehension, willingness-to-pay, staging, LIVE or sale."
+}

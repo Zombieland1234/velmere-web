@@ -1,0 +1,289 @@
+{
+  "schemaVersion": "velmere.pass36.a75.trusted-request-client-identity-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A75R0_TRUSTED_PROXY_AND_REQUEST_CLIENT_IDENTITY_BOUNDARY_HARDENING",
+  "counts": {
+    "total": 40,
+    "passed": 40,
+    "failed": 0
+  },
+  "coveredProductionFiles": 12,
+  "rawForwardedHeaderConsumers": [
+    "lib/security/api-guard.ts"
+  ],
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "dev_compat_xff",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "production_raw_forwarded_untrusted",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "production_vercel_exact_header",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "production_spoof_headers_ignored",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "production_vercel_chain_rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "leading_zero_ipv4_rejected",
+      "pass": true,
+      "detail": {
+        "address": null,
+        "trusted": true,
+        "profile": "vercel",
+        "source": "none",
+        "reason": "trusted_header_missing_or_invalid"
+      }
+    },
+    {
+      "id": "cidr_rejected",
+      "pass": true,
+      "detail": {
+        "address": null,
+        "trusted": true,
+        "profile": "vercel",
+        "source": "none",
+        "reason": "trusted_header_missing_or_invalid"
+      }
+    },
+    {
+      "id": "zone_id_rejected",
+      "pass": true,
+      "detail": {
+        "address": null,
+        "trusted": true,
+        "profile": "vercel",
+        "source": "none",
+        "reason": "trusted_header_missing_or_invalid"
+      }
+    },
+    {
+      "id": "garbage_rejected",
+      "pass": true,
+      "detail": {
+        "address": null,
+        "trusted": true,
+        "profile": "vercel",
+        "source": "none",
+        "reason": "trusted_header_missing_or_invalid"
+      }
+    },
+    {
+      "id": "ipv4_mapped_normalized",
+      "pass": true,
+      "detail": {
+        "address": "192.0.2.1",
+        "source": "x-vercel-forwarded-for",
+        "trusted": true,
+        "profile": "vercel",
+        "reason": "verified_vercel_profile"
+      }
+    },
+    {
+      "id": "ipv4_mapped_key_not_shared_ipv6_zero",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "ipv6_64_aggregation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "ipv6_different_64_separated",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "identity_exact_profile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "identity_ipv6_privacy_key",
+      "pass": true,
+      "detail": {
+        "address": "2001:db8:abcd:12::99",
+        "source": "x-vercel-forwarded-for",
+        "trusted": true,
+        "profile": "vercel",
+        "reason": "verified_vercel_profile",
+        "addressKey": "2001:db8:abcd:12::/64",
+        "userAgentFamily": "browser",
+        "privacyMaterial": "vercel:x-vercel-forwarded-for:2001:db8:abcd:12::/64:browser"
+      }
+    },
+    {
+      "id": "identity_material_no_raw_ip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "production_client_key_spoof_stable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "security_fingerprint_spoof_stable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "durable_identity_excludes_auth_cookie",
+      "pass": true,
+      "detail": {
+        "a": "aff7f64c6e12de7443d10eb8937cbcbf8150350193cabaaeefb6d13fe5caa31f",
+        "b": "aff7f64c6e12de7443d10eb8937cbcbf8150350193cabaaeefb6d13fe5caa31f"
+      }
+    },
+    {
+      "id": "durable_identity_trusted_source",
+      "pass": true,
+      "detail": "trusted_transport_fallback"
+    },
+    {
+      "id": "explicit_subject_binding_separates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_guardrail_nonproduction_memory",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "route": "investigator",
+        "key": "velmere-api-guard:market-integrity:investigator:_api_test:market-integrity:investigator:198.51.100.30:automation",
+        "limit": 30,
+        "remaining": 29,
+        "resetAt": "2026-07-27T05:50:00.000Z",
+        "retryAfterSeconds": 0,
+        "status": 200,
+        "mode": "memory"
+      }
+    },
+    {
+      "id": "market_guardrail_missing_proxy_fail_closed",
+      "pass": true,
+      "detail": {
+        "ok": false,
+        "route": "investigator",
+        "key": "market-integrity:investigator:blocked",
+        "limit": 0,
+        "remaining": 0,
+        "resetAt": "1970-01-01T00:00:00.000Z",
+        "retryAfterSeconds": 60,
+        "status": 503,
+        "mode": "trusted_client_address_required"
+      }
+    },
+    {
+      "id": "market_guardrail_missing_durable_store_fail_closed",
+      "pass": true,
+      "detail": {
+        "ok": false,
+        "route": "investigator",
+        "key": "market-integrity:investigator:blocked",
+        "limit": 30,
+        "remaining": 0,
+        "resetAt": "2026-07-27T05:50:00.000Z",
+        "retryAfterSeconds": 177,
+        "status": 503,
+        "mode": "unavailable"
+      }
+    },
+    {
+      "id": "single_forwarded_header_boundary",
+      "pass": true,
+      "detail": [
+        "lib/security/api-guard.ts"
+      ]
+    },
+    {
+      "id": "request_guards_central_rate_limit",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "request_guards_no_memory_bucket",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_guardrails_central_rate_limit",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_guardrails_no_memory_store",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "security_event_fingerprint_central",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "durable_identity_central",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "durable_identity_no_secret_transport_material",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_route_awaits:lib/server/market-integrity-route-modules/evidence-export.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_route_awaits:lib/server/market-integrity-route-modules/investigator.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_route_awaits:lib/server/market-integrity-route-modules/readiness.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "market_route_awaits:lib/server/market-integrity-route-modules/source-snapshots.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "profile_awaits_central_limiter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "square_posts_no_double_limiter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "square_comments_no_double_limiter",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

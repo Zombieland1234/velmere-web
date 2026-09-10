@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "velmere.pass35.audit-a4-execution-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "productCellId": "audit_evm_pro_automated_review",
+  "status": "ADAPTERS_EXECUTABLE_FIXTURE_PROVEN_REAL_TOOLCHAIN_BLOCKED",
+  "sellEnabled": false,
+  "paidDeliveryAllowed": false,
+  "fullAuditClaimAllowed": false,
+  "controls": {
+    "A01_PROVIDER_CHAIN_BINDING": {
+      "state": "IMPLEMENTED_PROVIDER_BOUND_RPC_ADAPTER_LOCAL_FIXTURE_PROVEN",
+      "paths": [
+        "lib/security/audit-chain-provider-receipt.ts",
+        "scripts/pass35/test-audit-a4-chain-provider.ts"
+      ],
+      "realExecutionCredit": false,
+      "missing": [
+        "non-loopback HTTPS provider execution",
+        "commercial rights evidence",
+        "real deployment/source case"
+      ]
+    },
+    "A02_PINNED_COMPILER": {
+      "state": "IMPLEMENTED_STANDARD_JSON_PINNED_TOOL_ADAPTER_FIXTURE_PROVEN",
+      "paths": [
+        "lib/security/audit-a02-solc-reproduction.ts",
+        "scripts/pass35/test-audit-a4-solc-reproduction.ts"
+      ],
+      "realExecutionCredit": false,
+      "capabilities": [
+        "exact version binding",
+        "tool artifact hash",
+        "standard-json input hash",
+        "link reference fail-closed",
+        "immutable value binding",
+        "Solidity metadata stripping",
+        "source-to-deployed runtime comparison"
+      ],
+      "missing": [
+        "official solc binary installed and hash-pinned",
+        "real verified-source case",
+        "real provider receipt"
+      ]
+    },
+    "A05_SLITHER_EXTERNAL_FAMILY": {
+      "state": "ADAPTER_IMPLEMENTED_FIXTURE_EXECUTABLE_REAL_SLITHER_NOT_INSTALLED",
+      "targetTool": "slither-analyzer 0.11.5",
+      "paths": [
+        "scripts/pass35/audit-slither-adapter.mjs",
+        "scripts/pass35/test-audit-a4-slither-adapter.mjs"
+      ],
+      "realExecutionCredit": false,
+      "missing": [
+        "official Slither 0.11.5 installation",
+        "binary/environment digest",
+        "real target execution",
+        "frozen benchmark and adjudication"
+      ]
+    }
+  },
+  "syntheticReceipts": [
+    "fixtures/pass35/audit-a4/PASS35_A4_CHAIN_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a4/PASS35_A4_SOLC_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a4/PASS35_A4_SLITHER_SYNTHETIC_RECEIPT.json"
+  ],
+  "hardStops": {
+    "fixtureMaySatisfyRealExecution": false,
+    "fixtureMaySatisfyExternalAnalyzerFamily": false,
+    "adapterPresenceMayUnlockPaidDelivery": false,
+    "compilerStructuralMatchMayClaimFullAudit": false,
+    "providerResponseMayClaimCommercialLive": false,
+    "oneStaticFamilyMaySatisfyA05": false
+  },
+  "runtimeBoundary": {
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "observedNodeDuringA4": "22.16.0",
+    "observedNpmDuringA4": "10.9.2",
+    "exactRuntimeProof": false,
+    "downloadAttempt": "BLOCKED_BY_EXECUTION_ENVIRONMENT_BINARY_DOWNLOAD_RESTRICTION"
+  },
+  "truthBoundary": "A4 implements executable adapters and validates them with synthetic fixture tools and a local RPC contract. No official solc or Slither binary, real provider, rights, real customer case, staging, benchmark or independent review was executed; all paid and full-audit claims remain blocked."
+}

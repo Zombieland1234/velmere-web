@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "velmere.pass36.a63.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+  "parentRevisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+  "decision": "BLOCKED_STAGING_PROGRAM_PRECONDITIONS",
+  "stagesExpected": 10,
+  "stagesExecuted": 0,
+  "stagesVerified": 0,
+  "a60Verified": false,
+  "historicalArtifactsRecovered": false,
+  "criticalOfflineGatePassed": false,
+  "realStagingProgramExecuted": false,
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A63 locally proves the orchestrator, ordering, evidence binding, journal and fail-closed preflight only. No A47-A57 staging stage has been executed or credited.",
+  "localContracts": {
+    "a63Adversarial": "38 scenarios / 156/156 assertions PASS",
+    "a63StaticVerifier": "20/20 PASS",
+    "a57Contract": "1138/1138 PASS",
+    "a57ProtectedIntegrity": "1073/1073 PASS",
+    "a46Contract": "791/791 PASS",
+    "a47Contract": "1118/1118 PASS",
+    "a59BudgetRecovery": "77/77 PASS",
+    "a60Admission": "32/32 PASS",
+    "a62Bootstrap": "53/53 PASS",
+    "uiLiveTruth": "40/40 PASS",
+    "apiBodyBoundary": "101/101 PASS",
+    "productTier": "186/186 PASS",
+    "zeroBudget": "439/439 PASS \u2014 91.9%"
+  },
+  "sourceAudit": {
+    "filesRead": 4271,
+    "codeFiles": 2686,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "activeSourceManifest": "4269/4269 PASS",
+  "cleanUnpack": "PASS \u2014 SOURCE_ONLY only",
+  "realPreflight": {
+    "decision": "BLOCKED_STAGING_PROGRAM_PRECONDITIONS",
+    "preflightPassed": false,
+    "executedStages": 0,
+    "mutationStarted": false
+  }
+}

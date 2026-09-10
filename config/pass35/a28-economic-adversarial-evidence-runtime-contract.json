@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "velmere.pass35.a28-economic-adversarial-evidence-runtime-contract.v1",
+  "passId": "PASS35_A28",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "strict": 9.3,
+    "zeroBudget": 80
+  },
+  "baselineA27": {
+    "canonical": 53.5,
+    "strict": 27.9,
+    "zeroBudget": 90.1
+  },
+  "progressDeltaVsA27": {
+    "canonicalPercentagePoints": 1.2,
+    "strictPercentagePoints": 2.3,
+    "zeroBudgetPercentagePoints": 0.4
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 14,
+    "strictPercentagePoints": 20.9,
+    "zeroBudgetPercentagePoints": 10.5
+  },
+  "canonicalWeightedPlanningPercent": 54.7,
+  "canonicalStrictDonePercent": 30.2,
+  "canonicalCounts": {
+    "DONE": 13,
+    "PARTIAL": 21,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 90.5,
+  "zeroBudgetCoreDenominator": 74,
+  "zeroBudgetCounts": {
+    "DONE": 61,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "correct": 72,
+      "accuracy": 1,
+      "unsafeEligible": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "total": 2304,
+      "killed": 2304,
+      "survived": 0,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:b07d57bb66c78776e40a98cb51fb378905419178dcaa9e9cf42b0bbd81813d64",
+    "receiptSha256": "sha256:9a827e29d4e329b3bff75d95310eaf2ffb53043597530845549f583a8b33cb87"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "currentRightsApprovedInputsUsed": false,
+  "officialForkedEvmExecuted": false,
+  "realEconomicExploitProven": false,
+  "realizedLossClaimed": false,
+  "calibratedProbabilityClaimAllowed": false,
+  "qualifiedHumanAdjudication": false,
+  "independentRerun": false,
+  "truthBoundary": "PASS35 A28 is the only canonical current status. Canonical roadmap is 54.7% weighted / 30.2% strict across 43 workstreams, up 1.2 pp weighted and 2.3 pp strict from A27, and 14.0 pp weighted from A16. Zero-budget functional core is 90.5% across 74 capabilities, up 0.4 pp from A27 and 10.5 pp from A16. A28 locally closes the declared bounded A10 target/method/replay binding, five-scenario registry, evidence/prerequisite coverage, sensitivity, uncertainty, dependency-DAG, deterministic-model, replay-correlation and mutation-evidence implementation. Current rights-approved inputs, official forked-EVM replay, real exploitability or realized loss, calibrated probability, qualified adjudication, staging, sale, outcomes and independent assurance remain unclaimed."
+}

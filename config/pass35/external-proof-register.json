@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "velmere.pass35.external-proof-register.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "evaluatedAt": "2026-07-22T00:00:00.000Z",
+  "status": "BLOCKED_EXTERNAL",
+  "promotionAllowed": false,
+  "truthBoundary": "This register is an execution denominator and fail-closed intake. Empty slots, plans, fixtures, synthetic runs, localhost runs, unsigned assertions, and locally authored receipts do not count as external proof.",
+  "workstreams": [
+    {
+      "id": "FG00_SIGNED_SELECTION",
+      "description": "Signed flagship product-cell selection with observed ICP workflow, paid-intent threshold, outcome and kill rules.",
+      "requiredCount": 1,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "ORG00_SIGNED_OPERATING_RECORD",
+      "description": "Signed owners, backups, independent reviewer, risk acceptor, budget, capacity, dates and conflict declarations.",
+      "requiredCount": 1,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "PROVIDER_COMMERCIAL_RIGHTS",
+      "description": "Current commercial-rights proof for every provider in the release denominator.",
+      "requiredCount": 21,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "MERCHANT_LEGAL_FIELDS",
+      "description": "Signed resolution of the 26 missing merchant/legal evidence fields reported by the exact baseline audit.",
+      "requiredCount": 26,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "STAGING_RLS_REAL_REPLAYS",
+      "description": "Real non-localhost staging RLS and tenant-isolation replays with exact artifact and real test services.",
+      "requiredCount": 19,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "CANONICAL_PROVIDER_BOUND_ROWS",
+      "description": "Provider/model/reviewer/render-bound canonical benchmark rows; synthetic adapter rows are excluded.",
+      "requiredCount": 2700,
+      "verifiedCount": 0,
+      "status": "NOT_STARTED_EXTERNAL"
+    },
+    {
+      "id": "NATIVE_REVIEW_OVERFLOW_CASES",
+      "description": "Native human review and overflow cases with reviewer identity, conflict declaration and adjudication.",
+      "requiredCount": 300,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "INDEPENDENT_ASSURANCE_REPORTS",
+      "description": "Independent clean-package, security, accessibility and applicable AI/data assurance reports.",
+      "requiredCount": 4,
+      "verifiedCount": 0,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "id": "REAL_CUSTOMER_COHORTS",
+      "description": "Two real, consented customer cohorts with outcome, retention, support, refund and stop-rule evidence.",
+      "requiredCount": 2,
+      "verifiedCount": 0,
+      "status": "NOT_STARTED_EXTERNAL"
+    }
+  ],
+  "evidenceReceipts": [],
+  "promotionPrerequisites": {
+    "allWorkstreamsComplete": false,
+    "organizationalDetachedSignaturePresent": false,
+    "independentVerifierPresent": false,
+    "exactSourceAndArtifactHashesBound": false,
+    "allEvidenceWithinTtl": false,
+    "allProductCellGatesPass": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.r6.staging-foundation-execution-contract.v1",
+  "environmentClass": "owner_authorized_non_production",
+  "confirmationToken": "I_AUTHORIZE_DISPOSABLE_R6_STAGING_EXECUTION",
+  "requiredToolchain": {
+    "node": "v24.18.0",
+    "npm": "11.16.0"
+  },
+  "requiredEnvironment": [
+    "VELMERE_R6_STAGING_DATABASE_URL",
+    "VELMERE_R6_STAGING_BASE_URL",
+    "VELMERE_R6_ACCOUNT_A_ID",
+    "VELMERE_R6_ACCOUNT_A_JWT",
+    "VELMERE_R6_ACCOUNT_B_ID",
+    "VELMERE_R6_ACCOUNT_B_JWT",
+    "VELMERE_R6_SERVICE_ROLE_KEY",
+    "VELMERE_R6_BROWSER_EXECUTION_CONFIG",
+    "VELMERE_R6_RESTORE_RECEIPT_PATH",
+    "VELMERE_R6_EXPORT_DELETE_RECEIPT_PATH",
+    "VELMERE_R6_RESTART_READBACK_RECEIPT_PATH"
+  ],
+  "gates": [
+    "exact_source_identity",
+    "exact_toolchain_and_dependencies",
+    "ordered_migrations",
+    "service_role_server_only",
+    "two_accounts_and_distinct_jwts",
+    "rls_cross_account_denial",
+    "write_readback",
+    "restart_persistence",
+    "rollback_concurrency_idempotency",
+    "database_storage_restore_post_restore_rls",
+    "account_export_delete",
+    "deployed_http",
+    "browser_basic_e2e"
+  ],
+  "firstRowTarget": "browser-basic",
+  "customerFinalCredit": false,
+  "truthBoundary": "Execution contract only. Every gate requires a physical receipt; absence remains WITHHELD."
+}

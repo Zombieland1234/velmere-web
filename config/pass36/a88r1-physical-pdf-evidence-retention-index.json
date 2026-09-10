@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "velmere.pass36.a88r1.physical-pdf-evidence-retention-index.v1",
+  "revisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "parentPdfRevisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "generatedAt": "2026-07-28T03:30:00.000Z",
+  "retentionMode": "PHYSICAL_SYNTHETIC_FILES_IN_MATERIALS_HASH_BOUND_FROM_SOURCE_ONLY",
+  "sourceOnlyIncludesPhysicalPdfs": false,
+  "materialsMustIncludePhysicalPdfs": true,
+  "corpus": {
+    "root": "A83_PHYSICAL_PDF_EVIDENCE/browser-lens-pdf-corpus",
+    "pdfCount": 450,
+    "pageCount": 2100,
+    "caseCount": 50,
+    "byLocale": {
+      "pl": 150,
+      "en": 150,
+      "de": 150
+    },
+    "byTier": {
+      "basic": 150,
+      "pro": 150,
+      "advanced": 150
+    },
+    "byteLength": 55442237,
+    "entryAggregateSha256": "20774140ed8e97cd393e2e88ca61318ff3a04564bfce0f85bf1dbefdc88091d3",
+    "manifestIntegritySha256": "7c533525ad2bebae7afaa71c47d3d65590523ed70705e5e2c9409da257f7e354"
+  },
+  "bindings": {
+    "manifest": {
+      "sourcePath": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_CORPUS_MANIFEST.json",
+      "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/PASS36_A83_BROWSER_LENS_PDF_CORPUS_MANIFEST.json",
+      "byteLength": 2443040,
+      "sha256": "7626b8ec1024c1c3aac02245299ffd74497305e4aa3c8d46cb2430324fecca45"
+    },
+    "qaReceipt": {
+      "sourcePath": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_RASTER_QA_RECEIPT.json",
+      "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/PASS36_A83_BROWSER_LENS_PDF_RASTER_QA_RECEIPT.json",
+      "byteLength": 686785,
+      "sha256": "898e21bfc7c1024fbd2b046339f6fa0f6357a16ff54a2a639aff0b1a26380a02",
+      "status": "PASS_A83_PDF_RASTER_AND_EXTERNAL_PARSE_QA"
+    },
+    "runtimeReceipt": {
+      "sourcePath": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_FIXTURE_RUNTIME.json",
+      "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/PASS36_A83_BROWSER_LENS_PDF_FIXTURE_RUNTIME.json",
+      "byteLength": 1688,
+      "sha256": "0f5c85fe6396c8ea0a390289fa02d81b53692d562626b1af788f632bd44ca05e"
+    },
+    "contactSheets": [
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/de-advanced-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/de-advanced-first-pages-contact-sheet.png",
+        "byteLength": 388258,
+        "sha256": "9284a3b3be0b29a1f5bbb6e11ad29b4137462b4ea3f8e3fd8c1f95427bbba3fa"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/de-basic-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/de-basic-first-pages-contact-sheet.png",
+        "byteLength": 395888,
+        "sha256": "19fed7765d82375368910a1bc4b55c812954c95c2f9157033dbea201d037b9d1"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/de-pro-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/de-pro-first-pages-contact-sheet.png",
+        "byteLength": 390561,
+        "sha256": "0e24eec0115596f1127e15811b57074b2149e90607eca88d8b2516ff4868e6d9"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/en-advanced-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/en-advanced-first-pages-contact-sheet.png",
+        "byteLength": 379877,
+        "sha256": "8843992c92f76a061688fda6a94b9238298be0be96089806acee59daced80155"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/en-basic-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/en-basic-first-pages-contact-sheet.png",
+        "byteLength": 387692,
+        "sha256": "30258f850ecfc047eb03c0317bd472a7c6d926253d25888a469e80d2e4375610"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/en-pro-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/en-pro-first-pages-contact-sheet.png",
+        "byteLength": 385610,
+        "sha256": "50e36a7fb55b534e9ffcd6e7daed1dfef749bf82e442576c8ec50f6cfc6c3ec3"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/pl-advanced-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/pl-advanced-first-pages-contact-sheet.png",
+        "byteLength": 386965,
+        "sha256": "6c958759c3e50fbf637742f1e7d21780742b1c87ae4d30e9cae45caf27e0ddf2"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/pl-basic-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/pl-basic-first-pages-contact-sheet.png",
+        "byteLength": 392953,
+        "sha256": "22ade99e76f960bbb8417eaf0211a152e3d56ddf3a909044f8f592f96e9b6a56"
+      },
+      {
+        "sourcePath": "artifacts/pass36/a83/renders/pl-pro-first-pages-contact-sheet.png",
+        "materialsPath": "A83_PHYSICAL_PDF_EVIDENCE/contact-sheets/pl-pro-first-pages-contact-sheet.png",
+        "byteLength": 397552,
+        "sha256": "70ae9cd8055596d861e43fc8c1c80d08b3783b5303a66b15d5357da914a036c4"
+      }
+    ]
+  },
+  "qa": {
+    "pdfCount": 450,
+    "renderedPageCount": 2100,
+    "blankPages": 0,
+    "pagesTouchingRasterEdge": 0,
+    "pypdfPassed": 450,
+    "pdfinfoPassed": 450,
+    "pdftotextPassed": 450,
+    "localeMarkerPassed": 450,
+    "ghostscriptSampleCount": 45,
+    "ghostscriptSamplePassed": 45,
+    "failedDocuments": 0
+  },
+  "truthBoundary": {
+    "syntheticOfflineCorpus": true,
+    "realCustomerPdfCount": 0,
+    "productionBrowserRuns": 0,
+    "secureCustomerDeliveries": 0,
+    "externalAccessibilityValidations": 0,
+    "customerComprehensionLabels": 0,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "statement": "Physical retention restores reproducible local PDF evidence. It does not prove current provider data, rights, account delivery, customer comprehension, paid value, LIVE or sale readiness."
+  },
+  "integrity": {
+    "algorithm": "sha256",
+    "digest": "67225d5d3da85c9cf104f1c0b2e641c21ddf04f424641117ab0a59f5c6f1422a"
+  }
+}

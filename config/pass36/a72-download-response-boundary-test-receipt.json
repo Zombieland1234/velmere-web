@@ -1,0 +1,274 @@
+{
+  "schemaVersion": "velmere.pass36.a72.download-response-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A72R0_DOWNLOAD_RESPONSE_AND_CONTENT_DISPOSITION_TRUST_BOUNDARY_HARDENING",
+  "counts": {
+    "total": 40,
+    "passed": 40,
+    "failed": 0
+  },
+  "coveredProductionFiles": 11,
+  "contentDispositionAssignments": 12,
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "pdf_content_type_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "pdf_attachment_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "pdf_no_duplicate_extension",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "inline_svg_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "unicode_filename_preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "ascii_fallback_only",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "rfc5987_specials_encoded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "path_separators_removed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "windows_reserved_avoided",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "dot_segment_fallback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "header_budget_bounded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_markdown",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_png",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_jpeg",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_gif",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_webp",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_avif",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "media_ico",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "crlf_rejected",
+      "pass": true,
+      "detail": "download_filename_control_character"
+    },
+    {
+      "id": "nul_rejected",
+      "pass": true,
+      "detail": "download_filename_control_character"
+    },
+    {
+      "id": "bidi_rejected",
+      "pass": true,
+      "detail": "download_filename_bidi_character"
+    },
+    {
+      "id": "invalid_disposition_rejected",
+      "pass": true,
+      "detail": "download_disposition_invalid"
+    },
+    {
+      "id": "invalid_media_rejected",
+      "pass": true,
+      "detail": "download_media_kind_invalid"
+    },
+    {
+      "id": "covered:lib/security/file-content-signatures.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/search-route-modules/lens-report.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/market-integrity-route-modules/evidence-export.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/market-integrity-route-modules/report-pdf.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/market-integrity-route-modules/asset-logo.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/lazy-route-modules/security--audit-watch--support-handoff.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/lazy-route-modules/security--audit-watch--customer-safe-report.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/lazy-route-modules/account--customer-artifact.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/lazy-route-modules/security--audit-watch--delivery-receipt.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/lazy-route-modules/security--audit-watch--pro-pdf.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "covered:lib/server/security-route-modules/export.ts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "assignment_count_complete",
+      "pass": true,
+      "detail": [
+        {
+          "relative": "lib/security/file-content-signatures.ts",
+          "line": 85,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/lazy-route-modules/account--customer-artifact.ts",
+          "line": 186,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/lazy-route-modules/security--audit-watch--customer-safe-report.ts",
+          "line": 85,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/lazy-route-modules/security--audit-watch--delivery-receipt.ts",
+          "line": 90,
+          "text": "...(download ? { \"content-disposition\": download.contentDisposition } : {}),"
+        },
+        {
+          "relative": "lib/server/lazy-route-modules/security--audit-watch--pro-pdf.ts",
+          "line": 61,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/lazy-route-modules/security--audit-watch--support-handoff.ts",
+          "line": 195,
+          "text": "...(download ? { \"content-disposition\": download.contentDisposition } : {}),"
+        },
+        {
+          "relative": "lib/server/market-integrity-route-modules/asset-logo.ts",
+          "line": 27,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/market-integrity-route-modules/evidence-export.ts",
+          "line": 50,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/market-integrity-route-modules/evidence-export.ts",
+          "line": 60,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/market-integrity-route-modules/report-pdf.ts",
+          "line": 69,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/search-route-modules/lens-report.ts",
+          "line": 709,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        },
+        {
+          "relative": "lib/server/security-route-modules/export.ts",
+          "line": 103,
+          "text": "\"content-disposition\": download.contentDisposition,"
+        }
+      ]
+    },
+    {
+      "id": "all_assignments_centralized",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "id": "legacy_encode_uri_removed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "legacy_dynamic_filename_templates_removed",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

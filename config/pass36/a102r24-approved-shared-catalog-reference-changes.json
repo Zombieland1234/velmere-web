@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "velmere.pass36.a102r24.approved-shared-catalog-reference-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R24_ACTION_REQUIRED_SHARED_CATALOG_REFERENCE_TRUTH_REMOTE_SEARCH_AND_REFRESH_FLICKER_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R23_ACTION_REQUIRED_KLINE_MODE_LOCAL_REFERENCE_DETAIL_ICON_REQUEST_AND_DEV_PREFETCH_STORM_RECOVERY_NO_REAL_CREDIT",
+  "fileCount": 6,
+  "approvedFiles": [
+    {
+      "path": "lib/market-integrity/shield-pro-full-catalog-client.ts",
+      "parentPresent": true,
+      "parentByteLength": 4333,
+      "parentSha256": "30f824f46e8f2580ca081c55a7ae886aada74d6ff93bd85f3d76a2912ccb45bf",
+      "currentByteLength": 6710,
+      "currentSha256": "a71c518256bccedc8b7fa195d25e01b6b49f0c26b7d90e43929f91ca86f30a26",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "parentPresent": true,
+      "parentByteLength": 55811,
+      "parentSha256": "f492fbf4c72f49aab507893448b6a71cbc18062b81e3d11a1400547d55ec40c5",
+      "currentByteLength": 58533,
+      "currentSha256": "a51afd1af086044b3ede2a99860b6da635b663640b4baca53ab7a526a391bdb9",
+      "changeType": "modified"
+    },
+    {
+      "path": "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+      "parentPresent": true,
+      "parentByteLength": 79499,
+      "parentSha256": "ab0bb560c2da321aab1d9cb6b64d7c67534688e1d6ce40385ffc4162780c4f87",
+      "currentByteLength": 81985,
+      "currentSha256": "4d9e0796edd4d8a7ddb715f8e9ef770a15f806759c98546fd707d3fcdf193a50",
+      "changeType": "modified"
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "parentPresent": true,
+      "parentByteLength": 15385,
+      "parentSha256": "5c9b0aeb516b47212830d82e85cee93c15c24918cf2e270101cc4b501ec2102e",
+      "currentByteLength": 15385,
+      "currentSha256": "ddf7285d8e314d0fb67e916f41868dd33d8efd87ce0bb9eead9869e196fd714c",
+      "changeType": "modified"
+    },
+    {
+      "path": "README.md",
+      "parentPresent": true,
+      "parentByteLength": 30154,
+      "parentSha256": "7c364eee1abcd61aae01e0964831a6ceb41dba20bcc5983fc28c66d00ed120ab",
+      "currentByteLength": 32039,
+      "currentSha256": "778b2b6cff99249f5b34157d3c0322c5450072d6b0c325d77a526b06a60f8226",
+      "changeType": "modified"
+    },
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "parentPresent": true,
+      "parentByteLength": 11561,
+      "parentSha256": "95cf5b0e154cb9e5a4b1209b647b9f2dd466e5182e07ec422a6309f68cb73d40",
+      "currentByteLength": 12471,
+      "currentSha256": "55d8879c6ac844ad0a0f6140a7c75b0ba9a0fcb2965f458de23639292e06183e",
+      "changeType": "modified"
+    }
+  ],
+  "truthBoundary": "A102R24 gives Shield and Shield Pro one paginated public catalog client, a bounded in-memory resolved cache with in-flight request de-duplication, an explicit local-reference UI mode, aggregate metric withholding for illustrative rows, live-only remote search and refresh behavior that retains the last safe table instead of flashing empty. It does not grant current market data, provider rights, exact build/browser, staging, LIVE, sale, production or world-class credit."
+}

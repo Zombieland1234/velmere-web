@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "velmere.pass36.a102r12.approved-admin-product-draft-browser-state-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R12_ACTION_REQUIRED_ADMIN_PRODUCT_DRAFT_LOCAL_STORAGE_CROSS_ACCOUNT_AND_STRICT_JSON_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R11_ACTION_REQUIRED_CLIENT_LENS_PDF_BYTE_BINDING_OBJECT_URL_AND_DOWNLOAD_LIFECYCLE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T05:53:15.000Z",
+  "approvedChanges": [
+    {
+      "path": "app/[locale]/admin/import-products/page.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R11_ACTION_REQUIRED_CLIENT_LENS_PDF_BYTE_BINDING_OBJECT_URL_AND_DOWNLOAD_LIFECYCLE_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 51830,
+      "historicalSha256": "ea9263c41e3b140751778afc8ad7da8bcf8219892564a028de879a60bc4308bb",
+      "currentByteLength": 52636,
+      "currentSha256": "560d1fc1ed7ee285573915231f0e3579a2164e2aae5951355afff1541d48534b",
+      "reason": "Remove persistent localStorage authority for private admin product drafts, bind current-tab memory to a one-way admin scope digest, purge legacy rows without reading or migration, and parse bounded admin API responses through the strict JSON boundary.",
+      "requiredLocalTest": "PASS_A102R12_ADMIN_PRODUCT_DRAFT_BROWSER_STATE_LOCAL_ONLY",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "lib/security/admin-product-draft-browser-state.ts",
+      "purpose": "Bounded current-tab, scope-bound admin product draft state with legacy delete-only cleanup and no browser persistence authority."
+    },
+    {
+      "path": "scripts/pass36/test-a102r12-admin-product-draft-browser-state.ts",
+      "purpose": "29-assertion behavioral and static proof for localStorage removal, strict JSON, scope isolation, bounds and defensive cloning."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "adminProductDraftLocalStorageAuthorityRemoved": true,
+    "legacyAdminProductDraftRowsPurgedWithoutReadOrMigration": true,
+    "adminProductDraftCurrentTabMemoryOnly": true,
+    "adminProductDraftAccountScopeDigestRequired": true,
+    "adminProductDraftCrossScopeRestoreForbidden": true,
+    "adminProductDraftSnapshotMaxDrafts": 100,
+    "adminProductDraftSnapshotMaxBytes": 8388608,
+    "adminProductDraftDefensiveCloneRequired": true,
+    "adminProductImportResponseStrictJsonRequired": true,
+    "duplicateAndPrototypeKeysFailClosed": true,
+    "durableServerAdminDraftStorageProven": false,
+    "realAdminBrowserLogoutAccountSwitchRowsExecuted": 0,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false,
+    "a89HistoricalPassRewritten": false
+  },
+  "truthBoundary": "This ledger binds exact A102R11-to-A102R12 changes that remove persistent browser authority from private admin product-import drafts and require scope-bound current-tab memory plus bounded strict JSON. Local tests do not prove real admin IdP/logout/account-switch behavior, durable server draft storage, exact build/browser, staging, LIVE or sale readiness."
+}

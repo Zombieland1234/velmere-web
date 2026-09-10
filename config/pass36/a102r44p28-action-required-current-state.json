@@ -1,0 +1,106 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": true,
+    "backupRestore": false,
+    "browser57": false,
+    "exactWindows": false,
+    "externalCiPostgresRls19": true,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "incident": false,
+    "pdf150": false,
+    "productionRls": false,
+    "real72h": false,
+    "sigstoreOidcAttestation": true,
+    "sourceAudit": false,
+    "sourceAuthority": true,
+    "staticPolicy": true,
+    "storageKmsEmail": false,
+    "stripeTest": false,
+    "supabaseStaging": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalEvidence": {
+    "classification": "EXTERNAL_CI_POSTGRES_RLS_ONLY",
+    "evidenceTarSha256": "47c57c214f3d1498a568de43898f7945e397ade6ed2bdd1ce74f4c984855254f",
+    "githubArtifactZipSha256": "ddd8ca0cd3e0b219afeec092c519bdcbf30810eef3a8be3a88c992374dbede6a",
+    "githubRunId": "31149232806",
+    "rls": {
+      "executed": 19,
+      "failed": 0,
+      "operator": 6,
+      "owner": 12,
+      "passed": 19,
+      "required": 19,
+      "sessionRevocation": 1
+    },
+    "sigstoreVerified": true,
+    "sourceAggregateSha256": "3643fce7cdd54b9f2e0180356f0677c6e4b66856138ae0c3216fdf6440b30287",
+    "sourceManifestSha256": "2fbae8adc5d2c1e22c4ca0feedd8a03de2e62eaa5081c2ab805edd2d755472af",
+    "sourceRevisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT"
+  },
+  "globalDecision": "NO_GO",
+  "implemented": [
+    "external GitHub-hosted PostgreSQL 16 RLS 19/19 execution",
+    "independent 28/28 semantic/artifact verification",
+    "Sigstore/Cosign OIDC attestation",
+    "exact parent R44P27 source binding",
+    "external evidence tamper suite"
+  ],
+  "newFindings": [
+    {
+      "id": "R44P28-P0-01",
+      "resolution": "Actual PostgreSQL 16.4 RLS 19/19 executed on GitHub-hosted disposable runner and independently verified.",
+      "severity": "P0",
+      "status": "CLOSED_EXTERNAL_CI",
+      "title": "No physical external PostgreSQL RLS evidence existed"
+    },
+    {
+      "id": "R44P28-P1-02",
+      "requiredAction": "Repeat exact denominator on two disposable provider tenants with externally controlled credentials and provider receipts.",
+      "severity": "P1",
+      "status": "OPEN",
+      "title": "External CI PostgreSQL is not Supabase staging or production"
+    },
+    {
+      "id": "R44P28-P1-03",
+      "requiredAction": "Execute Stripe TEST, storage/KMS/email, backup/restore, incident, 72h and exact Windows.",
+      "severity": "P1",
+      "status": "OPEN",
+      "title": "Only RLS track has external evidence"
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "remainingExternalDenominators": {
+    "backupRestore": 0,
+    "incident": 0,
+    "real72h": 0,
+    "storageKmsEmail": 0,
+    "stripeTest": 0,
+    "supabaseRls": 0
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p28.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "testResults": {
+    "externalPostgresRls": "19/19",
+    "independentExternalVerifier": "28/28",
+    "localSigstoreAndSemanticVerifier": "28/28",
+    "negativeTamperSuite": "PENDING_SOURCE_TEST_EXECUTION"
+  },
+  "worldClassProven": false
+}

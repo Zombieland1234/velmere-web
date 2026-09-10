@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "velmere.pass35.a30-threat-model-policy.v1",
+  "passId": "PASS35_A30",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "SYNTHETIC_FIXTURE",
+    "GENERATED_BENCHMARK"
+  ],
+  "requiredControlFamilies": [
+    "CASE_TARGET_ARCHITECTURE_BINDING",
+    "COMPONENT_ASSET_ACTOR_REGISTRY",
+    "TRUST_BOUNDARY_DATA_FLOW_COVERAGE",
+    "ENTRY_POINT_ACCESS_MAPPING",
+    "ASSUMPTION_INVALIDATION_REGISTRY",
+    "CRITICAL_ASSET_INVARIANTS",
+    "ABUSE_CASE_PRECONDITION_COVERAGE",
+    "ATTACK_PATH_MITIGATION_BINDING",
+    "RESIDUAL_RISK_LIMITATIONS",
+    "COVERAGE_DENOMINATORS",
+    "DETERMINISTIC_THREAT_MODEL_REPLAY",
+    "MUTATION_EVIDENCE"
+  ],
+  "thresholds": {
+    "minimumComponents": 5,
+    "minimumAssets": 5,
+    "minimumActors": 5,
+    "minimumTrustBoundaries": 4,
+    "minimumDataFlows": 6,
+    "minimumEntryPoints": 6,
+    "minimumAssumptions": 5,
+    "minimumInvariants": 6,
+    "minimumAbuseCases": 8,
+    "minimumAttackStepsPerAbuseCase": 2,
+    "minimumMitigationsPerAbuseCase": 1,
+    "minimumReplayRuns": 3,
+    "minimumCriticalAssetCoverage": 1,
+    "minimumStateChangingEntryPointCoverage": 1,
+    "minimumTrustBoundaryCoverage": 1,
+    "mutationKillRate": 0.9,
+    "requireUniqueIds": true,
+    "requireAcyclicAttackPaths": true,
+    "requireAssumptionInvalidationTriggers": true,
+    "requireResidualRiskAndLimitations": true,
+    "requireClaimBoundary": true
+  },
+  "benchmark": {
+    "families": [
+      "CASE_TARGET_ARCHITECTURE_BINDING",
+      "COMPONENT_ASSET_ACTOR_REGISTRY",
+      "TRUST_BOUNDARY_DATA_FLOW_COVERAGE",
+      "ENTRY_POINT_ACCESS_MAPPING",
+      "ASSUMPTION_INVALIDATION_REGISTRY",
+      "CRITICAL_ASSET_INVARIANTS",
+      "ABUSE_CASE_PRECONDITION_COVERAGE",
+      "ATTACK_PATH_MITIGATION_BINDING",
+      "RESIDUAL_RISK_LIMITATIONS",
+      "COVERAGE_DENOMINATORS",
+      "DETERMINISTIC_THREAT_MODEL_REPLAY",
+      "MUTATION_EVIDENCE"
+    ],
+    "mutationTypes": [
+      "TARGET_BINDING_TAMPER",
+      "REGISTRY_ID_COLLISION",
+      "BOUNDARY_FLOW_ORPHAN",
+      "ENTRY_POINT_ACCESS_DROP",
+      "ASSUMPTION_TRIGGER_DROP",
+      "CRITICAL_INVARIANT_DROP",
+      "ABUSE_PRECONDITION_ORPHAN",
+      "ATTACK_PATH_CYCLE",
+      "RESIDUAL_RISK_ERASURE",
+      "COVERAGE_DENOMINATOR_INFLATION",
+      "REPLAY_NONDETERMINISTIC",
+      "MUTATION_SCORE_WEAKEN"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "PASS35 A30 validates a bounded local evidence contract for architecture and threat modeling. It verifies exact case and architecture bindings, complete component/asset/actor registries, trust-boundary and data-flow coverage, entry-point access mapping, explicit assumptions and invalidation triggers, critical-asset invariants, abuse-case preconditions, attack paths and mitigations, residual-risk limitations, coverage denominators, deterministic local replay and mutation evidence. It does not prove that protocol-specific assumptions are correct, that business logic was manually adjudicated, that a qualified reviewer inspected the architecture, that every real-world threat is modeled, or that Audit Pro/Advanced is sell-ready."
+}

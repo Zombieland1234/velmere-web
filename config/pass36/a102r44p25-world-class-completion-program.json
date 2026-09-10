@@ -1,0 +1,43 @@
+{
+  "decision": "NO_GO",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p25.world-class-completion-program.v1",
+  "tracks": [
+    {
+      "id": "AUTHORITY",
+      "next": "verify manifest, pointers, fork ledger and clean unpack",
+      "status": "IMPLEMENTED"
+    },
+    {
+      "id": "WINDOWS",
+      "next": "execute exact Windows runner on clean R44P25 source",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "STAGING",
+      "next": "provide disposable test credentials and execute A95-A99",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "DATA_RIGHTS",
+      "next": "rights-approved 318/583 provider matrices",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "INDEPENDENT_ASSURANCE",
+      "next": "two independent reviewers and severity adjudication",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "CUSTOMER",
+      "next": "controlled cohorts and willingness-to-pay",
+      "status": "BLOCKED"
+    }
+  ]
+}

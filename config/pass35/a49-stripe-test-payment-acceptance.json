@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "velmere.pass35.a49.stripe-test-payment-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A49_STRIPE_TEST_PAYMENT_REFUND_RECONCILIATION_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A48_STAGING_TENANT_ISOLATION_ACCEPTANCE",
+  "requiredA48Decision": "VERIFIED_STAGING_TENANT_ISOLATION",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_THIS_USES_ONLY_STRIPE_TEST_MODE_AND_DISPOSABLE_STAGING_DATA",
+  "requiredEnvironment": [
+    "VELMERE_A49_STAGING_BASE_URL",
+    "VELMERE_A49_TEST_ACCOUNT_EMAIL",
+    "VELMERE_A49_TEST_ACCOUNT_PASSWORD",
+    "STRIPE_SECRET_KEY",
+    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY",
+    "STRIPE_WEBHOOK_SECRET",
+    "VELMERE_ENTITLEMENT_LIFECYCLE_SECRET",
+    "VELMERE_WORKER_INTERNAL_WORKERS_STRIPE_WEBHOOK_RECONCILIATION_SECRET_CURRENT",
+    "VELMERE_A49_CONFIRM"
+  ],
+  "requiredChecks": [
+    "source-fingerprint-before",
+    "precondition-a48-verified",
+    "runtime-exact",
+    "confirmation-token",
+    "staging-url-safety",
+    "stripe-test-key-boundary",
+    "test-account-signin",
+    "checkout-stop-sell-preserved",
+    "webhook-missing-signature-rejected",
+    "webhook-invalid-signature-rejected",
+    "stripe-payment-intent-created",
+    "stripe-payment-intent-succeeded",
+    "signed-checkout-webhook-accepted",
+    "checkout-webhook-replay-idempotent",
+    "stripe-refund-created",
+    "stripe-charge-fully-refunded",
+    "signed-refund-webhook-accepted",
+    "refund-webhook-replay-idempotent",
+    "entitlement-refund-idempotent",
+    "reconciliation-worker-authorized",
+    "reconciliation-worker-aggregate-only",
+    "session-revoked",
+    "source-fingerprint-unchanged",
+    "evidence-redaction"
+  ],
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "maximumEvidenceFileBytes": 16777216,
+    "stripeApiTimeoutMs": 30000
+  },
+  "stagingSafety": {
+    "httpsRequired": true,
+    "localhostAllowedOnlyInFixture": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "staging",
+      "preview",
+      "vercel.app",
+      "pages.dev",
+      "netlify.app"
+    ]
+  },
+  "stripeSafety": {
+    "secretKeyPrefix": "sk_test_",
+    "publishableKeyPrefix": "pk_test_",
+    "webhookSecretPrefix": "whsec_",
+    "paymentAmount": 100,
+    "currency": "eur",
+    "paymentMethod": "pm_card_visa",
+    "apiBase": "https://api.stripe.com"
+  },
+  "truthBoundary": "A49 proves only one Stripe test-mode payment/refund rail and one disposable staging replay of signed checkout/refund webhooks, entitlement refund state, duplicate-event idempotency and aggregate reconciliation worker output. It does not prove live-mode charging, production admin access, disputes, SCA/3DS/BLIK browser UX, accounting/tax settlement, continuous availability, customer value, independent assurance or sale readiness.",
+  "integrity": {
+    "a48ContractSha256": "a254c45a53d491edae8b6f61ae356a853c55e95bc6259f1e804c00bdd0872f7b",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "velmere.r6.browser-basic-e2e-contract.v1",
+  "productId": "browser-basic",
+  "targetTransition": "0/20_TO_1/20",
+  "requiredFlow": [
+    "owner_authorized_input",
+    "rights_preflight_before_network",
+    "safe_search_or_fetch",
+    "server_signed_source_token",
+    "basic_preview",
+    "server_signed_render_token",
+    "single_pdf_render",
+    "authenticated_basic_exact_account_artifact_store",
+    "same_account_json_readback",
+    "same_account_exact_pdf_preview_download_readback",
+    "cross_account_denial",
+    "new_process_or_restart_readback",
+    "pl_en_de_customer_safe_output",
+    "exact_node24_regression",
+    "exact_windows_regression"
+  ],
+  "requiredEquality": {
+    "renderedPdfShaEqualsResponseHeader": true,
+    "renderedPdfShaEqualsStoredPdfSha": true,
+    "previewAndDownloadBytesIdentical": true,
+    "artifactIdStable": true,
+    "requestedTier": "basic",
+    "deliveredTier": "basic"
+  },
+  "negativeCases": [
+    "missing_account_has_no_durable_storage_claim",
+    "account_b_cannot_list_or_read_account_a_artifact",
+    "tampered_source_token_denied",
+    "tampered_render_token_denied",
+    "wrong_locale_or_depth_denied",
+    "private_or_link_local_fetch_denied",
+    "raw_provider_error_redacted",
+    "rights_blocked_input_denied_before_network"
+  ],
+  "finalCreditRequires": [
+    "r6_authority_reconciliation_pass",
+    "r6_exact_source_transport_pass",
+    "exact_node24_npm11_dependency_campaign_pass",
+    "exact_windows_server_2025_pass",
+    "r6_staging_foundation_pass",
+    "browser_basic_deployed_e2e_pass",
+    "field_use_rights_pass",
+    "no_open_critical_finding"
+  ]
+}

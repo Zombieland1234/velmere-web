@@ -1,0 +1,588 @@
+{
+  "schemaVersion": "velmere.pass35.zero-budget-functional-roadmap.v1",
+  "passId": "PASS35_A32",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "goal": "Reach 100% functional product readiness for the declared free/public-data scope using own work, public/free data, open-source tools and fail-closed unavailable states.",
+  "scopeTruth": {
+    "wholeMarketDefinition": "100% of the normalized, declared, active catalog exposed by supported providers and 100% of its declared supported field denominator.",
+    "fiftyCaseMeaning": "Regression and edge-case corpus only; never a production market-coverage denominator.",
+    "notClaimed": [
+      "every financial instrument existing globally",
+      "unlimited provider availability",
+      "institutional SLA",
+      "external certification",
+      "human review without a reviewer"
+    ]
+  },
+  "tracks": {
+    "ZERO_BUDGET_FUNCTIONAL_CORE": {
+      "requiredForCoreLaunch": true,
+      "targetPercent": 100,
+      "allowsPublicFreeData": true,
+      "allowsOpenSourceTools": true,
+      "institutionalProofRequired": false
+    },
+    "COMMERCIAL_AUTOMATED": {
+      "requiredForPaidProAdvanced": true,
+      "targetPercent": 100,
+      "requiresProviderTermsAndPaymentTruth": true,
+      "paidFeedsRequired": false,
+      "transactionFeesAfterSalesPossible": true
+    },
+    "OPTIONAL_INSTITUTIONAL_ASSURANCE": {
+      "requiredForCoreLaunch": false,
+      "targetPercent": null,
+      "includes": [
+        "paid_data_sla",
+        "external_pentest",
+        "certification",
+        "human_review",
+        "independent_benchmark"
+      ]
+    }
+  },
+  "capabilities": [
+    {
+      "id": "ZB01_NON_VISUAL_PRODUCT_CONTRACT",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "Product/tier content specification and visual freeze."
+    },
+    {
+      "id": "ZB02_CANONICAL_PACKET_AND_PARITY",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A16 executes 21 immutable canonical packets and 126 packet/facts-identical API/UI/preview/PDF/Brain/Angel projections. Projections reference canonical claims only and cannot add facts; real customer outcome remains a separate gate."
+    },
+    {
+      "id": "ZB03_DYNAMIC_PROVIDER_CATALOG",
+      "status": "DONE",
+      "resourceModel": "Free/public provider APIs",
+      "truth": "Dynamic provider snapshot normalization, active-instrument denominator, stale/degraded exclusion, deduplication and exact receipt verification are implemented; live catalog size remains provider-dependent."
+    },
+    {
+      "id": "ZB04_MARKET_FRESHNESS_CONFLICT_FAILOVER",
+      "status": "DONE",
+      "resourceModel": "Own code + public data",
+      "truth": "Local freshness, conflict, stale/degraded exclusion, provider reliability, cache, shared inflight and failover contracts are implemented and mutation-tested; third-party uptime remains outside the code guarantee."
+    },
+    {
+      "id": "ZB05_SHIELD_BASIC_PRO_ADVANCED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + public market/chain data",
+      "truth": "Exact tier matrices, dynamic denominator and a complete four-provider public catalog runtime are implemented; live full-field observations for every active asset remain."
+    },
+    {
+      "id": "ZB06_SHIELD_PRO_TERMINAL_ANALYSIS",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + public market/chain data",
+      "truth": "Exact field matrices and runtime coverage evaluation exist for all three tiers without visual changes; real full-catalog provider execution remains."
+    },
+    {
+      "id": "ZB07_REAL_MARKETS_BASIC_PRO_ADVANCED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + public/delayed data",
+      "truth": "Exact tier matrices, dynamic denominator and resilient public crypto catalog runtime exist; non-crypto catalogs, corporate actions/calendars and real full-field execution remain."
+    },
+    {
+      "id": "ZB08_PDF_BASIC_PRO_ADVANCED",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A17 generates 21 physical packet-bound PDFs for all 7 surfaces x Basic/Pro/Advanced with exact 2/4/8-page contracts, 98 total pages, packet/facts/claim/evidence hashes embedded in uncompressed bytes and fail-closed structural verification. Customer purchase-worthiness and live-data usefulness remain separate external/product gates."
+    },
+    {
+      "id": "ZB09_AUDIT_BASIC_AUTOMATED",
+      "status": "DONE",
+      "resourceModel": "Own work + optional open-source analyzers",
+      "truth": "A19 closes the defined local automated Basic prescreen implementation: input/identity controls, privilege and dangerous-surface analysis, 15-class Solidity structural scanner, 240 vulnerable/remediated benchmark cases, frozen split, severity mapping and 2880 mutation checks. Real chain/source receipts, provider rights and customer usefulness remain separate release gates."
+    },
+    {
+      "id": "ZB10_AUDIT_PRO_AUTOMATED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + open-source tools",
+      "truth": "A01-A12/A14/A16 can reach full automated implementation with official tools and real public contracts."
+    },
+    {
+      "id": "ZB11_AUDIT_ADVANCED_AUTOMATED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + open-source tools",
+      "truth": "Deep automated challenge, mutation, replay, retest and monitoring can reach 100%; no human-review claim."
+    },
+    {
+      "id": "ZB12_AUDIT_HUMAN_REVIEW_ADDON",
+      "status": "OPTIONAL_EXTERNAL",
+      "resourceModel": "Qualified human",
+      "truth": "Optional add-on; excluded from zero-budget core 100% denominator."
+    },
+    {
+      "id": "ZB13_BRAIN_ANGEL_ORCHESTRATION",
+      "status": "DONE",
+      "resourceModel": "Own work plus optional local/open model",
+      "truth": "Brain and Angel are now mechanically bounded channel projections of the same canonical packet across all 7 surfaces and 3 tiers. They can summarize, lock fields and expose safe-next-checks but cannot create new claims."
+    },
+    {
+      "id": "ZB14_RISK_BASIC",
+      "status": "DONE",
+      "resourceModel": "Own work",
+      "truth": "Deterministic evidence ranking boundary is implemented."
+    },
+    {
+      "id": "ZB15_RISK_PRO_ADVANCED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work; real observation window required for claims",
+      "truth": "A17 adds actual ECE/MCE, Brier Skill, calibration intercept/slope, Wilson intervals, immutable threshold registry and sealed prediction-before-outcome receipts. Of the 100 synthetic prospective windows, 38 are closed and 62 remain open at the frozen evaluation time; all empirical probability, prospective performance and paid claims remain disabled until real preregistered outcomes close and are independently adjudicated."
+    },
+    {
+      "id": "ZB16_LOCAL_SECURITY_TESTS",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + open-source tools",
+      "truth": "Can reach 100% local test coverage; independent assurance is separate."
+    },
+    {
+      "id": "ZB17_BROWSER_I18N_PDF_E2E",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + local browsers/devices",
+      "truth": "Can reach 100% defined local matrix; physical-device coverage may use owned devices."
+    },
+    {
+      "id": "ZB18_FREE_TIER_STAGING_BETA",
+      "status": "NOT_DONE",
+      "resourceModel": "Free hosting/database tiers within limits",
+      "truth": "Functional beta can run cheaply/free; no uptime or unlimited-scale guarantee."
+    },
+    {
+      "id": "ZB19_PAYMENTS_FOR_PAID_TIERS",
+      "status": "PARTIAL",
+      "resourceModel": "No upfront platform fee assumed; transaction fees occur after sales",
+      "truth": "Code/staging can be completed; real charges create unavoidable per-transaction cost."
+    },
+    {
+      "id": "ZB20_OPTIONAL_INSTITUTIONAL_ASSURANCE",
+      "status": "OPTIONAL_EXTERNAL",
+      "resourceModel": "Paid feeds/auditors/certifications",
+      "truth": "Not a blocker for zero-budget functional product; separate future Enterprise track."
+    },
+    {
+      "id": "ZB21_MARKET_IMPACT_BASIC_PRO_ADVANCED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + public order-book APIs",
+      "truth": "Tier packets, four order-book adapters, stress scenarios, 60-asset regression and dynamic public catalog discovery are implemented; continuous fresh books and realized-slippage validation remain."
+    },
+    {
+      "id": "ZB22_WHALE_WATCH_BASIC_PRO_ADVANCED",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + public chain/explorer/RPC data",
+      "truth": "Concentration, signed labels, dual transfer sources with Etherscan fallback, flows, clustering, exit stress, tier packets and injected end-to-end provider runtime are implemented; real configured continuous runtime remains."
+    },
+    {
+      "id": "ZB23_PUBLIC_PROVIDER_CATALOG_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work + keyless public exchange catalog APIs",
+      "truth": "Binance, MEXC, Coinbase and Kraken catalog parsers, bounded fetch, retry/backoff, cache, shared inflight, rate budgets, schema quarantine, dynamic denominator and tamper verification are locally complete. Public-network execution remains environment-dependent."
+    },
+    {
+      "id": "ZB24_PUBLIC_WHALE_PROVIDER_RUNTIME",
+      "status": "PARTIAL",
+      "resourceModel": "Own work + free-tier explorer/RPC inputs + signed label registry",
+      "truth": "Signed asset binding, Etherscan holder/token/transfer inputs, Alchemy transfers, Etherscan transfer fallback, signed wallet-label merge and Basic/Pro/Advanced Whale Watch packets are locally integrated. Real keys/network, continuous coverage and monitoring delivery remain."
+    },
+    {
+      "id": "ZB25_PUBLIC_FX_REAL_MARKETS_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work + keyless central-bank public data",
+      "truth": "ECB CSV and Bank of Canada Valet JSON adapters, reconciliation, freshness, cache, quota, schema quarantine and Basic/Pro/Advanced eligibility are implemented and proven over a local HTTP network fixture. Public internet LIVE remains unclaimed."
+    },
+    {
+      "id": "ZB26_FULL_CATALOG_TARGET_SCHEDULER",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "Every listing and normalized asset in a fresh dynamic denominator receives budgeted spot quote, klines and order-book target jobs or an explicit unsupported reason. Planning does not claim network execution."
+    },
+    {
+      "id": "ZB27_WHALE_SUPPORTED_TOKEN_DENOMINATOR",
+      "status": "DONE",
+      "resourceModel": "Own work + public/free holder/transfer inputs",
+      "truth": "Every active crypto asset is counted. Exact chain/address binding and fresh holders/transfers/labels/market-impact evidence determine Basic/Pro/Advanced eligibility; unbound assets remain explicit UNAVAILABLE."
+    },
+    {
+      "id": "ZB28_FULL_CATALOG_EXECUTION_LEDGER",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "Every scheduled quote, kline and order-book job receives exactly one terminal AVAILABLE/UNAVAILABLE/STALE/CONFLICTED/FAILED/RATE_LIMITED row. Missing results stay in the denominator; fixture execution does not claim public-network LIVE."
+    },
+    {
+      "id": "ZB29_MARKET_IMPACT_FULL_DENOMINATOR",
+      "status": "DONE",
+      "resourceModel": "Own work + public order-book APIs",
+      "truth": "Every active crypto asset is counted in Market Impact. Local fixture packets prove Basic/Pro/Advanced functional readiness at provider floors while production eligibility remains zero until non-fixture order books execute."
+    },
+    {
+      "id": "ZB30_WHALE_MULTI_SOURCE_BINDING_RESOLVER",
+      "status": "DONE",
+      "resourceModel": "Own work + public exchange/explorer metadata",
+      "truth": "Every active crypto asset is classified as exact two-family chain/address consensus, single source, conflict or missing. Only exact consensus emits a binding; no symbol-only inference is allowed."
+    },
+    {
+      "id": "ZB31_PUBLIC_SECURITIES_CATALOG_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work + public Nasdaq/SEC catalog formats",
+      "truth": "Nasdaq symbol directories and SEC ticker/exchange associations are parsed, deduplicated and reconciled into a full US equity/ETF identity denominator. Catalog identity explicitly provides zero quote coverage."
+    },
+    {
+      "id": "ZB32_HASH_BOUND_SNAPSHOT_IMPORT",
+      "status": "DONE",
+      "resourceModel": "Own work + public snapshots exported from any networked machine",
+      "truth": "Provider snapshots are imported as bounded hash-bound bundles with provider/dataset/time/source-url digests, freshness classification and tamper rejection. FILE_IMPORT and fixture modes never auto-promote to LIVE or paid eligibility."
+    },
+    {
+      "id": "ZB33_SECURITIES_QUOTES_HISTORY_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work + free/public quote/history exports",
+      "truth": "Every catalog instrument remains in the denominator. 120-instrument fixture proves 100 Basic, 80 Pro and 60 Advanced functional-ready outputs with increasing provider-family and history-depth floors; all missing instruments remain explicit UNAVAILABLE."
+    },
+    {
+      "id": "ZB34_CORPORATE_ACTIONS_CALENDAR_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work + public exchange/action datasets",
+      "truth": "All 120 securities receive exchange-calendar state and corporate-action classification. Two-family reconciliation, conflict isolation, single-source disclosure and no-action states are explicit; fixture data never becomes production eligibility."
+    },
+    {
+      "id": "ZB35_REAL_MARKETS_CROSS_ASSET_TIER_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work + public quote/history/actions/FX data",
+      "truth": "Real Markets constructs 360 canonical Basic/Pro/Advanced packets across the full 120-instrument denominator, including FX-normalized semantic units, session state, provider floors, action provenance and explicit unavailable states."
+    },
+    {
+      "id": "ZB36_ORDER_BOOK_IMPORT_REPLAY",
+      "status": "DONE",
+      "resourceModel": "Own work + public exchange L2 snapshots exported as JSON",
+      "truth": "Imported L2 books are validated, crossed books quarantined, three venues aggregated, notional executions simulated and two-snapshot replay computed for all 60 declared assets. Imported books are not realized fills or LIVE."
+    },
+    {
+      "id": "ZB37_WHALE_EVIDENCE_BUNDLE_IMPORT",
+      "status": "DONE",
+      "resourceModel": "Own work + public explorer/label exports",
+      "truth": "Hash-bound token binding, holder, transfer and wallet-label bundles feed a 100-asset denominator. Two-family exact bindings and tier evidence floors are required; 20 unresolved assets remain explicit UNAVAILABLE."
+    },
+    {
+      "id": "ZB38_LEDGER_DENOMINATOR_BRIDGE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "Execution-ledger terminal states are projected into complete Shield and Real Markets tier denominators. Fixture bridge accounts 50 crypto assets and 120 securities, preserving failures and unavailable states without billing unlock."
+    },
+    {
+      "id": "ZB39_CROSS_ASSET_PORTFOLIO_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A16 computes complete asset-class/currency exposure, weights, HHI, volatility, drawdown, pair correlation and liquidity-exit horizons for 12 portfolios over 120 instruments, with 36 Basic/Pro/Advanced packets and no billing unlock."
+    },
+    {
+      "id": "ZB40_MARKET_REGIME_CLASSIFICATION",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A16 deterministically classifies CALM, RISK_ON, RISK_OFF, STRESS and DISLOCATION regimes from bounded trend, volatility, correlation and liquidity inputs. Classification is analytical context, not a forecast."
+    },
+    {
+      "id": "ZB41_CROSS_ASSET_STRESS_SCENARIOS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A16 executes six cross-asset stress scenarios for every declared portfolio, producing 72 bounded loss/liquidity estimates, worst-scenario receipts and monitoring triggers without claiming realized future losses."
+    },
+    {
+      "id": "ZB42_PROSPECTIVE_RISK_LEDGER",
+      "status": "DONE",
+      "resourceModel": "Own work only; real outcomes required later",
+      "truth": "A16 creates hash-bound prediction-before-outcome receipts and Advanced decision packets for 100 prospective cases, enforcing temporal ordering, uncertainty, abstention and human-override paths. The infrastructure is complete while performance claims remain disabled."
+    },
+    {
+      "id": "ZB43_EVIDENCE_QUALITY_CONTRADICTION_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A17 explicitly enumerates evidence families and tier floors for all 21 cells, scores claim coverage/rights/freshness, detects explicit and opposing-claim contradictions, forces Brain/Angel/PDF abstention on material blockers and verifies zero added facts across 63 guarded channel decisions."
+    },
+    {
+      "id": "ZB44_CROSS_SURFACE_DECISION_PACKET_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A17 fuses Shield, Real Markets, Market Impact and Whale Watch into three Basic/Pro/Advanced decision packets using only source packet IDs/hashes/claim IDs. Missing surfaces, stale evidence, withdrawn rights, contradictions or tier evidence-floor failures force ABSTAIN; paid delivery and LIVE remain false."
+    },
+    {
+      "id": "ZB45_TIER_INCREMENTAL_VALUE_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A18 executes a frozen 350-case structural tier-value corpus across all 7 surfaces, producing 1050 Basic/Pro/Advanced outputs and 700 blinded Basic-to-Pro / Pro-to-Advanced comparisons. Every paid upgrade must add at least 8 material fields, 2 new evidence families, 1 new scenario and a positive utility delta with no safety regression. This proves functional differentiation offline, not customer willingness-to-pay."
+    },
+    {
+      "id": "ZB46_TIER_VALUE_MUTATION_FILLER_DEFENSE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A18 runs 5600 controlled tier-value mutations across page-count-only filler, missing incremental fields/evidence/scenarios, unsafe non-abstention, invented claims, silent downgrade and duplicate filler. All mutations are rejected and mutation kill rate is 100% in the frozen synthetic program."
+    },
+    {
+      "id": "ZB47_NO_SILENT_DOWNGRADE_NO_CHARGE_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A18 binds structural tier-value failure to UNAVAILABLE_NOT_FOR_SALE and proves that neither clean offline fixtures nor any rejected mutant may enable charge, paid delivery, LIVE or silent delivery of a lower tier under a higher-tier label."
+    },
+    {
+      "id": "ZB48_AUDIT_STATIC_PRESCREEN_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A19 executes 240 generated Solidity cases across 15 vulnerability families with balanced vulnerable/remediated pairs and disjoint development/validation/frozen splits. Frozen recall, precision, specificity, F1 and severity accuracy are 1.0 for the declared local rule scope. Shared authoring bias and synthetic labels forbid external or paid assurance credit."
+    },
+    {
+      "id": "ZB49_EXACT_RUNTIME_BOOTSTRAP_FAIL_CLOSED",
+      "status": "DONE",
+      "resourceModel": "Own work + official runtime archives supplied separately",
+      "truth": "A19 pins the official Node 24.18.0 Linux x64 archive SHA-256, requires npm 11.16.0 registry integrity plus signature verification, and makes npm ci, typecheck, lint, full tests, Webpack/Turbopack builds, smokes and source immutability mandatory. The bootstrap contract is complete; actual exact-runtime execution remains blocked and receives zero release credit."
+    },
+    {
+      "id": "ZB50_CASE_BOUND_DEPENDENCY_GRAPH",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A20 builds a per-case Solidity import graph over the exact source bundle, resolves relative/package imports, records every edge, rejects traversal, reports unresolved imports and cycles, and binds all nodes and edges to source hashes. The graph is local structural evidence, not proof of deployed behavior."
+    },
+    {
+      "id": "ZB51_CASE_BOUND_LICENSE_ADVISORY_MAPPING",
+      "status": "DONE",
+      "resourceModel": "Own work + externally supplied advisory registry",
+      "truth": "A20 maps SPDX state per source file, detects missing/invalid/forbidden licenses and duplicate package versions, and matches hash-bound source or exact package-version advisories. The registry digest is bound to the report; completeness, legal interpretation and freshness remain external gates."
+    },
+    {
+      "id": "ZB52_A12_FROZEN_BENCHMARK_RECEIPT",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A20 executes 200 vulnerable/remediated cases across 10 dependency/license/advisory families with an 80-case frozen split and 2400/2400 mutation checks. The benchmark proves declared local behavior only and grants zero paid, legal or real-CVE credit."
+    },
+    {
+      "id": "ZB53_BOUNDED_ABSTRACT_EVM_INTERPRETER",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A21 executes a deterministic bounded EVM abstract interpreter over the exact runtime bytecode, including stack propagation, constants, calldata, caller, call value, block context, constant storage slots, static jumps and explicit unsupported states. This is local bounded analysis, not full SMT symbolic execution."
+    },
+    {
+      "id": "ZB54_SIMPLE_PATH_CONSTRAINT_FEASIBILITY",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A21 applies equality, inequality and bounded range constraints to supported symbolic variables, prunes constant and contradictory branches, records the exact condition and reason, and preserves unknown feasibility for unsupported expressions instead of inventing certainty."
+    },
+    {
+      "id": "ZB55_REACHABLE_RISK_PATH_RECEIPTS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A21 emits hash-bound path receipts for reachable SSTORE, CALL, DELEGATECALL, CREATE and SELFDESTRUCT signals with constraints and prerequisites, suppresses risk opcodes located only on pruned paths, and keeps paid/full-audit/exploitability claims disabled."
+    },
+    {
+      "id": "ZB56_EVIDENCE_BOUND_SEVERITY_TRIAGE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A22 computes severity from explicit impact, asset-at-risk, blast radius, attacker exposure, exploitability, persistence, path feasibility and evidence-family inputs. Missing asset binding, unknown paths, single-family evidence and conflicts apply hard severity/confidence caps instead of allowing unsupported escalation."
+    },
+    {
+      "id": "ZB57_ATTACK_CHAIN_BLAST_RADIUS_RUNTIME",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A22 builds evidence-bound finding enablement graphs, rejects cycles, records two-step and three-plus-step attack chains, classifies single-user through cross-protocol blast radius, and includes chain context in deterministic severity receipts without claiming exploit proof."
+    },
+    {
+      "id": "ZB58_SEVERITY_UNCERTAINTY_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A22 executes two frozen scoring profiles, exposes disagreement, computes exact agreement and weighted kappa, checks critical-justification invariants and runs a 192-case / 2304-mutation generated benchmark. The profiles are not independent humans and cannot grant paid or real-world quality credit."
+    },
+    {
+      "id": "ZB59_PATCH_IMPACT_COVERAGE_GRAPH",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A23 binds exact original/patched source and runtime bytecode to the same subject, maps every affected component into an acyclic patch-impact graph, and blocks closure when any material component is uncovered or the patch does not change source and bytecode."
+    },
+    {
+      "id": "ZB60_FAMILY_DERIVED_RETEST_CLOSURE_MATRIX",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A23 derives required A02-A14 retests from 12 finding families, requires distinct pre/post receipts, evidence-family floors, maintained behavioral coverage, no surviving finding and no new High/Critical regression before a local closure contract can pass."
+    },
+    {
+      "id": "ZB61_REMEDIATION_CLOSURE_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A23 executes 192 closable/blocked remediation cases with a 72-case frozen split and 2304 mutations covering missing retests, unchanged bytes, uncovered components, regression findings, reopened post-triage, graph cycles, integrity tampering and paired closure flips. Generated labels grant no real-fix or paid credit."
+    },
+    {
+      "id": "ZB62_MONITORING_EVENT_DEDUP_CORRELATION",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A24 canonicalizes provider-bound monitoring events, rejects target/time/digest mismatches, deterministically sorts out-of-order observations, drops duplicate chain/tx/log/type identities and creates hash-bound triggered-rule and incident receipts without claiming a live provider."
+    },
+    {
+      "id": "ZB63_INCIDENT_RESPONSE_LIFECYCLE_GATE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A24 enforces alert delivery and acknowledgement SLAs, complete required playbook actions, required customer communication, post-condition evidence and all-or-nothing local incident closure across the six A17 rule families. Late or partial workflows remain blocked."
+    },
+    {
+      "id": "ZB64_MONITORING_LIFECYCLE_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A24 executes 192 generated monitoring cases over 12 event/workflow families with a 72-case frozen split and 2304 mutations. Trigger, lifecycle, deduplication and ordering accuracy are 1.00 with zero unsafe closures; generated labels grant no LIVE, SLA or paid credit."
+    },
+    {
+      "id": "ZB65_A07_EXACT_TEST_BEHAVIOR_REGISTRY",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A25 binds declared behaviors, criticality, expected success/revert outcomes, required assertions, branch IDs and state-transition IDs to one exact target source/runtime/compiler identity. Duplicate or missing critical behavior definitions fail closed."
+    },
+    {
+      "id": "ZB66_A07_COVERAGE_ISOLATION_MUTATION_GATE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A25 enforces critical/high behavior coverage, branch and state-transition floors, baseline-state reset receipts, deterministic repeat results, exact target/runner bindings and a minimum mutation kill rate. Missing assertions, flaky tests, cross-test contamination or weak mutation evidence block local eligibility."
+    },
+    {
+      "id": "ZB67_A07_EXACT_TEST_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A25 executes 192 generated exact-test evidence cases over 12 coverage and integrity families with a 72-case frozen split and 2304 fail-closed mutations. Accuracy and mutation kill rate are 1.00; generated evidence grants no official Forge, real EVM, customer-case or paid credit."
+    },
+    {
+      "id": "ZB68_A08_FUZZ_INVARIANT_REGISTRY_AND_BINDINGS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A26 binds invariant IDs, components, criticality, required state keys and property digests to one exact source/runtime/compiler/model identity, campaign corpus and runner. Missing or duplicate invariants and binding mismatches fail closed."
+    },
+    {
+      "id": "ZB69_A08_SEED_STATE_REPLAY_SHRINK_MUTATION_GATE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A26 enforces seed diversity, campaign-run count, critical/high invariant coverage, state-key coverage, deterministic replay, counterexample shrinking and mutation kill-rate floors. Flaky runs, weak shrinking or surviving mutants block local eligibility."
+    },
+    {
+      "id": "ZB70_A08_FUZZ_INVARIANT_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A26 executes 192 generated fuzz/invariant evidence cases across 12 families with a 72-case frozen split and 2304 fail-closed mutations. Accuracy and mutation kill rate are 1.00; generated model evidence grants no Foundry/Echidna, compiled-EVM, equivalence, customer or paid credit."
+    },
+    {
+      "id": "ZB71_A09_CHAIN_BLOCK_STATE_TRANSACTION_BINDINGS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A27 binds one exact chain, block, target, source/runtime/deployment identity, snapshot roots and ordered transaction sequence. Every transaction must preserve pre-to-post state-root continuity and exact status, log, return-data and state-diff digests."
+    },
+    {
+      "id": "ZB72_A09_ASSERTION_DEPENDENCY_ISOLATED_REPLAY_GATE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A27 enforces critical/high assertion and state-key coverage, complete dependency snapshot coverage, runner binding, isolated reset receipts and deterministic repeated replay results. Any missing dependency, sequence gap, state drift or flaky replay fails closed."
+    },
+    {
+      "id": "ZB73_A09_FORK_REPLAY_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A27 executes 192 generated fork/replay evidence cases across 12 families with a 72-case frozen split and 2304 fail-closed mutations. Accuracy and mutation kill rate are 1.00; generated local evidence grants no native fork, public-provider, historical-exploit, customer or paid credit."
+    },
+    {
+      "id": "ZB74_A10_TARGET_SCENARIO_EVIDENCE_BINDINGS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A28 binds one exact target, methodology, model configuration and A27 replay receipt to five mandatory economic-adversarial scenario families. Every scenario must bind independent evidence families and explicit attack prerequisites; missing or conflicted evidence fails closed."
+    },
+    {
+      "id": "ZB75_A10_SENSITIVITY_UNCERTAINTY_REPLAY_GATE",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A28 enforces sorted monotonic sensitivity grids, bounded lower/central/upper loss estimates, an acyclic scenario dependency graph, deterministic repeated model output and bounded correlation to local A27 replay evidence. These are analytical estimates, not exploit proof, realized loss or probability."
+    },
+    {
+      "id": "ZB76_A10_ECONOMIC_ADVERSARIAL_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A28 executes 192 generated economic-adversarial evidence cases across 12 families with a 72-case frozen split and 2304 fail-closed mutations. Accuracy and mutation kill rate are 1.00; generated evidence grants no rights-approved data, official forked-EVM, real exploit, customer, reviewer or paid credit."
+    },
+    {
+      "id": "ZB77_A11_PROXY_AUTH_MULTISIG_TIMELOCK_BINDINGS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A29 binds exact proxy/admin/implementation slots, upgrade authorization, multisig owner/quorum evidence and timelock delay/role receipts to one target. Missing slots, weak quorum, duplicate owners or bypass routes fail closed."
+    },
+    {
+      "id": "ZB78_A11_STORAGE_ROLLBACK_EMERGENCY_KEY_CONTROLS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A29 enforces initializer protection, UUPS UUID where applicable, storage-layout compatibility, upgrade simulation, bounded rollback limitations, pause/emergency controls, key rotation/recovery and three key-compromise response scenarios. No rollback guarantee or current custody claim is allowed."
+    },
+    {
+      "id": "ZB79_A11_OPERATIONS_REPLAY_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A29 executes 192 generated upgrade/deployment-operations evidence cases across 12 families with a 72-case frozen split and 2304 fail-closed mutations. Accuracy and mutation kill rate are 1.00; generated evidence grants no on-chain, production, reviewer, customer, independent or paid credit."
+    },
+    {
+      "id": "ZB80_A03_COMPONENT_ASSET_ACTOR_BOUNDARY_REGISTRY",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A30 binds one exact case to complete component, critical-asset and actor registries, trust boundaries, data flows and entry-point access evidence. Orphan references, duplicate identities and denominator inflation fail closed."
+    },
+    {
+      "id": "ZB81_A03_ASSUMPTION_INVARIANT_ABUSE_ATTACK_MODEL",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A30 requires explicit protocol/market/oracle/governance/dependency assumptions with invalidation triggers, critical-asset invariants, abuse-case preconditions, acyclic attack paths, tested mitigations, residual risk and limitations."
+    },
+    {
+      "id": "ZB82_A03_THREAT_MODEL_REPLAY_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A30 executes 192 generated threat-model evidence cases across 12 families with a 72-case frozen split and 2304 fail-closed mutations. Generated evidence grants no manual architecture, protocol-assumption, customer, independent or paid credit."
+    },
+    {
+      "id": "ZB83_A04_ROLE_PRINCIPAL_SELECTOR_AUTHORIZATION_BINDINGS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A31 binds one exact case to role definitions, current local principal evidence, role-holder receipts, privileged selectors, required permissions and critical authorization coverage. Duplicate roles, missing holder evidence, unknown critical selectors or denominator inflation fail closed."
+    },
+    {
+      "id": "ZB84_A04_ROLE_ADMIN_PROXY_DELEGATION_SOD_ESCALATION_CONTROLS",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A31 enforces an acyclic role-admin graph, proxy/admin authority evidence, multisig/timelock delegation without direct bypass, separation-of-duties rules, bounded escalation scenarios, revoke/renounce/emergency recovery and mapped hidden privileged surfaces."
+    },
+    {
+      "id": "ZB85_A04_PRIVILEGE_CONTROL_REPLAY_FROZEN_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A31 executes 192 generated privilege-control evidence cases across 12 families with a 72-case frozen split and 2304 fail-closed mutations. Generated evidence grants no current on-chain role, hidden-privilege completeness, manual reviewer, customer, independent or paid credit."
+    },
+    {
+      "id": "ZB86_A16_CANONICAL_REPORT_ASSEMBLY_AND_CLAIM_TAXONOMY",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A32 binds exact canonical packet/facts/findings hashes to a report with complete analyzer receipt index and explicit FACT/FINDING/INFERENCE/ASSUMPTION/LIMITATION/NOT_TESTED classes. Critical sections and required tier fields must be complete; rendering cannot create analysis."
+    },
+    {
+      "id": "ZB87_A16_ACCOUNT_BOUND_PRIVATE_DELIVERY_INTEGRITY_AND_SUPERSESSION",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A32 enforces server-authorized account/case/tier bindings, sensitive-claim redaction, machine-sealed artifact integrity, one-time expiring download tokens, replay rejection, audit trail, correction supersession, invalidation and immutable history."
+    },
+    {
+      "id": "ZB88_A16_COMPREHENSION_PRIVACY_AND_FROZEN_DELIVERY_BENCHMARK",
+      "status": "DONE",
+      "resourceModel": "Own work only",
+      "truth": "A32 executes 192 generated report-delivery cases across 12 families with 72 frozen cases and 2304 fail-closed mutations. Scope/limitations/not-tested/false-safety acknowledgement and bounded retention/delete/export are locally enforced; real customers, staging and paid value receive zero credit."
+    }
+  ],
+  "zeroBudgetCoreExclusions": [
+    "ZB12_AUDIT_HUMAN_REVIEW_ADDON",
+    "ZB20_OPTIONAL_INSTITUTIONAL_ASSURANCE"
+  ],
+  "hundredPercentRules": [
+    "100% means all defined controls for the declared supported scope pass; unsupported assets and fields are explicitly excluded or unavailable.",
+    "100% never means third-party free APIs cannot fail or change.",
+    "100% automated Advanced does not imply human review or certification.",
+    "100% PDF parity means PDF, preview, UI, Brain and Angel use the same packet, not identical layout.",
+    "100% market runtime coverage is calculated from the active provider catalog and field registry, not a fixed test list.",
+    "Optional institutional assurance cannot reduce the zero-budget functional-core percentage."
+  ],
+  "visualChangesMade": false,
+  "truthBoundary": "PASS35 A32 adds a locally complete A16 report-delivery evidence contract for the declared bounded scope. ZERO-BUDGET planning is 91.9% across 86 capabilities. Real analyzer inputs, production tenant isolation, customer comprehension, willingness-to-pay, qualified signatures, staging, LIVE, sale and customer outcomes remain outside this local claim."
+}

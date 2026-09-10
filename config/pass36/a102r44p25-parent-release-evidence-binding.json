@@ -1,0 +1,172 @@
+{
+  "creditBoundary": {
+    "childBuildBrowserPdfCreditTransferred": false,
+    "childExactLinuxReleaseProven": false,
+    "childExactWindowsReleaseProven": false,
+    "liveCredit": false,
+    "paidSaleCredit": false,
+    "parentExactLinuxReleaseProven": true,
+    "parentExactWindowsReleaseProven": false,
+    "stagingCredit": false
+  },
+  "parentEvidence": {
+    "browser": {
+      "buildId": "vlm-deployment-turbopack-dff9fb99290740a2",
+      "checks": 57,
+      "fixtureCredit": false,
+      "independentVerifier": "22/22",
+      "passed": 57,
+      "popupTabs": 4,
+      "rows": 56,
+      "screenshots": 29,
+      "sourceManifestSha256": "9c18f3816fc4fcdbd50ef473ba62cbde6a70acda18bd1d60d4152b26dc1c48df"
+    },
+    "builds": {
+      "turbopack": {
+        "buildId": "vlm-deployment-turbopack-dff9fb99290740a2",
+        "compile": "PASS",
+        "compilePeakRssKb": 2817996,
+        "generate": "PASS",
+        "generatePeakRssKb": 161796,
+        "nextEnvObservedExact": true,
+        "nextEnvRestored": true,
+        "outputContract": true,
+        "sourceImmutable": true,
+        "status": "PASS"
+      },
+      "webpack": {
+        "buildId": "vlm-deployment-webpack-dff9fb99290740a2",
+        "compile": "PASS",
+        "compilePeakRssKb": 2107560,
+        "generate": "PASS",
+        "generatePeakRssKb": 249600,
+        "nextEnvObservedExact": true,
+        "nextEnvRestored": true,
+        "outputContract": true,
+        "sourceImmutable": true,
+        "status": "PASS"
+      }
+    },
+    "cleanUnpackReceiptSha256": "ae33bb344d2852e3e3fc29721dfa8e6e5bc1ec2b92f3a3746c2f8d5c022d2c74",
+    "ledgerSha256": "cda7860bf64f369ab0fd4cc24cc9fc90399a8253fd6fbff5958ae75aa0acce5e",
+    "pdf": {
+      "activeContent": 0,
+      "advanced": 50,
+      "basic": 50,
+      "blankPages": 0,
+      "documents": 150,
+      "edgeTouchPages": 0,
+      "fontEmbedded": 150,
+      "pages": 700,
+      "paidReleaseCredit": false,
+      "pro": 50,
+      "realCustomerPdfCredit": 0,
+      "toUnicode": 150
+    },
+    "quality": {
+      "approvedChanges": "16/16",
+      "authority": "16/16",
+      "eslint": {
+        "errors": 0,
+        "files": 3646,
+        "invocations": 426,
+        "partitions": 105,
+        "sourceImmutable": true,
+        "warnings": 0
+      },
+      "historicalLintMigration": "14/14",
+      "npmAuditOffline": {
+        "critical": 0,
+        "high": 0,
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "total": 0
+      },
+      "sourceAudit": {
+        "optionalFallbacks": 1,
+        "regularFiles": 6203,
+        "secretCandidates": 2,
+        "syntaxErrors": 0,
+        "typescriptFiles": 2001,
+        "undeclaredPackageImports": 0,
+        "unresolvedLocalImports": 0
+      },
+      "staticPolicy": "21/21",
+      "typeScriptPost": {
+        "configuredRoots": 303,
+        "nextEnvImmutable": true,
+        "partitions": 18,
+        "roots": 303,
+        "sourceImmutable": true,
+        "tooling": 183,
+        "transitive": 1693
+      },
+      "typeScriptPre": {
+        "configuredRoots": 161,
+        "nextEnvImmutable": true,
+        "partitions": 18,
+        "roots": 161,
+        "sourceImmutable": true,
+        "tooling": 183,
+        "transitive": 1551
+      }
+    },
+    "runtime": {
+      "chromium": "148.0.7778.96",
+      "chromiumExecutableSha256": "adc1c21ceed5c2a67184766376fe816ac03e556cc0ca3f782e8212235fe05c6f",
+      "chromiumRevision": 1223,
+      "eslint": "10.8.0",
+      "exactLinuxCredit": true,
+      "exactWindowsCredit": false,
+      "next": "16.2.12",
+      "node": "24.18.0",
+      "npm": "11.16.0",
+      "platform": "linux-x64",
+      "playwright": "1.60.0",
+      "typescript": "5.9.3"
+    },
+    "smokes": {
+      "turbopack": {
+        "assertions": 55,
+        "passedAssertions": 55,
+        "results": 16,
+        "sourceImmutable": true,
+        "status": "PASS",
+        "uniqueAssertions": 55,
+        "uniqueResults": 16
+      },
+      "webpack": {
+        "assertions": 55,
+        "passedAssertions": 55,
+        "results": 16,
+        "sourceImmutable": true,
+        "status": "PASS",
+        "uniqueAssertions": 55,
+        "uniqueResults": 16
+      }
+    },
+    "source": {
+      "aggregateSha256": "edb1ffc1e976e04e8d7736dec69bf5429845f09d76ef4f3a1ef004cb2f1acda0",
+      "byteLength": 162612652,
+      "fileCount": 5990,
+      "manifestSha256": "9c18f3816fc4fcdbd50ef473ba62cbde6a70acda18bd1d60d4152b26dc1c48df"
+    },
+    "status": "PASS_LOCAL_EXACT_LINUX_CURRENT_BYTE_RELEASE",
+    "truthBoundary": {
+      "LIVE": false,
+      "customerCredit": false,
+      "globalDecision": "NO_GO",
+      "independentReviewCredit": false,
+      "paidSaleCredit": false,
+      "productionApproved": false,
+      "providerRightsCredit": false,
+      "saleEnabled": false,
+      "stagingCredit": false,
+      "worldClassProven": false
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P24_ACTION_REQUIRED_TYPESCRIPT_WORKER_OUTPUT_SINGLE_WRITER_NEXT_ENV_AND_EXACT_LINUX_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p25.parent-release-evidence-binding.v1"
+}

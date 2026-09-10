@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "velmere.pass21.rls-table-classification.v1",
+  "truthBoundary": "Classification closes ambiguity only. It is not a real Postgres policy or tenant-isolation proof. Tables marked policy-required block staging until explicit policies and multi-user tests pass.",
+  "sourceAuditSha256": "d841a9dee953150da77be7908eb8af473775500e81a6d29b029cd4d8f4716796",
+  "tables": [
+    {
+      "table": "instrument_identity_snapshots",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "provider_evidence_ledgers",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "provider_evidence_refresh_targets",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "provider_evidence_snapshots",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "provider_health_observations",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "provider_health_snapshots",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_account_supabase_subject_bindings",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_admin_roles",
+      "classification": "OPERATOR_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authorized operator role with auditable server claim",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_admin_sessions",
+      "classification": "OPERATOR_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authorized operator role with auditable server claim",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_angel_memories",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_audit_intake_cases",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_audit_logs",
+      "classification": "OPERATOR_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authorized operator role with auditable server claim",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_audit_pdf_token_consumptions",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_audit_report_snapshots",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_customer_artifact_pdf_blobs",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_customer_artifact_snapshots",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_fulfilment_outbox_recovery_actions",
+      "classification": "OPERATOR_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authorized operator role with auditable server claim",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_fulfilment_provider_sync_queue",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_fulfilment_provider_sync_runs",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_fulfilment_provider_sync_worker_lock",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_fulfilment_retry_queue",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_mutation_receipts",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_order_drafts",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_order_events",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_order_items",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_order_state_events",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_orders",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_overlay_qa_receipts",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_payment_event_watermarks",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_payment_runtime_evidence",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_product_brain_reviews",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_product_variants",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_provider_contracts",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_provider_sandbox_runs",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_provider_snapshots",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_runtime_bridge_evidence_runs",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_runtime_bridge_gate_results",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_source_receipts",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_stripe_webhook_dead_letter_actions",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_stripe_webhook_effects",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_stripe_webhook_events",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_stripe_webhook_reconciliation_runs",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    },
+    {
+      "table": "velmere_support_handoff_event_ledger",
+      "classification": "OPERATOR_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authorized operator role with auditable server claim",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_vlm_audit_human_queue",
+      "classification": "OPERATOR_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authorized operator role with auditable server claim",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_vlm_paid_entitlements",
+      "classification": "OWNER_POLICY_REQUIRED_BEFORE_STAGING",
+      "intendedAccess": "authenticated owner through canonical subject/account binding",
+      "explicitPolicyPresent": false,
+      "blocksStaging": true
+    },
+    {
+      "table": "velmere_write_rate_limit_events",
+      "classification": "SERVICE_ROLE_ONLY_DEFAULT_DENY",
+      "intendedAccess": "server service role after endpoint authorization",
+      "explicitPolicyPresent": false,
+      "blocksStaging": false
+    }
+  ]
+}

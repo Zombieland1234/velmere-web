@@ -1,0 +1,278 @@
+{
+  "schemaVersion": "velmere.pass36.a102r42.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "parentDescendantManifestDigestSha256": "92672a889d2a98723486e3ad3071e93d84bc3fb45b55ceb8111eaea388fbf8a6",
+  "generatedAt": "2026-08-01T23:05:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A102R42_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_LOCAL_ONLY_NO_FORMAL_PASS_CREDIT",
+  "physicalPlatform": "win32",
+  "posixFilesystemPhysicallyTested": false,
+  "payload": {
+    "fileCount": 5580,
+    "byteLength": 129131692,
+    "pathSetSha256": "0ea8e4b05ace21bcc42efbfaa17ed759f3e4a45f75a58ce778611dfd40076c4e",
+    "aggregateSha256": "0a4fd03394b953dbfe7e0395623db268951ee6e67362a614e3e5b0e5f4b3e6e8"
+  },
+  "staticBindings": {
+    "stateSha256": "238ed9417fe3f482d160516d009d156db347ae85f81cce207d1cdce2d40878c6",
+    "completionProgramSha256": "efed7963ca5da5697c1bebcb52d2b6acd4978d417039106d27d916c29107196f",
+    "sourceModePolicySha256": "214668fd692273c89ca995ac8225b72741e4fbfa1596144d743e26047b0784ca",
+    "sourceModeMigrationSha256": "ff253e70d4d123768cea172368ea3b1142ce92892f84cceb6fff182d331690ba",
+    "approvedChangeLedgerSha256": "5b7a19ebbd7b83f5a41d30f7de75b606378014c1c21e696e2e66a2c05d42aeea",
+    "historicalSparseEdgeLedgerSha256": "4d0f41b779c30b8ff40f4c13e8138a521fbc08fa9a7734ffc6ec6655a0de3754",
+    "currentSourceAuthorityMigrationSha256": "b304f47ff51077ff4b40d4209c5823d40876c3c82a9f950028cdedf10aecb4e0",
+    "failureFinalizationMigrationSha256": "e3bebf2dfa605bce3e6c41eb72d386082c4c95ba05a8518463868eb4b3f45335",
+    "frozenRegressionMigrationSha256": "931b404b6218a60bdee8665261cd42c63df35423648f118d709cbc9d84400a48",
+    "a80r1ReceiptMigrationSha256": "6c3cee663988fb60c07617bb55e4234e517e208152eda6546dfb8c046325a3ff",
+    "packageBoundaryMigrationSha256": "1be998864fe4469e6e010b97d753d166e4b3759c03aa13c89261e010e17d97b6",
+    "a42CriticalRebaselineSha256": "41a9563fc178cd52b60f0994bd2f115ee9df8e457562b674bf4bfbce34254e2c",
+    "a78LockfileMigrationSha256": "025fae48af9e342e00fb351362994415778896b59e89d1d4290d194bacbc349a",
+    "descendantVerifierMigrationSha256": "9d6f26673d9fcfd67112822c8496a4be6e31fe4916031167593965f5e0cb8a41"
+  },
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a98PassCredit": false,
+    "a99PassCredit": false,
+    "a100PassCredit": false,
+    "a101PassCredit": false,
+    "a102PassCredit": false,
+    "a103PassCredit": false,
+    "a104PassCredit": false,
+    "a105PassCredit": false,
+    "a106PassCredit": false,
+    "a107PassCredit": false,
+    "a108PassCredit": false,
+    "a109PassCredit": false,
+    "a110PassCredit": false,
+    "a111PassCredit": false,
+    "a112PassCredit": false,
+    "a113PassCredit": false,
+    "a114PassCredit": false,
+    "a115PassCredit": false,
+    "a116PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "a102r42CurrentSourceAuthorityChecks": 47,
+    "a102r42CurrentSourcePreflightScenarios": 60,
+    "a102r42DescendantVerifierChecks": 28,
+    "a102r42A80R1MechanismChecks": 48,
+    "a102r42PackageBoundaryChecks": 38,
+    "a102r42A42VerifierChecks": 54,
+    "a102r42RetainedParentFindings": 39,
+    "a102r42NewFindings": 15,
+    "a102r42A60SemanticCasesBefore": 16,
+    "a102r42A60SemanticCasesAfter": 34,
+    "a102r42FrozenRegressionStagesBefore": 28,
+    "a102r42FrozenRegressionStagesAfter": 29,
+    "a102r42A60EvidencePackagePathsRequired": 59,
+    "a102r42A60EvidencePackagePathsVerified": 0,
+    "browserRowsRequired": 56,
+    "browserScenarioChecksRequired": 57,
+    "screenshotsRequired": 29,
+    "popupTabsRequired": 4,
+    "exactWindowsBuildBrowserCredit": false,
+    "stagingCredit": false,
+    "externalCommandExecutionCredit": false,
+    "durableAccountOperationWorkflowsImplemented": 0,
+    "durableOpaqueCheckoutFlowImplemented": false,
+    "paidCheckoutStopSellActive": true,
+    "executablePathDenominator": 58,
+    "realBrowserRows": 0,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "formalOpenEntries": 31,
+    "a77r1ToA80r1": {
+      "verified": 0,
+      "required": 4
+    },
+    "exactChrome148PlaywrightRevision1223": {
+      "verified": 0,
+      "required": 1
+    },
+    "exactWindowsNode24_18_0Npm11_16_0": {
+      "verified": 0,
+      "required": 1
+    },
+    "a102ObservationWindows": {
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200
+    },
+    "stagingStages": {
+      "verified": 0,
+      "required": 10
+    },
+    "realRls": {
+      "verified": 0,
+      "required": 19
+    },
+    "stripeTestLifecycle": {
+      "verified": 0,
+      "required": 1
+    },
+    "providerRights": {
+      "verified": 0,
+      "required": 21
+    },
+    "legalDpoSignedDecisions": {
+      "verified": 0,
+      "required": 20
+    },
+    "officialAuditToolRuns": {
+      "verified": 0,
+      "required": 200
+    },
+    "crossAudits": {
+      "verified": 0,
+      "required": 20
+    },
+    "realCustomerPdfs": {
+      "verified": 0,
+      "required": 50
+    },
+    "shield": {
+      "verified": 0,
+      "required": 318
+    },
+    "shieldProMap": {
+      "verified": 0,
+      "required": 318
+    },
+    "realMarkets": {
+      "verified": 0,
+      "required": 583
+    },
+    "brainAngelRiskRealEval": {
+      "verified": 0,
+      "required": 300
+    },
+    "customerCohorts": {
+      "verified": 0,
+      "required": 2
+    },
+    "realStorageMutations": {
+      "verified": 0,
+      "required": 2,
+      "cases": [
+        "private_object_success_cleanup",
+        "private_object_failure_cleanup"
+      ]
+    },
+    "realKmsCalls": {
+      "verified": 0,
+      "required": 1
+    },
+    "realEmails": {
+      "verified": 0,
+      "required": 1,
+      "inboxProofCredited": false
+    },
+    "realCleanupConfirmations": {
+      "verified": 0,
+      "required": 2,
+      "cases": [
+        "success_path",
+        "failure_path"
+      ]
+    },
+    "independentAssurance": {
+      "verified": 0,
+      "required": 1
+    },
+    "contractCases": {
+      "verified": 0,
+      "required": 50
+    },
+    "sourceBytecodeReproduction": {
+      "verified": 0,
+      "required": 50
+    },
+    "realTierOutputs": {
+      "verified": 0,
+      "required": 150
+    },
+    "marketImpact": {
+      "verified": 0,
+      "required": 318
+    },
+    "whaleWatch": {
+      "verified": 0,
+      "required": 318
+    },
+    "alternateProviderProbes": {
+      "verified": 0,
+      "required": 10
+    },
+    "a114PostStagingRegression": {
+      "verified": 0,
+      "required": 1
+    },
+    "a115FinalSkuLegalClaimsClosure": {
+      "verified": 0,
+      "required": 1
+    },
+    "a116IndependentFinalRelease": {
+      "verified": 0,
+      "required": 1
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "2d3d648f90e0f48e9e99538499f1b58e602a2e8230f10e6a9d4f575522078662"
+}

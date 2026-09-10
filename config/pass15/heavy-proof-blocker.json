@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "velmere.pass15.heavy-proof-blocker.v1",
+  "generatedAt": "2026-07-20T06:50:29.942080Z",
+  "status": "BLOCKED_BY_MISSING_EXACT_RUNTIME_CACHE_BUNDLE",
+  "classification": "INFRASTRUCTURE_ARTIFACT_BLOCKER_NOT_CODE_FAILURE",
+  "observedEnvironment": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "platform": "linux-x64"
+  },
+  "requiredEnvironment": {
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "platformProofTarget": "linux-x64-glibc"
+  },
+  "missingPaths": [
+    "node_modules",
+    ".velmere/exact-runtime",
+    ".velmere/npm-cache"
+  ],
+  "deliberatelyNotExecuted": [
+    "npm ci",
+    "npm run typecheck",
+    "npm run lint",
+    "npm test",
+    "npm run build:webpack",
+    "npm run build:turbopack"
+  ],
+  "inheritedEvidence": {
+    "source": "PASS13 REBUILT full runtime/evidence bundle",
+    "scope": "clean install, semantic TypeScript, ESLint and tests for PASS13 SHA only",
+    "notValidAsFreshPass15Proof": true,
+    "lastBuildStatus": "FAIL_TIMEOUT"
+  },
+  "unlockCondition": "Pair PASS15 source with a verified exact Node 24.18.0/npm 11.16.0 runtime and lockfile-bound npm cache, then run one milestone gate and one release dual-build gate.",
+  "truthBoundary": "No PASS15 semantic typecheck/lint/test/build/browser/PDF claim is permitted until the unlock condition is met."
+}

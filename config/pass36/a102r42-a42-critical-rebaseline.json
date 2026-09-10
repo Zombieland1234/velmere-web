@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "velmere.pass36.a102r42.a42-critical-rebaseline.v1",
+  "revisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "recordedAt": "2026-08-01T23:05:00+02:00",
+  "recordedAtSemantics": "Authority metadata recording time only; not a source freeze, execution receipt or promotion timestamp.",
+  "criticalFileDenominator": 76,
+  "parentEvidencePath": "config/pass36/a102r41-a42-critical-rebaseline.json",
+  "parentEvidenceRawSha256": "a16f186e6154bd60b091459af70b69a87ed798567e2eb6b659197b35d2295ec7",
+  "parentEvidenceDigestSha256": "cf57d77d7ddef7a49a67625f5c0750144a40ad99b228c7baa5ccd0b515d4b520",
+  "retainedHistoricalRows": [
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "classification": "A102R41_AUTHORITY_SECURITY_AND_SOURCE_AUDIT_APPROVED_REBASELINE",
+      "parentByteLength": 142,
+      "parentSha256": "c88e3b922f4e37bf6e3685e44ebc4aa8abe5667d79221e4f5e6005eca0b92b84",
+      "currentByteLength": 130,
+      "currentSha256": "7b5d50279655b03595841a6790008f9ce7dd3abb51a479719711365f69b469b5"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "classification": "A102R41_AUTHORITY_SECURITY_AND_SOURCE_AUDIT_APPROVED_REBASELINE",
+      "parentByteLength": 64377,
+      "parentSha256": "a3cfa579679e415fad46ec73b96585f497eab0347e377fc83eef6992e12a6b01",
+      "currentByteLength": 66251,
+      "currentSha256": "266987e4dd7f7ca378b748aaef0e0cf32b687e1b9f543e6fa58cb17f4502ab91"
+    },
+    {
+      "path": "next.config.mjs",
+      "classification": "A102R41_AUTHORITY_SECURITY_AND_SOURCE_AUDIT_APPROVED_REBASELINE",
+      "parentByteLength": 3702,
+      "parentSha256": "e622f263651a7d6ee0f67535beb01013498e08661a32d7a2f49421e09cf96c11",
+      "currentByteLength": 4329,
+      "currentSha256": "72c128511f5c26b0e4f402a4c81f2a3ddc796766a7d990341d452ed5bc5a12e4"
+    },
+    {
+      "path": "package.json",
+      "classification": "A102R41_AUTHORITY_SECURITY_AND_SOURCE_AUDIT_APPROVED_REBASELINE",
+      "parentByteLength": 112338,
+      "parentSha256": "b9870ae40d621c19e1d46db68ae2f6029cfe28eecb8fb739e128d50d7be1ed7e",
+      "currentByteLength": 114539,
+      "currentSha256": "9a575a88fd935d38ddc79984a337a63b1aceb53bfa5675d09f5486cc7edd986a"
+    },
+    {
+      "path": "scripts/a44-source-integrity-audit.mjs",
+      "classification": "A102R41_AUTHORITY_SECURITY_AND_SOURCE_AUDIT_APPROVED_REBASELINE",
+      "parentByteLength": 7560,
+      "parentSha256": "e6ecc630587cf9f7720dc0b9ee6f6bea020d4114a475f006c151568f92d26eaf",
+      "currentByteLength": 7059,
+      "currentSha256": "50429f6cc4f7411aad37064b8062f622a93ed575252f0f9daf4a603a65be8326"
+    }
+  ],
+  "currentRebaselinedRows": [
+    {
+      "revisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "classification": "A102R42_AUTHORITY_A60_FAIL_CLOSED_APPROVED_REBASELINE",
+      "parentByteLength": 130,
+      "parentSha256": "7b5d50279655b03595841a6790008f9ce7dd3abb51a479719711365f69b469b5",
+      "currentByteLength": 126,
+      "currentSha256": "4520a5006832cea4906a8c886c8d1df8ec26c9be875140238243dc1cbba1ea14"
+    },
+    {
+      "revisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+      "path": "config/pass36/current-release-authority.json",
+      "classification": "A102R42_AUTHORITY_A60_FAIL_CLOSED_APPROVED_REBASELINE",
+      "parentByteLength": 66251,
+      "parentSha256": "266987e4dd7f7ca378b748aaef0e0cf32b687e1b9f543e6fa58cb17f4502ab91",
+      "currentByteLength": 67805,
+      "currentSha256": "f361d0f85f4b89a251ba9137af8e5296b94da4bec019289ae52566bcc29a6ad1"
+    },
+    {
+      "revisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+      "path": "package.json",
+      "classification": "A102R42_AUTHORITY_A60_FAIL_CLOSED_APPROVED_REBASELINE",
+      "parentByteLength": 114539,
+      "parentSha256": "9a575a88fd935d38ddc79984a337a63b1aceb53bfa5675d09f5486cc7edd986a",
+      "currentByteLength": 116415,
+      "currentSha256": "b2d11275d95c767229d537b7e165d20fa44c8ec09aec6753aabd18d4b97e1707"
+    }
+  ],
+  "rebaselinedRowCount": 8,
+  "rowDenominatorMigration": {
+    "reason": "Retain all five frozen R41 rows and add the three current R42 critical authority rows; repeated paths are separate revision-bound observations.",
+    "old": 5,
+    "new": 8,
+    "retained": 5,
+    "added": 3,
+    "removed": 0,
+    "scoreCredit": false
+  },
+  "verifierDenominatorMigration": {
+    "reason": "Retain all exact 38 R41 verification assertions, add the parent-evidence anchor, and add fifteen exact current-row assertions.",
+    "old": 38,
+    "new": 54,
+    "retainedAssertions": 38,
+    "addedAssertions": 16,
+    "removedAssertions": 0,
+    "scoreCredit": false
+  },
+  "verifierPath": "scripts/pass36/verify-a102r42-a42-critical-rebaseline.mjs",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "truthBoundary": "Historical rows bind frozen R41 evidence/package bytes; current rows bind exact R42 physical bytes and the unchanged 76-file contract. No build/browser, staging, LIVE or sale credit.",
+  "evidenceDigestSha256": "4ccadf320d98752a2b71ff63832514d5f1a0203211924449ceea037678c98fe7"
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "velmere.pass21.diff-from-pass20.v1",
+  "generatedAt": "2026-07-20T13:45:00.000Z",
+  "baseArtifact": {
+    "name": "VELMERE_PASS20_DATA_LICENSE_I18N_SAFE_SOURCE.zip",
+    "sha256": "473bfe9e7274b1256da2db01d3666107bf29197154930a4ad2f2bad2310a0ddd"
+  },
+  "scope": "Clean source/evidence diff excluding generated .velmere receipts, build outputs, verification, manifest and this diff report.",
+  "summary": {
+    "newFiles": 20,
+    "changedFiles": 17,
+    "removedFiles": 0,
+    "newBytes": 884373,
+    "changedCurrentBytes": 3558960,
+    "changedPreviousBytes": 3553499
+  },
+  "new": [
+    {
+      "path": "config/pass20/PASS20_DIFF_FROM_PASS19.json",
+      "bytes": 2188,
+      "sha256": "1437299f3b74b0cfeeb7ac7cf2d19b86c7bf8215f33dff7736746d6acc2de5a9"
+    },
+    {
+      "path": "config/pass20/package-payload-manifest.json",
+      "bytes": 794488,
+      "sha256": "106432606910e97e1f95b14c65bfe94b87764c8e2243f14ffe029da9b6f97107"
+    },
+    {
+      "path": "config/pass21/gate-policy.json",
+      "bytes": 6660,
+      "sha256": "7908d65ca5e045ab0dc4f9b5769567a690a79418a701c89afe2d650243cc0e62"
+    },
+    {
+      "path": "config/pass21/i18n-neutral-allowlist.json",
+      "bytes": 1035,
+      "sha256": "f56f14bda777c5af076de1b5e83a9d59d775b934c131b7a470bd6a71e4d31dac"
+    },
+    {
+      "path": "config/pass21/merchant-legal-profile.json",
+      "bytes": 1095,
+      "sha256": "1bb0e116408efd7803a604c9fd5f198ed8ea859de8741d25cf58411926560ac2"
+    },
+    {
+      "path": "config/pass21/provider-commercial-rights-registry.json",
+      "bytes": 13249,
+      "sha256": "13f98966563c683ede63d19c1f961f986b6229a33998e788a790ffcdb7445661"
+    },
+    {
+      "path": "config/pass21/rls-table-classification.json",
+      "bytes": 12769,
+      "sha256": "c61d4df37e24fdf4dcb4134cc4a105b2176402c1872497715007ad8962d697d8"
+    },
+    {
+      "path": "config/pass21/typescript-syntax-scan.json",
+      "bytes": 447,
+      "sha256": "b7d0a0585bada6b6ad19626fc3c1982a8a3351937244eaf4fcf0c5965135a462"
+    },
+    {
+      "path": "lib/legal/merchant-legal-registry.ts",
+      "bytes": 1783,
+      "sha256": "8a9ac55ed224b8b92f7177780bf55d6d448442ab6c75e167b97d7af356d2fa47"
+    },
+    {
+      "path": "scripts/pass21/audit-clean-source.mjs",
+      "bytes": 11971,
+      "sha256": "7fb03dd01c8d590db0703664cb6f039e241b4455ab1b14cf64ec61a260af7ad0"
+    },
+    {
+      "path": "scripts/pass21/audit-current-product-readiness.mjs",
+      "bytes": 6918,
+      "sha256": "faf067000f465cc045d2df15b43449878f653899d6ad0d93433c57e0ce0053ae"
+    },
+    {
+      "path": "scripts/pass21/audit-i18n-release-readiness.mjs",
+      "bytes": 6185,
+      "sha256": "f05700079b26857b73b398bb7866f48a28cc529b091813e3ef5d38c58d48df65"
+    },
+    {
+      "path": "scripts/pass21/audit-merchant-legal-readiness.mjs",
+      "bytes": 2363,
+      "sha256": "b8fb0a9c7dfbff8534eca77e9b604f747770540abb2ce86ee6b50316817ab116"
+    },
+    {
+      "path": "scripts/pass21/audit-provider-rights-registry.mjs",
+      "bytes": 2846,
+      "sha256": "3e0fa1fbfec73caf4e02a0f3cd15c2d39499702562ef64cd7583102ee8e2374c"
+    },
+    {
+      "path": "scripts/pass21/audit-runner-contract.mjs",
+      "bytes": 1938,
+      "sha256": "9bcf38c0712fbf27ff9453343c6cbcfe57936a3e2e8bcae74eade3300d3e18e4"
+    },
+    {
+      "path": "scripts/pass21/run-gate.mjs",
+      "bytes": 5617,
+      "sha256": "a8e2918a07c9b1c393be7440e01c657b2e4c516d4d6ee02e750aba870fa3382a"
+    },
+    {
+      "path": "scripts/pass21/run-typescript-syntax-scan.mjs",
+      "bytes": 2989,
+      "sha256": "29256f208b0b6d406d44830e96cb0323c54705b06b27725d0bcba8103789d19c"
+    },
+    {
+      "path": "scripts/pass21/test-provider-legal-rls-boundaries.mjs",
+      "bytes": 4511,
+      "sha256": "696d317e1e43e7985fa15c1d00e32c4ff98f7f5d39a55052848ea259d873d57c"
+    },
+    {
+      "path": "scripts/pass21/verify-rls-classification.mjs",
+      "bytes": 1717,
+      "sha256": "85b8dbea19d39d524aa91d1204944adac0a5912d705af11c6d2299e9806cedd4"
+    },
+    {
+      "path": "supabase/migrations/20260720000007_5006_pass21_provider_legal_rls_receipts.sql",
+      "bytes": 3604,
+      "sha256": "5c544436098d33903e067fc8940800cca0fba616f0a0597f59827837de52b845"
+    }
+  ],
+  "changed": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "before": {
+        "bytes": 1936,
+        "sha256": "42a0fad46787fe0ff18e43067939505f0734bf683b0ab99912bff07f6aebc3e7"
+      },
+      "after": {
+        "bytes": 622,
+        "sha256": "f4d420e0273963d260cbff6884f703e2a98f1f0c8a614c7d345351908b2f2f4f"
+      }
+    },
+    {
+      "path": "README.md",
+      "before": {
+        "bytes": 844,
+        "sha256": "8d12e2ce116a4a54fbb381d24415a16e5db85a2b85d067f0e27a8c396871262d"
+      },
+      "after": {
+        "bytes": 798,
+        "sha256": "d6f9378a0d50aed729ea006fa52535ffa1824a175fced2f01e75bc19a9e1fe43"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "before": {
+        "bytes": 771,
+        "sha256": "67a3eaebfb7517e9202e45321168d3cf639718287c7809a4d437a9153a6041d1"
+      },
+      "after": {
+        "bytes": 789,
+        "sha256": "16ca4f34b69e7bb2fdf6fc9d02319b5fcd8fd66e09ee16195decfac78c488ab4"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 448548,
+        "sha256": "d8cff423e661361fbf35fe7e2bb3af97d011746d5b529fedeb75a4216d55307a"
+      },
+      "after": {
+        "bytes": 448548,
+        "sha256": "641bc38aaaae3d882c8e997a73e14117f571d26fc9813c3041ed4e469d01224b"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1290,
+        "sha256": "1e34c837091695cacbfc151a12bb4138acb4d23953f641e619c03af3c119566c"
+      },
+      "after": {
+        "bytes": 1290,
+        "sha256": "6a472c7109a8da1513342c92811375c4f2dba0126271e0cb28b6770098338b02"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 438789,
+        "sha256": "7a82988e13e8c8b45f44ca143216e4f92228ed7fc7a894cce8da7b5a04627092"
+      },
+      "after": {
+        "bytes": 438789,
+        "sha256": "071b563373902030d4c1a908f0aaae1052fbb7034b3dd90968e4fdbdfe54737c"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1507,
+        "sha256": "84064a1b91c7bed3ef5e0a9569cd7a939b8db4e1bacb305c47ee1d0e4350dbd1"
+      },
+      "after": {
+        "bytes": 1507,
+        "sha256": "2335782517f9b67422b62bf523709b920e3f1e3ff47591d99ca5f648195b6de0"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-evidence-fixtures.json",
+      "before": {
+        "bytes": 1073770,
+        "sha256": "6831d350998005c751e5fe26ed00c251dc8046160eea8f3e3b5288f487cf6c56"
+      },
+      "after": {
+        "bytes": 1073770,
+        "sha256": "719827d1ba350d60e5c0f11c452358b111ddf68844c6a2a9494f999470fa7a6f"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 431556,
+        "sha256": "40db1cb7a2ad2e057f09930976f12956fd3861e38f26cb9b3f680085207bd87e"
+      },
+      "after": {
+        "bytes": 431556,
+        "sha256": "fb74db9dea7b160d618b8dc0dd0f7cae7bbc0621835ab378165c6753d7c8bf49"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1464,
+        "sha256": "7a5306df545e3cebb3455926e33f24dbf84a67eb5170e9934b62ef22405f7ae4"
+      },
+      "after": {
+        "bytes": 1464,
+        "sha256": "45ec28abb5b4a0e5f6fba7fe38a487def1ed197531a7e2fc256135c75450de3a"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-evidence-fixtures.json",
+      "before": {
+        "bytes": 718563,
+        "sha256": "c4a8d0756ee2f1570639b0bb6c1f795ab67f26a8ead7d472e140c300fb1e15cc"
+      },
+      "after": {
+        "bytes": 718563,
+        "sha256": "34e9148e125dce0aeaa3153b7729be90df2f17039662023b13d4995b4d143257"
+      }
+    },
+    {
+      "path": "lib/checkout/readiness.ts",
+      "before": {
+        "bytes": 3398,
+        "sha256": "cf7c152c864cb5cd9b1403cc40def7ce1759633a1c501d91209d4d0d01ef1e14"
+      },
+      "after": {
+        "bytes": 3947,
+        "sha256": "5ff97ca4c9765ea0c3f3d0be3caf79e9cf0bbbccdb45eba7bcab94716afde73d"
+      }
+    },
+    {
+      "path": "messages/de.json",
+      "before": {
+        "bytes": 140953,
+        "sha256": "e939fe81a83e16ced7f518e2bb5bb0f9c64e24a6c64ed8e70f8ee515016e5ccf"
+      },
+      "after": {
+        "bytes": 143746,
+        "sha256": "98664030b3d1d54eb4e1b063d3184420306b9cf8092f623662cf8e5574f5f95e"
+      }
+    },
+    {
+      "path": "messages/en.json",
+      "before": {
+        "bytes": 138192,
+        "sha256": "feb809c429dd5fdc09dfb9ef6f8433dd93d244cfa94d76b4e56e602802c32475"
+      },
+      "after": {
+        "bytes": 138714,
+        "sha256": "8c15978e26ec150f73869a021660f8bf61d29219ee0e6ae7ddcd758713d9dc72"
+      }
+    },
+    {
+      "path": "messages/pl.json",
+      "before": {
+        "bytes": 141606,
+        "sha256": "ebd116074dfc58732a7cd7ea66b14279ede5a4fcead79e4ee57e3af592570258"
+      },
+      "after": {
+        "bytes": 143965,
+        "sha256": "02a7e2d273578240ea474f599378acdf5f3b6d9147d817500c8de4e505c78f69"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "bytes": 8280,
+        "sha256": "ccddfeb28e670ee006fa55f2baef458f3786475adcdc6ec3047e669a4c3f16f4"
+      },
+      "after": {
+        "bytes": 8718,
+        "sha256": "f363169160b8c12f0081df9fbbb5632f40e22186baecd53c06c368f611c843c0"
+      }
+    },
+    {
+      "path": "scripts/worldclass/common-implementation-digest.mjs",
+      "before": {
+        "bytes": 2032,
+        "sha256": "b5a3123fdc1d793b5d7e27de3d01ebe9bda0f33030e333e139f879c730603df8"
+      },
+      "after": {
+        "bytes": 2174,
+        "sha256": "c718154cff3c9a2171e188ff71e472408f38b7fca582515e84ed0e654e7bfd28"
+      }
+    }
+  ],
+  "removed": [],
+  "truthBoundary": "PASS21 closes registry/classification/source contracts only. It does not grant provider rights, supply merchant identity, implement staging policies or prove LIVE behavior."
+}

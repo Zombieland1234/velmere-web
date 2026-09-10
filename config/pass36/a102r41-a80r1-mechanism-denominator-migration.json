@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.a80r1-mechanism-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R40_ACTION_REQUIRED_CURRENT_SOURCE_AUTHORITY_EXACT_BUILD_PREFLIGHT_AND_STALE_RELEASE_POINTER_RECONCILIATION_NO_LIVE_CREDIT",
+  "migrationPath": "config/pass36/a102r41-a80r1-mechanism-denominator-migration.json",
+  "oldDenominator": 35,
+  "newDenominator": 36,
+  "retainedAssertionCount": 35,
+  "addedAssertionIds": [
+    "mode-migration:omitted-current-shebang-and-test-denominator-collapse-rejected"
+  ],
+  "removedAssertionIds": [],
+  "reason": "Add a negative test proving that a newly observed shebang path omitted from the mode migration cannot pass; no existing assertion is removed.",
+  "verifierPath": "scripts/pass36/test-a102r41-a80r1-two-phase-release-controller.mjs",
+  "denominatorCollapseNegativeTest": true,
+  "scoreImprovementClaimed": false,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "migrationDigestSha256": "f7b09979ce4493663859bd26b2cef008ff69b59d1a214c15e09b0f50c62a0e46"
+}

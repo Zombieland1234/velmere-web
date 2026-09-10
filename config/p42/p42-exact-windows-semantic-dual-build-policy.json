@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "velmere.p42.exact-windows-semantic-dual-build-policy.v2",
+  "revision": "P42_V16_EXACT_WINDOWS_CURRENT_ROOT_SEMANTIC_DUAL_BUILD_V2",
+  "generatedAt": "2026-08-14T11:25:00.000Z",
+  "parentRoot": "R44P46",
+  "checkpoint": "P42",
+  "authoritySha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9",
+  "exactTarget": {
+    "os": "windows-2025",
+    "platform": "win32",
+    "arch": "x64",
+    "node": "v24.18.0",
+    "npm": "11.16.0"
+  },
+  "currentRootBindings": {
+    "packageJson": {
+      "path": "package.json",
+      "sha256": "fd254fbfef215cbfd93e0f5cb04a7e84864dea998c0cfce0fc0f9227fac372ec",
+      "byteLength": 135168
+    },
+    "packageLock": {
+      "path": "package-lock.json",
+      "sha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+      "byteLength": 354803
+    },
+    "authority": {
+      "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V16_FULL_TOPOLOGY_FREE_LEGAL_CURRENT_WORLD_CLASS_2026-08-14.txt",
+      "sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9",
+      "byteLength": 62609
+    },
+    "lifecyclePolicy": {
+      "path": "config/p42/p42-lifecycle-quarantine-policy.json",
+      "sha256": "0670df72876daf51811f58c9a083599e53c94d292ce7d27b8a2d85dbc4d60325",
+      "byteLength": 4912
+    },
+    "lifecycleAllowlist": {
+      "path": "config/p42/p42-lifecycle-execution-allowlist.json",
+      "sha256": "5396e8530e3812538c81647acdf220d7f60e5f250d3f28bfb42003e1fb935e40",
+      "byteLength": 9140
+    },
+    "actionPins": {
+      "path": "config/p42/p42-github-action-pins.json",
+      "sha256": "041c78a72f28f75ee81def59519941409cbdc764076886ed602de3dc05140e80",
+      "byteLength": 908
+    },
+    "workflow": {
+      "path": ".github/workflows/p42-exact-windows-semantic-dual-build.yml",
+      "sha256": "94b8ef5509c5e883c6e9616e95dd36900ddd7f6e58211645b19629775f6c56b4",
+      "byteLength": 1633
+    },
+    "runner": {
+      "path": "scripts/pass42/run-p42-exact-windows-semantic-dual-build.mjs",
+      "sha256": "de108793dea24bfe855cbfa98a1f7ebe28effec02f8a74f034c43cdda574d5ce",
+      "byteLength": 8242
+    },
+    "nativeProbe": {
+      "path": "scripts/pass42/verify-p42-native-platform-availability.mjs",
+      "sha256": "0977f96c4ef0d7ab554217a2c504fffb2676789c218f43e8f6df78ab941307b7",
+      "byteLength": 4976
+    },
+    "lifecycleVerifier": {
+      "path": "scripts/pass42/verify-p42-lifecycle-quarantine.py",
+      "sha256": "697711e05f15d6b1ae1cfd3451fa4237920a925963d3ab363248d5734f6f9103",
+      "byteLength": 20224
+    },
+    "policyBuilder": {
+      "path": "scripts/pass42/build-p42-semantic-dual-build-policy.py",
+      "sha256": "0f43a0216ac378c012541473331b5f45012697e0ecd0307916c0517632230f26",
+      "byteLength": 4040
+    }
+  },
+  "commands": {
+    "lifecycleQuarantine": [
+      "python",
+      "scripts/pass42/verify-p42-lifecycle-quarantine.py",
+      "--root",
+      ".",
+      "--output",
+      "p42-out/P42_EXACT_WINDOWS_LIFECYCLE_QUARANTINE_RECEIPT.json",
+      "--require-windows"
+    ],
+    "npmCi": [
+      "npm",
+      "ci",
+      "--ignore-scripts",
+      "--audit=false",
+      "--fund=false",
+      "--prefer-online",
+      "--loglevel=notice"
+    ],
+    "npmLs": [
+      "npm",
+      "ls",
+      "--all",
+      "--json"
+    ],
+    "nativeProbe": [
+      "node",
+      "scripts/pass42/verify-p42-native-platform-availability.mjs",
+      "--output",
+      "p42-out/P42_NATIVE_PLATFORM_AVAILABILITY.json"
+    ],
+    "typecheck": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "lint": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "webpack": [
+      "npm",
+      "run",
+      "build:webpack"
+    ],
+    "turbopack": [
+      "npm",
+      "run",
+      "build:turbopack"
+    ]
+  },
+  "forbiddenCommands": [
+    "npm run install:trusted-native",
+    "npm rebuild",
+    "npm ci without --ignore-scripts"
+  ],
+  "gates": {
+    "dependencyLifecycleExecutionAllowed": false,
+    "lifecycleQuarantinePassRequired": true,
+    "npmCiIgnoreScriptsRequired": true,
+    "nativePlatformProbePassRequired": true,
+    "typecheckLintDualBuildAllowedOnlyAfterPriorGates": true
+  },
+  "creditBoundary": {
+    "selfTest": "BRIDGE_CONTRACT_ONLY",
+    "normalPass": "EXACT_WINDOWS_CURRENT_ROOT_SEMANTIC_DUAL_BUILD_ONLY",
+    "browser": false,
+    "pdf": false,
+    "rights": false,
+    "sale": false,
+    "goInternal": false,
+    "goPaid": false,
+    "live": false,
+    "worldClass": false
+  },
+  "integritySha256": "3e7cd14df2e18895a22245fb7c024a41c6917e8a0a93456089f7ed017549704f"
+}

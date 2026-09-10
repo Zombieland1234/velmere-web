@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "velmere.pass35.a52.kill-switch-incident-customer-communication-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A52_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A51_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_ACCEPTANCE",
+  "requiredA51Decision": "VERIFIED_STAGING_BACKUP_RESTORE_ROLLBACK_PROVIDER_FAILOVER",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_THIS_USES_DISPOSABLE_STAGING_INCIDENT_KILL_SWITCH_AND_CUSTOMER_COMMUNICATION_ONLY",
+  "requiredEnvironment": [
+    "VELMERE_A52_STAGING_BASE_URL",
+    "VELMERE_A52_INCIDENT_CONTROL_URL",
+    "VELMERE_A52_INCIDENT_STATUS_URL",
+    "VELMERE_A52_ALERT_DELIVERY_URL",
+    "VELMERE_A52_ONCALL_ACK_URL",
+    "VELMERE_A52_CUSTOMER_COMM_URL",
+    "VELMERE_A52_SERVICE_HEALTH_URL",
+    "VELMERE_A52_INCIDENT_BEARER_SECRET",
+    "VELMERE_A52_ALERT_BEARER_SECRET",
+    "VELMERE_A52_COMM_BEARER_SECRET",
+    "VELMERE_A52_PROJECT_CLASS",
+    "VELMERE_A52_CONFIRM"
+  ],
+  "requiredChecks": [
+    "source-fingerprint-before",
+    "precondition-a51-verified",
+    "runtime-exact",
+    "confirmation-token",
+    "staging-url-safety",
+    "bridge-url-safety",
+    "secret-boundary",
+    "baseline-service-healthy",
+    "incident-opened",
+    "incident-identity-bound",
+    "alert-delivered",
+    "oncall-acknowledged",
+    "acknowledgement-sla-met",
+    "kill-switch-activated",
+    "paid-delivery-blocked",
+    "service-safe-mode",
+    "customer-notice-created",
+    "customer-notice-delivered",
+    "customer-notice-content-bounded",
+    "customer-notice-truthful",
+    "playbook-actions-complete",
+    "evidence-attached",
+    "recovery-requested",
+    "service-recovered",
+    "kill-switch-released",
+    "resolution-message-delivered",
+    "incident-closed",
+    "postcondition-healthy",
+    "source-fingerprint-unchanged",
+    "evidence-redaction"
+  ],
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "acknowledgementSlaSeconds": 300,
+    "minimumPlaybookActions": 5,
+    "maximumCustomerMessageChars": 1200,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "stagingSafety": {
+    "httpsRequired": true,
+    "localhostAllowedOnlyInFixture": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "staging",
+      "preview",
+      "vercel.app",
+      "pages.dev",
+      "netlify.app"
+    ]
+  },
+  "bridgeSafety": {
+    "minimumSecretLength": 32,
+    "projectClass": "disposable_staging"
+  },
+  "incidentSafety": {
+    "safeModes": [
+      "degraded_safe",
+      "read_only_safe"
+    ],
+    "healthyModes": [
+      "healthy",
+      "recovered"
+    ],
+    "requiredPlaybookActions": [
+      "triage",
+      "containment",
+      "customer_notice",
+      "recovery_validation",
+      "closure_review"
+    ]
+  },
+  "truthBoundary": "A52 proves only one bounded disposable-staging incident lifecycle: alert delivery, on-call acknowledgement, incident kill switch activation, paid-delivery block, safe degraded mode, two customer communications, required playbook actions, recovery, kill-switch release and closure. It does not prove production incident response, customer comprehension, legal sufficiency, real SLA, zero data loss, independent assurance or sale readiness.",
+  "integrity": {
+    "a51ContractSha256": "f2bcc2f74ede786bbf30124f9c2f4910ac632b1e3b330a2a3b967e7ad0e0f382",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

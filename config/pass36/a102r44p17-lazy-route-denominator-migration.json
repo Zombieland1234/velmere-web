@@ -1,0 +1,86 @@
+{
+  "addedRoutes": [],
+  "changedFields": [
+    "handlerSha256",
+    "handlerBytes"
+  ],
+  "changedRoutes": [
+    "app/api/admin/security/audit-messages/operator-actions/route.ts"
+  ],
+  "currentManifest": {
+    "byteLength": 10270,
+    "checks": 176,
+    "routes": 16,
+    "sha256": "86c98f75a6395f14f3ab0f9728cf63cf031173e74089d47965e2f134eb5bb3db"
+  },
+  "currentProfile": {
+    "byteLength": 22406,
+    "routes": 16,
+    "sha256": "776e8bfe87efc746b35c69736a419966b529d7ebf2a63188aa14622b14cd0355"
+  },
+  "currentRow": {
+    "beforeEagerBytes": 1165212,
+    "beforeEagerFiles": 94,
+    "handlerBytes": 8423,
+    "handlerModule": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+    "handlerSha256": "f7d3720c252a26fd8d4eee77b34696e105ce00b1bceeef466c41b28f096cfdbf",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "route": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";"
+    ],
+    "shellBytes": 671,
+    "shellSha256": "2f5473db1fe1c8833fad09443abdf95b4184b94425cbc6d2670c0e97aeff313c"
+  },
+  "denominatorCollapse": false,
+  "manifestPath": "config/pass15/lazy-route-shell-manifest.json",
+  "parentManifest": {
+    "byteLength": 10270,
+    "checks": 176,
+    "routes": 16,
+    "sha256": "d68300e454facd69bc88a0bdc44361b98b06c9ddc2a896c8be0ce6f3f1fb8293"
+  },
+  "parentManifestPath": "_velmere/PASS36_A102R44P16_SOURCE_ONLY_MANIFEST.json",
+  "parentProfile": {
+    "byteLength": 22366,
+    "routes": 16,
+    "sha256": "a10bcdcc371eebeeb33ef40a36fac3b5917f3f2b50a51b2ca8f390e07032c790"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "parentRow": {
+    "beforeEagerBytes": 1165212,
+    "beforeEagerFiles": 94,
+    "handlerBytes": 8310,
+    "handlerModule": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+    "handlerSha256": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44",
+    "methods": [
+      "GET",
+      "POST"
+    ],
+    "route": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+    "routeConfig": [
+      "export const runtime = \"nodejs\";",
+      "export const dynamic = \"force-dynamic\";"
+    ],
+    "shellBytes": 671,
+    "shellSha256": "2f5473db1fe1c8833fad09443abdf95b4184b94425cbc6d2670c0e97aeff313c"
+  },
+  "profileChange": {
+    "current": 0,
+    "field": "wrappedRouteSummary.supersededDirectShellsRemoved",
+    "parent": "ABSENT"
+  },
+  "profilePath": "config/pass15/lazy-build-surface-profile.json",
+  "reason": "R44P17 changes one lazy handler for the current mark_analysis action while retaining GET/POST methods and all 16 lazy routes. The manifest is rebound to the current handler bytes without reducing the 176-check denominator.",
+  "removedRoutes": [],
+  "removedTests": 0,
+  "retainedChecks": 176,
+  "retainedRoutes": 16,
+  "revisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p17.lazy-route-denominator-migration.v1",
+  "truthBoundary": "Current-source lazy route integrity only; no LIVE, sale, customer, provider-rights, staging, PDF delivery or exact Windows credit."
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "velmere.pass36.a102r43.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T02:30:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "BOUNDED_FINAL_UI_UX_PERFORMANCE_HARDENING_BEFORE_CLEANUP",
+  "statePath": "config/pass36/a102r43-action-required-current-state.json",
+  "approvedChangeLedgerPath": "config/pass36/a102r43-approved-current-source-changes.json",
+  "descendantManifestPath": "config/pass36/a102r43-current-root-descendant-manifest.json",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "localUiWork": {
+    "closedFindings": 8,
+    "roadmapOnlyFindings": 10,
+    "physicalNavigationTransitions": 20,
+    "physicalMobileLocaleProductRoutes": 9,
+    "finalByteBrowserCredit": false,
+    "faultEmulationCredit": false,
+    "cleanupStarted": false
+  },
+  "externalOrToolBlockedWork": [
+    {"id":"UI-BLOCK-503","status":"BLOCKED_TOOL_POLICY","exactMissingInput":"A permitted disposable local browser origin after proxy fault injection","passCriteria":"Physical 503 test reaches bounded unavailable state with loader removed and retry available","whatRemainsForbidden":"No claim of 503 browser closure or final-byte A79 credit."},
+    {"id":"UI-BLOCK-FINAL-BYTES","status":"BLOCKED_BROWSER_SESSION_FINALIZED","exactMissingInput":"A new authorized physical browser session on the frozen R43 bytes","passCriteria":"Repeat required routes/stress/reduced-motion/slow-network/Back-Forward/rapid-click checks on exact digest","whatRemainsForbidden":"No final-byte browser, production, LIVE or sale credit."}
+  ],
+  "remainingCheckpointEstimate": {"minimum":11,"mostLikely":23,"withRevisionsAndRetests":39},
+  "nextSafeAction": "Run FINAL CLEANUP + CLEAN HANDOFF PACK only after accepting the recorded no-credit browser blockers; do not delete retained UI receipts or representative screenshots."
+}

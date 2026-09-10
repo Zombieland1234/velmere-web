@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "velmere.pass35.a22-severity-triage-policy.v1",
+  "passId": "PASS35_A22",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "severityOrder": [
+    "SUPPRESSED",
+    "INFORMATIONAL",
+    "LOW",
+    "MEDIUM",
+    "HIGH",
+    "CRITICAL"
+  ],
+  "scoreThresholds": {
+    "INFORMATIONAL": 0,
+    "LOW": 15,
+    "MEDIUM": 35,
+    "HIGH": 60,
+    "CRITICAL": 80
+  },
+  "raterProfiles": [
+    {
+      "id": "EXPLOITABILITY_RATER",
+      "weights": {
+        "impact": 25,
+        "assetScale": 14,
+        "blastRadius": 12,
+        "exposure": 18,
+        "exploitability": 18,
+        "persistence": 5,
+        "attackChain": 8
+      }
+    },
+    {
+      "id": "IMPACT_RATER",
+      "weights": {
+        "impact": 30,
+        "assetScale": 20,
+        "blastRadius": 20,
+        "exposure": 10,
+        "exploitability": 8,
+        "persistence": 7,
+        "attackChain": 5
+      }
+    }
+  ],
+  "featureValues": {
+    "impact": {
+      "NONE": 0,
+      "PRIVACY": 0.32,
+      "AVAILABILITY": 0.5,
+      "INTEGRITY": 0.62,
+      "ARBITRARY_CODE": 0.88,
+      "GOVERNANCE": 0.94,
+      "FUNDS": 1
+    },
+    "assetScale": {
+      "UNKNOWN": 0,
+      "LOW": 0.18,
+      "MEDIUM": 0.48,
+      "HIGH": 0.78,
+      "SYSTEMIC": 1
+    },
+    "blastRadius": {
+      "SINGLE_USER": 0.16,
+      "MULTI_USER": 0.48,
+      "PROTOCOL_WIDE": 0.82,
+      "CROSS_PROTOCOL": 1
+    },
+    "exposure": {
+      "INTERNAL": 0.12,
+      "PRIVILEGED": 0.4,
+      "AUTHENTICATED": 0.58,
+      "PUBLIC": 1
+    },
+    "exploitability": {
+      "THEORETICAL": 0.12,
+      "HIGH_COMPLEXITY": 0.38,
+      "MODERATE": 0.66,
+      "LOW_COMPLEXITY": 1
+    },
+    "persistence": {
+      "TRANSIENT": 0.08,
+      "PERSISTENT": 0.58,
+      "IRREVERSIBLE": 1
+    },
+    "attackChain": {
+      "NONE": 0,
+      "TWO_STEP": 0.5,
+      "THREE_PLUS_STEP": 1
+    }
+  },
+  "confidence": {
+    "base": 0.32,
+    "perEvidenceFamily": 0.11,
+    "reachablePathBonus": 0.16,
+    "exactSubjectBindingBonus": 0.1,
+    "completePrerequisiteBonus": 0.08,
+    "unknownPathCap": 0.65,
+    "singleEvidenceCap": 0.7,
+    "conflictedEvidenceCap": 0.55,
+    "raterDisagreementCap": 0.6,
+    "maximum": 0.97
+  },
+  "hardCaps": {
+    "unreachablePath": "SUPPRESSED",
+    "unknownPathMaximum": "HIGH",
+    "missingAssetMaximum": "MEDIUM",
+    "missingExactSubjectBindingMaximum": "MEDIUM",
+    "singleEvidenceFamilyMaximum": "HIGH",
+    "conflictedEvidenceMaximum": "HIGH",
+    "criticalRequiresReachablePath": true,
+    "criticalRequiresHighOrSystemicAsset": true,
+    "criticalRequiresProtocolOrCrossProtocolBlast": true,
+    "criticalRequiresAtLeastEvidenceFamilies": 2,
+    "criticalRequiresExactSubjectBinding": true
+  },
+  "benchmark": {
+    "families": [
+      {
+        "id": "PUBLIC_PROTOCOL_DRAIN_CRITICAL",
+        "expectedSeverity": "CRITICAL"
+      },
+      {
+        "id": "PUBLIC_GOVERNANCE_TAKEOVER_CRITICAL",
+        "expectedSeverity": "CRITICAL"
+      },
+      {
+        "id": "PRIVILEGED_UPGRADE_HIGH",
+        "expectedSeverity": "HIGH"
+      },
+      {
+        "id": "CROSS_PROTOCOL_ORACLE_CRITICAL",
+        "expectedSeverity": "CRITICAL"
+      },
+      {
+        "id": "PROTOCOL_WIDE_DOS_HIGH",
+        "expectedSeverity": "HIGH"
+      },
+      {
+        "id": "USER_INTERACTION_LOSS_MEDIUM",
+        "expectedSeverity": "MEDIUM"
+      },
+      {
+        "id": "LOW_VALUE_SINGLE_USER_LOW",
+        "expectedSeverity": "LOW"
+      },
+      {
+        "id": "UNKNOWN_PATH_CAPPED_HIGH",
+        "expectedSeverity": "HIGH"
+      },
+      {
+        "id": "UNREACHABLE_SUPPRESSED",
+        "expectedSeverity": "SUPPRESSED"
+      },
+      {
+        "id": "MISSING_ASSET_CAPPED_MEDIUM",
+        "expectedSeverity": "MEDIUM"
+      },
+      {
+        "id": "CONFLICTED_EVIDENCE_HIGH_CAP",
+        "expectedSeverity": "HIGH"
+      },
+      {
+        "id": "THREE_STEP_ATTACK_CHAIN_CRITICAL",
+        "expectedSeverity": "CRITICAL"
+      }
+    ],
+    "variantsPerFamily": 8,
+    "expectedCases": 192,
+    "expectedVulnerable": 96,
+    "expectedRemediated": 96,
+    "expectedDevelopment": 72,
+    "expectedValidation": 48,
+    "expectedFrozen": 72,
+    "mutationTypes": [
+      "reorder_evidence",
+      "duplicate_evidence",
+      "reorder_assets",
+      "add_irrelevant_limitation",
+      "rename_nonsemantic_title",
+      "normalize_identifier_case",
+      "change_observed_at",
+      "duplicate_attack_edge",
+      "add_nonmaterial_component",
+      "tamper_integrity",
+      "remove_material_evidence",
+      "paired_security_flip"
+    ],
+    "expectedMutations": 2304
+  },
+  "thresholds": {
+    "minimumFrozenSeverityAccuracy": 0.95,
+    "minimumFrozenSuppressionAccuracy": 1,
+    "minimumMutationKillRate": 0.99,
+    "minimumRaterExactAgreement": 0.75,
+    "minimumWeightedKappa": 0.8,
+    "maximumFalseCriticalRemediated": 0,
+    "maximumUnjustifiedCritical": 0
+  },
+  "hardStops": {
+    "syntheticBenchmarkMayUnlockPaid": false,
+    "localTriageMayClaimExploitabilityProof": false,
+    "localTriageMayReplaceQualifiedReview": false,
+    "localTriageMayEnableFullAuditClaim": false,
+    "localTriageMayClaimRealInterRaterAgreement": false,
+    "localTriageMayClaimCustomerValue": false
+  },
+  "truthBoundary": "A22 implements deterministic evidence-bound severity triage, uncertainty caps, blast-radius classification and attack-chain aggregation for a declared local scope. Its two frozen scoring profiles and generated vulnerable/remediated corpus test implementation consistency only. They are not independent human raters, do not prove exploitability on real protocols, and cannot unlock paid delivery, a full-audit claim, LIVE, customer value or world-class assurance."
+}

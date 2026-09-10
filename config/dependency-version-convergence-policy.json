@@ -1,0 +1,716 @@
+{
+  "schemaVersion": "velmere.dependency-version-convergence-policy.v2",
+  "generatedAt": "2026-07-17T13:14:12.281Z",
+  "source": {
+    "packageJsonSha256": "b39e56e6b326e2345b648cc15883cc460a0f0cdbdfb4f2ce9f2c6157ca64c5c9",
+    "packageLockSha256": "1e7acc6b4c854051231c664345722c0c1f9f148aae11cf485f2a0239d1db76de",
+    "licenseInventorySha256": "b940b106d49be19994b5e3696d3467ca28ba1454c27663ffb9e078691bdc0795"
+  },
+  "rules": {
+    "sourceHashesVerifiedAtRuntime": true,
+    "duplicateSetDerivedFromCurrentLockfile": true,
+    "baselineDuplicateNameSetFrozen": true,
+    "newDuplicateNameBlocksExactPromotion": true,
+    "newVersionOnExistingDuplicateBlocksExactPromotion": true,
+    "directDuplicateRequiresConvergencePlan": true,
+    "criticalFamilyRequiresSecurityCompatibilityReview": true,
+    "blindOverridesForbidden": true
+  },
+  "summary": {
+    "duplicateVersionNameCount": 40,
+    "directDuplicateNameCount": 4,
+    "criticalFamilyCount": 10,
+    "p1Count": 11,
+    "p2Count": 29,
+    "productionPromotionAllowedForCurrentBaseline": true
+  },
+  "records": [
+    {
+      "name": "@noble/curves",
+      "versions": [
+        "1.8.0",
+        "1.9.1",
+        "1.9.7"
+      ],
+      "count": 3,
+      "rootVersion": "1.9.1",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "1.9.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "eslint-visitor-keys",
+      "versions": [
+        "3.4.3",
+        "4.2.1",
+        "5.0.1"
+      ],
+      "count": 3,
+      "rootVersion": "4.2.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "4.2.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "ox",
+      "versions": [
+        "0.14.30",
+        "0.6.9",
+        "0.9.3"
+      ],
+      "count": 3,
+      "rootVersion": "0.14.30",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "0.14.30",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "semver",
+      "versions": [
+        "6.3.1",
+        "7.7.2",
+        "7.8.3"
+      ],
+      "count": 3,
+      "rootVersion": "6.3.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "6.3.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "zustand",
+      "versions": [
+        "4.5.7",
+        "5.0.0",
+        "5.0.3"
+      ],
+      "count": 3,
+      "rootVersion": "4.5.7",
+      "directDependency": true,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-release",
+      "releasePolicy": "no-new-version-and-convergence-evaluation-required-before-major-release",
+      "convergenceTarget": "4.5.7",
+      "convergenceStrategy": "preserve-root-api-and-test-transitive-upgrades",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@emnapi/runtime",
+      "versions": [
+        "1.10.0",
+        "1.11.0"
+      ],
+      "count": 2,
+      "rootVersion": "1.11.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "1.11.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@noble/hashes",
+      "versions": [
+        "1.7.0",
+        "1.8.0"
+      ],
+      "count": 2,
+      "rootVersion": "1.8.0",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "1.8.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@walletconnect/core",
+      "versions": [
+        "2.23.10",
+        "2.23.7"
+      ],
+      "count": 2,
+      "rootVersion": "2.23.10",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "2.23.10",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@walletconnect/sign-client",
+      "versions": [
+        "2.23.10",
+        "2.23.7"
+      ],
+      "count": 2,
+      "rootVersion": "2.23.10",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "2.23.10",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@walletconnect/types",
+      "versions": [
+        "2.23.10",
+        "2.23.7"
+      ],
+      "count": 2,
+      "rootVersion": "2.23.10",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "2.23.10",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@walletconnect/universal-provider",
+      "versions": [
+        "2.23.10",
+        "2.23.7"
+      ],
+      "count": 2,
+      "rootVersion": "2.23.10",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "2.23.10",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "@walletconnect/utils",
+      "versions": [
+        "2.23.10",
+        "2.23.7"
+      ],
+      "count": 2,
+      "rootVersion": "2.23.10",
+      "directDependency": false,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-security",
+      "releasePolicy": "no-new-version-with-security-compatibility-review",
+      "convergenceTarget": "2.23.10",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "abitype",
+      "versions": [
+        "1.0.6",
+        "1.2.3"
+      ],
+      "count": 2,
+      "rootVersion": "1.2.3",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "1.2.3",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "balanced-match",
+      "versions": [
+        "1.0.2",
+        "4.0.4"
+      ],
+      "count": 2,
+      "rootVersion": "1.0.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "1.0.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "brace-expansion",
+      "versions": [
+        "1.1.15",
+        "5.0.6"
+      ],
+      "count": 2,
+      "rootVersion": "1.1.15",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "1.1.15",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "chalk",
+      "versions": [
+        "4.1.2",
+        "5.6.2"
+      ],
+      "count": 2,
+      "rootVersion": "4.1.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "4.1.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "chokidar",
+      "versions": [
+        "3.6.0",
+        "5.0.0"
+      ],
+      "count": 2,
+      "rootVersion": "3.6.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "3.6.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "clsx",
+      "versions": [
+        "1.2.1",
+        "2.1.1"
+      ],
+      "count": 2,
+      "rootVersion": "2.1.1",
+      "directDependency": true,
+      "criticalFamily": false,
+      "priority": "P1",
+      "owner": "platform-release",
+      "releasePolicy": "no-new-version-and-convergence-evaluation-required-before-major-release",
+      "convergenceTarget": "2.1.1",
+      "convergenceStrategy": "preserve-root-api-and-test-transitive-upgrades",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "commander",
+      "versions": [
+        "14.0.2",
+        "4.1.1"
+      ],
+      "count": 2,
+      "rootVersion": "4.1.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "4.1.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "debug",
+      "versions": [
+        "3.2.7",
+        "4.4.3"
+      ],
+      "count": 2,
+      "rootVersion": "4.4.3",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "4.4.3",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "emoji-regex",
+      "versions": [
+        "8.0.0",
+        "9.2.2"
+      ],
+      "count": 2,
+      "rootVersion": "9.2.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "9.2.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "es-toolkit",
+      "versions": [
+        "1.44.0",
+        "1.45.1"
+      ],
+      "count": 2,
+      "rootVersion": "1.45.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "1.45.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "fast-glob",
+      "versions": [
+        "3.3.1",
+        "3.3.3"
+      ],
+      "count": 2,
+      "rootVersion": "3.3.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "3.3.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "find-up",
+      "versions": [
+        "4.1.0",
+        "5.0.0"
+      ],
+      "count": 2,
+      "rootVersion": "5.0.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "5.0.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "fsevents",
+      "versions": [
+        "2.3.2",
+        "2.3.3"
+      ],
+      "count": 2,
+      "rootVersion": "2.3.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "2.3.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "glob-parent",
+      "versions": [
+        "5.1.2",
+        "6.0.2"
+      ],
+      "count": 2,
+      "rootVersion": "6.0.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "6.0.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "globals",
+      "versions": [
+        "14.0.0",
+        "16.4.0"
+      ],
+      "count": 2,
+      "rootVersion": "14.0.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "14.0.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "ignore",
+      "versions": [
+        "5.3.2",
+        "7.0.5"
+      ],
+      "count": 2,
+      "rootVersion": "5.3.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "5.3.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "json5",
+      "versions": [
+        "1.0.2",
+        "2.2.3"
+      ],
+      "count": 2,
+      "rootVersion": "2.2.3",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "2.2.3",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "locate-path",
+      "versions": [
+        "5.0.0",
+        "6.0.0"
+      ],
+      "count": 2,
+      "rootVersion": "6.0.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "6.0.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "lru-cache",
+      "versions": [
+        "11.5.2",
+        "5.1.1"
+      ],
+      "count": 2,
+      "rootVersion": "5.1.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "5.1.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "minimatch",
+      "versions": [
+        "10.2.5",
+        "3.1.5"
+      ],
+      "count": 2,
+      "rootVersion": "3.1.5",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "3.1.5",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "p-limit",
+      "versions": [
+        "2.3.0",
+        "3.1.0"
+      ],
+      "count": 2,
+      "rootVersion": "3.1.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "3.1.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "p-locate",
+      "versions": [
+        "4.1.0",
+        "5.0.0"
+      ],
+      "count": 2,
+      "rootVersion": "5.0.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "5.0.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "readdirp",
+      "versions": [
+        "3.6.0",
+        "5.0.0"
+      ],
+      "count": 2,
+      "rootVersion": "3.6.0",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "3.6.0",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "resolve",
+      "versions": [
+        "1.22.12",
+        "2.0.0-next.7"
+      ],
+      "count": 2,
+      "rootVersion": "2.0.0-next.7",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "2.0.0-next.7",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "tslib",
+      "versions": [
+        "1.14.1",
+        "2.8.1"
+      ],
+      "count": 2,
+      "rootVersion": "2.8.1",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "2.8.1",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "undici-types",
+      "versions": [
+        "7.18.2",
+        "7.28.0"
+      ],
+      "count": 2,
+      "rootVersion": "7.18.2",
+      "directDependency": false,
+      "criticalFamily": false,
+      "priority": "P2",
+      "owner": "dependency-governance",
+      "releasePolicy": "no-new-version-with-lockfile-owner-review",
+      "convergenceTarget": "7.18.2",
+      "convergenceStrategy": "evaluate-parent-chain-before-dedupe-or-override",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "ws",
+      "versions": [
+        "7.5.12",
+        "8.21.0"
+      ],
+      "count": 2,
+      "rootVersion": "8.21.0",
+      "directDependency": true,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-release",
+      "releasePolicy": "no-new-version-and-convergence-evaluation-required-before-major-release",
+      "convergenceTarget": "8.21.0",
+      "convergenceStrategy": "preserve-root-api-and-test-transitive-upgrades",
+      "currentStateAccepted": true
+    },
+    {
+      "name": "zod",
+      "versions": [
+        "3.22.4",
+        "3.25.76"
+      ],
+      "count": 2,
+      "rootVersion": "3.25.76",
+      "directDependency": true,
+      "criticalFamily": true,
+      "priority": "P1",
+      "owner": "platform-release",
+      "releasePolicy": "no-new-version-and-convergence-evaluation-required-before-major-release",
+      "convergenceTarget": "3.25.76",
+      "convergenceStrategy": "preserve-root-api-and-test-transitive-upgrades",
+      "currentStateAccepted": true
+    }
+  ],
+  "baselineFingerprintSha256": "784ffc2f7e52d9209d837e2a0f71c45b6e5b8ac9adfef1dc99a570701e4fa1cf",
+  "policySha256": "ce222b3e3a31a890b379c0ac55fafe48c87daef143d548a86d0fbb6258de402f"
+}

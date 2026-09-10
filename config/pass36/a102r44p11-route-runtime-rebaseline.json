@@ -1,0 +1,69 @@
+{
+  "addedRoutes": 0,
+  "afterManifestSha256": "27af4f3b8df05994f80a856195a220ea2d47f591dcb81a5daddeed9e9750c3a4",
+  "beforeManifestSha256": "5f24c3fbf83b9e662909097583b369d73e13ab0b7d4d21c1417ea85aa2728137",
+  "changedFields": 2,
+  "changedRoutes": 1,
+  "changes": [
+    {
+      "after": {
+        "handlerBytes": 1903,
+        "handlerSha256": "b69dfa3e392ffdc06dbc6ef7bce7d766e58c0451c11720f64cd4d9fa6a990e82",
+        "methods": [
+          "GET"
+        ]
+      },
+      "before": {
+        "handlerBytes": 1867,
+        "handlerSha256": "dc8b7019312d49380c1ab07fd1cdc51ec93a360081b53f4bc1ba10423a6c4c8d",
+        "methods": [
+          "GET"
+        ]
+      },
+      "changedFields": [
+        "handlerSha256",
+        "handlerBytes"
+      ],
+      "group": "marketIntegrity",
+      "handlerModule": "lib/server/market-integrity-route-modules/access.ts",
+      "operation": "access",
+      "publicPath": "/api/market-integrity/access"
+    }
+  ],
+  "currentManifestSha256": "27af4f3b8df05994f80a856195a220ea2d47f591dcb81a5daddeed9e9750c3a4",
+  "lazyProfileAfterSha256": "a10bcdcc371eebeeb33ef40a36fac3b5917f3f2b50a51b2ca8f390e07032c790",
+  "lazyProfileBeforeSha256": "79c7d697a569b4c231b7ce6ee7ef02fd9dd40e29d4e8f9669f1befc11106fa41",
+  "lazyRouteManifestSha256": "d68300e454facd69bc88a0bdc44361b98b06c9ddc2a896c8be0ce6f3f1fb8293",
+  "methodExportChanges": 0,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "parser": {
+    "exactToolchainCreditEligible": true,
+    "mode": "100644",
+    "moduleByteLength": 9112572,
+    "moduleSha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+    "pathDisclosure": "node_modules/typescript/lib/typescript.js",
+    "source": "PROJECT_DEPENDENCY",
+    "version": "5.9.3"
+  },
+  "removedRoutes": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "routeAstRegistryAfterSha256": "8885d92be2a3eb12d8e695ce65db8a7c39fe8c88aa8ce3423a0e39c0229f9050",
+  "routeAstRegistryBeforeSha256": "243c62bb488bacf848372fe3692befc379468c24acccebddc0427fcab8d9a614",
+  "routeDenominatorAfter": 160,
+  "routeDenominatorBefore": 160,
+  "schemaVersion": "velmere.pass36.a102r44p11.route-runtime-rebaseline.v1",
+  "toolingFix": {
+    "denominatorReduced": false,
+    "path": "scripts/pass15/profile-lazy-build-surface.mjs",
+    "reason": "Anchor static import/export detection to source-line starts so TypeScript source snippets stored inside template strings are not reported as real unresolved imports.",
+    "removedTests": 0
+  },
+  "truthBoundary": {
+    "browserCredit": false,
+    "lazyCreditRequiresFull176Retest": true,
+    "liveCredit": false,
+    "reason": "One public access handler changed only customer-facing stop-sell wording; routes and method exports are retained. Lazy profile parser fix removes a false positive without ignoring real local imports.",
+    "routeCreditRequiresFull1480Retest": true,
+    "saleCredit": false
+  }
+}

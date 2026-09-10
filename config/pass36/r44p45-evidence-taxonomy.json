@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p45.evidence-taxonomy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "allowedStatuses": [
+    "IMPLEMENTED",
+    "TESTED_SYNTHETIC",
+    "TESTED_PUBLIC_CORPUS",
+    "TESTED_REAL_LOCAL",
+    "TESTED_STAGING",
+    "TESTED_PRODUCTION",
+    "AI_SIMULATED",
+    "EXTERNAL_HUMAN_PROVEN",
+    "NOT_PROVEN",
+    "BLOCKED_EXTERNAL",
+    "UNKNOWN",
+    "UNAVAILABLE",
+    "STALE",
+    "CONFLICTED"
+  ],
+  "forbiddenPromotions": [
+    "AI_SIMULATED_TO_EXTERNAL_HUMAN_PROVEN",
+    "PUBLIC_CONTROL_CANDIDATE_TO_FORMAL_TRUE_NEGATIVE",
+    "SYNTHETIC_TO_REAL_PROTOCOL_ACCURACY",
+    "LOCAL_STRESS_TO_PRODUCTION_LOAD",
+    "MOCK_PROVIDER_TO_REAL_PROVIDER",
+    "MORE_EVIDENCE_TO_HIGHER_FINDING_TRUTH"
+  ],
+  "sourceOnlyAuthority": true,
+  "materialsMayOverwriteSource": false,
+  "roadmapArchived": true,
+  "currentStateLedgerIsSoleExternalStateArtifact": true,
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

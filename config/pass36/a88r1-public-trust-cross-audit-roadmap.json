@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "velmere.pass36.a88r1.public-trust-cross-audit-roadmap.v1",
+  "revisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "status": "PLANNED_MANDATORY_NO_CREDIT",
+  "crossAuditValidation": {
+    "projectsRequired": 20,
+    "priorProfessionalAuditRequired": true,
+    "blindFindingFreezeBeforePriorReportReview": true,
+    "exactSubjectBindingRequired": [
+      "repository_or_verified_source_bundle",
+      "commit_or_release_digest",
+      "chain_id",
+      "contract_address",
+      "block_number",
+      "compiler_and_settings",
+      "deployed_bytecode_digest"
+    ],
+    "externallyAcceptedMediumOrHighRequired": 5,
+    "confirmedRemediationsRequired": 3,
+    "successfulRetestsRequired": 3,
+    "falsePositiveAndDuplicateRatesMustBePublished": true,
+    "independentAdjudicationRequired": true,
+    "rightsAndAuthorizationRequired": true,
+    "publicClaimGate": "No claim that Velmere found vulnerabilities missed by professional audits until all denominators and external confirmations are met."
+  },
+  "currentEvidence": {
+    "projectsCompleted": 0,
+    "externallyAcceptedMediumOrHigh": 0,
+    "confirmedRemediations": 0,
+    "successfulRetests": 0,
+    "signedProjectAcknowledgements": 0,
+    "publicPlatformAcceptedFindings": 0,
+    "qualifiedIndependentAdjudications": 0
+  },
+  "responsibleDisclosure": {
+    "authorizationRequired": true,
+    "acceptedAuthorizationModes": [
+      "public_audit_contest_scope",
+      "active_bug_bounty_scope",
+      "written_project_authorization"
+    ],
+    "mainnetExploitTestingForbidden": true,
+    "fundMovementForbidden": true,
+    "serviceDisruptionForbidden": true,
+    "secretOrPersonalDataAccessForbidden": true,
+    "localForkOrTestEnvironmentRequired": true,
+    "embargoRequired": true,
+    "projectNotificationBeforePublicationRequired": true,
+    "severityAndImpactMustBeExternallyConfirmedForPublicClaim": true,
+    "safeHarborIsProgramSpecific": true
+  },
+  "publicTrustWebsite": {
+    "implementedSections": 0,
+    "requiredSections": [
+      "security_and_trust_center_home",
+      "methodology_and_scope",
+      "public_audit_and_cross_audit_registry",
+      "finding_status_accepted_duplicate_invalid_disputed",
+      "exact_subject_commit_chain_address_block_binding",
+      "severity_confidence_evidence_and_limitations",
+      "responsible_disclosure_policy",
+      "safe_harbor_and_authorization_boundary",
+      "remediation_and_retest_history",
+      "signed_project_acknowledgements",
+      "independent_adjudication_and_conflicts",
+      "benchmark_denominators_false_positive_false_negative_duplicate_rates",
+      "basic_pro_advanced_scope_comparison",
+      "downloadable_hash_bound_reports_and_raw_evidence_index",
+      "release_provenance_sbom_and_transparency_log",
+      "provider_data_rights_and_freshness_status",
+      "legal_privacy_consumer_and_advice_boundaries",
+      "incident_status_and_correction_supersession",
+      "pl_en_de_locale_parity",
+      "wcag_eaa_accessibility_and_mobile_acceptance"
+    ],
+    "mustNotExpose": [
+      "unpatched_exploit_steps_before_embargo_end",
+      "private_customer_or_project_data",
+      "secrets_tokens_private_keys_or_raw_credentials",
+      "unverified_severity_or_certification_claims",
+      "paid_or_live_status_without_signed_release_gate"
+    ],
+    "publicRecordsMustBeHashBound": true,
+    "correctionsAndSupersessionMustRemainVisible": true,
+    "marketingClaimsMustLinkToExactEvidence": true
+  },
+  "claimBoundary": {
+    "publicClaimAllowedNow": false,
+    "mayClaimAccreditedCertification": false,
+    "mayCallSelfEthereumCertifiedAuditor": false,
+    "mayIssueOwnVerificationReports": true,
+    "ownReportLabelsAllowed": [
+      "Velmere Cross-Audit Verification Report",
+      "Velmere Validated Finding Record",
+      "Velmere Remediation Retest Report"
+    ],
+    "ownReportsAreNotThirdPartyCertification": true,
+    "externalPlatformRankingsAndAcknowledgementsMayBeShownOnlyWithExactSource": true
+  },
+  "resourceTruth": {
+    "canOftenBeDoneWithoutUpfrontFee": [
+      "public_audit_contest_participation",
+      "in_scope_bug_bounty_research",
+      "open_source_tooling",
+      "local_fork_reproduction",
+      "public_evidence_registry_and_trust_center_engineering"
+    ],
+    "notGuaranteedFree": [
+      "formal_accredited_certification",
+      "qualified_legal_and_dpo_signoff",
+      "independent_security_assurance",
+      "commercial_provider_rights",
+      "qualified_human_audit_review",
+      "hosting_and_operations_beyond_free_tier"
+    ]
+  },
+  "mappedPasses": {
+    "A89_A94": "Protect trust-center accounts, disclosure intake, evidence downloads, signing, privacy, accessibility and performance.",
+    "A102_A107": "Receive signed legal, security, methodology and independent adjudication evidence.",
+    "A108_A110": "Test customer comprehension and make per-SKU public-claim and sale decisions.",
+    "A111": "Execute the 20-project blind cross-audit validation denominator with official tools and independent labels.",
+    "A115": "Bind every trust-center, certification, comparison and marketing claim to signed legal decisions.",
+    "A116": "Publish the final signed trust center, evidence registry, transparency log and release package."
+  },
+  "truthBoundary": "This file expands the mandatory roadmap. It does not prove a completed cross-audit, accepted finding, certification, legal permission, customer value, LIVE status or sale readiness."
+}

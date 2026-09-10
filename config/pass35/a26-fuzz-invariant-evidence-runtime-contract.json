@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "velmere.pass35.a26-fuzz-invariant-evidence-runtime-contract.v1",
+  "passId": "PASS35_A26",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "strict": 9.3,
+    "zeroBudget": 80
+  },
+  "baselineA25": {
+    "canonical": 51.2,
+    "strict": 23.3,
+    "zeroBudget": 89.2
+  },
+  "progressDeltaVsA25": {
+    "canonicalPercentagePoints": 1.1,
+    "strictPercentagePoints": 2.3,
+    "zeroBudgetPercentagePoints": 0.5
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 11.6,
+    "strictPercentagePoints": 16.3,
+    "zeroBudgetPercentagePoints": 9.7
+  },
+  "canonicalWeightedPlanningPercent": 52.3,
+  "canonicalStrictDonePercent": 25.6,
+  "canonicalCounts": {
+    "DONE": 11,
+    "PARTIAL": 23,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 89.7,
+  "zeroBudgetCoreDenominator": 68,
+  "zeroBudgetCounts": {
+    "DONE": 55,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "correct": 72,
+      "accuracy": 1,
+      "unsafeEligible": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "total": 2304,
+      "killed": 2304,
+      "survived": 0,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:4d233a69264ebe66fd2f2b9a04b64b39e7b021f5e9f94695a79707bf1a78b1da",
+    "receiptSha256": "sha256:e256fd6b4b416683612a6ccb53b9464df51ad10f38c496a523046fa59ac6ea9b"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "officialFoundryExecuted": false,
+  "officialEchidnaExecuted": false,
+  "compiledEvmExecutionProven": false,
+  "implementationModelEquivalenceProven": false,
+  "realCustomerCase": false,
+  "truthBoundary": "PASS35 A26 is the only canonical current status. Canonical roadmap is 52.3% weighted / 25.6% strict across 43 workstreams, up 1.1 pp weighted and 2.3 pp strict from A25, and 11.6 pp weighted from A16. Zero-budget functional core is 89.7% across 68 capabilities, up 0.5 pp from A25 and 9.7 pp from A16. A26 locally closes the declared bounded A08 invariant registry, binding, seed/state coverage, replay, shrinking and mutation evidence implementation. Official Foundry/Echidna, compiled EVM equivalence, real customer cases, staging, sale, outcomes and independent assurance remain unclaimed."
+}

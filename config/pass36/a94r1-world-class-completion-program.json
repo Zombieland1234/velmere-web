@@ -1,0 +1,357 @@
+{
+  "schemaVersion": "velmere.pass36.a94r1.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "generatedAt": "2026-07-28T10:58:11Z",
+  "decision": "NO_GO",
+  "livingRoadmap": true,
+  "completedThrough": 89,
+  "partialRange": "A90-A94",
+  "remainingPasses": 31,
+  "lastPlannedPass": 116,
+  "closureTracks": [
+    {
+      "id": "A77R1",
+      "name": "EXACT_CLEAN_ROOT_LINEAGE_GOVERNANCE_DUAL_CONTROL",
+      "status": "NOT_STARTED",
+      "credit": false
+    },
+    {
+      "id": "A78R1",
+      "name": "OFFICIAL_EXACT_NODE_NPM_DEPENDENCY_AND_CHROMIUM_BOOTSTRAP",
+      "status": "BLOCKED_EXACT_INPUTS",
+      "credit": false
+    },
+    {
+      "id": "A79R1",
+      "name": "EXACT_BUILD_RUNTIME_BROWSER_PL_EN_DE_MATRIX",
+      "status": "BLOCKED_A78R1_AND_LOCAL_DEBT",
+      "credit": false
+    },
+    {
+      "id": "A80R1",
+      "name": "FROZEN_LOCAL_RELEASE_CANDIDATE_FINAL_BYTE_SEAL",
+      "status": "BLOCKED_A79R1",
+      "credit": false
+    }
+  ],
+  "passes": [
+    {
+      "id": "A90",
+      "name": "API_EDGE_REVERSE_PROXY_AND_REQUEST_TRUST_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "canonical origin and trusted forwarding disagreement rejection",
+        "method override, transfer framing and singleton ambiguity rejection",
+        "duplicate and shadow query rejection",
+        "body-bound worker mutation authorization",
+        "provider concurrency and single-flight budgets",
+        "rate-limit recovery circuit"
+      ],
+      "open": [
+        "full endpoint denominator behavior matrix",
+        "distributed multi-instance limiter proof",
+        "real proxy/CDN desync and cache tests",
+        "real provider and DNS-rebinding execution"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A91",
+      "name": "FILES_UPLOAD_DOWNLOAD_ARCHIVE_AND_PARSER_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "attachments fail closed without AV/CDR/private quarantine",
+        "multipart and bounded JSON boundary",
+        "hardlink, inode, TOCTOU and atomic temp identity checks",
+        "PNG and JPEG structural validation",
+        "unsafe remote product image rejection"
+      ],
+      "open": [
+        "real AV/CDR/quarantine",
+        "private staging storage and signed URL lifecycle",
+        "Windows-specific swap/hardlink tests",
+        "real browser download compatibility",
+        "complete archive and document parser matrix"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A92",
+      "name": "STRIPE_TEST_PAYMENT_ENTITLEMENT_AND_RECONCILIATION_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "runtime payment authority with multi-gate live stop-sell",
+        "Stripe TEST/live key separation",
+        "server idempotency keys and entitlement binding",
+        "partial refund non-revocation and durable terminal writes"
+      ],
+      "open": [
+        "real Stripe TEST payment/refund/replay/reorder/reconciliation",
+        "dead-letter operator workflow",
+        "multi-instance race proof",
+        "full SKU, coupon, price and tax mismatch denominator"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A93",
+      "name": "SUPPLY_CHAIN_BUILD_PROVENANCE_AND_REPRODUCIBILITY_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "dependency upgrade and zero npm advisory result at checkpoint",
+        "build child environment allowlist and redacted receipt",
+        "unsafe CSS lexical minifier disabled"
+      ],
+      "open": [
+        "official Node 24.18.0 archive proof",
+        "official npm 11.16.0 and 827 of 827 dependency CAS",
+        "exact Playwright Chromium",
+        "reproducible dual-build on final bytes",
+        "fresh SBOM, license, provenance and external trust anchor"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A94",
+      "name": "BROWSER_PERFORMANCE_ACCESSIBILITY_AND_CHAOS_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "server-first PL/EN/DE document locale",
+        "paid analysis depth disabled client-side without server entitlement",
+        "visibility abort and timer cleanup",
+        "focus indicators, contrast and localized metadata",
+        "real supported asset denominators retained when evidence is absent"
+      ],
+      "open": [
+        "real browser desktop/mobile/tablet PL/EN/DE",
+        "keyboard and screen-reader proof",
+        "zoom, reduced-motion, offline, slow-network and performance budgets"
+      ],
+      "credit": false
+    },
+    {
+      "range": "A95-A104",
+      "name": "REAL_STAGING_OPERATIONS_AND_OBSERVATION_WINDOWS",
+      "status": "NOT_STARTED_BLOCKED_EXTERNAL",
+      "realStagesVerified": 0,
+      "requiredStages": 10,
+      "credit": false
+    },
+    {
+      "range": "A105-A110",
+      "name": "RIGHTS_LEGAL_AUDITS_REAL_DATA_AI_RISK_AND_CUSTOMER_VALUE",
+      "status": "NOT_STARTED_BLOCKED_EXTERNAL",
+      "providerRightsApproved": "0/21",
+      "legalSigned": "0/20",
+      "realAudits": "0/50",
+      "officialToolRuns": "0/200",
+      "crossAudits": "0/20",
+      "realBrainAngelRiskEval": "0/300",
+      "customerCohorts": "0/2",
+      "credit": false
+    },
+    {
+      "range": "A111-A116",
+      "name": "FINAL_REAL_DATA_REBASELINE_EXACT_RELEASE_AND_SKU_DECISION",
+      "status": "NOT_STARTED",
+      "credit": false
+    }
+  ],
+  "newGaps": [
+    {
+      "id": "A90R1-DUPLICATE-SHADOW-QUERY",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject duplicate, encoded-shadow, Unicode-compatibility-shadow, ambiguous separator and dangerous query keys at the API edge."
+    },
+    {
+      "id": "A93R1-BUILD-ENV-SECRET-INHERITANCE",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Allowlist child build environment and never emit environment values in receipts."
+    },
+    {
+      "id": "A94R1-CSS-PARSER-CORRUPTION",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DUAL_BUILD",
+      "requirement": "Repair all lexical-minifier selector and declaration corruption and pass both Webpack and Turbopack on final bytes."
+    },
+    {
+      "id": "A94R1-DENOMINATOR-COLLAPSE",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Preserve 318 Shield, 318 Shield Pro/Map and 583 Real Markets unavailable or blocked rows when evidence is absent."
+    },
+    {
+      "id": "A94R1-AUTHORITY-DRIFT",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DESCENDANT",
+      "requirement": "Bind active pass, authority, compatibility mirrors, descendant manifest and living roadmap to one sparse non-pass checkpoint."
+    },
+    {
+      "id": "A95-STAGING-CANDIDATE-REBIND",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED",
+      "requirement": "Replace stale PASS35_OFFLINE_CANDIDATE_R3 binding with final frozen source and environment fingerprints before any staging credit."
+    },
+    {
+      "id": "A96-RLS-DENOMINATOR-19",
+      "severity": "P0",
+      "status": "LOCAL_HARNESS_FIXED_REAL_0_OF_19_BLOCKED_EXTERNAL",
+      "requirement": "Reconcile the stale 18-check staging plan with the canonical 19-case RLS matrix and execute all 19 against two disposable tenants."
+    },
+    {
+      "id": "A105-PROVIDER-RIGHTS-SCHEMA",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Record export, PDF, derived-data, AI/RAG, cache, redistribution, retention, correction, attribution, exit, territory and SKU rights per provider."
+    },
+    {
+      "id": "A107-INDEPENDENT-SIGNATURE-TRUTH",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Cryptographically verify signer identity, trust chain, timestamp, revocation, independence and conflict declaration."
+    },
+    {
+      "id": "A48R1-RLS-STRUCTURAL-PREFLIGHT-FALSE-CREDIT",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Never grant 19/19 RLS credit from a structural preflight; require exactly 19 prepared, executed and passed cases against two disposable tenants."
+    },
+    {
+      "id": "A91R1-IMMUTABLE-LOG-FIXTURE-SOURCE-LOSS",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Preserve the exact A42 immutable crash-log fixture while excluding all mutable runtime logs from SOURCE_ONLY."
+    },
+    {
+      "id": "A58R1-PHYSICAL-SOURCE-FINGERPRINT-GAP",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CLEAN_UNPACK",
+      "requirement": "Bind descendant and archive manifests and require forbidden-output absence before and after clean-unpack tests."
+    },
+    {
+      "id": "A58R1-EMBEDDED-MANIFEST-ADMISSION-GAP",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_PACKAGE",
+      "requirement": "Validate embedded manifest schema, lineage, no-credit truth fields, unique canonical paths, exact bytes, path-set and aggregate before A58 can pass."
+    },
+    {
+      "id": "A80R2-CLEAN-RECEIPT-PACKAGE-SEQUENCING",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_PACKAGE",
+      "requirement": "Emit SOURCE first, run clean-unpack, bind its receipt to exact archive and embedded manifest hashes, then admit MATERIALS packaging."
+    },
+    {
+      "id": "A78R2-NODE-MODULES-SYMLINK-EXECUTION",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_NO_EXACT_TOOLCHAIN_CREDIT",
+      "requirement": "Reject missing, file, symlink or out-of-tree node_modules and TypeScript CLI before any dependency-backed clean-unpack step."
+    },
+    {
+      "id": "A94R1-ZERO-WARNING-LINT-BUDGET",
+      "severity": "P1",
+      "status": "LOCALLY_VERIFIED_EXACT_NODE_24_18_PRE_FREEZE",
+      "requirement": "Keep the existing zero-warning lint budget and remove all 413 errors and 116 warnings without disables or threshold changes."
+    },
+    {
+      "id": "A93R2-BUILD-OUTPUT-WRITER-RACE",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DUAL_BUILD",
+      "requirement": "Serialize every mode/distDir writer with an atomic exclusive lock, bind the exact root BUILD_ID at phase boundaries, require exact root and standalone BUILD_ID equality, and report FAIL_OUTPUT_CONTRACT whenever the final output contract is false."
+    },
+    {
+      "id": "A93R2-ORPHAN-BUILD-LOCK-RECOVERY",
+      "severity": "P2",
+      "status": "OPEN_RUNBOOK_REQUIRED",
+      "requirement": "Define a dual-reviewed operator procedure that validates lock owner identity, process liveness, inode, frozen source and output state before removing an orphaned build lock; automatic lock stealing remains forbidden."
+    },
+    {
+      "id": "A93R3-WORKSPACE-REPLAY-BUILD-LOCK-BOUNDARY",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DUAL_BUILD",
+      "requirement": "Keep exclusive build locks in private external runtime state namespaced by the canonical source root, disclose no raw host path, and require repeated absence checks after each build process and production smoke so workspace persistence replay cannot leave a false-success lock."
+    },
+    {
+      "id": "A94R2-PRODUCTION-SMOKE-CANONICAL-ORIGIN",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_RUNTIME_SMOKE",
+      "requirement": "Exercise the production edge behind an explicit local simulated TLS reverse proxy without weakening fail-closed canonical-origin policy; separate process readiness from application status, use the real worker method, and replace stale source-text assertions with behavior."
+    },
+    {
+      "id": "A80R2-DETERMINISTIC-ORDER-MODE-AND-COLLISION",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DOUBLE_BUILD",
+      "requirement": "Use raw ordering, normalize and assert modes, reject raw/NFKC/casefold collisions and compare every ZIP entry byte, hash, mode and order."
+    },
+    {
+      "id": "A80R2-INDEPENDENT-DETERMINISTIC-REBUILD",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DOUBLE_BUILD",
+      "requirement": "Build SOURCE independently before and after clean-unpack and build MATERIALS twice from frozen inputs; require identical SHA-256 and byte length."
+    },
+    {
+      "id": "A78R3-SPARSE-NON-PASS-LINEAGE-AND-GATE-TRUTH",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CURRENT_ROOT_30_OF_30",
+      "requirement": "Admit an authority-declared sparse ACTION_REQUIRED_NON_PASS child only with exact parent/digest, completed-through, omitted-pass no-credit and no-promotion truth; keep exact 30/30 execution separate from offline release-candidate eligibility."
+    },
+    {
+      "id": "A90R2-WORKER-BODY-INVENTORY-DRIFT",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Recognize the real bounded internal-worker mutation helper in the full API inventory and behaviorally prove 401, bounded-body 413, duplicate-key rejection and validation reachability for every worker route."
+    },
+    {
+      "id": "A90R2-CANONICAL-ORIGIN-HARNESS-TRUTH",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Model the server-owned production canonical origin in proxy tests, preserve fail-closed 503 on missing or invalid configuration and prove that request Host and forwarded headers cannot steer redirects."
+    },
+    {
+      "id": "A59R1-ROUTE-DISPATCH-BYTE-METADATA-OMISSION",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_ROUTE_DISPATCH_REGRESSION",
+      "requirement": "Rebaseline the complete route-dispatch manifest after handler changes and make handler byte length an enforced tamper boundary alongside methods and SHA-256 for the full handler denominator."
+    },
+    {
+      "id": "A59R1-CSS-FINAL-BYTE-BINDING-DRIFT",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_A59_REGRESSION",
+      "requirement": "Rebind every changed CSS file and the aggregate profile to current physical bytes while preserving parser-error, used-identifier and fixed budget thresholds."
+    },
+    {
+      "id": "A59R2-ROUTE-METHOD-REGEX-VS-AST-EQUIVALENCE",
+      "severity": "P3",
+      "status": "OPEN_FUTURE_HARDENING",
+      "requirement": "Replace regex-only exported-method discovery with parser or registry-backed AST equivalence while retaining the complete handler, hash, byte-length and method denominator."
+    },
+    {
+      "id": "A58R2-ARCHIVE-MANIFEST-AND-LOCAL-CREDIT-TRUTH-DRIFT",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CLEAN_UNPACK",
+      "requirement": "Keep the exact embedded archive-manifest field contract synchronized with the deterministic packager, record true local lint, smoke, current-root and freeze results, and preserve explicit false exact-release, browser, staging, LIVE and sale credit."
+    }
+  ],
+  "metrics": {
+    "canonicalWeightedPercent": 59.3,
+    "canonicalStrictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changedByCheckpoint": false,
+    "reason": "Partial local hardening and additional tests do not close a canonical workstream or external proof denominator."
+  },
+  "skuDecisions": {
+    "basic": "PILOT_ONLY",
+    "pro": "BLOCKED_RIGHTS",
+    "advanced": "BLOCKED_ACCURACY"
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Pass ranges A90-A116 are formalized here from the canonical A89 completion program plus the user's stricter live roadmap. Only A89 and earlier historical credits remain. A90-A94 are partial local work with no PASS credit; A77R1-A80R1 and A95-A116 remain uncompleted."
+}

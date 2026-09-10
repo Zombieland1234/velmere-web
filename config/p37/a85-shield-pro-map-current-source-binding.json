@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "velmere.p37.a85.current-source-binding.v1",
+  "revision": "P37_A85_CURRENT_SOURCE_BINDING_REPAIR",
+  "state": "IMPLEMENTED_AND_TESTED_INTERNAL_STATIC_BINDING_ONLY",
+  "generatedAt": "2026-08-13T21:31:00.000Z",
+  "parentRoot": "R44P46",
+  "basePolicy": {
+    "path": "config/pass36/a85-shield-pro-map-full-depth-policy.json",
+    "sha256": "6ce6d3c1451744cf3438e10c4f58914eb8808e4cfb7eb9ab720bea72a2d31744",
+    "revisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+    "historicalPolicyPreservedUnchanged": true
+  },
+  "currentBindings": [
+    {
+      "key": "a84Policy",
+      "path": "config/pass36/a84-shield-full-catalog-tier-matrix-policy.json",
+      "byteLength": 14787,
+      "historicalA85Sha256": "95bbe8a4bfc01ff5507404e0c7cc80be62eba1ddd18f6f0492d5d7c551deacf1",
+      "currentSha256": "95bbe8a4bfc01ff5507404e0c7cc80be62eba1ddd18f6f0492d5d7c551deacf1",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "a84Receipt",
+      "path": "config/pass36/a84-test-receipt.json",
+      "byteLength": 11739,
+      "historicalA85Sha256": "6893934d6c27dd61832b93aa3ff702b5622b11d536523d5ff701f846fc5d7cef",
+      "currentSha256": "6893934d6c27dd61832b93aa3ff702b5622b11d536523d5ff701f846fc5d7cef",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "a84Descendant",
+      "path": "config/pass36/a84-current-root-descendant-manifest.json",
+      "byteLength": 1405,
+      "historicalA85Sha256": "a76ad3da24dc691fa55e60282453f813c52ade0029b154e2fcfedfdec76cc6dc",
+      "currentSha256": "a76ad3da24dc691fa55e60282453f813c52ade0029b154e2fcfedfdec76cc6dc",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "a84Runtime",
+      "path": "lib/worldclass/pass36-a84-shield-full-catalog-tier-matrix-runtime.ts",
+      "byteLength": 38302,
+      "historicalA85Sha256": "b2816316180827eb9a80efff8cd6b786e235b75bde01a5855990986f58789e02",
+      "currentSha256": "b2816316180827eb9a80efff8cd6b786e235b75bde01a5855990986f58789e02",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "shieldProClient",
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "byteLength": 58342,
+      "historicalA85Sha256": "e255a733c2e894a083427025faa3b595c4a9ee6fb08d18f631fb47b4396f7f8d",
+      "currentSha256": "03ecb26072e57e3f7eb7e11d585d46a182f4a332fb7a7f7560e03d60d0ea83ea",
+      "historicalBindingStale": true,
+      "bindingAction": "REBIND_TO_CURRENT_SOURCE"
+    },
+    {
+      "key": "shieldProPagination",
+      "path": "lib/market-integrity/shield-pro-full-catalog-client.ts",
+      "byteLength": 6874,
+      "historicalA85Sha256": "fa7a555b58308a3954ea9e3ad51ecfee4d47de967f8561329abf13f18a29cde8",
+      "currentSha256": "fa7a555b58308a3954ea9e3ad51ecfee4d47de967f8561329abf13f18a29cde8",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "shieldMapClient",
+      "path": "components/market-integrity/ShieldMapCommandClient.tsx",
+      "byteLength": 115836,
+      "historicalA85Sha256": "a2c474da0f0ba1e2aeb51148ad1b8b41c6ea6ceab93d218c6b8c68fbaa76121f",
+      "currentSha256": "609f58464f0360c455d5e1f12d146c78c75f2e42c35cfab54b76f3e79a917c01",
+      "historicalBindingStale": true,
+      "bindingAction": "REBIND_TO_CURRENT_SOURCE"
+    },
+    {
+      "key": "investigatorRoute",
+      "path": "lib/server/market-integrity-route-modules/investigator.ts",
+      "byteLength": 7184,
+      "historicalA85Sha256": "ac2b61d3b37e9b8b1509826d80d6a42249c56167044e7083d4db630dc3354b70",
+      "currentSha256": "ac2b61d3b37e9b8b1509826d80d6a42249c56167044e7083d4db630dc3354b70",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "shieldMapQueryBoundary",
+      "path": "lib/market-integrity/shield-map-query-boundary.ts",
+      "byteLength": 11000,
+      "historicalA85Sha256": "82e7acd2b8b036516b94dcf746ce336f411c19d817dfa3c34ed5383b18ba8bef",
+      "currentSha256": "82e7acd2b8b036516b94dcf746ce336f411c19d817dfa3c34ed5383b18ba8bef",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "shieldInvestigator",
+      "path": "lib/market-integrity/shield-investigator.ts",
+      "byteLength": 30376,
+      "historicalA85Sha256": "43923b1a07706b47e089f7b97a283e9d582f64d9473d9989eab2e3645d88fca6",
+      "currentSha256": "0738cae17bdacc69510a38e52db2ec66673d8462749343490a71fea3acf4b97a",
+      "historicalBindingStale": true,
+      "bindingAction": "REBIND_TO_CURRENT_SOURCE"
+    },
+    {
+      "key": "marketAssetBinding",
+      "path": "lib/market-integrity/market-asset-binding.ts",
+      "byteLength": 6329,
+      "historicalA85Sha256": "f030a89318f0013404987e779ef846472ce51698cc423680fb34ac069afc5d04",
+      "currentSha256": "f030a89318f0013404987e779ef846472ce51698cc423680fb34ac069afc5d04",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    },
+    {
+      "key": "walletLabelRegistry",
+      "path": "lib/market-integrity/wallet-label-registry.ts",
+      "byteLength": 8169,
+      "historicalA85Sha256": "05803547621ec32a21e80336faf854421d2d4948424310f8d4af024529950d61",
+      "currentSha256": "05803547621ec32a21e80336faf854421d2d4948424310f8d4af024529950d61",
+      "historicalBindingStale": false,
+      "bindingAction": "PRESERVE_MATCHING_BINDING"
+    }
+  ],
+  "staleBindingsDetected": 3,
+  "staleBindingKeys": [
+    "shieldInvestigator",
+    "shieldMapClient",
+    "shieldProClient"
+  ],
+  "staleBindingsRebound": 3,
+  "staticProductionAssertions": [
+    {
+      "id": "shield-pro-bounded-pagination",
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "includes": {
+        "fetchShieldProFullCatalog<MarketRow>": true,
+        "bounded partial catalog": true
+      },
+      "excludesAbsent": {
+        "/api/market-integrity/markets?perPage=100": true
+      },
+      "pass": true
+    },
+    {
+      "id": "pagination-tier-binding",
+      "path": "lib/market-integrity/shield-pro-full-catalog-client.ts",
+      "includes": {
+        "perPage: String(SHIELD_PRO_MARKET_PAGE_SIZE)": true,
+        "tier: \"basic\"": true,
+        "repeated_or_non_advancing_page": true
+      },
+      "excludesAbsent": {},
+      "pass": true
+    },
+    {
+      "id": "investigator-query-boundary",
+      "path": "lib/server/market-integrity-route-modules/investigator.ts",
+      "includes": {
+        "parseShieldMapQuery": true,
+        "verifyShieldMapResolvedIdentity": true,
+        "identityBinding": true,
+        "shieldMapTierState()": true
+      },
+      "excludesAbsent": {
+        "searchParams.get(\"query\")": true
+      },
+      "pass": true
+    },
+    {
+      "id": "deep-dive-basic-only",
+      "path": "components/market-integrity/ShieldMapCommandClient.tsx",
+      "includes": {
+        "depth=\"basic\"": true,
+        "compact={!showDeepDive}": true
+      },
+      "excludesAbsent": {
+        "depth=\"advanced\"": true
+      },
+      "pass": true
+    }
+  ],
+  "staticProductionAssertionsPassed": 4,
+  "staticProductionAssertionDenominator": 4,
+  "runtimeBoundary": {
+    "observedNode": "v22.16.0",
+    "requiredProjectNode": "v24.18.0",
+    "exactProjectNodeMatched": false,
+    "typescriptRuntimeExecuted": false,
+    "productionBuildExecuted": false,
+    "browserExecuted": false
+  },
+  "credit": {
+    "stalePolicySourceBindingClosed": true,
+    "staticAssertionCredit": true,
+    "runtimeBehaviorCredit": false,
+    "exactRuntimeCredit": false,
+    "buildCredit": false,
+    "browserCredit": false,
+    "providerRightsCredit": false,
+    "customerValueCredit": false,
+    "saleOrGoPaidCredit": false
+  },
+  "truthBoundary": "The historical A85 policy is preserved. P37 binds its declared source set to current bytes and rechecks four source-string production assertions. Exact Node 24.18.0 TypeScript runtime, build, Browser, provider rights, customer value and paid delivery remain unexecuted by this receipt.",
+  "integritySha256": "0635b30b8c60245d7aa8636ec7c524a6470615352e174bc63e291d634e90cc22"
+}

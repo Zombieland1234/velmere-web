@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "velmere.pass35.a29-upgrade-deployment-operations-policy.v1",
+  "passId": "PASS35_A29",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "SYNTHETIC_FIXTURE",
+    "GENERATED_BENCHMARK"
+  ],
+  "requiredControlFamilies": [
+    "PROXY_SLOT_BINDING",
+    "UPGRADE_AUTHORIZATION",
+    "MULTISIG_QUORUM",
+    "TIMELOCK_DELAY",
+    "INITIALIZER_PROTECTION",
+    "STORAGE_LAYOUT_COMPATIBILITY",
+    "UPGRADE_SIMULATION",
+    "ROLLBACK_LIMITS",
+    "PAUSE_EMERGENCY_CONTROLS",
+    "KEY_ROTATION_RECOVERY",
+    "KEY_COMPROMISE_SCENARIOS",
+    "DETERMINISTIC_OPERATIONS_REPLAY"
+  ],
+  "thresholds": {
+    "minimumMultisigOwners": 3,
+    "minimumMultisigThreshold": 2,
+    "minimumTimelockDelaySeconds": 86400,
+    "minimumCompromiseScenarios": 3,
+    "minimumCriticalHighAssertionCoverage": 1,
+    "minimumReplayRuns": 3,
+    "mutationKillRate": 0.9,
+    "requireUniqueOwners": true,
+    "requireStorageLayoutCompatibility": true,
+    "requireInitializerProtection": true,
+    "requireEmergencyPause": true,
+    "requireRollbackPlan": true,
+    "requireClaimBoundary": true
+  },
+  "benchmark": {
+    "families": [
+      "PROXY_SLOT_BINDING",
+      "UPGRADE_AUTHORIZATION",
+      "MULTISIG_QUORUM",
+      "TIMELOCK_DELAY",
+      "INITIALIZER_PROTECTION",
+      "STORAGE_LAYOUT_COMPATIBILITY",
+      "UPGRADE_SIMULATION",
+      "ROLLBACK_LIMITS",
+      "PAUSE_EMERGENCY_CONTROLS",
+      "KEY_ROTATION_RECOVERY",
+      "KEY_COMPROMISE_SCENARIOS",
+      "DETERMINISTIC_OPERATIONS_REPLAY"
+    ],
+    "mutationTypes": [
+      "PROXY_SLOT_TAMPER",
+      "AUTHORIZATION_UNBOUND",
+      "MULTISIG_WEAKEN",
+      "TIMELOCK_BYPASS",
+      "INITIALIZER_UNPROTECTED",
+      "STORAGE_LAYOUT_BREAK",
+      "UPGRADE_SIMULATION_MISSING",
+      "ROLLBACK_PLAN_MISSING",
+      "PAUSE_CONTROL_MISSING",
+      "KEY_ROTATION_MISSING",
+      "COMPROMISE_SCENARIO_DROP",
+      "REPLAY_NONDETERMINISTIC"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "PASS35 A29 validates a bounded local evidence contract for upgradeability and deployment operations. It verifies exact proxy-slot and authorization bindings, multisig and timelock policy, initializer and storage-layout safety, upgrade simulation, rollback limits, pause/emergency controls, key rotation/recovery, key-compromise scenarios, deterministic local replay and mutation evidence. It does not prove current on-chain administrators, real multisig or timelock configuration, hardware-key custody, production upgrade execution, incident response, qualified review, staging, LIVE readiness, customer outcome, independent assurance or sale eligibility."
+}

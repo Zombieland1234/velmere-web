@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "velmere.pass36.a84.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER",
+  "parentRevisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "generatedAt": "2026-07-27T18:00:00.000Z",
+  "decision": "PASS_LOCAL_A84_INJECTED_FULL_CATALOG_MATRIX_BLOCKED_CURRENT_PROVIDER_RIGHTS_BROWSER_CUSTOMER_EVIDENCE",
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "localHarness": {
+    "implemented": true,
+    "activeAssets": 318,
+    "activeListings": 1013,
+    "fieldFamilies": 7,
+    "observationRows": 7091,
+    "tierPackets": 954,
+    "popupRows": 3816,
+    "semanticMutations": 11448,
+    "mutationKilled": 11448,
+    "closedGaps": 37,
+    "testChecks": 32,
+    "verifierChecks": 18,
+    "executionMode": "INJECTED_FIXTURE",
+    "functionalReadiness": {
+      "basic": {
+        "functionalReadyOffline": 241,
+        "unavailable": 77,
+        "productionEligible": 0
+      },
+      "pro": {
+        "functionalReadyOffline": 155,
+        "unavailable": 163,
+        "productionEligible": 0
+      },
+      "advanced": {
+        "functionalReadyOffline": 126,
+        "unavailable": 192,
+        "productionEligible": 0
+      }
+    }
+  },
+  "realIntake": {
+    "providerCatalogBundles": 0,
+    "activeAssetDenominator": 318,
+    "evidenceCompleteAssets": 0,
+    "unavailableOrBlockedAssets": 318,
+    "fieldSnapshotBundles": 0,
+    "rightsApprovedAssets": 0,
+    "productionBrowserAssets": 0,
+    "customerValueLabeledAssets": 0,
+    "realTierOutputs": 0,
+    "decision": "BLOCKED_CURRENT_FULL_CATALOG_EVIDENCE"
+  },
+  "claims": {
+    "currentPublicNetworkExecuted": false,
+    "providerRightsApproved": false,
+    "productionBrowserExecuted": false,
+    "customerValueProven": false,
+    "exactA80CandidateBound": false,
+    "paidGateEligible": false,
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A85",
+    "title": "Shield Pro and Shield Map tier matrix",
+    "status": "PREPARE_TERMINAL_ORDERBOOK_INVESTIGATOR_BINDING_BLOCKED_REAL_DATA_EXACT_A80"
+  },
+  "truthBoundary": "A84 locally verifies a deterministic injected full-catalog Shield denominator, terminal field accounting, Basic/Pro/Advanced monotonicity, popup evidence parity and semantic mutation resistance. It does not prove current provider snapshots, rights, production browser behavior, customer value, exact A80, staging, LIVE or sale.",
+  "observedExecutionEnvironment": {
+    "node": "22.16.0",
+    "requiredNode": "24.18.0",
+    "currentRootGate": {
+      "passed": 24,
+      "required": 30,
+      "blocked": 6,
+      "semanticProductFailures": 0,
+      "sourceImmutable": true
+    },
+    "dependencyBlockers": {
+      "missingGenuineZodSuites": 5,
+      "missingGenuineTypeScriptSuites": 1
+    },
+    "creditBoundary": "Environment observation only; grants zero exact-runtime, current-provider, production-browser, customer, staging, LIVE or sale credit."
+  }
+}

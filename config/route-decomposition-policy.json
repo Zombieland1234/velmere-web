@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "velmere.pass4737.route-decomposition-policy.v1",
+  "generatedFromPass": 4736,
+  "currentPass": 4738,
+  "uiFrozen": true,
+  "checks": [
+    {
+      "name": "lens-request",
+      "sourceRoute": "app/api/search/lens-report/route.ts",
+      "destinationModule": "lib/search/lens-report-request-contract.ts",
+      "baselineNormalizedSha256": "1c78e220b6eb27a887ea4bca6bdaca1b6ef086eef2c9681c2c7f12ce6fb1a6c9",
+      "currentNormalizedSha256": "1c78e220b6eb27a887ea4bca6bdaca1b6ef086eef2c9681c2c7f12ce6fb1a6c9",
+      "parity": true,
+      "baselineBytes": 13101,
+      "currentBytes": 13101
+    },
+    {
+      "name": "lens-renderer",
+      "sourceRoute": "app/api/search/lens-report/route.ts",
+      "destinationModule": "lib/search/lens-pdf-renderer.ts",
+      "baselineNormalizedSha256": "e2e45260dbbcff9afe14cc0306ecc8e28a2abc58f4ff51d0f8600e301138c48e",
+      "currentNormalizedSha256": "e2e45260dbbcff9afe14cc0306ecc8e28a2abc58f4ff51d0f8600e301138c48e",
+      "parity": true,
+      "baselineBytes": 58189,
+      "currentBytes": 58189
+    },
+    {
+      "name": "angel-policy",
+      "sourceRoute": "app/api/angel/route.ts",
+      "destinationModule": "lib/ai/angel-route-policy.ts",
+      "baselineNormalizedSha256": "7173def7d41e4fb58c7b55060b10c42245fc72264105dcc4590613fad7c1e2b8",
+      "currentNormalizedSha256": "7173def7d41e4fb58c7b55060b10c42245fc72264105dcc4590613fad7c1e2b8",
+      "parity": true,
+      "baselineBytes": 22322,
+      "currentBytes": 22322
+    },
+    {
+      "name": "vlm-analysis",
+      "sourceRoute": "app/api/market-integrity/vlm/route.ts",
+      "destinationModule": "lib/market-integrity/vlm-route-analysis.ts",
+      "baselineNormalizedSha256": "b5dcb798da8ec5f8fa6e23b2bbf63fc216395cb5ed1b6ded3fc557cc26e30117",
+      "currentNormalizedSha256": "b5dcb798da8ec5f8fa6e23b2bbf63fc216395cb5ed1b6ded3fc557cc26e30117",
+      "parity": true,
+      "baselineBytes": 22070,
+      "currentBytes": 22070
+    },
+    {
+      "name": "vlm-output",
+      "sourceRoute": "app/api/market-integrity/vlm/route.ts",
+      "destinationModule": "lib/market-integrity/vlm-route-output.ts",
+      "baselineNormalizedSha256": "dca6948b986e34e48077b6caf890e07dff3506be8b6fa87698069c682c13966a",
+      "currentNormalizedSha256": "dca6948b986e34e48077b6caf890e07dff3506be8b6fa87698069c682c13966a",
+      "parity": true,
+      "baselineBytes": 28237,
+      "currentBytes": 28237
+    },
+    {
+      "name": "lens-handler",
+      "sourceRoute": "app/api/search/lens-report/route.ts",
+      "destinationModule": "app/api/search/lens-report/route.ts",
+      "baselineNormalizedSha256": "8286e81fce949a0bdbb10b0c66b4c8a55b557f466703cc779225736e5c92a438",
+      "currentNormalizedSha256": "8286e81fce949a0bdbb10b0c66b4c8a55b557f466703cc779225736e5c92a438",
+      "parity": true,
+      "baselineBytes": 658,
+      "currentBytes": 658
+    },
+    {
+      "name": "angel-handler",
+      "sourceRoute": "app/api/angel/route.ts",
+      "destinationModule": "app/api/angel/route.ts",
+      "baselineNormalizedSha256": "7f4b535068f2d544d6a0a6d5238264d94175df26c083ba160235d9d467ebc4c9",
+      "currentNormalizedSha256": "7f4b535068f2d544d6a0a6d5238264d94175df26c083ba160235d9d467ebc4c9",
+      "parity": true,
+      "baselineBytes": 50971,
+      "currentBytes": 50971
+    },
+    {
+      "name": "vlm-handler",
+      "sourceRoute": "app/api/market-integrity/vlm/route.ts",
+      "destinationModule": "app/api/market-integrity/vlm/route.ts",
+      "baselineNormalizedSha256": "553fb33a94333cc41337a493d0eb6307a5184edcaeccb298fcc1d8a36553659a",
+      "currentNormalizedSha256": "553fb33a94333cc41337a493d0eb6307a5184edcaeccb298fcc1d8a36553659a",
+      "parity": true,
+      "baselineBytes": 5420,
+      "currentBytes": 5420
+    }
+  ],
+  "routes": [
+    {
+      "path": "app/api/search/lens-report/route.ts",
+      "before": {
+        "path": "baseline:PASS4736/app/api/search/lens-report/route.ts",
+        "bytes": 99334,
+        "lines": 2742
+      },
+      "after": {
+        "path": "app/api/search/lens-report/route.ts",
+        "bytes": 27721,
+        "lines": 627
+      }
+    },
+    {
+      "path": "app/api/angel/route.ts",
+      "before": {
+        "path": "baseline:PASS4736/app/api/angel/route.ts",
+        "bytes": 79194,
+        "lines": 931
+      },
+      "after": {
+        "path": "app/api/angel/route.ts",
+        "bytes": 56916,
+        "lines": 515
+      }
+    },
+    {
+      "path": "app/api/market-integrity/vlm/route.ts",
+      "before": {
+        "path": "baseline:PASS4736/app/api/market-integrity/vlm/route.ts",
+        "bytes": 69152,
+        "lines": 1337
+      },
+      "after": {
+        "path": "app/api/market-integrity/vlm/route.ts",
+        "bytes": 15373,
+        "lines": 217
+      }
+    }
+  ],
+  "modules": [
+    {
+      "path": "lib/search/lens-report-request-contract.ts",
+      "bytes": 13683,
+      "lines": 258
+    },
+    {
+      "path": "lib/search/lens-pdf-renderer.ts",
+      "bytes": 59627,
+      "lines": 1892
+    },
+    {
+      "path": "lib/ai/angel-route-policy.ts",
+      "bytes": 23116,
+      "lines": 433
+    },
+    {
+      "path": "lib/market-integrity/vlm-route-analysis.ts",
+      "bytes": 25035,
+      "lines": 503
+    },
+    {
+      "path": "lib/market-integrity/vlm-route-output.ts",
+      "bytes": 30131,
+      "lines": 593
+    }
+  ],
+  "budgets": {
+    "lensRouteMaxLines": 700,
+    "angelRouteMaxLines": 550,
+    "vlmRouteMaxLines": 250,
+    "moduleMaxBytes": 70000,
+    "zeroHandlerDriftRequired": true,
+    "normalizedChunkParityRequired": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "classification": "LOCAL_DISPOSABLE_RUNTIME_E2E_NOT_STAGING",
+  "creditBoundary": {
+    "customerCredit": false,
+    "externalStripeCredit": false,
+    "liveCredit": false,
+    "localDisposableRuntimeCredit": true,
+    "paidSaleCredit": false,
+    "productionRouteCredit": false,
+    "stagingCredit": false,
+    "supabaseRlsCredit": false,
+    "transactionalEmailCredit": false
+  },
+  "minimumAssertions": 63,
+  "nonNegotiable": {
+    "accountDeletionPurgesArtifactsAndRedactsIdentifiers": true,
+    "advancedForSale": false,
+    "basicAlwaysFree": true,
+    "basicPaymentRequired": false,
+    "downloadTokenAccountBound": true,
+    "downloadTokenOneTime": true,
+    "proControlledBetaOnly": true,
+    "proPublicCheckoutAllowed": false,
+    "rawSourceForbiddenInLedger": true,
+    "rawTokensForbiddenInLedger": true,
+    "refundRevokesEntitlement": true,
+    "terminalEntitlementCannotReactivate": true,
+    "wrongAccountDenied": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "requiredFlows": [
+    "HTTP_INTAKE",
+    "IDEMPOTENT_DURABLE_JOB",
+    "SEPARATE_WORKER_PROCESS",
+    "PRIVATE_PACKET_AND_PDF_STORAGE",
+    "PAYMENT_WEBHOOK_SIGNATURE_AND_IDEMPOTENCY",
+    "ACCOUNT_BOUND_ONE_TIME_DOWNLOAD",
+    "WRONG_ACCOUNT_DENIAL",
+    "EXPIRY_AND_REPLAY_DENIAL",
+    "REFUND_ENTITLEMENT_REVOCATION",
+    "SESSION_EXPIRY",
+    "ACCOUNT_DELETION_AND_PURGE",
+    "APPEND_ONLY_HASH_CHAIN_LEDGER"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P23_ACTION_REQUIRED_LOCAL_DISPOSABLE_CUSTOMER_LIFECYCLE_REFUND_REVOCATION_DELETE_AND_DURABLE_DELIVERY_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p23.disposable-customer-lifecycle-policy.v1"
+}

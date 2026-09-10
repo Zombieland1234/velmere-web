@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "velmere.p35.internal-ai-availability-artifact-ledger-policy.v1",
+  "revision": "P35_EVIDENCE_AVAILABILITY_ARTIFACT_PARITY",
+  "generatedAt": "2026-08-13T05:45:00+00:00",
+  "executionMode": "MODEL_AUTHORED_ROLE_RUBRIC_DETERMINISTIC_EXPANSION",
+  "modelIdentity": {
+    "provider": "OpenAI",
+    "model": "GPT-5.6 Pro",
+    "liveModelCallsForRows": 0,
+    "modelFamilyIndependence": false,
+    "independenceCredit": false,
+    "description": "One model-authored frozen role/rubric set expanded deterministically against current profile receipts; not 4017 independent live model calls."
+  },
+  "authority": {
+    "methodologyPath": "docs/authority/VELMERE_METODOLOGIA_FINISHOWANIA_CANONICAL_V13_EVIDENCE_AVAILABILITY_ARTIFACT_PARITY_2026-08-13.txt",
+    "growthIntelPath": "docs/authority/VELMERE_GROWTH_INTEL_TOP_WORLD_R11_EVIDENCE_AVAILABILITY_VAULT_2026-08-13.txt",
+    "profileManifestPath": "artifacts/closure/p32/profile-execution-manifest.json",
+    "sourceIdentityPath": "artifacts/closure/p35/source-identity.json",
+    "eligibilityMatrixPath": "artifacts/closure/p35/current-evidence-availability-matrix.json",
+    "requirementR3Path": "docs/research/VELMERE_EVIDENCE_AVAILABILITY_DYNAMIC_TIERS_HISTORICAL_INTELLIGENCE_PDF_ACCOUNT_ARTIFACTS_R3_CURRENT_SOURCE_MAPPING_2026-08-13.txt"
+  },
+  "cohorts": [
+    {
+      "id": "AI_CUSTOMER_JOURNEYS",
+      "label": "AI customer personas / customer journey",
+      "personas": 100,
+      "stepsPerPersona": 24,
+      "denominator": 2400,
+      "creditClass": "INTERNAL_SIMULATED_CUSTOMER_ONLY"
+    },
+    {
+      "id": "AI_TECHNICAL_AUDITORS",
+      "label": "AI technical auditors and skeptical reviewers",
+      "roles": 12,
+      "profilesPerRole": 33,
+      "denominator": 396,
+      "creditClass": "INTERNAL_AI_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_ATTACKERS",
+      "label": "AI attackers and abuse reviewers",
+      "roles": 8,
+      "profilesPerRole": 33,
+      "denominator": 264,
+      "creditClass": "INTERNAL_AI_ATTACK_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_LEGAL_RISK",
+      "label": "AI legal-risk reviewers",
+      "roles": 6,
+      "profilesPerRole": 33,
+      "denominator": 198,
+      "creditClass": "INTERNAL_AI_LEGAL_PREPARATION_ONLY"
+    },
+    {
+      "id": "AI_PRODUCT_VALUE_PRICING",
+      "label": "AI product-value and pricing reviewers",
+      "roles": 8,
+      "profilesPerRole": 33,
+      "denominator": 264,
+      "creditClass": "INTERNAL_AI_VALUE_HYPOTHESIS_ONLY"
+    },
+    {
+      "id": "AI_ACCESSIBILITY_I18N",
+      "label": "AI accessibility and i18n reviewers",
+      "roles": 5,
+      "profilesPerRole": 33,
+      "denominator": 165,
+      "creditClass": "INTERNAL_AI_ACCESSIBILITY_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_OPS_SRE",
+      "label": "AI operations and SRE reviewers",
+      "roles": 5,
+      "profilesPerRole": 33,
+      "denominator": 165,
+      "creditClass": "INTERNAL_AI_OPS_REVIEW_ONLY"
+    },
+    {
+      "id": "AI_DATA_PROVIDER_RIGHTS",
+      "label": "AI data, provider and rights reviewers",
+      "roles": 5,
+      "profilesPerRole": 33,
+      "denominator": 165,
+      "creditClass": "INTERNAL_AI_DATA_RIGHTS_PREPARATION_ONLY"
+    },
+    {
+      "id": "AI_EVIDENCE_AVAILABILITY_CUSTOMER_JOURNEYS",
+      "label": "AI customer availability / historical / artifact journey supplement",
+      "personas": 100,
+      "stepsPerPersona": 8,
+      "denominator": 800,
+      "creditClass": "INTERNAL_SIMULATED_AVAILABILITY_CUSTOMER_ONLY"
+    },
+    {
+      "id": "AI_AVAILABILITY_ARTIFACT_REVIEWERS",
+      "label": "AI dynamic eligibility, historical truth and account artifact reviewers",
+      "roles": 10,
+      "profilesPerRole": 33,
+      "denominator": 330,
+      "creditClass": "INTERNAL_AI_AVAILABILITY_ARTIFACT_REVIEW_ONLY"
+    }
+  ],
+  "expectedTotalRows": 5147,
+  "mandatoryFalseCredits": {
+    "externalCredit": false,
+    "realCustomerCredit": false,
+    "independentReviewerCredit": false,
+    "professionalLegalDecisionCredit": false,
+    "providerRightsCredit": false,
+    "customerValueCredit": false,
+    "paidReleaseCredit": false,
+    "worldClassCredit": false
+  },
+  "truthBoundary": "P35 versions the internal AI denominator to include availability, historical-intelligence and canonical-artifact review. 5147/5147 may close internal AI execution only; real customers, independent reviewers, professional legal decisions, provider rights, final tier-value holdouts, GO_PAID and world-class evidence remain separate.",
+  "externalTracks": [
+    {
+      "trackId": "real-customers",
+      "label": "Real customer comprehension / decision utility",
+      "denominator": "FROZEN_BEFORE_RECRUITMENT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "real-wtp-refund-retention",
+      "label": "Real willingness-to-pay / refund / retention",
+      "denominator": "FROZEN_BEFORE_PILOT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "independent-human-reviewers",
+      "label": "Independent qualified human/org review",
+      "denominator": "ER_LEVEL_DEPENDENT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "professional-legal-decisions",
+      "label": "Professional legal/product-role decisions",
+      "denominator": "SCOPE_AND_JURISDICTION_DEPENDENT",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "provider-commercial-rights",
+      "label": "Provider commercial display/retention/redistribution rights",
+      "denominator": "ALL_PRODUCTION_PROVIDER_USE_CASE_CELLS",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "staging-production-runtime",
+      "label": "Disposable staging and production-like runtime proof",
+      "denominator": "FROZEN_STAGING_PROGRAM",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "real-accessibility-participants",
+      "label": "Real assistive-technology / disabled-user evidence",
+      "denominator": "FROZEN_ACCESSIBILITY_PROTOCOL",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "independent-security-test",
+      "label": "Independent deployed security/pentest falsification",
+      "denominator": "FROZEN_EXTERNAL_SECURITY_SCOPE",
+      "canAiSimulationSatisfy": false
+    },
+    {
+      "trackId": "production-outcomes",
+      "label": "Sustained production outcomes / drift / correction evidence",
+      "denominator": "TIME_AND_VOLUME_FROZEN",
+      "canAiSimulationSatisfy": false
+    }
+  ],
+  "p35RequiredTruth": {
+    "availabilityProfileDenominator": 33,
+    "saleEligibleProfileCount": 0,
+    "analysisEligibleProfileCount": 11,
+    "finalHoldoutProfilesClosed": 0,
+    "realCustomerCredit": 0,
+    "paidReleaseCredit": 0,
+    "externalCredit": 0,
+    "requiredNoAlias": [
+      "AI persona != real customer",
+      "AI review != independent review",
+      "internal eligibility != paid sale",
+      "PDF parity != production delivery",
+      "requirement document != implemented feature"
+    ]
+  }
+}

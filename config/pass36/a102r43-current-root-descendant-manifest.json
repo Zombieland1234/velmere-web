@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "velmere.pass36.a102r43.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R42_ACTION_REQUIRED_A60_TOTAL_FAIL_CLOSED_RECEIPT_AND_LOG_CLASSIFIER_BOUNDARY_EXACT_WINDOWS_NO_LIVE_CREDIT",
+  "parentDescendantManifestDigestSha256": "2d3d648f90e0f48e9e99538499f1b58e602a2e8230f10e6a9d4f575522078662",
+  "generatedAt": "2026-08-02T02:30:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "BOUNDED_FINAL_UI_UX_PERFORMANCE_HARDENING_BEFORE_CLEANUP",
+  "physicalPlatform": "win32",
+  "payload": {
+    "fileCount": 5591,
+    "byteLength": 129207241,
+    "pathSetSha256": "08d57cba797fd3b278feb336140d7723564103c2290dca17bb4e6e2305d724ae",
+    "aggregateSha256": "eeb5a1f513e1be3f6284260b7475650509733690d39eccc77791aa1438be42ae"
+  },
+  "staticBindings": {
+    "stateSha256": "d65d71f1269967336d8ffc3e0a7f96ddaaa9f1d546b04ab35be311403f981a95",
+    "completionProgramSha256": "3752953670422ca16ee21ed07ce42dcda0a84395e9ace842e7a513aee6a15151",
+    "sourceModePolicySha256": "16c3d38d4f6ea25a032c5ff8c39fde57730d52460b200f67ca33268c107a1413",
+    "approvedChangeLedgerSha256": "1f68b45810917def384cda78cac7511046ee3b7157be00d82ea87a675ead8c20",
+    "parentDescendantManifestSha256": "85f94a3b7574c8889577620bf92fcf84f04b14d3b86788ba401b1b7de51c2047"
+  },
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "a95PassCredit": false,
+    "a96PassCredit": false,
+    "a97PassCredit": false,
+    "a98PassCredit": false,
+    "a99PassCredit": false,
+    "a100PassCredit": false,
+    "a101PassCredit": false,
+    "a102PassCredit": false,
+    "approvedChangePaths": 30,
+    "authorityVerifierChecksRequired": 51,
+    "physicalNavigationTransitionsObserved": 20,
+    "physicalMobileLocaleProductRoutesObserved": 9,
+    "finalByteBrowserCredit": false,
+    "faultEmulationCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "stagingCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "formalOpenEntries": 31,
+    "a77r1ToA80r1": {
+      "verified": 0,
+      "required": 4
+    },
+    "exactChrome148PlaywrightRevision1223": {
+      "verified": 0,
+      "required": 1
+    },
+    "exactWindowsNode24_18_0Npm11_16_0": {
+      "verified": 0,
+      "required": 1
+    },
+    "a102ObservationWindows": {
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200
+    },
+    "stagingStages": {
+      "verified": 0,
+      "required": 10
+    },
+    "realRls": {
+      "verified": 0,
+      "required": 19
+    },
+    "stripeTestLifecycle": {
+      "verified": 0,
+      "required": 1
+    },
+    "providerRights": {
+      "verified": 0,
+      "required": 21
+    },
+    "legalDpoSignedDecisions": {
+      "verified": 0,
+      "required": 20
+    },
+    "officialAuditToolRuns": {
+      "verified": 0,
+      "required": 200
+    },
+    "crossAudits": {
+      "verified": 0,
+      "required": 20
+    },
+    "realCustomerPdfs": {
+      "verified": 0,
+      "required": 50
+    },
+    "shield": {
+      "verified": 0,
+      "required": 318
+    },
+    "shieldProMap": {
+      "verified": 0,
+      "required": 318
+    },
+    "realMarkets": {
+      "verified": 0,
+      "required": 583
+    },
+    "brainAngelRiskRealEval": {
+      "verified": 0,
+      "required": 300
+    },
+    "customerCohorts": {
+      "verified": 0,
+      "required": 2
+    },
+    "realStorageMutations": {
+      "verified": 0,
+      "required": 2
+    },
+    "realKmsCalls": {
+      "verified": 0,
+      "required": 1
+    },
+    "realEmails": {
+      "verified": 0,
+      "required": 1
+    },
+    "realCleanupConfirmations": {
+      "verified": 0,
+      "required": 2
+    },
+    "independentAssurance": {
+      "verified": 0,
+      "required": 1
+    },
+    "contractCases": {
+      "verified": 0,
+      "required": 50
+    },
+    "sourceBytecodeReproduction": {
+      "verified": 0,
+      "required": 50
+    },
+    "realTierOutputs": {
+      "verified": 0,
+      "required": 150
+    },
+    "marketImpact": {
+      "verified": 0,
+      "required": 318
+    },
+    "whaleWatch": {
+      "verified": 0,
+      "required": 318
+    },
+    "alternateProviderProbes": {
+      "verified": 0,
+      "required": 10
+    },
+    "a114PostStagingRegression": {
+      "verified": 0,
+      "required": 1
+    },
+    "a115FinalSkuLegalClaimsClosure": {
+      "verified": 0,
+      "required": 1
+    },
+    "a116IndependentFinalRelease": {
+      "verified": 0,
+      "required": 1
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    }
+  },
+  "manifestDigestSha256": "effa53a741fb362bf483e0803f2316fbcb026c82f273ab0b400d2bfd374b64fe"
+}

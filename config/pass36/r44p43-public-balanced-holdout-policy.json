@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p43.public-balanced-holdout-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P43_ACTION_REQUIRED_PUBLIC_BALANCED_HOLDOUT_LEGACY_COMPILER_AST_AND_CONTROL_ALERT_RATE_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P41_ACTION_REQUIRED_OFFICIAL_FOUNDRY_INVARIANTS_ANVIL_RAW_RPC_EXACT_OFFLINE_FULL_LINUX_RELEASE_NO_LIVE_CREDIT",
+  "testCycle": "2/3",
+  "globalDecision": "NO_GO",
+  "purpose": "Evaluate the current compiler-AST analyzer on a pinned public vulnerable corpus and preregistered public control candidates without conflating candidate alert rate with formal FPR.",
+  "publicPositiveCorpus": {
+    "repository": "smartbugs/smartbugs-curated",
+    "commit": "230e649123477eff332742a59a1c7cc6dc286cab",
+    "cases": 69,
+    "manifestSha256": "807f69b32e6c1987a6460e4434e489488fe98686cf699bca3d03365f197e034b",
+    "selectionFrozenBeforeAnalyzerExecution": true
+  },
+  "publicControlCandidates": {
+    "package": "@openzeppelin/contracts",
+    "version": "5.0.2",
+    "cases": 29,
+    "manifestSha256": "7082545f9b31bb1c0f686461b73fed593c4f95287820af66ed956660ecfaafab",
+    "selectionFrozenBeforeAnalyzerExecution": true,
+    "formalTrueNegativeCredit": false
+  },
+  "supportedDetectorFamilies": {
+    "ACCESS_CONTROL": [
+      "AST_R44P38_UNPROTECTED_UPGRADE",
+      "AST_SELFDESTRUCT_SURFACE",
+      "AST_TX_ORIGIN_AUTH",
+      "AST_UNGUARDED_DELEGATECALL_TARGET",
+      "AST_UNGUARDED_INITIALIZER",
+      "AST_UNPROTECTED_PRIVILEGED_STATE_WRITE",
+      "AST_UNBOUNDED_DYNAMIC_STORAGE_INDEX_WRITE",
+      "AST_WITHDRAWAL_BALANCE_NOT_CONSUMED",
+      "AST_WITHDRAWAL_LIMIT_COMPARISON_INVERTED"
+    ],
+    "REENTRANCY": [
+      "AST_EXTERNAL_INTERACTION_BEFORE_STATE_EFFECT"
+    ],
+    "UNCHECKED_LL_CALLS": [
+      "AST_UNCHECKED_LOW_LEVEL_CALL"
+    ]
+  },
+  "metricPolicy": {
+    "allowed": [
+      "supported subset recall",
+      "compiler/compact-AST coverage",
+      "coverage-adjusted detection share",
+      "candidate root alert rate",
+      "candidate bundle alert rate"
+    ],
+    "forbidden": [
+      "single overall accuracy",
+      "formal precision",
+      "formal FPR",
+      "severity accuracy",
+      "exploitability accuracy",
+      "world-class accuracy"
+    ],
+    "reason": "The public vulnerable selection lacks balanced independently adjudicated negatives, and the control roots are candidates rather than formal true negatives."
+  },
+  "truthBoundary": {
+    "independentGroundTruth": false,
+    "twoIndependentReviewers": false,
+    "sealedIndependentLabels": false,
+    "realDeploymentBinding": false,
+    "customerProof": false,
+    "saleCredit": false,
+    "liveCredit": false,
+    "worldClassCredit": false
+  },
+  "fullQaPolicy": {
+    "cycle": "2/3",
+    "targetedQaRequired": true,
+    "fullAppReleaseDeferredTo": "R44P44_CYCLE_3_OF_3"
+  }
+}

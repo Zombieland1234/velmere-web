@@ -1,0 +1,2513 @@
+{
+  "schemaVersion": "velmere.pass36.a86.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+  "parentRevisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+  "programRange": {
+    "firstPass": 76,
+    "lastPlannedPass": 116,
+    "plannedPassCount": 41,
+    "legacyBaseRange": "A76-A110",
+    "legacyBaseRemainingAfterA85": 25,
+    "requiredFinalWave": "A111-A116",
+    "remainingAfterA81": 35,
+    "remainingAfterA82": 34,
+    "remainingAfterA83": 33,
+    "remainingAfterA84": 32,
+    "remainingAfterA85": 31,
+    "remainingAfterA86": 30
+  },
+  "programRules": {
+    "roadmapIsLivingContract": true,
+    "newGapMustBeAddedImmediately": true,
+    "percentagesMustBeRecalculatedHonestly": true,
+    "noGapMayBeHiddenToPreservePercentage": true,
+    "onePassShouldCloseOneDeclaredDenominator": true,
+    "fixtureCannotPromoteStagingLiveOrSale": true,
+    "perSkuDecisionRequired": true,
+    "absoluteSecurityClaimForbidden": true,
+    "worldClassClaimRequiresIndependentExternalEvidence": true,
+    "a111A116AreMandatory": true,
+    "a77A80RealClosureMustRunInParallel": true,
+    "rightsMustBeResolvedBeforePaidRealDataRerun": true,
+    "realEvidenceRebaselineRequiredAfterRightsAndStaging": true,
+    "legalDenominatorMustEqualActivePerimeter": true
+  },
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "unchangedByA77": true
+  },
+  "waves": [
+    {
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "range": "A76-A80",
+      "goal": "One unambiguous release truth, exact local runtime/build/browser proof and a frozen local release candidate.",
+      "passes": [
+        "A76",
+        "A77",
+        "A78",
+        "A79",
+        "A80"
+      ]
+    },
+    {
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "range": "A81-A88",
+      "goal": "Prove cross-surface consistency and measurable incremental value for Basic, Pro and Advanced on shared real-case denominators.",
+      "passes": [
+        "A81",
+        "A82",
+        "A83",
+        "A84",
+        "A85",
+        "A86",
+        "A87",
+        "A88"
+      ]
+    },
+    {
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "range": "A89-A94",
+      "goal": "A frozen, cross-domain adversarial campaign with zero unresolved Critical/High findings.",
+      "passes": [
+        "A89",
+        "A90",
+        "A91",
+        "A92",
+        "A93",
+        "A94"
+      ]
+    },
+    {
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "range": "A95-A104",
+      "goal": "Execute the existing A47-A57 program on one frozen source and disposable staging without skipping a failed stage.",
+      "passes": [
+        "A95",
+        "A96",
+        "A97",
+        "A98",
+        "A99",
+        "A100",
+        "A101",
+        "A102",
+        "A103",
+        "A104"
+      ]
+    },
+    {
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "range": "A105-A110",
+      "goal": "Obtain signed rights, legal classification, independent assurance, customer value and per-SKU release decisions.",
+      "passes": [
+        "A105",
+        "A106",
+        "A107",
+        "A108",
+        "A109",
+        "A110"
+      ]
+    },
+    {
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "range": "A111-A116",
+      "goal": "Repeat the local product matrices on rights-approved real evidence after staging, close legal UX and publish one independently signed final release package.",
+      "passes": [
+        "A111",
+        "A112",
+        "A113",
+        "A114",
+        "A115",
+        "A116"
+      ]
+    }
+  ],
+  "passes": [
+    {
+      "passNumber": 76,
+      "revisionPrefix": "A76",
+      "title": "Current revision, roadmap and regulatory perimeter truth authority",
+      "status": "DONE_LOCAL",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "One authority classifies current code, canonical metrics, acceptance, visual/engine parents and legacy compatibility pointers.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 77,
+      "revisionPrefix": "A77",
+      "title": "Historical artifact resolution or clean-root governance decision",
+      "status": "DONE_LOCAL_GOVERNANCE_PENDING",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Construct a hash-bound clean root preserving A61 as 0/2; staging admission remains blocked until dual-control Ed25519 governance or exact legacy recovery.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 78,
+      "revisionPrefix": "A78",
+      "title": "Exact runtime, lockfile dependency and Chromium bootstrap",
+      "status": "PARTIAL_BLOCKED_EXACT_ARTIFACTS",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Local admission is hardened and exact CAS coverage is measured 81/827; completion still requires physical Node 24.18.0/npm 11.16.0, 827/827 lock-bound tarballs, exact Playwright 1.60.0 Chromium, 30/30 current-root and VERIFIED A60.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 79,
+      "revisionPrefix": "A79",
+      "title": "Exact final-byte build and browser acceptance",
+      "status": "DONE_LOCAL_ADMISSION_HARDENING_BLOCKED_A78_EXACT_ARTIFACTS",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Local runner/evidence admission bypasses are closed; completion still requires VERIFIED A78 physical toolchain followed by real lint, typecheck, Webpack, Turbopack, owned next start, exact 36-row Playwright matrix and 19 hash-bound PNG screenshots.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 80,
+      "revisionPrefix": "A80",
+      "title": "Frozen local release candidate",
+      "status": "PARTIAL_LOCAL_ADMISSION_IMPLEMENTED_BLOCKED_EXACT_EXECUTION",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "A80 admission/seal boundary is locally implemented and rejects deterministic-package-only promotion. Completion requires VERIFIED A78, VERIFIED A79, exact current-root 30/30, clean-unpack A58, zero local P0/P1 and an externally written immutable candidate seal.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 81,
+      "revisionPrefix": "A81",
+      "title": "Canonical mega-matrix orchestrator",
+      "status": "DONE_LOCAL_SYNTHETIC_ORCHESTRATOR_BLOCKED_FROZEN_A80_AND_REAL_CASES",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "One source-bound synthetic orchestrator covers 300 base cases, 2700 adapter rows, 500 module cases, 4500 Basic/Pro/Advanced packet rows, 27000 API/UI/preview/PDF/Brain/Angel projections and 36000 resealed semantic mutations with zero added facts or blocked-state promotion. Product credit still requires a verified A80 candidate and real cases.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 82,
+      "revisionPrefix": "A82",
+      "title": "Audit Basic Pro Advanced real-contract matrix",
+      "status": "DONE_LOCAL_INTAKE_AND_FIXTURE_HARNESS_BLOCKED_REAL_EVIDENCE_RIGHTS_OFFICIAL_TOOLS",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "A82 implements the fixed fifty-case intake, balanced classes, source-bytecode, rights, blind-label, official-tool and FP/FN evidence contracts. Completion still requires 50/50 fully supplied rights-approved real cases, 200/200 exact official tool receipts, independent labels and adjudication.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 83,
+      "revisionPrefix": "A83",
+      "title": "Browser Lens and PDF real-packet matrix",
+      "status": "DONE_LOCAL_PHYSICAL_CROSS_LOCALE_MATRIX_BLOCKED_REAL_PACKET_BROWSER_CUSTOMER_EVIDENCE",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "A83 verifies 450 deterministic physical PDFs / 2100 pages across fifty cases, three tiers and PL/EN/DE; six-channel parity and 8100 resealed mutations pass. Completion still requires 50/50 current rights-approved packets, 450 production browser/download/secure-delivery/accessibility checks and customer comprehension/value labels.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 84,
+      "revisionPrefix": "A84",
+      "title": "Shield full-catalog tier matrix",
+      "status": "DONE_LOCAL_INJECTED_FULL_CATALOG_MATRIX_BLOCKED_CURRENT_PROVIDER_RIGHTS_BROWSER_CUSTOMER_EVIDENCE",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "A84 locally covers 318 assets, 1013 listings, 7091 terminal field rows, 954 tier packets, 3816 popup projections and 11448 semantic mutations. Completion still requires current full-catalog snapshots, provider rights, production browser and customer value evidence.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 85,
+      "revisionPrefix": "A85",
+      "title": "Shield Pro and Shield Map tier matrix",
+      "status": "DONE_LOCAL_REAL_EVIDENCE_PENDING",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "Local 318-asset Shield Pro/Shield Map pagination, exact identity, chain/address, labels, six-lane investigator, depth and entitlement matrix is complete; real network, browser, rights, entitlement and customer evidence remain required.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 86,
+      "revisionPrefix": "A86",
+      "title": "Real Markets cross-asset full matrix and data-rights truth ledger",
+      "status": "DONE_LOCAL_STATIC_REFERENCE_MATRIX_BLOCKED_CURRENT_DATA_RIGHTS_BROWSER_CUSTOMER_EVIDENCE",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "A86 locally covers 583 instruments across stock, ETF, REIT, FX, commodity, index and crypto comparison classes; 5830 field rows, 1749 tier packets, 6996 channel projections and 31482 resealed semantic mutations pass. Completion still requires current quotes/history/calendars/actions/corrections, provider rights, production browser and customer value evidence.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 87,
+      "revisionPrefix": "A87",
+      "title": "Market Impact and Whale Watch tier matrix",
+      "status": "PLANNED_BLOCKED_REAL_DATA",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "Current multi-venue books, realized-slippage comparisons, holder/transfer/label evidence and continuous revalidation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 88,
+      "revisionPrefix": "A88",
+      "title": "Brain Angel and Risk real evaluation",
+      "status": "PLANNED_BLOCKED_REAL_EVAL",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "At least 300 multilingual cases including contradictions, prompt/RAG/tool injection, abstention, entitlement and calibration.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 89,
+      "revisionPrefix": "A89",
+      "title": "Account auth tenant and privacy red team",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Sessions, recovery, OAuth, CSRF, tenant isolation, RLS, fixation, ATO and cross-device revocation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 90,
+      "revisionPrefix": "A90",
+      "title": "API network edge and cache red team",
+      "status": "PLANNED",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "SSRF, DNS rebinding, host/redirect/proxy spoofing, request smuggling, CORS, CSP, cache poisoning, replay and rate limits.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 91,
+      "revisionPrefix": "A91",
+      "title": "Files PDF upload storage and persistence red team",
+      "status": "PLANNED",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Multipart/polyglot/bomb, path/symlink/TOCTOU, private download, PDF active content and storage isolation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 92,
+      "revisionPrefix": "A92",
+      "title": "Payments entitlements and commerce red team",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Webhook replay/reorder, refunds, reconciliation, success URL bypass, SKU/tier mismatch and revocation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 93,
+      "revisionPrefix": "A93",
+      "title": "Supply chain secrets signing and operations red team",
+      "status": "PLANNED",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Dependencies, scripts, CI/CD, command execution, logs, KMS, secret rotation, signing, trust anchors and rollback.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 94,
+      "revisionPrefix": "A94",
+      "title": "Performance accessibility browser and chaos acceptance",
+      "status": "PLANNED_BLOCKED_EXACT_BROWSER",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Core Web Vitals, slow network, large catalogs, memory, cancellation, mobile, WCAG/EAA and provider outages.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 95,
+      "revisionPrefix": "A95",
+      "title": "Real A47 evidence intake",
+      "status": "PLANNED_BLOCKED_A79",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Import exact A45/A46 build/browser/data evidence.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 96,
+      "revisionPrefix": "A96",
+      "title": "Real A48 tenant isolation",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Two disposable accounts, 19 RLS controls, private artifacts and session revocation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 97,
+      "revisionPrefix": "A97",
+      "title": "Real A49 Stripe test refund and reconciliation",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Test-mode charge, full refund, webhook replay and entitlement reconciliation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 98,
+      "revisionPrefix": "A98",
+      "title": "Real A50 email private storage and KMS",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Delivered transactional email, private bucket, cross-tenant denial, signed URL expiry and external wrap/unwrap.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 99,
+      "revisionPrefix": "A99",
+      "title": "Real A51 backup restore rollback and provider loss",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Disposable restore, digest/RLS parity, rollback/forward restore and provider failover.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 100,
+      "revisionPrefix": "A100",
+      "title": "Real A52 incident kill switch and customer communication",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Alert, ACK, safe mode, notices, playbook, recovery and closure.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 101,
+      "revisionPrefix": "A101",
+      "title": "Real A54 SLO alert ACK vendor exit and recovery",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Fresh bounded SLO, independent observer/ACK, independent failure domain, revoked credential rejection and finally restore.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 102,
+      "revisionPrefix": "A102",
+      "title": "Real A55 independent legal and customer review intake",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Signed security, data/provider, payments, operations and legal/customer reports.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 103,
+      "revisionPrefix": "A103",
+      "title": "Real A56 out-of-time repeated observation",
+      "status": "PLANNED_BLOCKED_TIME",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "At least three A54 runs over at least 72 hours with independent observers and provider diversity.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 104,
+      "revisionPrefix": "A104",
+      "title": "Real A57 controlled canary",
+      "status": "PLANNED_BLOCKED_PRECONDITIONS",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "At most 25 participants, Stripe test only, stop rules, kill switch, rollback and support/refund/outcome/security telemetry.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 105,
+      "revisionPrefix": "A105",
+      "title": "Provider and dataset rights closure",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "21/21 signed field-level rights for display, export, PDF, derived data, AI/RAG, retention, corrections and exit.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 106,
+      "revisionPrefix": "A106",
+      "title": "EU Germany Poland legal DPO and financial perimeter closure",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Signed applicability for privacy, AI, crypto/financial, consumer, community, accessibility, tax, sanctions and liability.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 107,
+      "revisionPrefix": "A107",
+      "title": "Independent assurance closure",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Independent security, data/provider, payment, operations, accessibility/AI and audit-methodology retests on frozen bytes.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 108,
+      "revisionPrefix": "A108",
+      "title": "Customer cohort one",
+      "status": "PLANNED_BLOCKED_CUSTOMERS",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Blind Basic-vs-Pro and Pro-vs-Advanced comprehension, utility, time saved, support, refund, outcome and willingness-to-pay.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 109,
+      "revisionPrefix": "A109",
+      "title": "Out-of-time customer cohort two",
+      "status": "PLANNED_BLOCKED_TIME_CUSTOMERS",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Repeat on a later window and different user profile without changing thresholds after results.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 110,
+      "revisionPrefix": "A110",
+      "title": "Per-SKU signed release decision",
+      "status": "PLANNED_BLOCKED_ALL_PRIOR",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Independent sell/no-sell decision for every product/tier; no global promotion by aggregate percentage.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 111,
+      "revisionPrefix": "A111",
+      "title": "Real evidence rebaseline for Audits and PDF",
+      "status": "PLANNED_MANDATORY",
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "requiredExitEvidence": "Repeat A82/A83 on 50 rights-approved real contracts and real packets with official tools, source-bytecode proof, secure delivery and independent labels.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 112,
+      "revisionPrefix": "A112",
+      "title": "Shield and Real Markets final real-data closure",
+      "status": "PLANNED_MANDATORY",
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "requiredExitEvidence": "Repeat A84-A86 on current rights-approved full catalogs with production browser, correction propagation, exact entitlement and complete denominator accounting.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 113,
+      "revisionPrefix": "A113",
+      "title": "Impact Whale Brain Angel and Risk final closure",
+      "status": "PLANNED_MANDATORY",
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "requiredExitEvidence": "Use current books, observed slippage, holders/transfers/labels, multilingual prompt/RAG/tool red team and closed real risk outcomes.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 114,
+      "revisionPrefix": "A114",
+      "title": "Post-staging full frozen-source regression",
+      "status": "PLANNED_MANDATORY",
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "requiredExitEvidence": "Repeat A81-A94 after A95-A104 on one frozen source with all tiers, locales, browsers, PDF, security, performance and accessibility.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 115,
+      "revisionPrefix": "A115",
+      "title": "Final claims legal UX geofencing and consumer flows",
+      "status": "PLANNED_MANDATORY",
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "requiredExitEvidence": "Bind every public claim, disclaimer, checkout, terms, withdrawal, privacy, country restriction and advice boundary to signed legal decisions.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 116,
+      "revisionPrefix": "A116",
+      "title": "Final independently signed release package",
+      "status": "PLANNED_MANDATORY",
+      "waveId": "W6_FINAL_REAL_EVIDENCE_AND_SIGNED_RELEASE",
+      "requiredExitEvidence": "Publish exact SOURCE_ONLY, MATERIALS, SBOM, provenance, transparency log, rollback/DR packages, two independent signatures and the 30-cell sell decision ledger.",
+      "mayEnableLiveOrSale": true
+    }
+  ],
+  "legalAndRegulatoryPerimeter": [
+    {
+      "itemId": "GDPR_EPRIVACY_DE_PL",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Accounts, analytics, cookies, security logs, wallet/entity labels, support, exports, deletion and cross-border processors.",
+      "requiredEvidence": [
+        "controller_processor_role_map",
+        "records_of_processing",
+        "lawful_basis_and_consent_matrix",
+        "DPIA_or_signed_no_DPIA_reason",
+        "DSAR_delete_export_retention_test",
+        "processor_SCC_transfer_register",
+        "German_TDDDG_and_Polish_cookie_review"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+      "blocks": [
+        "LIVE",
+        "SALE",
+        "CUSTOMER_COHORT"
+      ]
+    },
+    {
+      "itemId": "EU_AI_ACT",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Brain, Angel, risk analysis, generated reports, AI interaction disclosure, model/tool roles and human oversight.",
+      "requiredEvidence": [
+        "provider_deployer_importer_role_classification",
+        "prohibited_practice_check",
+        "AI_literacy_program",
+        "Article_50_transparency_and_machine_readability",
+        "high_risk_classification_or_signed_exclusion",
+        "logging_human_oversight_incident_plan",
+        "model_provider_contract_and_copyright_review"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "blocks": [
+        "AI_LIVE",
+        "AI_SALE"
+      ]
+    },
+    {
+      "itemId": "MICA_MIFID_MAR_FINANCIAL_PERIMETER",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Token plans, crypto information, market/risk outputs, alerts, recommendations, execution links and community content.",
+      "requiredEvidence": [
+        "token_classification",
+        "CASP_service_perimeter",
+        "MiFID_financial_instrument_test",
+        "advice_portfolio_management_execution_exclusion_or_authorisation",
+        "MAR_investment_recommendation_and_market_abuse_controls",
+        "marketing_risk_disclosures",
+        "competent_authority_and_territory_matrix"
+      ],
+      "officialSource": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+      "blocks": [
+        "TOKEN_LAUNCH",
+        "CRYPTO_SALE",
+        "RECOMMENDATION_CLAIMS"
+      ]
+    },
+    {
+      "itemId": "AML_CFT_TRAVEL_RULE_SANCTIONS",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Any custody, transfer, exchange, token sale, wallet payments or regulated crypto service.",
+      "requiredEvidence": [
+        "in_scope_service_decision",
+        "KYC_KYB_UBO_policy_if_applicable",
+        "transaction_monitoring_if_applicable",
+        "travel_rule_if_applicable",
+        "sanctions_PEP_screening",
+        "suspicious_activity_escalation",
+        "geofencing_and_record_retention"
+      ],
+      "officialSource": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+      "blocks": [
+        "TOKEN_LAUNCH",
+        "REGULATED_CRYPTO_SERVICE"
+      ]
+    },
+    {
+      "itemId": "DSA_COMMUNITY_SQUARE",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Square/community posts, comments, moderation, recommendations, advertising and minors.",
+      "requiredEvidence": [
+        "intermediary_online_platform_classification",
+        "notice_and_action",
+        "statement_of_reasons_and_appeals",
+        "terms_and_moderation_transparency",
+        "illegal_content_and_trusted_flagger_process",
+        "user_number_publication_or_exemption",
+        "minor_safety_and_dark_pattern_review",
+        "ad_recommender_transparency_if_used"
+      ],
+      "officialSource": "https://digital-strategy.ec.europa.eu/en/policies/digital-services-act",
+      "blocks": [
+        "SQUARE_PUBLIC_LAUNCH"
+      ]
+    },
+    {
+      "itemId": "EAA_ACCESSIBILITY",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "E-commerce, account, checkout, customer support, PDFs and mobile/desktop service flows.",
+      "requiredEvidence": [
+        "service_and_microenterprise_applicability",
+        "WCAG_EN301549_matrix",
+        "keyboard_screen_reader_zoom_contrast",
+        "accessible_auth_checkout_support",
+        "accessible_PDF_and_alternative_format",
+        "accessibility_statement_feedback_process",
+        "independent_accessibility_review"
+      ],
+      "officialSource": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en",
+      "blocks": [
+        "EU_ECOMMERCE_SALE"
+      ]
+    },
+    {
+      "itemId": "EU_CONSUMER_DIGITAL_CONTENT_ECOMMERCE",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Paid digital tiers, subscriptions, one-off reports, refunds, planned prices and digital service conformity.",
+      "requiredEvidence": [
+        "precontract_information",
+        "withdrawal_and_immediate_performance_consent",
+        "digital_content_service_conformity",
+        "price_duration_renewal_termination",
+        "refund_complaint_remedy_workflow",
+        "planned_price_no_dark_pattern_review",
+        "German_and_Polish_consumer_terms"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/EN/legal-content/summary/contracts-for-the-supply-of-digital-content-and-digital-services.html",
+      "blocks": [
+        "CONSUMER_SALE"
+      ]
+    },
+    {
+      "itemId": "PAYMENTS_PSD2_SCA_PCI_STRIPE_BLIK",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Checkout, test/live payments, refunds, reconciliation, payment data and BLIK/SCA.",
+      "requiredEvidence": [
+        "merchant_payment_role",
+        "SCA_3DS_flow",
+        "PCI_scope_and_SAQ",
+        "webhook_refund_reconciliation",
+        "chargeback_and_complaint_process",
+        "BLIK_provider_contract_if_offered",
+        "no_storage_of_prohibited_card_data"
+      ],
+      "officialSource": "https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services_en",
+      "blocks": [
+        "LIVE_PAYMENT",
+        "SALE"
+      ]
+    },
+    {
+      "itemId": "PROVIDER_DATA_DATABASE_AND_AI_RIGHTS",
+      "status": "PROVIDER_LEGAL_REVIEW_REQUIRED",
+      "scope": "Market, chain, labels, order books, securities, PDFs, caching, derived metrics, AI/RAG and redistribution.",
+      "requiredEvidence": [
+        "21_of_21_provider_contracts",
+        "field_level_display_export_PDF_rights",
+        "derived_data_and_model_input_rights",
+        "database_right_and_attribution",
+        "cache_retention_correction_deletion",
+        "geographic_and_customer_tier_limits",
+        "provider_exit_and_evidence_retention"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/dir/1996/9/oj",
+      "blocks": [
+        "MARKET_LIVE",
+        "PAID_REPORTS",
+        "AI_DATA_USE"
+      ]
+    },
+    {
+      "itemId": "DORA_ICT_THIRD_PARTY_PERIMETER",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Services supplied to regulated financial entities or operation as a regulated crypto/financial entity.",
+      "requiredEvidence": [
+        "entity_and_customer_perimeter",
+        "ICT_contract_clauses",
+        "incident_reporting_support",
+        "resilience_testing",
+        "subcontractor_register",
+        "exit_portability_and_audit_rights",
+        "concentration_risk"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng",
+      "blocks": [
+        "REGULATED_FINANCIAL_CUSTOMERS"
+      ]
+    },
+    {
+      "itemId": "NIS2_CRA_CYBER_PRODUCT_PERIMETER",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Entity/sector/size classification and any software product with digital elements made available on the market.",
+      "requiredEvidence": [
+        "NIS2_entity_scope_or_signed_exclusion",
+        "CRA_product_scope_or_signed_exclusion",
+        "vulnerability_handling_and_coordinated_disclosure",
+        "SBOM_and_secure_development",
+        "security_update_support_period",
+        "incident_reporting_readiness",
+        "conformity_marking_plan_if_applicable"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402847",
+      "blocks": [
+        "SOFTWARE_PRODUCT_RELEASE_IF_APPLICABLE"
+      ]
+    },
+    {
+      "itemId": "EU_DATA_ACT_PORTABILITY",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Cloud/data processing switching, customer export, interoperability and unfair contractual terms where applicable.",
+      "requiredEvidence": [
+        "service_scope",
+        "export_portability",
+        "switching_and_egress_terms",
+        "interoperability",
+        "trade_secret_protection",
+        "unfair_B2B_term_review"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj/eng",
+      "blocks": [
+        "ENTERPRISE_CONTRACTS_IF_APPLICABLE"
+      ]
+    },
+    {
+      "itemId": "TAX_VAT_INVOICING_ACCOUNTING",
+      "status": "LEGAL_TAX_REVIEW_REQUIRED",
+      "scope": "EU B2C/B2B digital services, Germany/Poland establishment, token and payment flows.",
+      "requiredEvidence": [
+        "seller_entity_and_fixed_establishment",
+        "VAT_place_of_supply",
+        "OSS_IOSS_or_local_registration",
+        "B2B_reverse_charge",
+        "invoice_credit_note_refund",
+        "revenue_recognition_token_accounting",
+        "record_retention"
+      ],
+      "officialSource": "https://taxation-customs.ec.europa.eu/taxation/vat/vat-e-commerce_en",
+      "blocks": [
+        "SALE"
+      ]
+    },
+    {
+      "itemId": "IP_OSS_MODEL_OUTPUT_BRAND",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Source, dependencies, fonts/assets, market data, training/RAG inputs, AI output, trademarks and customer report rights.",
+      "requiredEvidence": [
+        "SBOM_license_obligations",
+        "asset_font_image_provenance",
+        "model_and_output_terms",
+        "RAG_copyright_and_database_rights",
+        "trademark_domain_clearance",
+        "customer_report_license",
+        "infringement_takedown_process"
+      ],
+      "officialSource": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+      "blocks": [
+        "PUBLIC_RELEASE",
+        "SALE"
+      ]
+    },
+    {
+      "itemId": "AGE_MINORS_AND_VULNERABLE_USERS",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Account eligibility, community, financial content, profiling, marketing and support.",
+      "requiredEvidence": [
+        "minimum_age_and_parental_consent",
+        "age_appropriate_design",
+        "minor_DSA_safety",
+        "no_exploitative_gamification",
+        "financial_risk_communication",
+        "profiling_and_ads_restrictions",
+        "abuse_reporting"
+      ],
+      "officialSource": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors",
+      "blocks": [
+        "MINOR_ACCESS",
+        "SQUARE_PUBLIC_LAUNCH"
+      ]
+    },
+    {
+      "itemId": "PROFESSIONAL_PRODUCT_CYBER_LIABILITY",
+      "status": "LEGAL_INSURANCE_REVIEW_REQUIRED",
+      "scope": "Audit, risk, market analysis, data errors, cyber incident, outage, customer loss and contractual caps.",
+      "requiredEvidence": [
+        "service_scope_and_no_guarantee_language",
+        "professional_duty_and_limitation_review",
+        "insurance_quotes_and_coverage_decision",
+        "SLA_and_service_credit_policy",
+        "indemnity_and_third_party_claims",
+        "incident_customer_loss_process",
+        "recorded_human_review_scope"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/dir/1985/374/oj/eng",
+      "blocks": [
+        "PRO_ADVANCED_SALE"
+      ]
+    },
+    {
+      "itemId": "GERMANY_BUSINESS_TRADE_TAX_AND_IMPRINT",
+      "status": "LEGAL_TAX_REVIEW_REQUIRED",
+      "scope": "German establishment, Gewerbeanmeldung, tax registration, business form, invoicing, VAT/OSS, website imprint and commercial records.",
+      "requiredEvidence": [
+        "business_activity_classification",
+        "Gewerbeanmeldung_or_signed_exemption",
+        "tax_and_VAT_registration",
+        "invoice_and_accounting_controls",
+        "imprint_and_contact_information",
+        "professional_liability_decision",
+        "signed_German_adviser_review"
+      ],
+      "officialSource": "https://www.existenzgruendungsportal.de/Navigation/EN/Home/home",
+      "blocks": [
+        "GERMAN_COMMERCIAL_SALE",
+        "PUBLIC_PAID_LAUNCH"
+      ]
+    },
+    {
+      "itemId": "POLAND_CROSS_BORDER_CONSUMER_AND_MARKET_ENTRY",
+      "status": "LEGAL_TAX_REVIEW_REQUIRED",
+      "scope": "Sales and marketing to Polish consumers, Polish-language terms, complaints, pricing, subscriptions, tax/OSS and authority cooperation.",
+      "requiredEvidence": [
+        "Polish_market_entry_decision",
+        "Polish_consumer_terms",
+        "complaint_and_ombudsman_workflow",
+        "price_subscription_and_renewal_review",
+        "VAT_OSS_country_matrix",
+        "Polish_language_information_duties",
+        "signed_Polish_adviser_review"
+      ],
+      "officialSource": "https://uokik.gov.pl/en/consumer-protection",
+      "blocks": [
+        "POLISH_CONSUMER_SALE",
+        "POLISH_MARKETING"
+      ]
+    },
+    {
+      "itemId": "INVESTMENT_RECOMMENDATION_MARKETING_AND_CONFLICTS",
+      "status": "LEGAL_COMPLIANCE_REVIEW_REQUIRED",
+      "scope": "Public market commentary, rankings, alerts, social posts, influencer/affiliate content, conflicts, holdings and any output suggesting an investment strategy.",
+      "requiredEvidence": [
+        "personalised_advice_exclusion",
+        "public_recommendation_classification",
+        "objective_presentation_controls",
+        "conflict_and_holding_disclosures",
+        "marketing_approval_workflow",
+        "social_channel_disclosure_parity",
+        "no_buy_sell_target_or_guarantee_contract"
+      ],
+      "officialSource": "https://www.esma.europa.eu/press-news/esma-news/requirements-when-posting-investments-recommendations-social-media",
+      "blocks": [
+        "RECOMMENDATION_OUTPUT",
+        "MARKETING_CLAIMS",
+        "SOCIAL_PROMOTION"
+      ]
+    },
+    {
+      "itemId": "EVIDENCE_RETENTION_RECORDKEEPING_AND_LITIGATION_HOLD",
+      "status": "LEGAL_DPO_OPERATIONS_REVIEW_REQUIRED",
+      "scope": "Security logs, model/tool traces, provider receipts, customer reports, complaints, consent, payments, audit history, corrections and legal holds.",
+      "requiredEvidence": [
+        "record_category_register",
+        "purpose_and_legal_basis",
+        "retention_and_deletion_schedule",
+        "immutable_correction_and_supersession_history",
+        "legal_hold_process",
+        "customer_export_delete_exceptions",
+        "signed_legal_DPO_operations_approval"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+      "blocks": [
+        "LIVE",
+        "SALE",
+        "INDEPENDENT_ASSURANCE"
+      ]
+    }
+  ],
+  "globalStopConditions": [
+    "Any unresolved package integrity failure",
+    "Any unresolved Critical or High security finding",
+    "Any missing required provider right for a delivered field",
+    "Any missing signed legal applicability decision for an enabled territory or feature",
+    "Any failed tenant isolation, refund, rollback, incident recovery or entitlement check",
+    "Any stale, partial, conflicted or fixture evidence presented as LIVE",
+    "Any paid tier without measured incremental customer value and an exact SKU decision"
+  ],
+  "claims": {
+    "historicalArtifactsRecovered": false,
+    "cleanRootGovernanceApproved": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false,
+    "frozenLocalReleaseCandidateVerified": false,
+    "canonicalMegaMatrixImplemented": true,
+    "canonicalProviderBoundMatrixExecuted": false,
+    "physicalCustomerPdfMatrixExecuted": false,
+    "browserMatrixExecuted": false,
+    "modelMatrixExecuted": false,
+    "customerPurchaseWorthinessProven": false,
+    "realAuditCasesFullyVerified": false,
+    "officialAuditToolsExecuted": false,
+    "auditCustomerAccuracyProven": false,
+    "localSyntheticPhysicalPdfMatrixExecuted": true,
+    "shieldFullCatalogTierMatrixImplemented": true,
+    "currentShieldProviderCatalogExecuted": false,
+    "shieldProviderRightsApproved": false,
+    "shieldCustomerValueProven": false,
+    "remainingPlannedPasses": 30,
+    "realMarketsCrossAssetMatrixImplemented": true,
+    "realMarketsCurrentDataExecuted": false,
+    "realMarketsProviderRightsApproved": false,
+    "realMarketsProductionBrowserExecuted": false,
+    "realMarketsCustomerValueProven": false,
+    "legalRegulatoryDecisionDenominator": 20,
+    "legalRegulatoryDecisionsSigned": 0,
+    "requiredFinalRealEvidenceWave": "A111-A116"
+  },
+  "truthBoundary": "A86 expands the mandatory program through A116 and closes a complete local cross-asset matrix over a static reference universe. It does not convert reference identity into current market data, provider rights, production browser proof, customer value, exact release, staging, LIVE or sale.",
+  "lineageResolution": {
+    "legacyA61Status": "BLOCKED_EXACT_HISTORICAL_BYTES",
+    "legacyVerifiedExact": 0,
+    "legacyRequiredExact": 2,
+    "cleanRootConstructed": true,
+    "cleanRootGovernanceApproved": false,
+    "stagingAdmissionRule": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT",
+    "syntheticHistoricalReconstructionForbidden": true
+  },
+  "a77LocalEvidence": {
+    "cleanRootPayloadFiles": 4368,
+    "cleanRootPayloadBytes": 110882042,
+    "genesisValidationChecks": 21,
+    "governanceAdversarialScenarios": 47,
+    "governanceNegativeScenarios": 46,
+    "governanceAssertions": 141,
+    "cleanRootVerifierChecks": 33,
+    "legacyIsolationChecks": 10,
+    "a63LineageScenarios": 40,
+    "a63LineageAssertions": 164,
+    "a63VerifierChecks": 20,
+    "a46Checks": 791,
+    "routeDispatchChecks": 1320,
+    "protectedIntegrityRows": 1073,
+    "sourceAudit": {
+      "filesRead": 4379,
+      "codeFiles": 2729,
+      "syntaxErrors": 0,
+      "localImports": 6809,
+      "missingLocalImports": 0,
+      "missingCssModuleClasses": 0
+    }
+  },
+  "discoveredGapLedger": [
+    {
+      "gapId": "A77-GAP-01",
+      "severity": "P1",
+      "workstream": "MKT01_SHIELD_REAL_DATA / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "Kline malformed-request traffic and valid provider-work traffic used one quota bucket.",
+      "status": "CLOSED_LOCAL_A77",
+      "followUp": "Revalidate on exact runtime and distributed durable rate-limit storage in A78/A89.",
+      "percentageEffect": "No canonical credit; local hardening only."
+    },
+    {
+      "gapId": "A77-GAP-02",
+      "severity": "P1",
+      "workstream": "SEC01_LOCAL_SECURITY_CONTROLS / OPS01_STAGING_RLS_SERVICES",
+      "summary": "Supabase service-role configured-origin parsing did not fail closed on query and fragment.",
+      "status": "CLOSED_LOCAL_A77",
+      "followUp": "Execute a real brokered Supabase service-role request only on disposable staging in A96/A98.",
+      "percentageEffect": "No canonical credit; local hardening only."
+    },
+    {
+      "gapId": "A77-BLOCK-03",
+      "severity": "P0_BLOCKED_INPUT",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "Six current-root critical suites cannot execute in this source-only environment because genuine zod/typescript dependencies and exact Node 24.18.0 are absent.",
+      "status": "ASSIGNED_A78",
+      "followUp": "Supply exact runtime, 827 lock-bound tarballs and exact Chromium, then rerun all 30 suites without shims.",
+      "percentageEffect": "No exact-build or release credit."
+    },
+    {
+      "gapId": "A78-GAP-01",
+      "severity": "P0",
+      "workstream": "SEC01_LOCAL_SECURITY_CONTROLS / MKT01_SHIELD_REAL_DATA",
+      "summary": "Market Integrity shared guard converted a durable deny decision into metadata instead of returning the limiter-owned denial response directly.",
+      "status": "CLOSED_LOCAL_A78",
+      "followUp": "Revalidate all four routes in exact build/browser and distributed durable storage in A79/A89.",
+      "percentageEffect": "No canonical credit; security hardening only."
+    },
+    {
+      "gapId": "A78-GAP-02",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A62 inherited the parent process environment and system PATH and rewrote the extracted npm wrapper, weakening exact-runtime and secret-isolation claims.",
+      "status": "CLOSED_LOCAL_A78",
+      "followUp": "Execute with physical exact bundles and prove runtime tree digest unchanged before/after.",
+      "percentageEffect": "No exact credit until physical execution."
+    },
+    {
+      "gapId": "A78-GAP-03",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The current-root gate compared every descendant source tree directly with the frozen A77 genesis payload, making legal future passes look like genesis tampering.",
+      "status": "CLOSED_LOCAL_A78",
+      "followUp": "Preserve A77 genesis immutably and verify each descendant through the A78 parent-bound current-root manifest.",
+      "percentageEffect": "No canonical credit; lineage correctness only."
+    },
+    {
+      "gapId": "A78-BLOCK-04",
+      "severity": "P0_BLOCKED_INPUT",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "Only 81/827 lock paths are covered by exact local CAS bytes; exact Node 24.18.0/npm 11.16.0 and platform-exact Playwright 1.60.0 Chromium are not supplied.",
+      "status": "OPEN_BLOCKED_EXACT_ARTIFACTS",
+      "followUp": "Supply the three external bundles, verify all hashes/SRI, run isolated offline npm ci, current-root 30/30 and A60.",
+      "percentageEffect": "A78 remains partial and A79 remains blocked."
+    },
+    {
+      "gapId": "A79-GAP-01",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "A60 allowed an environment-controlled browser base URL, so acceptance could target a non-local or unrelated server.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Use only a runner-selected dynamic 127.0.0.1 port and reject all base URL overrides.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-02",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A60 invoked system npm and enabled shell execution on Windows instead of exact runtime-owned node/npm-cli paths.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Execute every stage through exact process.execPath + runtime-owned npm-cli with shell=false.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-03",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A60 verified declared manifest rows but did not reject additional active source files outside the declared path set.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Recompute the active inventory denominator and require exact path-set parity before and after execution.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-04",
+      "severity": "P1",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "Existing A45 receipts and screenshots were not removed before a new run, allowing stale artifacts to survive a partial execution.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Delete the A45 artifact root after preflight and before any exact stages.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-05",
+      "severity": "P0",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "The browser evidence verifier checked counts and presence but not the exact unique locale-route-viewport matrix.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Require exactly 27 desktop plus 9 PL mobile unique rows and reject duplicates or omissions.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-06",
+      "severity": "P0",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Browser evidence was not bound to the exact source manifest, runtime instance, browser executable and final Next build ID.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Bind all four identities into the browser receipt and verifier.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-07",
+      "severity": "P1",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "The popup screenshot was counted but had no declared digest in the browser receipt.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Record and verify the popup screenshot SHA-256 exactly.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-08",
+      "severity": "P1",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "Screenshot verification checked file hashes only when declared and did not validate PNG structure or dimensions.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Require all 19 declared hashes plus bounded PNG IHDR/IDAT/IEND structure and dimensions.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-09",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / OPS02_OBSERVABILITY_DR_ROLLBACK",
+      "summary": "A fixed port and weak server ownership check could confuse a pre-existing local server with the spawned production runtime.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Reserve a dynamic loopback port, reject overrides, and fail if the spawned process exits before readiness.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-10",
+      "severity": "P1",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "First-party request failures were recorded but did not fail an otherwise green route.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Make every first-party request failure a route failure while retaining bounded diagnostics.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-11",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Package metadata still pointed to the A77 patch/program while the current source was A78.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Bind package metadata, active pass, current authority and program path to A79 in one update.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A80-GAP-01",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "The deterministic release packager could produce an integral ZIP without proving that exact A78/A79 execution was VERIFIED, allowing package integrity to be confused with release-candidate readiness.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Require verified exact toolchain, exact build/browser, current-root 30/30 and clean-unpack integrity before candidate issuance.",
+      "percentageEffect": "No canonical credit; exact execution remains blocked."
+    },
+    {
+      "gapId": "A80-GAP-02",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Release-candidate receipts could be written inside the source tree, mutating the supposedly frozen candidate after validation.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Require all candidate receipts and seals to be written outside the source root and verify source bytes remain unchanged.",
+      "percentageEffect": "No canonical credit; local freeze boundary only."
+    },
+    {
+      "gapId": "A80-GAP-03",
+      "severity": "P0",
+      "workstream": "SEC01_LOCAL_SECURITY_CONTROLS / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "No dedicated candidate hygiene gate rejected private/live evidence, .env files, keys, databases, logs, caches, node_modules or .next from a candidate source tree.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Run a fail-closed source hygiene inventory before issuing any candidate seal.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A80-GAP-04",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A stale or fixture A60 receipt could be treated as build evidence unless exact decision, runtime, stages, bindings and source parity were revalidated together.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Revalidate the complete exact A60 receipt and all source/runtime/browser/build bindings inside A80.",
+      "percentageEffect": "No canonical credit; exact receipt still unavailable."
+    },
+    {
+      "gapId": "A80-GAP-05",
+      "severity": "P0",
+      "workstream": "PC00_PRODUCT_CELL_CATALOG / LIVE01_CONTROLLED_COHORTS",
+      "summary": "A release candidate could be promoted while LIVE or sale flags were true even though no staging/customer/provider/legal gates had passed.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "A80 candidate remains strictly local and requires saleEnabled=false, liveProven=false and worldClassProven=false.",
+      "percentageEffect": "No sale or LIVE credit."
+    },
+    {
+      "gapId": "A80-GAP-06",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The active source manifest and A80 descendant manifest could include each other’s mutable digest-bearing control files, creating an impossible self-referential freeze loop.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Exclude each manifest from the other payload denominator, stabilize the descendant first, then bind the final source manifest without circular hashes.",
+      "percentageEffect": "No canonical credit; deterministic evidence correctness only."
+    },
+    {
+      "gapId": "A80-GAP-07",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Historical A77/A79 tests and verifiers attempted to recompute their frozen payload against the legal A80 descendant tree, producing false tamper failures after authorized supersession.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Validate frozen historical manifest digests and explicit child-parent links; only A80 recomputes the current payload denominator.",
+      "percentageEffect": "No canonical credit; lineage and supersession correctness only."
+    },
+    {
+      "gapId": "A80-GAP-08",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / LIVE01_CONTROLLED_COHORTS",
+      "summary": "The A57 acceptance contract and hardening ledger still identified A79 as current source after A80 became active, creating an inconsistent evidence-plane identity.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Bind A57 current-source checks and approved-change ledger through A80 while preserving A57 as the active acceptance revision.",
+      "percentageEffect": "No staging or canary credit; evidence identity only."
+    },
+    {
+      "gapId": "A80-GAP-09",
+      "severity": "P1",
+      "workstream": "MKT01_SHIELD_REAL_DATA / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The A46 customer data-plane contract still required the A57 hardening ledger to identify A79 as current source after legal A80 supersession.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Bind A46 to the current A80 hardening source identity while preserving all 788 historical protected rows and current authorized changes.",
+      "percentageEffect": "No data-plane or staging credit; regression identity only."
+    },
+    {
+      "gapId": "A80-GAP-10",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The canonical current-status regression required the roadmap to start with A79, so every legal future pass would fail despite retaining A32 canonical metrics.",
+      "status": "CLOSED_LOCAL_A80",
+      "followUp": "Require A81 precedence, explicit A80/A79 history, and continued presence of the canonical A32 section and all 43 rows.",
+      "percentageEffect": "No canonical metric change; roadmap precedence correctness only."
+    },
+    {
+      "gapId": "A81-GAP-15",
+      "severity": "P0",
+      "workstream": "BENCH01_CANONICAL_CORPUS / PC00_PRODUCT_CELL_CATALOG",
+      "summary": "Projection mutations retained the original digest and could be killed by stale-integrity detection instead of semantic validation",
+      "status": "CLOSED_LOCAL_A81",
+      "followUp": "Re-run the resealed mutation and source-replay anchor checks on exact A80/A82 real-case outputs.",
+      "percentageEffect": "No canonical credit; synthetic verifier hardening only."
+    },
+    {
+      "gapId": "A81-GAP-16",
+      "severity": "P0",
+      "workstream": "BENCH01_CANONICAL_CORPUS / PC00_PRODUCT_CELL_CATALOG",
+      "summary": "Projection verification did not bind adapter status and analysis decision to the expected source state",
+      "status": "CLOSED_LOCAL_A81",
+      "followUp": "Re-run the resealed mutation and source-replay anchor checks on exact A80/A82 real-case outputs.",
+      "percentageEffect": "No canonical credit; synthetic verifier hardening only."
+    },
+    {
+      "gapId": "A81-GAP-17",
+      "severity": "P1",
+      "workstream": "BENCH01_CANONICAL_CORPUS / PC00_PRODUCT_CELL_CATALOG",
+      "summary": "A fully resealed alternate runtime was not explicitly rejected against a fresh source-replay digest anchor",
+      "status": "CLOSED_LOCAL_A81",
+      "followUp": "Re-run the resealed mutation and source-replay anchor checks on exact A80/A82 real-case outputs.",
+      "percentageEffect": "No canonical credit; synthetic verifier hardening only."
+    },
+    {
+      "gapId": "A81-GAP-18",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "Historical A58 release-integrity checks were hardcoded to specific descendant revisions",
+      "status": "CLOSED_LOCAL_A81",
+      "followUp": "Re-run A81 clean-unpack sequence on every future final SOURCE_ONLY before any mutating acceptance test.",
+      "percentageEffect": "No canonical credit; release-integrity verifier hardening only."
+    },
+    {
+      "gapId": "A81-GAP-19",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "Clean-unpack verification order was not encoded and receipt-generating tests could pollute the A58 exact path-set",
+      "status": "CLOSED_LOCAL_A81",
+      "followUp": "Re-run A81 clean-unpack sequence on every future final SOURCE_ONLY before any mutating acceptance test.",
+      "percentageEffect": "No canonical credit; release-integrity verifier hardening only."
+    },
+    {
+      "gapId": "A83-GAP-01",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Previous PDF corpus selected only one locale per case",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 generates every one of fifty cases in PL, EN and DE for every tier.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-02",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "No single physical denominator across Browser Lens and PDF",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 fixes a 450-document, 2100-page denominator without pruning unavailable real packets.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-03",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Cross-locale facts could drift silently",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "All locale variants bind one locale-independent canonical facts digest.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-04",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "API UI preview PDF Brain and Angel could add or drop facts",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Six projections bind exact fact, report and claim-set digests with addedFacts=0.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-05",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "PDF bytes were not re-rendered against the exact report",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Verifier rebuilds every report and requires byte-identical PDF output.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-06",
+      "severity": "P1",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Tier differentiation could be represented by labels only",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 binds exact 2/4/8 page contracts and monotonic material-field and evidence-family floors.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-07",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Unsafe active PDF content could pass layout-only QA",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 rejects JavaScript, Launch, remote actions, embedded files, forms, XFA, encryption and external URI actions.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-08",
+      "severity": "P1",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Font and Unicode failures could remain invisible in byte checks",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Every PDF requires an embedded font and ToUnicode map plus external text extraction.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-09",
+      "severity": "P1",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A4 page geometry was not bound across all locale-tier combinations",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Every one of 2100 pages is required to use A4 media dimensions.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-10",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Fixture identity could be confused with current real packet evidence",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Fixture rows always remain missing-source, offline, not-live and not-for-sale.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-11",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Provider rights and freshness could be inferred from a rendered document",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Real intake requires separate rights, provider-family, freshness and conflict receipts for all fifty cases.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-12",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Browser preview success could be inferred from local PDF generation",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Browser, download and Content-Disposition evidence remain separate zero-credit fields.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-13",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Secure customer delivery could be inferred from public fixture files",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Account, case, tier, one-time download and private-delivery evidence remain mandatory real inputs.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-14",
+      "severity": "P1",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Accessibility could be claimed from tags or metadata alone",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 separates structural accessibility from external reader and customer comprehension evidence.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-15",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Page count or duplicated copy could masquerade as paid value",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Real exit requires blind comprehension and willingness-to-pay labels; local page depth grants zero sale credit.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-16",
+      "severity": "P1",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Locale or tier paths could permit traversal or ambiguous filenames",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "All corpus paths are single-root safe relative PDF paths with deterministic filenames.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-17",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Mutation tests could rely on stale integrity digests",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 reseals every semantic mutation before requiring rejection.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-18",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A locally green physical corpus could enable LIVE or paid claims",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A83 records zero real packets, zero browser runs, zero secure deliveries, zero comprehension labels and sale disabled.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-19",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Resealed case identity mutation was not independently bound",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "entryId must equal exact caseId:locale:tier and cannot be changed by resealing the record.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-20",
+      "severity": "P0",
+      "workstream": "PDF02_REAL_TIER_VALUE / MKT01_SHIELD_REAL_DATA / AI01_BRAIN_ANGEL / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Resealed PDF hash mutation lacked a second artifact binding",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "renderBindingDigest independently binds case, locale, tier, path, PDF hash, bytes, pages and report digest.",
+      "percentageEffect": "No canonical credit; local synthetic physical PDF and evidence-binding hardening only."
+    },
+    {
+      "gapId": "A83-GAP-21",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Root source inventory required a manual allowlist update for every new pass",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A tightly scoped controlled-pass filename policy now classifies A<number> PATCH, RUN and VERIFY root artifacts without accepting arbitrary VELMERE files.",
+      "percentageEffect": "No canonical credit; release inventory robustness only."
+    },
+    {
+      "gapId": "A83-GAP-22",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A82 verifier recomputed a frozen historical payload against the current A83 tree",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A82 now validates its frozen manifest and the exact A83 child binding without remeasuring historical bytes against the current tree.",
+      "percentageEffect": "No canonical credit; historical lineage verifier correctness only."
+    },
+    {
+      "gapId": "A83-GAP-23",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A81 verifier expected A83 inside the A82 child manifest and skipped the exact intermediate lineage",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A81 now verifies the complete immutable A81 -> A82 -> A83 digest chain before accepting the current authority.",
+      "percentageEffect": "No canonical credit; historical lineage verifier correctness only."
+    },
+    {
+      "gapId": "A83-GAP-24",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Historical A80/A81 verifiers loaded the superseded A82 completion-program path",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Historical verifiers now resolve the active completion program through current-revision authority and validate the A83 revision and remaining-pass denominator.",
+      "percentageEffect": "No canonical credit; current-authority and historical-integrity regression robustness only."
+    },
+    {
+      "gapId": "A83-GAP-25",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The protected 1073-row integrity receipt ended its approved-change ledger at A82",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "A57R1 hardening integrity is rebuilt on A83 bytes and explicitly records A83 as an approved no-promotion change.",
+      "percentageEffect": "No canonical credit; current-authority and historical-integrity regression robustness only."
+    },
+    {
+      "gapId": "A83-GAP-26",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The canonical current-status test required A82 to be the first roadmap section",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "Roadmap precedence now requires A83 first while retaining A82, A81 and canonical A32 historical sections.",
+      "percentageEffect": "No canonical credit; current-authority and historical-integrity regression robustness only."
+    },
+    {
+      "gapId": "A83-GAP-27",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A77 clean-root verifier loaded the superseded A82 completion-program path",
+      "status": "CLOSED_LOCAL_A83",
+      "followUp": "The A77 verifier now resolves the current completion program through current-revision authority while preserving the frozen A77 genesis and governance state.",
+      "percentageEffect": "No canonical credit; current-authority resolution for historical governance verification only."
+    },
+    {
+      "gapId": "A83-GAP-28",
+      "severity": "P1",
+      "title": "Compatibility metadata underreported the final A83 closed-gap denominator",
+      "closure": "Current revision, authority, state, completion program and roadmap now report the same exact A83 closed-gap denominator."
+    },
+    {
+      "gapId": "A83-GAP-29",
+      "severity": "P0",
+      "title": "Synthetic physical PDFs were mislabeled as a physical customer PDF matrix",
+      "closure": "Truth fields now distinguish localSyntheticPhysicalMatrixExecuted=true from physicalCustomerPdfMatrixExecuted=false and preserve zero customer delivery/comprehension credit."
+    },
+    {
+      "gapId": "A83-GAP-30",
+      "severity": "P1",
+      "title": "Full 2100-page raster QA depended on one sequential process that exceeded bounded execution windows",
+      "closure": "A83 retains the full 450-document/2100-page denominator while using a bounded parallel worker pool and deterministic per-page receipts."
+    },
+    {
+      "gapId": "A83-GAP-31",
+      "severity": "P0",
+      "title": "SOURCE_ONLY verifier required full 450-PDF materials that packaging intentionally quarantined",
+      "closure": "A compact hash-bound source evidence summary now binds the full corpus manifest, raster receipt, runtime and test receipt; SOURCE_ONLY verifies the summary while MATERIALS supports full independent replay."
+    },
+    {
+      "gapId": "A84-GAP-21",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "Current package metadata still pointed selected execution fields at a prior pass",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-22",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A83 descendant verifier recomputed frozen A83 payload against a legal A84 child tree",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-23",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A83 product verifier hardcoded A83 as the permanently current source",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-24",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A82 descendant verifier stopped at A83 and rejected later legal descendants",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-25",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A82 matrix verifier hardcoded the A83 program and active revision",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-26",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A81 descendant verifier treated A83 as the terminal lineage node",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-27",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A81 matrix verifier hardcoded A83 current and remaining-pass counters",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-28",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A80 release admission and descendant verifiers hardcoded A83 as current",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-29",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A79 build/browser verifiers mixed historical A79 identity with a hardcoded A83 current source",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-30",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A57 current truth and approved-change ledger did not recognize A84",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-31",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "No reusable exact descendant-chain primitive existed, causing repeated supersession regressions",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact A78/A79 and final clean-unpack; do not grant staging, LIVE or sale credit.",
+      "percentageEffect": "No canonical credit; local evidence-chain hardening only."
+    },
+    {
+      "gapId": "A84-GAP-32",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / OPS01_STAGING_RLS_SERVICES",
+      "summary": "Canonical current-status test required the roadmap to start with literal A83 text",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact runtime and final clean-unpack.",
+      "percentageEffect": "No canonical credit; local control-plane hardening only."
+    },
+    {
+      "gapId": "A84-GAP-33",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / OPS01_STAGING_RLS_SERVICES",
+      "summary": "A63 staging orchestrator verifier hardcoded A83 as the current source",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact runtime and final clean-unpack.",
+      "percentageEffect": "No canonical credit; local control-plane hardening only."
+    },
+    {
+      "gapId": "A84-GAP-34",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A59 budget verifier required A83 as the current source",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact runtime and final clean-unpack.",
+      "percentageEffect": "No canonical credit; local supersession hardening only."
+    },
+    {
+      "gapId": "A84-GAP-35",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A46 protected-integrity verifier required the hardening ledger source to remain A83",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact runtime and final clean-unpack.",
+      "percentageEffect": "No canonical credit; local supersession hardening only."
+    },
+    {
+      "gapId": "A84-GAP-36",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A77 clean-root verifier required A83 for authority, active pass and completion program",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact runtime and final clean-unpack.",
+      "percentageEffect": "No canonical credit; local supersession hardening only."
+    },
+    {
+      "gapId": "A84-GAP-37",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A78 descendant verifier hardcoded A83 and reduced the current-root gate to 23/30",
+      "status": "CLOSED_LOCAL_A84",
+      "followUp": "Repeat on exact runtime and final clean-unpack.",
+      "percentageEffect": "No canonical credit; local supersession hardening only."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-01",
+      "severity": "P0",
+      "title": "Shield Pro fetched only the first 100 rows",
+      "status": "CLOSED_LOCAL",
+      "closure": "A bounded 250-row pagination loop walks up to 20 canonical pages, deduplicates exact IDs and stops only on a short final page."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-02",
+      "severity": "P0",
+      "title": "A repeated provider page could create a false complete catalog",
+      "status": "CLOSED_LOCAL",
+      "closure": "Pagination detects a non-advancing page and returns an explicit partial blocker."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-03",
+      "severity": "P1",
+      "title": "A later-page outage could erase the distinction between partial and complete coverage",
+      "status": "CLOSED_LOCAL",
+      "closure": "Rows already fetched are retained with mode=partial and an exact later-page failure blocker."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-04",
+      "severity": "P0",
+      "title": "Shield Pro batch requests did not explicitly bind the free delivery tier",
+      "status": "CLOSED_LOCAL",
+      "closure": "Every catalog page sends tier=basic; paid depth remains a separate account-bound route."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-05",
+      "severity": "P0",
+      "title": "Shield Map accepted unknown query parameters",
+      "status": "CLOSED_LOCAL",
+      "closure": "The server rejects every parameter outside query and locale."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-06",
+      "severity": "P0",
+      "title": "Duplicate query or locale parameters could shadow identity",
+      "status": "CLOSED_LOCAL",
+      "closure": "Duplicate security-relevant parameters are rejected before provider work."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-07",
+      "severity": "P1",
+      "title": "Shield Map query length, control and bidi characters were not centrally bounded",
+      "status": "CLOSED_LOCAL",
+      "closure": "A 120-byte strict query boundary and 2048-byte URL ceiling reject control and bidi input."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-08",
+      "severity": "P0",
+      "title": "A fuzzy CoinGecko suggestion could be published as the requested asset",
+      "status": "CLOSED_LOCAL",
+      "closure": "CoinGecko output is used only when an integrity-valid provider receipt proves exact requested identity."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-09",
+      "severity": "P0",
+      "title": "Ambiguous symbol or market resolution could continue to risk analysis",
+      "status": "CLOSED_LOCAL",
+      "closure": "Unresolved identity fails closed with HTTP 409 before investigator publication."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-10",
+      "severity": "P0",
+      "title": "An EVM address could be accepted without an exact chain binding",
+      "status": "CLOSED_LOCAL",
+      "closure": "Address requests require exact address equality and a non-empty resolved chain ID."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-11",
+      "severity": "P0",
+      "title": "A tampered provider identity receipt could authorize Shield Map",
+      "status": "CLOSED_LOCAL",
+      "closure": "Provider receipt integrity is recomputed before identity credit."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-12",
+      "severity": "P0",
+      "title": "The Shield Map deep-dive toggle could be mistaken for paid analysis",
+      "status": "CLOSED_LOCAL",
+      "closure": "The response and UI contract fix deepDivePresentationOnly=true and VLM depth=basic."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-13",
+      "severity": "P0",
+      "title": "Pro and Advanced delivery lacked one full-catalog entitlement proof",
+      "status": "CLOSED_LOCAL",
+      "closure": "All 636 paid packets remain blocked until a real server-owned account entitlement is verified."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-14",
+      "severity": "P0",
+      "title": "Symbol-only inference could promote paid Shield Map depth",
+      "status": "CLOSED_LOCAL",
+      "closure": "Pro and Advanced map readiness require exact multi-source chain/address consensus."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-15",
+      "severity": "P1",
+      "title": "Wallet or entity labels could be promoted without signed current evidence",
+      "status": "CLOSED_LOCAL",
+      "closure": "Advanced map readiness requires SIGNED_CURRENT labels; stale, conflict and missing stay blocked."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-16",
+      "severity": "P1",
+      "title": "Investigator lane completeness lacked a full-catalog denominator",
+      "status": "CLOSED_LOCAL",
+      "closure": "Every tier packet binds all six lanes: supply, unlock, liquidity, insider, social and contract."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-17",
+      "severity": "P1",
+      "title": "Shield Pro and Shield Map could drift on market identity",
+      "status": "CLOSED_LOCAL",
+      "closure": "Both surfaces bind the same canonical marketId, symbol and USD quote."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-18",
+      "severity": "P1",
+      "title": "Terminal timeframe coverage was not proven across all tiers",
+      "status": "CLOSED_LOCAL",
+      "closure": "Six exact ranges are bound for every one of 954 tier packets."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-19",
+      "severity": "P0",
+      "title": "Advanced could become ready on stale or conflicted order-book depth",
+      "status": "CLOSED_LOCAL",
+      "closure": "Paid terminal readiness requires AVAILABLE depth and preserves stale/conflict blockers."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-20",
+      "severity": "P0",
+      "title": "Offline functional readiness could be mistaken for paid delivery",
+      "status": "CLOSED_LOCAL",
+      "closure": "Functional readiness and real delivery decisions are separate fields; paidDelivered remains zero."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-21",
+      "severity": "P0",
+      "title": "Re-signed identity, binding, entitlement and depth mutations were not tested jointly",
+      "status": "CLOSED_LOCAL",
+      "closure": "Sixteen semantic mutation families are re-sealed for every tier packet and must fail verification."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-22",
+      "severity": "P0",
+      "title": "Real Shield Pro/Map evidence had no exact denominator",
+      "status": "CLOSED_LOCAL",
+      "closure": "A fail-closed 318-asset intake requires pagination, identity, binding, labels, depth, browser, entitlement, rights and customer labels."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-23",
+      "severity": "P0",
+      "title": "A85 could be promoted without an exact A80 candidate",
+      "status": "CLOSED_LOCAL",
+      "closure": "All A85 packets remain exactA80CandidateBound=false and ineligible for promotion."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-24",
+      "severity": "P1",
+      "title": "Injected fixture evidence could be described as current public-network execution",
+      "status": "CLOSED_LOCAL",
+      "closure": "The runtime records zero real cases, browser assets, rights, entitlements and customer labels."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-25",
+      "severity": "P1",
+      "title": "A84 descendant verification treated A84 as permanently current",
+      "status": "CLOSED_LOCAL",
+      "closure": "A84 frozen payload remains exact while lineage is verified through the authority-bound A85 child."
+    },
+    {
+      "pass": "A85",
+      "gapId": "A85-GAP-26",
+      "severity": "P1",
+      "title": "Current metadata and completion program still pointed at A84",
+      "status": "CLOSED_LOCAL",
+      "closure": "Active pass, authority, compatibility mirror, package metadata and roadmap program are advanced together to A85."
+    },
+    {
+      "gapId": "A86-GAP-01",
+      "severity": "P0",
+      "title": "Static catalog response time could be mistaken for data freshness",
+      "closure": "The route now separates responseGeneratedAt from catalogSnapshotAt and declares STATIC_REFERENCE_UNIVERSE."
+    },
+    {
+      "gapId": "A86-GAP-02",
+      "severity": "P0",
+      "title": "Catalog response did not explicitly deny LIVE quote coverage",
+      "closure": "liveDataIncluded=false is schema-bound and required by the client normalizer."
+    },
+    {
+      "gapId": "A86-GAP-03",
+      "severity": "P0",
+      "title": "Commercial provider rights state was implicit",
+      "closure": "commercialRightsVerified=false is explicit at catalog and matrix level."
+    },
+    {
+      "gapId": "A86-GAP-04",
+      "severity": "P1",
+      "title": "Catalog response omitted the exact row payload digest",
+      "closure": "The response exposes catalogRowsSha256 in addition to source lineage."
+    },
+    {
+      "gapId": "A86-GAP-05",
+      "severity": "P0",
+      "title": "Index rows were unsupported by the catalog schema",
+      "closure": "Index is now a declared asset class and a dedicated local fixture denominator is included."
+    },
+    {
+      "gapId": "A86-GAP-06",
+      "severity": "P0",
+      "title": "Exchange-token rows defaulted to crypto classification",
+      "closure": "Exchange and exchange_token map explicitly to exchanges; unsupported classes throw."
+    },
+    {
+      "gapId": "A86-GAP-07",
+      "severity": "P0",
+      "title": "Unknown asset classes failed open to crypto",
+      "closure": "categoryFromCatalog is exhaustive and rejects unknown values."
+    },
+    {
+      "gapId": "A86-GAP-08",
+      "severity": "P1",
+      "title": "Negative or fractional catalog counts were accepted",
+      "closure": "Counts require non-negative safe integers."
+    },
+    {
+      "gapId": "A86-GAP-09",
+      "severity": "P0",
+      "title": "Catalog counts were not reconciled with rows",
+      "closure": "Normalizer verifies total, unique symbols, class sum, IDs and symbols before ok=true."
+    },
+    {
+      "gapId": "A86-GAP-10",
+      "severity": "P0",
+      "title": "No complete cross-asset denominator existed",
+      "closure": "A86 covers 553 reference rows plus 30 index fixtures across seven asset classes."
+    },
+    {
+      "gapId": "A86-GAP-11",
+      "severity": "P0",
+      "title": "Crypto scope in Real Markets was ambiguous",
+      "closure": "Crypto rows are marked COMPARISON_ONLY and cannot become the primary Real Markets surface."
+    },
+    {
+      "gapId": "A86-GAP-12",
+      "severity": "P0",
+      "title": "Missing corporate actions could be confused with not applicable",
+      "closure": "Every class records either applicable evidence or VERIFIED_NOT_APPLICABLE."
+    },
+    {
+      "gapId": "A86-GAP-13",
+      "severity": "P1",
+      "title": "Session and calendar state had no complete denominator",
+      "closure": "Every instrument receives a terminal calendar_session row."
+    },
+    {
+      "gapId": "A86-GAP-14",
+      "severity": "P0",
+      "title": "Cross-currency values lacked a bound semantic unit",
+      "closure": "Every packet binds currency and semanticUnit and mutations are rejected."
+    },
+    {
+      "gapId": "A86-GAP-15",
+      "severity": "P1",
+      "title": "Correction state was not part of tier admission",
+      "closure": "Advanced admission includes an explicit correction ledger state."
+    },
+    {
+      "gapId": "A86-GAP-16",
+      "severity": "P0",
+      "title": "Provider quorum could be inferred from a single family",
+      "closure": "Pro and Advanced require exact family floors with a terminal quorum field."
+    },
+    {
+      "gapId": "A86-GAP-17",
+      "severity": "P0",
+      "title": "Advanced could be promoted without provenance depth",
+      "closure": "Advanced requires three provider families and a provenance field."
+    },
+    {
+      "gapId": "A86-GAP-18",
+      "severity": "P0",
+      "title": "Tier readiness could violate Basic-Pro-Advanced monotonicity",
+      "closure": "The full denominator enforces monotonic readiness for every instrument."
+    },
+    {
+      "gapId": "A86-GAP-19",
+      "severity": "P0",
+      "title": "API table modal and PDF could drift on facts",
+      "closure": "Four projections bind one facts digest and may not add facts."
+    },
+    {
+      "gapId": "A86-GAP-20",
+      "severity": "P0",
+      "title": "403 and 424 meanings were not tested as separate states",
+      "closure": "Ready paid evidence without entitlement yields 403; insufficient evidence yields 424."
+    },
+    {
+      "gapId": "A86-GAP-21",
+      "severity": "P0",
+      "title": "Offline readiness could be mistaken for paid delivery",
+      "closure": "All paidDelivered and productionEligible denominators remain zero."
+    },
+    {
+      "gapId": "A86-GAP-22",
+      "severity": "P0",
+      "title": "No semantic re-signed mutation campaign covered Real Markets",
+      "closure": "Eighteen mutation families are re-sealed for every tier packet."
+    },
+    {
+      "gapId": "A86-GAP-23",
+      "severity": "P0",
+      "title": "Real data evidence had no exact intake denominator",
+      "closure": "A fail-closed intake requires quote, history, calendar, actions, normalization, rights, browser and customer labels."
+    },
+    {
+      "gapId": "A86-GAP-24",
+      "severity": "P0",
+      "title": "Static identity seeds could be mistaken for current market evidence",
+      "closure": "The real intake starts at zero rows; static catalog identity grants no current-data credit."
+    },
+    {
+      "gapId": "A86-GAP-25",
+      "severity": "P1",
+      "title": "Index coverage could be hidden because production catalog currently has zero index rows",
+      "closure": "The matrix reports 30 explicit synthetic index fixtures and zero production index evidence."
+    },
+    {
+      "gapId": "A86-GAP-26",
+      "severity": "P0",
+      "title": "The legal roadmap denominator remained narrower than the active perimeter",
+      "closure": "The completion program is expanded to 20 signed legal/regulatory decisions."
+    },
+    {
+      "gapId": "A86-GAP-27",
+      "severity": "P0",
+      "title": "A111-A116 were described as optional repair buffer despite mandatory real reruns",
+      "closure": "A111-A116 become a required final real-evidence wave."
+    },
+    {
+      "gapId": "A86-GAP-28",
+      "severity": "P0",
+      "title": "A77-A80 exact closure could be lost behind later local matrices",
+      "closure": "Four parallel mandatory closure tracks remain explicit prerequisites for staging."
+    },
+    {
+      "gapId": "A86-GAP-29",
+      "severity": "P1",
+      "title": "Future pass count could decrease by hiding newly discovered scope",
+      "closure": "The program range expands to A116 and remainingAfterA86 is recalculated to 30."
+    },
+    {
+      "gapId": "A86-GAP-30",
+      "severity": "P0",
+      "title": "No single packet bound class, calendar, action applicability, normalization, quorum and correction evidence",
+      "closure": "A86 packet integrity and semantic verification bind all ten field families."
+    },
+    {
+      "gapId": "A86-GAP-31",
+      "severity": "P1",
+      "title": "A83 historical verifier hardcoded the legacy A110 program horizon",
+      "closure": "Historical completion-program checks derive remaining passes from the current authoritative lastPlannedPass instead of the superseded A110 horizon."
+    },
+    {
+      "gapId": "A86-GAP-32",
+      "severity": "P1",
+      "title": "A81 verifier hardcoded the superseded A110 completion horizon",
+      "closure": "A81 derives remaining passes from the authoritative lastPlannedPass."
+    },
+    {
+      "gapId": "A86-GAP-33",
+      "severity": "P1",
+      "title": "A82 verifier hardcoded the superseded A110 completion horizon",
+      "closure": "A82 derives remaining passes from the authoritative lastPlannedPass."
+    },
+    {
+      "gapId": "A86-GAP-34",
+      "severity": "P1",
+      "title": "The canonical current-status test hardcoded A85 as the permanent first roadmap heading",
+      "closure": "Roadmap precedence is validated from current-release authority and active revision rather than a frozen pass title."
+    },
+    {
+      "gapId": "A86-GAP-35",
+      "severity": "P1",
+      "title": "A57 protected-integrity approval stopped at A85 and could not bind authorized A86 changes",
+      "closure": "The A57 hardening builder and acceptance contract include the exact A86 change identifier and current source revision."
+    },
+    {
+      "gapId": "A86-GAP-36",
+      "severity": "P1",
+      "title": "A85 descendant verifier recomputed the frozen A85 payload against legal A86 source changes",
+      "closure": "A85 now verifies its frozen payload only when current and otherwise verifies the complete descendant chain to current authority."
+    },
+    {
+      "gapId": "A86-GAP-37",
+      "severity": "P1",
+      "title": "A41 route diagnostics assumed the Shield Pro market endpoint remained inline in the UI component",
+      "closure": "A41 now verifies both the component-to-full-catalog-helper wiring and the helper-to-markets endpoint binding, preserving coverage after bounded pagination extraction."
+    },
+    {
+      "gapId": "A86-GAP-38",
+      "severity": "P1",
+      "title": "The A86 clean-unpack sequence omitted retained A37-A41 runtime/performance regressions and the A59 build-route-CSS budget verifier",
+      "closure": "The exact unpacked SOURCE_ONLY sequence now runs A37 performance, A38 lifecycle, A39 runtime/CSS/a11y, A40 session/temporal/visibility, A41 route recovery and A59 static budgets after A58 and before product acceptance."
+    },
+    {
+      "gapId": "A86-GAP-39",
+      "severity": "P1",
+      "title": "The A86 current-state summary could retain a stale closed-gap count because the verifier did not bind it to the policy ledger",
+      "closure": "A86 test and verifier now bind current-state revision, NO_GO decision, exact denominators, 39/39 gap count, 20-decision legal denominator and all zero-credit production claims to the canonical policy and receipt."
+    }
+  ],
+  "a79LocalEvidence": {
+    "closedAdmissionGaps": 11,
+    "exactBuildExecuted": false,
+    "exactBrowserExecuted": false,
+    "blockedByA78PhysicalInputs": true,
+    "requiredBrowserRows": 36,
+    "requiredScreenshots": 19,
+    "requiredPopupTabs": 4,
+    "sourceExactPathSetRequired": true,
+    "dynamicLoopbackOnly": true,
+    "systemNpmForbidden": true,
+    "shellExecutionForbidden": true,
+    "closedGaps": 11
+  },
+  "a80LocalEvidence": {
+    "closedAdmissionGaps": 15,
+    "frozenReleaseCandidateVerified": false,
+    "blockedByA78ExactToolchain": true,
+    "blockedByA79ExactBuildBrowser": true,
+    "blockedByCurrentRootExactGate": true,
+    "candidateOutputOutsideSourceRequired": true,
+    "privateLiveEvidenceEmbeddingForbidden": true,
+    "sourceTreeMutationForbidden": true,
+    "closedGaps": 15
+  },
+  "a81LocalEvidence": {
+    "uniqueBaseCases": 300,
+    "sourceAdapterRows": 2700,
+    "modules": 10,
+    "moduleCases": 500,
+    "packetRows": 4500,
+    "channelProjections": 27000,
+    "mutationDenominator": 36000,
+    "mutationKillRate": 1,
+    "canonicalProviderBoundOutputsExecuted": 0,
+    "physicalCustomerPdfOutputsExecuted": 0,
+    "browserRunsExecuted": 0,
+    "modelRunsExecuted": 0,
+    "exactA80CandidateBound": false,
+    "customerPurchaseWorthinessProven": false,
+    "closedGaps": 19
+  },
+  "a82LocalEvidence": {
+    "fixtureCases": 50,
+    "fixtureTierOutputs": 150,
+    "fixtureToolReceipts": 200,
+    "fixtureBlindLabelBundles": 50,
+    "fixtureSemanticMutations": 1000,
+    "fixtureMutationKillRate": 1,
+    "realIdentitySeeds": 10,
+    "realCasesFullyVerified": 0,
+    "rightsApprovedCases": 0,
+    "officialToolExecutions": 0,
+    "independentRealLabels": 0,
+    "paidGateEligible": false,
+    "closedGaps": 12
+  },
+  "a83LocalEvidence": {
+    "fixtureCases": 50,
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "channelProjections": 2700,
+    "semanticMutations": 8100,
+    "mutationKillRate": 1,
+    "pypdfPassed": 450,
+    "pdfinfoPassed": 450,
+    "pdftotextPassed": 450,
+    "ghostscriptSamplePassed": 45,
+    "realPacketsVerified": 0,
+    "productionBrowserRuns": 0,
+    "secureDeliveries": 0,
+    "customerComprehensionLabels": 0,
+    "paidGateEligible": false,
+    "localSyntheticPhysicalMatrixExecuted": true,
+    "physicalCustomerPdfMatrixExecuted": false,
+    "sourceEvidenceSummaryPath": "config/pass36/a83-source-evidence-summary.json",
+    "sourceSummaryBindsFullMaterialsEvidence": true,
+    "closedGaps": 31,
+    "testChecks": 22,
+    "verifierChecks": 36,
+    "sourceSummaryIntegrityDigest": "b8fe6091916c3a489766c5c58f30fa40b0ce2aedaf0b8a781626ff516b90050e",
+    "fullEvidenceStoredInMaterials": true,
+    "sourceOnlyBoundByCompactSummary": true
+  },
+  "a84LocalEvidence": {
+    "activeAssets": 318,
+    "activeListings": 1013,
+    "fieldFamilies": 7,
+    "observationRows": 7091,
+    "tierPackets": 954,
+    "popupRows": 3816,
+    "semanticMutations": 11448,
+    "mutationKillRate": 1,
+    "readiness": {
+      "basic": {
+        "functionalReadyOffline": 241,
+        "unavailable": 77,
+        "productionEligible": 0
+      },
+      "pro": {
+        "functionalReadyOffline": 155,
+        "unavailable": 163,
+        "productionEligible": 0
+      },
+      "advanced": {
+        "functionalReadyOffline": 126,
+        "unavailable": 192,
+        "productionEligible": 0
+      }
+    },
+    "stateCounts": {
+      "AVAILABLE": 6122,
+      "STALE": 379,
+      "CONFLICTED": 178,
+      "FAILED": 205,
+      "RATE_LIMITED": 207,
+      "UNAVAILABLE": 0
+    },
+    "realFullCatalogSnapshotsVerified": 0,
+    "rightsApprovedAssets": 0,
+    "productionBrowserAssets": 0,
+    "customerValueLabeledAssets": 0,
+    "paidGateEligible": false,
+    "closedGaps": 37,
+    "testChecks": 32,
+    "verifierChecks": 18
+  },
+  "a85LocalEvidence": {
+    "activeAssets": 318,
+    "tierPackets": 954,
+    "surfaceProjections": 1908,
+    "semanticMutations": 15264,
+    "realFullDepthCasesVerified": 0,
+    "productionBrowserAssets": 0,
+    "realEntitlementsVerified": 0,
+    "rightsApprovedAssets": 0,
+    "customerValueLabeledAssets": 0,
+    "closedGaps": 26
+  },
+  "gapLedger": [
+    {
+      "gapId": "A86-GAP-01",
+      "severity": "P0",
+      "title": "Static catalog response time could be mistaken for data freshness",
+      "closure": "The route now separates responseGeneratedAt from catalogSnapshotAt and declares STATIC_REFERENCE_UNIVERSE."
+    },
+    {
+      "gapId": "A86-GAP-02",
+      "severity": "P0",
+      "title": "Catalog response did not explicitly deny LIVE quote coverage",
+      "closure": "liveDataIncluded=false is schema-bound and required by the client normalizer."
+    },
+    {
+      "gapId": "A86-GAP-03",
+      "severity": "P0",
+      "title": "Commercial provider rights state was implicit",
+      "closure": "commercialRightsVerified=false is explicit at catalog and matrix level."
+    },
+    {
+      "gapId": "A86-GAP-04",
+      "severity": "P1",
+      "title": "Catalog response omitted the exact row payload digest",
+      "closure": "The response exposes catalogRowsSha256 in addition to source lineage."
+    },
+    {
+      "gapId": "A86-GAP-05",
+      "severity": "P0",
+      "title": "Index rows were unsupported by the catalog schema",
+      "closure": "Index is now a declared asset class and a dedicated local fixture denominator is included."
+    },
+    {
+      "gapId": "A86-GAP-06",
+      "severity": "P0",
+      "title": "Exchange-token rows defaulted to crypto classification",
+      "closure": "Exchange and exchange_token map explicitly to exchanges; unsupported classes throw."
+    },
+    {
+      "gapId": "A86-GAP-07",
+      "severity": "P0",
+      "title": "Unknown asset classes failed open to crypto",
+      "closure": "categoryFromCatalog is exhaustive and rejects unknown values."
+    },
+    {
+      "gapId": "A86-GAP-08",
+      "severity": "P1",
+      "title": "Negative or fractional catalog counts were accepted",
+      "closure": "Counts require non-negative safe integers."
+    },
+    {
+      "gapId": "A86-GAP-09",
+      "severity": "P0",
+      "title": "Catalog counts were not reconciled with rows",
+      "closure": "Normalizer verifies total, unique symbols, class sum, IDs and symbols before ok=true."
+    },
+    {
+      "gapId": "A86-GAP-10",
+      "severity": "P0",
+      "title": "No complete cross-asset denominator existed",
+      "closure": "A86 covers 553 reference rows plus 30 index fixtures across seven asset classes."
+    },
+    {
+      "gapId": "A86-GAP-11",
+      "severity": "P0",
+      "title": "Crypto scope in Real Markets was ambiguous",
+      "closure": "Crypto rows are marked COMPARISON_ONLY and cannot become the primary Real Markets surface."
+    },
+    {
+      "gapId": "A86-GAP-12",
+      "severity": "P0",
+      "title": "Missing corporate actions could be confused with not applicable",
+      "closure": "Every class records either applicable evidence or VERIFIED_NOT_APPLICABLE."
+    },
+    {
+      "gapId": "A86-GAP-13",
+      "severity": "P1",
+      "title": "Session and calendar state had no complete denominator",
+      "closure": "Every instrument receives a terminal calendar_session row."
+    },
+    {
+      "gapId": "A86-GAP-14",
+      "severity": "P0",
+      "title": "Cross-currency values lacked a bound semantic unit",
+      "closure": "Every packet binds currency and semanticUnit and mutations are rejected."
+    },
+    {
+      "gapId": "A86-GAP-15",
+      "severity": "P1",
+      "title": "Correction state was not part of tier admission",
+      "closure": "Advanced admission includes an explicit correction ledger state."
+    },
+    {
+      "gapId": "A86-GAP-16",
+      "severity": "P0",
+      "title": "Provider quorum could be inferred from a single family",
+      "closure": "Pro and Advanced require exact family floors with a terminal quorum field."
+    },
+    {
+      "gapId": "A86-GAP-17",
+      "severity": "P0",
+      "title": "Advanced could be promoted without provenance depth",
+      "closure": "Advanced requires three provider families and a provenance field."
+    },
+    {
+      "gapId": "A86-GAP-18",
+      "severity": "P0",
+      "title": "Tier readiness could violate Basic-Pro-Advanced monotonicity",
+      "closure": "The full denominator enforces monotonic readiness for every instrument."
+    },
+    {
+      "gapId": "A86-GAP-19",
+      "severity": "P0",
+      "title": "API table modal and PDF could drift on facts",
+      "closure": "Four projections bind one facts digest and may not add facts."
+    },
+    {
+      "gapId": "A86-GAP-20",
+      "severity": "P0",
+      "title": "403 and 424 meanings were not tested as separate states",
+      "closure": "Ready paid evidence without entitlement yields 403; insufficient evidence yields 424."
+    },
+    {
+      "gapId": "A86-GAP-21",
+      "severity": "P0",
+      "title": "Offline readiness could be mistaken for paid delivery",
+      "closure": "All paidDelivered and productionEligible denominators remain zero."
+    },
+    {
+      "gapId": "A86-GAP-22",
+      "severity": "P0",
+      "title": "No semantic re-signed mutation campaign covered Real Markets",
+      "closure": "Eighteen mutation families are re-sealed for every tier packet."
+    },
+    {
+      "gapId": "A86-GAP-23",
+      "severity": "P0",
+      "title": "Real data evidence had no exact intake denominator",
+      "closure": "A fail-closed intake requires quote, history, calendar, actions, normalization, rights, browser and customer labels."
+    },
+    {
+      "gapId": "A86-GAP-24",
+      "severity": "P0",
+      "title": "Static identity seeds could be mistaken for current market evidence",
+      "closure": "The real intake starts at zero rows; static catalog identity grants no current-data credit."
+    },
+    {
+      "gapId": "A86-GAP-25",
+      "severity": "P1",
+      "title": "Index coverage could be hidden because production catalog currently has zero index rows",
+      "closure": "The matrix reports 30 explicit synthetic index fixtures and zero production index evidence."
+    },
+    {
+      "gapId": "A86-GAP-26",
+      "severity": "P0",
+      "title": "The legal roadmap denominator remained narrower than the active perimeter",
+      "closure": "The completion program is expanded to 20 signed legal/regulatory decisions."
+    },
+    {
+      "gapId": "A86-GAP-27",
+      "severity": "P0",
+      "title": "A111-A116 were described as optional repair buffer despite mandatory real reruns",
+      "closure": "A111-A116 become a required final real-evidence wave."
+    },
+    {
+      "gapId": "A86-GAP-28",
+      "severity": "P0",
+      "title": "A77-A80 exact closure could be lost behind later local matrices",
+      "closure": "Four parallel mandatory closure tracks remain explicit prerequisites for staging."
+    },
+    {
+      "gapId": "A86-GAP-29",
+      "severity": "P1",
+      "title": "Future pass count could decrease by hiding newly discovered scope",
+      "closure": "The program range expands to A116 and remainingAfterA86 is recalculated to 30."
+    },
+    {
+      "gapId": "A86-GAP-30",
+      "severity": "P0",
+      "title": "No single packet bound class, calendar, action applicability, normalization, quorum and correction evidence",
+      "closure": "A86 packet integrity and semantic verification bind all ten field families."
+    },
+    {
+      "gapId": "A86-GAP-31",
+      "severity": "P1",
+      "title": "A83 historical verifier hardcoded the legacy A110 program horizon",
+      "closure": "Historical completion-program checks derive remaining passes from the current authoritative lastPlannedPass instead of the superseded A110 horizon."
+    },
+    {
+      "gapId": "A86-GAP-32",
+      "severity": "P1",
+      "title": "A81 verifier hardcoded the superseded A110 completion horizon",
+      "closure": "A81 derives remaining passes from the authoritative lastPlannedPass."
+    },
+    {
+      "gapId": "A86-GAP-33",
+      "severity": "P1",
+      "title": "A82 verifier hardcoded the superseded A110 completion horizon",
+      "closure": "A82 derives remaining passes from the authoritative lastPlannedPass."
+    },
+    {
+      "gapId": "A86-GAP-34",
+      "severity": "P1",
+      "title": "The canonical current-status test hardcoded A85 as the permanent first roadmap heading",
+      "closure": "Roadmap precedence is validated from current-release authority and active revision rather than a frozen pass title."
+    },
+    {
+      "gapId": "A86-GAP-35",
+      "severity": "P1",
+      "title": "A57 protected-integrity approval stopped at A85 and could not bind authorized A86 changes",
+      "closure": "The A57 hardening builder and acceptance contract include the exact A86 change identifier and current source revision."
+    },
+    {
+      "gapId": "A86-GAP-36",
+      "severity": "P1",
+      "title": "A85 descendant verifier recomputed the frozen A85 payload against legal A86 source changes",
+      "closure": "A85 now verifies its frozen payload only when current and otherwise verifies the complete descendant chain to current authority."
+    },
+    {
+      "gapId": "A86-GAP-37",
+      "severity": "P1",
+      "title": "A41 route diagnostics assumed the Shield Pro market endpoint remained inline in the UI component",
+      "closure": "A41 now verifies both the component-to-full-catalog-helper wiring and the helper-to-markets endpoint binding, preserving coverage after bounded pagination extraction."
+    },
+    {
+      "gapId": "A86-GAP-38",
+      "severity": "P1",
+      "title": "The A86 clean-unpack sequence omitted retained A37-A41 runtime/performance regressions and the A59 build-route-CSS budget verifier",
+      "closure": "The exact unpacked SOURCE_ONLY sequence now runs A37 performance, A38 lifecycle, A39 runtime/CSS/a11y, A40 session/temporal/visibility, A41 route recovery and A59 static budgets after A58 and before product acceptance."
+    },
+    {
+      "gapId": "A86-GAP-39",
+      "severity": "P1",
+      "title": "The A86 current-state summary could retain a stale closed-gap count because the verifier did not bind it to the policy ledger",
+      "closure": "A86 test and verifier now bind current-state revision, NO_GO decision, exact denominators, 39/39 gap count, 20-decision legal denominator and all zero-credit production claims to the canonical policy and receipt."
+    }
+  ],
+  "a86LocalEvidence": {
+    "realMarketsCrossAssetMatrixImplemented": true,
+    "catalogRows": 553,
+    "syntheticIndexRows": 30,
+    "totalInstruments": 583,
+    "assetClasses": 7,
+    "fieldRows": 5830,
+    "tierPackets": 1749,
+    "channelProjections": 6996,
+    "semanticMutations": 31482,
+    "mutationKilled": 31482,
+    "basicFunctionalReadyOffline": 506,
+    "proFunctionalReadyOffline": 359,
+    "advancedFunctionalReadyOffline": 277,
+    "realEvidenceRowsVerified": 0,
+    "currentProviderEvidenceRows": 0,
+    "rightsApprovedRows": 0,
+    "productionBrowserRows": 0,
+    "customerValueLabeledRows": 0,
+    "paidDeliveredPackets": 0,
+    "exactA80CandidateBound": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "closedGaps": 39
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "LIVE": false,
+  "aiSimulatedPanel": {
+    "humanEvidenceLedgerRequired": true,
+    "label": "AI_SIMULATED_PANEL_INTERNAL_VALIDATION_ONLY",
+    "mandatorySeparateReporting": true,
+    "maxContributionToInternalReadinessPoints": 5,
+    "mayAffectCustomerProof": false,
+    "mayAffectInternalProductQuality": true,
+    "mayAffectSaleEnabled": false,
+    "mayAffectWillingnessToPay": false,
+    "mayAffectWorldClassProven": false,
+    "maySatisfyIndependentReviewerGate": false
+  },
+  "aiSimulationEvidence": {
+    "countsTowardCustomerProof": false,
+    "countsTowardIndependentReview": false,
+    "countsTowardSaleOrLive": false,
+    "countsTowardUxPsychologySimulation": true,
+    "countsTowardWillingnessToPay": false,
+    "countsTowardWorldClassProof": false,
+    "separateScoreAllowed": true
+  },
+  "customerProofCap": {
+    "score": 0,
+    "whenRealHumanParticipants": 0
+  },
+  "dimensions": [
+    "technology",
+    "securityPrivacy",
+    "dataProvenance",
+    "accuracySemanticTruth",
+    "uxPsychology",
+    "legalClaims",
+    "operations",
+    "customerProof",
+    "aiSimulatedValidation"
+  ],
+  "finalScoresAuthority": "FINAL_MATERIALS_AND_ROADMAP",
+  "globalDecision": "NO_GO",
+  "newGateMayReduceScore": true,
+  "noUnrelatedMovement": true,
+  "productionApproved": false,
+  "products": 17,
+  "revisionId": "VELMERE_PASS36_A102R44P44_ACTION_REQUIRED_BRUTAL_PRODUCT_REALITY_50_CONTRACT_ANGEL120_PERSONA100_FULL_QA_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p44.score-policy.v1",
+  "sourceScoreIsPolicyOnly": true,
+  "worldClassCapWithZeroCustomerProof": 49,
+  "worldClassProven": false
+}

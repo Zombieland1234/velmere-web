@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.a60-typescript-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "evidenceClass": "TESTED_LOCAL_REAL_EXECUTION",
+  "supersedesMigrationPath": "config/pass36/a102r44p12-a60-typescript-root-denominator-migration.json",
+  "reason": "Exact R44P46 probes observed one additional current source root and one additional generated root relative to the R44P12 declaration. The A60 admission contract is migrated to the observed current denominators without granting build, Browser, release or external credit.",
+  "historicalDeclaration": {
+    "preBuildSourceRoots": 160,
+    "postDualBuildRoots": 301,
+    "generatedRoots": 141,
+    "preBuildMinimumTransitiveFirstPartyFiles": 1535,
+    "postDualBuildMinimumTransitiveFirstPartyFiles": 1676,
+    "minimumToolingSyntaxFiles": 175,
+    "supportedByCurrentR44P46Probe": false
+  },
+  "currentObservedContract": {
+    "preBuild": {
+      "exactSourceRoots": 161,
+      "exactConfiguredRoots": 161,
+      "exactCoveredRoots": 161,
+      "observedTransitiveFirstPartyFiles": 1560,
+      "minimumTransitiveFirstPartyFiles": 1560,
+      "observedToolingSyntaxFiles": 185,
+      "minimumToolingSyntaxFiles": 185,
+      "maximumDiagnostics": 0,
+      "profile": "R44P46_SOURCE_ONLY_PRE_BUILD_161"
+    },
+    "postDualBuild": {
+      "exactRetainedSourceRoots": 161,
+      "exactGeneratedRoots": 142,
+      "exactWebpackGeneratedRoots": 139,
+      "exactTurbopackGeneratedRoots": 3,
+      "exactConfiguredRoots": 303,
+      "exactCoveredRoots": 303,
+      "observedTransitiveFirstPartyFiles": 1702,
+      "minimumTransitiveFirstPartyFiles": 1702,
+      "observedToolingSyntaxFiles": 185,
+      "minimumToolingSyntaxFiles": 185,
+      "maximumDiagnostics": 0,
+      "profile": "R44P46_DUAL_BUILD_GENERATED_TYPES_303"
+    },
+    "coveragePolicy": "EXACT_DISCOVERED_TSCONFIG_ROOTS_AT_EXECUTION_WITH_OBSERVED_TRANSITIVE_AND_TOOLING_FLOORS",
+    "rootFilesCoveredMustEqualConfiguredRootFiles": true
+  },
+  "deltaFromHistoricalDeclaration": {
+    "preBuildSourceRoots": 1,
+    "postDualBuildRoots": 2,
+    "generatedRoots": 1,
+    "preBuildMinimumTransitiveFirstPartyFiles": 25,
+    "postDualBuildMinimumTransitiveFirstPartyFiles": 26,
+    "minimumToolingSyntaxFiles": 10,
+    "rootsRemoved": 0,
+    "testsRemoved": 0,
+    "stagesRemoved": 0
+  },
+  "sourceAuthorityAtObservation": {
+    "manifestPath": "_velmere/PASS36_A102R44P46_SOURCE_ONLY_MANIFEST.json",
+    "manifestFileSha256": "732563689257c0e0db8c2c296977368afd21a0e19e54939f172e2af71289df5d",
+    "sourceFingerprint": "a15bb49f0002fabebaf2feec86bec6436c3f9635a153119fa76c0c19ae4bfdd8",
+    "fileCount": 6455,
+    "payloadBytes": 191827117,
+    "authorityStableAcrossBothProbes": true
+  },
+  "externalEvidenceRootEnvironmentVariable": "VELMERE_R46_EVIDENCE_ROOT",
+  "evidenceBindings": {
+    "preBuildProbeReceipt": {
+      "path": "a60-denominator-probe/R44P46_A60_TYPESCRIPT_DENOMINATOR_PROBE_RECEIPT.json",
+      "byteLength": 13706,
+      "sha256": "c067866f2a82b197d562de5cbaa3c2010d293ed789e075ed0108703888a8b406",
+      "status": "FAIL_R44P46_A60_TYPESCRIPT_DENOMINATOR_PROBE",
+      "negativeFailureRetained": true
+    },
+    "preBuildTypeScriptArtifact": {
+      "path": "a60-denominator-probe/pre-build-PASS13_PARTITIONED_TYPESCRIPT.json",
+      "byteLength": 291057,
+      "sha256": "07a4c79016318bbe01f642d055b8d809a02e3ad60f32a8dc665b00cf806c0167"
+    },
+    "postDualBuildContinuationReceipt": {
+      "path": "a60-denominator-probe-continuation/R44P46_A60_TYPESCRIPT_DENOMINATOR_CONTINUATION_RECEIPT.json",
+      "byteLength": 562833,
+      "sha256": "9d6f3db905c09a8c867f0ec342f8591b16c73785ddd1037512658c2bdd7b5047",
+      "status": "PASS_R44P46_POST_DUAL_BUILD_DENOMINATOR_OBSERVED_WITH_BUILD_LOCK_FAILURE_NO_CREDIT",
+      "negativeFailureRetained": true
+    },
+    "postDualBuildTypeScriptArtifact": {
+      "path": "a60-denominator-probe-continuation/post-dual-build-PASS13_PARTITIONED_TYPESCRIPT.json",
+      "byteLength": 576859,
+      "sha256": "57ae7e72a6737b0407e9640548de4d92f3b0ecae909c902ba3bc076e12795338"
+    },
+    "logs": [
+      {
+        "path": "a60-denominator-probe/logs/build-webpack.stdout.log",
+        "byteLength": 2758,
+        "sha256": "bf24516e9cb2eea130a80cf9318a7be8df30bda23b79c7f0affcd86ecbd1fea2",
+        "expectedExitCode": 1,
+        "classification": "NEGATIVE_BUILD_CHAIN_LOG"
+      },
+      {
+        "path": "a60-denominator-probe/logs/build-webpack.stderr.log",
+        "byteLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "expectedExitCode": 1,
+        "classification": "NEGATIVE_BUILD_CHAIN_LOG"
+      },
+      {
+        "path": "a60-denominator-probe-continuation/logs/build-turbopack.stdout.log",
+        "byteLength": 2766,
+        "sha256": "42af7a9b7cb3db0bd6504a6f54492536aff710857d7351a3db6b56a34dcb25b1",
+        "expectedExitCode": 1,
+        "classification": "NEGATIVE_BUILD_LOCK_LOG"
+      },
+      {
+        "path": "a60-denominator-probe-continuation/logs/build-turbopack.stderr.log",
+        "byteLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "expectedExitCode": 1,
+        "classification": "NEGATIVE_BUILD_LOCK_LOG"
+      },
+      {
+        "path": "a60-denominator-probe-continuation/logs/post-build-typecheck.stdout.log",
+        "byteLength": 1181,
+        "sha256": "1f774c6dfa8c4b4cdbd274e1fefde7921b6b40dc52b22fa47850730c980564a9",
+        "expectedExitCode": 0,
+        "classification": "DENOMINATOR_EXECUTION_LOG"
+      },
+      {
+        "path": "a60-denominator-probe-continuation/logs/post-build-typecheck.stderr.log",
+        "byteLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "expectedExitCode": 0,
+        "classification": "DENOMINATOR_EXECUTION_LOG"
+      },
+      {
+        "path": "a60-denominator-probe-continuation/logs/post-build-typecheck-direct.stdout.log",
+        "byteLength": 56,
+        "sha256": "0b55150fa85f8a7f96cb9e2f5c05625f46be2457bd293c4d83cefe0023412aae",
+        "expectedExitCode": 0,
+        "classification": "DIRECT_TYPESCRIPT_CONFIRMATION_LOG"
+      },
+      {
+        "path": "a60-denominator-probe-continuation/logs/post-build-typecheck-direct.stderr.log",
+        "byteLength": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "expectedExitCode": 0,
+        "classification": "DIRECT_TYPESCRIPT_CONFIRMATION_LOG"
+      }
+    ]
+  },
+  "negativeEvidence": {
+    "preBuildProbeStatusRetained": "FAIL_R44P46_A60_TYPESCRIPT_DENOMINATOR_PROBE",
+    "webpackChainedPostVerifierFailureRetained": true,
+    "turbopackBuildLockFailureRetained": true,
+    "denominatorObservationsMayBeUsedForContractMigration": true,
+    "failedBuildMayNotReceiveBuildCredit": true
+  },
+  "a60StageDenominator": {
+    "before": 14,
+    "after": 14,
+    "retained": 14,
+    "added": 0,
+    "removed": 0
+  },
+  "testsDeleted": 0,
+  "skipsAdded": 0,
+  "timeoutsIncreased": 0,
+  "denominatorsReduced": 0,
+  "a60ExecutedCredit": false,
+  "buildCredit": false,
+  "browserCredit": false,
+  "releaseCredit": false,
+  "externalEvidenceCredit": false,
+  "internalClosureCreditAdded": 0,
+  "internalClosure": {
+    "numerator": 1,
+    "denominator": 26,
+    "percent": 3.8,
+    "onlyClosedGate": "G11"
+  },
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "migrationDigestSha256": "5be54d052cef6d1658565b27b8e2fd58cc5f8d1f0ddffdf21321542882724087"
+}

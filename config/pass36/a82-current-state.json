@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "velmere.pass36.a82.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+  "parentRevisionId": "VELMERE_PASS36_A81R0_CANONICAL_BASIC_PRO_ADVANCED_MEGA_MATRIX_ORCHESTRATOR",
+  "generatedAt": "2026-07-27T14:00:00.000Z",
+  "decision": "PASS_LOCAL_A82_REAL_CONTRACT_INTAKE_FIXTURE_HARNESS_BLOCKED_REAL_EVIDENCE",
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "localHarness": {
+    "implemented": true,
+    "fixtureCases": 50,
+    "fixtureTierOutputs": 150,
+    "fixtureToolReceipts": 200,
+    "fixtureBlindLabelBundles": 50,
+    "fixtureSemanticMutations": 1000,
+    "fixtureMutationKilled": 1000,
+    "closedGaps": 12,
+    "testChecks": 26,
+    "verifierChecks": 22
+  },
+  "realIntake": {
+    "requiredCases": 50,
+    "identitySeeded": 10,
+    "assignedRealIdentities": 10,
+    "fullyVerifiedCases": 0,
+    "rightsApprovedCases": 0,
+    "sourceBytecodeMatches": 0,
+    "blindIndependentLabels": 0,
+    "officialToolExecutions": 0,
+    "realTierOutputs": 0,
+    "decision": "BLOCKED_REAL_CASE_EVIDENCE"
+  },
+  "claims": {
+    "realCasesFullyVerified": false,
+    "officialToolsExecuted": false,
+    "independentRealLabelsAvailable": false,
+    "customerAccuracyProven": false,
+    "paidGateEligible": false,
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A83",
+    "title": "Browser Lens and PDF real-packet matrix",
+    "status": "PREPARE_REAL_PACKET_INTAKE_BLOCKED_EXACT_A80_REAL_DATA_BROWSER"
+  },
+  "truthBoundary": "A82 proves only the local fail-closed intake and fixture harness for real-contract evidence. Ten public identities are seeded but none is source/bytecode verified, rights-approved, blind-labelled, independently adjudicated or officially tool-executed.",
+  "observedExecutionEnvironment": {
+    "node": "22.16.0",
+    "requiredNode": "24.18.0",
+    "currentRootGate": {
+      "passed": 24,
+      "required": 30,
+      "blocked": 6,
+      "semanticProductFailures": 0,
+      "sourceImmutable": true
+    },
+    "dependencyBlockers": {
+      "missingGenuineZodSuites": 5,
+      "missingGenuineTypeScriptSuites": 1
+    },
+    "officialToolExecutables": {
+      "solc": false,
+      "slither": false,
+      "semgrep": false,
+      "forge": false,
+      "availableFamilies": 0,
+      "requiredFamilies": 4
+    },
+    "creditBoundary": "Environment observation only; grants zero official-tool, exact-runtime, audit-quality, paid, staging, LIVE or sale credit."
+  }
+}

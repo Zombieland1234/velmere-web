@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "velmere.pass36.a83.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "parentRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+  "generatedAt": "2026-07-27T15:30:00.000Z",
+  "decision": "PASS_LOCAL_A83_PHYSICAL_CROSS_LOCALE_PDF_MATRIX_BLOCKED_REAL_PACKET_BROWSER_CUSTOMER_EVIDENCE",
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "localHarness": {
+    "implemented": true,
+    "fixtureCases": 50,
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "channelProjections": 2700,
+    "semanticMutations": 8100,
+    "mutationKilled": 8100,
+    "closedGaps": 31,
+    "testChecks": 22,
+    "verifierChecks": 36,
+    "localSyntheticPhysicalMatrixExecuted": true,
+    "physicalCustomerPdfMatrixExecuted": false,
+    "sourceEvidenceSummaryPath": "config/pass36/a83-source-evidence-summary.json",
+    "sourceSummaryIntegrityDigest": "b8fe6091916c3a489766c5c58f30fa40b0ce2aedaf0b8a781626ff516b90050e"
+  },
+  "externalPdfQa": {
+    "pypdfPassed": 450,
+    "pdfinfoPassed": 450,
+    "pdftotextPassed": 450,
+    "ghostscriptSamplePassed": 45,
+    "renderedPages": 2100,
+    "blankPages": 0,
+    "pagesTouchingRasterEdge": 0,
+    "fullEvidenceStoredInMaterials": true,
+    "sourceOnlyBoundByCompactSummary": true
+  },
+  "realIntake": {
+    "requiredCases": 50,
+    "realPacketsVerified": 0,
+    "rightsApprovedCases": 0,
+    "productionBrowserCases": 0,
+    "secureDeliveryCases": 0,
+    "externalAccessibilityCases": 0,
+    "customerComprehensionLabels": 0,
+    "realTierOutputs": 0,
+    "decision": "BLOCKED_REAL_PACKET_EVIDENCE"
+  },
+  "claims": {
+    "realPacketsVerified": false,
+    "productionBrowserExecuted": false,
+    "secureDeliveryProven": false,
+    "externalAccessibilityProven": false,
+    "customerComprehensionProven": false,
+    "customerPurchaseWorthinessProven": false,
+    "paidGateEligible": false,
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A84",
+    "title": "Shield full-catalog tier matrix",
+    "status": "PREPARE_CURRENT_FULL_CATALOG_DATA_BLOCKED_EXACT_A80_PROVIDER_RIGHTS_BROWSER"
+  },
+  "truthBoundary": "A83 locally verifies a deterministic synthetic cross-locale Browser/Lens/PDF corpus and fail-closed parity contract. It does not prove current provider data, rights, production browser delivery, account-bound access, external accessibility, customer comprehension, willingness-to-pay, staging, LIVE or sale.",
+  "observedExecutionEnvironment": {
+    "node": "22.16.0",
+    "requiredNode": "24.18.0",
+    "currentRootGate": {
+      "passed": 24,
+      "required": 30,
+      "blocked": 6,
+      "semanticProductFailures": 0,
+      "sourceImmutable": true
+    },
+    "dependencyBlockers": {
+      "missingGenuineZodSuites": 5,
+      "missingGenuineTypeScriptSuites": 1
+    },
+    "creditBoundary": "Environment observation only; grants zero exact-runtime, production browser, real packet, customer, staging, LIVE or sale credit."
+  }
+}

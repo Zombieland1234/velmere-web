@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "velmere.pass36.a77.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+  "parentRevisionId": "VELMERE_PASS36_A76R0_CURRENT_REVISION_ROADMAP_AND_REGULATORY_PERIMETER_TRUTH_AUTHORITY",
+  "decision": "PASS_LOCAL_CLEAN_ROOT_CONSTRUCTION_NO_GOVERNANCE_PROMOTION",
+  "legacyLineage": {
+    "decision": "BLOCKED_EXACT_HISTORICAL_BYTES",
+    "verifiedExact": 0,
+    "requiredExact": 2,
+    "a61Passed": false
+  },
+  "cleanRoot": {
+    "constructed": true,
+    "genesisPath": "config/pass36/a77-clean-root-genesis.json",
+    "governanceDecision": "BLOCKED_EXTERNAL_GOVERNANCE_SIGNATURES",
+    "governanceApproved": false
+  },
+  "criticalGate": {
+    "legacyModeCredit": false,
+    "currentRootModeImplemented": true,
+    "exactRuntimeCredit": false,
+    "currentRootLatestRun": "BLOCKED_EXACT_RUNTIME_OR_DEPENDENCIES",
+    "suiteCount": 30,
+    "passedSuites": 24,
+    "blockedSuites": 6,
+    "semanticFailuresAfterA77Fixes": 0,
+    "blockedByMissingExactDependencies": [
+      "real_markets_receipt_integrity:zod",
+      "market_risk_delivery_gate:zod",
+      "legacy_live_publication_truth:zod",
+      "control_plane_boundaries:zod",
+      "worker_mutation_envelope:zod",
+      "production_security_db_hardening:typescript"
+    ],
+    "sourceImmutable": true
+  },
+  "staging": {
+    "executedStages": 0,
+    "requiredStages": 10,
+    "admissionRule": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT"
+  },
+  "metrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "claims": {
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A78",
+    "title": "Exact runtime, lockfile dependency and Chromium bootstrap"
+  },
+  "truthBoundary": "Local clean-root construction closes lineage ambiguity only. External dual-control signatures or exact A61 recovery remain required before staging admission.",
+  "localEvidence": {
+    "genesisValidation": "21/21",
+    "governanceAdversarial": "47/47",
+    "cleanRootVerifier": "33/33",
+    "legacyIsolation": "10/10",
+    "a63LineageOrchestrator": "40 scenarios / 164 assertions",
+    "a63Verifier": "20/20",
+    "a46": "791/791",
+    "routeDispatch": "1320/1320",
+    "protectedIntegrity": "1073/1073; 80 authorized changed rows",
+    "sourceAudit": "2729 code files / 0 syntax errors / 6810 imports / 0 missing",
+    "shieldKlines": "64/64",
+    "supabaseServiceRest": "14/14",
+    "currentRootCriticalGate": "24/30; 0 semantic failures; 6 exact dependency/runtime blockers"
+  },
+  "newGapsClosed": [
+    {
+      "id": "A77-GAP-01",
+      "area": "Shield klines / abuse controls",
+      "finding": "Malformed kline requests shared the same durable quota with valid provider-work requests, allowing malformed traffic to consume the valid-user budget.",
+      "remediation": "Parse the bounded request before provider-work admission and use a separate durable invalid-request abuse bucket.",
+      "verification": "PASS6_SHIELD_KLINES_P0 64/64",
+      "status": "CLOSED_LOCAL"
+    },
+    {
+      "id": "A77-GAP-02",
+      "area": "Supabase privileged REST configured origin",
+      "finding": "The origin-only boundary rejected non-root paths but cleared query and fragment after parsing, so a configured URL containing query or fragment could still be normalized and accepted.",
+      "remediation": "Reject query and fragment before canonical origin construction; migrate the regression test to the brokered no-socket transport seam.",
+      "verification": "pass11-supabase-service-rest-v1 14/14",
+      "status": "CLOSED_LOCAL"
+    }
+  ]
+}

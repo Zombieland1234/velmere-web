@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "velmere.p39.v16-authority-topology-policy.v2",
+  "revision": "P39_V16_AUTHORITY_TOPOLOGY_AND_EXACT_NODE24_LINUX_RECONCILIATION",
+  "generatedAt": "2026-08-14T05:05:00.000Z",
+  "state": "CURRENT_SOURCE_ONLY_IN_PROGRESS",
+  "releaseState": "NO_GO",
+  "parentRoot": "R44P46",
+  "parentCheckpoint": "P38_V15_CURRENT_LOCKFILE_CAS_RECOVERY_AND_NODE24_DIFFERENTIAL",
+  "authority": {
+    "candidate": {
+      "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V16_FULL_TOPOLOGY_FREE_LEGAL_CURRENT_WORLD_CLASS_2026-08-14.txt",
+      "byteLength": 62609,
+      "sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9"
+    },
+    "previousHistorical": {
+      "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V15_FREE_LEGAL_TOP_WORLD_2026-08-13.txt",
+      "byteLength": 19804,
+      "sha256": "5cfbbfcbcef7242e30466f18bab3ad29cad859e485a909a4ee8658fb65e2f2c0"
+    },
+    "bindingRule": "V16 becomes current authority only after exact copy, authority manifest, regenerated source/path identity, affected policy/schema/receipt bindings, current validation, and deterministic 2/2 SOURCE_ONLY packaging with CRC.",
+    "candidateStateBeforePackage": "EXACT_WORKING_SOURCE_BINDING_PENDING_FINAL_P39_PACKAGE_RECEIPT"
+  },
+  "sourceBindings": {
+    "topology": {
+      "path": "lib/product/vlm-canonical-product-topology.ts",
+      "byteLength": 18142,
+      "sha256": "bf0c5a2c50224e6cae7cd5fa34014085510a5f444a9bbd4a78ee0d400faacabe"
+    },
+    "availabilityMatrix": {
+      "path": "lib/commerce/vlm-current-evidence-availability-matrix.ts",
+      "byteLength": 11037,
+      "sha256": "a001775a610b0ea70b258c0e4e47178cf70fe3d335b3d490af3d7fc750f9d115"
+    },
+    "currentSkuTruth": {
+      "path": "lib/commerce/vlm-current-sku-truth.ts",
+      "byteLength": 11197,
+      "sha256": "ef9fe483f2b68bfc5e0b23a2a0e3d13be2f2100e4dc2c5fe14fcafbdc285159a"
+    }
+  },
+  "topologyRules": {
+    "productFamilies": 11,
+    "customerFacingRows": 17,
+    "internalExecutionProfiles": 33,
+    "contextTransitions": 22,
+    "deltaRequiredTransitions": 6,
+    "notApplicableNoPaidDeltaClaimTransitions": 16,
+    "saleEligibilityDenominator": "17_REAL_CUSTOMER_FACING_ROWS_ONLY",
+    "internalExecutionProfilesAreSaleableSkus": false,
+    "standaloneContextDeltaRequiresCurrentCatalogClaim": true,
+    "truthInvariantAcrossContexts": true,
+    "safetyInvariantAcrossContexts": true
+  },
+  "runtimeTarget": {
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "requiredFinalPlatform": "Windows",
+    "currentPassExecutablePlatform": "linux-x64",
+    "toolcacheArchiveOrigin": "github-actions/actions-node-versions release asset",
+    "toolcacheArchiveSha256": "efced36c041a7a43e8b4a4b35cb929bef7747c1c7442e693901a0b4f06467e1d",
+    "toolcacheArchiveByteLength": 57653661,
+    "exactLinuxExecutionMayEarn": [
+      "exact Node 24.18.0 and npm 11.16.0 linux-x64 runtime identity",
+      "authority/topology/current-matrix verifier execution"
+    ],
+    "exactLinuxExecutionCannotEarn": [
+      "Windows execution",
+      "dependency closure",
+      "typecheck/lint/dual-build",
+      "Browser or PDF closure",
+      "GO_INTERNAL"
+    ]
+  },
+  "creditBoundary": {
+    "authorityWorkingBindingCredit": true,
+    "topologyDefinitionCredit": true,
+    "exactLinuxRuntimeCreditOnlyAfterRuntimeReceipt": false,
+    "exactWindowsCredit": false,
+    "productExecutionCredit": false,
+    "sourceRightsCredit": false,
+    "valueCredit": false,
+    "saleCredit": false,
+    "goInternalCredit": false,
+    "goPaidCredit": false,
+    "liveCredit": false,
+    "worldClassProvenCredit": false
+  },
+  "integritySha256": "ad769fe2fa26c415f88dc3db3532be154c196a4b3de1ea5d1f286573d3b23e61"
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.p0-p1-register.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "adjudicationScope": "Known current-source evidence at truth-rebaseline prepackage time.",
+  "controllableP0": [],
+  "controllableP0Count": 0,
+  "p0ClosureClaimed": false,
+  "p0Boundary": "No known controllable P0 was reproduced in this bounded truth pass; incomplete full-gate coverage means zero known is not a final zero-P0 proof.",
+  "controllableP1": [
+    {
+      "id": "P1-R46-001",
+      "title": "Audit accuracy denominator and independently sufficient sealed holdout remain open",
+      "gates": [
+        "G03",
+        "G04"
+      ],
+      "evidenceClass": "NOT_PROVEN"
+    },
+    {
+      "id": "P1-R46-002",
+      "title": "Unsupported high-risk public claim candidates require rendered-surface adjudication",
+      "gates": [
+        "G09"
+      ],
+      "evidenceClass": "NOT_PROVEN",
+      "observedCandidates": 575
+    },
+    {
+      "id": "P1-R46-003",
+      "title": "Whole active route/API runtime, auth, tenant, entitlement and journey coverage is incomplete",
+      "gates": [
+        "G06",
+        "G07",
+        "G08",
+        "G17"
+      ],
+      "evidenceClass": "NOT_PROVEN",
+      "routeModules": 137
+    },
+    {
+      "id": "P1-R46-004",
+      "title": "Concurrent audit, heap soak and degraded-mode resilience denominator remains open",
+      "gates": [
+        "G20"
+      ],
+      "evidenceClass": "NOT_PROVEN"
+    },
+    {
+      "id": "P1-R46-005",
+      "title": "Canonical deterministic trio and clean-unpack verification are pending",
+      "gates": [
+        "G25"
+      ],
+      "evidenceClass": "NOT_PROVEN"
+    },
+    {
+      "id": "P1-R46-006",
+      "title": "External handoff packet set has not yet been verified complete",
+      "gates": [
+        "G24"
+      ],
+      "evidenceClass": "NOT_PROVEN"
+    },
+    {
+      "id": "P1-R46-007",
+      "title": "Browser stable-parent reuse was invalidated by the PostCSS/Nanoid build dependency change",
+      "gates": [
+        "G10",
+        "G26"
+      ],
+      "evidenceClass": "STALE",
+      "requiredEvidence": "Exact R46 A60 dual-build/runtime/Browser 57/57, 29 screenshots, 4 popups and 584/584 evidence rerun."
+    }
+  ],
+  "resolvedNegativeEvidence": [
+    {
+      "id": "P1-R46-008",
+      "title": "PDF compact-summary binding drift invalidated interim stable-parent closure",
+      "gates": [
+        "G11",
+        "G26"
+      ],
+      "initialEvidenceClass": "STALE",
+      "initialExactVerifier": "FAIL_25_OF_31_WITH_6_FAILURES",
+      "resolutionEvidenceClass": "TESTED_LOCAL_REAL_EXECUTION",
+      "resolution": "Fresh R44P46 A83 final-RC execution passed in two disposable clones with 900 retained PDFs, 4200 rendered pages, 450/450 PDF byte identity, 2100/2100 page-raster identity and 18 retained contact sheets.",
+      "receiptPath": "qa/pdf-final-rc/R44P46_A83_FINAL_RC_TWO_RUN_RECEIPT.json",
+      "receiptSha256": "c1a56b18d111f437841273598a728c06513e83720893f228e899413881141a07",
+      "retainedNegativeEvidence": [
+        "Initial compact-summary split-brain: exact verifier FAIL 25/31 with six failures.",
+        "RUN1 initial generation failed because the exact font input was missing.",
+        "RUN2 initial generation failed because the exact font input was missing."
+      ]
+    }
+  ],
+  "externalBlockers": [
+    "Real customer and WTP evidence",
+    "Two independent reviewers and independent FN/severity adjudication",
+    "Professional legal review",
+    "Provider rights confirmations",
+    "Real Stripe TEST and production/staging outcomes",
+    "Exact Windows execution environment"
+  ]
+}

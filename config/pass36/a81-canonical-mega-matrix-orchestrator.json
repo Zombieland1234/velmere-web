@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "velmere.pass36.a81.canonical-mega-matrix-orchestrator.v1",
+  "revisionId": "VELMERE_PASS36_A81R0_CANONICAL_BASIC_PRO_ADVANCED_MEGA_MATRIX_ORCHESTRATOR",
+  "parentRevisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+  "deterministicEpoch": "2026-07-27T13:00:00.000Z",
+  "inputs": {
+    "corpus": {
+      "path": "evaluation/pass16/worldclass-base-corpus.json",
+      "sha256": "00acdd2019c03abba0a5ea596de242915d16deb5108b41aeac436f34a21e7d3b"
+    },
+    "matrix": {
+      "path": "evaluation/pass16/worldclass-2700-matrix.jsonl",
+      "sha256": "5507b5bfcee1debf5c80f777a11707a147355de8a944e8a44f8551beafccc6eb"
+    },
+    "marketAdapterIndex": {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "sha256": "28cdbae7e1e869b7410b332f5f607bf9833eb929159f30726b2a49ccedd87d25"
+    },
+    "auditLensAdapterIndex": {
+      "path": "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+      "sha256": "2979011a6020367ff75865e58b2726bf2d9144c5d5b03e7175017645e5a787de"
+    },
+    "brainAngelAdapterIndex": {
+      "path": "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+      "sha256": "d027dc2c065862ce162ea85ff19c0df7403df488c18d54339741d7750e36b5b8"
+    },
+    "productTierContract": {
+      "path": "config/pass35/product-tier-content-contract.json",
+      "sha256": "0ba7e57c91b241de716a3f98ed2328d68d4030cd341f7639f19a0f0f3638d102"
+    }
+  },
+  "sourceSurfaces": [
+    "shield",
+    "real_markets",
+    "smart_contract_audit",
+    "lens_pdf",
+    "vlm_brain",
+    "angel"
+  ],
+  "modules": [
+    {
+      "moduleId": "shield",
+      "sourceSurface": "shield",
+      "productSurfaceId": "shield",
+      "caseCount": 50,
+      "classification": "DIRECT_ADAPTER_MODULE"
+    },
+    {
+      "moduleId": "shield_pro",
+      "sourceSurface": "shield",
+      "productSurfaceId": "shield_pro",
+      "caseCount": 50,
+      "classification": "DERIVED_SHARED_CASE_MODULE"
+    },
+    {
+      "moduleId": "market_impact",
+      "sourceSurface": "shield",
+      "productSurfaceId": "market_impact",
+      "caseCount": 50,
+      "classification": "DERIVED_SHARED_CASE_MODULE"
+    },
+    {
+      "moduleId": "whale_watch",
+      "sourceSurface": "shield",
+      "productSurfaceId": "whale_watch",
+      "caseCount": 50,
+      "classification": "DERIVED_SHARED_CASE_MODULE"
+    },
+    {
+      "moduleId": "real_markets",
+      "sourceSurface": "real_markets",
+      "productSurfaceId": "real_markets",
+      "caseCount": 50,
+      "classification": "DIRECT_ADAPTER_MODULE"
+    },
+    {
+      "moduleId": "audit_evm",
+      "sourceSurface": "smart_contract_audit",
+      "productSurfaceId": "audit_evm",
+      "caseCount": 50,
+      "classification": "DIRECT_ADAPTER_MODULE"
+    },
+    {
+      "moduleId": "browser_lens",
+      "sourceSurface": "lens_pdf",
+      "productSurfaceId": "pdf_delivery",
+      "caseCount": 50,
+      "classification": "DERIVED_SHARED_CASE_MODULE"
+    },
+    {
+      "moduleId": "pdf_delivery",
+      "sourceSurface": "lens_pdf",
+      "productSurfaceId": "pdf_delivery",
+      "caseCount": 50,
+      "classification": "DIRECT_ADAPTER_MODULE"
+    },
+    {
+      "moduleId": "brain",
+      "sourceSurface": "vlm_brain",
+      "productSurfaceId": null,
+      "caseCount": 50,
+      "classification": "DIRECT_ADAPTER_MODULE"
+    },
+    {
+      "moduleId": "angel",
+      "sourceSurface": "angel",
+      "productSurfaceId": null,
+      "caseCount": 50,
+      "classification": "DIRECT_ADAPTER_MODULE"
+    }
+  ],
+  "tiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "locales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "channels": [
+    "api",
+    "ui",
+    "preview",
+    "pdf",
+    "brain",
+    "angel"
+  ],
+  "claimCountsByTier": {
+    "basic": 8,
+    "pro": 16,
+    "advanced": 24
+  },
+  "minimumIncrementByUpgrade": {
+    "materialClaims": 8,
+    "evidenceFamilies": 2,
+    "scenarios": 1
+  },
+  "supplementalEvidenceFamilies": {
+    "basic": [
+      "adapter_receipt",
+      "root_case_identity"
+    ],
+    "pro": [
+      "cross_channel_parity",
+      "tier_increment_receipt"
+    ],
+    "advanced": [
+      "contradiction_receipt",
+      "provenance_receipt"
+    ]
+  },
+  "expectedDenominators": {
+    "uniqueBaseCases": 300,
+    "sourceMatrixRows": 2700,
+    "sourceAdapterRows": 2700,
+    "moduleCases": 500,
+    "packetRows": 4500,
+    "channelProjections": 27000,
+    "mutationDenominator": 36000,
+    "modules": 10,
+    "tiers": 3,
+    "locales": 3,
+    "channels": 6
+  },
+  "mutationFamilies": [
+    "packet_hash_substitution",
+    "facts_hash_substitution",
+    "channel_added_claim",
+    "channel_dropped_claim",
+    "tier_label_substitution",
+    "sale_flag_promotion",
+    "adapter_status_substitution",
+    "analysis_decision_substitution"
+  ],
+  "requiredInvariants": [
+    "Every source matrix row has exactly one deterministic adapter row.",
+    "Every registered module receives exactly fifty shared source cases.",
+    "Every module case expands to Basic, Pro and Advanced in PL, EN and DE.",
+    "Every packet projects to API, UI, preview, PDF, Brain and Angel.",
+    "Every projection preserves packet ID, packet hash, facts hash and the exact claim set.",
+    "No channel may add, remove or silently rewrite a canonical claim.",
+    "Root case identity and root facts remain identical across derived modules.",
+    "Canonical claim IDs and facts remain semantically identical across locales.",
+    "Basic claims are a subset of Pro claims and Pro claims are a subset of Advanced claims.",
+    "Each tier upgrade adds at least eight material claims, two evidence families and one scenario.",
+    "Blocked source adapter states remain abstained and cannot be promoted by another channel.",
+    "No synthetic packet or projection may enable charge, LIVE, customer purchase-worthiness or release promotion."
+  ],
+  "truthBoundary": "A81 orchestrates existing frozen synthetic corpus and adapter evidence into one source-bound cross-module and cross-channel matrix. It proves deterministic identity, tier monotonicity, projection parity and fail-closed promotion behavior only. It does not execute real providers, exact A80, a browser, physical customer PDFs, a model, customer outcomes, staging, LIVE or sale.",
+  "closedByA81": [
+    {
+      "gapId": "A81-GAP-01",
+      "severity": "P0",
+      "title": "Separate adapter families had no single exact 2700-row completeness proof",
+      "closure": "A81 requires one unique deterministic adapter row for every frozen source matrix row."
+    },
+    {
+      "gapId": "A81-GAP-02",
+      "severity": "P0",
+      "title": "No shared root-case identity across Shield-derived and Lens-derived modules",
+      "closure": "A81 binds derived modules to one root case hash and root facts hash."
+    },
+    {
+      "gapId": "A81-GAP-03",
+      "severity": "P0",
+      "title": "Channel parity did not require an exact canonical claim set",
+      "closure": "All six projections must preserve packet ID, packet hash, facts hash and exact claim IDs."
+    },
+    {
+      "gapId": "A81-GAP-04",
+      "severity": "P1",
+      "title": "No explicit cross-locale semantic fact parity",
+      "closure": "PL, EN and DE packets must retain the same canonical facts hash for each module/case/tier."
+    },
+    {
+      "gapId": "A81-GAP-05",
+      "severity": "P0",
+      "title": "No unified tier monotonicity proof across all modules",
+      "closure": "Basic claim sets must be subsets of Pro and Pro subsets of Advanced with fixed incremental floors."
+    },
+    {
+      "gapId": "A81-GAP-06",
+      "severity": "P0",
+      "title": "A blocked source adapter state could be presented differently by another channel",
+      "closure": "One analysis decision is bound into every API/UI/preview/PDF/Brain/Angel projection."
+    },
+    {
+      "gapId": "A81-GAP-07",
+      "severity": "P1",
+      "title": "No unified mutation campaign against cross-channel promotion and claim drift",
+      "closure": "A81 executes 36000 re-sealed deterministic projection mutations and requires 100 percent semantic kill rate."
+    },
+    {
+      "gapId": "A81-GAP-08",
+      "severity": "P0",
+      "title": "Synthetic adapter orchestration could be confused with real provider, browser, PDF or model execution",
+      "closure": "Every row and receipt records zero real executions and forbids LIVE, sale and purchase-worthiness credit."
+    },
+    {
+      "gapId": "A81-GAP-09",
+      "severity": "P0",
+      "title": "No frozen A80 candidate digest exists for product execution binding",
+      "closure": "A81 remains explicitly unbound and cannot grant product execution credit until a verified A80 candidate exists."
+    },
+    {
+      "gapId": "A81-GAP-10",
+      "severity": "P1",
+      "title": "Brain and Angel lacked direct product-contract surfaces in the tier catalog",
+      "closure": "A81 uses explicit source-surface modules without inventing paid product-cell readiness."
+    },
+    {
+      "gapId": "A81-GAP-11",
+      "severity": "P1",
+      "title": "Current package metadata pointed to a stale A79 completion-program path and patch marker",
+      "closure": "A81 binds velmerePass, patch, authority and completion-program metadata to the same current revision and path."
+    },
+    {
+      "gapId": "A81-GAP-12",
+      "severity": "P0",
+      "title": "A80 release-candidate admission was hardcoded to the A80 source revision and could not safely evaluate a legal later descendant",
+      "closure": "A81 generalizes the retained A80 admission boundary to require one consistent active/current/authority/descendant revision while preserving A80 as the admission-policy revision."
+    },
+    {
+      "gapId": "A81-GAP-13",
+      "severity": "P1",
+      "title": "A80 blocked admission crashed when the external exact A60 receipt was absent from SOURCE_ONLY",
+      "closure": "A81 treats a missing external A60 receipt as an explicit fail-closed blocker instead of an unhandled filesystem exception."
+    },
+    {
+      "gapId": "A81-GAP-14",
+      "severity": "P1",
+      "title": "Canonical current-status verifier was hardcoded to A80 roadmap precedence",
+      "closure": "A81 requires A81 at the roadmap head, retains A80 as explicit history and preserves the full canonical A32 section and 43 workstream rows."
+    },
+    {
+      "gapId": "A81-GAP-15",
+      "severity": "P0",
+      "title": "Projection mutations retained the original digest and could be killed by stale-integrity detection instead of semantic validation",
+      "closure": "A81 reseals every adversarial projection after mutation so all 36000 kills require the exact semantic verifier rather than a stale digest mismatch."
+    },
+    {
+      "gapId": "A81-GAP-16",
+      "severity": "P0",
+      "title": "Projection verification did not bind adapter status and analysis decision to the expected source state",
+      "closure": "A81 binds adapterStatus and analysisDecision for every projection and mutation-tests blocked/passed plus abstain/ready substitutions."
+    },
+    {
+      "gapId": "A81-GAP-17",
+      "severity": "P1",
+      "title": "A fully resealed alternate runtime was not explicitly rejected against a fresh source-replay digest anchor",
+      "closure": "A81 supports an expected runtime-integrity anchor, reruns the matrix from source-bound inputs and rejects a coherently resealed alternate runtime whose digest differs from the fresh replay."
+    },
+    {
+      "gapId": "A81-GAP-18",
+      "severity": "P1",
+      "title": "Historical A58 release-integrity checks were hardcoded to specific descendant revisions",
+      "closure": "A81 binds A58 current-source checks to the single current-release authority, current revision and active pass instead of A75 or A81 literals."
+    },
+    {
+      "gapId": "A81-GAP-19",
+      "severity": "P1",
+      "title": "Clean-unpack verification order was not encoded and receipt-generating tests could pollute the A58 exact path-set",
+      "closure": "A81 adds a one-shot clean-unpack sequence that always runs A58 archive/path integrity before any test allowed to create deterministic receipts."
+    }
+  ],
+  "parentDescendantManifestPath": "config/pass36/a80-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a81-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a81-current-root-descendant-manifest.json"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "browser57": false,
+    "browserEvidence584": false,
+    "exactLinux": false,
+    "exactWindows": false,
+    "externalStaging": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "live": false,
+    "pdf150": false,
+    "popupTabs4": false,
+    "postBuildTypeScript": false,
+    "sale": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "turbopack": false,
+    "webpack": false
+  },
+  "externalBlockers": [
+    "EXACT_WINDOWS",
+    "STRIPE_TEST_12_OF_12",
+    "EXTERNAL_STORAGE_KMS_EMAIL_10_OF_10",
+    "BACKUP_RESTORE_10_OF_10",
+    "INCIDENT_8_OF_8",
+    "REAL_72H_3_OF_3",
+    "RIGHTS_APPROVED_SHIELD_318",
+    "RIGHTS_APPROVED_REAL_MARKETS_583",
+    "INDEPENDENT_REVIEW_AND_SEVERITY_ADJUDICATION",
+    "ANGEL_RISK_300_INDEPENDENT_EVALS",
+    "CUSTOMER_COHORTS_AND_WILLINGNESS_TO_PAY"
+  ],
+  "findings": [
+    {
+      "id": "R44P30-P1-BROWSER-COLLECTOR-RACE",
+      "severity": "P1",
+      "status": "IMPLEMENTED_RETEST_REQUIRED",
+      "summary": "Asynchronous requestfailed events could make retained items and evidenceCounts disagree when read separately."
+    },
+    {
+      "id": "R44P30-P1-ANONYMOUS-PROFILE-EXPECTATION",
+      "severity": "P1",
+      "status": "IMPLEMENTED_RETEST_REQUIRED",
+      "summary": "Legacy A60 fixture policy incorrectly required anonymous /api/profile traffic despite the current auth gate."
+    },
+    {
+      "id": "R44P30-P1-CHROMIUM-CDP-SCREENSHOT-SURFACE",
+      "severity": "P1",
+      "status": "IMPLEMENTED_RETEST_REQUIRED",
+      "summary": "Exact Chromium closed or hung on complex full-page screenshots while CDPScreenshotNewSurface was enabled; the QA harness now omits only that Playwright default feature flag and preserves the complete denominator."
+    }
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "anonymousProfileExactZeroFixture": true,
+    "browserEvidenceAtomicSnapshot": true,
+    "chromiumFullPageScreenshotBackendMigration": true,
+    "eslintBatchingPerformanceMigration": true,
+    "exactRuntimeInputBinding": true,
+    "inheritedEslintCleanupMigration": true,
+    "parallelEslintExactAggregation": true,
+    "persistentEslintApiRunner": true,
+    "persistentEslintExactPathSet": true,
+    "retainedExternalCiPostgresRls19": true,
+    "retainedSigstoreOidcAttestation": true,
+    "singleFrozenSourceReleaseProgram": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "remainingCheckpointEstimate": {
+    "central": 4,
+    "rangeMax": 8,
+    "rangeMin": 4
+  },
+  "retainedParentEvidence": {
+    "classification": "RETAINED_PARENT_EVIDENCE_ONLY",
+    "externalCiPostgresRls19": true,
+    "noSupabaseOrProductionCredit": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p30.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE",
+    "basic": "ALWAYS_FREE_ACTION_REQUIRED",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

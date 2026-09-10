@@ -1,0 +1,570 @@
+{
+  "schemaVersion": "velmere.pass36.a102r29.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R29_ACTION_REQUIRED_CANONICAL_ASSET_CLASS_LOCALE_INDEPENDENT_CHART_ROUTE_CACHE_AND_NESTED_AUTHORITY_PROGRAM_DRIFT_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R28_ACTION_REQUIRED_ASSET_DETAIL_ABORTED_INFLIGHT_REOPEN_AND_DEFERRED_IDENTITY_RESET_RACE_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T02:03:00.000Z",
+  "status": "PASS_A102R29_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 33,
+  "executedStages": 33,
+  "passedStages": 33,
+  "failedStages": 0,
+  "stages": [
+    {
+      "id": "a102r29",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r29-canonical-asset-class-locale-independent-chart-route-cache-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "3d8cef0924e47a35bccc239d89a782515e1b29c167e30c286e950febf245d182",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 3474,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r28-parent",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r28-chart-abort-reopen-and-cache-reset-race-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "ccb36a7f7a0154b9e88e72cd2f60f8084dc28487b44080f1f969204ac9092c60",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 2488,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r27-parent",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r27-provider-symbol-chart-identity-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "938ee0093719402094d545507bafce9ed499370bdb08d48479aad3f97b36342f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 3132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r26-parent",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r26-asset-detail-chart-runtime-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "48a46870b7680f3955d22e6059f2f39b6c8effcceeb6e9da70325f7e22812752",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 3999,
+      "stderrBytes": 0
+    },
+    {
+      "id": "dev-bootstrap",
+      "command": [
+        "node",
+        "scripts/velmere-dev-bootstrap.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "1494f483b2588d49997ec2f703f3146d2aa517fb0cf2d379db1ddaa4309469fa",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1043,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r19",
+      "command": [
+        "node",
+        "scripts/pass36/test-a102r19-css-customer-minimalism-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "9dc6411dc26c2653347489151c40bdb68f2eb21c93393d4fea71a414d11a426c",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 948,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r18",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r18-public-community-system-clipboard-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "9536ec4f4927152bab0c8fd8259b3be0236976cfb854ff24ccbdd5396e96d06a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 567,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r17",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r17-browser-response-strict-json-error-redaction.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "0b764ff54d73c9aeae1516bd107b60e472b625de85c9b397ac81d58a8d37ad85",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 625,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r5",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r5-paid-entitlement-browser-secret-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "1cb88dacf43528b298770bbb2fc050d4045e311ffef182c0d0d98f2141ffaece",
+      "stderrSha256": "cdf142cdc41938acbf63d08a83c0e5aa7bf2cd626efc3859ef3e8061b0a0ff18",
+      "stdoutBytes": 341,
+      "stderrBytes": 960
+    },
+    {
+      "id": "a102r6",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r6-private-account-browser-state-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "adc436bb8b2f96f125b80f0ece20002d4e93c4f312723a59c809f31c9f08b545",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 2847,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r7",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r7-mobile-wallet-deeplink-privacy-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "84cf0800f07329ac9c4eff20408969a546a913af7c0573dbb7418d05316403b3",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5297,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r8",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r8-checkout-customer-browser-privacy-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "6baea07406b8c9c82b51433c35d02c748246f1b67f6042c49a7efdd1848f4537",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6777,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r9",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r9-system-clipboard-private-export-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "0de86eb90c3afbfa1162c5157adfbc68b329766799b081ee72948999ce1a1939",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5889,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r10",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r10-external-navigation-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "f8af07140ab645a2d906fc47a105a605d255004e97cbb87dc0795235142b84d2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 106,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r11",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r11-client-pdf-blob-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "eb4648f5529cc7534882776ddf78eabe9734f2866692cd0622943f7e1a647639",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 131,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r12",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r12-admin-product-draft-browser-state.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "f5d964eef100123eef0289c69af92b636d87fc9c4c98c4c67a61350f462fd38f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 516,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r13",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r13-operational-log-and-client-error-redaction.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "2fa77869660c971dddeef3721534c6e164c907720af0cdbee77d79cf745b559e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 817,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r14",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r14-browser-shield-handoff-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "322896d88e93d05b2fd947627846c11a589209d3917c1727b8c7586b6a6f1133",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 482,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r15",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r15-asset-analysis-clipboard-redaction.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "e4ef3ea51cae38e11e1e3980fec2869a39513917b5897494efbbc09db688204f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 527,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r16",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a102r16-cookie-consent-granular-expiry-privacy-boundary.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "4b397fc003d37bf81a984f7abec7b85b30d06357ca0ea5451eaafff73f379d44",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 581,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a73-cookie-session-boundary.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6488,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a89",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass36/test-a89-account-auth-tenant-privacy-red-team.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "8b556bab06491ff4ac03f7d45d3442d8376897c6958eb1688e906256ff1fcc87",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 42201,
+      "stderrBytes": 0
+    },
+    {
+      "id": "api-body",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass6/test-api-body-stream-boundaries.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 526,
+      "stderrBytes": 0
+    },
+    {
+      "id": "malformed-json",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass4823/test-audit-malformed-json-routes.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 118,
+      "stderrBytes": 0
+    },
+    {
+      "id": "mega4800",
+      "command": [
+        "node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/pass4800/test-mega-pass.ts"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "94b61342f99a6cdfd3e81802f6c49ec53b2adab6f4e340973d5a13a1d7aefc94",
+      "stderrSha256": "f99b1e60469c9ec8388799bac3e02041371bc9f8a23ab8f4ad749c5ec56b4e8d",
+      "stdoutBytes": 649,
+      "stderrBytes": 1920
+    },
+    {
+      "id": "route-dispatch",
+      "command": [
+        "node",
+        "scripts/pass15/verify-route-dispatch-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-tamper",
+      "command": [
+        "node",
+        "scripts/pass15/test-route-dispatch-manifest-tamper.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy-routes",
+      "command": [
+        "node",
+        "scripts/pass15/verify-lazy-route-shells.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a59",
+      "command": [
+        "node",
+        "scripts/pass36/test-a59-build-graph-route-css-budget-recovery.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "fc39ef895f109772cb3bd7a8b30f572103a55f81eac40133b355323bcf8e9a8e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 15803,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a57",
+      "command": [
+        "node",
+        "scripts/pass35/test-a57-controlled-canary-kill-switch-rollback-telemetry-acceptance.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "e954fb2b56d5db7bced3ebb0b3a2674513e0492aec27dda30c9020c71e6793c2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 258,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product-tiers",
+      "command": [
+        "node",
+        "scripts/pass35/test-product-tier-content-contract.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero-budget",
+      "command": [
+        "node",
+        "scripts/pass35/test-zero-budget-functional-roadmap.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit",
+      "command": [
+        "node",
+        "scripts/a44-source-integrity-audit.mjs"
+      ],
+      "exitCode": 0,
+      "passed": true,
+      "stdoutSha256": "5afb75f7a565bfb839e6feebaee58a5e60fc1289d804dfe80dba8c25e74e7029",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0
+    }
+  ],
+  "keyDenominators": {
+    "a102r29BoundaryChecks": 23,
+    "a102r28ParentBoundaryChecks": 14,
+    "a102r27ParentBoundaryChecks": 20,
+    "a102r26ParentBoundaryChecks": 33,
+    "devBootstrapCriticalHashes": 71,
+    "localeVariantsVerified": 3,
+    "localizedLabelsInfluenceRouting": false,
+    "localizedLabelsInfluenceCacheIdentity": false,
+    "nestedCurrentSourceParentCoherent": true,
+    "roadmapProgramPointerCoherent": true,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeDispatchTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "a57Checks": 1138,
+    "protectedIntegrityRows": 1073,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "a59Checks": 77,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439
+  },
+  "sourceAudit": {
+    "filesRead": 5281,
+    "codeFiles": 3253,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "localClosure": {
+    "canonicalAssetClassRouting": true,
+    "localizedLabelsInfluenceRouting": false,
+    "localizedLabelsInfluenceCacheIdentity": false,
+    "nestedCurrentSourceParentCoherent": true,
+    "roadmapProgramPointerCoherent": true,
+    "productionSyntheticChartCredit": false
+  },
+  "environmentBlockers": [
+    {
+      "id": "exact_node_npm_project_dependencies",
+      "credit": false,
+      "observedNode": "22.16.0",
+      "requiredNode": "24.18.0",
+      "requiredNpm": "11.16.0"
+    },
+    {
+      "id": "exact_playwright_chromium",
+      "credit": false
+    },
+    {
+      "id": "real_locale_route_cache_browser_matrix_0_of_18",
+      "credit": false
+    },
+    {
+      "id": "a102_real_observation_0_of_3",
+      "credit": false
+    },
+    {
+      "id": "staging_rights_legal_customers",
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "providerRights": 0,
+    "browserRows": 0,
+    "realObservationRuns": 0,
+    "stagingStages": 0,
+    "legalDecisions": 0,
+    "customerCohorts": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Local canonical asset-class routing, locale-independent chart cache identity and nested current-authority/program coherence only. No exact build/browser, staging, rights, legal, customer, LIVE or sale credit."
+}

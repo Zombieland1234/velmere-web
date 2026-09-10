@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p4.semgrep-version-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P4_ACTION_REQUIRED_OFFICIAL_TOOLCHAIN_200_EXECUTIONS_SEMGREP_MIGRATION_AND_AUTOMATED_AUDIT_EVIDENCE_BINDING_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P3_ACTION_REQUIRED_CURRENT_BYTE_SHIELD_PRO_REAL_MARKETS_AND_MULTILINGUAL_AI_MATRIX_CLOSURE_NO_LIVE_CREDIT",
+  "historicalPolicyPath": "config/pass36/a102r44p2-official-toolchain-policy.json",
+  "oldRequiredVersion": "1.129.0",
+  "newRequiredVersion": "1.130.0",
+  "reason": "R44P2 contained a planned Semgrep version that was not the version available to the successful exact execution environment. R44P4 makes the physically installed, version-checked and hash-bound Semgrep 1.130.0 evidence authoritative for this descendant.",
+  "retainedToolFamilies": [
+    "solc",
+    "slither",
+    "semgrep",
+    "forge"
+  ],
+  "removedToolFamilies": [],
+  "oldExecutionCredit": 0,
+  "newCompletedOfficialExecutions": 50,
+  "newExecutableSha256": "7e0362f596fc3d58a50e017922269350a963af53effa1a03c5477efb5ecac851",
+  "newInterpreterSha256": "3d47c83556de5a94fb39905399cf8d7040be140c25c667bd34cb6d7eefd42075",
+  "denominatorMigration": {
+    "oldTools": 4,
+    "newTools": 4,
+    "removedRows": 0,
+    "oldPlannedExecutions": 200,
+    "newRequiredExecutions": 200
+  },
+  "realAuditCredit": 0,
+  "customerCredit": 0,
+  "liveCredit": 0,
+  "saleEnabled": false
+}

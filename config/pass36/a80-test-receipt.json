@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "velmere.pass36.a80.frozen-local-release-candidate-admission-test.v1",
+  "revisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+  "generatedAt": "2026-07-27T12:00:00.000Z",
+  "status": "PASS_A80_LOCAL_ADMISSION_BLOCKED_EXACT_PREREQUISITES",
+  "summary": {
+    "checks": 41,
+    "passed": 41,
+    "failed": 0
+  },
+  "actualDecision": "BLOCKED_FROZEN_RELEASE_CANDIDATE_PREREQUISITES",
+  "actualBlockers": [
+    "a60:bindings",
+    "a60:decision",
+    "a60:no-failure",
+    "a60:runtime",
+    "a60:source-unchanged",
+    "a60:stages",
+    "a78:exact-credit",
+    "a78:exact-inputs",
+    "a79:exact-execution",
+    "current-root:exact-30-of-30",
+    "source:current-authority-exact",
+    "source:hygiene"
+  ],
+  "exactReleaseCandidateVerified": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "fixture:verified",
+      "passed": true,
+      "detail": {
+        "decision": "VERIFIED_LOCAL_FROZEN_RELEASE_CANDIDATE",
+        "blockers": []
+      }
+    },
+    {
+      "id": "fixture:no-promotion",
+      "passed": true,
+      "detail": {
+        "saleEnabled": false,
+        "liveProven": false,
+        "stagingApproved": false
+      }
+    },
+    {
+      "id": "fixture:digest",
+      "passed": true,
+      "detail": "sha256_shape_verified"
+    },
+    {
+      "id": "mutation:current-revision",
+      "passed": true,
+      "detail": [
+        "authority:current",
+        "revision:active-current",
+        "revision:current-shape",
+        "source:manifest-exact"
+      ]
+    },
+    {
+      "id": "mutation:authority-revision",
+      "passed": true,
+      "detail": [
+        "authority:current"
+      ]
+    },
+    {
+      "id": "mutation:runtime-input",
+      "passed": true,
+      "detail": [
+        "a78:exact-inputs"
+      ]
+    },
+    {
+      "id": "mutation:dependencies-input",
+      "passed": true,
+      "detail": [
+        "a78:exact-inputs"
+      ]
+    },
+    {
+      "id": "mutation:browser-input",
+      "passed": true,
+      "detail": [
+        "a78:exact-inputs"
+      ]
+    },
+    {
+      "id": "mutation:a78-credit",
+      "passed": true,
+      "detail": [
+        "a78:exact-credit"
+      ]
+    },
+    {
+      "id": "mutation:a79-webpack",
+      "passed": true,
+      "detail": [
+        "a79:exact-execution"
+      ]
+    },
+    {
+      "id": "mutation:a79-turbopack",
+      "passed": true,
+      "detail": [
+        "a79:exact-execution"
+      ]
+    },
+    {
+      "id": "mutation:a79-runtime",
+      "passed": true,
+      "detail": [
+        "a79:exact-execution"
+      ]
+    },
+    {
+      "id": "mutation:a79-playwright",
+      "passed": true,
+      "detail": [
+        "a79:exact-execution"
+      ]
+    },
+    {
+      "id": "mutation:a79-screenshot",
+      "passed": true,
+      "detail": [
+        "a79:exact-execution"
+      ]
+    },
+    {
+      "id": "mutation:a60-decision",
+      "passed": true,
+      "detail": [
+        "a60:decision"
+      ]
+    },
+    {
+      "id": "mutation:a60-failure",
+      "passed": true,
+      "detail": [
+        "a60:no-failure"
+      ]
+    },
+    {
+      "id": "mutation:a60-source-drift",
+      "passed": true,
+      "detail": [
+        "a60:source-unchanged"
+      ]
+    },
+    {
+      "id": "mutation:a60-source-hashes-missing",
+      "passed": true,
+      "detail": [
+        "a60:source-unchanged"
+      ]
+    },
+    {
+      "id": "mutation:a60-node",
+      "passed": true,
+      "detail": [
+        "a60:runtime"
+      ]
+    },
+    {
+      "id": "mutation:a60-npm",
+      "passed": true,
+      "detail": [
+        "a60:runtime"
+      ]
+    },
+    {
+      "id": "mutation:a60-stage",
+      "passed": true,
+      "detail": [
+        "a60:stages"
+      ]
+    },
+    {
+      "id": "mutation:a60-runtime-binding",
+      "passed": true,
+      "detail": [
+        "a60:bindings"
+      ]
+    },
+    {
+      "id": "mutation:a60-browser-binding",
+      "passed": true,
+      "detail": [
+        "a60:bindings"
+      ]
+    },
+    {
+      "id": "mutation:a60-build-id",
+      "passed": true,
+      "detail": [
+        "a60:bindings"
+      ]
+    },
+    {
+      "id": "mutation:a60-base-url",
+      "passed": true,
+      "detail": [
+        "a60:bindings"
+      ]
+    },
+    {
+      "id": "mutation:current-root-29",
+      "passed": true,
+      "detail": [
+        "current-root:exact-30-of-30"
+      ]
+    },
+    {
+      "id": "mutation:current-root-nonexact",
+      "passed": true,
+      "detail": [
+        "current-root:exact-30-of-30"
+      ]
+    },
+    {
+      "id": "mutation:current-root-semantic",
+      "passed": true,
+      "detail": [
+        "current-root:exact-30-of-30"
+      ]
+    },
+    {
+      "id": "mutation:current-root-mutation",
+      "passed": true,
+      "detail": [
+        "current-root:exact-30-of-30"
+      ]
+    },
+    {
+      "id": "mutation:a58-blocker",
+      "passed": true,
+      "detail": [
+        "a58:integrity"
+      ]
+    },
+    {
+      "id": "mutation:a58-archive",
+      "passed": true,
+      "detail": [
+        "a58:integrity"
+      ]
+    },
+    {
+      "id": "mutation:a58-clean",
+      "passed": true,
+      "detail": [
+        "a58:integrity"
+      ]
+    },
+    {
+      "id": "mutation:source-hygiene",
+      "passed": true,
+      "detail": [
+        "source:hygiene"
+      ]
+    },
+    {
+      "id": "mutation:source-authority-mismatch",
+      "passed": true,
+      "detail": [
+        "source:current-authority-exact"
+      ]
+    },
+    {
+      "id": "mutation:sale-claim",
+      "passed": true,
+      "detail": [
+        "claims:fail-closed"
+      ]
+    },
+    {
+      "id": "mutation:live-claim",
+      "passed": true,
+      "detail": [
+        "claims:fail-closed"
+      ]
+    },
+    {
+      "id": "output:outside-accepted",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "output:inside-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "output:reparse-into-source-rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "actual:blocked",
+      "passed": true,
+      "detail": [
+        "a60:bindings",
+        "a60:decision",
+        "a60:no-failure",
+        "a60:runtime",
+        "a60:source-unchanged",
+        "a60:stages",
+        "a78:exact-credit",
+        "a78:exact-inputs",
+        "a79:exact-execution",
+        "current-root:exact-30-of-30",
+        "source:current-authority-exact",
+        "source:hygiene"
+      ]
+    },
+    {
+      "id": "actual:no-live-sale",
+      "passed": true,
+      "detail": {
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    }
+  ],
+  "truthBoundary": "A80 proves a fail-closed local release-candidate admission and external seal boundary. A deterministic ZIP or green local fixture is not a frozen release candidate. VERIFIED requires physical A78 exact inputs, exact current-root 30/30, VERIFIED A79 Webpack/Turbopack/next start/Playwright evidence, clean-unpack A58 integrity and an unchanged hygienic source tree. A80 does not prove staging, provider rights, customers, LIVE, sale or world-class status."
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "velmere.pass35.a41.critical-route-recovery.v1",
+  "revisionId": "VELMERE_PASS35_A41_BROWSER_SHIELD_ROUTE_RUNTIME_RECOVERY",
+  "truthBoundary": "PASS36 A59 supersedes endpoint-specific recovered shells with canonical registry dispatch. Public paths and handler modules remain unchanged; explicit route files no longer double-count Next entrypoints.",
+  "authorizedDirectRoutes": [],
+  "constraints": {
+    "nodeRuntime": true,
+    "forceDynamic": true,
+    "revalidateZero": true,
+    "handlerModuleReExportOnly": false,
+    "fixtureFallbackForbidden": true,
+    "sellEnableForbidden": true,
+    "registryDispatchRequired": true
+  }
+}

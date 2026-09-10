@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "velmere.pass35.a47.acceptance-evidence-intake.contract.v1",
+  "revisionId": "VELMERE_PASS35_A47_ACCEPTANCE_EVIDENCE_INTAKE_TRIAGE",
+  "parentRevisionId": "VELMERE_PASS35_A46_CUSTOMER_UI_DATA_PLANE_ACCEPTANCE",
+  "a45RevisionId": "VELMERE_PASS35_A45_EXACT_RUNTIME_BROWSER_ACCEPTANCE",
+  "a46RevisionId": "VELMERE_PASS35_A46_CUSTOMER_UI_DATA_PLANE_ACCEPTANCE",
+  "expectedA45RouteRows": 36,
+  "requiredA45Stages": [
+    "diagnose-a44",
+    "diagnose-a45",
+    "source-audit-a44",
+    "typecheck",
+    "lint",
+    "a44-contract",
+    "a45-contract",
+    "build-webpack",
+    "build-turbopack",
+    "dev-server-ready",
+    "http-smoke",
+    "browser-acceptance"
+  ],
+  "requiredA46Stages": [
+    "diagnose-a45",
+    "diagnose-a46",
+    "source-audit",
+    "a45-contract",
+    "a46-contract",
+    "dev-server-ready",
+    "data-plane-acceptance"
+  ],
+  "requiredA46Checks": [
+    "markets",
+    "shield-search",
+    "klines",
+    "shield-map-investigator",
+    "browser-search",
+    "lens-report-json",
+    "lens-report-pdf",
+    "market-intelligence-basic",
+    "market-intelligence-pro"
+  ],
+  "zipBudgets": {
+    "maximumArchiveBytes": 268435456,
+    "maximumEntries": 10000,
+    "maximumTotalUncompressedBytes": 805306368,
+    "maximumSingleFileBytes": 134217728
+  },
+  "truthBoundary": "A47 verifies the integrity and declared local results of A45 exact-runtime/browser evidence and A46 public data-plane evidence. A verified decision proves only the submitted local machine run bound to its receipts. It does not prove staging, provider rights, continuous LIVE reliability, customer value, independent assurance or sale readiness.",
+  "integrity": {
+    "a46ContractSha256": "35a5c0e0e62d582606f16c1d6cbd78aa4aaf1691e43a032fe0435fee7be8e5ee",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

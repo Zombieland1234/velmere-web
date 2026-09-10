@@ -1,0 +1,779 @@
+{
+  "schemaVersion": "velmere.pass36.a102r23.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R23_ACTION_REQUIRED_KLINE_MODE_LOCAL_REFERENCE_DETAIL_ICON_REQUEST_AND_DEV_PREFETCH_STORM_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R22_ACTION_REQUIRED_LOCAL_DEV_RUNTIME_DATA_REFERENCE_ICON_AND_CONTINUOUS_ROUTE_TRANSITION_RECOVERY_NO_REAL_CREDIT",
+  "frozenObservationSourceRevisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+  "generatedAt": "2026-07-31T00:17:00.000Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "decision": "NO_GO",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A102_KLINE_MODE_LOCAL_REFERENCE_DETAIL_ICON_REQUEST_AND_DEV_PREFETCH_STORM_RECOVERY_NO_FORMAL_PASS_CREDIT",
+  "passCredit": {
+    "a90ToA102": false,
+    "A102": false,
+    "A103ToA116": false,
+    "A77R1ToA80R1": false,
+    "A88R2": false,
+    "staging": false,
+    "realData": false,
+    "rights": false,
+    "legal": false,
+    "customer": false,
+    "assurance": false,
+    "A88R2HistoricalLocalResultRetained": true
+  },
+  "localImplementation": {
+    "testReceiptPath": "config/pass36/a102r23-test-receipt.json",
+    "approvedChangesPath": "config/pass36/a102r23-approved-kline-prefetch-logo-changes.json",
+    "klineResponseModesAccepted": [
+      "live_verified",
+      "live_partial",
+      "last_known_good",
+      "local_reference",
+      "conflict",
+      "error"
+    ],
+    "localKlineReferenceBars": 180,
+    "productionKlineReferenceBars": 0,
+    "localReferenceExactIdentityOnly": true,
+    "localReferenceRiskAndLiveClaimsWithheld": true,
+    "developmentRemoteLogoRequestsAllowed": false,
+    "developmentEagerCoreRoutePrewarmEnabled": false,
+    "routeClickInterceptionPhase": "bubble",
+    "exactBrowserExecuted": false
+  },
+  "runtimeTruth": {
+    "retainedA102R2ExactLocalExecutionNodeVersion": "24.18.0",
+    "retainedA102R2ExactLocalExecutionNpmVersion": "11.16.0",
+    "currentAuditExecutionNodeVersion": "22.16.0",
+    "currentAuditExecutionNpmVersion": "10.9.2",
+    "currentAuditObservedChromiumVersion": "144.0.7559.96",
+    "requiredNodeVersion": "24.18.0",
+    "requiredNpmVersion": "11.16.0",
+    "requiredPlaywrightVersion": "1.60.0",
+    "requiredChromiumVersion": "148.0.7778.96",
+    "requiredChromiumRevision": "1223",
+    "officialNodeChecksumIndexAvailable": true,
+    "officialNodeArchiveBinaryVerifiedInCurrentAudit": false,
+    "projectNodeModulesAvailable": false,
+    "exactProjectZodAvailable": false,
+    "exactProjectTypeScriptAvailable": false,
+    "freshExactBrowserRowsExecuted": 0,
+    "freshExactBrowserRowsRequired": 54,
+    "exactReleaseCreditGranted": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R4Bytes": false,
+    "freshNpmCiOnA102R4BytesExecuted": false,
+    "freshLintOnA102R4BytesExecuted": false,
+    "freshTypecheckOnA102R4BytesExecuted": false,
+    "freshWebpackBuildOnA102R4BytesExecuted": false,
+    "freshTurbopackBuildOnA102R4BytesExecuted": false,
+    "freshNextStartSmokeOnA102R4BytesExecuted": false,
+    "diagnosticTypeScriptVersion": "5.8.3",
+    "diagnosticTypeScriptSha256": "dd17428736a07e1db1a138d8a14295ddb2699ba780ee15038acdd2c6da5373a0",
+    "diagnosticRouteAstReparseExecuted": true,
+    "diagnosticRouteAstExactCredit": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R5Bytes": false,
+    "freshNpmCiOnA102R5BytesExecuted": false,
+    "freshLintOnA102R5BytesExecuted": false,
+    "freshTypecheckOnA102R5BytesExecuted": false,
+    "freshWebpackBuildOnA102R5BytesExecuted": false,
+    "freshTurbopackBuildOnA102R5BytesExecuted": false,
+    "freshNextStartSmokeOnA102R5BytesExecuted": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R6Bytes": false,
+    "freshNpmCiOnA102R6BytesExecuted": false,
+    "freshLintOnA102R6BytesExecuted": false,
+    "freshTypecheckOnA102R6BytesExecuted": false,
+    "freshWebpackBuildOnA102R6BytesExecuted": false,
+    "freshTurbopackBuildOnA102R6BytesExecuted": false,
+    "freshNextStartSmokeOnA102R6BytesExecuted": false,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R7Bytes": false,
+    "freshNpmCiOnA102R7BytesExecuted": false,
+    "freshLintOnA102R7BytesExecuted": false,
+    "freshTypecheckOnA102R7BytesExecuted": false,
+    "freshWebpackBuildOnA102R7BytesExecuted": false,
+    "freshTurbopackBuildOnA102R7BytesExecuted": false,
+    "freshNextStartSmokeOnA102R7BytesExecuted": false,
+    "freshMobileWalletBrowserRowsExecuted": 0,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R8Bytes": false,
+    "freshNpmCiOnA102R8BytesExecuted": false,
+    "freshLintOnA102R8BytesExecuted": false,
+    "freshTypecheckOnA102R8BytesExecuted": false,
+    "freshWebpackBuildOnA102R8BytesExecuted": false,
+    "freshTurbopackBuildOnA102R8BytesExecuted": false,
+    "freshNextStartSmokeOnA102R8BytesExecuted": false,
+    "freshBrowserStoragePrivacyRowsExecuted": 0,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R9Bytes": false,
+    "freshNpmCiOnA102R9BytesExecuted": false,
+    "freshLintOnA102R9BytesExecuted": false,
+    "freshTypecheckOnA102R9BytesExecuted": false,
+    "freshWebpackBuildOnA102R9BytesExecuted": false,
+    "freshTurbopackBuildOnA102R9BytesExecuted": false,
+    "freshNextStartSmokeOnA102R9BytesExecuted": false,
+    "freshSystemClipboardBrowserRowsExecuted": 0,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R10Bytes": false,
+    "freshNpmCiOnA102R10BytesExecuted": false,
+    "freshLintOnA102R10BytesExecuted": false,
+    "freshTypecheckOnA102R10BytesExecuted": false,
+    "freshWebpackBuildOnA102R10BytesExecuted": false,
+    "freshTurbopackBuildOnA102R10BytesExecuted": false,
+    "freshNextStartSmokeOnA102R10BytesExecuted": false,
+    "freshExternalNavigationBrowserRowsExecuted": 0,
+    "freshExternalNavigationBrowserRowsRequired": 18,
+    "retainedA102R2BuildAndSmokeReceiptsApplyToA102R11Bytes": false,
+    "freshNpmCiOnA102R11BytesExecuted": false,
+    "freshLintOnA102R11BytesExecuted": false,
+    "freshTypecheckOnA102R11BytesExecuted": false,
+    "freshWebpackBuildOnA102R11BytesExecuted": false,
+    "freshTurbopackBuildOnA102R11BytesExecuted": false,
+    "freshNextStartSmokeOnA102R11BytesExecuted": false,
+    "freshClientPdfBrowserRowsExecuted": 0,
+    "freshClientPdfBrowserRowsRequired": 18,
+    "freshNpmCiOnA102R12BytesExecuted": false,
+    "freshLintOnA102R12BytesExecuted": false,
+    "freshTypecheckOnA102R12BytesExecuted": false,
+    "freshWebpackBuildOnA102R12BytesExecuted": false,
+    "freshTurbopackBuildOnA102R12BytesExecuted": false,
+    "freshNextStartSmokeOnA102R12BytesExecuted": false,
+    "freshAdminProductDraftBrowserRowsExecuted": 0,
+    "freshAdminProductDraftBrowserRowsRequired": 18,
+    "freshWebpackBuildOnA102R13BytesExecuted": false,
+    "freshTurbopackBuildOnA102R13BytesExecuted": false,
+    "freshProductionNextStartOnA102R13BytesExecuted": false,
+    "freshBrowserRowsExecuted": 0,
+    "freshOperationalLogSinkRowsExecuted": 0,
+    "freshExactBuildBrowserCredit": false,
+    "a102r23ExactNodeDownloadAttempted": true,
+    "a102r23ExactNodeDownloadCompleted": false,
+    "a102r23NpmCiExecuted": false
+  },
+  "denominators": {
+    "a102ObservationRuns": {
+      "required": 3,
+      "realVerified": 0,
+      "minimumSpanSeconds": 259200
+    },
+    "exactClosureTracks": {
+      "required": 4,
+      "verified": 0
+    },
+    "browserChecks": {
+      "required": 54,
+      "exactChromiumCredit": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stripeTestLifecycle": {
+      "required": 1,
+      "realVerified": 0,
+      "productionPayments": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100,
+      "pypdfVerified": 450,
+      "pdfinfoVerified": 450,
+      "pdftotextVerified": 450,
+      "ghostscriptVerified": 450,
+      "rasterPagesVerified": 2100,
+      "blankPages": 0,
+      "edgeContactPages": 0,
+      "independentA102R3PypdfVerified": 450,
+      "independentA102R3PdfinfoVerified": 450,
+      "independentA102R3PdftotextVerified": 450,
+      "independentA102R3GhostscriptVerified": 450,
+      "independentA102R3VisualSampleDocuments": 9,
+      "independentA102R3VisualSamplePages": 51
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "whaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0,
+      "localHandlerExecutions": 324
+    },
+    "riskRealCalibrationWindows": {
+      "requiredRegimes": 2,
+      "closed": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0,
+      "acceptedMediumHigh": 0,
+      "confirmedFixes": 0,
+      "successfulRetests": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "browserCustomerPrivacy": {
+      "checkoutPiiPersistenceCasesRequired": 3,
+      "checkoutPiiPersistenceCasesVerified": 0,
+      "auditCasePersistenceCasesRequired": 3,
+      "auditCasePersistenceCasesVerified": 0,
+      "pdfActivityPersistenceCasesRequired": 3,
+      "pdfActivityPersistenceCasesVerified": 0,
+      "realAccountSwitchLogoutSharedDeviceRows": 0
+    },
+    "systemClipboardPrivacy": {
+      "privateAccountArtifactProfilesRequired": 12,
+      "privateAccountArtifactProfilesLocallyRedacted": 12,
+      "adminSupportProfilesRequired": 1,
+      "adminSupportProfilesLocallyRedacted": 1,
+      "realOsBrowserClipboardRowsRequired": 12,
+      "realOsBrowserClipboardRowsVerified": 0,
+      "realClipboardRevocationOrExpiryGuarantee": false,
+      "publicCommunityProfilesRequired": 2,
+      "publicCommunityProfilesLocallyBounded": 2,
+      "directPublicClipboardSinksRemaining": 0,
+      "realPublicCommunityClipboardRowsRequired": 18,
+      "realPublicCommunityClipboardRowsVerified": 0
+    },
+    "clientPdfBrowserLifecycle": {
+      "required": 18,
+      "realVerified": 0,
+      "matrix": "Chrome/Edge/Firefox x desktop/mobile x Basic/Pro/Advanced",
+      "status": "BLOCKED_ENVIRONMENT"
+    },
+    "a102r17BrowserResponseBoundaryChecks": 52,
+    "realBrowserStrictJsonErrorRedactionRows": 0,
+    "a102r18PublicCommunityClipboardBoundaryChecks": 42,
+    "realPublicCommunityClipboardBrowserRows": {
+      "required": 18,
+      "verified": 0,
+      "matrix": "PL/EN/DE x desktop/mobile x Chrome/Edge/Firefox-or-equivalent OS clipboard behavior"
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "priceRecommendation": null,
+      "reason": "Local prescreen and safety tooling only; current real data, rights, legal, staging, customer utility and exact-browser release evidence remain unproven."
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_ACCURACY",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "BLOCKED_ACCURACY",
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "sourceMaterialsBinding": {
+    "literalMutualArchiveHashBinding": "IMPOSSIBLE_WITHOUT_EXTERNAL_INDIRECTION",
+    "implementedBoundary": "MATERIALS_MANIFEST_BINDS_EXACT_SOURCE_ARCHIVE_AND_BOTH_BIND_REVISION_ID",
+    "materialsMayOverrideSource": false
+  },
+  "nextRequiredStep": "Run exact Node 24.18.0/npm 11.16.0 Webpack/Turbopack/production next-start and Chromium 54/54 on frozen A102R22 bytes; then execute real provider-rights-approved data and route-transition screenshot matrices.",
+  "truthBoundary": "A102R23 aligns Shield Pro with the canonical kline response modes, adds an exact local-reference OHLC path only for non-production local-reference asset identities, removes development remote-logo request chains, disables eager heavy-route prewarming in development and moves route interception to bubble phase so component handlers retain authority. It does not grant current market data, provider rights, exact build/browser, staging, LIVE, sale, production or world-class credit.",
+  "localVerification": {
+    "targetedBoundaryChecks": 71,
+    "targetedBoundaryPassed": 48,
+    "applicationSurfaceFiles": 1833,
+    "applicationSurfaceAggregateSha256": "c32e0a04f4eed273df473166dbc3ac0d4e56008e21f96461f30981cd54c6e835",
+    "applicationSurfaceFilesChanged": 0,
+    "readmeCurrentHeadingCount": 1,
+    "cleanReadmeCurrentHeadingCount": 1,
+    "planningMinimum": 6,
+    "planningMostLikely": 11,
+    "planningWithRevisions": 18,
+    "formalRemainingEntries": 31,
+    "realBrowserRows": 0,
+    "exactBuildBrowserCredit": false,
+    "applicationSurfaceBytes": 22126332,
+    "quotedPassLiteralCandidates": 200,
+    "quotedPassLiteralCandidateFiles": 14,
+    "localRegressionStages": 30,
+    "devBootstrapCriticalHashes": 71,
+    "sourceAuditSyntaxErrors": 0,
+    "sourceAuditMissingImports": 0,
+    "sourceAuditMissingCssClasses": 0
+  },
+  "realDenominators": {
+    "externalNewTabReferrerOpenerBrowserRows": {
+      "verified": 0,
+      "required": 18,
+      "status": "BLOCKED_ENVIRONMENT"
+    },
+    "clientPdfPreviewDownloadBrowserRows": {
+      "verified": 0,
+      "required": 18,
+      "status": "BLOCKED_ENVIRONMENT"
+    },
+    "realCustomerPdfCases": {
+      "verified": 0,
+      "required": 50,
+      "status": "BLOCKED_EXTERNAL"
+    },
+    "a102r17BrowserResponseBoundaryChecks": 52,
+    "realBrowserStrictJsonErrorRedactionRows": 0
+  },
+  "exactResumePoint": "Run exact Node 24.18.0/npm 11.16.0 Webpack/Turbopack/production next-start and Chromium 54/54 on frozen A102R22 bytes; then execute real provider-rights-approved data and route-transition screenshot matrices.",
+  "estimatedRemainingCheckpoints": {
+    "minimum": 4,
+    "mostLikely": 9,
+    "withRevisionsAndRetests": 16,
+    "formalRemainingEntries": 31,
+    "note": "Planning estimate only; no automatic release credit."
+  },
+  "livingGaps": [
+    {
+      "id": "A102R20-GAP-01",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Current authority named A102R19 while currentRootDescendantManifestRevisionId still named A102R18, allowing path/revision drift inside the same machine authority."
+    },
+    {
+      "id": "A102R20-GAP-02",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "The authority and A58 truth boundaries still described A102R18 clipboard work instead of the active A102R19 source."
+    },
+    {
+      "id": "A102R20-GAP-03",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Two compatibility pointers declared A102R12 and described it as machine authority despite the active A102R19 authority."
+    },
+    {
+      "id": "A102R20-GAP-04",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "README.md and CLEAN_SAFE_README.md each exposed multiple historical sections as Current checkpoint/current source truth, creating competing human authorities."
+    },
+    {
+      "id": "A102R20-GAP-05",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Planning mirrors simultaneously reported 12, 13 and 17 likely remaining checkpoints. They now share one 6/11/18 planning estimate while the formal unresolved denominator remains 31."
+    },
+    {
+      "id": "A102R20-GAP-06",
+      "priority": "P1",
+      "status": "OPEN_NEXT_REVISION",
+      "description": "A wider active UI inventory still contains customer/admin-visible internal PASS-number labels outside the three A102R19 surfaces. This checkpoint records the debt without claiming it closed."
+    },
+    {
+      "id": "A102R20-GAP-07",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "description": "Fresh exact Node/npm, dual-build, production-runtime and browser matrix on changed A102R20 bytes remains unexecuted."
+    },
+    {
+      "id": "A102R19-GAP-01",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Active global CSS contained duplicate keyframe names with different bodies, so browser last-definition-wins semantics could silently change animation behavior across surfaces."
+    },
+    {
+      "id": "A102R19-GAP-02",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Four VLM Analysis keyframes had two active owners in globals.css and the dedicated imported vlm-analysis-tab.css; the dedicated stylesheet is now the single owner."
+    },
+    {
+      "id": "A102R19-GAP-03",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Checkout success, account report detail and Real Markets safe-table fallback exposed internal PASS checkpoint jargon to customers; localized product language now replaces it while proof markers remain internal."
+    },
+    {
+      "id": "A102R19-GAP-04",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "description": "Real PL/EN/DE desktop/mobile visual animation and customer-copy screenshot matrix remains unexecuted."
+    },
+    {
+      "id": "A102R19-GAP-05",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "description": "Fresh exact build/browser matrix on changed A102R19 bytes remains unexecuted."
+    },
+    {
+      "id": "A102R18-GAP-01",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Square post sharing called navigator.clipboard.writeText directly and bypassed the central secure-context and byte-bound clipboard policy."
+    },
+    {
+      "id": "A102R18-GAP-02",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Community comment copy called navigator.clipboard.writeText directly and allowed unbounded control/bidi-bearing user text to leave the origin."
+    },
+    {
+      "id": "A102R18-GAP-03",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Public text and public post links lacked separate canonical profiles; one central sink now enforces 8 KiB text limits, control/bidi rejection and canonical same-origin PL/EN/DE Square links."
+    },
+    {
+      "id": "A102R18-GAP-04",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "description": "Real PL/EN/DE desktop/mobile browser and operating-system clipboard allow/deny/failure matrix remains unexecuted."
+    },
+    {
+      "id": "A102R18-GAP-05",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "description": "Fresh exact build/browser matrix on changed A102R18 bytes remains unexecuted."
+    },
+    {
+      "id": "A102R15-GAP-08",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Compatibility current-revision source/descendant pointed to A102R15 while currentReleaseAuthorityRevisionId remained A102R14; mirror was rebound to one exact authority."
+    },
+    {
+      "id": "A102R15-GAP-01",
+      "priority": "P0",
+      "status": "LOCALLY_FIXED",
+      "description": "Asset action dock copied a full customer packet, feedback, command surface and decision queue directly to the operating-system clipboard outside the A102R9 redaction boundary."
+    },
+    {
+      "id": "A102R15-GAP-02",
+      "priority": "P0",
+      "status": "LOCALLY_FIXED",
+      "description": "Asset export manifest copied latest receipt ID and generated timestamp and dispatched the full manifest through a browser event."
+    },
+    {
+      "id": "A102R15-GAP-03",
+      "priority": "P0",
+      "status": "LOCALLY_FIXED",
+      "description": "Live action copy exposed exact receipt ID, source label, observedAt value and risk value through a raw JSON clipboard sink."
+    },
+    {
+      "id": "A102R15-GAP-04",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Central clipboard blocked-key policy omitted singular packet/receipt IDs, source timestamps and source-claim keys."
+    },
+    {
+      "id": "A102R15-GAP-05",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Nested package current-revision/program/manifest metadata remained on A102R12 and the compatibility mirror program revision remained on A102R13."
+    },
+    {
+      "id": "A102R15-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "description": "Real PL/EN/DE desktop/mobile secure-context clipboard allow/deny/revocation matrix remains unexecuted."
+    },
+    {
+      "id": "A102R15-GAP-07",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "description": "Fresh exact build/browser matrix on changed A102R15 bytes remains unexecuted."
+    },
+    {
+      "id": "A102R14-GAP-01",
+      "priority": "P0",
+      "status": "RECOVERED_EXACT_NO_PROMOTION",
+      "description": "Primary uploaded A102R13 SOURCE archive was truncated and lacked ZIP central directory; exact deterministic rebuild copy restored authority and the truncated bytes are retained as negative evidence."
+    },
+    {
+      "id": "A102R14-GAP-02",
+      "priority": "P0",
+      "status": "LOCALLY_FIXED",
+      "description": "Browser-to-Shield handoff persisted the full analytical packet in sessionStorage and treated browser state as later input authority."
+    },
+    {
+      "id": "A102R14-GAP-03",
+      "priority": "P0",
+      "status": "LOCALLY_FIXED",
+      "description": "Handoff URL exposed customer query, requested depth/tier, packet identity and source metadata in navigation history."
+    },
+    {
+      "id": "A102R14-GAP-04",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Unkeyed checksum could not protect same-origin browser state from script mutation; persistent packet mechanism was removed rather than promoted."
+    },
+    {
+      "id": "A102R14-GAP-05",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED",
+      "description": "Target could inherit prior analytical claims instead of performing a fresh server-owned scan; targetFreshScanRequired is mandatory."
+    },
+    {
+      "id": "A102R14-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_18",
+      "description": "Real PL/EN/DE desktop/mobile/browser-history/account-switch handoff matrix remains unexecuted."
+    },
+    {
+      "id": "A102R14-GAP-07",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "description": "Fresh exact build/browser matrix on changed A102R14 bytes remains unexecuted."
+    },
+    {
+      "id": "A102R13-GAP-01",
+      "priority": "P0",
+      "status": "LOCALLY_FIXED_NO_REAL_BROWSER_CREDIT",
+      "description": "Public and component error boundaries could log raw Error objects/component stacks or render raw error.message in customer UI."
+    },
+    {
+      "id": "A102R13-GAP-02",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED_NO_PRODUCTION_LOG_PIPELINE_CREDIT",
+      "description": "Non-durable payment and entitlement logs exposed raw Stripe session, wallet, email, product, context and audit-queue identifiers."
+    },
+    {
+      "id": "A102R13-GAP-03",
+      "priority": "P1",
+      "status": "LOCALLY_FIXED_NO_REAL_PROVIDER_CREDIT",
+      "description": "Angel provider fallback used a separate console sink rather than the centralized bounded operational log boundary."
+    },
+    {
+      "id": "A102R13-GAP-04",
+      "priority": "P1",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "description": "Real production log transport, retention, access control, deletion, incident export and DPO review remain unverified."
+    },
+    {
+      "id": "A102R13-GAP-05",
+      "priority": "P1",
+      "status": "OPEN_BLOCKED_EXACT_BROWSER",
+      "description": "PL/EN/DE desktop/mobile browser console and customer-visible fallback matrix remains 0 rows."
+    },
+    {
+      "id": "A102R22-GAP-01",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED_NO_PROMOTION",
+      "title": "Historical A42 dev bootstrap required removed route/page shells and rejected the current consolidated project."
+    },
+    {
+      "id": "A102R22-GAP-02",
+      "priority": "P0_PRODUCT",
+      "status": "LOCALLY_FIXED_DEVELOPMENT_REFERENCE_ONLY",
+      "title": "Shield and Shield Pro rendered empty when all market providers were correctly rights-blocked; a fixed illustrative development reference is now available outside production without risk/LIVE claims."
+    },
+    {
+      "id": "A102R22-GAP-03",
+      "priority": "P1_PERFORMANCE",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Brand/icon fallback generated a high-volume 502 request storm instead of yielding quietly to local glyph assets."
+    },
+    {
+      "id": "A102R22-GAP-04",
+      "priority": "P1_PERFORMANCE",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Font requests crossed locale middleware/proxy and added seconds to initial route rendering."
+    },
+    {
+      "id": "A102R22-GAP-05",
+      "priority": "P0_UX",
+      "status": "LOCALLY_FIXED_PENDING_0_OF_18_REAL_BROWSER",
+      "title": "The route veil could disappear after 2.6 seconds because persistent locale layouts did not replace the expected DOM node."
+    },
+    {
+      "id": "A102R22-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "title": "Exact Webpack/Turbopack/production Chromium route and screenshot matrix remains unexecuted on final A102R22 bytes."
+    },
+    {
+      "id": "A102R22-GAP-07",
+      "priority": "P0_DATA",
+      "status": "BLOCKED_RIGHTS_0_OF_21",
+      "title": "Current provider market data remains unavailable until signed runtime rights authority exists."
+    }
+  ],
+  "resumePoint": "Run exact Node 24.18.0/npm 11.16.0 Webpack/Turbopack/production next-start and Chromium 54/54 on frozen A102R22 bytes; then execute real provider-rights-approved data and route-transition screenshot matrices.",
+  "newLocalClosure": {
+    "devBootstrapCurrentAuthorityChecks": 71,
+    "staleA42RequiredPathsRemoved": 12,
+    "localDevelopmentReferenceRows": 25,
+    "localReferenceProductionRows": 0,
+    "localReferenceDataQuality": "demo",
+    "riskScorePublished": false,
+    "providerRightsBlockerRetained": true,
+    "iconUnavailableStatus": 204,
+    "fontAssetsBypassLocaleProxy": true,
+    "routeTransitionContinuousUntilPathAndLayoutSettle": true,
+    "routeTransitionSafetyTimeoutMs": 30000,
+    "realBrowserRows": 0,
+    "realProviderRightsApproved": 0,
+    "exactBuildBrowserCredit": false,
+    "targetedBoundaryChecks": 71,
+    "localRegressionStages": 30
+  },
+  "newRoadmapGaps": [
+    {
+      "id": "A102R22-GAP-01",
+      "priority": "P0_LOCAL",
+      "status": "LOCALLY_FIXED_NO_PROMOTION",
+      "title": "Historical A42 dev bootstrap required removed route/page shells and rejected the current consolidated project."
+    },
+    {
+      "id": "A102R22-GAP-02",
+      "priority": "P0_PRODUCT",
+      "status": "LOCALLY_FIXED_DEVELOPMENT_REFERENCE_ONLY",
+      "title": "Shield and Shield Pro rendered empty when all market providers were correctly rights-blocked; a fixed illustrative development reference is now available outside production without risk/LIVE claims."
+    },
+    {
+      "id": "A102R22-GAP-03",
+      "priority": "P1_PERFORMANCE",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Brand/icon fallback generated a high-volume 502 request storm instead of yielding quietly to local glyph assets."
+    },
+    {
+      "id": "A102R22-GAP-04",
+      "priority": "P1_PERFORMANCE",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Font requests crossed locale middleware/proxy and added seconds to initial route rendering."
+    },
+    {
+      "id": "A102R22-GAP-05",
+      "priority": "P0_UX",
+      "status": "LOCALLY_FIXED_PENDING_0_OF_18_REAL_BROWSER",
+      "title": "The route veil could disappear after 2.6 seconds because persistent locale layouts did not replace the expected DOM node."
+    },
+    {
+      "id": "A102R22-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "title": "Exact Webpack/Turbopack/production Chromium route and screenshot matrix remains unexecuted on final A102R22 bytes."
+    },
+    {
+      "id": "A102R22-GAP-07",
+      "priority": "P0_DATA",
+      "status": "BLOCKED_RIGHTS_0_OF_21",
+      "title": "Current provider market data remains unavailable until signed runtime rights authority exists."
+    }
+  ],
+  "date": "2026-07-30",
+  "currentCheckpoint": "VELMERE_PASS36_A102R22_ACTION_REQUIRED_LOCAL_DEV_RUNTIME_DATA_REFERENCE_ICON_AND_CONTINUOUS_ROUTE_TRANSITION_RECOVERY_NO_REAL_CREDIT",
+  "planningEstimateRemainingPasses": {
+    "minimum": 4,
+    "mostLikely": 9,
+    "withRevisions": 16,
+    "formalRemainingEntries": 31
+  },
+  "planningEstimate": {
+    "minimumGroupedCheckpoints": 3,
+    "mostLikelyCheckpoints": 8,
+    "withRevisionsAndRetests": 15,
+    "formalRemainingEntries": 31
+  },
+  "newGaps": [
+    {
+      "id": "A102R23-GAP-01",
+      "priority": "P0_PRODUCT",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Shield Pro treated canonical live_verified/live_partial/last_known_good kline payloads as errors because the client accepted only legacy live/stale modes."
+    },
+    {
+      "id": "A102R23-GAP-02",
+      "priority": "P0_PRODUCT",
+      "status": "LOCALLY_FIXED_DEVELOPMENT_REFERENCE_ONLY",
+      "title": "Local-reference market rows used local-reference-* market IDs that the exact provider identity resolver rejected before a chart could render; a non-production exact local-reference OHLC path now exists."
+    },
+    {
+      "id": "A102R23-GAP-03",
+      "priority": "P1_PERFORMANCE",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Development asset logos could still cascade through brand-icon, remote icon and asset-logo requests even after 502 responses were softened; development now uses local assets or glyphs only."
+    },
+    {
+      "id": "A102R23-GAP-04",
+      "priority": "P1_PERFORMANCE",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Global idle prewarm could schedule multiple heavy routes while development compilation was already busy; development is now intent-driven and production prewarms at most one route on a non-metered connection."
+    },
+    {
+      "id": "A102R23-GAP-05",
+      "priority": "P1_BEHAVIOR",
+      "status": "LOCALLY_FIXED_PENDING_REAL_BROWSER",
+      "title": "Capture-phase document click interception could run before component handlers had a chance to prevent navigation; route interception now runs in bubble phase."
+    },
+    {
+      "id": "A102R23-GAP-06",
+      "priority": "P0_RELEASE",
+      "status": "BLOCKED_0_OF_54",
+      "title": "Exact Webpack/Turbopack/production Chromium route and screenshot matrix remains unexecuted on final A102R23 bytes."
+    },
+    {
+      "id": "A102R23-GAP-07",
+      "priority": "P0_DATA",
+      "status": "BLOCKED_RIGHTS_0_OF_21",
+      "title": "All real/current market data and Market Intelligence publication remain blocked until signed provider rights and real evidence exist."
+    }
+  ]
+}

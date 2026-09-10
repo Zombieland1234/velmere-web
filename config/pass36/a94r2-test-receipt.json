@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "velmere.pass36.a94r2.local-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A94R2_ROUTE_AST_ORPHAN_LOCK_PDF_AND_CROSS_SURFACE_VALUE_TRUTH_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "status": "PASS_TARGETED_LOCAL_SUITE_WITH_ONE_EXACT_DEPENDENCY_BLOCKER_NO_PROMOTION",
+  "targetedTests": 17,
+  "passed": 16,
+  "blocked": 1,
+  "failed": 0,
+  "routeAst": {
+    "files": 254,
+    "methodExports": 316,
+    "checks": 1021,
+    "exactCredit": false
+  },
+  "routes": {
+    "paths": 160,
+    "dispatchChecks": 1480,
+    "lazyChecks": 176
+  },
+  "orphanBuildLock": {
+    "assertions": 26,
+    "realRecoveries": 0
+  },
+  "crossSurface": {
+    "checks": 32,
+    "semanticMutations": 16,
+    "killed": 16,
+    "realEvidenceCredits": 0,
+    "paidSkuCredits": 0
+  },
+  "pdf": {
+    "documents": 450,
+    "pages": 2100,
+    "bindingChecks": 19,
+    "realCustomerPdfs": 0
+  },
+  "sourceAudit": {
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "blocker": "EXACT_TAILWIND_3_4_19_AND_FULL_A78R1_TOOLCHAIN_UNAVAILABLE",
+  "globalDecision": "NO_GO",
+  "liveProven": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "evidenceSummaryPath": "config/pass36/a94r2-local-evidence-summary.json",
+  "integritySha256": "bf7574107da4a553bb9c87323a9ed2ca5481db914b5fd89cfc55f03c14234d96"
+}

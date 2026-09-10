@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "velmere.pass35.audit-a8-execution-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "status": "LOCAL_A10_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARKED_REAL_DATA_REPLAY_REVIEW_BLOCKED",
+  "productCellId": "audit_evm_pro_automated_review",
+  "sellEnabled": false,
+  "paidDeliveryAllowed": false,
+  "fullAuditClaimAllowed": false,
+  "controls": {
+    "A10_ECONOMIC_ADVERSARIAL": {
+      "enginePath": "scripts/pass35/audit-economic-adversarial-engine.mjs",
+      "fixtureCasePath": "fixtures/pass35/audit-a8/economic/synthetic-economic-case.json",
+      "fixtureReceiptPath": "fixtures/pass35/audit-a8/PASS35_A8_A10_ECONOMIC_SYNTHETIC_RECEIPT.json",
+      "scenarioTypes": 5,
+      "realExecutionCredit": false,
+      "paidGateEligible": false,
+      "evidenceRuntimePath": "lib/security/pass35-a28-economic-adversarial-evidence-runtime.mjs",
+      "evidencePolicyPath": "config/pass35/a28-economic-adversarial-evidence-policy.json",
+      "evidenceContractPath": "config/pass35/a28-economic-adversarial-evidence-runtime-contract.json",
+      "evidenceTestPath": "scripts/pass35/test-a28-economic-adversarial-evidence.mjs",
+      "benchmarkCases": 192,
+      "benchmarkMutations": 2304,
+      "localEvidenceContractComplete": true
+    },
+    "A15_REMEDIATION_RETEST": {
+      "adapterPath": "scripts/pass35/audit-remediation-retest-adapter.mjs",
+      "fixtureCasePath": "fixtures/pass35/audit-a8/remediation/synthetic-remediation-retest-case.json",
+      "fixtureReceiptPath": "fixtures/pass35/audit-a8/PASS35_A8_A15_REMEDIATION_RETEST_SYNTHETIC_RECEIPT.json",
+      "requiredRetestControls": 5,
+      "signedClosure": false,
+      "realExecutionCredit": false,
+      "paidGateEligible": false
+    },
+    "A17_MONITORING_HANDOFF": {
+      "adapterPath": "scripts/pass35/audit-monitoring-handoff-adapter.mjs",
+      "fixtureCasePath": "fixtures/pass35/audit-a8/monitoring/synthetic-monitoring-handoff-case.json",
+      "fixtureReceiptPath": "fixtures/pass35/audit-a8/PASS35_A8_A17_MONITORING_HANDOFF_SYNTHETIC_RECEIPT.json",
+      "requiredRuleTypes": 6,
+      "liveMonitoringActive": false,
+      "alertDeliveryVerified": false,
+      "realExecutionCredit": false,
+      "paidGateEligible": false
+    },
+    "A11_UPGRADE_DEPLOYMENT_OPERATIONS": {
+      "evidenceRuntimePath": "lib/security/pass35-a29-upgrade-deployment-operations-runtime.mjs",
+      "evidencePolicyPath": "config/pass35/a29-upgrade-deployment-operations-policy.json",
+      "evidenceContractPath": "config/pass35/a29-upgrade-deployment-operations-runtime-contract.json",
+      "evidenceTestPath": "scripts/pass35/test-a29-upgrade-deployment-operations.mjs",
+      "controlFamilies": 12,
+      "benchmarkCases": 192,
+      "benchmarkMutations": 2304,
+      "localEvidenceContractComplete": true,
+      "realExecutionCredit": false,
+      "paidGateEligible": false
+    },
+    "A03_THREAT_MODEL": {
+      "evidenceRuntimePath": "lib/security/pass35-a30-threat-model-runtime.mjs",
+      "evidencePolicyPath": "config/pass35/a30-threat-model-policy.json",
+      "evidenceContractPath": "config/pass35/a30-threat-model-runtime-contract.json",
+      "evidenceTestPath": "scripts/pass35/test-a30-threat-model.mjs",
+      "controlFamilies": 12,
+      "benchmarkCases": 192,
+      "benchmarkMutations": 2304,
+      "localEvidenceContractComplete": true,
+      "realExecutionCredit": false,
+      "paidGateEligible": false
+    },
+    "A04_PRIVILEGE_CONTROL": {
+      "evidenceRuntimePath": "lib/security/pass35-a31-privilege-control-runtime.mjs",
+      "evidencePolicyPath": "config/pass35/a31-privilege-control-policy.json",
+      "evidenceContractPath": "config/pass35/a31-privilege-control-runtime-contract.json",
+      "evidenceTestPath": "scripts/pass35/test-a31-privilege-control.mjs",
+      "controlFamilies": 12,
+      "benchmarkCases": 192,
+      "benchmarkMutations": 2304,
+      "localEvidenceContractComplete": true,
+      "realExecutionCredit": false,
+      "paidGateEligible": false
+    }
+  },
+  "mutationEvidence": {
+    "A10": {
+      "requiredVariants": 9,
+      "killedVariants": 9
+    },
+    "A15": {
+      "requiredVariants": 7,
+      "killedVariants": 7
+    },
+    "A17": {
+      "requiredVariants": 6,
+      "killedVariants": 6
+    },
+    "totalRequired": 22,
+    "totalKilled": 22
+  },
+  "runtimeBoundary": {
+    "exactRuntimeProof": false,
+    "officialSolcAvailable": false,
+    "officialForgeAvailable": false,
+    "officialForkRunnerAvailable": false,
+    "officialSlitherAvailable": false,
+    "officialSemgrepAvailable": false,
+    "realProviderCaseExecuted": false
+  },
+  "hardStops": {
+    "syntheticEconomicScenarioMayProveExploit": false,
+    "localRetestChainMayCloseCustomerFinding": false,
+    "monitoringPlanMayClaimLiveAlerting": false,
+    "localControlMayUnlockPaidDelivery": false,
+    "noRightsNoRealInputNoReviewerMeans": "UNAVAILABLE_NOT_FOR_SALE"
+  },
+  "truthBoundary": "A31 verifies a bounded local privilege and authorization evidence contract over generated or explicitly supplied local case data. It can bind role definitions, principals, selector permissions, role-admin relationships, proxy/admin authority, multisig/timelock delegation, separation-of-duties rules, escalation scenarios, revoke/recovery controls, hidden privileged surfaces and deterministic replay receipts. It does not prove current on-chain role holders, real proxy/admin slots, multisig custody, timelock execution, absence of hidden business-logic privileges, qualified manual authorization review, customer outcomes, independent assurance, LIVE operation or paid readiness. Generated benchmark evidence must never be promoted to on-chain, reviewer, customer, independent or commercial credit."
+}

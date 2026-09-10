@@ -1,0 +1,367 @@
+{
+  "schemaVersion": "velmere.pass26.diff-from-pass25.v2",
+  "generatedAt": "2026-07-20T17:15:30.531567+00:00",
+  "baseArtifact": {
+    "name": "VELMERE_PASS25_PREBUILD_CONFIGURATION_CLOSURE_SAFE_SOURCE.zip",
+    "sha256": "da42cec385c1f9658ddb23e6d34324b3928c9a6963009114952b04b8260ef8dc"
+  },
+  "counts": {
+    "new": 21,
+    "changed": 19,
+    "deleted": 6,
+    "unchanged": 3311,
+    "baseFilesCompared": 3336,
+    "currentFilesCompared": 3351
+  },
+  "new": [
+    {
+      "path": ".github/workflows/pass26-exact-runtime-bridge.yml",
+      "bytes": 4263,
+      "sha256": "61f9e01b47f52c4574f7eede1dbc70326b695f8b2885e5095919cd9f421b128a"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/README.md",
+      "bytes": 679,
+      "sha256": "21b198cc4a2b24949868a056d2d08d0331fad1cd8970a3c7d79232894e42e73a"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/pass4710-exact-checkpoint.yml",
+      "bytes": 1538,
+      "sha256": "12a84a494d8ce5a39f8a7e88124d9b84396bfd843ad6d01ea75dfae513895bfb"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/pass4727-exact-checkpoint.yml",
+      "bytes": 1419,
+      "sha256": "68f6713cb040239ef39949ce3a344462bea76e327c1ce08212dd92917f0a1a89"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/pass4737-exact-candidate.yml",
+      "bytes": 2053,
+      "sha256": "b74035728246d078d989eaec8997dc242366358206303ddf217e98c02254fbcc"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/pass4738-exact-candidate.yml",
+      "bytes": 2053,
+      "sha256": "c6796572d622c215ee14e16352e4f58f33afe91fb4fd00676df36c216e0ef529"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/pass4739-exact-candidate.yml",
+      "bytes": 2053,
+      "sha256": "5d4111e53e7d6383091311424ea4f1bf6d215733f4205f1a64e9b41f798bec5b"
+    },
+    {
+      "path": "_velmere/history/retired-workflows/pass4741-exact-candidate.yml",
+      "bytes": 2419,
+      "sha256": "3fedac04db169817ebb784559dfdb1714ae75be38d1c2417a4877d83469846cb"
+    },
+    {
+      "path": "config/pass25/PASS25_DIFF_FROM_PASS24.json",
+      "bytes": 2038,
+      "sha256": "ccb442e2a4e8a09f94ff3b920850dfe135685b87e401bc8b205f128cfde22516"
+    },
+    {
+      "path": "config/pass25/package-payload-manifest.json",
+      "bytes": 623387,
+      "sha256": "84976ca585c3479efbbd6014099c762cb6f4246d5f8ee3f6c0a04ccbffdf3368"
+    },
+    {
+      "path": "config/pass26/ci-contract.json",
+      "bytes": 2930,
+      "sha256": "3cf0044e513429c9102f6c247fc34923e71c3034f81b833ae07c27e1d6b59b79"
+    },
+    {
+      "path": "config/pass26/runtime-cache-bundle-policy.json",
+      "bytes": 807,
+      "sha256": "f8f4d17add3841ac9d545c588f091fc250a769f4cfd9c7360e7d59a44f98a1b3"
+    },
+    {
+      "path": "scripts/pass26/audit-ci-contract.mjs",
+      "bytes": 4747,
+      "sha256": "22bc842a3b6e5bb99024899a24108553f7b745ecc3399ee8f80c8921de0d1c6a"
+    },
+    {
+      "path": "scripts/pass26/build-package-payload-manifest.mjs",
+      "bytes": 1183,
+      "sha256": "e87c270ef45b36f83281c03d5c3a6fa194d5ab26be55f8ae51aeec42a8e1fdbd"
+    },
+    {
+      "path": "scripts/pass26/build-runtime-cache-bundle.mjs",
+      "bytes": 3260,
+      "sha256": "baf3e45ad42ffdb6434b6acfdd6f16bfb90c4e5462a17505fdf656f3f4508775"
+    },
+    {
+      "path": "scripts/pass26/import-runtime-cache-bundle.mjs",
+      "bytes": 2332,
+      "sha256": "fbf3e5b791826980eb25a03d571734938254f9358394c6202b570f93933e6051"
+    },
+    {
+      "path": "scripts/pass26/run-gate.mjs",
+      "bytes": 2067,
+      "sha256": "b67cd873f4406f0bd22a9c29dc8dcd8d49beb55aef5745a9149fbfe669ed6487"
+    },
+    {
+      "path": "scripts/pass26/runtime-bundle-lib.mjs",
+      "bytes": 6871,
+      "sha256": "b32b7e2eb895815c004d8a51ff82184184ec1acee7257ebce7dcddab0a8d1476"
+    },
+    {
+      "path": "scripts/pass26/source-boundary.mjs",
+      "bytes": 2227,
+      "sha256": "3cc436a5994e6124b41e712d8d343c848be032a62992f18d0859eb6b1be64e11"
+    },
+    {
+      "path": "scripts/pass26/test-runtime-bundle-boundaries.mjs",
+      "bytes": 2520,
+      "sha256": "4022153f38543b6fbf27c38f714065dd4d7f3641ad648c3634d083d81a6db284"
+    },
+    {
+      "path": "scripts/pass26/verify-runtime-cache-bundle.mjs",
+      "bytes": 497,
+      "sha256": "c8b72c520dcbc1a558f1bb6568f59b1756dd2768f9904cd4999af0a90e6181b7"
+    }
+  ],
+  "changed": [
+    {
+      "path": ".github/workflows/quality-and-fresh-builds.yml",
+      "before": {
+        "bytes": 4477,
+        "sha256": "61945e0647ca637dbd06c3e2f87404f64849f6a0959808194b4fad18984f8084"
+      },
+      "after": {
+        "bytes": 1580,
+        "sha256": "a220e0714ef0bdf77e02313b8778d41e8d08e8d7500f453c83cfae7debe88ce9"
+      }
+    },
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "before": {
+        "bytes": 1073,
+        "sha256": "edbef60a33a1a817df5970ab43aa9bd9fc1d978ea2b1479cbee70c283d9e51c6"
+      },
+      "after": {
+        "bytes": 1344,
+        "sha256": "19037d5fcd875be1736317b6f60fc59876092915780cdb1fd0dee978926c5d1c"
+      }
+    },
+    {
+      "path": "README.md",
+      "before": {
+        "bytes": 978,
+        "sha256": "efc70c0190b31c18a558d8c3d56dfad17559e6b9f3553ad0927694929d313642"
+      },
+      "after": {
+        "bytes": 1030,
+        "sha256": "64b103ea3d79dbda89a53be52d52d610e119c30e0c8e262a07153fdd479b69ca"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "before": {
+        "bytes": 512,
+        "sha256": "2354cc5c11d16d71776c9b99a1c6c6af0e18b692019d221764b3acedbfebd02a"
+      },
+      "after": {
+        "bytes": 563,
+        "sha256": "98ee57a510fae2e6f7836dde348747a43d08bfa3236560f52f59eb3c9b2949fc"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 448548,
+        "sha256": "6149710982ead4e43a34d8c9d8207159c1feacab68891a6846598c0f55643273"
+      },
+      "after": {
+        "bytes": 448548,
+        "sha256": "a51662bb160d30832e520af1fe3b4339a68c7cfd0c0257384bce478174ce6ae8"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1290,
+        "sha256": "6d9f3f918d9c57cb7a6f4379c2bbd817c03dc2c6780ec22e7b45d6129b09e175"
+      },
+      "after": {
+        "bytes": 1290,
+        "sha256": "ed49fef7f720a8d263964f0f2689a6493bc19d4faa358ed3ffd8718765069180"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 438789,
+        "sha256": "85b791cfd56ddbd9fb8d036cd2037b8979490b1d7939b5ec41cc2502535edbdb"
+      },
+      "after": {
+        "bytes": 438789,
+        "sha256": "9d337698297d50e8dfcbcc0e2f26eae4a0ca3585419e255063ccb4ee106440d0"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1507,
+        "sha256": "516c8c75e670bbbd288b274df6bd0ae4ae8fb50f210d406a2c862faba8d08f39"
+      },
+      "after": {
+        "bytes": 1507,
+        "sha256": "9ec9510acdb0b29a899e0acd5016c767789e1320bc946179daf699d3cf6e3511"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-evidence-fixtures.json",
+      "before": {
+        "bytes": 1073770,
+        "sha256": "33033fd92b3d5dc4c0cbe979e6c34de5c40b3104caa0396bf08c1ecf36a271f4"
+      },
+      "after": {
+        "bytes": 1073770,
+        "sha256": "0527f1736ec8769aa52585b4395726bba42b6cdd44789607758c11588eaeda81"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+      "before": {
+        "bytes": 431556,
+        "sha256": "ef44fc7f34ffb25b298e4861c0706745a562443fe175bfd04d3ac730becdfbaa"
+      },
+      "after": {
+        "bytes": 431556,
+        "sha256": "d027dc2c065862ce162ea85ff19c0df7403df488c18d54339741d7750e36b5b8"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+      "before": {
+        "bytes": 1464,
+        "sha256": "66712bf3966198775d364ecf964b1a048c8fcaae336cbfb6f582d100156a8ef1"
+      },
+      "after": {
+        "bytes": 1464,
+        "sha256": "188f8aa21a30c52c3e1d984b53a7e0147ffba03df31dc7c7aeafe77641a57582"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-evidence-fixtures.json",
+      "before": {
+        "bytes": 718563,
+        "sha256": "7758618d924e360f13a995452ac053af5e77e519c0ccbeed81f9bfda2c804fdc"
+      },
+      "after": {
+        "bytes": 718563,
+        "sha256": "5fbe2f98021644c96a084290563cf9cc8e0b6a00f830fc866a2e84f3a2afa7cc"
+      }
+    },
+    {
+      "path": "package.json",
+      "before": {
+        "bytes": 10646,
+        "sha256": "3abfeb2f12c030a33154757ee9f0e4688aca6755fd503a69e2bce93b15d8a2bf"
+      },
+      "after": {
+        "bytes": 11145,
+        "sha256": "db71ee1dc695dbc6659eac8a8bd816ec566d3f0f6111fffbf57ab50307295b23"
+      }
+    },
+    {
+      "path": "scripts/pass23/run-gate.mjs",
+      "before": {
+        "bytes": 5617,
+        "sha256": "0fe5fc7cdbf665c9072def04a5e3cd9fe4c6be32a6700629d8fefc7597b11e55"
+      },
+      "after": {
+        "bytes": 5757,
+        "sha256": "780a6724e2394819073f2e621d658638d55a6263aaadb0c9bc9db964a98099e6"
+      }
+    },
+    {
+      "path": "scripts/pass23/run-typescript-syntax-scan.mjs",
+      "before": {
+        "bytes": 2866,
+        "sha256": "39a8cddb69168fc2c278d775dd7003d0f9249523366970a7a971f9bb3d6d7874"
+      },
+      "after": {
+        "bytes": 2986,
+        "sha256": "3b4efa97064e12be1dc04968ffe9768f388bca8f57d7412b3ea5128399f30616"
+      }
+    },
+    {
+      "path": "scripts/pass24/runtime-lib.mjs",
+      "before": {
+        "bytes": 8676,
+        "sha256": "6fb6ba5776d1c70c0f72e71909050dbd12bbfad6686166884e8e03ceaa7ac628"
+      },
+      "after": {
+        "bytes": 8805,
+        "sha256": "d8153be61ad38e6da04cd2cde3bbe14df4d4d1ac7c6e75a757c635b78ec23468"
+      }
+    },
+    {
+      "path": "scripts/pass25/common.mjs",
+      "before": {
+        "bytes": 2134,
+        "sha256": "380cf246eb760090b3a2c7d9f812d3a5a033b0acf9777fce64ba5b0b6ae2fabd"
+      },
+      "after": {
+        "bytes": 2263,
+        "sha256": "1594586acc16200402a74031e64d53bf7542f1c6c2da4f56846078f319812fe7"
+      }
+    },
+    {
+      "path": "scripts/pass25/run-build-watchdog.mjs",
+      "before": {
+        "bytes": 12578,
+        "sha256": "1d3bad0d8505be3d0c4afb6dee99cfc019663cd7d7d9847f3a5d96a49f599d60"
+      },
+      "after": {
+        "bytes": 13051,
+        "sha256": "db37f3babeebeadefb6b345fb24863bd0429735ef9caa4eb2fe2482053e6b797"
+      }
+    },
+    {
+      "path": "scripts/worldclass/common-implementation-digest.mjs",
+      "before": {
+        "bytes": 2652,
+        "sha256": "7f4ad11a28360bf6fdfb00c1beafc13d8816226dd9ec5fc32ab80ea9e6095e65"
+      },
+      "after": {
+        "bytes": 2923,
+        "sha256": "3ffd0f4c1423bb41401d2f5839e47568db389c985788bc72aa8a0e1853064b04"
+      }
+    }
+  ],
+  "deleted": [
+    {
+      "path": ".github/workflows/pass4710-exact-checkpoint.yml",
+      "bytes": 1538,
+      "sha256": "12a84a494d8ce5a39f8a7e88124d9b84396bfd843ad6d01ea75dfae513895bfb"
+    },
+    {
+      "path": ".github/workflows/pass4727-exact-checkpoint.yml",
+      "bytes": 1419,
+      "sha256": "68f6713cb040239ef39949ce3a344462bea76e327c1ce08212dd92917f0a1a89"
+    },
+    {
+      "path": ".github/workflows/pass4737-exact-candidate.yml",
+      "bytes": 2053,
+      "sha256": "b74035728246d078d989eaec8997dc242366358206303ddf217e98c02254fbcc"
+    },
+    {
+      "path": ".github/workflows/pass4738-exact-candidate.yml",
+      "bytes": 2053,
+      "sha256": "c6796572d622c215ee14e16352e4f58f33afe91fb4fd00676df36c216e0ef529"
+    },
+    {
+      "path": ".github/workflows/pass4739-exact-candidate.yml",
+      "bytes": 2053,
+      "sha256": "5d4111e53e7d6383091311424ea4f1bf6d215733f4205f1a64e9b41f798bec5b"
+    },
+    {
+      "path": ".github/workflows/pass4741-exact-candidate.yml",
+      "bytes": 2419,
+      "sha256": "3fedac04db169817ebb784559dfdb1714ae75be38d1c2417a4877d83469846cb"
+    }
+  ],
+  "truthBoundary": "Diff compares clean source payloads and excludes each pass self-referential manifest, verification and diff files plus root generated outputs. Nested source directories such as lib/build are included."
+}

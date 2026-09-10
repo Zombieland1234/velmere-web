@@ -1,0 +1,592 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p44.approved-source-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P44_ACTION_REQUIRED_BRUTAL_PRODUCT_REALITY_50_CONTRACT_ANGEL120_PERSONA100_FULL_QA_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P43_ACTION_REQUIRED_PUBLIC_BALANCED_HOLDOUT_LEGACY_COMPILER_AST_AND_CONTROL_ALERT_RATE_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentManifestSha256": "b3686ec440f9d1a11602de8321ac6a4c6a8e4c85e3517733f6860359e1900e7c",
+  "selfExcludedPaths": [
+    "_velmere/PASS36_A102R44P44_SOURCE_ONLY_MANIFEST.json",
+    "config/pass36/r44p44-approved-source-changes.json"
+  ],
+  "changedPathCount": 63,
+  "addedFiles": 26,
+  "modifiedFiles": 28,
+  "deletedFiles": 9,
+  "historyMutations": 0,
+  "testsRemoved": 0,
+  "denominatorCollapse": false,
+  "approvedChanges": [
+    {
+      "path": "VELMERE_A102R44P44_PATCH.txt",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1401,
+      "currentSha256": "0cd87de3eb99605a8a4c9f2a4abc82a12834d0413664b4ae44d51c99e7fd9b5e",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "changeType": "MODIFIED",
+      "parentByteLength": 142,
+      "parentSha256": "54bcbb8ecf647f37a9e6ca91f4ad84d17ad75529ec4e24e60e3e9420c84e5b81",
+      "currentByteLength": 138,
+      "currentSha256": "fc644629a24477f491d7d474a3f2e62cffeea0f01f1ad34f12e1e70038ca2928",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "_velmere/PASS36_A102R44P43_SOURCE_ONLY_MANIFEST.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1225751,
+      "currentSha256": "b3686ec440f9d1a11602de8321ac6a4c6a8e4c85e3517733f6860359e1900e7c",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "app/api/checkout/vlm-service/route.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 25993,
+      "parentSha256": "f9bc56a947e0bcc61146c81eaa79c5f457baa111ec4976302a7e4da62197c546",
+      "currentByteLength": 26022,
+      "currentSha256": "c91a89bf98ea98d873408609326556fceaddb74496a0980d7a0ac076e83fce4e",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "app/styles/premium-ui.css",
+      "changeType": "MODIFIED",
+      "parentByteLength": 61225,
+      "parentSha256": "a1350903de14e3c4f8c0072049a75437080fecb8e21a42d7099e2234a24a5409",
+      "currentByteLength": 58399,
+      "currentSha256": "e34608839d1f9a23201b39786cbdd851d4b97a4cd2ba21dfb08a8f38627f88bf",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "components/Navbar.tsx",
+      "changeType": "MODIFIED",
+      "parentByteLength": 44959,
+      "parentSha256": "145e16ec0ab19d5d1c5bb7e6bd4d47e50adfb85001e092388de1ec53ff9e971d",
+      "currentByteLength": 44965,
+      "currentSha256": "08a122ad1ea22803714fc706e0240ffd973cc7e6cf5957520a0e591b984d642e",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "changeType": "MODIFIED",
+      "parentByteLength": 55341,
+      "parentSha256": "e255a733c2e894a083427025faa3b595c4a9ee6fb08d18f631fb47b4396f7f8d",
+      "currentByteLength": 55818,
+      "currentSha256": "dc546e3106d2115d9e44283ee2c5e9f0542f617ab322ae8706471a9fe012cc8b",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "components/security/CustomerSafeAuditTimeline.tsx",
+      "changeType": "MODIFIED",
+      "parentByteLength": 3134,
+      "parentSha256": "2ef6310fb5bede64ba1852d16193d38386e1fdbf9757875bf97fc3c79cb9a818",
+      "currentByteLength": 3122,
+      "currentSha256": "bf235e2974cc6381305a2f979bc99ac1fd6f848a3352f3133a438fca6a6ecd11",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "config/current-release.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 33699,
+      "parentSha256": "c9483debb249d92b4301aa3bf6d917cd31e25d0bd278d18a77106c29d43fd792",
+      "currentByteLength": 34571,
+      "currentSha256": "20dfe31ffa161ff25eb73c01beed7a4273914724f98b849b7e55a4d03b845015",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 37075,
+      "parentSha256": "e796d09d03931a72f0f92e0732cc94c7cb70817c12cc98c56dd95c0169a59154",
+      "currentByteLength": 37800,
+      "currentSha256": "ce9202594777cb6f97beccffddf5132bc5d687e68eadc08dc2d4d09c2f35814c",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/a102r44p1-static-pattern-review.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 2579,
+      "parentSha256": "c6630ad1c9ac3885c7511c252d10bbfe1dbaf41559f553fc780d0a1beab83bea",
+      "currentByteLength": 2575,
+      "currentSha256": "76b357bd3b1d50d03b32029b53f55a58f6ee734fc40844a87f50a60f3871544e",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/a83-test-receipt.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 8910,
+      "parentSha256": "3da6d48ec19bf4d55295cfacbb0d3285d68f1737b1391d13242757e88e4a5942",
+      "currentByteLength": 8910,
+      "currentSha256": "517ad9fb06f8c45d9978c144b1ddb6989e812e57777b08c85e67a90baa6dbb9a",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/a87-test-receipt.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 14814,
+      "parentSha256": "8b803a77b81db8144448a45d278c156f81c383792fe54d6f06c88b8a6c527e9b",
+      "currentByteLength": 14814,
+      "currentSha256": "a3d7df46b57f4fa77b2b22ac7f8a935588eef9f6ae1b3f438ba2dbc710b2b747",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/a88-brain-angel-risk-eval-policy.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 17905,
+      "parentSha256": "c4e9235096e2a1ea259db176e8cf7ac4dce259bf237986790e31c6166da13333",
+      "currentByteLength": 17905,
+      "currentSha256": "7b836d8433d0dae93ce87bea78738843559bfc464198458f0161d54d1c1fba7e",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 81688,
+      "parentSha256": "7f31e5de55db2fea48272f52e6fd33f3317f01c6a7d3307c0afc7f3544c2bf24",
+      "currentByteLength": 82570,
+      "currentSha256": "e7e5b47b36e8181781c0a622d2a8c9bca6dd7ecfd69c92b53d8098de47756f73",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-a88-input-hash-migration.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3160,
+      "currentSha256": "8eca8b12f63125a20d42b4d05138ad55ce837b4d425f14e0d34353599fb8a036",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-ai-simulated-evidence-policy.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1803,
+      "currentSha256": "a18b1a442b2c591eec8c7f87364f69928f5601a4f8a4bdda313eb01045e18d83",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-current-state.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3928,
+      "currentSha256": "6e7cae704875e0af4164519cd268eb3b19c38976986ff74ec3c26711b823b907",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-font-asset-boundary.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 878,
+      "currentSha256": "f7c39b9baa2d57cde30e72bed03ce19e65bd834b9c6035389e4da261747ef008",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-product-reality-policy.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2272,
+      "currentSha256": "c87c5883faa5988b95dc3f99c2571fe6401598c308038cd50cdaa78575391149",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-real-human-customer-proof-ledger.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 771,
+      "currentSha256": "c3b49b9b3e9bb5e2aeb762a6091bc3b4952120c173ba4f993ccfac1bd939b995",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-release-boundary.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 893,
+      "currentSha256": "a5eff8a59349f67f01767f8bb77df52c4d180b9d1f0ddd98fbb7a99e8ec9f280",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "config/pass36/r44p44-score-policy.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1658,
+      "currentSha256": "0cf77c6ba2920d140311f027eadb8936428d628f485ee328b249fa5e17515d4a",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "lib/ai/vlm-advice-boundary.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 19874,
+      "parentSha256": "84f58c65a2d250ea7f372f50d1818e694e8aee9919e0db6728810687b1723f5a",
+      "currentByteLength": 21293,
+      "currentSha256": "8ec990c1e9ab847f08460089e41ddf461465ba7a6d50cf277deeaea2f56651c0",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/ai/vlm-security.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 18747,
+      "parentSha256": "823101b8b0df49e81b699521cb1ba95cbc6fc19102ecad9ef22fa654dfefa1a9",
+      "currentByteLength": 20750,
+      "currentSha256": "5c3507e4d36f21a3ec3ede1f1766e0b391407ad431d6866379eaaafaff0bb006",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/commerce/vlm-paid-surface-guard.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 5651,
+      "parentSha256": "0e3ba4b14c51d0b1ce55909994dddc8880627149576a2839ab9df8f50c55ccdd",
+      "currentByteLength": 5783,
+      "currentSha256": "9b638fec638709664e4f02f7ea1c4b775e1eb74da7e8e8154b1eb30694ae9ca2",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/search/lens-pdf-renderer.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 74736,
+      "parentSha256": "0c27e3d6f18c618a80995243b186dc390de40ed504afa51e8a735634fda023ac",
+      "currentByteLength": 75928,
+      "currentSha256": "5d3fe624ddb2277f30c68bc993a19a467a455ffa66173b41ca8fa2520b89aca8",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/security/audit-report-customer-projection.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 5223,
+      "parentSha256": "7c86e80471ea4f7a8d5ddce0cc9e98cb0ac42f1835eed75351262621f9374de6",
+      "currentByteLength": 5054,
+      "currentSha256": "606c4f19cd061970e3ce842ada10a29f5499b7629d2e359cfc3908f38a648bf1",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/security/audit-watch-server-helpers.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 4270,
+      "parentSha256": "473b7da3b64ff4379bcdf42b9ad0e6de6feea8804983bfdf018d7fdc5264d77a",
+      "currentByteLength": 4268,
+      "currentSha256": "6e60b38596d2e4b96907bddf95be2769253b1624a48f0f6215426cecece34226",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/security/r44p43-public-balanced-holdout-evidence.d.mts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1184,
+      "parentSha256": "5d56489203c37c4a431989b3eee71b59007901fc1a6c1b39a11d85414b52b263",
+      "currentByteLength": 1196,
+      "currentSha256": "29607c06117264434c22b83d1494e4da18bc1300d34f9a6c219a8b322e132edf",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/server/lazy-route-modules/angel.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 59539,
+      "parentSha256": "13fc1dfa95ceb7b479ec7a5dac4b170a7e5ffbc4f40fbb02775ccf571d6a84c8",
+      "currentByteLength": 58667,
+      "currentSha256": "2206d882b0e5b2956e0161d112c5028965648d5f24bb56fc8f27cf1184053275",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/angel.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 16271,
+      "parentSha256": "b6827ab83b14881fc54571d55ebe63f45b0858709747474518db3218752491aa",
+      "currentByteLength": 15591,
+      "currentSha256": "543b264fbc9ea41772ff629caf828b87ad3f84c257e659e6f9fca86c9668dc11",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "lib/server/security-route-modules/audit-report-assembler.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 10371,
+      "parentSha256": "dd705d38dbe01d574fb750f91bb9670b4acdb16d815539730c5053b6b71e1c9f",
+      "currentByteLength": 11639,
+      "currentSha256": "eae5402c2a99545549e5184270f88c18ee61739d3c9374d1152ddfdb87870e82",
+      "reason": "Product-truth or safety repair."
+    },
+    {
+      "path": "package.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 129742,
+      "parentSha256": "bdb5fb546081ca903c863d8ca2e544e02281485ffca2b825382461ea556f3867",
+      "currentByteLength": 131242,
+      "currentSha256": "59d27e225c26d5115ff851489ed4035527f487b8319ec0c4ab6b0aec4588e619",
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin-ext-italic.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 34392,
+      "parentSha256": "cd5bf126b2c84ab41b254a6a9a1ffb5c326a0f9f82c22fb4704daa31c9aaa415",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin-ext.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 33736,
+      "parentSha256": "cfa9a397d86f66c5c51775a2500a712d5f632a04f0c5eca6930dfaf612d4566d",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin-italic.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 39260,
+      "parentSha256": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 37640,
+      "parentSha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/jetbrains-mono-latin-ext.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 15196,
+      "parentSha256": "79bfdab9ba467e26eea4122e6f2567e188dd8a09a8c730d501fc487c4ab99c6e",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/jetbrains-mono-latin.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 40404,
+      "parentSha256": "18be452724bfdc236c074ca94a249a7f41a86752c7d04ab258ce9ed5651f6a7e",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/manrope-latin-ext.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 15120,
+      "parentSha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/manrope-latin.woff2",
+      "changeType": "DELETED",
+      "parentByteLength": 24836,
+      "parentSha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "public/fonts/velmere/manrope-pdf-latin-plus-ext.ttf",
+      "changeType": "DELETED",
+      "parentByteLength": 46464,
+      "parentSha256": "a07eea516ecb22957f162d68a559462c9af0534487669969d500f8e92aece0fa",
+      "currentByteLength": null,
+      "currentSha256": null,
+      "reason": "R44P44 policy, pointer or release-truth update."
+    },
+    {
+      "path": "scripts/pass13/run-partitioned-typescript.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 5542,
+      "parentSha256": "a0a9ddc6d501e2f7ffbcaef6f04884bb11b9f77a9bc6b6098d4e43b9ebce9e6b",
+      "currentByteLength": 6384,
+      "currentSha256": "34a846a2cf63d4ee0b0cce4ff74fc20ef9b5fd08bc51337597e285134cb0bb33",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p44-approved-source-changes.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2505,
+      "currentSha256": "a4a845d391ffd74a1dd59131e80a07b0bbf3658cae4fd03601447dd5cb8c284c",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p44-source-manifest.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1264,
+      "currentSha256": "4b3da3b29eb6a77fd31c0aeae7cc9d5097085582aabf3dcbe52af03f38e22f40",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/r44p44-source-lib.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2321,
+      "currentSha256": "0eae6fa346526ecb99db6b79f78860240d26d64450c3829de6b3aa4486662036",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/run-a102r44p43-public-balanced-holdout.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 14346,
+      "parentSha256": "169f511fc5c86a9dc501130792504e70745a86c85390e46a3d5e7cfae1941e9d",
+      "currentByteLength": 14304,
+      "currentSha256": "d84973e157d6896a9b6fb50f78ddf920b6843f39f71335f51ebc851665f7ab2e",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/run-a102r44p44-brutal-product-reality.py",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 49031,
+      "currentSha256": "f6d09544ef4f4449f86d4c45451f726f6d99eefffd6828df77f58069f6b1590c",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p43-public-balanced-holdout-tamper.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 4325,
+      "parentSha256": "3d60908a873fcae888a996f86e87f1864898570a1c423234cfad6636606cc2fb",
+      "currentByteLength": 4319,
+      "currentSha256": "2410e7ef7bc7688f4cb57bf9c937f3d083291d448f69687ac30b01edd732ee85",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p44-angel-120.ts",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 18097,
+      "currentSha256": "3f9ca0f707704655995c19c78c939b114810474f494a498f52cfa8e84ac0031f",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p44-pdf-width-wrapping.ts",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2584,
+      "currentSha256": "16ba43545e7bbe0ffd02e7829613842fb241718bbe382e76dab5d03e2d6e9f77",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p44-product-truth-security.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 6035,
+      "currentSha256": "f7f5592e4fb9a2c84c9f5d2d52052036ea2233162826743c5578208ec1bf5485",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p44-static-policy.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2835,
+      "currentSha256": "462361f6e5ee74a74f857da41ca09994f19d521bc9178ee6d43272ebb8277660",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/test-a63-staging-program-orchestrator.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 8209,
+      "parentSha256": "9fac32e2a615e603483eaa5236ac5e1ca7ed09a36184e92c7e9d7617b55e7b08",
+      "currentByteLength": 8241,
+      "currentSha256": "7f2bfc0e5276f997f1187381f5bd133901b733a7ba62637cbadfdec8d1422d31",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-a88-input-hash-migration.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1221,
+      "currentSha256": "a0cc08062945c39b453e6d358f8b388105a09353cddd4aab5cdb954dc4eaf3bd",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-approved-source-changes.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 4074,
+      "currentSha256": "77f375afb28024eda3f891a9a501fec722db3e109164d328edc28cc8bca2d43d",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-brutal-reports.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2602,
+      "currentSha256": "0f4e2f1b555f20a009c8ccaa5203f90a9a1886e4f646415bda00d9e7fe254646",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-clean-unpack-sequence.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1084,
+      "currentSha256": "70c7382ed7802d1a9aa22e876880525cecf91ae86714feafe1181643b76ad460",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-current-release-pointers.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1217,
+      "currentSha256": "a30ad8c0da1153f4c8790226a8c26c00651cf4008547867eeb48f8bac6586ffb",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-customer-evidence-separation.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3088,
+      "currentSha256": "e9fd3812c8a5580a91ea1e461643d9fe1185b191c5583e9d4b5b24dd86873944",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-font-asset-boundary.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2914,
+      "currentSha256": "1d5148402b476227e5bfbf0bcfb10e97810e173df52bafe5fb6175e82c8ed7d4",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p44-source-authority.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1687,
+      "currentSha256": "7c0a0f95ae92c0c1dcc5ebda21ed0e5d65cb5e765bf7a6ef81d9904cd483f3d7",
+      "reason": "Brutal audit, test, authority or QA implementation."
+    }
+  ],
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "ledgerDigestSha256": "5699c6e2b590156134e19796b25c1ffbb8ea07342483a49a8d1480902f3e974a"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "velmere.pass36.a65.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A65R0_EXTERNAL_COMMAND_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+  "localBoundaryImplemented": true,
+  "localAdversarialFixtureExecuted": true,
+  "localAdversarialChecks": 34,
+  "localAdversarialPassed": 34,
+  "productionExternalSignerExecuted": false,
+  "productionTransparencyPublisherExecuted": false,
+  "exactFinalByteBuildExecuted": false,
+  "criticalOfflineGatePassed": false,
+  "realStagingExecuted": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "decision": "PASS_LOCAL_EXTERNAL_COMMAND_BOUNDARY_ONLY_NO_RELEASE_CREDIT"
+}

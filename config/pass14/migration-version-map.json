@@ -1,0 +1,681 @@
+{
+  "schemaVersion": "velmere.pass14.supabase-migration-version-map.v1",
+  "generatedAt": "2026-07-20T00:00:00Z",
+  "truthBoundary": "Applied before any staging/LIVE migration history exists. SQL bytes are unchanged; only filenames and active source references changed. Existing deployed environments would require supabase migration repair before using this map.",
+  "strategy": "Preserve original day and lexicographic order; assign YYYYMMDD + six-digit sequence within each day.",
+  "migrationCount": 93,
+  "updatedReferenceFiles": [
+    ".github/workflows/pass4741-exact-candidate.yml",
+    "README.md",
+    "config/pass14/database-audit-baseline.json",
+    "docs/PASS4821_IMMUTABLE_ACCOUNT_SNAPSHOT_RUNBOOK.md",
+    "docs/PASS4822_SIGNED_LENS_DURABLE_ACCOUNT_ARTIFACT_RUNBOOK.md",
+    "lib/db/schema.sql",
+    "lib/market-integrity/import-pressure-map.ts",
+    "lib/security/supabase-release-evidence-board-migration-rls-gate.ts",
+    "scripts/pass4826/verify-durable-market-snapshot-contract.cjs",
+    "scripts/pass4992/atomic-commerce-paid-outbox.test.ts",
+    "scripts/pass4994/commerce-fulfilment-outbox-worker.test.ts",
+    "scripts/pass6/test-control-plane-boundaries.ts",
+    "scripts/velmere-supabase-dry-run-plan.mjs"
+  ],
+  "historicalFilesIntentionallyNotRewritten": [
+    "CLEAN_SAFE_VERIFICATION.json",
+    "_velmere/PASS4826_RELEASE_MANIFEST.json",
+    "_velmere/VLM_PASS5_RELEASE_MANIFEST.json",
+    "config/release-input-merkle.json"
+  ],
+  "mappings": [
+    {
+      "old": "20260616_2097_velmere_core_truth.sql",
+      "new": "20260616000001_2097_velmere_core_truth.sql",
+      "version": "20260616000001",
+      "orderWithinDay": 1,
+      "sha256Before": "3efa517fc12e979d78b13ee35d1c08911a581af7b5d048f537f1f902cdfeace1"
+    },
+    {
+      "old": "20260616_2121_runtime_bridge_checks.sql",
+      "new": "20260616000002_2121_runtime_bridge_checks.sql",
+      "version": "20260616000002",
+      "orderWithinDay": 2,
+      "sha256Before": "dcb6b4cf1dc7f08be0fc8d2212c21b064303ef7285fa8c490456b56cfda8f039"
+    },
+    {
+      "old": "20260617_2178_mutation_receipt_vault.sql",
+      "new": "20260617000001_2178_mutation_receipt_vault.sql",
+      "version": "20260617000001",
+      "orderWithinDay": 1,
+      "sha256Before": "f7adf2033c737882ba681fc5f98b76dd829590891e395d2430724dc8463238c0"
+    },
+    {
+      "old": "20260617_2179_mutation_receipt_runtime_truth.sql",
+      "new": "20260617000002_2179_mutation_receipt_runtime_truth.sql",
+      "version": "20260617000002",
+      "orderWithinDay": 2,
+      "sha256Before": "5e7f0bb6fa7a7fbf2d84e81bfd0766de90cd23eec7e7d8c4874fdf8a4a4b3483"
+    },
+    {
+      "old": "20260617_2182_runtime_receipt_capture.sql",
+      "new": "20260617000003_2182_runtime_receipt_capture.sql",
+      "version": "20260617000003",
+      "orderWithinDay": 3,
+      "sha256Before": "ccb37a4c3cff1f14fbe25ebedb39c4edc1a5051e106ae3c3ecae28ecdd32295c"
+    },
+    {
+      "old": "20260617_2189_provider_order_fulfilment_receipts.sql",
+      "new": "20260617000004_2189_provider_order_fulfilment_receipts.sql",
+      "version": "20260617000004",
+      "orderWithinDay": 4,
+      "sha256Before": "a57a96b62de4369230d1f9eae220826c2743536498b083ca138644e62b7f4003"
+    },
+    {
+      "old": "20260618_2223_advanced_entitlement_fail_closed.sql",
+      "new": "20260618000001_2223_advanced_entitlement_fail_closed.sql",
+      "version": "20260618000001",
+      "orderWithinDay": 1,
+      "sha256Before": "094e3cafee3b0cf7c39c0d19e909b81d7a9eaaadec266ff37df98337c160ac47"
+    },
+    {
+      "old": "20260618_2227_angel_durable_memory.sql",
+      "new": "20260618000002_2227_angel_durable_memory.sql",
+      "version": "20260618000002",
+      "orderWithinDay": 2,
+      "sha256Before": "3abd321a6b42cb99327c8ffd470dc8400d0bde65b2e0d847d93cb60107b24a5b"
+    },
+    {
+      "old": "20260621_2360_audit_account_messages.sql",
+      "new": "20260621000001_2360_audit_account_messages.sql",
+      "version": "20260621000001",
+      "orderWithinDay": 1,
+      "sha256Before": "9c0a9a8e8fc59b096dbc7c637fdf03a5f962675b0f787eeebd9f4f2f9110fd1c"
+    },
+    {
+      "old": "20260621_2366_durable_payment_evidence_store.sql",
+      "new": "20260621000002_2366_durable_payment_evidence_store.sql",
+      "version": "20260621000002",
+      "orderWithinDay": 2,
+      "sha256Before": "b90949c221c59f8674752035f2be631262319e1b3bf881c2a6e99ba26316ffa9"
+    },
+    {
+      "old": "20260621_2375_route_health_ping_ledger.sql",
+      "new": "20260621000003_2375_route_health_ping_ledger.sql",
+      "version": "20260621000003",
+      "orderWithinDay": 3,
+      "sha256Before": "3565ae62e96fed30517880acd926484a56840ae06f563884f7bf061d32b40331"
+    },
+    {
+      "old": "20260621_2377_delivery_receipt_ledger.sql",
+      "new": "20260621000004_2377_delivery_receipt_ledger.sql",
+      "version": "20260621000004",
+      "orderWithinDay": 4,
+      "sha256Before": "3b32c87eab1ccc01626964876e0b21a88b480e8119df22fa24d48699ea3cb04b"
+    },
+    {
+      "old": "20260621_2381_support_handoff_event_ledger.sql",
+      "new": "20260621000005_2381_support_handoff_event_ledger.sql",
+      "version": "20260621000005",
+      "orderWithinDay": 5,
+      "sha256Before": "6939eddb1346c1197a95451026cd625c36039719755a9dd71dafef30f9a80fa6"
+    },
+    {
+      "old": "20260624_2624_audit_account_delivery_production_lock.sql",
+      "new": "20260624000001_2624_audit_account_delivery_production_lock.sql",
+      "version": "20260624000001",
+      "orderWithinDay": 1,
+      "sha256Before": "b18b36ec353383ee650f59f55c5d78fdaab5cfbd51870ba2bc350b36720b06b4"
+    },
+    {
+      "old": "20260624_2628_release_evidence_board_rls_insert_only.sql",
+      "new": "20260624000002_2628_release_evidence_board_rls_insert_only.sql",
+      "version": "20260624000002",
+      "orderWithinDay": 2,
+      "sha256Before": "2aae08e40cdb8912ef245eb5240c9aaf5e45adedd502c86869bc89abbff9125d"
+    },
+    {
+      "old": "20260624_2637_release_board_public_receipt_view_live_rls.sql",
+      "new": "20260624000003_2637_release_board_public_receipt_view_live_rls.sql",
+      "version": "20260624000003",
+      "orderWithinDay": 3,
+      "sha256Before": "76443334d220df960ffa11681f51ee950af93b85562545f51d065633e31c0498"
+    },
+    {
+      "old": "20260624_2645_safe_pdf_download_token_consumption_ledger_rls.sql",
+      "new": "20260624000004_2645_safe_pdf_download_token_consumption_ledger_rls.sql",
+      "version": "20260624000004",
+      "orderWithinDay": 4,
+      "sha256Before": "d9232e9e02bdb9065e9ac80e2146d51fc35809f2682a16178f3f8983f4e40757"
+    },
+    {
+      "old": "20260625_2649_entitlement_revocation_ledger_adapter_rls.sql",
+      "new": "20260625000001_2649_entitlement_revocation_ledger_adapter_rls.sql",
+      "version": "20260625000001",
+      "orderWithinDay": 1,
+      "sha256Before": "671b05c4b6754d96bc7b751e3f082f2bacb647839a961b439411e0e0fe6a265a"
+    },
+    {
+      "old": "20260704_4435_audit_watch_receipts_rls_write_executor_contract.sql",
+      "new": "20260704000001_4435_audit_watch_receipts_rls_write_executor_contract.sql",
+      "version": "20260704000001",
+      "orderWithinDay": 1,
+      "sha256Before": "601c08be7be0a148dd5fa598adce96edcc0d891bcec8447c6bf96687ef41ff79"
+    },
+    {
+      "old": "20260707_4611_audit_intake_case_vault.sql",
+      "new": "20260707000001_4611_audit_intake_case_vault.sql",
+      "version": "20260707000001",
+      "orderWithinDay": 1,
+      "sha256Before": "7fe503061e2dba7769ba2e707aa1513e2afd7ad97305a67b533085d24176bbb2"
+    },
+    {
+      "old": "20260707_4612_audit_checkout_case_entitlement_binding.sql",
+      "new": "20260707000002_4612_audit_checkout_case_entitlement_binding.sql",
+      "version": "20260707000002",
+      "orderWithinDay": 2,
+      "sha256Before": "336aef2f43f6ac2a0df2ef984ad5a14a4689e93aa95f067d2ddcf70cab3eebbf"
+    },
+    {
+      "old": "20260707_4613_audit_status_payment_terminal_events.sql",
+      "new": "20260707000003_4613_audit_status_payment_terminal_events.sql",
+      "version": "20260707000003",
+      "orderWithinDay": 3,
+      "sha256Before": "bbf2244b43c06fa572004aa5c569fb6e09f4c354a41fed3f8d00eefe0825b4b8"
+    },
+    {
+      "old": "20260707_4615_audit_customer_safe_status_history.sql",
+      "new": "20260707000004_4615_audit_customer_safe_status_history.sql",
+      "version": "20260707000004",
+      "orderWithinDay": 4,
+      "sha256Before": "cc8e1aea64e72c0d0096490b16ad8422843c069eb368ee9e1b6d280b2fc41210"
+    },
+    {
+      "old": "20260707_4616_audit_review_assignment_sla_worker_lease.sql",
+      "new": "20260707000005_4616_audit_review_assignment_sla_worker_lease.sql",
+      "version": "20260707000005",
+      "orderWithinDay": 5,
+      "sha256Before": "6705b5d377255d2f48bb9b1b548249387495ca4d00694a85ba8a32e93e00047e"
+    },
+    {
+      "old": "20260708_pass4645_provider_evidence_ledgers.sql",
+      "new": "20260708000001_pass4645_provider_evidence_ledgers.sql",
+      "version": "20260708000001",
+      "orderWithinDay": 1,
+      "sha256Before": "aaf844a4a82d6c6f6664178c67f8fa3a2ed38a0585db2dae60ba621af89a97ab"
+    },
+    {
+      "old": "20260708_pass4653_provider_evidence_snapshots.sql",
+      "new": "20260708000002_pass4653_provider_evidence_snapshots.sql",
+      "version": "20260708000002",
+      "orderWithinDay": 2,
+      "sha256Before": "bdacd160337162edd87045798ddc7d47542ee18c0fdae7b96e3dc760b74bcdc4"
+    },
+    {
+      "old": "20260708_pass4654_atomic_refresh_leases.sql",
+      "new": "20260708000003_pass4654_atomic_refresh_leases.sql",
+      "version": "20260708000003",
+      "orderWithinDay": 3,
+      "sha256Before": "0ed53b641b1a180d0c94fddc8290ea8493a295dbca311a3d29e3e9cd0e2431db"
+    },
+    {
+      "old": "20260708_pass4656_provider_health_snapshots.sql",
+      "new": "20260708000004_pass4656_provider_health_snapshots.sql",
+      "version": "20260708000004",
+      "orderWithinDay": 4,
+      "sha256Before": "d456514fe31a85b9a6968398b4b838dc5e012dd30b227c63b03b84deb7bd9de8"
+    },
+    {
+      "old": "20260709_4657_audit_pdf_token_consumption.sql",
+      "new": "20260709000001_4657_audit_pdf_token_consumption.sql",
+      "version": "20260709000001",
+      "orderWithinDay": 1,
+      "sha256Before": "ed66f023ed0119d3466cdf45c60cb021050c707d5f3511d288c3487bf371134a"
+    },
+    {
+      "old": "20260709_4657_stripe_webhook_atomic_ordering.sql",
+      "new": "20260709000002_4657_stripe_webhook_atomic_ordering.sql",
+      "version": "20260709000002",
+      "orderWithinDay": 2,
+      "sha256Before": "c7d95ab448904fe7295fe5106e95935255d1646b75b07a200c2d21620ce19fc7"
+    },
+    {
+      "old": "20260709_4658_audit_pdf_token_lifecycle.sql",
+      "new": "20260709000003_4658_audit_pdf_token_lifecycle.sql",
+      "version": "20260709000003",
+      "orderWithinDay": 3,
+      "sha256Before": "362198fbc8f6ff60775d6ea9581680e0c6f2b9de0d77b9ba8579550209eac711"
+    },
+    {
+      "old": "20260709_pass4656_provider_health_observations.sql",
+      "new": "20260709000004_pass4656_provider_health_observations.sql",
+      "version": "20260709000004",
+      "orderWithinDay": 4,
+      "sha256Before": "c77fe997e7824e982b11ed48f84e782c45cd0d7417727bdefb8fc26fb927016d"
+    },
+    {
+      "old": "20260711_4699_stripe_webhook_effect_ledger.sql",
+      "new": "20260711000001_4699_stripe_webhook_effect_ledger.sql",
+      "version": "20260711000001",
+      "orderWithinDay": 1,
+      "sha256Before": "5301ae51cf5745ffbaceb214fc6ddf020af3e1855a2b9119c0b0e03ef2f549de"
+    },
+    {
+      "old": "20260711_4700_stripe_webhook_effect_reconciler.sql",
+      "new": "20260711000002_4700_stripe_webhook_effect_reconciler.sql",
+      "version": "20260711000002",
+      "orderWithinDay": 2,
+      "sha256Before": "5cf778a6de4731342150192678f0ddc3ac35905b7ee7993841f8d12adf017adc"
+    },
+    {
+      "old": "20260711_4703_stripe_webhook_worker_dead_letter.sql",
+      "new": "20260711000003_4703_stripe_webhook_worker_dead_letter.sql",
+      "version": "20260711000003",
+      "orderWithinDay": 3,
+      "sha256Before": "f9c0dcd955cc4195e6c9ad9209957adf8e4b3f63ab50c8dc28ebf79cb62584d3"
+    },
+    {
+      "old": "20260711_4704_printful_fulfilment_incident_hardening.sql",
+      "new": "20260711000004_4704_printful_fulfilment_incident_hardening.sql",
+      "version": "20260711000004",
+      "orderWithinDay": 4,
+      "sha256Before": "9e0c4ca4b785e5d12e55f3a0a430e41ab98a62063624ab99cac2f7e8328c46f6"
+    },
+    {
+      "old": "20260711_4707_fulfilment_incident_resolution_outbox.sql",
+      "new": "20260711000005_4707_fulfilment_incident_resolution_outbox.sql",
+      "version": "20260711000005",
+      "orderWithinDay": 5,
+      "sha256Before": "7d6733f4c15cace85127db0a4be01dc466c0fcf0b8c63bc8df1b71c55ff8a8cc"
+    },
+    {
+      "old": "20260712_4708_fulfilment_outbox_worker_rls_evidence.sql",
+      "new": "20260712000001_4708_fulfilment_outbox_worker_rls_evidence.sql",
+      "version": "20260712000001",
+      "orderWithinDay": 1,
+      "sha256Before": "fed7e0e00673b04cabbb8811c9730691af3efc8f5e24343c887570933c520ba9"
+    },
+    {
+      "old": "20260712_4709_fulfilment_recovery_subject_binding.sql",
+      "new": "20260712000002_4709_fulfilment_recovery_subject_binding.sql",
+      "version": "20260712000002",
+      "orderWithinDay": 2,
+      "sha256Before": "f9533b0cc6bbb79d24698874fa76cbd69de7326b33befad2aeac17ebfee55549"
+    },
+    {
+      "old": "20260712_4711_continuous_fulfilment_provider_sync.sql",
+      "new": "20260712000003_4711_continuous_fulfilment_provider_sync.sql",
+      "version": "20260712000003",
+      "orderWithinDay": 3,
+      "sha256Before": "cc3f2743f5aef71e69b41b83e2cdd57f3552200ab451ae57c656b30c7e20a2d4"
+    },
+    {
+      "old": "20260712_4716_profile_square_user_rls.sql",
+      "new": "20260712000004_4716_profile_square_user_rls.sql",
+      "version": "20260712000004",
+      "orderWithinDay": 4,
+      "sha256Before": "27f1fc3a2bd0f58f26ec2aa0030e5c5349da0de0874548afaa262f7ca5788dcb"
+    },
+    {
+      "old": "20260712_4717_auth_cookie_owner_read_policy.sql",
+      "new": "20260712000005_4717_auth_cookie_owner_read_policy.sql",
+      "version": "20260712000005",
+      "orderWithinDay": 5,
+      "sha256Before": "7b5329b1c3a570b8212f6222243b9331b54986d0c72fbbe10c38ceabd53215f7"
+    },
+    {
+      "old": "20260712_4718_auth_flow_staging_contract.sql",
+      "new": "20260712000006_4718_auth_flow_staging_contract.sql",
+      "version": "20260712000006",
+      "orderWithinDay": 6,
+      "sha256Before": "bad80aa3dfbce88fcae7940b6287b5bc94c77f916cb7c59b02b8bb3c316d1668"
+    },
+    {
+      "old": "20260712_4719_auth_session_family_alert_pipeline.sql",
+      "new": "20260712000007_4719_auth_session_family_alert_pipeline.sql",
+      "version": "20260712000007",
+      "orderWithinDay": 7,
+      "sha256Before": "04680263718fe087d696799ed072791ea32ad69a6d791eb68ac22e112d92a1e0"
+    },
+    {
+      "old": "20260713_4741_durable_computation_replay.sql",
+      "new": "20260713000001_4741_durable_computation_replay.sql",
+      "version": "20260713000001",
+      "orderWithinDay": 1,
+      "sha256Before": "ae36c530fce5a595e0aabff2863bab3bfc58c52e361f42ad24d5aee9d14f5309"
+    },
+    {
+      "old": "20260713_4743_durable_computation_operations.sql",
+      "new": "20260713000002_4743_durable_computation_operations.sql",
+      "version": "20260713000002",
+      "orderWithinDay": 2,
+      "sha256Before": "f3a61096a3f9e708fe13612fee77758fb0892a285971a20daad8a363b9f2c38f"
+    },
+    {
+      "old": "20260713_4745_durable_computation_sealed_worker.sql",
+      "new": "20260713000003_4745_durable_computation_sealed_worker.sql",
+      "version": "20260713000003",
+      "orderWithinDay": 3,
+      "sha256Before": "170c8703303d5d891844e449b90fcb3110ab497d7e9d40558bdf99e1cd8751ba"
+    },
+    {
+      "old": "20260713_4746_durable_computation_all_kind_worker.sql",
+      "new": "20260713000004_4746_durable_computation_all_kind_worker.sql",
+      "version": "20260713000004",
+      "orderWithinDay": 4,
+      "sha256Before": "25558019210c484ea339c9b8eb4af8fe6aac328bd6c6f728faee7c0cdb635899"
+    },
+    {
+      "old": "20260713_4747_durable_computation_strict_ownership.sql",
+      "new": "20260713000005_4747_durable_computation_strict_ownership.sql",
+      "version": "20260713000005",
+      "orderWithinDay": 5,
+      "sha256Before": "452895bf5eb89e08244a9246d2f1297afb7cfc260c3653960218dc99e7c8436b"
+    },
+    {
+      "old": "20260713_4748_durable_computation_budgeted_admission.sql",
+      "new": "20260713000006_4748_durable_computation_budgeted_admission.sql",
+      "version": "20260713000006",
+      "orderWithinDay": 6,
+      "sha256Before": "64a5b417d4b7af7a7c2ecde32aa4ddc3dbadbf21a09714afb89cb7aa34212937"
+    },
+    {
+      "old": "20260713_4749_durable_computation_cycle_receipts.sql",
+      "new": "20260713000007_4749_durable_computation_cycle_receipts.sql",
+      "version": "20260713000007",
+      "orderWithinDay": 7,
+      "sha256Before": "9f96ed1f824e235d1d184a676f343329f2cfb03391caca68ea35232e6721206b"
+    },
+    {
+      "old": "20260713_4750_durable_computation_staging_probe_alert_outbox.sql",
+      "new": "20260713000008_4750_durable_computation_staging_probe_alert_outbox.sql",
+      "version": "20260713000008",
+      "orderWithinDay": 8,
+      "sha256Before": "518045e797251788392894e36656314a464c4ea445ce41b74eda944f4e3d95a9"
+    },
+    {
+      "old": "20260713_4751_durable_computation_promotion_ledger_reconciliation.sql",
+      "new": "20260713000009_4751_durable_computation_promotion_ledger_reconciliation.sql",
+      "version": "20260713000009",
+      "orderWithinDay": 9,
+      "sha256Before": "c8955ebe43ad7760ecd666b7983c13a3b8c07404e126c96def06a69e538d20ef"
+    },
+    {
+      "old": "20260713_4752_vlm_paid_entitlement_lifecycle.sql",
+      "new": "20260713000010_4752_vlm_paid_entitlement_lifecycle.sql",
+      "version": "20260713000010",
+      "orderWithinDay": 10,
+      "sha256Before": "8f3cce0bbc369b657546da36b3fca8de029dbd2d76071b06600bfe6ada77ee6e"
+    },
+    {
+      "old": "20260713_4756_provider_observation_ledger.sql",
+      "new": "20260713000011_4756_provider_observation_ledger.sql",
+      "version": "20260713000011",
+      "orderWithinDay": 11,
+      "sha256Before": "0d4394a0343c522fdc1dbf6a71d9aad59bc5b0d5d6fb608d7c7b20f22f8a8265"
+    },
+    {
+      "old": "20260713_4757_provider_observation_operations_alert_reconciliation.sql",
+      "new": "20260713000012_4757_provider_observation_operations_alert_reconciliation.sql",
+      "version": "20260713000012",
+      "orderWithinDay": 12,
+      "sha256Before": "a4cbbf1e0fb21193c94651aa7803dc22b83e04d79c6031c12a271c1379d659ae"
+    },
+    {
+      "old": "20260713_4758_provider_quality_promotion_quarantine.sql",
+      "new": "20260713000013_4758_provider_quality_promotion_quarantine.sql",
+      "version": "20260713000013",
+      "orderWithinDay": 13,
+      "sha256Before": "a1355ee1ba8364462fa4373369c25c016b64e390c0a5c547586d77a7c3528397"
+    },
+    {
+      "old": "20260713_4759_provider_quality_incident_release_hold.sql",
+      "new": "20260713000014_4759_provider_quality_incident_release_hold.sql",
+      "version": "20260713000014",
+      "orderWithinDay": 14,
+      "sha256Before": "79513e0cefd4e7e6a7020c82f07a49eb3ff0af548e737f7f8557f4ced8c59f81"
+    },
+    {
+      "old": "20260713_4760_provider_quality_signed_auto_rollback_verification.sql",
+      "new": "20260713000015_4760_provider_quality_signed_auto_rollback_verification.sql",
+      "version": "20260713000015",
+      "orderWithinDay": 15,
+      "sha256Before": "f9db9933ec8e2be06788eb85f68efccc599da67109a7da3bc14cf9e83ae3cfb9"
+    },
+    {
+      "old": "20260713_4761_provider_quality_recovery_proof_repromotion.sql",
+      "new": "20260713000016_4761_provider_quality_recovery_proof_repromotion.sql",
+      "version": "20260713000016",
+      "orderWithinDay": 16,
+      "sha256Before": "c03729d40db6ade8a859eb2dbaaf0e3bc1f17ad55d61b6d8886a3347136c1229"
+    },
+    {
+      "old": "20260713_4762_provider_recovery_smoke_receipt_ledger.sql",
+      "new": "20260713000017_4762_provider_recovery_smoke_receipt_ledger.sql",
+      "version": "20260713000017",
+      "orderWithinDay": 17,
+      "sha256Before": "611b376dc5fa2baec702f96a6a756b7c1c00c037ff6aceac04141db9b596b801"
+    },
+    {
+      "old": "20260713_4763_provider_recovery_release_certificate.sql",
+      "new": "20260713000018_4763_provider_recovery_release_certificate.sql",
+      "version": "20260713000018",
+      "orderWithinDay": 18,
+      "sha256Before": "5e428ed00534d8651e10a129f3db67afaa961ae558d437cc1c31f9e8e3101f42"
+    },
+    {
+      "old": "20260713_4764_provider_recovery_release_bundle.sql",
+      "new": "20260713000019_4764_provider_recovery_release_bundle.sql",
+      "version": "20260713000019",
+      "orderWithinDay": 19,
+      "sha256Before": "bb6be1e553749c02422bd13a8a043d40c7769029ca6a1979fbfcd4e7fcb2704d"
+    },
+    {
+      "old": "20260713_4765_release_candidate_attestation.sql",
+      "new": "20260713000020_4765_release_candidate_attestation.sql",
+      "version": "20260713000020",
+      "orderWithinDay": 20,
+      "sha256Before": "8d9f18142b2cb0e8b1c02bcc4683016f1f24b4ec5cb02675a8c6e43bc5be5666"
+    },
+    {
+      "old": "20260713_4766_release_provenance_index_multisigner.sql",
+      "new": "20260713000021_4766_release_provenance_index_multisigner.sql",
+      "version": "20260713000021",
+      "orderWithinDay": 21,
+      "sha256Before": "aa7f43e08e0570fe056ea0e7af29736bda984fee62ff4fa975d52b2f1557d910"
+    },
+    {
+      "old": "20260713_4767_release_provenance_promotion_gate_public_feed.sql",
+      "new": "20260713000022_4767_release_provenance_promotion_gate_public_feed.sql",
+      "version": "20260713000022",
+      "orderWithinDay": 22,
+      "sha256Before": "4def41dd709ab173b037c64964c7d065d2745d1eecab9e851a7125612fbfc547"
+    },
+    {
+      "old": "20260713_4768_public_release_proof_packages.sql",
+      "new": "20260713000023_4768_public_release_proof_packages.sql",
+      "version": "20260713000023",
+      "orderWithinDay": 23,
+      "sha256Before": "8b2ec8e095ac81de6e6e36f19eca7ae6aa02bbeb6787abcb83403fc69ad14373"
+    },
+    {
+      "old": "20260713_4769_release_trust_checkpoint_revocation_supersession.sql",
+      "new": "20260713000024_4769_release_trust_checkpoint_revocation_supersession.sql",
+      "version": "20260713000024",
+      "orderWithinDay": 24,
+      "sha256Before": "7c55243618ee7a7bee8ab9649dec7267e2a0e11dc15dbe4e8291fff48c6c4060"
+    },
+    {
+      "old": "20260713_4770_release_trust_consistency_emergency_rebootstrap.sql",
+      "new": "20260713000025_4770_release_trust_consistency_emergency_rebootstrap.sql",
+      "version": "20260713000025",
+      "orderWithinDay": 25,
+      "sha256Before": "a334dfe486cfc4ab7302d9067eb16c9c9ba27490a39d9ede1cbf01c71723bd71"
+    },
+    {
+      "old": "20260713_4771_release_transparency_log.sql",
+      "new": "20260713000026_4771_release_transparency_log.sql",
+      "version": "20260713000026",
+      "orderWithinDay": 26,
+      "sha256Before": "38f2dc3daeed1263f82e21106e1c60fbc5cdc6d86da00c1e76e4ba4a465385e0"
+    },
+    {
+      "old": "20260713_4772_release_transparency_audit_checkpoints.sql",
+      "new": "20260713000027_4772_release_transparency_audit_checkpoints.sql",
+      "version": "20260713000027",
+      "orderWithinDay": 27,
+      "sha256Before": "8073093e2323b0334f8a95624509b358f52abc2f180ec927498be90116f4eb81"
+    },
+    {
+      "old": "20260713_4773_release_transparency_witness_quorum_split_view.sql",
+      "new": "20260713000028_4773_release_transparency_witness_quorum_split_view.sql",
+      "version": "20260713000028",
+      "orderWithinDay": 28,
+      "sha256Before": "89c1c83c04d9f9c395ddc429713672f4c8f48636be8e12d218efb5fa1949041a"
+    },
+    {
+      "old": "20260713_4774_witness_bound_promotion_atomic_consume.sql",
+      "new": "20260713000029_4774_witness_bound_promotion_atomic_consume.sql",
+      "version": "20260713000029",
+      "orderWithinDay": 29,
+      "sha256Before": "8cbcbf03f78c42cc52da28dde24c155941800a335911f7a73a0e0dd97dbdd543"
+    },
+    {
+      "old": "20260713_4775_witness_health_suspension_rollback.sql",
+      "new": "20260713000030_4775_witness_health_suspension_rollback.sql",
+      "version": "20260713000030",
+      "orderWithinDay": 30,
+      "sha256Before": "93e1203e699253209ef5fb0e7ccd8ffbe9aee2e43ad4e810625715e136bc97eb"
+    },
+    {
+      "old": "20260713_4776_witness_health_signed_recovery_unsuspend.sql",
+      "new": "20260713000031_4776_witness_health_signed_recovery_unsuspend.sql",
+      "version": "20260713000031",
+      "orderWithinDay": 31,
+      "sha256Before": "e91cdaea76b257f5fe9402d83287a2749406e90c33a5df2b7bd3b245207012a7"
+    },
+    {
+      "old": "20260713_4777_witness_rollback_resolution_reactivation.sql",
+      "new": "20260713000032_4777_witness_rollback_resolution_reactivation.sql",
+      "version": "20260713000032",
+      "orderWithinDay": 32,
+      "sha256Before": "7951fc7e54f4537167f520999a10ae63dfeeed445101ab78640f56b424119cef"
+    },
+    {
+      "old": "20260715_4802_provider_reliability_shared_state.sql",
+      "new": "20260715000001_4802_provider_reliability_shared_state.sql",
+      "version": "20260715000001",
+      "orderWithinDay": 1,
+      "sha256Before": "5d61f16dec576bcf23d34eb32973237787ce18a653c196e978b571ca48fb20f4"
+    },
+    {
+      "old": "20260715_4803_paid_audit_release_orchestration.sql",
+      "new": "20260715000002_4803_paid_audit_release_orchestration.sql",
+      "version": "20260715000002",
+      "orderWithinDay": 2,
+      "sha256Before": "2f65de1d117ebd84e8739688c35afb67e5b712163e9f4d2702c4c7dc4211380e"
+    },
+    {
+      "old": "20260715_4803_stripe_entitlement_revocation_race_safety.sql",
+      "new": "20260715000003_4803_stripe_entitlement_revocation_race_safety.sql",
+      "version": "20260715000003",
+      "orderWithinDay": 3,
+      "sha256Before": "fcd30beb1d481a86280eda4b1c4dfc943e0e4addde2c0c343239e5b9f5dabb77"
+    },
+    {
+      "old": "20260716_4806_audit_report_snapshot_delivery_gate.sql",
+      "new": "20260716000001_4806_audit_report_snapshot_delivery_gate.sql",
+      "version": "20260716000001",
+      "orderWithinDay": 1,
+      "sha256Before": "0aa8eaf748a3c2dbf5b3d892be9ded58d16ba472b31748626fb02ca0b086bb0e"
+    },
+    {
+      "old": "20260716_4807_audit_source_candidates_and_evidence_roots.sql",
+      "new": "20260716000002_4807_audit_source_candidates_and_evidence_roots.sql",
+      "version": "20260716000002",
+      "orderWithinDay": 2,
+      "sha256Before": "553fd0ec9af24348a39668449bd1aab32668b7b9bfc76c394c5fcd9ae6e82b35"
+    },
+    {
+      "old": "20260716_4821_audit_account_canonical_customer_snapshot.sql",
+      "new": "20260716000003_4821_audit_account_canonical_customer_snapshot.sql",
+      "version": "20260716000003",
+      "orderWithinDay": 3,
+      "sha256Before": "2ae051f8f3446c01a7ac4a427aa9ab72099bdd2f4446e5b175bde5bdd8afcae6"
+    },
+    {
+      "old": "20260716_4822_customer_artifact_snapshots.sql",
+      "new": "20260716000004_4822_customer_artifact_snapshots.sql",
+      "version": "20260716000004",
+      "orderWithinDay": 4,
+      "sha256Before": "7dd2041b57eceac53c308b9139b487a4b27e3832e1199561af2aa29fb06f9c98"
+    },
+    {
+      "old": "20260717_4823_customer_artifact_store_hardening.sql",
+      "new": "20260717000001_4823_customer_artifact_store_hardening.sql",
+      "version": "20260717000001",
+      "orderWithinDay": 1,
+      "sha256Before": "b816d1dd33797846c118d8cd115ee254d3e838624610cc7cd0f390ae6dce5e65"
+    },
+    {
+      "old": "20260717_4823_payment_state_monotonicity.sql",
+      "new": "20260717000002_4823_payment_state_monotonicity.sql",
+      "version": "20260717000002",
+      "orderWithinDay": 2,
+      "sha256Before": "88308f58d3cac2559a722ab84326c7b3f37de2b00a863a1857da2b05a69427c0"
+    },
+    {
+      "old": "20260717_4824_account_session_central_revocation.sql",
+      "new": "20260717000003_4824_account_session_central_revocation.sql",
+      "version": "20260717000003",
+      "orderWithinDay": 3,
+      "sha256Before": "127cba23afab1d1a88ee1bfd6bd29ba9024e72763fe4be8ac2a08118228e26ec"
+    },
+    {
+      "old": "20260717_4824_customer_artifact_exact_pdf_blobs.sql",
+      "new": "20260717000004_4824_customer_artifact_exact_pdf_blobs.sql",
+      "version": "20260717000004",
+      "orderWithinDay": 4,
+      "sha256Before": "40e73ce695deacd684a99cde67bd6915711ee38492678e1f8b3046acbb885716"
+    },
+    {
+      "old": "20260717_4826_durable_market_lkg_snapshots.sql",
+      "new": "20260717000005_4826_durable_market_lkg_snapshots.sql",
+      "version": "20260717000005",
+      "orderWithinDay": 5,
+      "sha256Before": "68b371abb33d9266c828e5d9c5b8c23a4349afe38598e92b13f8e2686e02f5ad"
+    },
+    {
+      "old": "20260718_4990_commerce_payment_integrity.sql",
+      "new": "20260718000001_4990_commerce_payment_integrity.sql",
+      "version": "20260718000001",
+      "orderWithinDay": 1,
+      "sha256Before": "cb12dd946dc0462d2f204d9daf56fe9d70596b31a6f7b33b692751b319221a66"
+    },
+    {
+      "old": "20260718_4991_operator_nonce_and_square_rls.sql",
+      "new": "20260718000002_4991_operator_nonce_and_square_rls.sql",
+      "version": "20260718000002",
+      "orderWithinDay": 2,
+      "sha256Before": "d8cc7da79ae2719944b88f90e4073aefcc58eb0c76f61c794b0421985baf3f2a"
+    },
+    {
+      "old": "20260718_4992_atomic_commerce_paid_fulfilment_outbox.sql",
+      "new": "20260718000003_4992_atomic_commerce_paid_fulfilment_outbox.sql",
+      "version": "20260718000003",
+      "orderWithinDay": 3,
+      "sha256Before": "0ffbbb6e923e4c7df7fe935f410e80a8097d711424e69d32db215a8d82d9d1f4"
+    },
+    {
+      "old": "20260718_4994_commerce_fulfilment_outbox_worker.sql",
+      "new": "20260718000004_4994_commerce_fulfilment_outbox_worker.sql",
+      "version": "20260718000004",
+      "orderWithinDay": 4,
+      "sha256Before": "bb41bb7f5eaba436491d3f4fd634c8a9c9a2c79e7499746eff14f0f5f54e85f6"
+    },
+    {
+      "old": "20260720_5000_pass14_security_definer_trigger_acl.sql",
+      "new": "20260720000001_5000_pass14_security_definer_trigger_acl.sql",
+      "version": "20260720000001",
+      "orderWithinDay": 1,
+      "sha256Before": "f570f355851f2cf785b6f91af2ad65f137f08bb4113ce18349e88e89efb9a7da"
+    }
+  ]
+}

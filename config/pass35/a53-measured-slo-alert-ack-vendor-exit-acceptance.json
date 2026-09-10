@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "velmere.pass35.a53.measured-slo-alert-ack-vendor-exit-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A52_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION_ACCEPTANCE",
+  "requiredA52Decision": "VERIFIED_STAGING_KILL_SWITCH_INCIDENT_CUSTOMER_COMMUNICATION",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_THIS_USES_DISPOSABLE_STAGING_SLO_TELEMETRY_AND_VENDOR_EXIT_ONLY",
+  "requiredEnvironment": [
+    "VELMERE_A53_STAGING_BASE_URL",
+    "VELMERE_A53_SLO_QUERY_URL",
+    "VELMERE_A53_ALERT_TRIGGER_URL",
+    "VELMERE_A53_ALERT_STATUS_URL",
+    "VELMERE_A53_ONCALL_ACK_URL",
+    "VELMERE_A53_VENDOR_CONTROL_URL",
+    "VELMERE_A53_VENDOR_STATUS_URL",
+    "VELMERE_A53_SERVICE_PROBE_URL",
+    "VELMERE_A53_TELEMETRY_BEARER_SECRET",
+    "VELMERE_A53_ALERT_BEARER_SECRET",
+    "VELMERE_A53_VENDOR_BEARER_SECRET",
+    "VELMERE_A53_PROJECT_CLASS",
+    "VELMERE_A53_CONFIRM"
+  ],
+  "requiredChecks": [
+    "source-fingerprint-before",
+    "precondition-a52-verified",
+    "runtime-exact",
+    "confirmation-token",
+    "staging-url-safety",
+    "bridge-url-safety",
+    "secret-boundary",
+    "slo-window-bounded",
+    "slo-minimum-samples",
+    "slo-availability-target",
+    "slo-p95-target",
+    "slo-p99-target",
+    "error-budget-within-limit",
+    "telemetry-source-bound",
+    "baseline-provider-healthy",
+    "alert-triggered",
+    "alert-delivered",
+    "alert-delivery-sla-met",
+    "oncall-acknowledged",
+    "acknowledgement-sla-met",
+    "vendor-exit-requested",
+    "primary-traffic-zero",
+    "primary-credential-revoked",
+    "alternate-provider-active",
+    "vendor-exit-sla-met",
+    "service-probes-complete",
+    "service-availability-floor",
+    "service-latency-floor",
+    "service-freshness-floor",
+    "vendor-restored",
+    "postcondition-healthy",
+    "source-fingerprint-unchanged",
+    "evidence-redaction"
+  ],
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "minimumWindowSeconds": 900,
+    "minimumSamples": 50,
+    "availabilityTargetPct": 99.0,
+    "p95MaximumMs": 1500,
+    "p99MaximumMs": 3000,
+    "maximumErrorBudgetConsumedPct": 100,
+    "alertDeliverySlaSeconds": 60,
+    "acknowledgementSlaSeconds": 300,
+    "vendorExitSlaSeconds": 120,
+    "minimumServiceProbes": 5,
+    "serviceAvailabilityFloorPct": 90,
+    "serviceP95MaximumMs": 2000,
+    "serviceFreshnessMaximumSeconds": 120,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "stagingSafety": {
+    "httpsRequired": true,
+    "localhostAllowedOnlyInFixture": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "staging",
+      "preview",
+      "vercel.app",
+      "pages.dev",
+      "netlify.app"
+    ]
+  },
+  "bridgeSafety": {
+    "minimumSecretLength": 32,
+    "projectClass": "disposable_staging"
+  },
+  "telemetrySafety": {
+    "allowedWindowClasses": [
+      "bounded_staging",
+      "disposable_staging"
+    ],
+    "allowedHealthStates": [
+      "healthy",
+      "recovered"
+    ],
+    "allowedExitStates": [
+      "alternate_active",
+      "primary_disabled"
+    ],
+    "allowedRestoreStates": [
+      "primary_active",
+      "healthy"
+    ]
+  },
+  "truthBoundary": "A53 proves only one bounded disposable-staging measurement window, delivered alert and on-call acknowledgement telemetry, and one reversible vendor-exit drill with alternate-provider service probes. It does not prove a production SLO, contractual SLA, continuous monitoring, production vendor exit, customer outcomes, independent assurance or sale readiness.",
+  "integrity": {
+    "a52ContractSha256": "fec8d45b3ca5cf5daab5917d47be0d8ada0155710bcf26302445101434e34096",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

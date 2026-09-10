@@ -1,0 +1,524 @@
+{
+  "schemaVersion": "velmere.p38.local-cache-import-manifest.v1",
+  "revision": "P38_V15_CURRENT_LOCKFILE_CAS_RECOVERY_AND_NODE24_DIFFERENTIAL",
+  "generatedAt": "2026-08-14T03:10:00.000Z",
+  "sourceClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE_NO_NETWORK",
+  "networkRequestsExecuted": 0,
+  "currentPackageLock": {
+    "sha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+    "remoteLockPaths": 661
+  },
+  "historicalBindingCorrection": {
+    "historicalA78LockSha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+    "historicalA78Denominator": 654,
+    "currentLockSha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+    "currentDenominator": 661,
+    "denominatorDelta": 7,
+    "currentBaselineExactCoverage": 41,
+    "historicalCoverageNotPromoted": true
+  },
+  "baselineCoverage": {
+    "expectedLockPaths": 661,
+    "exactCoveredLockPaths": 41,
+    "uncoveredLockPaths": 620,
+    "uniqueCasTarballs": 106,
+    "coveragePercent": 6.203,
+    "coveredPathSetSha256": "c01fa104074a14f9e75a31a738ac14663a589f3016f9762882964f8eba414de9"
+  },
+  "recovered": {
+    "tarballs": 26,
+    "lockPaths": 26,
+    "payloadBytes": 288997,
+    "rows": [
+      {
+        "path": "config/p38/dependency-cas/073e9ff9dbabedf5c128020a677381e9f92c90188d118830b30a7656a7c37d2c.tgz",
+        "byteLength": 6067,
+        "sha256": "073e9ff9dbabedf5c128020a677381e9f92c90188d118830b30a7656a7c37d2c",
+        "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/call-bind-apply-helpers"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/call-bind-apply-helpers",
+            "name": null,
+            "version": "1.0.2",
+            "resolved": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/270dec0fc06cff86481da8af2dd8f18dee6b602790b14ef0e1c2c18d7da39427.tgz",
+        "byteLength": 7776,
+        "sha256": "270dec0fc06cff86481da8af2dd8f18dee6b602790b14ef0e1c2c18d7da39427",
+        "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/detect-libc"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/detect-libc",
+            "name": null,
+            "version": "2.1.2",
+            "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/290a29b26644b16ad172c21797c5523788b537a7784ffd175607c4812653504e.tgz",
+        "byteLength": 28388,
+        "sha256": "290a29b26644b16ad172c21797c5523788b537a7784ffd175607c4812653504e",
+        "integrity": "sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/@reown/appkit/node_modules/semver"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/@reown/appkit/node_modules/semver",
+            "name": null,
+            "version": "7.7.2",
+            "resolved": "https://registry.npmjs.org/semver/-/semver-7.7.2.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/2c539a46d85ab6033183997434d2d9a5ca2ceefc12b4db9022f564784cd7987f.tgz",
+        "byteLength": 5849,
+        "sha256": "2c539a46d85ab6033183997434d2d9a5ca2ceefc12b4db9022f564784cd7987f",
+        "integrity": "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/ansi-styles"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/ansi-styles",
+            "name": null,
+            "version": "4.3.0",
+            "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/3de5372cf95b66a344b258a046b1b298b20ecaf187637f4d59f50017836a90a7.tgz",
+        "byteLength": 7997,
+        "sha256": "3de5372cf95b66a344b258a046b1b298b20ecaf187637f4d59f50017836a90a7",
+        "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/postcss-value-parser"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/postcss-value-parser",
+            "name": null,
+            "version": "4.2.0",
+            "resolved": "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/4460c7532f28b8df2ddc9a1ec17816d43c24d4b9591dc6c5936b82f7f86ae7c5.tgz",
+        "byteLength": 8059,
+        "sha256": "4460c7532f28b8df2ddc9a1ec17816d43c24d4b9591dc6c5936b82f7f86ae7c5",
+        "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/has-symbols"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/has-symbols",
+            "name": null,
+            "version": "1.1.0",
+            "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/47ad3b0d20a2e5e31ed65049829440fb1e3d4ac554d93f8040562c1821816585.tgz",
+        "byteLength": 17469,
+        "sha256": "47ad3b0d20a2e5e31ed65049829440fb1e3d4ac554d93f8040562c1821816585",
+        "integrity": "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/@jridgewell/sourcemap-codec"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/@jridgewell/sourcemap-codec",
+            "name": null,
+            "version": "1.5.5",
+            "resolved": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/507b7c4461e8eb941355af9a59e9a7e02cd0e7c6176b48d1809766344f3f1708.tgz",
+        "byteLength": 2868,
+        "sha256": "507b7c4461e8eb941355af9a59e9a7e02cd0e7c6176b48d1809766344f3f1708",
+        "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/color-name"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/color-name",
+            "name": null,
+            "version": "1.1.4",
+            "resolved": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/5986b8b13121340a8b0d5c7d8f0f961aa80ef3a74515ca9cb7a78d86ed0385f7.tgz",
+        "byteLength": 4431,
+        "sha256": "5986b8b13121340a8b0d5c7d8f0f961aa80ef3a74515ca9cb7a78d86ed0385f7",
+        "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/es-define-property"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/es-define-property",
+            "name": null,
+            "version": "1.0.1",
+            "resolved": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/662e27e54e00fe46fbb08f9f4aacb054e3695dbe72cc14b436613fbcfb780544.tgz",
+        "byteLength": 13800,
+        "sha256": "662e27e54e00fe46fbb08f9f4aacb054e3695dbe72cc14b436613fbcfb780544",
+        "integrity": "sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/get-intrinsic"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/get-intrinsic",
+            "name": null,
+            "version": "1.3.0",
+            "resolved": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/66f635d5eeabae44807534976913a102cf615b9a045368359c9f79ae6ee2119e.tgz",
+        "byteLength": 18477,
+        "sha256": "66f635d5eeabae44807534976913a102cf615b9a045368359c9f79ae6ee2119e",
+        "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/tslib"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/tslib",
+            "name": null,
+            "version": "2.8.1",
+            "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/6bafda00d4356a4df5d0463b4e4ad45ebc9f438bfede793e218a9f9f7c6844c3.tgz",
+        "byteLength": 5240,
+        "sha256": "6bafda00d4356a4df5d0463b4e4ad45ebc9f438bfede793e218a9f9f7c6844c3",
+        "integrity": "sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/update-browserslist-db"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/update-browserslist-db",
+            "name": null,
+            "version": "1.2.3",
+            "resolved": "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/704402651b02a1454f17d445fc7dd716efc282d059407126d58ef30a47e807aa.tgz",
+        "byteLength": 9799,
+        "sha256": "704402651b02a1454f17d445fc7dd716efc282d059407126d58ef30a47e807aa",
+        "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/function-bind"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/function-bind",
+            "name": null,
+            "version": "1.1.2",
+            "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/79a1de983c1b393180c47456d6b73caab278a00ea6e37d5c6675f2dcdec2a3e5.tgz",
+        "byteLength": 2246,
+        "sha256": "79a1de983c1b393180c47456d6b73caab278a00ea6e37d5c6675f2dcdec2a3e5",
+        "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/util-deprecate"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/util-deprecate",
+            "name": null,
+            "version": "1.0.2",
+            "resolved": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/89c1ac9c946ee8905a875837114528e97eeae35e03be3190584b2216af43e4a7.tgz",
+        "byteLength": 13449,
+        "sha256": "89c1ac9c946ee8905a875837114528e97eeae35e03be3190584b2216af43e4a7",
+        "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/debug"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/debug",
+            "name": null,
+            "version": "4.4.3",
+            "resolved": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/9cc5d260c11d3df84d91f3e80168adf79d85c6b6aa382d19281a030c0d74321b.tgz",
+        "byteLength": 55579,
+        "sha256": "9cc5d260c11d3df84d91f3e80168adf79d85c6b6aa382d19281a030c0d74321b",
+        "integrity": "sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/@swc/helpers"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/@swc/helpers",
+            "name": null,
+            "version": "0.5.17",
+            "resolved": "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.17.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/b019a0980f27638dc3f85836b0e478f188e00d7a6e5852c0819fa86f56e47b8f.tgz",
+        "byteLength": 3656,
+        "sha256": "b019a0980f27638dc3f85836b0e478f188e00d7a6e5852c0819fa86f56e47b8f",
+        "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/fast-deep-equal"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/fast-deep-equal",
+            "name": null,
+            "version": "3.1.3",
+            "resolved": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/b1b7a945b52685269083425216d6597e33d97bf21699d656e92fdb3eb5210a85.tgz",
+        "byteLength": 4109,
+        "sha256": "b1b7a945b52685269083425216d6597e33d97bf21699d656e92fdb3eb5210a85",
+        "integrity": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/base64-js"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/base64-js",
+            "name": null,
+            "version": "1.5.1",
+            "resolved": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/b8c2c35575493dc086df88cfc468a9e2651b6617336480ab3f00fcf853f443a7.tgz",
+        "byteLength": 6355,
+        "sha256": "b8c2c35575493dc086df88cfc468a9e2651b6617336480ab3f00fcf853f443a7",
+        "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/math-intrinsics"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/math-intrinsics",
+            "name": null,
+            "version": "1.1.0",
+            "resolved": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/ba2755afc0e6c6705326711fd218ebe107a527eccbd6485155fde98ed000bee7.tgz",
+        "byteLength": 4483,
+        "sha256": "ba2755afc0e6c6705326711fd218ebe107a527eccbd6485155fde98ed000bee7",
+        "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/escalade"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/escalade",
+            "name": null,
+            "version": "3.2.0",
+            "resolved": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/d14dd1c35b4bd3b8aca3219fd3627eb7f3eb49cf6b4c8a7ca58b91fd7a190993.tgz",
+        "byteLength": 5338,
+        "sha256": "d14dd1c35b4bd3b8aca3219fd3627eb7f3eb49cf6b4c8a7ca58b91fd7a190993",
+        "integrity": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/es-errors"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/es-errors",
+            "name": null,
+            "version": "1.3.0",
+            "resolved": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/d536d0de4dd285dc1468fbb7f39334a47ee0eec9c27f9b626a6e71466c9fda82.tgz",
+        "byteLength": 4584,
+        "sha256": "d536d0de4dd285dc1468fbb7f39334a47ee0eec9c27f9b626a6e71466c9fda82",
+        "integrity": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/gopd"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/gopd",
+            "name": null,
+            "version": "1.2.0",
+            "resolved": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/db52f9f62558baab13353dd39e3200750fc33e6a129a575b46226f493776e230.tgz",
+        "byteLength": 9622,
+        "sha256": "db52f9f62558baab13353dd39e3200750fc33e6a129a575b46226f493776e230",
+        "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/@jridgewell/resolve-uri"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/@jridgewell/resolve-uri",
+            "name": null,
+            "version": "3.1.2",
+            "resolved": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/ed1342228c82c10df9921c59d684df516a0cd6ed25b61e5f9d6330895326cfdb.tgz",
+        "byteLength": 5049,
+        "sha256": "ed1342228c82c10df9921c59d684df516a0cd6ed25b61e5f9d6330895326cfdb",
+        "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/dunder-proto"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/dunder-proto",
+            "name": null,
+            "version": "1.0.1",
+            "resolved": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/f126a6f9fca487a43219d8cb8c3a955279187a966119d548eb5cd47e999d4853.tgz",
+        "byteLength": 35340,
+        "sha256": "f126a6f9fca487a43219d8cb8c3a955279187a966119d548eb5cd47e999d4853",
+        "integrity": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/source-map-js"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/source-map-js",
+            "name": null,
+            "version": "1.2.1",
+            "resolved": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz"
+          }
+        ]
+      },
+      {
+        "path": "config/p38/dependency-cas/f6616e15e530ed552f9daa2d3ce71963947c6bc7c98c9b64fd3e673fd02622c6.tgz",
+        "byteLength": 2967,
+        "sha256": "f6616e15e530ed552f9daa2d3ce71963947c6bc7c98c9b64fd3e673fd02622c6",
+        "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+        "originClass": "LOCAL_PREEXISTING_NPM_CONTENT_CACHE",
+        "lockPaths": [
+          "node_modules/ms"
+        ],
+        "packages": [
+          {
+            "lockPath": "node_modules/ms",
+            "name": null,
+            "version": "2.1.3",
+            "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
+          }
+        ]
+      }
+    ]
+  },
+  "combinedCoverage": {
+    "expectedLockPaths": 661,
+    "exactCoveredLockPaths": 67,
+    "uncoveredLockPaths": 594,
+    "uniqueCasTarballs": 132,
+    "coveragePercent": 10.136,
+    "coveredPathSetSha256": "229630d5766c5d7b7c50d53d2216b90850abb9ebd81f036dabc2356feb1ea619"
+  },
+  "delta": {
+    "exactCoveredLockPaths": 26,
+    "coveragePercentagePoints": 3.933,
+    "remainingUncoveredLockPaths": 594
+  },
+  "allRecoveredSriVerified": true,
+  "allRecoveredSha256Verified": true,
+  "allRecoveredFilenamesContentAddressed": true,
+  "dependencyClosure": false,
+  "offlineNpmCiExecuted": false,
+  "releaseState": "NO_GO",
+  "truthBoundary": "P38 binds the current package-lock and recovers only exact SRI-matching tarballs already present in a local content-addressable cache. Historical A78 is preserved but is not current authority because its lock hash and denominator are stale. Partial CAS coverage is not dependency closure and gives no npm-ci, build, Browser, GO_INTERNAL, paid, LIVE, or world-class credit.",
+  "integritySha256": "904f2a8b245b79d95512ccb2b0d03bde9df5d3f0e5adcf13b8d250ea36ffc1be"
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "velmere.pass36.a102r11.approved-client-pdf-blob-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R11_ACTION_REQUIRED_CLIENT_LENS_PDF_BYTE_BINDING_OBJECT_URL_AND_DOWNLOAD_LIFECYCLE_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R10_ACTION_REQUIRED_EXTERNAL_NEW_TAB_PRODUCT_IMPORT_SEC_FILING_AND_WALLET_NAVIGATION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T04:45:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R10_ACTION_REQUIRED_EXTERNAL_NEW_TAB_PRODUCT_IMPORT_SEC_FILING_AND_WALLET_NAVIGATION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 254281,
+      "historicalSha256": "418aaa9ed69ef25dc56fab464653675b9562c4b693e2d82655c13e925b4de011",
+      "currentByteLength": 254831,
+      "currentSha256": "4007bd8f9dd8b9e362d78621fea33db03e084e77e74a599958ce06c5a7417929",
+      "reason": "Bind Lens preview/download bytes to exact report digest, PDF SHA-256, renderer, tier, page count, active-content, redaction and parity headers before Blob URL creation; revoke preview URLs immediately on close/replace.",
+      "requiredLocalTest": "PASS_A102R11_CLIENT_PDF_BYTE_BINDING_OBJECT_URL_LIFECYCLE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/account/AuditAccountMessagesClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R10_ACTION_REQUIRED_EXTERNAL_NEW_TAB_PRODUCT_IMPORT_SEC_FILING_AND_WALLET_NAVIGATION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 134895,
+      "historicalSha256": "1afd8df96906df6942b58155cbf15235149191002f6dd5497f36f09bbb574d1c",
+      "currentByteLength": 134666,
+      "currentSha256": "0a9acd8f5581b8e98e5a4607d46690aa7c6f75e3ebb9eb557734baf646895d7a",
+      "reason": "Route paid audit PDF download through one bounded object-URL sink with safe filename, no-referrer metadata and delayed idempotent revocation instead of zero-delay revoke.",
+      "requiredLocalTest": "PASS_A102R11_CLIENT_PDF_BYTE_BINDING_OBJECT_URL_LIFECYCLE_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "lib/security/client-pdf-blob-boundary.ts",
+      "purpose": "Client-side exact Lens PDF response/byte binding, safe filename and centralized Blob object-URL lifecycle."
+    },
+    {
+      "path": "scripts/pass36/test-a102r11-client-pdf-blob-boundary.ts",
+      "purpose": "43-assertion behavioral and static adversarial proof for PDF byte binding, response headers, filename, download and object URL lifecycle."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "lensPdfMimeAndMinimumSizeOnlyAccepted": false,
+    "lensPdfExactSha256Required": true,
+    "lensPdfCanonicalReportDigestAndIdRequired": true,
+    "lensPdfRendererTierPageCountRequired": true,
+    "lensPdfActiveContentNoneRequired": true,
+    "lensPdfRedactionCleanRequired": true,
+    "lensPdfPreviewDownloadExactBlobRequired": true,
+    "rawObjectUrlSinksOutsideBoundary": 0,
+    "paidAuditZeroDelayObjectUrlRevocationRemoved": true,
+    "safeClientPdfFilenameRequired": true,
+    "realBrowserPdfRowsExecuted": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false,
+    "a89HistoricalPassRewritten": false
+  },
+  "truthBoundary": "This ledger binds exact A102R10-to-A102R11 changes that enforce client-side byte/digest/header binding before Lens PDF preview/download and centralize PDF Blob URL lifecycle. Local tests do not prove actual Chromium PDF viewer behavior, browser download completion timing, staging, real customer delivery, LIVE or sale readiness.",
+  "entries": [
+    {
+      "path": "scripts/pass36/historical-descendant-chain-lib.mjs",
+      "historicalPlaneRevisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+      "historicalByteLength": 15880,
+      "historicalSha256": "ecaa604f4265cb4f3bc5c829dcc1c384d2be7199003c34b857348b39b9905e03",
+      "currentByteLength": 16268,
+      "currentSha256": "2ab1be33b97c168784d3f14b59e65791058b8ca0cff24dcd6af5468310f14e15",
+      "reason": "Preserve the frozen A89 payload while making historical descendant verification ignore lower revisions of the same pass when the verified chain starts at a later patch revision.",
+      "requiredLocalTest": "PASS_A102R11_HISTORICAL_DESCENDANT_CHAIN_LOWER_REVISION_EXCLUSION_NO_PROMOTION",
+      "historicalBytesRewritten": false
+    }
+  ]
+}

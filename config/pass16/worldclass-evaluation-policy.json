@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "velmere.pass16.worldclass-evaluation-policy.v1",
+  "surfaces": [
+    "shield",
+    "real_markets",
+    "smart_contract_audit",
+    "lens_pdf",
+    "vlm_brain",
+    "angel"
+  ],
+  "tiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "locales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "releaseRules": {
+    "basic": "May release only with explicit evidence status, limitations, requested locale and no unsupported numeric certainty.",
+    "pro": "Must fail closed without required independent source families, commercial rights, freshness and tier-specific value.",
+    "advanced": "Must include all Pro gates plus provenance receipt; smart-contract Advanced additionally requires named human-review authority.",
+    "all": "Fixtures, synthetic data and prepared gates never count as staging or LIVE proof."
+  },
+  "executionCadence": {
+    "duringImplementation": "Run corpus verifier only after a coherent product wave; do not generate 2700 outputs repeatedly.",
+    "offlineReleaseCandidate": "Generate and score all 2700 outputs once after product surfaces are frozen.",
+    "staging": "Replay only failed/high-risk slices plus provider/payment/database journeys.",
+    "live": "Use limited cohorts and record real SLO, freshness, false-positive/negative and reviewer SLA evidence."
+  }
+}

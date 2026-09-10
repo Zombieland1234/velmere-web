@@ -1,0 +1,69 @@
+{
+  "advanced": {
+    "checkoutAllowed": false,
+    "currentDecision": "NOT_FOR_SALE",
+    "humanReviewIncluded": false,
+    "independentAdjudicationRequired": true,
+    "publicPrice": null,
+    "target": "GO_PAID_AFTER_EVIDENCE"
+  },
+  "basic": {
+    "alwaysFree": true,
+    "checkoutAllowed": false,
+    "paymentRequired": false,
+    "publicPrice": null,
+    "target": "GO_FREE_AFTER_EVIDENCE"
+  },
+  "exactRuntime": {
+    "chromium": "148.0.7778.96",
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "playwright": "1.60.0",
+    "typescript": "5.9.3"
+  },
+  "flags": {
+    "LIVE": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "globalDecision": "NO_GO",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P19_ACTION_REQUIRED_BASIC_ALWAYS_FREE_PRO_ADVANCED_SALE_READINESS_AND_CROSS_SURFACE_COMMERCIAL_GATE_CLOSURE_NO_LIVE_CREDIT",
+  "pro": {
+    "checkoutAllowed": false,
+    "currentDecision": "INVITATION_ONLY_CONTROLLED_BETA",
+    "manualQaRequired": true,
+    "publicPrice": null,
+    "target": "GO_PAID_AFTER_EVIDENCE"
+  },
+  "requiredCurrentByteGates": [
+    "sourceAuthority",
+    "approvedChanges",
+    "staticPolicy",
+    "fullEslint",
+    "preBuildTypeScript",
+    "sourceAudit",
+    "webpack",
+    "turbopack",
+    "postBuildTypeScript",
+    "smokeWebpack",
+    "smokeTurbopack",
+    "browser57",
+    "screenshots29",
+    "popupTabs4",
+    "browserVerifier584",
+    "pdf150",
+    "packageDeterminism",
+    "cleanUnpack"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P20_ACTION_REQUIRED_CURRENT_BYTE_DUAL_BUILD_BROWSER_PDF_AND_BASIC_FREE_PRO_ADVANCED_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p20.release-closure-policy.v1",
+  "truthBoundary": {
+    "exactWindowsRequiredForWindowsCredit": true,
+    "liveCredit": false,
+    "providerRightsCredit": false,
+    "realCustomerPdfCredit": false,
+    "saleCredit": false,
+    "stagingCredit": false
+  }
+}

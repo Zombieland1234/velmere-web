@@ -1,0 +1,481 @@
+{
+  "schemaVersion": "velmere.pass36.a85.shield-pro-map-full-depth-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+  "generatedAt": "2026-07-27T18:30:00.000Z",
+  "status": "PASS_A85_LOCAL_FULL_DEPTH_MATRIX_NO_PROMOTION",
+  "summary": {
+    "checks": 34,
+    "passed": 34,
+    "failed": 0
+  },
+  "fixtureDenominators": {
+    "activeAssets": 318,
+    "tierPackets": 954,
+    "surfaceProjections": 1908,
+    "terminalTimeframeRows": 5724,
+    "investigatorLaneRows": 5724,
+    "semanticMutations": 15264,
+    "mutationKilled": 15264
+  },
+  "pagination": {
+    "rows": 318,
+    "pagesFetched": 2,
+    "pageSizes": [
+      250,
+      68
+    ],
+    "complete": true,
+    "repeatedPageRejected": true,
+    "laterFailureExplicitPartial": true
+  },
+  "bindingCounts": {
+    "EXACT_MULTI_SOURCE": 200,
+    "SINGLE_SOURCE": 58,
+    "CONFLICT": 30,
+    "MISSING": 30
+  },
+  "labelCounts": {
+    "SIGNED_CURRENT": 150,
+    "SIGNED_STALE": 40,
+    "CONFLICT": 30,
+    "MISSING": 98
+  },
+  "depthCounts": {
+    "AVAILABLE": 224,
+    "STALE": 32,
+    "CONFLICTED": 32,
+    "UNAVAILABLE": 30
+  },
+  "readiness": {
+    "basic": {
+      "shieldProFunctionalReadyOffline": 241,
+      "shieldMapFunctionalReadyOffline": 241,
+      "paidDelivered": 0
+    },
+    "pro": {
+      "shieldProFunctionalReadyOffline": 111,
+      "shieldMapFunctionalReadyOffline": 64,
+      "paidDelivered": 0
+    },
+    "advanced": {
+      "shieldProFunctionalReadyOffline": 93,
+      "shieldMapFunctionalReadyOffline": 29,
+      "paidDelivered": 0
+    }
+  },
+  "identityBoundary": {
+    "scenarios": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "runtimeIntegritySha256": "5dcd4d0aaaac440e8d7724d0d4b1ce95dc994947bfcde284b8a7febcdaf944d1",
+  "realIntake": {
+    "decision": "BLOCKED_REAL_SHIELD_PRO_MAP_EVIDENCE",
+    "requiredAssets": 318,
+    "activeAssetDenominator": 318,
+    "denominatorValid": true,
+    "evidenceCompleteAssets": 0,
+    "unavailableOrBlockedAssets": 318,
+    "fullCatalogPagesVerified": 0,
+    "exactMarketIdentityAssets": 0,
+    "exactChainAddressBindings": 0,
+    "signedCurrentLabelAssets": 0,
+    "orderBookDepthAssets": 0,
+    "productionBrowserAssets": 0,
+    "serverEntitlementAssets": 0,
+    "rightsApprovedAssets": 0,
+    "customerValueLabeledAssets": 0,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "realFullDepthCasesVerified": 0,
+  "rightsApprovedAssets": 0,
+  "productionBrowserAssets": 0,
+  "realEntitlementsVerified": 0,
+  "customerValueLabeledAssets": 0,
+  "exactA80CandidateBound": false,
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "runtime:verified",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      }
+    },
+    {
+      "id": "runtime:revision",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX"
+    },
+    {
+      "id": "parent:a84",
+      "passed": true,
+      "detail": "5dbc1775930da34bc55306b065634b3deadd40c1e4c9fafead22537154983781"
+    },
+    {
+      "id": "denominator:assets",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      }
+    },
+    {
+      "id": "denominator:packets",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      }
+    },
+    {
+      "id": "denominator:timeframes",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      }
+    },
+    {
+      "id": "denominator:lanes",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      }
+    },
+    {
+      "id": "denominator:mutations",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      }
+    },
+    {
+      "id": "pagination:full",
+      "passed": true,
+      "detail": {
+        "rows": 318,
+        "pagesFetched": 2,
+        "pageSizes": [
+          250,
+          68
+        ],
+        "complete": true,
+        "repeatedPageRejected": true,
+        "laterFailureExplicitPartial": true
+      }
+    },
+    {
+      "id": "pagination:adversarial",
+      "passed": true,
+      "detail": {
+        "rows": 318,
+        "pagesFetched": 2,
+        "pageSizes": [
+          250,
+          68
+        ],
+        "complete": true,
+        "repeatedPageRejected": true,
+        "laterFailureExplicitPartial": true
+      }
+    },
+    {
+      "id": "identity:boundary",
+      "passed": true,
+      "detail": {
+        "scenarios": 10,
+        "passed": 10,
+        "failed": 0
+      }
+    },
+    {
+      "id": "bindings:complete",
+      "passed": true,
+      "detail": {
+        "EXACT_MULTI_SOURCE": 200,
+        "SINGLE_SOURCE": 58,
+        "CONFLICT": 30,
+        "MISSING": 30
+      }
+    },
+    {
+      "id": "labels:complete",
+      "passed": true,
+      "detail": {
+        "SIGNED_CURRENT": 150,
+        "SIGNED_STALE": 40,
+        "CONFLICT": 30,
+        "MISSING": 98
+      }
+    },
+    {
+      "id": "depth:complete",
+      "passed": true,
+      "detail": {
+        "AVAILABLE": 224,
+        "STALE": 32,
+        "CONFLICTED": 32,
+        "UNAVAILABLE": 30
+      }
+    },
+    {
+      "id": "readiness:terminal-monotonic",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "shieldProFunctionalReadyOffline": 241,
+          "shieldMapFunctionalReadyOffline": 241,
+          "paidDelivered": 0
+        },
+        "pro": {
+          "shieldProFunctionalReadyOffline": 111,
+          "shieldMapFunctionalReadyOffline": 64,
+          "paidDelivered": 0
+        },
+        "advanced": {
+          "shieldProFunctionalReadyOffline": 93,
+          "shieldMapFunctionalReadyOffline": 29,
+          "paidDelivered": 0
+        }
+      }
+    },
+    {
+      "id": "readiness:map-monotonic",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "shieldProFunctionalReadyOffline": 241,
+          "shieldMapFunctionalReadyOffline": 241,
+          "paidDelivered": 0
+        },
+        "pro": {
+          "shieldProFunctionalReadyOffline": 111,
+          "shieldMapFunctionalReadyOffline": 64,
+          "paidDelivered": 0
+        },
+        "advanced": {
+          "shieldProFunctionalReadyOffline": 93,
+          "shieldMapFunctionalReadyOffline": 29,
+          "paidDelivered": 0
+        }
+      }
+    },
+    {
+      "id": "delivery:no-paid",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "shieldProFunctionalReadyOffline": 241,
+          "shieldMapFunctionalReadyOffline": 241,
+          "paidDelivered": 0
+        },
+        "pro": {
+          "shieldProFunctionalReadyOffline": 111,
+          "shieldMapFunctionalReadyOffline": 64,
+          "paidDelivered": 0
+        },
+        "advanced": {
+          "shieldProFunctionalReadyOffline": 93,
+          "shieldMapFunctionalReadyOffline": 29,
+          "paidDelivered": 0
+        }
+      }
+    },
+    {
+      "id": "packets:unique",
+      "passed": true,
+      "detail": 954
+    },
+    {
+      "id": "packets:three-tiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:deep-dive-basic",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:entitlement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invariants:zero",
+      "passed": true,
+      "detail": {
+        "duplicatePacketIds": 0,
+        "missingAssets": 0,
+        "identityParityFailures": 0,
+        "timeframeCoverageFailures": 0,
+        "pageCoverageFailures": 0,
+        "mapLaneCoverageFailures": 0,
+        "symbolOnlyBindingPromotions": 0,
+        "paidEntitlementBypasses": 0,
+        "basicPaidDepthLeaks": 0,
+        "tierMonotonicityFailures": 0,
+        "mutationSurvivors": 0,
+        "truthBoundaryFailures": 0
+      }
+    },
+    {
+      "id": "truth:no-promotion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "determinism:runtime",
+      "passed": true,
+      "detail": {
+        "first": "5dcd4d0aaaac440e8d7724d0d4b1ce95dc994947bfcde284b8a7febcdaf944d1",
+        "second": "5dcd4d0aaaac440e8d7724d0d4b1ce95dc994947bfcde284b8a7febcdaf944d1"
+      }
+    },
+    {
+      "id": "real:blocked",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_SHIELD_PRO_MAP_EVIDENCE",
+        "requiredAssets": 318,
+        "activeAssetDenominator": 318,
+        "denominatorValid": true,
+        "evidenceCompleteAssets": 0,
+        "unavailableOrBlockedAssets": 318,
+        "fullCatalogPagesVerified": 0,
+        "exactMarketIdentityAssets": 0,
+        "exactChainAddressBindings": 0,
+        "signedCurrentLabelAssets": 0,
+        "orderBookDepthAssets": 0,
+        "productionBrowserAssets": 0,
+        "serverEntitlementAssets": 0,
+        "rightsApprovedAssets": 0,
+        "customerValueLabeledAssets": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "real:full-denominator-blocked",
+      "passed": true,
+      "detail": {
+        "decision": "BLOCKED_REAL_SHIELD_PRO_MAP_EVIDENCE",
+        "requiredAssets": 318,
+        "activeAssetDenominator": 318,
+        "denominatorValid": true,
+        "evidenceCompleteAssets": 0,
+        "unavailableOrBlockedAssets": 318,
+        "fullCatalogPagesVerified": 0,
+        "exactMarketIdentityAssets": 0,
+        "exactChainAddressBindings": 0,
+        "signedCurrentLabelAssets": 0,
+        "orderBookDepthAssets": 0,
+        "productionBrowserAssets": 0,
+        "serverEntitlementAssets": 0,
+        "rightsApprovedAssets": 0,
+        "customerValueLabeledAssets": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "policy:gaps",
+      "passed": true,
+      "detail": 30
+    },
+    {
+      "id": "policy:mutations",
+      "passed": true,
+      "detail": [
+        "market_id_substitution",
+        "symbol_substitution",
+        "quote_substitution",
+        "timeframe_drop",
+        "page_coverage_promotion",
+        "depth_state_promotion",
+        "binding_state_promotion",
+        "address_substitution",
+        "label_state_promotion",
+        "lane_drop",
+        "entitlement_promotion",
+        "paid_delivery_promotion",
+        "tier_substitution",
+        "blocked_to_ready",
+        "deep_dive_paid_depth",
+        "live_sale_promotion"
+      ]
+    },
+    {
+      "id": "policy:intake-hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "production:shield-pro-bounded-pagination",
+      "passed": true,
+      "detail": "components/market-integrity/ShieldProCleanTerminalClient.tsx"
+    },
+    {
+      "id": "production:pagination-tier-binding",
+      "passed": true,
+      "detail": "lib/market-integrity/shield-pro-full-catalog-client.ts"
+    },
+    {
+      "id": "production:investigator-query-boundary",
+      "passed": true,
+      "detail": "lib/server/market-integrity-route-modules/investigator.ts"
+    },
+    {
+      "id": "production:deep-dive-basic-only",
+      "passed": true,
+      "detail": "components/market-integrity/ShieldMapCommandClient.tsx"
+    }
+  ],
+  "truthBoundary": "A85 proves local injected full-catalog Shield Pro and Shield Map identity, pagination, binding, depth, lane and entitlement semantics. It does not prove current public-network coverage, rights, real account entitlements, production browser behavior, customer value, LIVE or sale readiness."
+}

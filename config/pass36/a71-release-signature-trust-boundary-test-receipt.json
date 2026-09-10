@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "velmere.pass36.a71.release-signature-trust-boundary-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A71R0_RELEASE_SIGNATURE_AND_TRUST_ANCHOR_BOUNDARY_HARDENING",
+  "status": "PASS_LOCAL_RELEASE_SIGNATURE_AND_EXTERNAL_TRUST_ANCHOR_BOUNDARY_ONLY_NO_EXTERNAL_SIGNATURE_OR_PROMOTION_CREDIT",
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true
+    },
+    {
+      "id": "fingerprint_exact",
+      "pass": true
+    },
+    {
+      "id": "trusted_list_parsed",
+      "pass": true
+    },
+    {
+      "id": "public_key_ed25519",
+      "pass": true
+    },
+    {
+      "id": "signature_exact_64_bytes",
+      "pass": true
+    },
+    {
+      "id": "signature_padding_rejected",
+      "pass": true
+    },
+    {
+      "id": "duplicate_key_id_rejected",
+      "pass": true
+    },
+    {
+      "id": "duplicate_key_fingerprint_rejected",
+      "pass": true
+    },
+    {
+      "id": "fingerprint_mismatch_rejected",
+      "pass": true
+    },
+    {
+      "id": "non_ed25519_rejected",
+      "pass": true
+    },
+    {
+      "id": "qualified_threshold_passes",
+      "pass": true
+    },
+    {
+      "id": "duplicate_signer_rejected",
+      "pass": true
+    },
+    {
+      "id": "retiring_signer_not_threshold",
+      "pass": true
+    },
+    {
+      "id": "expired_signer_rejected",
+      "pass": true
+    },
+    {
+      "id": "wrong_role_rejected",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_anchored_passes",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_self_signed_without_anchor_rejected",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_wrong_anchor_rejected",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_duplicate_key_rejected",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_digest_tamper_rejected",
+      "pass": true
+    },
+    {
+      "id": "candidate_cli_valid",
+      "pass": true
+    },
+    {
+      "id": "candidate_cli_anchor_required",
+      "pass": true
+    },
+    {
+      "id": "candidate_cli_wrong_anchor_rejected",
+      "pass": true
+    },
+    {
+      "id": "candidate_unknown_field_rejected",
+      "pass": true
+    },
+    {
+      "id": "candidate_signature_tamper_rejected",
+      "pass": true
+    },
+    {
+      "id": "package_cli_valid",
+      "pass": true
+    },
+    {
+      "id": "package_cli_anchor_required",
+      "pass": true
+    },
+    {
+      "id": "package_signature_tamper_rejected",
+      "pass": true
+    },
+    {
+      "id": "package_duplicate_signer_rejected",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_cli_valid",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_cli_anchor_required",
+      "pass": true
+    },
+    {
+      "id": "checkpoint_package_binding_tamper_rejected",
+      "pass": true
+    },
+    {
+      "id": "transparency_cli_valid",
+      "pass": true
+    },
+    {
+      "id": "transparency_cli_anchor_required",
+      "pass": true
+    },
+    {
+      "id": "transparency_duplicate_checkpoint_rejected",
+      "pass": true
+    },
+    {
+      "id": "transparency_entry_tamper_rejected",
+      "pass": true
+    },
+    {
+      "id": "transparency_unverified_checkpoint_rejected",
+      "pass": true
+    }
+  ],
+  "counts": {
+    "total": 37,
+    "passed": 37,
+    "failed": 0
+  },
+  "externalSignaturesVerified": false,
+  "productionTransparencyLogVerified": false,
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "This receipt proves the local verifier rejects circular self-trust, unanchored public-key replacement, duplicate key identities, non-Ed25519 keys, malformed signatures, inactive/expired threshold members and unverified transparency checkpoints. Generated fixture keys are not external assurance or production signatures."
+}

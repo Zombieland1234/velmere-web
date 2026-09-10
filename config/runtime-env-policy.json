@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "velmere.runtime-env-policy.v1",
+  "scanRoots": [
+    "app",
+    "components",
+    "lib",
+    "store",
+    "i18n.ts",
+    "navigation.ts",
+    "next.config.mjs",
+    "proxy.ts",
+    "routing.ts"
+  ],
+  "systemManagedKeys": [
+    "NODE_ENV",
+    "VERCEL_ENV"
+  ],
+  "allowedPublicCredentialKeys": [
+    "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID"
+  ],
+  "envExamplePath": "ENV_PRODUCTION_READY.example"
+}

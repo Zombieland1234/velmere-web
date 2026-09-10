@@ -1,0 +1,66 @@
+# Dependencies and framework outputs
+node_modules/
+.next/
+.next*/
+out/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Local environment and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+
+# Runtime logs and temporary state
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Local checkpoint scratch; committed receipts remain explicit under artifacts/
+artifacts/**/runner-state.invalidated-*.json
+artifacts/**/started-server.log
+
+# PASS14 cheap-gate diagnostics (local receipts, not source)
+.velmere/pass14-gates/
+.velmere/pass14-diagnostics/
+.velmere/pass14-builds/
+
+# PASS35 A42 local generated cache marker
+.velmere/dev-runtime/
+
+# All local Velmere runtime state
+.velmere/
+.aider*
+
+# Large archives and evidence packages
+*.zip
+*.tar.gz
+
+# Local generated audit and report scratch directories
+/raporty*
+/dowody*
+/velmere-final/
+/velmere-top5-pack/
+/pliki/
+/scratch/
+/naprawa/
+/verifier/
+/preview_screenshots/
+/audit_captures*/
+
+# Root screenshot proofs
+/*.png
+/*.jpg
+
+# Root log/prompt text scratch files
+/prompt*.txt
+/gemini*.txt
+/zadanie*.txt
+/run_dev*.ps1

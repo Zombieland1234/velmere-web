@@ -1,0 +1,43 @@
+{
+  "allowEmbeddedPublicKeyAuthority": false,
+  "envelopePolicy": {
+    "canonicalJsonRejectsUnsupportedTypes": true,
+    "exactSignatureKeysRequired": true,
+    "exactTopLevelKeysRequired": true,
+    "keyMustBeActiveAtObservationAndAdmission": true,
+    "maximumAgeMs": 600000,
+    "maximumLifetimeMs": 600000,
+    "observedFutureSkewMs": 30000,
+    "strictBase64Required": true
+  },
+  "keyAdmission": {
+    "requiresIndependentOperator": true,
+    "requiresOutOfBandApproval": true,
+    "requiresRevocationStatus": true,
+    "requiresSpkiSha256": true,
+    "requiresValidFromAndExpiresAt": true,
+    "sourceOnlyMayNotContainPrivateKey": true
+  },
+  "productionTrustedKeys": [],
+  "replayPolicy": {
+    "atomicAppendRequired": true,
+    "durableJournalRequired": true,
+    "evidenceIdAndNonceStoredOnlyAsSha256": true,
+    "inMemorySetAloneIsInsufficient": true,
+    "singleWriterLockRequired": true,
+    "tamperedJournalFailsClosed": true
+  },
+  "requiredAlgorithm": "Ed25519",
+  "revisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DURABLE_EXTERNAL_EVIDENCE_REPLAY_JOURNAL_ATOMIC_ADMISSION_AND_ENVELOPE_TIME_HARDENING_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p27.external-evidence-trust-policy.v1",
+  "truthBoundary": {
+    "liveCredit": false,
+    "rawArtifactVerificationRequired": true,
+    "saleCredit": false,
+    "semanticVerificationRequired": true,
+    "stagingCredit": false,
+    "syntheticFixtureGrantsExternalCredit": false,
+    "validSignatureAloneGrantsCredit": false
+  },
+  "unknownKeyFailClosed": true
+}

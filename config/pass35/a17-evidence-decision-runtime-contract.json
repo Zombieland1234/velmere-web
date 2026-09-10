@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "velmere.pass35.a17-evidence-decision-runtime-contract.v1",
+  "passId": "PASS35_A17",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonicalWeightedPlanningPercent": 40.7,
+    "zeroBudgetWeightedPlanningPercent": 80
+  },
+  "progressDelta": {
+    "canonicalPercentagePoints": 1.2,
+    "zeroBudgetPercentagePoints": 2.1
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "paidDeliveryAllowed": false,
+  "liveClaimed": false,
+  "evidenceFamilyRegistry": {
+    "rules": 21,
+    "allCellsExplicit": true,
+    "registrySha256": "sha256:d09b61e07865eee3c0ff9cf820115db99f45aa683333362d9f5367f4066adb52"
+  },
+  "evidenceQualityDecision": {
+    "packets": 21,
+    "guardedChannelDecisions": 63,
+    "integratedDecisionPackets": 3,
+    "addedFactViolations": 0,
+    "contradictionCount": 0,
+    "hardBlockedPackets": 0,
+    "integritySha256": "sha256:5ed2dc847b35429af2ac942e86d5810282d17c28814dbf5920fdaf7c163ad2fa"
+  },
+  "physicalPacketPdfs": {
+    "verified": true,
+    "pdfCount": 21,
+    "totalPages": 98,
+    "passingPdfs": 21,
+    "receiptSha256": "sha256:944cc64dca040415ce769911a8a29c1fa7a0216aa70427b3cab30530a778ec17",
+    "pageContract": {
+      "basic": 2,
+      "pro": 4,
+      "advanced": 8
+    },
+    "rasterVerified": true,
+    "rasterPageCount": 98,
+    "blankPages": 0,
+    "pagesTouchingRasterEdge": 0,
+    "contactSheets": 3,
+    "rasterReceiptSha256": "sha256:9e8960de394b85ca563fdab25daf1f3ef2ae4dbdeabf6358985d15879b6a37d6"
+  },
+  "riskCalibrationEvaluation": {
+    "rows": 600,
+    "train": 360,
+    "validation": 140,
+    "prospective": 100,
+    "validationEce": 0.04542424,
+    "validationMce": 0.07592308,
+    "validationBrierSkillVsHalf": 0.11498352,
+    "validationCalibrationIntercept": -0.05523457,
+    "validationCalibrationSlope": 0.91905342,
+    "prospectiveClosed": 38,
+    "prospectiveOpen": 62,
+    "probabilityClaimsAllowed": false,
+    "prospectiveClaimsAllowed": false,
+    "integritySha256": "sha256:00d87d14da2f827cd3714a951a83323ff5f8e8245065711d1b8e3bafc7bf762e"
+  },
+  "canonicalWeightedPlanningPercent": 41.9,
+  "canonicalStrictDonePercent": 9.3,
+  "canonicalCounts": {
+    "DONE": 4,
+    "PARTIAL": 28,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 2
+  },
+  "zeroBudgetWeightedPlanningPercent": 82.1,
+  "zeroBudgetCoreDenominator": 42,
+  "zeroBudgetCounts": {
+    "DONE": 28,
+    "PARTIAL": 13,
+    "NOT_DONE": 1
+  },
+  "truthBoundary": "PASS35 A17 is the only canonical current status. Canonical roadmap is 41.9% weighted / 9.3% strict across 43 workstreams, up 1.2 pp from A16. Zero-budget functional core is 82.1% across 42 capabilities, up 2.1 pp from A16. A17 locally closes explicit evidence-family floors, contradiction-aware Brain/Angel/PDF decisions, cross-surface decision packets and physical canonical packet PDF delivery. Current public-network evidence, real risk outcomes, customer value, staging, sale and independent assurance remain unclaimed."
+}

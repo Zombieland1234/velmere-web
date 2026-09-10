@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "velmere.pass36.a59.current-css-exact-dedup.v2",
+  "revisionId": "VELMERE_PASS36_A102R44P46_A59_CURRENT_CSS_EXACT_DEDUP_READ_ONLY_CLOSURE",
+  "generatedAt": "2026-08-14T16:24:00.778Z",
+  "status": "PASS_A59_CURRENT_CSS_EXACT_DUPLICATE_SCAN",
+  "evidenceClass": "TESTED_STATIC",
+  "writeMode": false,
+  "cssMutationApplied": false,
+  "canonicalProfilePath": ".velmere/pass14-diagnostics/build-graph-profile.json",
+  "compactionReceiptPath": "config/pass36/a59-css-compaction-receipt.json",
+  "profileIdentity": {
+    "fileCount": 26,
+    "totalBytes": 2920723,
+    "pathSetSha256": "3a6d897b3df912cbfb38329b07e88e957f137610e8108360778267e5098966c5",
+    "finalIdentitySha256": "b083c0871d04a441552cc6f01f0443764fe3a07323ca4901e8f7baecc7e1dadf"
+  },
+  "files": [
+    {
+      "path": "app/globals.css",
+      "byteLength": 2211531,
+      "sha256": "586f1a3fb466e200a7fc4554b61455d02cee296616f37f7e7e33e6259b8d8569",
+      "rules": 11045,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/asset-popup-foundation.css",
+      "byteLength": 94617,
+      "sha256": "8b36a62c0af4c493a5bf18e3bfeef0c06f1238d1014ffb1ceb03d801130dcb78",
+      "rules": 387,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/asset-popup-geometry.css",
+      "byteLength": 11849,
+      "sha256": "b40130f1ef7d0a805b13420cd835eac81d858b3cce42c21b5fc3771fd51367c8",
+      "rules": 40,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/asset-popup-ownership.css",
+      "byteLength": 82909,
+      "sha256": "93d13323be5264e504ccd742edf0e1916092cfd3f994767078f294ad41bbc0cb",
+      "rules": 327,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/asset-popup-resize.css",
+      "byteLength": 6642,
+      "sha256": "ecbbdb9315c6080bc248395c727681bdc4d4d1c5efc055e2452cbb8d260a5d69",
+      "rules": 26,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/audit-account-handoff.css",
+      "byteLength": 1634,
+      "sha256": "ecf6c2ffaff1e440385aa53c3a14356bee17976de88a082f9ca63034cdad0bde",
+      "rules": 11,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/audit-one-screen.css",
+      "byteLength": 23340,
+      "sha256": "a0399b77a4258de50462fb781b227fd20877b8c929f921759f5274d87842de9d",
+      "rules": 188,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/final-ui-polish.css",
+      "byteLength": 1322,
+      "sha256": "2cb723af2f83d41e44edd1ee810878200f59786e24a7450a00b117efeff0c2b0",
+      "rules": 5,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/global-header.css",
+      "byteLength": 2836,
+      "sha256": "9c3d1c725d3cf2dc5f5f92e0f15b2fe5db142aa2ff40c5b53219c6a45414bb79",
+      "rules": 25,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/markets-cleanup.css",
+      "byteLength": 1138,
+      "sha256": "b48700ee4c155e19e4f52f612cc2ab2b86d76a30140a669af9196a2107955625",
+      "rules": 6,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/premium-ui.css",
+      "byteLength": 58399,
+      "sha256": "e34608839d1f9a23201b39786cbdd851d4b97a4cd2ba21dfb08a8f38627f88bf",
+      "rules": 355,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/shield-pro-terminal.css",
+      "byteLength": 17833,
+      "sha256": "85809af4d04cb08f095bac421e2bdd38b5b0a2cbb1fe524f045aafa28914bcb3",
+      "rules": 136,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/shield-risk-surface.css",
+      "byteLength": 4192,
+      "sha256": "a6d3e46d095b6e74ca6f1cf6215379cfda21fe81295edd9e83affb91aeeba176",
+      "rules": 31,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "app/styles/vlm-analysis-tab.css",
+      "byteLength": 22750,
+      "sha256": "84308f4f36e5e656d892a01fcf9d1fc7eba663d6f9c2c62d0825f815964c4333",
+      "rules": 170,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/intelligence/AngelEvidenceChapter.module.css",
+      "byteLength": 13442,
+      "sha256": "6f9c8cc92f688b7aff15f0655e6473ab7643b234dcf720ea82e4a49818e93633",
+      "rules": 130,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/intelligence/IntelligenceFlagshipSections.module.css",
+      "byteLength": 49463,
+      "sha256": "5b0ad0f8daad29ab874bf018d892292a26e69f841671ae9c25ccd89b461d3d6f",
+      "rules": 458,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/intelligence/IntelligenceLuxury.module.css",
+      "byteLength": 115356,
+      "sha256": "9e593fee9041afd6a288a9430ed66242b83bdec497f6f0f6b8f9205aab3cc739",
+      "rules": 1042,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/intelligence/IntelligencePage.module.css",
+      "byteLength": 114191,
+      "sha256": "f854fb0211298d07f0c8b1d49b004959f155cb4a7b8555f22284fa08ba5e9bb4",
+      "rules": 1129,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/market-integrity/AssetIntelligenceTabs.module.css",
+      "byteLength": 26882,
+      "sha256": "bde32e54ed1c61e9ad48b07dbb1fddfb12e44ae5029601951c68234573bb9439",
+      "rules": 280,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/market-integrity/ShieldProMonochromeGlobe.module.css",
+      "byteLength": 1448,
+      "sha256": "6c7ad06b8a2bc01ca6791c9a3ddb9300e79e80cfc49e47beda509d2bb7257a2a",
+      "rules": 10,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/motion-atelier/MotionAtelier.module.css",
+      "byteLength": 21645,
+      "sha256": "33ba218ae0ecfde92bf29b84da6fa008df8e8e4d39ebe67c478df468c57ded38",
+      "rules": 210,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/motion/VelmereAnalysisMarks.module.css",
+      "byteLength": 6190,
+      "sha256": "ef592889d88693dd451a9718694ea1f44aa6a2df099ddb244fbc6e5f87e71263",
+      "rules": 42,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/motion/VlmAnimationLab.module.css",
+      "byteLength": 1470,
+      "sha256": "8609b320b5e853463332881b278bc4dc6a17f40486ecc490a899d32520a74468",
+      "rules": 16,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/motion/VlmMotionScene.module.css",
+      "byteLength": 4189,
+      "sha256": "20a39769329f952ea2f980ae22b3615cd0e4b55446740c7b6b2ef11a28641837",
+      "rules": 48,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/research/ResearchLabExperience.module.css",
+      "byteLength": 15023,
+      "sha256": "b62e8f5560eef23dc551ae84f23e83204501be703d6f4dcd7ac8c0e157271d18",
+      "rules": 156,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/security/SecurityTrustPage.module.css",
+      "byteLength": 10432,
+      "sha256": "6fd89244112d6199f9b06174a2fbc1d49ed2c73767ee666a20e1fad454534bc9",
+      "rules": 83,
+      "duplicateGroups": 0,
+      "currentDuplicateExtras": 0,
+      "sampleHeads": []
+    }
+  ],
+  "totals": {
+    "rules": 16356,
+    "duplicateGroups": 0,
+    "currentDuplicateExtras": 0
+  },
+  "historicalA39Removal": {
+    "scope": "HISTORICAL_A39_THREE_FILE_WRITE_MODE_REMOVAL_EVIDENCE_ONLY",
+    "sourcePath": "config/pass36/a59-css-exact-dedup-historical-a39-removal-receipt.json",
+    "receiptSha256": "706a2ac0df3911e4e7527204e79902917c59b7416e0abec1399b90108fb7e2c8",
+    "receipt": {
+      "status": "PASS_A39_CSS_EXACT_DUPLICATES_REMOVED",
+      "writeMode": true,
+      "files": [
+        {
+          "path": "app/globals.css",
+          "beforeBytes": 2211517,
+          "afterBytes": 2211131,
+          "removedBytes": 386,
+          "rules": 11050,
+          "duplicateGroups": 1,
+          "duplicateExtras": 1,
+          "afterExtras": 0,
+          "sampleHeads": [
+            ".vlm-asset-detail-modal[data-vlm-asset-appearance=\"monochrome\"]:is(.vlm-asset-detail-tab[aria-selected=\"true\"],.vlm-analysis-tier-card[data-recommended=\"true\"],.vlm-analysis-progress-fill,.vlm-analysis-signal-tile::before)"
+          ]
+        },
+        {
+          "path": "components/intelligence/IntelligenceLuxury.module.css",
+          "beforeBytes": 115352,
+          "afterBytes": 115352,
+          "removedBytes": 0,
+          "rules": 1042,
+          "duplicateGroups": 0,
+          "duplicateExtras": 0,
+          "afterExtras": 0,
+          "sampleHeads": []
+        },
+        {
+          "path": "components/intelligence/IntelligencePage.module.css",
+          "beforeBytes": 114223,
+          "afterBytes": 114179,
+          "removedBytes": 44,
+          "rules": 1130,
+          "duplicateGroups": 1,
+          "duplicateExtras": 1,
+          "afterExtras": 0,
+          "sampleHeads": [
+            ".brainExperience,.brainMap"
+          ]
+        }
+      ],
+      "totals": {
+        "removedBytes": 430,
+        "duplicateGroups": 2,
+        "duplicateExtras": 2
+      },
+      "visualClaimed": false
+    }
+  },
+  "priorThreeFileReplay": {
+    "scope": "R44P46_THREE_FILE_ZERO_DELTA_REPLAY_EVIDENCE_ONLY",
+    "receiptSha256": "6187075fc15e7674980ce0d5887fbaa7f2cc52dbcb5be92a936a44ebfd6233a3",
+    "receipt": {
+      "status": "PASS_A39_CSS_EXACT_DUPLICATES_REMOVED",
+      "writeMode": true,
+      "files": [
+        {
+          "path": "app/globals.css",
+          "beforeBytes": 2211531,
+          "afterBytes": 2211531,
+          "removedBytes": 0,
+          "rules": 11042,
+          "duplicateGroups": 0,
+          "duplicateExtras": 0,
+          "afterExtras": 0,
+          "sampleHeads": []
+        },
+        {
+          "path": "components/intelligence/IntelligenceLuxury.module.css",
+          "beforeBytes": 115356,
+          "afterBytes": 115356,
+          "removedBytes": 0,
+          "rules": 1042,
+          "duplicateGroups": 0,
+          "duplicateExtras": 0,
+          "afterExtras": 0,
+          "sampleHeads": []
+        },
+        {
+          "path": "components/intelligence/IntelligencePage.module.css",
+          "beforeBytes": 114191,
+          "afterBytes": 114191,
+          "removedBytes": 0,
+          "rules": 1129,
+          "duplicateGroups": 0,
+          "duplicateExtras": 0,
+          "afterExtras": 0,
+          "sampleHeads": []
+        }
+      ],
+      "totals": {
+        "removedBytes": 0,
+        "duplicateGroups": 0,
+        "duplicateExtras": 0
+      },
+      "visualClaimed": false
+    }
+  },
+  "truthBoundary": "This receipt recomputes intra-file exact canonicalized block-rule and at-rule-statement duplicate closure read-only for the exact 26-path canonical CSS profile and binds every current file path, byte length and SHA-256. Historical A39 removal evidence (2 groups, 2 extras, 430 bytes) is kept distinct from the later R44P46 three-file zero-delta replay. No CSS product bytes are changed, and no browser, staging, LIVE, sale, customer, legal or provider-rights credit is claimed."
+}

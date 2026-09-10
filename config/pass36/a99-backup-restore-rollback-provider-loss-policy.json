@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "velmere.pass36.a99.backup-restore-rollback-provider-loss-policy.v1",
+  "revisionId": "VELMERE_PASS36_A99R0_BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_AND_RESTORED_RLS_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A98R0_EMAIL_STORAGE_KMS_ORIGIN_CONTEXT_CLEANUP_AND_DELIVERY_TRUTH_BOUNDARY",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "localPassCredit": false,
+  "requiredA98Decision": "VERIFIED_STAGING_EMAIL_STORAGE_KMS",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_A99_USES_ONLY_DISPOSABLE_STAGING_BACKUP_RESTORE_ROLLBACK_AND_PROVIDER_CHAOS",
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "maximumBackupBytes": 1099511627776,
+    "minimumRestoredRecords": 1,
+    "minimumRestoredObjects": 1,
+    "requiredRlsCases": 19,
+    "requiredOwnerCases": 13,
+    "requiredOperatorCases": 6,
+    "maximumAssertionLifetimeMs": 600000,
+    "maximumRecentAuthAgeMs": 300000,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "environmentSafety": {
+    "projectClass": "disposable_staging",
+    "restoreTargetClass": "disposable_restore",
+    "httpsRequired": true,
+    "sameTrustedOriginRequiredForControlBridges": true,
+    "sourceAndRestoreTargetsMustDiffer": true,
+    "sourceArchiveAndManifestBindingRequired": true,
+    "productionLikeHostsRejected": true
+  },
+  "backupSafety": {
+    "scope": "bounded_application_state",
+    "encryptionRequired": true,
+    "snapshotCutoffBeforeCreationRequired": true,
+    "databaseAndStorageDigestsRequired": true,
+    "providerReceiptDigestRequired": true,
+    "independentVerifyReceiptRequired": true,
+    "backupIdAndManifestExactBindingRequired": true
+  },
+  "restoreSafety": {
+    "exactA96RevisionRequired": true,
+    "casesPrepared": 19,
+    "casesExecuted": 19,
+    "casesPassed": 19,
+    "ownerCasesPassed": 13,
+    "operatorCasesPassed": 6,
+    "crossTenantReadsDeniedRequired": true,
+    "sessionRevocationVerifiedRequired": true,
+    "databaseAndStorageDigestParityRequired": true,
+    "cleanupInFinallyRequired": true
+  },
+  "deploymentSafety": {
+    "dualControlRequired": true,
+    "primaryRole": "operations_owner",
+    "independentRole": "independent_reviewer",
+    "phishingResistantMfaRequired": true,
+    "bodyMethodPathScopeBindingRequired": true,
+    "restoreForwardRequired": true,
+    "healthySmokeRequiredBeforeAndAfter": true
+  },
+  "providerSafety": {
+    "independentDimensions": [
+      "providerId",
+      "vendorFamily",
+      "accountDigest",
+      "failureDomainDigest",
+      "controlPlaneDigest",
+      "credentialDigest"
+    ],
+    "primaryModes": ["primary", "normal"],
+    "failoverModes": ["failover", "degraded_failover"],
+    "recoveredModes": ["primary", "recovered"],
+    "emergencyRestoreInFinallyRequired": true
+  },
+  "localDenominators": {
+    "boundaryAssertions": 78,
+    "fixtureScenarios": 8,
+    "realBackups": 0,
+    "realRestores": 0,
+    "realRestoredRlsCasesPassed": 0,
+    "realDeploymentRollbacks": 0,
+    "realProviderOutages": 0,
+    "realRestoreCleanupConfirmations": 0
+  },
+  "truthBoundary": "A99R0 locally hardens the backup, restore, deployment rollback and provider-loss staging path. It requires exact source/environment binding, encrypted bounded backup receipts, an independently different verify receipt, restore parity for database and storage digests, exact A96 19/19 RLS execution after restore, session revocation and cross-tenant denial, dual-controlled body-bound rollback and chaos operations, failure-domain-independent alternate providers, append-only lifecycle journaling and compensating restore/cleanup in finally. Local fixtures grant no real backup, restore, RLS, rollback, provider failover, production, LIVE, customer or sale credit.",
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false,
+    "stagingCredit": false
+  }
+}

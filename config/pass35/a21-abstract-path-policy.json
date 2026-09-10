@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "velmere.pass35.a21-abstract-path-policy.v1",
+  "passId": "PASS35_A21",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "limits": {
+    "maxBytecodeBytes": 24576,
+    "maxStates": 2048,
+    "maxSteps": 8192,
+    "maxVisitsPerPc": 8,
+    "maxStackDepth": 1024
+  },
+  "supportedConstraintDomain": [
+    "constant folding",
+    "calldata word equality and ranges",
+    "caller equality",
+    "call value equality and ranges",
+    "timestamp and block-number ranges",
+    "constant storage-slot equality and ranges"
+  ],
+  "benchmark": {
+    "families": [
+      "CONSTANT_FALSE_BRANCH_PRUNED",
+      "CONSTANT_TRUE_FALLTHROUGH_PRUNED",
+      "CONTRADICTORY_CALLDATA_BRANCH_PRUNED",
+      "CONTRADICTORY_CALLER_BRANCH_PRUNED",
+      "CONTRADICTORY_CALLVALUE_RANGE_PRUNED",
+      "REACHABLE_SELFDESTRUCT",
+      "REACHABLE_DELEGATECALL",
+      "REACHABLE_CALL",
+      "REACHABLE_SSTORE",
+      "UNREACHABLE_SELFDESTRUCT_SUPPRESSED",
+      "DYNAMIC_JUMP_UNRESOLVED",
+      "VISIT_LIMIT_TRUNCATION"
+    ],
+    "variantsPerClass": 8,
+    "expectedCases": 192,
+    "expectedEnabled": 96,
+    "expectedRemediated": 96,
+    "expectedFrozen": 72,
+    "mutationTypes": [
+      "uppercase_hex",
+      "raw_provider_digest",
+      "case_ref_change",
+      "chain_change",
+      "address_change",
+      "time_change",
+      "limits_expand",
+      "append_unreachable_stop",
+      "append_unreachable_push",
+      "provider_drop",
+      "paired_feature_flip",
+      "invalid_address"
+    ],
+    "expectedMutations": 2304
+  },
+  "thresholds": {
+    "minimumFrozenRecall": 1,
+    "minimumFrozenPrecision": 1,
+    "minimumFrozenSpecificity": 1,
+    "minimumMutationMatchRate": 1
+  },
+  "truthBoundary": "A21 defines a deterministic bounded abstract interpreter for a limited EVM opcode and predicate domain. It can prune constant and simple contradictory branches and attach conditions to reachable risk opcodes. It is not path-complete SMT symbolic execution, exploit proof, inter-contract state analysis, economic replay, official-tool evidence, human review, staging, LIVE or customer-grade paid assurance."
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "velmere.pass35.a55.independent-retest-legal-customer-release-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A55_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A54_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY_ACCEPTANCE",
+  "requiredA54RevisionId": "VELMERE_PASS35_A54_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY_ACCEPTANCE",
+  "requiredA54Decision": "VERIFIED_STAGING_STRICT_SLO_ALERT_ACK_VENDOR_EXIT_RECOVERY",
+  "runtime": { "node": "24.18.0", "npm": "11.16.0" },
+  "confirmationToken": "I_UNDERSTAND_A55_ONLY_ACCEPTS_EXTERNAL_SIGNED_RETEST_AND_DOES_NOT_ENABLE_SALE_OR_LIVE",
+  "requiredEnvironment": [
+    "VELMERE_A55_REVIEW_BUNDLE_ZIP",
+    "VELMERE_A55_TRUST_ROOTS_JSON",
+    "VELMERE_A55_TRUST_ROOTS_SHA256",
+    "VELMERE_A55_A54_EVIDENCE_ZIP",
+    "VELMERE_A55_A54_EVIDENCE_SHA256",
+    "VELMERE_A55_EXPECTED_SOURCE_MANIFEST_SHA256",
+    "VELMERE_A55_SUBJECT_ORGANIZATION_ID_HASH",
+    "VELMERE_A55_CONFIRM"
+  ],
+  "reportTypes": ["SECURITY", "DATA_PROVIDER", "PAYMENTS", "OPERATIONS", "LEGAL_CUSTOMER"],
+  "requiredScopes": {
+    "SECURITY": ["application", "api", "cloud", "tenant-isolation", "secret-rotation"],
+    "DATA_PROVIDER": ["provider-rights", "display-export-pdf-rights", "data-integrity", "provider-exit"],
+    "PAYMENTS": ["test-payment", "refund", "webhook-replay", "entitlement-revocation", "reconciliation"],
+    "OPERATIONS": ["alert-delivery", "oncall-ack", "backup-restore", "rollback", "vendor-exit", "recovery"],
+    "LEGAL_CUSTOMER": ["legal-applicability", "privacy", "consumer-terms", "customer-communication", "false-safety-claims"]
+  },
+  "primaryRoles": {
+    "SECURITY": "SECURITY_REVIEWER",
+    "DATA_PROVIDER": "DATA_RIGHTS_REVIEWER",
+    "PAYMENTS": "PAYMENT_CONTROLS_REVIEWER",
+    "OPERATIONS": "OPERATIONS_REVIEWER",
+    "LEGAL_CUSTOMER": "LEGAL_REVIEWER"
+  },
+  "secondaryRole": "INDEPENDENT_VERIFIER",
+  "releaseRoles": ["ACCOUNTABLE_RELEASE_OWNER", "INDEPENDENT_ASSURANCE_CHAIR"],
+  "allowedAlgorithms": ["ED25519"],
+  "budgets": {
+    "maximumArchiveBytes": 67108864,
+    "maximumEntries": 2000,
+    "maximumSingleFileBytes": 8388608,
+    "maximumTotalUncompressedBytes": 134217728,
+    "maximumJsonBytes": 2097152,
+    "maximumEvidenceAgeSeconds": 2592000,
+    "maximumClockSkewSeconds": 120,
+    "minimumValiditySeconds": 3600,
+    "maximumValiditySeconds": 7776000
+  },
+  "truthBoundary": "A55 validates one externally signed, hash-bound review bundle covering security, data/provider rights, payments, operations and legal/customer communication, plus a dual-control canary-preparation attestation. It verifies cryptographic signatures against an externally anchored trust-root file and enforces reviewer independence and zero open Critical/High findings. It does not prove the competence, honesty or legal authority of a signer beyond the supplied trust roots; it does not execute the retests, enable sale, prove LIVE, approve production or replace legal advice.",
+  "zipBudgets": {
+    "maximumArchiveBytes": 67108864,
+    "maximumEntries": 2000,
+    "maximumSingleFileBytes": 8388608,
+    "maximumTotalUncompressedBytes": 134217728
+  }
+}

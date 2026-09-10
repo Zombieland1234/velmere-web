@@ -1,0 +1,61 @@
+{
+  "creditBoundary": {
+    "customerCredit": false,
+    "exactWindowsCredit": false,
+    "liveCredit": false,
+    "localBrowserCredit": false,
+    "localCompilerAstCredit": true,
+    "localFoundryCredit": true,
+    "realExternalProtocolAccuracyCredit": false,
+    "realProviderCredit": false,
+    "rightsApprovedCredit": false,
+    "saleCredit": false,
+    "stagingCredit": false
+  },
+  "globalTruth": {
+    "decision": "NO_GO",
+    "live": false,
+    "productionApproved": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P10_ACTION_REQUIRED_METAMORPHIC_GENERALIZATION_CUSTOMER_CONFIDENCE_AND_ANALYSIS_QUEUE_TRUTH_CLEAN_SOURCE_CLOSURE_NO_LIVE_CREDIT",
+  "requiredDenominators": {
+    "angelAssertions": 1083,
+    "auditFixtureCases": 50,
+    "compilerAstAssertions": 64,
+    "foundryFuzzCampaigns": 3,
+    "foundryInvariantCampaigns": 4,
+    "foundryTests": 16,
+    "lazyRouteAssertions": 176,
+    "pdfDocuments": 150,
+    "pdfPages": 700,
+    "realMarketsInstruments": 583,
+    "routeDispatchAssertions": 1480,
+    "shieldAssets": 318,
+    "shieldProMapAssets": 318,
+    "visualFreezeAssertions": 20
+  },
+  "requiredLocalGates": [
+    "compiler_ast_policy",
+    "runtime_customer_truth",
+    "route_runtime_rebaseline",
+    "pdf_customer_truth",
+    "r44p10_targeted_truth",
+    "audit_fixture_matrix",
+    "shield_matrix",
+    "shield_pro_map_matrix",
+    "real_markets_matrix",
+    "impact_whale_matrix",
+    "brain_angel_risk_matrix",
+    "route_ast",
+    "route_dispatch",
+    "lazy_routes",
+    "visual_freeze",
+    "full_eslint",
+    "full_typescript",
+    "clean_source_audit"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p11.final-local-closure-policy.v1"
+}

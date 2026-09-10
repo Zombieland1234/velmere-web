@@ -1,0 +1,150 @@
+{
+  "added": [
+    {
+      "byteLength": 1587,
+      "mode": 420,
+      "path": "VELMERE_A102R44P14_PATCH.txt",
+      "sha256": "e3236fc4414e7ba3f394fbedc5c5d858fc72eebbef238fe2a7759bf404232bb1"
+    },
+    {
+      "byteLength": 1224814,
+      "mode": 420,
+      "path": "_velmere/PASS36_A102R44P13_SOURCE_MANIFEST.json",
+      "sha256": "df46bf8d8a2c5ca7b4271dce4cb1b00c7149901fbb870a305b4413e885a3f9d6"
+    },
+    {
+      "byteLength": 7086,
+      "mode": 420,
+      "path": "config/pass36/a102r44p14-action-required-current-state.json",
+      "sha256": "8f081e3ed57c1a24ed59f7c74f16d1d7ca99e9cd26fb54c436c7f19b0ca9e183"
+    },
+    {
+      "byteLength": 1147,
+      "mode": 420,
+      "path": "config/pass36/a102r44p14-analyzer-lint-normalization-migration.json",
+      "sha256": "697af1580ae50e3e56a639a22fed206a14298c9ff5c94f406255bcb39d53fe2a"
+    },
+    {
+      "byteLength": 870,
+      "mode": 420,
+      "path": "config/pass36/a102r44p14-current-release-authority.json",
+      "sha256": "e827f50cdffcd5e8e65883ece3d0ab1850dad5861875e174aca64af0dd13aa3d"
+    },
+    {
+      "byteLength": 4353,
+      "mode": 420,
+      "path": "config/pass36/a102r44p14-external-accuracy-remediation-policy.json",
+      "sha256": "c5d642d68caee2c6ee1a7fa612ef5b16dc325b0c6161b519eb73849672248e39"
+    },
+    {
+      "byteLength": 10530,
+      "mode": 420,
+      "path": "lib/security/solidity-structured-finding-catalog.ts",
+      "sha256": "1631316215d7b89c3644779a63e9d0b3255442753526b49e901ed28bf7b635c6"
+    },
+    {
+      "byteLength": 542,
+      "mode": 420,
+      "path": "lib/security/solidity-structured-signal.d.mts",
+      "sha256": "6eda690f3a0a049bf1f2cfe0dfd9e9dc127525fea749633bfe9fc01db0ef785f"
+    },
+    {
+      "byteLength": 3549,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p14-audit-tier-structured-findings.ts",
+      "sha256": "34efa6d47a5e6b8028e4d48d3dc2a34f5514cddb13e728e4022927cb7050b735"
+    },
+    {
+      "byteLength": 4681,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p14-source-authority.mjs",
+      "sha256": "faff808064767d52d46ccfdc3b019f2c9ae3c27451680068154793d797dfee17"
+    },
+    {
+      "byteLength": 4675,
+      "mode": 493,
+      "path": "scripts/pass36/verify-a102r44p14-static-policy.mjs",
+      "sha256": "f11959b56de56a17cb5e877ef3e1f6483f182ec25583616b137dcdf873c1b898"
+    },
+    {
+      "byteLength": 5134,
+      "mode": 420,
+      "path": "tests/pass36/a102r44p14-weak-category-recall-and-control-suppression.mjs",
+      "sha256": "d728044a228385e2bc3bf62482eb1ad965a79e166737440133b2609d00809bfe"
+    }
+  ],
+  "addedCount": 12,
+  "deleted": [],
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "modified": [
+    {
+      "current": {
+        "byteLength": 714,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "8aab445318942fc564f2f48fabb9b4db1f0377bceda21e9b45a5b79cb0ce6440"
+      },
+      "parent": {
+        "byteLength": 729,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "5e50f76e02dfbbe993dad06079544449ab306ed31b4071e16f12f03f04672cbf"
+      },
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "current": {
+        "byteLength": 1954637,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "83a77dc2c5f292732b64bebecf8e24ac3206b1d76a847f9dd43fbfd765af8fc6"
+      },
+      "parent": {
+        "byteLength": 1951971,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "f4f0a3117d96b0ed51f994c7bf0582e68252d314c3f6ed2cdc80c0865e9eab1b"
+      },
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "current": {
+        "byteLength": 41575,
+        "mode": 420,
+        "path": "lib/security/audit-a01-a05-engine.ts",
+        "sha256": "2f1afb6e4abb11c75105843920b4bb657ae53238439da04cd59f1f7dc48a46b3"
+      },
+      "parent": {
+        "byteLength": 42453,
+        "mode": 420,
+        "path": "lib/security/audit-a01-a05-engine.ts",
+        "sha256": "04bd9046b8415758e10ea7800e941185a9ee14a3e140aa1d80c3c48327944888"
+      },
+      "path": "lib/security/audit-a01-a05-engine.ts"
+    },
+    {
+      "current": {
+        "byteLength": 16451,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-signal.mjs",
+        "sha256": "57edb52e8f07be3360031b0352a16ddf979da346e68be5fb21e900b4bba41d39"
+      },
+      "parent": {
+        "byteLength": 6867,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-signal.mjs",
+        "sha256": "adaa221ff17d4e0a02105e90c0e70fac2c9b0ade7cb5210f0630e1d487ac8420"
+      },
+      "path": "lib/security/solidity-structured-signal.mjs"
+    }
+  ],
+  "modifiedCount": 4,
+  "parentManifestPath": "_velmere/PASS36_A102R44P13_SOURCE_MANIFEST.json",
+  "parentManifestSha256": "df46bf8d8a2c5ca7b4271dce4cb1b00c7149901fbb870a305b4413e885a3f9d6",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P13_ACTION_REQUIRED_EXTERNAL_LABELED_ACCURACY_FINAL_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_NO_LIVE_CREDIT",
+  "reason": "Targeted external-recall remediation, false-alert suppression, active audit-engine integration and checkpoint authority files. No parent file was deleted.",
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P14_ACTION_REQUIRED_WEAK_CATEGORY_RECALL_CONTROL_FALSE_ALERT_SUPPRESSION_AND_PRODUCT_ANALYZER_INTEGRATION_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p14.approved-current-source-changes.v1"
+}

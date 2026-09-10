@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "velmere.pass36.a102r10.approved-external-navigation-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R10_ACTION_REQUIRED_EXTERNAL_NEW_TAB_PRODUCT_IMPORT_SEC_FILING_AND_WALLET_NAVIGATION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T03:20:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 253771,
+      "historicalSha256": "bde8b88b6926661f6173616de00187d28f450dbf6d9d87271073069e1c04c275",
+      "currentByteLength": 254281,
+      "currentSha256": "418aaa9ed69ef25dc56fab464653675b9562c4b693e2d82655c13e925b4de011",
+      "reason": "Validate SEC filing links through one exact HTTPS host/path boundary and apply no-referrer/no-opener new-tab semantics.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/shop/ProductDetailClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 42350,
+      "historicalSha256": "360aaf8f17c8888472137fa46992055c72ce3c54f473185015e62ca5aa0a233f",
+      "currentByteLength": 42640,
+      "currentSha256": "7c72df8c31d61d8b722cb471997d25aa3c693cd16530d220a069a3a5ed51c7ce",
+      "reason": "Render external product CTA only after exact canonical allowlist validation and apply no-referrer/no-opener semantics.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/wallet/WalletConnectDrawer.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 27907,
+      "historicalSha256": "a1150bec78ad5b8e9155a4bfdd8a562b27bedd17a65914fd7e65f94a39dde5c4",
+      "currentByteLength": 27947,
+      "currentSha256": "896839112b21f03263db68a54492199233fd1e72a9ea5376665bfffd0e8ed04e",
+      "reason": "Route wallet-install new-tab navigation through the central exact allowlist opener.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/wallet/WalletConnectOptions.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 24954,
+      "historicalSha256": "1a5a537f1b1306c35251a034b169c491cc34dd28cc8e0e1baeeb45c3f6bdd4a3",
+      "currentByteLength": 25074,
+      "currentSha256": "59461564c181048df1793e178d4758f92763a114317a186bc6207cdd0101ce61",
+      "reason": "Route wallet-install fallback navigation through the central exact allowlist opener.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/importers/common.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 5100,
+      "historicalSha256": "2c34333e55bf70c9b8d46671d911ac0f29a13cf3e2122224773562d9fca39e57",
+      "currentByteLength": 5141,
+      "currentSha256": "afd7cf98c0b71a1abfd6626b4c50ed27f9be819df16c5edae9b487d374312789",
+      "reason": "Separate administrator review source URL from customer-facing external product URL.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/importers/url-importer.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 4884,
+      "historicalSha256": "3fbd60ea342c4ec68879ee1983aecfd36f023904bdbf5ee3039691ade1fc2bed",
+      "currentByteLength": 5246,
+      "currentSha256": "7adaf107614fd017d61504fa95e07c7a2c85126a6dd312f4a926c3b0cf82203e",
+      "reason": "Reject non-HTTPS, credentialed, local, IP, nonallowlisted and sensitive-query URLs before customer-link creation.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/products/local-product-store.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 10153,
+      "historicalSha256": "b340c26e71c702af9ad02b2ef3cf117129fc15e5dc6556b062005b8e7ef2daee",
+      "currentByteLength": 10653,
+      "currentSha256": "42fcb313abf9a1bdc3015c37a0f61f115392cde5400eecdb7a43595d26af3360",
+      "reason": "Drop unsafe external product URLs instead of persisting them as customer fulfilment authority.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/products/publish-decision.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 8087,
+      "historicalSha256": "668ac14e5e3ab70ad2dc6481ca50929a6a85a3777d0e00abb9eb2f3b2249be63",
+      "currentByteLength": 8945,
+      "currentSha256": "5a84447ac0139631b53502d24f78914337d19825e34614a85d9807d4434af00b",
+      "reason": "Block publication when an external-link product is not exact-canonical and allowlisted.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "lib/wallet/useWalletConnect.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 9316,
+      "historicalSha256": "bc9fd3a6cb792e2722cd136001771448ac66627fe04979cb4ce4ca756c393d68",
+      "currentByteLength": 9424,
+      "currentSha256": "824daa6072ce57f85656653be22d6039cd1c3dd9c5ffafeaeb0f11a4b2e62ca3",
+      "reason": "Route Phantom install fallback through the central safe external browser opener.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "scripts/pass36/verify-a74-navigation-redirect-boundary.mjs",
+      "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 9656,
+      "historicalSha256": "54b6896282cdc54b6022ea41e9e0e11212369435851451da102e18d5967df15c",
+      "currentByteLength": 9799,
+      "currentSha256": "61b9a6311f167f2dd91d9cc5506844299de6729b938cd886f67605fe8299b677",
+      "reason": "Preserve frozen A74 controls while resolving the current descendant from current release authority instead of hardcoded A83.",
+      "requiredLocalTest": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "lib/security/browser-external-navigation.ts",
+      "purpose": "One central fail-closed HTTPS new-tab boundary for wallet install, SEC filing and allowlisted external product navigation."
+    },
+    {
+      "path": "scripts/pass36/test-a102r10-external-navigation-boundary.ts",
+      "purpose": "59-assertion runtime and static adversarial proof for imported URL, publication, rendering, wallet and SEC new-tab controls."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "rawExternalWindowOpenSinksOutsideBoundary": 0,
+    "nonHttpsCustomerProductLinksAllowed": false,
+    "nonAllowlistedCustomerProductLinksAllowed": false,
+    "externalProductPublicationRequiresExactCanonicalAllowlist": true,
+    "walletInstallNavigationExactAllowlistRequired": true,
+    "secFilingExactHostPathRequired": true,
+    "noopenerRequired": true,
+    "noreferrerRequired": true,
+    "noReferrerPolicyRequired": true,
+    "realBrowserNewTabRowsExecuted": false,
+    "providerRightsVerified": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger binds exact A102R9-to-A102R10 changes that remove unsafe/nonallowlisted customer external product URLs, centralize new-tab opening, and constrain wallet-install and SEC filing navigation. Local URL parsing and static sink inventory do not prove real browser opener/referrer behavior, provider rights, staging, LIVE or sale readiness."
+}

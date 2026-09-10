@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "velmere.pass36.a102r4.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R3_ACTION_REQUIRED_LOCAL_FULL_REGRESSION_PRODUCT_PDF_AND_RELEASE_INTEGRITY_REBASELINE_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-29T18:54:00.000Z",
+  "phase": "FINAL",
+  "status": "PASS_A102R4_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "summary": {
+    "executedPassRows": 13,
+    "passedRows": 13,
+    "failedRows": 0,
+    "environmentBlockedRows": 3
+  },
+  "results": [
+    {
+      "id": "a102r4_client_auth",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_A102R4_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_FAIL_CLOSED",
+      "observedStatus": "PASS_A102R4_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_FAIL_CLOSED",
+      "passed": true,
+      "stdoutSha256": "2b804d04ef05e5fb5c667755aad08f923fecb8375dc1539dd4530812a7f3c14d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 307,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_cookie",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6488,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_verifier",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "97c7fd174c7a0f3171c078855a0433226186dfba66bf2ca0aecf7d38da8fbe87",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 7679,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a89_red_team",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+      "observedStatus": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "8ffc2295d83e75033c4f2e34421767eb0c2d9b6365d3297ffa5f62caf878e5a7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 41989,
+      "stderrBytes": 0
+    },
+    {
+      "id": "api_body_stream",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 526,
+      "stderrBytes": 0
+    },
+    {
+      "id": "malformed_json",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS",
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 118,
+      "stderrBytes": 0
+    },
+    {
+      "id": "mega4800",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "f38e756be0bbaa1fb707c2270dc92e85f726cd970709a2216d0c07763b098e1c",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1662,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route_dispatch",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "e48a4eae3263d019fe211a59c80ce7e9805d7f88276d1646e6b6d865ef6af29b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 231,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy_routes",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "2024643355adc003124536ca96116548a78c71a6a0de6af4e96f4a1f157ac578",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 233,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a59",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_STATIC_BUDGET_RECOVERY",
+      "observedStatus": "PASS_STATIC_BUDGET_RECOVERY",
+      "passed": true,
+      "stdoutSha256": "15567157040e1b073fd53502c87b3e3723cff225bc6046831674e15b43cd0fce",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 15766,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product_tiers",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_PRODUCT_TIER_CONTENT_CONTRACT",
+      "observedStatus": "PASS_PRODUCT_TIER_CONTENT_CONTRACT",
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero_budget",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": "PASS_ZERO_BUDGET_FUNCTIONAL_ROADMAP",
+      "observedStatus": "PASS_ZERO_BUDGET_FUNCTIONAL_ROADMAP",
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source_audit",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "expectedStatus": null,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "f33a9b9691425e4b4a599c59abb2dcbe1575cf4e9283ed84c62fc066a0d15738",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0,
+      "metrics": {
+        "filesRead": 4865,
+        "bytesRead": 117329656,
+        "codeFiles": 2991,
+        "syntaxErrors": 0,
+        "localImports": 7262,
+        "missingLocalImports": 0,
+        "cssModuleReferences": 758,
+        "missingCssModuleClasses": 0
+      }
+    }
+  ],
+  "environmentBlockers": [
+    {
+      "id": "exact_node_npm_project_dependencies",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Node 24.18.0 / npm 11.16.0 with genuine project node_modules",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "exact_playwright_chromium",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Chromium 148.0.7778.96 revision 1223",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "real_staging_external_inputs",
+      "classification": "BLOCKED_EXTERNAL",
+      "required": "real IdP/WebAuthn, two tenants, providers, rights, legal and observers",
+      "available": false,
+      "credit": false
+    }
+  ],
+  "keyDenominators": {
+    "a102r4AuthChecks": 21,
+    "a73Checks": 57,
+    "a73VerifierChecks": 73,
+    "a89Checks": 54,
+    "a89Cases": 192,
+    "a89MutationsKilled": 768,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "a59Checks": 77,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439
+  },
+  "sourceAudit": {
+    "filesRead": 4865,
+    "codeFiles": 2991,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "realEvidence": {
+    "a102ObservationRuns": 0,
+    "browserRows": 0,
+    "stagingStages": 0,
+    "providerRights": 0,
+    "legalDpo": 0,
+    "customerCohorts": 0,
+    "independentAssurance": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  }
+}

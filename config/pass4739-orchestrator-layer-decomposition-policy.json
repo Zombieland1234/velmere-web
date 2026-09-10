@@ -1,0 +1,490 @@
+{
+  "schemaVersion": "velmere.pass4739.orchestrator-layer-decomposition-policy.v1",
+  "currentPass": 4739,
+  "baselinePass": 4738,
+  "createdAt": "2026-07-13",
+  "uiFrozen": true,
+  "groups": [
+    {
+      "surface": "search",
+      "baselineFile": "lib/search/search-route-orchestrator.ts",
+      "baselineLines": 1205,
+      "modules": [
+        "lib/search/search-route-identity.ts",
+        "lib/search/search-route-market-provider.ts",
+        "lib/search/search-route-crypto-provider.ts",
+        "lib/search/search-route-response-policy.ts",
+        "lib/search/search-route-orchestrator.ts"
+      ],
+      "budgets": {
+        "lib/search/search-route-orchestrator.ts": 170
+      }
+    },
+    {
+      "surface": "real-markets",
+      "baselineFile": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "baselineLines": 1178,
+      "modules": [
+        "lib/market-integrity/real-markets-catalog.ts",
+        "lib/market-integrity/real-markets-provider-transport.ts",
+        "lib/market-integrity/real-markets-quote-hydration.ts",
+        "lib/market-integrity/real-markets-response-policy.ts",
+        "lib/market-integrity/real-markets-route-orchestrator.ts"
+      ],
+      "budgets": {
+        "lib/market-integrity/real-markets-route-orchestrator.ts": 450
+      }
+    },
+    {
+      "surface": "audit-watch",
+      "baselineFile": "lib/security/audit-watch-route-orchestrator.ts",
+      "baselineLines": 735,
+      "modules": [
+        "lib/security/audit-watch-access-policy.ts",
+        "lib/security/audit-watch-get-handler.ts",
+        "lib/security/audit-watch-post-handler.ts"
+      ],
+      "budgets": {
+        "lib/security/audit-watch-route-orchestrator.ts": 5,
+        "lib/security/audit-watch-post-handler.ts": 700
+      }
+    }
+  ],
+  "statementCount": 60,
+  "statementHashes": {
+    "lib/search/search-route-identity.ts#allowedModes": {
+      "sha256": "ded8e8b528f761d8c18e5283429dda8f717221c2e83c7d6646192f5fb2c96115",
+      "bytes": 123,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-identity.ts#LensLocale": {
+      "sha256": "39db91077f9f8273cb1434bd1a28dbb19685a6da2ace5a4ae57de300219a0efa",
+      "bytes": 37,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-identity.ts#pass2482ExactRealMarketAliases": {
+      "sha256": "21e9fc27615fcf420db469c77e9f8a1555e6ba5d9257653aa8112c4ffcc49f28",
+      "bytes": 483,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-identity.ts#resolvePass2482ExactRealMarketSymbol": {
+      "sha256": "dae80cc202ad594bf10396f63e2748af3ecbac40ba9ed44678e6ee5ada6bca4b",
+      "bytes": 177,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-identity.ts#resolveLensLocale": {
+      "sha256": "034d75b2d585c1fbd98db72fe88509b7a99aa83492761ff4e33ff49dea9873c9",
+      "bytes": 122,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-identity.ts#SearchIntent": {
+      "sha256": "1059d36050c5e88e84742e4e4ffea8ef5bd227afa7fdb9bb059b3fc0efe95ebb",
+      "bytes": 41,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-identity.ts#resolveSearchIntent": {
+      "sha256": "680b70fe4e09335d2b0ab453b18faeb18d8fbead7b29ad0cb5c084291933fbd6",
+      "bytes": 120,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#compactMarketValue": {
+      "sha256": "49175c7e19062030518f8040f76db12d7e1f9d69283ca367b2a7511fde798855",
+      "bytes": 612,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#marketClassLabel": {
+      "sha256": "14656a5852d24853bfe21a97361d1a37c4e89c23fda346a30d3c26fa9a8ea5ce",
+      "bytes": 377,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#providerClass": {
+      "sha256": "867dc196be739a2dff77ca32b1adc46ba7454d86f5a42b71b341d12bb0c71419",
+      "bytes": 105,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#marketTone": {
+      "sha256": "28fe24d72ef299d9fe13dbebec8fa9d37d220897aef7ff5faba11dcc6179397d",
+      "bytes": 190,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#marketResultCopy": {
+      "sha256": "5e10ba632ccab538aec3159ccbfdb3e6b6425e938c5987b3b066d86cd45bb88c",
+      "bytes": 3609,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#marketRowToLensResult": {
+      "sha256": "4d4fca3dcc6e8bd36bc603b3d9bf4a2b07af5553ade7e7d360d893563d81531a",
+      "bytes": 6711,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-market-provider.ts#loadPass466MarketMatches": {
+      "sha256": "6c78818af8f4f71bfe24bfdd2d93eb14a037e15b77d6d42f4153d29adc0b6984",
+      "bytes": 584,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#CoinGeckoMarket": {
+      "sha256": "2a806dcb599148a3d540e6390bd55185a615ba90dfe56351bf214f7eb63332fb",
+      "bytes": 542,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#resolveCoinGeckoConfidence": {
+      "sha256": "c2e663b0cc5bdfbd7bd08fa2350e7dda045326f92767aefaa01fb41a92f913bc",
+      "bytes": 820,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#defiLlamaConfidence": {
+      "sha256": "710f4a3ff1d03f5ed2503a37977c35f0f7f61cc8d7493781266260593cd8356b",
+      "bytes": 334,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#defiLlamaToLensResult": {
+      "sha256": "af18d70195e61d07ed2bf667dd3a688fe1186514aa689eb6091f7000ca6f9cf1",
+      "bytes": 3877,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#loadDefiLlamaMatches": {
+      "sha256": "e2737184878ac32fc871d03b635f67c63da9c3a42a91836723f0c4b5322ed0a8",
+      "bytes": 324,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#coinToLensResult": {
+      "sha256": "2c658e22916a2648a26703e9685bec61e497babdaf174330515c4edbcef8222e",
+      "bytes": 7280,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#attachPass463VenueEvidence": {
+      "sha256": "e26c8e873f0739a7d747d1cb6027f330d1dd2b102996df71dc81633d23573e74",
+      "bytes": 7215,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#scoreCoinGeckoMatch": {
+      "sha256": "6071dfc5ea7383cacfea3a624602aac795366ab2608c8d9815aa6614b8cb61bb",
+      "bytes": 633,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-crypto-provider.ts#loadCoinGeckoMatches": {
+      "sha256": "2d99065a15a01b1fc27e507aeddc8895d536e76bd685c4099acb4b7627fc05a0",
+      "bytes": 1518,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-response-policy.ts#mergeResults": {
+      "sha256": "a651b8cb77eb3795cba73473786cc952be40d00d40fd2ec4a7785c7c366cbe86",
+      "bytes": 384,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-response-policy.ts#localizeMissingData": {
+      "sha256": "0ef96001efc70ae1606edbde83be7a8dc9240dab1ecb41b48568de0aeba47bdb",
+      "bytes": 2133,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-response-policy.ts#localizeResult": {
+      "sha256": "60bc60a87e343ad7eba8b090b930554e9052352123b6a0b33ef4421c2579c521",
+      "bytes": 3471,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-response-policy.ts#localizeSourceNote": {
+      "sha256": "1b4b04a2cd562473aa6ebec9e3bee5bc40036105052f84e9f8bb6bce7ad29437",
+      "bytes": 2320,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-response-policy.ts#jsonResponse": {
+      "sha256": "c084723be3bc6bd5393093dc34ff2552f3b4b3f79da936c9602b8f9ab7ff78b5",
+      "bytes": 241,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/search/search-route-orchestrator.ts#handleSearchGet": {
+      "sha256": "22be98b61867f115dee0dce7bc5ac7ba407a3ea9f4eb711c71a863cb5dd87846",
+      "bytes": 5849,
+      "baselineSource": "lib/search/search-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-catalog.ts#PASS2809_REAL_MARKETS_SERVER_SYMBOL_BUDGET": {
+      "sha256": "b2e0b86e79e2fe40b67a8d9f3498e656ffdcd9b15e3a4331d304c48e4918e893",
+      "bytes": 54,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-catalog.ts#instruments": {
+      "sha256": "2abbc1c62d43faeeb69cf6469123be03d1cfcbf68e7040c509b7c5c6aefd567e",
+      "bytes": 1722,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-catalog.ts#InstrumentId": {
+      "sha256": "576b9f94f375b9b5663351f900c30be02794982838a388577822f3f1cac7cec5",
+      "bytes": 45,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-catalog.ts#rangeConfig": {
+      "sha256": "3e764a39cd8cc8211a37639f4ebf27b66d55fb098ea06f2419d460184a57840f",
+      "bytes": 389,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-catalog.ts#rangeMeta": {
+      "sha256": "4a3973f8a2e3e73c474ce3e34e7d010851fe14eb66e2d3befb780b178673adba",
+      "bytes": 1085,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-catalog.ts#safeSymbol": {
+      "sha256": "1a5f8a2ad17f4b9203c0e17341599a8773f498a3b6bada811b1d512290e46e7f",
+      "bytes": 46,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#YahooChart": {
+      "sha256": "dc8a3c4d02700e8882e9092c01f61732179be7e6f2f8d3b589b371541298c0c0",
+      "bytes": 551,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#YahooQuoteSummary": {
+      "sha256": "0fe37bedfe780c6c6311616d8551501ffd6d46568df9bb3933fc4731c842548b",
+      "bytes": 436,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#YahooQuoteSummaryModules": {
+      "sha256": "0121dd634fe0d1e38f749f7a6a87b196d9606ba323967a5b6ba8a1b131b2bc19",
+      "bytes": 493,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#finite": {
+      "sha256": "fd40ba2a632160a1b89a28e13b274b51506c0c4efe5a05dd0e1b6011a44ca186",
+      "bytes": 112,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#StooqDailyRow": {
+      "sha256": "116adfc779125dd02979e7d0961293f31d321305f90655ccf43b0796118b469b",
+      "bytes": 130,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#STOOQ_SYMBOL_OVERRIDES": {
+      "sha256": "851999ca0f34dbc4036317036b8ea80865f3d09c2cc059dc8674a004de1ef941",
+      "bytes": 569,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#stooqSymbolFromYahoo": {
+      "sha256": "073e3c03624755ccbe372a5e42e63ff8a23367d8b14cf253d4e0e14a0a149153",
+      "bytes": 523,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#parseStooqCsv": {
+      "sha256": "f771c6873bcba9e189e117dfb49ba55ee26c59b7705cb4b4bea6deaaccd1052d",
+      "bytes": 740,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#fetchQuiet": {
+      "sha256": "2b8376d69e5b62770cf460c4e43ac9862a65a09a9c1adbd0b5b93b45bba6b543",
+      "bytes": 687,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#stooqTimestamp": {
+      "sha256": "631a6480e11a794d6a86ad81c6fff3b9c92129500fdeaa2b10aa0c2e73a0b38a",
+      "bytes": 160,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#loadStooqDailyFallback": {
+      "sha256": "f236c3d0841c554ae89dee1f3433ec4520f3624e6b25cfa64cb130924efcf474",
+      "bytes": 2071,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#loadQuoteMetadataFallback": {
+      "sha256": "a0bc22a4b40643360c1bd547b4a1ced52fdfd70e06cda837588bf5d0a62f7d98",
+      "bytes": 1248,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-provider-transport.ts#loadIntradayChangeFallback": {
+      "sha256": "bd351399c24501af9e09fc4023cd5e57b90796f667d4d58ed3f8899769134d52",
+      "bytes": 1896,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-quote-hydration.ts#loadQuoteMetadata": {
+      "sha256": "5fa80e739fac6b3d91fe4aabd77425afd99a3425f5fe03f62b50a7706ddaacb7",
+      "bytes": 4655,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-quote-hydration.ts#loadQuote": {
+      "sha256": "63dcf585f3b42fdadff55c9458857a7252534f2b552d3a174f1ce006566257e8",
+      "bytes": 3266,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-quote-hydration.ts#localUnavailableQuote": {
+      "sha256": "216a200dbf312389e912254f5ddc1b401d2cb42dd821fc210646c1c933298835",
+      "bytes": 2431,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-quote-hydration.ts#resolveRealMarketQuoteSafely": {
+      "sha256": "f0957677401dbca7b134e8b6098b3f6761914ec8106576ba3d2a7738ad05ef05",
+      "bytes": 1219,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-response-policy.ts#tierFromRealMarketsRequest": {
+      "sha256": "686b82159f1a95972e5ac4ab4bec68c2a68e50b3fa4c6ac186b1b677930dcf2b",
+      "bytes": 241,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-response-policy.ts#pass2813RealMarketFamilyForSymbol": {
+      "sha256": "78fdf0d086105ab54f83a6013427e99e300d2e0ce784f8b8e79ce0668c7d41f2",
+      "bytes": 742,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-response-policy.ts#buildPass2808ChartReceipt": {
+      "sha256": "a166370e7246e38c927d8fc2a4ead1155296572918f80a9da6f0f89a2f9b3407",
+      "bytes": 941,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/market-integrity/real-markets-route-orchestrator.ts#handleRealMarketsGet": {
+      "sha256": "50f82bcd4c7711cda863c670640cca0dea2c519ae35a7669003035077d83b75a",
+      "bytes": 20650,
+      "baselineSource": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/security/audit-watch-access-policy.ts#wantsFullAuditProof": {
+      "sha256": "882cd481e2b444bef322ce4d4d21bf1264b8bac74efae13b2d6dc1857d7301b2",
+      "bytes": 195,
+      "baselineSource": "lib/security/audit-watch-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/security/audit-watch-access-policy.ts#Pass4640AuditWatchPayload": {
+      "sha256": "e07cfe7ed3c8c9a9d3be33736b6a14143eb7b1b4d3710a1086c2db6dc6776226",
+      "bytes": 145,
+      "baselineSource": "lib/security/audit-watch-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/security/audit-watch-get-handler.ts#handleAuditWatchGet": {
+      "sha256": "324f099fa2a195c6cc37eaa602e26bf10dfbf8c41860a92d61eb812a2a4a9425",
+      "bytes": 2386,
+      "baselineSource": "lib/security/audit-watch-route-orchestrator.ts",
+      "transformation": "exact top-level extraction"
+    },
+    "lib/security/audit-watch-post-handler.ts#handleAuditWatchPost": {
+      "sha256": "df1a789a18e1453303c597c9e5aac57f922b17dc1e4a34f5dbcbf8ae85ff07e5",
+      "bytes": 29293,
+      "baselineSource": "lib/security/audit-watch-route-orchestrator.ts",
+      "transformation": "extract plus pure tier-policy delegation"
+    }
+  },
+  "currentFiles": [
+    {
+      "file": "lib/search/search-route-identity.ts",
+      "lines": 53,
+      "bytes": 1346
+    },
+    {
+      "file": "lib/search/search-route-market-provider.ts",
+      "lines": 286,
+      "bytes": 12760
+    },
+    {
+      "file": "lib/search/search-route-crypto-provider.ts",
+      "lines": 536,
+      "bytes": 23517
+    },
+    {
+      "file": "lib/search/search-route-response-policy.ts",
+      "lines": 194,
+      "bytes": 8750
+    },
+    {
+      "file": "lib/search/search-route-orchestrator.ts",
+      "lines": 145,
+      "bytes": 6997
+    },
+    {
+      "file": "lib/market-integrity/real-markets-catalog.ts",
+      "lines": 123,
+      "bytes": 3396
+    },
+    {
+      "file": "lib/market-integrity/real-markets-provider-transport.ts",
+      "lines": 304,
+      "bytes": 10022
+    },
+    {
+      "file": "lib/market-integrity/real-markets-quote-hydration.ts",
+      "lines": 326,
+      "bytes": 12218
+    },
+    {
+      "file": "lib/market-integrity/real-markets-response-policy.ts",
+      "lines": 35,
+      "bytes": 2198
+    },
+    {
+      "file": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "lines": 412,
+      "bytes": 23963
+    },
+    {
+      "file": "lib/security/audit-watch-access-policy.ts",
+      "lines": 22,
+      "bytes": 1001
+    },
+    {
+      "file": "lib/security/audit-watch-get-handler.ts",
+      "lines": 66,
+      "bytes": 3703
+    },
+    {
+      "file": "lib/security/audit-watch-post-handler.ts",
+      "lines": 662,
+      "bytes": 35638
+    },
+    {
+      "file": "lib/security/audit-watch-route-orchestrator.ts",
+      "lines": 2,
+      "bytes": 158
+    }
+  ],
+  "fixtureMatrixPath": "artifacts/pass4739/fixture-matrix.json",
+  "rule": "All moved declarations preserve normalized top-level source hashes from PASS4738. Audit POST permits only two explicit pure tier-policy delegations. UI/CSS/layout remain frozen."
+}

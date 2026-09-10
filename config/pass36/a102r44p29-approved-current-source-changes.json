@@ -1,0 +1,393 @@
+{
+  "addedCount": 20,
+  "changes": [
+    {
+      "after": {
+        "byteLength": 621,
+        "mode": 420,
+        "path": "VELMERE_A102R44P29_PATCH.txt",
+        "sha256": "c5336e303635fd7d6ca10eedbf5e0f88fbf32c0c790ce020d828516fad918b5a"
+      },
+      "change": "ADDED",
+      "path": "VELMERE_A102R44P29_PATCH.txt"
+    },
+    {
+      "after": {
+        "byteLength": 160,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "0d53c116358a294d72945e297e9a992348df41b2883a2dd5e1ba34c380539568"
+      },
+      "before": {
+        "byteLength": 136,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "39438c370ac27a63f65c2b0c50196f732f6919955f29bb8101caefa3c1e27c3c"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "after": {
+        "byteLength": 2019845,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "121b584ea64ce3868b073b24909cf76f93bfffcd39a7c810ad4b01bd3c4b7be8"
+      },
+      "before": {
+        "byteLength": 2017760,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "272383cd0aecff8bc747d8e7d0b4b67618d5c6e0f1895c5972000203d2e6518f"
+      },
+      "change": "MODIFIED",
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "after": {
+        "byteLength": 1280228,
+        "mode": 420,
+        "path": "_velmere/PASS36_A102R44P28_SOURCE_ONLY_MANIFEST.json",
+        "sha256": "4a57ea62ebbdc5422fe47cfe5a2f8b6b247442efa4b083f043e7872ca13f7cd1"
+      },
+      "change": "ADDED",
+      "path": "_velmere/PASS36_A102R44P28_SOURCE_ONLY_MANIFEST.json"
+    },
+    {
+      "after": {
+        "byteLength": 7833,
+        "mode": 420,
+        "path": "components/launch/AdminAuditWriteApiPanel.tsx",
+        "sha256": "0583c1995901f313eb3b463aba28ac579fdfc92d8b42d502b32ca2af20ae9d6b"
+      },
+      "before": {
+        "byteLength": 7830,
+        "mode": 420,
+        "path": "components/launch/AdminAuditWriteApiPanel.tsx",
+        "sha256": "5209398a323a0cb8e0500160bbecee5047ebe9b6b1e0d5f2105cad7e06cad131"
+      },
+      "change": "MODIFIED",
+      "path": "components/launch/AdminAuditWriteApiPanel.tsx"
+    },
+    {
+      "after": {
+        "byteLength": 7980,
+        "mode": 420,
+        "path": "components/launch/AdminMutationAuditPanel.tsx",
+        "sha256": "b5e45c2c1a6cbb561b31bdda81b59a6372c1cabbc3b448c7e9ca08319c1bc25a"
+      },
+      "before": {
+        "byteLength": 7977,
+        "mode": 420,
+        "path": "components/launch/AdminMutationAuditPanel.tsx",
+        "sha256": "cafaab0414d8b12b0e75e55590407797878a0ca1fba1699802d72d2ce815731c"
+      },
+      "change": "MODIFIED",
+      "path": "components/launch/AdminMutationAuditPanel.tsx"
+    },
+    {
+      "after": {
+        "byteLength": 29133,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "1a7dec591677b98f18cad355db7dff513290f9a91668bbe6ad23f882de720510"
+      },
+      "before": {
+        "byteLength": 28833,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "8074a1e255e5ae9fc70c7ad4d1a2bb3f41f05c3ff82f650420c12dbc9db57a2c"
+      },
+      "change": "MODIFIED",
+      "path": "config/current-release.json"
+    },
+    {
+      "after": {
+        "byteLength": 31905,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "a02c9b3f8bd09b8512afe64d59ea3e0d8d5cd113c0c1b12761a8b4f5aebd8b40"
+      },
+      "before": {
+        "byteLength": 31605,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "0db4a5b250b5df63e525a61db862bd56c607128e5a77c2dedd384896a77d6b1b"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass35/current-revision.json"
+    },
+    {
+      "after": {
+        "byteLength": 1076,
+        "mode": 420,
+        "path": "config/pass36/a102r44p29-72h-watchdog-policy.json",
+        "sha256": "c1fe608a89b750bd97603a0392801c195adcd93cf5071f9cdb5172875dc205f2"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p29-72h-watchdog-policy.json"
+    },
+    {
+      "after": {
+        "byteLength": 2862,
+        "mode": 420,
+        "path": "config/pass36/a102r44p29-action-required-current-state.json",
+        "sha256": "f4761d0cb56ea5d379f6d33aa7617571d78d818618b225d2d450ab4a59b80ca3"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p29-action-required-current-state.json"
+    },
+    {
+      "after": {
+        "byteLength": 1286,
+        "mode": 420,
+        "path": "config/pass36/a102r44p29-evidence-quarantine-policy.json",
+        "sha256": "dc44da2eea89c53988e66f99255d6da7c5d4bb8214f73bf816699290b1edba8d"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p29-evidence-quarantine-policy.json"
+    },
+    {
+      "after": {
+        "byteLength": 6734,
+        "mode": 420,
+        "path": "config/pass36/a102r44p29-r44p27-fork-reconciliation.json",
+        "sha256": "431f83a1bc79e154796b34551dede512dbf9571ac59ef1168903aae6448867c6"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p29-r44p27-fork-reconciliation.json"
+    },
+    {
+      "after": {
+        "byteLength": 1206,
+        "mode": 420,
+        "path": "config/pass36/a102r44p29-trust-anchor-policy.json",
+        "sha256": "3c2582c5f4a8ff0ef3dd1ac15a80f2280c9699d5e1d362230317d78ed34015ec"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p29-trust-anchor-policy.json"
+    },
+    {
+      "after": {
+        "byteLength": 1171,
+        "mode": 420,
+        "path": "config/pass36/a102r44p29-world-class-completion-program.json",
+        "sha256": "811af9b62a55d291723e209df2ebb7bc18a552cd1842aaf5473c80fb15938372"
+      },
+      "change": "ADDED",
+      "path": "config/pass36/a102r44p29-world-class-completion-program.json"
+    },
+    {
+      "after": {
+        "byteLength": 74603,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "6626bcaabd6ecbd383da530654e3daa5da1b06284b062b6ddf25856cf76ef740"
+      },
+      "before": {
+        "byteLength": 74176,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "17c5acea11a053e08f7ecc44b71958d0d0428fffb5f7220c690fe179fe20eca1"
+      },
+      "change": "MODIFIED",
+      "path": "config/pass36/current-release-authority.json"
+    },
+    {
+      "after": {
+        "byteLength": 16671,
+        "mode": 420,
+        "path": "lib/security/market-integrity-cron-auth.ts",
+        "sha256": "ae840b9ab577465293771e602766a5af31e4ec3405447833f4a17b448bb5c693"
+      },
+      "before": {
+        "byteLength": 16657,
+        "mode": 420,
+        "path": "lib/security/market-integrity-cron-auth.ts",
+        "sha256": "e8cffca9b93495906dd5618bdf6eeb9dc5e153e6d79932bbedf465a44435fde6"
+      },
+      "change": "MODIFIED",
+      "path": "lib/security/market-integrity-cron-auth.ts"
+    },
+    {
+      "after": {
+        "byteLength": 125854,
+        "mode": 420,
+        "path": "package.json",
+        "sha256": "7797fcccd5d21ae533c2e8b4b1a221b525c1ad0c7710886d1bacfdab14af7955"
+      },
+      "before": {
+        "byteLength": 124958,
+        "mode": 420,
+        "path": "package.json",
+        "sha256": "d7a9272c154753ade36282215cec9c99a700056ef4f2aca712f4ff0c861d913d"
+      },
+      "change": "MODIFIED",
+      "path": "package.json"
+    },
+    {
+      "after": {
+        "byteLength": 4589,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-72h-watchdog-lib.mjs",
+        "sha256": "fe847db3fc7636b22f42648c0bee991e29e471c10f9953fd53720b3cc78c0d93"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/a102r44p29-72h-watchdog-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5561,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+        "sha256": "2a25173ee3cf6fe62271ee439a5c897fc0784b9835b0f9fd3df54de4251c0902"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 6313,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-trust-anchor-lib.mjs",
+        "sha256": "da982aa9ce84805238fe2a7d73e4eb18fa53ce40db321d67fab65a1164a29414"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/a102r44p29-trust-anchor-lib.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 3442,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+        "sha256": "b3cad05d90772a1475b6969d553ac766c4a0084ac750e7e7ba2983724ef5b0b2"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 1619,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-active-credential-literal-hygiene.mjs",
+        "sha256": "6fd19b70a0db041514dfe918ebeaccfaba313e2b79dfc13d1565a5c67e1cd1dd"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p29-active-credential-literal-hygiene.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 5626,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-dual-control-trust-anchor.mjs",
+        "sha256": "71e2451f1177ca1a146d59c97457b458df1449a15d4e86cb49ad7b527bbcae74"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p29-dual-control-trust-anchor.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 6751,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-evidence-quarantine.mjs",
+        "sha256": "e7811abdb5045ca4119f3021ac17ab27c37b5cf2ebde422a7950f3b41558c067"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p29-evidence-quarantine.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 2559,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-fork-reconciliation.mjs",
+        "sha256": "88a32fc1d9a5a75081253987b3aeda3c6b77a6603760426124c78232a5da23eb"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/test-a102r44p29-fork-reconciliation.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4706,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p29-approved-current-source-changes.mjs",
+        "sha256": "5b44b992ed22020df72dbf483d219f14810654e43aebc4417d2e6c7256e0e464"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p29-approved-current-source-changes.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 2470,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p29-current-release-pointers.mjs",
+        "sha256": "c8ec7153057c00bd8d381d4f74669977b9fe542b8323265882bbe8b33a3a4d13"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p29-current-release-pointers.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 7356,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p29-source-authority.mjs",
+        "sha256": "75c930fb6abeb86f91d2a0f449f1266bca57ab000664a9cb3698bb7b6c55c5df"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p29-source-authority.mjs"
+    },
+    {
+      "after": {
+        "byteLength": 4348,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p29-static-policy.mjs",
+        "sha256": "c03cdedaa0001a3dd7c96046d9bb3e444d0dd17964bbaf0d9cc6f211933d8ae5"
+      },
+      "change": "ADDED",
+      "path": "scripts/pass36/verify-a102r44p29-static-policy.mjs"
+    }
+  ],
+  "decision": "APPROVED_ACTION_REQUIRED_NO_PROMOTION",
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "historyMutations": 0,
+  "modifiedCount": 9,
+  "parentManifestSha256": "4a57ea62ebbdc5422fe47cfe5a2f8b6b247442efa4b083f043e7872ca13f7cd1",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "removedTests": 0,
+  "requiredAddedFiles": [
+    "VELMERE_A102R44P29_PATCH.txt",
+    "config/pass36/a102r44p29-action-required-current-state.json",
+    "config/pass36/a102r44p29-world-class-completion-program.json",
+    "config/pass36/a102r44p29-r44p27-fork-reconciliation.json",
+    "config/pass36/a102r44p29-trust-anchor-policy.json",
+    "config/pass36/a102r44p29-evidence-quarantine-policy.json",
+    "config/pass36/a102r44p29-72h-watchdog-policy.json",
+    "scripts/pass36/a102r44p29-trust-anchor-lib.mjs",
+    "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+    "scripts/pass36/a102r44p29-72h-watchdog-lib.mjs",
+    "scripts/pass36/test-a102r44p29-fork-reconciliation.mjs",
+    "scripts/pass36/test-a102r44p29-dual-control-trust-anchor.mjs",
+    "scripts/pass36/test-a102r44p29-evidence-quarantine.mjs",
+    "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+    "scripts/pass36/test-a102r44p29-active-credential-literal-hygiene.mjs",
+    "scripts/pass36/verify-a102r44p29-source-authority.mjs",
+    "scripts/pass36/verify-a102r44p29-approved-current-source-changes.mjs",
+    "scripts/pass36/verify-a102r44p29-static-policy.mjs",
+    "scripts/pass36/verify-a102r44p29-current-release-pointers.mjs"
+  ],
+  "requiredModifiedFiles": [
+    "VELMERE_ACTIVE_PASS.txt",
+    "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+    "package.json",
+    "components/launch/AdminAuditWriteApiPanel.tsx",
+    "components/launch/AdminMutationAuditPanel.tsx",
+    "lib/security/market-integrity-cron-auth.ts",
+    "config/pass36/current-release-authority.json",
+    "config/current-release.json",
+    "config/pass35/current-revision.json"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p29.approved-source-changes.v1",
+  "siblingRevisionId": "VELMERE_PASS36_A102R44P27_ACTION_REQUIRED_DUAL_CONTROL_TRUST_ANCHOR_EVIDENCE_QUARANTINE_AND_REAL_TIME_72H_WATCHDOG_NO_LIVE_CREDIT",
+  "siblingSourceZipSha256": "383816e58a15a1508567941de550c5c058f9537ad2258651c05c6bc4b127977a"
+}

@@ -1,0 +1,177 @@
+{
+  "capturedAt": "2026-08-05T00:00:00.000Z",
+  "globalTruthBoundary": {
+    "LIVE": false,
+    "aiRagAllowedProviders": 0,
+    "commercialUseAllowedProviders": 0,
+    "customerDisplayAllowedProviders": 0,
+    "diagnosticOnly": true,
+    "paidTierAllowedProviders": 0,
+    "pdfExportAllowedProviders": 0,
+    "productionApproved": false,
+    "rightsApprovedProviders": 0,
+    "saleEnabled": false
+  },
+  "matrixSha256": "91b94c88032d1e33dc7823072019fbecae487fcd12d69b2065952004bf108696",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "providers": [
+    {
+      "attributionRequired": true,
+      "blockers": [
+        "free_plan_personal_only",
+        "commercial_plan_not_proven",
+        "redistribution_requires_enterprise",
+        "legal_review_not_completed",
+        "raw_terms_snapshot_hash_unavailable"
+      ],
+      "currentPlanEvidence": "FREE_PUBLIC_ENDPOINT_OBSERVED",
+      "decisionSha256": "9a5f360e969c605e7e899982e64c4ac19f2d74518ca3c1ef42f1ed0b43ced07f",
+      "engineeringClassification": "FREE_PLAN_PERSONAL_ONLY_COMMERCIAL_BLOCKED",
+      "internalDiagnosticAllowed": true,
+      "legalApprovalStatus": "NOT_APPROVED",
+      "providerId": "coinpaprika",
+      "requiredPlanOrConsent": "NON_FREE_COMMERCIAL_PLAN_PLUS_REVIEW; ENTERPRISE_FOR_REDISTRIBUTION",
+      "rights": {
+        "aiRagAllowed": false,
+        "cachingAllowed": false,
+        "commercialUseAllowed": false,
+        "customerDeliveryAllowed": false,
+        "derivedAnalyticsExternalAllowed": false,
+        "paidTierAllowed": false,
+        "pdfExportAllowed": false,
+        "publicDisplayAllowed": false,
+        "redistributionAllowed": false,
+        "retentionAllowed": false
+      },
+      "sourceIds": [
+        "coinpaprika_terms",
+        "coinpaprika_plans"
+      ],
+      "technicalState": "DIAGNOSTIC_CODE_EXTERNAL_WORKFLOW"
+    },
+    {
+      "attributionRequired": null,
+      "blockers": [
+        "external_display_prohibited_without_written_consent",
+        "redistribution_prohibited_without_written_consent",
+        "derived_works_external_dissemination_restricted",
+        "authorized_redistribution_agreement_missing",
+        "legal_review_not_completed",
+        "raw_terms_snapshot_hash_unavailable"
+      ],
+      "currentPlanEvidence": "PUBLIC_MARKET_DATA_ENDPOINT_OBSERVED",
+      "decisionSha256": "ccfafed2800ea5552433ae96d35ae235ccdbe5e17a7692241ecad61ceda208a5",
+      "engineeringClassification": "INTERNAL_RESEARCH_ONLY_EXTERNAL_CUSTOMER_DISPLAY_BLOCKED",
+      "internalDiagnosticAllowed": true,
+      "legalApprovalStatus": "NOT_APPROVED",
+      "providerId": "coinbase",
+      "requiredPlanOrConsent": "PRIOR_EXPRESS_WRITTEN_CONSENT_OR_AUTHORIZED_REDISTRIBUTION_AGREEMENT",
+      "rights": {
+        "aiRagAllowed": false,
+        "cachingAllowed": false,
+        "commercialUseAllowed": false,
+        "customerDeliveryAllowed": false,
+        "derivedAnalyticsExternalAllowed": false,
+        "paidTierAllowed": false,
+        "pdfExportAllowed": false,
+        "publicDisplayAllowed": false,
+        "redistributionAllowed": false,
+        "retentionAllowed": false
+      },
+      "sourceIds": [
+        "coinbase_terms",
+        "coinbase_docs",
+        "coinbase_redistribution"
+      ],
+      "technicalState": "CODE_PRESENT_AND_PUBLIC_DIAGNOSTIC"
+    }
+  ],
+  "rawTermsStoredInSource": false,
+  "reviewClass": "ENGINEERING_PRIMARY_SOURCE_REVIEW_NOT_LEGAL_ADVICE_NOT_PROVIDER_APPROVAL",
+  "revisionId": "VELMERE_PASS36_A102R44P18_ACTION_REQUIRED_OFFICIAL_PROVIDER_RIGHTS_FAIL_CLOSED_CUSTOMER_DELIVERY_COINPAPRIKA_COINBASE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p18.official-provider-rights-decision-matrix.v1",
+  "sourceDocumentHashAvailable": false,
+  "sources": {
+    "coinbase_docs": {
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "facts": [
+        "Market data endpoints are public.",
+        "Access remains subject to the Coinbase Market Data Terms of Use."
+      ],
+      "observationSha256": "17ea5c7dccb32bd24fae7107ec471694aee0f24e85dfe91dc0b127be9945c79f",
+      "observedLastUpdated": null,
+      "rawDocumentSha256": null,
+      "rawDocumentStored": false,
+      "sourceClass": "OFFICIAL_PROVIDER_DOCUMENTATION",
+      "sourceLocationHash": "95e547955a32072c41d84290ac6082aa91fa00e563a32359136728ac2c6a6250",
+      "title": "Coinbase Exchange API Introduction",
+      "url": "https://docs.cdp.coinbase.com/exchange/introduction/welcome"
+    },
+    "coinbase_redistribution": {
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "facts": [
+        "Coinbase lists authorized redistribution partners.",
+        "Becoming a redistribution partner requires contacting Coinbase."
+      ],
+      "observationSha256": "e8b02ca91e26d0c0aa7c9ada5a7131d1c252b7d36a768e815bd23d9e407f2728",
+      "observedLastUpdated": null,
+      "rawDocumentSha256": null,
+      "rawDocumentStored": false,
+      "sourceClass": "OFFICIAL_PROVIDER_PRODUCT_PAGE",
+      "sourceLocationHash": "b46399fa627e11932a929a3f4c1eb586e6cce4684ec8e057f8d7109dd604760b",
+      "title": "Coinbase Institutional Market Data",
+      "url": "https://www.coinbase.com/de/institutional/market-data"
+    },
+    "coinbase_terms": {
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "facts": [
+        "The default license is limited to personal or internal research use.",
+        "External display, dissemination and redistribution require prior written consent.",
+        "External dissemination of derived works is restricted without prior written consent.",
+        "The license is nontransferable, nonsublicensable, revocable and limited."
+      ],
+      "observationSha256": "7cc6728bd9f31b0c66cc09beb33d33eca71e0f693b6f12aea8243ea8ff4709de",
+      "observedLastUpdated": "2023-02-06",
+      "rawDocumentSha256": null,
+      "rawDocumentStored": false,
+      "sourceClass": "OFFICIAL_PROVIDER_TERMS",
+      "sourceLocationHash": "c97e6d89dcfdfeff31fa99a3b94c064282d8c58edc2d755b6a88733835782519",
+      "title": "Coinbase Market Data Terms of Use",
+      "url": "https://www.coinbase.com/legal/market_data"
+    },
+    "coinpaprika_plans": {
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "facts": [
+        "Free usage is personal.",
+        "Starter and higher plans permit commercial usage.",
+        "Redistribution is unavailable below Enterprise.",
+        "Free plan update interval can be up to ten minutes."
+      ],
+      "observationSha256": "720345d67e1bc8565d0f62addabf20f4734a9840851dff6db1b75b30e362efcb",
+      "observedLastUpdated": null,
+      "rawDocumentSha256": null,
+      "rawDocumentStored": false,
+      "sourceClass": "OFFICIAL_PROVIDER_PLAN_TABLE",
+      "sourceLocationHash": "7fba6044d26267b72f89a0cc7779e3efe9a2e43213356e404a99822b9819bf15",
+      "title": "CoinPaprika API Plans",
+      "url": "https://docs.coinpaprika.com/api-plans"
+    },
+    "coinpaprika_terms": {
+      "capturedAt": "2026-08-05T00:00:00.000Z",
+      "facts": [
+        "Free plan is not eligible for commercial use.",
+        "Commercial use is available only in plans other than Free.",
+        "Attribution to CoinPaprika is required.",
+        "The license is limited, revocable and plan-scoped."
+      ],
+      "observationSha256": "9cf54058ed981a6905692bc49a1fe47f2290edf036221fd6e5241f831b3592bb",
+      "observedLastUpdated": "2026-08-04T12:39:42Z",
+      "rawDocumentSha256": null,
+      "rawDocumentStored": false,
+      "sourceClass": "OFFICIAL_PROVIDER_TERMS",
+      "sourceLocationHash": "d3a5b32494edbdad796465bc41740c600fbe9fc416b14c569d185ebe682d1f6d",
+      "title": "CoinPaprika API Terms of Use",
+      "url": "https://coinpaprika.com/api-terms-of-use/"
+    }
+  }
+}

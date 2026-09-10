@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "velmere.pass35.a28-economic-adversarial-evidence-policy.v1",
+  "passId": "PASS35_A28",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "SYNTHETIC_OFFLINE",
+    "GENERATED_BENCHMARK"
+  ],
+  "requiredScenarioTypes": [
+    "ORACLE_MANIPULATION",
+    "MEV_SANDWICH",
+    "LIQUIDITY_DRAIN",
+    "GOVERNANCE_TAKEOVER",
+    "PRIVILEGED_KEY_COMPROMISE"
+  ],
+  "thresholds": {
+    "minimumEvidenceFamilies": 5,
+    "minimumEvidenceFamiliesPerScenario": 2,
+    "minimumPrerequisitesPerScenario": 2,
+    "minimumSensitivityPoints": 4,
+    "maximumReplayCorrelationErrorBps": 1500,
+    "minimumCriticalHighPrerequisiteCoverage": 1,
+    "minimumReplayCorrelationCoverage": 1,
+    "minimumUncertaintyCoverage": 1,
+    "minimumModelDeterminism": 1,
+    "maxConflictedScenarios": 0,
+    "mutationKillRate": 0.95,
+    "requireScenarioDependencyDag": true,
+    "requireMonotonicSensitivity": true,
+    "requireBoundedUncertainty": true,
+    "requireClaimBoundary": true
+  },
+  "benchmark": {
+    "families": [
+      "TARGET_METHOD_BINDING",
+      "SCENARIO_REGISTRY",
+      "EVIDENCE_FAMILY_BINDING",
+      "PREREQUISITE_COVERAGE",
+      "SENSITIVITY_MONOTONICITY",
+      "UNCERTAINTY_BOUNDS",
+      "DEPENDENCY_DAG",
+      "REPLAY_CORRELATION",
+      "ECONOMIC_FEASIBILITY",
+      "MODEL_REPRODUCIBILITY",
+      "MUTATION_SCORE",
+      "CLAIM_BOUNDARY"
+    ],
+    "mutationTypes": [
+      "schema_invalid",
+      "input_class_relabel",
+      "target_binding_break",
+      "scenario_missing",
+      "evidence_family_drop",
+      "prerequisite_coverage_drop",
+      "sensitivity_non_monotonic",
+      "uncertainty_inverted",
+      "dependency_cycle",
+      "replay_correlation_break",
+      "model_nondeterminism",
+      "claim_boundary_break"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "A28 verifies a case-bound economic-adversarial evidence contract over exact target/methodology/replay bindings, five required scenario families, independent evidence-family and prerequisite coverage, monotonic sensitivity grids, bounded uncertainty, an acyclic scenario-dependency graph, deterministic model reproduction, replay-correlation receipts and mutation evidence. It does not use current rights-approved venue/oracle/governance inputs, execute an official forked EVM, prove exploit feasibility or realized loss, provide calibrated probability, qualified human adjudication, independent rerun or paid-delivery readiness."
+}

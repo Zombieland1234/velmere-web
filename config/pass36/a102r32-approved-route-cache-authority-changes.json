@@ -1,0 +1,271 @@
+{
+  "schemaVersion": "velmere.pass36.a102r32.approved-route-cache-authority-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R32_ACTION_REQUIRED_ROUTE_HASH_INVALID_MISSING_TARGET_TIMEOUT_AND_PREFETCH_INTENT_REENTRY_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R31_ACTION_REQUIRED_ROUTE_TRANSITION_HASH_FOCUS_PREFETCH_BOUND_AND_ACCESSIBILITY_CONTINUITY_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T06:20:00.000Z",
+  "fileCount": 29,
+  "approvedFiles": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "changeType": "MODIFIED",
+      "parentByteLength": 19543,
+      "parentSha256": "96e6fd026ce25b02a3f7ce049e7125c1763582908a235a3fb6fe6d1f4702c7ea",
+      "currentByteLength": 20988,
+      "currentSha256": "8619828bdcc4c5e6db190f21c93a6e26efab47e08b52d07cf8a85fa27e78745a",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "README.md",
+      "changeType": "MODIFIED",
+      "parentByteLength": 39111,
+      "parentSha256": "742c91b75ef9242aafab32a5864caaa0a8e45e8e4424e0f7a4ac76a7d18892b2",
+      "currentByteLength": 40556,
+      "currentSha256": "a56631518563672193bbabac6f2979a2ac69277b7a567c207bc335cd3a674b1e",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "VELMERE_A102R32_PATCH.txt",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 582,
+      "currentSha256": "5bb533c14a48172f7f23b854659f681e2e13ee0852c7cba3df6bd41c54e609c3",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "changeType": "MODIFIED",
+      "parentByteLength": 135,
+      "parentSha256": "e8e37f4621cb971cc20eae356c10cd2a8b4280028aa3da1087b737921729344e",
+      "currentByteLength": 133,
+      "currentSha256": "e7d0edd38be4f3cc057300c1a80e9717172018e0a813e0d782b9516d8a9049d0",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "components/ui/VelmereRouteTransition.tsx",
+      "changeType": "MODIFIED",
+      "parentByteLength": 18047,
+      "parentSha256": "a72e1f1670184304f97ac2c0fbaa0582da5aa2cc80fe3d6162dbc944f9272f2f",
+      "currentByteLength": 19434,
+      "currentSha256": "a8a897bd4e667cb071a7206772e7f792e88215658b7e4501802b369d82178a36",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/current-release.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 27619,
+      "parentSha256": "df5028c1e3a1fbd0abfea2b9154babc8e60d0accff18863530b4195dad5179d7",
+      "currentByteLength": 27617,
+      "currentSha256": "c5fdc32d77ecb56d7783abacde5d0fafbbdb7c800c596bc15c32a0cd8a9ff3a6",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 15395,
+      "parentSha256": "3ccef6c7133518cb2b5e0d01bab1fc48100fa2be776ffddc02a727a40c3155b1",
+      "currentByteLength": 15557,
+      "currentSha256": "391c9170ea9da5c4f5d5897b09cb259432126c6eeffea459218a6223a7eec9ee",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass35/a57r1-hardening-integrity.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 478721,
+      "parentSha256": "89685d0e57f49a462ada0dd8103b81bc615938b08d47951e7e6197644e5b5ab5",
+      "currentByteLength": 478813,
+      "currentSha256": "3456d2bcd179055671307de0e717f1bb37b68199c996204d58498f8d3e6a628c",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 29070,
+      "parentSha256": "97305d8e7a45c9248b5d6071429afbaaf3b3eb90f1329b9003d7daef232ef39e",
+      "currentByteLength": 29062,
+      "currentSha256": "1e296aa3031d8db9d9869397c3ef49a824b363c71db7df2863b9817f2b03d9b7",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r32-action-required-current-state.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 18821,
+      "currentSha256": "894fca3672d1d3f448a58d3348781277956cc7c3df8f9229189a61f7d13808fc",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r32-local-regression-receipt.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 20878,
+      "currentSha256": "8e7f7bd492b8327b7ae3a7308be5e2221a2ddf5c0a668f662c5ee9ce44bd3a9b",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r32-test-receipt.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1167,
+      "currentSha256": "5cb76c6d06295a40a4816c13ea037c69d48aa8b5867d765ad5a011837140315c",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass36/a102r32-world-class-completion-program.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 11058,
+      "currentSha256": "da693754e536198dc13bcf49cbf567ce439c3d5d3329055fc7fa691695897812",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass36/a58-release-integrity-policy.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 3056,
+      "parentSha256": "282c00d7a26ce8c9fc66fc1d749e23f4b76d89dd692711ba19631dece044ee99",
+      "currentByteLength": 3089,
+      "currentSha256": "8df97ca36454445635befddfd3363920960796091e7f98801e0a6c29e76de39d",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 59609,
+      "parentSha256": "2c4445f01b72c8a39952dacb61b2ae0080d8d5320b5469d3362ccd88771b6998",
+      "currentByteLength": 60440,
+      "currentSha256": "9206a33a91dcf81d5d3966c1e9125d8b8cfa6e36986637523d35b3b114368c35",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "lib/ui/route-transition-policy.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1400,
+      "parentSha256": "e235d7286c77fed0e8d467147448f78d2f978671a50b99ee7c0f00daeded9a05",
+      "currentByteLength": 2035,
+      "currentSha256": "987dd39415fe374630bb7092647cd4053422fdbe2a9c31cf9595a53c84fb0452",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "package.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 105937,
+      "parentSha256": "255242565e830abefe7e7b6679af2a6b5511e995fb0ae4beb914a3bb14f0bd62",
+      "currentByteLength": 107118,
+      "currentSha256": "7721ffc69e09d95516e609a64d2b9d8564833991e05a422741e19b86ed6c9dc7",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/lib/a42-dev-runtime-policy.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 8352,
+      "parentSha256": "368f5218f75cd51f867d8d931cba3fd1c431e613efee2d35081d6931486c1c9f",
+      "currentByteLength": 8391,
+      "currentSha256": "d13109593baa240a333ee1eddd9979a7598a81f139134416aae45d20b53c7738",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass35/build-a57r1-hardening-integrity.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 22688,
+      "parentSha256": "a08066727401486d97987ad7887d22247a9980a19662e0d9fe3d98d28a1b75da",
+      "currentByteLength": 22778,
+      "currentSha256": "3028108021494edd198054173e6721ab79ec3e06a885dea0043bd996c5ac284d",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/a102r32-source-boundary.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3815,
+      "currentSha256": "1117f4d5d5cfa360a8a5a9dc37cb5df4c37c93d7f7d3439580c498d6423b563d",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/build-a102r32-current-root-descendant-manifest.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2428,
+      "currentSha256": "7dcfcde091cf1f347852361b09a60490dd9df617135ad9d8de180a1965353c83",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/build-a102r32-local-regression-receipt.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 8516,
+      "currentSha256": "4f025edba4d08b55902e50a0c55fd849958c54439a9fce439646fa094402c08b",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/package-a102r32-deterministic.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 24767,
+      "currentSha256": "2b66bcabd6c5f6bca5712c9d61bcc105347862fc3a2274757cca7d9b11a1e8c2",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/test-a102r32-route-hash-timeout-prefetch-reentry-boundary.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 5819,
+      "currentSha256": "21e7cbc29c8597e967d91f2c8451b41bdd0cfadb67f18c934171d2eed25d17f3",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r32-action-required-authority.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 5119,
+      "currentSha256": "e7b7072544f465dd5252a2f3da0ef4402da2054976a373c439243a275082587b",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r32-approved-route-cache-authority-changes.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2169,
+      "currentSha256": "5f30a744a54388583c6d51e8f4f2c1c142f428f1f9f675af341457763c264b1c",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r32-current-root-descendant.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1592,
+      "currentSha256": "640e344f0514de86a378fd84860c4becc7a66e2e2721412b1d81b2e8d95eb495",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r32-final-packages.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 7293,
+      "currentSha256": "582e68a2ddfb6892607bcc7d945ce7d08a8287a3d098654c11ae585fb8c62bcd",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r32-local-regression-receipt.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2231,
+      "currentSha256": "428147b2c92bc2991f419aa32ae96e2b6e08e6eee80bdb2972d63631bdbbde24",
+      "reason": "A102R32 route-hash timeout/prefetch-intent recovery or authority rebaseline"
+    }
+  ],
+  "truthBoundary": "Exact parent-to-current changed-file ledger. It excludes its own self-referential bytes and the descendant manifest, and grants no exact build/browser, staging, rights, legal, customer, LIVE or sale credit."
+}

@@ -1,0 +1,30 @@
+{
+  "currentImplementation": {
+    "byteLength": 17036,
+    "path": "lib/commerce/vlm-commercial-readiness.ts",
+    "sha256": "5958a8167b6faa86a653dec04a30d6f010f2a34dff098f9c44407289d45f59aa"
+  },
+  "currentTests": [
+    "scripts/pass36/test-a102r44p21-field-commercial-readiness.mjs",
+    "scripts/pass36/test-a102r44p22-risk-basic-calibration-split.mjs"
+  ],
+  "denominatorCollapse": false,
+  "globalDecision": "NO_GO",
+  "historicalDenominatorRetained": true,
+  "historicalExpectedFailureIds": [
+    "data:rights-rows"
+  ],
+  "historicalTest": {
+    "byteLength": 6529,
+    "path": "scripts/pass36/test-a102r44p19-commercial-readiness.mjs",
+    "sha256": "128f9c7d875d128174eea0ee4e92b24d0d37f9917eeb3a04c2cd725d5a7e026e"
+  },
+  "historyRewritten": false,
+  "methodChange": [
+    "provider restrictions block exact fields instead of unrelated owned/on-chain/derived fields",
+    "Risk Basic descriptive tier no longer requires probability calibration",
+    "Risk Pro and Advanced still require calibration"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.commercial-readiness-methodology-migration.v1"
+}

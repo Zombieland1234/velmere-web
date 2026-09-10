@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "velmere.pass35.external-evidence-intake-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "globalExternalEvidenceDenominator": 3074,
+  "scope": "LEGAL_PROVIDER_RIGHTS_STAGING_METADATA_INTAKE_ONLY",
+  "maximumInputBytes": 1048576,
+  "maximumBatchRecords": 66,
+  "clockSkewSeconds": 300,
+  "minimumTtlSeconds": 300,
+  "workstreams": {
+    "PROVIDER_COMMERCIAL_RIGHTS": {
+      "requiredCount": 21,
+      "itemIdPrefix": "provider-rights:",
+      "environment": "EXTERNAL_PROVIDER_CONTRACT",
+      "issuerType": "PROVIDER_RIGHTS_HOLDER",
+      "maximumTtlSeconds": 7776000
+    },
+    "MERCHANT_LEGAL_FIELDS": {
+      "requiredCount": 26,
+      "itemIdPrefix": "merchant-legal:",
+      "environment": "EXTERNAL_LEGAL_REVIEW",
+      "issuerType": "INDEPENDENT_LEGAL_REVIEWER",
+      "maximumTtlSeconds": 15552000
+    },
+    "STAGING_RLS_REAL_REPLAYS": {
+      "requiredCount": 19,
+      "itemIdPrefix": "staging-rls:",
+      "environment": "EXTERNAL_STAGING",
+      "issuerType": "INDEPENDENT_TEST_OPERATOR",
+      "maximumTtlSeconds": 1209600
+    }
+  },
+  "acceptedSignatureAlgorithms": [
+    "ED25519",
+    "ECDSA_P256_SHA256",
+    "RSA_PSS_SHA256"
+  ],
+  "directRegisterMutationAllowed": false,
+  "metadataAloneMayIncrementVerifiedDenominator": false,
+  "metadataAloneMayAllowPromotion": false,
+  "truthBoundary": "This policy validates bounded external-evidence metadata for later independent verification. A signature reference is not cryptographic verification; this intake cannot increment the verified 3074 denominator or allow promotion."
+}

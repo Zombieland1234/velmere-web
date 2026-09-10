@@ -1,0 +1,28 @@
+{
+  "algorithm": "Ed25519",
+  "distinctOperatorOrganizationsRequired": 3,
+  "environmentClass": "DISPOSABLE_TEST",
+  "independentTimestampAuthorityRequired": true,
+  "minimumElapsedMs": 259200000,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "productionTimestampAuthorities": [],
+  "requiredMetrics": [
+    "requests",
+    "errors",
+    "availabilityPct",
+    "latencyP95Ms",
+    "providerFamily",
+    "frozenSourceSha256"
+  ],
+  "requiredObservations": 3,
+  "revisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p29.72h-watchdog-policy.v1",
+  "truthBoundary": {
+    "claimedTimestampsAloneGrantRealTimeCredit": false,
+    "cryptographicSignaturesAloneGrantRealTimeCredit": false,
+    "liveCredit": false,
+    "realTimeCredit": false,
+    "saleCredit": false,
+    "stagingCredit": false
+  }
+}

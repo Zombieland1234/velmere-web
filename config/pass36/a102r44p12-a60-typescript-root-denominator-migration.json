@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p12.a60-typescript-root-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P12_ACTION_REQUIRED_REAL_PUBLIC_PROVIDER_DIAGNOSTIC_15_ASSET_TWO_PROVIDER_IDENTITY_FRESHNESS_CONFLICT_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P11_ACTION_REQUIRED_COMPILER_AST_FOUNDRY_FUZZ_INVARIANT_ANGEL_SAFETY_UI_RUNTIME_AND_FINAL_BYTE_CLOSURE_NO_LIVE_CREDIT",
+  "reason": "The active A60 policy retained stale pre/post-build TypeScript root declarations 159/300. Physical R44P10 and R44P11 partitioned TypeScript receipts covered 160/160 pre-build and 301/301 post-dual-build roots. Correct the declaration to the physically discovered tsconfig denominator without deleting roots, generated route types, tests or stages.",
+  "historicalDeclaration": {
+    "migrationPath": "config/pass36/a102r41-a60-post-build-typescript-denominator-migration.json",
+    "preBuildRootDenominator": 159,
+    "postDualBuildRootDenominator": 300,
+    "generatedRootDenominator": 141,
+    "supportedByCurrentTsconfig": false
+  },
+  "currentPhysicalDenominator": {
+    "preBuildSourceRoots": 160,
+    "postDualBuildRoots": 301,
+    "generatedRoots": 141,
+    "retainedPhysicalSourceRoots": 160,
+    "removedSourceRoots": 0,
+    "removedGeneratedRoots": 0,
+    "coveragePolicy": "EXACT_DISCOVERED_TSCONFIG_ROOTS_AT_EXECUTION",
+    "preBuildProfile": "SOURCE_ONLY_PRE_BUILD_160",
+    "postBuildProfile": "DUAL_BUILD_GENERATED_TYPES_301"
+  },
+  "evidenceReceipts": {
+    "r44p10PreBuild": {
+      "configured": 160,
+      "covered": 160,
+      "transitiveFirstParty": 1539,
+      "tooling": 178,
+      "diagnostics": 0
+    },
+    "r44p11PreBuild": {
+      "configured": 160,
+      "covered": 160,
+      "transitiveFirstParty": 1539,
+      "tooling": 179,
+      "diagnostics": 0
+    },
+    "r44p11PostBuild": {
+      "configured": 301,
+      "covered": 301,
+      "transitiveFirstParty": 1680,
+      "tooling": 179,
+      "diagnostics": 0
+    },
+    "storedOutsideSource": true
+  },
+  "a60StageDenominator": {
+    "before": 14,
+    "after": 14,
+    "retained": 14,
+    "added": 0,
+    "removed": 0
+  },
+  "testsDeleted": 0,
+  "skipsAdded": 0,
+  "timeoutsIncreased": 0,
+  "denominatorsReduced": 0,
+  "scoreCredit": false,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "migrationDigestSha256": "4d267b7c8ffa5c83e20ccdb88d7992b0ee44643aaed21c595848b8ef9997d4bd"
+}

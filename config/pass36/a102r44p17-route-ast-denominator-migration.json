@@ -1,0 +1,85 @@
+{
+  "addedPaths": [],
+  "changedPaths": [
+    "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts"
+  ],
+  "changedRows": [
+    {
+      "current": {
+        "astEligible": true,
+        "byteLength": 8423,
+        "duplicateMethods": [],
+        "exportKinds": {
+          "GET": [
+            "function_declaration"
+          ],
+          "POST": [
+            "function_declaration"
+          ]
+        },
+        "exportStarCount": 0,
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "mode": "100644",
+        "namedReExportCount": 0,
+        "parseDiagnostics": [],
+        "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+        "routeConfig": {},
+        "sha256": "f7d3720c252a26fd8d4eee77b34696e105ce00b1bceeef466c41b28f096cfdbf"
+      },
+      "parent": {
+        "astEligible": true,
+        "byteLength": 8310,
+        "duplicateMethods": [],
+        "exportKinds": {
+          "GET": [
+            "function_declaration"
+          ],
+          "POST": [
+            "function_declaration"
+          ]
+        },
+        "exportStarCount": 0,
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "mode": "100644",
+        "namedReExportCount": 0,
+        "parseDiagnostics": [],
+        "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts",
+        "routeConfig": {},
+        "sha256": "b29d1c4a6ea86343e90fb3f00c17288c57d80510368eed0e193afa17737fac44"
+      },
+      "path": "lib/server/lazy-route-modules/admin--security--audit-messages--operator-actions.ts"
+    }
+  ],
+  "currentRegistry": {
+    "byteLength": 144698,
+    "fileCount": 254,
+    "methodExportCount": 317,
+    "registryDigestSha256": "bbc79eb2f3c385b111ddb9143d8b2733ddbb41847d7e05ff73f4859202fad4bb",
+    "sha256": "93c9ec721404d835038b20c882f49d6bc7bf3c23aca76ee9cac0b67f1057ae96"
+  },
+  "denominatorCollapse": false,
+  "parentManifestPath": "_velmere/PASS36_A102R44P16_SOURCE_ONLY_MANIFEST.json",
+  "parentRegistry": {
+    "byteLength": 144672,
+    "fileCount": 254,
+    "methodExportCount": 317,
+    "registryDigestSha256": "82576769d85226f9497b9c14cf0eb26d53fc8f268c5c04d9dfc88e46a7fe56a7",
+    "sha256": "0d770081788498ade6e5755a5b520a51154bc0ef3fad9fcddc6e790c3f82f2c3"
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P16_ACTION_REQUIRED_SINGLE_SKU_TRUTH_ANALYSIS_QUEUE_AND_CUSTOMER_CLAIM_CLOSURE_NO_LIVE_CREDIT",
+  "reason": "R44P17 legally changes only the admin audit-message operator action lazy module to accept current mark_analysis while retaining the legacy input alias. Route and method denominators are unchanged.",
+  "registryPath": "config/pass15/route-export-ast-registry.json",
+  "removedPaths": [],
+  "removedTests": 0,
+  "retainedFileCount": 254,
+  "retainedMethodExportCount": 317,
+  "revisionId": "VELMERE_PASS36_A102R44P17_ACTION_REQUIRED_DETERMINISTIC_50_ASSET_REAL_NETWORK_DIAGNOSTIC_CROSS_SURFACE_VALUE_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p17.route-ast-denominator-migration.v1",
+  "truthBoundary": "This migration proves current route AST integrity only. It grants no LIVE, sale, provider-rights, customer, staging or exact Windows credit."
+}

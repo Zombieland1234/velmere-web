@@ -1,0 +1,359 @@
+{
+  "schemaVersion": "velmere.pass36.a83.browser-lens-pdf-real-packet-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "generatedAt": "2026-07-27T15:30:00.000Z",
+  "status": "PASS_A83_LOCAL_SYNTHETIC_PHYSICAL_PDF_MATRIX_ONLY",
+  "summary": {
+    "checks": 22,
+    "passed": 22,
+    "failed": 0
+  },
+  "fixtureDenominators": {
+    "cases": 50,
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "channelProjections": 2700,
+    "semanticMutations": 8100,
+    "mutationKilled": 8100,
+    "byLocale": {
+      "pl": 150,
+      "en": 150,
+      "de": 150
+    },
+    "byTier": {
+      "basic": 150,
+      "pro": 150,
+      "advanced": 150
+    }
+  },
+  "manifestIntegrityDigest": "4cb8e1762da16cf8561c2e3787354447c006d08444e6cbbcaeb57abca0c0bf8d",
+  "realIntake": {
+    "requiredCases": 50,
+    "packetBundles": 0,
+    "rightsApproved": 0,
+    "freshnessVerified": 0,
+    "browserEvidence": 0,
+    "secureDeliveryEvidence": 0,
+    "accessibilityEvidence": 0,
+    "comprehensionLabels": 0,
+    "tierOutputs": 0,
+    "realPacketReady": 0,
+    "decision": "BLOCKED_REAL_PACKET_EVIDENCE"
+  },
+  "realPacketsVerified": 0,
+  "browserRuns": 0,
+  "secureDeliveries": 0,
+  "externalAccessibilityValidations": 0,
+  "customerComprehensionLabels": 0,
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "policy:fixture-hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "policy:intake-hash",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "corpus:deterministic",
+      "passed": true,
+      "detail": {
+        "first": "4cb8e1762da16cf8561c2e3787354447c006d08444e6cbbcaeb57abca0c0bf8d",
+        "second": "4cb8e1762da16cf8561c2e3787354447c006d08444e6cbbcaeb57abca0c0bf8d"
+      }
+    },
+    {
+      "id": "corpus:verify",
+      "passed": true,
+      "detail": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      }
+    },
+    {
+      "id": "corpus:pdfs",
+      "passed": true,
+      "detail": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      }
+    },
+    {
+      "id": "corpus:pages",
+      "passed": true,
+      "detail": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      }
+    },
+    {
+      "id": "corpus:projections",
+      "passed": true,
+      "detail": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      }
+    },
+    {
+      "id": "corpus:mutations",
+      "passed": true,
+      "detail": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      }
+    },
+    {
+      "id": "corpus:locale-counts",
+      "passed": true,
+      "detail": {
+        "pl": 150,
+        "en": 150,
+        "de": 150
+      }
+    },
+    {
+      "id": "corpus:tier-counts",
+      "passed": true,
+      "detail": {
+        "basic": 150,
+        "pro": 150,
+        "advanced": 150
+      }
+    },
+    {
+      "id": "corpus:class-counts",
+      "passed": true,
+      "detail": {
+        "CRYPTO_TOKEN": 10,
+        "EQUITY_ETF_REIT": 10,
+        "FX_COMMODITY_INDEX": 10,
+        "SMART_CONTRACT": 10,
+        "OSINT_DOCUMENT": 10
+      }
+    },
+    {
+      "id": "corpus:no-credit",
+      "passed": true,
+      "detail": {
+        "synthetic": true,
+        "offline": true,
+        "notLive": true,
+        "notForSale": true,
+        "realPacketCredit": 0,
+        "browserCredit": 0,
+        "secureDeliveryCredit": 0,
+        "accessibilityExternalCredit": 0,
+        "comprehensionCredit": 0,
+        "paidGateEligible": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "real:required",
+      "passed": true,
+      "detail": {
+        "requiredCases": 50,
+        "packetBundles": 0,
+        "rightsApproved": 0,
+        "freshnessVerified": 0,
+        "browserEvidence": 0,
+        "secureDeliveryEvidence": 0,
+        "accessibilityEvidence": 0,
+        "comprehensionLabels": 0,
+        "tierOutputs": 0,
+        "realPacketReady": 0,
+        "decision": "BLOCKED_REAL_PACKET_EVIDENCE"
+      }
+    },
+    {
+      "id": "real:zero",
+      "passed": true,
+      "detail": {
+        "requiredCases": 50,
+        "packetBundles": 0,
+        "rightsApproved": 0,
+        "freshnessVerified": 0,
+        "browserEvidence": 0,
+        "secureDeliveryEvidence": 0,
+        "accessibilityEvidence": 0,
+        "comprehensionLabels": 0,
+        "tierOutputs": 0,
+        "realPacketReady": 0,
+        "decision": "BLOCKED_REAL_PACKET_EVIDENCE"
+      }
+    },
+    {
+      "id": "real:blocked",
+      "passed": true,
+      "detail": "BLOCKED_REAL_PACKET_EVIDENCE"
+    },
+    {
+      "id": "policy:gaps",
+      "passed": true,
+      "detail": 31
+    },
+    {
+      "id": "policy:source-summary",
+      "passed": true,
+      "detail": "config/pass36/a83-source-evidence-summary.json"
+    },
+    {
+      "id": "policy:security",
+      "passed": true,
+      "detail": {
+        "a4Only": true,
+        "activeContentForbidden": true,
+        "javascriptForbidden": true,
+        "launchForbidden": true,
+        "remoteActionsForbidden": true,
+        "embeddedFilesForbidden": true,
+        "acroFormForbidden": true,
+        "xfaForbidden": true,
+        "encryptionForbidden": true,
+        "externalUriForbidden": true,
+        "embeddedFontRequired": true,
+        "toUnicodeRequired": true,
+        "deterministicBytesRequired": true,
+        "exactRerenderRequired": true,
+        "safeRelativePathRequired": true
+      }
+    },
+    {
+      "id": "policy:page-depth",
+      "passed": true,
+      "detail": [
+        {
+          "depth": "basic",
+          "label": "Basic",
+          "pageCount": 2,
+          "minimumMaterialFields": 8,
+          "minimumEvidenceFamilies": 3
+        },
+        {
+          "depth": "pro",
+          "label": "Pro",
+          "pageCount": 4,
+          "minimumMaterialFields": 16,
+          "minimumEvidenceFamilies": 6
+        },
+        {
+          "depth": "advanced",
+          "label": "Advanced",
+          "pageCount": 8,
+          "minimumMaterialFields": 24,
+          "minimumEvidenceFamilies": 10
+        }
+      ]
+    },
+    {
+      "id": "policy:channels",
+      "passed": true,
+      "detail": [
+        "api",
+        "ui",
+        "preview",
+        "pdf",
+        "brain",
+        "angel"
+      ]
+    },
+    {
+      "id": "policy:real-evidence",
+      "passed": true,
+      "detail": [
+        "canonical_packet_and_facts_digest",
+        "provider_family_receipts",
+        "freshness_and_conflict_receipts",
+        "display_export_pdf_and_derived_data_rights",
+        "api_ui_preview_pdf_brain_angel_parity",
+        "browser_download_and_content_disposition_evidence",
+        "account_and_tier_bound_secure_delivery",
+        "accessibility_and_reader_validation",
+        "customer_comprehension_labels",
+        "blind_tier_value_and_willingness_to_pay"
+      ]
+    },
+    {
+      "id": "truth:no-sale",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "truthBoundary": "A83 locally verifies a deterministic synthetic cross-locale Browser/Lens/PDF corpus and fail-closed parity contract. It does not prove current provider data, rights, production browser delivery, account-bound access, external accessibility, customer comprehension, willingness-to-pay, staging, LIVE or sale."
+}

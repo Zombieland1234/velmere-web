@@ -1,0 +1,2040 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p35.score-gate-ledger.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P35_ACTION_REQUIRED_STANDALONE_DECISION_SUPPORT_ANGEL_RISK_IMPACT_WHALE_AND_PSYCHOLOGY30_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "gates": [
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "R44P34 authority verifier",
+      "gateId": "source-authority",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Current SOURCE is manifest-bound and reverified.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "evidence": "17-row topology contract",
+      "gateId": "canonical-product-taxonomy",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Customer product identity now matches the actual architecture.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "evidence": "standalone product contract",
+      "gateId": "standalone-module-non-tiering",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Market Impact, Whale Watch, Angel and Risk are standalone products.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "STATICALLY_TESTED",
+      "beforeStatus": "STATICALLY_TESTED",
+      "dimensions": [
+        "technology",
+        "uxPsychology"
+      ],
+      "evidence": "24 integration-depth cells",
+      "gateId": "module-to-report-integration-depth",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Report tier changes explanation depth, not module truth.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "operations",
+        "legalClaims"
+      ],
+      "evidence": "gate-weighted before/after scorecard",
+      "gateId": "dynamic-score-ledger",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Every percentage is recomputed from physical gate states.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "operations"
+      ],
+      "evidence": "before/after/delta output",
+      "gateId": "score-delta-receipt",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Movement and no-movement reasons are explicit.",
+      "releaseGate": true,
+      "weight": 1
+    },
+    {
+      "afterStatus": "STATICALLY_TESTED",
+      "beforeStatus": "STATICALLY_TESTED",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "30 personas x 18 steps",
+      "gateId": "psychology-personas-30-static",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Expanded static psychology and comprehension test design.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "customerProof"
+      ],
+      "evidence": "0 real participants",
+      "gateId": "psychology-real-customer-cohort",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "No synthetic row receives customer proof.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "BLOCKED",
+      "beforeStatus": "BLOCKED",
+      "dimensions": [
+        "technology",
+        "operations"
+      ],
+      "evidence": "test cycle 1/3",
+      "gateId": "current-child-full-regression",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Full build/browser/PDF is scheduled for cycle 3/3.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "technology",
+        "operations"
+      ],
+      "evidence": "NOT_RUN",
+      "gateId": "exact-windows",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "Exact Windows remains external.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "securityPrivacy",
+        "operations"
+      ],
+      "evidence": "retained external CI protocol/storage evidence",
+      "gateId": "external-staging-operations",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "External CI evidence is not production staging.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "customerProof",
+        "legalClaims"
+      ],
+      "evidence": "0 real willingness-to-pay observations",
+      "gateId": "willingness-to-pay",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced",
+        "shield",
+        "shield-pro",
+        "shield-map",
+        "real-markets",
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "reason": "No price proof.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology",
+        "securityPrivacy",
+        "dataProvenance"
+      ],
+      "evidence": "official tool/evidence framework retained",
+      "gateId": "audit-framework-engineering",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "reason": "Strong framework, not accuracy proof.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "accuracySemanticTruth"
+      ],
+      "evidence": "adversarial findings retained",
+      "gateId": "audit-semantic-generalization",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "reason": "Semantic robustness remains partial.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "dataProvenance"
+      ],
+      "evidence": "0 real protocol ground-truth corpus",
+      "gateId": "audit-real-protocol-corpus",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "reason": "Real multi-contract accuracy remains unproven.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth"
+      ],
+      "evidence": "no independent severity labels",
+      "gateId": "audit-severity-calibration",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "reason": "Severity remains uncalibrated.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "customerProof"
+      ],
+      "evidence": "0 real customer audits",
+      "gateId": "audit-customer-outcomes",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "reason": "No customer-proven utility.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "legalClaims"
+      ],
+      "evidence": "free/beta/not-for-sale truth",
+      "gateId": "audit-customer-claims",
+      "productIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "reason": "Claims remain fail-closed.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "bounded prescreen scope",
+      "gateId": "audit-tier-delta-basic",
+      "productIds": [
+        "audit-basic"
+      ],
+      "reason": "Basic remains a complete free core.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "uxPsychology",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "evidence depth; incomplete detection delta",
+      "gateId": "audit-tier-delta-pro",
+      "productIds": [
+        "audit-pro"
+      ],
+      "reason": "Pro advantage is meaningful but incomplete.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "operations",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "manual QA operation not staffed",
+      "gateId": "audit-pro-manual-qa",
+      "productIds": [
+        "audit-pro"
+      ],
+      "reason": "Controlled beta remains operationally blocked.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "BLOCKED",
+      "beforeStatus": "BLOCKED",
+      "dimensions": [
+        "uxPsychology",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "professional detection/review delta missing",
+      "gateId": "audit-tier-delta-advanced",
+      "productIds": [
+        "audit-advanced"
+      ],
+      "reason": "Advanced remains not for sale.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "operations"
+      ],
+      "evidence": "0/2 reviewers",
+      "gateId": "audit-advanced-two-reviewers",
+      "productIds": [
+        "audit-advanced"
+      ],
+      "reason": "Advanced cannot be sold.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology",
+        "securityPrivacy"
+      ],
+      "evidence": "150 deterministic safe PDFs retained",
+      "gateId": "pdf-engineering",
+      "productIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "reason": "Format engineering remains strong.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "evidence": "customer truth and localization controls",
+      "gateId": "pdf-customer-semantics",
+      "productIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "reason": "Customer semantics improved historically.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "BLOCKED",
+      "beforeStatus": "BLOCKED",
+      "dimensions": [
+        "technology",
+        "operations"
+      ],
+      "evidence": "R44P34 corpus not rerun",
+      "gateId": "pdf-current-child-corpus",
+      "productIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "reason": "Cycle 3/3 will rerun 150 PDFs.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "customerProof"
+      ],
+      "evidence": "0 independent customer PDFs",
+      "gateId": "pdf-independent-qa",
+      "productIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "reason": "Independent delivery proof remains zero.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "short prescreen report",
+      "gateId": "pdf-tier-delta-basic",
+      "productIds": [
+        "pdf-basic"
+      ],
+      "reason": "Basic report remains useful.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "best depth/readability balance",
+      "gateId": "pdf-tier-delta-pro",
+      "productIds": [
+        "pdf-pro"
+      ],
+      "reason": "Pro report differentiation remains.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "evidence density remains high",
+      "gateId": "pdf-tier-delta-advanced",
+      "productIds": [
+        "pdf-advanced"
+      ],
+      "reason": "Advanced needs workflow, not pages.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "RETAINED_PARENT_EVIDENCE",
+      "beforeStatus": "RETAINED_PARENT_EVIDENCE",
+      "dimensions": [
+        "technology",
+        "uxPsychology"
+      ],
+      "evidence": "R44P30 browser 57/57 retained only",
+      "gateId": "browser-runtime-matrix",
+      "productIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "reason": "Current child full browser waits for cycle 3/3.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "profile/auth/paywall boundaries retained",
+      "gateId": "browser-security-boundary",
+      "productIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "reason": "Security boundary remains strong.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "keyboard/focus semantics tested; no real assistive cohort",
+      "gateId": "browser-accessibility",
+      "productIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "reason": "Accessibility customer proof missing.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "BLOCKED",
+      "beforeStatus": "BLOCKED",
+      "dimensions": [
+        "technology",
+        "operations"
+      ],
+      "evidence": "R44P34 browser NOT_RUN",
+      "gateId": "browser-current-child-matrix",
+      "productIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "reason": "Cycle 3/3 required.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "evidence viewer free core",
+      "gateId": "browser-tier-delta-basic",
+      "productIds": [
+        "browser-basic"
+      ],
+      "reason": "Basic is complete enough as a free viewer.",
+      "releaseGate": true,
+      "weight": 2
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "deeper evidence without full workflow",
+      "gateId": "browser-tier-delta-pro",
+      "productIds": [
+        "browser-pro"
+      ],
+      "reason": "Pro differentiation partial.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "BLOCKED",
+      "beforeStatus": "BLOCKED",
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "evidence": "professional workspace missing",
+      "gateId": "browser-tier-delta-advanced",
+      "productIds": [
+        "browser-advanced"
+      ],
+      "reason": "Advanced viewer not for sale.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "shield-technology",
+      "productIds": [
+        "shield"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "shield-security",
+      "productIds": [
+        "shield"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "shield-pro-technology",
+      "productIds": [
+        "shield-pro"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "shield-pro-security",
+      "productIds": [
+        "shield-pro"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "shield-map-technology",
+      "productIds": [
+        "shield-map"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "shield-map-security",
+      "productIds": [
+        "shield-map"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "real-markets-technology",
+      "productIds": [
+        "real-markets"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "real-markets-security",
+      "productIds": [
+        "real-markets"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "market-impact-technology",
+      "productIds": [
+        "market-impact"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "market-impact-security",
+      "productIds": [
+        "market-impact"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "whale-watch-technology",
+      "productIds": [
+        "whale-watch"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "whale-watch-security",
+      "productIds": [
+        "whale-watch"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "angel-technology",
+      "productIds": [
+        "angel"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "angel-security",
+      "productIds": [
+        "angel"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology"
+      ],
+      "evidence": "existing implementation and targeted source tests",
+      "gateId": "risk-indicator-technology",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "Implementation status.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy"
+      ],
+      "evidence": "fail-closed boundaries",
+      "gateId": "risk-indicator-security",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "Security status.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "dataProvenance",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "identity/on-chain core",
+      "gateId": "shield-onchain-core",
+      "productIds": [
+        "shield"
+      ],
+      "reason": "Core facts remain available.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "0/318 rights-approved",
+      "gateId": "shield-rights-approved-coverage",
+      "productIds": [
+        "shield"
+      ],
+      "reason": "Provider fields remain withheld.",
+      "releaseGate": true,
+      "weight": 6
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "customerProof"
+      ],
+      "evidence": "0 customer outcomes",
+      "gateId": "shield-customer-value",
+      "productIds": [
+        "shield"
+      ],
+      "reason": "No customer proof.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "dataProvenance",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "no licensed current depth",
+      "gateId": "shield-pro-order-book",
+      "productIds": [
+        "shield-pro"
+      ],
+      "reason": "Primary Pro value missing.",
+      "releaseGate": true,
+      "weight": 6
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "operations"
+      ],
+      "evidence": "no staffed paid terminal ops",
+      "gateId": "shield-pro-operations",
+      "productIds": [
+        "shield-pro"
+      ],
+      "reason": "Not for sale.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims"
+      ],
+      "evidence": "UNCLASSIFIED state",
+      "gateId": "shield-map-unclassified",
+      "productIds": [
+        "shield-map"
+      ],
+      "reason": "No guessed entity labels.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "no current signed label corpus",
+      "gateId": "shield-map-signed-labels",
+      "productIds": [
+        "shield-map"
+      ],
+      "reason": "Label evidence incomplete.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "operations",
+        "uxPsychology"
+      ],
+      "evidence": "correction design only",
+      "gateId": "shield-map-correction-workflow",
+      "productIds": [
+        "shield-map"
+      ],
+      "reason": "Operational correction proof missing.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "dataProvenance",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "reference/derived core",
+      "gateId": "markets-reference-core",
+      "productIds": [
+        "real-markets"
+      ],
+      "reason": "Reference core exists without live provider credit.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "0/583 rights-approved",
+      "gateId": "markets-rights-approved-coverage",
+      "productIds": [
+        "real-markets"
+      ],
+      "reason": "No commercial real-time coverage.",
+      "releaseGate": true,
+      "weight": 7
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "operations"
+      ],
+      "evidence": "no real multi-provider failover",
+      "gateId": "markets-provider-failover",
+      "productIds": [
+        "real-markets"
+      ],
+      "reason": "Operational resilience missing.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "technology",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "bounded simulation engine",
+      "gateId": "impact-simulation-engine",
+      "productIds": [
+        "market-impact"
+      ],
+      "reason": "Simulation core exists.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "evidence": "SIMULATION_ONLY contract",
+      "gateId": "impact-assumptions-uncertainty",
+      "productIds": [
+        "market-impact"
+      ],
+      "reason": "Assumptions and uncertainty are explicit.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "no current licensed order book",
+      "gateId": "impact-live-order-book",
+      "productIds": [
+        "market-impact"
+      ],
+      "reason": "No real market depth.",
+      "releaseGate": true,
+      "weight": 6
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "customerProof"
+      ],
+      "evidence": "0 predicted-versus-realized outcomes",
+      "gateId": "impact-realized-outcomes",
+      "productIds": [
+        "market-impact"
+      ],
+      "reason": "Model validity unproven.",
+      "releaseGate": true,
+      "weight": 6
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "dataProvenance",
+        "accuracySemanticTruth"
+      ],
+      "evidence": "on-chain transfer facts",
+      "gateId": "whale-onchain-facts",
+      "productIds": [
+        "whale-watch"
+      ],
+      "reason": "Transfers are verifiable.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "legalClaims",
+        "uxPsychology"
+      ],
+      "evidence": "transfer != buy/sell rule",
+      "gateId": "whale-no-trade-inference",
+      "productIds": [
+        "whale-watch"
+      ],
+      "reason": "Interpretation is bounded.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "no current signed labels",
+      "gateId": "whale-signed-labels",
+      "productIds": [
+        "whale-watch"
+      ],
+      "reason": "Labels remain unproven.",
+      "releaseGate": true,
+      "weight": 6
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "operations"
+      ],
+      "evidence": "correction design",
+      "gateId": "whale-label-corrections",
+      "productIds": [
+        "whale-watch"
+      ],
+      "reason": "Operational proof missing.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "evidence": "active Angel copy and topology contract",
+      "gateId": "angel-single-product-truth",
+      "productIds": [
+        "angel"
+      ],
+      "reason": "Angel is one product; report depth is context only.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "securityPrivacy",
+        "legalClaims"
+      ],
+      "evidence": "advice/prompt firewall retained",
+      "gateId": "angel-safety-boundary",
+      "productIds": [
+        "angel"
+      ],
+      "reason": "Safety standard invariant.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "dataProvenance"
+      ],
+      "evidence": "grounding framework, no real unseen denominator",
+      "gateId": "angel-evidence-grounding",
+      "productIds": [
+        "angel"
+      ],
+      "reason": "Evidence grounding incomplete.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "customerProof"
+      ],
+      "evidence": "0/300 independent evals",
+      "gateId": "angel-independent-evals",
+      "productIds": [
+        "angel"
+      ],
+      "reason": "No customer or independent proof.",
+      "releaseGate": true,
+      "weight": 7
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "evidence": "same indicator across report depth",
+      "gateId": "risk-single-indicator-truth",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "Payment cannot change risk value.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims"
+      ],
+      "evidence": "descriptive nonprobabilistic contract",
+      "gateId": "risk-descriptive-no-probability",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "No fake probability.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology"
+      ],
+      "evidence": "existing factor lanes; further UX work due",
+      "gateId": "risk-technical-vs-market-separation",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "Separation remains partial.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "accuracySemanticTruth"
+      ],
+      "evidence": "0 calibration windows",
+      "gateId": "risk-calibration",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "No probability claims.",
+      "releaseGate": true,
+      "weight": 7
+    },
+    {
+      "afterStatus": "MISSING",
+      "beforeStatus": "MISSING",
+      "dimensions": [
+        "customerProof",
+        "dataProvenance"
+      ],
+      "evidence": "0 independent outcomes",
+      "gateId": "risk-outcome-labels",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "reason": "No customer proof.",
+      "releaseGate": true,
+      "weight": 5
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "canonical packet and receipt binding retained",
+      "gateId": "pdf-canonical-packet-provenance",
+      "productIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "reason": "PDF provenance is strong but not customer proof.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "accuracySemanticTruth"
+      ],
+      "evidence": "customer semantics controls; real corpus accuracy unproven",
+      "gateId": "pdf-content-accuracy-boundary",
+      "productIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "reason": "Document correctness is separate from audit accuracy.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "afterStatus": "PASS",
+      "beforeStatus": "PASS",
+      "dimensions": [
+        "dataProvenance"
+      ],
+      "evidence": "canonical report packet binding retained",
+      "gateId": "browser-canonical-report-provenance",
+      "productIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "reason": "Browser displays canonical evidence without adding facts.",
+      "releaseGate": true,
+      "weight": 3
+    },
+    {
+      "afterStatus": "PARTIAL",
+      "beforeStatus": "PARTIAL",
+      "dimensions": [
+        "accuracySemanticTruth"
+      ],
+      "evidence": "parent browser/PDF parity evidence retained",
+      "gateId": "browser-content-parity",
+      "productIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "reason": "Current-child full parity waits for cycle 3/3.",
+      "releaseGate": true,
+      "weight": 4
+    },
+    {
+      "gateId": "standalone-market-whale-no-tier-paywall",
+      "productIds": [
+        "market-impact",
+        "whale-watch"
+      ],
+      "dimensions": [
+        "securityPrivacy",
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 active route/client contract",
+      "reason": "Standalone Market Impact and Whale Watch no longer require a report-tier entitlement."
+    },
+    {
+      "gateId": "market-impact-modelled-not-realized-copy",
+      "productIds": [
+        "market-impact",
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 decision-support and UI copy",
+      "reason": "Execution rows are described as modelled scenarios, never realized slippage or forecast."
+    },
+    {
+      "gateId": "market-impact-outcome-validation",
+      "productIds": [
+        "market-impact"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "customerProof"
+      ],
+      "weight": 5,
+      "beforeStatus": "MISSING",
+      "afterStatus": "MISSING",
+      "releaseGate": true,
+      "evidence": "0 realized outcome windows",
+      "reason": "Predicted-versus-realized execution outcomes remain absent."
+    },
+    {
+      "gateId": "whale-transfer-not-trade",
+      "productIds": [
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 transfer interpretation contract",
+      "reason": "A transfer is never automatically interpreted as a buy, sell, or market intention."
+    },
+    {
+      "gateId": "whale-label-provenance-unclassified",
+      "productIds": [
+        "whale-watch",
+        "shield-map"
+      ],
+      "dimensions": [
+        "dataProvenance",
+        "accuracySemanticTruth",
+        "uxPsychology"
+      ],
+      "weight": 3,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "STATICALLY_TESTED",
+      "releaseGate": true,
+      "evidence": "R44P35 UNCLASSIFIED/provenance contract",
+      "reason": "Unknown labels remain UNCLASSIFIED and customer copy exposes the provenance boundary."
+    },
+    {
+      "gateId": "whale-label-correction-dispute-workflow",
+      "productIds": [
+        "whale-watch",
+        "shield-map"
+      ],
+      "dimensions": [
+        "operations",
+        "dataProvenance"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PARTIAL",
+      "releaseGate": true,
+      "evidence": "R44P35 correction workflow contract only",
+      "reason": "Correction and dispute states are specified but not externally operated."
+    },
+    {
+      "gateId": "angel-structured-evidence-answer",
+      "productIds": [
+        "angel"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 4,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 standalone answer contract",
+      "reason": "Angel must separate scope, facts, calculations, assumptions, conflicts, missing proof, limitations, remediation and next check."
+    },
+    {
+      "gateId": "angel-abstention-on-missing-or-conflict",
+      "productIds": [
+        "angel"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "securityPrivacy",
+        "legalClaims"
+      ],
+      "weight": 4,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 abstention tests",
+      "reason": "No verified facts, unresolved conflicts or critical missing proof force abstention."
+    },
+    {
+      "gateId": "angel-independent-real-mixed-evals",
+      "productIds": [
+        "angel"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "customerProof"
+      ],
+      "weight": 6,
+      "beforeStatus": "MISSING",
+      "afterStatus": "MISSING",
+      "releaseGate": true,
+      "evidence": "0/300 independent evals",
+      "reason": "Targeted synthetic/adversarial tests are not independent customer or real/mixed evaluations."
+    },
+    {
+      "gateId": "risk-indicator-report-depth-invariance",
+      "productIds": [
+        "risk-indicator",
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced",
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced",
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 invariantKey tests",
+      "reason": "The same data produces the same Risk Indicator regardless of report depth."
+    },
+    {
+      "gateId": "risk-technical-market-data-separation",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology"
+      ],
+      "weight": 4,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 three-dimension risk decision",
+      "reason": "Technical, market and data-quality risk are separated and explained."
+    },
+    {
+      "gateId": "risk-no-false-probability-leverage-sizing",
+      "productIds": [
+        "risk-indicator",
+        "angel"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims",
+        "securityPrivacy"
+      ],
+      "weight": 4,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 null probability/leverage/sizing contract",
+      "reason": "The descriptive indicator never becomes probability, leverage or position sizing."
+    },
+    {
+      "gateId": "risk-calibration-outcomes",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "customerProof"
+      ],
+      "weight": 6,
+      "beforeStatus": "MISSING",
+      "afterStatus": "MISSING",
+      "releaseGate": true,
+      "evidence": "0 calibrated outcome windows",
+      "reason": "No calibrated probability or prospective outcomes exist."
+    },
+    {
+      "gateId": "withheld-next-safe-action-copy",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 localized decision-support cards",
+      "reason": "Withheld and limited states explain why and name the next safe action."
+    },
+    {
+      "gateId": "standalone-psychology-30-person-targeted",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "uxPsychology"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "STATICALLY_TESTED",
+      "releaseGate": true,
+      "evidence": "30 personas x 4 modules x 6 checks = 720 rows",
+      "reason": "Targeted static/adversarial psychology coverage expanded without customer credit."
+    },
+    {
+      "gateId": "risk-methodology-no-human-review-promise",
+      "productIds": [
+        "risk-indicator",
+        "angel"
+      ],
+      "dimensions": [
+        "legalClaims",
+        "uxPsychology"
+      ],
+      "weight": 2,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 PL/EN/DE methodology copy",
+      "reason": "The public surface no longer promises included human verification."
+    },
+    {
+      "gateId": "current-child-targeted-typescript-r44p35",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "technology"
+      ],
+      "weight": 2,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": false,
+      "evidence": "Exact TypeScript 5.9.3 changed-file check",
+      "reason": "Only the four changed standalone product surfaces receive this targeted TypeScript gate; unrelated products do not move."
+    },
+    {
+      "gateId": "standalone-customer-truth-runtime",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "risk-indicator",
+        "angel"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 4,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 exact Node 24.18.0 + TypeScript 5.9.3 runtime customer-truth contract 45/45",
+      "reason": "Standalone customer-truth envelopes execute on current bytes and preserve facts, simulations, limits, missing proof and next safe checks."
+    },
+    {
+      "gateId": "active-route-truth-binding",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "risk-indicator",
+        "angel"
+      ],
+      "dimensions": [
+        "technology",
+        "securityPrivacy",
+        "dataProvenance"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 active route and UI truth contract 27/27",
+      "reason": "Active API routes bind canonical standalone truth objects instead of reconstructing weaker customer copy."
+    },
+    {
+      "gateId": "angel-structured-evidence-ui",
+      "productIds": [
+        "angel"
+      ],
+      "dimensions": [
+        "uxPsychology",
+        "accuracySemanticTruth",
+        "dataProvenance"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 AngelPanel structured evidence map plus localized PL/EN/DE truth rail",
+      "reason": "Angel exposes severity, confidence state, confirmed evidence, conflicts, missing proof, limitations and next safe checks in an expandable customer view."
+    },
+    {
+      "gateId": "angel-artificial-delay-removed",
+      "productIds": [
+        "angel"
+      ],
+      "dimensions": [
+        "uxPsychology",
+        "operations"
+      ],
+      "weight": 2,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": false,
+      "evidence": "R44P35 active standalone contract verifies 420 ms floor and absence of legacy 5200 ms delay",
+      "reason": "The UI no longer imposes a multi-second artificial wait that could be mistaken for analytical depth."
+    },
+    {
+      "gateId": "market-impact-nonmodeled-liquidity-boundary",
+      "productIds": [
+        "market-impact"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims",
+        "dataProvenance"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 customer-truth runtime and engine integrity tests",
+      "reason": "Hidden liquidity, queue priority, replenishment, market reaction and realized outcomes are explicitly unmodelled and cannot be presented as observed facts."
+    },
+    {
+      "gateId": "whale-monitoring-continuity-external",
+      "productIds": [
+        "whale-watch"
+      ],
+      "dimensions": [
+        "operations",
+        "dataProvenance",
+        "customerProof"
+      ],
+      "weight": 5,
+      "beforeStatus": "MISSING",
+      "afterStatus": "MISSING",
+      "releaseGate": true,
+      "evidence": "No continuous external monitoring or correction SLA",
+      "reason": "Targeted local logic does not prove continuous provider availability, alert delivery, label expiry handling or externally observed corrections."
+    },
+    {
+      "gateId": "risk-indicator-customer-truth-binding",
+      "productIds": [
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims",
+        "dataProvenance"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 route and runtime contracts bind the descriptive customer-truth object",
+      "reason": "The public Risk Indicator remains descriptive, separates technical/market/data-quality risk and cannot silently become probability, leverage or position sizing."
+    },
+    {
+      "gateId": "standalone-insight-depth-truth-invariance",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "PARTIAL",
+      "afterStatus": "PASS",
+      "releaseGate": true,
+      "evidence": "R44P35 standalone insight contracts and invariant-key tests",
+      "reason": "Report context changes presentation depth while the underlying module truth and safety boundary remain invariant."
+    },
+    {
+      "gateId": "angel-customer-truth-rail-localized",
+      "productIds": [
+        "angel"
+      ],
+      "dimensions": [
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 2,
+      "beforeStatus": "MISSING",
+      "afterStatus": "STATICALLY_TESTED",
+      "releaseGate": true,
+      "evidence": "R44P35 Angel PL/EN/DE evidence boundary UI contract",
+      "reason": "Angel exposes abstention, truth boundary and the next safe check in localized customer copy."
+    },
+    {
+      "gateId": "thirty-person-runtime-decision-boundaries",
+      "productIds": [
+        "market-impact",
+        "whale-watch",
+        "angel",
+        "risk-indicator"
+      ],
+      "dimensions": [
+        "accuracySemanticTruth",
+        "uxPsychology",
+        "legalClaims"
+      ],
+      "weight": 3,
+      "beforeStatus": "MISSING",
+      "afterStatus": "PASS",
+      "releaseGate": false,
+      "evidence": "R44P35 30-person synthetic runtime decision-support assertions within 209/209 suite",
+      "reason": "Thirty deterministic persona variants preserve no-forecast, transfer-not-trade, abstention and no-leverage rules; no real-person credit is granted."
+    }
+  ],
+  "truthBoundary": "R44P35 gate ledger includes targeted executable standalone truth and 30-person synthetic decision-boundary tests. Real customer, provider-rights, full-release and world-class credits remain unavailable."
+}

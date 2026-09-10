@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "velmere.pass4739.route-adapter-decomposition-policy.v2",
+  "baselinePass": 4738,
+  "currentPass": 4739,
+  "uiFrozen": true,
+  "routes": [
+    {
+      "name": "search",
+      "route": "app/api/search/route.ts",
+      "module": "lib/search/search-route-orchestrator.ts",
+      "baselineBytes": 52309,
+      "baselineLines": 1212,
+      "routeBytes": 381,
+      "routeLines": 9,
+      "moduleBytes": 52010,
+      "moduleLines": 1205,
+      "baselineTransformedSha256": "9ccc0e0225663bcbdaf0fa9719224ba089cb485cc94fa546feee9b0f515c1b99",
+      "currentModuleSha256": "9ccc0e0225663bcbdaf0fa9719224ba089cb485cc94fa546feee9b0f515c1b99",
+      "parity": true,
+      "baselineRouteSha256": "4a5c53fbd6a35f373b25bcf8ae50ec7bf8c3fe44b36a7f66be5810b393706c27",
+      "currentRouteSha256": "4a5c53fbd6a35f373b25bcf8ae50ec7bf8c3fe44b36a7f66be5810b393706c27",
+      "layeredDecompositionPolicy": "config/pass4739-orchestrator-layer-decomposition-policy.json"
+    },
+    {
+      "name": "real-markets",
+      "route": "app/api/market-integrity/real-markets/route.ts",
+      "module": "lib/market-integrity/real-markets-route-orchestrator.ts",
+      "baselineBytes": 50456,
+      "baselineLines": 1185,
+      "routeBytes": 413,
+      "routeLines": 9,
+      "moduleBytes": 50146,
+      "moduleLines": 1178,
+      "baselineTransformedSha256": "c271fbbe455a01e7f22d4f14bf382fed8aae3a9d8e15af1b0704c43d7f67419a",
+      "currentModuleSha256": "c271fbbe455a01e7f22d4f14bf382fed8aae3a9d8e15af1b0704c43d7f67419a",
+      "parity": true,
+      "baselineRouteSha256": "973497f665d4ab652348fe7eea7e54e751f6456492a8800ebb44825e1e2c96f5",
+      "currentRouteSha256": "973497f665d4ab652348fe7eea7e54e751f6456492a8800ebb44825e1e2c96f5",
+      "layeredDecompositionPolicy": "config/pass4739-orchestrator-layer-decomposition-policy.json"
+    },
+    {
+      "name": "audit-watch",
+      "route": "app/api/security/audit-watch/route.ts",
+      "module": "lib/security/audit-watch-route-orchestrator.ts",
+      "baselineBytes": 38660,
+      "baselineLines": 741,
+      "routeBytes": 463,
+      "routeLines": 15,
+      "moduleBytes": 38398,
+      "moduleLines": 735,
+      "baselineTransformedSha256": "9d498033d3cb1c8b88f300417f227a6411e20d0216308cf2b422297b807b5e4b",
+      "currentModuleSha256": "9d498033d3cb1c8b88f300417f227a6411e20d0216308cf2b422297b807b5e4b",
+      "parity": true,
+      "baselineRouteSha256": "024309f5a8feffac93e9941395ce75e32912b2551b397149fc4c758ea9b2a386",
+      "currentRouteSha256": "024309f5a8feffac93e9941395ce75e32912b2551b397149fc4c758ea9b2a386",
+      "layeredDecompositionPolicy": "config/pass4739-orchestrator-layer-decomposition-policy.json"
+    }
+  ],
+  "budgets": {
+    "routeMaxLines": 20,
+    "moduleMaxBytes": 140000,
+    "zeroBehaviorDriftRequired": true,
+    "exactTransformedModuleParityRequired": false,
+    "exactRouteAdapterParityRequired": true
+  },
+  "forbiddenRouteTokens": [
+    "fetchWithDeadline",
+    "NextResponse.json",
+    "buildAuditWatchAssessment",
+    "resolvePass458ProviderTruthQuote",
+    "searchVelmereIntelligence"
+  ]
+}

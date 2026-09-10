@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "velmere.pass36.a64.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+  "parentRevisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+  "decision": "VERIFIED_LOCAL_HISTORICAL_CONTROL_METADATA_RECOVERY",
+  "historicalSourceArchiveSha256": "31d36618b4182fa317b20887db25a102da63858ff60ec84f6bd0103ea30d2f1b",
+  "restoredHistoricalFiles": 103,
+  "restoredControlPlaneFiles": 96,
+  "supplementalControlMetadata": "109/109 COMPLETE",
+  "staticControlPlane": "567/567 PASS",
+  "exactFinalByteBuildExecuted": false,
+  "criticalOfflineGatePassed": false,
+  "realStagingProgramExecuted": false,
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A64 proves exact local recovery and completeness of historical control metadata only. It does not make historical evidence current, execute exact build/browser acceptance, recover the two PASS5/PASS6 critical artifacts, prove staging, LIVE, legal rights, customer value, or enable sale."
+}

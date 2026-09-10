@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.legacy-multiplication-economic-sink-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "ruleId": "AST_LEGACY_UNCHECKED_MULTIPLICATION_ECONOMIC_SINK",
+  "classification": "BOUNDED_REVIEW_PRIORITY_ONLY",
+  "compilerBoundary": {
+    "eligible": ">=0.4.0 <0.8.0",
+    "notApplicable": ">=0.8.0",
+    "authority": "exact executed solc.version(), never pragma text alone"
+  },
+  "supportedScope": {
+    "arithmetic": "unsigned BinaryOperation multiplication",
+    "taint": "external/public function parameter or msg.value/msg.data, direct or local alias in the same function",
+    "sinks": [
+      "native transfer/send amount",
+      "legacy call.value or call options value",
+      "contract transfer/transferFrom/approve amount",
+      "mint/burn amount",
+      "msg.value/address balance/economic-state validation",
+      "semantic economic state write"
+    ],
+    "suppressions": [
+      "control-flow-dominating multiplication division-identity check before the sink",
+      "control-flow-dominating conjunctive literal upper bounds proving the product fits",
+      "operand type/literal range proving the product fits",
+      "SafeMath-style method call because it is not an unchecked BinaryOperation",
+      "Solidity 0.8 or later because this legacy family is not applicable"
+    ]
+  },
+  "explicitlyUnsupported": [
+    "broad arithmetic coverage",
+    "interprocedural or cross-contract taint completeness",
+    "signed arithmetic",
+    "path feasibility",
+    "economic loss",
+    "exploitability",
+    "severity accuracy",
+    "formal precision/recall",
+    "independent ground truth",
+    "real-protocol accuracy"
+  ],
+  "syntheticDenominator": {
+    "total": 44,
+    "vulnerable": 9,
+    "patched": 8,
+    "hardNegativeOrLookalike": 14,
+    "controlledMutation": 7,
+    "modernCompilerNotApplicable": 6,
+    "exactCompilerVersions": ["0.4.25", "0.5.17", "0.6.12", "0.7.6", "0.8.24"]
+  },
+  "credits": {
+    "implemented": true,
+    "testedSynthetic": true,
+    "testedPublicCorpus": false,
+    "testedLocalRealExecution": false,
+    "formalAccuracy": false,
+    "independentGroundTruth": false,
+    "realProtocol": false,
+    "externalHuman": false,
+    "customer": false,
+    "sale": false,
+    "live": false,
+    "worldClass": false
+  }
+}

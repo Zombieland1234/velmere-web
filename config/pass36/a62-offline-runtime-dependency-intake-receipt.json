@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "velmere.pass36.a62.offline-runtime-dependency-input.v2",
+  "revisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+  "decision": "BLOCKED_RUNTIME_OR_DEPENDENCY_ARTIFACTS",
+  "summary": {
+    "runtimeVerified": false,
+    "dependencyBundleVerified": false,
+    "browserBundleVerified": false,
+    "packageCount": 0,
+    "browserFiles": 0,
+    "errors": 3
+  },
+  "runtime": null,
+  "dependencies": null,
+  "browser": null,
+  "errors": [
+    "a62_node_archive_not_supplied",
+    "a62_dependency_bundle_not_supplied",
+    "a62_browser_bundle_not_supplied"
+  ],
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A62 can verify an exact official Node 24.18.0 archive for Windows x64 or Linux x64, its bundled npm 11.16.0, a complete lockfile-bound dependency tarball bundle, and an externally SHA-256-anchored Playwright Chromium bundle. It then prepares a no-network npm cache, proves a real browser launch, and invokes A60. It does not reconstruct missing artifacts, prove browser provenance beyond the supplied external anchor and launch test, prove staging or LIVE, or enable sale."
+}

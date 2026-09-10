@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A102R44_ACTION_REQUIRED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T04:30:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "BOUNDED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF",
+  "statePath": "config/pass36/a102r44-action-required-current-state.json",
+  "approvedChangeLedgerPath": "config/pass36/a102r44-approved-current-source-changes.json",
+  "descendantManifestPath": "config/pass36/a102r44-current-root-descendant-manifest.json",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "localUiWork": {
+    "closedFindings": 9,
+    "blockedFindings": 1,
+    "finalUiPolishBoundaryChecks": 35,
+    "localCanonicalIconAssets": 187,
+    "requiredMarketRows": 583,
+    "exactFinalByteBuildBrowserCredit": false,
+    "cleanupStarted": false
+  },
+  "externalBlockers": [
+    {
+      "id": "UI-R44-007",
+      "severity": "P1",
+      "status": "BLOCKED_DATA_RIGHTS_AND_PROVIDER",
+      "exactMissingInput": "Rights-approved exact 583-row icon identity matrix and authorized canonical HTTPS provider smoke.",
+      "owner": "DATA_RIGHTS_OWNER_AND_STAGING_OPERATOR",
+      "safeAcquisitionMethod": "Provider contracts/official brand sources plus disposable HTTPS staging; no copied trademark assets without permission.",
+      "requiredVerifier": "Independent rights reviewer and exact provider/route receipt.",
+      "passCriteria": "583/583 rows have truthful icon or explicit unavailable status with rights and identity binding.",
+      "whatRemainsForbidden": "No invented logos, no badge called a real icon, no canonical-origin guard weakening."
+    }
+  ],
+  "remainingCheckpointEstimate": {
+    "minimum": 11,
+    "mostLikely": 23,
+    "withRevisionsAndRetests": 39
+  },
+  "nextSafeAction": "Complete exact local regression and browser receipts, package deterministic clean handoff, then acquire rights-approved icon/provider evidence without weakening fail-closed security."
+}

@@ -1,0 +1,825 @@
+{
+  "schemaVersion": "velmere.preflight-critical-guard-id-registry.v1",
+  "generatedAt": "2026-07-12T16:47:53.500Z",
+  "policy": {
+    "explicitAuthoredIdsRequiredForCriticalPhases": true,
+    "messageHashSuffixRequired": true,
+    "scopeFallbackAllowedForNoncritical": true
+  },
+  "catalogCurrentSha256": "8856a240d18d2296769d6d369726ec7b5089e6b8d36540b5602ec464b3c2490e",
+  "criticalPhaseCount": 4,
+  "guardCount": 81,
+  "guards": [
+    {
+      "guardScope": "pf.product-commerce.001",
+      "authoredId": "commerce.001.if-pkg-dependencies-next-pkg-devdependencies-next",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "40decb349acb5c5f3acb2c606fc22c148e54d1d91cbc39ae0f920e890bf61164",
+      "semanticLabel": "if (!pkg.dependencies?.next && !pkg.devDependencies?.next) {",
+      "summary": "if (!pkg.dependencies?.next && !pkg.devDependencies?.next) {"
+    },
+    {
+      "guardScope": "pf.product-commerce.002",
+      "authoredId": "commerce.002.artifact-codex-handoff-source-artifact-is-in-the-project-root-an",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "3b59e08f055b52d02940234ee3b2e0fbb2fd4e7b932ee9a97cf8a567b3e3ab0f",
+      "semanticLabel": "${artifact}: Codex handoff/source artifact is in the project root and will be compiled by Next/TypeScript. Move it to docs/codex-handoff as .txt or keep it outside the deployment ZIP.",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.product-commerce.003",
+      "authoredId": "commerce.003.lib-products-types-missing-product-truth-type-needle",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "9204b6e36c554f05a666a7ca6487f0227e3f49c2d9496d807dd0b0b7ad1acb98",
+      "semanticLabel": "lib/products/types.ts: missing product truth type ${needle}.",
+      "summary": "Product truth production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.004",
+      "authoredId": "commerce.004.lib-products-launch-readiness-missing-commerce-launch-guard-need",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "5f236eb379cb8c340dd7f19ee5a0c1a880da98be05571520b80bed01b119c0c9",
+      "semanticLabel": "lib/products/launch-readiness.ts: missing commerce launch guard ${needle}.",
+      "summary": "Commerce launch safety production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.005",
+      "authoredId": "commerce.005.components-market-integrity-tokenriskmodalx-missing-operator-cop",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "700deb90c72c669a8cf3f6b1f9bb25674a5a2146aeda1e440f680fc51285a576",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing operator copy marker ${needle}.",
+      "summary": "Operator copy progress production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.006",
+      "authoredId": "commerce.006.lib-launch-site-page-audit-missing-site-audit-marker-needle",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "354c3462f173943e7558a4bae065f5a6ed12dc93c81a7dfb9999f0f1fb5a8563",
+      "semanticLabel": "lib/launch/site-page-audit.ts: missing site audit marker ${needle}.",
+      "summary": "Site page audit production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.007",
+      "authoredId": "commerce.007.file-codex-source-artifact-must-not-be-deployable",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "0ebe0abe8885a886a04fe3731bbd7f4911b95c1ac3f0d266767e1b8074165795",
+      "semanticLabel": "${file}: Codex source artifact must not be deployable.",
+      "summary": "Broad Vercel static production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.008",
+      "authoredId": "commerce.008.components-market-integrity-tokenriskmodalx-missing-orbit-cleanu",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "c95556b94800114957d8d032135d5127019d3930f1387d7faac78ba1031d274b",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing orbit cleanup marker ${needle}.",
+      "summary": "Orbit layout cleanup production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.009",
+      "authoredId": "commerce.009.lib-market-integrity-evidence-report-missing-evidence-export-man",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "df2f0d8119170cb9ee08b8a878c7dc5715192cd5598dde04aa56544bf2bf3d62",
+      "semanticLabel": "lib/market-integrity/evidence-report.ts: missing evidence export manifest marker ${needle}.",
+      "summary": "Evidence export manifest production guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.010",
+      "authoredId": "commerce.010.components-market-integrity-marketintegrityclientx-missing-legac",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "50f95c98a3679a891846b24806bae5a92d5e63caa79f0c6dad10242f35db9d76",
+      "semanticLabel": "components/market-integrity/MarketIntegrityClient.tsx: missing PASS197 search portal marker ${needle}.",
+      "summary": "PASS197 search portal containment guard"
+    },
+    {
+      "guardScope": "pf.product-commerce.011",
+      "authoredId": "commerce.011.fullsurfacereadinessindex-locale-locale-surface-home",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "8759b361abf380d8c77f15fdd41124b1f5ad2e8bafddff7fc250b283046a6599",
+      "semanticLabel": "<FullSurfaceReadinessIndex locale={locale} surface=\"home\" />",
+      "summary": "guard script marker: verify-pass197-search-portal-containment-safety.mjs"
+    },
+    {
+      "guardScope": "pf.product-commerce.012",
+      "authoredId": "commerce.012.legacy-home-locale-runtime-hotfix-guard-failed-error-instanceof",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "63a70501f4ddbd95351c014fe42ae59e83d521a5d725256698d3b60faa2e42c7",
+      "semanticLabel": "PASS195 home locale runtime hotfix guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "guard script marker: verify-pass196-orbit360-final-runtime-hotfix-safety.mjs"
+    },
+    {
+      "guardScope": "pf.product-commerce.013",
+      "authoredId": "commerce.013.components-market-integrity-tokenriskmodalx-missing-legacy-modal",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "c16688ab6c1c3b6069fa924eb26a19da96003c9609636fb25279cea22a4f5679",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing PASS194 modal marker ${needle}.",
+      "summary": "guard script marker: verify-pass195-home-locale-runtime-hotfix-safety.mjs"
+    },
+    {
+      "guardScope": "pf.product-commerce.014",
+      "authoredId": "commerce.014.components-security-securitytrustpagex-missing-legacy-runtime-im",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "b6ac087d7230e2b4c87c82f22ab23bd41d089484cd90102ca2c8befcf0b577de",
+      "semanticLabel": "components/security/SecurityTrustPage.tsx: missing PASS193 runtime import marker ${needle}.",
+      "summary": "guard script marker: verify-pass194-orbit360-modal-lens-polish-safety.mjs"
+    },
+    {
+      "guardScope": "pf.product-commerce.015",
+      "authoredId": "commerce.015.lib-security-payment-runtime-evidence-missing-legacy-evidence-ma",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "170977bf36084c83505e3bddbffbf362b9d7857ce61a11d5f27beb234b41d9ac",
+      "semanticLabel": "lib/security/payment-runtime-evidence.ts: missing PASS192 evidence marker ${needle}.",
+      "summary": "guard script marker: verify-pass193-vlm-lens-security-hotfix-safety.mjs"
+    },
+    {
+      "guardScope": "pf.product-commerce.016",
+      "authoredId": "commerce.016.lib-security-payment-webhook-guard-missing-legacy-guard-marker-n",
+      "logicalPhase": "product-commerce",
+      "owner": "commerce",
+      "criticality": "P0",
+      "sourceStatementSha256": "e5dbe6469f8f47b5c17c52b0e6d7d50e6d12fc2c5a3889aa35d6868fd5c1135b",
+      "semanticLabel": "lib/security/payment-webhook-guard.ts: missing PASS191 guard marker ${needle}.",
+      "summary": "guard script marker: verify-pass192-payment-runtime-evidence-replay-qa-safety.mjs"
+    },
+    {
+      "guardScope": "pf.runtime-release.001",
+      "authoredId": "release.001.search-page-client-missing-legacy-marker-needle",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "980c529e105f8b3861eabe533a1a4688adff9e9ead7a917aa63eea05bb64f3d5",
+      "semanticLabel": "search page/client: missing PASS175 marker ${needle}.",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.runtime-release.002",
+      "authoredId": "release.002.lib-market-integrity-source-adapter-runtime-missing-legacy-marke",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "324e71c3e3e3fd03fe914eab980c03816951fbd636a9bcd53ab2efc0423a79aa",
+      "semanticLabel": "lib/market-integrity/source-adapter-runtime.ts: missing PASS174 marker ${needle}.",
+      "summary": "guard script marker: verify-pass175-intelligence-search-safety.mjs"
+    },
+    {
+      "guardScope": "pf.runtime-release.003",
+      "authoredId": "release.003.lib-market-integrity-live-source-adapter-contract-missing-legacy",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "37fb4e7d75d71ecdfdfd6ad6e450b8d0cf0555d1de625dbe0b837ff6a4571167",
+      "semanticLabel": "lib/market-integrity/live-source-adapter-contract.ts: missing PASS173 marker ${needle}.",
+      "summary": "guard script marker: verify-pass174-source-cache-snapshot-ledger-safety.mjs"
+    },
+    {
+      "guardScope": "pf.runtime-release.004",
+      "authoredId": "release.004.components-market-integrity-tokenriskmodalx-missing-legacy-marke",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "d1f5053de838516617f74647169c212f20ddd49c64f4ca7f3e838f1cd5f61be6",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing PASS172 marker ${needle}.",
+      "summary": "guard script marker: verify-pass173-browser-source-readiness-safety.mjs"
+    },
+    {
+      "guardScope": "pf.runtime-release.005",
+      "authoredId": "release.005.components-market-integrity-tokenriskmodalx-missing-legacy-marke",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "736b8c61c085f4f6bdc1c011162225c976e3c8fd1d20e6fb2b54021b58372bb4",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing PASS171 marker ${needle}.",
+      "summary": "guard script marker: verify-vlm-brain-board-density-renderer-contract-safety.mjs"
+    },
+    {
+      "guardScope": "pf.runtime-release.006",
+      "authoredId": "release.006.components-market-integrity-tokenriskmodalx-missing-legacy-marke",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "5da3c7cf6c0a864bd79d24b7f945b8cdda44c138062e6be2ab6a59c166596402",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing PASS170 marker ${needle}.",
+      "summary": "guard script marker: verify-vlm-brain-board-focus-webgl-lane-safety.mjs"
+    },
+    {
+      "guardScope": "pf.runtime-release.007",
+      "authoredId": "release.007.lib-market-integrity-evidence-report-missing-needle",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "5c63d042f62347990bc3b0d6c690a2b5d9a60e6154c97b84b90c29a57da3cbe8",
+      "semanticLabel": "lib/market-integrity/evidence-report.ts: missing ${needle}.",
+      "summary": "Evidence report production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.008",
+      "authoredId": "release.008.lib-market-integrity-operator-casefile-missing-needle",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "683d75feb9c17d338c5816024cb8613956c4479fde8aaee0770601b2a70829ea",
+      "semanticLabel": "lib/market-integrity/operator-casefile.ts: missing ${needle}.",
+      "summary": "Operator casefile production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.009",
+      "authoredId": "release.009.components-market-integrity-tokenriskmodalx-missing-vlm-motion-g",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "3475709a6cba3bfe728f4423c5ef0e4460da00b77f9ef79192f7164c3278f17c",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing VLM motion governor marker ${needle}.",
+      "summary": "VLM motion governor production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.010",
+      "authoredId": "release.010.components-market-integrity-tokenriskmodalx-missing-vlm-spherica",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "94edd16ade33b9289182bcfb8103c112b9d8cf25f491ffd6d79dd47ffea02eb3",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing VLM spherical motion marker ${needle}.",
+      "summary": "VLM organic motion production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.011",
+      "authoredId": "release.011.components-market-integrity-shieldmapclientx-missing-suggestion",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "ecbd7cdb67d65873acca27c050d90a6a7d4252e65cb235e7a1f3391faaecc9f2",
+      "semanticLabel": "components/market-integrity/ShieldMapClient.tsx: missing suggestion outside-click marker ${needle}.",
+      "summary": "Shield runtime UI production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.012",
+      "authoredId": "release.012.scripts-verify-ai-risk-brain-scenarios-missing-scenario-needle",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "ee114e26ecbdacd497be187c8dafacea37426af522177ce08059be8646417067",
+      "semanticLabel": "scripts/verify-ai-risk-brain-scenarios.mjs: missing scenario ${needle}.",
+      "summary": "AI risk brain scenario guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.013",
+      "authoredId": "release.013.lib-market-integrity-risk-engine-message",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "5232c7d084b3648b454c4c80ac9c8ae25a2d4d008238acb303adac0f5c2f99aa",
+      "semanticLabel": "lib/market-integrity/risk-engine.ts: ${message}",
+      "summary": "AI brain import contract production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.014",
+      "authoredId": "release.014.components-market-integrity-shieldmapclientx-missing-locale-awar",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "4162b507542af2274443596beac153cb1c20c3a5930c9d62cb378fe0b892e812",
+      "semanticLabel": "components/market-integrity/ShieldMapClient.tsx: missing locale-aware block ${needle}.",
+      "summary": "Locale surface production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.015",
+      "authoredId": "release.015.modalfile-message",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "2d8765b47eb69caddb048fed2341d9c87f12caec4611275f960a9c360a98cf11",
+      "semanticLabel": "${modalFile}: ${message}",
+      "summary": "VLM brain performance guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.016",
+      "authoredId": "release.016.riskfile-message",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "d5c50e6b723c60dde3c6e94f3439190d729c01436e035f3cd54ce67cdaa6a107",
+      "semanticLabel": "${riskFile}: ${message}",
+      "summary": "Risk engine production guard"
+    },
+    {
+      "guardScope": "pf.runtime-release.017",
+      "authoredId": "release.017.const-textfiles",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "5df5f23a6f5602d409d064d9225dcdd9f88a7babec2d608c3e9afe1847ef0926",
+      "semanticLabel": "const textFiles = [",
+      "summary": "const textFiles = ["
+    },
+    {
+      "guardScope": "pf.runtime-release.018",
+      "authoredId": "release.018.file-use-repeat-999999-instead-of-repeat-infinity-for-vercel-waa",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "26fbdb34a635d4bd252d32ab8d06d02f08179e08d07ca08ca9b05ef4e4be900d",
+      "semanticLabel": "${file}: use repeat: 999999 instead of repeat: Infinity for Vercel/WAAPI safety.",
+      "summary": "for (const file of textFiles) {"
+    },
+    {
+      "guardScope": "pf.runtime-release.025",
+      "authoredId": "release.025.export-textfiles",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "889d57c5ec8b3d17ca92f6b49b1c6a46ebd1db2022be21b650f48ad20c422669",
+      "semanticLabel": "export { textFiles };",
+      "summary": "export { textFiles };"
+    },
+    {
+      "guardScope": "pf.runtime-release.019",
+      "authoredId": "release.019.cartsource-n-checkoutsuccess-n-checkoutcancel",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "0e2dc80d585981543b94695b355b816bbef678cfcc4cf7b0e4b74a3765b3c1a4",
+      "semanticLabel": "${cartSource}\\n${checkoutSuccess}\\n${checkoutCancel}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.runtime-release.020",
+      "authoredId": "release.020.root-route-guard-failed-error-instanceof-error-error-message-str",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "0cb6599343cdef658a3627130369ad741bee988aea2f8f091d3ff1ff8848b667",
+      "semanticLabel": "Root route guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.runtime-release.021",
+      "authoredId": "release.021.navbar-drawer-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "bd506e042fa5d9ee07a71d80a6e9836c857b3f67e6105cc5ef1e13a1d7d2ff61",
+      "semanticLabel": "Navbar drawer guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.runtime-release.022",
+      "authoredId": "release.022.square-mobile-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "58974cd53e7694bf727b8aec1a38d1959d2cfc4961320c50fb4e8a832ad677a1",
+      "semanticLabel": "Square mobile guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.runtime-release.023",
+      "authoredId": "release.023.vlm-mobile-switch-guard-failed-error-instanceof-error-error-mess",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "14fe19ce205d63dab471e0dc5c4db23c59d6a29f498e5b02585a6748a109b30b",
+      "semanticLabel": "VLM mobile switch guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.runtime-release.024",
+      "authoredId": "release.024.root-route-guard-failed-error-instanceof-error-error-message-str",
+      "logicalPhase": "runtime-release",
+      "owner": "release-engineering",
+      "criticality": "P0",
+      "sourceStatementSha256": "c122936ad921ca30ea1c0dbc79d6615a31799e3335b63ecaaeaccc862763c5c7",
+      "semanticLabel": "Root route guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.001",
+      "authoredId": "security.001.navbar-cart-guard-failed-error-instanceof-error-error-message-st",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "da34ea283870b22b115432816def83e9108139471faaca2dfc99d5c4f1bfaa1b",
+      "semanticLabel": "Navbar cart guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.002",
+      "authoredId": "security.002.kind-s",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "7474e9c8f3e1470b81e8fa63d0b0caea6a49641812592af5472555e46b61271b",
+      "semanticLabel": "${kind}\\\\s*:",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.003",
+      "authoredId": "security.003.product-image-optimization-guard-failed-error-instanceof-error-e",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "61e6e5a6aeb3acb0afb44efc83d1b1b36190a145508a67d1bf2872ed869307b4",
+      "semanticLabel": "Product image optimization guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.004",
+      "authoredId": "security.004.cart-hydration-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "589b61a03c80320861264e6587bed563fb89760ca0081d49d4ce1e168d1c3924",
+      "semanticLabel": "Cart hydration guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.005",
+      "authoredId": "security.005.proxy-matcher-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "47e4d572a87635667c2e016c1e009c16c04ca78f7ad693d285587c2a90cd51f9",
+      "semanticLabel": "Proxy matcher guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.006",
+      "authoredId": "security.006.printful-cache-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "cd70a5e144f061011523f2efbe3f5b7ac9f5afd6b9d1035c72ab4ea2038cf20c",
+      "semanticLabel": "Printful cache guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.007",
+      "authoredId": "security.007.stripe-webhook-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "f62c4e3177cbea727fc0821ac20dd35807b391b4a33e62d3d526b00aeb63b8ea",
+      "semanticLabel": "Stripe webhook guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.008",
+      "authoredId": "security.008.web3-provider-guard-failed-error-instanceof-error-error-message",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "c1eab76e7fb12dc6eceb4b8a6d5153beee6d1ef8b8209b3cf39824243a76d46b",
+      "semanticLabel": "Web3 provider guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.009",
+      "authoredId": "security.009.mobile-animation-guard-failed-error-instanceof-error-error-messa",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "b26a5111731d2106b5c04b4123b49cc35316f118b66c9c688b091615dccf16f6",
+      "semanticLabel": "Mobile animation guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.010",
+      "authoredId": "security.010.locale-root-route-guard-failed-error-instanceof-error-error-mess",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "97697ebd3aa0b381e96bb1f6634a18f58aafbb1d7b83660621366163d641a4ee",
+      "semanticLabel": "Locale root route guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.011",
+      "authoredId": "security.011.app-locale-route",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "1b675ca1fd99fc86399cf7aaa5557e5e5fb87767c391f402a1e932f82250e5fd",
+      "semanticLabel": "app/[locale]/${route}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.012",
+      "authoredId": "security.012.authgate-duplicate-locale-guard-failed-error-instanceof-error-er",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "c98f87158cad4d239c133ec71651c4de882257fcc8e9e5f692cd68c23f4fd879",
+      "semanticLabel": "AuthGate duplicate-locale guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.013",
+      "authoredId": "security.013.route-auth-route-or-registered-alias-is-missing-login-member-cli",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "cfd61f99c869dfd71613abfefe91ec0e6b94e3904cd18b637eedb9afbaf32e93",
+      "semanticLabel": "${route}: auth route or registered alias is missing; login/member clicks may show 404.",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.014",
+      "authoredId": "security.014.market-integrity-guard-failed-error-instanceof-error-error-messa",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "9dc894bec99b8d05457d224609d7ec7330cfd4a8ae25e1b2214ca8796a072543",
+      "semanticLabel": "Market integrity guard failed: ${error instanceof Error ? error.message : String(error)}",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.security-operations.015",
+      "authoredId": "security.015.lib-launch-square-vlm-launch-control-missing-launch-control-mark",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "3fe03062019c558688704ab33ecd6d34ee5ab3742aa7088baa95aeb1bd53a732",
+      "semanticLabel": "lib/launch/square-vlm-launch-control.ts: missing launch-control marker ${needle}.",
+      "summary": "Square/VLM launch control production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.016",
+      "authoredId": "security.016.lib-launch-commerce-launch-control-missing-commerce-launch-marke",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "3c287358d72c3dfdaff1778bc51f3e6563e1a395fe1da9188458b3481c335d2f",
+      "semanticLabel": "lib/launch/commerce-launch-control.ts: missing commerce launch marker ${needle}.",
+      "summary": "Commerce launch control production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.017",
+      "authoredId": "security.017.lib-launch-provider-truth-ledger-missing-provider-truth-marker-n",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "acd95eb2cc464d5e854e3ec0fe43fec1877e45192077337ec5ef7f69c6efb2d3",
+      "semanticLabel": "lib/launch/provider-truth-ledger.ts: missing provider truth marker ${needle}.",
+      "summary": "Provider truth/admin gate production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.018",
+      "authoredId": "security.018.components-product-productcardx-missing-provider-snapshot-marker",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "18d9812751ab060a51a3e44f050ccee38a21adabf6da1b3dbed53d386a44fce8",
+      "semanticLabel": "components/product/ProductCard.tsx: missing provider snapshot marker ${needle}.",
+      "summary": "Product provider snapshot production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.019",
+      "authoredId": "security.019.lib-launch-shipping-returns-truth-missing-shipping-returns-marke",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "19b9321d9e1ed96ea60b0d825af0622f4e7778bd5f947c29da8b7c3f936e5b33",
+      "semanticLabel": "lib/launch/shipping-returns-truth.ts: missing shipping/returns marker ${needle}.",
+      "summary": "Shipping/returns truth production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.020",
+      "authoredId": "security.020.lib-launch-payment-order-readiness-missing-payment-order-marker",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "1919ad26770da336e4abd255e844bfd9654ed4ad17137e99406862fd92d4caaf",
+      "semanticLabel": "lib/launch/payment-order-readiness.ts: missing payment/order marker ${needle}.",
+      "summary": "Payment/order readiness production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.021",
+      "authoredId": "security.021.lib-launch-order-event-ledger-missing-order-event-marker-needle",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "42bdef6d4eadcb55a97bc8e656106b0910555a2d72159be21c5b0746fe1cf508",
+      "semanticLabel": "lib/launch/order-event-ledger.ts: missing order event marker ${needle}.",
+      "summary": "Order event ledger production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.022",
+      "authoredId": "security.022.lib-launch-admin-route-gate-missing-admin-gate-marker-needle",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "1f4d12a31651d167d526a7e9d81b9a52f894ac02d84f251b748647ea44b83ce5",
+      "semanticLabel": "lib/launch/admin-route-gate.ts: missing admin gate marker ${needle}.",
+      "summary": "Admin route gate production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.023",
+      "authoredId": "security.023.lib-launch-admin-environment-gate-missing-admin-env-marker-needl",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "5ec6b224ea00d9d9925fb2cf2a99aec8caa5f7024b158624611e8d121c89f807",
+      "semanticLabel": "lib/launch/admin-environment-gate.ts: missing admin env marker ${needle}.",
+      "summary": "Admin environment gate production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.024",
+      "authoredId": "security.024.lib-launch-admin-server-auth-contract-missing-admin-auth-marker",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "115fb063e1c790be226c0bbfe5774fbe520719cdacabaa41f51b97d384bb232b",
+      "semanticLabel": "lib/launch/admin-server-auth-contract.ts: missing admin auth marker ${needle}.",
+      "summary": "Admin auth/publish/secret production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.025",
+      "authoredId": "security.025.lib-launch-redacted-logger-missing-redacted-logger-marker-needle",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "14c51e842b0e8032a06784343b801af323eb7a9948c815c35dd238d203d905cc",
+      "semanticLabel": "lib/launch/redacted-logger.ts: missing redacted logger marker ${needle}.",
+      "summary": "Admin mutation audit production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.026",
+      "authoredId": "security.026.lib-launch-admin-audit-persistence-missing-audit-persistence-mar",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "e81f5fe5e0f8f58da93ff1e1b80ded4b2309763acfbd270c6471f813da882c82",
+      "semanticLabel": "lib/launch/admin-audit-persistence.ts: missing audit persistence marker ${needle}.",
+      "summary": "Admin audit persistence production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.027",
+      "authoredId": "security.027.lib-launch-admin-audit-write-contract-missing-audit-write-marker",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "8d354118ab57f0e77c7ab1fc53a90310669d8e077842b1c43aeb97a6dae45c32",
+      "semanticLabel": "lib/launch/admin-audit-write-contract.ts: missing audit write marker ${needle}.",
+      "summary": "Admin audit write API production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.028",
+      "authoredId": "security.028.lib-launch-admin-auth-session-guard-missing-auth-session-marker",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "8870633d86b5cdd1c1d5fee025039f6e95cdcc397d10f1d462923b591ab2b1d8",
+      "semanticLabel": "lib/launch/admin-auth-session-guard.ts: missing auth session marker ${needle}.",
+      "summary": "Admin auth session/idempotency production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.029",
+      "authoredId": "security.029.components-market-integrity-tokenriskmodalx-missing-legacy-vlm-b",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "dec08ac1c9ac5d92eb457b84a6a6f5b66f4658f35dcf39bd7ec7f411edc9c57e",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing PASS148 VLM brain marker ${needle}.",
+      "summary": "VLM brain orbit cleanup production guard"
+    },
+    {
+      "guardScope": "pf.security-operations.030",
+      "authoredId": "security.030.components-market-integrity-tokenriskmodalx-missing-legacy-marke",
+      "logicalPhase": "security-operations",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "35c18c716e9a9849f72259536be4a4d0e7238cd04eeb150c0d99555e7a8a58a5",
+      "semanticLabel": "components/market-integrity/TokenRiskModal.tsx: missing PASS149 marker ${needle}.",
+      "summary": "VLM brain explainer advanced guard"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.001",
+      "authoredId": "trust.001.lib-market-integrity-vlm-brain-legacy-evidence-runbook-missing-l",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "12ecdb3f481eecb6671e3a2f4cf148d8cbf5c285f2e96686c63d9cca80cc8b20",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass256-evidence-runbook.ts: missing PASS256 marker ${marker}.",
+      "summary": "try {"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.002",
+      "authoredId": "trust.002.lib-market-integrity-vlm-brain-legacy-evidence-sla-timeline-miss",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "c7c4c9314381bb3d150f131b566dd98196b42635080daef0525b6d15fa9d315a",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass257-evidence-sla-timeline.ts: missing PASS257 marker ${marker}.",
+      "summary": "guard script marker: verify-pass256-evidence-runbook-export-quarantine-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.003",
+      "authoredId": "trust.003.lib-market-integrity-vlm-brain-legacy-proof-receipt-lock-missing",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "ca25053d90a09f5dc4c19adafba7765749edfd629664e209f959964bc3fcf386",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass258-proof-receipt-lock.ts: missing PASS258 marker ${marker}.",
+      "summary": "guard script marker: verify-pass257-evidence-sla-timeline-exception-firewall-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.004",
+      "authoredId": "trust.004.lib-market-integrity-vlm-brain-legacy-attestation-ledger-missing",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "c4b992b50b5b03cf8ae45071082789a1c219f71889553dbc35d8cdc8563bba25",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass259-attestation-ledger.ts: missing PASS259 marker ${marker}.",
+      "summary": "guard script marker: verify-pass258-proof-receipt-lock-browser-trace-pack-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.005",
+      "authoredId": "trust.005.lib-market-integrity-vlm-brain-legacy-release-promotion-firewall",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "63ad9e2fea846c34cbfac31c64834789cdaad27b963f0c02ab5c1d9e6f380ca1",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass260-release-promotion-firewall.ts: missing PASS260 marker ${marker}.",
+      "summary": "guard script marker: verify-pass259-attestation-ledger-release-freeze-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.006",
+      "authoredId": "trust.006.lib-market-integrity-vlm-brain-legacy-release-cutover-control-mi",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "cc3e1625bff4105ad68641de0703e30974191060578cee794d6e2fd2eaefd7db",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass261-release-cutover-control.ts: missing PASS261 marker ${marker}.",
+      "summary": "guard script marker: verify-pass260-release-promotion-firewall-review-packet-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.007",
+      "authoredId": "trust.007.lib-market-integrity-vlm-brain-legacy-release-rehearsal-matrix-m",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "19066f69d5fe253981a128b3550faf756656ec0863aa995b4b5a0ac280680937",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass262-release-rehearsal-matrix.ts: missing PASS262 marker ${marker}.",
+      "summary": "guard script marker: verify-pass261-release-cutover-control-rollback-vault-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.008",
+      "authoredId": "trust.008.lib-market-integrity-vlm-brain-legacy-release-candidate-trust-bo",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "ff8f1bcfda858834950271b8510f8ade397c90f627070a6eade5d30a2211a096",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass263-release-candidate-trust-board.ts: missing PASS263 marker ${marker}.",
+      "summary": "guard script marker: verify-pass262-release-rehearsal-matrix-surface-locks-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.009",
+      "authoredId": "trust.009.lib-market-integrity-vlm-brain-legacy-trust-narrative-guard-miss",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "bf801fad2007510b4aa6381f72f4850279919213acf6192d9e0e3ab7b4d94c97",
+      "semanticLabel": "lib/market-integrity/vlm-brain-pass264-trust-narrative-guard.ts: missing PASS264 marker ${marker}.",
+      "summary": "guard script marker: verify-pass263-release-candidate-trust-board-safety.mjs"
+    },
+    {
+      "guardScope": "pf.late-trust-routes.010",
+      "authoredId": "trust.010.contract-file-missing-legacy-response-contract-marker",
+      "logicalPhase": "late-trust-routes",
+      "owner": "appsec",
+      "criticality": "P0",
+      "sourceStatementSha256": "89c10ebb7a6b2cb47088f1f475bf265268d13ec4f94913527162716609e5198c",
+      "semanticLabel": "${contract.file}: missing PASS474 response contract marker.",
+      "summary": "guard script marker: verify-pass264-trust-narrative-guard-dark-pattern-firewall-safety.mjs"
+    }
+  ],
+  "registrySha256": "6e0d681ed512128feb63990afe87eacadb297105b991f420a97bd9127da19484"
+}

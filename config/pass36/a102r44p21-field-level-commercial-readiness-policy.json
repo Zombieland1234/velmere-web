@@ -1,0 +1,73 @@
+{
+  "availabilityStates": [
+    "AVAILABLE_OWNED",
+    "AVAILABLE_PUBLIC_CHAIN",
+    "AVAILABLE_DERIVED",
+    "AVAILABLE_USER_SUPPLIED",
+    "AVAILABLE_PUBLIC_REGULATOR",
+    "AVAILABLE_RIGHTS_APPROVED_PROVIDER",
+    "AVAILABLE_MANUAL_REVIEW",
+    "BLOCKED_RIGHTS",
+    "BLOCKED_DATA",
+    "BLOCKED_CALIBRATION",
+    "BLOCKED_OPERATIONS",
+    "UNAVAILABLE",
+    "SYNTHETIC_ONLY"
+  ],
+  "catalog": {
+    "families": 10,
+    "fieldDefinitions": 86,
+    "tiers": 3
+  },
+  "currentRetainedEvidence": {
+    "controlFlagBps": 0,
+    "exactWindows": false,
+    "externalHistoricalRecallBps": 9565,
+    "independentAdjudications": 0,
+    "realCustomerCases": 0,
+    "realMarketsDiagnosticDenominator": "50/583",
+    "realNetworkDiagnosticAssets": 50,
+    "rightsApprovedRows": 0,
+    "shieldDiagnosticDenominator": "50/318"
+  },
+  "nonNegotiable": {
+    "LIVE": false,
+    "advancedTarget": "GO_PAID_AFTER_EVIDENCE",
+    "basicAlwaysFree": true,
+    "basicCheckoutAllowed": false,
+    "basicPaymentRequired": false,
+    "basicPublicPrice": null,
+    "currentPublicCheckoutAllowed": false,
+    "optionalProviderFieldsMayBeHidden": true,
+    "proTarget": "GO_PAID_AFTER_EVIDENCE",
+    "providerRestrictionDoesNotZeroOwnedFields": true,
+    "requiredFieldsFailClosed": true,
+    "saleEnabled": false,
+    "syntheticFixtureNeverReceivesRealProviderCredit": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P20_ACTION_REQUIRED_CURRENT_BYTE_DUAL_BUILD_BROWSER_PDF_AND_BASIC_FREE_PRO_ADVANCED_RELEASE_CLOSURE_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P21_ACTION_REQUIRED_FIELD_LEVEL_DATA_PROVENANCE_MODULAR_SALE_READINESS_AND_LEGAL_ALTERNATIVE_ROUTING_NO_LIVE_CREDIT",
+  "safeAlternatives": [
+    "DIRECT_CHAIN_QUERY",
+    "VELMERE_DERIVATION",
+    "PUBLIC_REGULATOR_API",
+    "USER_SUPPLIED_SIGNED_SNAPSHOT",
+    "RIGHTS_APPROVED_PROVIDER",
+    "CACHE_WITHIN_TERMS",
+    "MANUAL_VERIFICATION",
+    "HIDE_FIELD",
+    "NO_SAFE_SUBSTITUTE"
+  ],
+  "schemaVersion": "velmere.pass36.a102r44p21.field-level-commercial-readiness-policy.v1",
+  "sourceClasses": [
+    "VELMERE_OWNED",
+    "PUBLIC_BLOCKCHAIN_DIRECT",
+    "VELMERE_DERIVED",
+    "USER_SUPPLIED",
+    "EXTERNAL_PROVIDER",
+    "PUBLIC_REGULATOR_DATA",
+    "MANUAL_REVIEW",
+    "SYNTHETIC_FIXTURE"
+  ],
+  "truthBoundary": "Field-level readiness preserves Velmere-owned, direct-chain, derived, user-supplied and regulator value while blocking only unavailable required fields. It does not grant provider rights, exact Windows, staging, customer outcomes, LIVE or sale credit."
+}

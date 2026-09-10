@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "velmere.pass35.a27-fork-replay-evidence-runtime-contract.v1",
+  "passId": "PASS35_A27",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "strict": 9.3,
+    "zeroBudget": 80
+  },
+  "baselineA26": {
+    "canonical": 52.3,
+    "strict": 25.6,
+    "zeroBudget": 89.7
+  },
+  "progressDeltaVsA26": {
+    "canonicalPercentagePoints": 1.2,
+    "strictPercentagePoints": 2.3,
+    "zeroBudgetPercentagePoints": 0.4
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 12.8,
+    "strictPercentagePoints": 18.6,
+    "zeroBudgetPercentagePoints": 10.1
+  },
+  "canonicalWeightedPlanningPercent": 53.5,
+  "canonicalStrictDonePercent": 27.9,
+  "canonicalCounts": {
+    "DONE": 12,
+    "PARTIAL": 22,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 90.1,
+  "zeroBudgetCoreDenominator": 71,
+  "zeroBudgetCounts": {
+    "DONE": 58,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "correct": 72,
+      "accuracy": 1,
+      "unsafeEligible": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "total": 2304,
+      "killed": 2304,
+      "survived": 0,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:e8aa5d0cbf2a1c295de9427794c69e78dc96f9566a45301c0e7212fabdb8f8c4",
+    "receiptSha256": "sha256:1b784180997fd42f11b8f0c794c5657648bf95ce08f7ff039a2a84f6befb34a2"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "officialNativeForkRunnerExecuted": false,
+  "publicNetworkProviderUsed": false,
+  "realHistoricalExploitReplayed": false,
+  "realCustomerWorkflowReplayed": false,
+  "commercialProviderRightsProven": false,
+  "independentRerun": false,
+  "truthBoundary": "PASS35 A27 is the only canonical current status. Canonical roadmap is 53.5% weighted / 27.9% strict across 43 workstreams, up 1.2 pp weighted and 2.3 pp strict from A26, and 12.8 pp weighted from A16. Zero-budget functional core is 90.1% across 71 capabilities, up 0.4 pp from A26 and 10.1 pp from A16. A27 locally closes the declared bounded A09 chain/block/snapshot binding, transaction/state-root continuity, assertion/state-diff/dependency coverage, isolated deterministic replay and mutation evidence implementation. Official native fork execution, real providers/rights, historical exploit or customer replay, staging, sale, outcomes and independent assurance remain unclaimed."
+}

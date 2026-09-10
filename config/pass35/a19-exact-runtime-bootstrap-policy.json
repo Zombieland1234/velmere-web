@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "velmere.pass35.a19-exact-runtime-bootstrap-policy.v1",
+  "passId": "PASS35_A19",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "node": {
+    "version": "24.18.0",
+    "platform": "linux",
+    "arch": "x64",
+    "archiveFile": "node-v24.18.0-linux-x64.tar.xz",
+    "archiveSha256": "55aa7153f9d88f28d765fcdad5ae6945b5c0f98a36881703817e4c450fa76742",
+    "officialIndexUrl": "https://nodejs.org/download/release/latest-v24.x/SHASUMS256.txt",
+    "officialReleaseUrl": "https://nodejs.org/en/blog/release/v24.18.0"
+  },
+  "npm": {
+    "version": "11.16.0",
+    "archiveFile": "npm-11.16.0.tgz",
+    "registryMetadataUrl": "https://registry.npmjs.org/npm/11.16.0",
+    "requireRegistryIntegrity": true,
+    "requireRegistrySignatureVerification": true
+  },
+  "requiredExecution": [
+    "npm_ci",
+    "typecheck",
+    "lint",
+    "pass35_full_test_matrix",
+    "webpack_build",
+    "webpack_smoke",
+    "turbopack_build",
+    "turbopack_smoke",
+    "source_hash_immutable_pre_post"
+  ],
+  "hardStops": {
+    "versionStringWithoutArchiveHashMayPass": false,
+    "nodeArchiveHashMismatchMayPass": false,
+    "npmVersionWithoutRegistryIntegrityMayPass": false,
+    "npmIntegrityWithoutRegistrySignatureMayPass": false,
+    "partialCommandMatrixMayPass": false,
+    "nonzeroExitMayPass": false,
+    "sourceMutationDuringExecutionMayPass": false,
+    "currentEnvironmentMayReceiveExactCredit": false
+  },
+  "currentEnvironmentObservation": {
+    "observedNode": "22.16.0",
+    "observedNpm": "10.9.2",
+    "networkDnsAvailable": false,
+    "nodeArchiveAvailable": false,
+    "npmArchiveAvailable": false,
+    "exactRuntimeExecuted": false,
+    "status": "BLOCKED_TOOLCHAIN_ARCHIVES_NOT_AVAILABLE_IN_EXECUTION_ENVIRONMENT"
+  },
+  "truthBoundary": "A19 freezes and mutation-tests a reproducible exact-runtime acquisition and execution contract. The official Node archive hash is pinned, npm requires registry integrity plus signature verification, and every build/test/smoke command is mandatory. No exact-runtime credit is granted until the actual archives execute the complete matrix on final source bytes."
+}

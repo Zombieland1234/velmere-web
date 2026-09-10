@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "velmere.pass36.source-only-runtime-environment-policy.v1",
+  "artifactClass": "SOURCE_ONLY_NON_SECRET_CONFIGURATION_POLICY",
+  "documentationOnly": true,
+  "containsSecretValues": false,
+  "runtimeConfigurationSource": "PROCESS_ENVIRONMENT_OR_APPROVED_SECRET_STORE_ONLY",
+  "sourceOnlyEnvFilesAllowed": false,
+  "forbiddenSourcePathPatterns": [
+    ".env",
+    ".env.*"
+  ],
+  "forbiddenVariableFields": [
+    "value",
+    "defaultValue",
+    "exampleValue",
+    "secret"
+  ],
+  "requiredSecretVariables": [
+    {
+      "name": "VELMERE_PROVIDER_RECEIPT_SIGNING_SECRET",
+      "missingBehavior": "BLOCK_STAGING_PROVIDER_RECEIPT_ADMISSION"
+    },
+    {
+      "name": "VELMERE_PROVIDER_HEALTH_SIGNING_SECRET_CURRENT",
+      "missingBehavior": "BLOCK_PRODUCTION_READINESS"
+    },
+    {
+      "name": "STRIPE_SECRET_KEY",
+      "missingBehavior": "BLOCK_STRIPE_RUNTIME"
+    },
+    {
+      "name": "STRIPE_WEBHOOK_SECRET",
+      "missingBehavior": "BLOCK_STRIPE_WEBHOOK_RUNTIME"
+    },
+    {
+      "name": "VELMERE_PROVIDER_RECOVERY_RELEASE_BUNDLE_SECRET",
+      "missingBehavior": "BLOCK_PROVIDER_RECOVERY_RELEASE_BUNDLE"
+    }
+  ],
+  "invariants": {
+    "policyMustNeverSupplyRuntimeValues": true,
+    "missingOrBlankSecretMustFailClosed": true,
+    "placeholderSecretMustFailClosed": true,
+    "releaseEligibilityWhenAnyRequiredSecretIsMissing": false,
+    "liveWhenAnyRequiredSecretIsMissing": false,
+    "saleEnabledWhenAnyRequiredSecretIsMissing": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "classification": "DISPOSABLE_TEST_ONLY",
+  "confirmationToken": "I_UNDERSTAND_DISPOSABLE_TEST_ONLY",
+  "creditBoundary": {
+    "admissionPrepared": true,
+    "externalStagingExecuted": false,
+    "liveCredit": false,
+    "rls19Credit": false,
+    "saleCredit": false,
+    "storageKmsEmailCredit": false,
+    "stripeLifecycleCredit": false
+  },
+  "forbidden": {
+    "customerEmailDomains": [],
+    "liveStripePrefixes": [
+      "sk_live_",
+      "pk_live_"
+    ],
+    "productionCharges": true,
+    "productionHostTokens": [
+      "prod",
+      "production",
+      "live"
+    ],
+    "sourceTreeSecrets": true
+  },
+  "required": {
+    "confirmation": "VELMERE_STAGING_CONFIRM",
+    "emailRecipient": "VELMERE_STAGING_EMAIL_RECIPIENT",
+    "kmsKeyId": "VELMERE_STAGING_KMS_KEY_ID",
+    "programId": "VELMERE_STAGING_PROGRAM_ID",
+    "sourceManifestSha256": "VELMERE_STAGING_SOURCE_MANIFEST_SHA256",
+    "storageUrl": "VELMERE_STAGING_STORAGE_URL",
+    "stripePublishableKey": "VELMERE_STRIPE_PUBLISHABLE_KEY",
+    "stripeSecretKey": "VELMERE_STRIPE_SECRET_KEY",
+    "stripeWebhookSecret": "VELMERE_STRIPE_WEBHOOK_SECRET",
+    "tenantAUrl": "VELMERE_STAGING_TENANT_A_URL",
+    "tenantBUrl": "VELMERE_STAGING_TENANT_B_URL"
+  },
+  "requirements": {
+    "disposableRecipientMarkerRequired": true,
+    "httpsOnly": true,
+    "kmsNonProductionIdentifier": true,
+    "noQueryOrFragment": true,
+    "noUrlCredentials": true,
+    "reportMustNotContainRawSecrets": true,
+    "stripeTestPrefixes": true,
+    "twoDistinctTenantHosts": true,
+    "zeroMutationOnFailure": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P25_ACTION_REQUIRED_AUTHORITY_FORK_RECONCILIATION_CURRENT_RELEASE_POINTER_STAGING_ADMISSION_WINDOWS_HANDOFF_AND_SIGNED_EVIDENCE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p25.staging-admission-policy.v1"
+}

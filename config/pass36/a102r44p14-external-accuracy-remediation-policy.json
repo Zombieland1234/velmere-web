@@ -1,0 +1,136 @@
+{
+  "baseline": {
+    "controlFlagRate": 0.583333,
+    "externalAnyLabelRecall": 0.710145,
+    "flaggedControls": 7
+  },
+  "current": {
+    "categoryDelta": {
+      "access_control": {
+        "baselineRecall": 0.444444,
+        "currentRecall": 0.888889,
+        "delta": 0.444445
+      },
+      "arithmetic": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "bad_randomness": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "denial_of_service": {
+        "baselineRecall": 0.333333,
+        "currentRecall": 1.0,
+        "delta": 0.666667
+      },
+      "front_running": {
+        "baselineRecall": 0.25,
+        "currentRecall": 1.0,
+        "delta": 0.75
+      },
+      "other": {
+        "baselineRecall": 0.666667,
+        "currentRecall": 0.666667,
+        "delta": 0.0
+      },
+      "reentrancy": {
+        "baselineRecall": 0.857143,
+        "currentRecall": 0.0,
+        "delta": -0.857143
+      },
+      "short_addresses": {
+        "baselineRecall": 0.0,
+        "currentRecall": 1.0,
+        "delta": 1.0
+      },
+      "time_manipulation": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      },
+      "unchecked_low_level_calls": {
+        "baselineRecall": 1.0,
+        "currentRecall": 1.0,
+        "delta": 0.0
+      }
+    },
+    "controlFlagRate": 0.0,
+    "externalAnyLabelRecall": 0.855072,
+    "flaggedControls": 0
+  },
+  "decision": "ACTION_REQUIRED",
+  "fixedDenominators": {
+    "auditTierChecks": 12,
+    "externalCases": 69,
+    "metamorphicAssertions": 432,
+    "projectControls": 12,
+    "targetedRiskControlAssertions": 40
+  },
+  "forbiddenClaims": [
+    "formal precision",
+    "severity calibrated",
+    "human-reviewed audit",
+    "independent certification",
+    "world-class proven",
+    "LIVE",
+    "production approved",
+    "sale enabled"
+  ],
+  "generatedAt": "2026-08-04T00:00:00.000Z",
+  "hybridReviewQueue": {
+    "caseAnyLabelMatched": 65,
+    "caseAnyLabelRecall": 0.942029,
+    "customerFindingAccuracyCredit": 0,
+    "formalPrecisionCredit": 0,
+    "labelInstanceRecall": 0.942029,
+    "purpose": "MANUAL_REVIEW_PRIORITIZATION_ONLY"
+  },
+  "mandatoryExternalToolLanes": {
+    "reason": "R44P14 structured analyzer standalone reentrancy recall is 0/7 while the R44P13 external lane retained 6/7.",
+    "reentrancy": true,
+    "structuredAnalyzerReplacementAllowed": false
+  },
+  "materialBindings": {
+    "externalArtifact": {
+      "bytes": 97277,
+      "path": "external/r44p14-external-remediation-evidence.zip",
+      "sha256": "af68a4748a94ec9ca7cb6935b37081e785f19b1b8ac3afe3dbf5de79d4089eeb"
+    },
+    "independentVerification": {
+      "bytes": 1566,
+      "path": "external/R44P14_INDEPENDENT_EVIDENCE_VERIFICATION.json",
+      "sha256": "7f4a99ec4b238d08f57bcf262ecdeb2601a2e7010d98631a8011968c5e76463f"
+    },
+    "ledger": {
+      "bytes": 98052,
+      "path": "external/R44P14_EXTERNAL_ACCURACY_REMEDIATION_LEDGER.json",
+      "sha256": "e271806adaaa14c630b57d37ff70292e2996d750671a1997fd98c110edbe6527"
+    },
+    "summary": {
+      "bytes": 416,
+      "path": "external/R44P14_EXTERNAL_ACCURACY_REMEDIATION_SUMMARY.json",
+      "sha256": "d9231c043963f0739ccb005826c12e341bc5f41189258e1cecb703f7ba826d07"
+    }
+  },
+  "objective": "Raise weak-category recall and suppress benign-control alerts without pretending that an external labeled baseline is formal precision or world-class accuracy.",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P13_ACTION_REQUIRED_EXTERNAL_LABELED_ACCURACY_FINAL_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_NO_LIVE_CREDIT",
+  "requiredTruthBoundary": {
+    "businessLogicCoverage": false,
+    "commercialRightsApproved": false,
+    "customerCredit": false,
+    "externalLabeledRecallBaseline": true,
+    "formalPrecision": false,
+    "independentAdjudication": false,
+    "independentDatasetDesign": true,
+    "liveCredit": false,
+    "modernProtocolRepresentativeness": false,
+    "paidTierCredit": false,
+    "severityCalibration": false,
+    "worldClassProven": false
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P14_ACTION_REQUIRED_WEAK_CATEGORY_RECALL_CONTROL_FALSE_ALERT_SUPPRESSION_AND_PRODUCT_ANALYZER_INTEGRATION_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p14.external-accuracy-remediation-policy.v1"
+}

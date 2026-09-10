@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "velmere.pass36.a69.structured-data-deserialization-trust-boundary.v1",
+  "revisionId": "VELMERE_PASS36_A69R0_STRUCTURED_DATA_DESERIALIZATION_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A68R0_FILESYSTEM_PERSISTENCE_TRUST_BOUNDARY_HARDENING",
+  "scope": [
+    "Lens multipart JSON payload",
+    "external audit-provider JSON responses",
+    "verified ABI permission parsing",
+    "contract source/ABI extraction",
+    "durable computation keyring and sealed payload",
+    "durable result replay",
+    "browser CSP reports"
+  ],
+  "requirements": {
+    "singleSharedStrictJsonBoundary": true,
+    "boundedUtf8Bytes": true,
+    "fatalUtf8ForByteInputs": true,
+    "duplicateObjectKeysRejected": true,
+    "prototypePollutionKeysRejected": true,
+    "maximumDepthRequired": true,
+    "maximumNodeCountRequired": true,
+    "explicitTopLevelShapeWhenRequired": true,
+    "rawJsonParseForbiddenAtCoveredSinks": true,
+    "visualChanges": false
+  },
+  "truthBoundary": {
+    "realProviderNetworkExecuted": false,
+    "realCustomerLensExportExecuted": false,
+    "realDurableWorkerExecuted": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "saleEnabled": false,
+    "liveProven": false
+  }
+}

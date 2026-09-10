@@ -1,0 +1,49 @@
+{
+  "status": "PASS_A39_CSS_EXACT_DUPLICATES_REMOVED",
+  "writeMode": true,
+  "files": [
+    {
+      "path": "app/globals.css",
+      "beforeBytes": 2211517,
+      "afterBytes": 2211131,
+      "removedBytes": 386,
+      "rules": 11050,
+      "duplicateGroups": 1,
+      "duplicateExtras": 1,
+      "afterExtras": 0,
+      "sampleHeads": [
+        ".vlm-asset-detail-modal[data-vlm-asset-appearance=\"monochrome\"]:is(.vlm-asset-detail-tab[aria-selected=\"true\"],.vlm-analysis-tier-card[data-recommended=\"true\"],.vlm-analysis-progress-fill,.vlm-analysis-signal-tile::before)"
+      ]
+    },
+    {
+      "path": "components/intelligence/IntelligenceLuxury.module.css",
+      "beforeBytes": 115352,
+      "afterBytes": 115352,
+      "removedBytes": 0,
+      "rules": 1042,
+      "duplicateGroups": 0,
+      "duplicateExtras": 0,
+      "afterExtras": 0,
+      "sampleHeads": []
+    },
+    {
+      "path": "components/intelligence/IntelligencePage.module.css",
+      "beforeBytes": 114223,
+      "afterBytes": 114179,
+      "removedBytes": 44,
+      "rules": 1130,
+      "duplicateGroups": 1,
+      "duplicateExtras": 1,
+      "afterExtras": 0,
+      "sampleHeads": [
+        ".brainExperience,.brainMap"
+      ]
+    }
+  ],
+  "totals": {
+    "removedBytes": 430,
+    "duplicateGroups": 2,
+    "duplicateExtras": 2
+  },
+  "visualClaimed": false
+}

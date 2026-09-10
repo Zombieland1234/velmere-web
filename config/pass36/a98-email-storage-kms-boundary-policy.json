@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "velmere.pass36.a98.email-storage-kms-boundary-policy.v1",
+  "revisionId": "VELMERE_PASS36_A98R0_EMAIL_STORAGE_KMS_ORIGIN_CONTEXT_CLEANUP_AND_DELIVERY_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A97R1_SCOPED_PAYMENT_OPERATOR_ASSERTIONS_DUAL_CONTROL_AND_SINGLE_USE_REQUEUE",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "localPassCredit": false,
+  "requiredPaymentDecision": "VERIFIED_STAGING_PAYMENT_REFUND_RECONCILIATION",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_A98_USES_ONLY_DISPOSABLE_STAGING_STORAGE_EMAIL_AND_EXTERNAL_KMS_DATA",
+  "requiredEnvironment": [
+    "VELMERE_A98_STAGING_BASE_URL",
+    "VELMERE_A98_TENANT_A_EMAIL",
+    "VELMERE_A98_TENANT_A_PASSWORD",
+    "VELMERE_A98_TENANT_B_EMAIL",
+    "VELMERE_A98_TENANT_B_PASSWORD",
+    "SUPABASE_URL",
+    "SUPABASE_ANON_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "VELMERE_A98_SUPABASE_PROJECT_CLASS",
+    "VELMERE_A98_STORAGE_BUCKET",
+    "VELMERE_A98_KMS_TRUSTED_ORIGIN",
+    "VELMERE_A98_KMS_WRAP_URL",
+    "VELMERE_A98_KMS_UNWRAP_URL",
+    "VELMERE_A98_KMS_WRAP_BEARER_SECRET",
+    "VELMERE_A98_KMS_UNWRAP_BEARER_SECRET",
+    "RESEND_API_KEY",
+    "VELMERE_A98_EMAIL_FROM",
+    "VELMERE_A98_EMAIL_TO",
+    "VELMERE_A98_EMAIL_TO_SHA256",
+    "VELMERE_A98_CONFIRM"
+  ],
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "maximumObjectBytes": 1048576,
+    "signedUrlExpirySeconds": 5,
+    "signedUrlExpiryGraceMs": 2500,
+    "emailDeliveryTimeoutMs": 60000,
+    "emailPollIntervalMs": 1500,
+    "cleanupAttempts": 3,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "storageSafety": {
+    "bucketMustBePrivate": true,
+    "objectContentType": "application/vnd.velmere.encrypted+json",
+    "objectPrefix": "a98-disposable",
+    "encryptionAlgorithm": "aes-256-gcm",
+    "aadContextRequired": true,
+    "sameOriginSignedUrlRequired": true,
+    "exactObjectPathRequired": true,
+    "cleanupInFinallyRequired": true,
+    "minimumSecretLength": 32
+  },
+  "kmsSafety": {
+    "trustedOriginRequired": true,
+    "allowedPaths": ["/wrap", "/unwrap", "/kms/wrap", "/kms/unwrap"],
+    "separateWrapUnwrapSecrets": true,
+    "requestIdBindingRequired": true,
+    "contextDigestBindingRequired": true,
+    "keyIdBindingRequired": true,
+    "exactResponseFieldsRequired": true,
+    "dataKeyZeroizationRequired": true
+  },
+  "emailSafety": {
+    "apiBase": "https://api.resend.com",
+    "apiKeyPrefix": "re_",
+    "requiredFinalEvent": "delivered",
+    "subjectPrefix": "Velmere A98 staging receipt",
+    "exactRecipientHashRequired": true,
+    "forbiddenRecipientDomains": ["gmail.com", "outlook.com", "hotmail.com", "yahoo.com", "icloud.com"],
+    "providerReportedDeliveryOnly": true
+  },
+  "localDenominators": {
+    "boundaryAssertions": 77,
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realSignedUrls": 0,
+    "realCleanupConfirmations": 0
+  },
+  "truthBoundary": "A98R0 locally hardens the staging email, private-storage, signed-URL and external-KMS acceptance path. It binds every outbound origin and path, rejects provider-returned signed-URL SSRF, parses JSON with duplicate/dangerous-key rejection, authenticates AES-GCM envelopes with context AAD, binds KMS request ID/context/key ID, requires distinct secrets and exact disposable recipient identity, zeroizes data keys, and requires cleanup in finally after any storage mutation. Local fixtures and provider spies grant no real Supabase, KMS, Resend, staging, customer, LIVE, paid or sale credit.",
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false,
+    "stagingCredit": false
+  }
+}

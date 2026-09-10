@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "velmere.pass36.a94r1.action-required-current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A94R1_ACTION_REQUIRED_LOCAL_HARDENING_CHECKPOINT",
+  "parentRevisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+  "parentDescendantManifestDigestSha256": "8900eab75426203d41a6012c265a1824fe2d45b68ed8e3dd240e007def2f30f8",
+  "generatedAt": "2026-07-28T10:58:11Z",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "coveredWorkRange": "A90-A94_PARTIAL",
+  "payload": {
+    "fileCount": 4619,
+    "byteLength": 114732598,
+    "pathSetSha256": "d08b55939fbeea90e0473e43598cbfea9e1f4e4e0f15fc098c5666336f1d35e1",
+    "aggregateSha256": "380de191bf43efa8e88cd1c26463eda71fcb732734ab45557d8c1aecc36d7d5f"
+  },
+  "exclusions": [
+    ".git/",
+    ".velmere/",
+    ".next/",
+    ".next-*",
+    ".turbo/",
+    "_velmere/",
+    "artifacts/",
+    "coverage/",
+    "node_modules/",
+    ".env*",
+    "*.log EXCEPT fixtures/pass35/a42/windows-global-json-crash.log",
+    "*.db",
+    "*.sqlite",
+    "*.sqlite3",
+    "config/pass36/a94r1-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "a90PassCredit": false,
+    "a91PassCredit": false,
+    "a92PassCredit": false,
+    "a93PassCredit": false,
+    "a94PassCredit": false,
+    "exactA77R1ToA80R1Credit": false,
+    "exactFinalByteBuildExecuted": false,
+    "currentRoot30Of30PassedOnFinalBytes": false,
+    "browserExecuted": false,
+    "stagingExecuted": false,
+    "realDataProven": false,
+    "providerRightsApproved": false,
+    "legalApproved": false,
+    "customerValueProven": false,
+    "independentlyAssured": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "denominators": {
+    "rlsChecks": {
+      "required": 19,
+      "realPassed": 0
+    },
+    "stagingStages": {
+      "required": 10,
+      "realVerified": 0
+    },
+    "providerRights": {
+      "required": 21,
+      "approved": 0
+    },
+    "legalDpo": {
+      "required": 20,
+      "signed": 0
+    },
+    "realAuditCases": {
+      "required": 50,
+      "fullyVerified": 0
+    },
+    "officialAuditToolRuns": {
+      "required": 200,
+      "executed": 0
+    },
+    "realCustomerPdfCases": {
+      "required": 50,
+      "verified": 0
+    },
+    "syntheticPhysicalPdfs": {
+      "documents": 450,
+      "pages": 2100
+    },
+    "shieldAssets": {
+      "required": 318,
+      "currentProviderVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "shieldProMapAssets": {
+      "required": 318,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 318
+    },
+    "realMarketsInstruments": {
+      "required": 583,
+      "fullyVerified": 0,
+      "unavailableOrBlocked": 583
+    },
+    "marketImpactWhaleWatchAssets": {
+      "required": 318,
+      "fullyVerified": 0
+    },
+    "brainAngelRiskRealEval": {
+      "required": 300,
+      "verified": 0
+    },
+    "customerCohorts": {
+      "required": 2,
+      "verified": 0
+    },
+    "crossAudits": {
+      "required": 20,
+      "verified": 0
+    }
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY",
+      "paid": false,
+      "reasons": [
+        "local synthetic and fixture evidence only",
+        "browser, staging, rights, legal and customer value not proven"
+      ]
+    },
+    "pro": {
+      "decision": "BLOCKED_RIGHTS",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "BLOCKED_ACCURACY",
+      "paid": false,
+      "secondaryBlockers": [
+        "BLOCKED_RIGHTS",
+        "BLOCKED_LEGAL",
+        "BLOCKED_DATA",
+        "BLOCKED_CUSTOMER_VALUE",
+        "BLOCKED_OPERATIONS"
+      ]
+    }
+  },
+  "manifestDigestSha256": "00ed3f8f09095ba0defbd1d0c56d716c18c55307493cf756054fc1fc9b7a4aba"
+}

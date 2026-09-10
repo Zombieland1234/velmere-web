@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "velmere.pass35.public-provider-runtime-contract.v1",
+  "passId": "PASS35_A12",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "visualChangesMade": false,
+  "publicCatalogRuntime": {
+    "providers": [
+      "binance",
+      "mexc",
+      "coinbase",
+      "kraken"
+    ],
+    "endpointMode": "KEYLESS_PUBLIC_CATALOGS",
+    "fixtureExecution": {
+      "providers": 4,
+      "activeListings": 1013,
+      "activeAssets": 318,
+      "excludedListings": 27,
+      "assertions": 33
+    },
+    "controls": [
+      "bounded_response",
+      "retry_backoff",
+      "cache",
+      "shared_inflight",
+      "quota_budget",
+      "schema_quarantine",
+      "halted_delisted_exclusion",
+      "canonical_asset_deduplication",
+      "tamper_verification"
+    ],
+    "publicNetworkStatus": "BLOCKED_ENVIRONMENT_DNS"
+  },
+  "whaleRuntime": {
+    "holderProviders": [
+      "etherscan"
+    ],
+    "transferProviders": [
+      "alchemy",
+      "etherscan_fallback"
+    ],
+    "labelProviders": [
+      "signed_public_registry"
+    ],
+    "fixtureExecution": {
+      "holders": 10,
+      "transfers": 50,
+      "verifiedLabels": 6,
+      "labelCoveragePercent": 60,
+      "assertions": 22,
+      "tierPackets": 3
+    },
+    "controls": [
+      "signed_asset_binding",
+      "signed_wallet_labels",
+      "dual_transfer_sources",
+      "alchemy_outage_fallback",
+      "holder_coverage",
+      "flow_windows",
+      "exit_stress",
+      "tier_packet_integrity",
+      "tamper_verification"
+    ],
+    "publicNetworkStatus": "NOT_EXECUTED_REAL_KEYS_AND_DNS"
+  },
+  "marketCoverageTruth": "The dynamic denominator is the complete normalized active catalog returned by successful fresh supported-provider snapshots. The 318-asset injected run is regression evidence, not a claim about current live catalog size.",
+  "sellEnabled": false,
+  "paidDeliveryEligible": false,
+  "liveClaimed": false
+}

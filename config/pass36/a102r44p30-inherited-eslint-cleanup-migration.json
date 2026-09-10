@@ -1,0 +1,217 @@
+{
+  "changedFiles": 10,
+  "decision": "APPROVED_BEHAVIOR_PRESERVING_INHERITED_LINT_MIGRATION_NO_RELEASE_PROMOTION",
+  "deletedFiles": 0,
+  "denominatorReduced": false,
+  "eslintDisableAdded": false,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "reason": "The complete current-byte ESLint denominator found seven errors and eight warnings in ten inherited active evidence-governance scripts. Exact before/after bindings are recorded; no file, test, assertion, security check, or denominator row is removed.",
+  "removedAssertions": 0,
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P30_ACTION_REQUIRED_EXACT_CURRENT_BYTE_LINUX_DUAL_BUILD_BROWSER_PDF_AND_PARENT_EXTERNAL_RLS_NO_LIVE_CREDIT",
+  "rows": [
+    {
+      "after": {
+        "byteLength": 3768,
+        "mode": 420,
+        "path": "scripts/pass36/a102r44p25-external-evidence-lib.mjs",
+        "sha256": "3f9d2cb84fa69f8a520c80be0d93699fa785ab81650b1b2eb7d0d945a7d91044"
+      },
+      "before": {
+        "byteLength": 3689,
+        "mode": 420,
+        "path": "scripts/pass36/a102r44p25-external-evidence-lib.mjs",
+        "sha256": "2464a2f5d1b9652e2060a669d2a86bca14e32946d11e95bc22db4b64108cd383"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p25-external-evidence-lib.mjs",
+      "rules": [
+        "no-empty"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 2359,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs",
+        "sha256": "71e1648f9625cd0bf6435a7522a1a49e7c1d6fecbcb0f8040dd62e257bd7083c"
+      },
+      "before": {
+        "byteLength": 2364,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs",
+        "sha256": "8112ca6bbe99db2b8810b675f531dc444f0066f163255c3db774cf83ddf74bb7"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p26-exact-runtime-bridge-admission.mjs",
+      "rules": [
+        "no-useless-assignment"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 3497,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs",
+        "sha256": "a8f09fee80cd775812194f6c72aa4f840550d582bf39f46cc3e284b5cc26b7c9"
+      },
+      "before": {
+        "byteLength": 3529,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs",
+        "sha256": "af53e59978d3c15d11c491989bd289a176ad5f9b726fb5d7f5dfbe6a9cd32dc7"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p26-import-external-staging-evidence.mjs",
+      "rules": [
+        "@typescript-eslint/no-unused-vars"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 4886,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs",
+        "sha256": "6f9ab82c8f5f1534bc1c125e7a7c32e41f2a4888bb2a98e8e4e4baa15edb4af9"
+      },
+      "before": {
+        "byteLength": 4812,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs",
+        "sha256": "755f3a9241842d31cb711cad9e8c45019a510d0ebe18e586469a01dec89f2243"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p26-trusted-external-evidence-lib.mjs",
+      "rules": [
+        "no-empty"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 17709,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+        "sha256": "b275e41c1c0be151191d0c0ddce0b630891797b55b04f8dbe77d5c5194bf660f"
+      },
+      "before": {
+        "byteLength": 17618,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+        "sha256": "a4bf66f0fa2f2167f5391394d58c4fbb6eafe2b0dcb73a4caa16928587ad6675"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p27-external-evidence-admission-journal.mjs",
+      "rules": [
+        "no-empty",
+        "preserve-caught-error"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 10454,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+        "sha256": "5233eba7d1019c35f2bbe3af378f27f3787335a74cce5be9acef37d386f5a715"
+      },
+      "before": {
+        "byteLength": 10462,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+        "sha256": "6bb96e562b1aa1ce306fa9ddbd480eb5fff6e9f135e1daadbc23435fd2c5def0"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p27-import-external-staging-evidence.mjs",
+      "rules": [
+        "@typescript-eslint/no-unused-vars",
+        "preserve-caught-error"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 10512,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+        "sha256": "a123d411b88739c0adc8173c44c91a407b3c26afaef570e934201b47e96b17f8"
+      },
+      "before": {
+        "byteLength": 10519,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+        "sha256": "0bea8a56492b54faf5d1b959171e299ac4fe212bd11641e421ec6260467f01b6"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p27-trusted-external-evidence-lib.mjs",
+      "rules": [
+        "no-useless-assignment"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 5536,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+        "sha256": "e6d7f7fa62f0d8d5fb3ea91bd67ed8676370612dc63f740e2e35c8d422fd64ca"
+      },
+      "before": {
+        "byteLength": 5561,
+        "mode": 493,
+        "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+        "sha256": "2a25173ee3cf6fe62271ee439a5c897fc0784b9835b0f9fd3df54de4251c0902"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/a102r44p29-evidence-quarantine-lib.mjs",
+      "rules": [
+        "@typescript-eslint/no-unused-vars"
+      ],
+      "semanticIntent": "Preserve existing fail-closed behavior while making ignored exceptions, error causality, and unused bindings explicit."
+    },
+    {
+      "after": {
+        "byteLength": 3443,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+        "sha256": "f58b5e396b2d84b30fa3426bb47deaae10dabca95275786b9caabead283a213f"
+      },
+      "before": {
+        "byteLength": 3442,
+        "mode": 493,
+        "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+        "sha256": "b3cad05d90772a1475b6969d553ac766c4a0084ac750e7e7ba2983724ef5b0b2"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/test-a102r44p29-72h-watchdog.mjs",
+      "rules": [
+        "@typescript-eslint/no-unused-vars"
+      ],
+      "semanticIntent": "Remove an unused callback parameter or unused map allocation without changing the tested denominator, evidence bindings, or fail-closed verdict."
+    },
+    {
+      "after": {
+        "byteLength": 7425,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs",
+        "sha256": "3c9f71503df50d2b1a996f0531e500a970f739d33b3fac50fa1a1f22e3d31b7d"
+      },
+      "before": {
+        "byteLength": 7482,
+        "mode": 493,
+        "path": "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs",
+        "sha256": "6a23eb5771629bbf49a09df477e9046a6d8769d10a341507934e6ddfa0c2b389"
+      },
+      "classification": "BEHAVIOR_PRESERVING_LINT_CORRECTION",
+      "path": "scripts/pass36/verify-a102r44p28-external-ci-evidence.mjs",
+      "rules": [
+        "@typescript-eslint/no-unused-vars"
+      ],
+      "semanticIntent": "Remove an unused callback parameter or unused map allocation without changing the tested denominator, evidence bindings, or fail-closed verdict."
+    }
+  ],
+  "schemaVersion": "velmere.pass36.a102r44p30.inherited-eslint-cleanup-migration.v1"
+}

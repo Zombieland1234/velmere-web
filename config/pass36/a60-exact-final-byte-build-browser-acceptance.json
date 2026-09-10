@@ -1,0 +1,153 @@
+{
+  "a59PolicyPath": "config/pass36/a59-build-graph-route-css-budget-recovery.json",
+  "a59TestReceiptPath": "config/pass36/a59-build-graph-route-css-budget-recovery-test.json",
+  "activeAcceptanceRevisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+  "browser": {
+    "baseUrl": "http://127.0.0.1:4176",
+    "maximumConsoleErrors": 0,
+    "maximumFailedChecks": 0,
+    "maximumHorizontalOverflowPx": 4,
+    "maximumPageErrors": 0,
+    "processIsolation": {
+      "batchSize": 6,
+      "denominatorStable": true,
+      "expectedBrowserLaunches": 11,
+      "expectedPopupLaunches": 1,
+      "expectedRouteBatches": 10,
+      "migrationPath": "config/pass36/a102r44p12-browser-process-isolation-and-verifier-identity-migration.json",
+      "mode": "SIX_ROUTE_BROWSER_PROCESS_BATCH",
+      "routeRowDenominator": 56,
+      "scenarioDenominator": 57,
+      "scoreCredit": false,
+      "screenshotDenominator": 29
+    },
+    "qaFixture": {
+      "denominatorMigrationPath": "config/pass36/a102r41-a60-browser-fixture-evidence-denominator-migration.json",
+      "durableStorageCredit": false,
+      "evidenceConsistencyMode": "ATOMIC_COLLECTOR_SNAPSHOT",
+      "generate": true,
+      "generatorId": "a102r41-a45-deterministic-local-reference-fixture-v1",
+      "liveCredit": false,
+      "migrationPath": "config/pass36/a102r44p30-browser-evidence-race-and-profile-migration.json",
+      "providerCredit": false,
+      "realDataCredit": false,
+      "relativePath": "artifacts/pass35/a45/A45_DETERMINISTIC_LOCAL_REFERENCE_QA_FIXTURE.json",
+      "requestCounterKeys": [
+        "authSession",
+        "profile",
+        "markets",
+        "klines",
+        "marketIntelligence",
+        "realMarketsCatalog",
+        "realMarkets",
+        "assetLogo",
+        "brandIcon",
+        "icon"
+      ],
+      "requiredPositiveRequestFamilies": [
+        "authSession",
+        "markets",
+        "realMarketsCatalog",
+        "realMarkets"
+      ],
+      "requiredZeroRequestFamilies": [
+        "profile"
+      ],
+      "saleCredit": false
+    },
+    "requiredChecks": 56,
+    "requiredLocales": [
+      "pl",
+      "en",
+      "de"
+    ],
+    "requiredPopupTabs": [
+      "overview",
+      "analysis",
+      "market-impact",
+      "whale-watch"
+    ],
+    "requiredScreenshots": 29
+  },
+  "currentSourceAuthorityPath": "config/pass36/current-release-authority.json",
+  "currentSourceParentRevisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "currentSourceRevisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "evidencePackage": {
+    "browserScenarioChecksRequired": 57,
+    "browserVerifierCheckIdentitySha256": "35cccfef96eece4751495d9f87f9f6cc8a63d3a4df380005ad7769ffa2ddc882",
+    "browserVerifierChecksRequired": 584,
+    "childStageLogsRequired": 24,
+    "coreArtifactsRequired": 4,
+    "productionServerLogsRequired": 2,
+    "requiredPathSetSha256": "748873f54fb9fe4c10946f1f55e13fc9f8ccabec30ba28758735d102be60eba9",
+    "requiredPaths": 59,
+    "screenshotsRequired": 29,
+    "totalLogsRequired": 26
+  },
+  "expectedRuntime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "historicalA57ManifestPath": "config/pass35/a57-source-manifest.json",
+  "parentRevisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY",
+  "promotionConditions": {
+    "browserRequired": true,
+    "dualBuildRequired": true,
+    "exactRuntimeRequired": true,
+    "externalSourceManifestAnchorRequired": true,
+    "liveProven": false,
+    "productionRuntimeRequired": true,
+    "saleEnabled": false,
+    "sourceUnchangedRequired": true
+  },
+  "requiredStages": [
+    "source-manifest-preflight",
+    "npm-ci",
+    "lint",
+    "typecheck",
+    "a58-current-integrity",
+    "a59-contract",
+    "a60-contract",
+    "build-webpack",
+    "build-turbopack",
+    "post-build-typecheck",
+    "production-server-ready",
+    "runtime-smoke",
+    "browser-acceptance",
+    "browser-evidence-verification"
+  ],
+  "revisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+  "runtimeBuildOutput": {
+    "buildIdPath": ".next-pass25-turbopack/BUILD_ID",
+    "distDir": ".next-pass25-turbopack",
+    "genericNextAliasForbidden": true,
+    "mode": "turbopack"
+  },
+  "runtimeSmoke": {
+    "denominatorMigrationPath": "config/pass36/a102r41-a60-runtime-smoke-denominator-migration.json",
+    "mode": "turbopack",
+    "realTlsCredit": false,
+    "requiredUniqueAssertions": 55,
+    "requiredUniqueResults": 16,
+    "runnerPath": "scripts/deployment/run-production-smoke.mjs",
+    "simulatedTlsReverseProxy": true
+  },
+  "schemaVersion": "velmere.pass36.a60.exact-final-byte-build-browser-acceptance.v1",
+  "sourceManifestPath": "_velmere/PASS36_A102R44P46_SOURCE_ONLY_MANIFEST.json",
+  "truthBoundary": "A60 can verify one exact local final-byte npm ci, lint, pre-build TypeScript denominator, Webpack build, Turbopack build, post-dual-build generated-route TypeScript denominator, production runtime smoke and bounded Playwright matrix. It does not prove staging, production services, provider rights, real customers, LIVE reliability, payment readiness or sale readiness.",
+  "typescript": {
+    "denominatorMigrationPath": "config/pass36/a102r44p46-a60-typescript-denominator-migration.json",
+    "maximumDiagnostics": 0,
+    "minimumToolingSyntaxFiles": 185,
+    "postDualBuildExpectedRootFiles": 303,
+    "postDualBuildGeneratedRootFiles": 142,
+    "postDualBuildMinimumTransitiveFirstPartyFiles": 1702,
+    "preBuildExpectedRootFiles": 161,
+    "preBuildMinimumTransitiveFirstPartyFiles": 1560,
+    "rootFilesCoveredMustEqualConfiguredRootFiles": true
+  },
+  "currentSourceProfile": "R44P46_SOURCE_ONLY_MANIFEST_V1",
+  "sourceManifestSchema": "velmere.pass36.a102r44p46.source-manifest.v1",
+  "sourceFingerprintField": "sourceAggregateSha256",
+  "manifestFileSha256AnchorRequired": true
+}

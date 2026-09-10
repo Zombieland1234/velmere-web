@@ -1,0 +1,181 @@
+{
+  "dataset": {
+    "cases": 69,
+    "commit": "230e649123477eff332742a59a1c7cc6dc286cab",
+    "datasetIndependentOfVelmereFixtureDesign": true,
+    "labelInstances": 69,
+    "licenseBoundary": "Original contracts retain their original licenses. Canonical Velmere materials store hashes, labels and sanitized tool results, not the external Solidity source files.",
+    "repository": "smartbugs/smartbugs-curated",
+    "selection": "ICSE2020_curated_69.txt",
+    "sourceFilesRedistributedInMaterials": 0
+  },
+  "evidenceBindings": {
+    "independentVerification": {
+      "byteLength": 525,
+      "relativePath": "packaged-evidence/R44P13_INDEPENDENT_EVIDENCE_VERIFICATION.json",
+      "sha256": "872fac771d6dafe98785e7b9308bdd2b5305c806589ed33fd060a772f4b3be72"
+    },
+    "innerDeterministicTar": {
+      "byteLength": 66938,
+      "filename": "r44p13-smartbugs-external-accuracy-evidence.tar.gz",
+      "sha256": "81047857c3c5cf3f978929e2d0d568098af672e51ce67bd60e14e620f995ed66"
+    },
+    "ledger": {
+      "byteLength": 80711,
+      "relativePath": "packaged-evidence/R44P13_EXTERNAL_LABELED_ACCURACY_LEDGER.json",
+      "sha256": "16f6a2ec61fc9e0bac9294d9d00feaddd72209e454ad6be4cfe5704f984aaed4"
+    },
+    "outerWorkflowArtifact": {
+      "byteLength": 223272,
+      "filename": "r44p13-smartbugs-external-accuracy-evidence.zip",
+      "sha256": "971d6478850760952b60a1d84b4a9b6929ab5475ecebf9cc97282a4a84107cdb"
+    }
+  },
+  "execution": {
+    "casesProcessed": 69,
+    "compileSuccess": 57,
+    "independentEvidenceChecks": 31,
+    "independentEvidencePassed": 31,
+    "legacyNativeCompilerBlockedCases": 12,
+    "receipts": 69,
+    "semgrepSanitizedResults": 69,
+    "slitherSanitizedResults": 57
+  },
+  "interpretation": {
+    "businessLogicCoverage": false,
+    "criticalFinding": "71.0145% label recall and 58.3333% flag rate on project-owned controls are not sufficient for autonomous public sale.",
+    "formalPrecision": false,
+    "modernProtocolRepresentativeness": false,
+    "publicClaimAllowed": false,
+    "severityCalibration": false,
+    "strength": "First external labeled recall baseline independent of Velmere fixture design."
+  },
+  "metrics": {
+    "contractAllLabelsRecall": 0.710145,
+    "contractAnyLabelRecall": 0.710145,
+    "controlFlagRate": 0.583333,
+    "controls": 12,
+    "flaggedControls": 7,
+    "labelInstanceRecall": 0.710145,
+    "perCategory": {
+      "access_control": {
+        "labeledCases": 18,
+        "semgrepHits": 8,
+        "semgrepRecall": 0.444444,
+        "slitherHits": 4,
+        "slitherRecall": 0.222222,
+        "unionHits": 8,
+        "unionRecall": 0.444444
+      },
+      "arithmetic": {
+        "labeledCases": 14,
+        "semgrepHits": 14,
+        "semgrepRecall": 1.0,
+        "slitherHits": 0,
+        "slitherRecall": 0.0,
+        "unionHits": 14,
+        "unionRecall": 1.0
+      },
+      "bad_randomness": {
+        "labeledCases": 8,
+        "semgrepHits": 8,
+        "semgrepRecall": 1.0,
+        "slitherHits": 1,
+        "slitherRecall": 0.125,
+        "unionHits": 8,
+        "unionRecall": 1.0
+      },
+      "denial_of_service": {
+        "labeledCases": 6,
+        "semgrepHits": 0,
+        "semgrepRecall": 0.0,
+        "slitherHits": 2,
+        "slitherRecall": 0.333333,
+        "unionHits": 2,
+        "unionRecall": 0.333333
+      },
+      "front_running": {
+        "labeledCases": 4,
+        "semgrepHits": 1,
+        "semgrepRecall": 0.25,
+        "slitherHits": 0,
+        "slitherRecall": 0.0,
+        "unionHits": 1,
+        "unionRecall": 0.25
+      },
+      "other": {
+        "labeledCases": 3,
+        "semgrepHits": 0,
+        "semgrepRecall": 0.0,
+        "slitherHits": 2,
+        "slitherRecall": 0.666667,
+        "unionHits": 2,
+        "unionRecall": 0.666667
+      },
+      "reentrancy": {
+        "labeledCases": 7,
+        "semgrepHits": 1,
+        "semgrepRecall": 0.142857,
+        "slitherHits": 6,
+        "slitherRecall": 0.857143,
+        "unionHits": 6,
+        "unionRecall": 0.857143
+      },
+      "short_addresses": {
+        "labeledCases": 1,
+        "semgrepHits": 0,
+        "semgrepRecall": 0.0,
+        "slitherHits": 0,
+        "slitherRecall": 0.0,
+        "unionHits": 0,
+        "unionRecall": 0.0
+      },
+      "time_manipulation": {
+        "labeledCases": 4,
+        "semgrepHits": 4,
+        "semgrepRecall": 1.0,
+        "slitherHits": 3,
+        "slitherRecall": 0.75,
+        "unionHits": 4,
+        "unionRecall": 1.0
+      },
+      "unchecked_low_level_calls": {
+        "labeledCases": 4,
+        "semgrepHits": 4,
+        "semgrepRecall": 1.0,
+        "slitherHits": 2,
+        "slitherRecall": 0.5,
+        "unionHits": 4,
+        "unionRecall": 1.0
+      }
+    }
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P12_ACTION_REQUIRED_REAL_PUBLIC_PROVIDER_DIAGNOSTIC_15_ASSET_TWO_PROVIDER_IDENTITY_FRESHNESS_CONFLICT_AND_RIGHTS_BOUNDARY_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P13_ACTION_REQUIRED_FINAL_FROZEN_LINUX_DUAL_BUILD_BROWSER_57_SCREENSHOT_29_AND_CURRENT_BYTE_STATIC_CLOSURE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p13.external-labeled-accuracy-policy.v1",
+  "skuConsequences": {
+    "auditAdvanced": "NOT_FOR_SALE",
+    "auditBasic": "GO_FREE_LIMITED_PRESCREEN_AFTER_FINAL_BROWSER_WITH_STRONG_LIMITATIONS",
+    "auditPro": "INVITATION_ONLY_CONTROLLED_BETA_100_PERCENT_MANUAL_QA"
+  },
+  "tools": {
+    "legacyNativeCompilerVersionsBlocked": [
+      "0.4.0",
+      "0.4.2",
+      "0.4.9"
+    ],
+    "semgrep": "1.130.0",
+    "slither": "0.11.5",
+    "solcNativeVersionsAvailable": 13
+  },
+  "truthBoundary": {
+    "commercialRightsApproved": false,
+    "customerCredit": false,
+    "externalLabeledRecallBaseline": true,
+    "formalAccuracyCertification": false,
+    "liveCredit": false,
+    "paidTierCredit": false,
+    "saleCredit": false,
+    "worldClassProven": false
+  }
+}

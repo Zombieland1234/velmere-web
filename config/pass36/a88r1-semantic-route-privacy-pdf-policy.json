@@ -1,0 +1,403 @@
+{
+  "schemaVersion": "velmere.pass36.a88r1.semantic-route-privacy-pdf-policy.v1",
+  "revisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "parentRevisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+  "deterministicEpoch": "2026-07-28T03:30:00.000Z",
+  "inputs": {
+    "securityBoundary": {
+      "path": "lib/ai/vlm-security.ts",
+      "sha256": "823101b8b0df49e81b699521cb1ba95cbc6fc19102ecad9ef22fa654dfefa1a9"
+    },
+    "adviceBoundary": {
+      "path": "lib/ai/vlm-advice-boundary.ts",
+      "sha256": "8aef189203293f1edc512982907eac1da30230c561f1bebaf2fb8e2c6efe61ba"
+    },
+    "userPromptBoundary": {
+      "path": "lib/ai/vlm-user-prompt-boundary.ts",
+      "sha256": "e8637df7deafa6adfe9ff01cb659a83163490944be080f42d5ede3e8bc222a43"
+    },
+    "requestBoundary": {
+      "path": "lib/ai/vlm-route-request-boundary.ts",
+      "sha256": "9a06de3fe0f93aa1990545f73c87437ccdd422875efc360a5fa58f87bcefd2fd"
+    },
+    "routePreflight": {
+      "path": "lib/ai/vlm-route-preflight.ts",
+      "sha256": "cc1646d9eebaa39023f88d828aeabce95bcd4e92ac762c254a7203126668f2ab"
+    },
+    "brainRoute": {
+      "path": "lib/server/market-integrity-route-modules/brain.ts",
+      "sha256": "561e4d4e98e7b57563279f4e805e3f0e6157cf5daf4ad231228b056bc88fe54c"
+    },
+    "angelRoute": {
+      "path": "lib/server/market-integrity-route-modules/angel.ts",
+      "sha256": "b6827ab83b14881fc54571d55ebe63f45b0858709747474518db3218752491aa"
+    },
+    "semanticRuntime": {
+      "path": "lib/worldclass/pass36-a88r1-semantic-adversarial-runtime.ts",
+      "sha256": "dc4116c355ae3c7e4ac3faa80adc6193aa148e8b1204ca1cc80d7c234a73e41e"
+    },
+    "routeTest": {
+      "path": "scripts/pass36/test-a88r1-route-preflight.ts",
+      "sha256": "6af88b499a27cc65f303c85a7f5a9ea00437f3e1d4f80ba521dd182f2220d2bc"
+    },
+    "pdfRetentionIndex": {
+      "path": "config/pass36/a88r1-physical-pdf-evidence-retention-index.json",
+      "sha256": "19a85da719ab8240222b11b3b34b8aa39a0e7319fc51fe5be4c79b4ab3c0aec1"
+    },
+    "pdfSummaryVerifier": {
+      "path": "scripts/pass36/verify-a88r1-pdf-evidence-summary.mjs",
+      "sha256": "df198eb7370b7f8c1d17c0a19c8f4514ac867accb6a25dce957eb9bd2c4967a0"
+    },
+    "cleanUnpackBridge": {
+      "path": "scripts/pass36/verify-a88r1-clean-unpack-sequence.mjs",
+      "sha256": "29929bc6c700e93e6b9a5960d3b9afba0a580fb94a4226f61098a36cb6443c13"
+    },
+    "cleanUnpackSequence": {
+      "path": "scripts/pass36/verify-a88r1-clean-unpack-sequence.py",
+      "sha256": "4b4148edda91c6078b33f32f35567f8ca46a5225e5d6943dceadfb74154f7664"
+    },
+    "patch": {
+      "path": "VELMERE_A88R1_PATCH.txt",
+      "sha256": "8212842f0a3f0501b70331f3561f6158b4ddf4caf8a0e6ad98ae2499ee263a18"
+    },
+    "runner": {
+      "path": "VELMERE_RUN_A88R1_SEMANTIC_ROUTE_PRIVACY_PDF.cmd",
+      "sha256": "724f5526fc65e2086313693acf08e71dc29cea4c26ff965391b1d26d645d963b"
+    },
+    "tierPresentationPolicy": {
+      "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+      "sha256": "e883caaeb274a538f63afd1b2573feef2264d601f8fe95f23fe01c92fc365c33"
+    },
+    "intelligencePresentationConsumer": {
+      "path": "app/[locale]/intelligence/page.tsx",
+      "sha256": "42e378782c1c4d7f118f0d023a4c7c5b77f5ffa1603d968055909302088d1160"
+    },
+    "paidSurfacePolicyBuilder": {
+      "path": "scripts/pass35/build-paid-surface-policy.mjs",
+      "sha256": "ad9253ae61cdafbff00ac50f74073647ef9b4f4e1cbb1c31c97a3c6cde9484f3"
+    }
+  },
+  "parentDescendantManifestPath": "config/pass36/a88-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a88r1-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass36/a88r1-current-root-descendant-manifest.json",
+    "config/pass35/a57-source-manifest.json",
+    "_velmere/PASS35_SOURCE_ONLY_MANIFEST.json"
+  ],
+  "localCorpus": {
+    "parentCases": 360,
+    "focusedCases": 150,
+    "combinedCases": 510,
+    "locales": 3,
+    "parentFamilies": 15,
+    "focusedFamilies": 10,
+    "channelProjections": 2550,
+    "semanticMutations": 7560,
+    "mutationKilled": 7560
+  },
+  "routeExecution": {
+    "cases": 31,
+    "blockedCases": 26,
+    "allowedControls": 5,
+    "checks": 143,
+    "providerCallsOnBlockedCases": 0
+  },
+  "pdfEvidence": {
+    "indexPath": "config/pass36/a88r1-physical-pdf-evidence-retention-index.json",
+    "physicalPdfs": 450,
+    "renderedPages": 2100,
+    "materialsRequired": true,
+    "sourceOnlyHashBound": true
+  },
+  "realExit": {
+    "minimumVerifiedCases": 300,
+    "rightsApprovedRequired": true,
+    "independentAdjudicationRequired": true,
+    "customerDecisionUtilityLabelsRequired": true,
+    "closedRealCalibrationWindowsRequired": true,
+    "legalRegulatorySignedDecisionsRequired": 20
+  },
+  "focusedMutationFamilies": [
+    "decision_promotion",
+    "security_drop",
+    "advice_drop",
+    "locale_swap",
+    "family_swap",
+    "provider_call",
+    "stable_prompt_fingerprint",
+    "fact_addition",
+    "probability_publish",
+    "legal_publish",
+    "live_enable",
+    "sale_enable"
+  ],
+  "closedByA88R1": [
+    {
+      "id": "A88R1-GAP-01",
+      "severity": "P0",
+      "title": "Paraphrased individualized asset selection bypassed literal rules",
+      "closure": "Feature-based PL/EN/DE personal-context + asset-selection detection."
+    },
+    {
+      "id": "A88R1-GAP-02",
+      "severity": "P0",
+      "title": "Existing-position leverage paraphrases could reach provider work",
+      "closure": "Cross-lingual position/leverage/size semantics abstain before provider work."
+    },
+    {
+      "id": "A88R1-GAP-03",
+      "severity": "P0",
+      "title": "Individual contract termination requests lacked semantic coverage",
+      "closure": "Personal contract/action/liability patterns abstain without legal conclusion."
+    },
+    {
+      "id": "A88R1-GAP-04",
+      "severity": "P0",
+      "title": "Concealment and reporting-evasion paraphrases were incomplete",
+      "closure": "Authority/transfer/concealment feature pairs reject in PL/EN/DE."
+    },
+    {
+      "id": "A88R1-GAP-05",
+      "severity": "P0",
+      "title": "Guarantee language variants were under-covered",
+      "closure": "Risk-free/cannot-lose/near-certainty variants reject while educational critique remains allowed."
+    },
+    {
+      "id": "A88R1-GAP-06",
+      "severity": "P0",
+      "title": "Word-based probability claims bypassed numeric-percent checks",
+      "closure": "English, Polish and German number-word probability forms reject."
+    },
+    {
+      "id": "A88R1-GAP-07",
+      "severity": "P0",
+      "title": "Unicode homoglyph prompt injection could evade ASCII matching",
+      "closure": "Cyrillic/Greek confusables and diacritics are folded before security pattern evaluation."
+    },
+    {
+      "id": "A88R1-GAP-08",
+      "severity": "P1",
+      "title": "Educational criticism of unsafe text caused false positives",
+      "closure": "Quoted/meta analysis is allowed only without execution intent or secret/encoded payload."
+    },
+    {
+      "id": "A88R1-GAP-09",
+      "severity": "P0",
+      "title": "Brain and Angel duplicated request boundary logic",
+      "closure": "Both production routes use one shared fail-closed preflight."
+    },
+    {
+      "id": "A88R1-GAP-10",
+      "severity": "P0",
+      "title": "Blocked requests lacked executable provider-not-called proof",
+      "closure": "31-case provider-spy route matrix proves zero calls for 26 blocked cases."
+    },
+    {
+      "id": "A88R1-GAP-11",
+      "severity": "P0",
+      "title": "Duplicate query parameters could shadow security fields",
+      "closure": "Shared preflight rejects duplicates before provider/model/access work."
+    },
+    {
+      "id": "A88R1-GAP-12",
+      "severity": "P0",
+      "title": "Body/query shadowing was not jointly proven for AI routes",
+      "closure": "Shared preflight rejects mixed duplicates and unknown fields."
+    },
+    {
+      "id": "A88R1-GAP-13",
+      "severity": "P1",
+      "title": "Stable prompt fingerprints created correlation risk",
+      "closure": "Advice evidence ID is per-call keyed HMAC with random nonce."
+    },
+    {
+      "id": "A88R1-GAP-14",
+      "severity": "P1",
+      "title": "Prompt fingerprint could appear in customer response",
+      "closure": "Brain and Angel publish only decision/flags; no stable prompt identity."
+    },
+    {
+      "id": "A88R1-GAP-15",
+      "severity": "P1",
+      "title": "A88 corpus was fitted to known literal prompts",
+      "closure": "150 unseen paraphrase/control cases and 1800 focused semantic mutations added."
+    },
+    {
+      "id": "A88R1-GAP-16",
+      "severity": "P1",
+      "title": "Physical A83 PDF evidence was absent from handoff",
+      "closure": "450 PDFs/2100 pages retained in MATERIALS with SOURCE_ONLY hash binding."
+    },
+    {
+      "id": "A88R1-GAP-17",
+      "severity": "P1",
+      "title": "PDF retention lacked a fresh full external QA receipt",
+      "closure": "pypdf/pdfinfo/pdftotext 450/450, Ghostscript 45/45, blank/edge failures zero."
+    },
+    {
+      "id": "A88R1-GAP-18",
+      "severity": "P1",
+      "title": "Clean-unpack Node bridge could keep CI handles alive",
+      "closure": "Async spawn, bounded output, timeout, process-group termination and explicit exit."
+    },
+    {
+      "id": "A88R1-GAP-19",
+      "severity": "P1",
+      "title": "Roadmap blurred zero-budget engineering and unavoidable external gates",
+      "closure": "Resource model separates free engineering from legal/rights/assurance/payment costs."
+    },
+    {
+      "id": "A88R1-GAP-20",
+      "severity": "P0",
+      "title": "Local hardening could still be mistaken for sale readiness",
+      "closure": "NO_GO, sellEnabled=false, real eval/legal/rights/customer denominators remain explicit zero."
+    },
+    {
+      "id": "A88R1-GAP-21",
+      "severity": "P0",
+      "title": "Public Intelligence presentation imported the mixed entitlement resolver module",
+      "closure": "Presentation-only tier metadata is isolated in a side-effect-free module; the public page no longer imports account, token, ledger or entitlement resolution code, and the paid-surface control plane returns STATIC_PROVEN."
+    }
+  ],
+  "productionAssertions": [
+    {
+      "id": "brain-shared-preflight-before-provider",
+      "path": "lib/server/market-integrity-route-modules/brain.ts",
+      "includes": [
+        "evaluateVlmRoutePreflight",
+        "resolveMarketResult(query)",
+        "adviceBoundary: { decision: adviceBoundary.decision, flags: adviceBoundary.flags }"
+      ],
+      "excludes": [
+        "adviceBoundary.fingerprint"
+      ]
+    },
+    {
+      "id": "angel-shared-preflight-before-provider",
+      "path": "lib/server/market-integrity-route-modules/angel.ts",
+      "includes": [
+        "evaluateVlmRoutePreflight",
+        "resolveMarketResult(query)",
+        "adviceBoundary: { decision: adviceBoundary.decision, flags: adviceBoundary.flags }"
+      ],
+      "excludes": [
+        "adviceBoundary.fingerprint"
+      ]
+    },
+    {
+      "id": "shared-route-preflight-contract",
+      "path": "lib/ai/vlm-route-preflight.ts",
+      "includes": [
+        "validateOnlySearchParams",
+        "validateBodyObject",
+        "rejectMixedBodyAndQuery",
+        "inspectVlmUserPrompt",
+        "inspectVlmAdviceBoundary"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "confusable-fold-before-security",
+      "path": "lib/ai/vlm-security.ts",
+      "includes": [
+        "foldVlmSecurityConfusables",
+        "SECURITY_CONFUSABLES",
+        "const scanText = foldVlmSecurityConfusables(normalized)"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "privacy-opaque-advice-id",
+      "path": "lib/ai/vlm-advice-boundary.ts",
+      "includes": [
+        "createHmac",
+        "randomBytes",
+        "privacyOpaqueFingerprint"
+      ],
+      "excludes": [
+        "createHash(\"sha256\").update(normalized)"
+      ]
+    },
+    {
+      "id": "quoted-analysis-control",
+      "path": "lib/ai/vlm-user-prompt-boundary.ts",
+      "includes": [
+        "META_PROMPT_ANALYSIS",
+        "EXECUTION_INTENT",
+        "QUOTE_OR_EXPLICIT_SAMPLE"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "async-clean-unpack-bridge",
+      "path": "scripts/pass36/verify-a88r1-clean-unpack-sequence.mjs",
+      "includes": [
+        "spawn(",
+        "shell: false",
+        "BRIDGE_TIMEOUT_MS",
+        "MAX_OUTPUT_BYTES",
+        "process.exit(exitCode)"
+      ],
+      "excludes": [
+        "spawnSync"
+      ]
+    },
+    {
+      "id": "physical-pdf-retention-index",
+      "path": "config/pass36/a88r1-physical-pdf-evidence-retention-index.json",
+      "includes": [
+        "PHYSICAL_SYNTHETIC_FILES_IN_MATERIALS_HASH_BOUND_FROM_SOURCE_ONLY",
+        "\"pdfCount\": 450",
+        "\"pageCount\": 2100"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "presentation-only-tier-module",
+      "path": "lib/commerce/vlm-tier-presentation-policy.ts",
+      "includes": [
+        "Presentation-only product scope",
+        "buildVlmAdvancedOnlyTierPolicies"
+      ],
+      "excludes": [
+        "resolveRequestAccount",
+        "verifyVlmPaidAccessEntitlement",
+        "readPaidAccessToken",
+        "authorization"
+      ]
+    },
+    {
+      "id": "intelligence-page-no-entitlement-resolver-import",
+      "path": "app/[locale]/intelligence/page.tsx",
+      "includes": [
+        "@/lib/commerce/vlm-tier-presentation-policy"
+      ],
+      "excludes": [
+        "@/lib/commerce/vlm-advanced-only-access-policy",
+        "resolveVlmAdvancedOnlyAccess",
+        "verifyVlmPaidAccessEntitlement"
+      ]
+    }
+  ],
+  "truthBoundary": "A88R1 proves a larger local semantic/paraphrase and quoted-analysis boundary, shared route preflight ordering, provider-not-called behavior for the declared route matrix, privacy-safe public response identity and physical synthetic PDF evidence retention. It also expands the mandatory cross-audit/public-trust roadmap without granting credit. It does not prove legal approval, provider rights, real model accuracy, accepted findings, certification, real calibration, customer value, exact A80, staging, LIVE, world-class status or sale readiness.",
+  "roadmapExpansions": [
+    {
+      "id": "A88R1-ROADMAP-01",
+      "title": "Cross-audit validation denominator",
+      "status": "PLANNED_0_OF_20",
+      "path": "config/pass36/a88r1-public-trust-cross-audit-roadmap.json"
+    },
+    {
+      "id": "A88R1-ROADMAP-02",
+      "title": "Evidence-bound public trust website",
+      "status": "PLANNED_0_OF_20_SECTIONS",
+      "path": "docs/security/VELMERE_CROSS_AUDIT_PUBLIC_TRUST_PROGRAM.md"
+    },
+    {
+      "id": "A88R1-ROADMAP-03",
+      "title": "Certification and responsible-disclosure claim boundary",
+      "status": "PLANNED_NO_EXTERNAL_CREDIT",
+      "path": "config/pass36/a88r1-public-trust-cross-audit-roadmap.json"
+    }
+  ]
+}

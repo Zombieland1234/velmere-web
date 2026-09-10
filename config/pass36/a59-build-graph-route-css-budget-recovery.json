@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "velmere.pass36.a59.build-graph-route-css-budget-recovery.v1",
+  "revisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY",
+  "parentRevisionId": "VELMERE_PASS36_A58R0_RELEASE_INTEGRITY_FINAL_BYTE_BINDING",
+  "activeAcceptanceRevisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+  "budgets": {
+    "entrypointsMax": 148,
+    "apiRoutesMax": 82,
+    "aggregateCssBytesMax": 3400000,
+    "globalsCssBytesMax": 3100000,
+    "serverRoutesImportingClientCodeMax": 0,
+    "unresolvedLocalImportsMax": 0
+  },
+  "requiredLogicalApiOperations": 266,
+  "requiredPreservedDispatchPaths": 160,
+  "retiredRootPageShells": [
+    "app/page.tsx",
+    "app/browser/page.tsx",
+    "app/search/page.tsx",
+    "app/shield/page.tsx",
+    "app/market-integrity/page.tsx",
+    "app/shield-pro/page.tsx",
+    "app/shield-map/page.tsx",
+    "app/real-markets/page.tsx"
+  ],
+  "retiredDirectApiShells": [
+    "app/api/market-integrity/investigator/route.ts",
+    "app/api/market-integrity/klines/route.ts",
+    "app/api/market-integrity/market-intelligence/route.ts",
+    "app/api/market-integrity/markets/route.ts",
+    "app/api/market-integrity/real-markets/route.ts",
+    "app/api/market-integrity/search/route.ts",
+    "app/api/market-integrity/vlm/route.ts",
+    "app/api/search/bridge/route.ts",
+    "app/api/search/lens-report/route.ts",
+    "app/api/search/lens-route/route.ts",
+    "app/api/search/live-preview/route.ts",
+    "app/api/search/token-metadata/route.ts",
+    "app/api/market-integrity/vlm/access-policy/route.ts",
+    "app/api/market-integrity/vlm/keys/route.ts",
+    "app/api/market-integrity/vlm/verify/route.ts",
+    "app/api/market-integrity/real-markets/catalog/route.ts",
+    "app/api/market-integrity/real-markets/provider-contract/route.ts",
+    "app/api/market-integrity/real-markets/search/route.ts"
+  ],
+  "requiredDispatchers": [
+    "app/api/market-integrity/[operation]/route.ts",
+    "app/api/search/[operation]/route.ts",
+    "app/api/market-integrity/vlm/[operation]/route.ts",
+    "app/api/market-integrity/real-markets/[operation]/route.ts"
+  ],
+  "cssReceiptPath": "config/pass36/a59-css-compaction-receipt.json",
+  "buildGraphProfilePath": ".velmere/pass14-diagnostics/build-graph-profile.json",
+  "constraints": {
+    "publicUrlParityRequired": true,
+    "bodyBoundaryCoveragePercent": 100,
+    "saleEnabled": false,
+    "liveProven": false,
+    "budgetThresholdIncreaseForbidden": true,
+    "exactFinalByteBuildRequiredForPromotion": true,
+    "browserScreenshotParityRequiredForPromotion": true
+  },
+  "currentIdentityBinding": {
+    "schemaVersion": "velmere.pass36.a59.current-identity-binding.v1",
+    "revisionId": "VELMERE_PASS36_A102R44P46_P46_A59_CURRENT_IDENTITY_REBIND",
+    "generatedAt": "2026-08-14T16:24:00.778Z",
+    "budgetTupleSha256": "9a510de14aed733ce4a4844e83275858ed5cd1f146e59b04456da670a2394e13",
+    "css": {
+      "allowedRoots": [
+        "app",
+        "components"
+      ],
+      "fileCount": 26,
+      "totalBytes": 2920723,
+      "pathSetSha256": "3a6d897b3df912cbfb38329b07e88e957f137610e8108360778267e5098966c5",
+      "finalIdentitySha256": "b083c0871d04a441552cc6f01f0443764fe3a07323ca4901e8f7baecc7e1dadf",
+      "historicalA39RemovalReceiptPath": "config/pass36/a59-css-exact-dedup-historical-a39-removal-receipt.json",
+      "historicalA39RemovalReceiptSha256": "706a2ac0df3911e4e7527204e79902917c59b7416e0abec1399b90108fb7e2c8",
+      "priorThreeFileReplayReceiptSha256": "6187075fc15e7674980ce0d5887fbaa7f2cc52dbcb5be92a936a44ebfd6233a3"
+    },
+    "api": {
+      "inventoryPath": "artifacts/PASS4659_API_SURFACE_INVENTORY.json",
+      "passId": "pass4659-canonical-api-surface-registry-v1",
+      "allowedFileRoots": [
+        "app",
+        "lib"
+      ],
+      "routeIdentitySha256": "647456f5f867cef795e6bb6bab7d7a6286d5bdb56a3177f1c50e52e39d3df79e",
+      "handlerFileBindingCount": 266,
+      "uniqueHandlerFileCount": 266,
+      "handlerFileIdentitySha256": "37329370addb235c0ac9b1d88cc623e67700f1865c04347043187255fbf80eb9",
+      "summary": {
+        "routeCount": 266,
+        "counts": {
+          "control_plane": 0,
+          "machine_webhook": 11,
+          "admin_operator": 27,
+          "authenticated_customer": 15,
+          "public_product": 213,
+          "unclassified": 0
+        },
+        "controlPlaneCount": 0,
+        "mutatingRouteCount": 76,
+        "boundedMutatingRouteCount": 76,
+        "unboundedMutatingRouteCount": 0,
+        "boundedMutatingCoveragePercent": 100,
+        "allMutatingBodyHandlingCounts": {
+          "stream_bounded": 69,
+          "body_rejected": 7
+        }
+      }
+    }
+  },
+  "truthBoundary": "A59 proves static build-graph, route-registry, stream-safe body-boundary and CSS parser/identifier-budget recovery on the frozen source candidate. It does not claim a fresh exact Node 24.18.0 Next build, browser screenshot parity, staging, LIVE, customer value, provider rights or sale readiness.",
+  "cssExactDedupReceiptPath": "config/pass36/a59-css-exact-dedup-receipt.json"
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.pass22.merchant-legal-intake-template.v1",
+  "truthBoundary": "This template is intentionally empty. It must be completed with real seller data and reviewed for the launch jurisdiction; no field may be inferred from brand, email, work location or prior chat text.",
+  "requiredIdentity": {
+    "legalName": null,
+    "legalForm": null,
+    "countryCode": null,
+    "fullServiceAddress": null,
+    "commercialRegister": null,
+    "registrationNumber": null,
+    "vatId": null,
+    "taxId": null,
+    "supportEmail": null,
+    "phone": null,
+    "returnAddress": null,
+    "competentSupervisoryAuthority": null,
+    "consumerDisputeResolutionStatement": null
+  },
+  "requiredPolicyApprovals": {
+    "processorRegisterApproved": false,
+    "retentionScheduleApproved": false,
+    "shippingRegionsApproved": false,
+    "shippingRatesApproved": false,
+    "returnsProcessApproved": false,
+    "privacyPolicyApproved": false,
+    "termsApproved": false,
+    "taxHandlingApproved": false,
+    "fulfilmentApproved": false,
+    "legalReviewApproved": false
+  },
+  "evidence": {
+    "identityDocumentHash": null,
+    "registerExtractHash": null,
+    "taxEvidenceHash": null,
+    "legalReviewReceiptHash": null
+  },
+  "status": "EMPTY_NO_GO"
+}

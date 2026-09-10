@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "velmere.pass36.a82.audit-real-contract-matrix-policy.v1",
+  "revisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+  "parentRevisionId": "VELMERE_PASS36_A81R0_CANONICAL_BASIC_PRO_ADVANCED_MEGA_MATRIX_ORCHESTRATOR",
+  "deterministicEpoch": "2026-07-27T14:00:00.000Z",
+  "intakeIndex": {
+    "path": "evaluation/pass36/a82-real-contract-intake-index.json",
+    "sha256": "c961e8d2a5c4d45e2c384b2dfb448a1620bc1a8bea8f45e9672bab8237616791"
+  },
+  "requiredCaseCount": 50,
+  "caseClasses": {
+    "KNOWN_VULNERABILITY": 10,
+    "REMEDIATED_PAIR": 10,
+    "BENIGN_CONTROL": 10,
+    "PROXY_UPGRADE_GOVERNANCE": 10,
+    "ECONOMIC_BUSINESS_LOGIC": 10
+  },
+  "tiers": [
+    "basic",
+    "pro",
+    "advanced"
+  ],
+  "officialToolFamilies": [
+    {
+      "toolId": "solc",
+      "minimumVersionBinding": true,
+      "exactExecutableSha256Required": true,
+      "rawOutputSha256Required": true,
+      "fixtureMayGrantCredit": false
+    },
+    {
+      "toolId": "slither",
+      "minimumVersionBinding": true,
+      "exactExecutableSha256Required": true,
+      "rawOutputSha256Required": true,
+      "fixtureMayGrantCredit": false
+    },
+    {
+      "toolId": "semgrep",
+      "minimumVersionBinding": true,
+      "exactExecutableSha256Required": true,
+      "rawOutputSha256Required": true,
+      "fixtureMayGrantCredit": false
+    },
+    {
+      "toolId": "forge",
+      "minimumVersionBinding": true,
+      "exactExecutableSha256Required": true,
+      "rawOutputSha256Required": true,
+      "fixtureMayGrantCredit": false
+    }
+  ],
+  "realCaseRequiredEvidence": [
+    "exact_chain_and_address",
+    "provider_bound_deployed_bytecode",
+    "exact_source_bundle",
+    "compiler_version_settings_and_libraries",
+    "source_to_bytecode_match",
+    "benchmark_and_report_rights",
+    "blind_known_finding_labels",
+    "independent_adjudication",
+    "official_tool_receipts",
+    "tier_outputs",
+    "raw_evidence_redaction"
+  ],
+  "tierRequirements": {
+    "basic": {
+      "minimumEvidenceFamilies": 3,
+      "minimumMaterialFields": 8,
+      "officialToolFamiliesRequired": 0,
+      "humanReviewRequired": false
+    },
+    "pro": {
+      "minimumEvidenceFamilies": 6,
+      "minimumMaterialFields": 16,
+      "officialToolFamiliesRequired": 4,
+      "humanReviewRequired": false
+    },
+    "advanced": {
+      "minimumEvidenceFamilies": 10,
+      "minimumMaterialFields": 24,
+      "officialToolFamiliesRequired": 4,
+      "humanReviewRequired": true
+    }
+  },
+  "metricRequirements": {
+    "falsePositiveLedgerRequired": true,
+    "falseNegativeLedgerRequired": true,
+    "perFamilyMetricsRequired": true,
+    "blindBeforeExecutionRequired": true,
+    "remediatedPairLinkRequired": true,
+    "benignControlsRequired": 10,
+    "minimumIndependentOrganizations": 2
+  },
+  "fixtureDenominators": {
+    "cases": 50,
+    "tierOutputs": 150,
+    "toolReceipts": 200,
+    "sourceBytecodePairs": 50,
+    "blindLabelBundles": 50,
+    "semanticMutations": 1000
+  },
+  "closedByA82": [
+    {
+      "gapId": "A82-GAP-01",
+      "severity": "P0",
+      "title": "No single fail-closed intake for fifty real audit cases",
+      "closure": "A82 defines a fixed fifty-slot denominator with five balanced case classes and never prunes missing cases."
+    },
+    {
+      "gapId": "A82-GAP-02",
+      "severity": "P0",
+      "title": "Contract address identity could be confused with verified source and bytecode",
+      "closure": "Identity, deployed bytecode, source bundle, compiler settings and source-to-bytecode reproduction are separate mandatory receipts."
+    },
+    {
+      "gapId": "A82-GAP-03",
+      "severity": "P0",
+      "title": "Known audit labels could be exposed before tool execution",
+      "closure": "A82 requires blind-before-execution label receipts and independent post-run adjudication."
+    },
+    {
+      "gapId": "A82-GAP-04",
+      "severity": "P0",
+      "title": "Fixture tool adapters could be credited as official execution",
+      "closure": "Every official tool receipt binds executable SHA, version, configuration, target, input and raw output; fixtureOnly always receives zero real credit."
+    },
+    {
+      "gapId": "A82-GAP-05",
+      "severity": "P0",
+      "title": "Source and deployed bytecode mismatch could still produce customer findings",
+      "closure": "Any source-bytecode mismatch forces ABSTAIN and blocks all Pro/Advanced delivery."
+    },
+    {
+      "gapId": "A82-GAP-06",
+      "severity": "P1",
+      "title": "False positives and false negatives lacked one complete real-case ledger",
+      "closure": "A82 requires case, family, tier and evidence-bound FP/FN adjudication without dropping unavailable cases."
+    },
+    {
+      "gapId": "A82-GAP-07",
+      "severity": "P1",
+      "title": "Remediated pairs were not bound to the original vulnerable identity",
+      "closure": "Every remediation case requires exact predecessor, patch and post-deployment bindings."
+    },
+    {
+      "gapId": "A82-GAP-08",
+      "severity": "P0",
+      "title": "Advanced could imply human review without a qualified signed reviewer",
+      "closure": "Advanced remains blocked unless a qualified conflict-declared human review and independent sample are both present."
+    },
+    {
+      "gapId": "A82-GAP-09",
+      "severity": "P0",
+      "title": "Tier value could be inflated by pages or duplicate findings",
+      "closure": "Basic, Pro and Advanced require monotonic material fields, new evidence families and non-duplicate scenarios."
+    },
+    {
+      "gapId": "A82-GAP-10",
+      "severity": "P0",
+      "title": "Public contract identities could be mistaken for rights-approved benchmark use",
+      "closure": "Display, source, report, derived-data and redistribution rights are independent mandatory decisions."
+    },
+    {
+      "gapId": "A82-GAP-11",
+      "severity": "P1",
+      "title": "Real-case denominators could be silently reduced to available tool outputs",
+      "closure": "All fifty slots remain in the denominator as READY, BLOCKED, UNAVAILABLE or REJECTED_INTEGRITY."
+    },
+    {
+      "gapId": "A82-GAP-12",
+      "severity": "P0",
+      "title": "A clean local harness could enable paid audit claims",
+      "closure": "Local fixture success always records zero real cases, zero official tools, no customer accuracy, no paid readiness and sale disabled."
+    }
+  ],
+  "parentDescendantManifestPath": "config/pass36/a81-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a82-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a82-current-root-descendant-manifest.json"
+  ],
+  "truthBoundary": "A82 locally implements and adversarially verifies a fail-closed real-contract intake, official-tool evidence binding, blind-label, source-bytecode, tier-value and FP/FN ledger contract. The local run uses generated fixture cases only. The repository contains ten historical public identity seeds but zero complete rights-approved real cases, zero official tool executions, zero independent labels and zero paid-ready outputs."
+}

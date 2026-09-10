@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "velmere.pass36.a83.source-evidence-summary.v3",
+  "revisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+  "currentSourceRevisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "evidenceAsOfRevisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "generatedAt": "2026-07-27T15:30:00.000Z",
+  "status": "PASS_A83_CURRENT_R46_FINAL_RC_TWO_RUN_BOUND",
+  "evidenceClass": "TESTED_LOCAL_REAL_EXECUTION",
+  "evidenceMode": "CURRENT_R46_FINAL_RC_TWO_DISPOSABLE_CLONES_EXTERNAL_MATERIALS_BOUND",
+  "sourceSummaryPath": "config/pass36/a83-source-evidence-summary.json",
+  "corpusManifest": {
+    "path": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_CORPUS_MANIFEST.json",
+    "materialsRelativePath": "qa/pdf-final-rc/RUN1/CORPUS_MANIFEST.json",
+    "byteLength": 2443040,
+    "sha256": "af3f563ae724949e031c82736f863b0ac7fffe46d08e1c8c37e48439d7412e51",
+    "integrityDigest": "49834771794b8bcbd4f92289bf1a9bc333fde4baa86b724fccffed645db4cccb",
+    "entryCount": 450,
+    "totals": {
+      "cases": 50,
+      "physicalPdfs": 450,
+      "renderedPages": 2100,
+      "channelProjections": 2700,
+      "semanticMutations": 8100,
+      "mutationKilled": 8100,
+      "byLocale": {
+        "pl": 150,
+        "en": 150,
+        "de": 150
+      },
+      "byTier": {
+        "basic": 150,
+        "pro": 150,
+        "advanced": 150
+      }
+    },
+    "entryBindingDigest": "3fb77d6bf9e9a3e222e42366074dc27149e1c7d98506275cbb5614ff181b87fb",
+    "aggregatePdfByteLength": 55286735,
+    "evidenceState": "TESTED_LOCAL_REAL_EXECUTION"
+  },
+  "rasterQaReceipt": {
+    "path": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_RASTER_QA_RECEIPT.json",
+    "materialsRelativePath": "qa/pdf-final-rc/RUN1/RASTER_QA_RECEIPT.json",
+    "byteLength": 686785,
+    "sha256": "03f14559fd9e563754b08cabeb72d5ecb7260e825d58fd7a785462e7040a44d6",
+    "status": "PASS_A83_PDF_RASTER_AND_EXTERNAL_PARSE_QA",
+    "pdfCount": 450,
+    "renderedPageCount": 2100,
+    "blankPages": 0,
+    "pagesTouchingRasterEdge": 0,
+    "pypdfPassed": 450,
+    "pdfinfoPassed": 450,
+    "pdftotextPassed": 450,
+    "localeMarkerPassed": 450,
+    "ghostscriptSamplePassed": 45,
+    "failedDocuments": 0,
+    "rasterBindingDigest": "5b45e093c92791aebd0bf1e6f9f21c26b7db9995355d835811824f2b78f12c17",
+    "contactSheetDigest": "0b06dfe075e9e6b07ca335154cf220af595ea7524f8f0b82e2927ef92433d5ee",
+    "evidenceState": "TESTED_LOCAL_REAL_EXECUTION"
+  },
+  "fixtureRuntime": {
+    "path": "artifacts/pass36/a83/PASS36_A83_BROWSER_LENS_PDF_FIXTURE_RUNTIME.json",
+    "materialsRelativePath": "qa/pdf-final-rc/RUN1/FIXTURE_RUNTIME.json",
+    "byteLength": 1688,
+    "sha256": "8ed05e1e233b129fca36c7bd97b2367b3aca0d134d53ab993a3b53faf2d5272d",
+    "status": "PASS_A83_SYNTHETIC_PHYSICAL_PDF_CORPUS_NO_REAL_CREDIT",
+    "manifestSha256": "af3f563ae724949e031c82736f863b0ac7fffe46d08e1c8c37e48439d7412e51",
+    "manifestIntegrityDigest": "49834771794b8bcbd4f92289bf1a9bc333fde4baa86b724fccffed645db4cccb",
+    "evidenceState": "TESTED_LOCAL_REAL_EXECUTION"
+  },
+  "testReceipt": {
+    "path": "config/pass36/a83-test-receipt.json",
+    "byteLength": 8910,
+    "sha256": "517ad9fb06f8c45d9978c144b1ddb6989e812e57777b08c85e67a90baa6dbb9a",
+    "status": "PASS_A83_LOCAL_SYNTHETIC_PHYSICAL_PDF_MATRIX_ONLY",
+    "checks": 22,
+    "passed": 22,
+    "failed": 0,
+    "manifestIntegrityDigest": "49834771794b8bcbd4f92289bf1a9bc333fde4baa86b724fccffed645db4cccb",
+    "evidenceState": "TESTED_LOCAL_REAL_EXECUTION"
+  },
+  "finalRcTwoRun": {
+    "materialsRelativePath": "qa/pdf-final-rc/R44P46_A83_FINAL_RC_TWO_RUN_RECEIPT.json",
+    "byteLength": 7137,
+    "sha256": "c1a56b18d111f437841273598a728c06513e83720893f228e899413881141a07",
+    "status": "PASS_A83_R44P46_FINAL_RC_TWO_DISPOSABLE_CLONES_BYTE_IDENTICAL",
+    "checkCount": 22,
+    "passedChecks": 22,
+    "denominators": {
+      "cloneRuns": 2,
+      "physicalPdfsPerRun": 450,
+      "physicalPdfsTotal": 900,
+      "renderedPagesPerRun": 2100,
+      "renderedPagesTotal": 4200,
+      "channelProjectionsPerRun": 2700,
+      "semanticMutationsPerRun": 8100,
+      "mutationKilledPerRun": 8100,
+      "completePdfByteComparisons": 450,
+      "completePageRasterComparisons": 2100,
+      "retainedPhysicalPdfArtifacts": 900,
+      "retainedContactSheetArtifacts": 18,
+      "ghostscriptSamplesPerRun": 45
+    },
+    "dependencySnapshotSha256": "4e0c28f440ee14d300878d2c0614b6bd18ff165b73f9b691391975bd89e43f60",
+    "pdfSetAggregateSha256": "f89add5241c74b6102446d7e19e0bde57d77949359dfa338ed6135079d2b7f17",
+    "pageRasterAggregateSha256": "f6489f8fd3751ce3d9b340c44ab7c57ce9a8e827d6c494e7e31d286a8d373c9e",
+    "run1": {
+      "resultSha256": "10ecbcbb58837a44f54aadc14e518ac2d66bdbf803dfdcdc5db91f1ed3b584ac",
+      "manifestSha256": "af3f563ae724949e031c82736f863b0ac7fffe46d08e1c8c37e48439d7412e51",
+      "rasterReceiptSha256": "03f14559fd9e563754b08cabeb72d5ecb7260e825d58fd7a785462e7040a44d6",
+      "runtimeSha256": "8ed05e1e233b129fca36c7bd97b2367b3aca0d134d53ab993a3b53faf2d5272d",
+      "semanticReceiptSha256": "517ad9fb06f8c45d9978c144b1ddb6989e812e57777b08c85e67a90baa6dbb9a",
+      "pdfRowsSha256": "a89b7321b2d7a7c9697122b2bc91ce35fdac798cb1e0955bba96532237fd2e71"
+    },
+    "run2": {
+      "resultSha256": "19abfa07c070652415ffae00c820f4aa91894d0606b4a2c57067bd135d3aef77",
+      "manifestSha256": "af3f563ae724949e031c82736f863b0ac7fffe46d08e1c8c37e48439d7412e51",
+      "rasterReceiptSha256": "03f14559fd9e563754b08cabeb72d5ecb7260e825d58fd7a785462e7040a44d6",
+      "runtimeSha256": "8ed05e1e233b129fca36c7bd97b2367b3aca0d134d53ab993a3b53faf2d5272d",
+      "semanticReceiptSha256": "517ad9fb06f8c45d9978c144b1ddb6989e812e57777b08c85e67a90baa6dbb9a",
+      "pdfRowsSha256": "a89b7321b2d7a7c9697122b2bc91ce35fdac798cb1e0955bba96532237fd2e71"
+    },
+    "byteIdenticalPdfCount": 450,
+    "byteIdenticalPageRasterCount": 2100,
+    "g11ClosureEligible": true,
+    "evidenceState": "TESTED_LOCAL_REAL_EXECUTION"
+  },
+  "fontRecoveryProvenance": {
+    "materialsRelativePath": "qa/pdf-final-rc/FONT_RECOVERY_PROVENANCE.json",
+    "receiptSha256": "9bd41fe88bafe5a2aac064a37075128fd9ef40edf6caeecabb0bedf5db95a448",
+    "status": "PASS_EXACT_PARENT_MATERIALS_PDF_FONTFILE2_RECOVERY",
+    "parentMaterialsArchive": {
+      "fileName": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT_MATERIALS.zip",
+      "byteLength": 42840121,
+      "sha256": "7858e88f45d315b435d7e7a0c794fe1d33951a03fdf5ceb8b8902a11cc64b961",
+      "revisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT"
+    },
+    "retainedR44P44Materials": {
+      "manifestRelativePath": "07_RETAINED_PARENT_R44P44/materials/R44P44_MATERIALS_MANIFEST.json",
+      "manifestByteLength": 161316,
+      "manifestSha256": "fddc322d374886b86f79d0ce0212b8be2ab30830970900f28fe596d12d2a24b2",
+      "payloadFileCount": 806,
+      "payloadAggregateSha256": "4d83bfe44d396da30f1d288d170091f160617fe366cf30309eae84d69c2e6684"
+    },
+    "sourcePdf": {
+      "archiveMember": "07_RETAINED_PARENT_R44P44/materials/04_PDF/RUN1_FULL_CORPUS/en/basic/94-aapl-basic-en.pdf",
+      "materialsRelativePath": "07_RETAINED_PARENT_R44P44/materials/04_PDF/RUN1_FULL_CORPUS/en/basic/94-aapl-basic-en.pdf",
+      "byteLength": 106661,
+      "sha256": "45aeba8009cbf35c4a7043b76d27e3e531953f73b338ba58a6e2f22e0d91da6f",
+      "pageIndex": 0
+    },
+    "fontObject": {
+      "resourceName": "/F1",
+      "fontObjectId": 3,
+      "baseFont": "/VelmereManrope-Regular",
+      "fontDescriptorObjectId": 14,
+      "streamKey": "/FontFile2",
+      "fontFile2ObjectId": 16
+    },
+    "recoveredFont": {
+      "byteLength": 46464,
+      "sha256": "a07eea516ecb22957f162d68a559462c9af0534487669969d500f8e92aece0fa",
+      "copiedIntoSource": false,
+      "role": "EXTERNAL_EXACT_HASH_BOUND_TEST_INPUT_ONLY"
+    }
+  },
+  "negativeEvidence": {
+    "initialExactVerifierStatus": "FAIL_A83_BROWSER_LENS_PDF_MATRIX",
+    "initialExactVerifierChecks": 31,
+    "initialExactVerifierPassed": 25,
+    "initialExactVerifierFailed": 6,
+    "staleSummaryReceiptSha256": "3da6d48ec19bf4d55295cfacbb0d3285d68f1737b1391d13242757e88e4a5942",
+    "currentReceiptSha256": "517ad9fb06f8c45d9978c144b1ddb6989e812e57777b08c85e67a90baa6dbb9a",
+    "staleSummaryManifestIntegrityDigest": "7c533525ad2bebae7afaa71c47d3d65590523ed70705e5e2c9409da257f7e354",
+    "currentReceiptManifestIntegrityDigest": "49834771794b8bcbd4f92289bf1a9bc333fde4baa86b724fccffed645db4cccb",
+    "failureIds": [
+      "summary:test-receipt",
+      "authority:plane",
+      "program:revision",
+      "program:a83",
+      "program:evidence",
+      "program:remaining"
+    ],
+    "initialMissingFontCloneFailures": [
+      {
+        "materialsRelativePath": "qa/pdf-final-rc/RUN1_INITIAL_MISSING_FONT_FAIL/04_generate_450_pdfs.receipt.json",
+        "receiptSha256": "08ace1cc18a6fd7433cfc8b77dfd30a0d646bfe6facdcac315045cf828d8f3f4",
+        "exitCode": 1,
+        "stderrSha256": "2a4530aee01922cdf8aabaee84b5a8325bdb79a8957d5550d1db9a6c5b862056"
+      },
+      {
+        "materialsRelativePath": "qa/pdf-final-rc/RUN2_INITIAL_MISSING_FONT_FAIL/04_generate_450_pdfs.receipt.json",
+        "receiptSha256": "f0105d8e2fd5ff6d4d5a8a220e59952280984b417320f5bc797e1b5d8cd4715c",
+        "exitCode": 1,
+        "stderrSha256": "0a1757e1f4fe1180d3149e05d8011629a577122ee24454163125d50cd13312c6"
+      }
+    ],
+    "historyRetained": true
+  },
+  "currentSourceExecution": {
+    "exactR46PdfFinalRcExecuted": true,
+    "twoRunDeterminismProven": true,
+    "disposableCloneRuns": 2,
+    "uniquePhysicalPdfsVerified": 450,
+    "physicalPdfsExecuted": 900,
+    "renderedPagesPerRun": 2100,
+    "renderedPagesExecuted": 4200,
+    "byteIdenticalPdfComparisons": 450,
+    "byteIdenticalPageRasterComparisons": 2100,
+    "semanticMutationsPerRun": 8100,
+    "mutationKilledPerRun": 8100,
+    "g11ClosureEligible": true,
+    "finalRcRerunRequired": false
+  },
+  "fullEvidenceRequiredForIndependentReplay": true,
+  "fullEvidenceExpectedInSourceOnly": false,
+  "fullEvidenceCurrentlyAvailableForIndependentReplay": false,
+  "fullEvidencePreparedForMaterials": true,
+  "executionTruth": {
+    "localSyntheticPhysicalMatrixExecutedHistorically": true,
+    "physicalCustomerPdfMatrixExecuted": false,
+    "realPacketsVerified": 0,
+    "productionBrowserRuns": 0,
+    "secureCustomerDeliveries": 0,
+    "externalAccessibilityValidations": 0,
+    "customerComprehensionLabels": 0,
+    "customerPurchaseWorthinessProven": false,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "truthBoundary": "This compact SOURCE_ONLY summary binds the complete R44P46 A83 final-RC evidence retained outside SOURCE: two separately created disposable-clone runs, 900 executed PDFs, 4200 rendered pages, complete 450-PDF byte identity, complete 2100-page raster identity, 8100/8100 semantic mutations killed per run, active-content/font checks and external parser/raster QA. The exact font was recovered byte-for-byte from parent MATERIALS PDF /FontFile2 and remained an external test input. This closes only internal G11 and grants no real-packet, customer, production, legal, LIVE, sale or world-class credit.",
+  "integrity": {
+    "algorithm": "sha256",
+    "digest": "5f95eaaeecfdc12cf18e52ef526a0af1be75dc3fb2f0942d506c5314740ca68d"
+  }
+}

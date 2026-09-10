@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "velmere.pass36.a80.current-state.v1",
+  "revisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+  "generatedAt": "2026-07-27T12:00:00.000Z",
+  "decision": "PASS_LOCAL_RELEASE_CANDIDATE_ADMISSION_BLOCKED_EXACT_EXECUTION",
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changed": false
+  },
+  "localAdmission": {
+    "deterministicZipDoesNotImplyReleaseCandidate": true,
+    "verifiedA78Required": true,
+    "verifiedA79Required": true,
+    "currentRootExact30Of30Required": true,
+    "cleanUnpackA58Required": true,
+    "sourceHygieneRequired": true,
+    "outputOutsideSourceRequired": true,
+    "sourceMutationForbidden": true,
+    "privateLiveEvidenceEmbeddingForbidden": true,
+    "closedAdmissionGaps": 15
+  },
+  "frozenReleaseCandidate": {
+    "verified": false,
+    "candidateSealIssued": false,
+    "candidatePackageIssued": false,
+    "blockers": [
+      "A78_EXACT_RUNTIME_DEPENDENCY_BROWSER_NOT_VERIFIED",
+      "A79_EXACT_BUILD_RUNTIME_BROWSER_NOT_EXECUTED",
+      "CURRENT_ROOT_EXACT_30_OF_30_NOT_EXECUTED"
+    ]
+  },
+  "exactPrerequisites": {
+    "a78PhysicalInputs": "0/3",
+    "dependencyLockPaths": "81/827",
+    "a79ExactBuildExecuted": false,
+    "a79ExactBrowserExecuted": false,
+    "currentRootExact": "24/30_SOURCE_ONLY",
+    "semanticProductFailuresAfterDiagnosticDependencies": 0
+  },
+  "claims": {
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "nextPass": {
+    "pass": "A81",
+    "title": "Canonical mega-matrix orchestrator",
+    "status": "MAY_PREPARE_LOCAL_ORCHESTRATOR_BUT_PRODUCT_EXECUTION_REQUIRES_FROZEN_A80_CANDIDATE"
+  },
+  "truthBoundary": "A80 locally closes release-candidate admission and seal bypasses but does not create a frozen local release candidate. Exact A78/A79 execution and exact current-root 30/30 remain unavailable, so candidate issuance, staging, LIVE and sale remain blocked."
+}

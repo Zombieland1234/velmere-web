@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p1.static-pattern-review.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P1_ACTION_REQUIRED_PRODUCT_REALITY_WAVE1_NON_MUTATING_ADAPTER_PDF_VISUAL_FREEZE_AND_PAID_GATE_PATCH_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T06:15:00.000Z",
+  "secretCandidateReview": {
+    "path": "scripts/pass36/test-a63-staging-program-orchestrator.mjs",
+    "classification": "DELIBERATE_FAKE_NEGATIVE_TEST_VALUE",
+    "evidence": [
+      "[REDACTED_LIVE_KEY_FIXTURE] is injected into a blocked scenario",
+      "[REDACTED_LIVE_KEY_FIXTURE] is asserted to trigger live_key_leak"
+    ],
+    "realSecretFound": false
+  },
+  "dangerousPatternReview": [
+    {
+      "path": "app/[locale]/intelligence/page.tsx",
+      "pattern": "dangerouslySetInnerHTML",
+      "classification": "JSON_LD_ONLY_WITH_ESCAPE_HARDENING",
+      "controls": [
+        "JSON.stringify",
+        "escape & < > U+2028 U+2029",
+        "no user HTML insertion"
+      ]
+    },
+    {
+      "paths": [
+        "scripts/pass11/audit-full-tree.mjs",
+        "scripts/pass12/audit-full-tree.mjs",
+        "scripts/pass13/audit-full-tree.mjs",
+        "scripts/pass14/audit-clean-source.mjs",
+        "scripts/pass16/audit-clean-source.mjs",
+        "scripts/pass17/audit-clean-source.mjs",
+        "scripts/pass18/audit-clean-source.mjs",
+        "scripts/pass19/audit-clean-source.mjs",
+        "scripts/pass20/audit-clean-source.mjs",
+        "scripts/pass21/audit-clean-source.mjs",
+        "scripts/pass22/audit-clean-source.mjs",
+        "scripts/pass23/audit-clean-source.mjs",
+        "scripts/pass12/test-routing-single-dom-contract.mjs"
+      ],
+      "pattern": "dangerouslySetInnerHTML",
+      "classification": "SCANNER_OR_TEST_STRING_REFERENCE_NOT_RUNTIME_SINK"
+    },
+    {
+      "paths": [
+        "scripts/pass4826/test-binance-fallback-contract.cjs",
+        "scripts/pass4826/test-durable-market-snapshot.cjs"
+      ],
+      "pattern": "new Function",
+      "classification": "TEST_ONLY_EXECUTION_OF_LOCALLY_TRANSPILED_OUTPUT_WITH_CONTROLLED_REQUIRE"
+    },
+    {
+      "paths": [
+        "scripts/smoke-owner-production-blockers.mjs",
+        "scripts/velmere-production-hard-gate.mjs"
+      ],
+      "pattern": "child_process_exec",
+      "classification": "FIXED_NPM_VERSION_COMMAND_NO_USER_INPUT",
+      "remainingRisk": "Prefer execFile/spawn with exact npm path in a later tooling-hardening pass."
+    }
+  ],
+  "decision": "REVIEWED_NO_CONFIRMED_RUNTIME_SECRET_OR_HTML_INJECTION_IN_THIS_WAVE",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "velmere.pass35.a18-tier-value-benchmark-policy.v1",
+  "passId": "PASS35_A18",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA17": {
+    "canonicalWeightedPlanningPercent": 41.9,
+    "zeroBudgetWeightedPlanningPercent": 82.1
+  },
+  "caseProgram": {
+    "surfaceCount": 7,
+    "casesPerSurface": 50,
+    "tiersPerCase": 3,
+    "upgradeComparisonsPerCase": 2,
+    "caseArchetypes": [
+      "HEALTHY",
+      "PROVIDER_CONFLICT",
+      "STALE_CRITICAL_INPUT",
+      "RIGHTS_WITHDRAWN",
+      "MISSING_IDENTITY",
+      "EVIDENCE_SHORTFALL",
+      "PROVIDER_OUTAGE_FAILOVER",
+      "HIGH_VOLATILITY",
+      "LOW_LIQUIDITY",
+      "PACKET_TAMPER_ATTEMPT"
+    ],
+    "splitRule": "case index 0-29 development, 30-39 validation, 40-49 frozen_test",
+    "blindPairOrder": "sha256(caseId + upgradeId) parity",
+    "fixtureBoundary": "All cases are synthetic/offline structural value cases. They cannot prove willingness-to-pay, customer outcome, real provider quality or commercial purchase-worthiness."
+  },
+  "thresholds": {
+    "minimumBasicMaterialFields": 12,
+    "minimumIncrementalFieldsPerPaidUpgrade": 8,
+    "minimumNewEvidenceFamiliesPerPaidUpgrade": 2,
+    "minimumNewScenariosPerPaidUpgrade": 1,
+    "minimumUtilityScoreDelta": 0.04,
+    "maximumFillerRatio": 0.05,
+    "minimumBlindSelectionAccuracy": 1,
+    "minimumMutationKillRate": 1,
+    "requiredMutationTypes": 8
+  },
+  "supplementalEvidenceFamilies": [
+    {
+      "surfaceId": "shield_pro",
+      "tier": "advanced",
+      "families": [
+        "case_evidence_graph"
+      ]
+    },
+    {
+      "surfaceId": "real_markets",
+      "tier": "advanced",
+      "families": [
+        "macro_factor_reference"
+      ]
+    },
+    {
+      "surfaceId": "pdf_delivery",
+      "tier": "pro",
+      "families": [
+        "scenario_receipts"
+      ]
+    },
+    {
+      "surfaceId": "pdf_delivery",
+      "tier": "advanced",
+      "families": [
+        "monitoring_invalidation_receipts"
+      ]
+    },
+    {
+      "surfaceId": "whale_watch",
+      "tier": "advanced",
+      "families": [
+        "cluster_methodology_validation"
+      ]
+    }
+  ],
+  "mutationTypes": [
+    "PAGE_COUNT_ONLY_FILLER",
+    "MISSING_INCREMENTAL_FIELDS",
+    "MISSING_INCREMENTAL_EVIDENCE",
+    "MISSING_INCREMENTAL_SCENARIOS",
+    "SAFETY_REGRESSION",
+    "INVENTED_CLAIM",
+    "SILENT_TIER_DOWNGRADE",
+    "DUPLICATE_FILLER"
+  ],
+  "commercialBoundary": {
+    "functionalOfflineTierValueMayPass": true,
+    "sellEnabled": false,
+    "chargeAllowed": false,
+    "paidDeliveryAllowed": false,
+    "customerPurchaseWorthinessClaimAllowed": false,
+    "liveClaimAllowed": false,
+    "reason": "A18 proves only that the frozen product contract creates non-filler, fail-closed structural increments under synthetic cases and that known downgrade/filler mutations are rejected."
+  }
+}

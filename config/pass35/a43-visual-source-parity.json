@@ -1,0 +1,1564 @@
+{
+  "schemaVersion": "velmere.pass35.a43.visual-source-parity.v1",
+  "revisionId": "VELMERE_PASS35_A43_WEBPACK_CSS_VISUAL_RUNTIME_RECOVERY",
+  "visualInput": "VELMERE_VISUAL_SOURCE_CLEAN(2).zip",
+  "files": [
+    {
+      "surface": "home",
+      "path": "app/[locale]/page.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "3d7d9be648bb37a878671c3d872963c96606896deb475bb85b1e6cd2ca910dd1",
+      "visualSourceSha256": "3d7d9be648bb37a878671c3d872963c96606896deb475bb85b1e6cd2ca910dd1"
+    },
+    {
+      "surface": "home",
+      "path": "components/home/HomePageClient.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "e1fedc358cb996362f30fbdef6c805bf4439c7099e09301c2fddadd0a7e08001",
+      "visualSourceSha256": "cccccb17a8285f366f8d03d42989bab889b487abd324e3142439888cf7299ec7"
+    },
+    {
+      "surface": "home",
+      "path": "components/home/NeuralAtelier3D.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "18f6368d6931349d4c023797e715afa3ca02cfd3a36733c1f5758f4525f5e9b7",
+      "visualSourceSha256": "18f6368d6931349d4c023797e715afa3ca02cfd3a36733c1f5758f4525f5e9b7"
+    },
+    {
+      "surface": "home",
+      "path": "components/ui/PremiumAmbientGlobe.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "fd9a560e95936183e0006b4fcdfdff6f25598315420e2027bedd1a7ddca44cc4",
+      "visualSourceSha256": "fd9a560e95936183e0006b4fcdfdff6f25598315420e2027bedd1a7ddca44cc4"
+    },
+    {
+      "surface": "browser",
+      "path": "app/[locale]/search/page.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "73c335d52a034034265e16e2b953dd53146e4d0e52a0ba46020e584753e5cd5f",
+      "visualSourceSha256": "73c335d52a034034265e16e2b953dd53146e4d0e52a0ba46020e584753e5cd5f"
+    },
+    {
+      "surface": "browser",
+      "path": "components/search/VelmereIntelligenceSearchClient.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "d0e1de78e8f7d43070d5338bc3c6830be25a9f5e68e0014ea37f15ed05e459fc",
+      "visualSourceSha256": "16f2257aa1caa6f98e605c1095171091a709770b302ddd368f9e82d00da9beec"
+    },
+    {
+      "surface": "shield",
+      "path": "app/[locale]/market-integrity/page.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "8ea6bcd0a2a8a6ecaf0f731adb203561946a54e7ebf7f9a3553dccb6046f998b",
+      "visualSourceSha256": "8ea6bcd0a2a8a6ecaf0f731adb203561946a54e7ebf7f9a3553dccb6046f998b"
+    },
+    {
+      "surface": "shield",
+      "path": "components/market-integrity/ShieldRealMarketsParityClient.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "375b83997604f7961c3aeb5c8cc0c1abd884ed361bff18df38bf12fdebd2cbed",
+      "visualSourceSha256": "57cc310a03c1f61a6bdefe969803a59fbbfc21f2c2d7653fc8f967c1c8d22cd9"
+    },
+    {
+      "surface": "shieldPro",
+      "path": "app/[locale]/shield-pro/page.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "c3ac105539b41912c79b5d80d51aede446f09cf28fea89f3f515f64b5295521e",
+      "visualSourceSha256": "c3ac105539b41912c79b5d80d51aede446f09cf28fea89f3f515f64b5295521e"
+    },
+    {
+      "surface": "shieldPro",
+      "path": "components/market-integrity/ShieldProCleanTerminalClient.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "097b18bb0e345b857e6e186dd8645def722e75e1a02a7606ea31525e23c72b6d",
+      "visualSourceSha256": "aaa302e6bd9740db04033c90fd6f338f97c6d3f7748dd6a883f10e427a1f53d4"
+    },
+    {
+      "surface": "shieldMap",
+      "path": "app/[locale]/shield-map/page.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "4e09a3b7cbfc69baa7c84148b840ce2b99e76a6f4104da546aebe806ee834b42",
+      "visualSourceSha256": "4e09a3b7cbfc69baa7c84148b840ce2b99e76a6f4104da546aebe806ee834b42"
+    },
+    {
+      "surface": "shieldMap",
+      "path": "components/market-integrity/ShieldMapCommandClient.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "a516b27192ac9dfd77fc5c351bce746727fc90eac89686c5ed88aa5598d4af7c",
+      "visualSourceSha256": "85778eee14575fd29daa6b0faa54a552e114f1c47ea6f0a326e7c1fb869a7bef"
+    },
+    {
+      "surface": "popup",
+      "path": "components/market-integrity/AssetDetailModal.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "9a3ef5bbdfb9fcc4bc450d630b1060475197cd8a1d252434d1ca8e93d63070dd",
+      "visualSourceSha256": "878394e7da7e6382eab0ae30cf81a601a0f9cea44bbe6be7755e797d5cb8b2d8"
+    },
+    {
+      "surface": "popup",
+      "path": "components/market-integrity/AssetIntelligenceTabs.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "78737af8dc0b2584c2095190c4d23f06ff59902efed103fc84847264aabf48b5",
+      "visualSourceSha256": "35888c16f3d3ea072cb618d42ccd54020cff1532c84bb9c60a2360453cfa3445"
+    },
+    {
+      "surface": "popup",
+      "path": "components/market-integrity/AssetIntelligenceTabs.module.css",
+      "classification": "safely_adapted",
+      "a43Sha256": "fbc9be1d891be30226591080fc17c80209a3aa3a72b19ef866a974ab9bf8509b",
+      "visualSourceSha256": "0b03298500bafef9f8bdc8454028049f9f2e93ac03b3b2be5e91d4e015a9fcc4"
+    },
+    {
+      "surface": "popup",
+      "path": "components/market-integrity/MarketIntelligenceSideDrawer.tsx",
+      "classification": "safely_adapted",
+      "a43Sha256": "3c8c375da8325de97d126503a136f440b3e0b3ab6ad0a30edb7511836a9c8687",
+      "visualSourceSha256": "f8ccea3cb0bead837cf46d13c37c30951731f17ca657ee554199c8eb5f73fa06"
+    },
+    {
+      "surface": "atelier",
+      "path": "app/[locale]/atelier/page.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "4d5739ed10becdd9ee1580dd6ea6b4ef7111112475873f0a0e19d97dfedd93ac",
+      "visualSourceSha256": "4d5739ed10becdd9ee1580dd6ea6b4ef7111112475873f0a0e19d97dfedd93ac"
+    },
+    {
+      "surface": "atelier",
+      "path": "components/atelier/AtelierPage.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "a2f181d14d18979c8825f39eed4c08275080134a7103322a98759c2032001d5c",
+      "visualSourceSha256": "a2f181d14d18979c8825f39eed4c08275080134a7103322a98759c2032001d5c"
+    },
+    {
+      "surface": "atelier",
+      "path": "components/atelier/AtelierThreeGlobe.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "d2c532a3867ebd5b4bd89912b93fc668bc130296f55eb5d8cb4d6c9ce4cffce0",
+      "visualSourceSha256": "d2c532a3867ebd5b4bd89912b93fc668bc130296f55eb5d8cb4d6c9ce4cffce0"
+    },
+    {
+      "surface": "atelier",
+      "path": "components/atelier/AtelierInteractiveGlobe.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "54b46d36200d4a5a1e3abb161b250212e160720d42d8c41995b9dbb9518599dc",
+      "visualSourceSha256": "54b46d36200d4a5a1e3abb161b250212e160720d42d8c41995b9dbb9518599dc"
+    },
+    {
+      "surface": "atelier",
+      "path": "components/atelier/AtelierAnimationLab.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "ab8d9d4c4eb3b2415c9df6119fa3591135359b675d330c17986156f929916185",
+      "visualSourceSha256": "ab8d9d4c4eb3b2415c9df6119fa3591135359b675d330c17986156f929916185"
+    },
+    {
+      "surface": "atelier",
+      "path": "components/atelier/AtelierNetworkMap.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "a4eeb791346e649af74ad7ab74ba2d9a3d270a8f1cdf7a0351b2ea7c288e675b",
+      "visualSourceSha256": "a4eeb791346e649af74ad7ab74ba2d9a3d270a8f1cdf7a0351b2ea7c288e675b"
+    },
+    {
+      "surface": "motion",
+      "path": "components/PageTransition.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "194351489b03352594321a81e4bf4a78745da1a3f773ab152d6f79bba4639952",
+      "visualSourceSha256": "194351489b03352594321a81e4bf4a78745da1a3f773ab152d6f79bba4639952"
+    },
+    {
+      "surface": "motion",
+      "path": "components/ui/VelmereRouteTransition.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "c80c36e9bb63ed80d63c1b5de42853b9f4acbd88681f127934c5ab368bc746b1",
+      "visualSourceSha256": "c80c36e9bb63ed80d63c1b5de42853b9f4acbd88681f127934c5ab368bc746b1"
+    },
+    {
+      "surface": "motion",
+      "path": "components/ui/RouteLoadingShell.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "c043c985528ebf8af6b851abc0a8b9799e02ed015241d26d2c2b6f80c456fef7",
+      "visualSourceSha256": "c043c985528ebf8af6b851abc0a8b9799e02ed015241d26d2c2b6f80c456fef7"
+    },
+    {
+      "surface": "motion",
+      "path": "components/motion-atelier/MotionAtelier.tsx",
+      "classification": "byte_identical",
+      "a43Sha256": "65fff4e853b43103796da5e8c935af7a8f47d772e8c41dc4360150ed35e0ec2f",
+      "visualSourceSha256": "65fff4e853b43103796da5e8c935af7a8f47d772e8c41dc4360150ed35e0ec2f"
+    },
+    {
+      "surface": "motion",
+      "path": "components/motion-atelier/MotionAtelier.module.css",
+      "classification": "byte_identical",
+      "a43Sha256": "47c35235355f92f73b5615950e5af545145d67debe01fd4de9b8547bae0ef33e",
+      "visualSourceSha256": "47c35235355f92f73b5615950e5af545145d67debe01fd4de9b8547bae0ef33e"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/market-logos/aapl.svg",
+      "sha256": "fef882dfded008323492a0de4036dd3301cc4f66b8bebbaae17c8ff97a7c6656",
+      "a43Exists": true,
+      "a43Sha256": "fef882dfded008323492a0de4036dd3301cc4f66b8bebbaae17c8ff97a7c6656"
+    },
+    {
+      "path": "public/market-logos/abbv.svg",
+      "sha256": "d20d7848032aed1dea2365dc4f2c7ad1be18faabf3440f2c2ab11a5f8f59d474",
+      "a43Exists": true,
+      "a43Sha256": "d20d7848032aed1dea2365dc4f2c7ad1be18faabf3440f2c2ab11a5f8f59d474"
+    },
+    {
+      "path": "public/market-logos/abnb.svg",
+      "sha256": "21b60ac62ba73ff1da551fc0faa32fc22136c23682f24ea276b9bf2cff521556",
+      "a43Exists": true,
+      "a43Sha256": "21b60ac62ba73ff1da551fc0faa32fc22136c23682f24ea276b9bf2cff521556"
+    },
+    {
+      "path": "public/market-logos/aca.svg",
+      "sha256": "d3c1d97ce189d3d253454cb94a0aa53c6a96b1dcb227dcd24cb2c4efccb23ee8",
+      "a43Exists": true,
+      "a43Sha256": "d3c1d97ce189d3d253454cb94a0aa53c6a96b1dcb227dcd24cb2c4efccb23ee8"
+    },
+    {
+      "path": "public/market-logos/acn.svg",
+      "sha256": "30a049ff2c2648bc2240281ccf390ae87d22386b9d703d4fe72999a5b1a7cdfc",
+      "a43Exists": true,
+      "a43Sha256": "30a049ff2c2648bc2240281ccf390ae87d22386b9d703d4fe72999a5b1a7cdfc"
+    },
+    {
+      "path": "public/market-logos/ada.svg",
+      "sha256": "f9c2cde1a44e0222928f832aa1bb06b065d4e42bb815637b4ad19778edf990b8",
+      "a43Exists": true,
+      "a43Sha256": "f9c2cde1a44e0222928f832aa1bb06b065d4e42bb815637b4ad19778edf990b8"
+    },
+    {
+      "path": "public/market-logos/adbe.svg",
+      "sha256": "48860dbd6701e9c22fb9bd1ddd7e15dae2b19652947a84232ecb37b8117e4724",
+      "a43Exists": true,
+      "a43Sha256": "48860dbd6701e9c22fb9bd1ddd7e15dae2b19652947a84232ecb37b8117e4724"
+    },
+    {
+      "path": "public/market-logos/adidas.svg",
+      "sha256": "bbf4953c262e19c50925a55b5593086c06084e05f176cdc87a5c54bb8e26a973",
+      "a43Exists": true,
+      "a43Sha256": "bbf4953c262e19c50925a55b5593086c06084e05f176cdc87a5c54bb8e26a973"
+    },
+    {
+      "path": "public/market-logos/air.svg",
+      "sha256": "b3afbb1ce9d0c4a8c739c2628bf53733e2c2ced1bbfa4bccfa60c9e55d8b6e56",
+      "a43Exists": true,
+      "a43Sha256": "b3afbb1ce9d0c4a8c739c2628bf53733e2c2ced1bbfa4bccfa60c9e55d8b6e56"
+    },
+    {
+      "path": "public/market-logos/alv.svg",
+      "sha256": "27b8b1909ead5bb00b82f83f95a7e2f84b83e3fbc048affa16900ac776185bc1",
+      "a43Exists": true,
+      "a43Sha256": "27b8b1909ead5bb00b82f83f95a7e2f84b83e3fbc048affa16900ac776185bc1"
+    },
+    {
+      "path": "public/market-logos/amd.svg",
+      "sha256": "288a0fc34ea4607b931762b8013d6278076f33611b1ba4d0e8136a246c82c1f0",
+      "a43Exists": true,
+      "a43Sha256": "288a0fc34ea4607b931762b8013d6278076f33611b1ba4d0e8136a246c82c1f0"
+    },
+    {
+      "path": "public/market-logos/amgn.svg",
+      "sha256": "6f771d7c9670a928f9100ed6db408803c39c9092a700d3b5e5a7f9a7d10afa29",
+      "a43Exists": true,
+      "a43Sha256": "6f771d7c9670a928f9100ed6db408803c39c9092a700d3b5e5a7f9a7d10afa29"
+    },
+    {
+      "path": "public/market-logos/amzn.svg",
+      "sha256": "512c88e4866b7c30f9be72d68d6439b4b999a580a2702d2cafb874aec9472557",
+      "a43Exists": true,
+      "a43Sha256": "512c88e4866b7c30f9be72d68d6439b4b999a580a2702d2cafb874aec9472557"
+    },
+    {
+      "path": "public/market-logos/arkk.svg",
+      "sha256": "d8db743c9c5406bbc4020f691f9932c64855dde4e8ea8bca22c89e941bf2ce34",
+      "a43Exists": true,
+      "a43Sha256": "d8db743c9c5406bbc4020f691f9932c64855dde4e8ea8bca22c89e941bf2ce34"
+    },
+    {
+      "path": "public/market-logos/arm.svg",
+      "sha256": "3f05ce20f2ab8e6719334c5d2368341311aff2cbb62447d24ac8cb641ea8643b",
+      "a43Exists": true,
+      "a43Sha256": "3f05ce20f2ab8e6719334c5d2368341311aff2cbb62447d24ac8cb641ea8643b"
+    },
+    {
+      "path": "public/market-logos/asml.svg",
+      "sha256": "88b7a73f94616e4d39b8b7d0125cd23fb195f1ef7d0314e759bba0fa0d4d6cf8",
+      "a43Exists": true,
+      "a43Sha256": "88b7a73f94616e4d39b8b7d0125cd23fb195f1ef7d0314e759bba0fa0d4d6cf8"
+    },
+    {
+      "path": "public/market-logos/avax.svg",
+      "sha256": "ba7801b6e8396ab7527a52c74f1542e481c976454911863717f1f51866762294",
+      "a43Exists": true,
+      "a43Sha256": "ba7801b6e8396ab7527a52c74f1542e481c976454911863717f1f51866762294"
+    },
+    {
+      "path": "public/market-logos/avgo.svg",
+      "sha256": "4dfc7f23ac4d423938ded66ae8e67a5b4e3de8cdaf85ac42d102b9e202c4f944",
+      "a43Exists": true,
+      "a43Sha256": "4dfc7f23ac4d423938ded66ae8e67a5b4e3de8cdaf85ac42d102b9e202c4f944"
+    },
+    {
+      "path": "public/market-logos/baba.svg",
+      "sha256": "d608223596915b5f638c3ad9a2f611aa2c8af039fdcfe922b29a1848ebe1848a",
+      "a43Exists": true,
+      "a43Sha256": "d608223596915b5f638c3ad9a2f611aa2c8af039fdcfe922b29a1848ebe1848a"
+    },
+    {
+      "path": "public/market-logos/bac.svg",
+      "sha256": "3148740b6111dce63fe8128a36c6aa9ea8d2cdba6521129a1f5fa2424eeeb9af",
+      "a43Exists": true,
+      "a43Sha256": "3148740b6111dce63fe8128a36c6aa9ea8d2cdba6521129a1f5fa2424eeeb9af"
+    },
+    {
+      "path": "public/market-logos/binance.svg",
+      "sha256": "8c567bccb8d3852078af1cb43c79d1375c3d469752f57ef03614696631ae1ee2",
+      "a43Exists": true,
+      "a43Sha256": "8c567bccb8d3852078af1cb43c79d1375c3d469752f57ef03614696631ae1ee2"
+    },
+    {
+      "path": "public/market-logos/bitget.svg",
+      "sha256": "c24ffcc1dad99cdee05a06874083d6f49f27e97eb66404bdac5ce81fd009ed78",
+      "a43Exists": true,
+      "a43Sha256": "c24ffcc1dad99cdee05a06874083d6f49f27e97eb66404bdac5ce81fd009ed78"
+    },
+    {
+      "path": "public/market-logos/bk.svg",
+      "sha256": "9ef6651baab4e03da75bcd819c4845faca3925161eddc3062296765e64eb55eb",
+      "a43Exists": true,
+      "a43Sha256": "9ef6651baab4e03da75bcd819c4845faca3925161eddc3062296765e64eb55eb"
+    },
+    {
+      "path": "public/market-logos/bkng.svg",
+      "sha256": "22c52146e170bf631a60b4e6d102479481898f75b85124053944785607741b2a",
+      "a43Exists": true,
+      "a43Sha256": "22c52146e170bf631a60b4e6d102479481898f75b85124053944785607741b2a"
+    },
+    {
+      "path": "public/market-logos/bmw.svg",
+      "sha256": "f8b0a99cc15ccea4174811ca369822c004eb7957fac32b797824a0b15a952337",
+      "a43Exists": true,
+      "a43Sha256": "f8b0a99cc15ccea4174811ca369822c004eb7957fac32b797824a0b15a952337"
+    },
+    {
+      "path": "public/market-logos/bnb.svg",
+      "sha256": "ff3f0ffa52811a84ea1f69f7ab976f6907fdb9ec0d1cdf80f68fb488aa17058e",
+      "a43Exists": true,
+      "a43Sha256": "ff3f0ffa52811a84ea1f69f7ab976f6907fdb9ec0d1cdf80f68fb488aa17058e"
+    },
+    {
+      "path": "public/market-logos/bnp.svg",
+      "sha256": "15d16b1803def0bdb908efa7a33c8862914c439f26801b26dca448e96377eaf5",
+      "a43Exists": true,
+      "a43Sha256": "15d16b1803def0bdb908efa7a33c8862914c439f26801b26dca448e96377eaf5"
+    },
+    {
+      "path": "public/market-logos/btc.svg",
+      "sha256": "d7f64b316f4219449a997e4614edce3c88738206febac4f186c2204f705b2bf5",
+      "a43Exists": true,
+      "a43Sha256": "d7f64b316f4219449a997e4614edce3c88738206febac4f186c2204f705b2bf5"
+    },
+    {
+      "path": "public/market-logos/bybit.svg",
+      "sha256": "55c248fd900151cbc6d4ca01b530de78af8357d369f41817b5b9265545ef66af",
+      "a43Exists": true,
+      "a43Sha256": "55c248fd900151cbc6d4ca01b530de78af8357d369f41817b5b9265545ef66af"
+    },
+    {
+      "path": "public/market-logos/bz.svg",
+      "sha256": "0fcd0b0bb06898a944c04ef22aa7c77f0c4ec4828ac1637199f1c8cf39e34ef7",
+      "a43Exists": true,
+      "a43Sha256": "0fcd0b0bb06898a944c04ef22aa7c77f0c4ec4828ac1637199f1c8cf39e34ef7"
+    },
+    {
+      "path": "public/market-logos/cat.svg",
+      "sha256": "2224822e3557668b8a51d06d7a54a17c1e54c9f1bb2cfbe579aa2a227999785d",
+      "a43Exists": true,
+      "a43Sha256": "2224822e3557668b8a51d06d7a54a17c1e54c9f1bb2cfbe579aa2a227999785d"
+    },
+    {
+      "path": "public/market-logos/cboe.svg",
+      "sha256": "3c70d72e89f9d518d7adea295bd3c2ae2b25bd887dfbb921533cc47f3ac9361e",
+      "a43Exists": true,
+      "a43Sha256": "3c70d72e89f9d518d7adea295bd3c2ae2b25bd887dfbb921533cc47f3ac9361e"
+    },
+    {
+      "path": "public/market-logos/cfr.svg",
+      "sha256": "49f6f9af20c53ccdf2aab974f47f4ccc19085db3fa8e75e22e4144a05969e157",
+      "a43Exists": true,
+      "a43Sha256": "49f6f9af20c53ccdf2aab974f47f4ccc19085db3fa8e75e22e4144a05969e157"
+    },
+    {
+      "path": "public/market-logos/cl.svg",
+      "sha256": "1559b3f4a18f2eb0d68f6782474054b982109a2cb1113fb0d92262b45266ef1c",
+      "a43Exists": true,
+      "a43Sha256": "1559b3f4a18f2eb0d68f6782474054b982109a2cb1113fb0d92262b45266ef1c"
+    },
+    {
+      "path": "public/market-logos/cme.svg",
+      "sha256": "6ed4dfa4257d3ef7a027da1bebe5185abac7d265f5cff9065f9b93a10b1d6007",
+      "a43Exists": true,
+      "a43Sha256": "6ed4dfa4257d3ef7a027da1bebe5185abac7d265f5cff9065f9b93a10b1d6007"
+    },
+    {
+      "path": "public/market-logos/coin.svg",
+      "sha256": "b76ee59ec223098452befab84f4653d59612726487ccf7fb098ae1bd0ed56935",
+      "a43Exists": true,
+      "a43Sha256": "b76ee59ec223098452befab84f4653d59612726487ccf7fb098ae1bd0ed56935"
+    },
+    {
+      "path": "public/market-logos/coinbase.svg",
+      "sha256": "8eda15ff8e0f34b0a7525fc903a36edfc951c688164e5fbde18f4934269f553b",
+      "a43Exists": true,
+      "a43Sha256": "8eda15ff8e0f34b0a7525fc903a36edfc951c688164e5fbde18f4934269f553b"
+    },
+    {
+      "path": "public/market-logos/cop.svg",
+      "sha256": "39170b6e03f12ff640696cc47b46ac460aeced72679f0b2c18772d56ddf24b04",
+      "a43Exists": true,
+      "a43Sha256": "39170b6e03f12ff640696cc47b46ac460aeced72679f0b2c18772d56ddf24b04"
+    },
+    {
+      "path": "public/market-logos/cost.svg",
+      "sha256": "d1c27e38cf767a108da6cc52dc1647b4e578ab41732652af288979c9a8041e42",
+      "a43Exists": true,
+      "a43Sha256": "d1c27e38cf767a108da6cc52dc1647b4e578ab41732652af288979c9a8041e42"
+    },
+    {
+      "path": "public/market-logos/crm.svg",
+      "sha256": "17fe24b009bccf9b3725420f9acd190578fdc286dad373eb4e61f9d645bd4dae",
+      "a43Exists": true,
+      "a43Sha256": "17fe24b009bccf9b3725420f9acd190578fdc286dad373eb4e61f9d645bd4dae"
+    },
+    {
+      "path": "public/market-logos/crwd.svg",
+      "sha256": "4b6a0567d278d2c57ace63d16558f650ad353b300256ec1aaf112fa23274075a",
+      "a43Exists": true,
+      "a43Sha256": "4b6a0567d278d2c57ace63d16558f650ad353b300256ec1aaf112fa23274075a"
+    },
+    {
+      "path": "public/market-logos/csco.svg",
+      "sha256": "1ca30a5073f9691812b486fa67ed65935327f98d8aae9fa4be5f74e0339e4f3d",
+      "a43Exists": true,
+      "a43Sha256": "1ca30a5073f9691812b486fa67ed65935327f98d8aae9fa4be5f74e0339e4f3d"
+    },
+    {
+      "path": "public/market-logos/cvx.svg",
+      "sha256": "bf01236a82a76e6771fb77dff3eb68e6bfa1fcbddd754237f7eff6250a7c49f6",
+      "a43Exists": true,
+      "a43Sha256": "bf01236a82a76e6771fb77dff3eb68e6bfa1fcbddd754237f7eff6250a7c49f6"
+    },
+    {
+      "path": "public/market-logos/dax.svg",
+      "sha256": "823c628687ea4d90ba2952adde28e8565897d0eb5fa4aaabee7d619e2535425e",
+      "a43Exists": true,
+      "a43Sha256": "823c628687ea4d90ba2952adde28e8565897d0eb5fa4aaabee7d619e2535425e"
+    },
+    {
+      "path": "public/market-logos/db1.svg",
+      "sha256": "e8dea616839f54939a4431adcb995b0f77719936409aa7b6b5858a44f37c3f3c",
+      "a43Exists": true,
+      "a43Sha256": "e8dea616839f54939a4431adcb995b0f77719936409aa7b6b5858a44f37c3f3c"
+    },
+    {
+      "path": "public/market-logos/deribit.svg",
+      "sha256": "c0813090a6a5abbb9f8a7c2eef77b7baa4f4b5423158515e93548bb29401ef2c",
+      "a43Exists": true,
+      "a43Sha256": "c0813090a6a5abbb9f8a7c2eef77b7baa4f4b5423158515e93548bb29401ef2c"
+    },
+    {
+      "path": "public/market-logos/dia.svg",
+      "sha256": "acab91b236a29b4d2dbb280a4902d89b8eceaa1e27d53c9395291e456bc08e65",
+      "a43Exists": true,
+      "a43Sha256": "acab91b236a29b4d2dbb280a4902d89b8eceaa1e27d53c9395291e456bc08e65"
+    },
+    {
+      "path": "public/market-logos/dis.svg",
+      "sha256": "f9d66d098569971dff3b70c74aaca08eb6ba27d647ee7d7d66c6d01e446728cb",
+      "a43Exists": true,
+      "a43Sha256": "f9d66d098569971dff3b70c74aaca08eb6ba27d647ee7d7d66c6d01e446728cb"
+    },
+    {
+      "path": "public/market-logos/doge.svg",
+      "sha256": "fdc55a4fd69c69f736bdc2dfea8a5bb7945f6d22fb46b112ea563639e78e3536",
+      "a43Exists": true,
+      "a43Sha256": "fdc55a4fd69c69f736bdc2dfea8a5bb7945f6d22fb46b112ea563639e78e3536"
+    },
+    {
+      "path": "public/market-logos/dot.svg",
+      "sha256": "cc2f1e2fa3aca55553c2870296b0e649dbb54852a3c1c8591312413a7fe18cfe",
+      "a43Exists": true,
+      "a43Sha256": "cc2f1e2fa3aca55553c2870296b0e649dbb54852a3c1c8591312413a7fe18cfe"
+    },
+    {
+      "path": "public/market-logos/eem.svg",
+      "sha256": "24e83876e70d978bc3c19ffa405b46c879c6560267aa7b137c39ce2630900a3a",
+      "a43Exists": true,
+      "a43Sha256": "24e83876e70d978bc3c19ffa405b46c879c6560267aa7b137c39ce2630900a3a"
+    },
+    {
+      "path": "public/market-logos/efa.svg",
+      "sha256": "eff495fa4d31479e07cd5d1e531a330bfe77a46348b2cd79dcea6e8108f8995f",
+      "a43Exists": true,
+      "a43Sha256": "eff495fa4d31479e07cd5d1e531a330bfe77a46348b2cd79dcea6e8108f8995f"
+    },
+    {
+      "path": "public/market-logos/enb.svg",
+      "sha256": "5714493ba47bd535b3dc9b2dadacf05c998a34b37859ce2e07e01a457f7fd0b6",
+      "a43Exists": true,
+      "a43Sha256": "5714493ba47bd535b3dc9b2dadacf05c998a34b37859ce2e07e01a457f7fd0b6"
+    },
+    {
+      "path": "public/market-logos/eth.svg",
+      "sha256": "0c118bc0b474cb22827cccea49c87697ddae7841c5455f877d332999fc621a6e",
+      "a43Exists": true,
+      "a43Sha256": "0c118bc0b474cb22827cccea49c87697ddae7841c5455f877d332999fc621a6e"
+    },
+    {
+      "path": "public/market-logos/eurex.svg",
+      "sha256": "5b7bdc87f0d26ca9d35a1defd2baa925ea172c6b7058c6b88d1c2e4a6e95de5a",
+      "a43Exists": true,
+      "a43Sha256": "5b7bdc87f0d26ca9d35a1defd2baa925ea172c6b7058c6b88d1c2e4a6e95de5a"
+    },
+    {
+      "path": "public/market-logos/eurgbp.svg",
+      "sha256": "f351f8cf63780201e97d2f37092cef92860a72d752a6cc2d5badf5955dd7c233",
+      "a43Exists": true,
+      "a43Sha256": "f351f8cf63780201e97d2f37092cef92860a72d752a6cc2d5badf5955dd7c233"
+    },
+    {
+      "path": "public/market-logos/euronext.svg",
+      "sha256": "f84d83dfac52b957874167f3305c26c2e3f2ceeda566c87380ba3b5a7af8d1ab",
+      "a43Exists": true,
+      "a43Sha256": "f84d83dfac52b957874167f3305c26c2e3f2ceeda566c87380ba3b5a7af8d1ab"
+    },
+    {
+      "path": "public/market-logos/eurpln.svg",
+      "sha256": "82a32bd0f2df47bc1fee90ac4358799ecd7ce823dee4301a68d7e92268fb0de1",
+      "a43Exists": true,
+      "a43Sha256": "82a32bd0f2df47bc1fee90ac4358799ecd7ce823dee4301a68d7e92268fb0de1"
+    },
+    {
+      "path": "public/market-logos/eurtry.svg",
+      "sha256": "32f6dd235d688bc4b53d0590db20c64ee9a02bfd9ddd7a4c708df79bd238833a",
+      "a43Exists": true,
+      "a43Sha256": "32f6dd235d688bc4b53d0590db20c64ee9a02bfd9ddd7a4c708df79bd238833a"
+    },
+    {
+      "path": "public/market-logos/eurusd.svg",
+      "sha256": "59c23788c5d10ef65ebc2bc11c2886712b3571c6aa07cef0ac037de2077d17a5",
+      "a43Exists": true,
+      "a43Sha256": "59c23788c5d10ef65ebc2bc11c2886712b3571c6aa07cef0ac037de2077d17a5"
+    },
+    {
+      "path": "public/market-logos/ftse.svg",
+      "sha256": "5cdcbcf2524963addf15a3a06d025f2a3b859a16f7f047871938b305f794d6d3",
+      "a43Exists": true,
+      "a43Sha256": "5cdcbcf2524963addf15a3a06d025f2a3b859a16f7f047871938b305f794d6d3"
+    },
+    {
+      "path": "public/market-logos/ftx.svg",
+      "sha256": "71e9df014b706755a1c8045a83e261b65a3c797c950d8780f3ff737475b1ba1d",
+      "a43Exists": true,
+      "a43Sha256": "71e9df014b706755a1c8045a83e261b65a3c797c950d8780f3ff737475b1ba1d"
+    },
+    {
+      "path": "public/market-logos/gateio.svg",
+      "sha256": "100f10d77b9152434a84de71b7b2c396294dee1b19bbbdd71dc94429ce031815",
+      "a43Exists": true,
+      "a43Sha256": "100f10d77b9152434a84de71b7b2c396294dee1b19bbbdd71dc94429ce031815"
+    },
+    {
+      "path": "public/market-logos/gbpusd.svg",
+      "sha256": "5ef883e0c632ed9a4560c87ae72120484d5a824e3bd6158a70f351d26e321ea0",
+      "a43Exists": true,
+      "a43Sha256": "5ef883e0c632ed9a4560c87ae72120484d5a824e3bd6158a70f351d26e321ea0"
+    },
+    {
+      "path": "public/market-logos/gc.svg",
+      "sha256": "eeaf5a75893c3b4a2b5d204f47e616886e31c416fba1c2ab15bdc05b92dea8b4",
+      "a43Exists": true,
+      "a43Sha256": "eeaf5a75893c3b4a2b5d204f47e616886e31c416fba1c2ab15bdc05b92dea8b4"
+    },
+    {
+      "path": "public/market-logos/ge.svg",
+      "sha256": "d7e162166afe78e95418586aeb1fad285f60feba35c4508293643ec0f5694eaa",
+      "a43Exists": true,
+      "a43Sha256": "d7e162166afe78e95418586aeb1fad285f60feba35c4508293643ec0f5694eaa"
+    },
+    {
+      "path": "public/market-logos/gld.svg",
+      "sha256": "4af66e40250a45883842a22672f1b2b2a902bd9a37c77287a975af2af3846c55",
+      "a43Exists": true,
+      "a43Sha256": "4af66e40250a45883842a22672f1b2b2a902bd9a37c77287a975af2af3846c55"
+    },
+    {
+      "path": "public/market-logos/googl.svg",
+      "sha256": "58b2405fc52de09709dccf9cbf6d5c70865efbbfe2ee0ca625f8b92654bf3ff8",
+      "a43Exists": true,
+      "a43Sha256": "58b2405fc52de09709dccf9cbf6d5c70865efbbfe2ee0ca625f8b92654bf3ff8"
+    },
+    {
+      "path": "public/market-logos/gs.svg",
+      "sha256": "70c6a4ec3c2dd95e42f1859ca961cf148e22f24bff63bfada773d901f386fc14",
+      "a43Exists": true,
+      "a43Sha256": "70c6a4ec3c2dd95e42f1859ca961cf148e22f24bff63bfada773d901f386fc14"
+    },
+    {
+      "path": "public/market-logos/hd.svg",
+      "sha256": "8ef7378540cfc54f6135f3a08b2a1350291fca197759206923713b44572a628a",
+      "a43Exists": true,
+      "a43Sha256": "8ef7378540cfc54f6135f3a08b2a1350291fca197759206923713b44572a628a"
+    },
+    {
+      "path": "public/market-logos/hg.svg",
+      "sha256": "0e457305d4c6e8b0632242482adaef31a617321c2f95402aa9fb0b80f10ae82d",
+      "a43Exists": true,
+      "a43Sha256": "0e457305d4c6e8b0632242482adaef31a617321c2f95402aa9fb0b80f10ae82d"
+    },
+    {
+      "path": "public/market-logos/hk0388.svg",
+      "sha256": "a87410ddd7258bda6b28db369fc8bc2330c94ea8e8e3fd18250b6c812d7e9946",
+      "a43Exists": true,
+      "a43Sha256": "a87410ddd7258bda6b28db369fc8bc2330c94ea8e8e3fd18250b6c812d7e9946"
+    },
+    {
+      "path": "public/market-logos/hkex.svg",
+      "sha256": "97883f36e2dee94ccd50b9aee2cad177012205c0cbfd37b8b3564dccb1b0aab8",
+      "a43Exists": true,
+      "a43Sha256": "97883f36e2dee94ccd50b9aee2cad177012205c0cbfd37b8b3564dccb1b0aab8"
+    },
+    {
+      "path": "public/market-logos/hon.svg",
+      "sha256": "32928cfa363ab550c82c399bceeb4c5c49d866fed4cbd701e872c1b30f6d4a50",
+      "a43Exists": true,
+      "a43Sha256": "32928cfa363ab550c82c399bceeb4c5c49d866fed4cbd701e872c1b30f6d4a50"
+    },
+    {
+      "path": "public/market-logos/hood.svg",
+      "sha256": "0ea1996389f33fc8978e95452537966c75b9a8f3274d608408ffdfd171e22ad4",
+      "a43Exists": true,
+      "a43Sha256": "0ea1996389f33fc8978e95452537966c75b9a8f3274d608408ffdfd171e22ad4"
+    },
+    {
+      "path": "public/market-logos/hsbc.svg",
+      "sha256": "97867149dc1785707182d3f7751ad00ff4b0e92dc016df53a633746e48dcd99d",
+      "a43Exists": true,
+      "a43Sha256": "97867149dc1785707182d3f7751ad00ff4b0e92dc016df53a633746e48dcd99d"
+    },
+    {
+      "path": "public/market-logos/hyg.svg",
+      "sha256": "940b2d1271018b16dc219d67f4fc343beb5c5e7c8f7a2a7aa693c4b687aa624b",
+      "a43Exists": true,
+      "a43Sha256": "940b2d1271018b16dc219d67f4fc343beb5c5e7c8f7a2a7aa693c4b687aa624b"
+    },
+    {
+      "path": "public/market-logos/ibm.svg",
+      "sha256": "19f6b1bac73109cf114d812fc52f650b6ebdf28127c980e596e2286d4ee3bf8c",
+      "a43Exists": true,
+      "a43Sha256": "19f6b1bac73109cf114d812fc52f650b6ebdf28127c980e596e2286d4ee3bf8c"
+    },
+    {
+      "path": "public/market-logos/ice.svg",
+      "sha256": "f403a34688c20b4678b3233f070f099b7b05f1dfbc8c81ad0c3ad2b8aa2a0ec5",
+      "a43Exists": true,
+      "a43Sha256": "f403a34688c20b4678b3233f070f099b7b05f1dfbc8c81ad0c3ad2b8aa2a0ec5"
+    },
+    {
+      "path": "public/market-logos/intc.svg",
+      "sha256": "8657e79e320880dba471e34610ea81321eedb144cfb356fd9786f9dcf342d0be",
+      "a43Exists": true,
+      "a43Sha256": "8657e79e320880dba471e34610ea81321eedb144cfb356fd9786f9dcf342d0be"
+    },
+    {
+      "path": "public/market-logos/isrg.svg",
+      "sha256": "173b6f81261d8eb7c78fc420e80f161174ad38c39d1056d63d41f1e4c806d413",
+      "a43Exists": true,
+      "a43Sha256": "173b6f81261d8eb7c78fc420e80f161174ad38c39d1056d63d41f1e4c806d413"
+    },
+    {
+      "path": "public/market-logos/iwdp.svg",
+      "sha256": "b741ab0818a64d5cce952d17806ebbee76e690d082add2501a23d799add18c11",
+      "a43Exists": true,
+      "a43Sha256": "b741ab0818a64d5cce952d17806ebbee76e690d082add2501a23d799add18c11"
+    },
+    {
+      "path": "public/market-logos/iwm.svg",
+      "sha256": "340484874464718408d0447b68ce8903e42acf06cc10c5dc2924ede9886aa46d",
+      "a43Exists": true,
+      "a43Sha256": "340484874464718408d0447b68ce8903e42acf06cc10c5dc2924ede9886aa46d"
+    },
+    {
+      "path": "public/market-logos/iyr.svg",
+      "sha256": "5d73c36aa4cacc263fd6efb5b001b49e6476226101390928e7cb1f3641471118",
+      "a43Exists": true,
+      "a43Sha256": "5d73c36aa4cacc263fd6efb5b001b49e6476226101390928e7cb1f3641471118"
+    },
+    {
+      "path": "public/market-logos/jnj.svg",
+      "sha256": "cf419f93070637e1065010ed668fc40ffe11c375433df04053d2086b285393fb",
+      "a43Exists": true,
+      "a43Sha256": "cf419f93070637e1065010ed668fc40ffe11c375433df04053d2086b285393fb"
+    },
+    {
+      "path": "public/market-logos/jpm.svg",
+      "sha256": "53e406b6f021cfef2a4f6112c150ab133f79aa0bab26e440ca8697ac1f7b4de3",
+      "a43Exists": true,
+      "a43Sha256": "53e406b6f021cfef2a4f6112c150ab133f79aa0bab26e440ca8697ac1f7b4de3"
+    },
+    {
+      "path": "public/market-logos/jpx.svg",
+      "sha256": "1ead99dcaccc02304584ec668e45ec405a9e9cde7d8cacac91a26d1a80996239",
+      "a43Exists": true,
+      "a43Sha256": "1ead99dcaccc02304584ec668e45ec405a9e9cde7d8cacac91a26d1a80996239"
+    },
+    {
+      "path": "public/market-logos/jup.svg",
+      "sha256": "cba2cc80d97fd1ccc8adb6e44e02d0782bc8907850f991333e0dd7a69a105c04",
+      "a43Exists": true,
+      "a43Sha256": "cba2cc80d97fd1ccc8adb6e44e02d0782bc8907850f991333e0dd7a69a105c04"
+    },
+    {
+      "path": "public/market-logos/ker.svg",
+      "sha256": "6c7913f05804821cc33ad706205d2eee1ca1bb3a16cd9bb0b5aad95ee87366e6",
+      "a43Exists": true,
+      "a43Sha256": "6c7913f05804821cc33ad706205d2eee1ca1bb3a16cd9bb0b5aad95ee87366e6"
+    },
+    {
+      "path": "public/market-logos/klac.svg",
+      "sha256": "98e82fcc0977d2d3d891e1764338640385091640c1b6a9394ffd3ac3172d5b82",
+      "a43Exists": true,
+      "a43Sha256": "98e82fcc0977d2d3d891e1764338640385091640c1b6a9394ffd3ac3172d5b82"
+    },
+    {
+      "path": "public/market-logos/ko.svg",
+      "sha256": "e08eee67bfa92eec708ac50ee70f4d97f434fdf3a4ff8b2c68ede89575170f7f",
+      "a43Exists": true,
+      "a43Sha256": "e08eee67bfa92eec708ac50ee70f4d97f434fdf3a4ff8b2c68ede89575170f7f"
+    },
+    {
+      "path": "public/market-logos/kraken.svg",
+      "sha256": "1dbd8adae3beff85cb8e2981f8fe7e9091125be76aa9718bb6991dc6bdd1adb3",
+      "a43Exists": true,
+      "a43Sha256": "1dbd8adae3beff85cb8e2981f8fe7e9091125be76aa9718bb6991dc6bdd1adb3"
+    },
+    {
+      "path": "public/market-logos/kucoin.svg",
+      "sha256": "01c9b4dcdb93f480b9aab9ee10f8e7e02fcc613e70ed23c1d9d78c5a3b0cd79c",
+      "a43Exists": true,
+      "a43Sha256": "01c9b4dcdb93f480b9aab9ee10f8e7e02fcc613e70ed23c1d9d78c5a3b0cd79c"
+    },
+    {
+      "path": "public/market-logos/lin.svg",
+      "sha256": "6b8aa3f5669892706ee17dbde0d8632dec5bb3a2fa0766c787a5040497881f08",
+      "a43Exists": true,
+      "a43Sha256": "6b8aa3f5669892706ee17dbde0d8632dec5bb3a2fa0766c787a5040497881f08"
+    },
+    {
+      "path": "public/market-logos/link.svg",
+      "sha256": "7443c8ad9357d14c54e600ef5c9d21066ba126674b7347c1a4da323fd226eae7",
+      "a43Exists": true,
+      "a43Sha256": "7443c8ad9357d14c54e600ef5c9d21066ba126674b7347c1a4da323fd226eae7"
+    },
+    {
+      "path": "public/market-logos/low.svg",
+      "sha256": "48c1fadb799b3473071f74e5ce6f961d3e0914ebdb345bd7602b54576105dda8",
+      "a43Exists": true,
+      "a43Sha256": "48c1fadb799b3473071f74e5ce6f961d3e0914ebdb345bd7602b54576105dda8"
+    },
+    {
+      "path": "public/market-logos/lqd.svg",
+      "sha256": "40e863bfbd0074a23ab30d7707c935bd94a5d03bb72af7ee4f2945a9df0f2e52",
+      "a43Exists": true,
+      "a43Sha256": "40e863bfbd0074a23ab30d7707c935bd94a5d03bb72af7ee4f2945a9df0f2e52"
+    },
+    {
+      "path": "public/market-logos/lrcx.svg",
+      "sha256": "704f335890588fe0fe6d7d81200160168f021a38589e8cd10f9344fdd319c2f6",
+      "a43Exists": true,
+      "a43Sha256": "704f335890588fe0fe6d7d81200160168f021a38589e8cd10f9344fdd319c2f6"
+    },
+    {
+      "path": "public/market-logos/lse.svg",
+      "sha256": "8992d19959e945f8a3a8ad0fda711ab83ba8fe34de61f76c3b9bffe00da50447",
+      "a43Exists": true,
+      "a43Sha256": "8992d19959e945f8a3a8ad0fda711ab83ba8fe34de61f76c3b9bffe00da50447"
+    },
+    {
+      "path": "public/market-logos/lseg.svg",
+      "sha256": "346360ec9f680ef4fa1b3aa78cc24cf319bd7c7f5e67a57d6c1cb1e002cae19a",
+      "a43Exists": true,
+      "a43Sha256": "346360ec9f680ef4fa1b3aa78cc24cf319bd7c7f5e67a57d6c1cb1e002cae19a"
+    },
+    {
+      "path": "public/market-logos/lvmh.svg",
+      "sha256": "ee3071d8c73ad1f68d175cde8ea7d4c59d9ccbff5f0a7371d00b9fee4a26bf4d",
+      "a43Exists": true,
+      "a43Sha256": "ee3071d8c73ad1f68d175cde8ea7d4c59d9ccbff5f0a7371d00b9fee4a26bf4d"
+    },
+    {
+      "path": "public/market-logos/mastercard.svg",
+      "sha256": "ac48d990e18d66e78d81dcd79cd08e4e577549bc21a1164a588c5d695666b33d",
+      "a43Exists": true,
+      "a43Sha256": "ac48d990e18d66e78d81dcd79cd08e4e577549bc21a1164a588c5d695666b33d"
+    },
+    {
+      "path": "public/market-logos/mcd.svg",
+      "sha256": "33e7cd269c80993632b6675eb46dcb89a3a4b951d59995e890dd2c735facf5b3",
+      "a43Exists": true,
+      "a43Sha256": "33e7cd269c80993632b6675eb46dcb89a3a4b951d59995e890dd2c735facf5b3"
+    },
+    {
+      "path": "public/market-logos/meli.svg",
+      "sha256": "d377243c6251e761da1ed8bb7c68b9b55973c9104ac48a996ed4d49c6a5076d7",
+      "a43Exists": true,
+      "a43Sha256": "d377243c6251e761da1ed8bb7c68b9b55973c9104ac48a996ed4d49c6a5076d7"
+    },
+    {
+      "path": "public/market-logos/mercedes.svg",
+      "sha256": "0bee32aa97223ea9641eca497c538db2a48591bfee8411214cfdd9c7135a71dd",
+      "a43Exists": true,
+      "a43Sha256": "0bee32aa97223ea9641eca497c538db2a48591bfee8411214cfdd9c7135a71dd"
+    },
+    {
+      "path": "public/market-logos/meta.svg",
+      "sha256": "25843281b6cb465f5ee437a20959c6facc493ce167547ee61e9c9fbf72d5156c",
+      "a43Exists": true,
+      "a43Sha256": "25843281b6cb465f5ee437a20959c6facc493ce167547ee61e9c9fbf72d5156c"
+    },
+    {
+      "path": "public/market-logos/mexc.svg",
+      "sha256": "b9a325686dba0f734619e228434aa4ee459079483c4c05033b07c12e1b471051",
+      "a43Exists": true,
+      "a43Sha256": "b9a325686dba0f734619e228434aa4ee459079483c4c05033b07c12e1b471051"
+    },
+    {
+      "path": "public/market-logos/mrk.svg",
+      "sha256": "7dd46c28c309b9205b399269b53dea39488e8c7e66a54a2effab28d7d33c6c83",
+      "a43Exists": true,
+      "a43Sha256": "7dd46c28c309b9205b399269b53dea39488e8c7e66a54a2effab28d7d33c6c83"
+    },
+    {
+      "path": "public/market-logos/ms.svg",
+      "sha256": "55796a69d377d37ec53300891bbf8507f03df45f9961c25715adb09726dc41ec",
+      "a43Exists": true,
+      "a43Sha256": "55796a69d377d37ec53300891bbf8507f03df45f9961c25715adb09726dc41ec"
+    },
+    {
+      "path": "public/market-logos/msft.svg",
+      "sha256": "eaa150d4e3dff801b63479348299aa6a2b07700dc35188eaf9973a40d88200fd",
+      "a43Exists": true,
+      "a43Sha256": "eaa150d4e3dff801b63479348299aa6a2b07700dc35188eaf9973a40d88200fd"
+    },
+    {
+      "path": "public/market-logos/mstr.svg",
+      "sha256": "68069eac3b4672d69ec3526eeb6ce68c738e036e1049bc5a22928f23132f734a",
+      "a43Exists": true,
+      "a43Sha256": "68069eac3b4672d69ec3526eeb6ce68c738e036e1049bc5a22928f23132f734a"
+    },
+    {
+      "path": "public/market-logos/mu.svg",
+      "sha256": "a54ee6a3f4222d413bee7031e24ebf59f57e22f94c2fce87588834590fede480",
+      "a43Exists": true,
+      "a43Sha256": "a54ee6a3f4222d413bee7031e24ebf59f57e22f94c2fce87588834590fede480"
+    },
+    {
+      "path": "public/market-logos/nasdaq.svg",
+      "sha256": "9a909ca7056ded19b1bd6dee7eaea068e230d16fa9a4ab88caddc8ef35703d9a",
+      "a43Exists": true,
+      "a43Sha256": "9a909ca7056ded19b1bd6dee7eaea068e230d16fa9a4ab88caddc8ef35703d9a"
+    },
+    {
+      "path": "public/market-logos/ndaq.svg",
+      "sha256": "440a3c59fb83ce205d3e06a62895b9241a5b9e879c71df84c4fda51c306b9c99",
+      "a43Exists": true,
+      "a43Sha256": "440a3c59fb83ce205d3e06a62895b9241a5b9e879c71df84c4fda51c306b9c99"
+    },
+    {
+      "path": "public/market-logos/ndx.svg",
+      "sha256": "d61494f0bb68e3f72cb3ff46bb9b7797cdfb3e591c9f00d09907dcd02db9be69",
+      "a43Exists": true,
+      "a43Sha256": "d61494f0bb68e3f72cb3ff46bb9b7797cdfb3e591c9f00d09907dcd02db9be69"
+    },
+    {
+      "path": "public/market-logos/net.svg",
+      "sha256": "c40985ffe987f3443a447fd4690606ddc7baf788b9e25d39148920b336f28fa4",
+      "a43Exists": true,
+      "a43Sha256": "c40985ffe987f3443a447fd4690606ddc7baf788b9e25d39148920b336f28fa4"
+    },
+    {
+      "path": "public/market-logos/nflx.svg",
+      "sha256": "7f7e79eeffe8e8343d023caaaf01797c4097999df65b2be9e8d434a7eee23fe4",
+      "a43Exists": true,
+      "a43Sha256": "7f7e79eeffe8e8343d023caaaf01797c4097999df65b2be9e8d434a7eee23fe4"
+    },
+    {
+      "path": "public/market-logos/ng.svg",
+      "sha256": "4172acd3daaa2f43cf8354aa99a87cd6a97ccecab5c89399929548da9a58895a",
+      "a43Exists": true,
+      "a43Sha256": "4172acd3daaa2f43cf8354aa99a87cd6a97ccecab5c89399929548da9a58895a"
+    },
+    {
+      "path": "public/market-logos/nikkei.svg",
+      "sha256": "36230d7c516dab80cbb3c7d7fb2b315fae064dc0da9978a03ca868c9fb8448b4",
+      "a43Exists": true,
+      "a43Sha256": "36230d7c516dab80cbb3c7d7fb2b315fae064dc0da9978a03ca868c9fb8448b4"
+    },
+    {
+      "path": "public/market-logos/nke.svg",
+      "sha256": "0e3a1f25a488d3adf46eb473b66e98992018fb7abc5f0eecdf98535f38731aa1",
+      "a43Exists": true,
+      "a43Sha256": "0e3a1f25a488d3adf46eb473b66e98992018fb7abc5f0eecdf98535f38731aa1"
+    },
+    {
+      "path": "public/market-logos/now.svg",
+      "sha256": "d53a4ffb10fa32152d9175b125e69f49cbae675849d86f4dc52beb9fb64727d1",
+      "a43Exists": true,
+      "a43Sha256": "d53a4ffb10fa32152d9175b125e69f49cbae675849d86f4dc52beb9fb64727d1"
+    },
+    {
+      "path": "public/market-logos/nvda.svg",
+      "sha256": "e8943dbeccd1f69707d3dfb3cd4be4dc0cf5159db1bbb1d50e25ee11b9de8e7c",
+      "a43Exists": true,
+      "a43Sha256": "e8943dbeccd1f69707d3dfb3cd4be4dc0cf5159db1bbb1d50e25ee11b9de8e7c"
+    },
+    {
+      "path": "public/market-logos/nvo.svg",
+      "sha256": "a51a231d6ef7bba974f8c20a86d58d6e5d90ed35be37add098c0ea431ec00a62",
+      "a43Exists": true,
+      "a43Sha256": "a51a231d6ef7bba974f8c20a86d58d6e5d90ed35be37add098c0ea431ec00a62"
+    },
+    {
+      "path": "public/market-logos/nyse.svg",
+      "sha256": "cb3b32d15f1bc550190f6d72d152dfbb5a2cdde781c451d8ce13289d541640cc",
+      "a43Exists": true,
+      "a43Sha256": "cb3b32d15f1bc550190f6d72d152dfbb5a2cdde781c451d8ce13289d541640cc"
+    },
+    {
+      "path": "public/market-logos/okx.svg",
+      "sha256": "8b699113a2653075f668879f9daf4cd6d315ff874d2856cc0720311e6a30841a",
+      "a43Exists": true,
+      "a43Sha256": "8b699113a2653075f668879f9daf4cd6d315ff874d2856cc0720311e6a30841a"
+    },
+    {
+      "path": "public/market-logos/or.svg",
+      "sha256": "de113afa5932ce37397b36a091cc4cf29fae8af1060fe1a08f50ff9bd5d60eaa",
+      "a43Exists": true,
+      "a43Sha256": "de113afa5932ce37397b36a091cc4cf29fae8af1060fe1a08f50ff9bd5d60eaa"
+    },
+    {
+      "path": "public/market-logos/orcl.svg",
+      "sha256": "bed2178d0abe387d602ba57125a8e11bda5856766e6dffeb51eed1914490db9e",
+      "a43Exists": true,
+      "a43Sha256": "bed2178d0abe387d602ba57125a8e11bda5856766e6dffeb51eed1914490db9e"
+    },
+    {
+      "path": "public/market-logos/panw.svg",
+      "sha256": "ed94afd7babd403421a377e3ccdd53c08f1213abc5425a4be610e5477bdf5ef5",
+      "a43Exists": true,
+      "a43Sha256": "ed94afd7babd403421a377e3ccdd53c08f1213abc5425a4be610e5477bdf5ef5"
+    },
+    {
+      "path": "public/market-logos/pep.svg",
+      "sha256": "6001ca3b632071a467f3846117297d8fb49efa0a6b5f3777c0fd43843966902e",
+      "a43Exists": true,
+      "a43Sha256": "6001ca3b632071a467f3846117297d8fb49efa0a6b5f3777c0fd43843966902e"
+    },
+    {
+      "path": "public/market-logos/pg.svg",
+      "sha256": "4a32a47cd552784e596c226f3fbba85621576f5e3beac74db81f97d6cc902d4e",
+      "a43Exists": true,
+      "a43Sha256": "4a32a47cd552784e596c226f3fbba85621576f5e3beac74db81f97d6cc902d4e"
+    },
+    {
+      "path": "public/market-logos/pld.svg",
+      "sha256": "7ce2075d902b46e7c6d95a5a6cf09eff82abb130d8b3783d22e03e28389164f3",
+      "a43Exists": true,
+      "a43Sha256": "7ce2075d902b46e7c6d95a5a6cf09eff82abb130d8b3783d22e03e28389164f3"
+    },
+    {
+      "path": "public/market-logos/porsche.svg",
+      "sha256": "99a45abe92d263261f335b78568fbcdf74b16508a68bdce62f60fa325289134f",
+      "a43Exists": true,
+      "a43Sha256": "99a45abe92d263261f335b78568fbcdf74b16508a68bdce62f60fa325289134f"
+    },
+    {
+      "path": "public/market-logos/pypl.svg",
+      "sha256": "aa0c7f1ffbaa1e9ce1552249c6e997a1cdf6944271c38d38ee76634d466e9330",
+      "a43Exists": true,
+      "a43Sha256": "aa0c7f1ffbaa1e9ce1552249c6e997a1cdf6944271c38d38ee76634d466e9330"
+    },
+    {
+      "path": "public/market-logos/qcom.svg",
+      "sha256": "f616b11c80c65096133ab693b15001cc26499ffa74a86bc99c9e26b54c06f017",
+      "a43Exists": true,
+      "a43Sha256": "f616b11c80c65096133ab693b15001cc26499ffa74a86bc99c9e26b54c06f017"
+    },
+    {
+      "path": "public/market-logos/qqq.svg",
+      "sha256": "f4686c1aafd9d3f37446a0fcc9555982437c963e06c91f1798b613e57ddc8b3a",
+      "a43Exists": true,
+      "a43Sha256": "f4686c1aafd9d3f37446a0fcc9555982437c963e06c91f1798b613e57ddc8b3a"
+    },
+    {
+      "path": "public/market-logos/race.svg",
+      "sha256": "faf8e0b4b66da69d62b9854304bfae6a248bea3d59cc8b106376d503c0ee848e",
+      "a43Exists": true,
+      "a43Sha256": "faf8e0b4b66da69d62b9854304bfae6a248bea3d59cc8b106376d503c0ee848e"
+    },
+    {
+      "path": "public/market-logos/rms.svg",
+      "sha256": "8f0f8adfdccf0eb297746ed9c24f484f3963d522925fa39754dc1de095b78ffd",
+      "a43Exists": true,
+      "a43Sha256": "8f0f8adfdccf0eb297746ed9c24f484f3963d522925fa39754dc1de095b78ffd"
+    },
+    {
+      "path": "public/market-logos/rtx.svg",
+      "sha256": "721f98c7825ec8afca43987eb682cf14ee972d641a1072eb9ec27deafb890192",
+      "a43Exists": true,
+      "a43Sha256": "721f98c7825ec8afca43987eb682cf14ee972d641a1072eb9ec27deafb890192"
+    },
+    {
+      "path": "public/market-logos/ry.svg",
+      "sha256": "a2047cf60a15af1c08847a6bfb24d99e4c61461ccab5d7daf0ce6e9d6c78040f",
+      "a43Exists": true,
+      "a43Sha256": "a2047cf60a15af1c08847a6bfb24d99e4c61461ccab5d7daf0ce6e9d6c78040f"
+    },
+    {
+      "path": "public/market-logos/sap.svg",
+      "sha256": "172411912e77164915028ed30b5e3d0811c2a716d2d0440fce251264c3d973a1",
+      "a43Exists": true,
+      "a43Sha256": "172411912e77164915028ed30b5e3d0811c2a716d2d0440fce251264c3d973a1"
+    },
+    {
+      "path": "public/market-logos/schw.svg",
+      "sha256": "fe592970dff8e3acd0a098233b1a40fec2f4859c7d19ad64f62da4c06a101fc7",
+      "a43Exists": true,
+      "a43Sha256": "fe592970dff8e3acd0a098233b1a40fec2f4859c7d19ad64f62da4c06a101fc7"
+    },
+    {
+      "path": "public/market-logos/shop.svg",
+      "sha256": "51909996ed708601cd3d7df7f129b281adbed4d7ca09ed875343ff9277e6474d",
+      "a43Exists": true,
+      "a43Sha256": "51909996ed708601cd3d7df7f129b281adbed4d7ca09ed875343ff9277e6474d"
+    },
+    {
+      "path": "public/market-logos/si.svg",
+      "sha256": "e734f2b63ff4cdb4ce4db07de9cde1391d05b4f0c16ec90a1ec152d61b35fc62",
+      "a43Exists": true,
+      "a43Sha256": "e734f2b63ff4cdb4ce4db07de9cde1391d05b4f0c16ec90a1ec152d61b35fc62"
+    },
+    {
+      "path": "public/market-logos/sie.svg",
+      "sha256": "91c7a891e0201c32169be9743100334353a4cef970180f10b152f8cf37bcd65b",
+      "a43Exists": true,
+      "a43Sha256": "91c7a891e0201c32169be9743100334353a4cef970180f10b152f8cf37bcd65b"
+    },
+    {
+      "path": "public/market-logos/slb.svg",
+      "sha256": "8992263057dc23e61a3ed55221143ff2fed1108c516811a44f3d88449daa1519",
+      "a43Exists": true,
+      "a43Sha256": "8992263057dc23e61a3ed55221143ff2fed1108c516811a44f3d88449daa1519"
+    },
+    {
+      "path": "public/market-logos/slv.svg",
+      "sha256": "06256578e73ee9efc8a0362ff0ed3a32afecc7015e99b621b26a9bdbffc94a67",
+      "a43Exists": true,
+      "a43Sha256": "06256578e73ee9efc8a0362ff0ed3a32afecc7015e99b621b26a9bdbffc94a67"
+    },
+    {
+      "path": "public/market-logos/smci.svg",
+      "sha256": "50d717ace049458d032aa7236199024461fff051e0366c96028ad93ad4fcbb6d",
+      "a43Exists": true,
+      "a43Sha256": "50d717ace049458d032aa7236199024461fff051e0366c96028ad93ad4fcbb6d"
+    },
+    {
+      "path": "public/market-logos/snow.svg",
+      "sha256": "f34485f266209fbed3a41e1f8ccc638833e36668785d36deaf5f15f232ca9847",
+      "a43Exists": true,
+      "a43Sha256": "f34485f266209fbed3a41e1f8ccc638833e36668785d36deaf5f15f232ca9847"
+    },
+    {
+      "path": "public/market-logos/sol.svg",
+      "sha256": "43cad60d71052b22e034241c8383ac4fc92aa76a4097144ed9290ba7d9fcd02d",
+      "a43Exists": true,
+      "a43Sha256": "43cad60d71052b22e034241c8383ac4fc92aa76a4097144ed9290ba7d9fcd02d"
+    },
+    {
+      "path": "public/market-logos/sony.svg",
+      "sha256": "1d156509e24129b3610d0367828e7d971a1d60bfb81f9e9a4ff3f94af0f8f53f",
+      "a43Exists": true,
+      "a43Sha256": "1d156509e24129b3610d0367828e7d971a1d60bfb81f9e9a4ff3f94af0f8f53f"
+    },
+    {
+      "path": "public/market-logos/sp500.svg",
+      "sha256": "63c82655026f7de29ac8d974b30ae2ca32aa2ebdb8355b71b3d229850de094a9",
+      "a43Exists": true,
+      "a43Sha256": "63c82655026f7de29ac8d974b30ae2ca32aa2ebdb8355b71b3d229850de094a9"
+    },
+    {
+      "path": "public/market-logos/spot.svg",
+      "sha256": "676de89b38eaee9749824530913548f47e3c803a109be0b42c7c8df63a592aa9",
+      "a43Exists": true,
+      "a43Sha256": "676de89b38eaee9749824530913548f47e3c803a109be0b42c7c8df63a592aa9"
+    },
+    {
+      "path": "public/market-logos/spy.svg",
+      "sha256": "92c71a6dbfd4f6683f4253d2c8a989f5dcdc406663f3c19f70fc2ac15e74455f",
+      "a43Exists": true,
+      "a43Sha256": "92c71a6dbfd4f6683f4253d2c8a989f5dcdc406663f3c19f70fc2ac15e74455f"
+    },
+    {
+      "path": "public/market-logos/stoxx50e.svg",
+      "sha256": "53fab1bf0dae0a6ba97307d71781b01cedbc30c85013ef034175bae8ea0c8a81",
+      "a43Exists": true,
+      "a43Sha256": "53fab1bf0dae0a6ba97307d71781b01cedbc30c85013ef034175bae8ea0c8a81"
+    },
+    {
+      "path": "public/market-logos/td.svg",
+      "sha256": "5d38436ffb777b6a1dd971a9c2dc415b9a1907765363995f320d29b1e665e6fd",
+      "a43Exists": true,
+      "a43Sha256": "5d38436ffb777b6a1dd971a9c2dc415b9a1907765363995f320d29b1e665e6fd"
+    },
+    {
+      "path": "public/market-logos/team.svg",
+      "sha256": "769d490c76858397359d0d776e92f29c3be4a3521d5733cca1b39ec365686af0",
+      "a43Exists": true,
+      "a43Sha256": "769d490c76858397359d0d776e92f29c3be4a3521d5733cca1b39ec365686af0"
+    },
+    {
+      "path": "public/market-logos/tlt.svg",
+      "sha256": "e3f5a3b3e4612560f8cf05a4176264e543a6507ba4b27831dbb6ff31222e06e5",
+      "a43Exists": true,
+      "a43Sha256": "e3f5a3b3e4612560f8cf05a4176264e543a6507ba4b27831dbb6ff31222e06e5"
+    },
+    {
+      "path": "public/market-logos/tmo.svg",
+      "sha256": "b78483310325be64416ccc86a4273678e3c1ca22c0ca123a483891700f1a0dbb",
+      "a43Exists": true,
+      "a43Sha256": "b78483310325be64416ccc86a4273678e3c1ca22c0ca123a483891700f1a0dbb"
+    },
+    {
+      "path": "public/market-logos/tsla.svg",
+      "sha256": "b7328b8e7735e885fde04210c05a5b1ac3a905fac540976dc457da53e8879e2b",
+      "a43Exists": true,
+      "a43Sha256": "b7328b8e7735e885fde04210c05a5b1ac3a905fac540976dc457da53e8879e2b"
+    },
+    {
+      "path": "public/market-logos/tsm.svg",
+      "sha256": "c2dddf82b24f60b251c92b70a0c2a04cc418e3f9a27e692a43af0740dacc62ce",
+      "a43Exists": true,
+      "a43Sha256": "c2dddf82b24f60b251c92b70a0c2a04cc418e3f9a27e692a43af0740dacc62ce"
+    },
+    {
+      "path": "public/market-logos/txn.svg",
+      "sha256": "2d6f2d760ddc39816bd5902cace25f71f06be6f6e8d134041675558dc5379ded",
+      "a43Exists": true,
+      "a43Sha256": "2d6f2d760ddc39816bd5902cace25f71f06be6f6e8d134041675558dc5379ded"
+    },
+    {
+      "path": "public/market-logos/uber.svg",
+      "sha256": "87491d7864f17da5de913aa61396f42b77638e9c6bc162538590ad0af6a1afdb",
+      "a43Exists": true,
+      "a43Sha256": "87491d7864f17da5de913aa61396f42b77638e9c6bc162538590ad0af6a1afdb"
+    },
+    {
+      "path": "public/market-logos/ubs.svg",
+      "sha256": "37ee7b4884ce55251b92df52123fe40816cf2017b0d754894dd3f82273ee66f3",
+      "a43Exists": true,
+      "a43Sha256": "37ee7b4884ce55251b92df52123fe40816cf2017b0d754894dd3f82273ee66f3"
+    },
+    {
+      "path": "public/market-logos/unh.svg",
+      "sha256": "77321aac24479b879e3e7ce5b5a87195948b3b77e1153f486e343e1f0eb11e89",
+      "a43Exists": true,
+      "a43Sha256": "77321aac24479b879e3e7ce5b5a87195948b3b77e1153f486e343e1f0eb11e89"
+    },
+    {
+      "path": "public/market-logos/usdc.svg",
+      "sha256": "b7e7d15742813c873b6ab5ee188eaea70372a4289bfef0cf38433f2bf6a42a64",
+      "a43Exists": true,
+      "a43Sha256": "b7e7d15742813c873b6ab5ee188eaea70372a4289bfef0cf38433f2bf6a42a64"
+    },
+    {
+      "path": "public/market-logos/usdchf.svg",
+      "sha256": "34ec4cc711fce1533c849356cfa30fb7cc87eefcaa07f2161631d915cfdecbde",
+      "a43Exists": true,
+      "a43Sha256": "34ec4cc711fce1533c849356cfa30fb7cc87eefcaa07f2161631d915cfdecbde"
+    },
+    {
+      "path": "public/market-logos/usdjpy.svg",
+      "sha256": "4d73750a4847a7410ea3c94758e630b72505a852def1016d75ab784a9c2e948f",
+      "a43Exists": true,
+      "a43Sha256": "4d73750a4847a7410ea3c94758e630b72505a852def1016d75ab784a9c2e948f"
+    },
+    {
+      "path": "public/market-logos/usdpln.svg",
+      "sha256": "33a62c7430d31cc8a04405b07ec0c6b004f971434cd0606fba0f5766754df2fa",
+      "a43Exists": true,
+      "a43Sha256": "33a62c7430d31cc8a04405b07ec0c6b004f971434cd0606fba0f5766754df2fa"
+    },
+    {
+      "path": "public/market-logos/usdt.svg",
+      "sha256": "63b075f54c065b5460500a41ced2e8a6b88fe944f814a7fe6b9b9df3101d0a11",
+      "a43Exists": true,
+      "a43Sha256": "63b075f54c065b5460500a41ced2e8a6b88fe944f814a7fe6b9b9df3101d0a11"
+    },
+    {
+      "path": "public/market-logos/usdtry.svg",
+      "sha256": "e6ad68a7d5bb513a61e794150f65f8ea2c54ab1eedeaef13eedfb08aa1283405",
+      "a43Exists": true,
+      "a43Sha256": "e6ad68a7d5bb513a61e794150f65f8ea2c54ab1eedeaef13eedfb08aa1283405"
+    },
+    {
+      "path": "public/market-logos/visa.svg",
+      "sha256": "e118c7dfccfc94d7d3ef1e0f4482d95f8025bd11392374f3f4b794f5373086ab",
+      "a43Exists": true,
+      "a43Sha256": "e118c7dfccfc94d7d3ef1e0f4482d95f8025bd11392374f3f4b794f5373086ab"
+    },
+    {
+      "path": "public/market-logos/vnq.svg",
+      "sha256": "a62311a528f551cf4585f56af82a0498577b2248aba22dff4be42d02e5115118",
+      "a43Exists": true,
+      "a43Sha256": "a62311a528f551cf4585f56af82a0498577b2248aba22dff4be42d02e5115118"
+    },
+    {
+      "path": "public/market-logos/voo.svg",
+      "sha256": "d4e6e26ae71f7cf2f01997e2048ae6fa32ae0453ca257d4dd97ce3496339499a",
+      "a43Exists": true,
+      "a43Sha256": "d4e6e26ae71f7cf2f01997e2048ae6fa32ae0453ca257d4dd97ce3496339499a"
+    },
+    {
+      "path": "public/market-logos/vti.svg",
+      "sha256": "3ade699caf2186f7e47b3d9fd17697ad9590354fc7a11e2ca1d458a21ef02469",
+      "a43Exists": true,
+      "a43Sha256": "3ade699caf2186f7e47b3d9fd17697ad9590354fc7a11e2ca1d458a21ef02469"
+    },
+    {
+      "path": "public/market-logos/vw.svg",
+      "sha256": "e66f61c7aad33fbad0934a5493d0c3658be68ebeb89176a6432e8bf38b2db99e",
+      "a43Exists": true,
+      "a43Sha256": "e66f61c7aad33fbad0934a5493d0c3658be68ebeb89176a6432e8bf38b2db99e"
+    },
+    {
+      "path": "public/market-logos/wfc.svg",
+      "sha256": "2af7c8130a05448804d57a5f91080a2e2ecea4f576d8c4466915e5c8dd117718",
+      "a43Exists": true,
+      "a43Sha256": "2af7c8130a05448804d57a5f91080a2e2ecea4f576d8c4466915e5c8dd117718"
+    },
+    {
+      "path": "public/market-logos/wig20tr.svg",
+      "sha256": "a9fd7bec17e033bd640a1c11ca3a55feb316786a646bf658f503450952f309c2",
+      "a43Exists": true,
+      "a43Sha256": "a9fd7bec17e033bd640a1c11ca3a55feb316786a646bf658f503450952f309c2"
+    },
+    {
+      "path": "public/market-logos/wmt.svg",
+      "sha256": "a8a302f548c15dcc86ab8f162f97001d0ff3c67cb5bf8a1d5ea171cc17b9ebf4",
+      "a43Exists": true,
+      "a43Sha256": "a8a302f548c15dcc86ab8f162f97001d0ff3c67cb5bf8a1d5ea171cc17b9ebf4"
+    },
+    {
+      "path": "public/market-logos/xetra.svg",
+      "sha256": "36b334a1c307aa5a14a304cfa0c9d20dfadf595bed7fa3348e6b39ff7f89031f",
+      "a43Exists": true,
+      "a43Sha256": "36b334a1c307aa5a14a304cfa0c9d20dfadf595bed7fa3348e6b39ff7f89031f"
+    },
+    {
+      "path": "public/market-logos/xle.svg",
+      "sha256": "5d9044d73fd73af7a176e5043e8f43ec0a8638989a1baf5d2a42a4b4e74ba4bc",
+      "a43Exists": true,
+      "a43Sha256": "5d9044d73fd73af7a176e5043e8f43ec0a8638989a1baf5d2a42a4b4e74ba4bc"
+    },
+    {
+      "path": "public/market-logos/xlf.svg",
+      "sha256": "9f49e91eeb63dbcdc9bec4ce9bb4a8911804270f4125dff6d1ed62e85c657ab8",
+      "a43Exists": true,
+      "a43Sha256": "9f49e91eeb63dbcdc9bec4ce9bb4a8911804270f4125dff6d1ed62e85c657ab8"
+    },
+    {
+      "path": "public/market-logos/xlk.svg",
+      "sha256": "b197cb0a28d2bc999b3de275988841714094843c4051f29f13d6c1a923cbb4f7",
+      "a43Exists": true,
+      "a43Sha256": "b197cb0a28d2bc999b3de275988841714094843c4051f29f13d6c1a923cbb4f7"
+    },
+    {
+      "path": "public/market-logos/xlre.svg",
+      "sha256": "7fe35940fef0f682b62fe7e81e068157deda2d1f379ef5538fd01dfe3546e0f5",
+      "a43Exists": true,
+      "a43Sha256": "7fe35940fef0f682b62fe7e81e068157deda2d1f379ef5538fd01dfe3546e0f5"
+    },
+    {
+      "path": "public/market-logos/xlv.svg",
+      "sha256": "4e65aec5f1526ebff20d8dcd8acd019d6cf8bd60b25cf9241e04e5f527653578",
+      "a43Exists": true,
+      "a43Sha256": "4e65aec5f1526ebff20d8dcd8acd019d6cf8bd60b25cf9241e04e5f527653578"
+    },
+    {
+      "path": "public/market-logos/xom.svg",
+      "sha256": "4789c5c825944eda330735669cbfabc4ae2f3ff96d67ef3d707ee236a2f637eb",
+      "a43Exists": true,
+      "a43Sha256": "4789c5c825944eda330735669cbfabc4ae2f3ff96d67ef3d707ee236a2f637eb"
+    },
+    {
+      "path": "public/market-logos/xrp.svg",
+      "sha256": "8002b18d029ab1c3a7f71d8f5efa0a7297c40e943fd391290059126856cec477",
+      "a43Exists": true,
+      "a43Sha256": "8002b18d029ab1c3a7f71d8f5efa0a7297c40e943fd391290059126856cec477"
+    },
+    {
+      "path": "public/market-logos/zw.svg",
+      "sha256": "f4f612f4ea2dae626c9aee8e5e7d8829a34a5444f31692e00471620c8188c129",
+      "a43Exists": true,
+      "a43Sha256": "f4f612f4ea2dae626c9aee8e5e7d8829a34a5444f31692e00471620c8188c129"
+    },
+    {
+      "path": "public/images/atelier/earth-blue-marble-2048.jpg",
+      "sha256": "c2427a51523c8189716e364c712a6cc362cc2558d00ba824e04bd2baff52340d",
+      "a43Exists": true,
+      "a43Sha256": "c2427a51523c8189716e364c712a6cc362cc2558d00ba824e04bd2baff52340d"
+    },
+    {
+      "path": "public/images/atelier/earth-blue-marble-5400.jpg",
+      "sha256": "dc059529b8ed1cfcdd59747a7c3f259c93c1322bf88ca1ec8bab1dd71fcc57f5",
+      "a43Exists": true,
+      "a43Sha256": "dc059529b8ed1cfcdd59747a7c3f259c93c1322bf88ca1ec8bab1dd71fcc57f5"
+    },
+    {
+      "path": "public/images/atelier/earth-clouds-1024.png",
+      "sha256": "7d3b82ef6b3feb506fc06f02a744aed3d864e23e7417075005f4082a7ff935a4",
+      "a43Exists": true,
+      "a43Sha256": "7d3b82ef6b3feb506fc06f02a744aed3d864e23e7417075005f4082a7ff935a4"
+    },
+    {
+      "path": "public/images/atelier/earth-night-lights-2048.jpg",
+      "sha256": "a362e217d9b2864361227a45e54942587450e1b4d1c2d4c6dc7821b3f8d72e7f",
+      "a43Exists": true,
+      "a43Sha256": "a362e217d9b2864361227a45e54942587450e1b4d1c2d4c6dc7821b3f8d72e7f"
+    },
+    {
+      "path": "public/images/atelier/earth-night-lights-3600.jpg",
+      "sha256": "d87de751a264e4f8ff69c68de5dab9606daee87a6f15ae743c93200743bd7ec1",
+      "a43Exists": true,
+      "a43Sha256": "d87de751a264e4f8ff69c68de5dab9606daee87a6f15ae743c93200743bd7ec1"
+    },
+    {
+      "path": "public/images/atelier/earth-normal-2048.jpg",
+      "sha256": "3fc43e9639c34e8223c4a871e3bdf5b2d52ee79f7e89ce3f28cba45d4cac031a",
+      "a43Exists": true,
+      "a43Sha256": "3fc43e9639c34e8223c4a871e3bdf5b2d52ee79f7e89ce3f28cba45d4cac031a"
+    },
+    {
+      "path": "public/images/atelier/earth-specular-2048.jpg",
+      "sha256": "2df48906732d7a458b2d0a7cdec51a829262307c6bdee4cfdf079a4dd7c71c69",
+      "a43Exists": true,
+      "a43Sha256": "2df48906732d7a458b2d0a7cdec51a829262307c6bdee4cfdf079a4dd7c71c69"
+    },
+    {
+      "path": "public/images/atelier/world-dotted-globe-texture-v2.png",
+      "sha256": "71067387983c6de3447298d2ab216c2bfb51efc61550dc935759f8bad74e534b",
+      "a43Exists": true,
+      "a43Sha256": "71067387983c6de3447298d2ab216c2bfb51efc61550dc935759f8bad74e534b"
+    },
+    {
+      "path": "public/images/atelier/world-dotted-globe-texture.png",
+      "sha256": "1cc66da28aab71344000bb81561aebfeb88709ef4722ffc8d8e6a347cc99460b",
+      "a43Exists": true,
+      "a43Sha256": "1cc66da28aab71344000bb81561aebfeb88709ef4722ffc8d8e6a347cc99460b"
+    },
+    {
+      "path": "public/images/atelier/world-dotted-points.json",
+      "sha256": "f70f911ddad8dd7577b538844d55a106e90f7f061b2f452d2e08f01743fc6da2",
+      "a43Exists": true,
+      "a43Sha256": "f70f911ddad8dd7577b538844d55a106e90f7f061b2f452d2e08f01743fc6da2"
+    },
+    {
+      "path": "public/images/atelier/world-dotted-premium.svg",
+      "sha256": "00d3b8c4fa61ae605fb92f5e9e5bf5e1acd3ac33ca0e1c85474576045ebac274",
+      "a43Exists": true,
+      "a43Sha256": "00d3b8c4fa61ae605fb92f5e9e5bf5e1acd3ac33ca0e1c85474576045ebac274"
+    },
+    {
+      "path": "public/images/atelier/world-dotted.svg",
+      "sha256": "267a2b9f0dca3cc23505f9c221e2f45f67317afe5a5160f04b3917291e223779",
+      "a43Exists": true,
+      "a43Sha256": "267a2b9f0dca3cc23505f9c221e2f45f67317afe5a5160f04b3917291e223779"
+    },
+    {
+      "path": "public/images/atelier/world-orthographic-land-v6.svg",
+      "sha256": "8c14cb9f5a58f29ffe8f62522ece526ef36662a89a0275bde70c5afa3de5845e",
+      "a43Exists": true,
+      "a43Sha256": "8c14cb9f5a58f29ffe8f62522ece526ef36662a89a0275bde70c5afa3de5845e"
+    },
+    {
+      "path": "public/images/atelier/world-orthographic-land-v6.webp",
+      "sha256": "7dca8b71e6ad887ef3441b14c4d8a07be6bc52e2a60ef83bea02317a2b4e66c6",
+      "a43Exists": true,
+      "a43Sha256": "7dca8b71e6ad887ef3441b14c4d8a07be6bc52e2a60ef83bea02317a2b4e66c6"
+    },
+    {
+      "path": "public/images/atelier/world-real-globe-texture-v3.png",
+      "sha256": "351e50ab00e6ffd56ab20e160df03d34dbd6049db3821e6b7c9870dfad1945ee",
+      "a43Exists": true,
+      "a43Sha256": "351e50ab00e6ffd56ab20e160df03d34dbd6049db3821e6b7c9870dfad1945ee"
+    },
+    {
+      "path": "public/images/atelier/world-real-globe-texture-v4.png",
+      "sha256": "af33981560633f17b9e0ca9acbcca678ec1535dbf195a9a8dab96efa778cb141",
+      "a43Exists": true,
+      "a43Sha256": "af33981560633f17b9e0ca9acbcca678ec1535dbf195a9a8dab96efa778cb141"
+    },
+    {
+      "path": "public/images/atelier/world-real-globe-texture-v5.png",
+      "sha256": "f6207a608a5eb9f62e737905bfecc43920fbcc51324fad87cb9c7a61869e9e0b",
+      "a43Exists": true,
+      "a43Sha256": "f6207a608a5eb9f62e737905bfecc43920fbcc51324fad87cb9c7a61869e9e0b"
+    },
+    {
+      "path": "public/images/atelier/world-real-land-points-v3.json",
+      "sha256": "7e9499c4a5675221cc56fd948bddae9b1c0cf97107244d24845f72a3ccf1136d",
+      "a43Exists": true,
+      "a43Sha256": "7e9499c4a5675221cc56fd948bddae9b1c0cf97107244d24845f72a3ccf1136d"
+    },
+    {
+      "path": "public/images/atelier/world-real-land-points-v4.json",
+      "sha256": "1607865f72df563093fa1a5ac105bd612c7a55acfd3f6b6e7146f399acc676c9",
+      "a43Exists": true,
+      "a43Sha256": "1607865f72df563093fa1a5ac105bd612c7a55acfd3f6b6e7146f399acc676c9"
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin-ext-italic.woff2",
+      "sha256": "cd5bf126b2c84ab41b254a6a9a1ffb5c326a0f9f82c22fb4704daa31c9aaa415",
+      "a43Exists": true,
+      "a43Sha256": "cd5bf126b2c84ab41b254a6a9a1ffb5c326a0f9f82c22fb4704daa31c9aaa415"
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin-ext.woff2",
+      "sha256": "cfa9a397d86f66c5c51775a2500a712d5f632a04f0c5eca6930dfaf612d4566d",
+      "a43Exists": true,
+      "a43Sha256": "cfa9a397d86f66c5c51775a2500a712d5f632a04f0c5eca6930dfaf612d4566d"
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin-italic.woff2",
+      "sha256": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55",
+      "a43Exists": true,
+      "a43Sha256": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55"
+    },
+    {
+      "path": "public/fonts/velmere/cormorant-garamond-latin.woff2",
+      "sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235",
+      "a43Exists": true,
+      "a43Sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+    },
+    {
+      "path": "public/fonts/velmere/jetbrains-mono-latin-ext.woff2",
+      "sha256": "79bfdab9ba467e26eea4122e6f2567e188dd8a09a8c730d501fc487c4ab99c6e",
+      "a43Exists": true,
+      "a43Sha256": "79bfdab9ba467e26eea4122e6f2567e188dd8a09a8c730d501fc487c4ab99c6e"
+    },
+    {
+      "path": "public/fonts/velmere/jetbrains-mono-latin.woff2",
+      "sha256": "18be452724bfdc236c074ca94a249a7f41a86752c7d04ab258ce9ed5651f6a7e",
+      "a43Exists": true,
+      "a43Sha256": "18be452724bfdc236c074ca94a249a7f41a86752c7d04ab258ce9ed5651f6a7e"
+    },
+    {
+      "path": "public/fonts/velmere/manrope-latin-ext.woff2",
+      "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb",
+      "a43Exists": true,
+      "a43Sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb"
+    },
+    {
+      "path": "public/fonts/velmere/manrope-latin.woff2",
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "a43Exists": true,
+      "a43Sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    {
+      "path": "public/wallets/coinbase.svg",
+      "sha256": "e2c4dbfbfe5736b2f467784517e009aa3475c3b5ce612ed2ece7dc6cdee9cbe2",
+      "a43Exists": true,
+      "a43Sha256": "e2c4dbfbfe5736b2f467784517e009aa3475c3b5ce612ed2ece7dc6cdee9cbe2"
+    },
+    {
+      "path": "public/wallets/ledger.svg",
+      "sha256": "f47a02cd6b871b54a39e500a2b6cfd101dc2b8777de8fe54191c522d1ad0e0bc",
+      "a43Exists": true,
+      "a43Sha256": "f47a02cd6b871b54a39e500a2b6cfd101dc2b8777de8fe54191c522d1ad0e0bc"
+    },
+    {
+      "path": "public/wallets/metamask.svg",
+      "sha256": "18c6c8750c7c1aa1e6c4ede9309a93a1d1ee8a9bc97bd126cf9eb916207c4003",
+      "a43Exists": true,
+      "a43Sha256": "18c6c8750c7c1aa1e6c4ede9309a93a1d1ee8a9bc97bd126cf9eb916207c4003"
+    },
+    {
+      "path": "public/wallets/okx.svg",
+      "sha256": "29cbf943fc56b51509b3dfe46e9b5713d6c70037854e701dc280ab4138c1c120",
+      "a43Exists": true,
+      "a43Sha256": "29cbf943fc56b51509b3dfe46e9b5713d6c70037854e701dc280ab4138c1c120"
+    },
+    {
+      "path": "public/wallets/phantom.svg",
+      "sha256": "3d01c794e38905bf9ff973bdf7ab14b1e0e37ce95af217363255f8ff4b8809ed",
+      "a43Exists": true,
+      "a43Sha256": "3d01c794e38905bf9ff973bdf7ab14b1e0e37ce95af217363255f8ff4b8809ed"
+    },
+    {
+      "path": "public/wallets/walletconnect.svg",
+      "sha256": "c7b13175541629b18b189c29e00ee57477e10c7126fe4144b9baec5bfd3851b0",
+      "a43Exists": true,
+      "a43Sha256": "c7b13175541629b18b189c29e00ee57477e10c7126fe4144b9baec5bfd3851b0"
+    },
+    {
+      "path": "public/products/velmere-preview/1.webp",
+      "sha256": "fbf09c02c2f786981937d0c4f99d81bb05a80f839b2e5d8ddd08a60fa86cea7a",
+      "a43Exists": true,
+      "a43Sha256": "fbf09c02c2f786981937d0c4f99d81bb05a80f839b2e5d8ddd08a60fa86cea7a"
+    },
+    {
+      "path": "public/products/velmere-preview/2.webp",
+      "sha256": "6089595a9fcb53372f16e65e3d1179cfa193ffd8e6792526f7533de615803fed",
+      "a43Exists": true,
+      "a43Sha256": "6089595a9fcb53372f16e65e3d1179cfa193ffd8e6792526f7533de615803fed"
+    },
+    {
+      "path": "public/products/velmere-preview/3.webp",
+      "sha256": "df5f40b30e420966ade6df6d193315b74a65f23b70e1a28412017db63cc76c38",
+      "a43Exists": true,
+      "a43Sha256": "df5f40b30e420966ade6df6d193315b74a65f23b70e1a28412017db63cc76c38"
+    },
+    {
+      "path": "public/products/velmere-preview/4.webp",
+      "sha256": "be205d38b5941b6b3a7ffeacc51a98d2718e17a70065cd72f354ea8552713ffa",
+      "a43Exists": true,
+      "a43Sha256": "be205d38b5941b6b3a7ffeacc51a98d2718e17a70065cd72f354ea8552713ffa"
+    }
+  ],
+  "legacyNamedReview": [
+    {
+      "path": "components/search/TokenMetadataProviderPanel.tsx",
+      "status": "not_rendered_publicly",
+      "evidence": "app/[locale]/search/page.tsx comment only"
+    },
+    {
+      "path": "components/search/VelmereLensCommandRouter.tsx",
+      "status": "concept_marker_only",
+      "evidence": "VelmereIntelligenceSearchClient.tsx comment only"
+    },
+    {
+      "path": "components/search/VelmereSearchDiscoveryRail.tsx",
+      "status": "concept_marker_only",
+      "evidence": "VelmereIntelligenceSearchClient.tsx comment only"
+    }
+  ],
+  "truthBoundary": [
+    "byte_identical means the A43 file hash equals the supplied visual source hash",
+    "safely_adapted means the active surface remains present but was intentionally integrated with current security/data/runtime boundaries",
+    "visual-only legacy or parallel components are not imported merely by filename when the active graph does not render them"
+  ]
+}

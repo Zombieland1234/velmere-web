@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "velmere.pass35.audit-a5-execution-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "productCellId": "audit_evm_pro_automated_review",
+  "status": "LOCAL_ADAPTER_AND_BOUNDED_CFG_PROVEN_REAL_TOOLCHAIN_BLOCKED",
+  "sellEnabled": false,
+  "paidDeliveryAllowed": false,
+  "fullAuditClaimAllowed": false,
+  "currentStatusRegisterPath": "config/pass35/current-status-register.json",
+  "controls": {
+    "A05_SEMGREP_EXTERNAL_FAMILY": {
+      "state": "ADAPTER_IMPLEMENTED_FIXTURE_CONTRACT_PROVEN_REAL_TOOL_MISSING",
+      "paths": [
+        "scripts/pass35/audit-semgrep-adapter.mjs",
+        "scripts/pass35/run-audit-a5-semgrep-case.mjs",
+        "scripts/pass35/test-audit-a5-semgrep-adapter.mjs"
+      ],
+      "rulesetPath": "fixtures/pass35/audit-a5/semgrep-solidity-rules.yml",
+      "realExecutionCredit": false,
+      "missing": [
+        "official Semgrep executable and binary hash",
+        "real target execution",
+        "frozen benchmark and false-positive adjudication",
+        "signed independence/equivalence decision"
+      ]
+    },
+    "A06_BOUNDED_CFG_PATH": {
+      "state": "IMPLEMENTED_LOCAL_BOUNDED_ABSTRACT_FEASIBILITY_BENCHMARKED_NOT_FULL_SMT",
+      "paths": [
+        "lib/security/audit-a06-bounded-path-analysis.ts",
+        "lib/security/pass35-a21-abstract-path-runtime.mjs",
+        "scripts/pass35/test-audit-a5-a06-bounded-path.ts",
+        "scripts/pass35/test-a21-abstract-path.mjs"
+      ],
+      "realExecutionCredit": false,
+      "capabilities": [
+        "push-aware opcode decode",
+        "bounded abstract stack propagation",
+        "constant folding",
+        "supported calldata/caller/call-value/block/storage constraints",
+        "contradictory branch pruning",
+        "reachable risk-opcode prerequisites",
+        "dynamic jump and truncation reporting",
+        "frozen generated benchmark"
+      ],
+      "missing": [
+        "full SMT/path completeness",
+        "memory and dynamic storage model",
+        "inter-contract state",
+        "real protocol benchmark",
+        "exploitability adjudication",
+        "independent rerun"
+      ]
+    }
+  },
+  "syntheticReceipts": [
+    "fixtures/pass35/audit-a5/PASS35_A5_SEMGREP_SYNTHETIC_RECEIPT.json",
+    "fixtures/pass35/audit-a5/PASS35_A5_A06_SYNTHETIC_RECEIPT.json"
+  ],
+  "hardStops": {
+    "fixtureMaySatisfyExternalFamily": false,
+    "adapterPresenceMayUnlockPaidDelivery": false,
+    "boundedCfgMayClaimSymbolicExecution": false,
+    "opcodeSignalMayClaimExploitability": false,
+    "twoAdaptersMayCountAsTwoValidatedFamilies": false,
+    "statusNormalizationMayIncreaseReadiness": false
+  },
+  "runtimeBoundary": {
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "observedNodeDuringA5": "22.16.0",
+    "observedNpmDuringA5": "10.9.2",
+    "exactRuntimeProof": false,
+    "officialReleaseVerified": "Node 24.18.0 / npm 11.16.0 release page available; binary archive acquisition remained blocked by current tool transport."
+  },
+  "truthBoundary": "A21 defines a deterministic bounded abstract interpreter for a limited EVM opcode and predicate domain. It can prune constant and simple contradictory branches and attach conditions to reachable risk opcodes. It is not path-complete SMT symbolic execution, exploit proof, inter-contract state analysis, economic replay, official-tool evidence, human review, staging, LIVE or customer-grade paid assurance."
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.pass36.a71.release-signature-trust-boundary-policy.v1",
+  "revisionId": "VELMERE_PASS36_A71R0_RELEASE_SIGNATURE_AND_TRUST_ANCHOR_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A70R0_MULTIPART_UPLOAD_AND_PASSIVE_ATTACHMENT_TRUST_BOUNDARY_HARDENING",
+  "requirements": {
+    "ed25519Only": true,
+    "strictCanonicalBase64urlSignatures": true,
+    "uniqueKeyIdsAndFingerprints": true,
+    "activeAndCurrentKeysOnlyCountTowardThreshold": true,
+    "externalFingerprintAnchorRequiredForCandidateAttestation": true,
+    "externalGenesisAnchorRequiredForTrustCheckpoint": true,
+    "trustCheckpointChainVerifiedBeforeTransparencyEntries": true,
+    "duplicateCheckpointDigestsRejected": true,
+    "strictCandidateArtifactFieldAllowlist": true,
+    "regularNonSymlinkBoundedInputs": true,
+    "productionCandidateKeyAnchorRequired": true,
+    "productionTransparencyGenesisAnchorRequired": true
+  },
+  "coveredVerifierScripts": [
+    "scripts/verify-release-candidate-attestation.mjs",
+    "scripts/verify-release-proof-package.mjs",
+    "scripts/verify-release-trust-checkpoint.mjs",
+    "scripts/verify-release-transparency-log.mjs"
+  ],
+  "coveredProductionModules": [
+    "lib/market-integrity/release-candidate-attestation.ts",
+    "lib/market-integrity/release-trust-checkpoint.ts",
+    "lib/market-integrity/release-trust-consistency.ts",
+    "lib/market-integrity/release-transparency-log.ts"
+  ],
+  "externalSignaturesVerified": false,
+  "productionTransparencyLogVerified": false,
+  "independentTrustAnchorCustodyVerified": false,
+  "exactFinalByteBuildExecuted": false,
+  "criticalOfflineGatePassed": false,
+  "realStagingExecuted": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "truthBoundary": "A71 proves local signature-verification and external-anchor enforcement for covered release paths. Fixture Ed25519 keys and local signatures do not establish external key custody, organizational independence, production transparency-log integrity, LIVE, customer value or sale readiness."
+}

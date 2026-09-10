@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "velmere.pass35.a24-monitoring-lifecycle-runtime-contract.v1",
+  "passId": "PASS35_A24",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "zeroBudget": 80
+  },
+  "baselineA23": {
+    "canonical": 48.8,
+    "zeroBudget": 88.1
+  },
+  "progressDeltaVsA23": {
+    "canonicalPercentagePoints": 1.2,
+    "strictPercentagePoints": 2.3,
+    "zeroBudgetPercentagePoints": 0.6
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 9.3,
+    "strictPercentagePoints": 11.6,
+    "zeroBudgetPercentagePoints": 8.7
+  },
+  "canonicalWeightedPlanningPercent": 50,
+  "canonicalStrictDonePercent": 20.9,
+  "canonicalCounts": {
+    "DONE": 9,
+    "PARTIAL": 25,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 88.7,
+  "zeroBudgetCoreDenominator": 62,
+  "zeroBudgetCounts": {
+    "DONE": 49,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "cases": 192,
+    "frozen": {
+      "correct": 72,
+      "accuracy": 1,
+      "triggerAccuracy": 1,
+      "lifecycleAccuracy": 1,
+      "dedupeAccuracy": 1,
+      "orderingAccuracy": 1,
+      "unsafeClosures": 0,
+      "falseBlocks": 0,
+      "wilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      }
+    },
+    "mutations": 2304,
+    "families": 12,
+    "mutation": {
+      "total": 2304,
+      "killed": 2304,
+      "survived": 0,
+      "killRate": 1
+    },
+    "runtimeIntegritySha256": "sha256:ed9ad9e745f2e3e9952b9c7526f1087a78f24dca88162a7f78fe211f75ddaed7",
+    "receiptSha256": "sha256:ba53f757ae81b9242d141cd0a0bce4d04b749b1254ce945e98d9f745c855ec17"
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "liveMonitoringActive": false,
+  "realIncidentClaimed": false,
+  "truthBoundary": "PASS35 A24 is the only canonical current status. Canonical roadmap is 50.0% weighted / 20.9% strict across 43 workstreams, up 1.2 pp from A23 and 9.3 pp from A16. Zero-budget functional core is 88.7% across 62 capabilities, up 0.6 pp from A23 and 8.7 pp from A16. A24 locally closes the declared bounded A17 event evaluation, deduplication, alert/acknowledgement SLA, playbook, communication and local incident-closure implementation. Live monitoring, real alerts, real incident response, staging, sale, customer outcomes and independent assurance remain unclaimed."
+}

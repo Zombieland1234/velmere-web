@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "velmere.pass35.a50.transactional-email-private-storage-kms-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A50_TRANSACTIONAL_EMAIL_PRIVATE_STORAGE_KMS_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A49_STRIPE_TEST_PAYMENT_REFUND_RECONCILIATION_ACCEPTANCE",
+  "requiredA49Decision": "VERIFIED_STAGING_PAYMENT_REFUND_RECONCILIATION",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_THIS_USES_DISPOSABLE_STAGING_STORAGE_EMAIL_AND_KMS_DATA_ONLY",
+  "requiredEnvironment": [
+    "VELMERE_A50_STAGING_BASE_URL",
+    "VELMERE_A50_TENANT_A_EMAIL",
+    "VELMERE_A50_TENANT_A_PASSWORD",
+    "VELMERE_A50_TENANT_B_EMAIL",
+    "VELMERE_A50_TENANT_B_PASSWORD",
+    "SUPABASE_URL",
+    "SUPABASE_ANON_KEY",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "VELMERE_A50_SUPABASE_PROJECT_CLASS",
+    "VELMERE_A50_STORAGE_BUCKET",
+    "VELMERE_A50_KMS_WRAP_URL",
+    "VELMERE_A50_KMS_UNWRAP_URL",
+    "VELMERE_A50_KMS_BEARER_SECRET",
+    "RESEND_API_KEY",
+    "VELMERE_A50_EMAIL_FROM",
+    "VELMERE_A50_EMAIL_TO",
+    "VELMERE_A50_CONFIRM"
+  ],
+  "requiredChecks": [
+    "source-fingerprint-before",
+    "precondition-a49-verified",
+    "runtime-exact",
+    "confirmation-token",
+    "staging-url-safety",
+    "supabase-url-safety",
+    "provider-secret-boundary",
+    "tenant-a-authenticated",
+    "tenant-b-authenticated",
+    "storage-bucket-private",
+    "kms-wrap-succeeded",
+    "storage-encrypted-uploaded",
+    "storage-public-access-denied",
+    "storage-cross-tenant-denied",
+    "storage-cross-tenant-list-isolated",
+    "storage-owner-download-exact",
+    "kms-unwrap-succeeded",
+    "storage-decryption-exact",
+    "storage-raw-object-not-plaintext",
+    "storage-signed-url-issued",
+    "storage-signed-url-valid-before-expiry",
+    "storage-signed-url-expired",
+    "email-send-accepted",
+    "email-retrieve-delivered",
+    "email-content-bound",
+    "storage-cleanup-complete",
+    "source-fingerprint-unchanged",
+    "evidence-redaction"
+  ],
+  "budgets": {
+    "requestTimeoutMs": 30000,
+    "maximumJsonBytes": 1048576,
+    "maximumObjectBytes": 1048576,
+    "signedUrlExpirySeconds": 5,
+    "signedUrlExpiryGraceMs": 2500,
+    "emailDeliveryTimeoutMs": 60000,
+    "emailPollIntervalMs": 1500,
+    "maximumEvidenceFileBytes": 16777216
+  },
+  "stagingSafety": {
+    "httpsRequired": true,
+    "localhostAllowedOnlyInFixture": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "staging",
+      "preview",
+      "vercel.app",
+      "pages.dev",
+      "netlify.app"
+    ]
+  },
+  "storageSafety": {
+    "bucketMustBePrivate": true,
+    "objectContentType": "application/vnd.velmere.encrypted+json",
+    "objectPrefix": "a50-disposable",
+    "encryptionAlgorithm": "aes-256-gcm",
+    "minimumKmsSecretLength": 32
+  },
+  "emailSafety": {
+    "apiBase": "https://api.resend.com",
+    "apiKeyPrefix": "re_",
+    "requiredFinalEvent": "delivered",
+    "subjectPrefix": "Velmere A50 staging receipt"
+  },
+  "truthBoundary": "A50 proves only one disposable staging object encrypted with an externally configured KMS bridge, stored in one private Supabase Storage bucket, isolated between two disposable tenants, retrieved through one short-lived signed URL, deleted after the run, and one transactional email accepted and reported delivered by the configured Resend test/staging provider. It does not prove production key custody, HSM certification, provider-wide encryption guarantees, continuous delivery, bounce/complaint handling, legal retention, backup/restore, disaster recovery, real customer communication, independent assurance or sale readiness.",
+  "integrity": {
+    "a49ContractSha256": "2b48792cc992e39e3c0113062ec10d4186595a99822fe40f0d66d3b9efcda73f",
+    "visualFiles": 338,
+    "visualDigest": "6e9bac1df01e88e81a04c63675b176c082fe5382d5e5b51492b6a130f24f40ad",
+    "publicAssets": 225,
+    "publicAssetsDigest": "f1632ee7bc33d669d34622840dace6d50d8a2881c448b59cc3deaedfe5042136",
+    "protectedEngineFiles": 510,
+    "protectedEngineDigest": "005ec0e064a6a9cbda78aea35d8587023f4ad9c8ac0a876fcbf1fb9850a96f50"
+  }
+}

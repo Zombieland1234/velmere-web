@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "velmere.pass36.a102r6.approved-private-account-browser-state-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R6_ACTION_REQUIRED_PRIVATE_ACCOUNT_BROWSER_STATE_LOCAL_STORAGE_CLIENT_FALLBACK_AND_DURABLE_VAULT_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R5_ACTION_REQUIRED_SERVER_ACCOUNT_ENTITLEMENT_BROWSER_BEARER_AND_PERSISTENT_PAID_ACCESS_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-29T20:56:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "components/account/MarketActionReportsInboxClient.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R5_ACTION_REQUIRED_SERVER_ACCOUNT_ENTITLEMENT_BROWSER_BEARER_AND_PERSISTENT_PAID_ACCESS_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 196999,
+      "historicalSha256": "35bf2dc42fef8d5ec279246bcc46367f19f5254036a946dd334ffb6152b49f1b",
+      "currentByteLength": 195921,
+      "currentSha256": "16e15188c259182a4770adc0cf1e6bc08c5bfb861250df8a76a96bc77be593bc",
+      "reason": "Remove persistent and cross-tab browser authority for private Account Vault state and block client-fallback durable vault promotion.",
+      "requiredLocalTest": "PASS_A102R6_PRIVATE_ACCOUNT_EPHEMERAL_SERVER_CONFIRMED_BOUNDARY_NO_PROMOTION",
+      "parentBytesRewritten": false
+    },
+    {
+      "path": "components/market-integrity/AssetDetailModal.tsx",
+      "parentRevisionId": "VELMERE_PASS36_A102R5_ACTION_REQUIRED_SERVER_ACCOUNT_ENTITLEMENT_BROWSER_BEARER_AND_PERSISTENT_PAID_ACCESS_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 313948,
+      "historicalSha256": "64b189713920c6d2b9b4e9e3cf67ada007bf2d7134f74b2e8d1c3d8a03d72610",
+      "currentByteLength": 312740,
+      "currentSha256": "7d5034d8734c64fe656073776f7de62a5ea9ed3d5310039bc4e4471907d35c26",
+      "reason": "Remove persistent and cross-tab browser authority for private Account Vault state and block client-fallback durable vault promotion.",
+      "requiredLocalTest": "PASS_A102R6_PRIVATE_ACCOUNT_EPHEMERAL_SERVER_CONFIRMED_BOUNDARY_NO_PROMOTION",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "lib/account/private-account-ephemeral-store.ts",
+      "purpose": "Bounded, defensively cloned, current-tab-only private account state with legacy purge-only behavior."
+    },
+    {
+      "path": "scripts/pass36/test-a102r6-private-account-browser-state-boundary.ts",
+      "purpose": "Adversarial and static proof for no browser persistent/cross-tab authority and no client fallback durable vault claim."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "persistentPrivateAccountBrowserStateAuthority": false,
+    "crossTabPrivateAccountBrowserStateAuthority": false,
+    "clientFallbackVaultReadyAuthority": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger binds exact A102R5-to-A102R6 production-file changes for the private Account Vault browser-state boundary. It does not rewrite frozen historical receipts and grants no durable database, RLS, browser, staging, LIVE or sale credit."
+}

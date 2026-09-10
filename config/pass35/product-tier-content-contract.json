@@ -1,0 +1,1916 @@
+{
+  "schemaVersion": "velmere.pass35.product-tier-content-contract.v1",
+  "passId": "PASS35_A24",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "status": "IMPLEMENTED_NON_VISUAL_PRODUCT_SPECIFICATION",
+  "visualChangesMade": false,
+  "common": {
+    "visualFreeze": {
+      "enabled": true,
+      "owner": "CODEX_FRONTEND_WORKSTREAM",
+      "forbiddenInThisTrack": [
+        "app/**",
+        "components/**",
+        "styles/**",
+        "public/visual/**",
+        "layout",
+        "typography",
+        "colors",
+        "spacing",
+        "animations",
+        "responsive_breakpoints"
+      ],
+      "allowedInThisTrack": [
+        "config/pass35/**",
+        "scripts/pass35/**",
+        "artifacts/release/**",
+        "roadmap text",
+        "non_visual schemas",
+        "tests",
+        "receipts"
+      ]
+    },
+    "truthRules": [
+      "No renderer, UI, PDF, Brain or Angel may invent a field absent from the canonical packet.",
+      "Basic must be useful within a narrower scope and may not be a crippled advertisement.",
+      "Pro and Advanced value must come from additional evidence, methodology, scenarios and traceability, not page count or token count.",
+      "Missing, stale, conflicted or unsupported data must be explicit; no placeholder may replace evidence.",
+      "A paid tier must fail closed before charge if its minimum evidence floor cannot be met.",
+      "Automated Advanced must never be labelled human reviewed; human review is a separate optional add-on.",
+      "All market outputs are informational analysis, not a guarantee, execution instruction or individualized investment advice.",
+      "All audit outputs separate fact, finding, inference, assumption, limitation and not-tested scope."
+    ],
+    "canonicalPacketMinimum": [
+      "packet_id",
+      "schema_version",
+      "product_cell_id",
+      "tier",
+      "asset_or_contract_identity",
+      "source_revision_id",
+      "provider_and_tool_provenance",
+      "observed_at",
+      "freshness_state",
+      "data_quality_state",
+      "verified_facts",
+      "inferences",
+      "assumptions",
+      "confidence_and_uncertainty",
+      "missing_evidence",
+      "conflicts",
+      "limitations",
+      "next_safe_checks",
+      "created_at",
+      "expires_at",
+      "invalidation_triggers",
+      "packet_hash"
+    ],
+    "tierValueRules": {
+      "basic": {
+        "priceModel": "FREE",
+        "purpose": "TRUSTED_ENTRY",
+        "minimumIncrementalEvidenceFamilies": 1,
+        "purchaseClaimAllowed": false
+      },
+      "pro": {
+        "priceModel": "PAID",
+        "purpose": "AUTOMATED_EVIDENCE_DEPTH",
+        "minimumIncrementalEvidenceFamiliesOverBasic": 2,
+        "minimumIncrementalDecisionFieldsOverBasic": 8,
+        "requiresMeasuredActionabilityGain": true
+      },
+      "advanced": {
+        "priceModel": "PAID",
+        "purpose": "HIGHEST_AUTOMATED_ASSURANCE",
+        "minimumIncrementalEvidenceFamiliesOverPro": 2,
+        "minimumIncrementalDecisionFieldsOverPro": 8,
+        "requiresScenarioStressTraceMonitoring": true
+      }
+    },
+    "chargeGate": [
+      "entitlement_valid",
+      "exact_product_cell_ready",
+      "minimum_evidence_floor_met",
+      "canonical_packet_sealed",
+      "delivery_capacity_available",
+      "no_forbidden_downgrade",
+      "no_stale_critical_inputs"
+    ]
+  },
+  "surfaces": [
+    {
+      "surfaceId": "shield",
+      "productRole": "CRYPTO_MARKET_AND_CONTRACT_RISK_ANALYSIS",
+      "marketCoverageRule": "Run dynamically for every normalized asset in the active supported-provider catalog; the 50-asset corpus is regression coverage only.",
+      "tiers": {
+        "basic": {
+          "purpose": "FAST_TRUSTED_CRYPTO_SNAPSHOT",
+          "customerQuestion": "What is this asset, what is happening now, and what are the clearest visible risks?",
+          "requiredSections": [
+            "identity_and_market_snapshot",
+            "data_health",
+            "basic_risk_summary",
+            "top_risk_drivers",
+            "sources_and_freshness",
+            "missing_and_limitations",
+            "next_safe_checks"
+          ],
+          "requiredFields": [
+            "canonical_asset_id",
+            "symbol",
+            "chain",
+            "contract_address_if_applicable",
+            "spot_price",
+            "change_1h",
+            "change_24h",
+            "change_7d",
+            "change_30d",
+            "market_cap",
+            "volume_24h",
+            "liquidity_summary",
+            "circulating_and_total_supply_when_available",
+            "provider_count",
+            "observed_at",
+            "freshness_state",
+            "deterministic_risk_band",
+            "top_3_risk_drivers",
+            "missing_critical_fields"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "market_quote",
+            "chain_identity"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no_order_book_depth",
+            "no_whale_entity_conclusions",
+            "no_advanced_exit_liquidity",
+            "no_probability_of_profit_or_loss"
+          ],
+          "purchaseValueReason": "Useful free answer with honest data health and concrete risk drivers, sufficient to decide whether deeper investigation is needed.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "MULTI_SOURCE_MARKET_STRUCTURE_AND_RISK",
+          "customerQuestion": "Where do providers disagree, how liquid is the market, and which risks are material rather than cosmetic?",
+          "requiredSections": [
+            "executive_delta_from_basic",
+            "multi_provider_consensus",
+            "market_structure",
+            "liquidity_and_slippage",
+            "volatility_and_drawdown",
+            "contract_and_control_risk",
+            "holder_and_flow_summary",
+            "scenario_analysis",
+            "evidence_rows",
+            "actionable_checks"
+          ],
+          "requiredFields": [
+            "all_basic_fields",
+            "provider_consensus_price",
+            "provider_divergence_bps",
+            "venue_coverage",
+            "order_book_depth_ladders",
+            "estimated_slippage_for_preregistered_sizes",
+            "realized_and_implied_volatility_when_available",
+            "drawdown_windows",
+            "liquidity_concentration",
+            "top_holder_concentration",
+            "proxy_and_privilege_summary",
+            "mint_pause_blacklist_tax_controls",
+            "unlock_or_supply_change_signals",
+            "exchange_inflow_outflow_summary",
+            "risk_component_breakdown",
+            "confidence_caps",
+            "conflict_resolution_state"
+          ],
+          "minimumEvidenceFamilies": 2,
+          "requiredEvidenceFamilies": [
+            "market_quote",
+            "order_book",
+            "chain_contract"
+          ],
+          "requiredScenarios": [
+            "provider_outage",
+            "liquidity_drop",
+            "volatility_spike",
+            "large_order_exit"
+          ],
+          "explicitExclusions": [
+            "no_verified_identity_from_unverified_wallet_labels",
+            "no guaranteed target price",
+            "no raw paid feed redistribution"
+          ],
+          "purchaseValueReason": "Adds independent-source reconciliation, liquidity economics, contract controls and scenarios that materially improve risk understanding over Basic.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 2
+        },
+        "advanced": {
+          "purpose": "INVESTIGATION_STRESS_AND_MONITORING",
+          "customerQuestion": "What fails under stress, how could capital exit, and what evidence should be monitored continuously?",
+          "requiredSections": [
+            "executive_delta_from_pro",
+            "full_provenance_graph",
+            "cross_venue_and_cross_chain_investigation",
+            "exit_liquidity_stress",
+            "adversarial_market_scenarios",
+            "entity_and_flow_conflicts",
+            "historical_analogs",
+            "monitoring_rules",
+            "proof_capsule",
+            "full_limitations"
+          ],
+          "requiredFields": [
+            "all_pro_fields",
+            "full_field_lineage",
+            "chain_height_and_snapshot_binding",
+            "wallet_or_entity_label_confidence",
+            "bridge_exchange_treasury_flow_windows",
+            "multi_venue_stress_matrix",
+            "exit_capacity_by_size_and_horizon",
+            "liquidity_gap_and_cascade_indicators",
+            "oracle_and_market_manipulation_signals",
+            "regime_classification",
+            "historical_analog_distance",
+            "scenario_severity_and_prerequisites",
+            "monitoring_rule_ids",
+            "invalidation_triggers",
+            "machine_receipt_hashes"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "market_quote",
+            "order_book",
+            "chain_contract",
+            "whale_flow",
+            "historical_snapshot"
+          ],
+          "requiredScenarios": [
+            "provider_conflict",
+            "exchange_outage",
+            "liquidity_cascade",
+            "large_holder_exit",
+            "oracle_dislocation",
+            "bridge_or_contract_incident"
+          ],
+          "explicitExclusions": [
+            "no human-reviewed claim",
+            "no identity certainty beyond evidence",
+            "no guaranteed loss avoidance"
+          ],
+          "purchaseValueReason": "Provides investigation-grade traceability, stress testing, exit analysis and monitoring handoff unavailable in Pro.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 3
+        }
+      }
+    },
+    {
+      "surfaceId": "shield_pro",
+      "productRole": "PROFESSIONAL_TERMINAL_AND_INVESTIGATION_WORKFLOW",
+      "tierValueBoundary": "The terminal appearance is not paid value. Tier value is determined only by data, evidence, scenarios, workflow and export contracts.",
+      "tiers": {
+        "basic": {
+          "purpose": "TERMINAL_MIRROR_OF_TRUSTED_SNAPSHOT",
+          "customerQuestion": "Can I inspect the same trusted Basic truth in a terminal workflow without hidden extra claims?",
+          "requiredSections": [
+            "canonical_snapshot",
+            "data_health",
+            "source_status",
+            "basic_risk",
+            "limitations"
+          ],
+          "requiredFields": [
+            "canonical_asset_id",
+            "symbol",
+            "chain",
+            "contract_address_if_applicable",
+            "spot_price",
+            "change_1h",
+            "change_24h",
+            "change_7d",
+            "change_30d",
+            "market_cap",
+            "volume_24h",
+            "liquidity_summary",
+            "deterministic_risk_band",
+            "top_3_risk_drivers",
+            "source_status",
+            "observed_at",
+            "freshness_state",
+            "stream_or_poll_status",
+            "last_successful_update",
+            "provider_degradation_state"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "shield_basic_packet"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no extra factual depth from terminal presentation alone"
+          ],
+          "purchaseValueReason": "Makes free truth accessible in the terminal while preserving parity with Shield Basic.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "ACTIVE_MULTI_VENUE_ANALYSIS_WORKSPACE",
+          "customerQuestion": "What is changing across venues and what market-structure evidence explains it?",
+          "requiredSections": [
+            "live_or_delayed_status",
+            "multi_venue_tape",
+            "depth_and_liquidity",
+            "market_impact",
+            "volatility_regime",
+            "flow_timeline",
+            "contract_controls",
+            "scenario_workspace",
+            "evidence_export"
+          ],
+          "requiredFields": [
+            "all_shield_pro_fields",
+            "venue_by_venue_price_and_spread",
+            "depth_ladders",
+            "order_book_imbalance",
+            "market_impact_by_size",
+            "liquidity_heat_windows",
+            "volatility_regime",
+            "provider_latency_and_staleness",
+            "flow_event_timeline",
+            "saved_analysis_packet",
+            "exportable_evidence_rows"
+          ],
+          "minimumEvidenceFamilies": 2,
+          "requiredEvidenceFamilies": [
+            "market_quote",
+            "order_book",
+            "chain_contract"
+          ],
+          "requiredScenarios": [
+            "market_order_sizes",
+            "venue_loss",
+            "stale_book",
+            "rapid_spread_expansion"
+          ],
+          "explicitExclusions": [
+            "no execution or order routing",
+            "no fake real-time label"
+          ],
+          "purchaseValueReason": "Adds professional multi-venue workflow, market impact and evidence export, not merely a different screen.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 2
+        },
+        "advanced": {
+          "purpose": "INVESTIGATION_REPLAY_ALERTING_AND_CASE_WORKFLOW",
+          "customerQuestion": "Can I reconstruct, stress and monitor a complex market or on-chain event as a case?",
+          "requiredSections": [
+            "case_identity",
+            "cross_venue_chain_timeline",
+            "replay_and_stress",
+            "entity_flow_graph_data",
+            "alert_rules",
+            "case_notes_and_evidence",
+            "proof_capsule",
+            "monitoring_handoff"
+          ],
+          "requiredFields": [
+            "all_shield_pro_pro_fields",
+            "case_id",
+            "snapshot_hashes",
+            "replay_receipts",
+            "cross_chain_flow_bindings",
+            "label_conflict_records",
+            "stress_scenario_matrix",
+            "alert_thresholds",
+            "alert_delivery_state",
+            "superseding_packet_links",
+            "case_export_hash"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "market_quote",
+            "order_book",
+            "chain_contract",
+            "historical_replay",
+            "case_evidence_graph"
+          ],
+          "requiredScenarios": [
+            "historical_replay",
+            "chain_venue_divergence",
+            "large_exit",
+            "provider_failure",
+            "contract_or_bridge_event"
+          ],
+          "explicitExclusions": [
+            "no law-enforcement identity claim",
+            "no human-reviewed claim unless separately signed"
+          ],
+          "purchaseValueReason": "Adds case-grade replay, monitoring and evidence lineage needed for advanced investigation.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 3
+        }
+      }
+    },
+    {
+      "surfaceId": "real_markets",
+      "productRole": "CROSS_ASSET_MARKET_EVIDENCE",
+      "marketCoverageRule": "Coverage is 100% of the declared provider-supported catalog and supported field denominator, not a fixed list of 50 instruments and not every instrument existing globally.",
+      "tiers": {
+        "basic": {
+          "purpose": "HONEST_CROSS_ASSET_SNAPSHOT",
+          "customerQuestion": "What is the instrument, what is its current or delayed market state, and is the data usable?",
+          "requiredSections": [
+            "instrument_identity",
+            "market_snapshot",
+            "market_session_and_delay",
+            "basic_risk",
+            "data_health",
+            "sources_and_limits"
+          ],
+          "requiredFields": [
+            "canonical_instrument_id",
+            "asset_class",
+            "exchange_or_venue",
+            "currency",
+            "timezone",
+            "market_session_state",
+            "live_delayed_or_eod_label",
+            "price",
+            "open_high_low_previous_close_when_available",
+            "change_1h_when_meaningful",
+            "change_24h",
+            "change_7d",
+            "change_30d",
+            "volume",
+            "market_cap_or_not_applicable",
+            "source",
+            "observed_at",
+            "freshness_state",
+            "simple_volatility_or_risk_band",
+            "missing_fields"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "asset_class_quote"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no cross-asset recommendation",
+            "no invented intraday data for closed or unsupported markets"
+          ],
+          "purchaseValueReason": "Gives a useful and comparable free snapshot with correct session, currency and delay semantics.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "NORMALIZED_MULTI_SOURCE_CROSS_ASSET_ANALYSIS",
+          "customerQuestion": "How does this instrument compare after correcting for source, currency, calendar and corporate-action differences?",
+          "requiredSections": [
+            "delta_from_basic",
+            "provider_reconciliation",
+            "adjusted_time_series",
+            "calendar_and_corporate_actions",
+            "fx_normalization",
+            "liquidity_and_volatility",
+            "peer_or_sector_context",
+            "event_timeline",
+            "cross_asset_comparison",
+            "evidence_export"
+          ],
+          "requiredFields": [
+            "all_basic_fields",
+            "provider_consensus_and_conflicts",
+            "adjustment_state",
+            "split_dividend_or_roll_events",
+            "trading_calendar",
+            "fx_rate_and_timestamp",
+            "normalized_returns",
+            "volatility_windows",
+            "drawdown",
+            "liquidity_proxy",
+            "spread_when_available",
+            "peer_group_definition",
+            "sector_or_category_context",
+            "event_flags",
+            "semantic_unit_conversion",
+            "confidence_and_missingness"
+          ],
+          "minimumEvidenceFamilies": 2,
+          "requiredEvidenceFamilies": [
+            "quote_history",
+            "corporate_actions_calendar",
+            "fx_reference"
+          ],
+          "requiredScenarios": [
+            "currency_move",
+            "market_close_gap",
+            "corporate_action",
+            "provider_disagreement",
+            "liquidity_deterioration"
+          ],
+          "explicitExclusions": [
+            "no false live label",
+            "no comparison across incompatible units without normalization"
+          ],
+          "purchaseValueReason": "Adds corrected and reconciled cross-asset analysis that Basic cannot provide.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 2
+        },
+        "advanced": {
+          "purpose": "PORTFOLIO_REGIME_STRESS_AND_FULL_PROVENANCE",
+          "customerQuestion": "What happens across regimes and portfolio exposures, and which assumptions drive the result?",
+          "requiredSections": [
+            "delta_from_pro",
+            "full_provenance",
+            "portfolio_or_basket_exposure",
+            "correlation_and_concentration",
+            "regime_analysis",
+            "stress_matrix",
+            "liquidity_exit",
+            "macro_and_factor_sensitivity",
+            "monitoring_and_invalidation",
+            "proof_capsule"
+          ],
+          "requiredFields": [
+            "all_pro_fields",
+            "portfolio_or_basket_definition",
+            "correlation_matrix_with_window",
+            "concentration_metrics",
+            "regime_labels_and_rules",
+            "stress_shocks",
+            "scenario_pnl_or_impact_ranges_without_advice",
+            "liquidity_exit_horizons",
+            "factor_or_macro_sensitivity_when_supported",
+            "cross_market_conflicts",
+            "full_field_lineage",
+            "monitoring_rules",
+            "packet_supersession"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "quote_history",
+            "corporate_actions_calendar",
+            "fx_reference",
+            "portfolio_regime_stress",
+            "macro_factor_reference"
+          ],
+          "requiredScenarios": [
+            "rate_or_fx_shock",
+            "volatility_regime_shift",
+            "correlation_break",
+            "liquidity_freeze",
+            "provider_loss",
+            "corporate_action_error"
+          ],
+          "explicitExclusions": [
+            "no personalized portfolio recommendation",
+            "no guaranteed forecast"
+          ],
+          "purchaseValueReason": "Adds portfolio/regime stress, complete lineage and monitoring needed for Advanced decisions.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 3
+        }
+      }
+    },
+    {
+      "surfaceId": "audit_evm",
+      "productRole": "AUTOMATED_SMART_CONTRACT_SECURITY_EVIDENCE",
+      "advancedModel": "Advanced Automated is the core zero-budget target. Human Reviewed is a separate optional add-on and is never implied by Automated Advanced.",
+      "tiers": {
+        "basic": {
+          "purpose": "AUTOMATED_SECURITY_PRESCREEN",
+          "customerQuestion": "Is the contract identifiable, what controls are obvious, and which immediate red flags require deeper review?",
+          "requiredSections": [
+            "scope_and_identity",
+            "source_and_bytecode_state",
+            "proxy_and_privilege_prescreen",
+            "token_or_protocol_controls",
+            "known_pattern_prescreen",
+            "market_or_holder_context_when_applicable",
+            "top_findings",
+            "not_tested_and_false_safety_warning",
+            "sources_and_hashes"
+          ],
+          "requiredFields": [
+            "chain_id",
+            "address",
+            "deployment_tx_when_available",
+            "verified_source_state",
+            "abi_state",
+            "compiler_metadata_when_available",
+            "runtime_bytecode_hash",
+            "proxy_type_and_implementation",
+            "owner_admin_pauser_minter_blacklist_tax_controls",
+            "upgradeability_summary",
+            "obvious_dangerous_patterns",
+            "honeypot_style_prescreen_signals",
+            "liquidity_holder_lock_context_when_applicable",
+            "finding_severity_confidence",
+            "not_tested_list"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "source_bytecode_identity",
+            "chain_state"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no full audit claim",
+            "no certified safe claim",
+            "no complete business logic review",
+            "no exploit absence claim"
+          ],
+          "purchaseValueReason": "A genuinely useful free prescreen that reveals identity, control and obvious-risk evidence without pretending to be a full audit.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "MULTI_ENGINE_AUTOMATED_SECURITY_REVIEW",
+          "customerQuestion": "Which code, state and economic weaknesses are supported by multiple analysis families, and how should they be remediated?",
+          "requiredSections": [
+            "executive_summary",
+            "A01_identity",
+            "A02_reproducibility",
+            "A03_threat_model",
+            "A04_privileges",
+            "A05_static_analysis",
+            "A06_path_analysis",
+            "A07_exact_tests",
+            "A08_fuzz_invariants",
+            "A09_fork_replay",
+            "A10_economic_adversarial",
+            "A11_upgrade_ops",
+            "A12_dependencies_cve_license",
+            "A14_severity_triage",
+            "remediation_plan",
+            "methodology_limitations",
+            "evidence_receipts",
+            "A16_report_delivery_evidence"
+          ],
+          "requiredFields": [
+            "all_basic_fields",
+            "source_to_deployed_bytecode_result",
+            "architecture_assets_trust_boundaries",
+            "role_and_proxy_state",
+            "normalized_multi_tool_findings",
+            "path_or_symbolic_signals",
+            "unit_integration_test_results",
+            "fuzz_invariant_results",
+            "fork_replay_results",
+            "economic_scenarios",
+            "upgrade_multisig_timelock_pause_evidence",
+            "dependency_license_cve_map",
+            "severity_prerequisites_blast_radius_asset_at_risk",
+            "finding_by_finding_remediation",
+            "coverage_and_tool_versions",
+            "false_positive_adjudication_state",
+            "bounded_path_conditions",
+            "pruned_infeasible_branches",
+            "reachable_risk_opcode_prerequisites",
+            "unknown_feasibility_state",
+            "severity_score_and_caps",
+            "exploitability_prerequisites",
+            "blast_radius_and_asset_at_risk",
+            "rater_disagreement_and_uncertainty",
+            "patch_impact_graph",
+            "affected_component_coverage",
+            "family_derived_retest_matrix",
+            "pre_post_retest_receipt_bindings",
+            "regression_finding_delta",
+            "post_patch_severity_state",
+            "monitoring_event_receipts",
+            "deduplicated_event_count",
+            "triggered_rule_receipts",
+            "alert_delivery_sla_state",
+            "acknowledgement_sla_state",
+            "playbook_action_completion",
+            "customer_communication_state",
+            "exact_behavior_registry",
+            "required_assertion_results",
+            "critical_behavior_coverage",
+            "branch_and_state_transition_coverage",
+            "test_isolation_receipts",
+            "repeatability_and_flaky_test_state",
+            "mutation_kill_rate",
+            "invariant_registry_and_criticality",
+            "fuzz_campaign_seed_and_corpus_binding",
+            "critical_high_invariant_coverage",
+            "state_key_coverage",
+            "deterministic_trace_replay",
+            "counterexample_shrink_receipts",
+            "fuzz_mutation_kill_rate",
+            "fork_replay_target_and_snapshot_binding",
+            "fork_transaction_sequence_receipts",
+            "fork_pre_post_state_root_continuity",
+            "fork_assertion_and_state_diff_coverage",
+            "fork_dependency_snapshot_bindings",
+            "fork_isolation_and_replay_determinism",
+            "fork_replay_mutation_kill_rate",
+            "economic_target_method_replay_binding",
+            "economic_scenario_registry",
+            "economic_evidence_family_and_prerequisite_coverage",
+            "economic_sensitivity_grid",
+            "economic_bounded_uncertainty",
+            "economic_replay_correlation",
+            "economic_model_reproducibility_and_mutation_rate",
+            "upgrade_proxy_slot_and_authorization_binding",
+            "upgrade_multisig_quorum_and_timelock",
+            "upgrade_initializer_and_storage_layout_safety",
+            "upgrade_simulation_and_rollback_limits",
+            "upgrade_pause_emergency_controls",
+            "upgrade_key_rotation_recovery_and_compromise_scenarios",
+            "upgrade_operations_replay_and_mutation_rate",
+            "threat_model_case_architecture_binding",
+            "threat_model_component_asset_actor_registry",
+            "threat_model_trust_boundary_and_data_flow_coverage",
+            "threat_model_entry_point_access_mapping",
+            "threat_model_assumption_and_invalidation_registry",
+            "threat_model_critical_asset_invariants",
+            "threat_model_abuse_cases_attack_paths_and_mitigations",
+            "threat_model_residual_risk_coverage_and_replay",
+            "privilege_case_role_state_binding",
+            "privilege_role_principal_holder_registry",
+            "privilege_selector_permission_coverage",
+            "privilege_role_admin_graph",
+            "privilege_proxy_admin_authority_binding",
+            "privilege_multisig_timelock_delegation",
+            "privilege_separation_of_duties",
+            "privilege_escalation_and_lifecycle_controls",
+            "report_canonical_packet_and_facts_binding",
+            "report_analyzer_receipt_index",
+            "report_claim_taxonomy",
+            "report_critical_section_completeness",
+            "report_tier_scope_and_field_coverage",
+            "report_sensitive_finding_redaction",
+            "report_account_case_entitlement_binding",
+            "report_machine_sealed_artifact_integrity",
+            "report_one_time_download_and_replay_rejection",
+            "report_supersession_and_invalidation",
+            "report_comprehension_acknowledgements",
+            "report_privacy_retention_delete_export",
+            "report_delivery_audit_trail"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "source_bytecode",
+            "static_analysis",
+            "exact_tests",
+            "fuzz_invariants",
+            "fork_replay",
+            "chain_state"
+          ],
+          "requiredScenarios": [
+            "privilege_abuse",
+            "reentrancy_or_state_ordering",
+            "accounting_break",
+            "oracle_or_liquidity_attack",
+            "upgrade_key_compromise"
+          ],
+          "explicitExclusions": [
+            "no human-reviewed claim",
+            "no guarantee of no vulnerabilities",
+            "no finding without evidence receipt"
+          ],
+          "purchaseValueReason": "Provides a coherent automated review across code, tests, state and economics with actionable remediation, materially beyond Basic.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 3
+        },
+        "advanced": {
+          "purpose": "HIGHEST_AUTOMATED_ASSURANCE_AND_PROOF_CAPSULE",
+          "customerQuestion": "What remains after deeper automated challenge, disagreement resolution, mutation testing, replay and monitoring design?",
+          "requiredSections": [
+            "delta_from_pro",
+            "expanded_analyzer_matrix",
+            "deep_path_and_state_analysis",
+            "expanded_fuzz_and_mutation",
+            "multi_snapshot_replay",
+            "cross_tool_disagreement_resolution",
+            "private_sensitive_findings_lane",
+            "advanced_severity_and_attack_chain",
+            "remediation_retest_plan",
+            "monitoring_handoff",
+            "full_proof_capsule",
+            "complete_not_tested_scope",
+            "A16_private_delivery_supersession_and_proof_capsule"
+          ],
+          "requiredFields": [
+            "all_pro_fields",
+            "expanded_rules_and_tool_matrix",
+            "path_feasibility_or_signed_limitation",
+            "mutation_score",
+            "corpus_and_seed_hashes",
+            "multi_block_or_multi_state_replay",
+            "cross_tool_conflict_records",
+            "attack_chain_graph_data",
+            "sensitive_finding_visibility",
+            "retest_requirements",
+            "monitoring_rule_set",
+            "full_raw_receipt_index",
+            "packet_signature_or_machine_seal",
+            "supersession_and_invalidation_rules",
+            "all_bounded_path_receipts",
+            "constraint_registry_digest",
+            "dynamic_jump_and_truncation_state",
+            "path_receipt_hashes",
+            "attack_chain_paths",
+            "cross_finding_enablement_edges",
+            "critical_justification_receipt",
+            "severity_supersession_rules",
+            "patch_impact_graph",
+            "affected_component_coverage",
+            "family_derived_retest_matrix",
+            "pre_post_retest_receipt_bindings",
+            "regression_finding_delta",
+            "post_patch_severity_state",
+            "finding_supersession_receipt",
+            "closure_invalidation_triggers",
+            "independent_retest_state",
+            "signed_closure_eligibility",
+            "closure_evidence_capsule",
+            "monitoring_event_receipts",
+            "deduplicated_event_count",
+            "triggered_rule_receipts",
+            "alert_delivery_sla_state",
+            "acknowledgement_sla_state",
+            "playbook_action_completion",
+            "customer_communication_state",
+            "incident_correlation_receipts",
+            "incident_lifecycle_state",
+            "postcondition_resolution_receipts",
+            "monitoring_closure_evidence_capsule",
+            "monitoring_invalidation_triggers",
+            "exact_behavior_registry",
+            "required_assertion_results",
+            "critical_behavior_coverage",
+            "branch_and_state_transition_coverage",
+            "test_isolation_receipts",
+            "repeatability_and_flaky_test_state",
+            "mutation_kill_rate",
+            "full_behavior_to_test_trace",
+            "all_execution_receipt_hashes",
+            "mutation_registry_and_survivors",
+            "coverage_invalidation_triggers",
+            "invariant_registry_and_criticality",
+            "fuzz_campaign_seed_and_corpus_binding",
+            "critical_high_invariant_coverage",
+            "state_key_coverage",
+            "deterministic_trace_replay",
+            "counterexample_shrink_receipts",
+            "fuzz_mutation_kill_rate",
+            "full_fuzz_trace_index",
+            "all_seed_and_corpus_receipt_hashes",
+            "surviving_mutants_and_limitations",
+            "minimized_counterexample_index",
+            "fuzz_invalidation_triggers",
+            "fork_replay_target_and_snapshot_binding",
+            "fork_transaction_sequence_receipts",
+            "fork_pre_post_state_root_continuity",
+            "fork_assertion_and_state_diff_coverage",
+            "fork_dependency_snapshot_bindings",
+            "fork_isolation_and_replay_determinism",
+            "fork_replay_mutation_kill_rate",
+            "full_fork_replay_receipt_index",
+            "all_transaction_state_diff_hashes",
+            "dependency_snapshot_lineage",
+            "replay_conflicts_and_limitations",
+            "fork_replay_invalidation_triggers",
+            "economic_target_method_replay_binding",
+            "economic_scenario_registry",
+            "economic_evidence_family_and_prerequisite_coverage",
+            "economic_sensitivity_grid",
+            "economic_bounded_uncertainty",
+            "economic_replay_correlation",
+            "economic_model_reproducibility_and_mutation_rate",
+            "economic_scenario_dependency_graph",
+            "full_economic_evidence_and_assumption_index",
+            "economic_conflicts_and_limitations",
+            "economic_invalidation_triggers",
+            "economic_no_exploit_no_probability_claim_boundary",
+            "upgrade_proxy_slot_and_authorization_binding",
+            "upgrade_multisig_quorum_and_timelock",
+            "upgrade_initializer_and_storage_layout_safety",
+            "upgrade_simulation_and_rollback_limits",
+            "upgrade_pause_emergency_controls",
+            "upgrade_key_rotation_recovery_and_compromise_scenarios",
+            "upgrade_operations_replay_and_mutation_rate",
+            "full_upgrade_control_evidence_index",
+            "upgrade_role_and_key_conflicts",
+            "upgrade_failure_and_rollback_limitations",
+            "upgrade_incident_invalidation_triggers",
+            "upgrade_no_current_onchain_no_production_claim_boundary",
+            "threat_model_case_architecture_binding",
+            "threat_model_component_asset_actor_registry",
+            "threat_model_trust_boundary_and_data_flow_coverage",
+            "threat_model_entry_point_access_mapping",
+            "threat_model_assumption_and_invalidation_registry",
+            "threat_model_critical_asset_invariants",
+            "threat_model_abuse_cases_attack_paths_and_mitigations",
+            "threat_model_residual_risk_coverage_and_replay",
+            "full_threat_model_evidence_index",
+            "threat_model_assumption_conflicts",
+            "threat_model_unmodeled_scope_and_limitations",
+            "threat_model_invalidation_triggers",
+            "threat_model_no_human_review_no_completeness_claim_boundary",
+            "privilege_case_role_state_binding",
+            "privilege_role_principal_holder_registry",
+            "privilege_selector_permission_coverage",
+            "privilege_role_admin_graph",
+            "privilege_proxy_admin_authority_binding",
+            "privilege_multisig_timelock_delegation",
+            "privilege_separation_of_duties",
+            "privilege_escalation_and_lifecycle_controls",
+            "full_privilege_control_evidence_index",
+            "privilege_hidden_surface_registry",
+            "privilege_escalation_path_receipts",
+            "privilege_conflicts_and_limitations",
+            "privilege_invalidation_triggers",
+            "privilege_no_current_onchain_no_manual_review_claim_boundary",
+            "report_canonical_packet_and_facts_binding",
+            "report_analyzer_receipt_index",
+            "report_claim_taxonomy",
+            "report_critical_section_completeness",
+            "report_tier_scope_and_field_coverage",
+            "report_sensitive_finding_redaction",
+            "report_account_case_entitlement_binding",
+            "report_machine_sealed_artifact_integrity",
+            "report_one_time_download_and_replay_rejection",
+            "report_supersession_and_invalidation",
+            "report_comprehension_acknowledgements",
+            "report_privacy_retention_delete_export",
+            "report_delivery_audit_trail",
+            "report_private_sensitive_finding_lane",
+            "report_full_raw_receipt_index",
+            "report_correction_supersession_graph",
+            "report_complete_not_tested_scope",
+            "report_lineage_expiry_and_invalidation",
+            "report_advanced_proof_capsule_machine_seal",
+            "report_download_revocation_and_immutable_history",
+            "report_customer_view_private_view_separation"
+          ],
+          "minimumEvidenceFamilies": 5,
+          "requiredEvidenceFamilies": [
+            "source_bytecode",
+            "static_analysis",
+            "path_analysis",
+            "exact_tests",
+            "fuzz_invariants",
+            "fork_replay",
+            "economic_adversarial",
+            "monitoring"
+          ],
+          "requiredScenarios": [
+            "multi_step_attack_chain",
+            "governance_or_upgrade_takeover",
+            "oracle_liquidity_composition",
+            "dependency_failure",
+            "incident_response_replay"
+          ],
+          "explicitExclusions": [
+            "no human-reviewed label",
+            "no external certification claim",
+            "no guaranteed security"
+          ],
+          "purchaseValueReason": "Adds the deepest automated challenge, mutation/replay evidence, conflict resolution, retest and monitoring package; human review remains an optional add-on.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 5
+        }
+      },
+      "optionalAddOn": {
+        "id": "audit_evm_advanced_human_review_addon",
+        "requiredForCoreAdvancedAutomated": false,
+        "adds": [
+          "qualified_manual_business_logic_review",
+          "conflict_declaration",
+          "signed_finding_adjudication",
+          "exact_patch_retest",
+          "second_reviewer_sample"
+        ],
+        "sellRule": "Disabled unless a qualified reviewer and capacity are actually available."
+      }
+    },
+    {
+      "surfaceId": "pdf_delivery",
+      "productRole": "CANONICAL_PACKET_EVIDENCE_REPORT",
+      "rendererRule": "The PDF is a delivery channel. It may reorganize facts but may not add analysis absent from the source product packet.",
+      "pageContract": {
+        "basic": 2,
+        "pro": 4,
+        "advanced": 8
+      },
+      "tiers": {
+        "basic": {
+          "purpose": "TWO_PAGE_DECISION_SNAPSHOT",
+          "customerQuestion": "Can I understand the result, evidence health and limitations quickly?",
+          "requiredSections": [
+            "page_1_executive_identity_snapshot_risk_and_top_drivers",
+            "page_2_evidence_sources_freshness_missing_limitations_and_next_checks"
+          ],
+          "requiredFields": [
+            "packet_identity",
+            "product_and_tier",
+            "subject_identity",
+            "executive_result",
+            "top_metrics_or_findings",
+            "top_risk_drivers",
+            "source_list",
+            "observed_at",
+            "freshness",
+            "confidence",
+            "missing_evidence",
+            "limitations",
+            "next_checks",
+            "packet_hash"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "canonical_ui_packet"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no hidden paid fields",
+            "no long filler appendix"
+          ],
+          "purchaseValueReason": "A concise free report that is useful on its own and transparent about evidence quality.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "FOUR_PAGE_EVIDENCE_AND_SCENARIO_REPORT",
+          "customerQuestion": "What evidence changed the conclusion, where do sources disagree, and what should be checked next?",
+          "requiredSections": [
+            "page_1_executive_delta_and_scope",
+            "page_2_deep_analysis_and_risk_components",
+            "page_3_conflicts_scenarios_and_material_evidence",
+            "page_4_methodology_remediation_or_action_checklist_and_full_sources"
+          ],
+          "requiredFields": [
+            "all_basic_pdf_fields",
+            "incremental_pro_fields_from_source_packet",
+            "provider_or_tool_reconciliation",
+            "risk_component_table",
+            "scenario_results",
+            "material_evidence_rows",
+            "methodology_versions",
+            "remediation_or_safe_action_checklist",
+            "full_source_and_receipt_index",
+            "tier_value_delta"
+          ],
+          "minimumEvidenceFamilies": 2,
+          "requiredEvidenceFamilies": [
+            "canonical_ui_packet",
+            "material_evidence_index",
+            "scenario_receipts"
+          ],
+          "requiredScenarios": [
+            "product_specific_scenarios"
+          ],
+          "explicitExclusions": [
+            "no page-count-only upgrade",
+            "no human review claim"
+          ],
+          "purchaseValueReason": "Turns the Pro packet into an auditable, actionable report with evidence, scenarios and methodology.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 2
+        },
+        "advanced": {
+          "purpose": "EIGHT_PAGE_PROOF_CAPSULE_AND_MONITORING_REPORT",
+          "customerQuestion": "Can the complete conclusion be traced, challenged, retested and monitored?",
+          "requiredSections": [
+            "page_1_executive_delta_and_scope",
+            "page_2_full_data_or_code_quality",
+            "page_3_deep_risk_or_findings",
+            "page_4_scenario_and_stress_matrix",
+            "page_5_investigation_threat_or_flow_analysis",
+            "page_6_remediation_retest_or_decision_controls",
+            "page_7_proof_capsule_lineage_hashes_and_conflicts",
+            "page_8_monitoring_invalidation_full_limitations_and_appendix"
+          ],
+          "requiredFields": [
+            "all_pro_pdf_fields",
+            "incremental_advanced_fields_from_source_packet",
+            "full_provenance_graph_data",
+            "stress_matrix",
+            "conflict_resolution_records",
+            "replay_or_mutation_results_when_applicable",
+            "proof_capsule",
+            "monitoring_rules",
+            "invalidation_triggers",
+            "supersession_links",
+            "machine_seal",
+            "complete_not_tested_scope"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "canonical_ui_packet",
+            "material_evidence_index",
+            "proof_capsule",
+            "monitoring_invalidation_receipts"
+          ],
+          "requiredScenarios": [
+            "advanced_product_specific_stress_and_replay"
+          ],
+          "explicitExclusions": [
+            "no human-review badge without signature",
+            "no duplicate filler"
+          ],
+          "purchaseValueReason": "Provides complete trace, stress, retest and monitoring evidence that cannot fit in Pro.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch"
+          ],
+          "evidenceFamilyFloor": 3
+        }
+      }
+    },
+    {
+      "surfaceId": "market_impact",
+      "productRole": "ORDER_BOOK_DEPTH_SLIPPAGE_AND_EXECUTION_STRESS_ANALYSIS",
+      "marketCoverageRule": "Run for every normalized active crypto market that exposes a valid order book; the 50-case corpus is regression coverage only and unsupported books are explicit UNAVAILABLE.",
+      "tierValueBoundary": "Basic summarizes representative execution cost; Pro adds multi-venue depth and failures; Advanced adds full stress, trace and monitoring.",
+      "tiers": {
+        "basic": {
+          "purpose": "REPRESENTATIVE_EXECUTION_COST_SNAPSHOT",
+          "customerQuestion": "How much visible liquidity exists and what could a representative buy or sell cost right now?",
+          "requiredSections": [
+            "identity_and_evidence_state",
+            "reference_price_and_spread",
+            "representative_buy_sell_simulation",
+            "visible_depth_summary",
+            "sources_and_freshness",
+            "missing_and_limitations"
+          ],
+          "requiredFields": [
+            "canonical_asset_id",
+            "reference_mid_price",
+            "venue_count",
+            "provider_family_count",
+            "best_spread_bps",
+            "visible_bid_depth_usd_100bps",
+            "visible_ask_depth_usd_100bps",
+            "representative_buy_notional_usd",
+            "representative_buy_fill_ratio",
+            "representative_buy_impact_bps",
+            "representative_sell_notional_usd",
+            "representative_sell_fill_ratio",
+            "representative_sell_impact_bps",
+            "observed_at",
+            "freshness_state",
+            "evidence_status",
+            "missing_evidence"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "order_book_l2"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no_full_venue_ladders",
+            "no_multi_venue_outage_matrix",
+            "no_hidden_liquidity_claim",
+            "no_execution_guarantee"
+          ],
+          "purchaseValueReason": "The free tier gives an immediately useful and honest estimate of visible liquidity and representative execution cost without pretending that the order can actually be filled at the simulated price.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch",
+            "order_book_empty",
+            "reference_mid_price_unavailable"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "MULTI_VENUE_DEPTH_AND_SLIPPAGE_ANALYSIS",
+          "customerQuestion": "How does execution quality differ across venues and what happens when liquidity or a venue disappears?",
+          "requiredSections": [
+            "executive_delta_from_basic",
+            "venue_spread_and_depth_table",
+            "notional_execution_grid",
+            "venue_contribution_breakdown",
+            "cross_venue_divergence",
+            "depth_loss_scenarios",
+            "deepest_venue_outage",
+            "source_conflicts_and_limitations"
+          ],
+          "requiredFields": [
+            "all_basic_fields",
+            "venue_summaries",
+            "venue_source_digests",
+            "cross_venue_mid_divergence_bps",
+            "depth_bands_10_25_50_100_200bps",
+            "full_buy_sell_notional_grid",
+            "vwap_by_notional",
+            "worst_price_by_notional",
+            "unfilled_notional_usd",
+            "fee_usd",
+            "venue_contribution_percent",
+            "visible_depth_minus_50_scenario",
+            "deepest_venue_outage_scenario",
+            "excluded_venues_and_reasons",
+            "provider_conflict_state"
+          ],
+          "minimumEvidenceFamilies": 2,
+          "requiredEvidenceFamilies": [
+            "order_book_l2_primary",
+            "order_book_l2_independent",
+            "quote_conversion"
+          ],
+          "requiredScenarios": [
+            "visible_depth_minus_50",
+            "deepest_venue_outage"
+          ],
+          "explicitExclusions": [
+            "no_hidden_order_book_claim",
+            "no_realized_execution_claim_without_trade_receipt",
+            "no_personalized_trade_instruction"
+          ],
+          "purchaseValueReason": "Pro materially improves the decision by reconciling independent venues, exposing price and liquidity disagreement, showing the full notional execution ladder and quantifying failure when depth or the deepest venue disappears.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch",
+            "independent_provider_family_count_below_two",
+            "quote_conversion_unverified",
+            "cross_venue_conflict_unresolved"
+          ],
+          "evidenceFamilyFloor": 2
+        },
+        "advanced": {
+          "purpose": "FULL_MARKET_IMPACT_STRESS_AND_MONITORING",
+          "customerQuestion": "What is the worst credible execution outcome under compound stress and which market conditions must be monitored?",
+          "requiredSections": [
+            "executive_delta_from_pro",
+            "full_venue_provenance",
+            "complete_depth_ladder",
+            "full_notional_execution_matrix",
+            "multi_scenario_stress_matrix",
+            "compound_spread_depth_shock",
+            "venue_outage_and_cascade",
+            "worst_case_execution",
+            "monitoring_rules",
+            "proof_capsule_and_limitations"
+          ],
+          "requiredFields": [
+            "all_pro_fields",
+            "minimum_three_provider_families",
+            "full_depth_bands",
+            "all_execution_notionals",
+            "all_scenario_results",
+            "visible_depth_minus_25_50_75",
+            "spread_x3_depth_minus_50",
+            "worst_buy_and_sell",
+            "failed_scenario_count",
+            "largest_order_fill_ratio",
+            "stable_quote_deviation",
+            "monitoring_trigger_ids",
+            "invalidation_triggers",
+            "all_receipt_and_packet_hashes"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "order_book_l2_primary",
+            "order_book_l2_independent",
+            "order_book_l2_third",
+            "full_lineage"
+          ],
+          "requiredScenarios": [
+            "visible_depth_minus_25",
+            "visible_depth_minus_50",
+            "visible_depth_minus_75",
+            "deepest_venue_outage",
+            "spread_x3_depth_minus_50"
+          ],
+          "explicitExclusions": [
+            "no_guaranteed_executable_liquidity",
+            "no_latency_or_queue_position_guarantee",
+            "no_human_review_claim"
+          ],
+          "purchaseValueReason": "Advanced adds complete provenance, compound stress, worst-case execution, monitoring triggers and a proof capsule that cannot be reconstructed from the Pro summary alone.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch",
+            "independent_provider_family_count_below_three",
+            "advanced_stress_matrix_incomplete",
+            "largest_order_fill_below_policy"
+          ],
+          "evidenceFamilyFloor": 3
+        }
+      }
+    },
+    {
+      "surfaceId": "whale_watch",
+      "productRole": "HOLDER_CONCENTRATION_VERIFIED_FLOW_AND_EXIT_STRESS_ANALYSIS",
+      "marketCoverageRule": "Run for every normalized token with verified holder distribution and transfer evidence; wallet labels remain unknown unless cryptographically verified and the 50-case corpus is QA only.",
+      "tierValueBoundary": "Basic reports concentration and coverage; Pro adds verified entity flows; Advanced adds clustering, holder-exit stress, full trace and monitoring.",
+      "tiers": {
+        "basic": {
+          "purpose": "CONCENTRATION_AND_DATA_COVERAGE_SNAPSHOT",
+          "customerQuestion": "How concentrated is supply and how complete is the holder evidence?",
+          "requiredSections": [
+            "asset_and_supply_identity",
+            "holder_coverage",
+            "raw_concentration",
+            "largest_flow_24h_summary",
+            "basic_alerts",
+            "sources_missing_and_limitations"
+          ],
+          "requiredFields": [
+            "canonical_asset_id",
+            "total_supply",
+            "price_usd",
+            "holder_count",
+            "transfer_count",
+            "holder_coverage_percent",
+            "raw_top1_percent",
+            "raw_top5_percent",
+            "raw_top10_percent",
+            "raw_hhi",
+            "raw_gini",
+            "whale_transfer_usd_24h",
+            "minted_usd_24h",
+            "burned_usd_24h",
+            "evidence_status",
+            "observed_at",
+            "missing_evidence"
+          ],
+          "minimumEvidenceFamilies": 1,
+          "requiredEvidenceFamilies": [
+            "holder_distribution"
+          ],
+          "requiredScenarios": [],
+          "explicitExclusions": [
+            "no_wallet_identity_claim",
+            "no_cluster_claim",
+            "no_exchange_flow_claim_from_unverified_labels",
+            "no_price_direction_prediction"
+          ],
+          "purchaseValueReason": "Basic provides a useful concentration and evidence-coverage snapshot while refusing to invent wallet identities or infer market direction from a single transfer.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch",
+            "holder_distribution_unavailable",
+            "total_supply_unverified",
+            "holder_coverage_below_basic_floor"
+          ],
+          "evidenceFamilyFloor": 1
+        },
+        "pro": {
+          "purpose": "VERIFIED_ENTITY_FLOW_AND_CONCENTRATION",
+          "customerQuestion": "Which verified categories are moving funds and how do exchange, treasury, bridge and liquidity flows change over time?",
+          "requiredSections": [
+            "executive_delta_from_basic",
+            "adjusted_concentration",
+            "verified_label_coverage",
+            "flow_windows_24h_7d_30d",
+            "exchange_inflow_outflow",
+            "treasury_and_team_flows",
+            "bridge_and_liquidity_flows",
+            "mint_burn_activity",
+            "alerts_and_conflicts",
+            "evidence_rows"
+          ],
+          "requiredFields": [
+            "all_basic_fields",
+            "adjusted_top1_top5_top10",
+            "verified_label_coverage_percent",
+            "provider_family_count",
+            "exchange_inflow_usd_24h_7d_30d",
+            "exchange_outflow_usd_24h_7d_30d",
+            "net_exchange_flow_usd",
+            "treasury_to_exchange_usd",
+            "treasury_distribution_usd",
+            "bridge_flow_usd",
+            "liquidity_added_usd",
+            "liquidity_removed_usd",
+            "minted_and_burned_usd",
+            "verified_wallet_label_artifact_count",
+            "wallet_label_registry_digest",
+            "alert_confidence_and_evidence"
+          ],
+          "minimumEvidenceFamilies": 2,
+          "requiredEvidenceFamilies": [
+            "holder_distribution",
+            "transfer_history",
+            "verified_wallet_labels"
+          ],
+          "requiredScenarios": [
+            "exchange_inflow_spike",
+            "treasury_to_exchange",
+            "liquidity_remove",
+            "mint_burn_anomaly"
+          ],
+          "explicitExclusions": [
+            "no_beneficial_owner_certainty",
+            "no_intent_claim",
+            "no_unverified_label_promotion"
+          ],
+          "purchaseValueReason": "Pro creates material value by replacing anonymous raw concentration with verified category-adjusted concentration and multi-window exchange, treasury, bridge, liquidity and supply flows.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch",
+            "verified_label_coverage_below_floor",
+            "transfer_history_unavailable",
+            "independent_provider_family_count_below_two"
+          ],
+          "evidenceFamilyFloor": 2
+        },
+        "advanced": {
+          "purpose": "CLUSTER_EXIT_STRESS_AND_CONTINUOUS_MONITORING",
+          "customerQuestion": "What happens if the largest verified holders exit and which wallet-flow conditions invalidate the current conclusion?",
+          "requiredSections": [
+            "executive_delta_from_pro",
+            "verified_cluster_coverage",
+            "holder_exit_targets",
+            "exit_liquidity_execution_stress",
+            "flow_and_liquidity_cascade",
+            "label_and_cluster_conflicts",
+            "full_evidence_trace",
+            "monitoring_rules",
+            "invalidation_triggers",
+            "proof_capsule_and_limitations"
+          ],
+          "requiredFields": [
+            "all_pro_fields",
+            "cluster_coverage_percent",
+            "verified_cluster_ids_redacted",
+            "holder_exit_stress_by_fraction",
+            "exit_notional_usd",
+            "exit_fill_ratio",
+            "exit_impact_bps",
+            "exit_unfilled_notional",
+            "market_impact_packet_digest",
+            "source_observation_times",
+            "monitoring_trigger_ids",
+            "label_registry_conflicts",
+            "full_capability_receipts",
+            "all_packet_and_source_hashes"
+          ],
+          "minimumEvidenceFamilies": 3,
+          "requiredEvidenceFamilies": [
+            "holder_distribution",
+            "transfer_history",
+            "verified_wallet_labels",
+            "market_impact_exit_stress",
+            "cluster_methodology_validation"
+          ],
+          "requiredScenarios": [
+            "top_holder_exit_10_25_50_percent",
+            "exchange_inflow_and_liquidity_loss",
+            "bridge_or_treasury_flow_conflict",
+            "wallet_label_conflict"
+          ],
+          "explicitExclusions": [
+            "no_identity_disclosure",
+            "no_guaranteed_dump_prediction",
+            "no_human_review_claim"
+          ],
+          "purchaseValueReason": "Advanced binds verified clusters to executable exit-liquidity stress, exposes evidence conflicts and provides continuous monitoring and invalidation rules unavailable in Pro.",
+          "failClosedIf": [
+            "critical_identity_missing",
+            "critical_input_stale",
+            "minimum_evidence_floor_missing",
+            "packet_hash_missing",
+            "tier_scope_mismatch",
+            "cluster_coverage_below_floor",
+            "holder_exit_stress_unavailable",
+            "market_impact_not_advanced_ready",
+            "independent_provider_family_count_below_three"
+          ],
+          "evidenceFamilyFloor": 3
+        }
+      }
+    }
+  ],
+  "completionDefinition": {
+    "specificationCompleteWhen": [
+      "all_required_surfaces_have_basic_pro_advanced",
+      "every_tier_has_sections_fields_evidence_scenarios_exclusions_value",
+      "advanced_automated_is_separate_from_human_addon",
+      "pdf_is_bound_to_same_packet_as_ui",
+      "dynamic_market_coverage_rule_is_explicit",
+      "visual_freeze_is_enforced",
+      "Market Impact and Whale Watch each have exact Basic/Pro/Advanced content and evidence floors."
+    ],
+    "implementationCompleteWhen": [
+      "every_required_field_is_emitted_from_real_or_explicitly_unavailable_source",
+      "tier_parity_tests_pass",
+      "purchase_value_benchmark_passes",
+      "full_supported_catalog_runtime_coverage_is_measured",
+      "no_paid_charge_occurs_below_evidence_floor"
+    ]
+  },
+  "a17EvidenceFamilyRegistry": {
+    "schemaVersion": "velmere.pass35.a17.evidence-family-registry.v1",
+    "path": "config/pass35/a17-evidence-family-registry.json",
+    "ruleCount": 21,
+    "allCellsExplicit": true,
+    "truthBoundary": "Families are explicit engineering evidence lanes. They do not claim that a current provider, analyzer, reviewer or customer observation exists."
+  },
+  "a18TierValuePolicy": {
+    "schemaVersion": "velmere.pass35.a18-tier-value-benchmark-policy.v1",
+    "path": "config/pass35/a18-tier-value-benchmark-policy.json",
+    "supplementalEvidenceFamilyRuleCount": 5,
+    "thresholds": {
+      "minimumBasicMaterialFields": 12,
+      "minimumIncrementalFieldsPerPaidUpgrade": 8,
+      "minimumNewEvidenceFamiliesPerPaidUpgrade": 2,
+      "minimumNewScenariosPerPaidUpgrade": 1,
+      "minimumUtilityScoreDelta": 0.04,
+      "maximumFillerRatio": 0.05,
+      "minimumBlindSelectionAccuracy": 1,
+      "minimumMutationKillRate": 1,
+      "requiredMutationTypes": 8
+    },
+    "commercialBoundary": {
+      "functionalOfflineTierValueMayPass": true,
+      "sellEnabled": false,
+      "chargeAllowed": false,
+      "paidDeliveryAllowed": false,
+      "customerPurchaseWorthinessClaimAllowed": false,
+      "liveClaimAllowed": false,
+      "reason": "A18 proves only that the frozen product contract creates non-filler, fail-closed structural increments under synthetic cases and that known downgrade/filler mutations are rejected."
+    }
+  },
+  "a21AbstractPath": {
+    "policyPath": "config/pass35/a21-abstract-path-policy.json",
+    "contractPath": "config/pass35/a21-abstract-path-runtime-contract.json",
+    "requiredProFields": [
+      "bounded_path_conditions",
+      "pruned_infeasible_branches",
+      "reachable_risk_opcode_prerequisites",
+      "unknown_feasibility_state"
+    ],
+    "requiredAdvancedFields": [
+      "all_bounded_path_receipts",
+      "constraint_registry_digest",
+      "dynamic_jump_and_truncation_state",
+      "path_receipt_hashes"
+    ],
+    "paidGateEligible": false
+  },
+  "a22SeverityTriage": {
+    "policyPath": "config/pass35/a22-severity-triage-policy.json",
+    "contractPath": "config/pass35/a22-severity-triage-runtime-contract.json",
+    "requiredProFields": [
+      "severity_score_and_caps",
+      "exploitability_prerequisites",
+      "blast_radius_and_asset_at_risk",
+      "rater_disagreement_and_uncertainty"
+    ],
+    "requiredAdvancedFields": [
+      "attack_chain_paths",
+      "cross_finding_enablement_edges",
+      "critical_justification_receipt",
+      "severity_supersession_rules"
+    ],
+    "paidGateEligible": false,
+    "independentHumanRatersClaimed": false
+  },
+  "a23RemediationClosure": {
+    "policyPath": "config/pass35/a23-remediation-closure-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A23_REMEDIATION_CLOSURE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A23_REMEDIATION_CLOSURE_RECEIPT.json",
+    "requiredProFields": [
+      "patch_impact_graph",
+      "affected_component_coverage",
+      "family_derived_retest_matrix",
+      "pre_post_retest_receipt_bindings",
+      "regression_finding_delta",
+      "post_patch_severity_state"
+    ],
+    "requiredAdvancedFields": [
+      "finding_supersession_receipt",
+      "closure_invalidation_triggers",
+      "independent_retest_state",
+      "signed_closure_eligibility",
+      "closure_evidence_capsule"
+    ],
+    "paidGateEligible": false,
+    "signedClosureClaimed": false
+  },
+  "a24MonitoringLifecycle": {
+    "policyPath": "config/pass35/a24-monitoring-lifecycle-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A24_MONITORING_LIFECYCLE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A24_MONITORING_LIFECYCLE_RECEIPT.json",
+    "requiredProFields": [
+      "monitoring_event_receipts",
+      "deduplicated_event_count",
+      "triggered_rule_receipts",
+      "alert_delivery_sla_state",
+      "acknowledgement_sla_state",
+      "playbook_action_completion",
+      "customer_communication_state"
+    ],
+    "requiredAdvancedFields": [
+      "incident_correlation_receipts",
+      "incident_lifecycle_state",
+      "postcondition_resolution_receipts",
+      "monitoring_closure_evidence_capsule",
+      "monitoring_invalidation_triggers"
+    ],
+    "liveMonitoringActive": false,
+    "paidGateEligible": false
+  },
+  "a25ExactTestEvidence": {
+    "policyPath": "config/pass35/a25-exact-test-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A25_EXACT_TEST_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A25_EXACT_TEST_EVIDENCE_RECEIPT.json",
+    "requiredProFields": [
+      "exact_behavior_registry",
+      "required_assertion_results",
+      "critical_behavior_coverage",
+      "branch_and_state_transition_coverage",
+      "test_isolation_receipts",
+      "repeatability_and_flaky_test_state",
+      "mutation_kill_rate"
+    ],
+    "requiredAdvancedFields": [
+      "full_behavior_to_test_trace",
+      "all_execution_receipt_hashes",
+      "mutation_registry_and_survivors",
+      "coverage_invalidation_triggers"
+    ],
+    "officialForgeExecuted": false,
+    "compiledEvmExecutionProven": false,
+    "paidGateEligible": false
+  },
+  "a26FuzzInvariantEvidence": {
+    "policyPath": "config/pass35/a26-fuzz-invariant-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A26_FUZZ_INVARIANT_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A26_FUZZ_INVARIANT_EVIDENCE_RECEIPT.json",
+    "requiredProFields": [
+      "invariant_registry_and_criticality",
+      "fuzz_campaign_seed_and_corpus_binding",
+      "critical_high_invariant_coverage",
+      "state_key_coverage",
+      "deterministic_trace_replay",
+      "counterexample_shrink_receipts",
+      "fuzz_mutation_kill_rate"
+    ],
+    "requiredAdvancedFields": [
+      "full_fuzz_trace_index",
+      "all_seed_and_corpus_receipt_hashes",
+      "surviving_mutants_and_limitations",
+      "minimized_counterexample_index",
+      "fuzz_invalidation_triggers"
+    ],
+    "officialFoundryExecuted": false,
+    "officialEchidnaExecuted": false,
+    "compiledEvmExecutionProven": false,
+    "paidGateEligible": false
+  },
+  "a27ForkReplayEvidence": {
+    "policyPath": "config/pass35/a27-fork-replay-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A27_FORK_REPLAY_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A27_FORK_REPLAY_EVIDENCE_RECEIPT.json",
+    "requiredProFields": [
+      "fork_replay_target_and_snapshot_binding",
+      "fork_transaction_sequence_receipts",
+      "fork_pre_post_state_root_continuity",
+      "fork_assertion_and_state_diff_coverage",
+      "fork_dependency_snapshot_bindings",
+      "fork_isolation_and_replay_determinism",
+      "fork_replay_mutation_kill_rate"
+    ],
+    "requiredAdvancedFields": [
+      "full_fork_replay_receipt_index",
+      "all_transaction_state_diff_hashes",
+      "dependency_snapshot_lineage",
+      "replay_conflicts_and_limitations",
+      "fork_replay_invalidation_triggers"
+    ],
+    "officialNativeForkRunnerExecuted": false,
+    "publicNetworkProviderUsed": false,
+    "paidGateEligible": false
+  },
+  "a28EconomicAdversarialEvidence": {
+    "policyPath": "config/pass35/a28-economic-adversarial-evidence-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A28_ECONOMIC_ADVERSARIAL_EVIDENCE_RECEIPT.json",
+    "requiredProFields": [
+      "economic_target_method_replay_binding",
+      "economic_scenario_registry",
+      "economic_evidence_family_and_prerequisite_coverage",
+      "economic_sensitivity_grid",
+      "economic_bounded_uncertainty",
+      "economic_replay_correlation",
+      "economic_model_reproducibility_and_mutation_rate"
+    ],
+    "requiredAdvancedFields": [
+      "economic_scenario_dependency_graph",
+      "full_economic_evidence_and_assumption_index",
+      "economic_conflicts_and_limitations",
+      "economic_invalidation_triggers",
+      "economic_no_exploit_no_probability_claim_boundary"
+    ],
+    "currentRightsApprovedInputsUsed": false,
+    "officialForkedEvmExecuted": false,
+    "paidGateEligible": false
+  },
+  "a29UpgradeDeploymentOperations": {
+    "policyPath": "config/pass35/a29-upgrade-deployment-operations-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A29_UPGRADE_DEPLOYMENT_OPERATIONS_RECEIPT.json",
+    "requiredProFields": [
+      "upgrade_proxy_slot_and_authorization_binding",
+      "upgrade_multisig_quorum_and_timelock",
+      "upgrade_initializer_and_storage_layout_safety",
+      "upgrade_simulation_and_rollback_limits",
+      "upgrade_pause_emergency_controls",
+      "upgrade_key_rotation_recovery_and_compromise_scenarios",
+      "upgrade_operations_replay_and_mutation_rate"
+    ],
+    "requiredAdvancedFields": [
+      "full_upgrade_control_evidence_index",
+      "upgrade_role_and_key_conflicts",
+      "upgrade_failure_and_rollback_limitations",
+      "upgrade_incident_invalidation_triggers",
+      "upgrade_no_current_onchain_no_production_claim_boundary"
+    ],
+    "currentOnChainStateVerified": false,
+    "productionUpgradeExecuted": false,
+    "paidGateEligible": false
+  },
+  "a30ThreatModel": {
+    "policyPath": "config/pass35/a30-threat-model-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A30_THREAT_MODEL_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A30_THREAT_MODEL_RECEIPT.json",
+    "requiredProFields": [
+      "threat_model_case_architecture_binding",
+      "threat_model_component_asset_actor_registry",
+      "threat_model_trust_boundary_and_data_flow_coverage",
+      "threat_model_entry_point_access_mapping",
+      "threat_model_assumption_and_invalidation_registry",
+      "threat_model_critical_asset_invariants",
+      "threat_model_abuse_cases_attack_paths_and_mitigations",
+      "threat_model_residual_risk_coverage_and_replay"
+    ],
+    "requiredAdvancedFields": [
+      "full_threat_model_evidence_index",
+      "threat_model_assumption_conflicts",
+      "threat_model_unmodeled_scope_and_limitations",
+      "threat_model_invalidation_triggers",
+      "threat_model_no_human_review_no_completeness_claim_boundary"
+    ],
+    "protocolSpecificAssumptionsHumanValidated": false,
+    "businessLogicHumanReviewed": false,
+    "paidGateEligible": false
+  },
+  "a31PrivilegeControl": {
+    "policyPath": "config/pass35/a31-privilege-control-policy.json",
+    "runtimePath": "artifacts/pass35/PASS35_A31_PRIVILEGE_CONTROL_BENCHMARK.json",
+    "receiptPath": "artifacts/pass35/PASS35_A31_PRIVILEGE_CONTROL_RECEIPT.json",
+    "requiredProFields": [
+      "privilege_case_role_state_binding",
+      "privilege_role_principal_holder_registry",
+      "privilege_selector_permission_coverage",
+      "privilege_role_admin_graph",
+      "privilege_proxy_admin_authority_binding",
+      "privilege_multisig_timelock_delegation",
+      "privilege_separation_of_duties",
+      "privilege_escalation_and_lifecycle_controls"
+    ],
+    "requiredAdvancedFields": [
+      "full_privilege_control_evidence_index",
+      "privilege_hidden_surface_registry",
+      "privilege_escalation_path_receipts",
+      "privilege_conflicts_and_limitations",
+      "privilege_invalidation_triggers",
+      "privilege_no_current_onchain_no_manual_review_claim_boundary"
+    ],
+    "currentOnchainRoleStateProven": false,
+    "manualAuthorizationReviewed": false,
+    "paidGateEligible": false
+  },
+  "a32ReportDelivery": {
+    "policyPath": "config/pass35/a32-report-delivery-policy.json",
+    "contractPath": "config/pass35/a32-report-delivery-runtime-contract.json",
+    "requiredProFields": [
+      "report_canonical_packet_and_facts_binding",
+      "report_analyzer_receipt_index",
+      "report_claim_taxonomy",
+      "report_critical_section_completeness",
+      "report_tier_scope_and_field_coverage",
+      "report_sensitive_finding_redaction",
+      "report_account_case_entitlement_binding",
+      "report_machine_sealed_artifact_integrity",
+      "report_one_time_download_and_replay_rejection",
+      "report_supersession_and_invalidation",
+      "report_comprehension_acknowledgements",
+      "report_privacy_retention_delete_export",
+      "report_delivery_audit_trail"
+    ],
+    "requiredAdvancedFields": [
+      "report_private_sensitive_finding_lane",
+      "report_full_raw_receipt_index",
+      "report_correction_supersession_graph",
+      "report_complete_not_tested_scope",
+      "report_lineage_expiry_and_invalidation",
+      "report_advanced_proof_capsule_machine_seal",
+      "report_download_revocation_and_immutable_history",
+      "report_customer_view_private_view_separation"
+    ],
+    "truthBoundary": "PASS35 A32 defines and benchmarks a bounded local A16 report-delivery evidence contract. It can prove packet/receipt/tier/redaction/account/artifact/download/supersession/comprehension/privacy integrity for generated or imported offline evidence. It does not prove real analyzer execution, real customer comprehension, production account isolation, staging delivery, qualified signatures, legal sufficiency, paid value, LIVE operation or customer outcome."
+  }
+}

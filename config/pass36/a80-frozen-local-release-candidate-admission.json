@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "velmere.pass36.a80.frozen-local-release-candidate-admission.v1",
+  "revisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+  "deterministicEpoch": "2026-07-27T12:00:00.000Z",
+  "sourceManifestPath": "config/pass36/a102r44-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a80-current-root-descendant-manifest.json",
+  "parentDescendantManifestPath": "config/pass36/a79-current-root-descendant-manifest.json",
+  "expectedRuntime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "requiredExactDecision": "VERIFIED_LOCAL_EXACT_FINAL_BYTE_BUILD_RUNTIME_BROWSER_EVIDENCE_BOUND",
+  "requiredCurrentRootSuites": 30,
+  "requiredBrowserRows": 56,
+  "requiredScreenshots": 29,
+  "requiredPopupTabs": 4,
+  "descendantManifestExclusions": [
+    "config/pass36/a80-current-root-descendant-manifest.json",
+    "config/pass35/a57-source-manifest.json"
+  ],
+  "outputBoundary": {
+    "outputMustBeOutsideSourceRoot": true,
+    "sourceTreeMutationForbidden": true,
+    "blockedRunMayWriteReceiptOutsideSourceOnly": true,
+    "verifiedCandidateSealMayNotEmbedPrivateOrLiveEvidence": true
+  },
+  "closedByA80": [
+    "deterministic_zip_misrepresented_as_verified_release_candidate",
+    "release_candidate_created_without_verified_a78_exact_toolchain",
+    "release_candidate_created_without_verified_a79_build_browser",
+    "stale_or_fixture_a60_receipt_reuse",
+    "release_candidate_output_mutating_the_frozen_source_tree",
+    "private_or_live_evidence_embedded_in_source_candidate",
+    "environment_secret_or_private_key_file_in_candidate",
+    "candidate_promotion_with_incomplete_current_root_gate",
+    "candidate_promotion_with_blocking_package_integrity_failure",
+    "candidate_promotion_with_live_or_sale_claims",
+    "mutually_recursive_source_and_descendant_manifests_preventing_deterministic_freeze",
+    "historical_descendant_verifiers_recomputing_frozen_payload_against_legal_current_descendant",
+    "a57_current_source_and_hardening_ledger_not_bound_to_a80",
+    "a46_current_hardening_source_revision_lagging_a80",
+    "current_status_roadmap_precedence_hardcoded_to_a79"
+  ],
+  "decisions": {
+    "verified": "VERIFIED_LOCAL_FROZEN_RELEASE_CANDIDATE",
+    "blocked": "BLOCKED_FROZEN_RELEASE_CANDIDATE_PREREQUISITES",
+    "rejected": "REJECTED_RELEASE_CANDIDATE_INTEGRITY"
+  },
+  "truthBoundary": "A80 proves a fail-closed local release-candidate admission and external seal boundary. A deterministic ZIP or green local fixture is not a frozen release candidate. VERIFIED requires physical A78 exact inputs, exact current-root 30/30, VERIFIED A79 Webpack/Turbopack/next start/Playwright evidence, clean-unpack A58 integrity and an unchanged hygienic source tree. A80 does not prove staging, provider rights, customers, LIVE, sale or world-class status.",
+  "historicalA57ManifestPath": "config/pass35/a57-source-manifest.json",
+  "currentSourceAuthorityPath": "config/pass36/current-release-authority.json",
+  "currentSourceRevisionId": "VELMERE_PASS36_A102R44_ACTION_REQUIRED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF_NO_LIVE_CREDIT",
+  "currentSourceParentRevisionId": "VELMERE_PASS36_A102R43_ACTION_REQUIRED_FINAL_UI_UX_PERFORMANCE_HARDENING_AND_BLOCKED_FAULT_EMULATION_NO_LIVE_CREDIT"
+}

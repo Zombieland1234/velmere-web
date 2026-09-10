@@ -1,0 +1,141 @@
+/* ==========================================================================
+   VELMERE ANIMATED LUXURY SHIELD EMBLEM (V-CREST)
+   ========================================================================== */
+
+.vlm-luxury-shield-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  perspective: 1000px;
+}
+
+.vlm-shield-glow-backdrop {
+  position: absolute;
+  inset: -15%;
+  background: radial-gradient(circle at 50% 50%, rgba(30, 80, 220, 0.28) 0%, rgba(15, 35, 120, 0.12) 45%, transparent 70%);
+  filter: blur(35px);
+  pointer-events: none;
+  animation: vlmShieldPulse 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes vlmShieldPulse {
+  0% { transform: scale(0.92); opacity: 0.7; filter: blur(30px); }
+  50% { transform: scale(1.08); opacity: 1; filter: blur(45px); }
+  100% { transform: scale(0.92); opacity: 0.7; filter: blur(30px); }
+}
+
+/* Orbiting Rings */
+.vlm-shield-orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1.5px solid rgba(100, 160, 255, 0.4);
+  box-shadow: 0 0 15px rgba(60, 130, 255, 0.35), inset 0 0 15px rgba(60, 130, 255, 0.2);
+}
+
+.vlm-shield-orbit-ring-1 {
+  width: 124%;
+  height: 48%;
+  transform: rotate(-25deg);
+  animation: vlmOrbitSpin1 12s linear infinite;
+}
+
+.vlm-shield-orbit-ring-2 {
+  width: 118%;
+  height: 44%;
+  transform: rotate(32deg);
+  border-color: rgba(140, 190, 255, 0.3);
+  animation: vlmOrbitSpin2 16s linear infinite reverse;
+}
+
+@keyframes vlmOrbitSpin1 {
+  0% { transform: rotate(-25deg) scale(1); }
+  50% { transform: rotate(-20deg) scale(1.02); }
+  100% { transform: rotate(-25deg) scale(1); }
+}
+
+@keyframes vlmOrbitSpin2 {
+  0% { transform: rotate(32deg) scale(1); }
+  50% { transform: rotate(38deg) scale(0.98); }
+  100% { transform: rotate(32deg) scale(1); }
+}
+
+/* Orbiting Sparks / Nodes */
+.vlm-shield-orbit-spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 12px 3px rgba(120, 190, 255, 0.95), 0 0 25px 6px rgba(70, 140, 255, 0.7);
+}
+
+/* Shield Frame & Image */
+.vlm-shield-core-wrapper {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: vlmShieldFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes vlmShieldFloat {
+  0% { transform: translateY(0px) rotateY(-2deg); }
+  50% { transform: translateY(-8px) rotateY(2deg); }
+  100% { transform: translateY(0px) rotateY(-2deg); }
+}
+
+.vlm-shield-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 35px rgba(0, 20, 60, 0.8)) drop-shadow(0 0 25px rgba(60, 120, 240, 0.45));
+}
+
+/* Laser sweep shine effect across shield */
+.vlm-shield-shine-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.0) 35%,
+    rgba(160, 210, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.7) 53%,
+    rgba(160, 210, 255, 0.35) 56%,
+    transparent 70%
+  );
+  mix-blend-mode: overlay;
+  mask-image: radial-gradient(circle at 50% 50%, black 60%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 60%, transparent 80%);
+  animation: vlmLaserShine 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes vlmLaserShine {
+  0% { transform: translateX(-150%) translateY(-30%); opacity: 0; }
+  25% { opacity: 0.8; }
+  50% { transform: translateX(150%) translateY(30%); opacity: 0; }
+  100% { transform: translateX(150%) translateY(30%); opacity: 0; }
+}
+
+/* Bottom Radiant Core Flare */
+.vlm-shield-bottom-flare {
+  position: absolute;
+  bottom: -4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 16%;
+  background: radial-gradient(circle at 50% 50%, rgba(120, 200, 255, 0.95) 0%, rgba(40, 110, 255, 0.6) 40%, transparent 75%);
+  filter: blur(8px);
+  pointer-events: none;
+  animation: vlmFlarePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes vlmFlarePulse {
+  0% { transform: translateX(-50%) scale(0.85); opacity: 0.7; }
+  100% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+}

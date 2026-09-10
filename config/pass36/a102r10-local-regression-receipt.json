@@ -1,0 +1,412 @@
+{
+  "schemaVersion": "velmere.pass36.a102r10.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R10_ACTION_REQUIRED_EXTERNAL_NEW_TAB_PRODUCT_IMPORT_SEC_FILING_AND_WALLET_NAVIGATION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R9_ACTION_REQUIRED_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_DOWNLOAD_SESSION_ADMIN_SUPPORT_EXPORT_REDACTION_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T03:20:00.000Z",
+  "phase": "FINAL",
+  "orchestrationMode": "FOUR_EXTERNAL_HASH_BOUND_GROUP_OUTPUTS_NO_PASS_CREDIT_FROM_PARENT_TIMEOUT",
+  "status": "PASS_A102R10_LOCAL_REGRESSION_ACTION_REQUIRED_NO_PROMOTION",
+  "summary": {
+    "executedPassRows": 22,
+    "passedRows": 22,
+    "failedRows": 0,
+    "groupedRunnerRows": 4,
+    "deferredFinalLineageRows": 2,
+    "environmentBlockedRows": 4
+  },
+  "groupRuns": [
+    {
+      "id": "receipt_a",
+      "evidenceFile": "receipt_a.json",
+      "evidenceByteLength": 6053,
+      "evidenceSha256": "fac8fdacbbdc5496fcd4b0a198003ca2f9f0b5dace12e34a73042c7ef76659d3",
+      "expectedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_A_NO_PROMOTION",
+      "observedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_A_NO_PROMOTION",
+      "checks": 8,
+      "passed": 8,
+      "failed": 0,
+      "groupPassed": true
+    },
+    {
+      "id": "receipt_b",
+      "evidenceFile": "receipt_b.json",
+      "evidenceByteLength": 4245,
+      "evidenceSha256": "8ce4e3a7d4a6685e248e21e6511c3a511fc0a98b57b298956edc8fb6e4f17b5a",
+      "expectedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_B_NO_PROMOTION",
+      "observedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_B_NO_PROMOTION",
+      "checks": 6,
+      "passed": 6,
+      "failed": 0,
+      "groupPassed": true
+    },
+    {
+      "id": "receipt_c",
+      "evidenceFile": "receipt_c.json",
+      "evidenceByteLength": 2671,
+      "evidenceSha256": "12f8d24993a5a9a7b34833d9135726b8a443e992461c0737c65f6eb382f32ccc",
+      "expectedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_C_NO_PROMOTION",
+      "observedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_C_NO_PROMOTION",
+      "checks": 4,
+      "passed": 4,
+      "failed": 0,
+      "groupPassed": true
+    },
+    {
+      "id": "receipt_d",
+      "evidenceFile": "receipt_d.json",
+      "evidenceByteLength": 2970,
+      "evidenceSha256": "834973caa7091e079015267848b2b63694175b02199075a5093034b80aa68354",
+      "expectedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_D_NO_PROMOTION",
+      "observedStatus": "PASS_A102R10_CLEAN_UNPACK_GROUP_RECEIPT_D_NO_PROMOTION",
+      "checks": 4,
+      "passed": 4,
+      "failed": 0,
+      "groupPassed": true
+    }
+  ],
+  "results": [
+    {
+      "id": "a102r10_external_navigation",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A102R10_EXTERNAL_NAVIGATION_FAIL_CLOSED_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "f8af07140ab645a2d906fc47a105a605d255004e97cbb87dc0795235142b84d2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 106,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r9_clipboard",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A102R9_SYSTEM_CLIPBOARD_PRIVATE_ACCOUNT_AND_ADMIN_EXPORT_REDACTION_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "0de86eb90c3afbfa1162c5157adfbc68b329766799b081ee72948999ce1a1939",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5889,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r8_browser_privacy",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A102R8_CHECKOUT_PII_AUDIT_CASE_AND_PDF_METADATA_BROWSER_PERSISTENCE_FAIL_CLOSED_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "089dbbfb82097dfa44ca9beeb20ced5efe1410e8acdd1489380f2bf49162feb2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6777,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r7_wallet_privacy",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A102R7_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_FAIL_CLOSED_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "84cf0800f07329ac9c4eff20408969a546a913af7c0573dbb7418d05316403b3",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5297,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r6_private_state",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A102R6_PRIVATE_ACCOUNT_EPHEMERAL_SERVER_CONFIRMED_BOUNDARY_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "adc436bb8b2f96f125b80f0ece20002d4e93c4f312723a59c809f31c9f08b545",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 2847,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r5_paid_boundary",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A102R5_SERVER_ACCOUNT_ENTITLEMENT_NO_BROWSER_BEARER_PERSISTENCE",
+      "passed": true,
+      "stdoutSha256": "978a533b7081af106c71785568d1f5ba0ccd9f532fa5c601474cf5c8b9c33bdd",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 812,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a74_test",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "3e38315452c8a981df6040adca353fdf9f5aba18397fc1827ec56581c4c320f1",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6967,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a74_verifier",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "f678841876d1ec9b947e86c61a4c693e9380f3ec6bd2f3a013dd7113d6e21509",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 7168,
+      "stderrBytes": 0
+    },
+    {
+      "id": "vlm_verify_preflight",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "537e93419e3187f07d9e821dc148c2d278ab518f74bf53995b860b8320d57596",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 94,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_cookie",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "08d99366e27b27336eaf48a080964d5789937a918fe586afce068cc4c4cd6a90",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 6488,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a73_verifier",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "97c7fd174c7a0f3171c078855a0433226186dfba66bf2ca0aecf7d38da8fbe87",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 7679,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a89_red_team",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_A89_LOCAL_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_NO_PROMOTION",
+      "passed": true,
+      "stdoutSha256": "8ffc2295d83e75033c4f2e34421767eb0c2d9b6365d3297ffa5f62caf878e5a7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 41989,
+      "stderrBytes": 0
+    },
+    {
+      "id": "api_body_stream",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "709b18274099992b30b3792faf345b1e17cfb0cb2ad884eadd6f10b2414685fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 526,
+      "stderrBytes": 0
+    },
+    {
+      "id": "malformed_json",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f99b9312649a8676121eb5ccc881f4373d75865fcc14cdb869a30d1dcd51c0d9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 118,
+      "stderrBytes": 0
+    },
+    {
+      "id": "mega4800",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "7823368831215cfc15ed0531dbf174081579ebe67ad55b9fc45892137d26ca1e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1662,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route_dispatch",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route_dispatch_tamper",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS",
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy_routes",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a59",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_STATIC_BUDGET_RECOVERY",
+      "passed": true,
+      "stdoutSha256": "ecdd99d32fe2171a8f6e6f1a9d955cf3bb0afdb15821f6062ddd6a232e65487e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 15777,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product_tiers",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_PRODUCT_TIER_CONTENT_CONTRACT",
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero_budget",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": "PASS_ZERO_BUDGET_FUNCTIONAL_ROADMAP",
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source_audit",
+      "classification": "PASS_LOCAL",
+      "exitCode": 0,
+      "observedStatus": null,
+      "passed": true,
+      "stdoutSha256": "5c614862c87974b281939f70355ed16afbd2212e998b7edf4aba31eb2f652d18",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0,
+      "metrics": {
+        "filesRead": 4973,
+        "bytesRead": 118563540,
+        "codeFiles": 3064,
+        "syntaxErrors": 0,
+        "localImports": 7359,
+        "missingLocalImports": 0,
+        "cssModuleReferences": 758,
+        "missingCssModuleClasses": 0
+      }
+    }
+  ],
+  "deferredFinalLineageVerifiers": [
+    {
+      "id": "a88r1_final_descendant_verifier",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    },
+    {
+      "id": "a89_final_descendant_verifier",
+      "requiredAfterDescendantFreeze": true,
+      "credit": false
+    }
+  ],
+  "environmentBlockers": [
+    {
+      "id": "exact_node_npm_project_dependencies",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Node 24.18.0 / npm 11.16.0 with genuine project node_modules",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "exact_playwright_chromium",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "required": "Chromium 148.0.7778.96 revision 1223",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "real_external_new_tab_referrer_opener_matrix",
+      "classification": "BLOCKED_EXTERNAL",
+      "required": "18 Chrome/Edge/Firefox desktop/mobile opener/referrer/redirect rows",
+      "available": false,
+      "credit": false
+    },
+    {
+      "id": "external_product_link_allowlist_provider_rights",
+      "classification": "BLOCKED_RIGHTS",
+      "required": "signed allowlist governance and commercial/provider rights",
+      "available": false,
+      "credit": false
+    }
+  ],
+  "keyDenominators": {
+    "a102r10ExternalNavigationChecks": 59,
+    "a102r9ClipboardChecks": 38,
+    "a102r8BrowserPrivacyChecks": 41,
+    "a102r7WalletPrivacyChecks": 43,
+    "a102r6PrivateStateChecks": 30,
+    "a102r5PaidBoundaryChecks": 26,
+    "a74TestChecks": 58,
+    "a74VerifierChecks": 72,
+    "a73Checks": 57,
+    "a73VerifierChecks": 73,
+    "a89Checks": 54,
+    "a89Cases": 192,
+    "a89MutationsKilled": 768,
+    "apiBodyChecks": 37,
+    "malformedJsonChecks": 112,
+    "mega4800Checks": 61,
+    "a59Checks": 77,
+    "routeDispatchChecks": 1480,
+    "routeDispatchTamperChecks": 7,
+    "routeRoutes": 160,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439
+  },
+  "sourceAudit": {
+    "filesRead": 4973,
+    "codeFiles": 3064,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "realEvidence": {
+    "a102ObservationRuns": 0,
+    "browserRows": 0,
+    "externalNewTabRows": 0,
+    "providerRights": 0,
+    "legalDpo": 0,
+    "stagingStages": 0,
+    "customerCohorts": 0,
+    "independentAssurance": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  }
+}

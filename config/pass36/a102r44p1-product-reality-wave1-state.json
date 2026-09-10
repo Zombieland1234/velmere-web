@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p1.product-reality-wave1-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P1_ACTION_REQUIRED_PRODUCT_REALITY_WAVE1_NON_MUTATING_ADAPTER_PDF_VISUAL_FREEZE_AND_PAID_GATE_PATCH_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44_ACTION_REQUIRED_FINAL_UI_POLISH_EXACT_BUILD_BROWSER_AND_CLEAN_HANDOFF_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-02T06:15:00.000Z",
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "environment": {
+    "observedNode": "22.16.0",
+    "observedNpm": "10.9.2",
+    "requiredNode": "24.18.0",
+    "requiredNpm": "11.16.0",
+    "platform": "linux-x64",
+    "exactWindowsExecuted": false,
+    "browserExecuted": false,
+    "buildExecuted": false,
+    "dependencyInstall": "BLOCKED_INTERNAL_PACKAGE_GATEWAY_MISSING_ZUSTAND_4_5_7",
+    "truthBoundary": "All evidence in this wave is local/source-contained or synthetic. No exact Windows, staging, LIVE, real-provider, real-customer or production-sale credit is granted."
+  },
+  "implemented": [
+    "Pass17/18/19 adapter verifiers are read-only by default; writes require explicit --write.",
+    "Checkout readiness test now validates the current two-argument Stripe create call and server idempotency binding.",
+    "Current visual-freeze baseline formally supersedes only the generic current command while preserving the historical pass14 baseline.",
+    "Clean-source audit treats custom .next-* generated route types as build-generated, while arbitrary missing imports remain blocking.",
+    "JSON-LD serialization escapes ampersand, less-than, greater-than and Unicode line separators before dangerouslySetInnerHTML.",
+    "Python/_cache/last_welcome.txt runtime residue removed from clean SOURCE."
+  ],
+  "tests": {
+    "wave1Patch": {
+      "schemaVersion": "velmere.pass36.a102r44.product-reality-wave1-patch-test.v1",
+      "status": "PASS_PRODUCT_REALITY_WAVE1_PATCH_LOCAL_ONLY",
+      "passed": 22,
+      "failed": 0,
+      "sourceMutationPrevented": true,
+      "live": false,
+      "saleEnabled": false,
+      "productionApproved": false,
+      "worldClassProven": false
+    },
+    "currentVisualFreeze": {
+      "schemaVersion": "velmere.pass36.a102r44p1.current-visual-freeze-verification.v1",
+      "status": "PASS_CURRENT_VISUAL_FREEZE_LOCAL_ONLY",
+      "baselinePath": "config/pass36/a102r44p1-current-visual-freeze-baseline.json",
+      "protectedFileCount": 12,
+      "passed": 20,
+      "failed": 0,
+      "migration": {
+        "oldDenominator": 12,
+        "newDenominator": 12,
+        "retainedPathCount": 1,
+        "changedPathCount": 11,
+        "removedPathCount": 0,
+        "addedPathCount": 0
+      },
+      "globalDecision": "NO_GO",
+      "live": false,
+      "saleEnabled": false
+    },
+    "productCell": {
+      "exitCode": 0,
+      "summary": "PASS35 product-cell catalog: 30 candidate cells and all 6 legacy IDs are registered\nPASS35 binding: exact surface/tier/cell/SKU mismatches fail closed\nPASS35 checkout: no readiness means no Stripe client and no charge"
+    },
+    "fullTreeAudit": {
+      "schemaVersion": "velmere.pass13.full-tree-audit.v1",
+      "generatedAt": "2026-08-02T05:33:10.010Z",
+      "truthBoundary": "Every regular file in the extracted tree except the two self-referential generated audit outputs was byte-read and SHA-256 hashed. Textual first-party files were line-counted and scanned; TypeScript-family files were syntax-transpiled with the lockfile-bound TypeScript. This is not full semantic type-check, lint, framework build, browser, staging or LIVE evidence.",
+      "runtime": {
+        "node": "v22.16.0",
+        "platform": "linux",
+        "arch": "x64"
+      },
+      "coverage": {
+        "regularFilesRead": 6220,
+        "selfReferentialOutputsExcluded": [
+          "artifacts/pass13/PASS13_AUDIT_WAVE1_FINAL.json",
+          "artifacts/pass13/PASS13_FULL_TREE_MANIFEST.json"
+        ],
+        "totalBytesRead": 232977622,
+        "textFilesRead": 5478,
+        "totalTextLinesRead": 2725140,
+        "firstPartyAnalyzedBytes": 93661892,
+        "typescriptFamilyFilesSyntaxChecked": 1976
+      },
+      "inventory": {
+        "byCategory": {
+          "first_party_source_or_config": 3417,
+          "evidence": 610,
+          "vendored_dependency_or_cas": 204,
+          "database": 193,
+          "public_asset": 226,
+          "test_or_control_plane": 1570
+        },
+        "byExtension": {
+          ".json": 1199,
+          "<none>": 7,
+          ".yml": 5,
+          ".tsx": 207,
+          ".ts": 1769,
+          ".css": 26,
+          ".svg": 197,
+          ".pdf": 600,
+          ".md": 110,
+          ".gz": 7,
+          ".pem": 8,
+          ".tgz": 106,
+          ".sql": 196,
+          ".example": 1,
+          ".mjs": 1464,
+          ".tsv": 3,
+          ".py": 47,
+          ".csv": 6,
+          ".jsonl": 5,
+          ".txt": 113,
+          ".sol": 56,
+          ".log": 1,
+          ".toml": 2,
+          ".js": 1,
+          ".woff2": 8,
+          ".ttf": 1,
+          ".jpg": 6,
+          ".png": 7,
+          ".webp": 5,
+          ".cjs": 8,
+          ".cmd": 44,
+          ".ps1": 5
+        },
+        "exactDuplicateGroupCount": 6,
+        "giantFileCount": 148
+      },
+      "findings": {
+        "syntaxErrorFileCount": 0,
+        "unresolvedLocalImportCount": 0,
+        "optionalFallbackImportCount": 1,
+        "undeclaredPackageImportCount": 0,
+        "todoMarkerCount": 53,
+        "secretCandidateCount": 1,
+        "dangerousPatternFileCount": 18
+      },
+      "syntaxErrors": [],
+      "unresolvedLocalImports": [],
+      "optionalFallbackImports": [
+        {
+          "path": "next-env.d.ts",
+          "specifier": "./.next-pass25-webpack/types/routes.d.ts",
+          "reason": "next_build_generated"
+        }
+      ],
+      "undeclaredPackageImports": [],
+      "todoLocations": [
+        {
+          "path": "config/pass23/merchant-legal-intake-schema.json",
+          "line": 15,
+          "preview": "\"forbiddenPlaceholderRegex\": \"(?:^|\\\\b)(?:tbd|todo|unknown|example|placeholder|to be confirmed|do uzupełnienia|do potwierdzenia|unbekannt|noch zu bestätigen|n/?a)(?:\\\\b|$)\","
+        },
+        {
+          "path": "data/real-markets-customer-catalog.json",
+          "line": 1,
+          "preview": "{\"schemaVersion\":\"real_markets_customer_catalog_v4\",\"sourceSha256\":\"ee41769afc88f23216aa98999d34a2b8a7f863d8e1764b7efc4c90a5922d91eb\",\"normalization\":{\"policy\":\"one_customer_row_pe"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 96,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 97,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 119,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 120,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 142,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 143,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 165,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 166,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 188,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 189,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 211,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 212,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 234,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 235,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 257,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 258,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 280,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 281,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 303,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 304,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 326,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 327,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 349,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 350,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 372,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 373,
+          "preview": "\"FIXME\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 395,
+          "preview": "\"TODO\": 0,"
+        },
+        {
+          "path": "lib/market-integrity/semantic-audit-batch-rebalance.ts",
+          "line": 396,
+          "preview": "\"FIXME\": 0,"
+        }
+      ],
+      "secretCandidates": [
+        {
+          "kind": "stripe_live_secret",
+          "path": "scripts/pass36/test-a63-staging-program-orchestrator.mjs"
+        }
+      ],
+      "dangerousLocations": [
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "app/[locale]/intelligence/page.tsx"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass11/audit-full-tree.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass12/audit-full-tree.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass12/test-routing-single-dom-contract.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass13/audit-full-tree.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass14/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass16/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass17/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass18/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass19/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass20/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass21/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass22/audit-clean-source.mjs"
+        },
+        {
+          "kind": "dangerously_set_inner_html",
+          "path": "scripts/pass23/audit-clean-source.mjs"
+        },
+        {
+          "kind": "new_function",
+          "path": "scripts/pass4826/test-binance-fallback-contract.cjs"
+        },
+        {
+          "kind": "new_function",
+          "path": "scripts/pass4826/test-durable-market-snapshot.cjs"
+        },
+        {
+          "kind": "child_process_exec",
+          "path": "scripts/smoke-owner-production-blockers.mjs"
+        },
+        {
+          "kind": "child_process_exec",
+          "path": "scripts/velmere-production-hard-gate.mjs"
+        }
+      ],
+      "giantFiles": [
+        {
+          "path": "config/pass36/a59-css-compaction-receipt.json",
+          "lines": 46710,
+          "bytes": 1976675
+        },
+        {
+          "path": "config/pass35/a44-visual-master-engine-binding.json",
+          "lines": 35347,
+          "bytes": 1398074
+        },
+        {
+          "path": "config/release-input-merkle.json",
+          "lines": 34304,
+          "bytes": 1573795
+        },
+        {
+          "path": "config/pass35/source-lifecycle-classification.json",
+          "lines": 33762,
+          "bytes": 1218131
+        },
+        {
+          "path": "_velmere/PASS36_A102R44_SOURCE_ONLY_MANIFEST.json",
+          "lines": 33643,
+          "bytes": 1192185
+        },
+        {
+          "path": "config/pass36/a102r42-parent-source-package-manifest.json",
+          "lines": 33283,
+          "bytes": 1179119
+        },
+        {
+          "path": "config/pass36/a102r41-parent-source-package-manifest.json",
+          "lines": 32905,
+          "bytes": 1165081
+        },
+        {
+          "path": "config/pass36/a102r40-parent-source-package-manifest.json",
+          "lines": 32767,
+          "bytes": 1160141
+        },
+        {
+          "path": "config/pass36/a102r39-parent-source-package-manifest.json",
+          "lines": 32635,
+          "bytes": 1155426
+        },
+        {
+          "path": "config/pass36/a64-a44-control-metadata-anchor.json",
+          "lines": 29470,
+          "bytes": 996236
+        },
+        {
+          "path": "evaluation/pass16/worldclass-base-corpus.json",
+          "lines": 25793,
+          "bytes": 753193
+        },
+        {
+          "path": "evaluation/pass18/audit-lens-evidence-fixtures.json",
+          "lines": 23344,
+          "bytes": 1073770
+        },
+        {
+          "path": "config/pass35/a57-source-manifest.json",
+          "lines": 22928,
+          "bytes": 852624
+        },
+        {
+          "path": "config/pass4786-market-data-sanity-baseline.json",
+          "lines": 22862,
+          "bytes": 450603
+        },
+        {
+          "path": "config/pass35/a48-source-manifest.json",
+          "lines": 21296,
+          "bytes": 792473
+        },
+        {
+          "path": "config/pass35/a47-source-manifest.json",
+          "lines": 21246,
+          "bytes": 790726
+        },
+        {
+          "path": "config/pass35/a46-source-manifest.json",
+          "lines": 21171,
+          "bytes": 788059
+        },
+        {
+          "path": "config/pass35/a45-source-manifest.json",
+          "lines": 21113,
+          "bytes": 786222
+        },
+        {
+          "path": "config/pass35/a56-source-manifest.json",
+          "lines": 21098,
+          "bytes": 784464
+        },
+        {
+          "path": "config/pass35/a55-source-manifest.json",
+          "lines": 21048,
+          "bytes": 782580
+        },
+        {
+          "path": "config/pass35/a54-source-manifest.json",
+          "lines": 20998,
+          "bytes": 780685
+        },
+        {
+          "path": "config/pass35/a53-source-manifest.json",
+          "lines": 20929,
+          "bytes": 778177
+        },
+        {
+          "path": "config/pass35/a52-source-manifest.json",
+          "lines": 20884,
+          "bytes": 776495
+        },
+        {
+          "path": "config/pass35/a51-source-manifest.json",
+          "lines": 20852,
+          "bytes": 775047
+        },
+        {
+          "path": "config/pass35/a50-source-manifest.json",
+          "lines": 20802,
+          "bytes": 773185
+        },
+        {
+          "path": "config/pass35/a49-source-manifest.json",
+          "lines": 20752,
+          "bytes": 771368
+        },
+        {
+          "path": "config/pass20/package-payload-manifest.json",
+          "lines": 20145,
+          "bytes": 794488
+        },
+        {
+          "path": "config/pass19/package-payload-manifest.json",
+          "lines": 20064,
+          "bytes": 795573
+        },
+        {
+          "path": "config/pass18/package-payload-manifest.json",
+          "lines": 19966,
+          "bytes": 791988
+        },
+        {
+          "path": "config/pass17/package-payload-manifest.json",
+          "lines": 19873,
+          "bytes": 788600
+        }
+      ],
+      "largestDuplicateGroups": [
+        {
+          "sha256": "83710d943775b6e62bab5ed906c5d41e7a86b243f5756e00fbd60eafb39d7c2e",
+          "count": 4,
+          "paths": [
+            "app/[locale]/market-integrity/cross-asset/loading.tsx",
+            "app/[locale]/market-integrity/loading.tsx",
+            "app/[locale]/market-integrity/shield-map/loading.tsx",
+            "app/[locale]/search/loading.tsx"
+          ]
+        },
+        {
+          "sha256": "25feb117c04ca849420694657f7727617a2a2d6b7f1de1c0860c9e42a60c545d",
+          "count": 3,
+          "paths": [
+            "config/pass4781-visual-layout-freeze.json",
+            "config/pass4782-visual-layout-freeze.json",
+            "config/pass4783-visual-layout-freeze.json"
+          ]
+        },
+        {
+          "sha256": "55075b5ec4e8b31936cbbc282b8829116d1fd48f2f2f1856dee592a6650700ce",
+          "count": 2,
+          "paths": [
+            ".node-version",
+            ".nvmrc"
+          ]
+        },
+        {
+          "sha256": "6a93f463b3fd018eb45afb5355002c279967821692e72047d6f797497d213b2e",
+          "count": 2,
+          "paths": [
+            "config/pass4747-visual-freeze.json",
+            "config/pass4748-visual-freeze.json"
+          ]
+        },
+        {
+          "sha256": "e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab",
+          "count": 2,
+          "paths": [
+            "config/supply-chain-install-script-archive-cas-pass4825/e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab.tgz",
+            "config/supply-chain-license-archive-cas-pass4825/e04574b405c225bd2cbca4e336079125aa710dca05a397ab9b6cc08aee2d22ab.tgz"
+          ]
+        },
+        {
+          "sha256": "eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5",
+          "count": 2,
+          "paths": [
+            "config/supply-chain-install-script-archive-cas-pass4825/eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5.tgz",
+            "config/supply-chain-license-archive-cas-pass4825/eb8ef756f8299d16d5c8b35678606d715ba29923f500db7b37c181310eed40a5.tgz"
+          ]
+        }
+      ],
+      "gates": {
+        "allFilesByteRead": true,
+        "typescriptSyntax": "PASS",
+        "localImportResolution": "PASS",
+        "packageImportDeclaration": "PASS",
+        "secretScan": "REVIEW"
+      }
+    },
+    "routeDispatch": {
+      "groups": 5,
+      "routesPreserved": 160,
+      "publicPathsUnique": 160,
+      "passed": 1480,
+      "failed": 0,
+      "netNextEntrypointReduction": 155,
+      "routeAstRegistryFiles": 254,
+      "routeAstRegistryExactCredit": true
+    },
+    "lazyRoutes": {
+      "routes": 16,
+      "passed": 176,
+      "failed": 0,
+      "eagerBytesBefore": 23306289,
+      "eagerBytesAfter": 57853,
+      "eagerByteReduction": 23248436,
+      "routeAstRegistryFiles": 254,
+      "routeAstRegistryExactCredit": true
+    },
+    "a82FixtureHarness": {
+      "schemaVersion": "velmere.pass36.a82.audit-real-contract-matrix-test-receipt.v1",
+      "revisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+      "generatedAt": "2026-07-27T14:00:00.000Z",
+      "status": "PASS_A82_LOCAL_REAL_CONTRACT_INTAKE_AND_FIXTURE_HARNESS_ONLY",
+      "summary": {
+        "passed": 26,
+        "failed": 0
+      },
+      "fixtureDenominators": {
+        "cases": 50,
+        "tierOutputs": 150,
+        "toolReceipts": 200,
+        "sourceBytecodePairs": 50,
+        "blindLabelBundles": 50,
+        "semanticMutations": 1000,
+        "mutationKilled": 1000
+      },
+      "realIntake": {
+        "requiredCases": 50,
+        "assignedRealIdentities": 10,
+        "evidenceReady": 0,
+        "rightsApproved": 0,
+        "officialToolReceipts": 0,
+        "realTierOutputs": 0,
+        "decision": "BLOCKED_REAL_CASE_EVIDENCE",
+        "classCounts": {
+          "KNOWN_VULNERABILITY": 10,
+          "REMEDIATED_PAIR": 10,
+          "BENIGN_CONTROL": 10,
+          "PROXY_UPGRADE_GOVERNANCE": 10,
+          "ECONOMIC_BUSINESS_LOGIC": 10
+        }
+      },
+      "runtimeIntegritySha256": "61ff70d85c8340d53cff23b474fd270c95d5f6d0159fd120369166c2f0f3402f",
+      "realCasesFullyVerified": 0,
+      "rightsApprovedRealCases": 0,
+      "officialToolExecutions": 0,
+      "independentRealLabels": 0,
+      "customerAccuracyProven": false,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A82 locally implements and adversarially verifies a fail-closed real-contract intake, official-tool evidence binding, blind-label, source-bytecode, tier-value and FP/FN ledger contract. The local run uses generated fixture cases only. The repository contains ten historical public identity seeds but zero complete rights-approved real cases, zero official tool executions, zero independent labels and zero paid-ready outputs."
+    },
+    "a82CanonicalVerifier": {
+      "schemaVersion": "velmere.pass36.a82.audit-real-contract-matrix-verification.v1",
+      "revisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+      "status": "FAIL_A82_AUDIT_REAL_CONTRACT_MATRIX",
+      "passed": 20,
+      "failed": 2,
+      "fixtureDenominators": {
+        "cases": 50,
+        "tierOutputs": 150,
+        "toolReceipts": 200,
+        "sourceBytecodePairs": 50,
+        "blindLabelBundles": 50,
+        "semanticMutations": 1000,
+        "mutationKilled": 1000
+      },
+      "realIntake": {
+        "requiredCases": 50,
+        "assignedRealIdentities": 10,
+        "evidenceReady": 0,
+        "rightsApproved": 0,
+        "officialToolReceipts": 0,
+        "realTierOutputs": 0,
+        "decision": "BLOCKED_REAL_CASE_EVIDENCE",
+        "classCounts": {
+          "KNOWN_VULNERABILITY": 10,
+          "REMEDIATED_PAIR": 10,
+          "BENIGN_CONTROL": 10,
+          "PROXY_UPGRADE_GOVERNANCE": 10,
+          "ECONOMIC_BUSINESS_LOGIC": 10
+        }
+      },
+      "realCasesFullyVerified": 0,
+      "officialToolExecutions": 0,
+      "independentRealLabels": 0,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A82 locally implements and adversarially verifies a fail-closed real-contract intake, official-tool evidence binding, blind-label, source-bytecode, tier-value and FP/FN ledger contract. The local run uses generated fixture cases only. The repository contains ten historical public identity seeds but zero complete rights-approved real cases, zero official tool executions, zero independent labels and zero paid-ready outputs."
+    },
+    "a83SyntheticPdfMatrix": {
+      "schemaVersion": "velmere.pass36.a83.browser-lens-pdf-real-packet-test-receipt.v1",
+      "revisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+      "generatedAt": "2026-07-27T15:30:00.000Z",
+      "status": "PASS_A83_LOCAL_SYNTHETIC_PHYSICAL_PDF_MATRIX_ONLY",
+      "summary": {
+        "passed": 22,
+        "failed": 0
+      },
+      "fixtureDenominators": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      },
+      "manifestIntegrityDigest": "7c533525ad2bebae7afaa71c47d3d65590523ed70705e5e2c9409da257f7e354",
+      "realIntake": {
+        "requiredCases": 50,
+        "packetBundles": 0,
+        "rightsApproved": 0,
+        "freshnessVerified": 0,
+        "browserEvidence": 0,
+        "secureDeliveryEvidence": 0,
+        "accessibilityEvidence": 0,
+        "comprehensionLabels": 0,
+        "tierOutputs": 0,
+        "realPacketReady": 0,
+        "decision": "BLOCKED_REAL_PACKET_EVIDENCE"
+      },
+      "realPacketsVerified": 0,
+      "browserRuns": 0,
+      "secureDeliveries": 0,
+      "externalAccessibilityValidations": 0,
+      "customerComprehensionLabels": 0,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A83 locally verifies a deterministic synthetic cross-locale Browser/Lens/PDF corpus and fail-closed parity contract. It does not prove current provider data, rights, production browser delivery, account-bound access, external accessibility, customer comprehension, willingness-to-pay, staging, LIVE or sale."
+    },
+    "a83CanonicalVerifier": {
+      "schemaVersion": "velmere.pass36.a83.browser-lens-pdf-real-packet-verification.v2",
+      "revisionId": "VELMERE_PASS36_A83R0_BROWSER_LENS_PDF_REAL_PACKET_MATRIX_AND_SECURE_DELIVERY_PARITY",
+      "status": "FAIL_A83_BROWSER_LENS_PDF_MATRIX",
+      "evidenceMode": "SOURCE_SUMMARY_ONLY",
+      "passed": 27,
+      "failed": 4,
+      "fixtureDenominators": {
+        "cases": 50,
+        "physicalPdfs": 450,
+        "renderedPages": 2100,
+        "channelProjections": 2700,
+        "semanticMutations": 8100,
+        "mutationKilled": 8100,
+        "byLocale": {
+          "pl": 150,
+          "en": 150,
+          "de": 150
+        },
+        "byTier": {
+          "basic": 150,
+          "pro": 150,
+          "advanced": 150
+        }
+      },
+      "realIntake": {
+        "requiredCases": 50,
+        "packetBundles": 0,
+        "rightsApproved": 0,
+        "freshnessVerified": 0,
+        "browserEvidence": 0,
+        "secureDeliveryEvidence": 0,
+        "accessibilityEvidence": 0,
+        "comprehensionLabels": 0,
+        "tierOutputs": 0,
+        "realPacketReady": 0,
+        "decision": "BLOCKED_REAL_PACKET_EVIDENCE"
+      },
+      "rasterSummary": {
+        "pdfCount": 450,
+        "renderedPageCount": 2100,
+        "blankPages": 0,
+        "pagesTouchingRasterEdge": 0
+      },
+      "sourceSummaryIntegrityDigest": "b8fe6091916c3a489766c5c58f30fa40b0ce2aedaf0b8a781626ff516b90050e",
+      "fullEvidenceHashes": {
+        "corpusManifestSha256": "7626b8ec1024c1c3aac02245299ffd74497305e4aa3c8d46cb2430324fecca45",
+        "rasterReceiptSha256": "898e21bfc7c1024fbd2b046339f6fa0f6357a16ff54a2a639aff0b1a26380a02",
+        "runtimeSha256": "0f5c85fe6396c8ea0a390289fa02d81b53692d562626b1af788f632bd44ca05e"
+      },
+      "realPacketsVerified": 0,
+      "browserRuns": 0,
+      "secureDeliveries": 0,
+      "customerComprehensionLabels": 0,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A83 locally verifies a deterministic synthetic cross-locale Browser/Lens/PDF corpus and fail-closed parity contract. It does not prove current provider data, rights, production browser delivery, account-bound access, external accessibility, customer comprehension, willingness-to-pay, staging, LIVE or sale."
+    },
+    "a84ShieldMatrix": {
+      "schemaVersion": "velmere.pass36.a84.shield-full-catalog-tier-matrix-test-receipt.v1",
+      "revisionId": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER",
+      "generatedAt": "2026-07-27T18:00:00.000Z",
+      "status": "PASS_A84_LOCAL_INJECTED_FULL_CATALOG_MATRIX_ONLY",
+      "summary": {
+        "passed": 32,
+        "failed": 0
+      },
+      "fixtureDenominators": {
+        "activeAssets": 318,
+        "activeListings": 1013,
+        "fieldIds": 7,
+        "observationTargets": 7091,
+        "observationRows": 7091,
+        "tierPackets": 954,
+        "popupRows": 3816,
+        "semanticMutations": 11448,
+        "mutationKilled": 11448
+      },
+      "fixtureCatalog": {
+        "executionMode": "INJECTED_FIXTURE",
+        "providers": 4,
+        "successfulProviders": 4,
+        "activeListings": 1013,
+        "activeAssets": 318,
+        "excludedListings": 27,
+        "catalogIntegritySha256": "28ce842b9903df31d8355fe6a4e68220b2c511b5f8fbd7e8d3827f1157d3ef44"
+      },
+      "stateCounts": {
+        "AVAILABLE": 6122,
+        "STALE": 379,
+        "CONFLICTED": 178,
+        "FAILED": 205,
+        "RATE_LIMITED": 207,
+        "UNAVAILABLE": 0
+      },
+      "readiness": {
+        "basic": {
+          "functionalReadyOffline": 241,
+          "unavailable": 77,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 155,
+          "unavailable": 163,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 126,
+          "unavailable": 192,
+          "productionEligible": 0
+        }
+      },
+      "runtimeIntegritySha256": "5dbc1775930da34bc55306b065634b3deadd40c1e4c9fafead22537154983781",
+      "realIntake": {
+        "requiredProviders": 4,
+        "requiredFieldFamilies": 7,
+        "requiredAssetDenominator": 318,
+        "activeAssetDenominator": 318,
+        "denominatorValid": true,
+        "providerCatalogBundles": 0,
+        "fieldSnapshotBundles": 0,
+        "requiredFieldSnapshotBundles": 2226,
+        "rightsApprovedAssets": 0,
+        "productionBrowserAssets": 0,
+        "customerValueLabeledAssets": 0,
+        "realTierOutputs": 0,
+        "evidenceCompleteAssets": 0,
+        "unavailableOrBlockedAssets": 318,
+        "decision": "BLOCKED_CURRENT_FULL_CATALOG_EVIDENCE",
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      },
+      "realFullCatalogSnapshotsVerified": 0,
+      "rightsApprovedAssets": 0,
+      "productionBrowserAssets": 0,
+      "customerValueLabeledAssets": 0,
+      "exactA80CandidateBound": false,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A84 proves a deterministic injected full-catalog Shield denominator, terminal field accounting, tier monotonicity, popup evidence parity and semantic mutation resistance. It does not prove current public-network snapshots, provider rights, exact A80, production browser behavior, customer value, staging, LIVE or sale."
+    },
+    "a84ShieldVerifier": {
+      "schemaVersion": "velmere.pass36.a84.shield-full-catalog-tier-matrix-verification.v1",
+      "revisionId": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER",
+      "status": "PASS_A84_LOCAL_SHIELD_FULL_CATALOG_VERIFICATION_NO_PROMOTION",
+      "passed": 18,
+      "failed": 0,
+      "fixtureDenominators": {
+        "activeAssets": 318,
+        "activeListings": 1013,
+        "fieldIds": 7,
+        "observationTargets": 7091,
+        "observationRows": 7091,
+        "tierPackets": 954,
+        "popupRows": 3816,
+        "semanticMutations": 11448,
+        "mutationKilled": 11448
+      },
+      "readiness": {
+        "basic": {
+          "functionalReadyOffline": 241,
+          "unavailable": 77,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 155,
+          "unavailable": 163,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 126,
+          "unavailable": 192,
+          "productionEligible": 0
+        }
+      },
+      "realIntake": {
+        "requiredProviders": 4,
+        "requiredFieldFamilies": 7,
+        "requiredAssetDenominator": 318,
+        "activeAssetDenominator": 318,
+        "denominatorValid": true,
+        "providerCatalogBundles": 0,
+        "fieldSnapshotBundles": 0,
+        "requiredFieldSnapshotBundles": 2226,
+        "rightsApprovedAssets": 0,
+        "productionBrowserAssets": 0,
+        "customerValueLabeledAssets": 0,
+        "realTierOutputs": 0,
+        "evidenceCompleteAssets": 0,
+        "unavailableOrBlockedAssets": 318,
+        "decision": "BLOCKED_CURRENT_FULL_CATALOG_EVIDENCE",
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      },
+      "exactA80CandidateBound": false,
+      "currentPublicNetworkExecuted": false,
+      "rightsApprovedAssets": 0,
+      "productionBrowserExecuted": false,
+      "customerValueProven": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A84 proves a deterministic injected full-catalog Shield denominator, terminal field accounting, tier monotonicity, popup evidence parity and semantic mutation resistance. It does not prove current public-network snapshots, provider rights, exact A80, production browser behavior, customer value, staging, LIVE or sale."
+    },
+    "a85CurrentByteDiagnostic": {
+      "ok": true,
+      "denominators": {
+        "activeAssets": 318,
+        "tierPackets": 954,
+        "surfaceProjections": 1908,
+        "terminalTimeframeRows": 5724,
+        "investigatorLaneRows": 5724,
+        "semanticMutations": 15264,
+        "mutationKilled": 15264
+      },
+      "pagination": {
+        "pagesFetched": 2,
+        "pageSizes": [
+          250,
+          68
+        ],
+        "complete": true,
+        "repeatedPageRejected": true,
+        "laterFailureExplicitPartial": true
+      },
+      "readiness": {
+        "basic": {
+          "shieldProFunctionalReadyOffline": 241,
+          "shieldMapFunctionalReadyOffline": 241,
+          "paidDelivered": 0
+        },
+        "pro": {
+          "shieldProFunctionalReadyOffline": 111,
+          "shieldMapFunctionalReadyOffline": 64,
+          "paidDelivered": 0
+        },
+        "advanced": {
+          "shieldProFunctionalReadyOffline": 93,
+          "shieldMapFunctionalReadyOffline": 29,
+          "paidDelivered": 0
+        }
+      },
+      "realFullDepthCasesVerified": 0,
+      "paidGateEligible": false,
+      "saleEnabled": false,
+      "integrity": "5dcd4d0aaaac440e8d7724d0d4b1ce95dc994947bfcde284b8a7febcdaf944d1"
+    },
+    "a86CurrentByteDiagnostic": {
+      "ok": true,
+      "catalog": {
+        "catalogRows": 553,
+        "syntheticIndexRows": 30,
+        "totalInstruments": 583,
+        "classCounts": {
+          "stock": 263,
+          "etf": 86,
+          "real_estate": 53,
+          "fx": 80,
+          "commodity": 68,
+          "index": 30,
+          "crypto": 3
+        },
+        "staticReferenceRows": 553,
+        "liveDataRows": 0,
+        "rightsApprovedRows": 0
+      },
+      "denominators": {
+        "instruments": 583,
+        "fieldRows": 5830,
+        "tierPackets": 1749,
+        "channelProjections": 6996,
+        "semanticMutations": 31482,
+        "mutationKilled": 31482
+      },
+      "readiness": {
+        "basic": {
+          "functionalReadyOffline": 506,
+          "evidenceWithheld": 77,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 359,
+          "evidenceWithheld": 224,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 277,
+          "evidenceWithheld": 306,
+          "paidDelivered": 0,
+          "productionEligible": 0
+        }
+      },
+      "httpStatusCounts": {
+        "200": 506,
+        "403": 636,
+        "424": 607
+      },
+      "paidGateEligible": false,
+      "saleEnabled": false,
+      "integrity": "c63ab8cd9d5e350ba6f2618b919a8f5f243af84d1b719dcfa27b2acb39fba107"
+    },
+    "a87MarketImpactWhale": {
+      "schemaVersion": "velmere.pass36.a87.market-impact-whale-watch-test-receipt.v1",
+      "revisionId": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER",
+      "generatedAt": "2026-07-27T21:30:00.000Z",
+      "status": "PASS_A87_LOCAL_COMMON_DENOMINATOR_NO_PROMOTION",
+      "summary": {
+        "passed": 31,
+        "failed": 0
+      },
+      "denominators": {
+        "activeAssets": 318,
+        "surfaces": 2,
+        "tierPackets": 1908,
+        "channelProjections": 7632,
+        "marketImpactVenueSnapshots": 1042,
+        "marketImpactReplayPairs": 308,
+        "whaleHolderRows": 4600,
+        "whaleTransferRows": 7200,
+        "walletLabelArtifacts": 1200,
+        "semanticMutations": 34344,
+        "mutationKilled": 34344
+      },
+      "readiness": {
+        "market_impact": {
+          "basic": {
+            "functionalReadyOffline": 307,
+            "unavailable": 11,
+            "productionEligible": 0
+          },
+          "pro": {
+            "functionalReadyOffline": 290,
+            "unavailable": 28,
+            "productionEligible": 0
+          },
+          "advanced": {
+            "functionalReadyOffline": 245,
+            "unavailable": 73,
+            "productionEligible": 0
+          }
+        },
+        "whale_watch": {
+          "basic": {
+            "functionalReadyOffline": 230,
+            "unavailable": 88,
+            "productionEligible": 0
+          },
+          "pro": {
+            "functionalReadyOffline": 150,
+            "unavailable": 168,
+            "productionEligible": 0
+          },
+          "advanced": {
+            "functionalReadyOffline": 85,
+            "unavailable": 233,
+            "productionEligible": 0
+          }
+        }
+      },
+      "runtimeIntegritySha256": "99599b88054d1ddd8c984454511daf9e21b8da75fd1cce1d107f50a84bdedb9c",
+      "realIntake": {
+        "decision": "BLOCKED_REAL_MARKET_IMPACT_WHALE_EVIDENCE",
+        "fullyVerified": 0,
+        "rightsApproved": 0,
+        "currentBooks": 0,
+        "realizedSlippage": 0,
+        "exactBindings": 0,
+        "currentHolderTransferLabels": 0,
+        "monitoringWindows": 0,
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      },
+      "exactA80CandidateBound": false,
+      "currentProviderEvidenceVerified": false,
+      "providerRightsApproved": false,
+      "productionBrowserExecuted": false,
+      "realizedExecutionValidated": false,
+      "continuousMonitoringExecuted": false,
+      "customerValueProven": false,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A87 proves a common 318-asset local fixture denominator, semantic tier gates, replay and holder/transfer/label bindings. It does not prove current public order books, realized fills, commercial data rights, continuous monitoring, customer value, LIVE or sale readiness."
+    },
+    "a87Verifier": {
+      "schemaVersion": "velmere.pass36.a87.verifier.v1",
+      "revisionId": "VELMERE_PASS36_A87R0_MARKET_IMPACT_WHALE_WATCH_COMMON_DENOMINATOR_AND_REAL_EVIDENCE_TRUTH_LEDGER",
+      "status": "PASS_A87_LOCAL_MATRIX_NO_PROMOTION",
+      "summary": {
+        "passed": 19,
+        "failed": 0
+      }
+    },
+    "a88BrainAngelRisk": {
+      "schemaVersion": "velmere.pass36.a88.brain-angel-risk-eval-test-receipt.v1",
+      "revisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+      "generatedAt": "2026-07-28T02:30:00.000Z",
+      "status": "PASS_A88_LOCAL_MULTILINGUAL_ADVERSARIAL_EVAL_NO_PROMOTION",
+      "summary": {
+        "passed": 61,
+        "failed": 0
+      },
+      "denominators": {
+        "cases": 360,
+        "locales": 3,
+        "families": 15,
+        "surfaces": 3,
+        "tiers": 3,
+        "channelProjections": 1800,
+        "semanticMutations": 5760,
+        "mutationKilled": 5760,
+        "mismatchCount": 0
+      },
+      "decisionCounts": {
+        "ALLOW_INFORMATIONAL_ANALYSIS": 24,
+        "ABSTAIN_MATERIAL_CONTRADICTION": 24,
+        "REJECT_SECURITY_POLICY": 144,
+        "ABSTAIN_INDIVIDUALIZED_ADVICE": 48,
+        "REJECT_EVASION_OR_CONCEALMENT": 24,
+        "REJECT_GUARANTEE_OR_CERTIFICATION": 24,
+        "REJECT_UNCALIBRATED_PROBABILITY": 24,
+        "ABSTAIN_MISSING_OR_STALE_EVIDENCE": 24,
+        "REJECT_INPUT_CONTRACT": 24
+      },
+      "runtimeIntegritySha256": "13f331abfa57ef0a3d754933b20147046f717776db3311eb4da0541ce21b453a",
+      "realIntake": {
+        "decision": "BLOCKED_REAL_BRAIN_ANGEL_RISK_EVAL",
+        "fullyVerified": 0,
+        "required": 300
+      },
+      "realModelExecutions": 0,
+      "rightsApprovedCases": 0,
+      "independentAdjudications": 0,
+      "customerDecisionUtilityLabels": 0,
+      "realCalibrationWindowsClosed": 0,
+      "exactA80CandidateBound": false,
+      "paidGateEligible": false,
+      "liveProven": false,
+      "saleEnabled": false,
+      "truthBoundary": "A88 proves a deterministic multilingual synthetic adversarial corpus, strict Brain/Angel request contracts, prompt/RAG/tool defenses, individualized-advice abstention, legal-advice boundaries and probability publication locks. It does not execute a real model/provider/customer evaluation, prove real calibration, legal correctness, customer utility, LIVE or sale readiness."
+    },
+    "a88Verifier": {
+      "schemaVersion": "velmere.pass36.a88.verifier.v1",
+      "revisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+      "status": "PASS_A88_LOCAL_MATRIX_NO_PROMOTION",
+      "summary": {
+        "passed": 20,
+        "failed": 0
+      }
+    },
+    "localPdfCorpus": {
+      "status": "PASS",
+      "receiptPath": "artifacts/pass35/local-product-quality/PASS35_LOCAL_PDF_QA_RECEIPT.json",
+      "totals": {
+        "pdfCount": 150,
+        "byTier": {
+          "Basic": 50,
+          "Pro": 50,
+          "Advanced": 50
+        },
+        "totalPages": 700
+      },
+      "assertions": {
+        "total": 3359,
+        "passed": 3359,
+        "failed": 0
+      }
+    }
+  },
+  "denominators": {
+    "auditFixtureCases": 50,
+    "auditFixtureTierOutputs": 150,
+    "simulatedOfficialToolReceipts": 200,
+    "realOfficialToolExecutions": 0,
+    "realAuditCases": 0,
+    "localPdfCases": 50,
+    "localPdfDocuments": 150,
+    "localPdfPages": 700,
+    "localPdfAssertions": 3359,
+    "realCustomerPdfCases": 0,
+    "a83SyntheticPhysicalPdfs": 450,
+    "a83RenderedPages": 2100,
+    "shieldAssets": 318,
+    "shieldRealEvidenceCompleteAssets": 0,
+    "shieldProAssets": 318,
+    "shieldProRealFullDepthCases": 0,
+    "realMarketsInstruments": 583,
+    "realMarketsLiveRows": 0,
+    "realMarketsRightsApprovedRows": 0,
+    "marketImpactWhaleAssets": 318,
+    "marketImpactWhaleRealEvidenceRows": 0,
+    "brainAngelRiskSyntheticCases": 360,
+    "brainAngelRiskRequiredRealCases": 300,
+    "brainAngelRiskRealCases": 0
+  },
+  "skuDecisions": {
+    "auditBasic": "PILOT_ONLY_FREE_INFORMATIONAL_PRESCREEN",
+    "auditPro": "NOT_FOR_SALE_PENDING_REAL_CASE_ACCURACY_AND_OFFICIAL_TOOL_EVIDENCE",
+    "auditAdvanced": "NOT_FOR_SALE_PENDING_REAL_CASE_ACCURACY_OFFICIAL_TOOLS_AND_CLAIM_SCOPE",
+    "pdfBasic": "LOCAL_SYNTHETIC_QA_PASS_NOT_CUSTOMER_PROVEN",
+    "pdfPro": "NOT_FOR_SALE_PENDING_REAL_PACKET_AND_CUSTOMER_VALUE",
+    "pdfAdvanced": "NOT_FOR_SALE_PENDING_REAL_PACKET_AND_CUSTOMER_VALUE",
+    "shield": "PILOT_ONLY_DATA_BLOCKED",
+    "shieldPro": "PILOT_ONLY_DATA_BLOCKED",
+    "realMarkets": "PILOT_ONLY_DATA_AND_RIGHTS_BLOCKED",
+    "marketImpact": "PILOT_ONLY_REAL_EVIDENCE_BLOCKED",
+    "whaleWatch": "PILOT_ONLY_REAL_EVIDENCE_BLOCKED",
+    "brainAngelRisk": "PILOT_ONLY_REAL_MODEL_EVAL_BLOCKED"
+  },
+  "blockers": [
+    {
+      "id": "ENV-EXACT-WINDOWS",
+      "reason": "This environment is Linux Node 22.16.0; exact Windows Node 24.18.0/npm 11.16.0/browser release evidence was not rerun."
+    },
+    {
+      "id": "DEPS-INSTALL",
+      "reason": "npm ci could not complete because the internal package gateway did not provide zustand@4.5.7."
+    },
+    {
+      "id": "A82-REAL",
+      "reason": "0/50 rights-approved real audit cases and 0/200 official tool executions."
+    },
+    {
+      "id": "A83-REAL",
+      "reason": "0/50 real customer packet/PDF cases and no browser secure-delivery/customer-comprehension evidence."
+    },
+    {
+      "id": "A84-A87-REAL",
+      "reason": "Shield/Shield Pro/Markets/Impact/Whale matrices are synthetic or static; real provider and rights evidence remains zero."
+    },
+    {
+      "id": "A88-REAL",
+      "reason": "0/300 unseen real Brain/Angel/Risk evaluations and no calibration/customer utility evidence."
+    }
+  ],
+  "remainingCheckpointEstimate": {
+    "localProductCheckpoints": 4,
+    "windowsRetestCheckpoints": 1,
+    "stagingAndExternalCheckpoints": "4-7"
+  }
+}

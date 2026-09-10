@@ -1,0 +1,948 @@
+{
+  "schemaVersion": "velmere.pass36.a79.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "programRange": {
+    "firstPass": 76,
+    "lastPlannedPass": 110,
+    "plannedPassCount": 35,
+    "repairBuffer": "A111-A116",
+    "remainingAfterA79": 31
+  },
+  "programRules": {
+    "roadmapIsLivingContract": true,
+    "newGapMustBeAddedImmediately": true,
+    "percentagesMustBeRecalculatedHonestly": true,
+    "noGapMayBeHiddenToPreservePercentage": true,
+    "onePassShouldCloseOneDeclaredDenominator": true,
+    "fixtureCannotPromoteStagingLiveOrSale": true,
+    "perSkuDecisionRequired": true,
+    "absoluteSecurityClaimForbidden": true,
+    "worldClassClaimRequiresIndependentExternalEvidence": true
+  },
+  "canonicalMetrics": {
+    "weightedPercent": 59.3,
+    "strictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "unchangedByA77": true
+  },
+  "waves": [
+    {
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "range": "A76-A80",
+      "goal": "One unambiguous release truth, exact local runtime/build/browser proof and a frozen local release candidate.",
+      "passes": [
+        "A76",
+        "A77",
+        "A78",
+        "A79",
+        "A80"
+      ]
+    },
+    {
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "range": "A81-A88",
+      "goal": "Prove cross-surface consistency and measurable incremental value for Basic, Pro and Advanced on shared real-case denominators.",
+      "passes": [
+        "A81",
+        "A82",
+        "A83",
+        "A84",
+        "A85",
+        "A86",
+        "A87",
+        "A88"
+      ]
+    },
+    {
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "range": "A89-A94",
+      "goal": "A frozen, cross-domain adversarial campaign with zero unresolved Critical/High findings.",
+      "passes": [
+        "A89",
+        "A90",
+        "A91",
+        "A92",
+        "A93",
+        "A94"
+      ]
+    },
+    {
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "range": "A95-A104",
+      "goal": "Execute the existing A47-A57 program on one frozen source and disposable staging without skipping a failed stage.",
+      "passes": [
+        "A95",
+        "A96",
+        "A97",
+        "A98",
+        "A99",
+        "A100",
+        "A101",
+        "A102",
+        "A103",
+        "A104"
+      ]
+    },
+    {
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "range": "A105-A110",
+      "goal": "Obtain signed rights, legal classification, independent assurance, customer value and per-SKU release decisions.",
+      "passes": [
+        "A105",
+        "A106",
+        "A107",
+        "A108",
+        "A109",
+        "A110"
+      ]
+    }
+  ],
+  "passes": [
+    {
+      "passNumber": 76,
+      "revisionPrefix": "A76",
+      "title": "Current revision, roadmap and regulatory perimeter truth authority",
+      "status": "DONE_LOCAL",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "One authority classifies current code, canonical metrics, acceptance, visual/engine parents and legacy compatibility pointers.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 77,
+      "revisionPrefix": "A77",
+      "title": "Historical artifact resolution or clean-root governance decision",
+      "status": "DONE_LOCAL_GOVERNANCE_PENDING",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Construct a hash-bound clean root preserving A61 as 0/2; staging admission remains blocked until dual-control Ed25519 governance or exact legacy recovery.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 78,
+      "revisionPrefix": "A78",
+      "title": "Exact runtime, lockfile dependency and Chromium bootstrap",
+      "status": "PARTIAL_BLOCKED_EXACT_ARTIFACTS",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Local admission is hardened and exact CAS coverage is measured 81/827; completion still requires physical Node 24.18.0/npm 11.16.0, 827/827 lock-bound tarballs, exact Playwright 1.60.0 Chromium, 30/30 current-root and VERIFIED A60.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 79,
+      "revisionPrefix": "A79",
+      "title": "Exact final-byte build and browser acceptance",
+      "status": "DONE_LOCAL_ADMISSION_HARDENING_BLOCKED_A78_EXACT_ARTIFACTS",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Local runner/evidence admission bypasses are closed; completion still requires VERIFIED A78 physical toolchain followed by real lint, typecheck, Webpack, Turbopack, owned next start, exact 56-row Playwright matrix and 29 hash-bound PNG screenshots.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 80,
+      "revisionPrefix": "A80",
+      "title": "Frozen local release candidate",
+      "status": "PLANNED",
+      "waveId": "W1_LOCAL_RELEASE_EXIT",
+      "requiredExitEvidence": "Repackage exact final bytes, close all local P0 and unresolved local P1, and issue deterministic release receipts.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 81,
+      "revisionPrefix": "A81",
+      "title": "Canonical mega-matrix orchestrator",
+      "status": "PLANNED",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "One case identity and fact set across API, UI, preview, PDF, Brain and Angel with no channel-added claims.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 82,
+      "revisionPrefix": "A82",
+      "title": "Audit Basic Pro Advanced real-contract matrix",
+      "status": "PLANNED_BLOCKED_REAL_CASES",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "At least 50 rights-approved contracts with known findings, remediated pairs, blind labels, official tools and false-positive/false-negative adjudication.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 83,
+      "revisionPrefix": "A83",
+      "title": "Browser Lens and PDF real-packet matrix",
+      "status": "PLANNED_BLOCKED_REAL_DATA",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "At least 150 real/current packet PDFs with PL/EN/DE preview parity, secure delivery, accessibility and comprehension checks.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 84,
+      "revisionPrefix": "A84",
+      "title": "Shield full-catalog tier matrix",
+      "status": "PLANNED_BLOCKED_REAL_DATA",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "Current full denominator for quotes, market cap, volume, klines, freshness, conflicts and all three tiers.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 85,
+      "revisionPrefix": "A85",
+      "title": "Shield Pro and Shield Map tier matrix",
+      "status": "PLANNED_BLOCKED_REAL_DATA",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "Terminal, order book, investigator, chain/address/entity binding, entitlement and performance proof.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 86,
+      "revisionPrefix": "A86",
+      "title": "Real Markets cross-asset tier matrix",
+      "status": "PLANNED_BLOCKED_REAL_DATA",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "Equities, ETF, REIT, FX, commodities, indices and crypto with calendars, actions, corrections and rights.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 87,
+      "revisionPrefix": "A87",
+      "title": "Market Impact and Whale Watch tier matrix",
+      "status": "PLANNED_BLOCKED_REAL_DATA",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "Current multi-venue books, realized-slippage comparisons, holder/transfer/label evidence and continuous revalidation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 88,
+      "revisionPrefix": "A88",
+      "title": "Brain Angel and Risk real evaluation",
+      "status": "PLANNED_BLOCKED_REAL_EVAL",
+      "waveId": "W2_BASIC_PRO_ADVANCED_MEGA_MATRIX",
+      "requiredExitEvidence": "At least 300 multilingual cases including contradictions, prompt/RAG/tool injection, abstention, entitlement and calibration.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 89,
+      "revisionPrefix": "A89",
+      "title": "Account auth tenant and privacy red team",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Sessions, recovery, OAuth, CSRF, tenant isolation, RLS, fixation, ATO and cross-device revocation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 90,
+      "revisionPrefix": "A90",
+      "title": "API network edge and cache red team",
+      "status": "PLANNED",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "SSRF, DNS rebinding, host/redirect/proxy spoofing, request smuggling, CORS, CSP, cache poisoning, replay and rate limits.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 91,
+      "revisionPrefix": "A91",
+      "title": "Files PDF upload storage and persistence red team",
+      "status": "PLANNED",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Multipart/polyglot/bomb, path/symlink/TOCTOU, private download, PDF active content and storage isolation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 92,
+      "revisionPrefix": "A92",
+      "title": "Payments entitlements and commerce red team",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Webhook replay/reorder, refunds, reconciliation, success URL bypass, SKU/tier mismatch and revocation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 93,
+      "revisionPrefix": "A93",
+      "title": "Supply chain secrets signing and operations red team",
+      "status": "PLANNED",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Dependencies, scripts, CI/CD, command execution, logs, KMS, secret rotation, signing, trust anchors and rollback.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 94,
+      "revisionPrefix": "A94",
+      "title": "Performance accessibility browser and chaos acceptance",
+      "status": "PLANNED_BLOCKED_EXACT_BROWSER",
+      "waveId": "W3_WORLD_CLASS_SECURITY_RELIABILITY",
+      "requiredExitEvidence": "Core Web Vitals, slow network, large catalogs, memory, cancellation, mobile, WCAG/EAA and provider outages.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 95,
+      "revisionPrefix": "A95",
+      "title": "Real A47 evidence intake",
+      "status": "PLANNED_BLOCKED_A79",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Import exact A45/A46 build/browser/data evidence.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 96,
+      "revisionPrefix": "A96",
+      "title": "Real A48 tenant isolation",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Two disposable accounts, 19 RLS controls, private artifacts and session revocation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 97,
+      "revisionPrefix": "A97",
+      "title": "Real A49 Stripe test refund and reconciliation",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Test-mode charge, full refund, webhook replay and entitlement reconciliation.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 98,
+      "revisionPrefix": "A98",
+      "title": "Real A50 email private storage and KMS",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Delivered transactional email, private bucket, cross-tenant denial, signed URL expiry and external wrap/unwrap.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 99,
+      "revisionPrefix": "A99",
+      "title": "Real A51 backup restore rollback and provider loss",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Disposable restore, digest/RLS parity, rollback/forward restore and provider failover.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 100,
+      "revisionPrefix": "A100",
+      "title": "Real A52 incident kill switch and customer communication",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Alert, ACK, safe mode, notices, playbook, recovery and closure.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 101,
+      "revisionPrefix": "A101",
+      "title": "Real A54 SLO alert ACK vendor exit and recovery",
+      "status": "PLANNED_BLOCKED_STAGING",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Fresh bounded SLO, independent observer/ACK, independent failure domain, revoked credential rejection and finally restore.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 102,
+      "revisionPrefix": "A102",
+      "title": "Real A55 independent legal and customer review intake",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "Signed security, data/provider, payments, operations and legal/customer reports.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 103,
+      "revisionPrefix": "A103",
+      "title": "Real A56 out-of-time repeated observation",
+      "status": "PLANNED_BLOCKED_TIME",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "At least three A54 runs over at least 72 hours with independent observers and provider diversity.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 104,
+      "revisionPrefix": "A104",
+      "title": "Real A57 controlled canary",
+      "status": "PLANNED_BLOCKED_PRECONDITIONS",
+      "waveId": "W4_REAL_STAGING_PROGRAM",
+      "requiredExitEvidence": "At most 25 participants, Stripe test only, stop rules, kill switch, rollback and support/refund/outcome/security telemetry.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 105,
+      "revisionPrefix": "A105",
+      "title": "Provider and dataset rights closure",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "21/21 signed field-level rights for display, export, PDF, derived data, AI/RAG, retention, corrections and exit.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 106,
+      "revisionPrefix": "A106",
+      "title": "EU Germany Poland legal DPO and financial perimeter closure",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Signed applicability for privacy, AI, crypto/financial, consumer, community, accessibility, tax, sanctions and liability.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 107,
+      "revisionPrefix": "A107",
+      "title": "Independent assurance closure",
+      "status": "PLANNED_BLOCKED_EXTERNAL",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Independent security, data/provider, payment, operations, accessibility/AI and audit-methodology retests on frozen bytes.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 108,
+      "revisionPrefix": "A108",
+      "title": "Customer cohort one",
+      "status": "PLANNED_BLOCKED_CUSTOMERS",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Blind Basic-vs-Pro and Pro-vs-Advanced comprehension, utility, time saved, support, refund, outcome and willingness-to-pay.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 109,
+      "revisionPrefix": "A109",
+      "title": "Out-of-time customer cohort two",
+      "status": "PLANNED_BLOCKED_TIME_CUSTOMERS",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Repeat on a later window and different user profile without changing thresholds after results.",
+      "mayEnableLiveOrSale": false
+    },
+    {
+      "passNumber": 110,
+      "revisionPrefix": "A110",
+      "title": "Per-SKU signed release decision",
+      "status": "PLANNED_BLOCKED_ALL_PRIOR",
+      "waveId": "W5_LEGAL_CUSTOMER_AND_SELL_DECISION",
+      "requiredExitEvidence": "Independent sell/no-sell decision for every product/tier; no global promotion by aggregate percentage.",
+      "mayEnableLiveOrSale": false
+    }
+  ],
+  "legalAndRegulatoryPerimeter": [
+    {
+      "itemId": "GDPR_EPRIVACY_DE_PL",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Accounts, analytics, cookies, security logs, wallet/entity labels, support, exports, deletion and cross-border processors.",
+      "requiredEvidence": [
+        "controller_processor_role_map",
+        "records_of_processing",
+        "lawful_basis_and_consent_matrix",
+        "DPIA_or_signed_no_DPIA_reason",
+        "DSAR_delete_export_retention_test",
+        "processor_SCC_transfer_register",
+        "German_TDDDG_and_Polish_cookie_review"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+      "blocks": [
+        "LIVE",
+        "SALE",
+        "CUSTOMER_COHORT"
+      ]
+    },
+    {
+      "itemId": "EU_AI_ACT",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Brain, Angel, risk analysis, generated reports, AI interaction disclosure, model/tool roles and human oversight.",
+      "requiredEvidence": [
+        "provider_deployer_importer_role_classification",
+        "prohibited_practice_check",
+        "AI_literacy_program",
+        "Article_50_transparency_and_machine_readability",
+        "high_risk_classification_or_signed_exclusion",
+        "logging_human_oversight_incident_plan",
+        "model_provider_contract_and_copyright_review"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+      "blocks": [
+        "AI_LIVE",
+        "AI_SALE"
+      ]
+    },
+    {
+      "itemId": "MICA_MIFID_MAR_FINANCIAL_PERIMETER",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Token plans, crypto information, market/risk outputs, alerts, recommendations, execution links and community content.",
+      "requiredEvidence": [
+        "token_classification",
+        "CASP_service_perimeter",
+        "MiFID_financial_instrument_test",
+        "advice_portfolio_management_execution_exclusion_or_authorisation",
+        "MAR_investment_recommendation_and_market_abuse_controls",
+        "marketing_risk_disclosures",
+        "competent_authority_and_territory_matrix"
+      ],
+      "officialSource": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+      "blocks": [
+        "TOKEN_LAUNCH",
+        "CRYPTO_SALE",
+        "RECOMMENDATION_CLAIMS"
+      ]
+    },
+    {
+      "itemId": "AML_CFT_TRAVEL_RULE_SANCTIONS",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Any custody, transfer, exchange, token sale, wallet payments or regulated crypto service.",
+      "requiredEvidence": [
+        "in_scope_service_decision",
+        "KYC_KYB_UBO_policy_if_applicable",
+        "transaction_monitoring_if_applicable",
+        "travel_rule_if_applicable",
+        "sanctions_PEP_screening",
+        "suspicious_activity_escalation",
+        "geofencing_and_record_retention"
+      ],
+      "officialSource": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+      "blocks": [
+        "TOKEN_LAUNCH",
+        "REGULATED_CRYPTO_SERVICE"
+      ]
+    },
+    {
+      "itemId": "DSA_COMMUNITY_SQUARE",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Square/community posts, comments, moderation, recommendations, advertising and minors.",
+      "requiredEvidence": [
+        "intermediary_online_platform_classification",
+        "notice_and_action",
+        "statement_of_reasons_and_appeals",
+        "terms_and_moderation_transparency",
+        "illegal_content_and_trusted_flagger_process",
+        "user_number_publication_or_exemption",
+        "minor_safety_and_dark_pattern_review",
+        "ad_recommender_transparency_if_used"
+      ],
+      "officialSource": "https://digital-strategy.ec.europa.eu/en/policies/digital-services-act",
+      "blocks": [
+        "SQUARE_PUBLIC_LAUNCH"
+      ]
+    },
+    {
+      "itemId": "EAA_ACCESSIBILITY",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "E-commerce, account, checkout, customer support, PDFs and mobile/desktop service flows.",
+      "requiredEvidence": [
+        "service_and_microenterprise_applicability",
+        "WCAG_EN301549_matrix",
+        "keyboard_screen_reader_zoom_contrast",
+        "accessible_auth_checkout_support",
+        "accessible_PDF_and_alternative_format",
+        "accessibility_statement_feedback_process",
+        "independent_accessibility_review"
+      ],
+      "officialSource": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en",
+      "blocks": [
+        "EU_ECOMMERCE_SALE"
+      ]
+    },
+    {
+      "itemId": "EU_CONSUMER_DIGITAL_CONTENT_ECOMMERCE",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Paid digital tiers, subscriptions, one-off reports, refunds, planned prices and digital service conformity.",
+      "requiredEvidence": [
+        "precontract_information",
+        "withdrawal_and_immediate_performance_consent",
+        "digital_content_service_conformity",
+        "price_duration_renewal_termination",
+        "refund_complaint_remedy_workflow",
+        "planned_price_no_dark_pattern_review",
+        "German_and_Polish_consumer_terms"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/EN/legal-content/summary/contracts-for-the-supply-of-digital-content-and-digital-services.html",
+      "blocks": [
+        "CONSUMER_SALE"
+      ]
+    },
+    {
+      "itemId": "PAYMENTS_PSD2_SCA_PCI_STRIPE_BLIK",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Checkout, test/live payments, refunds, reconciliation, payment data and BLIK/SCA.",
+      "requiredEvidence": [
+        "merchant_payment_role",
+        "SCA_3DS_flow",
+        "PCI_scope_and_SAQ",
+        "webhook_refund_reconciliation",
+        "chargeback_and_complaint_process",
+        "BLIK_provider_contract_if_offered",
+        "no_storage_of_prohibited_card_data"
+      ],
+      "officialSource": "https://finance.ec.europa.eu/consumer-finance-and-payments/payment-services/payment-services_en",
+      "blocks": [
+        "LIVE_PAYMENT",
+        "SALE"
+      ]
+    },
+    {
+      "itemId": "PROVIDER_DATA_DATABASE_AND_AI_RIGHTS",
+      "status": "PROVIDER_LEGAL_REVIEW_REQUIRED",
+      "scope": "Market, chain, labels, order books, securities, PDFs, caching, derived metrics, AI/RAG and redistribution.",
+      "requiredEvidence": [
+        "21_of_21_provider_contracts",
+        "field_level_display_export_PDF_rights",
+        "derived_data_and_model_input_rights",
+        "database_right_and_attribution",
+        "cache_retention_correction_deletion",
+        "geographic_and_customer_tier_limits",
+        "provider_exit_and_evidence_retention"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/dir/1996/9/oj",
+      "blocks": [
+        "MARKET_LIVE",
+        "PAID_REPORTS",
+        "AI_DATA_USE"
+      ]
+    },
+    {
+      "itemId": "DORA_ICT_THIRD_PARTY_PERIMETER",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Services supplied to regulated financial entities or operation as a regulated crypto/financial entity.",
+      "requiredEvidence": [
+        "entity_and_customer_perimeter",
+        "ICT_contract_clauses",
+        "incident_reporting_support",
+        "resilience_testing",
+        "subcontractor_register",
+        "exit_portability_and_audit_rights",
+        "concentration_risk"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj/eng",
+      "blocks": [
+        "REGULATED_FINANCIAL_CUSTOMERS"
+      ]
+    },
+    {
+      "itemId": "NIS2_CRA_CYBER_PRODUCT_PERIMETER",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Entity/sector/size classification and any software product with digital elements made available on the market.",
+      "requiredEvidence": [
+        "NIS2_entity_scope_or_signed_exclusion",
+        "CRA_product_scope_or_signed_exclusion",
+        "vulnerability_handling_and_coordinated_disclosure",
+        "SBOM_and_secure_development",
+        "security_update_support_period",
+        "incident_reporting_readiness",
+        "conformity_marking_plan_if_applicable"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202402847",
+      "blocks": [
+        "SOFTWARE_PRODUCT_RELEASE_IF_APPLICABLE"
+      ]
+    },
+    {
+      "itemId": "EU_DATA_ACT_PORTABILITY",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Cloud/data processing switching, customer export, interoperability and unfair contractual terms where applicable.",
+      "requiredEvidence": [
+        "service_scope",
+        "export_portability",
+        "switching_and_egress_terms",
+        "interoperability",
+        "trade_secret_protection",
+        "unfair_B2B_term_review"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/reg/2023/2854/oj/eng",
+      "blocks": [
+        "ENTERPRISE_CONTRACTS_IF_APPLICABLE"
+      ]
+    },
+    {
+      "itemId": "TAX_VAT_INVOICING_ACCOUNTING",
+      "status": "LEGAL_TAX_REVIEW_REQUIRED",
+      "scope": "EU B2C/B2B digital services, Germany/Poland establishment, token and payment flows.",
+      "requiredEvidence": [
+        "seller_entity_and_fixed_establishment",
+        "VAT_place_of_supply",
+        "OSS_IOSS_or_local_registration",
+        "B2B_reverse_charge",
+        "invoice_credit_note_refund",
+        "revenue_recognition_token_accounting",
+        "record_retention"
+      ],
+      "officialSource": "https://taxation-customs.ec.europa.eu/taxation/vat/vat-e-commerce_en",
+      "blocks": [
+        "SALE"
+      ]
+    },
+    {
+      "itemId": "IP_OSS_MODEL_OUTPUT_BRAND",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Source, dependencies, fonts/assets, market data, training/RAG inputs, AI output, trademarks and customer report rights.",
+      "requiredEvidence": [
+        "SBOM_license_obligations",
+        "asset_font_image_provenance",
+        "model_and_output_terms",
+        "RAG_copyright_and_database_rights",
+        "trademark_domain_clearance",
+        "customer_report_license",
+        "infringement_takedown_process"
+      ],
+      "officialSource": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+      "blocks": [
+        "PUBLIC_RELEASE",
+        "SALE"
+      ]
+    },
+    {
+      "itemId": "AGE_MINORS_AND_VULNERABLE_USERS",
+      "status": "LEGAL_REVIEW_REQUIRED",
+      "scope": "Account eligibility, community, financial content, profiling, marketing and support.",
+      "requiredEvidence": [
+        "minimum_age_and_parental_consent",
+        "age_appropriate_design",
+        "minor_DSA_safety",
+        "no_exploitative_gamification",
+        "financial_risk_communication",
+        "profiling_and_ads_restrictions",
+        "abuse_reporting"
+      ],
+      "officialSource": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-protection-minors",
+      "blocks": [
+        "MINOR_ACCESS",
+        "SQUARE_PUBLIC_LAUNCH"
+      ]
+    },
+    {
+      "itemId": "PROFESSIONAL_PRODUCT_CYBER_LIABILITY",
+      "status": "LEGAL_INSURANCE_REVIEW_REQUIRED",
+      "scope": "Audit, risk, market analysis, data errors, cyber incident, outage, customer loss and contractual caps.",
+      "requiredEvidence": [
+        "service_scope_and_no_guarantee_language",
+        "professional_duty_and_limitation_review",
+        "insurance_quotes_and_coverage_decision",
+        "SLA_and_service_credit_policy",
+        "indemnity_and_third_party_claims",
+        "incident_customer_loss_process",
+        "recorded_human_review_scope"
+      ],
+      "officialSource": "https://eur-lex.europa.eu/eli/dir/1985/374/oj/eng",
+      "blocks": [
+        "PRO_ADVANCED_SALE"
+      ]
+    }
+  ],
+  "globalStopConditions": [
+    "Any unresolved package integrity failure",
+    "Any unresolved Critical or High security finding",
+    "Any missing required provider right for a delivered field",
+    "Any missing signed legal applicability decision for an enabled territory or feature",
+    "Any failed tenant isolation, refund, rollback, incident recovery or entitlement check",
+    "Any stale, partial, conflicted or fixture evidence presented as LIVE",
+    "Any paid tier without measured incremental customer value and an exact SKU decision"
+  ],
+  "claims": {
+    "historicalArtifactsRecovered": false,
+    "cleanRootGovernanceApproved": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "A79 is the living world-class completion program after local exact-build/browser admission hardening. It does not convert missing A78 physical toolchain artifacts into build or browser credit. Percentages, staging, LIVE, sale and world-class claims remain unchanged until real evidence closes their denominators.",
+  "lineageResolution": {
+    "legacyA61Status": "BLOCKED_EXACT_HISTORICAL_BYTES",
+    "legacyVerifiedExact": 0,
+    "legacyRequiredExact": 2,
+    "cleanRootConstructed": true,
+    "cleanRootGovernanceApproved": false,
+    "stagingAdmissionRule": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT",
+    "syntheticHistoricalReconstructionForbidden": true
+  },
+  "a77LocalEvidence": {
+    "cleanRootPayloadFiles": 4368,
+    "cleanRootPayloadBytes": 110882042,
+    "genesisValidationChecks": 21,
+    "governanceAdversarialScenarios": 47,
+    "governanceNegativeScenarios": 46,
+    "governanceAssertions": 141,
+    "cleanRootVerifierChecks": 33,
+    "legacyIsolationChecks": 10,
+    "a63LineageScenarios": 40,
+    "a63LineageAssertions": 164,
+    "a63VerifierChecks": 20,
+    "a46Checks": 791,
+    "routeDispatchChecks": 1320,
+    "protectedIntegrityRows": 1073,
+    "sourceAudit": {
+      "filesRead": 4379,
+      "codeFiles": 2729,
+      "syntaxErrors": 0,
+      "localImports": 6809,
+      "missingLocalImports": 0,
+      "missingCssModuleClasses": 0
+    }
+  },
+  "discoveredGapLedger": [
+    {
+      "gapId": "A77-GAP-01",
+      "severity": "P1",
+      "workstream": "MKT01_SHIELD_REAL_DATA / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "Kline malformed-request traffic and valid provider-work traffic used one quota bucket.",
+      "status": "CLOSED_LOCAL_A77",
+      "followUp": "Revalidate on exact runtime and distributed durable rate-limit storage in A78/A89.",
+      "percentageEffect": "No canonical credit; local hardening only."
+    },
+    {
+      "gapId": "A77-GAP-02",
+      "severity": "P1",
+      "workstream": "SEC01_LOCAL_SECURITY_CONTROLS / OPS01_STAGING_RLS_SERVICES",
+      "summary": "Supabase service-role configured-origin parsing did not fail closed on query and fragment.",
+      "status": "CLOSED_LOCAL_A77",
+      "followUp": "Execute a real brokered Supabase service-role request only on disposable staging in A96/A98.",
+      "percentageEffect": "No canonical credit; local hardening only."
+    },
+    {
+      "gapId": "A77-BLOCK-03",
+      "severity": "P0_BLOCKED_INPUT",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "Six current-root critical suites cannot execute in this source-only environment because genuine zod/typescript dependencies and exact Node 24.18.0 are absent.",
+      "status": "ASSIGNED_A78",
+      "followUp": "Supply exact runtime, 827 lock-bound tarballs and exact Chromium, then rerun all 30 suites without shims.",
+      "percentageEffect": "No exact-build or release credit."
+    },
+    {
+      "gapId": "A78-GAP-01",
+      "severity": "P0",
+      "workstream": "SEC01_LOCAL_SECURITY_CONTROLS / MKT01_SHIELD_REAL_DATA",
+      "summary": "Market Integrity shared guard converted a durable deny decision into metadata instead of returning the limiter-owned denial response directly.",
+      "status": "CLOSED_LOCAL_A78",
+      "followUp": "Revalidate all four routes in exact build/browser and distributed durable storage in A79/A89.",
+      "percentageEffect": "No canonical credit; security hardening only."
+    },
+    {
+      "gapId": "A78-GAP-02",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A62 inherited the parent process environment and system PATH and rewrote the extracted npm wrapper, weakening exact-runtime and secret-isolation claims.",
+      "status": "CLOSED_LOCAL_A78",
+      "followUp": "Execute with physical exact bundles and prove runtime tree digest unchanged before/after.",
+      "percentageEffect": "No exact credit until physical execution."
+    },
+    {
+      "gapId": "A78-GAP-03",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "The current-root gate compared every descendant source tree directly with the frozen A77 genesis payload, making legal future passes look like genesis tampering.",
+      "status": "CLOSED_LOCAL_A78",
+      "followUp": "Preserve A77 genesis immutably and verify each descendant through the A78 parent-bound current-root manifest.",
+      "percentageEffect": "No canonical credit; lineage correctness only."
+    },
+    {
+      "gapId": "A78-BLOCK-04",
+      "severity": "P0_BLOCKED_INPUT",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM",
+      "summary": "Only 81/827 lock paths are covered by exact local CAS bytes; exact Node 24.18.0/npm 11.16.0 and platform-exact Playwright 1.60.0 Chromium are not supplied.",
+      "status": "OPEN_BLOCKED_EXACT_ARTIFACTS",
+      "followUp": "Supply the three external bundles, verify all hashes/SRI, run isolated offline npm ci, current-root 30/30 and A60.",
+      "percentageEffect": "A78 remains partial and A79 remains blocked."
+    },
+    {
+      "gapId": "A79-GAP-01",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "A60 allowed an environment-controlled browser base URL, so acceptance could target a non-local or unrelated server.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Use only a runner-selected dynamic 127.0.0.1 port and reject all base URL overrides.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-02",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / SEC01_LOCAL_SECURITY_CONTROLS",
+      "summary": "A60 invoked system npm and enabled shell execution on Windows instead of exact runtime-owned node/npm-cli paths.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Execute every stage through exact process.execPath + runtime-owned npm-cli with shell=false.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-03",
+      "severity": "P0",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "A60 verified declared manifest rows but did not reject additional active source files outside the declared path set.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Recompute the active inventory denominator and require exact path-set parity before and after execution.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-04",
+      "severity": "P1",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "Existing A45 receipts and screenshots were not removed before a new run, allowing stale artifacts to survive a partial execution.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Delete the A45 artifact root after preflight and before any exact stages.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-05",
+      "severity": "P0",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "The browser evidence verifier checked counts and presence but not the exact unique locale-route-viewport matrix.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Require exactly 27 desktop plus 9 PL mobile unique rows and reject duplicates or omissions.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-06",
+      "severity": "P0",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E / SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Browser evidence was not bound to the exact source manifest, runtime instance, browser executable and final Next build ID.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Bind all four identities into the browser receipt and verifier.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-07",
+      "severity": "P1",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "The popup screenshot was counted but had no declared digest in the browser receipt.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Record and verify the popup screenshot SHA-256 exactly.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-08",
+      "severity": "P1",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "Screenshot verification checked file hashes only when declared and did not validate PNG structure or dimensions.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Require all 19 declared hashes plus bounded PNG IHDR/IDAT/IEND structure and dimensions.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-09",
+      "severity": "P0",
+      "workstream": "SRC02_EXACT_RUNTIME_NODE_NPM / OPS02_OBSERVABILITY_DR_ROLLBACK",
+      "summary": "A fixed port and weak server ownership check could confuse a pre-existing local server with the spawned production runtime.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Reserve a dynamic loopback port, reject overrides, and fail if the spawned process exits before readiness.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-10",
+      "severity": "P1",
+      "workstream": "ZB17_BROWSER_I18N_PDF_E2E",
+      "summary": "First-party request failures were recorded but did not fail an otherwise green route.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Make every first-party request failure a route failure while retaining bounded diagnostics.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    },
+    {
+      "gapId": "A79-GAP-11",
+      "severity": "P1",
+      "workstream": "SRC01_SOURCE_PACKAGE_INTEGRITY",
+      "summary": "Package metadata still pointed to the A77 patch/program while the current source was A78.",
+      "status": "CLOSED_LOCAL_A79",
+      "followUp": "Bind package metadata, active pass, current authority and program path to A79 in one update.",
+      "percentageEffect": "No canonical credit; local admission hardening only."
+    }
+  ],
+  "a79LocalEvidence": {
+    "closedAdmissionGaps": 11,
+    "exactBuildExecuted": false,
+    "exactBrowserExecuted": false,
+    "blockedByA78PhysicalInputs": true,
+    "requiredBrowserRows": 56,
+    "requiredScreenshots": 29,
+    "requiredPopupTabs": 4,
+    "sourceExactPathSetRequired": true,
+    "dynamicLoopbackOnly": true,
+    "systemNpmForbidden": true,
+    "shellExecutionForbidden": true
+  }
+}

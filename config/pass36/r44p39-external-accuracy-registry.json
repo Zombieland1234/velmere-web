@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p39.external-accuracy-registry.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P39_ACTION_REQUIRED_AUDIT_PACKET_PARITY_BYTECODE_PROXY_BINDING_AND_EXTERNAL_ACCURACY_REGISTRY_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "entries": [
+    {
+      "evidenceId": "R44P13_SMARTBUGS_EXTERNAL_LABELED_DIAGNOSTIC",
+      "classification": "RETAINED_EXTERNAL_PUBLIC_LABELED_CORPUS_DIAGNOSTIC_ONLY",
+      "artifactZipSha256": "971d6478850760952b60a1d84b4a9b6929ab5475ecebf9cc97282a4a84107cdb",
+      "summarySha256": "812f2ad3dd53d7d4a7ecc37b0373cb7b5311d29d8449bdb3330f644fb5f20045",
+      "cases": 69,
+      "compiledCases": 57,
+      "labelRecall": 0.710145,
+      "controls": 12,
+      "flaggedControls": 7,
+      "controlFlagRate": 0.583333,
+      "currentAnalyzerDirectCredit": false,
+      "commercialRedistributionRightsApproved": false,
+      "productAccuracyCredit": false,
+      "customerCredit": false,
+      "saleCredit": false,
+      "liveCredit": false,
+      "truthBoundary": "Retained external public labeled corpus diagnostic from R44P13. It is not a direct R44P39 compiler-engine run, individual contract licenses remain source-specific, and no combined accuracy score or commercial redistribution right is granted."
+    }
+  ],
+  "aggregationPolicy": {
+    "singleOverallAccuracyForbidden": true,
+    "reportMetricsSeparately": [
+      "localSyntheticMetamorphic",
+      "localHistoricalMultiFile",
+      "externalHistoricalDiagnostic",
+      "futureIndependentRealProtocol"
+    ],
+    "emptyIndependentCorpusCannotReceiveCredit": true
+  },
+  "independentRealProtocolCases": 0,
+  "independentReviewers": 0,
+  "worldClassCredit": false
+}

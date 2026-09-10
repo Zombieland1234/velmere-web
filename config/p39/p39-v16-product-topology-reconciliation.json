@@ -1,0 +1,1281 @@
+{
+  "schemaVersion": "velmere.p39.v16-product-topology-reconciliation.v2",
+  "revision": "P39_V16_AUTHORITY_TOPOLOGY_AND_EXACT_NODE24_LINUX_RECONCILIATION",
+  "generatedAt": "2026-08-14T05:05:00.000Z",
+  "state": "IMPLEMENTED_AND_TESTED_INTERNAL_TOPOLOGY_RECONCILIATION",
+  "parentRoot": "R44P46",
+  "authority": {
+    "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V16_FULL_TOPOLOGY_FREE_LEGAL_CURRENT_WORLD_CLASS_2026-08-14.txt",
+    "byteLength": 62609,
+    "sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9"
+  },
+  "previousAuthorityRetainedHistorically": {
+    "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V15_FREE_LEGAL_TOP_WORLD_2026-08-13.txt",
+    "byteLength": 19804,
+    "sha256": "5cfbbfcbcef7242e30466f18bab3ad29cad859e485a909a4ee8658fb65e2f2c0"
+  },
+  "denominators": {
+    "customerFacingRows": 17,
+    "productFamilies": 11,
+    "explicitlyTieredRows": 9,
+    "standaloneRows": 8,
+    "internalExecutionProfiles": 33,
+    "contextTransitions": 22,
+    "deltaRequiredTransitions": 6,
+    "notApplicableNoPaidDeltaClaimTransitions": 16
+  },
+  "customerFacingRows": [
+    {
+      "rowId": "audit-basic",
+      "family": "audit",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "basic",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "audit-pro",
+      "family": "audit",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "pro",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "audit-advanced",
+      "family": "audit",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "advanced",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "pdf-basic",
+      "family": "pdf",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "basic",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "pdf-pro",
+      "family": "pdf",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "pro",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "pdf-advanced",
+      "family": "pdf",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "advanced",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "browser-basic",
+      "family": "browser",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "basic",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "browser-pro",
+      "family": "browser",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "pro",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "browser-advanced",
+      "family": "browser",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "tier": "advanced",
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "shield",
+      "family": "shield",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "shield-pro",
+      "family": "shield-pro",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "shield-map",
+      "family": "shield-map",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "real-markets",
+      "family": "real-markets",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "market-impact",
+      "family": "market-impact",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "whale-watch",
+      "family": "whale-watch",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "angel",
+      "family": "angel",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    },
+    {
+      "rowId": "risk-indicator",
+      "family": "risk-indicator",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "tier": null,
+      "saleEligibilityApplies": true,
+      "currentOutputAuditState": "NOT_EXECUTED_CURRENT_V16",
+      "currentClosurePercent": 0,
+      "currentSaleEligible": false
+    }
+  ],
+  "productFamilies": [
+    {
+      "family": "audit",
+      "displayName": "Audit",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "standaloneProduct": false,
+      "customerFacingProductIds": [
+        "audit-basic",
+        "audit-pro",
+        "audit-advanced"
+      ],
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "pdf",
+      "displayName": "PDF",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "standaloneProduct": false,
+      "customerFacingProductIds": [
+        "pdf-basic",
+        "pdf-pro",
+        "pdf-advanced"
+      ],
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "browser",
+      "displayName": "Browser",
+      "customerFacingType": "EXPLICITLY_TIERED_PRODUCT_FAMILY",
+      "standaloneProduct": false,
+      "customerFacingProductIds": [
+        "browser-basic",
+        "browser-pro",
+        "browser-advanced"
+      ],
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "shield",
+      "displayName": "Shield",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "shield"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "shield-pro",
+      "displayName": "Shield Pro",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "shield-pro"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "shield-map",
+      "displayName": "Shield Map",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "shield-map"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "real-markets",
+      "displayName": "Real Markets",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "real-markets"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "market-impact",
+      "displayName": "Market Impact",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "market-impact"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "whale-watch",
+      "displayName": "Whale Watch",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "whale-watch"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "angel",
+      "displayName": "Angel",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "angel"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    },
+    {
+      "family": "risk-indicator",
+      "displayName": "Risk Indicator",
+      "customerFacingType": "STANDALONE_PRODUCT_FAMILY",
+      "standaloneProduct": true,
+      "customerFacingProductIds": [
+        "risk-indicator"
+      ],
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true
+    }
+  ],
+  "internalExecutionProfiles": [
+    {
+      "profileId": "audit@BASIC_CONTEXT",
+      "family": "audit",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "audit@PRO_CONTEXT",
+      "family": "audit",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "UNIQUE_DECISION_RELEVANT_EVIDENCE",
+        "EXPLOITABILITY_AND_PRECONDITIONS",
+        "REMEDIATION_VALIDATION",
+        "RISK_AND_EFFORT_PRIORITIZATION"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "REQUIRED_DELTA_NOT_EXECUTED"
+    },
+    {
+      "profileId": "audit@ADVANCED_CONTEXT",
+      "family": "audit",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "ATTACK_PATH_AND_CROSS_CONTROL_SYNTHESIS",
+        "BUSINESS_AND_TECHNICAL_IMPACT",
+        "RESIDUAL_RISK_AND_CONFIDENCE",
+        "TEAM_HANDOFF_AND_RETEST_PLAN"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "REQUIRED_DELTA_NOT_EXECUTED"
+    },
+    {
+      "profileId": "pdf@BASIC_CONTEXT",
+      "family": "pdf",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "pdf@PRO_CONTEXT",
+      "family": "pdf",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "DEEPER_EVIDENCE_AND_CROSS_REFERENCES",
+        "PROVENANCE_MAP",
+        "STRUCTURED_ACTION_SECTIONS",
+        "ANALYSIS_TIME_REDUCTION"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "REQUIRED_DELTA_NOT_EXECUTED"
+    },
+    {
+      "profileId": "pdf@ADVANCED_CONTEXT",
+      "family": "pdf",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "CLAIM_TO_EVIDENCE_TO_SOURCE_TRACEABILITY",
+        "CONFLICT_AND_CONFIDENCE_SECTIONS",
+        "REPRODUCIBLE_ARTIFACT_IDENTITY",
+        "TEAM_DECISION_HANDOFF"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "REQUIRED_DELTA_NOT_EXECUTED"
+    },
+    {
+      "profileId": "browser@BASIC_CONTEXT",
+      "family": "browser",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "browser@PRO_CONTEXT",
+      "family": "browser",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "DEEPER_EXTRACTION_AND_CROSS_CHECK",
+        "PROVENANCE_NAVIGATION",
+        "NEW_SAFE_ACTIONS",
+        "FASTER_REVIEW_WORKFLOW"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "REQUIRED_DELTA_NOT_EXECUTED"
+    },
+    {
+      "profileId": "browser@ADVANCED_CONTEXT",
+      "family": "browser",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INTERACTIVE_DECISION_WORKSPACE",
+        "CONFLICT_ADJUDICATION",
+        "ADVANCED_EXPORT_AND_HANDOFF",
+        "STORED_ARTIFACT_PARITY"
+      ],
+      "saleEligibilityApplies": true,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "REQUIRED_DELTA_NOT_EXECUTED"
+    },
+    {
+      "profileId": "shield@BASIC_CONTEXT",
+      "family": "shield",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "shield@PRO_CONTEXT",
+      "family": "shield",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "shield@ADVANCED_CONTEXT",
+      "family": "shield",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "shield-pro@BASIC_CONTEXT",
+      "family": "shield-pro",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "shield-pro@PRO_CONTEXT",
+      "family": "shield-pro",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "shield-pro@ADVANCED_CONTEXT",
+      "family": "shield-pro",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "shield-map@BASIC_CONTEXT",
+      "family": "shield-map",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "shield-map@PRO_CONTEXT",
+      "family": "shield-map",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "shield-map@ADVANCED_CONTEXT",
+      "family": "shield-map",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "real-markets@BASIC_CONTEXT",
+      "family": "real-markets",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "real-markets@PRO_CONTEXT",
+      "family": "real-markets",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "real-markets@ADVANCED_CONTEXT",
+      "family": "real-markets",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "market-impact@BASIC_CONTEXT",
+      "family": "market-impact",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "market-impact@PRO_CONTEXT",
+      "family": "market-impact",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "market-impact@ADVANCED_CONTEXT",
+      "family": "market-impact",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "whale-watch@BASIC_CONTEXT",
+      "family": "whale-watch",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "whale-watch@PRO_CONTEXT",
+      "family": "whale-watch",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "whale-watch@ADVANCED_CONTEXT",
+      "family": "whale-watch",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "angel@BASIC_CONTEXT",
+      "family": "angel",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "angel@PRO_CONTEXT",
+      "family": "angel",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "angel@ADVANCED_CONTEXT",
+      "family": "angel",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "risk-indicator@BASIC_CONTEXT",
+      "family": "risk-indicator",
+      "context": "BASIC_CONTEXT",
+      "contextTier": "basic",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INDEPENDENTLY_USEFUL_BASELINE"
+      ],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "INDEPENDENTLY_USEFUL_BASELINE_NOT_EXECUTED"
+    },
+    {
+      "profileId": "risk-indicator@PRO_CONTEXT",
+      "family": "risk-indicator",
+      "context": "PRO_CONTEXT",
+      "contextTier": "pro",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "profileId": "risk-indicator@ADVANCED_CONTEXT",
+      "family": "risk-indicator",
+      "context": "ADVANCED_CONTEXT",
+      "contextTier": "advanced",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "executionState": "NOT_EXECUTED_CURRENT_V16",
+      "valueState": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    }
+  ],
+  "contextTransitions": [
+    {
+      "transitionId": "audit:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "audit",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "UNIQUE_DECISION_RELEVANT_EVIDENCE",
+        "EXPLOITABILITY_AND_PRECONDITIONS",
+        "REMEDIATION_VALIDATION",
+        "RISK_AND_EFFORT_PRIORITIZATION"
+      ],
+      "saleEligibilityApplies": true,
+      "defaultValueResult": "REQUIRES_CURRENT_MATCHED_INPUT_VALUE_EVIDENCE"
+    },
+    {
+      "transitionId": "audit:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "audit",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "ATTACK_PATH_AND_CROSS_CONTROL_SYNTHESIS",
+        "BUSINESS_AND_TECHNICAL_IMPACT",
+        "RESIDUAL_RISK_AND_CONFIDENCE",
+        "TEAM_HANDOFF_AND_RETEST_PLAN"
+      ],
+      "saleEligibilityApplies": true,
+      "defaultValueResult": "REQUIRES_CURRENT_MATCHED_INPUT_VALUE_EVIDENCE"
+    },
+    {
+      "transitionId": "pdf:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "pdf",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "DEEPER_EVIDENCE_AND_CROSS_REFERENCES",
+        "PROVENANCE_MAP",
+        "STRUCTURED_ACTION_SECTIONS",
+        "ANALYSIS_TIME_REDUCTION"
+      ],
+      "saleEligibilityApplies": true,
+      "defaultValueResult": "REQUIRES_CURRENT_MATCHED_INPUT_VALUE_EVIDENCE"
+    },
+    {
+      "transitionId": "pdf:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "pdf",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "CLAIM_TO_EVIDENCE_TO_SOURCE_TRACEABILITY",
+        "CONFLICT_AND_CONFIDENCE_SECTIONS",
+        "REPRODUCIBLE_ARTIFACT_IDENTITY",
+        "TEAM_DECISION_HANDOFF"
+      ],
+      "saleEligibilityApplies": true,
+      "defaultValueResult": "REQUIRES_CURRENT_MATCHED_INPUT_VALUE_EVIDENCE"
+    },
+    {
+      "transitionId": "browser:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "browser",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "DEEPER_EXTRACTION_AND_CROSS_CHECK",
+        "PROVENANCE_NAVIGATION",
+        "NEW_SAFE_ACTIONS",
+        "FASTER_REVIEW_WORKFLOW"
+      ],
+      "saleEligibilityApplies": true,
+      "defaultValueResult": "REQUIRES_CURRENT_MATCHED_INPUT_VALUE_EVIDENCE"
+    },
+    {
+      "transitionId": "browser:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "browser",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": true,
+      "standaloneProduct": false,
+      "deltaRequiredByCatalog": true,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [
+        "INTERACTIVE_DECISION_WORKSPACE",
+        "CONFLICT_ADJUDICATION",
+        "ADVANCED_EXPORT_AND_HANDOFF",
+        "STORED_ARTIFACT_PARITY"
+      ],
+      "saleEligibilityApplies": true,
+      "defaultValueResult": "REQUIRES_CURRENT_MATCHED_INPUT_VALUE_EVIDENCE"
+    },
+    {
+      "transitionId": "shield:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "shield",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "shield:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "shield",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "shield-pro:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "shield-pro",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "shield-pro:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "shield-pro",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "shield-map:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "shield-map",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "shield-map:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "shield-map",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "real-markets:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "real-markets",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "real-markets:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "real-markets",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "market-impact:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "market-impact",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "market-impact:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "market-impact",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "whale-watch:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "whale-watch",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "whale-watch:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "whale-watch",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "angel:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "angel",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "angel:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "angel",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "risk-indicator:BASIC_CONTEXT->PRO_CONTEXT",
+      "family": "risk-indicator",
+      "fromContext": "BASIC_CONTEXT",
+      "toContext": "PRO_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    },
+    {
+      "transitionId": "risk-indicator:PRO_CONTEXT->ADVANCED_CONTEXT",
+      "family": "risk-indicator",
+      "fromContext": "PRO_CONTEXT",
+      "toContext": "ADVANCED_CONTEXT",
+      "customerFacingSku": false,
+      "standaloneProduct": true,
+      "deltaRequiredByCatalog": false,
+      "truthInvariantAcrossContexts": true,
+      "safetyInvariantAcrossContexts": true,
+      "expectedDeltaDimensions": [],
+      "saleEligibilityApplies": false,
+      "defaultValueResult": "NOT_APPLICABLE_NO_PAID_DELTA_CLAIM"
+    }
+  ],
+  "mandatoryFamiliesPresent": [
+    "market-impact",
+    "whale-watch",
+    "shield-map",
+    "angel",
+    "risk-indicator"
+  ],
+  "rules": {
+    "revisionId": "P39_V16_AUTHORITY_TOPOLOGY_AND_EXACT_NODE24_LINUX_RECONCILIATION",
+    "predecessorRevisionId": "VELMERE_PASS36_A102R44P35_ACTION_REQUIRED_STANDALONE_DECISION_SUPPORT_ANGEL_RISK_IMPACT_WHALE_AND_PSYCHOLOGY30_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+    "schemaVersion": "velmere.v16.full-product-topology.v1",
+    "customerProductRows": 17,
+    "productFamilies": 11,
+    "tieredProductRows": 9,
+    "standaloneProductRows": 8,
+    "internalExecutionProfiles": 33,
+    "contextTransitions": 22,
+    "requiredPaidDeltaTransitions": 6,
+    "noPaidDeltaClaimTransitions": 16,
+    "reportTierChangesPresentationDepthOnly": false,
+    "standaloneProductsNeverBecomeThreeCustomerFacingSkus": true,
+    "standaloneContextDeltaRequiresCurrentCatalogClaim": true,
+    "invariantTruthIsPositiveConsistencyRequirement": true,
+    "shieldAndShieldProAreSeparateProducts": true,
+    "riskValueCannotChangeBecauseCustomerPaidMore": true,
+    "angelTruthAndSafetyCannotChangeBecauseCustomerPaidMore": true,
+    "saleEligibilityDenominatorUsesCustomerFacingRowsOnly": true,
+    "legacyThirtyThreeSaleSkuModel": "FORBIDDEN_INTERNAL_EXECUTION_CONTEXTS_ONLY",
+    "legacyThirtyRowModel": "HISTORICAL_COMPATIBILITY_ONLY"
+  },
+  "denominatorsCurrentReceipt": {
+    "customerFacingRowsReconciled": "17/17",
+    "internalProfilesDefined": "33/33",
+    "transitionApplicabilityClassified": "22/22",
+    "catalogRequiredTransitions": "6/22",
+    "notApplicableNoPaidDeltaClaim": "16/22",
+    "catalogRequiredTransitionsValuePassed": "0/6",
+    "internalProfilesPhysicallyExecutedCurrentV16": "0/33",
+    "customerOutputsPhysicallyAuditedCurrentV16": "0/17",
+    "saleEligibleCustomerRows": "0/17"
+  },
+  "creditBoundary": {
+    "topologyReconciliationCredit": true,
+    "executionCoverageCredit": false,
+    "productQualityCredit": false,
+    "materialValueCredit": false,
+    "saleEligibilityCredit": false,
+    "goInternalCredit": false,
+    "goPaidCredit": false,
+    "worldClassCredit": false
+  },
+  "truthBoundary": "This receipt reconciles the V16 product and denominator topology only: 11 families, 17 real customer-facing rows, 33 internal contexts and 22 transitions. It does not prove current customer outputs, factual quality, source rights, material paid value, Browser/PDF execution, GO_INTERNAL, GO_PAID, LIVE or WORLD_CLASS_PROVEN.",
+  "integritySha256": "26fb2213a8140cbaf7a73f5062f0431e7280480a516208bc9a1d8075da3fa25a"
+}

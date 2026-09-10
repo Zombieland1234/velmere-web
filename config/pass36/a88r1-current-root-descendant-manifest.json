@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "velmere.pass36.a88r1.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A88R1_SEMANTIC_GENERALIZATION_ROUTE_EXECUTION_PRIVACY_AND_PDF_EVIDENCE_RETENTION",
+  "parentRevisionId": "VELMERE_PASS36_A88R0_BRAIN_ANGEL_RISK_MULTILINGUAL_ADVERSARIAL_EVAL_AND_ADVICE_BOUNDARY",
+  "parentDescendantManifestDigestSha256": "fe159b565eadd5996353b12b3934238401db5cf573d63cba7f048fb0b4293762",
+  "generatedAt": "2026-07-28T03:30:00.000Z",
+  "payload": {
+    "fileCount": 4559,
+    "byteLength": 113182489,
+    "pathSetSha256": "a133249b40b289763b2a12b0cfef53ec0fc10faac9e1b3e3f9ae77025917c127",
+    "aggregateSha256": "72162064213fb6b1b61b626efd8016601b9ec294130a8d7952542f3df28a860b"
+  },
+  "exclusions": [
+    "_velmere/PASS35_SOURCE_ONLY_MANIFEST.json",
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a88r1-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "semanticGeneralizationImplemented": true,
+    "combinedSyntheticCases": 510,
+    "focusedSemanticCases": 150,
+    "channelProjections": 2550,
+    "semanticMutations": 7560,
+    "mutationKilled": 7560,
+    "decisionMismatches": 0,
+    "routePreflightCases": 31,
+    "routePreflightChecks": 143,
+    "providerCallsOnBlockedCases": 0,
+    "publicStablePromptFingerprints": 0,
+    "physicalSyntheticPdfsRetained": 450,
+    "physicalSyntheticPdfPages": 2100,
+    "realCustomerPdfs": 0,
+    "realEvalCasesVerified": 0,
+    "realModelExecutions": 0,
+    "rightsApprovedCases": 0,
+    "independentAdjudications": 0,
+    "customerDecisionUtilityLabels": 0,
+    "realCalibrationWindowsClosed": 0,
+    "legalRegulatoryDecisionsSigned": 0,
+    "exactA80CandidateBound": false,
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "manifestDigestSha256": "51e4a9570d52a845080b33f424d5221752ba5d8a251b1bc3447d2e73ce6eb2be"
+}

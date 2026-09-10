@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "velmere.pass23.merchant-legal-intake-schema.v1",
+  "requiredIdentityFields": [
+    "legalName", "legalForm", "countryCode", "fullServiceAddress", "commercialRegister",
+    "registrationNumber", "supportEmail", "phone", "returnAddress",
+    "competentSupervisoryAuthority", "consumerDisputeResolutionStatement"
+  ],
+  "taxIdentityRule": "vatId_or_taxId",
+  "requiredPolicyApprovals": [
+    "processorRegisterApproved", "retentionScheduleApproved", "shippingRegionsApproved",
+    "shippingRatesApproved", "returnsProcessApproved", "privacyPolicyApproved", "termsApproved",
+    "taxHandlingApproved", "fulfilmentApproved", "legalReviewApproved"
+  ],
+  "requiredEvidenceHashes": ["identityDocumentHash", "registerExtractHash", "taxEvidenceHash", "legalReviewReceiptHash"],
+  "forbiddenPlaceholderRegex": "(?:^|\\b)(?:tbd|todo|unknown|example|placeholder|to be confirmed|do uzupełnienia|do potwierdzenia|unbekannt|noch zu bestätigen|n/?a)(?:\\b|$)",
+  "truthBoundary": "The schema validates completeness and evidence binding only. It does not invent seller data, determine the correct legal form or replace jurisdiction-specific legal review."
+}

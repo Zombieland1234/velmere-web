@@ -1,0 +1,1291 @@
+{
+  "schemaVersion": "velmere.pass36.a101.world-class-completion-program.v1",
+  "revisionId": "VELMERE_PASS36_A101R0_MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+  "parentRevisionId": "VELMERE_PASS36_A100R0_INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION_TRUTH_BOUNDARY",
+  "generatedAt": "2026-07-29T10:30:00.000Z",
+  "decision": "NO_GO",
+  "livingRoadmap": true,
+  "completedThrough": 89,
+  "partialRange": "A90-A101_LOCAL_HARDENING_NO_PASS_CREDIT",
+  "remainingPasses": 31,
+  "lastPlannedPass": 116,
+  "closureTracks": [
+    {
+      "id": "A77R1",
+      "name": "EXACT_CLEAN_ROOT_LINEAGE_GOVERNANCE_DUAL_CONTROL",
+      "status": "NOT_STARTED",
+      "credit": false
+    },
+    {
+      "id": "A78R1",
+      "name": "OFFICIAL_EXACT_NODE_NPM_DEPENDENCY_AND_CHROMIUM_BOOTSTRAP",
+      "status": "BLOCKED_EXACT_INPUTS",
+      "credit": false
+    },
+    {
+      "id": "A79R1",
+      "name": "EXACT_BUILD_RUNTIME_BROWSER_PL_EN_DE_MATRIX",
+      "status": "BLOCKED_A78R1_AND_LOCAL_DEBT",
+      "credit": false
+    },
+    {
+      "id": "A80R1",
+      "name": "FROZEN_LOCAL_RELEASE_CANDIDATE_FINAL_BYTE_SEAL",
+      "status": "BLOCKED_A79R1",
+      "credit": false
+    }
+  ],
+  "passes": [
+    {
+      "id": "A90",
+      "name": "API_EDGE_REVERSE_PROXY_AND_REQUEST_TRUST_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "canonical origin and trusted forwarding disagreement rejection",
+        "method override, transfer framing and singleton ambiguity rejection",
+        "duplicate and shadow query rejection",
+        "body-bound worker mutation authorization",
+        "provider concurrency and single-flight budgets",
+        "rate-limit recovery circuit"
+      ],
+      "open": [
+        "full endpoint denominator behavior matrix",
+        "distributed multi-instance limiter proof",
+        "real proxy/CDN desync and cache tests",
+        "real provider and DNS-rebinding execution"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A91",
+      "name": "FILES_UPLOAD_DOWNLOAD_ARCHIVE_AND_PARSER_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "attachments fail closed without AV/CDR/private quarantine",
+        "multipart and bounded JSON boundary",
+        "hardlink, inode, TOCTOU and atomic temp identity checks",
+        "PNG and JPEG structural validation",
+        "unsafe remote product image rejection"
+      ],
+      "open": [
+        "real AV/CDR/quarantine",
+        "private staging storage and signed URL lifecycle",
+        "Windows-specific swap/hardlink tests",
+        "real browser download compatibility",
+        "complete archive and document parser matrix"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A92",
+      "name": "STRIPE_TEST_PAYMENT_ENTITLEMENT_AND_RECONCILIATION_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "runtime payment authority with multi-gate live stop-sell",
+        "Stripe TEST/live key separation",
+        "server idempotency keys and entitlement binding",
+        "partial refund non-revocation and durable terminal writes"
+      ],
+      "open": [
+        "real Stripe TEST payment/refund/replay/reorder/reconciliation",
+        "dead-letter operator workflow",
+        "multi-instance race proof",
+        "full SKU, coupon, price and tax mismatch denominator"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A93",
+      "name": "SUPPLY_CHAIN_BUILD_PROVENANCE_AND_REPRODUCIBILITY_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "dependency upgrade and zero npm advisory result at checkpoint",
+        "build child environment allowlist and redacted receipt",
+        "unsafe CSS lexical minifier disabled"
+      ],
+      "open": [
+        "official Node 24.18.0 archive proof",
+        "official npm 11.16.0 and 827 of 827 dependency CAS",
+        "exact Playwright Chromium",
+        "reproducible dual-build on final bytes",
+        "fresh SBOM, license, provenance and external trust anchor"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A94",
+      "name": "BROWSER_PERFORMANCE_ACCESSIBILITY_AND_CHAOS_HARDENING",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "server-first PL/EN/DE document locale",
+        "paid analysis depth disabled client-side without server entitlement",
+        "visibility abort and timer cleanup",
+        "focus indicators, contrast and localized metadata",
+        "real supported asset denominators retained when evidence is absent"
+      ],
+      "open": [
+        "real browser desktop/mobile/tablet PL/EN/DE",
+        "keyboard and screen-reader proof",
+        "zoom, reduced-motion, offline, slow-network and performance budgets"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A95",
+      "name": "STAGING_SUBJECT_EXACT_BINDING_ENVIRONMENT_ISOLATION_AND_ZERO_MUTATION_PREFLIGHT",
+      "status": "LOCAL_IMPLEMENTATION_GREEN_BLOCKED_EXACT_RELEASE_AND_EXTERNAL_INPUTS",
+      "implemented": [
+        "current authority and descendant binding",
+        "exact external source archive and package-manifest binding",
+        "A77R1-A80R1 non-fixture exact receipt requirements",
+        "sanitized explicit staging environment",
+        "URL credential/query/fragment/private-host rejection",
+        "unknown relevant environment rejection",
+        "zero mutation and zero stage calls on blocked preflight",
+        "historical PASS35 candidate demoted from current staging authority"
+      ],
+      "open": [
+        "VERIFIED A77R1-A80R1",
+        "current-root exact 30/30",
+        "external A95 SOURCE_ONLY archive binding",
+        "real disposable staging environment",
+        "two tenant accounts",
+        "real A96-A104 stages"
+      ],
+      "credit": false
+    },
+    {
+      "range": "A95-A104",
+      "name": "REAL_STAGING_OPERATIONS_AND_OBSERVATION_WINDOWS",
+      "status": "NOT_STARTED_BLOCKED_EXTERNAL",
+      "realStagesVerified": 0,
+      "requiredStages": 10,
+      "credit": false
+    },
+    {
+      "range": "A105-A110",
+      "name": "RIGHTS_LEGAL_AUDITS_REAL_DATA_AI_RISK_AND_CUSTOMER_VALUE",
+      "status": "NOT_STARTED_BLOCKED_EXTERNAL",
+      "providerRightsApproved": "0/21",
+      "legalSigned": "0/20",
+      "realAudits": "0/50",
+      "officialToolRuns": "0/200",
+      "crossAudits": "0/20",
+      "realBrainAngelRiskEval": "0/300",
+      "customerCohorts": "0/2",
+      "credit": false
+    },
+    {
+      "range": "A111-A116",
+      "name": "FINAL_REAL_DATA_REBASELINE_EXACT_RELEASE_AND_SKU_DECISION",
+      "status": "NOT_STARTED",
+      "credit": false
+    },
+    {
+      "id": "A96",
+      "name": "RLS_19_CASE_EXECUTABLE_REPLAY_AND_CUSTOMER_ARTIFACT_USER_CLIENT_BOUNDARY",
+      "status": "LOCAL_IMPLEMENTATION_GREEN_REAL_0_OF_19_BLOCKED_EXTERNAL",
+      "implemented": [
+        "exact 19-case owner/operator SQL replay",
+        "rollback-only fixture lifecycle",
+        "strict psql and database host binding",
+        "minimal psql environment with no credentials in arguments",
+        "strict single receipt marker and JSON boundary",
+        "customer artifact reads through an active user-scoped Supabase client"
+      ],
+      "open": [
+        "exact A77R1-A80R1 and A95 READY receipt",
+        "genuine psql executable",
+        "two disposable tenant accounts",
+        "real disposable staging database",
+        "19/19 real row fixture outcomes",
+        "API-level cross-tenant replay and session revocation"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A98",
+      "name": "TRANSACTIONAL_EMAIL_PRIVATE_STORAGE_SIGNED_URL_AND_EXTERNAL_KMS_BOUNDARY",
+      "status": "PARTIAL_ACTION_REQUIRED",
+      "implemented": [
+        "same-origin exact-object signed URL verification",
+        "strict duplicate/dangerous-key JSON parsing",
+        "KMS requestId/contextDigest/keyId response binding",
+        "AES-256-GCM context digest AAD",
+        "separate wrap and unwrap secrets",
+        "finally cleanup with bounded retries",
+        "exact disposable recipient hash binding",
+        "data-key zeroization"
+      ],
+      "open": [
+        "real disposable Supabase storage execution",
+        "real external KMS wrap/unwrap",
+        "real provider-reported Resend delivery",
+        "browser/customer secure delivery",
+        "production retention and deletion proof"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A99",
+      "name": "BACKUP_RESTORE_ROLLBACK_PROVIDER_LOSS_AND_RESTORED_RLS_TRUTH_BOUNDARY",
+      "status": "LOCAL_IMPLEMENTATION_GREEN_REAL_LIFECYCLE_0_OF_1_BLOCKED_EXTERNAL",
+      "implemented": [
+        "exact source/environment-bound encrypted backup and independent verification receipts",
+        "database and storage digest parity on isolated disposable restore target",
+        "exact A96 19/19 restored RLS plus cross-tenant denial and session revocation",
+        "body-bound independent dual-control for rollback, provider outage and restore-forward",
+        "six-dimension provider failure-domain independence",
+        "append-only journal and compensating provider/deployment/restore cleanup"
+      ],
+      "open": [
+        "exact A77R1-A80R1 and real A95-A98 VERIFIED prerequisites",
+        "real encrypted backup and independent verify",
+        "real disposable restore and A96 19/19 execution",
+        "real deployment rollback and forward restore",
+        "real independent provider outage and restoration",
+        "real cleanup confirmation and external evidence"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A100",
+      "name": "INCIDENT_KILL_SWITCH_ALERT_ACK_AND_CUSTOMER_COMMUNICATION",
+      "status": "LOCAL_IMPLEMENTATION_GREEN_BLOCKED_EXACT_RELEASE_AND_EXTERNAL_STAGING",
+      "implemented": [
+        "ordered incident state machine",
+        "independent alert observation and ACK SLA",
+        "kill-switch paid-delivery containment",
+        "PL/EN/DE customer-safe notices",
+        "playbook and recovery evidence",
+        "dual-control release and closure",
+        "emergency containment on failure"
+      ],
+      "open": [
+        "exact A77R1-A80R1",
+        "real A95-A99 prerequisites",
+        "real alert delivery and on-call acknowledgement",
+        "real customer notice delivery",
+        "legal/customer communication review",
+        "real incident closure"
+      ],
+      "credit": false
+    },
+    {
+      "id": "A101",
+      "name": "MEASURED_SLO_ERROR_BUDGET_VENDOR_EXIT_AND_RECOVERY_TRUTH_BOUNDARY",
+      "status": "LOCAL_IMPLEMENTATION_GREEN_BLOCKED_EXACT_RELEASE_AND_EXTERNAL_STAGING",
+      "implemented": [
+        "strict current 900-1800 second SLO window and exact counter algebra",
+        "recomputed availability and error-budget consumption",
+        "independent telemetry, vendor control and observer families",
+        "six-dimension primary/alternate provider independence",
+        "zero primary traffic, revoked credential and purged cache within 120 seconds",
+        "ten unique alternate-provider probes with availability, latency and freshness floors",
+        "three-attempt compensating primary restore and healthy final baseline",
+        "zero mutation on SLO, provider-independence or dual-control preflight failure"
+      ],
+      "open": [
+        "exact A77R1-A80R1",
+        "real A95-A100 verified prerequisites",
+        "one current measured SLO window from independent telemetry",
+        "real six-dimension alternate provider and vendor-exit drill",
+        "real revoked-primary credential probe and ten service probes",
+        "confirmed primary restore and external evidence"
+      ],
+      "credit": false
+    }
+  ],
+  "newGaps": [
+    {
+      "id": "A90R1-DUPLICATE-SHADOW-QUERY",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject duplicate, encoded-shadow, Unicode-compatibility-shadow, ambiguous separator and dangerous query keys at the API edge."
+    },
+    {
+      "id": "A93R1-BUILD-ENV-SECRET-INHERITANCE",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Allowlist child build environment and never emit environment values in receipts."
+    },
+    {
+      "id": "A94R1-CSS-PARSER-CORRUPTION",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DUAL_BUILD",
+      "requirement": "Repair all lexical-minifier selector and declaration corruption and pass both Webpack and Turbopack on final bytes."
+    },
+    {
+      "id": "A94R1-DENOMINATOR-COLLAPSE",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Preserve 318 Shield, 318 Shield Pro/Map and 583 Real Markets unavailable or blocked rows when evidence is absent."
+    },
+    {
+      "id": "A94R1-AUTHORITY-DRIFT",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DESCENDANT",
+      "requirement": "Bind active pass, authority, compatibility mirrors, descendant manifest and living roadmap to one sparse non-pass checkpoint."
+    },
+    {
+      "id": "A95-STAGING-CANDIDATE-REBIND",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED",
+      "requirement": "Replace stale PASS35_OFFLINE_CANDIDATE_R3 binding with final frozen source and environment fingerprints before any staging credit."
+    },
+    {
+      "id": "A96-RLS-DENOMINATOR-19",
+      "severity": "P0",
+      "status": "LOCAL_HARNESS_FIXED_REAL_0_OF_19_BLOCKED_EXTERNAL",
+      "requirement": "Reconcile the stale 18-check staging plan with the canonical 19-case RLS matrix and execute all 19 against two disposable tenants."
+    },
+    {
+      "id": "A105-PROVIDER-RIGHTS-SCHEMA",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Record export, PDF, derived-data, AI/RAG, cache, redistribution, retention, correction, attribution, exit, territory and SKU rights per provider."
+    },
+    {
+      "id": "A107-INDEPENDENT-SIGNATURE-TRUTH",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Cryptographically verify signer identity, trust chain, timestamp, revocation, independence and conflict declaration."
+    },
+    {
+      "id": "A48R1-RLS-STRUCTURAL-PREFLIGHT-FALSE-CREDIT",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Never grant 19/19 RLS credit from a structural preflight; require exactly 19 prepared, executed and passed cases against two disposable tenants."
+    },
+    {
+      "id": "A91R1-IMMUTABLE-LOG-FIXTURE-SOURCE-LOSS",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Preserve the exact A42 immutable crash-log fixture while excluding all mutable runtime logs from SOURCE_ONLY."
+    },
+    {
+      "id": "A58R1-PHYSICAL-SOURCE-FINGERPRINT-GAP",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CLEAN_UNPACK",
+      "requirement": "Bind descendant and archive manifests and require forbidden-output absence before and after clean-unpack tests."
+    },
+    {
+      "id": "A58R1-EMBEDDED-MANIFEST-ADMISSION-GAP",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_PACKAGE",
+      "requirement": "Validate embedded manifest schema, lineage, no-credit truth fields, unique canonical paths, exact bytes, path-set and aggregate before A58 can pass."
+    },
+    {
+      "id": "A80R2-CLEAN-RECEIPT-PACKAGE-SEQUENCING",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_PACKAGE",
+      "requirement": "Emit SOURCE first, run clean-unpack, bind its receipt to exact archive and embedded manifest hashes, then admit MATERIALS packaging."
+    },
+    {
+      "id": "A78R2-NODE-MODULES-SYMLINK-EXECUTION",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_NO_EXACT_TOOLCHAIN_CREDIT",
+      "requirement": "Reject missing, file, symlink or out-of-tree node_modules and TypeScript CLI before any dependency-backed clean-unpack step."
+    },
+    {
+      "id": "A94R1-ZERO-WARNING-LINT-BUDGET",
+      "severity": "P1",
+      "status": "LOCALLY_VERIFIED_EXACT_NODE_24_18_PRE_FREEZE",
+      "requirement": "Keep the existing zero-warning lint budget and remove all 413 errors and 116 warnings without disables or threshold changes."
+    },
+    {
+      "id": "A93R2-BUILD-OUTPUT-WRITER-RACE",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DUAL_BUILD",
+      "requirement": "Serialize every mode/distDir writer with an atomic exclusive lock, bind the exact root BUILD_ID at phase boundaries, require exact root and standalone BUILD_ID equality, and report FAIL_OUTPUT_CONTRACT whenever the final output contract is false."
+    },
+    {
+      "id": "A93R2-ORPHAN-BUILD-LOCK-RECOVERY",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CLEAN_UNPACK_NO_REAL_RECOVERY_CREDIT",
+      "requirement": "Define a dual-reviewed operator procedure that validates lock owner identity, process liveness, inode, frozen source and output state before removing an orphaned build lock; automatic lock stealing remains forbidden."
+    },
+    {
+      "id": "A93R3-WORKSPACE-REPLAY-BUILD-LOCK-BOUNDARY",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DUAL_BUILD",
+      "requirement": "Keep exclusive build locks in private external runtime state namespaced by the canonical source root, disclose no raw host path, and require repeated absence checks after each build process and production smoke so workspace persistence replay cannot leave a false-success lock."
+    },
+    {
+      "id": "A94R2-PRODUCTION-SMOKE-CANONICAL-ORIGIN",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_RUNTIME_SMOKE",
+      "requirement": "Exercise the production edge behind an explicit local simulated TLS reverse proxy without weakening fail-closed canonical-origin policy; separate process readiness from application status, use the real worker method, and replace stale source-text assertions with behavior."
+    },
+    {
+      "id": "A80R2-DETERMINISTIC-ORDER-MODE-AND-COLLISION",
+      "severity": "P2",
+      "status": "LOCALLY_IMPLEMENTED_PENDING_FINAL_DOUBLE_BUILD",
+      "requirement": "Use raw ordering, normalize and assert modes, reject raw/NFKC/casefold collisions and compare every ZIP entry byte, hash, mode and order."
+    },
+    {
+      "id": "A80R2-INDEPENDENT-DETERMINISTIC-REBUILD",
+      "severity": "P2",
+      "status": "LOCALLY_IMPLEMENTED_PENDING_FINAL_DOUBLE_BUILD",
+      "requirement": "Build SOURCE independently before and after clean-unpack and build MATERIALS twice from frozen inputs; require identical SHA-256 and byte length."
+    },
+    {
+      "id": "A78R3-SPARSE-NON-PASS-LINEAGE-AND-GATE-TRUTH",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CURRENT_ROOT_30_OF_30",
+      "requirement": "Admit an authority-declared sparse ACTION_REQUIRED_NON_PASS child only with exact parent/digest, completed-through, omitted-pass no-credit and no-promotion truth; keep exact 30/30 execution separate from offline release-candidate eligibility."
+    },
+    {
+      "id": "A90R2-WORKER-BODY-INVENTORY-DRIFT",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Recognize the real bounded internal-worker mutation helper in the full API inventory and behaviorally prove 401, bounded-body 413, duplicate-key rejection and validation reachability for every worker route."
+    },
+    {
+      "id": "A90R2-CANONICAL-ORIGIN-HARNESS-TRUTH",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Model the server-owned production canonical origin in proxy tests, preserve fail-closed 503 on missing or invalid configuration and prove that request Host and forwarded headers cannot steer redirects."
+    },
+    {
+      "id": "A59R1-ROUTE-DISPATCH-BYTE-METADATA-OMISSION",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_ROUTE_DISPATCH_REGRESSION",
+      "requirement": "Rebaseline the complete route-dispatch manifest after handler changes and make handler byte length an enforced tamper boundary alongside methods and SHA-256 for the full handler denominator."
+    },
+    {
+      "id": "A59R1-CSS-FINAL-BYTE-BINDING-DRIFT",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_A59_REGRESSION",
+      "requirement": "Rebind every changed CSS file and the aggregate profile to current physical bytes while preserving parser-error, used-identifier and fixed budget thresholds."
+    },
+    {
+      "id": "A59R2-ROUTE-METHOD-REGEX-VS-AST-EQUIVALENCE",
+      "severity": "P3",
+      "status": "LOCALLY_FIXED_DIAGNOSTIC_AST_PENDING_EXACT_A78R1_REPARSE",
+      "requirement": "Replace regex-only exported-method discovery with parser or registry-backed AST equivalence while retaining the complete handler, hash, byte-length and method denominator."
+    },
+    {
+      "id": "A58R2-ARCHIVE-MANIFEST-AND-LOCAL-CREDIT-TRUTH-DRIFT",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CLEAN_UNPACK",
+      "requirement": "Keep the exact embedded archive-manifest field contract synchronized with the deterministic packager, record true local lint, smoke, current-root and freeze results, and preserve explicit false exact-release, browser, staging, LIVE and sale credit."
+    },
+    {
+      "id": "A94R2-LAZY-ROUTE-METHOD-PARITY",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_EXACT_RUNTIME_BROWSER_REGRESSION",
+      "requirement": "Keep every lazy shell method set exactly equal to its handler; the advanced-audit release shell must preserve POST, PUT and PATCH and reject future shell/handler drift."
+    },
+    {
+      "id": "A90R3-LAZY-LOADER-INVENTORY-RESOLUTION",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_REGRESSION",
+      "requirement": "Resolve both inline load imports and separately declared const load functions to the real mutation handler before awarding bounded-body coverage."
+    },
+    {
+      "id": "A94R2-PHYSICAL-PDF-EVIDENCE-RETENTION",
+      "severity": "P1",
+      "status": "LOCALLY_VERIFIED_SYNTHETIC_ONLY_REAL_CUSTOMER_ZERO",
+      "requirement": "Retain and independently reverify all 450 physical synthetic PDFs and 2100 pages with exact materials binding; never convert renderer QA into real-data, customer-value or sale credit."
+    },
+    {
+      "id": "A94R2-CROSS-SURFACE-PAID-VALUE-TRUTH",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EVIDENCE_BLOCKED",
+      "requirement": "One fail-closed gate must preserve real denominators and SKU blockers for Audit, PDF, Shield, Shield Pro/Map, Real Markets, Market Impact, Whale Watch, Brain, Angel and Risk; synthetic readiness must never enable paid delivery."
+    },
+    {
+      "id": "A94R2-EXACT-TAILWIND-CSS-REPLAY",
+      "severity": "P1",
+      "status": "OPEN_BLOCKED_EXACT_DEPENDENCY",
+      "requirement": "Repeat the A94 Tailwind 3.4.19/PostCSS parser and both production builds on final A94R2 bytes with genuine lockfile dependencies; byte-identical CSS inputs preserve history but grant no new build/browser credit."
+    },
+    {
+      "id": "A80R3-PYTHON-BYTECODE-CACHE-PACKAGE-POLLUTION",
+      "severity": "P2",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_DOUBLE_BUILD",
+      "requirement": "Exclude nested __pycache__ directories and .pyc files from source lineage and deterministic packages, reject them in packaged-tree admission, and preserve only source scripts as canonical code."
+    },
+    {
+      "id": "A95-GAP-10",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_EXTERNAL_FINAL_CLEAN_UNPACK_RECEIPT_REQUIRED",
+      "requirement": "A58 and current authority verification must be read-only with respect to package-forbidden runtime artifacts; SOURCE identity excludes artifacts and verifier children use no-write mode."
+    },
+    {
+      "id": "A95-GAP-11",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_EXTERNAL_FINAL_CLEAN_UNPACK_RECEIPT_REQUIRED",
+      "requirement": "Historical A94R2 cross-surface value verification must accept only an exact no-promotion current descendant bound to A94R2, rather than hardcoding A94R2 as permanently current or broadly accepting arbitrary revisions."
+    },
+    {
+      "id": "A96-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "A structural RLS preflight must never grant 19/19 credit; require exact prepared, executed and passed counters for all 19 cases."
+    },
+    {
+      "id": "A96-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_PENDING_REAL_ROUTE_REPLAY",
+      "requirement": "Customer artifact list, metadata and PDF reads for real accounts must use an authenticated user-scoped Supabase client; service-role route reads are forbidden."
+    },
+    {
+      "id": "A96-GAP-03",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_REAL_PSQL",
+      "requirement": "Do not rely on psql variable interpolation inside dollar-quoted PL/pgSQL; bind identities through transaction-local custom settings."
+    },
+    {
+      "id": "A96-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_INPUTS_BLOCKED",
+      "requirement": "Bind exact regular non-symlink psql bytes and detached database-host identity; reject production-like databases and weak TLS."
+    },
+    {
+      "id": "A96-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED",
+      "requirement": "Execute all synthetic staging fixtures inside one rollback-only transaction and emit no commit path."
+    },
+    {
+      "id": "A96-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Accept exactly one bounded A96 receipt marker through duplicate-key and dangerous-key rejecting strict JSON parsing."
+    },
+    {
+      "id": "A96-GAP-07",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED",
+      "requirement": "Do not put database credentials in process arguments or receipts; use a minimal child environment and redact failures."
+    },
+    {
+      "id": "A96-GAP-08",
+      "severity": "P1",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute two-account API replay, exact 19/19 SQL cases, session revocation and cross-tenant artifact denial on disposable staging."
+    },
+    {
+      "id": "A96-GAP-09",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Historical cross-surface truth verification must validate an ordered no-promotion descendant chain instead of assuming the current source is the immediate A94R2 child."
+    },
+    {
+      "id": "A96-GAP-10",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Historical A95 admission verification must accept only an exact current no-promotion child bound to A95 rather than hardcoding A95 as permanently current."
+    },
+    {
+      "id": "A97R0-HISTORICAL-A95-DESCENDANT-CHAIN-DEPTH",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Historical A95 admission verification must accept an exact digest-linked descendant chain of arbitrary declared depth instead of only A95 or one immediate child."
+    },
+    {
+      "id": "A97R0-A94R2-CROSS-SURFACE-DESCENDANT-CHAIN-DEPTH",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "The retained A94R2 cross-surface verifier must construct and verify the complete exact digest-linked descendant chain through the current authority instead of freezing its chain at A96."
+    },
+    {
+      "id": "A97R1-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Remove legacy shared ADMIN_IMPORT_TOKEN authorization from Stripe reconciliation and dead-letter mutation routes; require scoped signed admin sessions."
+    },
+    {
+      "id": "A97R1-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Bind every operator assertion to exact raw body SHA-256, method, route path, action scope, actor and session."
+    },
+    {
+      "id": "A97R1-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_DURABLE_EXECUTION_BLOCKED",
+      "requirement": "Consume primary assertions and independent approvals through a durable unique ledger before any payment mutation; replay must execute zero actions."
+    },
+    {
+      "id": "A97R1-GAP-04",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Require a separately signed owner approval from a distinct actor and session before dead-letter requeue."
+    },
+    {
+      "id": "A97R1-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_IDP_CEREMONY_BLOCKED",
+      "requirement": "Require short-lived assertions, recent authentication and phishing-resistant WebAuthn semantics; real IdP ceremony remains external."
+    },
+    {
+      "id": "A97R1-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject scope, path, body-byte, actor, session, environment and action-digest substitution."
+    },
+    {
+      "id": "A97R1-GAP-07",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Use exact body-field allowlists and ensure blocked authorization produces zero durable consumption and zero action execution."
+    },
+    {
+      "id": "A97R1-GAP-08",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute real server-issued operator assertions, independent owner approval, durable Supabase single-use consumption and Stripe TEST reconciliation/requeue on disposable staging."
+    },
+    {
+      "id": "A97R1-GAP-11",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_FINAL_CLEAN_UNPACK",
+      "requirement": "Rebind A58 current checkpoint, archive manifest schema/path, no-credit field and authority verifier to exact A97R1 bytes while treating A57 supplements only as historical nonblocking evidence."
+    },
+    {
+      "id": "A98-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_BLOCKED",
+      "title": "PROVIDER_SIGNED_URL_ORIGIN_AND_OBJECT_CONFUSION",
+      "requirement": "Reject provider-returned signed URLs unless same-origin, exact bucket/object path and token-only query."
+    },
+    {
+      "id": "A98-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_BLOCKED",
+      "title": "STORAGE_MUTATION_CLEANUP_NOT_GUARANTEED",
+      "requirement": "After any upload, execute bounded cleanup in normal and exceptional paths and record truthful confirmation."
+    },
+    {
+      "id": "A98-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_BLOCKED",
+      "title": "KMS_RESPONSE_UNDERBOUND",
+      "requirement": "Bind KMS response to operation, requestId, context digest, key identity and exact response fields."
+    },
+    {
+      "id": "A98-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "title": "ENVELOPE_CONTEXT_NOT_AUTHENTICATED",
+      "requirement": "Authenticate immutable context digest as AES-GCM AAD and reject context drift."
+    },
+    {
+      "id": "A98-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "title": "PROVIDER_JSON_DUPLICATE_DANGEROUS_KEYS",
+      "requirement": "Reject duplicate keys, prototype keys, invalid UTF-8, excessive depth/nodes and oversized JSON."
+    },
+    {
+      "id": "A98-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_BLOCKED",
+      "title": "KMS_SECRET_FAILURE_DOMAIN_REUSE",
+      "requirement": "Use distinct wrap and unwrap bearer secrets and reject secret collisions."
+    },
+    {
+      "id": "A98-GAP-07",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_BLOCKED",
+      "title": "EMAIL_RECIPIENT_MISDELIVERY",
+      "requirement": "Bind exact disposable recipient SHA-256 and reject common consumer domains in real staging."
+    },
+    {
+      "id": "A98-GAP-08",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "title": "DATA_KEY_MEMORY_RETENTION",
+      "requirement": "Zeroize plaintext data-key buffers after normal completion and every error path."
+    },
+    {
+      "id": "A98-GAP-09",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "title": "REAL_EMAIL_STORAGE_KMS_LIFECYCLE",
+      "requirement": "Execute one exact disposable staging lifecycle with private storage, external KMS, provider-reported email delivery and confirmed cleanup."
+    },
+    {
+      "id": "A99-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Bind backup creation and independent verification to exact source revision, source manifest, environment, snapshot cutoff, encrypted scope, database/storage digests and provider receipts."
+    },
+    {
+      "id": "A99-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require restore database/storage digest parity and a different disposable restore target."
+    },
+    {
+      "id": "A99-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require exact A96 19/19 RLS replay, 13 owner and 6 operator cases, cross-tenant denial and session revocation after restore."
+    },
+    {
+      "id": "A99-GAP-04",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require independent dual-control WebAuthn assertions bound to body, method, path and scope for rollback, provider outage and restore-forward."
+    },
+    {
+      "id": "A99-GAP-05",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require alternate provider independence across provider, vendor, account, failure domain, control plane and credential."
+    },
+    {
+      "id": "A99-GAP-06",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Run provider restore, deployment forward restoration and disposable restore cleanup as compensating recovery after any post-mutation failure."
+    },
+    {
+      "id": "A99-GAP-07",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject duplicate/dangerous JSON, extra response fields, source/environment drift and ambiguous receipt identities."
+    },
+    {
+      "id": "A99-GAP-08",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Preserve append-only sequence/previousDigest lifecycle evidence and never expose raw backup, restore, deployment or provider IDs."
+    },
+    {
+      "id": "A99-GAP-09",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute one complete disposable-staging backup/restore/rollback/provider-loss lifecycle with real A96 19/19 replay and confirmed cleanup."
+    },
+    {
+      "id": "A100-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Enforce an exact ordered incident lifecycle from READY through OPEN, CONTAINED, RECOVERING, RESOLVED and CLOSED; reject skipped, reversed or stale state transitions."
+    },
+    {
+      "id": "A100-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require body/method/path/scope-bound dual-control WebAuthn assertions with distinct actors and sessions before kill-switch release and incident closure."
+    },
+    {
+      "id": "A100-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "After any post-mutation failure, preserve or re-establish paid-delivery containment and require confirmed emergency hold; unconfirmed containment is RECOVERY_REQUIRED."
+    },
+    {
+      "id": "A100-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Generate server-owned PL/EN/DE customer notices with exact cross-locale fact parity, bounded content and rejection of zero-risk, fully-safe or no-data-loss guarantees."
+    },
+    {
+      "id": "A100-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require independent alert producer/observer families, delivery within 60 seconds and phishing-resistant on-call acknowledgement within 300 seconds."
+    },
+    {
+      "id": "A100-GAP-06",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute one complete disposable-staging incident lifecycle with real alert delivery, on-call ACK, kill-switch containment, customer notices, validated recovery, dual-controlled release/closure and a healthy final baseline."
+    }
+  ],
+  "metrics": {
+    "canonicalWeightedPercent": 59.3,
+    "canonicalStrictPercent": 39.5,
+    "zeroBudgetPercent": 91.9,
+    "changedByCheckpoint": false,
+    "reason": "Partial local hardening and additional tests do not close a canonical workstream or external proof denominator."
+  },
+  "skuDecisions": {
+    "basic": "PILOT_ONLY",
+    "pro": "BLOCKED_RIGHTS",
+    "advanced": "BLOCKED_ACCURACY"
+  },
+  "promotion": {
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "A100R0 adds a local incident, alert/ACK, kill-switch, multilingual customer-communication and recovery truth boundary without changing the 31-entry formal denominator or granting A100, exact release, staging, LIVE, paid or customer-value credit.",
+  "localCheckpointAdditions": [
+    {
+      "id": "A59R2",
+      "name": "ROUTE_METHOD_AST_EQUIVALENCE",
+      "status": "LOCALLY_FIXED_DIAGNOSTIC_TYPESCRIPT_NO_EXACT_CREDIT",
+      "credit": false
+    },
+    {
+      "id": "A93R2",
+      "name": "ORPHAN_BUILD_LOCK_DUAL_REVIEW_RECOVERY",
+      "status": "LOCALLY_FIXED_FIXTURE_REAL_EXECUTION_ZERO",
+      "credit": false
+    },
+    {
+      "id": "A94R2-PDF",
+      "name": "RETAINED_PHYSICAL_PDF_INDEPENDENT_QA",
+      "status": "LOCALLY_VERIFIED_SYNTHETIC_ONLY",
+      "credit": false
+    },
+    {
+      "id": "A94R2-VALUE",
+      "name": "CROSS_SURFACE_BASIC_PRO_ADVANCED_VALUE_TRUTH",
+      "status": "LOCALLY_VERIFIED_NO_REAL_OR_PAID_CREDIT",
+      "credit": false
+    },
+    "A99 exact backup/restore receipt and restored RLS truth boundary",
+    "A99 dual-controlled rollback/provider-loss and compensating recovery lifecycle",
+    "A100 exact ordered incident state-machine and containment boundary",
+    "A100 independent alert/ACK, multilingual customer notices and dual-controlled recovery/closure"
+  ],
+  "planningEstimate": {
+    "formalRemainingEntries": 31,
+    "formalBasePassesA90ToA116": 27,
+    "closureTracksA77R1ToA80R1": 4,
+    "likelyRepairRetestRevisionsLow": 7,
+    "likelyRepairRetestRevisionsHigh": 14,
+    "realisticRemainingCheckpointsLow": 34,
+    "realisticRemainingCheckpointsHigh": 41,
+    "classification": "PLANNING_INFERENCE_NOT_CREDIT"
+  },
+  "newGapsA94R2": [
+    {
+      "id": "A78R1-EXACT-TYPESCRIPT-AST-REPARSE",
+      "severity": "P1",
+      "status": "OPEN_BLOCKED_EXACT_INPUTS",
+      "requirement": "Rebuild and reparse the complete route AST registry with the exact lockfile TypeScript under the verified A78R1 toolchain."
+    },
+    {
+      "id": "A94R2-LAZY-ROUTE-METHOD-DRIFT",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Require each lazy route shell to expose every AST-discovered handler method and remove superseded direct shells from the physical denominator."
+    },
+    {
+      "id": "A94R2-PDF-RETENTION-INDEPENDENT-QA",
+      "severity": "P1",
+      "status": "LOCALLY_VERIFIED_SYNTHETIC_ONLY",
+      "requirement": "Retain and independently parse, text-extract and raster-check all 450 physical PDFs after every packaging change; preserve zero real-customer credit."
+    },
+    {
+      "id": "A94R2-CROSS-SURFACE-VALUE-TRUTH",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_NO_REAL_OR_PAID_CREDIT",
+      "requirement": "Bind Audit, PDF, Shield, Shield Pro, Shield Map, Real Markets, Market Impact, Whale Watch, Brain, Angel and Risk denominators and no-paid/no-real truth in one resealed semantic-mutation gate."
+    }
+  ],
+  "localClosureSummary": {
+    "routeAstFiles": 254,
+    "routeAstMethodExports": 316,
+    "routeAstChecks": 1021,
+    "routeDispatchChecks": 1480,
+    "lazyRouteChecks": 176,
+    "orphanBuildLockAssertions": 26,
+    "physicalSyntheticPdfs": 450,
+    "physicalSyntheticPages": 2100,
+    "pdfMaterialsBindingChecks": 19,
+    "crossSurfaceChecks": 32,
+    "crossSurfaceMutationsKilled": 16,
+    "realEvidenceCreditsGranted": 0,
+    "paidSkuCreditsGranted": 0
+  },
+  "newGapsA95R0": [
+    {
+      "id": "A95-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_INPUTS_BLOCKED",
+      "requirement": "Do not allow the historical PASS35 candidateId to define the current staging subject."
+    },
+    {
+      "id": "A95-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_EXACT_RECEIPTS_ABSENT",
+      "requirement": "Require exact non-fixture A77R1-A80R1 receipts bound to the same source package manifest before any staging mutation."
+    },
+    {
+      "id": "A95-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject missing source bindings; null source binding is never acceptable for exact or stage receipts."
+    },
+    {
+      "id": "A95-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Do not inherit the full ambient process environment into staging admission or child stages."
+    },
+    {
+      "id": "A95-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject URL credentials, query, fragment, HTTP, localhost, private IP, production names and insufficient origin diversity."
+    },
+    {
+      "id": "A95-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Reject unknown relevant environment names, weak or duplicate secrets and live Stripe prefixes."
+    },
+    {
+      "id": "A95-GAP-07",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Require the source archive to be a regular non-symlink file outside the source tree with exact bytes and SHA-256."
+    },
+    {
+      "id": "A95-GAP-08",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_NO_REAL_EXECUTION_CREDIT",
+      "requirement": "A blocked admission must make zero stage calls, start zero mutation and preserve source identity."
+    },
+    {
+      "id": "A95-GAP-09",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_EXTERNAL_FINAL_CLEAN_UNPACK_RECEIPT_REQUIRED",
+      "requirement": "Rebind A58 current archive manifest schema, path and pass-credit field to A95 instead of hardcoded A94R2."
+    },
+    {
+      "id": "A95-GAP-10",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_EXTERNAL_FINAL_CLEAN_UNPACK_RECEIPT_REQUIRED",
+      "requirement": "A58 and current authority verification must be read-only with respect to package-forbidden runtime artifacts; SOURCE identity excludes artifacts and verifier children use no-write mode."
+    },
+    {
+      "id": "A95-GAP-11",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_EXTERNAL_FINAL_CLEAN_UNPACK_RECEIPT_REQUIRED",
+      "requirement": "Historical A94R2 cross-surface value verification must accept only an exact no-promotion current descendant bound to A94R2, rather than hardcoding A94R2 as permanently current or broadly accepting arbitrary revisions."
+    }
+  ],
+  "localA95Summary": {
+    "adversarialCases": 44,
+    "passed": 44,
+    "realStageCalls": 0,
+    "mutationStarted": false,
+    "exactReleasePrerequisitesVerified": 0,
+    "sourceArchivesVerified": 0,
+    "stagingCredit": false
+  },
+  "newGapsA96R0": [
+    {
+      "id": "A96-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "A structural RLS preflight must never grant 19/19 credit; require exact prepared, executed and passed counters for all 19 cases."
+    },
+    {
+      "id": "A96-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_PENDING_REAL_ROUTE_REPLAY",
+      "requirement": "Customer artifact list, metadata and PDF reads for real accounts must use an authenticated user-scoped Supabase client; service-role route reads are forbidden."
+    },
+    {
+      "id": "A96-GAP-03",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_PENDING_REAL_PSQL",
+      "requirement": "Do not rely on psql variable interpolation inside dollar-quoted PL/pgSQL; bind identities through transaction-local custom settings."
+    },
+    {
+      "id": "A96-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_INPUTS_BLOCKED",
+      "requirement": "Bind exact regular non-symlink psql bytes and detached database-host identity; reject production-like databases and weak TLS."
+    },
+    {
+      "id": "A96-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED",
+      "requirement": "Execute all synthetic staging fixtures inside one rollback-only transaction and emit no commit path."
+    },
+    {
+      "id": "A96-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Accept exactly one bounded A96 receipt marker through duplicate-key and dangerous-key rejecting strict JSON parsing."
+    },
+    {
+      "id": "A96-GAP-07",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED",
+      "requirement": "Do not put database credentials in process arguments or receipts; use a minimal child environment and redact failures."
+    },
+    {
+      "id": "A96-GAP-08",
+      "severity": "P1",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute two-account API replay, exact 19/19 SQL cases, session revocation and cross-tenant artifact denial on disposable staging."
+    },
+    {
+      "id": "A96-GAP-09",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Historical cross-surface truth verification must validate an ordered no-promotion descendant chain instead of assuming the current source is the immediate A94R2 child."
+    },
+    {
+      "id": "A96-GAP-10",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Historical A95 admission verification must accept only an exact current no-promotion child bound to A95 rather than hardcoding A95 as permanently current."
+    }
+  ],
+  "localA96Summary": {
+    "adversarialChecks": 21,
+    "passed": 21,
+    "verifierChecks": 24,
+    "verifierPassed": 24,
+    "sqlCasesPrepared": 19,
+    "realRlsExecuted": 0,
+    "realRlsPassed": 0,
+    "customerArtifactUserClientBoundary": true,
+    "a96PassCredit": false,
+    "stagingCredit": false
+  },
+  "newGapsA97R0": [
+    {
+      "id": "A97-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED",
+      "title": "SIGNED_WEBHOOK_LIVEMODE_RUNTIME_AUTHORITY_MISMATCH",
+      "requirement": "Reject signed test/live events that do not match server-owned payment mode before durable event claim or effect execution."
+    },
+    {
+      "id": "A97-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED",
+      "title": "VLM_PAID_SESSION_PAYMENT_INTENT_UNDER_BINDING",
+      "requirement": "Require complete paid payment-mode Checkout Session plus succeeded exact PaymentIntent with amount received, currency, livemode, product, product cell, context and account parity."
+    },
+    {
+      "id": "A97-GAP-03",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "title": "STRIPE_WEBHOOK_MEDIA_TYPE_AND_CONTENT_ENCODING",
+      "requirement": "Require strict application/json and reject compressed/ambiguous webhook bodies before raw signature construction."
+    },
+    {
+      "id": "A97-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "title": "SERVER_VERIFY_WEBHOOK_RECEIPT_PARITY",
+      "requirement": "Use the same full receipt verifier for success-page server verification and signed webhook entitlement delivery."
+    },
+    {
+      "id": "A97-GAP-05",
+      "severity": "P1",
+      "status": "OPEN_NEXT_REVISION",
+      "title": "RECONCILIATION_DEAD_LETTER_INDEPENDENT_OPERATOR_CONTROL",
+      "requirement": "Replace legacy admin import authorization for payment reconciliation and dead-letter mutation with scoped, body-bound, single-use operator assertions and independent approval for requeue."
+    },
+    {
+      "id": "A97-GAP-06",
+      "severity": "P0",
+      "status": "BLOCKED_EXTERNAL",
+      "title": "REAL_STRIPE_TEST_PAYMENT_REFUND_REPLAY_RECONCILIATION",
+      "requirement": "Execute one complete Stripe TEST payment, full refund, signed webhook replay/reorder and reconciliation lifecycle on disposable staging without production charging."
+    }
+  ],
+  "localA97Summary": {
+    "pureContractAssertions": 50,
+    "ingressProviderSpyAssertions": 14,
+    "handlerPreflightAssertions": 8,
+    "verifierChecks": 25,
+    "receiptMutationFamilies": 24,
+    "receiptMutationsKilled": 24,
+    "blockedIngressDurableClaims": 0,
+    "blockedReceiptEntitlementWrites": 0,
+    "realStripeTestLifecycle": 0,
+    "realRefunds": 0,
+    "realReconciliationRuns": 0,
+    "passCredit": false,
+    "stagingCredit": false
+  },
+  "localA97R1Summary": {
+    "behavioralAssertions": 44,
+    "validReconcileActions": 1,
+    "validRequeueActions": 1,
+    "blockedActionExecutions": 0,
+    "bodyBound": true,
+    "singleUse": true,
+    "independentApprovalRequiredForRequeue": true,
+    "realOperatorReauthCeremonies": 0,
+    "realDurableAssertionConsumptions": 0,
+    "realStripeRequeues": 0,
+    "passCredit": false,
+    "stagingCredit": false,
+    "a58CurrentCheckpointRebound": true
+  },
+  "localA98Summary": {
+    "boundaryAssertions": 77,
+    "fixtureScenarios": 6,
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realSignedUrls": 0,
+    "realCleanupConfirmations": 0,
+    "stagingCredit": false,
+    "passCredit": false
+  },
+  "localA99Summary": {
+    "boundaryAssertions": 78,
+    "fixtureScenarios": 8,
+    "realBackups": 0,
+    "realRestores": 0,
+    "realRestoredRlsCasesPassed": 0,
+    "realDeploymentRollbacks": 0,
+    "realProviderOutages": 0,
+    "realRestoreCleanupConfirmations": 0,
+    "stagingCredit": false,
+    "passCredit": false
+  },
+  "localA100Summary": {
+    "boundaryAssertions": 110,
+    "fixtureScenarios": 11,
+    "verifierChecks": 17,
+    "realIncidentRuns": 0,
+    "realAlertDeliveries": 0,
+    "realOnCallAcknowledgements": 0,
+    "realKillSwitchActivations": 0,
+    "realCustomerNoticeDeliveries": 0,
+    "realRecoveryValidations": 0,
+    "realClosedIncidents": 0,
+    "stagingCredit": false,
+    "passCredit": false,
+    "cleanUnpackChecks": 22,
+    "cleanUnpackChildSteps": 17,
+    "a58LiteralFirstChild": true,
+    "sourcePackageChecks": 18,
+    "materialsPackageChecks": 18,
+    "deterministicSourceRebuild": true,
+    "deterministicMaterialsRebuild": true
+  },
+  "newGapsA100R0": [
+    {
+      "id": "A100-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Enforce an exact ordered incident lifecycle from READY through OPEN, CONTAINED, RECOVERING, RESOLVED and CLOSED; reject skipped, reversed or stale state transitions."
+    },
+    {
+      "id": "A100-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require body/method/path/scope-bound dual-control WebAuthn assertions with distinct actors and sessions before kill-switch release and incident closure."
+    },
+    {
+      "id": "A100-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "After any post-mutation failure, preserve or re-establish paid-delivery containment and require confirmed emergency hold; unconfirmed containment is RECOVERY_REQUIRED."
+    },
+    {
+      "id": "A100-GAP-04",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Generate server-owned PL/EN/DE customer notices with exact cross-locale fact parity, bounded content and rejection of zero-risk, fully-safe or no-data-loss guarantees."
+    },
+    {
+      "id": "A100-GAP-05",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require independent alert producer/observer families, delivery within 60 seconds and phishing-resistant on-call acknowledgement within 300 seconds."
+    },
+    {
+      "id": "A100-GAP-06",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute one complete disposable-staging incident lifecycle with real alert delivery, on-call ACK, kill-switch containment, customer notices, validated recovery, dual-controlled release/closure and a healthy final baseline."
+    }
+  ],
+  "localA101Summary": {
+    "boundaryAssertions": 94,
+    "fixtureScenarios": 15,
+    "verifierChecks": 22,
+    "realSloWindows": 0,
+    "realVendorExitRuns": 0,
+    "realCredentialRevocationProbes": 0,
+    "realAlternateServiceProbeSets": 0,
+    "realPrimaryRestoreConfirmations": 0,
+    "productionSloProven": false,
+    "continuousMonitoringProven": false,
+    "stagingCredit": false,
+    "passCredit": false
+  },
+  "newGapsA101R0": [
+    {
+      "id": "A101-GAP-01",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Bind one current 900-1800 second telemetry window to exact source, environment and independent telemetry family; reject stale, future, coerced or algebraically inconsistent metrics."
+    },
+    {
+      "id": "A101-GAP-02",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Recompute availability and error-budget consumption from exact integer counters; reported metrics cannot self-authorize SLO credit."
+    },
+    {
+      "id": "A101-GAP-03",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require an alternate provider independent across provider, vendor, account, failure domain, control plane and credential before a vendor-exit drill can begin."
+    },
+    {
+      "id": "A101-GAP-04",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Require zero primary traffic, revoked primary credential, purged cache and independently observed alternate activation within 120 seconds."
+    },
+    {
+      "id": "A101-GAP-05",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Prove the old primary credential is rejected with 401/403 by an independent observer before vendor-exit success credit."
+    },
+    {
+      "id": "A101-GAP-06",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Execute at least ten unique alternate-provider probes with exact provider identity, request/observation chronology, payload binding, availability, latency and freshness floors."
+    },
+    {
+      "id": "A101-GAP-07",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Every post-mutation path must attempt primary restore up to three times and verify a healthy final baseline; otherwise return RECOVERY_REQUIRED."
+    },
+    {
+      "id": "A101-GAP-08",
+      "severity": "P0",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "SLO, provider-independence and dual-control failures must execute zero vendor mutations."
+    },
+    {
+      "id": "A101-GAP-09",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED_REAL_EXECUTION_BLOCKED_EXTERNAL",
+      "requirement": "Record the bounded lifecycle in an append-only hash-chained journal without raw credentials, provider secrets or customer identifiers."
+    },
+    {
+      "id": "A101-GAP-10",
+      "severity": "P0",
+      "status": "OPEN_BLOCKED_EXTERNAL",
+      "requirement": "Execute one complete current disposable-staging SLO and vendor-exit/recovery run on exact A77R1-A80R1 frozen bytes with real telemetry, distinct provider failure domains, credential rejection, alternate probes and confirmed primary restoration."
+    },
+    {
+      "id": "A101-GAP-11",
+      "severity": "P1",
+      "status": "LOCALLY_FIXED",
+      "requirement": "Keep top-level current authority manifest/program pointers and compatibility-pointer declared revision synchronized with the current A101 source; stale A97/A98 pointers cannot survive a legal descendant."
+    }
+  ]
+}

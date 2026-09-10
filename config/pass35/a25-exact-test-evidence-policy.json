@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "velmere.pass35.a25-exact-test-evidence-policy.v1",
+  "passId": "PASS35_A25",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "SYNTHETIC_OFFLINE",
+    "GENERATED_BENCHMARK"
+  ],
+  "criticalities": [
+    "CRITICAL",
+    "HIGH",
+    "MEDIUM",
+    "LOW"
+  ],
+  "thresholds": {
+    "criticalBehaviorCoverage": 1,
+    "highBehaviorCoverage": 1,
+    "mediumBehaviorCoverage": 0.8,
+    "branchCoverage": 0.9,
+    "stateTransitionCoverage": 0.9,
+    "mutationKillRate": 0.95,
+    "maxFlakyTests": 0,
+    "requireIsolatedBaselineState": true,
+    "requireResetReceipt": true,
+    "requireTargetBinding": true,
+    "requireRunnerBinding": true
+  },
+  "benchmark": {
+    "families": [
+      "CRITICAL_SUCCESS_BEHAVIOR",
+      "CRITICAL_REVERT_BEHAVIOR",
+      "EVENT_ASSERTION",
+      "STATE_DIFF_ASSERTION",
+      "BRANCH_COVERAGE",
+      "STATE_TRANSITION_COVERAGE",
+      "TEST_ISOLATION",
+      "MUTATION_SCORE",
+      "FLAKINESS_REPEAT",
+      "TARGET_BINDING",
+      "RUNNER_BINDING",
+      "BEHAVIOR_REGISTRY_COMPLETENESS"
+    ],
+    "mutationTypes": [
+      "schema_invalid",
+      "input_class_relabel",
+      "target_digest_invalid",
+      "duplicate_behavior",
+      "missing_critical_execution",
+      "failed_execution",
+      "missing_required_assertion",
+      "branch_coverage_drop",
+      "transition_coverage_drop",
+      "isolation_break",
+      "mutation_score_drop",
+      "flaky_repeat"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "A25 verifies a case-bound exact-test evidence contract over declared behaviors, execution receipts, assertions, coverage, isolation, repeatability and mutation results. It does not execute official Forge, compile Solidity, prove EVM equivalence, establish real customer-case coverage, provide independent rerun or unlock paid delivery."
+}

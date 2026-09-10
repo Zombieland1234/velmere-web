@@ -1,0 +1,4925 @@
+{
+  "schemaVersion": "velmere.pass23.browser-overflow-matrix.v1",
+  "truthBoundary": "This is a planned browser matrix only. No screenshot, layout, WCAG or overflow case is counted as executed until a production build is started and Playwright receipts are bound to the exact source SHA.",
+  "status": "PREPARED_NOT_EXECUTED",
+  "locales": [
+    "pl",
+    "en",
+    "de"
+  ],
+  "viewports": [
+    {
+      "id": "mobile_320",
+      "width": 320,
+      "height": 800
+    },
+    {
+      "id": "mobile_390",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "id": "tablet_768",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "id": "desktop_1280",
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "id": "desktop_1920",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "path": "/"
+    },
+    {
+      "id": "archive",
+      "path": "/archive"
+    },
+    {
+      "id": "lookbook",
+      "path": "/lookbook"
+    },
+    {
+      "id": "shop",
+      "path": "/shop"
+    },
+    {
+      "id": "vlm",
+      "path": "/vlm"
+    },
+    {
+      "id": "vlm_pro",
+      "path": "/vlm/pro"
+    },
+    {
+      "id": "protocol_lab",
+      "path": "/vlm/protocol-lab"
+    },
+    {
+      "id": "how_to_buy",
+      "path": "/vlm/how-to-buy"
+    },
+    {
+      "id": "shield",
+      "path": "/shield"
+    },
+    {
+      "id": "real_markets",
+      "path": "/real-markets"
+    },
+    {
+      "id": "audits",
+      "path": "/audits"
+    },
+    {
+      "id": "lens",
+      "path": "/lens"
+    },
+    {
+      "id": "square",
+      "path": "/square"
+    },
+    {
+      "id": "account",
+      "path": "/account"
+    },
+    {
+      "id": "checkout",
+      "path": "/checkout"
+    },
+    {
+      "id": "privacy",
+      "path": "/legal/privacy"
+    },
+    {
+      "id": "terms",
+      "path": "/legal/terms"
+    },
+    {
+      "id": "cookies",
+      "path": "/legal/cookies"
+    },
+    {
+      "id": "returns",
+      "path": "/legal/returns"
+    },
+    {
+      "id": "not_found",
+      "path": "/pass23-nonexistent-route"
+    }
+  ],
+  "plannedCases": 300,
+  "executedCases": 0,
+  "passedCases": 0,
+  "failedCases": 0,
+  "cases": [
+    {
+      "caseId": "overflow_pl_home_mobile_320",
+      "locale": "pl",
+      "path": "/pl",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_home_mobile_390",
+      "locale": "pl",
+      "path": "/pl",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_home_tablet_768",
+      "locale": "pl",
+      "path": "/pl",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_home_desktop_1280",
+      "locale": "pl",
+      "path": "/pl",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_home_desktop_1920",
+      "locale": "pl",
+      "path": "/pl",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_archive_mobile_320",
+      "locale": "pl",
+      "path": "/pl/archive",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_archive_mobile_390",
+      "locale": "pl",
+      "path": "/pl/archive",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_archive_tablet_768",
+      "locale": "pl",
+      "path": "/pl/archive",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_archive_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/archive",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_archive_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/archive",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lookbook_mobile_320",
+      "locale": "pl",
+      "path": "/pl/lookbook",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lookbook_mobile_390",
+      "locale": "pl",
+      "path": "/pl/lookbook",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lookbook_tablet_768",
+      "locale": "pl",
+      "path": "/pl/lookbook",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lookbook_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/lookbook",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lookbook_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/lookbook",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shop_mobile_320",
+      "locale": "pl",
+      "path": "/pl/shop",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shop_mobile_390",
+      "locale": "pl",
+      "path": "/pl/shop",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shop_tablet_768",
+      "locale": "pl",
+      "path": "/pl/shop",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shop_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/shop",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shop_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/shop",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_mobile_320",
+      "locale": "pl",
+      "path": "/pl/vlm",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_mobile_390",
+      "locale": "pl",
+      "path": "/pl/vlm",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_tablet_768",
+      "locale": "pl",
+      "path": "/pl/vlm",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/vlm",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/vlm",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_pro_mobile_320",
+      "locale": "pl",
+      "path": "/pl/vlm/pro",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_pro_mobile_390",
+      "locale": "pl",
+      "path": "/pl/vlm/pro",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_pro_tablet_768",
+      "locale": "pl",
+      "path": "/pl/vlm/pro",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_pro_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/vlm/pro",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_vlm_pro_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/vlm/pro",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_protocol_lab_mobile_320",
+      "locale": "pl",
+      "path": "/pl/vlm/protocol-lab",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_protocol_lab_mobile_390",
+      "locale": "pl",
+      "path": "/pl/vlm/protocol-lab",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_protocol_lab_tablet_768",
+      "locale": "pl",
+      "path": "/pl/vlm/protocol-lab",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_protocol_lab_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/vlm/protocol-lab",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_protocol_lab_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/vlm/protocol-lab",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_how_to_buy_mobile_320",
+      "locale": "pl",
+      "path": "/pl/vlm/how-to-buy",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_how_to_buy_mobile_390",
+      "locale": "pl",
+      "path": "/pl/vlm/how-to-buy",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_how_to_buy_tablet_768",
+      "locale": "pl",
+      "path": "/pl/vlm/how-to-buy",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_how_to_buy_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/vlm/how-to-buy",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_how_to_buy_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/vlm/how-to-buy",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shield_mobile_320",
+      "locale": "pl",
+      "path": "/pl/shield",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shield_mobile_390",
+      "locale": "pl",
+      "path": "/pl/shield",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shield_tablet_768",
+      "locale": "pl",
+      "path": "/pl/shield",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shield_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/shield",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_shield_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/shield",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_real_markets_mobile_320",
+      "locale": "pl",
+      "path": "/pl/real-markets",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_real_markets_mobile_390",
+      "locale": "pl",
+      "path": "/pl/real-markets",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_real_markets_tablet_768",
+      "locale": "pl",
+      "path": "/pl/real-markets",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_real_markets_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/real-markets",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_real_markets_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/real-markets",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_audits_mobile_320",
+      "locale": "pl",
+      "path": "/pl/audits",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_audits_mobile_390",
+      "locale": "pl",
+      "path": "/pl/audits",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_audits_tablet_768",
+      "locale": "pl",
+      "path": "/pl/audits",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_audits_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/audits",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_audits_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/audits",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lens_mobile_320",
+      "locale": "pl",
+      "path": "/pl/lens",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lens_mobile_390",
+      "locale": "pl",
+      "path": "/pl/lens",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lens_tablet_768",
+      "locale": "pl",
+      "path": "/pl/lens",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lens_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/lens",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_lens_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/lens",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_square_mobile_320",
+      "locale": "pl",
+      "path": "/pl/square",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_square_mobile_390",
+      "locale": "pl",
+      "path": "/pl/square",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_square_tablet_768",
+      "locale": "pl",
+      "path": "/pl/square",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_square_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/square",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_square_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/square",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_account_mobile_320",
+      "locale": "pl",
+      "path": "/pl/account",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_account_mobile_390",
+      "locale": "pl",
+      "path": "/pl/account",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_account_tablet_768",
+      "locale": "pl",
+      "path": "/pl/account",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_account_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/account",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_account_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/account",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_checkout_mobile_320",
+      "locale": "pl",
+      "path": "/pl/checkout",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_checkout_mobile_390",
+      "locale": "pl",
+      "path": "/pl/checkout",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_checkout_tablet_768",
+      "locale": "pl",
+      "path": "/pl/checkout",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_checkout_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/checkout",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_checkout_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/checkout",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_privacy_mobile_320",
+      "locale": "pl",
+      "path": "/pl/legal/privacy",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_privacy_mobile_390",
+      "locale": "pl",
+      "path": "/pl/legal/privacy",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_privacy_tablet_768",
+      "locale": "pl",
+      "path": "/pl/legal/privacy",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_privacy_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/legal/privacy",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_privacy_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/legal/privacy",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_terms_mobile_320",
+      "locale": "pl",
+      "path": "/pl/legal/terms",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_terms_mobile_390",
+      "locale": "pl",
+      "path": "/pl/legal/terms",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_terms_tablet_768",
+      "locale": "pl",
+      "path": "/pl/legal/terms",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_terms_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/legal/terms",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_terms_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/legal/terms",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_cookies_mobile_320",
+      "locale": "pl",
+      "path": "/pl/legal/cookies",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_cookies_mobile_390",
+      "locale": "pl",
+      "path": "/pl/legal/cookies",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_cookies_tablet_768",
+      "locale": "pl",
+      "path": "/pl/legal/cookies",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_cookies_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/legal/cookies",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_cookies_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/legal/cookies",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_returns_mobile_320",
+      "locale": "pl",
+      "path": "/pl/legal/returns",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_returns_mobile_390",
+      "locale": "pl",
+      "path": "/pl/legal/returns",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_returns_tablet_768",
+      "locale": "pl",
+      "path": "/pl/legal/returns",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_returns_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/legal/returns",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_returns_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/legal/returns",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_not_found_mobile_320",
+      "locale": "pl",
+      "path": "/pl/pass23-nonexistent-route",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_not_found_mobile_390",
+      "locale": "pl",
+      "path": "/pl/pass23-nonexistent-route",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_not_found_tablet_768",
+      "locale": "pl",
+      "path": "/pl/pass23-nonexistent-route",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_not_found_desktop_1280",
+      "locale": "pl",
+      "path": "/pl/pass23-nonexistent-route",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_pl_not_found_desktop_1920",
+      "locale": "pl",
+      "path": "/pl/pass23-nonexistent-route",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_home_mobile_320",
+      "locale": "en",
+      "path": "/en",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_home_mobile_390",
+      "locale": "en",
+      "path": "/en",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_home_tablet_768",
+      "locale": "en",
+      "path": "/en",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_home_desktop_1280",
+      "locale": "en",
+      "path": "/en",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_home_desktop_1920",
+      "locale": "en",
+      "path": "/en",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_archive_mobile_320",
+      "locale": "en",
+      "path": "/en/archive",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_archive_mobile_390",
+      "locale": "en",
+      "path": "/en/archive",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_archive_tablet_768",
+      "locale": "en",
+      "path": "/en/archive",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_archive_desktop_1280",
+      "locale": "en",
+      "path": "/en/archive",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_archive_desktop_1920",
+      "locale": "en",
+      "path": "/en/archive",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lookbook_mobile_320",
+      "locale": "en",
+      "path": "/en/lookbook",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lookbook_mobile_390",
+      "locale": "en",
+      "path": "/en/lookbook",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lookbook_tablet_768",
+      "locale": "en",
+      "path": "/en/lookbook",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lookbook_desktop_1280",
+      "locale": "en",
+      "path": "/en/lookbook",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lookbook_desktop_1920",
+      "locale": "en",
+      "path": "/en/lookbook",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shop_mobile_320",
+      "locale": "en",
+      "path": "/en/shop",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shop_mobile_390",
+      "locale": "en",
+      "path": "/en/shop",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shop_tablet_768",
+      "locale": "en",
+      "path": "/en/shop",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shop_desktop_1280",
+      "locale": "en",
+      "path": "/en/shop",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shop_desktop_1920",
+      "locale": "en",
+      "path": "/en/shop",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_mobile_320",
+      "locale": "en",
+      "path": "/en/vlm",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_mobile_390",
+      "locale": "en",
+      "path": "/en/vlm",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_tablet_768",
+      "locale": "en",
+      "path": "/en/vlm",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_desktop_1280",
+      "locale": "en",
+      "path": "/en/vlm",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_desktop_1920",
+      "locale": "en",
+      "path": "/en/vlm",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_pro_mobile_320",
+      "locale": "en",
+      "path": "/en/vlm/pro",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_pro_mobile_390",
+      "locale": "en",
+      "path": "/en/vlm/pro",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_pro_tablet_768",
+      "locale": "en",
+      "path": "/en/vlm/pro",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_pro_desktop_1280",
+      "locale": "en",
+      "path": "/en/vlm/pro",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_vlm_pro_desktop_1920",
+      "locale": "en",
+      "path": "/en/vlm/pro",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_protocol_lab_mobile_320",
+      "locale": "en",
+      "path": "/en/vlm/protocol-lab",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_protocol_lab_mobile_390",
+      "locale": "en",
+      "path": "/en/vlm/protocol-lab",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_protocol_lab_tablet_768",
+      "locale": "en",
+      "path": "/en/vlm/protocol-lab",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_protocol_lab_desktop_1280",
+      "locale": "en",
+      "path": "/en/vlm/protocol-lab",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_protocol_lab_desktop_1920",
+      "locale": "en",
+      "path": "/en/vlm/protocol-lab",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_how_to_buy_mobile_320",
+      "locale": "en",
+      "path": "/en/vlm/how-to-buy",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_how_to_buy_mobile_390",
+      "locale": "en",
+      "path": "/en/vlm/how-to-buy",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_how_to_buy_tablet_768",
+      "locale": "en",
+      "path": "/en/vlm/how-to-buy",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_how_to_buy_desktop_1280",
+      "locale": "en",
+      "path": "/en/vlm/how-to-buy",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_how_to_buy_desktop_1920",
+      "locale": "en",
+      "path": "/en/vlm/how-to-buy",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shield_mobile_320",
+      "locale": "en",
+      "path": "/en/shield",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shield_mobile_390",
+      "locale": "en",
+      "path": "/en/shield",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shield_tablet_768",
+      "locale": "en",
+      "path": "/en/shield",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shield_desktop_1280",
+      "locale": "en",
+      "path": "/en/shield",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_shield_desktop_1920",
+      "locale": "en",
+      "path": "/en/shield",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_real_markets_mobile_320",
+      "locale": "en",
+      "path": "/en/real-markets",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_real_markets_mobile_390",
+      "locale": "en",
+      "path": "/en/real-markets",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_real_markets_tablet_768",
+      "locale": "en",
+      "path": "/en/real-markets",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_real_markets_desktop_1280",
+      "locale": "en",
+      "path": "/en/real-markets",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_real_markets_desktop_1920",
+      "locale": "en",
+      "path": "/en/real-markets",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_audits_mobile_320",
+      "locale": "en",
+      "path": "/en/audits",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_audits_mobile_390",
+      "locale": "en",
+      "path": "/en/audits",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_audits_tablet_768",
+      "locale": "en",
+      "path": "/en/audits",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_audits_desktop_1280",
+      "locale": "en",
+      "path": "/en/audits",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_audits_desktop_1920",
+      "locale": "en",
+      "path": "/en/audits",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lens_mobile_320",
+      "locale": "en",
+      "path": "/en/lens",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lens_mobile_390",
+      "locale": "en",
+      "path": "/en/lens",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lens_tablet_768",
+      "locale": "en",
+      "path": "/en/lens",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lens_desktop_1280",
+      "locale": "en",
+      "path": "/en/lens",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_lens_desktop_1920",
+      "locale": "en",
+      "path": "/en/lens",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_square_mobile_320",
+      "locale": "en",
+      "path": "/en/square",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_square_mobile_390",
+      "locale": "en",
+      "path": "/en/square",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_square_tablet_768",
+      "locale": "en",
+      "path": "/en/square",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_square_desktop_1280",
+      "locale": "en",
+      "path": "/en/square",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_square_desktop_1920",
+      "locale": "en",
+      "path": "/en/square",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_account_mobile_320",
+      "locale": "en",
+      "path": "/en/account",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_account_mobile_390",
+      "locale": "en",
+      "path": "/en/account",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_account_tablet_768",
+      "locale": "en",
+      "path": "/en/account",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_account_desktop_1280",
+      "locale": "en",
+      "path": "/en/account",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_account_desktop_1920",
+      "locale": "en",
+      "path": "/en/account",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_checkout_mobile_320",
+      "locale": "en",
+      "path": "/en/checkout",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_checkout_mobile_390",
+      "locale": "en",
+      "path": "/en/checkout",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_checkout_tablet_768",
+      "locale": "en",
+      "path": "/en/checkout",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_checkout_desktop_1280",
+      "locale": "en",
+      "path": "/en/checkout",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_checkout_desktop_1920",
+      "locale": "en",
+      "path": "/en/checkout",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_privacy_mobile_320",
+      "locale": "en",
+      "path": "/en/legal/privacy",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_privacy_mobile_390",
+      "locale": "en",
+      "path": "/en/legal/privacy",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_privacy_tablet_768",
+      "locale": "en",
+      "path": "/en/legal/privacy",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_privacy_desktop_1280",
+      "locale": "en",
+      "path": "/en/legal/privacy",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_privacy_desktop_1920",
+      "locale": "en",
+      "path": "/en/legal/privacy",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_terms_mobile_320",
+      "locale": "en",
+      "path": "/en/legal/terms",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_terms_mobile_390",
+      "locale": "en",
+      "path": "/en/legal/terms",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_terms_tablet_768",
+      "locale": "en",
+      "path": "/en/legal/terms",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_terms_desktop_1280",
+      "locale": "en",
+      "path": "/en/legal/terms",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_terms_desktop_1920",
+      "locale": "en",
+      "path": "/en/legal/terms",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_cookies_mobile_320",
+      "locale": "en",
+      "path": "/en/legal/cookies",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_cookies_mobile_390",
+      "locale": "en",
+      "path": "/en/legal/cookies",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_cookies_tablet_768",
+      "locale": "en",
+      "path": "/en/legal/cookies",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_cookies_desktop_1280",
+      "locale": "en",
+      "path": "/en/legal/cookies",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_cookies_desktop_1920",
+      "locale": "en",
+      "path": "/en/legal/cookies",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_returns_mobile_320",
+      "locale": "en",
+      "path": "/en/legal/returns",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_returns_mobile_390",
+      "locale": "en",
+      "path": "/en/legal/returns",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_returns_tablet_768",
+      "locale": "en",
+      "path": "/en/legal/returns",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_returns_desktop_1280",
+      "locale": "en",
+      "path": "/en/legal/returns",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_returns_desktop_1920",
+      "locale": "en",
+      "path": "/en/legal/returns",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_not_found_mobile_320",
+      "locale": "en",
+      "path": "/en/pass23-nonexistent-route",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_not_found_mobile_390",
+      "locale": "en",
+      "path": "/en/pass23-nonexistent-route",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_not_found_tablet_768",
+      "locale": "en",
+      "path": "/en/pass23-nonexistent-route",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_not_found_desktop_1280",
+      "locale": "en",
+      "path": "/en/pass23-nonexistent-route",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_en_not_found_desktop_1920",
+      "locale": "en",
+      "path": "/en/pass23-nonexistent-route",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_home_mobile_320",
+      "locale": "de",
+      "path": "/de",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_home_mobile_390",
+      "locale": "de",
+      "path": "/de",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_home_tablet_768",
+      "locale": "de",
+      "path": "/de",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_home_desktop_1280",
+      "locale": "de",
+      "path": "/de",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_home_desktop_1920",
+      "locale": "de",
+      "path": "/de",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_archive_mobile_320",
+      "locale": "de",
+      "path": "/de/archive",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_archive_mobile_390",
+      "locale": "de",
+      "path": "/de/archive",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_archive_tablet_768",
+      "locale": "de",
+      "path": "/de/archive",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_archive_desktop_1280",
+      "locale": "de",
+      "path": "/de/archive",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_archive_desktop_1920",
+      "locale": "de",
+      "path": "/de/archive",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lookbook_mobile_320",
+      "locale": "de",
+      "path": "/de/lookbook",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lookbook_mobile_390",
+      "locale": "de",
+      "path": "/de/lookbook",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lookbook_tablet_768",
+      "locale": "de",
+      "path": "/de/lookbook",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lookbook_desktop_1280",
+      "locale": "de",
+      "path": "/de/lookbook",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lookbook_desktop_1920",
+      "locale": "de",
+      "path": "/de/lookbook",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shop_mobile_320",
+      "locale": "de",
+      "path": "/de/shop",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shop_mobile_390",
+      "locale": "de",
+      "path": "/de/shop",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shop_tablet_768",
+      "locale": "de",
+      "path": "/de/shop",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shop_desktop_1280",
+      "locale": "de",
+      "path": "/de/shop",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shop_desktop_1920",
+      "locale": "de",
+      "path": "/de/shop",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_mobile_320",
+      "locale": "de",
+      "path": "/de/vlm",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_mobile_390",
+      "locale": "de",
+      "path": "/de/vlm",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_tablet_768",
+      "locale": "de",
+      "path": "/de/vlm",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_desktop_1280",
+      "locale": "de",
+      "path": "/de/vlm",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_desktop_1920",
+      "locale": "de",
+      "path": "/de/vlm",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_pro_mobile_320",
+      "locale": "de",
+      "path": "/de/vlm/pro",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_pro_mobile_390",
+      "locale": "de",
+      "path": "/de/vlm/pro",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_pro_tablet_768",
+      "locale": "de",
+      "path": "/de/vlm/pro",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_pro_desktop_1280",
+      "locale": "de",
+      "path": "/de/vlm/pro",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_vlm_pro_desktop_1920",
+      "locale": "de",
+      "path": "/de/vlm/pro",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_protocol_lab_mobile_320",
+      "locale": "de",
+      "path": "/de/vlm/protocol-lab",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_protocol_lab_mobile_390",
+      "locale": "de",
+      "path": "/de/vlm/protocol-lab",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_protocol_lab_tablet_768",
+      "locale": "de",
+      "path": "/de/vlm/protocol-lab",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_protocol_lab_desktop_1280",
+      "locale": "de",
+      "path": "/de/vlm/protocol-lab",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_protocol_lab_desktop_1920",
+      "locale": "de",
+      "path": "/de/vlm/protocol-lab",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_how_to_buy_mobile_320",
+      "locale": "de",
+      "path": "/de/vlm/how-to-buy",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_how_to_buy_mobile_390",
+      "locale": "de",
+      "path": "/de/vlm/how-to-buy",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_how_to_buy_tablet_768",
+      "locale": "de",
+      "path": "/de/vlm/how-to-buy",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_how_to_buy_desktop_1280",
+      "locale": "de",
+      "path": "/de/vlm/how-to-buy",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_how_to_buy_desktop_1920",
+      "locale": "de",
+      "path": "/de/vlm/how-to-buy",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shield_mobile_320",
+      "locale": "de",
+      "path": "/de/shield",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shield_mobile_390",
+      "locale": "de",
+      "path": "/de/shield",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shield_tablet_768",
+      "locale": "de",
+      "path": "/de/shield",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shield_desktop_1280",
+      "locale": "de",
+      "path": "/de/shield",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_shield_desktop_1920",
+      "locale": "de",
+      "path": "/de/shield",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_real_markets_mobile_320",
+      "locale": "de",
+      "path": "/de/real-markets",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_real_markets_mobile_390",
+      "locale": "de",
+      "path": "/de/real-markets",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_real_markets_tablet_768",
+      "locale": "de",
+      "path": "/de/real-markets",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_real_markets_desktop_1280",
+      "locale": "de",
+      "path": "/de/real-markets",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_real_markets_desktop_1920",
+      "locale": "de",
+      "path": "/de/real-markets",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_audits_mobile_320",
+      "locale": "de",
+      "path": "/de/audits",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_audits_mobile_390",
+      "locale": "de",
+      "path": "/de/audits",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_audits_tablet_768",
+      "locale": "de",
+      "path": "/de/audits",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_audits_desktop_1280",
+      "locale": "de",
+      "path": "/de/audits",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_audits_desktop_1920",
+      "locale": "de",
+      "path": "/de/audits",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lens_mobile_320",
+      "locale": "de",
+      "path": "/de/lens",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lens_mobile_390",
+      "locale": "de",
+      "path": "/de/lens",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lens_tablet_768",
+      "locale": "de",
+      "path": "/de/lens",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lens_desktop_1280",
+      "locale": "de",
+      "path": "/de/lens",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_lens_desktop_1920",
+      "locale": "de",
+      "path": "/de/lens",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_square_mobile_320",
+      "locale": "de",
+      "path": "/de/square",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_square_mobile_390",
+      "locale": "de",
+      "path": "/de/square",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_square_tablet_768",
+      "locale": "de",
+      "path": "/de/square",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_square_desktop_1280",
+      "locale": "de",
+      "path": "/de/square",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_square_desktop_1920",
+      "locale": "de",
+      "path": "/de/square",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_account_mobile_320",
+      "locale": "de",
+      "path": "/de/account",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_account_mobile_390",
+      "locale": "de",
+      "path": "/de/account",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_account_tablet_768",
+      "locale": "de",
+      "path": "/de/account",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_account_desktop_1280",
+      "locale": "de",
+      "path": "/de/account",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_account_desktop_1920",
+      "locale": "de",
+      "path": "/de/account",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_checkout_mobile_320",
+      "locale": "de",
+      "path": "/de/checkout",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_checkout_mobile_390",
+      "locale": "de",
+      "path": "/de/checkout",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_checkout_tablet_768",
+      "locale": "de",
+      "path": "/de/checkout",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_checkout_desktop_1280",
+      "locale": "de",
+      "path": "/de/checkout",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_checkout_desktop_1920",
+      "locale": "de",
+      "path": "/de/checkout",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_privacy_mobile_320",
+      "locale": "de",
+      "path": "/de/legal/privacy",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_privacy_mobile_390",
+      "locale": "de",
+      "path": "/de/legal/privacy",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_privacy_tablet_768",
+      "locale": "de",
+      "path": "/de/legal/privacy",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_privacy_desktop_1280",
+      "locale": "de",
+      "path": "/de/legal/privacy",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_privacy_desktop_1920",
+      "locale": "de",
+      "path": "/de/legal/privacy",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_terms_mobile_320",
+      "locale": "de",
+      "path": "/de/legal/terms",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_terms_mobile_390",
+      "locale": "de",
+      "path": "/de/legal/terms",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_terms_tablet_768",
+      "locale": "de",
+      "path": "/de/legal/terms",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_terms_desktop_1280",
+      "locale": "de",
+      "path": "/de/legal/terms",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_terms_desktop_1920",
+      "locale": "de",
+      "path": "/de/legal/terms",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_cookies_mobile_320",
+      "locale": "de",
+      "path": "/de/legal/cookies",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_cookies_mobile_390",
+      "locale": "de",
+      "path": "/de/legal/cookies",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_cookies_tablet_768",
+      "locale": "de",
+      "path": "/de/legal/cookies",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_cookies_desktop_1280",
+      "locale": "de",
+      "path": "/de/legal/cookies",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_cookies_desktop_1920",
+      "locale": "de",
+      "path": "/de/legal/cookies",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_returns_mobile_320",
+      "locale": "de",
+      "path": "/de/legal/returns",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_returns_mobile_390",
+      "locale": "de",
+      "path": "/de/legal/returns",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_returns_tablet_768",
+      "locale": "de",
+      "path": "/de/legal/returns",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_returns_desktop_1280",
+      "locale": "de",
+      "path": "/de/legal/returns",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_returns_desktop_1920",
+      "locale": "de",
+      "path": "/de/legal/returns",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_not_found_mobile_320",
+      "locale": "de",
+      "path": "/de/pass23-nonexistent-route",
+      "viewport": "mobile_320",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_not_found_mobile_390",
+      "locale": "de",
+      "path": "/de/pass23-nonexistent-route",
+      "viewport": "mobile_390",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_not_found_tablet_768",
+      "locale": "de",
+      "path": "/de/pass23-nonexistent-route",
+      "viewport": "tablet_768",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_not_found_desktop_1280",
+      "locale": "de",
+      "path": "/de/pass23-nonexistent-route",
+      "viewport": "desktop_1280",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    },
+    {
+      "caseId": "overflow_de_not_found_desktop_1920",
+      "locale": "de",
+      "path": "/de/pass23-nonexistent-route",
+      "viewport": "desktop_1920",
+      "assertions": [
+        "no_horizontal_document_scroll",
+        "no_text_clipping",
+        "no_overlapping_interactive_controls",
+        "buttons_remain_operable",
+        "modals_and_panels_scroll_internally",
+        "focus_indicator_visible",
+        "aria_names_nonempty",
+        "screenshot_baseline_required"
+      ]
+    }
+  ]
+}

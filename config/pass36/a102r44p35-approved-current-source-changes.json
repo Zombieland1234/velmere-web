@@ -1,0 +1,700 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p35.approved-current-source-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P35_ACTION_REQUIRED_STANDALONE_DECISION_SUPPORT_ANGEL_RISK_IMPACT_WHALE_AND_PSYCHOLOGY30_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P34_ACTION_REQUIRED_CANONICAL_PRODUCT_TAXONOMY_DYNAMIC_SCORING_PSYCHOLOGY30_AND_TEST_CYCLE_1_OF_3_NO_LIVE_CREDIT",
+  "parentManifestPath": "_velmere/PASS36_A102R44P34_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "3bbbcb3c866c898cb3bdfc720d4c2fcc2a4a7c8f9ed25f9c2adc94ff6de8ea94",
+  "decision": "APPROVED_ACTION_REQUIRED_NO_PROMOTION",
+  "addedCount": 32,
+  "modifiedCount": 21,
+  "deletedCount": 0,
+  "historyMutations": 0,
+  "removedTests": 0,
+  "denominatorCollapse": false,
+  "requiredAddedFiles": [
+    "_velmere/PASS36_A102R44P34_SOURCE_ONLY_MANIFEST.json",
+    "config/pass36/a102r44p35-action-required-current-state.json",
+    "config/pass36/a102r44p35-canonical-product-topology.json",
+    "config/pass36/a102r44p35-dynamic-scoring-policy.json",
+    "config/pass36/a102r44p35-score-gate-ledger.json",
+    "config/pass36/a102r44p35-standalone-psychology-policy.json",
+    "lib/ai/angel-structured-response.ts",
+    "lib/intelligence/vlm-standalone-decision-support.ts",
+    "lib/market-integrity/risk-indicator-customer-truth.ts",
+    "lib/market-integrity/risk-indicator-projection.ts",
+    "lib/market-integrity/whale-watch-customer-truth.ts",
+    "lib/product/vlm-standalone-customer-truth.ts",
+    "lib/product/vlm-standalone-insight-contract.ts",
+    "scripts/pass36/test-a102r44p35-standalone-decision-support.mjs",
+    "scripts/pass36/test-a102r44p35-standalone-customer-truth-runtime.mjs",
+    "scripts/pass36/build-a102r44p35-standalone-psychology-matrix.mjs",
+    "scripts/pass36/verify-a102r44p35-source-authority.mjs",
+    "scripts/pass36/verify-a102r44p35-targeted-typescript.mjs"
+  ],
+  "changes": [
+    {
+      "path": "VELMERE_A102R44P35_PATCH.txt",
+      "change": "ADDED",
+      "after": {
+        "path": "VELMERE_A102R44P35_PATCH.txt",
+        "byteLength": 2229,
+        "sha256": "72359e8ce0de27dd8c7bedffd425e2a3859909e886e9e6bc82fb223b851f32fb",
+        "mode": 420
+      }
+    },
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 135,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "6c2506925afd90361e3b45524abfabe7273fb28626c34094007af8f8bbaad168"
+      },
+      "after": {
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "byteLength": 144,
+        "sha256": "350f440f722e769d28b660c75b10442a35220cb5aa71ea7b5fe7cdc4221544f6",
+        "mode": 420
+      }
+    },
+    {
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 2045820,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "bbd61f4f10a4737e5356a010d129b96774643dc3eb0cd6390f28f8952889d0b7"
+      },
+      "after": {
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "byteLength": 2055522,
+        "sha256": "5b588df9c44f64d7a0531fd01f0d48869ac63d34812fd2daca01bb5281a38a64",
+        "mode": 420
+      }
+    },
+    {
+      "path": "_velmere/PASS36_A102R44P34_SOURCE_ONLY_MANIFEST.json",
+      "change": "ADDED",
+      "after": {
+        "path": "_velmere/PASS36_A102R44P34_SOURCE_ONLY_MANIFEST.json",
+        "byteLength": 1304469,
+        "sha256": "3bbbcb3c866c898cb3bdfc720d4c2fcc2a4a7c8f9ed25f9c2adc94ff6de8ea94",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/angel/AngelPanel.tsx",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 16273,
+        "mode": 420,
+        "path": "components/angel/AngelPanel.tsx",
+        "sha256": "17f05ef4037b8f6b9561ce430c298af19f598ffd1b183646cc593bd60a8aac60"
+      },
+      "after": {
+        "path": "components/angel/AngelPanel.tsx",
+        "byteLength": 21965,
+        "sha256": "93a416fd1d1b8f3b2afc8bfdc03aac00cd03948041ddb08d79e459396e0633d1",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/intelligence/RiskMethodologyModal.tsx",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 13523,
+        "mode": 420,
+        "path": "components/intelligence/RiskMethodologyModal.tsx",
+        "sha256": "35949a9fd859fa0e6f82c74b76762d92d836415b616ac9e46e79584f5061dcd3"
+      },
+      "after": {
+        "path": "components/intelligence/RiskMethodologyModal.tsx",
+        "byteLength": 13830,
+        "sha256": "d038dfbaee856c94fdf170f8f544ac5df1233d8b5c3f8210ad0cc7d5f8cd194c",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/market-integrity/AssetIntelligenceTabs.tsx",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 36141,
+        "mode": 420,
+        "path": "components/market-integrity/AssetIntelligenceTabs.tsx",
+        "sha256": "91b22424f06a90141f1474bffd5962c7ba55d0f895ad824ee53ae68de82e2d43"
+      },
+      "after": {
+        "path": "components/market-integrity/AssetIntelligenceTabs.tsx",
+        "byteLength": 40340,
+        "sha256": "548fa5de9566fdcd9a9fae25be2e5c26c3122d594428504cfb62a3f2751bacc4",
+        "mode": 420
+      }
+    },
+    {
+      "path": "components/market-integrity/asset-detail/market-intelligence-client-runtime.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 32184,
+        "mode": 420,
+        "path": "components/market-integrity/asset-detail/market-intelligence-client-runtime.ts",
+        "sha256": "75beab1e6fcbfc48bd84fc3fb483ca6f738481e55302bfff437299d678ac36a8"
+      },
+      "after": {
+        "path": "components/market-integrity/asset-detail/market-intelligence-client-runtime.ts",
+        "byteLength": 31888,
+        "sha256": "bbb5775b0d417f7a34a55d54fe94b248a1322f4f543ce23959b0c3a38f72c336",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/current-release.json",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 30494,
+        "mode": 420,
+        "path": "config/current-release.json",
+        "sha256": "d4f9b587700b057a0b443a441eaaa065752f6eb30aa54277de27f5dc42938ddb"
+      },
+      "after": {
+        "path": "config/current-release.json",
+        "byteLength": 31884,
+        "sha256": "665f237cc44dea9a7e8b2a3c87eca0f8cb852a78b7eb3c44dc4ba7981b1396a2",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 33303,
+        "mode": 420,
+        "path": "config/pass35/current-revision.json",
+        "sha256": "70717f94a3423d60faa36e8138a20e96485d761c42a92651a59a84f6831aea0a"
+      },
+      "after": {
+        "path": "config/pass35/current-revision.json",
+        "byteLength": 35088,
+        "sha256": "305287a04399a4cd5368ada367c6924ff1551134ba64f27f8fc45ead9c846940",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass36/a102r44p35-action-required-current-state.json",
+      "change": "ADDED",
+      "after": {
+        "path": "config/pass36/a102r44p35-action-required-current-state.json",
+        "byteLength": 7875,
+        "sha256": "4d96a298c3582e4d3c6adef3696284420dae35cd1c3b34624169a90a21cf5d17",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass36/a102r44p35-canonical-product-topology.json",
+      "change": "ADDED",
+      "after": {
+        "path": "config/pass36/a102r44p35-canonical-product-topology.json",
+        "byteLength": 8140,
+        "sha256": "2dc477171292b777e5339dabe330c53e9ca2df36557c326602faeee009363837",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass36/a102r44p35-dynamic-scoring-policy.json",
+      "change": "ADDED",
+      "after": {
+        "path": "config/pass36/a102r44p35-dynamic-scoring-policy.json",
+        "byteLength": 2958,
+        "sha256": "18a0b7ecf2344dc0a609f8209da54defc41dc1ae286babf17718a37a15dfa879",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass36/a102r44p35-score-gate-ledger.json",
+      "change": "ADDED",
+      "after": {
+        "path": "config/pass36/a102r44p35-score-gate-ledger.json",
+        "byteLength": 53817,
+        "sha256": "a3553c1fda95ce8289dee4b58bfc71f6ce371ce643b1cce6248530fa855b642f",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass36/a102r44p35-standalone-psychology-policy.json",
+      "change": "ADDED",
+      "after": {
+        "path": "config/pass36/a102r44p35-standalone-psychology-policy.json",
+        "byteLength": 1242,
+        "sha256": "141daac9cda80ea0484585d840c47fc39c98acc50de375d7ea5741338a03ca6a",
+        "mode": 420
+      }
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 76468,
+        "mode": 420,
+        "path": "config/pass36/current-release-authority.json",
+        "sha256": "d7374188310bf4eec3e315b2b2ac3b6639a648f446f8b87dae7adb03bf8223df"
+      },
+      "after": {
+        "path": "config/pass36/current-release-authority.json",
+        "byteLength": 77748,
+        "sha256": "df2ae7cab9063cc51b992cd7c94e7444fd20b30cf773e950cfacc5aedfb61a54",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/angel-evidence-context.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 25310,
+        "mode": 420,
+        "path": "lib/ai/angel-evidence-context.ts",
+        "sha256": "99607140ac5a0c4ce576e80f6e786f2519e34e971634d4b3e176ac0181e08239"
+      },
+      "after": {
+        "path": "lib/ai/angel-evidence-context.ts",
+        "byteLength": 25881,
+        "sha256": "b993963e6e52fe1d8bb4c359c13daee439967d3c202f5b9f4f1f2edc587a4678",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/ai/angel-structured-response.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/ai/angel-structured-response.ts",
+        "byteLength": 7143,
+        "sha256": "1415c46c7107a48aa8b7a30f17a8fc608a6c19109b01d39a9e891edf0bd507e3",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/commerce/vlm-current-sku-truth.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 10387,
+        "mode": 420,
+        "path": "lib/commerce/vlm-current-sku-truth.ts",
+        "sha256": "6698dd256d60100d0447cd756761b594ddc1dd7a6eb4a92235ce4964fe61085a"
+      },
+      "after": {
+        "path": "lib/commerce/vlm-current-sku-truth.ts",
+        "byteLength": 10559,
+        "sha256": "e8a9509c1da4ee61441639e1b0dc270b9e2cbc497ec8957a6193c4866457f013",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/intelligence/vlm-standalone-decision-support.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/intelligence/vlm-standalone-decision-support.ts",
+        "byteLength": 16482,
+        "sha256": "2d4c0dbac1a9ce087d1bdf4d0a29de6c446c95bb59a8a457ad1bcf9a32e33cde",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/market-impact-customer-truth.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/market-integrity/market-impact-customer-truth.ts",
+        "byteLength": 13540,
+        "sha256": "cbdcfaed14f617fa50fcc636e56f49decc132e3b6e189cb5cd113ac2a0e6082b",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/market-impact-engine.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 19722,
+        "mode": 420,
+        "path": "lib/market-integrity/market-impact-engine.ts",
+        "sha256": "f60c91c54555678dd2ef048598c24e64a298edfdcbef3706d6c14620b0890806"
+      },
+      "after": {
+        "path": "lib/market-integrity/market-impact-engine.ts",
+        "byteLength": 20975,
+        "sha256": "3b0e4f05e45069b6e395ad137a4ff5b040d67ca8ed69e9477d2c282179d4c1bc",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/market-impact-types.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 3730,
+        "mode": 420,
+        "path": "lib/market-integrity/market-impact-types.ts",
+        "sha256": "c17f04378bc0fd3e633683767e4128fbbf7e685b2ed161508e95414a64c17a2f"
+      },
+      "after": {
+        "path": "lib/market-integrity/market-impact-types.ts",
+        "byteLength": 3954,
+        "sha256": "e927452035b94a7cbd78c0392d2151a46d917d0dd2aef1581eee7dddb4d6b512",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/risk-engine.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 6717,
+        "mode": 420,
+        "path": "lib/market-integrity/risk-engine.ts",
+        "sha256": "19e8b8986e246c7b8a4adab6c0d303e491c0f33b7232c444b8f878881cb5ce27"
+      },
+      "after": {
+        "path": "lib/market-integrity/risk-engine.ts",
+        "byteLength": 7306,
+        "sha256": "0f758bf6bb74d782ae6896dc174c2f1e68ca32682d18fdd9fcc9f0685c3ad050",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/risk-indicator-customer-truth.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/market-integrity/risk-indicator-customer-truth.ts",
+        "byteLength": 13846,
+        "sha256": "78ebf087489015afdef1e57370ff26e1c1324f94c071fdcb3e461228ccfe3f01",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/risk-indicator-projection.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/market-integrity/risk-indicator-projection.ts",
+        "byteLength": 7971,
+        "sha256": "f1a0970ae8de4054d6e38303423ff51ec1f74d4be721fc911cfe1509aa0b1a40",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/risk-types.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 9208,
+        "mode": 420,
+        "path": "lib/market-integrity/risk-types.ts",
+        "sha256": "2515cba22af50cb4ed1c86a4304ba0ecfdbd86b9c6b20d8b4378c8d17b02fab6"
+      },
+      "after": {
+        "path": "lib/market-integrity/risk-types.ts",
+        "byteLength": 9441,
+        "sha256": "779001c553e3b0a47121928992aea406a6d81980165e82ea0b4457aeb653fa3b",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/whale-watch-customer-truth.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/market-integrity/whale-watch-customer-truth.ts",
+        "byteLength": 11048,
+        "sha256": "93db5ead9e743624d707b94e8841a0c70e50c024a8d53a4b9b7f90e2f6a38913",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/whale-watch-engine.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 28850,
+        "mode": 420,
+        "path": "lib/market-integrity/whale-watch-engine.ts",
+        "sha256": "f30dd425d52efb6f3fcfdbff23f5296401b7a8d9d3618f4a6fee3bc5ba06d24c"
+      },
+      "after": {
+        "path": "lib/market-integrity/whale-watch-engine.ts",
+        "byteLength": 29713,
+        "sha256": "b55fa91567d8c8d240f63c40276ea58d75a0d6600b39367586fa07ec845bcc71",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/market-integrity/whale-watch-types.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 4256,
+        "mode": 420,
+        "path": "lib/market-integrity/whale-watch-types.ts",
+        "sha256": "e08e83b2e8b965ab9726d5555f501e8653a4ef6d104bd49b057c3d093c27d4b0"
+      },
+      "after": {
+        "path": "lib/market-integrity/whale-watch-types.ts",
+        "byteLength": 4722,
+        "sha256": "a0a360bc3970ccf5ce0c6dda5329b5154975c3bfb521684a93ea81c03337c364",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/product/vlm-canonical-product-topology.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 7439,
+        "mode": 420,
+        "path": "lib/product/vlm-canonical-product-topology.ts",
+        "sha256": "28d6cc3b181daefe75cc5f1b18cde4babd2290c55f7555265a80259afb161e48"
+      },
+      "after": {
+        "path": "lib/product/vlm-canonical-product-topology.ts",
+        "byteLength": 7448,
+        "sha256": "516e9fb4219f11e075bc7f69a26aa546441bb324f86da4279755c773063e0eb9",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/product/vlm-dynamic-product-scoring.mjs",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 5680,
+        "mode": 420,
+        "path": "lib/product/vlm-dynamic-product-scoring.mjs",
+        "sha256": "dc7bac63620b58907c5db37d3a3a2db06e55bdfa9ec1dba4fb1136b301fe8715"
+      },
+      "after": {
+        "path": "lib/product/vlm-dynamic-product-scoring.mjs",
+        "byteLength": 9910,
+        "sha256": "8520ee5fddf2a28b5dfadc3bd1c54690bec1fc169724b3e7149204fa340fcec4",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/product/vlm-standalone-customer-truth.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/product/vlm-standalone-customer-truth.ts",
+        "byteLength": 20047,
+        "sha256": "4359fd17dc8f0fa7f1858ec750d381f91a0911c5ff1bd0e92a836a6a4e1b6c2f",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/product/vlm-standalone-insight-contract.ts",
+      "change": "ADDED",
+      "after": {
+        "path": "lib/product/vlm-standalone-insight-contract.ts",
+        "byteLength": 6973,
+        "sha256": "143901fc8ce333895f64ac1c2cd302bf7b7ec2940eb11bcd96d068387255c386",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/server/lazy-route-modules/angel.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 58056,
+        "mode": 420,
+        "path": "lib/server/lazy-route-modules/angel.ts",
+        "sha256": "4b756fccdcc994d2f16f92924656d0a2010c8f683badf44b71b8296160bc366d"
+      },
+      "after": {
+        "path": "lib/server/lazy-route-modules/angel.ts",
+        "byteLength": 59539,
+        "sha256": "13fc1dfa95ceb7b479ec7a5dac4b170a7e5ffbc4f40fbb02775ccf571d6a84c8",
+        "mode": 420
+      }
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "change": "MODIFIED",
+      "before": {
+        "byteLength": 41840,
+        "mode": 420,
+        "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+        "sha256": "d4bc25e7b07a39e6ea4440e6bf79d71be1207b7b102924f1f7025cf19131c3a6"
+      },
+      "after": {
+        "path": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+        "byteLength": 45532,
+        "sha256": "d90c04724c9dee32fbf32f97075abfc108c2a4f1a9f42c17ab49bfdeba8def05",
+        "mode": 420
+      }
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p35-dynamic-product-scorecard.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/build-a102r44p35-dynamic-product-scorecard.mjs",
+        "byteLength": 586,
+        "sha256": "fca111f998b6574e384ac06ab44ffaebf7890f46314d2c097b0d6d496cfb854d",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p35-standalone-psychology-matrix.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/build-a102r44p35-standalone-psychology-matrix.mjs",
+        "byteLength": 5010,
+        "sha256": "5f123853f551bbaa9dacb2abe21aaa11adbc5775af75d2949a7377277a8702fd",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/run-a102r44p35-targeted-cycle.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/run-a102r44p35-targeted-cycle.mjs",
+        "byteLength": 2175,
+        "sha256": "64f73c3c2ff0b8e8f6bf29173656b51b7b405b8e1db448f46356124b34c8d8da",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-active-route-contract.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-active-route-contract.mjs",
+        "byteLength": 4337,
+        "sha256": "7fb615b9ccdfe5abe1a38a7cf0bf78efb82a9f994aea892330624978831518c5",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-active-standalone-contract.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-active-standalone-contract.mjs",
+        "byteLength": 3379,
+        "sha256": "c9e98980c692646abfc252de422fabb0b8337a716bd3ec20030e43863f48a9de",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-dynamic-product-scorecard.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-dynamic-product-scorecard.mjs",
+        "byteLength": 2381,
+        "sha256": "31686596e304a1b0f3166ac6e3bb96c6b1d88d530cf90496a3002af7d4149dd9",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-product-topology-contract.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-product-topology-contract.mjs",
+        "byteLength": 1739,
+        "sha256": "3a491d927f1c177e202bbeee4bff90a348ed4c22b493911abf386a3783a74474",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-standalone-customer-truth-runtime.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-standalone-customer-truth-runtime.mjs",
+        "byteLength": 14910,
+        "sha256": "5f449bb6d5d4abc0ebae20f4dda99be25d1b9f45b3c8dbe9486775e56210bd45",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-standalone-decision-support.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-standalone-decision-support.mjs",
+        "byteLength": 10121,
+        "sha256": "3cf3da590dbb64f0a9be98eff8f802394d5039d5a9d42eb25a0bb7fdc006e39d",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-standalone-product-truth.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-standalone-product-truth.mjs",
+        "byteLength": 13150,
+        "sha256": "425c617c5eef0c9ae2f734ab2e098905ce4c010f0f39a7cf690efba24b448b23",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p35-standalone-psychology-matrix.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/test-a102r44p35-standalone-psychology-matrix.mjs",
+        "byteLength": 2181,
+        "sha256": "46d89be8ac79066e0636b169146ebc5f625b0d1bcd2e00c8038f769d01b84f52",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p35-approved-current-source-changes.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p35-approved-current-source-changes.mjs",
+        "byteLength": 4697,
+        "sha256": "a121d3c159a7ca6f00b6e3e76ec56f60acbc88a2e63df105ea61508fe02b0d74",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p35-clean-unpack.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p35-clean-unpack.mjs",
+        "byteLength": 2944,
+        "sha256": "e33254cb547b257c92c938998d3c619b10dbea93aef9a73e508d3dcaaa48e2c0",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p35-current-release-pointers.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p35-current-release-pointers.mjs",
+        "byteLength": 2865,
+        "sha256": "df33c1eb064d8fdf4aae602ecd13ce00f139c8876fa5129ba4b218b07c5a16de",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p35-source-authority.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p35-source-authority.mjs",
+        "byteLength": 6500,
+        "sha256": "ef3674a5e8c8cf37f63276b997afa8b6f8f1ee3ad112181e07cafb8b3e84c139",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p35-static-policy.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p35-static-policy.mjs",
+        "byteLength": 8494,
+        "sha256": "89391d6b88e0716a5ba6198c16843d39949718520b9d09c57e8028985fc93ac2",
+        "mode": 493
+      }
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p35-targeted-typescript.mjs",
+      "change": "ADDED",
+      "after": {
+        "path": "scripts/pass36/verify-a102r44p35-targeted-typescript.mjs",
+        "byteLength": 4196,
+        "sha256": "80f924f6e988e4dca06b2c9ea55c1ced4ee75bca43cf0e132d025722b65b06b7",
+        "mode": 493
+      }
+    }
+  ],
+  "truthBoundary": {
+    "currentChildFullRegressionCredit": false,
+    "customerProofCredit": false,
+    "saleCredit": false,
+    "liveCredit": false,
+    "realStripeTestCredit": false,
+    "providerRightsCredit": false
+  }
+}

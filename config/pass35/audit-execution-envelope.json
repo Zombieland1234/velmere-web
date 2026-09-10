@@ -1,0 +1,605 @@
+{
+  "schemaVersion": "velmere.pass35.audit-execution-envelope-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "status": "FCP04F_A8_ECONOMIC_RETEST_MONITORING_REAL_EXECUTION_NOT_PROVEN",
+  "productCellId": "audit_evm_pro_automated_review",
+  "customerFacingName": "Automated Security Evidence Review",
+  "fullAuditClaimAllowed": false,
+  "sellEnabled": false,
+  "executionCreditRequiresRealCase": true,
+  "fixtureOrSyntheticMaySatisfyExecution": false,
+  "requiredCaseIdentity": [
+    "caseRef",
+    "accountBindingHash",
+    "productCellId",
+    "tier",
+    "chainId",
+    "contractAddress",
+    "sourceCommitOrExplorerVersion",
+    "createdAt"
+  ],
+  "requiredInputBindings": [
+    "sourceSha256",
+    "abiSha256",
+    "deployedRuntimeBytecodeSha256",
+    "compilerConfigurationSha256",
+    "providerReceiptRoot"
+  ],
+  "requiredAnalyzerReceiptFields": [
+    "familyId",
+    "toolName",
+    "toolVersion",
+    "binaryOrImageSha256",
+    "configurationSha256",
+    "inputBundleSha256",
+    "rawOutputSha256",
+    "startedAt",
+    "completedAt",
+    "exitCode",
+    "executionEnvironment",
+    "applicability",
+    "status",
+    "limitations",
+    "assuranceClass",
+    "realCaseExecution",
+    "paidGateEligible"
+  ],
+  "capabilityInventory": [
+    {
+      "familyId": "source_abi_bytecode_intake",
+      "controls": [
+        "A01",
+        "A02"
+      ],
+      "state": "IMPLEMENTED_PINNED_COMPILER_AND_CHAIN_ADAPTER_FIXTURE_PROVEN_REAL_EXECUTION_BLOCKED",
+      "activePaths": [
+        "lib/security/audit-a01-a05-engine.ts",
+        "scripts/pass35/run-audit-a01-a05-case.ts",
+        "lib/security/contract-source-abi-extraction.ts",
+        "lib/security/audit-source-spine.ts",
+        "lib/security/audit-source-candidates.ts",
+        "lib/security/audit-a02-solc-reproduction.ts",
+        "lib/security/audit-chain-provider-receipt.ts",
+        "scripts/pass35/run-audit-a4-solc-case.ts"
+      ],
+      "executionClass": "local_identity_and_supplied_bytecode_verifier",
+      "mayClaim": [
+        "source/ABI/compiler/provenance structural binding",
+        "exact or strict metadata-stripped equality of supplied runtime bytecodes",
+        "missing-input boundary",
+        "pinned compiler/standard-json adapter contract executed on synthetic fixture",
+        "provider-bound RPC receipt contract executed on local fixture"
+      ],
+      "mayNotClaim": [
+        "official solc compiler executed on a real case",
+        "commercial provider rights/live execution",
+        "full deployed source reproducibility independently proven"
+      ]
+    },
+    {
+      "familyId": "permission_control_parser",
+      "controls": [
+        "A04"
+      ],
+      "state": "IMPLEMENTED_LOCAL_CASE_BOUND_PRIVILEGE_AUTHORIZATION_EVIDENCE_BENCHMARKED_ONCHAIN_REVIEW_MISSING",
+      "activePaths": [
+        "lib/security/audit-a01-a05-engine.ts",
+        "lib/security/audit-permission-parser.ts",
+        "lib/security/pass35-a31-privilege-control-runtime.mjs",
+        "config/pass35/a31-privilege-control-policy.json",
+        "config/pass35/a31-privilege-control-runtime-contract.json",
+        "scripts/pass35/test-a31-privilege-control.mjs"
+      ],
+      "executionClass": "local_privilege_authorization_evidence_not_current_onchain_or_human_reviewed",
+      "mayClaim": [
+        "case-bound role/principal and role-holder evidence",
+        "selector-permission and critical authorization coverage",
+        "role-admin/proxy/delegation/separation-of-duties controls",
+        "bounded escalation/lifecycle/hidden-surface/replay and generated mutation benchmark"
+      ],
+      "mayNotClaim": [
+        "current on-chain role holders proven",
+        "all hidden privileges excluded",
+        "manual authorization and business logic reviewed",
+        "independent chain-state verification",
+        "A04 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "holder_liquidity_lock_evidence",
+      "controls": [
+        "A10"
+      ],
+      "state": "IMPLEMENTED_PROVIDER_EVIDENCE_PARTIAL",
+      "activePaths": [
+        "lib/security/audit-liquidity-holder-lock-risk.ts",
+        "lib/security/holder-liquidity-depth-evidence.ts",
+        "lib/security/audit-provider-intelligence.ts"
+      ],
+      "executionClass": "provider_intelligence_not_code_audit",
+      "mayClaim": [
+        "provider-bound market and holder evidence when receipts pass"
+      ],
+      "mayNotClaim": [
+        "economic exploit proof",
+        "fork replay",
+        "smart-contract safety"
+      ]
+    },
+    {
+      "familyId": "report_packet_and_private_delivery",
+      "controls": [
+        "A14",
+        "A16"
+      ],
+      "state": "IMPLEMENTED_LOCAL_CASE_BOUND_REPORT_DELIVERY_EVIDENCE_BENCHMARKED_STAGING_CUSTOMER_PROOF_MISSING",
+      "activePaths": [
+        "lib/security/pass35-a32-report-delivery-runtime.mjs",
+        "config/pass35/a32-report-delivery-policy.json",
+        "config/pass35/a32-report-delivery-runtime-contract.json",
+        "scripts/pass35/test-a32-report-delivery.mjs"
+      ],
+      "executionClass": "local_packet_receipt_taxonomy_tier_redaction_account_artifact_download_supersession_comprehension_privacy_evidence_not_staging_customer_delivery",
+      "mayClaim": [
+        "canonical packet/report and analyzer-receipt binding",
+        "claim taxonomy and complete critical report sections",
+        "tier field scope, sensitive redaction and machine-sealed artifact integrity",
+        "account/case entitlement, one-time download, supersession, comprehension and privacy evidence",
+        "generated frozen benchmark passed for declared local scope"
+      ],
+      "mayNotClaim": [
+        "real analyzer execution",
+        "production tenant isolation or staging delivery",
+        "real customer comprehension or willingness-to-pay",
+        "qualified human signature",
+        "A16 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "qualified_manual_review",
+      "controls": [
+        "A13",
+        "A15"
+      ],
+      "state": "PREPARED_BLOCKED_EXTERNAL_REVIEWER",
+      "activePaths": [
+        "lib/security/audit-review-orchestration.ts",
+        "lib/security/advanced-audit-release-envelope.ts"
+      ],
+      "executionClass": "queue_and_release_control_only",
+      "mayClaim": [
+        "review is required and fail-closed"
+      ],
+      "mayNotClaim": [
+        "human reviewed",
+        "signed retest",
+        "independent second auditor"
+      ]
+    },
+    {
+      "familyId": "static_semantic_family_1",
+      "controls": [
+        "A05"
+      ],
+      "state": "IMPLEMENTED_LOCAL_HEURISTIC_NOT_BENCHMARKED",
+      "activePaths": [
+        "lib/security/audit-a01-a05-engine.ts",
+        "scripts/pass35/run-audit-a01-a05-case.ts",
+        "scripts/pass35/test-audit-a01-a05-engine.ts"
+      ],
+      "executionClass": "local_source_semantic_family_not_external_assurance",
+      "mayClaim": [
+        "source_semantic_family local deterministic lane executed with raw-output digest"
+      ],
+      "mayNotClaim": [
+        "validated external analyzer family executed",
+        "independent assurance",
+        "benchmark-proven detection quality",
+        "A05 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "static_semantic_family_2",
+      "controls": [
+        "A05"
+      ],
+      "state": "IMPLEMENTED_LOCAL_HEURISTIC_NOT_BENCHMARKED",
+      "activePaths": [
+        "lib/security/audit-a01-a05-engine.ts",
+        "scripts/pass35/run-audit-a01-a05-case.ts",
+        "scripts/pass35/test-audit-a01-a05-engine.ts"
+      ],
+      "executionClass": "local_abi_bytecode_family_not_external_assurance",
+      "mayClaim": [
+        "abi_bytecode_family local deterministic lane executed with raw-output digest"
+      ],
+      "mayNotClaim": [
+        "validated external analyzer family executed",
+        "independent assurance",
+        "benchmark-proven detection quality",
+        "A05 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "symbolic_path_analysis",
+      "controls": [
+        "A06"
+      ],
+      "state": "IMPLEMENTED_LOCAL_BOUNDED_ABSTRACT_FEASIBILITY_BENCHMARKED",
+      "activePaths": [
+        "lib/security/audit-a06-bounded-path-analysis.ts",
+        "lib/security/pass35-a21-abstract-path-runtime.mjs",
+        "scripts/pass35/test-audit-a5-a06-bounded-path.ts",
+        "scripts/pass35/test-a21-abstract-path.mjs"
+      ],
+      "executionClass": "local_bounded_abstract_path_feasibility_not_full_smt",
+      "mayClaim": [
+        "push-aware EVM decode and bounded abstract stack execution",
+        "supported equality/range constraints and contradictory branch pruning",
+        "reachable risk opcodes with path conditions and explicit unknown states",
+        "generated frozen benchmark passed for the declared local feature scope"
+      ],
+      "mayNotClaim": [
+        "path-complete solver-backed symbolic execution",
+        "full memory/storage/inter-contract modeling",
+        "exploit proof or business-logic adjudication",
+        "A06 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "exact_unit_integration_tests",
+      "controls": [
+        "A07"
+      ],
+      "state": "IMPLEMENTED_LOCAL_EXACT_TEST_EVIDENCE_BENCHMARKED_OFFICIAL_FORGE_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-forge-adapter.mjs",
+        "lib/security/pass35-a25-exact-test-evidence-runtime.mjs",
+        "config/pass35/a25-exact-test-evidence-policy.json",
+        "scripts/pass35/test-a25-exact-test-evidence.mjs"
+      ],
+      "executionClass": "local_behavior_assertion_coverage_isolation_repeatability_mutation_evidence_not_real_forge_evm_assurance",
+      "mayClaim": [
+        "case-bound behavior and assertion registry enforced",
+        "critical/high behavior coverage and branch/state-transition floors enforced",
+        "test isolation and deterministic repeatability enforced",
+        "mutation kill-rate floor enforced",
+        "generated frozen benchmark passed for declared local scope"
+      ],
+      "mayNotClaim": [
+        "official Forge or solc executed",
+        "compiled EVM/customer contract tests executed",
+        "implementation-model equivalence proven",
+        "independent rerun completed",
+        "A07 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "property_fuzz_invariant",
+      "controls": [
+        "A08"
+      ],
+      "state": "IMPLEMENTED_LOCAL_FUZZ_INVARIANT_EVIDENCE_BENCHMARKED_OFFICIAL_ENGINES_MISSING",
+      "activePaths": [
+        "lib/security/audit-a08-model-fuzz.ts",
+        "scripts/pass35/run-audit-a6-a08-case.ts",
+        "scripts/pass35/test-audit-a6-a08-model-fuzz.ts",
+        "config/pass35/a08-foundry-invariant-plan.json",
+        "fixtures/pass35/audit-a7/forge-invariant-project/test/A7InvariantToken.invariant.t.sol",
+        "lib/security/pass35-a26-fuzz-invariant-evidence-runtime.mjs",
+        "config/pass35/a26-fuzz-invariant-evidence-policy.json",
+        "config/pass35/a26-fuzz-invariant-evidence-runtime-contract.json",
+        "scripts/pass35/test-a26-fuzz-invariant-evidence.mjs"
+      ],
+      "executionClass": "local_model_fuzz_invariant_evidence_not_compiled_evm_assurance",
+      "mayClaim": [
+        "case-bound invariant registry and evidence bindings",
+        "seed and state coverage gates",
+        "deterministic trace replay and counterexample shrinking",
+        "generated frozen benchmark and mutation campaign"
+      ],
+      "mayNotClaim": [
+        "official Foundry or Echidna executed",
+        "compiled Solidity/EVM fuzz executed",
+        "implementation-model equivalence",
+        "real customer-case fuzz coverage",
+        "A08 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "fork_replay_exact_state",
+      "controls": [
+        "A09"
+      ],
+      "state": "IMPLEMENTED_LOCAL_FORK_REPLAY_EVIDENCE_BENCHMARKED_NATIVE_FORK_REAL_PROVIDER_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-fork-replay-adapter.mjs",
+        "scripts/pass35/run-audit-a7-fork-replay-case.mjs",
+        "scripts/pass35/test-audit-a7-fork-replay-adapter.mjs",
+        "lib/security/pass35-a27-fork-replay-evidence-runtime.mjs",
+        "config/pass35/a27-fork-replay-evidence-policy.json",
+        "config/pass35/a27-fork-replay-evidence-runtime-contract.json",
+        "scripts/pass35/test-a27-fork-replay-evidence.mjs"
+      ],
+      "executionClass": "local_fork_replay_evidence_not_native_public_network_assurance",
+      "mayClaim": [
+        "case-bound chain/block/snapshot and transaction evidence bindings",
+        "pre/post state-root continuity and assertion/state-diff coverage",
+        "dependency snapshot and isolated deterministic replay gates",
+        "generated frozen benchmark and mutation campaign"
+      ],
+      "mayNotClaim": [
+        "official native fork runner executed",
+        "real public-network provider or commercial rights",
+        "historical exploit or customer workflow replayed",
+        "independent rerun",
+        "A09 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "dependency_license_vulnerability_mapping",
+      "controls": [
+        "A12"
+      ],
+      "state": "IMPLEMENTED_REPOSITORY_LEVEL_NOT_CASE_BOUND",
+      "activePaths": [
+        "artifacts/release/SBOM.cdx.json",
+        "scripts/pass4992/supply-chain-release.mjs"
+      ],
+      "executionClass": "repository_supply_chain_only",
+      "mayClaim": [
+        "Velmere repository SBOM exists"
+      ],
+      "mayNotClaim": [
+        "customer-contract dependency or license mapping complete"
+      ]
+    },
+    {
+      "familyId": "slither_external_static_family",
+      "controls": [
+        "A05"
+      ],
+      "state": "ADAPTER_IMPLEMENTED_FIXTURE_CONTRACT_PROVEN_REAL_TOOL_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-slither-adapter.mjs",
+        "scripts/pass35/test-audit-a4-slither-adapter.mjs"
+      ],
+      "executionClass": "external_tool_adapter_contract_not_external_assurance",
+      "mayClaim": [
+        "Slither JSON/version/hash adapter contract is executable and fail-closed"
+      ],
+      "mayNotClaim": [
+        "official Slither executed",
+        "validated external analyzer family received real credit",
+        "A05 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "semgrep_external_static_family",
+      "controls": [
+        "A05"
+      ],
+      "state": "ADAPTER_IMPLEMENTED_FIXTURE_CONTRACT_PROVEN_REAL_TOOL_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-semgrep-adapter.mjs",
+        "scripts/pass35/run-audit-a5-semgrep-case.mjs",
+        "scripts/pass35/test-audit-a5-semgrep-adapter.mjs",
+        "fixtures/pass35/audit-a5/semgrep-solidity-rules.yml"
+      ],
+      "executionClass": "external_tool_adapter_contract_not_external_assurance",
+      "mayClaim": [
+        "Semgrep version/executable/ruleset/target/raw-output adapter contract is executable and fail-closed"
+      ],
+      "mayNotClaim": [
+        "official Semgrep executed",
+        "validated independent analyzer family received real credit",
+        "A05 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "economic_adversarial_scenario_engine",
+      "controls": [
+        "A10"
+      ],
+      "state": "IMPLEMENTED_LOCAL_ECONOMIC_ADVERSARIAL_EVIDENCE_BENCHMARKED_REAL_DATA_REPLAY_REVIEW_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-economic-adversarial-engine.mjs",
+        "scripts/pass35/test-audit-a8-economic-adversarial.mjs",
+        "fixtures/pass35/audit-a8/PASS35_A8_A10_ECONOMIC_SYNTHETIC_RECEIPT.json",
+        "lib/security/pass35-a28-economic-adversarial-evidence-runtime.mjs",
+        "config/pass35/a28-economic-adversarial-evidence-policy.json",
+        "config/pass35/a28-economic-adversarial-evidence-runtime-contract.json",
+        "scripts/pass35/test-a28-economic-adversarial-evidence.mjs"
+      ],
+      "executionClass": "local_economic_adversarial_evidence_not_real_exploit_or_probability",
+      "mayClaim": [
+        "case-bound target/methodology/A27-replay evidence bindings",
+        "five scenario types with evidence/prerequisite coverage",
+        "monotonic sensitivity, bounded uncertainty and scenario dependency-DAG gates",
+        "deterministic model reproduction, local replay correlation and generated mutation benchmark"
+      ],
+      "mayNotClaim": [
+        "current rights-approved data used",
+        "official forked-EVM replay executed",
+        "real economic exploit or realized loss proven",
+        "calibrated probability",
+        "qualified or independent adjudication",
+        "A10 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "remediation_retest_local_contract",
+      "controls": [
+        "A15"
+      ],
+      "state": "IMPLEMENTED_LOCAL_EVIDENCE_BOUND_CLOSURE_BENCHMARKED_REAL_SIGNED_CLOSURE_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-remediation-retest-adapter.mjs",
+        "lib/security/pass35-a23-remediation-closure-runtime.mjs",
+        "config/pass35/a23-remediation-closure-policy.json",
+        "scripts/pass35/test-a23-remediation-closure.mjs"
+      ],
+      "executionClass": "local_patch_impact_retest_regression_post_triage_closure_not_customer_signed_closure",
+      "mayClaim": [
+        "exact pre/post subject and bytecode binding",
+        "affected-component patch impact coverage",
+        "family-derived retest applicability",
+        "regression and post-patch severity gates",
+        "generated frozen benchmark passed for declared local scope"
+      ],
+      "mayNotClaim": [
+        "real vulnerability fixed",
+        "qualified reviewer signed closure",
+        "independent retest",
+        "Advanced delivery authorized",
+        "A15 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "post_audit_monitoring_handoff",
+      "controls": [
+        "A17"
+      ],
+      "state": "IMPLEMENTED_LOCAL_EVENT_INCIDENT_LIFECYCLE_BENCHMARKED_LIVE_PROVIDER_MISSING",
+      "activePaths": [
+        "scripts/pass35/audit-monitoring-handoff-adapter.mjs",
+        "lib/security/pass35-a24-monitoring-lifecycle-runtime.mjs",
+        "config/pass35/a24-monitoring-lifecycle-policy.json",
+        "scripts/pass35/test-a24-monitoring-lifecycle.mjs"
+      ],
+      "executionClass": "local_event_dedup_incident_sla_playbook_communication_closure_not_live_monitoring",
+      "mayClaim": [
+        "six required monitoring rule families represented",
+        "deterministic event ordering and duplicate suppression",
+        "local alert delivery and acknowledgement SLA enforcement",
+        "required action, communication and post-condition closure gates",
+        "generated frozen benchmark passed for declared local scope"
+      ],
+      "mayNotClaim": [
+        "live provider monitoring",
+        "production alert delivery",
+        "real on-call response",
+        "real customer communication",
+        "SLA performance",
+        "A17 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "severity_triage_attack_chain",
+      "state": "IMPLEMENTED_LOCAL_EVIDENCE_BOUND_TRIAGE_BENCHMARKED_REAL_ADJUDICATION_MISSING",
+      "activePaths": [
+        "lib/security/pass35-a22-severity-triage-runtime.mjs",
+        "config/pass35/a22-severity-triage-policy.json",
+        "scripts/pass35/test-a22-severity-triage.mjs"
+      ],
+      "executionClass": "local_evidence_bound_severity_and_attack_chain_not_human_adjudication",
+      "mayClaim": [
+        "deterministic severity inputs and caps",
+        "asset-at-risk and blast-radius classification",
+        "evidence-bound attack-chain graph",
+        "generated frozen benchmark for the declared local feature scope"
+      ],
+      "mayNotClaim": [
+        "real exploitability adjudication",
+        "independent human inter-rater agreement",
+        "customer-grade severity calibration",
+        "A14 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "upgrade_deployment_operations",
+      "label": "Upgrade and deployment operations",
+      "requiredFor": [
+        "audit_evm_pro",
+        "audit_evm_advanced"
+      ],
+      "state": "IMPLEMENTED_LOCAL_UPGRADE_DEPLOYMENT_OPERATIONS_EVIDENCE_BENCHMARKED_ONCHAIN_DRILL_REVIEW_MISSING",
+      "activePaths": [
+        "lib/security/pass35-a29-upgrade-deployment-operations-runtime.mjs",
+        "config/pass35/a29-upgrade-deployment-operations-policy.json",
+        "config/pass35/a29-upgrade-deployment-operations-runtime-contract.json",
+        "scripts/pass35/test-a29-upgrade-deployment-operations.mjs"
+      ],
+      "executionClass": "local_upgrade_deployment_operations_evidence_not_current_onchain_or_production_drill",
+      "mayClaim": [
+        "case-bound proxy-slot and authorization evidence",
+        "multisig/timelock and storage-layout gates",
+        "upgrade simulation, bounded rollback, emergency and key-compromise evidence",
+        "deterministic local operations replay and generated mutation benchmark"
+      ],
+      "mayNotClaim": [
+        "current on-chain admin configuration verified",
+        "real multisig/timelock or hardware-key custody proven",
+        "production upgrade or rollback executed",
+        "qualified or independent review",
+        "A11 paid gate passed"
+      ]
+    },
+    {
+      "familyId": "architecture_threat_model",
+      "label": "Architecture and threat model",
+      "requiredFor": [
+        "audit_evm_pro",
+        "audit_evm_advanced"
+      ],
+      "state": "IMPLEMENTED_LOCAL_CASE_BOUND_THREAT_MODEL_EVIDENCE_BENCHMARKED_HUMAN_REVIEW_MISSING",
+      "activePaths": [
+        "lib/security/pass35-a30-threat-model-runtime.mjs",
+        "config/pass35/a30-threat-model-policy.json",
+        "config/pass35/a30-threat-model-runtime-contract.json",
+        "scripts/pass35/test-a30-threat-model.mjs"
+      ],
+      "executionClass": "local_threat_model_evidence_not_human_reviewed_or_real_architecture_workshop",
+      "mayClaim": [
+        "case-bound architecture and registry evidence",
+        "trust-boundary/data-flow and entry-point coverage",
+        "assumption/invalidation, invariant and abuse-case evidence",
+        "acyclic attack paths, tested mitigations, residual risk and generated mutation benchmark"
+      ],
+      "mayNotClaim": [
+        "protocol assumptions validated by a qualified human",
+        "business logic manually adjudicated",
+        "every real-world threat modeled",
+        "independent architecture review",
+        "A03 paid gate passed"
+      ]
+    }
+  ],
+  "paidDeliveryGate": {
+    "requiredControlsForPro": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+      "A12",
+      "A14",
+      "A16"
+    ],
+    "allApplicableAnalyzerReceiptsMustBeVerified": true,
+    "missingOrNotApplicableRequiresSignedApplicabilityRecord": true,
+    "rawOutputDigestRequired": true,
+    "sourceToBytecodeBindingRequired": true,
+    "unresolvedCriticalOrHighBlocksDelivery": true,
+    "noRealExecutionMeans": "UNAVAILABLE_NOT_FOR_SALE",
+    "currentPaidDeliveryPossible": false,
+    "currentStopSellReasons": [
+      "official pinned solc and provider-bound real source-to-bytecode execution missing",
+      "official Slither and Semgrep execution with independence/benchmark evidence missing",
+      "A06 solver-backed symbolic/path feasibility and exploitability adjudication missing",
+      "A07 official Forge real-case execution, test provenance and coverage missing",
+      "A08 compiled-contract fuzz/invariant execution and implementation-model equivalence missing",
+      "A09 official native fork/replay execution, real provider state and historical/customer replay missing",
+      "real qualified manual review and severity/retest missing",
+      "real corpus, staging, rights and tier-value benchmark missing"
+    ]
+  },
+  "truthBoundary": "A24 may prove deterministic local event evaluation, deduplication, ordering, incident lifecycle completeness and SLA enforcement over generated/offline cases only. It cannot claim a live monitoring provider, delivered production alerts, real on-call response, real customer communication, SLA performance, paid lifecycle coverage or incident prevention.",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL"
+}

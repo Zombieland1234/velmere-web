@@ -1,0 +1,425 @@
+{
+  "schemaVersion": "velmere.pass36.a86.real-markets-cross-asset-policy.v1",
+  "revisionId": "VELMERE_PASS36_A86R0_REAL_MARKETS_CROSS_ASSET_FULL_MATRIX_AND_DATA_RIGHTS_TRUTH_LEDGER",
+  "parentRevisionId": "VELMERE_PASS36_A85R0_SHIELD_PRO_AND_SHIELD_MAP_FULL_DEPTH_IDENTITY_ENTITLEMENT_MATRIX",
+  "deterministicEpoch": "2026-07-27T20:30:00.000Z",
+  "inputs": {
+    "a85Policy": {
+      "path": "config/pass36/a85-shield-pro-map-full-depth-policy.json",
+      "sha256": "99d45a32efe55d4d630a6fcab42c3b4a47a5b54332ed6ddbb23b8af52653bc73"
+    },
+    "a85Receipt": {
+      "path": "config/pass36/a85-test-receipt.json",
+      "sha256": "f72de4db59f4c72202034decbd9c82716056e75295926b6e7fec0cbdef6e69ea"
+    },
+    "a85Descendant": {
+      "path": "config/pass36/a85-current-root-descendant-manifest.json",
+      "sha256": "80735d96888562ad54377f567d4f52d2070a097719896e20d779eb9be5f647cb"
+    },
+    "catalogData": {
+      "path": "data/real-markets-customer-catalog.json",
+      "sha256": "0b5887f3881e0ce19ac6071fefd1ec3406b9b9b7a61c0a1486f4766c65ca27df"
+    },
+    "catalogModule": {
+      "path": "lib/market-integrity/real-markets-customer-catalog.ts",
+      "sha256": "7afaeefe42331cdafe04607f9497876ca7dd427f2edd19871888130cdf1d188c"
+    },
+    "catalogRoute": {
+      "path": "lib/server/real-markets-route-modules/catalog.ts",
+      "sha256": "d8e92cf3a394ef6b81a362bb9237ebb1f006f129039f864180ee13dd074b5d06"
+    },
+    "catalogNormalizer": {
+      "path": "lib/market-integrity/cross-asset-runtime-normalizers.ts",
+      "sha256": "a73e6462d507470cd92b59f9a75905fe4ca4536dee669bb0c69c0208c134d977"
+    },
+    "runtime": {
+      "path": "lib/worldclass/pass36-a86-real-markets-cross-asset-runtime.ts",
+      "sha256": "7c23642c8455014d5f24d25ef741a3707ca0e85b14d229ddc12c4cf5cf22a0a0"
+    }
+  },
+  "fixture": {
+    "syntheticIndexRows": 30,
+    "expectedCatalogRows": 553
+  },
+  "fieldIds": [
+    "instrument_identity",
+    "quote",
+    "history",
+    "calendar_session",
+    "corporate_actions",
+    "currency_normalization",
+    "correction_state",
+    "provider_quorum",
+    "cross_asset_context",
+    "provenance"
+  ],
+  "assetClasses": [
+    "stock",
+    "etf",
+    "real_estate",
+    "fx",
+    "commodity",
+    "index",
+    "crypto"
+  ],
+  "channels": [
+    "api",
+    "table",
+    "detail_modal",
+    "pdf"
+  ],
+  "tierRequirements": {
+    "basic": {
+      "minimumProviderFamilies": 1,
+      "requiredFields": [
+        "instrument_identity",
+        "quote",
+        "calendar_session"
+      ],
+      "maximumStaleFields": 3,
+      "conflictsAllowed": true,
+      "minimumEvidenceFamilies": 5,
+      "minimumMaterialFields": 4
+    },
+    "pro": {
+      "minimumProviderFamilies": 2,
+      "requiredFields": [
+        "instrument_identity",
+        "quote",
+        "history",
+        "calendar_session",
+        "corporate_actions",
+        "currency_normalization",
+        "provider_quorum"
+      ],
+      "maximumStaleFields": 2,
+      "conflictsAllowed": false,
+      "minimumEvidenceFamilies": 9,
+      "minimumMaterialFields": 14
+    },
+    "advanced": {
+      "minimumProviderFamilies": 3,
+      "requiredFields": [
+        "instrument_identity",
+        "quote",
+        "history",
+        "calendar_session",
+        "corporate_actions",
+        "currency_normalization",
+        "correction_state",
+        "provider_quorum",
+        "cross_asset_context",
+        "provenance"
+      ],
+      "maximumStaleFields": 0,
+      "conflictsAllowed": false,
+      "minimumEvidenceFamilies": 13,
+      "minimumMaterialFields": 24
+    }
+  },
+  "mutationFamilies": [
+    "asset_class_substitution",
+    "quote_state_promotion",
+    "history_state_promotion",
+    "calendar_state_promotion",
+    "corporate_action_silence",
+    "normalization_unit_substitution",
+    "correction_state_promotion",
+    "provider_quorum_promotion",
+    "tier_substitution",
+    "decision_promotion",
+    "blocker_drop",
+    "http_status_substitution",
+    "channel_fact_addition",
+    "facts_digest_substitution",
+    "rights_promotion",
+    "browser_promotion",
+    "live_sale_promotion",
+    "crypto_scope_substitution"
+  ],
+  "closedByA86": [
+    {
+      "gapId": "A86-GAP-01",
+      "severity": "P0",
+      "title": "Static catalog response time could be mistaken for data freshness",
+      "closure": "The route now separates responseGeneratedAt from catalogSnapshotAt and declares STATIC_REFERENCE_UNIVERSE."
+    },
+    {
+      "gapId": "A86-GAP-02",
+      "severity": "P0",
+      "title": "Catalog response did not explicitly deny LIVE quote coverage",
+      "closure": "liveDataIncluded=false is schema-bound and required by the client normalizer."
+    },
+    {
+      "gapId": "A86-GAP-03",
+      "severity": "P0",
+      "title": "Commercial provider rights state was implicit",
+      "closure": "commercialRightsVerified=false is explicit at catalog and matrix level."
+    },
+    {
+      "gapId": "A86-GAP-04",
+      "severity": "P1",
+      "title": "Catalog response omitted the exact row payload digest",
+      "closure": "The response exposes catalogRowsSha256 in addition to source lineage."
+    },
+    {
+      "gapId": "A86-GAP-05",
+      "severity": "P0",
+      "title": "Index rows were unsupported by the catalog schema",
+      "closure": "Index is now a declared asset class and a dedicated local fixture denominator is included."
+    },
+    {
+      "gapId": "A86-GAP-06",
+      "severity": "P0",
+      "title": "Exchange-token rows defaulted to crypto classification",
+      "closure": "Exchange and exchange_token map explicitly to exchanges; unsupported classes throw."
+    },
+    {
+      "gapId": "A86-GAP-07",
+      "severity": "P0",
+      "title": "Unknown asset classes failed open to crypto",
+      "closure": "categoryFromCatalog is exhaustive and rejects unknown values."
+    },
+    {
+      "gapId": "A86-GAP-08",
+      "severity": "P1",
+      "title": "Negative or fractional catalog counts were accepted",
+      "closure": "Counts require non-negative safe integers."
+    },
+    {
+      "gapId": "A86-GAP-09",
+      "severity": "P0",
+      "title": "Catalog counts were not reconciled with rows",
+      "closure": "Normalizer verifies total, unique symbols, class sum, IDs and symbols before ok=true."
+    },
+    {
+      "gapId": "A86-GAP-10",
+      "severity": "P0",
+      "title": "No complete cross-asset denominator existed",
+      "closure": "A86 covers 553 reference rows plus 30 index fixtures across seven asset classes."
+    },
+    {
+      "gapId": "A86-GAP-11",
+      "severity": "P0",
+      "title": "Crypto scope in Real Markets was ambiguous",
+      "closure": "Crypto rows are marked COMPARISON_ONLY and cannot become the primary Real Markets surface."
+    },
+    {
+      "gapId": "A86-GAP-12",
+      "severity": "P0",
+      "title": "Missing corporate actions could be confused with not applicable",
+      "closure": "Every class records either applicable evidence or VERIFIED_NOT_APPLICABLE."
+    },
+    {
+      "gapId": "A86-GAP-13",
+      "severity": "P1",
+      "title": "Session and calendar state had no complete denominator",
+      "closure": "Every instrument receives a terminal calendar_session row."
+    },
+    {
+      "gapId": "A86-GAP-14",
+      "severity": "P0",
+      "title": "Cross-currency values lacked a bound semantic unit",
+      "closure": "Every packet binds currency and semanticUnit and mutations are rejected."
+    },
+    {
+      "gapId": "A86-GAP-15",
+      "severity": "P1",
+      "title": "Correction state was not part of tier admission",
+      "closure": "Advanced admission includes an explicit correction ledger state."
+    },
+    {
+      "gapId": "A86-GAP-16",
+      "severity": "P0",
+      "title": "Provider quorum could be inferred from a single family",
+      "closure": "Pro and Advanced require exact family floors with a terminal quorum field."
+    },
+    {
+      "gapId": "A86-GAP-17",
+      "severity": "P0",
+      "title": "Advanced could be promoted without provenance depth",
+      "closure": "Advanced requires three provider families and a provenance field."
+    },
+    {
+      "gapId": "A86-GAP-18",
+      "severity": "P0",
+      "title": "Tier readiness could violate Basic-Pro-Advanced monotonicity",
+      "closure": "The full denominator enforces monotonic readiness for every instrument."
+    },
+    {
+      "gapId": "A86-GAP-19",
+      "severity": "P0",
+      "title": "API table modal and PDF could drift on facts",
+      "closure": "Four projections bind one facts digest and may not add facts."
+    },
+    {
+      "gapId": "A86-GAP-20",
+      "severity": "P0",
+      "title": "403 and 424 meanings were not tested as separate states",
+      "closure": "Ready paid evidence without entitlement yields 403; insufficient evidence yields 424."
+    },
+    {
+      "gapId": "A86-GAP-21",
+      "severity": "P0",
+      "title": "Offline readiness could be mistaken for paid delivery",
+      "closure": "All paidDelivered and productionEligible denominators remain zero."
+    },
+    {
+      "gapId": "A86-GAP-22",
+      "severity": "P0",
+      "title": "No semantic re-signed mutation campaign covered Real Markets",
+      "closure": "Eighteen mutation families are re-sealed for every tier packet."
+    },
+    {
+      "gapId": "A86-GAP-23",
+      "severity": "P0",
+      "title": "Real data evidence had no exact intake denominator",
+      "closure": "A fail-closed intake requires quote, history, calendar, actions, normalization, rights, browser and customer labels."
+    },
+    {
+      "gapId": "A86-GAP-24",
+      "severity": "P0",
+      "title": "Static identity seeds could be mistaken for current market evidence",
+      "closure": "The real intake starts at zero rows; static catalog identity grants no current-data credit."
+    },
+    {
+      "gapId": "A86-GAP-25",
+      "severity": "P1",
+      "title": "Index coverage could be hidden because production catalog currently has zero index rows",
+      "closure": "The matrix reports 30 explicit synthetic index fixtures and zero production index evidence."
+    },
+    {
+      "gapId": "A86-GAP-26",
+      "severity": "P0",
+      "title": "The legal roadmap denominator remained narrower than the active perimeter",
+      "closure": "The completion program is expanded to 20 signed legal/regulatory decisions."
+    },
+    {
+      "gapId": "A86-GAP-27",
+      "severity": "P0",
+      "title": "A111-A116 were described as optional repair buffer despite mandatory real reruns",
+      "closure": "A111-A116 become a required final real-evidence wave."
+    },
+    {
+      "gapId": "A86-GAP-28",
+      "severity": "P0",
+      "title": "A77-A80 exact closure could be lost behind later local matrices",
+      "closure": "Four parallel mandatory closure tracks remain explicit prerequisites for staging."
+    },
+    {
+      "gapId": "A86-GAP-29",
+      "severity": "P1",
+      "title": "Future pass count could decrease by hiding newly discovered scope",
+      "closure": "The program range expands to A116 and remainingAfterA86 is recalculated to 30."
+    },
+    {
+      "gapId": "A86-GAP-30",
+      "severity": "P0",
+      "title": "No single packet bound class, calendar, action applicability, normalization, quorum and correction evidence",
+      "closure": "A86 packet integrity and semantic verification bind all ten field families."
+    },
+    {
+      "gapId": "A86-GAP-31",
+      "severity": "P1",
+      "title": "A83 historical verifier hardcoded the legacy A110 program horizon",
+      "closure": "Historical completion-program checks derive remaining passes from the current authoritative lastPlannedPass instead of the superseded A110 horizon."
+    },
+    {
+      "gapId": "A86-GAP-32",
+      "severity": "P1",
+      "title": "A81 verifier hardcoded the superseded A110 completion horizon",
+      "closure": "A81 derives remaining passes from the authoritative lastPlannedPass."
+    },
+    {
+      "gapId": "A86-GAP-33",
+      "severity": "P1",
+      "title": "A82 verifier hardcoded the superseded A110 completion horizon",
+      "closure": "A82 derives remaining passes from the authoritative lastPlannedPass."
+    },
+    {
+      "gapId": "A86-GAP-34",
+      "severity": "P1",
+      "title": "The canonical current-status test hardcoded A85 as the permanent first roadmap heading",
+      "closure": "Roadmap precedence is validated from current-release authority and active revision rather than a frozen pass title."
+    },
+    {
+      "gapId": "A86-GAP-35",
+      "severity": "P1",
+      "title": "A57 protected-integrity approval stopped at A85 and could not bind authorized A86 changes",
+      "closure": "The A57 hardening builder and acceptance contract include the exact A86 change identifier and current source revision."
+    },
+    {
+      "gapId": "A86-GAP-36",
+      "severity": "P1",
+      "title": "A85 descendant verifier recomputed the frozen A85 payload against legal A86 source changes",
+      "closure": "A85 now verifies its frozen payload only when current and otherwise verifies the complete descendant chain to current authority."
+    },
+    {
+      "gapId": "A86-GAP-37",
+      "severity": "P1",
+      "title": "A41 route diagnostics assumed the Shield Pro market endpoint remained inline in the UI component",
+      "closure": "A41 now verifies both the component-to-full-catalog-helper wiring and the helper-to-markets endpoint binding, preserving coverage after bounded pagination extraction."
+    },
+    {
+      "gapId": "A86-GAP-38",
+      "severity": "P1",
+      "title": "The A86 clean-unpack sequence omitted retained A37-A41 runtime/performance regressions and the A59 build-route-CSS budget verifier",
+      "closure": "The exact unpacked SOURCE_ONLY sequence now runs A37 performance, A38 lifecycle, A39 runtime/CSS/a11y, A40 session/temporal/visibility, A41 route recovery and A59 static budgets after A58 and before product acceptance."
+    },
+    {
+      "gapId": "A86-GAP-39",
+      "severity": "P1",
+      "title": "The A86 current-state summary could retain a stale closed-gap count because the verifier did not bind it to the policy ledger",
+      "closure": "A86 test and verifier now bind current-state revision, NO_GO decision, exact denominators, 39/39 gap count, 20-decision legal denominator and all zero-credit production claims to the canonical policy and receipt."
+    }
+  ],
+  "realIntakeIndex": {
+    "path": "evaluation/pass36/a86-real-markets-intake.json",
+    "sha256": "0937abb7e98e0b261f7201058e16f74f645a66141ed0361f97310ef233f8332d"
+  },
+  "parentDescendantManifestPath": "config/pass36/a85-current-root-descendant-manifest.json",
+  "descendantManifestPath": "config/pass36/a86-current-root-descendant-manifest.json",
+  "descendantManifestExclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a86-current-root-descendant-manifest.json"
+  ],
+  "productionAssertions": [
+    {
+      "id": "catalog-truth-fields",
+      "path": "lib/server/real-markets-route-modules/catalog.ts",
+      "includes": [
+        "responseGeneratedAt",
+        "catalogSnapshotAt",
+        "liveDataIncluded",
+        "commercialRightsVerified",
+        "catalogRowsSha256"
+      ],
+      "excludes": [
+        "generatedAt: new Date().toISOString()"
+      ]
+    },
+    {
+      "id": "catalog-count-coherence",
+      "path": "lib/market-integrity/cross-asset-runtime-normalizers.ts",
+      "includes": [
+        "counts.total === rows.length",
+        "countSum === rows.length",
+        "Number.isSafeInteger"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "exhaustive-category-mapping",
+      "path": "lib/market-integrity/cross-asset-runtime-normalizers.ts",
+      "includes": [
+        "assetClass === \"index\"",
+        "assetClass === \"exchange\" || assetClass === \"exchange_token\"",
+        "real_markets_catalog_asset_class_unsupported"
+      ],
+      "excludes": [
+        "return \"crypto\";\n}"
+      ]
+    }
+  ],
+  "truthBoundary": "A86 proves a complete local cross-asset packet, tier, channel and semantic-mutation matrix over a static 553-row reference catalog plus 30 explicit synthetic index fixtures. It does not prove current quotes, histories, provider rights, production browsers, customer value, exact A80, staging, LIVE or sale."
+}

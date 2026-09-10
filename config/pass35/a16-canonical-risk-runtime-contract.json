@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "velmere.pass35.a16-canonical-risk-runtime-contract.v1",
+  "passId": "PASS35_A16",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "paidDeliveryEligible": false,
+  "liveClaimed": false,
+  "canonicalChannelParity": {
+    "surfaces": 7,
+    "tierPackets": 21,
+    "channels": [
+      "api",
+      "ui",
+      "preview",
+      "pdf",
+      "brain",
+      "angel"
+    ],
+    "projections": 126,
+    "parityChecks": 126,
+    "addedFactViolations": 0,
+    "integritySha256": "0d46e13ef511276cf41e548db13fa5738d9cdfec625fb5361bb98326a6dc3cc4"
+  },
+  "crossAssetPortfolio": {
+    "instruments": 120,
+    "portfolios": 12,
+    "tierPackets": 36,
+    "basic": 12,
+    "pro": 12,
+    "advanced": 12,
+    "integritySha256": "sha256:888ea84131b80e40c43a9e01f9988c3593accc7b8265e84204fb6b8feaa72015"
+  },
+  "regimeStress": {
+    "windows": 5,
+    "portfolios": 12,
+    "regimes": [
+      "CALM",
+      "RISK_ON",
+      "RISK_OFF",
+      "STRESS",
+      "DISLOCATION"
+    ],
+    "scenarios": 6,
+    "scenarioResults": 72,
+    "integritySha256": "sha256:3a4cfddcbdce889eb648a4e01b0f90a59ca39b6e73abb5e2e6bf51dbffaf8039"
+  },
+  "riskProspective": {
+    "rows": 600,
+    "train": 360,
+    "validation": 140,
+    "prospective": 100,
+    "frozenPredictions": 100,
+    "probabilityClaimsAllowed": false,
+    "prospectiveClaimsAllowed": false,
+    "integritySha256": "sha256:9674e203234fa23484c5984ce7e302685bdd6a7796209d165842b6be0089c8df"
+  },
+  "canonicalWeightedPlanningPercent": 41.9,
+  "canonicalStrictDonePercent": 9.3,
+  "zeroBudgetWeightedPlanningPercent": 82.1,
+  "zeroBudgetCoreDenominator": 42,
+  "zeroBudgetCounts": {
+    "DONE": 25,
+    "PARTIAL": 14,
+    "NOT_DONE": 1
+  },
+  "truthBoundary": "PASS35 A16 is the only canonical current status. Canonical roadmap is 40.7% weighted / 9.3% strict across 43 workstreams. Zero-budget functional core is 80.0% across 40 capabilities. A16 locally closes exact canonical packet parity for analysis/PDF/Brain/Angel, cross-asset portfolio analytics, five-regime classification, six stress scenarios and prospective risk-ledger infrastructure. Public-network freshness, real risk outcomes, customer value, staging and sale remain unclaimed."
+}

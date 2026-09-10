@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "velmere.pass36.a102r41.next-tracing-and-build-receipt-denominator-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R41_ACTION_REQUIRED_SECURITY_EVIDENCE_AUTHORITY_EXACT_WINDOWS_AND_FAIL_CLOSED_RELEASE_PACKAGING_NO_LIVE_CREDIT",
+  "scoreCredit": false,
+  "testsDeleted": 0,
+  "segmentedBuildCompat": {
+    "parentDenominator": 6,
+    "currentDenominator": 8,
+    "retainedRows": 6,
+    "addedRows": 2,
+    "removedRows": 0,
+    "addedRowIds": [
+      "COMPAT-ADD-01-OUTPUT-RELATIVE-PATHS",
+      "COMPAT-ADD-02-RAW-ABSOLUTE-PATH-NO-DISCLOSURE"
+    ]
+  },
+  "nextTracingAuthority": {
+    "parentDedicatedDenominator": 0,
+    "currentDedicatedDenominator": 12,
+    "addedRows": 12,
+    "removedRows": 0,
+    "rowIds": [
+      "TRACE-01-CONFIG-EXPORT-OBJECT",
+      "TRACE-02-ROOT-ABSOLUTE",
+      "TRACE-03-ROOT-CANONICAL",
+      "TRACE-04-ROOT-CONFIG-DIRECTORY",
+      "TRACE-05-FILE-URL-DERIVATION",
+      "TRACE-06-ANCESTOR-LOCK-NON-AUTHORITY",
+      "TRACE-07-COMPAT-TEST-EXIT",
+      "TRACE-08-COMPAT-TEST-ZERO-STDERR",
+      "TRACE-09-COMPAT-TEST-STATUS",
+      "TRACE-10-COMPAT-TEST-DENOMINATOR",
+      "TRACE-11-COMPAT-RELATIVE-REPORTING-SOURCE",
+      "TRACE-12-COMPAT-NO-DISCLOSURE-SOURCE"
+    ]
+  },
+  "truthBoundary": "The migration prevents an ambient ancestor lockfile from defining Next standalone tracing authority and removes absolute paths from the compatibility receipt. A physical final dual build is still required; static configuration and fixture tests grant no build, browser, release, LIVE or sale credit.",
+  "migrationDigestSha256": "50ed673f33d2f667fc4eb196658ff6a90e8ff2cbfbfccde506b15f197da16153"
+}

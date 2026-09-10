@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "velmere.declared-non-runtime-entrypoints.v1",
+  "entries": [
+    {
+      "path": "lib/auth/pass2363-account-session.ts",
+      "kind": "compatibility-test-adapter",
+      "owner": "scripts/pass4725/domain-kernel-wave.test.ts",
+      "evidence": [
+        "scripts/pass4725/domain-kernel-wave.test.ts",
+        "scripts/test-pass4657-account-binding-idor.ts",
+        "scripts/test-pass4657-account-auth-boundary.ts"
+      ]
+    },
+    {
+      "path": "lib/security/pass2178-mutation-receipt-vault.ts",
+      "kind": "compatibility-test-adapter",
+      "owner": "scripts/pass4725/domain-kernel-wave.test.ts",
+      "evidence": [
+        "scripts/pass4725/domain-kernel-wave.test.ts",
+        "scripts/velmere-pass2178-mutation-receipt-scan.mjs"
+      ]
+    },
+    {
+      "path": "lib/market-integrity/customer-tier-pdf-renderer.ts",
+      "kind": "dynamic-test-entrypoint",
+      "owner": "scripts/pass4784/test-worldclass-report-pdf-matrix.cjs",
+      "evidence": [
+        "scripts/pass4784/test-worldclass-report-pdf-matrix.cjs",
+        "scripts/pass4784/verify-report-commercial-policy.mjs"
+      ]
+    },
+    {
+      "path": "lib/security/pass4666-page-alias-redirects.mjs",
+      "kind": "compatibility-test-adapter",
+      "owner": "scripts/test-pass4666-page-alias-reduction.mjs",
+      "evidence": [
+        "scripts/test-pass4666-page-alias-reduction.mjs",
+        "scripts/verify-pass2819-mobile-accessibility-overlay-gate.mjs"
+      ]
+    },
+    {
+      "path": "lib/security/pass4666-account-operation-redirects.mjs",
+      "kind": "compatibility-test-adapter",
+      "owner": "config/release-input-merkle.json",
+      "evidence": [
+        "config/release-input-merkle.json"
+      ]
+    }
+  ]
+}

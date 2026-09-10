@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "velmere.pass4788.runtime-source-parity-baseline.v1",
+  "baselinePass": 4787,
+  "baselineZipSha256": "1638ca936fae04721c6fdc8da3d055a2664e0eb8ae9251dfb567fd029eec907f",
+  "runtimeFileCount": 1838,
+  "aggregateSha256": "ed2c6646b4f68f8976931950087a03bcb060d9cf565748b17228d3be434a0ed6",
+  "mismatchCount": 0,
+  "mismatches": [],
+  "note": "Every remaining active runtime-root file is byte-identical to PASS4787. PASS4788 only removes unreachable history and changes SQL/tooling outside the runtime import graph."
+}

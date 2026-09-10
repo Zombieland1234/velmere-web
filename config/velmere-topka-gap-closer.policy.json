@@ -1,0 +1,21 @@
+{
+  "version": "PASS2161-2165",
+  "goal": "Close the remaining premium/product-quality gap without fake runtime claims.",
+  "hardRule": "Do not promote above 90% without real runtime receipts; do not promote to 100% without all owner/runtime/legal receipts.",
+  "surfaceGroups": [
+    {"id":"global_overlay", "weight": 10, "checks":["modal_z_index", "scroll_lock", "outside_click", "escape_close", "focus_restore"]},
+    {"id":"shield_terminal", "weight": 14, "checks":["tri_state_sort", "chart_wheel_containment", "asset_modal_parity", "tier_buttons_work", "mobile_safe"]},
+    {"id":"real_markets", "weight": 12, "checks":["shield_parity", "no_crypto_duplication", "basic_pro_advanced_action", "full_width_table"]},
+    {"id":"lens_pdf", "weight": 10, "checks":["one_payload_preview_download", "a4_print_safe", "locale_parity", "download_button_visible"]},
+    {"id":"vlm_brain", "weight": 12, "checks":["continuous_motion", "tier_depth", "reduced_motion", "webgl_fallback", "evidence_readout"]},
+    {"id":"commerce_checkout", "weight": 12, "checks":["order_state_durable", "stripe_signature", "provider_retry", "incident_case"]},
+    {"id":"admin_security", "weight": 10, "checks":["session_role", "audit_log", "rate_limit", "no_client_secrets"]},
+    {"id":"legal_trust", "weight": 10, "checks":["de_eu_pages", "no_roi_promises", "privacy_copy", "owner_signoff"]},
+    {"id":"observability", "weight": 10, "checks":["slo", "runbook", "alerts", "receipt_archive"]}
+  ],
+  "promotionThresholds": {
+    "above90": ["npm_ci", "typecheck", "build", "db", "stripe", "provider", "hosted", "admin", "legal"],
+    "above95": ["mobile_visual_receipts", "provider_live_order_receipt", "lighthouse_receipt", "incident_drill_receipt"],
+    "hundred": ["independent_security_review", "owner_legal_signoff", "live_monitoring_7_days", "zero_p0_bugs"]
+  }
+}

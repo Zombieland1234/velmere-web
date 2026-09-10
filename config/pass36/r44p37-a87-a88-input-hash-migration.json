@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p37.a87-a88-input-hash-migration.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P37_ACTION_REQUIRED_AUTHORITY_RELEASE_TRUTH_TYPESCRIPT_AND_EVIDENCE_REPAIR_TEST_CYCLE_0_OF_3_NO_LIVE_CREDIT",
+  "rows": [
+    {
+      "policyPath": "config/pass36/a87-market-impact-whale-watch-policy.json",
+      "inputId": "marketImpactEngine",
+      "inputPath": "lib/market-integrity/market-impact-engine.ts",
+      "parentSha256": "f60c91c54555678dd2ef048598c24e64a298edfdcbef3706d6c14620b0890806",
+      "currentSha256": "d919eaaa3b5962d103ad68af47c77c989c1fe5e99ae99f1135be2f8b3d53ffd2",
+      "reason": "CURRENT_SOURCE_INPUT_CHANGED_OR_PREEXISTING_BINDING_DRIFT_REQUIRES_FORMAL_RESEAL"
+    },
+    {
+      "policyPath": "config/pass36/a87-market-impact-whale-watch-policy.json",
+      "inputId": "whaleWatchEngine",
+      "inputPath": "lib/market-integrity/whale-watch-engine.ts",
+      "parentSha256": "f30dd425d52efb6f3fcfdbff23f5296401b7a8d9d3618f4a6fee3bc5ba06d24c",
+      "currentSha256": "b55fa91567d8c8d240f63c40276ea58d75a0d6600b39367586fa07ec845bcc71",
+      "reason": "CURRENT_SOURCE_INPUT_CHANGED_OR_PREEXISTING_BINDING_DRIFT_REQUIRES_FORMAL_RESEAL"
+    },
+    {
+      "policyPath": "config/pass36/a87-market-impact-whale-watch-policy.json",
+      "inputId": "productionRoute",
+      "inputPath": "lib/server/market-integrity-route-modules/market-intelligence.ts",
+      "parentSha256": "d4bc25e7b07a39e6ea4440e6bf79d71be1207b7b102924f1f7025cf19131c3a6",
+      "currentSha256": "dbe1e78d6c4e8cc7b8d423b141765b221dd332df2df46cd7da415ecc61a7b168",
+      "reason": "CURRENT_SOURCE_INPUT_CHANGED_OR_PREEXISTING_BINDING_DRIFT_REQUIRES_FORMAL_RESEAL"
+    },
+    {
+      "policyPath": "config/pass36/a88-brain-angel-risk-eval-policy.json",
+      "inputId": "adviceBoundary",
+      "inputPath": "lib/ai/vlm-advice-boundary.ts",
+      "parentSha256": "8aef189203293f1edc512982907eac1da30230c561f1bebaf2fb8e2c6efe61ba",
+      "currentSha256": "84f58c65a2d250ea7f372f50d1818e694e8aee9919e0db6728810687b1723f5a",
+      "reason": "CURRENT_SOURCE_INPUT_CHANGED_OR_PREEXISTING_BINDING_DRIFT_REQUIRES_FORMAL_RESEAL"
+    }
+  ],
+  "denominators": {
+    "a87Assets": 318,
+    "a87TierPackets": 1908,
+    "a87SemanticMutations": 34344,
+    "a88Cases": 360,
+    "a88ChannelProjections": 1800,
+    "a88SemanticMutations": 5760
+  },
+  "removedTests": 0,
+  "removedAssertions": 0,
+  "denominatorCollapse": false,
+  "currentProviderEvidenceCredit": false,
+  "realCustomerCredit": false,
+  "saleCredit": false,
+  "liveCredit": false,
+  "truthBoundary": "The migration only rebinds exact current source bytes. It does not validate model accuracy, provider rights, realized outcomes, real customers or sale readiness."
+}

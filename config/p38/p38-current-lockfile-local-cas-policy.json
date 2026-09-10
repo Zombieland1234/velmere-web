@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "velmere.p38.current-lockfile-local-cas-policy.v1",
+  "revision": "P38_V15_CURRENT_LOCKFILE_CAS_RECOVERY_AND_NODE24_DIFFERENTIAL",
+  "generatedAt": "2026-08-14T03:10:00.000Z",
+  "state": "CURRENT_SOURCE_ONLY_IN_PROGRESS",
+  "parentRoot": "R44P46",
+  "parentCheckpoint": "P37_V15_PACKAGE_REPRODUCIBILITY_AND_A85_BINDING",
+  "currentPackageLock": {
+    "path": "package-lock.json",
+    "sha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+    "expectedRemoteLockPaths": 661,
+    "derivation": "non-link package-lock packages rows with string resolved and integrity"
+  },
+  "historicalA78Binding": {
+    "path": "config/pass36/a78-exact-runtime-lockfile-browser-bootstrap.json",
+    "sha256": "3614f34a42c1431f6c87cedee1f46327cb8e1af9582104feaf5b07dc4ecaac5f",
+    "boundPackageLockSha256": "6269b250e484780187c9378b52c69898fa533cf1c39cc21122ce8ef053387a6b",
+    "expectedRemotePackages": 654,
+    "currentStatus": "HISTORICAL_POLICY_PRESERVED_BUT_CURRENT_LOCK_BINDING_STALE"
+  },
+  "casDirectories": {
+    "baseline": [
+      "config/supply-chain-license-archive-cas-pass4825",
+      "config/supply-chain-install-script-archive-cas-pass4825"
+    ],
+    "recovered": "config/p38/dependency-cas"
+  },
+  "admissionRules": {
+    "networkRequestsAllowed": false,
+    "exactCurrentLockSriRequired": true,
+    "sha256FilenameRequired": true,
+    "symlinksAllowed": false,
+    "nonRegularFilesAllowed": false,
+    "unknownTarballsReceiveCoverage": false,
+    "allCurrentLockTarballsRequiredForDependencyClosure": true,
+    "offlineNpmCiRequiredForDependencyClosure": true
+  },
+  "expectedCurrentResult": {
+    "baselineExactCoveredLockPaths": 41,
+    "recoveredExactCoveredLockPaths": 26,
+    "combinedExactCoveredLockPaths": 67,
+    "remainingUncoveredLockPaths": 594
+  },
+  "creditBoundary": {
+    "currentLockRebound": true,
+    "exactTarballRecoveryCredit": true,
+    "dependencyClosureCredit": false,
+    "offlineNpmCiCredit": false,
+    "exactNodeCredit": false,
+    "buildCredit": false,
+    "browserCredit": false,
+    "goInternalCredit": false,
+    "saleOrLiveCredit": false
+  },
+  "truthBoundary": "P38 binds the current package-lock and recovers only exact SRI-matching tarballs already present in a local content-addressable cache. Historical A78 is preserved but is not current authority because its lock hash and denominator are stale. Partial CAS coverage is not dependency closure and gives no npm-ci, build, Browser, GO_INTERNAL, paid, LIVE, or world-class credit.",
+  "integritySha256": "f78a2d2ff8cca450770ed40190c1da3aebd6a865efa36d712e4188adb4f0e3ee"
+}

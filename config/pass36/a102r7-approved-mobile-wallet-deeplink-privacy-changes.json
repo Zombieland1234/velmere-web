@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.pass36.a102r7.approved-mobile-wallet-deeplink-privacy-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R7_ACTION_REQUIRED_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_AND_EXTERNAL_PROVIDER_PRIVACY_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R6_ACTION_REQUIRED_PRIVATE_ACCOUNT_BROWSER_STATE_LOCAL_STORAGE_CLIENT_FALLBACK_AND_DURABLE_VAULT_FAIL_CLOSED_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-29T22:20:00.000Z",
+  "approvedChanges": [
+    {
+      "path": "lib/wallet/mobile-deeplinks.ts",
+      "parentRevisionId": "VELMERE_PASS36_A102R6_ACTION_REQUIRED_PRIVATE_ACCOUNT_BROWSER_STATE_LOCAL_STORAGE_CLIENT_FALLBACK_AND_DURABLE_VAULT_FAIL_CLOSED_NO_REAL_CREDIT",
+      "historicalByteLength": 2096,
+      "historicalSha256": "241cce2515af13f566f36c475ac6c45168ea1974c977dc03ed0b721a20fc7149",
+      "currentByteLength": 5952,
+      "currentSha256": "d2d699d74d1f02615000e45e9391a9336f85750c32519c63a7deb234ffbf0f30",
+      "reason": "Prevent query, fragment, private dynamic path, credentials, unsafe protocol and remote-port disclosure to MetaMask or Phantom mobile deeplink providers; preserve only validated origin and allowlisted public path.",
+      "requiredLocalTest": "PASS_A102R7_MOBILE_WALLET_DEEPLINK_QUERY_HASH_PRIVATE_PATH_FAIL_CLOSED_NO_PROMOTION",
+      "parentBytesRewritten": false
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "scripts/pass36/test-a102r7-mobile-wallet-deeplink-privacy-boundary.ts",
+      "purpose": "Static and runtime adversarial proof for mobile wallet external-provider URL privacy and fail-closed route reduction."
+    }
+  ],
+  "claims": {
+    "parentHistoricalPassRewritten": false,
+    "currentQueryForwardedToWalletProvider": false,
+    "currentFragmentForwardedToWalletProvider": false,
+    "privateDynamicPathForwardedToWalletProvider": false,
+    "validatedOriginAndAllowlistedPublicPathOnly": true,
+    "freshExactBuildBrowserCredit": false,
+    "realMobileWalletBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger binds exact A102R6-to-A102R7 production-file changes for mobile wallet deeplink privacy. It does not rewrite frozen historical receipts and grants no exact build, real mobile browser, external provider privacy, staging, LIVE or sale credit."
+}

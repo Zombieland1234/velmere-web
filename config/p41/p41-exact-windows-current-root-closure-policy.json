@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "velmere.p41.exact-windows-current-root-closure-policy.v1",
+  "revision": "P41_V16_EXACT_WINDOWS_PREFLIGHT_CURRENT_ROOT_BRIDGE_REPAIR",
+  "generatedAt": "2026-08-14T09:20:00.000Z",
+  "state": "CURRENT_SOURCE_ONLY_IN_PROGRESS",
+  "releaseState": "NO_GO",
+  "parentRoot": "R44P46",
+  "parentCheckpoint": "P40_V16_A85_CANONICAL_REPLAY_SOURCE_DIFFERENTIAL_FIXTURE_PROFILE_BASELINE",
+  "parentSourceAggregateSha256": "81fd077bf390f2b1c6937d02703983ae9714849149a4c492f74f77b2446db9c7",
+  "authority": {
+    "path": "docs/authority/VELMERE_CANONICAL_OWNER_DIRECTIVE_V16_FULL_TOPOLOGY_FREE_LEGAL_CURRENT_WORLD_CLASS_2026-08-14.txt",
+    "sha256": "67816a5a9238668c8080a3a8cc623f078d268c1b78fddf534cb4893bb45490e9",
+    "status": "CURRENT_BOUND_AUTHORITY_UNCHANGED"
+  },
+  "currentRootBindings": {
+    "packageJson": {
+      "path": "package.json",
+      "byteLength": 135167,
+      "sha256": "04aa4b393337fffa6e02ef54ad7668fe8136b038b0d924b208158a095b6f70a5"
+    },
+    "packageLock": {
+      "path": "package-lock.json",
+      "byteLength": 354803,
+      "sha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb",
+      "lockfileVersion": 3,
+      "lockPathsWithResolvedIntegrity": 661,
+      "uniqueResolvedIntegrityTarballs": 618
+    },
+    "sourceIdentityPath": "artifacts/closure/p41/source-identity.json",
+    "embeddedPackagePayloadAllowed": false,
+    "staleBranchRootAllowed": false
+  },
+  "exactTarget": {
+    "runner": "windows-2025",
+    "platform": "win32",
+    "arch": "x64",
+    "node": "v24.18.0",
+    "npm": "11.16.0"
+  },
+  "workflow": {
+    "path": ".github/workflows/p41-exact-windows-node24-current-root-closure.yml",
+    "permissions": "contents:read",
+    "checkoutPersistCredentials": false,
+    "artifactUploadAlways": true,
+    "artifactRetentionDays": 7,
+    "artifactCompressionLevel": 0
+  },
+  "executionOrder": [
+    "CURRENT_ROOT_SOURCE_IDENTITY_PREFLIGHT",
+    "EXACT_WINDOWS_NODE_NPM_ASSERTION",
+    "LOCKFILE_DENOMINATOR_ASSERTION",
+    "ONLINE_NPM_CI_IGNORE_SCRIPTS",
+    "OFFLINE_NPM_CI_REPLAY",
+    "SRI_VERIFIED_TARBALL_CAS",
+    "NPM_LS",
+    "SEMANTIC_TYPESCRIPT",
+    "ESLINT",
+    "WEBPACK_PRODUCTION_BUILD",
+    "TURBOPACK_PRODUCTION_BUILD"
+  ],
+  "commands": {
+    "typecheck": ["npm", "run", "typecheck"],
+    "lint": ["npm", "run", "lint"],
+    "webpack": ["npm", "run", "build:webpack"],
+    "turbopack": ["npm", "run", "build:turbopack"]
+  },
+  "failureReceiptContract": {
+    "writeBeforeNonZeroExit": true,
+    "uploadOnFailure": true,
+    "preserveCommandLogs": true,
+    "preserveFirstFailure": true,
+    "neverPromoteFromSetupOnly": true
+  },
+  "observedPriorAttempt": {
+    "repository": "Zombieland1234/velmere1",
+    "branch": "velmere-p41-windows-dependency-closure-20260814",
+    "workflowRunId": 31780989640,
+    "jobId": 94706519523,
+    "headSha": "bb11b7838ab1874f87bc73c696e97248dc375e88",
+    "runnerOs": "Microsoft Windows Server 2025 10.0.26100 Datacenter",
+    "runnerImage": "windows-2025-vs2026",
+    "runnerImageVersion": "20260803.193.1",
+    "nodeSetup": "PASS_v24.18.0",
+    "npmSetup": "PASS_11.16.0",
+    "dependencyExecution": "NOT_REACHED",
+    "failureClass": "STALE_EMBEDDED_PACKAGE_PAYLOAD_IDENTITY_MISMATCH",
+    "expectedPackageJsonSha256": "04aa4b393337fffa6e02ef54ad7668fe8136b038b0d924b208158a095b6f70a5",
+    "decodedPackageJsonSha256": "c4c0f2e36f7d16478013bb073c5e58df94d1bc879e6e75afbd5f4c6933d06a4e",
+    "artifactUploaded": false,
+    "classification": "EXACT_WINDOWS_TOOLCHAIN_PREFLIGHT_PASS_PAYLOAD_IDENTITY_FAIL"
+  },
+  "creditBoundary": {
+    "exactWindowsToolchainPreflight": true,
+    "exactCurrentRootWindowsExecution": false,
+    "dependencyClosure": false,
+    "typecheck": false,
+    "lint": false,
+    "webpack": false,
+    "turbopack": false,
+    "browser": false,
+    "pdf": false,
+    "customerOutput": false,
+    "sourceRights": false,
+    "materialValue": false,
+    "goInternal": false,
+    "goPaid": false,
+    "live": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This policy repairs only the exact-Windows closure bridge. A successful environment setup or portable self-test never counts as exact current-root dependency, build, Browser, PDF, customer-output, sale or release proof."
+}

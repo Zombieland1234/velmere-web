@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "velmere.pass14.visual-freeze-manifest.v1",
+  "createdAt": "2026-07-20T00:00:00Z",
+  "purpose": "Protect the current Codex-owned visual layer during non-visual engineering passes. Updating this manifest requires an explicit visual handoff.",
+  "files": [
+    {
+      "path": "app/globals.css",
+      "sha256": "b9db1728fa722a07e6ce52ed851fa23735489352f5b0e64ae7abb1745b1732d3",
+      "bytes": 3035742
+    },
+    {
+      "path": "tailwind.config.ts",
+      "sha256": "3ab993dccf2da7b0ac97eed9a2365c7647fc7603917851651172fa653bad9f33",
+      "bytes": 1494
+    },
+    {
+      "path": "app/styles/asset-popup-foundation.css",
+      "sha256": "589c7733b247df1ca8ebaf9aa6d4ad6d888b9d59f18d6ee01e7cda98a963149a",
+      "bytes": 106421
+    },
+    {
+      "path": "app/styles/asset-popup-geometry.css",
+      "sha256": "fdecd257b4469b39d0c4d108b20e4c46afbb365c6253dce3c3b06a1ff486c5ab",
+      "bytes": 13180
+    },
+    {
+      "path": "app/styles/asset-popup-ownership.css",
+      "sha256": "bf6b71309d16d6b3c29b4566927494ff8c6a832c1f37ecb878f43a0659dd2a9c",
+      "bytes": 96800
+    },
+    {
+      "path": "app/styles/asset-popup-resize.css",
+      "sha256": "2816d7486f384843aec0cc48fb125de614b497366dd1c97919c8ebab960d88f2",
+      "bytes": 7468
+    },
+    {
+      "path": "app/styles/audit-account-handoff.css",
+      "sha256": "c2b4a927284917b9fbcf1453edefae99be101245d2b3c22fac2ec94c0dc2f52e",
+      "bytes": 2152
+    },
+    {
+      "path": "app/styles/audit-one-screen.css",
+      "sha256": "1bcb2c2dd160dc3fabb23d6b0175ea1512732a6b5776c6d331b2f936eebe54e4",
+      "bytes": 20772
+    },
+    {
+      "path": "app/styles/global-header.css",
+      "sha256": "94e2a9ea2ff471ff7766c5825f1dc0081cf646dfbd9a46ceab525349f4539010",
+      "bytes": 3695
+    },
+    {
+      "path": "app/styles/markets-cleanup.css",
+      "sha256": "c2a1b4e2acb35aa93277d75f74d89aec6bf4398f42125f95308dbb224ff659be",
+      "bytes": 1450
+    },
+    {
+      "path": "app/styles/shield-pro-terminal.css",
+      "sha256": "88ed2ecfec38bb284d9cfadfec6ea757bed43648ad4774d43be5a6959049ef29",
+      "bytes": 20408
+    },
+    {
+      "path": "app/styles/shield-risk-surface.css",
+      "sha256": "728e359d3dfc5e5fd9ffaecbd1ec48c8f9346e2d163f1958ec5292eadd3073a5",
+      "bytes": 5196
+    }
+  ]
+}

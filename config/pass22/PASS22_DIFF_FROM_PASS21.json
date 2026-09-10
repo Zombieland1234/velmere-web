@@ -1,0 +1,357 @@
+{
+  "schemaVersion": "velmere.pass22.diff-from-pass21.v1",
+  "generatedAt": "2026-07-20T17:00:00.000Z",
+  "base": {
+    "artifact": "VELMERE_PASS21_PROVIDER_LEGAL_RLS_I18N_SAFE_SOURCE.zip",
+    "sha256": "d0c770fff623468f235d814c31a50f79526065d0cf6bc9c05e6e482f439260d8",
+    "filesCompared": 3257
+  },
+  "current": {
+    "artifact": "VELMERE_PASS22_RLS_PROVIDER_RIGHTS_I18N_SAFE_SOURCE.zip",
+    "filesCompared": 3283
+  },
+  "summary": {
+    "newFiles": 26,
+    "changedFiles": 18,
+    "removedFiles": 0,
+    "unchangedFiles": 3239,
+    "newBytes": 182221,
+    "changedCurrentBytes": 3571874,
+    "changedPreviousBytes": 3561126,
+    "removedBytes": 0
+  },
+  "newFiles": [
+    {
+      "path": "config/pass22/gate-policy.json",
+      "bytes": 5216,
+      "sha256": "143ad316a56efb8bc746abd0694e1b8fec4c10769d1399979192742d80ec5f99"
+    },
+    {
+      "path": "config/pass22/i18n-neutral-allowlist.json",
+      "bytes": 1799,
+      "sha256": "c01598fb2321b1263f650552d2a263a5bba02616eda06c7334d6d3ab83df02f6"
+    },
+    {
+      "path": "config/pass22/merchant-legal-intake-template.json",
+      "bytes": 1263,
+      "sha256": "95883586b2bf54a77697435712ddf3b650c1fc452cccc509ed1cc90a1b2aef69"
+    },
+    {
+      "path": "config/pass22/provider-rights-evidence-manifest.json",
+      "bytes": 306,
+      "sha256": "ee23a5b60fc3d665fd19172d6373465c33ac97859f0d23e9d4c0d73ba7ec7148"
+    },
+    {
+      "path": "config/pass22/provider-rights-evidence-schema.json",
+      "bytes": 2239,
+      "sha256": "b5f226d0d43e1e1359f32f0c81389bf2e67fdb71e4d24223ff0964216509c406"
+    },
+    {
+      "path": "config/pass22/rls-table-classification.json",
+      "bytes": 15924,
+      "sha256": "c5d48b554d8b12a15f3d3a00f0a64293fcba50d5807f4bd194c6b734681f91c5"
+    },
+    {
+      "path": "config/pass22/typescript-syntax-scan.json",
+      "bytes": 487,
+      "sha256": "3b7218da48812f70d452936393ac6b29ef5b5c94f18e12a40ac96c9666d25456"
+    },
+    {
+      "path": "docs/pass22/MERCHANT_LEGAL_INTAKE_README.md",
+      "bytes": 496,
+      "sha256": "2f2acaeb6ba50c879d7d6b43f7e819cb9c9ffc4241a8cbeeb5bbe8defb5b6c3d"
+    },
+    {
+      "path": "docs/pass22/PROVIDER_RIGHTS_EVIDENCE_README.md",
+      "bytes": 658,
+      "sha256": "c028cf173f9770751a5275ac7bd102384d16a46625bd89759fc6fe96b1bfacfa"
+    },
+    {
+      "path": "lib/compliance/provider-rights-resolver.d.ts",
+      "bytes": 626,
+      "sha256": "6dd1a11226b7c58d9cdbbc5ed1654ef7420aa3c19abfd1103aaef95cbdbb9928"
+    },
+    {
+      "path": "lib/compliance/provider-rights-resolver.mjs",
+      "bytes": 3432,
+      "sha256": "72a5aa87b263c024f28ebb7bad565db62301c62936ec9061fb52e3d66f2a4a01"
+    },
+    {
+      "path": "scripts/pass22/apply-i18n-wave-2.mjs",
+      "bytes": 20274,
+      "sha256": "232d7d75632425a8cd75aaab1ba9c634cb3f2696025cf8751986ff5e24a39cfd"
+    },
+    {
+      "path": "scripts/pass22/apply-i18n-wave-3.mjs",
+      "bytes": 18928,
+      "sha256": "6525cab3d59b00618728f61c4e0e937e5aedc7c9ee3f7d4c5d814349bb2d5d01"
+    },
+    {
+      "path": "scripts/pass22/apply-i18n-wave-4.mjs",
+      "bytes": 16733,
+      "sha256": "5b017359743c9a689fed06415d77e93811f7526eca6eb19736f8487519f3f331"
+    },
+    {
+      "path": "scripts/pass22/apply-i18n-wave.mjs",
+      "bytes": 23813,
+      "sha256": "ff17a680e0ef604c49881067ff8ec46f86be026bcaa4a1ad8312919ba59a3412"
+    },
+    {
+      "path": "scripts/pass22/audit-clean-source.mjs",
+      "bytes": 11971,
+      "sha256": "eb6683c31f6f10728fbfaea9227f30721a75b0dd0739359fecb2f7294b18efc0"
+    },
+    {
+      "path": "scripts/pass22/audit-current-product-readiness.mjs",
+      "bytes": 5767,
+      "sha256": "df17e650058cb268339842b9478a01d209ba376ee8e3ab2b35490f6c5393f475"
+    },
+    {
+      "path": "scripts/pass22/audit-i18n-release-readiness.mjs",
+      "bytes": 6185,
+      "sha256": "3128a00afe0ebf51d481a624b2df56b3f1a661db4369163468afc85976e6cc2b"
+    },
+    {
+      "path": "scripts/pass22/audit-runner-contract.mjs",
+      "bytes": 1938,
+      "sha256": "9c97338ce4818b9f1f62e56c98431356917147c8f59858019a01b7565789d018"
+    },
+    {
+      "path": "scripts/pass22/run-gate.mjs",
+      "bytes": 5617,
+      "sha256": "d76e13a436566d9183e53504bd7890546a7216ddca85965d512422510f2de17b"
+    },
+    {
+      "path": "scripts/pass22/run-typescript-syntax-scan.mjs",
+      "bytes": 2866,
+      "sha256": "f4f8b8d692ed1bf6c9fd33713c05e6071a05939abb66c09ebe94255d3d758223"
+    },
+    {
+      "path": "scripts/pass22/test-provider-rights-rls-boundaries.mjs",
+      "bytes": 4102,
+      "sha256": "059ec6fac9539e29bf71357ac280b00a6f45e3143012755d80ada18e9f7ca514"
+    },
+    {
+      "path": "scripts/pass22/test-provider-rights-runtime.mjs",
+      "bytes": 4423,
+      "sha256": "646e6d53dae612e4330c263da802184e3be9993b9cec304c4dfa0e715aecfbd4"
+    },
+    {
+      "path": "scripts/pass22/verify-owner-operator-rls.mjs",
+      "bytes": 4449,
+      "sha256": "ded57bc0f01e191cbdf5038f18b1064c3ea5a144b75d6eecf88549b19c5dfe0e"
+    },
+    {
+      "path": "scripts/pass22/verify-provider-rights-evidence.mjs",
+      "bytes": 5390,
+      "sha256": "1071b3e65439659765e9d8e57a12f019c284f0896a75e2fb0069487bcc83e6cf"
+    },
+    {
+      "path": "supabase/migrations/20260720000008_5007_pass22_owner_operator_rls_and_provider_evidence.sql",
+      "bytes": 17319,
+      "sha256": "5cb51cdcf96a1e5277f4ca6a274d40c2cfd54fa124457d1ac0a04a1d947adb54"
+    }
+  ],
+  "changedFiles": [
+    {
+      "path": "CLEAN_SAFE_README.md",
+      "previous": {
+        "bytes": 622,
+        "sha256": "f4d420e0273963d260cbff6884f703e2a98f1f0c8a614c7d345351908b2f2f4f"
+      },
+      "current": {
+        "bytes": 550,
+        "sha256": "91851ca60a24cd41a8db2810abe419477ea87eefd6972c1b66fc16b92fe89118"
+      }
+    },
+    {
+      "path": "README.md",
+      "previous": {
+        "bytes": 798,
+        "sha256": "d6f9378a0d50aed729ea006fa52535ffa1824a175fced2f01e75bc19a9e1fe43"
+      },
+      "current": {
+        "bytes": 632,
+        "sha256": "530c1a3bde3a564fc29c675096a4971a7dbdd3be2c7a3a7947a6c11903831c20"
+      }
+    },
+    {
+      "path": "VELMERE_RUN_FULL_CHECK.ps1",
+      "previous": {
+        "bytes": 789,
+        "sha256": "16ca4f34b69e7bb2fdf6fc9d02319b5fcd8fd66e09ee16195decfac78c488ab4"
+      },
+      "current": {
+        "bytes": 557,
+        "sha256": "86f273efd3d82bf17be90999fe489f58d6a4e70111c8d50c0e0e05b71bb917e8"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-output-index.jsonl",
+      "previous": {
+        "bytes": 448548,
+        "sha256": "641bc38aaaae3d882c8e997a73e14117f571d26fc9813c3041ed4e469d01224b"
+      },
+      "current": {
+        "bytes": 448548,
+        "sha256": "c02cafd510e980cf6545d21f0bfa1a4852b9c7e3bf550b86e6b39cefaffa0cf9"
+      }
+    },
+    {
+      "path": "evaluation/pass17/market-adapter-simulation-summary.json",
+      "previous": {
+        "bytes": 1290,
+        "sha256": "6a472c7109a8da1513342c92811375c4f2dba0126271e0cb28b6770098338b02"
+      },
+      "current": {
+        "bytes": 1290,
+        "sha256": "c4e644fba4a56d8a05e43e46da8442f307e17c504eb09427abb292cff96619a1"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+      "previous": {
+        "bytes": 438789,
+        "sha256": "071b563373902030d4c1a908f0aaae1052fbb7034b3dd90968e4fdbdfe54737c"
+      },
+      "current": {
+        "bytes": 438789,
+        "sha256": "adc4b51b3e2137e026a24f0375543c81155f8554bc1faee34425001e28db72af"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+      "previous": {
+        "bytes": 1507,
+        "sha256": "2335782517f9b67422b62bf523709b920e3f1e3ff47591d99ca5f648195b6de0"
+      },
+      "current": {
+        "bytes": 1507,
+        "sha256": "04b69bc7967acd8f40702ce870b7fbea3d9b587cca4f176ded1da07a9da012dd"
+      }
+    },
+    {
+      "path": "evaluation/pass18/audit-lens-evidence-fixtures.json",
+      "previous": {
+        "bytes": 1073770,
+        "sha256": "719827d1ba350d60e5c0f11c452358b111ddf68844c6a2a9494f999470fa7a6f"
+      },
+      "current": {
+        "bytes": 1073770,
+        "sha256": "e108e5c0f01614e5b1c650db0d07bcb79c36c76b67bf94454eb9dec495cfc944"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+      "previous": {
+        "bytes": 431556,
+        "sha256": "fb74db9dea7b160d618b8dc0dd0f7cae7bbc0621835ab378165c6753d7c8bf49"
+      },
+      "current": {
+        "bytes": 431556,
+        "sha256": "2c4c04fa65b04066400566915db0902d0f875449575f9992b2b2d8be68edf624"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+      "previous": {
+        "bytes": 1464,
+        "sha256": "45ec28abb5b4a0e5f6fba7fe38a487def1ed197531a7e2fc256135c75450de3a"
+      },
+      "current": {
+        "bytes": 1464,
+        "sha256": "21d3cfc1d369620fca207c4ffc075944ae698726d1258d5c3ac02071e9dc85fa"
+      }
+    },
+    {
+      "path": "evaluation/pass19/brain-angel-evidence-fixtures.json",
+      "previous": {
+        "bytes": 718563,
+        "sha256": "34e9148e125dce0aeaa3153b7729be90df2f17039662023b13d4995b4d143257"
+      },
+      "current": {
+        "bytes": 718563,
+        "sha256": "9bbd71272ada185d42d256486357742245f970cfc3f899a0b873648f9b2edc7c"
+      }
+    },
+    {
+      "path": "lib/worldclass/data-license-eligibility.d.ts",
+      "previous": {
+        "bytes": 945,
+        "sha256": "57da9ce9be18f2104d95dd119467215f1e4711f9c9bf11f18b02a7090a4b52bf"
+      },
+      "current": {
+        "bytes": 1090,
+        "sha256": "f20c9227707b45d79bab7e7536faef8a052ff4caed230ee8f38de7c543f17ac3"
+      }
+    },
+    {
+      "path": "lib/worldclass/data-license-eligibility.mjs",
+      "previous": {
+        "bytes": 5168,
+        "sha256": "d3b01dbe054e3478dd1f98c844c0389fa824f351929c6ca324f8233be3ad6cfd"
+      },
+      "current": {
+        "bytes": 6138,
+        "sha256": "1af395d059cb3db51b052ba6c7d09684226f9d2278932a53237471c04e0d1063"
+      }
+    },
+    {
+      "path": "messages/de.json",
+      "previous": {
+        "bytes": 143746,
+        "sha256": "98664030b3d1d54eb4e1b063d3184420306b9cf8092f623662cf8e5574f5f95e"
+      },
+      "current": {
+        "bytes": 148842,
+        "sha256": "51043133a1b4d08e87e50590e79212d86e5f22a347d851c1515472bd715f36cd"
+      }
+    },
+    {
+      "path": "messages/en.json",
+      "previous": {
+        "bytes": 138714,
+        "sha256": "8c15978e26ec150f73869a021660f8bf61d29219ee0e6ae7ddcd758713d9dc72"
+      },
+      "current": {
+        "bytes": 138690,
+        "sha256": "9d20e1f45ee488b3cd13de3b8ffc618bb89085605094da74c36c5870a49f5427"
+      }
+    },
+    {
+      "path": "messages/pl.json",
+      "previous": {
+        "bytes": 143965,
+        "sha256": "02a7e2d273578240ea474f599378acdf5f3b6d9147d817500c8de4e505c78f69"
+      },
+      "current": {
+        "bytes": 148397,
+        "sha256": "e11e5538a68ffd2e59f05548db5a455f1d3c236d3180488320d73fe175e56770"
+      }
+    },
+    {
+      "path": "package.json",
+      "previous": {
+        "bytes": 8718,
+        "sha256": "f363169160b8c12f0081df9fbbb5632f40e22186baecd53c06c368f611c843c0"
+      },
+      "current": {
+        "bytes": 9175,
+        "sha256": "87353c9424e81b039b378b6e14013eedc56ff348a1826d96b7ba87c61205ea6e"
+      }
+    },
+    {
+      "path": "scripts/worldclass/common-implementation-digest.mjs",
+      "previous": {
+        "bytes": 2174,
+        "sha256": "c718154cff3c9a2171e188ff71e472408f38b7fca582515e84ed0e654e7bfd28"
+      },
+      "current": {
+        "bytes": 2316,
+        "sha256": "d55ee806f6b974fbbb394e4bc162c50198b78fe85664d8082101a4095eed7235"
+      }
+    }
+  ],
+  "removedFiles": [],
+  "truthBoundary": "Byte/hash diff excludes generated local diagnostics/build output, verification and self-referential PASS22 diff/manifest."
+}

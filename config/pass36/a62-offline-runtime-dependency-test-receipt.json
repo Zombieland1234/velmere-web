@@ -1,0 +1,658 @@
+{
+  "schemaVersion": "velmere.pass36.a62.offline-exact-runtime-dependency-bootstrap-test.v2",
+  "revisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+  "status": "PASS_A62_STATIC_AND_ADVERSARIAL_FIXTURE",
+  "summary": {
+    "checks": 55,
+    "passed": 55,
+    "failed": 0
+  },
+  "failures": [],
+  "checks": [
+    {
+      "id": "valid-decision",
+      "ok": true,
+      "detail": "VERIFIED"
+    },
+    {
+      "id": "valid-runtime",
+      "ok": true,
+      "detail": {
+        "sha256": "2adced09315e0238ea1ab77bd5c7e2a6aa2661e1d947508a8e28151b034e7a73",
+        "byteLength": 384,
+        "entries": 9,
+        "node": "99.0.0",
+        "npm": "99.0.0",
+        "platform": "linux-x64"
+      }
+    },
+    {
+      "id": "valid-package-count",
+      "ok": true,
+      "detail": {
+        "runtimeVerified": true,
+        "dependencyBundleVerified": true,
+        "browserBundleVerified": true,
+        "packageCount": 1,
+        "browserFiles": 1,
+        "errors": 0
+      }
+    },
+    {
+      "id": "valid-browser",
+      "ok": true,
+      "detail": {
+        "bundle": {
+          "sha256": "123cdf818b4e3274110da0785b782bde98b6da46c0f6b58a1b22fa4a07957068",
+          "byteLength": 682,
+          "entries": 2
+        },
+        "platform": "linux-x64",
+        "executableRelativePath": "ms-playwright/chromium-fixture/chrome",
+        "files": 1
+      }
+    },
+    {
+      "id": "valid-no-promotion",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-extraction",
+      "ok": true,
+      "detail": "ms-playwright/chromium-fixture/chrome"
+    },
+    {
+      "id": "missing-inputs-blocked",
+      "ok": true,
+      "detail": {
+        "runtimeVerified": false,
+        "dependencyBundleVerified": false,
+        "browserBundleVerified": false,
+        "packageCount": 0,
+        "browserFiles": 0,
+        "errors": 3
+      }
+    },
+    {
+      "id": "wrong-runtime-hash-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "wrong-lock-anchor-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "dependency-extra-file-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "tarball-sha-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "tarball-size-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "tarball-integrity-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "bundle-lock-digest-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "bundle-metadata-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "bundle-missing-package-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "bundle-duplicate-package-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-anchor-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-file-hash-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-extra-file-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-platform-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-lock-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "browser-executable-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runtime-version-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "unsafe-runtime-symlink-rejected",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/a62-offline-exact-runtime-dependency-bootstrap.mjs",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/a62-offline-runtime-dependency-lib.mjs",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/a62_safe_tar.py",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/a62-playwright-browser-smoke.mjs",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/build-a62-playwright-browser-bundle.mjs",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/build-a62-dependency-bundle.mjs",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/a62_deterministic_zip.py",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:scripts/pass36/verify-a62-offline-exact-runtime-dependency-bootstrap.mjs",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "file:VELMERE_RUN_A62_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP.cmd",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "production-linux-anchor",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "production-windows-anchor",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "production-runtime-exact",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "production-package-denominator",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "production-browser-bound",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "production-offline-required",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:a62_missing_external_source_manifest_anchor",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:buildIsolatedExecutionEnvironment",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:a62_runtime_tree_mutated_during_bootstrap",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:a62_confirmation_token_invalid",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:dependency-cache-seeded",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:playwright-browser-bundle-extracted",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:playwright-browser-launch-smoke",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:offline-npm-ci",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:a60-exact-admission",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:VERIFIED_LOCAL_EXACT_FINAL_BYTE_BUILD_BROWSER",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "runner-marker:sourceUnchanged",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "a45-executable-binding",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "current-source-a63-and-a62-retained",
+      "ok": true,
+      "detail": {
+        "schemaVersion": "velmere.pass35.current-revision.v1",
+        "sourceRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "activeAcceptanceRevisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+        "previousAcceptanceRevisionId": "VELMERE_PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE",
+        "supersededAcceptanceRevisionId": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE",
+        "canonicalRoadmapRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+        "visualRevisionId": "VELMERE_PASS35_A44_VISUAL_MASTER_ENGINE_BINDING",
+        "engineRevisionId": "VELMERE_PASS35_A43_WEBPACK_CSS_VISUAL_RUNTIME_RECOVERY",
+        "runtimeRecoveryRevisionId": "VELMERE_PASS35_A42_DEV_RUNTIME_CACHE_RECOVERY",
+        "realStagingExecuted": false,
+        "independentExternalRetestExecuted": false,
+        "outOfTimeObservationExecuted": false,
+        "controlledCanaryApproved": false,
+        "liveProven": false,
+        "saleEnabled": false,
+        "controlledCanaryExecuted": false,
+        "controlledCanaryTelemetryProven": false,
+        "releaseIntegrityRevisionId": "VELMERE_PASS36_A58R0_RELEASE_INTEGRITY_FINAL_BYTE_BINDING",
+        "exactFinalByteBuildExecuted": false,
+        "historicalArtifactRecoveryComplete": false,
+        "buildGraphBudgetRecoveryRevisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY",
+        "buildGraphStaticBudgetsPassed": true,
+        "browserScreenshotParityExecuted": false,
+        "exactFinalByteBuildAcceptanceRevisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+        "historicalArtifactRecoveryIntakeRevisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+        "criticalOfflineGatePassed": false,
+        "offlineExactRuntimeDependencyBootstrapRevisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+        "offlineExactRuntimeDependencyBootstrapExecuted": false,
+        "exactRuntimeArtifactVerified": false,
+        "dependencyBundleVerified": false,
+        "playwrightBrowserBundleVerified": false,
+        "stagingProgramOrchestratorRevisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+        "stagingProgramExecuted": false,
+        "stagingProgramVerified": false,
+        "historicalControlMetadataRecoveryRevisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+        "historicalControlMetadataRecovered": true,
+        "supplementalControlMetadataComplete": true,
+        "staticControlPlaneComplete": true,
+        "staticControlPlaneChecksPassed": 567,
+        "externalCommandTrustBoundaryRevisionId": "VELMERE_PASS36_A65R0_EXTERNAL_COMMAND_EXECUTION_TRUST_BOUNDARY_HARDENING",
+        "externalCommandTrustBoundaryImplemented": true,
+        "productionExternalSignerExecuted": false,
+        "productionTransparencyPublisherExecuted": false,
+        "auditToolExecutionTrustBoundaryRevisionId": "VELMERE_PASS36_A66R0_AUDIT_TOOL_EXECUTION_TRUST_BOUNDARY_HARDENING",
+        "auditToolExecutionTrustBoundaryImplemented": true,
+        "officialSolcExecuted": false,
+        "realProviderBoundContractExecuted": false,
+        "networkEgressTrustBoundaryRevisionId": "VELMERE_PASS36_A67R0_NETWORK_EGRESS_CREDENTIAL_AND_SAME_ORIGIN_TRUST_BOUNDARY_HARDENING",
+        "networkEgressTrustBoundaryImplemented": true,
+        "singleRawProductionFetchPrimitive": true,
+        "supabaseServiceRoleBrokered": true,
+        "sameOriginClientFetchBoundaryImplemented": true,
+        "realSupabaseBrokerRequestExecuted": false,
+        "realProviderNetworkExecuted": false,
+        "filesystemPersistenceTrustBoundaryRevisionId": "VELMERE_PASS36_A68R0_FILESYSTEM_PERSISTENCE_TRUST_BOUNDARY_HARDENING",
+        "filesystemPersistenceTrustBoundaryImplemented": true,
+        "structuredDataDeserializationTrustBoundaryRevisionId": "VELMERE_PASS36_A69R0_STRUCTURED_DATA_DESERIALIZATION_TRUST_BOUNDARY_HARDENING",
+        "structuredDataDeserializationTrustBoundaryImplemented": true,
+        "multipartUploadTrustBoundaryRevisionId": "VELMERE_PASS36_A70R0_MULTIPART_UPLOAD_AND_PASSIVE_ATTACHMENT_TRUST_BOUNDARY_HARDENING",
+        "multipartUploadTrustBoundaryImplemented": true,
+        "releaseSignatureTrustBoundaryRevisionId": "VELMERE_PASS36_A71R0_RELEASE_SIGNATURE_AND_TRUST_ANCHOR_BOUNDARY_HARDENING",
+        "releaseSignatureTrustBoundaryImplemented": true,
+        "externalReleaseSignatureVerified": false,
+        "productionTransparencyLogVerified": false,
+        "independentTrustAnchorCustodyVerified": false,
+        "downloadResponseTrustBoundaryRevisionId": "VELMERE_PASS36_A72R0_DOWNLOAD_RESPONSE_AND_CONTENT_DISPOSITION_TRUST_BOUNDARY_HARDENING",
+        "downloadResponseTrustBoundaryImplemented": true,
+        "coveredDownloadResponseFiles": 11,
+        "coveredContentDispositionAssignments": 12,
+        "browserContentDispositionCompatibilityExecuted": false,
+        "cookieSessionTrustBoundaryRevisionId": "VELMERE_PASS36_A73R0_COOKIE_SESSION_AND_AUTH_FLOW_TRUST_BOUNDARY_HARDENING",
+        "cookieSessionTrustBoundaryImplemented": true,
+        "closedSecurityCookieProfiles": 7,
+        "coveredAuthCookieModules": 5,
+        "duplicateCookieShadowingRejected": true,
+        "signedCookieStrictJsonBoundaryImplemented": true,
+        "productionBrowserCookieCompatibilityExecuted": false,
+        "realAuthProviderFlowExecuted": false,
+        "navigationRedirectTrustBoundaryRevisionId": "VELMERE_PASS36_A74R0_NAVIGATION_REDIRECT_AND_CALLBACK_TRUST_BOUNDARY_HARDENING",
+        "navigationRedirectTrustBoundaryImplemented": true,
+        "coveredNavigationRedirectProductionFiles": 9,
+        "navigationRedirectProfiles": 4,
+        "productionCanonicalOriginExplicit": true,
+        "requestHostCallbackOriginRejected": true,
+        "productionBrowserNavigationExecuted": false,
+        "realStripeCheckoutRedirectExecuted": false,
+        "trustedProxyRequestClientIdentityBoundaryRevisionId": "VELMERE_PASS36_A75R0_TRUSTED_PROXY_AND_REQUEST_CLIENT_IDENTITY_BOUNDARY_HARDENING",
+        "trustedProxyRequestClientIdentityBoundaryImplemented": true,
+        "coveredRequestClientIdentityProductionFiles": 12,
+        "rawForwardedHeaderProductionConsumers": 1,
+        "rawForwardedHeaderBoundaryFile": "lib/security/api-guard.ts",
+        "productionTrustedProxyProfileRequired": true,
+        "productionDurableRateLimitRequired": true,
+        "authorizationCookiePaidTokenExcludedFromFallbackIdentity": true,
+        "productionTrustedProxyObserved": false,
+        "productionDurableRateLimitObserved": false,
+        "currentReleaseAuthorityRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "currentReleaseAuthorityPath": "config/pass36/current-release-authority.json",
+        "worldClassCompletionProgramPath": "config/pass36/a82-world-class-completion-program.json",
+        "legacyCurrentReleasePointerClassified": true,
+        "legacyCurrentReleasePointerMayDefineCurrentSource": false,
+        "roadmapLivingContract": true,
+        "newGapMustBeAddedAndPercentagesRecalculated": true,
+        "legalRegulatoryPerimeterItems": 16,
+        "legalSignedDecisions": 0,
+        "worldClassProven": false,
+        "cleanRootMigrationRevisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+        "cleanRootConstructed": true,
+        "cleanRootGovernanceApproved": false,
+        "legacyHistoricalArtifactsVerifiedExact": 0,
+        "legacyHistoricalArtifactsRequiredExact": 2,
+        "legacyHistoricalArtifactRecoveryComplete": false,
+        "stagingLineageAdmissionRule": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT",
+        "worldClassCompletionProgramRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "worldClassCompletionProgramRemainingPasses": 28,
+        "exactToolchainBootstrapHardeningRevisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+        "currentRootDescendantManifestRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "exactToolchainLocalCasCoveredLockPaths": 81,
+        "exactToolchainRequiredLockPaths": 827,
+        "exactToolchainPhysicalInputsSupplied": false,
+        "exactBuildBrowserEvidenceHardeningRevisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+        "exactBuildBrowserLocalAdmissionHardened": true,
+        "exactBuildBrowserClosedAdmissionGaps": 11,
+        "exactBuildBrowserRequiredRows": 36,
+        "exactBuildBrowserRequiredScreenshots": 19,
+        "exactBuildBrowserRequiredPopupTabs": 4,
+        "exactBuildBrowserDynamicLoopbackRequired": true,
+        "exactBuildBrowserSystemNpmForbidden": true,
+        "exactBuildBrowserShellForbidden": true,
+        "exactBuildBrowserEvidenceBoundToSourceRuntimeBrowserBuild": true,
+        "frozenLocalReleaseCandidateRevisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+        "frozenLocalReleaseCandidateAdmissionImplemented": true,
+        "frozenLocalReleaseCandidateVerified": false,
+        "releaseCandidateSealOutputMustBeOutsideSource": true,
+        "releaseCandidateSourceMutationForbidden": true,
+        "releaseCandidatePrivateLiveEvidenceEmbeddingForbidden": true,
+        "canonicalMegaMatrixRevisionId": "VELMERE_PASS36_A81R0_CANONICAL_BASIC_PRO_ADVANCED_MEGA_MATRIX_ORCHESTRATOR",
+        "canonicalMegaMatrixImplemented": true,
+        "canonicalMegaMatrixUniqueBaseCases": 300,
+        "canonicalMegaMatrixSourceAdapterRows": 2700,
+        "canonicalMegaMatrixModules": 10,
+        "canonicalMegaMatrixModuleCases": 500,
+        "canonicalMegaMatrixPacketRows": 4500,
+        "canonicalMegaMatrixChannelProjections": 27000,
+        "canonicalMegaMatrixMutationDenominator": 36000,
+        "canonicalMegaMatrixMutationKillRate": 1,
+        "canonicalMegaMatrixCrossChannelParityFailures": 0,
+        "canonicalMegaMatrixCrossLocaleFactsFailures": 0,
+        "canonicalMegaMatrixTierMonotonicityFailures": 0,
+        "canonicalProviderBoundMatrixExecuted": false,
+        "physicalCustomerPdfMatrixExecuted": false,
+        "browserMatrixExecuted": false,
+        "modelMatrixExecuted": false,
+        "customerPurchaseWorthinessProven": false,
+        "canonicalMegaMatrixClosedGaps": 19,
+        "auditRealContractMatrixRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "auditRealContractMatrixImplemented": true,
+        "auditRealContractMatrixRequiredCases": 50,
+        "auditRealContractIdentitySeeded": 10,
+        "realAuditCasesFullyVerified": 0,
+        "auditRightsApprovedCases": 0,
+        "auditOfficialToolExecutions": 0,
+        "auditIndependentRealLabels": 0,
+        "auditPaidGateEligible": false,
+        "auditCustomerAccuracyProven": false,
+        "auditRealContractMatrixClosedGaps": 12
+      }
+    },
+    {
+      "id": "current-a60-retained",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "id": "current-no-false-credit",
+      "ok": true,
+      "detail": {
+        "schemaVersion": "velmere.pass35.current-revision.v1",
+        "sourceRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "activeAcceptanceRevisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+        "previousAcceptanceRevisionId": "VELMERE_PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE",
+        "supersededAcceptanceRevisionId": "VELMERE_PASS35_A53_MEASURED_SLO_ALERT_ACK_VENDOR_EXIT_ACCEPTANCE",
+        "canonicalRoadmapRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+        "visualRevisionId": "VELMERE_PASS35_A44_VISUAL_MASTER_ENGINE_BINDING",
+        "engineRevisionId": "VELMERE_PASS35_A43_WEBPACK_CSS_VISUAL_RUNTIME_RECOVERY",
+        "runtimeRecoveryRevisionId": "VELMERE_PASS35_A42_DEV_RUNTIME_CACHE_RECOVERY",
+        "realStagingExecuted": false,
+        "independentExternalRetestExecuted": false,
+        "outOfTimeObservationExecuted": false,
+        "controlledCanaryApproved": false,
+        "liveProven": false,
+        "saleEnabled": false,
+        "controlledCanaryExecuted": false,
+        "controlledCanaryTelemetryProven": false,
+        "releaseIntegrityRevisionId": "VELMERE_PASS36_A58R0_RELEASE_INTEGRITY_FINAL_BYTE_BINDING",
+        "exactFinalByteBuildExecuted": false,
+        "historicalArtifactRecoveryComplete": false,
+        "buildGraphBudgetRecoveryRevisionId": "VELMERE_PASS36_A59R0_BUILD_GRAPH_ROUTE_CSS_BUDGET_RECOVERY",
+        "buildGraphStaticBudgetsPassed": true,
+        "browserScreenshotParityExecuted": false,
+        "exactFinalByteBuildAcceptanceRevisionId": "VELMERE_PASS36_A60R0_EXACT_FINAL_BYTE_BUILD_BROWSER_ACCEPTANCE",
+        "historicalArtifactRecoveryIntakeRevisionId": "VELMERE_PASS36_A61R0_HISTORICAL_ARTIFACT_RECOVERY_INTAKE_CRITICAL_GATE_TRUTH",
+        "criticalOfflineGatePassed": false,
+        "offlineExactRuntimeDependencyBootstrapRevisionId": "VELMERE_PASS36_A62R0_OFFLINE_EXACT_RUNTIME_DEPENDENCY_BOOTSTRAP",
+        "offlineExactRuntimeDependencyBootstrapExecuted": false,
+        "exactRuntimeArtifactVerified": false,
+        "dependencyBundleVerified": false,
+        "playwrightBrowserBundleVerified": false,
+        "stagingProgramOrchestratorRevisionId": "VELMERE_PASS36_A63R0_STAGING_PROGRAM_ORCHESTRATOR_EVIDENCE_CHAIN",
+        "stagingProgramExecuted": false,
+        "stagingProgramVerified": false,
+        "historicalControlMetadataRecoveryRevisionId": "VELMERE_PASS36_A64R0_HISTORICAL_CONTROL_METADATA_RECOVERY_COMPLETE_CONTROL_PLANE",
+        "historicalControlMetadataRecovered": true,
+        "supplementalControlMetadataComplete": true,
+        "staticControlPlaneComplete": true,
+        "staticControlPlaneChecksPassed": 567,
+        "externalCommandTrustBoundaryRevisionId": "VELMERE_PASS36_A65R0_EXTERNAL_COMMAND_EXECUTION_TRUST_BOUNDARY_HARDENING",
+        "externalCommandTrustBoundaryImplemented": true,
+        "productionExternalSignerExecuted": false,
+        "productionTransparencyPublisherExecuted": false,
+        "auditToolExecutionTrustBoundaryRevisionId": "VELMERE_PASS36_A66R0_AUDIT_TOOL_EXECUTION_TRUST_BOUNDARY_HARDENING",
+        "auditToolExecutionTrustBoundaryImplemented": true,
+        "officialSolcExecuted": false,
+        "realProviderBoundContractExecuted": false,
+        "networkEgressTrustBoundaryRevisionId": "VELMERE_PASS36_A67R0_NETWORK_EGRESS_CREDENTIAL_AND_SAME_ORIGIN_TRUST_BOUNDARY_HARDENING",
+        "networkEgressTrustBoundaryImplemented": true,
+        "singleRawProductionFetchPrimitive": true,
+        "supabaseServiceRoleBrokered": true,
+        "sameOriginClientFetchBoundaryImplemented": true,
+        "realSupabaseBrokerRequestExecuted": false,
+        "realProviderNetworkExecuted": false,
+        "filesystemPersistenceTrustBoundaryRevisionId": "VELMERE_PASS36_A68R0_FILESYSTEM_PERSISTENCE_TRUST_BOUNDARY_HARDENING",
+        "filesystemPersistenceTrustBoundaryImplemented": true,
+        "structuredDataDeserializationTrustBoundaryRevisionId": "VELMERE_PASS36_A69R0_STRUCTURED_DATA_DESERIALIZATION_TRUST_BOUNDARY_HARDENING",
+        "structuredDataDeserializationTrustBoundaryImplemented": true,
+        "multipartUploadTrustBoundaryRevisionId": "VELMERE_PASS36_A70R0_MULTIPART_UPLOAD_AND_PASSIVE_ATTACHMENT_TRUST_BOUNDARY_HARDENING",
+        "multipartUploadTrustBoundaryImplemented": true,
+        "releaseSignatureTrustBoundaryRevisionId": "VELMERE_PASS36_A71R0_RELEASE_SIGNATURE_AND_TRUST_ANCHOR_BOUNDARY_HARDENING",
+        "releaseSignatureTrustBoundaryImplemented": true,
+        "externalReleaseSignatureVerified": false,
+        "productionTransparencyLogVerified": false,
+        "independentTrustAnchorCustodyVerified": false,
+        "downloadResponseTrustBoundaryRevisionId": "VELMERE_PASS36_A72R0_DOWNLOAD_RESPONSE_AND_CONTENT_DISPOSITION_TRUST_BOUNDARY_HARDENING",
+        "downloadResponseTrustBoundaryImplemented": true,
+        "coveredDownloadResponseFiles": 11,
+        "coveredContentDispositionAssignments": 12,
+        "browserContentDispositionCompatibilityExecuted": false,
+        "cookieSessionTrustBoundaryRevisionId": "VELMERE_PASS36_A73R0_COOKIE_SESSION_AND_AUTH_FLOW_TRUST_BOUNDARY_HARDENING",
+        "cookieSessionTrustBoundaryImplemented": true,
+        "closedSecurityCookieProfiles": 7,
+        "coveredAuthCookieModules": 5,
+        "duplicateCookieShadowingRejected": true,
+        "signedCookieStrictJsonBoundaryImplemented": true,
+        "productionBrowserCookieCompatibilityExecuted": false,
+        "realAuthProviderFlowExecuted": false,
+        "navigationRedirectTrustBoundaryRevisionId": "VELMERE_PASS36_A74R0_NAVIGATION_REDIRECT_AND_CALLBACK_TRUST_BOUNDARY_HARDENING",
+        "navigationRedirectTrustBoundaryImplemented": true,
+        "coveredNavigationRedirectProductionFiles": 9,
+        "navigationRedirectProfiles": 4,
+        "productionCanonicalOriginExplicit": true,
+        "requestHostCallbackOriginRejected": true,
+        "productionBrowserNavigationExecuted": false,
+        "realStripeCheckoutRedirectExecuted": false,
+        "trustedProxyRequestClientIdentityBoundaryRevisionId": "VELMERE_PASS36_A75R0_TRUSTED_PROXY_AND_REQUEST_CLIENT_IDENTITY_BOUNDARY_HARDENING",
+        "trustedProxyRequestClientIdentityBoundaryImplemented": true,
+        "coveredRequestClientIdentityProductionFiles": 12,
+        "rawForwardedHeaderProductionConsumers": 1,
+        "rawForwardedHeaderBoundaryFile": "lib/security/api-guard.ts",
+        "productionTrustedProxyProfileRequired": true,
+        "productionDurableRateLimitRequired": true,
+        "authorizationCookiePaidTokenExcludedFromFallbackIdentity": true,
+        "productionTrustedProxyObserved": false,
+        "productionDurableRateLimitObserved": false,
+        "currentReleaseAuthorityRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "currentReleaseAuthorityPath": "config/pass36/current-release-authority.json",
+        "worldClassCompletionProgramPath": "config/pass36/a82-world-class-completion-program.json",
+        "legacyCurrentReleasePointerClassified": true,
+        "legacyCurrentReleasePointerMayDefineCurrentSource": false,
+        "roadmapLivingContract": true,
+        "newGapMustBeAddedAndPercentagesRecalculated": true,
+        "legalRegulatoryPerimeterItems": 16,
+        "legalSignedDecisions": 0,
+        "worldClassProven": false,
+        "cleanRootMigrationRevisionId": "VELMERE_PASS36_A77R0_HISTORICAL_LINEAGE_CLEAN_ROOT_MIGRATION_AND_DUAL_CONTROL_GOVERNANCE",
+        "cleanRootConstructed": true,
+        "cleanRootGovernanceApproved": false,
+        "legacyHistoricalArtifactsVerifiedExact": 0,
+        "legacyHistoricalArtifactsRequiredExact": 2,
+        "legacyHistoricalArtifactRecoveryComplete": false,
+        "stagingLineageAdmissionRule": "EXACT_A61_OR_SIGNED_A77_CLEAN_ROOT",
+        "worldClassCompletionProgramRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "worldClassCompletionProgramRemainingPasses": 28,
+        "exactToolchainBootstrapHardeningRevisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+        "currentRootDescendantManifestRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "exactToolchainLocalCasCoveredLockPaths": 81,
+        "exactToolchainRequiredLockPaths": 827,
+        "exactToolchainPhysicalInputsSupplied": false,
+        "exactBuildBrowserEvidenceHardeningRevisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+        "exactBuildBrowserLocalAdmissionHardened": true,
+        "exactBuildBrowserClosedAdmissionGaps": 11,
+        "exactBuildBrowserRequiredRows": 36,
+        "exactBuildBrowserRequiredScreenshots": 19,
+        "exactBuildBrowserRequiredPopupTabs": 4,
+        "exactBuildBrowserDynamicLoopbackRequired": true,
+        "exactBuildBrowserSystemNpmForbidden": true,
+        "exactBuildBrowserShellForbidden": true,
+        "exactBuildBrowserEvidenceBoundToSourceRuntimeBrowserBuild": true,
+        "frozenLocalReleaseCandidateRevisionId": "VELMERE_PASS36_A80R0_FROZEN_LOCAL_RELEASE_CANDIDATE_ADMISSION_AND_PROMOTION_SEAL_HARDENING",
+        "frozenLocalReleaseCandidateAdmissionImplemented": true,
+        "frozenLocalReleaseCandidateVerified": false,
+        "releaseCandidateSealOutputMustBeOutsideSource": true,
+        "releaseCandidateSourceMutationForbidden": true,
+        "releaseCandidatePrivateLiveEvidenceEmbeddingForbidden": true,
+        "canonicalMegaMatrixRevisionId": "VELMERE_PASS36_A81R0_CANONICAL_BASIC_PRO_ADVANCED_MEGA_MATRIX_ORCHESTRATOR",
+        "canonicalMegaMatrixImplemented": true,
+        "canonicalMegaMatrixUniqueBaseCases": 300,
+        "canonicalMegaMatrixSourceAdapterRows": 2700,
+        "canonicalMegaMatrixModules": 10,
+        "canonicalMegaMatrixModuleCases": 500,
+        "canonicalMegaMatrixPacketRows": 4500,
+        "canonicalMegaMatrixChannelProjections": 27000,
+        "canonicalMegaMatrixMutationDenominator": 36000,
+        "canonicalMegaMatrixMutationKillRate": 1,
+        "canonicalMegaMatrixCrossChannelParityFailures": 0,
+        "canonicalMegaMatrixCrossLocaleFactsFailures": 0,
+        "canonicalMegaMatrixTierMonotonicityFailures": 0,
+        "canonicalProviderBoundMatrixExecuted": false,
+        "physicalCustomerPdfMatrixExecuted": false,
+        "browserMatrixExecuted": false,
+        "modelMatrixExecuted": false,
+        "customerPurchaseWorthinessProven": false,
+        "canonicalMegaMatrixClosedGaps": 19,
+        "auditRealContractMatrixRevisionId": "VELMERE_PASS36_A82R0_AUDIT_BASIC_PRO_ADVANCED_REAL_CONTRACT_MATRIX_AND_OFFICIAL_TOOL_EVIDENCE_BINDING",
+        "auditRealContractMatrixImplemented": true,
+        "auditRealContractMatrixRequiredCases": 50,
+        "auditRealContractIdentitySeeded": 10,
+        "realAuditCasesFullyVerified": 0,
+        "auditRightsApprovedCases": 0,
+        "auditOfficialToolExecutions": 0,
+        "auditIndependentRealLabels": 0,
+        "auditPaidGateEligible": false,
+        "auditCustomerAccuracyProven": false,
+        "auditRealContractMatrixClosedGaps": 12
+      }
+    }
+  ],
+  "realRuntimeSupplied": false,
+  "realDependencyBundleSupplied": false,
+  "realBrowserBundleSupplied": false,
+  "saleEnabled": false,
+  "liveProven": false,
+  "truthBoundary": "A62 can verify an exact official Node 24.18.0 archive for Windows x64 or Linux x64, its bundled npm 11.16.0, a complete lockfile-bound dependency tarball bundle, and an externally SHA-256-anchored Playwright Chromium bundle. It then prepares a no-network npm cache, proves a real browser launch, and invokes A60. It does not reconstruct missing artifacts, prove browser provenance beyond the supplied external anchor and launch test, prove staging or LIVE, or enable sale."
+}

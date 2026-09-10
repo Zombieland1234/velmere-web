@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "velmere.pass35.ai-system-inventory.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "status": "PREPARED_PROVIDER_AND_LEGAL_PROOF_MISSING",
+  "systems": [
+    {"aiSystemId": "brain_basic", "surface": "brain", "tier": "basic", "status": "IMPLEMENTED_OFFLINE_ONLY", "sellEnabled": false},
+    {"aiSystemId": "brain_pro", "surface": "brain", "tier": "pro", "status": "PREPARED", "sellEnabled": false},
+    {"aiSystemId": "brain_advanced", "surface": "brain", "tier": "advanced", "status": "PREPARED", "sellEnabled": false},
+    {"aiSystemId": "angel_basic", "surface": "angel", "tier": "basic", "status": "IMPLEMENTED_OFFLINE_ONLY", "sellEnabled": false},
+    {"aiSystemId": "angel_pro", "surface": "angel", "tier": "pro", "status": "PREPARED", "sellEnabled": false},
+    {"aiSystemId": "angel_advanced", "surface": "angel", "tier": "advanced", "status": "PREPARED", "sellEnabled": false},
+    {"aiSystemId": "risk_basic_ranking", "surface": "risk", "tier": "basic", "status": "OFFLINE_PROVEN_DETERMINISTIC_RANKING_ONLY", "sellEnabled": false},
+    {"aiSystemId": "risk_pro_calibrated", "surface": "risk", "tier": "pro", "status": "MISSING_EMPIRICAL_CALIBRATION", "sellEnabled": false},
+    {"aiSystemId": "risk_advanced_prospective", "surface": "risk", "tier": "advanced", "status": "MISSING_PROSPECTIVE_OUTCOMES", "sellEnabled": false}
+  ],
+  "requiredPerSystemFieldsBeforeStaging": [
+    "intendedPurpose",
+    "user",
+    "modelProviderVersionRegion",
+    "promptSha256",
+    "ragDatasetSha256",
+    "toolPermissions",
+    "trainingRetentionOptOut",
+    "subprocessors",
+    "dataClass",
+    "legalRiskClass",
+    "humanOversight",
+    "fallback",
+    "killSwitch",
+    "evalSuite",
+    "owner",
+    "ttl",
+    "regulatoryRole"
+  ],
+  "forbiddenRiskClaims": [
+    "empirical_probability_without_calibration",
+    "universal_score_across_incompatible_events",
+    "investment_advice",
+    "guaranteed_outcome"
+  ]
+}

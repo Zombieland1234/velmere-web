@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "velmere.pass36.a68.filesystem-persistence-trust-boundary-test.v1",
+  "revisionId": "VELMERE_PASS36_A68R0_FILESYSTEM_PERSISTENCE_TRUST_BOUNDARY_HARDENING",
+  "total": 38,
+  "passed": 38,
+  "failed": 0,
+  "checks": [
+    {
+      "id": "boundary_id_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "write_readback_verified",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "atomic_rename_reported",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "write_digest_exact",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "json_round_trip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "regular_file_replacement_atomic",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "target_mode_private",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "temporary_files_cleaned",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "traversal_file_name_rejected",
+      "pass": true,
+      "detail": "durable_file_name_invalid"
+    },
+    {
+      "id": "absolute_file_name_rejected",
+      "pass": true,
+      "detail": "durable_file_name_invalid"
+    },
+    {
+      "id": "control_root_rejected",
+      "pass": true,
+      "detail": "durable_file_root_invalid"
+    },
+    {
+      "id": "filesystem_root_rejected",
+      "pass": true,
+      "detail": "durable_file_root_filesystem_root_forbidden"
+    },
+    {
+      "id": "relative_production_root_rejected",
+      "pass": true,
+      "detail": "durable_file_root_absolute_required"
+    },
+    {
+      "id": "invalid_label_rejected",
+      "pass": true,
+      "detail": "durable_file_label_invalid"
+    },
+    {
+      "id": "invalid_budget_rejected",
+      "pass": true,
+      "detail": "durable_file_maximum_bytes_invalid"
+    },
+    {
+      "id": "oversized_write_rejected",
+      "pass": true,
+      "detail": "durable_file_too_large"
+    },
+    {
+      "id": "invalid_json_rejected",
+      "pass": true,
+      "detail": "durable_file_json_invalid"
+    },
+    {
+      "id": "oversized_read_rejected",
+      "pass": true,
+      "detail": "durable_file_too_large"
+    },
+    {
+      "id": "symlink_root_rejected",
+      "pass": true,
+      "detail": "durable_file_path_symlink_forbidden"
+    },
+    {
+      "id": "symlink_component_rejected",
+      "pass": true,
+      "detail": "durable_file_path_symlink_forbidden"
+    },
+    {
+      "id": "target_symlink_write_rejected",
+      "pass": true,
+      "detail": "durable_file_target_symlink_forbidden"
+    },
+    {
+      "id": "target_symlink_read_rejected",
+      "pass": true,
+      "detail": "durable_file_target_symlink_forbidden"
+    },
+    {
+      "id": "external_target_unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "directory_target_write_rejected",
+      "pass": true,
+      "detail": "durable_file_target_not_regular"
+    },
+    {
+      "id": "directory_target_read_rejected",
+      "pass": true,
+      "detail": "durable_file_target_not_regular"
+    },
+    {
+      "id": "world_writable_production_root_rejected",
+      "pass": true,
+      "detail": "durable_file_root_writable_by_group_or_world"
+    },
+    {
+      "id": "integration_provider-evidence-ledger_ts_uses_boundary",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_provider-evidence-ledger_ts_no_direct_atomic_write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_instrument-metadata-cache_ts_uses_boundary",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_instrument-metadata-cache_ts_no_direct_atomic_write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_continuous-evidence-availability_ts_uses_boundary",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_continuous-evidence-availability_ts_no_direct_atomic_write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_local-product-store_ts_uses_boundary",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "integration_local-product-store_ts_no_direct_atomic_write",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "boundary_uses_no_follow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "boundary_revalidates_root_before_rename",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "boundary_fsyncs_file_and_directory",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "boundary_read_is_bounded",
+      "pass": true,
+      "detail": null
+    }
+  ]
+}

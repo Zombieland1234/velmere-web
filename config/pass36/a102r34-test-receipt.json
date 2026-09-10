@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "velmere.pass36.a102r34.test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R34_ACTION_REQUIRED_DIALOG_TOP_LAYER_ESCAPE_TAB_OUTSIDE_POINTER_AND_NESTED_RETURN_OWNERSHIP_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R33_ACTION_REQUIRED_DIALOG_FOCUS_RETURN_RAPID_REOPEN_NESTED_MODAL_AND_PENDING_OBSERVER_RACE_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T07:45:00.000Z",
+  "status": "PASS_A102R34_DIALOG_STACK_TOP_LAYER_OWNERSHIP_NO_PROMOTION",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "checksPassed": 24,
+  "checksFailed": 0,
+  "closure": {
+    "orderedDialogStack": true,
+    "topLayerOnlyEscape": true,
+    "topLayerOnlyTabTrap": true,
+    "topLayerOnlyOutsidePointer": true,
+    "nestedReturnInsideUnderlyingAllowed": true,
+    "nestedReturnOutsideUnderlyingBlocked": true,
+    "staleReturnAfterNewDialogBlocked": true
+  },
+  "realBrowserRows": 0,
+  "exactReleaseCredit": false,
+  "truthBoundary": "Local dialog stack ordering, top-layer event ownership and nested focus-return containment only. No exact browser, staging, rights, legal, customer, LIVE or sale credit."
+}

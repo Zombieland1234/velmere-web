@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "velmere.pass15.gate-policy.v1",
+  "purpose": "Large engineering waves with cheap deterministic controls during implementation and one heavy proof run at milestone/release boundaries.",
+  "truthBoundary": "Quick/domain gates are static code-only evidence. Milestone requires installed exact dependencies. Release build is not browser, staging or LIVE proof.",
+  "heavyExecutionRequiresExplicitFlag": true,
+  "levels": {
+    "quick": {
+      "maxExpectedSeconds": 90,
+      "commands": [
+        "node scripts/pass15/audit-runner-contract.mjs",
+        "node scripts/pass14/verify-visual-freeze.mjs",
+        "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+        "node scripts/pass15/profile-lazy-build-surface.mjs",
+        "node scripts/pass15/verify-lazy-route-shells.mjs",
+        "node scripts/pass14/profile-build-graph.mjs",
+        "node scripts/pass14/verify-migration-versions.mjs",
+        "node scripts/pass14/verify-retired-fixture-routes.mjs",
+        "node scripts/pass14/audit-database-contract.mjs",
+        "node scripts/pass14/audit-i18n-semantic-parity.mjs",
+        "node scripts/pass14/audit-clean-source.mjs"
+      ]
+    },
+    "domain": {
+      "maxExpectedSeconds": 180,
+      "domains": {
+        "build": [
+          "node scripts/pass15/verify-route-dispatch-consolidation.mjs",
+          "node scripts/pass15/profile-lazy-build-surface.mjs",
+          "node scripts/pass15/verify-lazy-route-shells.mjs",
+          "node scripts/pass14/profile-build-graph.mjs"
+        ],
+        "database": [
+          "node scripts/pass14/verify-migration-versions.mjs",
+          "node scripts/pass14/audit-database-contract.mjs"
+        ],
+        "visual-freeze": [
+          "node scripts/pass14/verify-visual-freeze.mjs"
+        ],
+        "i18n": [
+          "npm run check:i18n",
+          "node scripts/pass14/audit-i18n-semantic-parity.mjs"
+        ],
+        "source": [
+          "node scripts/pass14/audit-clean-source.mjs"
+        ]
+      }
+    },
+    "milestone": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 2400,
+      "commands": [
+        "npm run gate:quick",
+        "npm run typecheck",
+        "npm run lint",
+        "npm test"
+      ]
+    },
+    "release": {
+      "requiresAllowHeavy": true,
+      "maxExpectedSeconds": 10800,
+      "commands": [
+        "npm ci",
+        "npm audit --audit-level=high",
+        "npm run gate:milestone -- --allow-heavy",
+        "npm run build:webpack",
+        "npm run build:turbopack"
+      ]
+    }
+  },
+  "cadence": {
+    "quick": "Once after a coherent batch, not after every file.",
+    "domain": "Once after completing a whole domain wave.",
+    "milestone": "Once at the end of PASS15 MEGA-WAVE.",
+    "release": "Once for the final release candidate before browser/PDF/staging proof."
+  },
+  "forbiddenShortcuts": [
+    "Do not count static lazy-boundary checks as successful build.",
+    "Do not rerun unchanged heavy gates.",
+    "Do not raise LIVE percentages from offline fixtures or inherited receipts."
+  ]
+}

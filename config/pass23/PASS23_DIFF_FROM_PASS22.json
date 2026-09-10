@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "velmere.pass23.diff-from-pass22.v1",
+  "generatedAt": "2026-07-20T18:00:00.000Z",
+  "base": {
+    "name": "VELMERE_PASS22_RLS_PROVIDER_RIGHTS_I18N_SAFE_SOURCE.zip",
+    "sha256": "8ca93120b2d2f0b9e094bc9174fc2ca86c634bf54ffa80e1fce860daa11309eb",
+    "files": 3285
+  },
+  "current": {
+    "plannedName": "VELMERE_PASS23_CODE_ONLY_CLOSURE_SAFE_SOURCE.zip",
+    "filesBeforeSelfMetadata": 3313
+  },
+  "summary": {
+    "new": 28,
+    "changed": 17,
+    "removed": 0,
+    "unchanged": 3268
+  },
+  "new": [
+    "config/pass23/PASS23_DIFF_FROM_PASS22.json",
+    "config/pass23/browser-overflow-matrix.json",
+    "config/pass23/gate-policy.json",
+    "config/pass23/i18n-final-translations.json",
+    "config/pass23/merchant-legal-intake-schema.json",
+    "config/pass23/native-language-review-checklist.json",
+    "config/pass23/provider-rights-import-policy.json",
+    "config/pass23/rls-staging-case-matrix.json",
+    "config/pass23/rls-table-classification.json",
+    "config/pass23/typescript-syntax-scan.json",
+    "lib/compliance/provider-rights-evidence-validator.mjs",
+    "scripts/pass23/apply-i18n-final-wave.mjs",
+    "scripts/pass23/audit-clean-source.mjs",
+    "scripts/pass23/audit-current-product-readiness.mjs",
+    "scripts/pass23/audit-i18n-release-readiness.mjs",
+    "scripts/pass23/audit-runner-contract.mjs",
+    "scripts/pass23/import-provider-rights-evidence.mjs",
+    "scripts/pass23/reconcile-provider-rights-evidence.mjs",
+    "scripts/pass23/run-gate.mjs",
+    "scripts/pass23/run-rls-staging-harness.mjs",
+    "scripts/pass23/run-typescript-syntax-scan.mjs",
+    "scripts/pass23/test-merchant-legal-intake-boundaries.mjs",
+    "scripts/pass23/test-provider-rights-import-boundaries.mjs",
+    "scripts/pass23/verify-merchant-legal-intake.mjs",
+    "scripts/pass23/verify-native-review-overflow-preparation.mjs",
+    "scripts/pass23/verify-rls-staging-harness.mjs",
+    "supabase/migrations/20260720000009_5008_pass23_explicit_service_role_boundaries.sql",
+    "tests/staging/pass23/rls-policy-structural-preflight.sql"
+  ],
+  "changed": [
+    "CLEAN_SAFE_README.md",
+    "README.md",
+    "VELMERE_RUN_FULL_CHECK.ps1",
+    "config/pass22/i18n-neutral-allowlist.json",
+    "config/pass22/rls-table-classification.json",
+    "evaluation/pass17/market-adapter-output-index.jsonl",
+    "evaluation/pass17/market-adapter-simulation-summary.json",
+    "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+    "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+    "evaluation/pass18/audit-lens-evidence-fixtures.json",
+    "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+    "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+    "evaluation/pass19/brain-angel-evidence-fixtures.json",
+    "messages/de.json",
+    "messages/pl.json",
+    "package.json",
+    "scripts/worldclass/common-implementation-digest.mjs"
+  ],
+  "removed": [],
+  "truthBoundary": "Byte-level clean source diff excluding generated outputs and self metadata."
+}

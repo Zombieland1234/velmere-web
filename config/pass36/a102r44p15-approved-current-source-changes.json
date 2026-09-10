@@ -1,0 +1,231 @@
+{
+  "added": [
+    {
+      "byteLength": 2435,
+      "mode": 420,
+      "path": "VELMERE_A102R44P15_PATCH.txt",
+      "sha256": "392a3ba4df84b34b6b3b93a582450f430ee1255018322898cffcbe76702b937e"
+    },
+    {
+      "byteLength": 1227147,
+      "mode": 420,
+      "path": "_velmere/PASS36_A102R44P14_RETAINED_WORKING_ROOT_MANIFEST.json",
+      "sha256": "b48a433f92c1115f7698aa2ab7f35b94a36a336404bdeeb65e167e49e9f66d9f"
+    },
+    {
+      "byteLength": 7213,
+      "mode": 420,
+      "path": "config/pass36/a102r44p15-action-required-current-state.json",
+      "sha256": "9a0d72c883e0a254d8a0438aed0b94d17ab284d9e29ca4e5cf3146ca9dab8988"
+    },
+    {
+      "byteLength": 1906,
+      "mode": 420,
+      "path": "config/pass36/a102r44p15-parent-external-evidence-drift.json",
+      "sha256": "47c1e78764e3215da7f27a3ef50bd8bd133610598ff9c8d006c2241a16d9183b"
+    },
+    {
+      "byteLength": 4752,
+      "mode": 420,
+      "path": "config/pass36/a102r44p15-reentrancy-remediation-policy.json",
+      "sha256": "9d494127b71ea8666b3118136503e2e314b21307e6e15ddbc79115f79b3b8e64"
+    },
+    {
+      "byteLength": 743,
+      "mode": 420,
+      "path": "config/pass36/a102r44p15-source-audit-declaration-boundary.json",
+      "sha256": "486d0a19186dcc6f48ccc600c19afb08a9294bf562c9b042601f970cf8632e85"
+    },
+    {
+      "byteLength": 3539,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p15-generated-diagnostics-source-boundary.mjs",
+      "sha256": "5ee5ca615a8363ee834c3d406abf8d6ff587a36cb2fe3a8a9404807ea6f8c9d8"
+    },
+    {
+      "byteLength": 1923,
+      "mode": 420,
+      "path": "scripts/pass36/test-a102r44p15-source-audit-declaration-boundary.mjs",
+      "sha256": "4c91d6b2b33e8f03e4005aa1cf63f66bbdeecdea083e98dcad7068d0caeae851"
+    },
+    {
+      "byteLength": 6946,
+      "mode": 493,
+      "path": "scripts/pass36/test-a102r44p15-structured-reentrancy-generalization.mjs",
+      "sha256": "246fff65d9ddff7f132ef8f01bf9932fbf8d4a8531422bcbb0a13c6c23a3427c"
+    },
+    {
+      "byteLength": 3762,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p15-approved-source-changes.mjs",
+      "sha256": "8a7a8ea3fe809a78505ee524f6744bb98c0f3857e6f12a9b173052e4e4e598a2"
+    },
+    {
+      "byteLength": 3683,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p15-external-evidence.mjs",
+      "sha256": "748dbd6130677e6880a4efe9c39707926579dbbe9069fc882265b225c3b7a354"
+    },
+    {
+      "byteLength": 4691,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p15-source-authority.mjs",
+      "sha256": "51f2356e0f947c527aef3450cc86939cede0eb6db00f6c43e78a3bcb2c8f2b9e"
+    },
+    {
+      "byteLength": 5708,
+      "mode": 420,
+      "path": "scripts/pass36/verify-a102r44p15-static-policy.mjs",
+      "sha256": "f8a015aabaf1dc1c1dc72c37c2567328018a2d25526875d3919b57a50a5b9806"
+    },
+    {
+      "byteLength": 8724,
+      "mode": 420,
+      "path": "tests/pass36/a102r44p15-reentrancy-recall-and-control-suppression.mjs",
+      "sha256": "45235064edb344aa2174ae8dfdf3e3123217830de07ebf5346927406a7bf796c"
+    },
+    {
+      "byteLength": 11153,
+      "mode": 493,
+      "path": "tests/pass36/a102r44p15-reentrancy-source-parity-and-control-suppression.mjs",
+      "sha256": "6cdb31fd30c9b964e1d2bb5cd3669aad45b0a98997143527100b2d2b03b908d2"
+    }
+  ],
+  "addedCount": 15,
+  "deleted": [],
+  "deletedCount": 0,
+  "denominatorCollapse": false,
+  "modified": [
+    {
+      "current": {
+        "byteLength": 135,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "ad9aa0721695c150906e2853bd71a739638b7f3cd27b57ec8f6b82cf9bf18b60"
+      },
+      "parent": {
+        "byteLength": 714,
+        "mode": 420,
+        "path": "VELMERE_ACTIVE_PASS.txt",
+        "sha256": "8aab445318942fc564f2f48fabb9b4db1f0377bceda21e9b45a5b79cb0ce6440"
+      },
+      "path": "VELMERE_ACTIVE_PASS.txt"
+    },
+    {
+      "current": {
+        "byteLength": 1958164,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "b0cd2c0e5d423083ee71e87bfe7130bc47436480ee01d00049cbe22b1848c530"
+      },
+      "parent": {
+        "byteLength": 1954637,
+        "mode": 420,
+        "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt",
+        "sha256": "83a77dc2c5f292732b64bebecf8e24ac3206b1d76a847f9dd43fbfd765af8fc6"
+      },
+      "path": "VELMERE_WORLD_CLASS_MAX_ROADMAP_PASS35.txt"
+    },
+    {
+      "current": {
+        "byteLength": 1227352,
+        "mode": 384,
+        "path": "_velmere/PASS36_A102R44P14_SOURCE_ONLY_MANIFEST.json",
+        "sha256": "241193cf4ac0dc92f1059875452d1f199af3d8d87f6fbeb253b6be704e38bfc1"
+      },
+      "parent": {
+        "byteLength": 1227352,
+        "mode": 420,
+        "path": "_velmere/PASS36_A102R44P14_SOURCE_ONLY_MANIFEST.json",
+        "sha256": "241193cf4ac0dc92f1059875452d1f199af3d8d87f6fbeb253b6be704e38bfc1"
+      },
+      "path": "_velmere/PASS36_A102R44P14_SOURCE_ONLY_MANIFEST.json"
+    },
+    {
+      "current": {
+        "byteLength": 41587,
+        "mode": 420,
+        "path": "lib/security/audit-a01-a05-engine.ts",
+        "sha256": "ed642d6a102776b2e45aa0bdaac2226434a9d10206dee15adf103f4d598df3bf"
+      },
+      "parent": {
+        "byteLength": 41575,
+        "mode": 420,
+        "path": "lib/security/audit-a01-a05-engine.ts",
+        "sha256": "2f1afb6e4abb11c75105843920b4bb657ae53238439da04cd59f1f7dc48a46b3"
+      },
+      "path": "lib/security/audit-a01-a05-engine.ts"
+    },
+    {
+      "current": {
+        "byteLength": 10985,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-finding-catalog.ts",
+        "sha256": "2c59509013daedd95c697cd09c442af4f08f3189e1346d4adb66064ee1d246e9"
+      },
+      "parent": {
+        "byteLength": 10530,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-finding-catalog.ts",
+        "sha256": "1631316215d7b89c3644779a63e9d0b3255442753526b49e901ed28bf7b635c6"
+      },
+      "path": "lib/security/solidity-structured-finding-catalog.ts"
+    },
+    {
+      "current": {
+        "byteLength": 565,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-signal.d.mts",
+        "sha256": "3a3e0249d0ff7840469a356f1f7065efbe623bb34a3a423c341d9e89d1ab5e11"
+      },
+      "parent": {
+        "byteLength": 542,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-signal.d.mts",
+        "sha256": "6eda690f3a0a049bf1f2cfe0dfd9e9dc127525fea749633bfe9fc01db0ef785f"
+      },
+      "path": "lib/security/solidity-structured-signal.d.mts"
+    },
+    {
+      "current": {
+        "byteLength": 22792,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-signal.mjs",
+        "sha256": "16e51259f81553e0b80d62136ee43157b3db4020792e4664d92b69372ecc1f8d"
+      },
+      "parent": {
+        "byteLength": 16451,
+        "mode": 420,
+        "path": "lib/security/solidity-structured-signal.mjs",
+        "sha256": "57edb52e8f07be3360031b0352a16ddf979da346e68be5fb21e900b4bba41d39"
+      },
+      "path": "lib/security/solidity-structured-signal.mjs"
+    },
+    {
+      "current": {
+        "byteLength": 15851,
+        "mode": 420,
+        "path": "scripts/pass13/audit-full-tree.mjs",
+        "sha256": "51d8e5ec7523b265f09b901bf9f38de2a95d08718739b228acfb099d39428ec3"
+      },
+      "parent": {
+        "byteLength": 15788,
+        "mode": 420,
+        "path": "scripts/pass13/audit-full-tree.mjs",
+        "sha256": "9a156f2385a06559044c9163b189a0cb942861d986a960f0915cefbda3dd3910"
+      },
+      "path": "scripts/pass13/audit-full-tree.mjs"
+    }
+  ],
+  "modifiedCount": 8,
+  "parentAuthorityClass": "RECONSTRUCTED_FROM_RETAINED_R44P14_WORKING_ROOT_NOT_FINAL_ARCHIVE_AUTHORITY",
+  "parentManifestPath": "_velmere/PASS36_A102R44P14_RETAINED_WORKING_ROOT_MANIFEST.json",
+  "parentManifestSha256": "b48a433f92c1115f7698aa2ab7f35b94a36a336404bdeeb65e167e49e9f66d9f",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P14_ACTION_REQUIRED_WEAK_CATEGORY_RECALL_CONTROL_FALSE_ALERT_SUPPRESSION_AND_PRODUCT_ANALYZER_INTEGRATION_NO_LIVE_CREDIT",
+  "reason": "R44P15 state-aware reentrancy recall, declaration-file source-audit boundary, exact external evidence bindings, final-byte release verifiers and roadmap truth. Parent continuity is reconstructed from the retained R44P14 working root, not promoted as exact final archive lineage.",
+  "removedTests": 0,
+  "revisionId": "VELMERE_PASS36_A102R44P15_ACTION_REQUIRED_REENTRANCY_RECALL_SOURCE_AUDIT_DECLARATION_BOUNDARY_AND_FINAL_BYTE_REGRESSION_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p15.approved-current-source-changes.v1",
+  "selfExcludedPath": "config/pass36/a102r44p15-approved-current-source-changes.json",
+  "sourceManifestExcludedPath": "_velmere/PASS36_A102R44P15_SOURCE_ONLY_MANIFEST.json"
+}

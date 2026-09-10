@@ -1,0 +1,609 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p46.approved-source-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P46_ACTION_REQUIRED_LEGACY_MULTIPLICATION_ECONOMIC_SINK_TRUTH_REBASE_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R44P45_ACTION_REQUIRED_CONTINUOUS_CURRENT_STATE_CONTEXT_QUALIFIED_INTERACTION_ORDERING_PUBLIC_CONTROL_DELTA_NO_LIVE_CREDIT",
+  "parentManifestPath": "_velmere/PASS36_A102R44P45_SOURCE_ONLY_MANIFEST.json",
+  "parentManifestSha256": "c72c0a6fd8ff206ad2eb1cff62682cd12cc03a41fb6c6e199cae5cea365a85c7",
+  "selfExcludedPaths": [
+    "_velmere/PASS36_A102R44P46_SOURCE_ONLY_MANIFEST.json",
+    "config/pass36/r44p46-approved-source-changes.json"
+  ],
+  "changedPathCount": 73,
+  "addedFiles": 38,
+  "modifiedFiles": 35,
+  "deletedFiles": 0,
+  "deletedCriticalPaths": [],
+  "testsOrGatesRemoved": 0,
+  "denominatorCollapse": false,
+  "approvedChanges": [
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "changeType": "MODIFIED",
+      "parentByteLength": 142,
+      "parentSha256": "32e730879c7c8e5e4dabb2d44b3f7dd9cecf66a03442090be4a4847242566cf7",
+      "currentByteLength": 106,
+      "currentSha256": "5d9b9bea87152b7dabd57ab5465f6243f0257aa5df91c3116d5ee29c88e7f5a0"
+    },
+    {
+      "path": "_velmere/PASS36_A102R44P45_SOURCE_ONLY_MANIFEST.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1235331,
+      "currentSha256": "c72c0a6fd8ff206ad2eb1cff62682cd12cc03a41fb6c6e199cae5cea365a85c7"
+    },
+    {
+      "path": "config/current-release.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 34881,
+      "parentSha256": "0d3f12f86e474dfe54bde4ccefaa81693bca1cfa29463be2d4810a6a87840c47",
+      "currentByteLength": 35288,
+      "currentSha256": "49ad8e210aa8de46886541f3a403ec9c5f2821c4a8e1149ccbb57b5b52b720df"
+    },
+    {
+      "path": "config/current-state-and-pass-ledger.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 482,
+      "parentSha256": "73ea8ef07739514b9026b6ba4a3b67fce34aaf8672aaf2fb4cea489af1c43c3b",
+      "currentByteLength": 644,
+      "currentSha256": "8dd0a13ea0a512b12e68bd9fc91a45b0b6f8044a504ed7b50b348eca7e23351a"
+    },
+    {
+      "path": "config/pass15/route-dispatch-manifest.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 114194,
+      "parentSha256": "27af4f3b8df05994f80a856195a220ea2d47f591dcb81a5daddeed9e9750c3a4",
+      "currentByteLength": 114194,
+      "currentSha256": "c24937263fd0a9ae4d93ba970dbc7f206917b8801f8ba941efbe7fdc0d82bb53"
+    },
+    {
+      "path": "config/pass15/route-export-ast-registry.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 145802,
+      "parentSha256": "c570ac5af6d5e2262772b03c51d05008177725139f166e171aa7b4485f695381",
+      "currentByteLength": 145794,
+      "currentSha256": "8bbe9a3de604f3e5a74f6655c416e84579c86a14dd85b3e6f8782f5aa6d7e922"
+    },
+    {
+      "path": "config/pass35/current-revision.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 38110,
+      "parentSha256": "3f849bf9cafa1b99be9f4effd436c3bf01d81192f70a35f2da91ddc3c3b2180b",
+      "currentByteLength": 38838,
+      "currentSha256": "68d152d64e0a1f7b32eab851d1773f0338b14c92fb98e9f8122b8dc9e040850b"
+    },
+    {
+      "path": "config/pass36/a102r41-a60-browser-fixture-evidence-denominator-migration.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 4543,
+      "parentSha256": "89e379900460e9b3aa4162321c3939746ae506f1c731a575a5a96cb48cc7a8d4",
+      "currentByteLength": 5955,
+      "currentSha256": "49fb941f6b9af27645cd027c86108d2d7c9fc6f0d3b738fc80569f56a2864876"
+    },
+    {
+      "path": "config/pass36/a102r44p46-a60-typescript-denominator-migration.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 7851,
+      "currentSha256": "4451553d132e1c88a4d557e862c2ad524a6e40ec81851dd78c3702d33b0f4730"
+    },
+    {
+      "path": "config/pass36/a58-release-integrity-policy.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 3196,
+      "parentSha256": "ea1510305445d9af9bfd216bb8f1e4a30832863def9bacef5a17c8b8fe667741",
+      "currentByteLength": 3600,
+      "currentSha256": "518dfbeb300d4dceb29b993a80fde37d555553bb21eb696d99c141709b37ac14"
+    },
+    {
+      "path": "config/pass36/a59-build-graph-route-css-budget-recovery.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 3000,
+      "parentSha256": "f6929b8c17af49f0dec21bfd9008a18784e866f4c3d67f54e5794a89b49392c3",
+      "currentByteLength": 5071,
+      "currentSha256": "1e632072be3f521bf7faeb831a069c4f27477da996c181db793aea51a94fd911"
+    },
+    {
+      "path": "config/pass36/a59-css-compaction-receipt.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1976675,
+      "parentSha256": "f17582cacb00803771471a2d2b0e7bc74528d39cb51ca13565959c0574e7145d",
+      "currentByteLength": 1978666,
+      "currentSha256": "6524dcb67b7fb0fbb554942c8991d0ddebb1783afd8b427fb3c8d1c322206f3d"
+    },
+    {
+      "path": "config/pass36/a59-css-exact-dedup-historical-a39-removal-receipt.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1344,
+      "currentSha256": "706a2ac0df3911e4e7527204e79902917c59b7416e0abec1399b90108fb7e2c8"
+    },
+    {
+      "path": "config/pass36/a59-css-exact-dedup-receipt.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1344,
+      "parentSha256": "706a2ac0df3911e4e7527204e79902917c59b7416e0abec1399b90108fb7e2c8",
+      "currentByteLength": 12175,
+      "currentSha256": "9e00c9eb334fa010f0ee2a355285e1befa8860231b03dcc6232bea56df1288ed"
+    },
+    {
+      "path": "config/pass36/a60-exact-final-byte-build-browser-acceptance.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 5771,
+      "parentSha256": "101abbb1603b01739c813f227f51c2e468cabfd226de21abc7da072b06ea1e4e",
+      "currentByteLength": 6014,
+      "currentSha256": "98873376e8c13be5cd263ac4e38a389f7133cc5c8f370b7d77f0f5d5fc046c95"
+    },
+    {
+      "path": "config/pass36/a83-source-evidence-summary.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 4019,
+      "parentSha256": "e23acf49f469eafcd685d06b85ec1c6adf7af79582d88e26396013ef9336cedb",
+      "currentByteLength": 11626,
+      "currentSha256": "734af904938aeba25a2a5388110297868a99abfa4146a4207939bf7d16e9dce5"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 83579,
+      "parentSha256": "1c706b3b97fdfd9cb0ae821c56473fc038fd530f056f799500656cc1fa1cafef",
+      "currentByteLength": 84853,
+      "currentSha256": "a261c3b48eb5a9ac37050a5bfb9e23c9bdf8e985f07fc413e8b689d6b325e748"
+    },
+    {
+      "path": "config/pass36/r44p46-claim-inventory.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1797,
+      "currentSha256": "27416c807c2e43095f5c6af7b8d4af73d0d01bf749a9c8a587a73d74b7d438ad"
+    },
+    {
+      "path": "config/pass36/r44p46-controllable-gate-registry.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 12231,
+      "currentSha256": "1b258904bf19ae54820c980a65ebfb1a3c21f7140d74dc0b8b2d7169f3c584c9"
+    },
+    {
+      "path": "config/pass36/r44p46-current-state.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1881,
+      "currentSha256": "dd785b57da7cb42c00121f00f0ea41b5f0afef77df5bf8a208da14051348fd26"
+    },
+    {
+      "path": "config/pass36/r44p46-evidence-taxonomy.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1566,
+      "currentSha256": "ebc9a806ea1700223eef5a5d0aa432ecf682b12930175cd8a5f62041875f3690"
+    },
+    {
+      "path": "config/pass36/r44p46-external-human-proof.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2485,
+      "currentSha256": "7f9b0990c4e5b2b2824096c3192b1f47646ed045d63d6f13d84b1a3904160f78"
+    },
+    {
+      "path": "config/pass36/r44p46-legacy-multiplication-economic-sink-policy.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2385,
+      "currentSha256": "b26a8d1fe1ddaedf6db17961f39faed0dccf222c122c21cca9651aeaf81d9430"
+    },
+    {
+      "path": "config/pass36/r44p46-p0-p1-register.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3716,
+      "currentSha256": "053d207aa1687fb4ceff73d03f5741d756903efad66651b565ad0a09174c661e"
+    },
+    {
+      "path": "config/pass36/r44p46-pdf-dependency-closure.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 11818,
+      "currentSha256": "84f0b1fdcd0edbe5dc3e6114f3f6a9bd0aee482b216f439fcf203524b28d7570"
+    },
+    {
+      "path": "config/pass36/r44p46-prepackage-snapshot.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1083,
+      "currentSha256": "91162330231c673d72b3155c641d40f62c289abfc2c842086268780e23bb4505"
+    },
+    {
+      "path": "config/pass36/r44p46-route-api-inventory.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3133,
+      "currentSha256": "b5fd790dcff38383babaf003fc125e3ef101259474f1d114c9e4db6ba863a41f"
+    },
+    {
+      "path": "config/pass36/r44p46-score-policy.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1291,
+      "currentSha256": "f4f4b49250d22361e43d760889535c644d5375fc8121bcf1d0e0616a1fc999c2"
+    },
+    {
+      "path": "config/pass36/r44p46-scorecard.json",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 71485,
+      "currentSha256": "816aa7eb6fb3b730ed271ef9b70c36cd14baf078b42019a1ac78fcbe39fd98ad"
+    },
+    {
+      "path": "lib/build/sanitized-build-environment.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1979,
+      "parentSha256": "f69b35615e6ef30dd8590db592115b022f6f6c8d5bac54d09143a45fa6bfce53",
+      "currentByteLength": 2238,
+      "currentSha256": "2d53f969074968a1664adf34225545d26e186749481869be21d3a8f2fa09da4d"
+    },
+    {
+      "path": "lib/security/audit-compiler-ast-review-layer.d.mts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1942,
+      "parentSha256": "fdfb9d472e9f6708fda9e538c1141ccbfa53670b455cdb4e3900cf5b24bcd1e3",
+      "currentByteLength": 2044,
+      "currentSha256": "d49e5d5050af77b1fed3bdab3a91c9a4b195bf857461128b8679db6b6f520698"
+    },
+    {
+      "path": "lib/security/audit-compiler-ast-review-layer.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 4694,
+      "parentSha256": "a50f1006f76c1973dfa2026b9303683e35c8f437dae2ef35dfb3ad19de17d5f1",
+      "currentByteLength": 5329,
+      "currentSha256": "438b3b1919bab93adaf525e4cab88044bc43d79bf91d32b7d4d48bb31d6e14b9"
+    },
+    {
+      "path": "lib/security/solidity-compiler-ast-runtime.d.mts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 6273,
+      "parentSha256": "4bd944efdf42b443cdbbe01b3b53521e2adc39096a578670de32a10a2a3fa4f0",
+      "currentByteLength": 7563,
+      "currentSha256": "fddd38b2e66d7d1ba1a1f0157c79e80fd3205da8a4ad321dd76b648421501486"
+    },
+    {
+      "path": "lib/security/solidity-compiler-ast-runtime.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 80334,
+      "parentSha256": "9dc118b2111be414df83a750c9c693f1ef2d06a724e126ccebfc291030de1a85",
+      "currentByteLength": 102117,
+      "currentSha256": "c92d7ff72fe029c1b1d916126821078f7eb5b678bad33769c6bd672d7caf4319"
+    },
+    {
+      "path": "lib/security/solidity-compiler-legacy-evaluation.d.mts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1785,
+      "parentSha256": "c10105a3b87f96927fcc5ae6feb3644814f4ea322f1dc7ba7622ef9eb334f87b",
+      "currentByteLength": 1896,
+      "currentSha256": "0f74715dd175ef35106cfa321f0ddd4f496721d9f49c5c3e573081848920319f"
+    },
+    {
+      "path": "lib/security/solidity-compiler-legacy-evaluation.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 9136,
+      "parentSha256": "aa486dd987f0a8597196b56619de99c19ba2edc100579aa641297ac8ef8e15e6",
+      "currentByteLength": 10555,
+      "currentSha256": "ddf85a7511deefcce4acd7a020d44059da4921fae55d1f3268faeb7838bcec64"
+    },
+    {
+      "path": "package-lock.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 354771,
+      "parentSha256": "abd75eb78ca1570c0b8c13717d128ae439c0ddd4c02c196e3ec03a877258258f",
+      "currentByteLength": 354803,
+      "currentSha256": "e228adec08801e454ef5559a20f302110b4896a307c364195716218a376c48bb"
+    },
+    {
+      "path": "package.json",
+      "changeType": "MODIFIED",
+      "parentByteLength": 132209,
+      "parentSha256": "dd6a6f5e6c0100dfc06c7ef831361071dbfbe2cf089161970e176827bee696a8",
+      "currentByteLength": 133977,
+      "currentSha256": "1042ce8309601c7e5a68c61be067f1f5d14a8945b3926d1d7a3b2fc8b1f23755"
+    },
+    {
+      "path": "scripts/a60-exact-final-byte-build-browser-acceptance.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 31252,
+      "parentSha256": "cde5e14c62d46b76cda1dce89f57ca4dfd0d5ce5c969225b8fd210d5d5fd331f",
+      "currentByteLength": 31445,
+      "currentSha256": "e09b8ddb1bac3a8fff951970055eb24979297882f4292fa9bae114188201d897"
+    },
+    {
+      "path": "scripts/deployment/run-segmented-build.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 19462,
+      "parentSha256": "51967ceab295b94a5722fcc4b40b4190c6ff9be47bf95871966a11991b980df6",
+      "currentByteLength": 19784,
+      "currentSha256": "b54f649e16e1de7ef8db2d959c8b06c76b11c76676fbde54b45e7d8155c08979"
+    },
+    {
+      "path": "scripts/deployment/test-sanitized-build-environment.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 1789,
+      "parentSha256": "6099f3eb051be5099d9aba83c0a1153a09c69cde5d7162491c4b3a6476827e66",
+      "currentByteLength": 2629,
+      "currentSha256": "75a4059b4d0bb0f2299cfa753ae97394fdac664e05cd04213be31f2e994e95a7"
+    },
+    {
+      "path": "scripts/pass35/test-a45-browser-qa-fixture.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 8422,
+      "parentSha256": "57f83f3ef8913589f2c09f555e0f0eb965533fb49ed92d06fe416ebb59794690",
+      "currentByteLength": 11208,
+      "currentSha256": "5da94840712675de55b04e611be709e78edf00fb5a8ac9d7cc1340809ec6b86b"
+    },
+    {
+      "path": "scripts/pass36/a58-result-validator.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2465,
+      "currentSha256": "a8eace80eda669eb22681d58573bf9de5b473f4d72e3487e040cd32385fee3f1"
+    },
+    {
+      "path": "scripts/pass36/a59-current-css-dedup-lib.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 9506,
+      "currentSha256": "5e32daaec05c70352969ac2d8001c1e361d3aeac49574ce9aaae89cf80b42fbf"
+    },
+    {
+      "path": "scripts/pass36/a59-current-identity-lib.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 11559,
+      "currentSha256": "dd33c4437ffc91c2d632947d58fbf120bf50a8afcd6c70cc444451c6d081e137"
+    },
+    {
+      "path": "scripts/pass36/a79-exact-build-browser-lib.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 55347,
+      "parentSha256": "43600d062488cee461c43c943ef43480863b7f0b8dfb5a82b4450842d70b1ec8",
+      "currentByteLength": 56198,
+      "currentSha256": "f2f6d2cbc94e86d9f4f383ac25a33d0803232d04d4d9a2e80a3246e44570a40d"
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p46-approved-changes.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3946,
+      "currentSha256": "8c2dddabed86bbe895730ff8f62f8b085d685b469299318693f3524eeeafaba2"
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p46-current-pointers.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 8172,
+      "currentSha256": "0f22841f65bf6dceecf438396056202e8ec1b4b1cdf45f8d6a5acb5b095ba680"
+    },
+    {
+      "path": "scripts/pass36/build-a102r44p46-source-manifest.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2267,
+      "currentSha256": "c75605a0ddd3a94ba917211fdb9d2bfbfc63e906bbee33528c3dfe54b91f85b7"
+    },
+    {
+      "path": "scripts/pass36/build-a59-current-css-dedup-receipt.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 5145,
+      "currentSha256": "b0060a5b998af9526cd1c3653915e70ab9b9fad552baf6a2650af67c5f703739"
+    },
+    {
+      "path": "scripts/pass36/build-a83-source-evidence-summary.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 7198,
+      "parentSha256": "156ad9ecddda15359ec6aafd0f70eba4c25d95632f0de0d07e5419d287e83693",
+      "currentByteLength": 26530,
+      "currentSha256": "b66ccb7b8df1cb3a18734cd20992cc1b34c027083cc203b4d43c5e6ebd7bfd61"
+    },
+    {
+      "path": "scripts/pass36/current-source-authority-lib.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 28622,
+      "parentSha256": "693c52aa44fd1e02ad3f292aae7e4c297b037d75b9a1c24dba6f8bf22f1fc6b1",
+      "currentByteLength": 40541,
+      "currentSha256": "e5cc9d0006cf509ea5605a758250ac100ee59dc489682412bc12e022102a8e49"
+    },
+    {
+      "path": "scripts/pass36/package-a102r44p46-deterministic.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 12588,
+      "currentSha256": "649e5bb37c6cfeb9b3b3f4560bb707b60b9d5ba67ccd85295409a749a749502c"
+    },
+    {
+      "path": "scripts/pass36/r44p46-a58-release-integrity-lib.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 18838,
+      "currentSha256": "fcb8b62c9da1035b3d19d78234de9b63ea2624851506a7693a69b8e956bab3aa"
+    },
+    {
+      "path": "scripts/pass36/r44p46-packaging-lib.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 24269,
+      "currentSha256": "f38f9658d03aaf1858ae58313cd75dc47f3a15750edde3cfaa7b6bb2ac54d21c"
+    },
+    {
+      "path": "scripts/pass36/run-a102r44p46-legacy-multiplication-economic-sink.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 18637,
+      "currentSha256": "87df1688a8ef09bc2d0524beb29369473260ead020d64c45e589e23ca6f5ec1a"
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p46-a58-result-validator.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 11566,
+      "currentSha256": "dea275afa773d600934b0e6078e3024753f5eca7a6fccf0af330c87b366911d3"
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p46-current-source-authority-preflight.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 10857,
+      "currentSha256": "22ba8bcdb048865230980cfb02e71c9d8fc5c977cfd16d953af3c84b7992eed8"
+    },
+    {
+      "path": "scripts/pass36/test-a102r44p46-packaging-adversarial.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 18197,
+      "currentSha256": "6aa4ea43d14faf0c7f8477dc72da7fdc8f8f80f426b27a9e9c841af16035eb1d"
+    },
+    {
+      "path": "scripts/pass36/test-a59-build-graph-route-css-budget-recovery.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 9848,
+      "parentSha256": "8226a58910ce48f97618c485605415f4210c1f8291b688f6ccb1d50fae8183d1",
+      "currentByteLength": 16876,
+      "currentSha256": "6a70881acc95823979ade0579f133299fdd6cf0fbd224d4fdd89b597d8800e6c"
+    },
+    {
+      "path": "scripts/pass36/test-a59-current-identity-adversarial.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 13079,
+      "currentSha256": "e79464241a10c1d4eed8cc458db4e71c50bc6be87b3ddf927e3fdce3a8ddb18e"
+    },
+    {
+      "path": "scripts/pass36/test-a60-exact-final-byte-build-browser-acceptance.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 21155,
+      "parentSha256": "6f085c2ceaaab8615209ba89e2a854008615cc2f4eb4d79bece6faf974ca5da6",
+      "currentByteLength": 24957,
+      "currentSha256": "8091755b0ada609dcbfb7d7414c0b68cbb45faf93800e91d6941a5472fa9487f"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r41-a60-browser-fixture-evidence-denominator-migration.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 34677,
+      "parentSha256": "2ce3775a3c59fec1503097bb6d14794a2f59ed8f12e38376eee23da06fd6efaf",
+      "currentByteLength": 42823,
+      "currentSha256": "bb5ebdcf58fb1dec63e8dd210d8107fd8a924dc18f6c3074b9d0e2d9d0ea1db4"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-a60-typescript-denominator-migration.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 16415,
+      "currentSha256": "a2ecc93999af78fc4b17e145aba04d487a89332b1eda472c84c932a82dd4a9f0"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-approved-changes.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 1229,
+      "currentSha256": "988ff4a3df526c14f2d34883ec4e4710eca042335ff5f1f606a5584265f77872"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-canonical-trio.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 5223,
+      "currentSha256": "75591e125f0673f0148f68bf68e7f34bdce5d2a4c959b9441be9e7f4c1602c2b"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-clean-source-authority.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 3917,
+      "currentSha256": "09fc299c02fc1bc41a2bf5f2a979dd44163e83921da66f7ab7ce92b7a0de6214"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-clean-unpack.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 6434,
+      "currentSha256": "56214d87012d9a81dea67716bc264893709e757883a66da5e8ad6b11058103f0"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-current-pointers.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 9845,
+      "currentSha256": "6ff1607a106928e8337c48ce03a1cbc52b1a7026e611e1485298e7ad8931f766"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-current-source-authority.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 2033,
+      "currentSha256": "4d1282ae42902058587163ffd590eb3867ecd00b8d660474d601b6a9a1bbd5ce"
+    },
+    {
+      "path": "scripts/pass36/verify-a102r44p46-truth-rebaseline.mjs",
+      "changeType": "ADDED",
+      "parentByteLength": null,
+      "parentSha256": null,
+      "currentByteLength": 63450,
+      "currentSha256": "d3d5abe90591e17246784fcc9bb0a824e083ed070a01781498a5abf1cef140dd"
+    },
+    {
+      "path": "scripts/pass36/verify-a58-release-integrity.mjs",
+      "changeType": "MODIFIED",
+      "parentByteLength": 24044,
+      "parentSha256": "7872efaa7b68b9ba049a1b0c6909817bca6da2b77ce6c24f6ed7fd6c908db330",
+      "currentByteLength": 24749,
+      "currentSha256": "a2491e3b4e3bc7a609450372af9689efbbbca423ac7792690c9eadbff646c801"
+    },
+    {
+      "path": "scripts/pass36/verify-a83-browser-lens-pdf-real-packet-matrix.ts",
+      "changeType": "MODIFIED",
+      "parentByteLength": 10736,
+      "parentSha256": "c4b63644d5208e4c090c6ccdda3cd48789cefaf4026e023db1c750e47170e074",
+      "currentByteLength": 15551,
+      "currentSha256": "f3d847d9d8ac9fe83be6826d6fb35ba3a6f58e5a29538ded94122d635d8991c4"
+    }
+  ],
+  "globalDecision": "NO_GO",
+  "LIVE": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "velmere.pass4992.supply-chain-release-policy.v2",
+  "policyId": "pass4992-current-workflow-supply-chain-offline-v2",
+  "mode": "OFFLINE_PREPARATION_ONLY",
+  "toolchain": {
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "lockfileVersion": 3,
+    "registryHosts": [
+      "registry.npmjs.org"
+    ]
+  },
+  "githubActions": {
+    "requireFullLengthCommitPin": true,
+    "forbidPullRequestTarget": true,
+    "forbidWriteAll": true,
+    "requireCheckoutCredentialsDisabledForAllWorkflows": true,
+    "allowedActions": {
+      "actions/checkout": [
+        "11d5960a326750d5838078e36cf38b85af677262",
+        "9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0"
+      ],
+      "actions/setup-node": [
+        "49933ea5288caeca8642d1e84afbd3f7d6820020",
+        "820762786026740c76f36085b0efc47a31fe5020"
+      ],
+      "actions/upload-artifact": [
+        "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+        "ea165f8d65b6e75b540449e92b4886f43607fa02"
+      ],
+      "actions/download-artifact": [
+        "d3f86a106a0bac45b974a628896c90dbdf5c8093"
+      ],
+      "actions/dependency-review-action": [
+        "a1d282b36b6f3519aa1f3fc636f609c47dddb294"
+      ],
+      "github/codeql-action/init": [
+        "7188fc363630916deb702c7fdcf4e481b751f97a"
+      ],
+      "github/codeql-action/analyze": [
+        "7188fc363630916deb702c7fdcf4e481b751f97a"
+      ]
+    },
+    "requiredWorkflowFiles": [
+      "p41-exact-windows-node24-current-root-closure.yml",
+      "p42-exact-windows-node24-lifecycle-quarantine.yml",
+      "p42-exact-windows-semantic-dual-build.yml",
+      "p47-windows-build-relevant-projection.yml",
+      "p65-current-free-legal-source-receipts.yml",
+      "pass26-exact-runtime-bridge.yml",
+      "pass4992-supply-chain-security.yml",
+      "quality-and-fresh-builds.yml",
+      "r6-exact-windows-current-byte-closure.yml"
+    ],
+    "expectedActionReferenceCount": 30
+  },
+  "codeql": {
+    "requiredLanguages": [
+      "actions",
+      "javascript-typescript"
+    ],
+    "requiredQuerySuites": [
+      "security-extended",
+      "security-and-quality"
+    ],
+    "maximumReceiptAgeSeconds": 86400,
+    "maximumOpenCritical": 0,
+    "maximumOpenHigh": 0
+  },
+  "secretProtection": {
+    "offlineHighPrecisionScanRequired": true,
+    "githubSecretScanningRequiredForRelease": true,
+    "pushProtectionRequiredForRelease": true,
+    "historicalScanRequiredForRelease": true,
+    "maximumReceiptAgeSeconds": 86400,
+    "maximumUnresolvedVerifiedSecrets": 0
+  },
+  "dependencySecurity": {
+    "dependabotVersionUpdatesRequired": [
+      "github-actions",
+      "npm"
+    ],
+    "dependabotAlertsRequiredForRelease": true,
+    "dependencyReviewRequiredForRelease": true,
+    "malwareAndRegistrySignatureReviewRequiredForRelease": true,
+    "maximumReceiptAgeSeconds": 86400,
+    "maximumCritical": 0,
+    "maximumHigh": 0,
+    "maximumUnknownSeverity": 0
+  },
+  "sbom": {
+    "format": "CycloneDX",
+    "specVersion": "1.6",
+    "inventoryScope": "package-lock-v3-all-packages",
+    "requireExactLockfileCoverage": true,
+    "requireSha512IntegrityForEveryPackage": true
+  },
+  "vex": {
+    "format": "OpenVEX",
+    "context": "https://openvex.dev/ns/v0.2.0",
+    "allowedStatuses": [
+      "affected",
+      "fixed",
+      "not_affected",
+      "under_investigation"
+    ],
+    "notAffectedRequiresMachineReadableJustification": true,
+    "affectedRequiresActionStatement": true,
+    "releaseMayNotRelyOnUnsignedVex": true
+  },
+  "provenance": {
+    "statementType": "https://in-toto.io/Statement/v1",
+    "predicateType": "https://slsa.dev/provenance/v1",
+    "trustedBuilderRequiredForRelease": true,
+    "oidcIdentityRequiredForRelease": true,
+    "transparencyLogRequiredForRelease": true,
+    "artifactDigestBindingRequiredForRelease": true,
+    "offlineBuilderId": "https://velmere.invalid/builders/offline-untrusted"
+  },
+  "releaseGate": {
+    "requiredSignedControls": [
+      "codeql",
+      "dependency-review",
+      "github-secret-protection",
+      "provenance"
+    ],
+    "trustedReceiptKeyIds": [],
+    "requireTwoPersonReviewedProtectedBranch": true,
+    "requireImmutableReleaseArtifact": true,
+    "offlineReceiptMustRemainReleaseBlocked": true
+  }
+}

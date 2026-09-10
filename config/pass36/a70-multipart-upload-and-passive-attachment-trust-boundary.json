@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "velmere.pass36.a70.multipart-upload-and-passive-attachment-trust-boundary.v1",
+  "revisionId": "VELMERE_PASS36_A70R0_MULTIPART_UPLOAD_AND_PASSIVE_ATTACHMENT_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A69R0_STRUCTURED_DATA_DESERIALIZATION_TRUST_BOUNDARY_HARDENING",
+  "scope": [
+    "public contact multipart content-type and boundary validation",
+    "strict contact form field inventory and duplicate rejection",
+    "passive PDF attachment structure and active-content denial",
+    "PNG chunk, CRC, dimension and exact-IEND validation",
+    "JPEG segment, dimension and exact-EOI validation",
+    "attachment filename normalization and bidi/control denial",
+    "idempotency reservation after complete form and file validation"
+  ],
+  "requirements": {
+    "actualStreamByteLimitRetained": true,
+    "strictMultipartBoundary": true,
+    "unknownAndDuplicateFieldsRejected": true,
+    "singleAttachmentOnly": true,
+    "passiveAttachmentTypesOnly": true,
+    "mimeExtensionAndContentAgreement": true,
+    "trailingPayloadRejected": true,
+    "pdfActiveContentRejected": true,
+    "pngCrcAndChunkOrderValidated": true,
+    "imageDimensionBombRejected": true,
+    "idempotencyNotConsumedByInvalidUpload": true,
+    "attachmentDigestOnlyInPrivateMutationReceipt": true,
+    "visualChanges": false
+  },
+  "truthBoundary": {
+    "malwareScannerExecuted": false,
+    "realResendAttachmentDelivered": false,
+    "productionContactFormExecuted": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "saleEnabled": false,
+    "liveProven": false
+  }
+}

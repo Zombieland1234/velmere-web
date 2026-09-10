@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "velmere.pass4779.visual-layout-freeze.v1",
+  "sourceCheckpoint": 4778,
+  "scope": [
+    "app excluding app/api and three cryptographic proof logic files",
+    "components",
+    "public",
+    "styles"
+  ],
+  "excludedLogicOnlyFiles": [
+    "app/proof/market-integrity/[publicProofId]/page.tsx",
+    "app/proof/market-integrity/[publicProofId]/verify/page.tsx",
+    "app/proof/market-integrity/[publicProofId]/audit-trail/page.tsx"
+  ],
+  "baselineFileCount": 534,
+  "baselineAggregateSha256": "7f0f9c5874b8dc2742f524535e123c8717b17a397bead446425c6969c64f89d1",
+  "excludedRenderSurfaces": {
+    "app/proof/market-integrity/[publicProofId]/page.tsx": {
+      "marker": "    <main",
+      "suffixSha256": "727fb81abb8208c0163ba1ea20ee794889d8103dd936344795ec1f57bf806a87",
+      "suffixBytes": 2690
+    },
+    "app/proof/market-integrity/[publicProofId]/verify/page.tsx": {
+      "marker": "    <main",
+      "suffixSha256": "2ac6718c61db6761b5d1482bc4073df6586ecd2e0a12d905637c90b744972ca2",
+      "suffixBytes": 1713
+    },
+    "app/proof/market-integrity/[publicProofId]/audit-trail/page.tsx": {
+      "marker": "    <main",
+      "suffixSha256": "69107cabdbb973c4702322ae1cff561f874e0677467d7ac7d35526ab80084fb5",
+      "suffixBytes": 1818
+    }
+  },
+  "rule": "All visual files remain byte-identical to PASS4778 except three public proof pages whose JSX render suffix must remain byte-identical while only digest implementation may change."
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "velmere.pass35.a27-fork-replay-evidence-policy.v1",
+  "passId": "PASS35_A27",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "allowedInputClasses": [
+    "SYNTHETIC_OFFLINE",
+    "GENERATED_BENCHMARK"
+  ],
+  "thresholds": {
+    "minimumTransactions": 4,
+    "minimumReplayRuns": 8,
+    "criticalAssertionCoverage": 1,
+    "highAssertionCoverage": 1,
+    "criticalStateKeyCoverage": 1,
+    "highStateKeyCoverage": 1,
+    "dependencyCoverage": 1,
+    "minimumReplayDeterminism": 1,
+    "maxFlakyReplays": 0,
+    "mutationKillRate": 0.95,
+    "requireExactChainBlockBinding": true,
+    "requireStateRootContinuity": true,
+    "requireSnapshotIsolation": true,
+    "requireRunnerBinding": true
+  },
+  "benchmark": {
+    "families": [
+      "CHAIN_BLOCK_BINDING",
+      "STATE_ROOT_CONTINUITY",
+      "TRANSACTION_SEQUENCE",
+      "ASSERTION_COVERAGE",
+      "STATE_DIFF_COVERAGE",
+      "DEPENDENCY_BINDING",
+      "LOG_RETURN_BINDING",
+      "RUNNER_BINDING",
+      "SNAPSHOT_ISOLATION",
+      "REPLAY_DETERMINISM",
+      "MUTATION_SCORE",
+      "REGISTRY_COMPLETENESS"
+    ],
+    "mutationTypes": [
+      "schema_invalid",
+      "input_class_relabel",
+      "block_binding_break",
+      "state_continuity_break",
+      "sequence_break",
+      "assertion_coverage_drop",
+      "state_coverage_drop",
+      "dependency_coverage_drop",
+      "runner_binding_break",
+      "isolation_break",
+      "replay_nondeterminism",
+      "mutation_score_drop"
+    ],
+    "expectedCases": 192,
+    "expectedFrozen": 72,
+    "expectedMutations": 2304
+  },
+  "truthBoundary": "A27 verifies a case-bound fork/replay evidence contract over exact chain/block/snapshot identity, transaction sequencing, pre/post state-root continuity, assertions, state-diff and dependency coverage, isolated deterministic replays and mutation evidence. It does not execute an official native fork runner, use a real public-network provider, reproduce a historical exploit or customer workflow, prove commercial provider rights, provide an independent rerun or unlock paid delivery."
+}

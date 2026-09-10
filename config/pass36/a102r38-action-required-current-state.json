@@ -1,0 +1,308 @@
+{
+  "schemaVersion": "velmere.pass36.a102r38.action-required-current-state.v1",
+  "revisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+  "generatedAt": "2026-08-01T04:00:00+02:00",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "completedThrough": 89,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "inputExternalCheckpoint": {
+    "revisionId": "VELMERE_PASS36_A102R37R4_ACTION_REQUIRED_DUAL_LOCAL_BUILD_PARITY_DIAGNOSTIC_BROWSER57_PASS_EXACT_CHROME_WINDOWS_STAGING_PENDING_NO_LIVE_CREDIT",
+    "sourceArchiveFileName": "VELMERE_PASS36_A102R37R4_ACTION_REQUIRED_DUAL_LOCAL_BUILD_PARITY_DIAGNOSTIC_BROWSER57_PASS_EXACT_CHROME_WINDOWS_STAGING_PENDING_NO_LIVE_CREDIT_SOURCE_ONLY(2).zip",
+    "sourceArchiveByteLength": 49999759,
+    "sourceArchiveSha256": "da02611bc1baba82927df003889de1125b38d1d65ee0317128a4e2a6fecdec1e",
+    "sourcePayloadFileCount": 5414,
+    "sourcePayloadByteLength": 122435425,
+    "sourceTreeSha256": "5b0a53eb29b8ea770314520f71f27f2867611fc01b3a8cb6c41a46f0830ba757",
+    "materialsArchiveFileName": "VELMERE_PASS36_A102R37R4_ACTION_REQUIRED_DUAL_LOCAL_BUILD_PARITY_DIAGNOSTIC_BROWSER57_PASS_EXACT_CHROME_WINDOWS_STAGING_PENDING_NO_LIVE_CREDIT_MATERIALS(2).zip",
+    "materialsArchiveByteLength": 793725,
+    "materialsArchiveSha256": "b2b5e236f2b494fe18025daa35404ae5754cf07cd21caa07ccf74b6116af3e88",
+    "observedInternalSourceAuthorityRevisionId": "VELMERE_PASS36_A102R36_ACTION_REQUIRED_WINDOWS_ESLINT_RUNNER_PROCESS_EXEC_PATH_PORTABILITY_AND_EXACT_LINT_CLOSURE_NO_REAL_CREDIT",
+    "classification": "EXTERNAL_EVIDENCE_CHECKPOINT_OVER_A102R36_SOURCE_BYTES_NOT_INTERNAL_SOURCE_AUTHORITY"
+  },
+  "findings": [
+    {
+      "id": "A102R38-GAP-01",
+      "severity": "P0_RELEASE",
+      "status": "LOCALLY_FIXED_NO_PROMOTION",
+      "title": "External A102R37R4 package identity disagreed with internal SOURCE authority A102R36",
+      "resolution": "A102R38 is now the single internal source authority and records A102R37R4 as historical external evidence only."
+    },
+    {
+      "id": "A102R38-GAP-02",
+      "severity": "P0_RELEASE_EVIDENCE",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "Webpack and Turbopack smoke receipts counted 55 rows but only 52 unique assertion identities",
+      "resolution": "Exact ordered 55-name evidence contract rejects duplicate, missing, extra, invalid or reordered assertion identities."
+    },
+    {
+      "id": "A102R38-GAP-03",
+      "severity": "P1_EVIDENCE",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "Production smoke requested and stored GET /de/real-markets twice",
+      "resolution": "The exact HTTP-result denominator is 16 unique identities; the German Real Markets response is fetched once and reused."
+    },
+    {
+      "id": "A102R38-GAP-04",
+      "severity": "P1_EVIDENCE",
+      "status": "LOCALLY_FIXED_RETEST_REQUIRED",
+      "title": "Dual-build parity accepted equal duplicated smoke row sets",
+      "resolution": "Future smoke PASS requires evidenceContract.ok; historical R37R4 smoke is truthfully reclassified as 52 unique assertions in 55 rows."
+    },
+    {
+      "id": "A102R38-GAP-05",
+      "severity": "P1_TEST_INTEGRITY",
+      "status": "LOCALLY_FIXED",
+      "title": "A102R36 portability fixture omitted the new eslint-partition-plan module and asserted removed receipt fields",
+      "resolution": "Fixture copies the complete current runner module set, uses the v4 receipt contract, verifies 75/75 files and adds an import-closure guard; 39/39 checks pass."
+    },
+    {
+      "id": "A102R38-GAP-06",
+      "severity": "P0_RELEASE",
+      "status": "OPEN_BLOCKED_ENVIRONMENT",
+      "title": "Source change invalidates fresh exact lint/typecheck/build/smoke/browser credit",
+      "resolution": "Exact official runtime/browser artifacts could not be obtained because DNS resolution is unavailable and the local npm cache contains zero package payloads. Rerun exact Windows runtime, both production builds, corrected 55/55 unique smokes, parity and exact browser on unchanged A102R38 bytes."
+    },
+    {
+      "id": "A102R38-GAP-07",
+      "severity": "P0_LOCAL_RUNTIME_ADMISSION",
+      "status": "LOCALLY_FIXED_NO_BUILD_PROMOTION",
+      "title": "A42 dev bootstrap critical hash contract rejected the delivered/current source",
+      "resolution": "Five inherited drifts were verified against exact A102R37R4 Stage8 source-tree evidence. Three authority pointers, one A102R36 test-contract repair and one source-audit contract repair are explicit A102R38 changes. The fixed 76-file denominator now passes 76/76; verifier 45/45 and A42 contract 126/126."
+    },
+    {
+      "id": "A102R38-GAP-08",
+      "severity": "P1_RELEASE_EVIDENCE",
+      "status": "LOCALLY_FIXED_DIAGNOSTIC_RETEST_REQUIRED",
+      "title": "Route AST registry and route-dispatch manifest were stale for current handler bytes",
+      "resolution": "Rebuilt the complete 254-file/316-export TypeScript AST registry, rebound all 160 route rows, and corrected asset-logo, brand-icon and icon handler byte contracts. AST verifier 1021/1021, route dispatch 1480/1480, one-byte tamper 7/7 and lazy routes 176/176. Parser is diagnostic TypeScript 5.8.3 only; exact project TypeScript 5.9.3 reparse remains required."
+    },
+    {
+      "id": "A102R38-GAP-09",
+      "severity": "P1_TEST_INTEGRITY",
+      "status": "LOCALLY_FIXED",
+      "title": "Source integrity audit falsely rejected segmented Next generated route-type references",
+      "resolution": "The exemption is narrowed to next-env.d.ts importing exactly ./.next[-safe-suffix]/types/routes.d.ts. Standard and segmented positive profiles pass; ordinary missing and traversal-lookalike imports fail closed. Boundary 11/11; full audit 5434 files, 3350 code files, zero syntax/import/CSS failures."
+    },
+    {
+      "id": "A102R38-GAP-10",
+      "severity": "P0_EXTERNAL_INPUT",
+      "status": "BLOCKED_ENVIRONMENT_ZERO_CREDIT",
+      "title": "Official exact Node and Chrome artifacts and lockfile packages are unavailable in the execution environment",
+      "resolution": "Direct official-host checks failed at DNS resolution. Local npm cache verification found zero content entries, so no offline npm ci or advisory fresh build was fabricated. External exact Windows/Linux runtime, dependency and browser inputs remain mandatory."
+    }
+  ],
+  "localImplementation": {
+    "boundaryChecks": 46,
+    "productionSmokeContractChecks": 82,
+    "expectedAssertionRows": 55,
+    "uniqueAssertionRows": 55,
+    "expectedHttpResults": 16,
+    "uniqueHttpResults": 16,
+    "historicalR37R4SmokeRows": 55,
+    "historicalR37R4UniqueAssertionIdentities": 52,
+    "historicalR37R4ResultRows": 17,
+    "historicalR37R4UniqueResultIdentities": 16,
+    "sourceAuthorityReconciled": true,
+    "duplicateAssertionNamesClosed": [
+      "/de/real-markets_x_frame_options",
+      "/de/real-markets_nosniff",
+      "/de/real-markets_csp"
+    ],
+    "duplicateResultIdentityClosed": "GET /de/real-markets",
+    "referrerPolicyAssertionsAdded": [
+      "/en_referrer_policy",
+      "/pl/security_referrer_policy",
+      "/de/real-markets_referrer_policy"
+    ],
+    "parentA102R36PortabilityChecks": 39,
+    "parentFixtureFilesCovered": 75,
+    "parentFixtureImportClosureVerified": true,
+    "a42CriticalFilesRequired": 76,
+    "a42CriticalFilesPassed": 76,
+    "a42InputPreexistingDriftsVerifiedAgainstR37R4Stage8": 5,
+    "a42A102R38AuthorityPointerRebaselines": 3,
+    "devBootstrapAdmissionRestored": true,
+    "a42RebaselinedRows": 10,
+    "a42HistoricalTestCurrentAuthorityAware": true,
+    "a42TestContractRebaselines": 1,
+    "a42SourceAuditContractRebaselines": 1,
+    "a42CriticalVerifierChecks": 45,
+    "a42ContractChecks": 126,
+    "routeAstRegistryFiles": 254,
+    "routeAstMethodExports": 316,
+    "routeAstVerifierChecks": 1021,
+    "routeAstExactToolchainCredit": false,
+    "routeDispatchRoutes": 160,
+    "routeDispatchChecksPassed": 1480,
+    "routeDispatchChecksRequired": 1480,
+    "routeDispatchTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "sourceAuditGeneratedNextTypesChecks": 11,
+    "localRegressionStagesPassed": 13,
+    "localRegressionStagesRequired": 13,
+    "sourceAuditFilesRead": 5434,
+    "sourceAuditCodeFiles": 3350,
+    "sourceAuditSyntaxErrors": 0,
+    "sourceAuditMissingLocalImports": 0,
+    "sourceAuditMissingCssModuleClasses": 0,
+    "officialArtifactDnsResolved": false,
+    "localNpmCacheContentEntries": 0
+  },
+  "creditBoundary": {
+    "a102PassCredit": false,
+    "exactBuildBrowserCreditOnA102R38": false,
+    "r37r4BuildsRetainedAsHistoricalDiagnosticEvidenceOnly": true,
+    "r37r4Smoke55Of55ClaimRetained": false,
+    "r37r4SmokeUniqueCredit": {
+      "passed": 52,
+      "required": 55
+    },
+    "windowsExactRuntimeCredit": false,
+    "stagingCredit": false,
+    "liveCredit": false,
+    "saleCredit": false,
+    "routeAstExactProjectTypescriptCredit": false,
+    "freshDependencyInstallCredit": false,
+    "freshAdvisoryBuildCredit": false
+  },
+  "realDenominators": {
+    "formalOpenEntries": 31,
+    "a77r1ToA80r1": {
+      "verified": 0,
+      "required": 4
+    },
+    "exactChrome148PlaywrightRevision1223": {
+      "verified": 0,
+      "required": 1
+    },
+    "exactWindowsNode24_18_0Npm11_16_0": {
+      "verified": 0,
+      "required": 1
+    },
+    "a102ObservationWindows": {
+      "verified": 0,
+      "required": 3,
+      "minimumSpanSeconds": 259200
+    },
+    "stagingStages": {
+      "verified": 0,
+      "required": 10
+    },
+    "realRls": {
+      "verified": 0,
+      "required": 19
+    },
+    "stripeTestLifecycle": {
+      "verified": 0,
+      "required": 1
+    },
+    "providerRights": {
+      "verified": 0,
+      "required": 21
+    },
+    "legalDpoSignedDecisions": {
+      "verified": 0,
+      "required": 20
+    },
+    "realAudits": {
+      "verified": 0,
+      "required": 50
+    },
+    "officialAuditToolRuns": {
+      "verified": 0,
+      "required": 200
+    },
+    "crossAudits": {
+      "verified": 0,
+      "required": 20
+    },
+    "realCustomerPdfs": {
+      "verified": 0,
+      "required": 50
+    },
+    "shield": {
+      "verified": 0,
+      "required": 318
+    },
+    "shieldProMap": {
+      "verified": 0,
+      "required": 318
+    },
+    "realMarkets": {
+      "verified": 0,
+      "required": 583
+    },
+    "marketImpactWhaleWatch": {
+      "verified": 0,
+      "required": 318
+    },
+    "brainAngelRiskRealEval": {
+      "verified": 0,
+      "required": 300
+    },
+    "customerCohorts": {
+      "verified": 0,
+      "required": 2
+    },
+    "realStorageMutations": 0,
+    "realKmsCalls": 0,
+    "realEmails": 0,
+    "realCleanupConfirmations": 0
+  },
+  "skuDecisions": {
+    "basic": {
+      "decision": "PILOT_ONLY_FREE_PRESCREEN",
+      "paid": false,
+      "priceRecommendation": null
+    },
+    "pro": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "advanced": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null,
+      "blockers": [
+        "ACCURACY",
+        "RIGHTS",
+        "LEGAL",
+        "DATA",
+        "CUSTOMER_VALUE",
+        "OPERATIONS"
+      ]
+    },
+    "paidPdfTiers": {
+      "decision": "NOT_FOR_SALE",
+      "paid": false,
+      "priceRecommendation": null
+    }
+  },
+  "planningEstimate": {
+    "minimumCheckpoints": 12,
+    "mostLikelyCheckpoints": 24,
+    "withRevisionsRetestsLegalProviderCustomer": 40
+  },
+  "nextExecutionOrder": [
+    "Acquire official exact Node 24.18.0/npm 11.16.0, lockfile packages and the required Playwright/Chrome bundle outside the DNS-blocked environment.",
+    "Run exact project TypeScript 5.9.3 AST reparse, clean install, lint and typecheck on unchanged A102R38 bytes.",
+    "Run Webpack and Turbopack builds, corrected unique 55/55 production smokes and dual-build parity.",
+    "Run exact Chrome for Testing 148 / Playwright revision 1223 and clean Windows browser matrix on the same bytes.",
+    "Close A77R1-A80R1, staging 10/10, RLS 19/19 and real external-effect lifecycles.",
+    "Close rights, legal/DPO, real product matrices, independent assurance and customer cohorts before signed per-SKU release."
+  ],
+  "truthBoundary": "A102R38 proves local evidence-denominator uniqueness, coherent source authority, A42 admission, complete diagnostic route binding and source-audit integrity. It does not prove exact project toolchain, fresh builds, browser behavior, Windows parity, staging, provider rights, legal approval, real-data accuracy, customer value, LIVE or sale readiness."
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "velmere.r7.internal-customer-final-authority.v1",
+  "effectiveDate": "2026-08-24",
+  "authorityType": "STALE_BLOCKER_RECONCILIATION_ACTIVATING_CURRENT_OWNER_RULE",
+  "canonicalParent": "P101R1",
+  "appliesToCandidate": "R7_MERGED_CURRENT_SOURCE",
+  "ancestry": {
+    "commonBase": "R4",
+    "siblingBranches": [
+      "R5",
+      "R6"
+    ],
+    "mergeRequired": true
+  },
+  "sourceBindings": {
+    "v4Path": "VELMERE_P101R1_ZERO_EURO_FULL_PRODUCT_ACTIVATION_20_OF_20_AI_VALIDATION_MASTER_OVERRIDE_V4_2026-08-21.txt",
+    "v4Sha256": "a7cf0389fde143b650164c8cdacc5923607eb2eb5d17d27e8a2bc4b8300f3432",
+    "v17Path": "VELMERE_CANONICAL_OWNER_DIRECTIVE_V17_TRUE_TOPOLOGY_AUTOMATED_ADVANCED_CURRENT_WORLD_CLASS_2026-08-17.txt",
+    "v17Sha256": "de7fbd6df651a7a8a8f85054c6e9ac3c2ca530ebfb0d4ccd335dcb99fb658f05",
+    "r5ProgressPath": "artifacts/r5/VELMERE_R5_20_ROW_PROGRESS.json",
+    "r5ProgressSha256": "11f849026e265829cab7e750367f6d13c79f5eb76f60142211a0a1aa7a4cb075",
+    "r6ProgressPath": "artifacts/r6/VELMERE_R6_20_ROW_PROGRESS.json",
+    "r6ProgressSha256": "df67340c5cd0d33aa95f5d27b45fbb0981a2b7f6e041564a801d1f09998f17e4",
+    "r7ProgressPath": "config/r7/r7-20-row-progress.json",
+    "r7ProgressSha256": "313ff805efc6c4fb51eac66710371eea2c47bf31c7aa48e690d0f712222d4781"
+  },
+  "resolution": {
+    "historicalRealExternalCustomerProofPreserved": true,
+    "realExternalCustomerProofIsInternalFinalGate": false,
+    "externalPilotIsInternalFinalGate": false,
+    "activeReplacementGate": "OWNER_AUTHORIZED_CURRENT_BYTE_END_TO_END_EXECUTION",
+    "historicalMapsRemainImmutable": true,
+    "currentR7MapSupersedesHistoricalExternalBlockerSemanticsForActiveExecution": true
+  },
+  "internalCustomerFinal": {
+    "allowedEvidence": [
+      "owner_authorized_non_production_environment",
+      "actual_product_routes",
+      "at_least_two_owner_controlled_accounts",
+      "verified_jwt_or_session_boundaries",
+      "real_database_and_storage_write_readback_where_required",
+      "two_tenant_rls_and_cross_account_denial",
+      "restart_recovery_and_restore_integrity_where_required",
+      "owner_authorized_real_or_historical_input",
+      "rights_safe_current_evidence_where_required",
+      "actual_final_customer_visible_output",
+      "exact_artifact_bytes_and_hashes_where_required",
+      "current_source_regression",
+      "exact_node_24_18_0_and_npm_11_16_0_execution",
+      "exact_windows_server_2025_execution_where_required",
+      "no_open_critical_finding"
+    ],
+    "disallowedSubstitutes": [
+      "unit_test_only",
+      "fixture_only",
+      "mock_only",
+      "local_static_sweep_only",
+      "successful_http_status_only",
+      "synthetic_ai_persona_only",
+      "stale_pre_fix_receipt",
+      "wrong_source_github_main",
+      "unexecuted_workflow"
+    ],
+    "externalHumanOrCustomerProofRequired": false,
+    "externalPilotRequired": false
+  },
+  "post20Gates": [
+    "full_ai_customer_campaign",
+    "external_customer_or_human_pilot",
+    "independent_human_appsec",
+    "attributable_legal_signoff",
+    "real_assistive_technology_or_user_accessibility_validation",
+    "production_observability_and_slo",
+    "payment_lifecycle",
+    "production_dns_email_domain",
+    "load_chaos_incident_drills",
+    "pilot_ready",
+    "go_paid",
+    "live",
+    "world_class_proven"
+  ],
+  "nonWeakeningGuarantees": {
+    "rowFinalBooleanContractPreserved": true,
+    "fieldRightsPreserved": true,
+    "sourceIdentityAndFreshnessPreserved": true,
+    "authAndTenantIsolationPreserved": true,
+    "durableReadbackAndRestorePreserved": true,
+    "customerSafeOutputAndPrivacyPreserved": true,
+    "tierEntitlementAndMatchedInputValuePreserved": true,
+    "exactCurrentByteEngineeringPreserved": true,
+    "noOpenCriticalFindingPreserved": true,
+    "auditProThresholdPreserved": "5 live / 4 strict / 3 independent families / 6 evidence rows",
+    "auditAdvancedThresholdPreserved": "6 live / 5 strict / 4 independent families / 10 evidence rows"
+  },
+  "credit": {
+    "customerFinalNumerator": 0,
+    "paidValueFinalNumerator": 0,
+    "globalState": "NO_GO_STOP_SELL"
+  }
+}

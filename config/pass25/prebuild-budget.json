@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "velmere.pass25.prebuild-budget.v1",
+  "nextVersion": "16.2.7",
+  "maximums": {
+    "entrypoints": 148,
+    "apiRoutes": 82,
+    "serverRoutesImportingClientCode": 0,
+    "unresolvedLocalImports": 0,
+    "topEntrypointTransitiveBytes": 7500000,
+    "cssBytes": 3400000,
+    "globalsCssBytes": 3100000
+  },
+  "requiredTypeGlobs": [
+    ".next-pass25-webpack/types/**/*.ts",
+    ".next-pass25-webpack/dev/types/**/*.ts",
+    ".next-pass25-turbopack/types/**/*.ts",
+    ".next-pass25-turbopack/dev/types/**/*.ts"
+  ],
+  "truthBoundary": "Static prebuild budgets prevent known graph/config regressions. They do not replace semantic TypeScript, a production build, browser, PDF, staging or LIVE evidence."
+}

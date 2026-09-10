@@ -1,0 +1,32 @@
+{
+  "downloadAttempt": {
+    "credit": false,
+    "rawBinaryStored": false,
+    "status": "FAILED_DNS_RESOLUTION",
+    "urlClass": "OFFICIAL_NODEJS_ARCHIVE"
+  },
+  "exactRuntimeCredit": false,
+  "exactWindowsCredit": false,
+  "notes": [
+    "Targeted offline tests may execute on the available runtime but do not receive exact release credit.",
+    "Historical R44P21 build/browser/PDF receipts are superseded by R44P22 source changes.",
+    "Official Node.js release metadata was verified online, but the sandbox could not resolve/download nodejs.org; the unavailable binary was not substituted."
+  ],
+  "observed": {
+    "chromium": "144.0.7559.96",
+    "node": "22.16.0",
+    "npm": "10.9.2",
+    "playwrightPython": "1.57.0",
+    "typescriptDiagnostic": "5.8.3"
+  },
+  "required": {
+    "chromium": "148.0.7778.96",
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "playwright": "1.60.0",
+    "typescript": "5.9.3"
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "safeDecision": "ACTION_REQUIRED_NO_SUBSTITUTION_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p22.exact-runtime-blocker.v1"
+}

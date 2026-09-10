@@ -1,0 +1,853 @@
+{
+  "schemaVersion": "velmere.pass15.lazy-build-surface-profile.v1",
+  "generatedAt": "2026-08-06T06:53:08.534Z",
+  "sourceDigest": "599f88182596a5159d92c3fde0fbf8a7a036cb34b39575e763b94465ae3bc327",
+  "truthBoundary": "Static eager-vs-lazy import analysis. It predicts route graph pressure but does not replace a successful Webpack/Turbopack build.",
+  "comparison": {
+    "pass14Entrypoints": 303,
+    "pass15Entrypoints": 147,
+    "entrypointReduction": 156,
+    "entrypointReductionPercent": 51.49,
+    "pass14ApiRoutes": 237,
+    "pass15ApiRoutes": 79,
+    "apiRouteReduction": 158,
+    "apiRouteReductionPercent": 66.67
+  },
+  "consolidatedDispatchers": [
+    {
+      "entry": "app/api/market-integrity/[operation]/route.ts",
+      "type": "api-route",
+      "eagerFiles": 3,
+      "eagerBytes": 17603,
+      "totalFiles": 527,
+      "totalBytes": 6550345,
+      "lazyBoundaryFiles": 524
+    },
+    {
+      "entry": "app/api/security/[operation]/route.ts",
+      "type": "api-route",
+      "eagerFiles": 3,
+      "eagerBytes": 11805,
+      "totalFiles": 249,
+      "totalBytes": 2454513,
+      "lazyBoundaryFiles": 246
+    },
+    {
+      "entry": "app/api/internal/workers/[worker]/route.ts",
+      "type": "api-route",
+      "eagerFiles": 3,
+      "eagerBytes": 5908,
+      "totalFiles": 340,
+      "totalBytes": 4948371,
+      "lazyBoundaryFiles": 337
+    },
+    {
+      "entry": "app/api/search/[operation]/route.ts",
+      "type": "api-route",
+      "eagerFiles": 3,
+      "eagerBytes": 5150,
+      "totalFiles": 164,
+      "totalBytes": 1909669,
+      "lazyBoundaryFiles": 161
+    },
+    {
+      "entry": "app/api/admin/[operation]/route.ts",
+      "type": "api-route",
+      "eagerFiles": 3,
+      "eagerBytes": 4925,
+      "totalFiles": 40,
+      "totalBytes": 281143,
+      "lazyBoundaryFiles": 37
+    }
+  ],
+  "wrappedRoutes": [
+    {
+      "route": "app/api/account/audit-messages/route.ts",
+      "beforeEagerBytes": 1127751,
+      "beforeEagerFiles": 86,
+      "after": {
+        "entry": "app/api/account/audit-messages/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3852,
+        "totalFiles": 73,
+        "totalBytes": 908238,
+        "lazyBoundaryFiles": 71
+      }
+    },
+    {
+      "route": "app/api/account/customer-artifact/route.ts",
+      "beforeEagerBytes": 1816347,
+      "beforeEagerFiles": 162,
+      "after": {
+        "entry": "app/api/account/customer-artifact/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3652,
+        "totalFiles": 82,
+        "totalBytes": 1041408,
+        "lazyBoundaryFiles": 80
+      }
+    },
+    {
+      "route": "app/api/admin/security/advanced-audit-release/route.ts",
+      "beforeEagerBytes": 1806025,
+      "beforeEagerFiles": 125,
+      "after": {
+        "entry": "app/api/admin/security/advanced-audit-release/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 4283,
+        "totalFiles": 105,
+        "totalBytes": 1557132,
+        "lazyBoundaryFiles": 103
+      }
+    },
+    {
+      "route": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+      "beforeEagerBytes": 1165212,
+      "beforeEagerFiles": 94,
+      "after": {
+        "entry": "app/api/admin/security/audit-messages/operator-actions/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3937,
+        "totalFiles": 72,
+        "totalBytes": 901010,
+        "lazyBoundaryFiles": 70
+      }
+    },
+    {
+      "route": "app/api/ai/route.ts",
+      "beforeEagerBytes": 1124851,
+      "beforeEagerFiles": 98,
+      "after": {
+        "entry": "app/api/ai/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3590,
+        "totalFiles": 58,
+        "totalBytes": 604260,
+        "lazyBoundaryFiles": 56
+      }
+    },
+    {
+      "route": "app/api/angel/route.ts",
+      "beforeEagerBytes": 1576529,
+      "beforeEagerFiles": 130,
+      "after": {
+        "entry": "app/api/angel/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3593,
+        "totalFiles": 73,
+        "totalBytes": 870160,
+        "lazyBoundaryFiles": 71
+      }
+    },
+    {
+      "route": "app/api/angel/stream/route.ts",
+      "beforeEagerBytes": 1591435,
+      "beforeEagerFiles": 132,
+      "after": {
+        "entry": "app/api/angel/stream/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3601,
+        "totalFiles": 79,
+        "totalBytes": 918057,
+        "lazyBoundaryFiles": 77
+      }
+    },
+    {
+      "route": "app/api/market-integrity/continuity/refresh/route.ts",
+      "beforeEagerBytes": 1835675,
+      "beforeEagerFiles": 141,
+      "after": {
+        "entry": "app/api/market-integrity/continuity/refresh/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3663,
+        "totalFiles": 53,
+        "totalBytes": 587492,
+        "lazyBoundaryFiles": 51
+      }
+    },
+    {
+      "route": "app/api/search/route.ts",
+      "beforeEagerBytes": 1408373,
+      "beforeEagerFiles": 132,
+      "after": {
+        "entry": "app/api/search/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3632,
+        "totalFiles": 56,
+        "totalBytes": 670950,
+        "lazyBoundaryFiles": 54
+      }
+    },
+    {
+      "route": "app/api/security/audit-review/pro/settle/route.ts",
+      "beforeEagerBytes": 1802211,
+      "beforeEagerFiles": 125,
+      "after": {
+        "entry": "app/api/security/audit-review/pro/settle/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3663,
+        "totalFiles": 106,
+        "totalBytes": 1572510,
+        "lazyBoundaryFiles": 104
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/customer-safe-report/route.ts",
+      "beforeEagerBytes": 1040225,
+      "beforeEagerFiles": 77,
+      "after": {
+        "entry": "app/api/security/audit-watch/customer-safe-report/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3669,
+        "totalFiles": 64,
+        "totalBytes": 804024,
+        "lazyBoundaryFiles": 62
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/delivery-receipt/route.ts",
+      "beforeEagerBytes": 1107646,
+      "beforeEagerFiles": 84,
+      "after": {
+        "entry": "app/api/security/audit-watch/delivery-receipt/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3665,
+        "totalFiles": 72,
+        "totalBytes": 903275,
+        "lazyBoundaryFiles": 70
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/paid-preview/route.ts",
+      "beforeEagerBytes": 44205,
+      "beforeEagerFiles": 6,
+      "after": {
+        "entry": "app/api/security/audit-watch/paid-preview/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3680,
+        "totalFiles": 7,
+        "totalBytes": 51286,
+        "lazyBoundaryFiles": 5
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/pro-pdf/route.ts",
+      "beforeEagerBytes": 1826972,
+      "beforeEagerFiles": 123,
+      "after": {
+        "entry": "app/api/security/audit-watch/pro-pdf/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3656,
+        "totalFiles": 45,
+        "totalBytes": 493216,
+        "lazyBoundaryFiles": 43
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/pro-pdf/token/route.ts",
+      "beforeEagerBytes": 1798901,
+      "beforeEagerFiles": 120,
+      "after": {
+        "entry": "app/api/security/audit-watch/pro-pdf/token/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3625,
+        "totalFiles": 38,
+        "totalBytes": 401366,
+        "lazyBoundaryFiles": 36
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/route-health/route.ts",
+      "beforeEagerBytes": 1137517,
+      "beforeEagerFiles": 86,
+      "after": {
+        "entry": "app/api/security/audit-watch/route-health/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3661,
+        "totalFiles": 73,
+        "totalBytes": 925765,
+        "lazyBoundaryFiles": 71
+      }
+    },
+    {
+      "route": "app/api/security/audit-watch/support-handoff/route.ts",
+      "beforeEagerBytes": 1140619,
+      "beforeEagerFiles": 86,
+      "after": {
+        "entry": "app/api/security/audit-watch/support-handoff/route.ts",
+        "type": "api-route",
+        "eagerFiles": 2,
+        "eagerBytes": 3591,
+        "totalFiles": 74,
+        "totalBytes": 935792,
+        "lazyBoundaryFiles": 72
+      }
+    }
+  ],
+  "wrappedRouteSummary": {
+    "routes": 17,
+    "beforeEagerBytes": 23350494,
+    "afterEagerBytes": 63013,
+    "eagerByteReduction": 23287481,
+    "supersededDirectShellsRemoved": 0
+  },
+  "topEntrypointsByEagerBytes": [
+    {
+      "entry": "app/layout.tsx",
+      "type": "page-entry",
+      "eagerFiles": 10,
+      "eagerBytes": 2329394,
+      "totalFiles": 10,
+      "totalBytes": 2329394,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/account/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 117,
+      "eagerBytes": 1807626,
+      "totalFiles": 118,
+      "totalBytes": 1812792,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/admin/security/audit-inbox/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 89,
+      "eagerBytes": 1086123,
+      "totalFiles": 90,
+      "totalBytes": 1091289,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/real-markets/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 67,
+      "eagerBytes": 979504,
+      "totalFiles": 71,
+      "totalBytes": 1056916,
+      "lazyBoundaryFiles": 4
+    },
+    {
+      "entry": "app/[locale]/market-integrity/cross-asset/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 67,
+      "eagerBytes": 978612,
+      "totalFiles": 71,
+      "totalBytes": 1056024,
+      "lazyBoundaryFiles": 4
+    },
+    {
+      "entry": "app/[locale]/security/audits/support-handoff/[receiptId]/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 69,
+      "eagerBytes": 909019,
+      "totalFiles": 70,
+      "totalBytes": 914185,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/security/audits/delivery-receipt/[receiptId]/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 67,
+      "eagerBytes": 865211,
+      "totalFiles": 68,
+      "totalBytes": 870377,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/search/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 76,
+      "eagerBytes": 848083,
+      "totalFiles": 77,
+      "totalBytes": 853249,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/security/audits/customer-report/[id]/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 62,
+      "eagerBytes": 798166,
+      "totalFiles": 63,
+      "totalBytes": 803332,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/shield-pro/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 58,
+      "eagerBytes": 713351,
+      "totalFiles": 62,
+      "totalBytes": 790763,
+      "lazyBoundaryFiles": 4
+    },
+    {
+      "entry": "app/[locale]/intelligence/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 21,
+      "eagerBytes": 469041,
+      "totalFiles": 21,
+      "totalBytes": 469041,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/checkout/route.ts",
+      "type": "api-route",
+      "eagerFiles": 49,
+      "eagerBytes": 445816,
+      "totalFiles": 49,
+      "totalBytes": 445816,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/admin/import-products/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 48,
+      "eagerBytes": 421595,
+      "totalFiles": 48,
+      "totalBytes": 421595,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/shield/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 39,
+      "eagerBytes": 420844,
+      "totalFiles": 40,
+      "totalBytes": 426010,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/market-integrity/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 38,
+      "eagerBytes": 420774,
+      "totalFiles": 39,
+      "totalBytes": 425940,
+      "lazyBoundaryFiles": 1
+    },
+    {
+      "entry": "app/[locale]/admin/security/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 52,
+      "eagerBytes": 369895,
+      "totalFiles": 52,
+      "totalBytes": 369895,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/orders/provider-sandbox/route.ts",
+      "type": "api-route",
+      "eagerFiles": 37,
+      "eagerBytes": 362297,
+      "totalFiles": 37,
+      "totalBytes": 362297,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/security/audit-case/status/route.ts",
+      "type": "api-route",
+      "eagerFiles": 30,
+      "eagerBytes": 353619,
+      "totalFiles": 30,
+      "totalBytes": 353619,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/shop/[id]/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 47,
+      "eagerBytes": 324855,
+      "totalFiles": 47,
+      "totalBytes": 324855,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/square/posts/route.ts",
+      "type": "api-route",
+      "eagerFiles": 38,
+      "eagerBytes": 320483,
+      "totalFiles": 38,
+      "totalBytes": 320483,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/layout.tsx",
+      "type": "page-entry",
+      "eagerFiles": 50,
+      "eagerBytes": 305014,
+      "totalFiles": 50,
+      "totalBytes": 305014,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/orders/fulfilment-retry/route.ts",
+      "type": "api-route",
+      "eagerFiles": 31,
+      "eagerBytes": 300217,
+      "totalFiles": 31,
+      "totalBytes": 300217,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/checkout/vlm-service/route.ts",
+      "type": "api-route",
+      "eagerFiles": 30,
+      "eagerBytes": 270977,
+      "totalFiles": 30,
+      "totalBytes": 270977,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/auth/callback/route.ts",
+      "type": "api-route",
+      "eagerFiles": 28,
+      "eagerBytes": 267263,
+      "totalFiles": 28,
+      "totalBytes": 267263,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/security/audit-review/pro/claim/route.ts",
+      "type": "api-route",
+      "eagerFiles": 22,
+      "eagerBytes": 264679,
+      "totalFiles": 22,
+      "totalBytes": 264679,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/security/audit-review/advanced/assign/route.ts",
+      "type": "api-route",
+      "eagerFiles": 22,
+      "eagerBytes": 264362,
+      "totalFiles": 22,
+      "totalBytes": 264362,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/auth/recovery/route.ts",
+      "type": "api-route",
+      "eagerFiles": 25,
+      "eagerBytes": 253381,
+      "totalFiles": 25,
+      "totalBytes": 253381,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/products/publish/route.ts",
+      "type": "api-route",
+      "eagerFiles": 26,
+      "eagerBytes": 253197,
+      "totalFiles": 26,
+      "totalBytes": 253197,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/square/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 31,
+      "eagerBytes": 249949,
+      "totalFiles": 31,
+      "totalBytes": 249949,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/products/checkout-guard/route.ts",
+      "type": "api-route",
+      "eagerFiles": 30,
+      "eagerBytes": 247095,
+      "totalFiles": 30,
+      "totalBytes": 247095,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/shop/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 38,
+      "eagerBytes": 242357,
+      "totalFiles": 38,
+      "totalBytes": 242357,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/market-integrity/shield-map/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 45,
+      "eagerBytes": 227407,
+      "totalFiles": 45,
+      "totalBytes": 227407,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/shield-map/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 45,
+      "eagerBytes": 227397,
+      "totalFiles": 45,
+      "totalBytes": 227397,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/orders/fulfilment-provider-sync/route.ts",
+      "type": "api-route",
+      "eagerFiles": 26,
+      "eagerBytes": 225123,
+      "totalFiles": 26,
+      "totalBytes": 225123,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/square/comments/route.ts",
+      "type": "api-route",
+      "eagerFiles": 28,
+      "eagerBytes": 221784,
+      "totalFiles": 28,
+      "totalBytes": 221784,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/stripe/webhook/route.ts",
+      "type": "api-route",
+      "eagerFiles": 29,
+      "eagerBytes": 204860,
+      "totalFiles": 29,
+      "totalBytes": 204860,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/profile/route.ts",
+      "type": "api-route",
+      "eagerFiles": 22,
+      "eagerBytes": 200052,
+      "totalFiles": 22,
+      "totalBytes": 200052,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/vlm-token/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 26,
+      "eagerBytes": 195787,
+      "totalFiles": 26,
+      "totalBytes": 195787,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/checkout/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 29,
+      "eagerBytes": 195099,
+      "totalFiles": 29,
+      "totalBytes": 195099,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/products/catalog/route.ts",
+      "type": "api-route",
+      "eagerFiles": 26,
+      "eagerBytes": 187055,
+      "totalFiles": 26,
+      "totalBytes": 187055,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/angel/memory/route.ts",
+      "type": "api-route",
+      "eagerFiles": 18,
+      "eagerBytes": 174770,
+      "totalFiles": 18,
+      "totalBytes": 174770,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/market-integrity/account-operations/[operation]/route.ts",
+      "type": "api-route",
+      "eagerFiles": 14,
+      "eagerBytes": 162516,
+      "totalFiles": 206,
+      "totalBytes": 3013006,
+      "lazyBoundaryFiles": 192
+    },
+    {
+      "entry": "app/[locale]/cart/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 25,
+      "eagerBytes": 161124,
+      "totalFiles": 25,
+      "totalBytes": 161124,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/auth/email-change/route.ts",
+      "type": "api-route",
+      "eagerFiles": 17,
+      "eagerBytes": 150790,
+      "totalFiles": 17,
+      "totalBytes": 150790,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/auth/oauth/google/route.ts",
+      "type": "api-route",
+      "eagerFiles": 17,
+      "eagerBytes": 150420,
+      "totalFiles": 17,
+      "totalBytes": 150420,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/orders/fulfilment-incident-case/route.ts",
+      "type": "api-route",
+      "eagerFiles": 18,
+      "eagerBytes": 146030,
+      "totalFiles": 18,
+      "totalBytes": 146030,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/orders/fulfilment-retry-queue/route.ts",
+      "type": "api-route",
+      "eagerFiles": 14,
+      "eagerBytes": 141982,
+      "totalFiles": 14,
+      "totalBytes": 141982,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/[...missing]/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 21,
+      "eagerBytes": 139996,
+      "totalFiles": 21,
+      "totalBytes": 139996,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/login/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 20,
+      "eagerBytes": 138720,
+      "totalFiles": 20,
+      "totalBytes": 138720,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/checkout/success/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 17,
+      "eagerBytes": 134050,
+      "totalFiles": 17,
+      "totalBytes": 134050,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/products/brain-review/route.ts",
+      "type": "api-route",
+      "eagerFiles": 13,
+      "eagerBytes": 123937,
+      "totalFiles": 13,
+      "totalBytes": 123937,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/provenance/witnesses/route.ts",
+      "type": "api-route",
+      "eagerFiles": 7,
+      "eagerBytes": 121768,
+      "totalFiles": 7,
+      "totalBytes": 121768,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/security/audits/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 15,
+      "eagerBytes": 121023,
+      "totalFiles": 15,
+      "totalBytes": 121023,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/payments/stripe-webhook-dead-letter/route.ts",
+      "type": "api-route",
+      "eagerFiles": 13,
+      "eagerBytes": 109484,
+      "totalFiles": 13,
+      "totalBytes": 109484,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/contact/message/route.ts",
+      "type": "api-route",
+      "eagerFiles": 14,
+      "eagerBytes": 108545,
+      "totalFiles": 14,
+      "totalBytes": 108545,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/internal/vlm-entitlements/lifecycle/route.ts",
+      "type": "api-route",
+      "eagerFiles": 11,
+      "eagerBytes": 102513,
+      "totalFiles": 11,
+      "totalBytes": 102513,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/admin/accounts/supabase-subject-binding/route.ts",
+      "type": "api-route",
+      "eagerFiles": 15,
+      "eagerBytes": 102495,
+      "totalFiles": 15,
+      "totalBytes": 102495,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 14,
+      "eagerBytes": 101818,
+      "totalFiles": 14,
+      "totalBytes": 101818,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/[locale]/atelier/page.tsx",
+      "type": "page-entry",
+      "eagerFiles": 6,
+      "eagerBytes": 99007,
+      "totalFiles": 6,
+      "totalBytes": 99007,
+      "lazyBoundaryFiles": 0
+    },
+    {
+      "entry": "app/api/provenance/audit-snapshots/route.ts",
+      "type": "api-route",
+      "eagerFiles": 6,
+      "eagerBytes": 98973,
+      "totalFiles": 6,
+      "totalBytes": 98973,
+      "lazyBoundaryFiles": 0
+    }
+  ],
+  "unresolvedLocalImports": []
+}

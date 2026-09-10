@@ -1,0 +1,454 @@
+{
+  "schemaVersion": "velmere.pass36.a84.shield-full-catalog-tier-matrix-test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER",
+  "generatedAt": "2026-07-27T18:00:00.000Z",
+  "status": "PASS_A84_LOCAL_INJECTED_FULL_CATALOG_MATRIX_ONLY",
+  "summary": {
+    "checks": 32,
+    "passed": 32,
+    "failed": 0
+  },
+  "fixtureDenominators": {
+    "activeAssets": 318,
+    "activeListings": 1013,
+    "fieldIds": 7,
+    "observationTargets": 7091,
+    "observationRows": 7091,
+    "tierPackets": 954,
+    "popupRows": 3816,
+    "semanticMutations": 11448,
+    "mutationKilled": 11448
+  },
+  "fixtureCatalog": {
+    "executionMode": "INJECTED_FIXTURE",
+    "providers": 4,
+    "successfulProviders": 4,
+    "activeListings": 1013,
+    "activeAssets": 318,
+    "excludedListings": 27,
+    "catalogIntegritySha256": "28ce842b9903df31d8355fe6a4e68220b2c511b5f8fbd7e8d3827f1157d3ef44"
+  },
+  "stateCounts": {
+    "AVAILABLE": 6122,
+    "STALE": 379,
+    "CONFLICTED": 178,
+    "FAILED": 205,
+    "RATE_LIMITED": 207,
+    "UNAVAILABLE": 0
+  },
+  "readiness": {
+    "basic": {
+      "functionalReadyOffline": 241,
+      "unavailable": 77,
+      "productionEligible": 0
+    },
+    "pro": {
+      "functionalReadyOffline": 155,
+      "unavailable": 163,
+      "productionEligible": 0
+    },
+    "advanced": {
+      "functionalReadyOffline": 126,
+      "unavailable": 192,
+      "productionEligible": 0
+    }
+  },
+  "runtimeIntegritySha256": "5dbc1775930da34bc55306b065634b3deadd40c1e4c9fafead22537154983781",
+  "realIntake": {
+    "requiredProviders": 4,
+    "requiredFieldFamilies": 7,
+    "requiredAssetDenominator": 318,
+    "activeAssetDenominator": 318,
+    "denominatorValid": true,
+    "providerCatalogBundles": 0,
+    "fieldSnapshotBundles": 0,
+    "requiredFieldSnapshotBundles": 2226,
+    "rightsApprovedAssets": 0,
+    "productionBrowserAssets": 0,
+    "customerValueLabeledAssets": 0,
+    "realTierOutputs": 0,
+    "evidenceCompleteAssets": 0,
+    "unavailableOrBlockedAssets": 318,
+    "decision": "BLOCKED_CURRENT_FULL_CATALOG_EVIDENCE",
+    "paidGateEligible": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "realFullCatalogSnapshotsVerified": 0,
+  "rightsApprovedAssets": 0,
+  "productionBrowserAssets": 0,
+  "customerValueLabeledAssets": 0,
+  "exactA80CandidateBound": false,
+  "paidGateEligible": false,
+  "liveProven": false,
+  "saleEnabled": false,
+  "failures": [],
+  "checks": [
+    {
+      "id": "runtime:verified",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "activeListings": 1013,
+        "fieldIds": 7,
+        "observationTargets": 7091,
+        "observationRows": 7091,
+        "tierPackets": 954,
+        "popupRows": 3816,
+        "semanticMutations": 11448,
+        "mutationKilled": 11448
+      }
+    },
+    {
+      "id": "runtime:revision",
+      "passed": true,
+      "detail": "VELMERE_PASS36_A84R0_SHIELD_FULL_CATALOG_TIER_MATRIX_AND_PROVIDER_TRUTH_LEDGER"
+    },
+    {
+      "id": "catalog:providers",
+      "passed": true,
+      "detail": {
+        "executionMode": "INJECTED_FIXTURE",
+        "providers": 4,
+        "successfulProviders": 4,
+        "activeListings": 1013,
+        "activeAssets": 318,
+        "excludedListings": 27,
+        "catalogIntegritySha256": "28ce842b9903df31d8355fe6a4e68220b2c511b5f8fbd7e8d3827f1157d3ef44"
+      }
+    },
+    {
+      "id": "catalog:denominator",
+      "passed": true,
+      "detail": {
+        "executionMode": "INJECTED_FIXTURE",
+        "providers": 4,
+        "successfulProviders": 4,
+        "activeListings": 1013,
+        "activeAssets": 318,
+        "excludedListings": 27,
+        "catalogIntegritySha256": "28ce842b9903df31d8355fe6a4e68220b2c511b5f8fbd7e8d3827f1157d3ef44"
+      }
+    },
+    {
+      "id": "denominator:observations",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "activeListings": 1013,
+        "fieldIds": 7,
+        "observationTargets": 7091,
+        "observationRows": 7091,
+        "tierPackets": 954,
+        "popupRows": 3816,
+        "semanticMutations": 11448,
+        "mutationKilled": 11448
+      }
+    },
+    {
+      "id": "denominator:packets",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "activeListings": 1013,
+        "fieldIds": 7,
+        "observationTargets": 7091,
+        "observationRows": 7091,
+        "tierPackets": 954,
+        "popupRows": 3816,
+        "semanticMutations": 11448,
+        "mutationKilled": 11448
+      }
+    },
+    {
+      "id": "denominator:mutations",
+      "passed": true,
+      "detail": {
+        "activeAssets": 318,
+        "activeListings": 1013,
+        "fieldIds": 7,
+        "observationTargets": 7091,
+        "observationRows": 7091,
+        "tierPackets": 954,
+        "popupRows": 3816,
+        "semanticMutations": 11448,
+        "mutationKilled": 11448
+      }
+    },
+    {
+      "id": "states:complete",
+      "passed": true,
+      "detail": {
+        "AVAILABLE": 6122,
+        "STALE": 379,
+        "CONFLICTED": 178,
+        "FAILED": 205,
+        "RATE_LIMITED": 207,
+        "UNAVAILABLE": 0
+      }
+    },
+    {
+      "id": "states:adversarial",
+      "passed": true,
+      "detail": {
+        "AVAILABLE": 6122,
+        "STALE": 379,
+        "CONFLICTED": 178,
+        "FAILED": 205,
+        "RATE_LIMITED": 207,
+        "UNAVAILABLE": 0
+      }
+    },
+    {
+      "id": "readiness:monotonic",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 241,
+          "unavailable": 77,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 155,
+          "unavailable": 163,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 126,
+          "unavailable": 192,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "readiness:explicit-unavailable",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 241,
+          "unavailable": 77,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 155,
+          "unavailable": 163,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 126,
+          "unavailable": 192,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "readiness:no-production",
+      "passed": true,
+      "detail": {
+        "basic": {
+          "functionalReadyOffline": 241,
+          "unavailable": 77,
+          "productionEligible": 0
+        },
+        "pro": {
+          "functionalReadyOffline": 155,
+          "unavailable": 163,
+          "productionEligible": 0
+        },
+        "advanced": {
+          "functionalReadyOffline": 126,
+          "unavailable": 192,
+          "productionEligible": 0
+        }
+      }
+    },
+    {
+      "id": "coverage:providers",
+      "passed": true,
+      "detail": {
+        "binance": 311,
+        "mexc": 273,
+        "coinbase": 234,
+        "kraken": 195
+      }
+    },
+    {
+      "id": "observations:unique",
+      "passed": true,
+      "detail": 7091
+    },
+    {
+      "id": "packets:unique",
+      "passed": true,
+      "detail": 954
+    },
+    {
+      "id": "packets:all-assets",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "packets:three-tiers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "popup:four-sections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "popup:basic-paid-depth-blocked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "truth:no-real-credit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "truth:no-promotion",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "invariants:zero",
+      "passed": true,
+      "detail": {
+        "missingTerminalRows": 0,
+        "duplicateObservationIds": 0,
+        "duplicatePacketIds": 0,
+        "missingAssets": 0,
+        "tierMonotonicityFailures": 0,
+        "blockedPromotionFailures": 0,
+        "popupParityFailures": 0,
+        "truthBoundaryFailures": 0,
+        "mutationSurvivors": 0
+      }
+    },
+    {
+      "id": "determinism:runtime",
+      "passed": true,
+      "detail": {
+        "first": "5dbc1775930da34bc55306b065634b3deadd40c1e4c9fafead22537154983781",
+        "second": "5dbc1775930da34bc55306b065634b3deadd40c1e4c9fafead22537154983781"
+      }
+    },
+    {
+      "id": "determinism:first-last",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "real:blocked",
+      "passed": true,
+      "detail": {
+        "requiredProviders": 4,
+        "requiredFieldFamilies": 7,
+        "requiredAssetDenominator": 318,
+        "activeAssetDenominator": 318,
+        "denominatorValid": true,
+        "providerCatalogBundles": 0,
+        "fieldSnapshotBundles": 0,
+        "requiredFieldSnapshotBundles": 2226,
+        "rightsApprovedAssets": 0,
+        "productionBrowserAssets": 0,
+        "customerValueLabeledAssets": 0,
+        "realTierOutputs": 0,
+        "evidenceCompleteAssets": 0,
+        "unavailableOrBlockedAssets": 318,
+        "decision": "BLOCKED_CURRENT_FULL_CATALOG_EVIDENCE",
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "real:full-denominator-blocked",
+      "passed": true,
+      "detail": {
+        "requiredProviders": 4,
+        "requiredFieldFamilies": 7,
+        "requiredAssetDenominator": 318,
+        "activeAssetDenominator": 318,
+        "denominatorValid": true,
+        "providerCatalogBundles": 0,
+        "fieldSnapshotBundles": 0,
+        "requiredFieldSnapshotBundles": 2226,
+        "rightsApprovedAssets": 0,
+        "productionBrowserAssets": 0,
+        "customerValueLabeledAssets": 0,
+        "realTierOutputs": 0,
+        "evidenceCompleteAssets": 0,
+        "unavailableOrBlockedAssets": 318,
+        "decision": "BLOCKED_CURRENT_FULL_CATALOG_EVIDENCE",
+        "paidGateEligible": false,
+        "liveProven": false,
+        "saleEnabled": false
+      }
+    },
+    {
+      "id": "policy:gaps",
+      "passed": true,
+      "detail": 37
+    },
+    {
+      "id": "policy:fields",
+      "passed": true,
+      "detail": [
+        "spot_quote",
+        "market_cap",
+        "volume_24h",
+        "kline_1h",
+        "kline_24h",
+        "kline_7d",
+        "kline_30d"
+      ]
+    },
+    {
+      "id": "policy:providers",
+      "passed": true,
+      "detail": [
+        "binance",
+        "mexc",
+        "coinbase",
+        "kraken"
+      ]
+    },
+    {
+      "id": "policy:popup",
+      "passed": true,
+      "detail": [
+        "overview",
+        "analysis",
+        "market_impact",
+        "whale_watch"
+      ]
+    },
+    {
+      "id": "policy:mutations",
+      "passed": true,
+      "detail": [
+        "field_state_promotion",
+        "freshness_timestamp_rewrite",
+        "provider_family_duplication",
+        "required_field_drop",
+        "tier_label_substitution",
+        "decision_promotion",
+        "popup_fact_addition",
+        "popup_section_promotion",
+        "sale_flag_promotion",
+        "live_flag_promotion",
+        "rights_flag_promotion",
+        "packet_identity_substitution"
+      ]
+    },
+    {
+      "id": "policy:intake-hash",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "truthBoundary": "A84 proves a deterministic injected full-catalog Shield denominator, terminal field accounting, tier monotonicity, popup evidence parity and semantic mutation resistance. It does not prove current public-network snapshots, provider rights, exact A80, production browser behavior, customer value, staging, LIVE or sale."
+}

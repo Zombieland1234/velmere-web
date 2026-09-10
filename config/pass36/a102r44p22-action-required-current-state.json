@@ -1,0 +1,167 @@
+{
+  "LIVE": false,
+  "checkpointClass": "ACTION_REQUIRED",
+  "currentByteCredit": {
+    "approvedChanges": false,
+    "browser57": false,
+    "cleanUnpack": false,
+    "exactWindows": false,
+    "fullEslint": false,
+    "fullTypeScript": false,
+    "packageDeterminism": false,
+    "pdf150": false,
+    "postBuildTypeScript": false,
+    "previewBrowserRuntime": false,
+    "screenshots29": false,
+    "smokeTurbopack": false,
+    "smokeWebpack": false,
+    "sourceAudit": false,
+    "sourceAuthority": false,
+    "staticPolicy": false,
+    "targetedSecurity": true,
+    "turbopack": false,
+    "webpack": false
+  },
+  "dataTruth": {
+    "currentOrderBooks": 0,
+    "nonCryptoSyntheticStressAssets": 120,
+    "realMarketsDiagnostic": "50/583 retained parent evidence",
+    "realPublicNetworkCryptoInStressMatrix": 20,
+    "realizedSlippageOutcomes": 0,
+    "rightsApprovedRows": 0,
+    "shieldDiagnostic": "50/318 retained parent evidence",
+    "signedCurrentLabels": 0
+  },
+  "externalBlockers": [
+    "EXACT_NODE_24_18_0_AND_NPM_11_16_0_IN_CURRENT_SANDBOX",
+    "EXACT_WINDOWS",
+    "PROVIDER_RIGHTS",
+    "FULL_318_583_COVERAGE",
+    "INDEPENDENT_ADJUDICATION",
+    "REAL_CUSTOMER_OUTCOMES",
+    "WILLINGNESS_TO_PAY",
+    "STAGING_OPERATIONS",
+    "ANGEL_RISK_300_EVALS",
+    "IMPACT_REALIZED_SLIPPAGE",
+    "WHALE_SIGNED_LABELS"
+  ],
+  "globalDecision": "NO_GO",
+  "implemented": {
+    "assetsPerClass": 20,
+    "communityClipboardCentralPolicyMigration": true,
+    "crossAssetClasses": 7,
+    "crossAssetTierRows": 420,
+    "crossAssetUniqueAssets": 140,
+    "externalPreviewLinkHardening": true,
+    "fieldDefinitionsRetained": 86,
+    "legalDataAlternativeRegistry": true,
+    "previewFocusRestore": true,
+    "previewLocalizationPlEnDe": true,
+    "previewLocalizationTestChecks": 50,
+    "previewLocalizedIntegrityLine": true,
+    "previewPdf": true,
+    "previewPdfActiveContentFindings": 0,
+    "previewPdfDocuments": 6,
+    "productFamiliesRetained": 10,
+    "profileFetchAuthGate": true,
+    "realNetworkCryptoAssetsInStressMatrix": 20,
+    "riskTierCalibrationSplit": true,
+    "ruthlessCustomerJourneyRows": 300,
+    "ruthlessCustomerPersonas": 15,
+    "securePaidPreview": true,
+    "syntheticNonCryptoStressAssets": 120,
+    "tiers": 3
+  },
+  "localEvidence": {
+    "accountPrivacy": "PASS_LOCAL_DIAGNOSTIC",
+    "authTenantRedTeam": "PASS_LOCAL_DIAGNOSTIC",
+    "checkoutContainment": "PASS_LOCAL_DIAGNOSTIC",
+    "commercialMethodologyMigration": "PASS_9_OF_9_WITH_HISTORICAL_NEGATIVE_PRESERVED",
+    "communityClipboardCurrent": "PASS_14_OF_14_WITH_HISTORICAL_41_OF_42_NEGATIVE_PRESERVED",
+    "cookieSessionBoundary": "PASS_57_OF_57_WITH_CANONICAL_LOADER",
+    "crossAssetStressTest": "PASS_11_OF_11_420_ROWS_20_PER_7_CLASSES_20_REAL_CRYPTO_120_SYNTHETIC",
+    "emailStorageKmsBoundary": "PASS_LOCAL_DIAGNOSTIC",
+    "externalNavigationBoundary": "PASS_59_OF_59",
+    "legalAlternativeTest": "PASS_64_OF_64_OFFICIAL_SOURCE_REVIEWED_NOT_RIGHTS_APPROVED",
+    "previewLeakageTest": "PASS_30_OF_30_LOCAL_DIAGNOSTIC",
+    "previewLocalizationTest": "PASS_50_OF_50_PL_EN_DE",
+    "previewPdfCorpus": "PASS_6_OF_6_ONE_PAGE_WATERMARK_NO_ACTIVE_CONTENT_LOCALIZED_PL_EN_DE",
+    "previewUiTest": "PASS_22_OF_22",
+    "productTierTableTest": "PASS_10_OF_10_30_ROWS_NO_PUBLIC_PAID_PRICE",
+    "profileAuthGateTest": "PASS_8_OF_8_LOCAL_DIAGNOSTIC",
+    "riskSplitTest": "PASS_7_OF_7_LOCAL_DIAGNOSTIC",
+    "ruthlessCustomerMatrixTest": "PASS_10_OF_10_300_ROWS_15_PERSONAS_20_STEPS",
+    "securePreviewTest": "PASS_42_OF_42_LOCAL_DIAGNOSTIC",
+    "sourceAudit": "PENDING_FINAL_POST_FREEZE_RECEIPT",
+    "stripeWebhookIngress": "PASS_LOCAL_DIAGNOSTIC",
+    "surfaceSecurityRetest": "PASS_31_CURRENT_COMMANDS_WITH_2_HISTORICAL_NEGATIVES_AND_1_SUPERSEDED_INVOCATION_NEGATIVE"
+  },
+  "newFindings": [
+    {
+      "id": "R44P22-P1-EXTERNAL-PREVIEW-LINK",
+      "status": "CLOSED_LOCAL",
+      "summary": "Paid preview PDF target=_blank lacked the central external-link rel token; hardened to noopener noreferrer external plus no-referrer."
+    },
+    {
+      "id": "R44P22-P1-COMMUNITY-CLIPBOARD-STATIC-MARKER",
+      "status": "CLOSED_BY_FORMAL_MIGRATION",
+      "summary": "Historical test expected obsolete PUBLIC_TEXT_FORBIDDEN marker; active behavior already delegated to semantic control/bidi policy. Historical 41/42 remains negative evidence, current 14/14 passes."
+    },
+    {
+      "id": "R44P22-P0-EXACT-RUNTIME-UNAVAILABLE",
+      "status": "BLOCKED",
+      "summary": "Required Node 24.18.0/npm 11.16.0/project dependencies and Chromium 148 are unavailable in this sandbox; no exact lint/build/browser/PDF credit."
+    },
+    {
+      "id": "R44P22-P1-PREVIEW-MIXED-LOCALE",
+      "status": "CLOSED_LOCAL",
+      "summary": "Visual PDF QA found English technical/customer copy in PL/DE previews; all truth, provenance, workflow, integrity and withheld-detail labels are now localized and locked by a 50-check test plus six rendered PDFs."
+    },
+    {
+      "id": "R44P22-P1-PDF-INTEGRITY-LABEL",
+      "status": "CLOSED_LOCAL",
+      "summary": "The shared customer-safe PDF renderer had a hard-coded English integrity statement. Added an optional bounded integrityLabel so PL/DE previews localize the statement without changing the default historical contract."
+    },
+    {
+      "id": "R44P22-P1-PROFILE-PUBLIC-REQUEST",
+      "status": "CLOSED_LOCAL",
+      "summary": "Public/login navigation could trigger GET /api/profile before authentication and create aborted browser requests. profileRequestKey now returns null unless authReady && authenticated."
+    },
+    {
+      "id": "R44P22-P1-HISTORICAL-ENTITLEMENT-REASON",
+      "status": "CLOSED_BY_FORMAL_MIGRATION",
+      "summary": "Historical entitlement test expects the obsolete account_session_required reason. Current fail-closed test and formal reason migration pass; historical negative remains preserved."
+    },
+    {
+      "id": "R44P22-P1-HISTORICAL-CLIPBOARD-MARKER",
+      "status": "CLOSED_BY_FORMAL_MIGRATION",
+      "summary": "Historical community clipboard test remains 41/42 because it expects a stale marker. Current central semantic policy passes 14/14 and the migration verifier passes."
+    },
+    {
+      "id": "R44P22-P1-CURRENT-BYTE-RELEASE-MISSING",
+      "status": "BLOCKED",
+      "summary": "Exact full ESLint/TypeScript, dual build, browser 57/29, 150 full PDFs and exact Windows are not credited in this sandbox after R44P22 source changes."
+    }
+  ],
+  "parentRevisionId": "VELMERE_PASS36_A102R44P21_ACTION_REQUIRED_FIELD_LEVEL_DATA_PROVENANCE_MODULAR_SALE_READINESS_AND_LEGAL_ALTERNATIVE_ROUTING_NO_LIVE_CREDIT",
+  "productionApproved": false,
+  "releaseTruth": {
+    "checkpointStatus": "ACTION_REQUIRED",
+    "exactReleaseCredit": false,
+    "exactRuntimeAvailable": false,
+    "liveCredit": false,
+    "localPreviewPdfCredit": true,
+    "localTargetedAndSecurityCredit": true,
+    "realCustomerPdfCredit": false,
+    "stagingCredit": false
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P22_ACTION_REQUIRED_RUTHLESS_CUSTOMER_SECURE_PAID_PREVIEW_RISK_TIER_SPLIT_CROSS_ASSET_AND_LEGAL_DATA_ALTERNATIVES_NO_LIVE_CREDIT",
+  "saleEnabled": false,
+  "schemaVersion": "velmere.pass36.a102r44p22.action-required-current-state.v1",
+  "skuDecisions": {
+    "advanced": "NOT_FOR_SALE_UNTIL_INDEPENDENT_PROFESSIONAL_VALUE_PROVEN",
+    "basic": "GO_FREE_TARGET_FAIL_CLOSED_UNTIL_REQUIRED_GATES",
+    "pro": "INVITATION_ONLY_CONTROLLED_BETA_TARGET_MANUAL_QA_REQUIRED"
+  },
+  "worldClassProven": false
+}

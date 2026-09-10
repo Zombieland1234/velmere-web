@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "velmere.pass35.assurance-customer-evidence-policy.v1",
+  "candidateId": "VELMERE_PASS35_OFFLINE_CANDIDATE_R3",
+  "requiredAssuranceReportTypes": [
+    "CLEAN_PACKAGE",
+    "SECURITY",
+    "ACCESSIBILITY",
+    "AI_DATA_GOVERNANCE"
+  ],
+  "requiredCustomerCohorts": 2,
+  "minimumCohortRetentionDays": 30,
+  "maximumEvidenceTtlSeconds": 7776000,
+  "maximumInputBytes": 4194304,
+  "clockSkewSeconds": 300,
+  "acceptedSignatureReferenceSchemes": [
+    "https:",
+    "urn:",
+    "sigstore:"
+  ],
+  "metadataAloneMayIncrementVerifiedDenominator": false,
+  "metadataAloneMayAllowPromotion": false,
+  "truthBoundary": "The validator accepts only privacy-minimized aggregate metadata for four independent assurance reports and two real consented customer cohorts. It does not create customers, outcomes or reports, fetch evidence, verify signatures cryptographically, increment the 3074 denominator or authorize promotion."
+}

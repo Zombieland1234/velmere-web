@@ -1,0 +1,105 @@
+export const SOLIDITY_COMPILER_AST_ANALYZER_ID: "velmere-solidity-compiler-ast-bounded-v1";
+export const SOLIDITY_COMPILER_AST_ANALYZER_CLASS: "SOLC_STANDARD_JSON_AST_IR_BOUNDED_RULE_ENGINE_V1";
+export const SOLIDITY_COMPILER_AST_SCHEMA: "velmere.pass36.solidity-compiler-ast-evidence.v1";
+export const SOLIDITY_COMPILER_OUTPUT_AST_SCHEMA: "velmere.pass36.solidity-compiler-output-ast-evidence.v1";
+export const LEGACY_UNCHECKED_MULTIPLICATION_ECONOMIC_SINK_RULE_ID: "AST_LEGACY_UNCHECKED_MULTIPLICATION_ECONOMIC_SINK";
+
+export type SolidityCompilerAstRuleEvaluation = {
+  ruleId: string;
+  status: "EVALUATED_LEGACY_COMPILER" | "NOT_APPLICABLE_SOLC_0_8_OR_LATER" | "WITHHELD_COMPILATION_NOT_EXECUTED" | "WITHHELD_COMPILER_VERSION_UNPARSEABLE";
+  compilerVersion: string;
+  compilerRange: string;
+  exactCompilerBound: boolean;
+  legacyWraparoundSemantics: boolean;
+  supportedScope: string;
+  candidateMultiplications: number;
+  unsignedExternalTaintedMultiplications: number;
+  boundedEconomicSinkMatches: number;
+  guardedOrRangeProvenSuppressions: number;
+  findings: number;
+  broadArithmeticCoverageCredit: false;
+  exploitabilityCredit: false;
+  formalAccuracyCredit: false;
+};
+
+export type SolidityCompilerAstSourceFile = { path: string; content: string };
+export type SolidityCompilerAstFinding = {
+  ruleId: string;
+  state: "finding";
+  severity: "critical" | "high" | "medium" | "low" | "informational";
+  title: string;
+  description: string;
+  remediation: string;
+  sourcePath: string;
+  contractName: string | null;
+  functionName: string | null;
+  line: number;
+  astNodeId: number | null;
+  sourceSpan: { offset: number; length: number };
+  excerpt: string;
+  confidenceClass: "COMPILER_AST_BOUNDED_RULE_NOT_EXPLOITABILITY_PROOF";
+  limitations: string[];
+  evidenceSha256: string;
+};
+export type SolidityCompilerAstEvidence = {
+  schemaVersion: "velmere.pass36.solidity-compiler-ast-evidence.v1";
+  analyzerId: "velmere-solidity-compiler-ast-bounded-v1";
+  analyzerClass: "SOLC_STANDARD_JSON_AST_IR_BOUNDED_RULE_ENGINE_V1";
+  observedAt: string;
+  compiler: { family: "solc-js"; version: string; expectedVersionPrefix: string; exactExpectedVersion: boolean };
+  inputIdentity: { sourceFiles: number; sourceBytes: number; sourceBundleSha256: string; standardJsonInputSha256: string; settingsSha256: string };
+  compilation: { status: "EXECUTED" | "BLOCKED_OR_FAILED"; outputSha256: string; errorCount: number; warningCount: number; sourceUnits: number; contracts: number; diagnostics: unknown[] };
+  findings: SolidityCompilerAstFinding[];
+  ruleCoverage: string[];
+  ruleEvaluations: SolidityCompilerAstRuleEvaluation[];
+  r44p38Generalization: {
+    analyzerClass: string;
+    analyzerRevision: string | null;
+    signalFamilies: number;
+    observedSignals: string[];
+    findings: number;
+    suppressedInteractionPatterns: Array<Record<string, unknown>>;
+    suppressedBaseInteractionFindings: Array<Record<string, unknown>>;
+    sourceBundleSha256: string;
+    compilerOutputBindingSha256: string;
+    localCompilerAstCredit: true;
+    independentGroundTruthCredit: false;
+    realProtocolAccuracyCredit: false;
+  } | null;
+  storageLayouts: Array<{ sourcePath: string; contractName: string; storage: unknown[]; typesSha256: string; layoutSha256: string }>;
+  irArtifacts: Array<{ sourcePath: string; contractName: string; irSha256: string | null; irOptimizedSha256: string | null; bytecodeSha256: string | null; deployedBytecodeSha256: string | null }>;
+  bytecodeArtifacts: Array<{ sourcePath: string; contractName: string; creationBytecode: string; deployedBytecode: string; creationByteLength: number; deployedByteLength: number; creationBytecodeSha256: string; deployedBytecodeSha256: string; creationCoreSha256: string; deployedCoreSha256: string; creationMetadataBytes: number; deployedMetadataBytes: number }>;
+  blockers: string[];
+  creditBoundary: { localCompilerAstCredit: boolean; localIrBindingCredit: boolean; localMetamorphicGeneralizationLayerCredit: boolean; legacyUncheckedMultiplicationEconomicSinkEvaluationCredit: boolean; broadArithmeticCoverageCredit: false; realProtocolAccuracyCredit: false; independentGroundTruthCredit: false; exploitabilityCredit: false; customerCredit: false; saleCredit: false; liveCredit: false };
+  limitations: string[];
+  evidenceSha256: string;
+};
+export function buildSolidityCompilerInput(sourceFiles: SolidityCompilerAstSourceFile[], settings?: Record<string, unknown>): { input: unknown; normalized: unknown };
+export function analyzeSolidityCompilerAst(input: { solc: { compile(value: string): string; version(): string }; sourceFiles: SolidityCompilerAstSourceFile[]; settings?: Record<string, unknown>; storageComparisonPairs?: Array<{ baselineContract: string; candidateContract: string }>; observedAt?: string }): SolidityCompilerAstEvidence;
+export function verifySolidityCompilerAstEvidence(evidence: SolidityCompilerAstEvidence | SolidityCompilerOutputAstEvidence | null | undefined, sourceFiles: SolidityCompilerAstSourceFile[]): { ok: boolean; checks: Array<{ id: string; ok: boolean; detail?: unknown }>; failed: Array<{ id: string; ok: boolean; detail?: unknown }> };
+export function compareStorageLayouts(input: { before: unknown; after: unknown }): { compatibleAppendOnlyPrefix: boolean; beforeEntries: number; afterEntries: number; issues: unknown[]; comparisonSha256: string };
+
+export type SolidityCompilerOutputAstEvidence = {
+  schemaVersion: "velmere.pass36.solidity-compiler-output-ast-evidence.v1";
+  analyzerId: typeof SOLIDITY_COMPILER_AST_ANALYZER_ID;
+  analyzerClass: typeof SOLIDITY_COMPILER_AST_ANALYZER_CLASS;
+  profile: string;
+  observedAt: string;
+  compiler: { family: "solc-js"; version: string; expectedVersionPrefix: string; exactExpectedVersion: boolean };
+  inputIdentity: { sourceFiles: number; sourceBytes: number; sourceBundleSha256: string };
+  compilation: { status: "EXECUTED" | "WITHHELD_COMPILATION_ERROR" | "WITHHELD_COMPACT_AST_UNAVAILABLE"; compilerOutputSha256: string; errorCount: number; warningCount: number; astMissing: string[]; sourceUnits: number; contracts: number; diagnostics: unknown[] };
+  findings: SolidityCompilerAstFinding[];
+  ruleCoverage: string[];
+  ruleEvaluations: SolidityCompilerAstRuleEvaluation[];
+  r44p38Generalization: SolidityCompilerAstEvidence["r44p38Generalization"];
+  storageLayouts: SolidityCompilerAstEvidence["storageLayouts"];
+  irArtifacts: SolidityCompilerAstEvidence["irArtifacts"];
+  bytecodeArtifacts: SolidityCompilerAstEvidence["bytecodeArtifacts"];
+  blockers: string[];
+  creditBoundary: { compilerOutputAstCredit: boolean; legacyCompilerAstCredit: boolean; currentCompilerAstCredit: boolean; legacyUncheckedMultiplicationEconomicSinkEvaluationCredit: boolean; broadArithmeticCoverageCredit: false; independentGroundTruthCredit: false; realProtocolAccuracyCredit: false; formalPrecisionCredit: false; formalFalsePositiveRateCredit: false; exploitabilityCredit: false; customerCredit: false; saleCredit: false; liveCredit: false; worldClassCredit: false };
+  limitations: string[];
+  evidenceSha256: string;
+};
+export function analyzeSolidityCompilerOutputAst(input: { compilerOutput: Record<string, unknown>; sourceFiles: SolidityCompilerAstSourceFile[]; compilerVersion: string; expectedCompilerVersionPrefix?: string; storageComparisonPairs?: Array<{ baselineContract: string; candidateContract: string }>; observedAt?: string; profile?: string }): SolidityCompilerOutputAstEvidence;
+
+export type VlmCompilerAstAnalyzerRevision = "R44P45_CONTEXT_QUALIFIED_INTERACTION_ORDERING_V3";

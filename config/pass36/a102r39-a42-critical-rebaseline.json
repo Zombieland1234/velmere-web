@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.pass36.a102r39.a42-critical-rebaseline.v1",
+  "revisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T05:00:00+02:00",
+  "criticalFileDenominator": 76,
+  "rebaselinedRows": [
+    {
+      "path": "VELMERE_ACTIVE_PASS.txt",
+      "classification": "A102R39_CURRENT_AUTHORITY_POINTER_REBASELINE",
+      "parentByteLength": 143,
+      "parentSha256": "257e0882773a9139b4cf1ca62522095cb00468aec510e2e132ac06420e2b6473",
+      "currentByteLength": 133,
+      "currentSha256": "2e5dd536ee02d2f4954231ced694b877db19542bc493e4ecd169d5ebea7d4b3f"
+    },
+    {
+      "path": "config/pass36/current-release-authority.json",
+      "classification": "A102R39_CURRENT_AUTHORITY_POINTER_REBASELINE",
+      "parentByteLength": 63123,
+      "parentSha256": "c5043c59bad1e242c7f95d3c0f95e0e5b771b474392bb5eb74ef6f4734ed670a",
+      "currentByteLength": 63740,
+      "currentSha256": "279d996cc564c3a7d06e63fee6c256f24bbf9f026f4fd4d9486f199188e09c8b"
+    },
+    {
+      "path": "package.json",
+      "classification": "A102R39_CURRENT_AUTHORITY_POINTER_REBASELINE",
+      "parentByteLength": 110455,
+      "parentSha256": "52ff1d5f1ea093bdd79876eef1cad3d386158b2db2db29524fc23574a93d923c",
+      "currentByteLength": 111699,
+      "currentSha256": "7278946cc7cbe36eee91f5a20278cadd4baf2443225ca13d661416332d085867"
+    }
+  ],
+  "rebaselinedRowCount": 3,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "truthBoundary": "Exact current critical-file bytes and hashes only; no Windows runtime, browser, staging, LIVE or sale credit."
+}

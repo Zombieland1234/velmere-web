@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "velmere.pass35.a22-severity-triage-runtime-contract.v1",
+  "passId": "PASS35_A22",
+  "sourceRevisionId": "VELMERE_PASS35_A32_REPORT_DELIVERY_EVIDENCE_NON_VISUAL",
+  "baselineA16": {
+    "canonical": 40.7,
+    "zeroBudget": 80
+  },
+  "baselineA21": {
+    "canonical": 46.5,
+    "zeroBudget": 86.8
+  },
+  "progressDeltaVsA21": {
+    "canonicalPercentagePoints": 1.2,
+    "zeroBudgetPercentagePoints": 0.7
+  },
+  "progressDeltaVsA16": {
+    "canonicalPercentagePoints": 7,
+    "zeroBudgetPercentagePoints": 7.5
+  },
+  "canonicalWeightedPlanningPercent": 47.7,
+  "canonicalStrictDonePercent": 16.3,
+  "canonicalCounts": {
+    "DONE": 7,
+    "PARTIAL": 27,
+    "BLOCKED_EXTERNAL": 9,
+    "NOT_DONE": 0
+  },
+  "zeroBudgetWeightedPlanningPercent": 87.5,
+  "zeroBudgetCoreDenominator": 56,
+  "zeroBudgetCounts": {
+    "DONE": 43,
+    "PARTIAL": 12,
+    "NOT_DONE": 1
+  },
+  "benchmark": {
+    "families": 12,
+    "cases": 192,
+    "vulnerable": 96,
+    "remediated": 96,
+    "development": 72,
+    "validation": 48,
+    "frozen": {
+      "severityAccuracy": 1,
+      "severityWilson95": {
+        "lower": 0.949349,
+        "upper": 1
+      },
+      "suppressionAccuracy": 1,
+      "suppressionWilson95": {
+        "lower": 0.910333,
+        "upper": 1
+      },
+      "raterExactAgreement": 1,
+      "weightedKappa": 1,
+      "falseCriticalRemediated": 0,
+      "unjustifiedCritical": 0
+    },
+    "mutations": 2304,
+    "mutation": {
+      "killed": 2304,
+      "total": 2304,
+      "killRate": 1,
+      "wilson95": {
+        "lower": 0.998335,
+        "upper": 1
+      }
+    },
+    "runtimeIntegritySha256": "sha256:e136639d56d508f0e4688213a103954ac22bd5e4f3fc856538a372595d0da502",
+    "receiptSha256": "sha256:a412a6ac1a70662eb029325b93f6299f74d8e04730e84769eeb57720c52708b8"
+  },
+  "raterProfiles": [
+    "EXPLOITABILITY_RATER",
+    "IMPACT_RATER"
+  ],
+  "hardCaps": {
+    "unreachablePath": "SUPPRESSED",
+    "unknownPathMaximum": "HIGH",
+    "missingAssetMaximum": "MEDIUM",
+    "missingExactSubjectBindingMaximum": "MEDIUM",
+    "singleEvidenceFamilyMaximum": "HIGH",
+    "conflictedEvidenceMaximum": "HIGH",
+    "criticalRequiresReachablePath": true,
+    "criticalRequiresHighOrSystemicAsset": true,
+    "criticalRequiresProtocolOrCrossProtocolBlast": true,
+    "criticalRequiresAtLeastEvidenceFamilies": 2,
+    "criticalRequiresExactSubjectBinding": true
+  },
+  "visualChangesMade": false,
+  "sellEnabled": false,
+  "chargeAllowed": false,
+  "paidDeliveryAllowed": false,
+  "liveClaimed": false,
+  "truthBoundary": "PASS35 A22 is the only canonical current status. Canonical roadmap is 47.7% weighted / 16.3% strict across 43 workstreams, up 1.2 pp from A21 and 7 pp from A16. Zero-budget functional core is 87.5% across 56 capabilities, up 0.7 pp from A21 and 7.5 pp from A16. A22 locally closes the declared bounded A14 severity, uncertainty, blast-radius and attack-chain implementation. Real findings, independent human raters, exploitability adjudication, official analyzer execution, staging, sale, LIVE, customer outcomes and independent assurance remain unclaimed."
+}

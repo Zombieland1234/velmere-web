@@ -1,0 +1,34 @@
+{
+  "artifactPolicy": {
+    "descriptorBoundRegularFilesRequired": true,
+    "duplicatesForbidden": true,
+    "maximumArtifactBytes": 16777216,
+    "maximumArtifacts": 256,
+    "maximumTotalBytes": 134217728,
+    "relativePathsOnly": true,
+    "symlinksForbidden": true
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P28_ACTION_REQUIRED_EXTERNAL_CI_POSTGRES_RLS19_SIGSTORE_OIDC_ATTESTATION_AND_PARENT_SOURCE_BINDING_NO_LIVE_CREDIT",
+  "requiredVerification": [
+    "operator-signature",
+    "source-binding",
+    "semantic-denominator",
+    "physical-artifacts",
+    "independent-reviewer",
+    "replay-protection"
+  ],
+  "review": {
+    "decisionRequired": "ACCEPT",
+    "independentReviewerRequired": true,
+    "reviewSignatureAlgorithm": "Ed25519",
+    "reviewerOrganizationMustDifferFromOperator": true
+  },
+  "revisionId": "VELMERE_PASS36_A102R44P29_ACTION_REQUIRED_R44P27_AUTHORITY_FORK_RECONCILIATION_DUAL_CONTROL_TRUST_QUARANTINE_72H_WATCHDOG_AND_CREDENTIAL_HYGIENE_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p29.evidence-quarantine-policy.v1",
+  "truthBoundary": {
+    "manualSemanticAdmissionStillRequired": true,
+    "quarantinePassGrantsLiveCredit": false,
+    "quarantinePassGrantsSaleCredit": false,
+    "quarantinePassGrantsStagingCredit": false
+  }
+}

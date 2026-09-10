@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "velmere.pass36.a102r22.approved-runtime-data-transition-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R22_ACTION_REQUIRED_LOCAL_DEV_RUNTIME_DATA_REFERENCE_ICON_AND_CONTINUOUS_ROUTE_TRANSITION_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R21_ACTION_REQUIRED_CUSTOMER_ACCESSIBILITY_AND_OPERATOR_CHECKPOINT_JARGON_MINIMALISM_BOUNDARY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-30T21:45:00.000Z",
+  "status": "PASS_A102R22_APPROVED_EXACT_CHANGES_NO_PROMOTION",
+  "declaredRows": 15,
+  "changedRows": 15,
+  "rows": [
+    {
+      "path": "components/PageTransition.tsx",
+      "parentPresent": true,
+      "parentByteLength": 1904,
+      "parentSha256": "351dc9f362c3549a1f00a9cca73cb4289b2479ce29f1b2852d243d5985ddb53e",
+      "currentByteLength": 1945,
+      "currentSha256": "84df35092566e0e075a3859033a6db052acf34ef7a8c69ba7ba5d43f9920fbe4",
+      "changed": true
+    },
+    {
+      "path": "components/ui/VelmereRouteTransition.tsx",
+      "parentPresent": true,
+      "parentByteLength": 10557,
+      "parentSha256": "c80c36e9bb63ed80d63c1b5de42853b9f4acbd88681f127934c5ab368bc746b1",
+      "currentByteLength": 13170,
+      "currentSha256": "a285c59a8c19c61471000f8dfc5e947a20530b90b0f579ada2d5207b239b01f6",
+      "changed": true
+    },
+    {
+      "path": "proxy.ts",
+      "parentPresent": true,
+      "parentByteLength": 10996,
+      "parentSha256": "48fc812e79428c5d60a35211e10a2b3c13e62a365b7b7ca9d55027a6ec096384",
+      "currentByteLength": 11009,
+      "currentSha256": "e5f6dc036adacb5e660ab96dff7a1ad04aa685208f8b112227d920edced4a287",
+      "changed": true
+    },
+    {
+      "path": "scripts/velmere-dev-bootstrap.mjs",
+      "parentPresent": true,
+      "parentByteLength": 8100,
+      "parentSha256": "30de23af463ba5d5dd6b4b9ad9f238935bb314ec73479d9545435937d2a36d93",
+      "currentByteLength": 8752,
+      "currentSha256": "73e6161f59e64d3831ac35091d639e69cf7f94ad8e4da07898cd62062c8f4b46",
+      "changed": true
+    },
+    {
+      "path": "scripts/lib/a42-dev-runtime-policy.mjs",
+      "parentPresent": true,
+      "parentByteLength": 7934,
+      "parentSha256": "164be2b8e10a6c2158a97411ecdc2bb86bb1b26967723361859b7a4b8694be20",
+      "currentByteLength": 8352,
+      "currentSha256": "368f5218f75cd51f867d8d931cba3fd1c431e613efee2d35081d6931486c1c9f",
+      "changed": true
+    },
+    {
+      "path": "config/pass35/a42-dev-runtime-cache-recovery.json",
+      "parentPresent": true,
+      "parentByteLength": 15482,
+      "parentSha256": "4db0eff21080a1638cb72f571ae9ce85e3e938faecceb581bf4cab396b8fe7c0",
+      "currentByteLength": 15116,
+      "currentSha256": "fb87c0c655962858fde33f4f17d0553c153c5a5f357b38dd68ecbed33f85a99a",
+      "changed": true
+    },
+    {
+      "path": "lib/market-integrity/local-development-market-reference.ts",
+      "parentPresent": false,
+      "parentByteLength": 0,
+      "parentSha256": null,
+      "currentByteLength": 5569,
+      "currentSha256": "379852f23ee5def1998331243088da78a7f85edf9e0026e2ea26fa0374042617",
+      "changed": true
+    },
+    {
+      "path": "lib/market-integrity/asset-logo-resolver.ts",
+      "parentPresent": true,
+      "parentByteLength": 23020,
+      "parentSha256": "07c5e6a87afe3508412c72e7a2ea52c89c19e0a214a37ebdb411c8bf0f3be03c",
+      "currentByteLength": 23169,
+      "currentSha256": "fa71162c2f9bd64c794975edf5de03580bf7d36a589fc6f16d031c63323af61e",
+      "changed": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/markets.ts",
+      "parentPresent": true,
+      "parentByteLength": 15094,
+      "parentSha256": "a6fc115c980a252026c0e768ea6ee7069c70a8f5cb2eb3d4f8845fe49557f2bd",
+      "currentByteLength": 16672,
+      "currentSha256": "a0a25b6c248547075a24c4887ffcfd6e2380a04950f7c8de89bcaeec2478540f",
+      "changed": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/brand-icon.ts",
+      "parentPresent": true,
+      "parentByteLength": 3243,
+      "parentSha256": "dc920776db762e173cf59ad21e44fd0ccc821d8f7eb589aa17bb3725d6ce1ffa",
+      "currentByteLength": 3299,
+      "currentSha256": "da9e0ae41194e2fbf55148bcc72b29c499072031cec99745181552427d6b10aa",
+      "changed": true
+    },
+    {
+      "path": "lib/server/market-integrity-route-modules/icon.ts",
+      "parentPresent": true,
+      "parentByteLength": 3846,
+      "parentSha256": "ea5534a8d3a57e4bf24f684842d60cc84b5ca4da8d955c3becd69f183c2d8cfd",
+      "currentByteLength": 3945,
+      "currentSha256": "65414268f3630be99460642e138daddcd9662006fcf8ae7eb6a246b684df569e",
+      "changed": true
+    },
+    {
+      "path": "config/pass15/route-export-ast-registry.json",
+      "parentPresent": true,
+      "parentByteLength": 144612,
+      "parentSha256": "d8bf6f4649fd6b1a352c23f9361f23fce3136944e4af9617bde0112c740de134",
+      "currentByteLength": 144611,
+      "currentSha256": "d3f775a9165e9d246e95b399394c2b16a86b60ef08ff5831b9be878bdbd14f30",
+      "changed": true
+    },
+    {
+      "path": "config/pass15/route-dispatch-manifest.json",
+      "parentPresent": true,
+      "parentByteLength": 114194,
+      "parentSha256": "4f703fb6abd830afbf6a5cd535c9983e0729e832450675f56da3d2c6508025d5",
+      "currentByteLength": 114194,
+      "currentSha256": "2513ee0158eed33ac470dc25652dc55b2b80bb6fa7f419d0c49dc56938851674",
+      "changed": true
+    },
+    {
+      "path": "scripts/pass35/build-a57r1-hardening-integrity.mjs",
+      "parentPresent": true,
+      "parentByteLength": 20065,
+      "parentSha256": "bf31f91550b28671ae43276491d703f953bd4fcae8631750bd808b9e8ff457c9",
+      "currentByteLength": 20461,
+      "currentSha256": "010b2118531a4a3174e187a04b8cde6caf26366d6d54c7aad42d18c57f811f60",
+      "changed": true
+    },
+    {
+      "path": "config/pass35/a57r1-hardening-integrity.json",
+      "parentPresent": true,
+      "parentByteLength": 475268,
+      "parentSha256": "b80276d975f4bbec97b21c12b00909e89f3964c4e8a0be98633ee82c56f533cb",
+      "currentByteLength": 476456,
+      "currentSha256": "20663195dfda4ba88df50237cc225427345d5225d8a9a638cffddd6529d02eb3",
+      "changed": true
+    }
+  ],
+  "promotion": {
+    "passCredit": false,
+    "liveProven": false,
+    "saleEnabled": false
+  }
+}

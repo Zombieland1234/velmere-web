@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "velmere.r7.browser-basic-e2e-contract.v1",
+  "rowId": "browser-basic",
+  "ordinal": 4,
+  "tier": "basic",
+  "chain": [
+    "authorized_current_input",
+    "field_use_rights_decision",
+    "rights_before_network",
+    "safe_fetch",
+    "parsing_rendering",
+    "customer_safe_output",
+    "durable_exact_artifact_store",
+    "exact_stored_artifact_digest",
+    "user_a_readback",
+    "user_b_cross_account_denial",
+    "reconnect_readback",
+    "backup_restore",
+    "post_restore_owner_rls",
+    "deployed_http_customer_route",
+    "exact_current_byte_engineering",
+    "no_open_critical_blocker"
+  ],
+  "authenticatedBasicPersistsExactAccountArtifact": true,
+  "anonymousBasicMayRenderWithoutAccountPersistence": true,
+  "paidTierWithoutAccountFailsClosed": true,
+  "externalPilotRequiredForInternalFinal": false,
+  "customerFinal": false,
+  "promotionRule": "PROMOTE_ONLY_AFTER_ALL_CHAIN_GATES_HAVE_RUNTIME_RECEIPTS_BOUND_TO_EXACT_R7_IDENTITY",
+  "runtimeStatus": "PASS_PRE_WINDOWS",
+  "runtimeReceiptPath": "artifacts/r7/staging/R7_BROWSER_BASIC_FINAL_GATE_PRE_WINDOWS.json",
+  "remainingPhysicalBlockers": [
+    "HOSTED_EXACT_WINDOWS_R7_52_X2_AND_SOURCE_AUTHORITY_BINDING"
+  ]
+}

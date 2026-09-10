@@ -1,0 +1,76 @@
+{
+  "angel": {
+    "paidTruthDeltaAllowed": false,
+    "realModelQualityCredit": 0,
+    "standalone": true,
+    "syntheticBoundaryCases": 121
+  },
+  "audit": {
+    "advancedForSale": false,
+    "advancedHumanReviewClaimAllowed": false,
+    "basicAlwaysFree": true,
+    "proManualQaRequired": true,
+    "proPublicCheckoutAllowed": false
+  },
+  "evidenceTracks": {
+    "aiSimulated": {
+      "classification": "INTERNAL_MODEL_PANEL",
+      "countsFor": "bounded internal QA and idea generation only",
+      "customerProofCredit": 0,
+      "independentReviewerCredit": 0,
+      "liveCredit": false,
+      "maxInternalReadinessContributionPoints": 5,
+      "saleCredit": false,
+      "willingnessToPayCredit": 0
+    },
+    "realHumanExternal": {
+      "classification": "REAL_HUMAN_OR_EXTERNAL_INDEPENDENT_EVIDENCE",
+      "currentCustomerProof": 0,
+      "currentIndependentReviewers": 0,
+      "currentParticipants": 0,
+      "currentWillingnessToPay": 0,
+      "requiredForWorldClassEvidence": true
+    }
+  },
+  "materialsCanOverwriteSource": false,
+  "noPromotion": {
+    "live": false,
+    "production": false,
+    "sale": false,
+    "worldClass": false
+  },
+  "parentRevisionId": "VELMERE_PASS36_A102R44P43_ACTION_REQUIRED_PUBLIC_BALANCED_HOLDOUT_LEGACY_COMPILER_AST_AND_CONTROL_ALERT_RATE_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "requiredDeliverables": [
+    "SOURCE_ONLY",
+    "MATERIALS",
+    "WORLD_CLASS_MAX_ROADMAP"
+  ],
+  "revisionId": "VELMERE_PASS36_A102R44P44_ACTION_REQUIRED_BRUTAL_PRODUCT_REALITY_50_CONTRACT_ANGEL120_PERSONA100_FULL_QA_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p44.product-reality-policy.v1",
+  "sourceAuthority": "SOURCE_ONLY_ONLY",
+  "standaloneProducts": [
+    "shield",
+    "shield-pro",
+    "shield-map",
+    "real-markets",
+    "market-impact",
+    "whale-watch",
+    "angel",
+    "risk-indicator"
+  ],
+  "testCycle": "3/3",
+  "tieredProducts": [
+    "audit",
+    "pdf",
+    "browser"
+  ],
+  "truth": {
+    "customerProofFromSyntheticPersonasForbidden": true,
+    "rightsUnverifiedFailClosed": true,
+    "simulationAsForecastForbidden": true,
+    "singleOverallAccuracyForbidden": true,
+    "transferAsTradeForbidden": true,
+    "unknownWalletLabel": "UNCLASSIFIED"
+  },
+  "uiRedesignAllowed": false
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "velmere.pass24.diff-from-pass23.v1",
+  "generatedAt": "2026-07-20T20:30:00+02:00",
+  "baseArtifact": {
+    "name": "VELMERE_PASS23_CODE_ONLY_CLOSURE_SAFE_SOURCE.zip",
+    "sha256": "a24ca561f3725d7299e3d79b7bd77498a671f19eb2cb6ca119e880859c82a2db",
+    "filesCompared": 3314
+  },
+  "currentArtifactRole": "PASS24_RUNTIME_MILESTONE_GATE_SAFE_SOURCE",
+  "summary": {
+    "new": 10,
+    "changed": 14,
+    "deleted": 0,
+    "unchanged": 3300,
+    "currentFilesCompared": 3324
+  },
+  "newFiles": [
+    "config/pass24/lockfile-target-manifest.json",
+    "config/pass24/runtime-policy.json",
+    "scripts/pass24/audit-local-cache-coverage.mjs",
+    "scripts/pass24/build-runtime-requirements.mjs",
+    "scripts/pass24/import-exact-runtime.mjs",
+    "scripts/pass24/run-exact-milestone.mjs",
+    "scripts/pass24/run-gate.mjs",
+    "scripts/pass24/runtime-lib.mjs",
+    "scripts/pass24/test-runtime-acquisition-boundaries.mjs",
+    "scripts/pass24/verify-exact-runtime.mjs"
+  ],
+  "changedFiles": [
+    "CLEAN_SAFE_README.md",
+    "README.md",
+    "VELMERE_RUN_FULL_CHECK.ps1",
+    "evaluation/pass17/market-adapter-output-index.jsonl",
+    "evaluation/pass17/market-adapter-simulation-summary.json",
+    "evaluation/pass18/audit-lens-adapter-output-index.jsonl",
+    "evaluation/pass18/audit-lens-adapter-simulation-summary.json",
+    "evaluation/pass18/audit-lens-evidence-fixtures.json",
+    "evaluation/pass19/brain-angel-adapter-output-index.jsonl",
+    "evaluation/pass19/brain-angel-adapter-simulation-summary.json",
+    "evaluation/pass19/brain-angel-evidence-fixtures.json",
+    "package.json",
+    "scripts/pass23/audit-runner-contract.mjs",
+    "scripts/worldclass/common-implementation-digest.mjs"
+  ],
+  "deletedFiles": [],
+  "truthBoundary": "This diff compares clean source payloads and excludes CLEAN_SAFE_VERIFICATION.json, the current self-referential payload manifest, current diff output, local diagnostics, dependencies and build artifacts."
+}

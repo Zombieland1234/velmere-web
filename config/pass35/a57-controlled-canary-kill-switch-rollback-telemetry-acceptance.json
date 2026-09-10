@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "velmere.pass35.a57.controlled-canary-kill-switch-rollback-telemetry-acceptance.contract.v1",
+  "revisionId": "VELMERE_PASS35_A57_CONTROLLED_CANARY_KILL_SWITCH_ROLLBACK_TELEMETRY_ACCEPTANCE",
+  "parentRevisionId": "VELMERE_PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE",
+  "requiredA55RevisionId": "VELMERE_PASS35_A55_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE_ACCEPTANCE",
+  "requiredA55Decision": "VERIFIED_STAGING_INDEPENDENT_RETEST_LEGAL_CUSTOMER_RELEASE",
+  "requiredA56RevisionId": "VELMERE_PASS35_A56_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION_ACCEPTANCE",
+  "requiredA56Decision": "VERIFIED_STAGING_OUT_OF_TIME_SLO_VENDOR_EXIT_OBSERVATION",
+  "runtime": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "confirmationToken": "I_UNDERSTAND_A57_RUNS_A_BOUNDED_TEST_ONLY_CONTROLLED_CANARY_WITH_KILL_SWITCH_AND_ROLLBACK_AND_DOES_NOT_ENABLE_SALE_LIVE_OR_PRODUCTION",
+  "requiredEnvironment": [
+    "VELMERE_A57_A55_EVIDENCE_ZIP",
+    "VELMERE_A57_A55_EVIDENCE_SHA256",
+    "VELMERE_A57_A56_EVIDENCE_ZIP",
+    "VELMERE_A57_A56_EVIDENCE_SHA256",
+    "VELMERE_A57_A55_SIGNER_PUBLIC_KEY_PEM",
+    "VELMERE_A57_A55_MANIFEST_SIGNATURE_BASE64",
+    "VELMERE_A57_A56_SIGNER_PUBLIC_KEY_PEM",
+    "VELMERE_A57_A56_MANIFEST_SIGNATURE_BASE64",
+    "VELMERE_A57_EXPECTED_SOURCE_MANIFEST_SHA256",
+    "VELMERE_A57_PROJECT_CLASS",
+    "VELMERE_A57_CONTROL_STATUS_URL",
+    "VELMERE_A57_CONTROL_ACTION_URL",
+    "VELMERE_A57_TELEMETRY_URL",
+    "VELMERE_A57_SUPPORT_URL",
+    "VELMERE_A57_PAYMENT_REFUND_URL",
+    "VELMERE_A57_OUTCOME_URL",
+    "VELMERE_A57_SECURITY_URL",
+    "VELMERE_A57_CONTROL_BEARER_SECRET",
+    "VELMERE_A57_TELEMETRY_BEARER_SECRET",
+    "VELMERE_A57_SUPPORT_BEARER_SECRET",
+    "VELMERE_A57_PAYMENT_BEARER_SECRET",
+    "VELMERE_A57_OUTCOME_BEARER_SECRET",
+    "VELMERE_A57_SECURITY_BEARER_SECRET",
+    "VELMERE_A57_CONFIRM"
+  ],
+  "projectClass": "controlled_canary",
+  "parentEvidenceTrust": {
+    "signatureAlgorithm": "ed25519",
+    "a55PublicKeySpkiSha256": null,
+    "a56PublicKeySpkiSha256": null,
+    "requireDistinctSigners": true,
+    "status": "TRUST_ANCHORS_NOT_PINNED_NO_REAL_CANARY"
+  },
+  "canary": {
+    "paymentMode": "STRIPE_TEST_ONLY",
+    "maximumParticipants": 25,
+    "maximumTestTransactions": 10,
+    "maximumDurationSeconds": 1800,
+    "minimumSnapshots": 5,
+    "maximumSnapshots": 20,
+    "minimumObservationSeconds": 240,
+    "pollIntervalMs": 60000,
+    "maximumClockSkewSeconds": 120,
+    "maximumSnapshotAgeSeconds": 180,
+    "maximumResponseBytes": 1048576,
+    "requestTimeoutMs": 30000,
+    "recoveryAttempts": 3,
+    "recoveryBackoffMs": 1000,
+    "maximumTrafficPct": 5,
+    "maximumParentEvidenceAgeSeconds": 3888000
+  },
+  "stopRules": {
+    "availabilityMinimumPct": 99,
+    "p95MaximumMs": 1500,
+    "p99MaximumMs": 3000,
+    "errorRateMaximumPct": 1,
+    "freshnessMaximumSeconds": 120,
+    "securityIncidentsMaximum": 0,
+    "authIsolationViolationsMaximum": 0,
+    "entitlementViolationsMaximum": 0,
+    "customerHarmFlagsMaximum": 0,
+    "sev1TicketsMaximum": 0,
+    "unresolvedSev2TicketsMaximum": 0,
+    "supportFirstResponseP95MaximumSeconds": 900,
+    "failedRefundsMaximum": 0,
+    "pendingRefundsMaximum": 0,
+    "minimumRefundCompletionPct": 100,
+    "minimumJourneyCompletionPct": 80,
+    "maximumComprehensionFailures": 0
+  },
+  "stagingSafety": {
+    "requireHttps": true,
+    "rejectHostnameTokens": [
+      "prod",
+      "production",
+      "live",
+      "www"
+    ],
+    "requireHostnameHint": [
+      "canary",
+      "staging",
+      "preview",
+      "test"
+    ],
+    "minimumSecretLength": 32,
+    "minimumDistinctOrigins": 3
+  },
+  "zipBudgets": {
+    "maximumArchiveBytes": 268435456,
+    "maximumEntries": 5000,
+    "maximumSingleFileBytes": 134217728,
+    "maximumTotalUncompressedBytes": 536870912
+  },
+  "requiredJournalSteps": [
+    "run-started",
+    "preflight-complete",
+    "baseline-verified",
+    "canary-started",
+    "snapshot-observed",
+    "canary-stop-requested",
+    "kill-switch-activated",
+    "rollback-requested",
+    "rollback-verified",
+    "run-completed"
+  ],
+  "truthBoundary": "A57 can execute and verify one bounded, test-payment-only controlled canary after independently anchored A55 and A56 evidence. It enforces a maximum 25-participant cohort, maximum 10 Stripe test transactions, independent telemetry/support/payment/outcome/security surfaces, strict stop rules, immediate kill switch, compensating rollback, source immutability and an append-only journal. A successful run proves only this bounded staging canary lifecycle. It does not prove unrestricted production traffic, production payments, customer willingness-to-pay, continuous monitoring, contractual SLA, LIVE, production readiness or sale eligibility."
+}

@@ -1,0 +1,42 @@
+export const COMPILER_AST_ANALYZER_CLASS: "SOLC_0_8_24_AST_STORAGE_LAYOUT_IR_REVIEW_V1";
+export const COMPILER_AST_SIGNAL_CATALOG: Readonly<Record<string, { severity: "critical" | "high" | "medium" | "low" | "informational"; title: string }>>;
+export type CompilerAstFinding = {
+  signalId: string;
+  severity: "critical" | "high" | "medium" | "low" | "informational";
+  title: string;
+  sourcePath: string | null;
+  line: number | null;
+  contractName: string | null;
+  functionName: string | null;
+  evidence: Record<string, unknown>;
+  compilerBacked: true;
+  exploitabilityProven: false;
+  independentReview: false;
+};
+export type CompilerAstAnalysis = {
+  schemaVersion: "velmere.pass36.solidity-compiler-ast-generalization.v1";
+  analyzerClass: typeof COMPILER_AST_ANALYZER_CLASS;
+  compilerVersionExpected: string;
+  sourceFiles: number;
+  contracts: number;
+  sourceBundleSha256: string;
+  compilerOutputBindingSha256: string;
+  findings: CompilerAstFinding[];
+  signals: string[];
+  signalCounts: Record<string, number>;
+  compilerContracts: Array<{ sourcePath: string; contractName: string; storageEntries: number; storageLayoutSha256: string | null; irSha256: string | null; irAvailable: boolean }>;
+  localCompilerAstCredit: true;
+  realProtocolAccuracyCredit: false;
+  independentGroundTruthCredit: false;
+  customerCredit: false;
+  paidSaleCredit: false;
+  liveCredit: false;
+  limitations: string[];
+};
+export function analyzeSolidityCompilerAst(input: {
+  compilerOutput: Record<string, unknown>;
+  sources: Record<string, string>;
+  storageComparisonPairs?: Array<{ baselineContract: string; candidateContract: string }>;
+  expectedCompilerVersion?: string;
+}): CompilerAstAnalysis;
+export function verifyCompilerAstAnalysisShape(value: unknown): value is CompilerAstAnalysis;

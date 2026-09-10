@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": "velmere.pass21.provider-commercial-rights-registry.v1",
+  "truthBoundary": "Code presence and API credentials do not grant redistribution or paid-product rights. Every external provider remains blocked for commercial output until a reviewed agreement/terms snapshot and evidence hash are attached.",
+  "providers": [
+    {
+      "id": "alchemy",
+      "kind": "chain_rpc",
+      "sourceFamilies": [
+        "chain_rpc",
+        "independent_indexer"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "alpha_vantage",
+      "kind": "market_data",
+      "sourceFamilies": [
+        "primary_market",
+        "fundamental"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/alpha-vantage-provider.ts"
+      ],
+      "credentialEnvNames": [
+        "ALPHA_VANTAGE_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "RIGHTS_RESTRICTED_FOR_COMMERCIAL",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "tier": "FREE_PERSONAL_KEY",
+      "tiersObserved": {
+        "free_personal_key": {
+          "label": "Free API key",
+          "intendedUse": "personal / development / non-commercial",
+          "commercialUseAllowed": false,
+          "publicDisplayAllowed": false,
+          "attribution": "per Alpha Vantage guidelines when use is granted"
+        },
+        "commercial_onboarding": {
+          "label": "Commercial use (contact sales)",
+          "intendedUse": "paid product / commercial use",
+          "commercialUseAllowed": "UNVERIFIED — requires sales contact + signed agreement",
+          "publicDisplayAllowed": "UNVERIFIED",
+          "rawApiRedistributionAllowed": false
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["commercial_onboarding — UNVERIFIED until agreement"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["commercial_onboarding — UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["commercial_onboarding — UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "realtime15MinUSData": {
+          "allowedUnder": ["REQUIRES additional licensing/regulatory review"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "Alpha Vantage free key is personal/non-commercial. Commercial use requires contacting sales and a separate agreement. Realtime/15-min US data has additional licensing/regulatory requirements.",
+      "evidence": [
+        {
+          "type": "official_terms_snapshot",
+          "label": "Alpha Vantage licensing/terms page (current as of 2026-09-02)",
+          "retrievedAt": "2026-09-02",
+          "scope": "free key is personal/non-commercial; commercial use requires sales contact; realtime/15-min US data has additional licensing",
+          "url": "https://www.alphavantage.co/licensing/"
+        }
+      ]
+    },
+    {
+      "id": "angel_external",
+      "kind": "model_provider",
+      "sourceFamilies": [
+        "model_provider"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/angel-provider-gateway.ts"
+      ],
+      "credentialEnvNames": [
+        "VELMERE_ANGEL_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "arkham",
+      "kind": "entity_attribution",
+      "sourceFamilies": [
+        "entity_attribution",
+        "onchain_flows"
+      ],
+      "integrationPaths": [],
+      "credentialEnvNames": [],
+      "technicalState": "NOT_INTEGRATED",
+      "rightsState": "RIGHTS_UNVERIFIED",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — commercial/API scope must be confirmed"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "Arkham entity attribution is probabilistic. Do not collapse to certainty. Commercial/API scope must be confirmed before wiring into Velmère.",
+      "evidence": []
+    },
+    {
+      "id": "binance",
+      "kind": "market_exchange",
+      "sourceFamilies": [
+        "primary_market",
+        "market_realtime"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/binance-klines.ts",
+        "lib/market-integrity/binance-orderbook.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "chainlink",
+      "kind": "oracle_and_data",
+      "sourceFamilies": [
+        "oracle_reference",
+        "market_data",
+        "rwa_reference",
+        "proof_of_reserve"
+      ],
+      "integrationPaths": [],
+      "credentialEnvNames": [],
+      "technicalState": "NOT_INTEGRATED",
+      "rightsState": "RIGHTS_UNVERIFIED_DESPITE_BRAND_RESPONSE",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "productsObserved": [
+        "Chainlink Data Feeds",
+        "Chainlink Data Streams (low-latency market data)",
+        "Chainlink SmartData",
+        "Chainlink Proof of Reserve",
+        "Chainlink DataLink (permissioned institutional distribution)"
+      ],
+      "tiersObserved": {
+        "public_data_feeds": {
+          "label": "Public Data Feeds (technical access)",
+          "intendedUse": "on-chain reference data; technical access via public documentation",
+          "commercialUseAllowed": "UNVERIFIED — public access ≠ commercial redistribution rights",
+          "publicDisplayAllowed": "UNVERIFIED",
+          "rawApiRedistributionAllowed": false,
+          "attribution": "Per Chainlink guidelines when use is granted"
+        },
+        "datalink_institutional": {
+          "label": "DataLink / institutional distribution",
+          "intendedUse": "permissioned, controlled commercialization of data",
+          "commercialUseAllowed": "UNVERIFIED — requires explicit agreement"
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — no written commercial redistribution license in repository evidence"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "brandUsageEvidence": {
+        "type": "positive_brand_response",
+        "label": "Chainlink positive response on logo/brand usage + Data Feeds documentation",
+        "scope": "logo / brand usage guidance + Data Feeds documentation only",
+        "doNotExpandTo": "commercial redistribution license for paid product",
+        "evidenceOnFile": false,
+        "evidencePath": null,
+        "literalInterpretation": "Until the actual email/message is located in repository evidence and read literally, do not treat it as commercial redistribution rights. Logo/brand permission ≠ commercial data license."
+      },
+      "truthBoundary": "Chainlink previously gave Velmère positive logo/brand usage guidance and Data Feeds documentation. That is NOT the same as a written commercial redistribution license. The relevant literal evidence (email/message) was not located in repository at the time of this audit; if/when located, it must be parsed literally and used only for exactly what it says. Chainlink DataLink's very existence shows that access ≠ licensing and that commercialization is permissioned.",
+      "evidence": [
+        {
+          "type": "internal_knowledge",
+          "label": "Velmère knowledge 07 + master mission §3 (Chainlink)",
+          "retrievedAt": "2026-09-02",
+          "scope": "brand/logo permission and Data Feeds documentation observed; commercial redistribution NOT established",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "coinbase",
+      "kind": "market_exchange",
+      "sourceFamilies": [
+        "primary_market",
+        "market_realtime"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "coingecko",
+      "kind": "market_aggregator",
+      "sourceFamilies": [
+        "independent_market",
+        "market_delayed",
+        "onchain"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/coingecko.ts"
+      ],
+      "credentialEnvNames": [
+        "COINGECKO_DEMO_API_KEY",
+        "COINGECKO_PRO_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "PARTIAL_PER_USE_CASE",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "tier": "UNVERIFIED_ACTIVE_PLAN",
+      "tiersObserved": {
+        "keyless_public_api": {
+          "label": "Keyless Public API",
+          "intendedUse": "light experimentation, prototyping, non-commercial educational use",
+          "commercialUseAllowed": false,
+          "publicDisplayAllowed": false,
+          "rawApiRedistributionAllowed": false,
+          "derivedAnalyticsAllowed": false,
+          "pdfAllowed": false,
+          "cacheAllowed": false,
+          "modelTrainingAllowed": false,
+          "attribution": "required by their guidelines when used"
+        },
+        "standard_commercial_license_basic_analyst_lite_pro": {
+          "label": "Basic / Analyst / Lite / Pro (paid plans)",
+          "intendedUse": "build a paid product that consumes CoinGecko data and charges customers",
+          "commercialUseAllowed": true,
+          "publicDisplayAllowed": true,
+          "rawApiRedistributionAllowed": false,
+          "sublicensingAllowed": false,
+          "rawResaleAllowed": false,
+          "derivedAnalyticsAllowed": true,
+          "pdfAllowed": true,
+          "cacheAllowed": true,
+          "modelTrainingAllowed": false,
+          "attribution": "MUST show 'Data provided by CoinGecko' with link per their current licensing terms",
+          "scopeNotes": "Standard license permits paid product use BUT does NOT allow reselling, sublicensing, or redistributing raw API/data access"
+        },
+        "custom_enterprise": {
+          "label": "Custom / Enterprise",
+          "intendedUse": "raw redistribution, resale, sublicensing, or institutional data products",
+          "commercialUseAllowed": true,
+          "rawApiRedistributionAllowed": true,
+          "attribution": "per negotiated agreement"
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["standard_commercial_license_basic_analyst_lite_pro", "custom_enterprise"],
+          "requiresAttribution": true,
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["standard_commercial_license_basic_analyst_lite_pro", "custom_enterprise"],
+          "requiresAttribution": true,
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["standard_commercial_license_basic_analyst_lite_pro", "custom_enterprise"],
+          "activeInVelmere": false
+        },
+        "derivedAnalytics": {
+          "allowedUnder": ["standard_commercial_license_basic_analyst_lite_pro", "custom_enterprise"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": ["custom_enterprise"],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED — not explicit in standard license terms observed"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "API key works ≠ commercial rights. Velmère may NOT sell raw CoinGecko feed/API access to customers on a standard license. Per-field attribution is mandatory when commercial use is granted.",
+      "evidence": [
+        {
+          "type": "official_terms_snapshot",
+          "label": "CoinGecko public pricing / plan page (Basic, Analyst, Lite, Pro) as observed 2026-09-02 — Standard Commercial License scope",
+          "retrievedAt": "2026-09-02",
+          "scope": "Standard Commercial License: paid product use allowed, raw API resale/sublicensing/redistribution NOT allowed; Custom/Enterprise required for redistribution",
+          "url": "https://www.coingecko.com/en/api/pricing",
+          "attributionRequirement": "Data provided by CoinGecko + link"
+        }
+      ]
+    },
+    {
+      "id": "coinmarketcap",
+      "kind": "market_aggregator",
+      "sourceFamilies": [
+        "independent_market",
+        "market_delayed"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "coinpaprika",
+      "kind": "market_aggregator",
+      "sourceFamilies": [
+        "independent_market",
+        "market_delayed"
+      ],
+      "integrationPaths": [
+        "scripts/pass36/test-a102r44p17-real-provider-diagnostic-boundary.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "DIAGNOSTIC_ONLY",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "contrado",
+      "kind": "fulfilment",
+      "sourceFamilies": [
+        "fulfilment",
+        "shipping"
+      ],
+      "integrationPaths": [
+        "lib/launch/provider-truth-ledger.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "defillama",
+      "kind": "defi_data",
+      "sourceFamilies": [
+        "independent_market",
+        "onchain"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [
+        "DEFILLAMA_PRO_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "RIGHTS_RESTRICTED",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "tier": "STANDARD_PUBLIC_API",
+      "tiersObserved": {
+        "standard_public_api": {
+          "label": "Standard public API (default access)",
+          "intendedUse": "personal, internal reference, non-commercial",
+          "commercialUseAllowed": false,
+          "publicDisplayAllowed": false,
+          "rawApiRedistributionAllowed": false,
+          "derivedAnalyticsAllowed": false,
+          "scrapingAllowed": false,
+          "harvestingAllowed": false,
+          "republishingAllowed": false,
+          "resaleAllowed": false,
+          "attribution": "preserve source attribution where use is permitted"
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — ToS restricts commercial use without permission"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED — explicit commercial RAG input not granted"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "DeFiLlama ToS explicitly restrict copying, scraping, harvesting, commercial exploitation, republication and resale without prior written permission. Treat the standard API as non-commercial until a specific written permission is attached.",
+      "evidence": [
+        {
+          "type": "official_terms_snapshot",
+          "label": "DeFiLlama Terms — official public API scope",
+          "retrievedAt": "2026-09-02",
+          "scope": "personal/non-commercial; commercial copying, scraping, republishing, resale require prior written permission",
+          "url": "https://defillama.com/terms"
+        }
+      ]
+    },
+    {
+      "id": "dexscreener",
+      "kind": "dex_aggregator",
+      "sourceFamilies": [
+        "dex_pairs",
+        "liquidity",
+        "market_realtime"
+      ],
+      "integrationPaths": [],
+      "credentialEnvNames": [],
+      "technicalState": "NOT_INTEGRATED",
+      "rightsState": "RIGHTS_UNVERIFIED",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — exact commercial/API/display rights must be verified per DexScreener current terms"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "DexScreener exact commercial / API / display rights must be verified per current official terms before any paid-product wiring.",
+      "evidence": []
+    },
+    {
+      "id": "blockaid",
+      "kind": "security_intelligence",
+      "sourceFamilies": [
+        "address_security",
+        "transaction_security",
+        "dapp_reputation"
+      ],
+      "integrationPaths": [],
+      "credentialEnvNames": [],
+      "technicalState": "NOT_INTEGRATED",
+      "rightsState": "RIGHTS_UNVERIFIED",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — Blockaid is enterprise/API; commercial integration scope must be obtained"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "Blockaid is an enterprise/API security product. Do not wire it into Velmère until an explicit commercial integration scope is obtained and stored as evidence.",
+      "evidence": []
+    },
+    {
+      "id": "etherscan",
+      "kind": "chain_explorer",
+      "sourceFamilies": [
+        "verified_source_code",
+        "independent_indexer"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [
+        "ETHERSCAN_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "PARTIAL_PER_USE_CASE",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "tier": "FREE_TIER_PLUS_OPTIONAL_COMMERCIAL",
+      "tiersObserved": {
+        "free_tier": {
+          "label": "Free tier / personal API key",
+          "intendedUse": "development, light internal use",
+          "commercialUseAllowed": false,
+          "publicDisplayAllowed": false,
+          "rawApiRedistributionAllowed": false,
+          "attribution": "preserve explorer source attribution"
+        },
+        "paid_production": {
+          "label": "Paid production / commercial plans",
+          "intendedUse": "production traffic, commercial product",
+          "commercialUseAllowed": "UNVERIFIED — depends on plan/scope",
+          "redistributionAllowed": "UNVERIFIED — typically requires separate written permission"
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — typically requires commercial plan + permission"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "Etherscan free tier is NOT commercial permission. Paid production plans exist; redistribution/redistribution of data still requires a separate commercial permission. Per Velmère knowledge 07, prefer direct RPC / self-hosted over explorer families for the audit core.",
+      "evidence": [
+        {
+          "type": "internal_knowledge",
+          "label": "Velmère knowledge 07 — Etherscan/Explorer families",
+          "retrievedAt": "2026-09-02",
+          "scope": "paid production authority / redistribution requires separate commercial permission"
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "kind": "model_provider",
+      "sourceFamilies": [
+        "model_provider"
+      ],
+      "integrationPaths": [
+        "lib/ai/gemini.ts",
+        "lib/ai/vlm-provider-registry.ts"
+      ],
+      "credentialEnvNames": [
+        "GEMINI_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "kraken",
+      "kind": "market_exchange",
+      "sourceFamilies": [
+        "independent_market",
+        "market_realtime"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "openai",
+      "kind": "model_provider",
+      "sourceFamilies": [
+        "model_provider"
+      ],
+      "integrationPaths": [
+        "lib/admin/ai-input-policy.ts"
+      ],
+      "credentialEnvNames": [
+        "OPENAI_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "polygon",
+      "kind": "market_data",
+      "sourceFamilies": [
+        "independent_market",
+        "market_realtime"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "printful",
+      "kind": "fulfilment",
+      "sourceFamilies": [
+        "fulfilment",
+        "shipping"
+      ],
+      "integrationPaths": [
+        "lib/products/vlm-product-provider-adapter.ts"
+      ],
+      "credentialEnvNames": [
+        "PRINTFUL_API_TOKEN"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "pyth",
+      "kind": "oracle_reference",
+      "sourceFamilies": [
+        "oracle_reference",
+        "onchain_oracle"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/pyth-price-provider.ts"
+      ],
+      "credentialEnvNames": [
+        "PYTH_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "RIGHTS_UNVERIFIED_PER_PLAN",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "tier": "HERMES_API_KEY_REQUIRED_POST_2026_08_26",
+      "tiersObserved": {
+        "hermes_post_2026_08_26": {
+          "label": "Hermes REST (after 2026-08-26 upgrade)",
+          "intendedUse": "API-key authenticated access; specific commercial scope per product/plan",
+          "commercialUseAllowed": "UNVERIFIED_PER_PLAN",
+          "rawApiRedistributionAllowed": false,
+          "attribution": "per Pyth guidelines when use is granted"
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — depends on specific Pyth plan/scope"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "Pyth commercial scope must be checked per Pyth product/API for the specific Velmère use case. Do not generalize from one product to another.",
+      "evidence": [
+        {
+          "type": "official_docs_snapshot",
+          "label": "Pyth Hermes API key requirement post-2026-08-26",
+          "retrievedAt": "2026-09-02",
+          "scope": "API-key authenticated access now required; commercial scope per product",
+          "url": "https://docs.pyth.network/"
+        }
+      ]
+    },
+    {
+      "id": "quicknode",
+      "kind": "chain_rpc",
+      "sourceFamilies": [
+        "chain_rpc",
+        "independent_indexer"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "rwa_xyz",
+      "kind": "rwa_reference",
+      "sourceFamilies": [
+        "rwa_reference"
+      ],
+      "integrationPaths": [],
+      "credentialEnvNames": [],
+      "technicalState": "NOT_INTEGRATED",
+      "rightsState": "RIGHTS_UNVERIFIED",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["UNVERIFIED — API/commercial redistribution scope must be established"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "RWA.xyz is intended as reference/RWA Evidence Passport data. API/commercial redistribution scope must be established before any paid-product wiring.",
+      "evidence": []
+    },
+    {
+      "id": "resend",
+      "kind": "email",
+      "sourceFamilies": [
+        "email"
+      ],
+      "integrationPaths": [
+        "app/api/contact/message/route.ts"
+      ],
+      "credentialEnvNames": [
+        "RESEND_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "stripe",
+      "kind": "payment",
+      "sourceFamilies": [
+        "payment"
+      ],
+      "integrationPaths": [
+        "lib/checkout/readiness.ts"
+      ],
+      "credentialEnvNames": [
+        "STRIPE_SECRET_KEY",
+        "STRIPE_WEBHOOK_SECRET"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "supabase",
+      "kind": "database",
+      "sourceFamilies": [
+        "database",
+        "auth"
+      ],
+      "integrationPaths": [
+        "lib/db/supabase.ts"
+      ],
+      "credentialEnvNames": [
+        "NEXT_PUBLIC_SUPABASE_URL",
+        "SUPABASE_SERVICE_ROLE_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "tapstitch",
+      "kind": "fulfilment",
+      "sourceFamilies": [
+        "fulfilment",
+        "shipping"
+      ],
+      "integrationPaths": [
+        "lib/products/vlm-product-provider-adapter.ts"
+      ],
+      "credentialEnvNames": [
+        "TAPSTITCH_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "UNVERIFIED",
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "evidence": []
+    },
+    {
+      "id": "twelve_data",
+      "kind": "market_data",
+      "sourceFamilies": [
+        "independent_market",
+        "market_realtime"
+      ],
+      "integrationPaths": [
+        "lib/market-integrity/server-owned-market-intelligence-providers.ts"
+      ],
+      "credentialEnvNames": [
+        "TWELVE_DATA_API_KEY"
+      ],
+      "technicalState": "CODE_PRESENT",
+      "rightsState": "PARTIAL_PER_USE_CASE",
+      "globalCommercialUseAllowed": false,
+      "globalRedistributionAllowed": false,
+      "tier": "UNVERIFIED_ACTIVE_PLAN",
+      "tiersObserved": {
+        "individual_basic_grow_pro_ultra": {
+          "label": "Individual Basic / Grow / Pro / Ultra",
+          "intendedUse": "personal / internal / non-production",
+          "commercialUseAllowed": false,
+          "publicDisplayAllowed": false,
+          "thirdPartyCommercialDisplayAllowed": false,
+          "attribution": "per Twelve Data guidelines when use is granted"
+        },
+        "business_venture_enterprise_enterprise_plus": {
+          "label": "Business Venture / Enterprise / Enterprise+",
+          "intendedUse": "commercial display in a paid product",
+          "commercialUseAllowed": true,
+          "publicDisplayAllowed": true,
+          "thirdPartyCommercialDisplayAllowed": true,
+          "rawApiRedistributionAllowed": false,
+          "attribution": "per negotiated plan / agreement"
+        }
+      },
+      "useCaseMatrix": {
+        "uiAuthenticatedCustomerDisplay": {
+          "allowedUnder": ["business_venture_enterprise_enterprise_plus"],
+          "activeInVelmere": false
+        },
+        "pdfArtifact": {
+          "allowedUnder": ["business_venture_enterprise_enterprise_plus"],
+          "activeInVelmere": false
+        },
+        "cache": {
+          "allowedUnder": ["UNVERIFIED — depends on plan"],
+          "activeInVelmere": false
+        },
+        "rawApiRedistribution": {
+          "allowedUnder": ["UNVERIFIED — requires separate written agreement"],
+          "activeInVelmere": false
+        },
+        "aiRagInput": {
+          "allowedUnder": ["UNVERIFIED"],
+          "activeInVelmere": false
+        },
+        "modelTraining": {
+          "allowedUnder": [],
+          "activeInVelmere": false
+        }
+      },
+      "displayUseAllowed": false,
+      "commercialUseAllowed": false,
+      "redistributionAllowed": false,
+      "modelTrainingAllowed": false,
+      "contractRequired": true,
+      "truthBoundary": "Twelve Data individual plans (Basic/Grow/Pro/Ultra) DO NOT grant commercial display to third parties. Velmère may NOT route Twelve Data data into a paid public-facing surface on an individual plan. Business plans allow commercial display; redistribution still requires a separate agreement.",
+      "evidence": [
+        {
+          "type": "official_pricing_snapshot",
+          "label": "Twelve Data Plans page (Individual vs Business) — current as of 2026-09-02",
+          "retrievedAt": "2026-09-02",
+          "scope": "Individual plans: personal/internal/non-production, no commercial third-party display. Business plans: commercial display allowed; redistribution requires separate agreement",
+          "url": "https://twelvedata.com/pricing"
+        }
+      ]
+    }
+  ],
+  "firstPartyPlanes": [
+    {
+      "id": "velmere_risk_engine",
+      "sourceFamilies": [
+        "canonical_fact_packet"
+      ],
+      "rightsState": "FIRST_PARTY_CODE_ONLY",
+      "commercialUseAllowed": true,
+      "providerBoundEvidence": false
+    },
+    {
+      "id": "velmere_static_audit_pipeline",
+      "sourceFamilies": [
+        "static_analyzer"
+      ],
+      "rightsState": "FIRST_PARTY_CODE_ONLY",
+      "commercialUseAllowed": true,
+      "providerBoundEvidence": false
+    },
+    {
+      "id": "velmere_human_review_queue",
+      "sourceFamilies": [
+        "human_reviewer"
+      ],
+      "rightsState": "WORKFLOW_ONLY_NO_REVIEWER_PROOF",
+      "commercialUseAllowed": false,
+      "providerBoundEvidence": false
+    }
+  ]
+}

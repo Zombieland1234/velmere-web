@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "velmere.pass36.a102r4.approved-auth-boundary-changes.v1",
+  "revisionId": "VELMERE_PASS36_A102R4_ACTION_REQUIRED_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_AND_ACCOUNT_DATA_FAIL_CLOSED_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R3_ACTION_REQUIRED_LOCAL_FULL_REGRESSION_PRODUCT_PDF_AND_RELEASE_INTEGRITY_REBASELINE_NO_REAL_CREDIT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "entries": [
+    {
+      "path": "lib/auth/account-session.ts",
+      "historicalPlaneRevisionId": "VELMERE_PASS36_A89R0_ACCOUNT_AUTH_TENANT_PRIVACY_RED_TEAM_AND_TRUST_CENTER_INTAKE",
+      "historicalByteLength": 15468,
+      "historicalSha256": "601ad1f527ba75a545e5cfce2498ac3a08eb9ea83b9222770515d003dfefb4d9",
+      "currentByteLength": 15126,
+      "currentSha256": "d868eb37ed14c0bddb14e5f72c3247b5da7cfe5be4e2b520ad1d91f5566acc09",
+      "reason": "Remove unsigned preview-header authentication and require signed server-owned cookie/session authority.",
+      "requiredLocalTest": "PASS_A102R4_CLIENT_AUTH_PREVIEW_HEADER_LOCAL_STORAGE_FAIL_CLOSED",
+      "historicalBytesRewritten": false
+    }
+  ],
+  "claims": {
+    "a89HistoricalPassRewritten": false,
+    "freshExactBuildBrowserCredit": false,
+    "realCredit": false,
+    "liveProven": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "This ledger permits one exact current descendant byte change without modifying the frozen A89 policy or receipt. Permission is valid only under A102R4 current authority and does not grant A89 real, staging, build, browser, LIVE or sale credit."
+}

@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "velmere.pass36.a102r44p41.foundry-invariant-policy.v1",
+  "revisionId": "VELMERE_PASS36_A102R44P41_ACTION_REQUIRED_OFFICIAL_FOUNDRY_INVARIANTS_ANVIL_RAW_RPC_EXACT_OFFLINE_FULL_LINUX_RELEASE_NO_LIVE_CREDIT",
+  "parentSourceRevisionId": "VELMERE_PASS36_A102R44P39_ACTION_REQUIRED_AUDIT_PACKET_PARITY_BYTECODE_PROXY_BINDING_AND_EXTERNAL_ACCURACY_REGISTRY_TEST_CYCLE_2_OF_3_NO_LIVE_CREDIT",
+  "parentCheckpointRevisionId": "VELMERE_PASS36_A102R44P40_ACTION_REQUIRED_FULL_QA_OF_FROZEN_R44P39_SOURCE_TEST_CYCLE_3_OF_3_NO_LIVE_CREDIT",
+  "testCycle": "0/3",
+  "classification": "OFFICIAL_FOUNDRY_LOCAL_INVARIANT_FUZZ_REPLAY_AND_ANVIL_RAW_RPC_ONLY",
+  "toolchain": {
+    "foundryRelease": "v1.7.1",
+    "foundryCommit": "4072e48705af9d93e3c0f6e29e93b5e9a40caed8",
+    "officialLinuxAmd64ArchiveSha256": "cf7e688ed0c4c48adffca788b496076e31060b67ac5afe1e43dbb5499c20c88b",
+    "deterministicToolchainArchiveSha256": "cb9c0aca15d6bc733251d779c8784850a0679d2364d419a9093af10b35f4e518",
+    "forgeSha256": "4f77da0810de94325734855d0ad58d70640aa8a5b2a837608ddf8c26da34355c",
+    "castSha256": "ccd95a4607ca3ebfcb88bb90e7235cdb7f0564f5f1afa17478d5fccabbb222cb",
+    "anvilSha256": "10c1c727d6c1de973aeb160e59875b9a9a23464d6e74149ee8abb30b3500311b",
+    "chiselSha256": "a338965386e29b0f76122053031340128a6aca4ef1bbc1ed764b82d2b2ea269d",
+    "solcVersion": "0.8.24+commit.e11b9ed9.Linux.g++",
+    "solcSha256": "fb03a29a517452b9f12bcf459ef37d0a543765bb3bbc911e70a87d6a37c30d5f"
+  },
+  "campaign": {
+    "familyCount": 8,
+    "riskRepetitions": 2,
+    "controlRepetitions": 2,
+    "invariantRuns": 256,
+    "invariantDepth": 64,
+    "seed": "0x414141",
+    "riskReplayTests": 8,
+    "controlReplayTests": 8,
+    "families": [
+      {
+        "id": "vault-solvency",
+        "risk": "VaultRiskInvariant",
+        "control": "VaultControlInvariant",
+        "invariant": "invariant_vault_solvency",
+        "reason": "R44P41_VAULT_INSOLVENT"
+      },
+      {
+        "id": "supply-cap",
+        "risk": "SupplyCapRiskInvariant",
+        "control": "SupplyCapControlInvariant",
+        "invariant": "invariant_supply_cap",
+        "reason": "R44P41_SUPPLY_CAP_BROKEN"
+      },
+      {
+        "id": "owner-integrity",
+        "risk": "OwnershipRiskInvariant",
+        "control": "OwnershipControlInvariant",
+        "invariant": "invariant_owner_integrity",
+        "reason": "R44P41_OWNER_TAKEOVER"
+      },
+      {
+        "id": "bridge-replay",
+        "risk": "BridgeReplayRiskInvariant",
+        "control": "BridgeReplayControlInvariant",
+        "invariant": "invariant_bridge_single_execution",
+        "reason": "R44P41_BRIDGE_REPLAY"
+      },
+      {
+        "id": "pause-bypass",
+        "risk": "PauseRiskInvariant",
+        "control": "PauseControlInvariant",
+        "invariant": "invariant_pause_blocks_movement",
+        "reason": "R44P41_PAUSE_BYPASS"
+      },
+      {
+        "id": "blacklist-bypass",
+        "risk": "BlacklistRiskInvariant",
+        "control": "BlacklistControlInvariant",
+        "invariant": "invariant_blacklist_blocks_movement",
+        "reason": "R44P41_BLACKLIST_BYPASS"
+      },
+      {
+        "id": "fee-cap",
+        "risk": "FeeCapRiskInvariant",
+        "control": "FeeCapControlInvariant",
+        "invariant": "invariant_fee_cap",
+        "reason": "R44P41_FEE_CAP_BROKEN"
+      },
+      {
+        "id": "minimum-quorum",
+        "risk": "QuorumRiskInvariant",
+        "control": "QuorumControlInvariant",
+        "invariant": "invariant_minimum_quorum",
+        "reason": "R44P41_LOW_QUORUM"
+      }
+    ]
+  },
+  "localAnvil": {
+    "chainId": 31341,
+    "requiredContracts": [
+      "RiskVault",
+      "ControlVault"
+    ],
+    "requiredRawRpcMethods": [
+      "eth_chainId",
+      "eth_getTransactionReceipt",
+      "eth_getTransactionByHash",
+      "eth_getBlockByNumber",
+      "eth_getCode",
+      "eth_getBalance",
+      "eth_call"
+    ],
+    "exactRuntimeBytecodeRequired": true,
+    "riskSolvencyReplayRequired": true,
+    "controlSolvencyReplayRequired": true,
+    "realChainCredit": false,
+    "forkReplayCredit": false
+  },
+  "credits": {
+    "officialFoundryExecutionCredit": "CONDITIONAL_ON_PHYSICAL_RECEIPT",
+    "localInvariantCredit": "CONDITIONAL_ON_PHYSICAL_RECEIPT",
+    "replayableCounterexampleCredit": "CONDITIONAL_ON_PHYSICAL_RECEIPT",
+    "localAnvilRawRpcCredit": "CONDITIONAL_ON_PHYSICAL_RECEIPT",
+    "realChainCredit": false,
+    "forkReplayCredit": false,
+    "independentGroundTruthCredit": false,
+    "independentReviewerCredit": false,
+    "customerCredit": false,
+    "paidSaleCredit": false,
+    "liveCredit": false,
+    "worldClassCredit": false
+  },
+  "truthBoundary": "Official Foundry invariant/fuzz execution, replayable local counterexamples and local Anvil raw RPC receipts are engineering evidence only. They do not prove real-chain execution, fork replay, unseen-protocol recall, independent ground truth, human review, customer value, paid-sale readiness, LIVE readiness or world-class accuracy."
+}

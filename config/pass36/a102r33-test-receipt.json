@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "velmere.pass36.a102r33.test-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R33_ACTION_REQUIRED_DIALOG_FOCUS_RETURN_RAPID_REOPEN_NESTED_MODAL_AND_PENDING_OBSERVER_RACE_RECOVERY_NO_REAL_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R32_ACTION_REQUIRED_ROUTE_HASH_INVALID_MISSING_TARGET_TIMEOUT_AND_PREFETCH_INTENT_REENTRY_RECOVERY_NO_REAL_CREDIT",
+  "generatedAt": "2026-07-31T07:15:00.000Z",
+  "status": "PASS_A102R33_DIALOG_FOCUS_RETURN_RACE_BOUNDARY_NO_PROMOTION",
+  "checksPassed": 24,
+  "checksFailed": 0,
+  "localClosure": {
+    "dialogReturnFocusGlobalEpochBound": true,
+    "rapidReopenStaleRestore": false,
+    "nestedDialogFocusEscape": false,
+    "pendingReturnFrameTracked": true,
+    "pendingReturnObserverTracked": true,
+    "pendingReturnTimeoutTracked": true,
+    "productionPromotionCredit": false
+  },
+  "realBrowserRows": 0,
+  "exactBrowserRows": 0,
+  "globalDecision": "NO_GO",
+  "live": false,
+  "saleEnabled": false,
+  "productionApproved": false,
+  "worldClassProven": false,
+  "truthBoundary": "A102R33 proves only local stale dialog return-focus cancellation across rapid reopen, nested dialogs and pending observer/frame/timeout lifecycles. No exact browser, screenshot, staging, rights, legal, customer, LIVE or sale credit."
+}

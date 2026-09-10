@@ -1,0 +1,318 @@
+{
+  "schemaVersion": "velmere.pass36.a102r39.local-regression-receipt.v1",
+  "revisionId": "VELMERE_PASS36_A102R39_ACTION_REQUIRED_CROSS_PLATFORM_SOURCE_MODE_IDENTITY_WINDOWS_UNPACK_AND_POSIX_EXECUTABLE_POLICY_NO_LIVE_CREDIT",
+  "parentRevisionId": "VELMERE_PASS36_A102R38_ACTION_REQUIRED_PRODUCTION_SMOKE_UNIQUE_ASSERTION_RESULT_DENOMINATOR_AND_SOURCE_AUTHORITY_RECONCILIATION_NO_LIVE_CREDIT",
+  "generatedAt": "2026-08-01T05:00:00+02:00",
+  "status": "PASS_A102R39_CROSS_PLATFORM_SOURCE_MODE_AND_RELEASE_INTEGRITY_REGRESSION_ACTION_REQUIRED_NO_FRESH_WINDOWS_BUILD_BROWSER_CREDIT",
+  "checkpointClass": "ACTION_REQUIRED_NON_PASS",
+  "requiredStages": 16,
+  "executedStages": 16,
+  "passedStages": 16,
+  "failedStages": 0,
+  "stages": [
+    {
+      "id": "a102r39-cross-platform-source-mode",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r39-cross-platform-source-mode-policy.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "931cd8c7b618f2a9205dfabc3d888dbd331129a118bad050b2956ca5dd6ca056",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 623,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a58-release-integrity-adversarial",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a58-release-integrity.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "226c3f302165e45d866006ce82436e037e649c741d787564ab86cce454555371",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5810,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r38-smoke-evidence",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r38-production-smoke-evidence-uniqueness.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "9e6f6321fb61192ae00dae1b98c1d062865d7945dc07cb0a6b22f3c7c89fb840",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 946,
+      "stderrBytes": 0
+    },
+    {
+      "id": "production-smoke-contract",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--import",
+        "./scripts/pass11/register-offline-ts-loader.mjs",
+        "scripts/deployment/test-production-smoke-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "3717d0eb692fc9f81c70ad1eff3cbb8eca56df1db30c4d5246cfbb26e386a8a4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 191,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r36-eslint-portability",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r36-eslint-runner-portability.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a540ec4df9ba950f5a8e22bf93b78a2c535ed160855a338bd560f50fe0afbb47",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 5451,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a42-rebaseline",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r39-a42-critical-rebaseline.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "ccf53c9e7dd229d9cb45c1bfdd3e796f491b56a7a54e98140ec7a231529bfd4a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 202,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a42-contract",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-a42-dev-runtime-cache-recovery.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "14fa340ad7d954478fc6fc34020357e0f6b53c48bbfd4606e708594218586703",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 52,
+      "stderrBytes": 0
+    },
+    {
+      "id": "dev-bootstrap",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/velmere-dev-bootstrap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "efc1061199a1e90a1fe2b17c8856633d760cf85f86e2e267211b0c77f86bc9c9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1019,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-dispatch",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-route-dispatch-consolidation.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "7f6bfe77ebff86e2f8c60a4ef1db0aeb35eac91de76a4399dfb485e130e10b3a",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 232,
+      "stderrBytes": 0
+    },
+    {
+      "id": "route-tamper",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/test-route-dispatch-manifest-tamper.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "f71e73c8bc98f0d00f38732093017b8e3b8facd1c05b7d9d8fdf167ac5b2a504",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "lazy-routes",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass15/verify-lazy-route-shells.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "43b3299db195369a4a35927468da6fb21b312f0931ea389dd7b560740b0a6619",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 234,
+      "stderrBytes": 0
+    },
+    {
+      "id": "product-tiers",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-product-tier-content-contract.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "fd0ef75f9a2b6c3fa3a2e0fac0dcd63b532e24ce4509d766b86ef0be63359571",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 132,
+      "stderrBytes": 0
+    },
+    {
+      "id": "zero-budget",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass35/test-zero-budget-functional-roadmap.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "8388074c20d516a98486dc14051740a134610e438b996f9793f8b07002da2357",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 255,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit-generated-next-types",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/test-a102r38-source-audit-generated-next-types.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "a464bad3df513561d8c890c3793ba7074639140488651771369d6eb878209acf",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 231,
+      "stderrBytes": 0
+    },
+    {
+      "id": "source-audit",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/a44-source-integrity-audit.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "8750912f016fb571293dbee951e241c24d2bee8a87514e29b740c0a8a439e8a5",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 206,
+      "stderrBytes": 0
+    },
+    {
+      "id": "a102r39-authority",
+      "command": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "scripts/pass36/verify-a102r39-action-required-authority.mjs"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "passed": true,
+      "stdoutSha256": "174c86ef2d2cf3e6e31ba779d26b52cf49589a720060a7bc80f81212f6937ce6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 639,
+      "stderrBytes": 0
+    }
+  ],
+  "keyDenominators": {
+    "crossPlatformModeChecks": 21,
+    "canonicalExecutablePaths": 23,
+    "a58AdversarialBaselineChecks": 45,
+    "a102r38EvidenceChecks": 46,
+    "productionSmokeContractChecks": 82,
+    "parentA102r36Checks": 39,
+    "a42CriticalFiles": 76,
+    "a42ContractChecks": 126,
+    "routeDispatchChecks": 1480,
+    "routeRoutes": 160,
+    "routeTamperChecks": 7,
+    "lazyRouteChecks": 176,
+    "productTierChecks": 186,
+    "zeroBudgetChecks": 439,
+    "sourceAuditGeneratedNextTypesChecks": 11,
+    "authorityChecks": 28
+  },
+  "sourceAudit": {
+    "filesRead": 5457,
+    "codeFiles": 3362,
+    "syntaxErrors": 0,
+    "missingLocalImports": 0,
+    "missingCssModuleClasses": 0
+  },
+  "localClosure": {
+    "windowsPhysicalModeIsNotAuthority": true,
+    "canonicalArchiveModesPathOwned": true,
+    "posixExactPermissionParity": true,
+    "posixModeLossFailsClosed": true,
+    "windowsSimulatedInventoryParity": true,
+    "allChildProcessesUseExactNodeAndShellFalse": true,
+    "sourceImmutable": true
+  },
+  "environmentBlockers": [
+    {
+      "id": "fresh_exact_windows_node_npm",
+      "requiredNode": "24.18.0",
+      "requiredNpm": "11.16.0",
+      "credit": false
+    },
+    {
+      "id": "fresh_windows_webpack_turbopack_smoke_parity",
+      "credit": false
+    },
+    {
+      "id": "exact_chrome_playwright",
+      "credit": false
+    },
+    {
+      "id": "a77r1_to_a80r1_0_of_4",
+      "credit": false
+    },
+    {
+      "id": "staging_rights_legal_customers",
+      "credit": false
+    }
+  ],
+  "realEvidence": {
+    "actualWindowsExecutionCredit": false,
+    "freshWebpackBuildCredit": false,
+    "freshTurbopackBuildCredit": false,
+    "freshProductionSmokeCredit": false,
+    "exactBrowserCredit": false,
+    "a102ObservationRuns": 0,
+    "stagingStages": 0,
+    "providerRights": 0,
+    "legalDecisions": 0,
+    "customerCohorts": 0
+  },
+  "promotion": {
+    "globalDecision": "NO_GO",
+    "live": false,
+    "saleEnabled": false,
+    "productionApproved": false,
+    "worldClassProven": false
+  },
+  "truthBoundary": "Cross-platform canonical source-mode identity, POSIX negative enforcement, release-integrity wiring and retained local regression only. The win32 branch is simulated from byte-identical source; no actual Windows build, browser, staging, rights, legal, customer, LIVE or sale credit."
+}

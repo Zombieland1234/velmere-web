@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "velmere.pass36.a79.current-root-descendant-manifest.v1",
+  "revisionId": "VELMERE_PASS36_A79R0_EXACT_FINAL_BYTE_BUILD_RUNTIME_AND_BROWSER_EVIDENCE_BINDING_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A78R0_EXACT_RUNTIME_LOCKFILE_DEPENDENCY_BROWSER_BOOTSTRAP_HARDENING",
+  "parentDescendantManifestDigestSha256": "de5c0c9e0d847d44cf0e57e9971f8e2244947150d599af34c3278708806b2f10",
+  "generatedAt": "2026-07-27T10:30:00.000Z",
+  "payload": {
+    "fileCount": 4395,
+    "byteLength": 111088872,
+    "pathSetSha256": "91d3979899cee10b82977132529f4215b0867a807ff2b5c29ab3e63de0772669",
+    "aggregateSha256": "4969276fa1e559a78615c632fcd08fbe01d9c1882755bf64f25f59f58ac6211f"
+  },
+  "exclusions": [
+    "config/pass35/a57-source-manifest.json",
+    "config/pass36/a79-current-root-descendant-manifest.json"
+  ],
+  "claims": {
+    "a78ExactToolchainVerified": false,
+    "exactBuildVerified": false,
+    "exactBrowserVerified": false,
+    "stagingProven": false,
+    "liveProven": false,
+    "saleEnabled": false
+  },
+  "manifestDigestSha256": "e9d70870e84c844573bbdde62217f282a8e27b9951dab93a7f060835cf17fd3e"
+}

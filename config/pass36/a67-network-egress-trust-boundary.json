@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "velmere.pass36.a67.network-egress-trust-boundary.v1",
+  "revisionId": "VELMERE_PASS36_A67R0_NETWORK_EGRESS_CREDENTIAL_AND_SAME_ORIGIN_TRUST_BOUNDARY_HARDENING",
+  "parentRevisionId": "VELMERE_PASS36_A66R0_AUDIT_TOOL_EXECUTION_TRUST_BOUNDARY_HARDENING",
+  "scope": [
+    "server-owned Supabase service-role REST transport",
+    "customer/admin same-origin browser requests",
+    "active and compatibility Real Markets client normalizers",
+    "local and remote Angel provider transport selection",
+    "production raw-fetch sink inventory"
+  ],
+  "requirements": {
+    "singleRawFetchPrimitiveBelowAppAndLib": true,
+    "rawFetchPrimitivePath": "lib/network/fetch-with-deadline.ts",
+    "sameOriginRequestsRequireRootRelativePath": true,
+    "schemeRelativeBackslashAndControlPathsRejected": true,
+    "sameOriginRedirectsRejected": true,
+    "supabaseServiceRoleUsesPinnedConfiguredOriginBroker": true,
+    "supabaseResponseMaximumBytes": 8388608,
+    "supabaseRequestMaximumBytes": 1048576,
+    "supabaseRedirectMaximum": 0,
+    "angelLocalLoopbackUsesDeadlinePrimitive": true,
+    "angelRemoteUsesSafeEgress": true,
+    "dnsPrivateAddressAndSocketPinningRetained": true,
+    "visualChanges": false
+  },
+  "truthBoundary": {
+    "realSupabaseRequestExecuted": false,
+    "realProviderNetworkExecuted": false,
+    "exactFinalByteBuildExecuted": false,
+    "realStagingExecuted": false,
+    "saleEnabled": false,
+    "liveProven": false
+  }
+}

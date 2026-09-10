@@ -1,0 +1,37 @@
+{
+  "attempts": [
+    {
+      "credit": false,
+      "label": "ENGINEERING_RUN1_REJECTED",
+      "lifecycle": "12/12",
+      "reason": "INDEPENDENT_VERIFIER_FIELD_MISMATCH_AND_MUTABLE_WAL_FILE_HASH",
+      "verifier": "43/45"
+    },
+    {
+      "credit": false,
+      "label": "ENGINEERING_RUN2_REJECTED",
+      "lifecycle": "ABORTED_AFTER_12_CASES",
+      "reason": "SQLITE_JOURNAL_MODE_TRANSITION_LOCKED_DATABASE",
+      "verifier": "NOT_RUN"
+    },
+    {
+      "credit": false,
+      "label": "ENGINEERING_RUN3_ACCEPTED_PRE_FREEZE",
+      "lifecycle": "12/12",
+      "reason": "PRE_FREEZE_PARENT_BOUND_VALIDATION_ONLY",
+      "verifier": "45/45"
+    },
+    {
+      "credit": "MATERIALS_ONLY",
+      "label": "FINAL_SOURCE_BOUND_RUN",
+      "lifecycle": "EXPECTED_12/12",
+      "reason": "MUST_BIND_FINAL_R44P32_MANIFEST_AND_AGGREGATE",
+      "verifier": "EXPECTED_45/45"
+    }
+  ],
+  "denominatorReduced": false,
+  "failedAttemptsPreserved": true,
+  "parentRevisionId": "VELMERE_PASS36_A102R44P31_ACTION_REQUIRED_EXTERNAL_CI_LOCALSTACK_STORAGE_KMS_EMAIL10_SIGSTORE_OIDC_AND_PARENT_EXACT_RELEASE_NO_LIVE_CREDIT",
+  "revisionId": "VELMERE_PASS36_A102R44P32_ACTION_REQUIRED_LOCAL_DURABLE_STRIPE_PROTOCOL_LIFECYCLE12_REAL_STRIPE_TEST_BLOCKED_NO_LIVE_CREDIT",
+  "schemaVersion": "velmere.pass36.a102r44p32.local-stripe-attempt-ledger.v1"
+}
