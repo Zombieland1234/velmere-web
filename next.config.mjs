@@ -38,9 +38,6 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ["@wagmi/connectors", "framer-motion", "lucide-react"],
-    turbopackFileSystemCacheForBuild: false,
-    serverSourceMaps: false,
-    preloadEntriesOnStart: false,
   },
   images: {
     remotePatterns: [
