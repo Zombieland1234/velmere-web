@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "velmere.r7.ecb-usage-policy-review.v1",
+  "reviewedAt": "2026-08-24T16:25:00.000Z",
+  "validUntil": "2026-08-31T23:59:59.999Z",
+  "sourceId": "ecb_statistics",
+  "sourceLabel": "European Central Bank / ESCB public statistics",
+  "officialPolicyUrl": "https://www.ecb.europa.eu/stats/ecb_statistics/governance_and_quality_framework/html/usage_policy.en.html",
+  "officialDataApiDocumentationUrl": "https://data.ecb.europa.eu/help/api/data",
+  "officialDataUrl": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+PLN+GBP+TRY.EUR.SP00.A?lastNObservations=3&format=csvdata",
+  "reviewObservation": {
+    "policyTitle": "Policy regarding the reuse of ESCB statistics",
+    "pageCopyrightYear": 2026,
+    "publicStatisticsFreeReuse": true,
+    "commercialUseIncluded": true,
+    "nonCommercialUseIncluded": true,
+    "sourceAttributionRequired": true,
+    "statisticsAndMetadataMustNotBeModified": true,
+    "thirdPartyDataExcludedWithoutOriginatorPermission": true,
+    "continuityNotGuaranteed": true,
+    "accessMayBeRestrictedInExceptionalCircumstances": true
+  },
+  "approvedUse": {
+    "fieldIds": [
+      "market.reference_rate",
+      "market.reference_date"
+    ],
+    "directPublishedPairsOnly": true,
+    "customerDisplay": true,
+    "basicPdfExport": true,
+    "accountArtifactRetention": true,
+    "accountScopedReadback": true,
+    "rawResponseCaching": false,
+    "publicBulkRedistribution": false,
+    "aiRag": false,
+    "externalThirdPartySublicensing": false,
+    "attribution": "Source: ECB statistics.",
+    "statisticsModified": false,
+    "referenceOnly": true,
+    "executableQuote": false,
+    "intradayFreshnessEligible": false,
+    "marketPriceFieldEligible": false,
+    "riskVerdictEligible": false,
+    "paidValueEligible": false
+  },
+  "decision": "GREEN_BOUNDED_REFERENCE_LANE",
+  "decisionBoundary": "Approval is limited to direct ECB-published EUR reference statistics, unchanged and attributed. It does not approve third-party data, executable quotes, intraday market-price claims, trading, paid differentiation or risk verdicts.",
+  "failureBehavior": "Fail closed when the review expires, the response is unavailable or malformed, a requested pair is not directly published, the observation date is invalid, or required attribution/integrity cannot be preserved.",
+  "customerFinalCredit": false,
+  "secretsPresent": false
+}
