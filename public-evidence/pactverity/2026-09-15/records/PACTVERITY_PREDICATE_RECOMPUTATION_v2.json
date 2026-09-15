@@ -1,0 +1,40 @@
+{
+  "schema": "velmere.pactverity.static-predicate-review.v2",
+  "classification": "STATIC_SOURCE_PREDICATES_EXECUTED_NOT_LIVE_API_NOT_R12A_RERUN",
+  "observedAt": "2026-09-14T15:44:22.406081+00:00",
+  "repository": "PactVerityHQ/pactverity",
+  "sourceRef": "b34f4f346eb51e88e172616411d8074cf5832cc8",
+  "file": "benchmark/scenarios.json",
+  "gitBlobSha": "596633aeb0eb46b327b007836939b1a582dd935f",
+  "caseId": "output-integrity-mismatch",
+  "inputs": {
+    "maxLatencyMs": 1000,
+    "measuredLatencyMs": 410,
+    "minUptimeBps": 9900,
+    "uptimeBps": 9990,
+    "maxFreshnessSeconds": 300,
+    "freshnessSeconds": 14,
+    "expectedOutputSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "observedOutputSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "checks": {
+    "latency": true,
+    "uptime": true,
+    "freshness": true,
+    "output_integrity": false
+  },
+  "overall": "fail",
+  "expectedStatuses": [
+    "pass",
+    "pass",
+    "pass",
+    "fail"
+  ],
+  "matchedExpectedStatuses": true,
+  "limits": [
+    "No live Receipt API request or new receipt",
+    "No independent truth validation of source measurements",
+    "R12A claim-core historical record reviewed, not rerun",
+    "Source ref is a Git ref; old pre-scope tree label must not imply full Git-tree equality"
+  ]
+}
