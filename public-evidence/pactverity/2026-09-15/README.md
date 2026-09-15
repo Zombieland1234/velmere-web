@@ -27,7 +27,7 @@ Commit: `b34f4f346eb51e88e172616411d8074cf5832cc8`
 Fixture Git blob: `596633aeb0eb46b327b007836939b1a582dd935f`  
 Upstream runner Git blob: `2ed0bfbfab6a3e8e83b9bd60a2064da8ee2284ef`
 
-The `source/` copies are byte-checked against those Git blob IDs.
+The published `source/scenarios.json` copy is byte-identical to the pinned upstream fixture Git blob.
 
 ## Reproduce the four comparisons
 
@@ -45,7 +45,7 @@ Complete capture is under `run/`: `stdout.json`, `stderr.txt`, `exit-code.txt`, 
 - `records/PACTVERITY_PRE_SCOPE_VELMERE_RESULT.json`
 - `records/VELMERE_PACTVERITY_REPRO_CASE_v1.md`
 
-Their exact SHA-256 digests are listed in `SHA256SUMS.txt` and `manifest.json`.
+Their exact SHA-256 digests are listed in `RECORD_SHA256SUMS.txt`. That checksum file intentionally covers only the three requested review records, avoiding self-referential or mutable auxiliary-file hashing.
 
 ## Stale / re-verification triggers
 
