@@ -1,0 +1,183 @@
+{
+  "schema": "velmere.pactverity.prescope.v1",
+  "subject": {
+    "tree": "b34f4f346eb51e88e172616411d8074cf5832cc8",
+    "scenario": "output-integrity-mismatch",
+    "expectedOutputSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "observedOutputSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "envelope": {
+    "schemaVersion": "velmere.evidence-envelope.v1",
+    "envelopeId": "velmere-pactverity-prescope-20260914",
+    "subject": {
+      "id": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+      "kind": "external_record",
+      "sourceHash": "b34f4f346eb51e88e172616411d8074cf5832cc8",
+      "version": "PactVerity public benchmark main observed 2026-09-14"
+    },
+    "producer": {
+      "name": "Velmere prescope harness",
+      "version": "R12A",
+      "external": false
+    },
+    "evidence": [
+      {
+        "id": "source-tree-pinned",
+        "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+        "state": "VERIFIED_TRUE",
+        "source": "GitHub public source",
+        "statement": "PactVerity main tree observed as b34f4f346eb51e88e172616411d8074cf5832cc8"
+      },
+      {
+        "id": "scenario-published",
+        "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+        "state": "VERIFIED_TRUE",
+        "source": "benchmark/scenarios.json",
+        "statement": "Published scenario output-integrity-mismatch expects FAIL with pass/pass/pass/fail."
+      },
+      {
+        "id": "hash-mismatch-recomputed",
+        "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+        "state": "VERIFIED_TRUE",
+        "source": "Velmere independent recomputation",
+        "statement": "expectedOutputSha256 differs from observedOutputSha256."
+      },
+      {
+        "id": "upstream-api-executed",
+        "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+        "state": "MISSING",
+        "source": "sandbox runtime",
+        "statement": "Live PactVerity Receipt API execution was not completed because external DNS/network access was unavailable."
+      },
+      {
+        "id": "upstream-receipt-verified",
+        "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+        "state": "MISSING",
+        "source": "sandbox runtime",
+        "statement": "No live receipt was created, so current API receipt verification was not observed."
+      }
+    ],
+    "generatedAt": "2026-09-14T10:25:02.681Z",
+    "truthBoundary": "Source-pinned public fixture analysis only. Live PactVerity API execution was attempted separately but blocked by sandbox DNS/network restrictions; no current upstream receipt is claimed."
+  },
+  "results": [
+    {
+      "schemaVersion": "velmere.claim-sufficiency-result.v1",
+      "engine": "Velmere Claim Sufficiency Core",
+      "engineVersion": "velmere.claim-sufficiency-core.v1",
+      "claimId": "pv-source-fixture-mismatch",
+      "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+      "statement": "The pinned public PactVerity fixture contains an output hash mismatch and declares that check as fail.",
+      "verdict": "SUPPORTED",
+      "requirements": [
+        {
+          "requirementId": "r1",
+          "label": "Pinned published scenario",
+          "mode": "all",
+          "critical": true,
+          "status": "SATISFIED",
+          "resolvedEvidenceIds": [
+            "source-tree-pinned",
+            "scenario-published",
+            "hash-mismatch-recomputed"
+          ],
+          "missingEvidenceIds": [],
+          "subjectMismatchEvidenceIds": [],
+          "states": [
+            "VERIFIED_TRUE",
+            "VERIFIED_TRUE",
+            "VERIFIED_TRUE"
+          ],
+          "reason": "all_required_evidence_verified_true"
+        }
+      ],
+      "truthBoundary": "Deterministic claim-to-declared-evidence sufficiency evaluation only. Upstream cryptography, code analysis, market observations, formal proofs and provider assertions are not independently re-verified by this core unless represented by separately verified evidence."
+    },
+    {
+      "schemaVersion": "velmere.claim-sufficiency-result.v1",
+      "engine": "Velmere Claim Sufficiency Core",
+      "engineVersion": "velmere.claim-sufficiency-core.v1",
+      "claimId": "pv-live-api-fails-case",
+      "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+      "statement": "The current live PactVerity Receipt API returns FAIL for this exact fixture.",
+      "verdict": "UNKNOWN",
+      "requirements": [
+        {
+          "requirementId": "r2",
+          "label": "Observed live API execution",
+          "mode": "all",
+          "critical": true,
+          "status": "MISSING",
+          "resolvedEvidenceIds": [
+            "upstream-api-executed"
+          ],
+          "missingEvidenceIds": [],
+          "subjectMismatchEvidenceIds": [],
+          "states": [
+            "MISSING"
+          ],
+          "reason": "required_evidence_not_verified_true"
+        }
+      ],
+      "truthBoundary": "Deterministic claim-to-declared-evidence sufficiency evaluation only. Upstream cryptography, code analysis, market observations, formal proofs and provider assertions are not independently re-verified by this core unless represented by separately verified evidence."
+    },
+    {
+      "schemaVersion": "velmere.claim-sufficiency-result.v1",
+      "engine": "Velmere Claim Sufficiency Core",
+      "engineVersion": "velmere.claim-sufficiency-core.v1",
+      "claimId": "pv-live-receipt-verifies",
+      "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+      "statement": "A receipt created by the current live API for this fixture verifies successfully.",
+      "verdict": "UNKNOWN",
+      "requirements": [
+        {
+          "requirementId": "r3",
+          "label": "Observed receipt verification",
+          "mode": "all",
+          "critical": true,
+          "status": "MISSING",
+          "resolvedEvidenceIds": [
+            "upstream-receipt-verified"
+          ],
+          "missingEvidenceIds": [],
+          "subjectMismatchEvidenceIds": [],
+          "states": [
+            "MISSING"
+          ],
+          "reason": "required_evidence_not_verified_true"
+        }
+      ],
+      "truthBoundary": "Deterministic claim-to-declared-evidence sufficiency evaluation only. Upstream cryptography, code analysis, market observations, formal proofs and provider assertions are not independently re-verified by this core unless represented by separately verified evidence."
+    },
+    {
+      "schemaVersion": "velmere.claim-sufficiency-result.v1",
+      "engine": "Velmere Claim Sufficiency Core",
+      "engineVersion": "velmere.claim-sufficiency-core.v1",
+      "claimId": "pv-original-measurements-true",
+      "subjectId": "pactverity:tree:b34f4f346eb51e88e172616411d8074cf5832cc8:scenario:output-integrity-mismatch",
+      "statement": "The original latency, uptime, freshness and output observations are independently true in the real world.",
+      "verdict": "NOT_COVERED",
+      "requirements": [],
+      "truthBoundary": "Deterministic claim-to-declared-evidence sufficiency evaluation only. Upstream cryptography, code analysis, market observations, formal proofs and provider assertions are not independently re-verified by this core unless represented by separately verified evidence."
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "supported": 1,
+    "partial": 0,
+    "unknown": 2,
+    "contradicted": 0,
+    "notCovered": 1
+  },
+  "staleTriggers": [
+    "PactVerity source tree changes",
+    "benchmark/scenarios.json changes",
+    "benchmark/run.mjs changes",
+    "Receipt API behavior/version changes",
+    "receipt schema or verification rules change"
+  ],
+  "limitations": [
+    "No live PactVerity API receipt was created in this sandbox.",
+    "Fixture values are caller-supplied evidence; their real-world truth was not independently established."
+  ]
+}
