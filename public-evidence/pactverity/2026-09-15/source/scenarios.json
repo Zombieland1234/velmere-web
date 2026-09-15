@@ -1,0 +1,26 @@
+[
+  {
+    "id": "healthy-agent-response",
+    "description": "All evaluated availability checks pass; output hash is intentionally not evaluated.",
+    "expectedOutcome": "pass",
+    "expectedCheckStatuses": ["pass", "pass", "pass", "not_evaluated"],
+    "criteria": { "maxLatencyMs": 900, "minUptimeBps": 9950, "maxFreshnessSeconds": 120, "expectedOutputSha256": "" },
+    "evidence": { "measuredLatencyMs": 642, "uptimeBps": 9988, "freshnessSeconds": 42, "observedOutputSha256": "" }
+  },
+  {
+    "id": "latency-threshold-breach",
+    "description": "Latency exceeds the agreement while uptime and freshness remain within bounds.",
+    "expectedOutcome": "fail",
+    "expectedCheckStatuses": ["fail", "pass", "pass", "not_evaluated"],
+    "criteria": { "maxLatencyMs": 500, "minUptimeBps": 9900, "maxFreshnessSeconds": 180, "expectedOutputSha256": "" },
+    "evidence": { "measuredLatencyMs": 781, "uptimeBps": 9975, "freshnessSeconds": 66, "observedOutputSha256": "" }
+  },
+  {
+    "id": "output-integrity-mismatch",
+    "description": "Availability checks pass but the observed output hash differs from the expected hash.",
+    "expectedOutcome": "fail",
+    "expectedCheckStatuses": ["pass", "pass", "pass", "fail"],
+    "criteria": { "maxLatencyMs": 1000, "minUptimeBps": 9900, "maxFreshnessSeconds": 300, "expectedOutputSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+    "evidence": { "measuredLatencyMs": 410, "uptimeBps": 9990, "freshnessSeconds": 14, "observedOutputSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }
+  }
+]
