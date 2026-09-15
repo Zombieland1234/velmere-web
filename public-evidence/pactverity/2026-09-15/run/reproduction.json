@@ -1,0 +1,12 @@
+{
+  "schema": "velmere.reproduction-capture.v1",
+  "command": "node verify_predicates.mjs\n",
+  "exitCode": 0,
+  "stdoutText": "{\n  \"schema\": \"velmere.pactverity.predicate-reproduction.v1\",\n  \"source\": {\n    \"repository\": \"PactVerityHQ/pactverity\",\n    \"commit\": \"b34f4f346eb51e88e172616411d8074cf5832cc8\",\n    \"file\": \"benchmark/scenarios.json\",\n    \"gitBlobSha\": \"596633aeb0eb46b327b007836939b1a582dd935f\",\n    \"sha256\": \"00511eb9ac8283550489e120036a1ce24d23b2a049da183df06cc425d9d19e9d\"\n  },\n  \"scenario\": \"output-integrity-mismatch\",\n  \"environment\": {\n    \"node\": \"v22.16.0\",\n    \"platform\": \"linux\",\n    \"arch\": \"x64\",\n    \"osRelease\": \"6.18.44\"\n  },\n  \"comparisons\": {\n    \"latency\": {\n      \"expression\": \"measuredLatencyMs <= maxLatencyMs\",\n      \"values\": [\n        410,\n        1000\n      ],\n      \"result\": true\n    },\n    \"uptime\": {\n      \"expression\": \"uptimeBps >= minUptimeBps\",\n      \"values\": [\n        9990,\n        9900\n      ],\n      \"result\": true\n    },\n    \"freshness\": {\n      \"expression\": \"freshnessSeconds <= maxFreshnessSeconds\",\n      \"values\": [\n        14,\n        300\n      ],\n      \"result\": true\n    },\n    \"output_integrity\": {\n      \"expression\": \"observedOutputSha256 === expectedOutputSha256\",\n      \"values\": [\n        \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\n        \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\n      ],\n      \"result\": false\n    }\n  },\n  \"actualStatuses\": [\n    \"pass\",\n    \"pass\",\n    \"pass\",\n    \"fail\"\n  ],\n  \"expectedStatuses\": [\n    \"pass\",\n    \"pass\",\n    \"pass\",\n    \"fail\"\n  ],\n  \"overall\": \"fail\",\n  \"expectedOutcome\": \"fail\",\n  \"matchedExpectedStatuses\": true,\n  \"matchedExpectedOutcome\": true,\n  \"scope\": {\n    \"liveReceiptApiExecuted\": false,\n    \"liveReceiptCreated\": false,\n    \"liveReceiptVerified\": false,\n    \"originalMeasurementsIndependentlyValidated\": false\n  }\n}\n",
+  "stderrText": "",
+  "environment": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "uname": "Linux localhost 6.18.44 #1 SMP Sat Sep 12 15:35:21 UTC 2026 x86_64 GNU/Linux"
+  }
+}
