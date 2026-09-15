@@ -1,0 +1,73 @@
+{
+  "schema": "velmere.pactverity.predicate-reproduction.v1",
+  "source": {
+    "repository": "PactVerityHQ/pactverity",
+    "commit": "b34f4f346eb51e88e172616411d8074cf5832cc8",
+    "file": "benchmark/scenarios.json",
+    "gitBlobSha": "596633aeb0eb46b327b007836939b1a582dd935f",
+    "sha256": "00511eb9ac8283550489e120036a1ce24d23b2a049da183df06cc425d9d19e9d"
+  },
+  "scenario": "output-integrity-mismatch",
+  "environment": {
+    "node": "v22.16.0",
+    "platform": "linux",
+    "arch": "x64",
+    "osRelease": "6.18.44"
+  },
+  "comparisons": {
+    "latency": {
+      "expression": "measuredLatencyMs <= maxLatencyMs",
+      "values": [
+        410,
+        1000
+      ],
+      "result": true
+    },
+    "uptime": {
+      "expression": "uptimeBps >= minUptimeBps",
+      "values": [
+        9990,
+        9900
+      ],
+      "result": true
+    },
+    "freshness": {
+      "expression": "freshnessSeconds <= maxFreshnessSeconds",
+      "values": [
+        14,
+        300
+      ],
+      "result": true
+    },
+    "output_integrity": {
+      "expression": "observedOutputSha256 === expectedOutputSha256",
+      "values": [
+        "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "result": false
+    }
+  },
+  "actualStatuses": [
+    "pass",
+    "pass",
+    "pass",
+    "fail"
+  ],
+  "expectedStatuses": [
+    "pass",
+    "pass",
+    "pass",
+    "fail"
+  ],
+  "overall": "fail",
+  "expectedOutcome": "fail",
+  "matchedExpectedStatuses": true,
+  "matchedExpectedOutcome": true,
+  "scope": {
+    "liveReceiptApiExecuted": false,
+    "liveReceiptCreated": false,
+    "liveReceiptVerified": false,
+    "originalMeasurementsIndependentlyValidated": false
+  }
+}
