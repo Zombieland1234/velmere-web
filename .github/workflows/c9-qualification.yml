@@ -1,0 +1,151 @@
+name: C9 real-source qualification and frozen external corpus
+on:
+  push:
+    branches: [c9/r16-regression-qualification-20260917]
+permissions:
+  contents: read
+concurrency:
+  group: c9-release-qualification
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    outputs:
+      materialized: ${{ steps.stage.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - id: stage
+        name: Integrate hash-locked reviewed files on this branch only
+        env:
+          C9_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c9-stage ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$GITHUB_REF_NAME" = 'c9/r16-regression-qualification-20260917'
+          test "$(git rev-parse HEAD^)" = '0609ef1c5aeecfab6de3ada8144efaa089064c71'
+          python3 - <<'PY'
+          from pathlib import Path
+          import gzip,json,hashlib,subprocess
+          raw=b''.join(Path(f'scripts/c9-stage/part{i}.bin').read_bytes() for i in range(4))
+          assert hashlib.sha256(raw).hexdigest()=='5662d326b123f91918faf9c0ddcc7f247b145b4c8046ba7960a0c3b0c5f1f847'
+          data=gzip.decompress(raw);assert len(data)<200000
+          files=json.loads(data);assert len(files)==12
+          patch=files.pop('scripts/c9/reviewed.runtime.patch')
+          assert hashlib.sha256(patch.encode()).hexdigest()=='77ba8a3a37a055c4bdb523ef6a267a1205352a2d11202e3a2c53990dedb88415'
+          for name,text in files.items():
+            p=Path(name);assert not p.is_absolute() and '..' not in p.parts and not p.exists()
+            assert name.startswith('scripts/c9/') or name in ('lib/security/solidity-guard-proof.mjs','tsconfig.c9-tests.json')
+            p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+          Path('/tmp/c9.patch').write_text(patch)
+          subprocess.run(['git','apply','--check','/tmp/c9.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c9.patch'],check=True)
+          PY
+          git rm -r scripts/c9-stage
+          git diff --check
+          git config user.name 'Velmere C9 source integration'
+          git config user.email 'c9-integration@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c9): constrain mutex suppression and correct EVM bytecode boundaries'
+          cat > /tmp/c9-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C9_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c9-askpass.sh
+          GIT_ASKPASS=/tmp/c9-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c9/r16-regression-qualification-20260917
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+          echo 'Source integrated; a fresh exact-SHA trigger is required for qualification.'
+          git rev-parse HEAD
+  qualify:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Full source and current regression qualification
+        run: python3 scripts/c9/qualify.py
+      - name: Actual build browser, scans, manifest and source export
+        if: always()
+        run: python3 scripts/c9/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c9-source-${{ github.run_id }}
+          path: /tmp/c9-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c9-evidence-${{ github.run_id }}
+          path: /tmp/c9-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Preserve technical failures; no release promotion
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,sys
+          p=pathlib.Path('/tmp/c9-evidence/RELEASE_GATE.json')
+          if not p.exists():sys.exit('NO_GO: no release evidence')
+          gate=json.loads(p.read_text());print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:sys.exit(1)
+          PY
+  external-corpus:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Freeze >=1000 distinct external runtime inputs then compare C8/C9
+        run: bash scripts/c9/benchmark.sh
+      - name: Hash corpus evidence and preserve failed/partial run status
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,datetime
+          p=Path('/tmp/c9-benchmark');p.mkdir(exist_ok=True)
+          for f in [p/'private-inputs.json',*p.glob('*-engine.cjs')]:
+            if f.exists():f.unlink()
+          entries=[dict(path=str(f.relative_to(p)),bytes=f.stat().st_size,sha256=hashlib.sha256(f.read_bytes()).hexdigest()) for f in sorted(p.rglob('*')) if f.is_file()]
+          (p/'EVIDENCE_MANIFEST.json').write_text(json.dumps(dict(sourceSha=os.environ['GITHUB_SHA'],runId=os.environ['GITHUB_RUN_ID'],at=datetime.datetime.now(datetime.timezone.utc).isoformat(),comparisonPresent=(p/'COMPARISON.json').exists(),files=entries),indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c9-external-corpus-${{ github.run_id }}
+          path: /tmp/c9-benchmark
+          retention-days: 14
+          if-no-files-found: error
