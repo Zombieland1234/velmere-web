@@ -176,7 +176,7 @@ export interface StandardFindingV2 {
   findingId: string;
   /** Candidate findings are surfaced for review but excluded from numeric risk scoring. */
   claimState?: "DETECTOR_FINDING" | "HEURISTIC_CANDIDATE";
-  analysisMethod?: "BYTECODE_CFG_HEURISTIC" | "STRUCTURED_SOURCE_HEURISTIC" | "SIMULATION";
+  analysisMethod?: "BYTECODE_CFG_HEURISTIC" | "STRUCTURED_SOURCE_HEURISTIC" | "SUBMITTED_SOURCE_HEURISTIC" | "SIMULATION";
   limitations?: string[];
   title: string;
   severity: SeverityLevel;
