@@ -12,6 +12,7 @@
 
 import { StandardFindingV2, PrivilegeGraph, PrivilegeRole, SeverityLevel } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { evidenceSha256 } from "./evidence-integrity";
 
 export interface AccessControlAnalysisResult {
   hasVulnerability: boolean;
@@ -103,7 +104,7 @@ export function analyzeContextualAccessControl(
       evidence: {
         opcodeTraceExcerpt: `PC 0x${originPc.toString(16)}: ORIGIN -> PUSH20/SLOAD -> EQ`,
         disassemblyContext: "EVM ORIGIN opcode evaluated in conditional authorization jump.",
-        hashProof: `sha256:${Buffer.from(`txorigin-${originPc}`).toString("hex")}`,
+        hashProof: evidenceSha256(`txorigin-${originPc}`),
       },
       remediation: {
         strategy: "Replace tx.origin with msg.sender to guarantee immediate caller authentication.",
@@ -112,8 +113,6 @@ export function analyzeContextualAccessControl(
 @@ -5,3 +5,3 @@
 -    require(tx.origin == owner, "Not owner");
 +    require(msg.sender == owner, "Not owner");`,
-        appliedSuccessfully: true,
-        regressionPassed: true,
       },
       verificationState: "AUTOMATED",
     });
@@ -163,7 +162,7 @@ export function analyzeContextualAccessControl(
       evidence: {
         opcodeTraceExcerpt: `Dispatcher: 0xf2fde38b (transferOwnership) present, 0x79ba5097 (acceptOwnership) absent.`,
         disassemblyContext: "Single-step transfer pattern identified without pending ownership two-step handshake.",
-        hashProof: `sha256:${Buffer.from(`single-step-${pc}`).toString("hex")}`,
+        hashProof: evidenceSha256(`single-step-${pc}`),
       },
       remediation: {
         strategy: "Inherit OpenZeppelin Ownable2Step to require pending owner claim before role reassignment.",
@@ -174,8 +173,6 @@ export function analyzeContextualAccessControl(
 -contract ProtocolToken is Ownable {
 +import "@openzeppelin/contracts/access/Ownable2Step.sol";
 +contract ProtocolToken is Ownable2Step {`,
-        appliedSuccessfully: true,
-        regressionPassed: true,
       },
       verificationState: "AUTOMATED",
     });
@@ -186,8 +183,6 @@ export function analyzeContextualAccessControl(
   if (selectorsDiscovered.has(mintSelector)) {
     // If the contract has mint and lacks owner/admin checks in the dispatcher branch
     const pc = selectorsDiscovered.get(mintSelector)!;
-    // Check if caller opcode is checked near this selector
-    const hasCallerCheck = cfg.totalInstructions > 100; // heuristic check
     // If source exists and does not contain onlyOwner/onlyRole on mint
     if (sourceCode && sourceCode.includes("function mint(") && !sourceCode.includes("onlyOwner") && !sourceCode.includes("onlyRole")) {
       hasUnprotectedMinter = true;
@@ -218,7 +213,7 @@ export function analyzeContextualAccessControl(
         evidence: {
           opcodeTraceExcerpt: `Selector 0x40c10f19 dispatched without CALLER == owner validation`,
           disassemblyContext: "Publicly exposed mint function without access modifier",
-          hashProof: `sha256:${Buffer.from(`mint-${pc}`).toString("hex")}`,
+          hashProof: evidenceSha256(`mint-${pc}`),
         },
         remediation: {
           strategy: "Restrict minting function with onlyOwner or dedicated AccessControl MINTER_ROLE.",
@@ -242,7 +237,7 @@ export function analyzeContextualAccessControl(
     !sourceCode.includes("onlyRole")
   ) {
     findings.push({
-      findingId: "VLM-SEC-AUTH-UNPROTECTED-MINT-03",
+      findingId: "VLM-SEC-AUTH-ARBITRARY-BURN-04",
       title: "Arbitrary Third-Party Token Burn Flaw (SafeMoon Incident Model)",
       severity: "critical",
       confidence: "certain",
@@ -273,7 +268,7 @@ export function analyzeContextualAccessControl(
       evidence: {
         opcodeTraceExcerpt: "burn(address,uint256) subtracts balance from arbitrary 'from' parameter without allowance or caller verification",
         disassemblyContext: "Public burn function lacks authorization modifier.",
-        hashProof: `sha256:${Buffer.from(`safemoon-burn-${contractAddress}`).toString("hex")}`,
+        hashProof: evidenceSha256(`safemoon-burn-${contractAddress}`),
       },
       remediation: {
         strategy: "Ensure burn only burns from msg.sender or enforces allowance: require(from == msg.sender || allowance[from][msg.sender] >= amount).",
@@ -282,8 +277,6 @@ export function analyzeContextualAccessControl(
 @@ -10,2 +10,4 @@
      function burn(address from, uint256 amount) external {
 +        require(from == msg.sender, "Can only burn own tokens");`,
-        appliedSuccessfully: true,
-        regressionPassed: true,
       },
       verificationState: "AUTOMATED",
     });
@@ -330,7 +323,7 @@ export function analyzeContextualAccessControl(
         evidence: {
           opcodeTraceExcerpt: `Dispatcher: initialize() exposed without constructor _disableInitializers() lock.`,
           disassemblyContext: "Upgradeable contract lacks constructor initializer protection.",
-          hashProof: `sha256:${Buffer.from(`init-${pc}`).toString("hex")}`,
+          hashProof: evidenceSha256(`init-${pc}`),
         },
         remediation: {
           strategy: "Lock implementation initializers inside the constructor with OpenZeppelin _disableInitializers().",

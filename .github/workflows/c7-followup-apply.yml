@@ -1,0 +1,48 @@
+name: C7 follow-up truth patch apply
+on:
+  push:
+    branches: [c7/engine-integrity-20260917]
+    paths:
+      - scripts/c7/C7_FOLLOWUP_TRUTH_AND_GUARD.patch
+permissions:
+  contents: write
+concurrency:
+  group: c7-followup-truth-apply
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - name: Verify and apply reviewed patch exactly once
+        env:
+          C7_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = "c7/engine-integrity-20260917"
+          test -f scripts/c7/C7_FOLLOWUP_TRUTH_AND_GUARD.patch
+          test "$(sha256sum scripts/c7/C7_FOLLOWUP_TRUTH_AND_GUARD.patch | cut -d' ' -f1)" = "1da86f6e954520b376d85424331b6c475fb5ebafd54d3d0db99b3323f4f3e6ed"
+          if [ -f release/c7/C7_FOLLOWUP_TRUTH_APPLIED ]; then
+            echo "Already applied"
+            exit 0
+          fi
+          git apply --check scripts/c7/C7_FOLLOWUP_TRUTH_AND_GUARD.patch
+          git apply scripts/c7/C7_FOLLOWUP_TRUTH_AND_GUARD.patch
+          mkdir -p release/c7
+          printf 'seedSha=%s\npatchSha256=%s\nappliedAt=%s\n' "$GITHUB_SHA" "1da86f6e954520b376d85424331b6c475fb5ebafd54d3d0db99b3323f4f3e6ed" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > release/c7/C7_FOLLOWUP_TRUTH_APPLIED
+          git rm scripts/c7/C7_FOLLOWUP_TRUTH_AND_GUARD.patch
+          git diff --check
+          git config user.name 'Velmere C7 qualification'
+          git config user.email 'c7-qualification@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c7): fail closed on guard names and unexecuted exploit claims'
+          cat > /tmp/c7-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C7_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c7-askpass.sh
+          export GIT_ASKPASS=/tmp/c7-askpass.sh GIT_TERMINAL_PROMPT=0
+          git push origin HEAD:refs/heads/c7/engine-integrity-20260917

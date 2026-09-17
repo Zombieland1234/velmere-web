@@ -13,6 +13,7 @@
 
 import { DefiEconomicAttackSimulation, StandardFindingV2 } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { evidenceSha256 } from "./evidence-integrity";
 
 export interface EconomicAnalysisResult {
   hasVulnerability: boolean;
@@ -66,11 +67,11 @@ export function simulateDefiEconomicAttacks(
         attackType: "ERC4626_VAULT_INFLATION",
         classification: "SIMULATION / ESTIMATE / ASSUMPTIONS",
         targetContract: contractAddress,
-        capitalRequiredUsd: 25000,
-        estimatedProfitUsd: 14200,
-        maximumLossUsd: 500, // Tx fees if front-run
-        priceImpactPercent: 99.9,
-        gasCostEstimatedGwei: 45,
+        capitalRequiredUsd: null,
+        estimatedProfitUsd: null,
+        maximumLossUsd: null,
+        priceImpactPercent: null,
+        gasCostEstimatedGwei: null,
         attackSequence: [
           {
             step: 1,
@@ -114,6 +115,7 @@ export function simulateDefiEconomicAttacks(
           },
         ],
         requiredAssumptions: [
+          "No live market, gas, liquidity or target-state inputs were supplied; quantitative USD/impact/gas fields are withheld.",
           "Target vault has 0 initial totalShares (newly deployed or fully drained).",
           "Attacker front-runs first victim deposit in public mempool.",
           "Vault calculates convertToShares using integer division rounding down without virtual shares offset.",
@@ -124,12 +126,15 @@ export function simulateDefiEconomicAttacks(
 
       findings.push({
         findingId: "VLM-SEC-DEFI-VAULT-INFLATION-01",
-        title: "ERC-4626 Vault Inflation (First-Depositor Share Rounding Exploit)",
+        claimState: "HEURISTIC_CANDIDATE",
+        analysisMethod: "SIMULATION",
+        limitations: ["No target-state execution or live economic inputs; candidate requires adversarial reproduction."],
+        title: "Heuristic candidate: ERC-4626 vault-inflation exposure",
         severity: "critical",
-        confidence: "high",
-        exploitability: "active_exploit",
+        confidence: "medium",
+        exploitability: "theoretical",
         impact:
-          "The first depositor can deposit 1 wei and transfer substantial underlying assets directly to the vault, inflating the share price such that subsequent depositors suffer devastating rounding-down losses.",
+          "If the deployed vault uses vulnerable first-depositor share math without an effective offset/minimum-liquidity defense, donation-based share-price manipulation may harm later depositors. The executed path is not proved here.",
         likelihood: "high",
         taxonomy: {
           swcId: "SWC-101",
@@ -143,7 +148,7 @@ export function simulateDefiEconomicAttacks(
         executionPath: ["deposit()", "totalAssets()", "convertToShares()", "integer division truncation"],
         stateDependencies: { storageSlotsRead: ["totalSupply", "totalAssets"], storageSlotsWritten: ["totalSupply", "shares"] },
         attackScenario:
-          "1. Attacker observes empty vault and deposits 1 wei, minting 1 share.\n2. Attacker transfers 10 ether directly to the vault via ERC-20 transfer, setting totalAssets = 10 ether + 1 wei and totalSupply = 1.\n3. Victim deposits 19 ether. Vault computes: (19 ether * 1) / (10 ether + 1) = 1 share.\n4. Vault now has 29 ether and 2 shares. Each share is worth 14.5 ether.\n5. Attacker redeems 1 share, receiving 14.5 ether for an initial outlay of 10 ether + 1 wei, stealing 4.5 ether from victim.",
+          "ILLUSTRATIVE ONLY: model a first deposit, direct donation, later victim deposit and redemption. Exact share output, profitability and reachability must be reproduced against the target state before confirmation.",
         proofOfConcept: {
           summary: "First depositor 1-wei mint followed by direct donation rounding manipulation",
           sequence: [
@@ -154,9 +159,9 @@ export function simulateDefiEconomicAttacks(
           ],
         },
         evidence: {
-          opcodeTraceExcerpt: `DIV opcode in convertToShares without _decimalsOffset() virtual shares buffer`,
-          disassemblyContext: "ERC-4626 vault implementation without minimum liquidity burn or virtual assets/shares offset.",
-          hashProof: `sha256:${Buffer.from(`vault-inflation-${contractAddress}`).toString("hex")}`,
+          opcodeTraceExcerpt: "ERC-4626 selector/source heuristic; executed DIV/share path not proved",
+          disassemblyContext: "Potential ERC-4626 surface with no recognized virtual-share/minimum-liquidity token in the bounded source heuristic; compiler AST and runtime path not verified.",
+          hashProof: evidenceSha256(`vault-inflation-${contractAddress}`),
         },
         remediation: {
           strategy: "Implement OpenZeppelin ERC4626 with _decimalsOffset() (virtual shares) or burn the first 1000 shares to address(0).",
@@ -169,8 +174,6 @@ export function simulateDefiEconomicAttacks(
 +    function _decimalsOffset() internal view virtual override returns (uint8) {
 +        return 3;
 +    }`,
-          appliedSuccessfully: true,
-          regressionPassed: true,
         },
         verificationState: "SIMULATED",
       });
@@ -183,13 +186,16 @@ export function simulateDefiEconomicAttacks(
     !cleanSource.includes("checkLiquidity")
   ) {
     findings.push({
-      findingId: "VLM-SEC-DEFI-VAULT-INFLATION-01",
-      title: "Uncollateralized Reserve Donation Liquidation Exploit (Euler Finance Incident Model)",
+      findingId: "VLM-SEC-DEFI-RESERVE-DONATION-02",
+      claimState: "HEURISTIC_CANDIDATE",
+      analysisMethod: "SIMULATION",
+      limitations: ["Source-pattern candidate only; no target execution or solvency-state proof."],
+      title: "Heuristic candidate: reserve-donation solvency exposure",
       severity: "critical",
-      confidence: "high",
-      exploitability: "active_exploit",
+      confidence: "medium",
+      exploitability: "theoretical",
       impact:
-        "Borrowers can donate their own collateral to protocol reserves without checking account solvency, driving themselves into artificial liquidation at a massive collateral discount.",
+        "A reserve-donation path without an effective post-state solvency check can create liquidation/accounting risk. This source-pattern check does not prove the target path is reachable or economically exploitable.",
       likelihood: "high",
       taxonomy: {
         swcId: "SWC-101",
@@ -203,7 +209,7 @@ export function simulateDefiEconomicAttacks(
       executionPath: ["donateToReserves()", "reserve transfer without checkLiquidity()", "Self-liquidation discount extraction"],
       stateDependencies: { storageSlotsRead: ["collateralBalances"], storageSlotsWritten: ["collateralBalances", "reserves"] },
       attackScenario:
-        "1. Attacker takes flash loan and deposits collateral, borrowing maximum allowable funds.\n2. Attacker donates large collateral to reserves via donateToReserves().\n3. Account is pushed severely underwater without triggering an immediate revert.\n4. Attacker uses another address to liquidate underwater account, buying collateral at 20% liquidation discount.\n5. Attacker pockets profit and repays flash loan.",
+        "ILLUSTRATIVE ONLY: reproduce donation, resulting health-factor transition and liquidation economics on the target before treating this as an exploit path.",
       proofOfConcept: {
         summary: "Self-liquidation via unverified reserve donation",
         sequence: [
@@ -213,9 +219,9 @@ export function simulateDefiEconomicAttacks(
         ],
       },
       evidence: {
-        opcodeTraceExcerpt: "donateToReserves executes without checkLiquidity / solvency assertion",
-        disassemblyContext: "Missing health check after collateral state modification.",
-        hashProof: `sha256:${Buffer.from(`euler-${contractAddress}`).toString("hex")}`,
+        opcodeTraceExcerpt: "Source-pattern observation: donateToReserves token present and checkLiquidity token absent; no executed opcode path claimed",
+        disassemblyContext: "Bounded source heuristic only; compiler AST, aliases and equivalent solvency checks may change the conclusion.",
+        hashProof: evidenceSha256(`euler-${contractAddress}`),
       },
       remediation: {
         strategy: "Ensure checkLiquidity(msg.sender) is enforced in donateToReserves or disallow self-donation.",
@@ -224,8 +230,6 @@ export function simulateDefiEconomicAttacks(
 @@ -20,3 +20,4 @@
      function donateToReserves(uint256 amount) external {
 +        require(checkLiquidity(msg.sender), "Insolvent after donation");`,
-        appliedSuccessfully: true,
-        regressionPassed: true,
       },
       verificationState: "SIMULATED",
     });
@@ -267,11 +271,11 @@ export function simulateDefiEconomicAttacks(
       attackType: "SANDWICH_MEV_DRAIN",
       classification: "SIMULATION / ESTIMATE / ASSUMPTIONS",
       targetContract: contractAddress,
-      capitalRequiredUsd: 150000,
-      estimatedProfitUsd: 4800,
-      maximumLossUsd: 350,
-      priceImpactPercent: 4.8,
-      gasCostEstimatedGwei: 85,
+      capitalRequiredUsd: null,
+      estimatedProfitUsd: null,
+      maximumLossUsd: null,
+      priceImpactPercent: null,
+      gasCostEstimatedGwei: null,
       attackSequence: [
         {
           step: 1,
@@ -299,6 +303,7 @@ export function simulateDefiEconomicAttacks(
         },
       ],
       requiredAssumptions: [
+        "No live market, gas, liquidity or target-state inputs were supplied; quantitative USD/impact/gas fields are withheld.",
         "Mempool is public and victim trade specifies loose slippage tolerance (>= 3%).",
         "Block builder accepts bundle via Flashbots / private RPC.",
       ],
@@ -327,12 +332,15 @@ export function simulateDefiEconomicAttacks(
     if (!hasInitiatorCheck) {
       findings.push({
         findingId: "VLM-SEC-DEFI-FLASH-CALLBACK-01",
-        title: "Unprotected Flash Loan Callback (Missing Initiator/Lender Authorization)",
+        claimState: "HEURISTIC_CANDIDATE",
+        analysisMethod: "SIMULATION",
+        limitations: ["Callback/caller checks are source/selector heuristics; no malicious flash-loan execution was performed."],
+        title: "Heuristic candidate: flash-loan callback authorization gap",
         severity: "critical",
-        confidence: "high",
-        exploitability: "active_exploit",
+        confidence: "medium",
+        exploitability: "theoretical",
         impact:
-          "The flash loan callback (onFlashLoan / executeOperation) lacks caller verification (msg.sender == lender) and initiator verification (initiator == address(this)). Any external attacker can trigger arbitrary flash loans targeting this contract and drain its token reserves via repayment fees or unauthorized trade executions.",
+          "If the reachable callback lacks equivalent lender/initiator authorization, arbitrary invocation can create fee or execution risk. The bounded source/selector check does not prove an exploitable callback path.",
         likelihood: "high",
         taxonomy: {
           swcId: "SWC-105",
@@ -346,19 +354,19 @@ export function simulateDefiEconomicAttacks(
         executionPath: ["External Flash Loan initiation", "Callback triggered", "Missing caller/initiator guard", "Repayment fee deducted"],
         stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
         attackScenario:
-          "1. Attacker calls lender.flashLoan(victim, token, maxAmount, data).\n2. Lender transfers tokens to victim and invokes victim.onFlashLoan().\n3. Because victim lacks initiator verification, callback executes without error.\n4. Lender pulls back principal plus flash loan fee from victim's reserves.\n5. Repeating this in a loop completely drains victim contract's balance.",
+          "UNEXECUTED hypothesis: attempt an unauthorized lender/initiator callback against the deployed target and verify whether caller checks, state transitions and repayment approvals permit loss.",
         proofOfConcept: {
-          summary: "Arbitrary attacker triggers flash loan on victim receiver, draining balance via flash loan fees.",
+          summary: "UNEXECUTED hypothesis: unauthorized flash-loan initiation may expose callback fee/state paths if caller and initiator checks are absent.",
           sequence: [
             { step: 1, actor: "Attacker", call: "flashLender.flashLoan(victim, token, amount, '')", expectation: "Callback invoked on victim" },
-            { step: 2, actor: "Victim Contract", call: "onFlashLoan(attacker, token, amount, fee, '')", expectation: "Executes without revert due to missing auth" },
-            { step: 3, actor: "Flash Lender", call: "token.transferFrom(victim, lender, amount + fee)", expectation: "Victim funds drained" }
+            { step: 2, actor: "Victim Contract", call: "onFlashLoan(attacker, token, amount, fee, '')", expectation: "Determine whether unauthorized callback is rejected before privileged effects" },
+            { step: 3, actor: "Flash Lender", call: "token.transferFrom(victim, lender, amount + fee)", expectation: "Confirm whether any target funds/state can actually be affected" }
           ]
         },
         evidence: {
-          opcodeTraceExcerpt: "CALLDATALOAD(0x00) -> onFlashLoan -> NO CALLER CHECK -> RETURN",
-          disassemblyContext: "Missing REQUIRE EQ(CALLER, LENDER) and EQ(INITIATOR, ADDRESS)",
-          hashProof: "0x" + Buffer.from(contractAddress + ":FLASH_CALLBACK_AUTH").toString("hex").slice(0, 64)
+          opcodeTraceExcerpt: "Flash-loan callback selector/source token observed; executed caller-check path not proved",
+          disassemblyContext: "No recognized caller/initiator check in the bounded source heuristic; equivalent guards and bytecode reachability are not excluded.",
+          hashProof: evidenceSha256(`${contractAddress}:FLASH_CALLBACK_AUTH`)
         },
         remediation: {
           strategy: "Enforce strict caller and initiator checks in flash loan callback: require(msg.sender == address(lender), 'Unauthorized lender'); require(initiator == address(this), 'Untrusted loan initiator');",

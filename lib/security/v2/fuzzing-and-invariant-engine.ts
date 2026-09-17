@@ -1,12 +1,12 @@
 /**
- * Velmère Security Engine V2 — Fuzzing & Invariant Verification Engine
+ * Velmère Security Engine V2 — Synthetic Property Fuzzing & Invariant Model Engine
  *
- * Implements property-based testing and mutational fuzzing inspired by
+ * Runs a synthetic balance-state model inspired by property-based testing tools such as
  * Echidna, Medusa, and Foundry invariant suites:
- * - Dynamic invariant inference based on contract type (ERC-20, Vault, Lending)
+ * - Model invariant definitions selected from contract type hints
  * - Multi-actor call sequence generation (Actor A -> Actor B -> Actor C)
  * - Mutational fuzzing (boundary values, extreme numbers, zero address)
- * - Automatic failure minimization (sequence shrinking)
+ * - Synthetic-model failure minimization (sequence shrinking)
  * - Corpus persistence with deterministic seeds.
  */
 
@@ -46,6 +46,8 @@ export function runFuzzAndInvariantCampaign(
       formalExpression: "forall s in States: s.totalSupply == sum(s.balances)",
       category: "SUPPLY_CONSERVATION",
       passed: true,
+      evaluationScope: "SYNTHETIC_BALANCE_MODEL_ONLY",
+      targetEvaluated: false,
     },
     {
       id: "INV-02-NO-UNAUTHORIZED-MINT",
@@ -54,6 +56,8 @@ export function runFuzzAndInvariantCampaign(
       formalExpression: "forall a not in Admins: State.totalSupply after a.mint() == revert",
       category: "NO_UNAUTHORIZED_MINT",
       passed: true,
+      evaluationScope: "SYNTHETIC_BALANCE_MODEL_ONLY",
+      targetEvaluated: false,
     },
     {
       id: "INV-03-SOLVENCY",
@@ -62,6 +66,8 @@ export function runFuzzAndInvariantCampaign(
       formalExpression: "Vault.totalAssets() >= sum(Vault.sharesOf(u) * sharePrice)",
       category: "SOLVENCY",
       passed: true,
+      evaluationScope: "SYNTHETIC_BALANCE_MODEL_ONLY",
+      targetEvaluated: false,
     },
     {
       id: "INV-04-NO-NEGATIVE-BALANCES",
@@ -70,6 +76,8 @@ export function runFuzzAndInvariantCampaign(
       formalExpression: "forall u in Users: u.balance >= 0",
       category: "BALANCE_MONOTONICITY",
       passed: true,
+      evaluationScope: "SYNTHETIC_BALANCE_MODEL_ONLY",
+      targetEvaluated: false,
     },
   ];
 

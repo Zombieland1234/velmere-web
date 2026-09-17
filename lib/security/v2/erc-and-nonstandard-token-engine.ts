@@ -14,6 +14,19 @@
 
 import { StandardFindingV2 } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { evidenceSha256 } from "./evidence-integrity";
+import { stripCommentsAndStrings } from "../solidity-structured-signal.mjs";
+
+
+function sourceDeclaresTransferWithoutBool(sourceCode: string): boolean {
+  const code = stripCommentsAndStrings(sourceCode);
+  const pattern = /\bfunction\s+transfer\s*\([^)]*\)\s*([^;{]*)(?:[;{])/gim;
+  for (const match of code.matchAll(pattern)) {
+    const tail = match[1] ?? "";
+    if (!/\breturns\s*\(\s*bool(?:\s+[A-Za-z_]\w*)?\s*\)/i.test(tail)) return true;
+  }
+  return false;
+}
 
 export interface ErcConformanceResult {
   isErc20: boolean;
@@ -39,9 +52,6 @@ export function analyzeErcAndTokenQuirks(
   const totalSupplySel = "0x18160ddd";
   const balanceOfSel = "0x70a08231";
   const transferSel = "0xa9059cbb";
-  const transferFromSel = "0x23b872dd";
-  const approveSel = "0x095ea7b3";
-  const allowanceSel = "0xdd62ed3e";
 
   const isErc20 =
     selectorsDiscovered.has(totalSupplySel) &&
@@ -73,18 +83,25 @@ export function analyzeErcAndTokenQuirks(
   // 1. Check for Missing Boolean Return Value (USDT-style non-standard ERC-20)
   // USDT contract address on Ethereum: 0xdac17f958d2ee523a2206206994597c13d831ec7
   const isUsdtKnownAddress = contractAddress.toLowerCase() === "0xdac17f958d2ee523a2206206994597c13d831ec7";
-  const sourceLacksReturnBool = sourceCode && sourceCode.includes("function transfer(") && !sourceCode.includes("returns (bool)");
+  // Source evidence is admitted only when deployed bytecode also exposes the
+  // minimum ERC-20 selector surface. This prevents an unrelated helper named
+  // transfer() from being promoted into a token-standard finding. The source
+  // signature parser is whitespace/comment invariant rather than exact-string.
+  const sourceLacksReturnBool = Boolean(isErc20 && sourceCode && sourceDeclaresTransferWithoutBool(sourceCode));
+  const nonStandardEvidenceBasis = isUsdtKnownAddress
+    ? "KNOWN_MAINNET_USDT_ADDRESS_REFERENCE"
+    : "ERC20_SELECTOR_PLUS_SOURCE_SIGNATURE_HEURISTIC";
 
   if (isUsdtKnownAddress || sourceLacksReturnBool) {
     quirks.push("USDT_MISSING_RETURN_BOOL");
     findings.push({
       findingId: "VLM-SEC-ERC-NON-STANDARD-RETURN-01",
-      title: "Non-Standard ERC-20 Missing Boolean Return Value (USDT / OMNI Pattern)",
+      title: "ERC-20 Transfer Signature May Omit Boolean Return Value",
       severity: "medium",
-      confidence: "certain",
-      exploitability: "active_exploit",
+      confidence: isUsdtKnownAddress ? "high" : "medium",
+      exploitability: "theoretical",
       impact:
-        "Standard IERC20 interfaces expect a 32-byte boolean return value on transfer() and transferFrom(). If a protocol calls this token using standard IERC20, the EVM ABI decoder reverts due to 0 return data length, bricking deposits and withdrawals.",
+        "Standard IERC20 integrations generally expect a boolean return value. A token whose transfer path returns no ABI boolean can cause strict callers to revert; actual impact depends on the caller integration and the executed return path.",
       likelihood: "high",
       taxonomy: {
         swcId: "SWC-104",
@@ -98,9 +115,9 @@ export function analyzeErcAndTokenQuirks(
       executionPath: ["transfer()", "STOP instead of PUSH1 0x01 + RETURN 32"],
       stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
       attackScenario:
-        "1. Vault contract interacts with token using standard IERC20(token).transfer(to, amount).\n2. Token executes state changes but executes STOP (returning 0 bytes) instead of returning true.\n3. Vault ABI decoder reverts because returndatasize == 0 < 32 bytes.\n4. Protocol funds become completely stuck in vault.",
+        "Potential integration failure: a strict IERC20 caller invokes transfer(), the token returns no ABI boolean on the executed path, and the caller reverts while decoding. This engine has not executed that caller/token composition.",
       proofOfConcept: {
-        summary: "IERC20.transfer() revert against non-standard 0-byte return",
+        summary: "UNEXECUTED compatibility hypothesis: verify the deployed transfer return path and the integrating caller's return-data handling",
         sequence: [
           { step: 1, actor: "User", call: "Vault.withdraw()", expectation: "Vault executes IERC20.transfer()" },
           { step: 2, actor: "Token", call: "transfer(user, amount)", expectation: "Token returns 0 bytes (void)" },
@@ -108,9 +125,11 @@ export function analyzeErcAndTokenQuirks(
         ],
       },
       evidence: {
-        opcodeTraceExcerpt: "transfer function terminates with STOP opcode without pushing boolean return data",
-        disassemblyContext: "Token does not conform to EIP-20 boolean return specification.",
-        hashProof: `sha256:${Buffer.from(`usdt-return-${contractAddress}`).toString("hex")}`,
+        opcodeTraceExcerpt: `Evidence basis: ${nonStandardEvidenceBasis}; executed return path not proved`,
+        disassemblyContext: sourceLacksReturnBool
+          ? "Deployed bytecode exposes the minimum ERC-20 selector surface and the bounded source signature parser found transfer(...) without returns(bool)."
+          : "The target address matches the configured Ethereum mainnet USDT reference; this is identity evidence, not a fresh executed return-path proof.",
+        hashProof: evidenceSha256(JSON.stringify({ contractAddress, nonStandardEvidenceBasis, sourceLacksReturnBool })),
       },
       remediation: {
         strategy: "Use OpenZeppelin SafeERC20 (safeTransfer and safeTransferFrom) across all protocol integrations.",
@@ -122,8 +141,6 @@ export function analyzeErcAndTokenQuirks(
 +    using SafeERC20 for IERC20;
 -    IERC20(token).transfer(msg.sender, amount);
 +    IERC20(token).safeTransfer(msg.sender, amount);`,
-        appliedSuccessfully: true,
-        regressionPassed: true,
       },
       verificationState: "AUTOMATED",
     });
@@ -162,7 +179,7 @@ export function analyzeErcAndTokenQuirks(
       evidence: {
         opcodeTraceExcerpt: "Dispatcher contains addBlackList (0x0ecb93c0) mapping modifier",
         disassemblyContext: "Centralized blacklist registry identified.",
-        hashProof: `sha256:${Buffer.from(`blacklist-${contractAddress}`).toString("hex")}`,
+        hashProof: evidenceSha256(`blacklist-${contractAddress}`),
       },
       remediation: {
         strategy: "Disclose centralized freeze risk in documentation or migrate to multi-sig timelock governance.",
