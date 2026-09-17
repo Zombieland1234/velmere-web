@@ -1,0 +1,398 @@
+diff --git a/app/api/auth/email-change/route.ts b/app/api/auth/email-change/route.ts
+index e4d5060..abe8f6b 100644
+--- a/app/api/auth/email-change/route.ts
++++ b/app/api/auth/email-change/route.ts
+@@ -3,7 +3,7 @@ import { beginSupabaseEmailChange, SupabaseAuthFlowError } from "@/lib/auth/supa
+ import { scheduleAuthSecurityEvent } from "@/lib/auth/auth-security-observability";
+ import { applyApiRateLimit, assertSameOriginRequest, rejectLargeContentLength } from "@/lib/security/api-guard";
+ import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
+-import { isProductionLikeEnvironment, validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
++import { isProductionLikeEnvironment, validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
+ 
+ export const runtime = "nodejs";
+ export const dynamic = "force-dynamic";
+@@ -17,6 +17,7 @@ export async function POST(request: Request) {
+   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4719-email-change", limit: 4, windowMs: 15 * 60_000 }); if (!rate.ok) return rate.response;
+   const body = await readBoundedJsonBody<Payload>(request, 8 * 1024, { maxDepth: 2 }); if (!body.ok) return body.response;
+   const exactBody = validateExactObjectKeys(body.value, ["email", "locale"]); if (!exactBody.ok) return exactBody.response;
++  const fieldTypes = validateOptionalStringFields(body.value, ["email", "locale"]); if (!fieldTypes.ok) return fieldTypes.response;
+   const email = body.value.email?.trim().toLowerCase() ?? "";
+   if (!EMAIL.test(email) || email.length > 180) return NextResponse.json({ ok: false, error: "INVALID_EMAIL_CHANGE_INPUT" }, { status: 400, headers: headers() });
+   try {
+diff --git a/app/api/auth/oauth/google/route.ts b/app/api/auth/oauth/google/route.ts
+index 20b9cc2..a2b8525 100644
+--- a/app/api/auth/oauth/google/route.ts
++++ b/app/api/auth/oauth/google/route.ts
+@@ -3,7 +3,7 @@ import { beginSupabaseGoogleOAuth, SupabaseAuthFlowError } from "@/lib/auth/supa
+ import { scheduleAuthSecurityEvent } from "@/lib/auth/auth-security-observability";
+ import { applyApiRateLimit, assertSameOriginRequest, rejectLargeContentLength } from "@/lib/security/api-guard";
+ import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
+-import { isProductionLikeEnvironment, validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
++import { isProductionLikeEnvironment, validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
+ 
+ export const runtime = "nodejs";
+ export const dynamic = "force-dynamic";
+@@ -18,6 +18,7 @@ export async function POST(request: Request) {
+   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4718-google-oauth-start", limit: 8, windowMs: 60_000 }); if (!rate.ok) return rate.response;
+   const body = await readBoundedJsonBody<Payload>(request, 8 * 1024, { maxDepth: 3 }); if (!body.ok) return body.response;
+   const exactBody = validateExactObjectKeys(body.value, ["locale", "returnPath"]); if (!exactBody.ok) return exactBody.response;
++  const fieldTypes = validateOptionalStringFields(body.value, ["locale", "returnPath"]); if (!fieldTypes.ok) return fieldTypes.response;
+   try {
+     const result = await beginSupabaseGoogleOAuth(request, body.value);
+     scheduleAuthSecurityEvent("oauth_started");
+diff --git a/app/api/auth/recovery/route.ts b/app/api/auth/recovery/route.ts
+index 1676e46..b199c46 100644
+--- a/app/api/auth/recovery/route.ts
++++ b/app/api/auth/recovery/route.ts
+@@ -7,7 +7,7 @@ import { appendSetCookieHeaders, buildClearedSupabaseAuthCookieHeaders } from "@
+ import { scheduleAuthSecurityEvent } from "@/lib/auth/auth-security-observability";
+ import { applyApiRateLimit, assertSameOriginRequest, rejectLargeContentLength } from "@/lib/security/api-guard";
+ import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
+-import { isProductionLikeEnvironment, validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
++import { isProductionLikeEnvironment, validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
+ 
+ export const runtime = "nodejs";
+ export const dynamic = "force-dynamic";
+@@ -25,6 +25,7 @@ export async function POST(request: Request) {
+   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4718-password-recovery-request", limit: 5, windowMs: 15 * 60_000 }); if (!rate.ok) return rate.response;
+   const body = await readBoundedJsonBody<RequestPayload>(request, 8 * 1024, { maxDepth: 3 }); if (!body.ok) return body.response;
+   const exactBody = validateExactObjectKeys(body.value, ["email", "locale"]); if (!exactBody.ok) return exactBody.response;
++  const fieldTypes = validateOptionalStringFields(body.value, ["email", "locale"]); if (!fieldTypes.ok) return fieldTypes.response;
+   const email = body.value.email?.trim().toLowerCase() ?? "";
+   if (!EMAIL.test(email) || email.length > 180) return NextResponse.json({ ok: false, error: "INVALID_RECOVERY_INPUT" }, { status: 400, headers: headers() });
+   try {
+@@ -45,6 +46,7 @@ export async function PUT(request: Request) {
+   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4718-password-recovery-update", limit: 5, windowMs: 15 * 60_000 }); if (!rate.ok) return rate.response;
+   const body = await readBoundedJsonBody<UpdatePayload>(request, 8 * 1024, { maxDepth: 2 }); if (!body.ok) return body.response;
+   const exactBody = validateExactObjectKeys(body.value, ["password"]); if (!exactBody.ok) return exactBody.response;
++  const fieldTypes = validateOptionalStringFields(body.value, ["password"]); if (!fieldTypes.ok) return fieldTypes.response;
+   const password = body.value.password ?? "";
+   if (password.length < 10 || password.length > 128) return NextResponse.json({ ok: false, error: "INVALID_NEW_PASSWORD" }, { status: 400, headers: headers() });
+   try {
+diff --git a/app/api/auth/session/route.ts b/app/api/auth/session/route.ts
+index c7f1995..9ca0a52 100644
+--- a/app/api/auth/session/route.ts
++++ b/app/api/auth/session/route.ts
+@@ -11,7 +11,7 @@ import {
+   resolveRequestAccount,
+ } from "@/lib/auth/account-session";
+ import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
+-import { validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
++import { validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
+ import {
+   SupabaseAuthSessionError,
+   establishSupabasePasswordSession,
+@@ -138,6 +138,8 @@ export async function POST(request: Request) {
+   if (!parsedBody.ok) return parsedBody.response;
+   const exactBody = validateExactObjectKeys(parsedBody.value, ["email", "password", "mode", "displayName", "provider", "accountId", "handle", "locale"]);
+   if (!exactBody.ok) return exactBody.response;
++  const fieldTypes = validateOptionalStringFields(parsedBody.value, ["email", "password", "mode", "displayName", "provider", "accountId", "handle", "locale"]);
++  if (!fieldTypes.ok) return fieldTypes.response;
+   const payload = parsedBody.value;
+ 
+   if (payload.provider === "email" || payload.password) {
+diff --git a/lib/payments/stripe-webhook/ingress.ts b/lib/payments/stripe-webhook/ingress.ts
+index 4daeb8b..d4cdbda 100644
+--- a/lib/payments/stripe-webhook/ingress.ts
++++ b/lib/payments/stripe-webhook/ingress.ts
+@@ -207,7 +207,7 @@ async function applyOrdering(
+   }
+ }
+ 
+-export async function handleStripeWebhookRequest(
++async function processStripeWebhookRequest(
+   req: Request,
+   dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
+ ) {
+@@ -255,6 +255,15 @@ export async function handleStripeWebhookRequest(
+     );
+   }
+ 
++  // The SDK authenticates bytes; it does not schema-validate arbitrary signed JSON.
++  if (!event || typeof event !== "object" || Array.isArray(event) ||
++      !event.data || typeof event.data !== "object" || Array.isArray(event.data) ||
++      !event.data.object || typeof event.data.object !== "object" || Array.isArray(event.data.object)) {
++    return NextResponse.json({ received: false, retryable: false, error: "stripe_event_payload_invalid" }, {
++      status: 400, headers: dependencies.customerWebhookHeaders("invalid-payload-rejected"),
++    });
++  }
++
+   const runtimeVerdict = dependencies.validateRuntimeEvent({
+     eventId: event.id,
+     eventType: event.type,
+@@ -367,3 +376,20 @@ export async function handleStripeWebhookRequest(
+     );
+   }
+ }
++
++/** Keep infrastructure failures retryable, including those before dispatch. */
++export async function handleStripeWebhookRequest(
++  req: Request,
++  dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
++): Promise<Response> {
++  try {
++    return await processStripeWebhookRequest(req, dependencies);
++  } catch {
++    // Do not log request bodies, signatures, tokens or raw downstream errors.
++    console.error("[velmere.webhook] dependency_unavailable");
++    return NextResponse.json({ received: false, retryable: true, error: "webhook_temporarily_unavailable" }, {
++      status: 503,
++      headers: { "cache-control": "no-store", "x-content-type-options": "nosniff", "retry-after": "10" },
++    });
++  }
++}
+diff --git a/lib/security/exact-request-boundary.ts b/lib/security/exact-request-boundary.ts
+index 3398179..5939773 100644
+--- a/lib/security/exact-request-boundary.ts
++++ b/lib/security/exact-request-boundary.ts
+@@ -30,6 +30,26 @@ export function validateExactObjectKeys(
+   return { ok: true, keys: keys.sort() };
+ }
+ 
++/** JSON type parameters are not runtime validation. Never coerce credentials. */
++export function validateOptionalStringFields(
++  value: Record<string, unknown>,
++  fields: readonly string[],
++): { ok: true } | { ok: false; response: Response } {
++  const invalid = fields.filter((field) =>
++    value[field] !== undefined && typeof value[field] !== "string",
++  );
++  if (invalid.length) {
++    return {
++      ok: false,
++      response: securityJson(
++        { ok: false, error: "invalid_body_field_type", fields: invalid.sort() },
++        { status: 400 },
++      ),
++    };
++  }
++  return { ok: true };
++}
++
+ export type ExactSearchParamResult =
+   | { ok: true; values: Readonly<Record<string, string | null>> }
+   | { ok: false; response: Response; code: "unknown_query_parameter" | "duplicate_query_parameter" };
+diff --git a/lib/security/payment-webhook-guard.ts b/lib/security/payment-webhook-guard.ts
+index f249362..6b99126 100644
+--- a/lib/security/payment-webhook-guard.ts
++++ b/lib/security/payment-webhook-guard.ts
+@@ -5,7 +5,7 @@ export type PaymentGuardDecision =
+   | { ok: false; response: NextResponse };
+ 
+ function jsonError(message: string, status: number, details?: unknown) {
+-  return NextResponse.json({ error: message, details }, { status });
++  return NextResponse.json({ error: message, details }, { status, headers: { "cache-control": "no-store", "x-content-type-options": "nosniff" } });
+ }
+ 
+ function contentLength(request: Request) {
+@@ -104,11 +104,15 @@ export function validateStripeWebhookBoundary(request: Request): PaymentGuardDec
+ }
+ 
+ export const paymentWebhookGuardReadiness = {
+-  schemaVersion: "velmere-payment-webhook-guard-v3",
++  schemaVersion: "velmere-payment-webhook-guard-v4",
+   checkoutMaxBytes: 64_000,
+   webhookMaxBytes: 1_000_000,
+   signatureHeaderMaxBytes: 2_500,
+   streamingLimitEnforced: true,
++  bodyReadDeadlineMs: 10_000,
++  requestAbortEnforced: true,
++  cancellationDoesNotBlockResponse: true,
++  nonFiniteJsonNumbersRejected: true,
+   strictJsonObjectBoundary: true,
+   duplicateJsonKeysRejected: true,
+   dangerousJsonKeysRejected: true,
+@@ -120,90 +124,113 @@ export type BoundedBodyBytesResult =
+   | { ok: true; bytes: Uint8Array; byteLength: number }
+   | { ok: false; response: NextResponse };
+ 
++export type BoundedBodyReadOptions = {
++  /** Total body-read budget, not a per-chunk timeout. Maximum 30 seconds. */
++  maxDurationMs?: number;
++};
++
+ export async function readBoundedBodyBytes(
+   request: Request,
+   maxBytes: number,
++  options: BoundedBodyReadOptions = {},
+ ): Promise<BoundedBodyBytesResult> {
+   if (!Number.isSafeInteger(maxBytes) || maxBytes < 0) {
+     throw new RangeError("maxBytes must be a non-negative safe integer");
+   }
+-
++  const maxDurationMs = options.maxDurationMs ?? 10_000;
++  if (!Number.isSafeInteger(maxDurationMs) || maxDurationMs < 1 || maxDurationMs > 30_000) {
++    throw new RangeError("maxDurationMs must be an integer from 1 to 30000");
++  }
+   const declaredLength = contentLength(request);
+   if (!declaredLength.valid || hasAmbiguousTransferFraming(request)) {
+-    return {
+-      ok: false,
+-      response: jsonError("Request framing is ambiguous.", 400),
+-    };
++    return { ok: false, response: jsonError("Request framing is ambiguous.", 400) };
+   }
+   if (declaredLength.value > maxBytes) {
+-    return {
+-      ok: false,
+-      response: jsonError("Request payload is too large.", 413, {
+-        maxBytes,
+-        declaredBytes: declaredLength.value,
+-      }),
+-    };
++    return { ok: false, response: jsonError("Request payload is too large.", 413, {
++      maxBytes, declaredBytes: declaredLength.value,
++    }) };
++  }
++  if (request.signal.aborted) {
++    return { ok: false, response: jsonError("Request was aborted.", 400) };
+   }
+-
+   if (!request.body) {
+     if (declaredLength.present && declaredLength.value !== 0) {
+       return { ok: false, response: jsonError("Content-Length does not match request body.", 400) };
+     }
+     return { ok: true, bytes: new Uint8Array(0), byteLength: 0 };
+   }
+-
+-  const reader = request.body.getReader();
+-  const chunks: Uint8Array[] = [];
++  let reader: ReadableStreamDefaultReader<Uint8Array>;
++  try { reader = request.body.getReader(); }
++  catch { return { ok: false, response: jsonError("Unable to read request body.", 400) }; }
++
++  const deadline = performance.now() + maxDurationMs;
++  let timedOut = false;
++  // Only the current read has an interrupt handler. Racing every chunk against
++  // one never-settled Promise would retain one listener per chunk until expiry.
++  let interruptRead: ((error: Error) => void) | undefined;
++  const timer = setTimeout(() => {
++    timedOut = true;
++    interruptRead?.(new Error("body_read_timeout"));
++  }, maxDurationMs);
++  const onAbort = () => interruptRead?.(new Error("body_read_aborted"));
++  request.signal.addEventListener("abort", onAbort, { once: true });
++  // A producer's cancellation hook can fail or never settle. It must not hold
++  // the response open after a size/time/abort rejection.
++  const cancel = (reason: string) => { void reader.cancel(reason).catch(() => undefined); };
++  let storage = new Uint8Array(0);
+   let byteLength = 0;
+-
+   try {
+     while (true) {
+-      const { done, value } = await reader.read();
++      if (request.signal.aborted) throw new Error("body_read_aborted");
++      if (performance.now() >= deadline) { timedOut = true; throw new Error("body_read_timeout"); }
++      const { done, value } = await new Promise<ReadableStreamReadResult<Uint8Array>>((resolve, reject) => {
++        interruptRead = reject;
++        void reader.read().then(resolve, reject);
++      });
++      interruptRead = undefined;
++      if (request.signal.aborted) throw new Error("body_read_aborted");
++      if (performance.now() >= deadline) { timedOut = true; throw new Error("body_read_timeout"); }
+       if (done) break;
+       if (!value) continue;
+       if (!(value instanceof Uint8Array)) {
+-        await reader.cancel("payload_chunk_type_invalid").catch(() => undefined);
++        cancel("payload_chunk_type_invalid");
+         return { ok: false, response: jsonError("Unable to read request body.", 400) };
+       }
+-
+-      byteLength += value.byteLength;
+-      if (byteLength > maxBytes) {
+-        await reader.cancel("payload_limit_exceeded").catch(() => undefined);
+-        return {
+-          ok: false,
+-          response: jsonError("Request payload is too large.", 413, {
+-            maxBytes,
+-            actualBytesAtAbort: byteLength,
+-          }),
+-        };
++      if (value.byteLength > maxBytes - byteLength) {
++        cancel("payload_limit_exceeded");
++        return { ok: false, response: jsonError("Request payload is too large.", 413, {
++          maxBytes, actualBytesAtAbort: byteLength + value.byteLength,
++        }) };
++      }
++      const needed = byteLength + value.byteLength;
++      if (needed > storage.byteLength) {
++        const capacity = Math.min(maxBytes, Math.max(needed, 8192, storage.byteLength * 2));
++        const next = new Uint8Array(capacity);
++        next.set(storage.subarray(0, byteLength));
++        storage = next;
+       }
+-      chunks.push(value);
++      // Snapshot every delivered chunk before the producer can reuse its buffer.
++      storage.set(value, byteLength);
++      byteLength = needed;
+     }
+   } catch {
+-    await reader.cancel("payload_read_failed").catch(() => undefined);
+-    return { ok: false, response: jsonError("Unable to read request body.", 400) };
++    cancel(timedOut ? "payload_read_timeout" : request.signal.aborted ? "payload_read_aborted" : "payload_read_failed");
++    return { ok: false, response: jsonError(
++      timedOut ? "Request body read timed out." : request.signal.aborted ? "Request was aborted." : "Unable to read request body.",
++      timedOut ? 408 : 400,
++    ) };
+   } finally {
++    interruptRead = undefined;
++    clearTimeout(timer);
++    request.signal.removeEventListener("abort", onAbort);
+     reader.releaseLock();
+   }
+-
+   if (declaredLength.present && declaredLength.value !== byteLength) {
+-    return {
+-      ok: false,
+-      response: jsonError("Content-Length does not match request body.", 400, {
+-        declaredBytes: declaredLength.value,
+-        actualBytes: byteLength,
+-      }),
+-    };
+-  }
+-
+-  const bytes = new Uint8Array(byteLength);
+-  let offset = 0;
+-  for (const chunk of chunks) {
+-    bytes.set(chunk, offset);
+-    offset += chunk.byteLength;
++    return { ok: false, response: jsonError("Content-Length does not match request body.", 400, {
++      declaredBytes: declaredLength.value, actualBytes: byteLength,
++    }) };
+   }
+-
+-  return { ok: true, bytes, byteLength };
++  return { ok: true, bytes: storage.slice(0, byteLength), byteLength };
+ }
+ 
+ /**
+@@ -378,7 +405,7 @@ function scanJsonObjectKeys(
+   return issue;
+ }
+ 
+-export type StrictJsonBodyOptions = {
++export type StrictJsonBodyOptions = BoundedBodyReadOptions & {
+   requireObject?: boolean;
+   rejectDuplicateKeys?: boolean;
+   rejectDangerousKeys?: boolean;
+@@ -401,7 +428,7 @@ export async function readBoundedJsonBody<T>(
+     };
+   }
+ 
+-  const body = await readBoundedBodyBytes(request, maxBytes);
++  const body = await readBoundedBodyBytes(request, maxBytes, options);
+   if (!body.ok) return body;
+ 
+   let raw: string;
+@@ -413,7 +440,10 @@ export async function readBoundedJsonBody<T>(
+ 
+   let value: unknown;
+   try {
+-    value = JSON.parse(raw);
++    value = JSON.parse(raw, (_key, item: unknown) => {
++      if (typeof item === "number" && !Number.isFinite(item)) throw new Error("non_finite_json_number");
++      return item;
++    });
+   } catch {
+     return { ok: false, response: jsonError("Invalid JSON payload.", 400) };
+   }
