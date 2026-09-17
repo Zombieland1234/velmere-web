@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 /**
  * Velmère Security Engine V2 — Contextual Reentrancy Engine
  *
@@ -28,15 +29,9 @@ export function analyzeContextualReentrancy(
   const findings: StandardFindingV2[] = [];
   const { cfg, selectorsDiscovered } = cfgResult;
 
-  const hasReentrancyGuard =
-    cfgResult.hasReentrancyGuard ||
-    Boolean(
-      sourceCode &&
-        (sourceCode.includes("nonReentrant") ||
-          sourceCode.includes("ReentrancyGuard") ||
-          sourceCode.includes("_status") ||
-          sourceCode.includes("lock")),
-    );
+  // Source keywords and a contract-wide SSTORE heuristic do not establish a
+  // mutex proof for this call path. The detector emits reviewable signals.
+  const hasReentrancyGuard = false;
 
   let classicReentrancyDetected = false;
   let readOnlyReentrancyDetected = false;
@@ -44,51 +39,43 @@ export function analyzeContextualReentrancy(
 
   // 1. Classic Reentrancy: Check CFG paths for CALL followed by SSTORE in non-guarded blocks
   for (const block of cfg.blocks.values()) {
-    // If the contract or block has an active reentrancy mutex lock, the pattern is safely guarded
-    if (block.isReentrancyGuarded || hasReentrancyGuard) {
-      continue;
-    }
-
-    let callSeen = false;
     let callPc = -1;
     let sstorePc = -1;
-    const writtenSlots: string[] = [];
-
-    for (let i = 0; i < block.instructions.length; i++) {
-      const inst = block.instructions[i];
-
-      if (inst.name === "CALL") {
-        callSeen = true;
-        callPc = inst.pc;
+    let evidencePath: string[] = [];
+    for (const [index, instruction] of block.instructions.entries()) {
+      if (instruction.name !== "CALL") continue;
+      const localWrite = block.instructions.slice(index + 1).find(candidate => candidate.name === "SSTORE");
+      if (localWrite) {
+        callPc = instruction.pc; sstorePc = localWrite.pc; evidencePath = [block.id]; break;
       }
-
-      if (callSeen && inst.name === "SSTORE") {
-        sstorePc = inst.pc;
-        classicReentrancyDetected = true;
-        break;
-      }
-    }
-
-    // Also trace successors (paths leading from a block with CALL to a subsequent block with SSTORE)
-    if (callSeen && !classicReentrancyDetected) {
-      for (const succId of block.successors) {
-        const succBlock = cfg.blocks.get(succId);
-        if (succBlock && succBlock.hasSstore && !succBlock.isReentrancyGuarded) {
-          classicReentrancyDetected = true;
-          callPc = block.instructions.find((ins) => ins.name === "CALL")?.pc ?? block.startPc;
-          sstorePc = succBlock.instructions.find((ins) => ins.name === "SSTORE")?.pc ?? succBlock.startPc;
-          break;
+      // Compiler return-data/revert checks often span more than one successor.
+      // Traverse the represented CFG with a strict work bound; unresolved jumps
+      // remain a limitation, not proof that a storage write cannot follow.
+      const queue = block.successors.map(id => ({id, path:[block.id, id]}));
+      const visited = new Set<string>();
+      for (let cursor = 0; cursor < queue.length && visited.size < 512; cursor++) {
+        const current = queue[cursor];
+        if (visited.has(current.id)) continue;
+        visited.add(current.id);
+        const next = cfg.blocks.get(current.id);
+        if (!next) continue;
+        const write = next.instructions.find(candidate => candidate.name === "SSTORE");
+        if (write) {
+          callPc = instruction.pc; sstorePc = write.pc; evidencePath = current.path; break;
         }
+        for (const id of next.successors) if (!visited.has(id)) queue.push({id,path:[...current.path,id]});
       }
+      if (sstorePc >= 0) break;
     }
+    if (sstorePc >= 0) classicReentrancyDetected = true;
 
     if (classicReentrancyDetected) {
       findings.push({
         findingId: "VLM-SEC-REENTRANCY-01",
-        title: "State Modification After External Call Without Mutex Guard (Classic Reentrancy)",
-        severity: "critical",
-        confidence: "high",
-        exploitability: "active_exploit",
+        title: "State Write Reachable After External Call (Mutex Proof Unavailable)",
+        severity: "high",
+        confidence: "medium",
+        exploitability: "theoretical",
         impact:
           "An attacker contract receiving the external call can invoke the vulnerable function recursively before the storage slot is updated, draining protocol balances.",
         likelihood: "high",
@@ -99,12 +86,12 @@ export function analyzeContextualReentrancy(
           owaspScsvsCategory: "G6: Secure Interactions",
         },
         affectedContract: contractAddress,
-        affectedFunction: "withdraw() / transfer()",
+        affectedFunction: "Unresolved external-call path",
         bytecodeOffset: {
           pcStart: callPc,
           pcEnd: sstorePc,
         },
-        executionPath: [block.id, `CALL@0x${callPc.toString(16)}`, `SSTORE@0x${sstorePc.toString(16)}`],
+        executionPath: [...evidencePath, `CALL@0x${callPc.toString(16)}`, `SSTORE@0x${sstorePc.toString(16)}`],
         stateDependencies: {
           storageSlotsRead: Array.from(block.readsStorageSlots),
           storageSlotsWritten: Array.from(block.writesStorageSlots),
@@ -112,7 +99,7 @@ export function analyzeContextualReentrancy(
         attackScenario:
           "1. Attacker calls victim contract withdraw function.\n2. Victim sends ETH/tokens via low-level CALL opcode.\n3. Attacker fallback/receive function is triggered and calls withdraw again.\n4. Victim repeats balance transfer because SSTORE updating balance has not executed yet.\n5. Entire contract balance is depleted in a single transaction.",
         proofOfConcept: {
-          summary: "Recursive call from malicious receiver fallback prior to SSTORE state commitment",
+          summary: "UNEXECUTED test hypothesis: recursive call prior to SSTORE; validate target identity, storage dependency and mutex before confirming exploitability.",
           sequence: [
             { step: 1, actor: "Attacker", call: "deposit{value: 1 ether}()", expectation: "Balance credited" },
             { step: 2, actor: "Attacker", call: "withdraw(1 ether)", expectation: "External CALL to attacker" },
@@ -122,8 +109,8 @@ export function analyzeContextualReentrancy(
         },
         evidence: {
           opcodeTraceExcerpt: `PC 0x${callPc.toString(16)}: CALL -> PC 0x${sstorePc.toString(16)}: SSTORE`,
-          disassemblyContext: `Block ${block.id} executes external call before updating storage. No mutex slot modified.`,
-          hashProof: `sha256:${Buffer.from(`${callPc}-${sstorePc}`).toString("hex")}`,
+          disassemblyContext: `Represented CFG path ${evidencePath.join(" -> ")} reaches a state write after CALL; mutex, call target and path feasibility are not proved.`,
+          hashProof: `sha256:${createHash("sha256").update(JSON.stringify({contractAddress,callPc,sstorePc,evidencePath})).digest("hex")}`,
         },
         remediation: {
           strategy: "Enforce Checks-Effects-Interactions (CEI) pattern or apply OpenZeppelin ReentrancyGuard.",
@@ -139,8 +126,8 @@ export function analyzeContextualReentrancy(
          require(s, "Transfer failed");
 -        balances[msg.sender] -= amount;
      }`,
-          appliedSuccessfully: true,
-          regressionPassed: true,
+          appliedSuccessfully: false,
+          regressionPassed: false,
         },
         verificationState: "AUTOMATED",
       });

@@ -156,6 +156,8 @@ export function runFuzzAndInvariantCampaign(
 
   const campaign: FuzzCampaignResult = {
     engine: "Velmère-PropertyFuzzer-V2",
+    executionScope: "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE",
+    targetExecuted: false,
     iterationsExecuted: iterations,
     uniqueSequencesExplored: executedSequences.length,
     invariantsChecked: invariants.length,

@@ -1332,10 +1332,7 @@ const failures: ReleaseGateFailure[] = [];
 const warnings: string[] = [];
 
 let evidenceIntegrity: boolean;
-let formalIntegrity: boolean;
 let unknownPassProtection = false;
-let scoringIntegrity: boolean;
-let pdfIntegrity: boolean;
 
 /* ----------------------------- Evidence -------------------------------- */
 
@@ -1364,7 +1361,7 @@ output.formalResults,
 
 failures.push(...formalFailures);
 
-formalIntegrity = formalFailures.length === 0;
+const formalIntegrity = formalFailures.length === 0;
 
 /* ---------------------------- Unknown PASS ------------------------------ */
 
@@ -1433,14 +1430,14 @@ output.score,
 );
 
 failures.push(...scoringFailures);
-scoringIntegrity = scoringFailures.length === 0;
+const scoringIntegrity = scoringFailures.length === 0;
 
 /* -------------------------------- PDF ---------------------------------- */
 
 const pdfFailures = validatePdfLayout(output.report);
 
 failures.push(...pdfFailures);
-pdfIntegrity = pdfFailures.length === 0;
+const pdfIntegrity = pdfFailures.length === 0;
 
 /* ------------------------ Critical Exploits Guard ----------------------- */
 

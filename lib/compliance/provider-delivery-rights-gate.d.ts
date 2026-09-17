@@ -24,5 +24,5 @@ export type ProviderRightsProjection = {
   internalDiagnosticAllowed: boolean;
   projectionSha256: string;
 };
-export declare function resolveProviderDeliveryRights(args: { providerId: string; purpose: ProviderDeliveryPurpose; matrix: Record<string, unknown> }): ProviderDeliveryRightsResolution;
+export declare function resolveProviderDeliveryRights(args: { providerId: string; purpose: ProviderDeliveryPurpose; matrix: Record<string, unknown>; operationScope?: {datasetId:string;productId:string;environment:"internal_test"|"closed_beta"|"production";dataClass:"derived"|"raw"|"mixed";cacheTtlSeconds?:number}; nowMs?:number }): ProviderDeliveryRightsResolution;
 export declare function buildProviderRightsProjection(args: { providerId: string; matrix: Record<string, unknown> }): ProviderRightsProjection;

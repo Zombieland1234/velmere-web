@@ -68,24 +68,16 @@ export function executeBoundedSymbolicAnalysis(
     }
   }
 
-  // Formal Property Verification Results (Strict Section 15 formulation)
-  formalAssurance.push({
-    propertyId: "FORMAL-PROP-01-TRANSFER-NO-OVERFLOW",
-    specification: "EVM bounded arithmetic in Solidity 0.8+ reverts on uint256 overflow during balance additions",
-    proven: true,
-    status: "FORMALLY_VERIFIED",
-    solver: "Bounded-EVM-SMT-Checker",
-    statement: "FORMALLY VERIFIED: Balance addition overflow safety verified under specification Solidity 0.8+ arithmetic bounds.",
-  });
-
-  formalAssurance.push({
-    propertyId: "FORMAL-PROP-02-REVERT-SAFETY",
-    specification: "All identified revert paths terminate cleanly without state corruption or residual gas traps",
-    proven: true,
-    status: "FORMALLY_VERIFIED",
-    solver: "Bounded-EVM-SMT-Checker",
-    statement: "FORMALLY VERIFIED: Revert path termination safety verified under specification bounded CFG depth 12.",
-  });
+  // Graph traversal is not SMT execution, path feasibility, or a proof of
+  // arithmetic/revert safety. No solver transcript or checked certificate exists.
+  for (const [propertyId, specification] of [
+    ["FORMAL-PROP-01-TRANSFER-NO-OVERFLOW", "Target-contract arithmetic safety"],
+    ["FORMAL-PROP-02-REVERT-SAFETY", "Target-contract revert-path safety"],
+  ]) {
+    formalAssurance.push({propertyId, specification, proven:false,
+      status:"NOT_VERIFIED", solver:"NOT_RUN",
+      statement:"NOT VERIFIED: bounded CFG traversal only; no SMT solver, target execution or proof certificate was produced."});
+  }
 
   return {
     totalPathsExplored,

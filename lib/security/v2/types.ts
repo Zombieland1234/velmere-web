@@ -146,6 +146,8 @@ export interface InvariantDefinition {
 
 export interface FuzzCampaignResult {
   engine: "Velmère-PropertyFuzzer-V2";
+  executionScope?: "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE";
+  targetExecuted?: false;
   iterationsExecuted: number;
   uniqueSequencesExplored: number;
   invariantsChecked: number;
@@ -163,8 +165,8 @@ export interface FormalAssuranceResult {
   propertyId: string;
   specification: string;
   proven: boolean;
-  status: "FORMALLY_VERIFIED" | "COUNTEREXAMPLE_FOUND" | "BOUND_EXCEEDED";
-  solver: "Bounded-EVM-SMT-Checker";
+  status: "FORMALLY_VERIFIED" | "COUNTEREXAMPLE_FOUND" | "BOUND_EXCEEDED" | "NOT_VERIFIED";
+  solver: "Bounded-EVM-SMT-Checker" | "NOT_RUN";
   statement: string;
 }
 

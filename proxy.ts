@@ -273,12 +273,6 @@ export default function proxy(request: NextRequest) {
   }
 
   if (normalizedPath.startsWith("/api/")) {
-      url: request.url,
-      host: request.headers.get('host'),
-      origin: request.headers.get('origin'),
-      xfh: request.headers.get('x-forwarded-host'),
-      edge: inspectApiEdgeRequest(request)
-    });
     const edge = inspectApiEdgeRequest(request);
     if (!edge.ok) {
       return new NextResponse(JSON.stringify({

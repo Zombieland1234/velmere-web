@@ -631,27 +631,9 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     url: string;
   } | null>(null);
 
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("velmere_unlocked_audit_tiers");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed)) {
-          setUnlockedAuditTiers(new Set(["basic", ...parsed]));
-        }
-      }
-    } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
-  }, []);
-
+  // Browser storage is not an entitlement ledger. Paid requests remain server-authorized.
   const unlockAuditTierAndSave = (tier: "pro" | "advanced") => {
-    setUnlockedAuditTiers((prev) => {
-      const next = new Set(prev);
-      next.add(tier);
-      try {
-        localStorage.setItem("velmere_unlocked_audit_tiers", JSON.stringify(Array.from(next)));
-      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
-      return next;
-    });
+    setUnlockedAuditTiers((prev) => new Set([...prev, tier]));
   };
 
   const handleAuditStripeCheckout = async (tier: "pro" | "advanced") => {
@@ -700,6 +682,63 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
       setIsAuditStripeLoading(false);
     }
   };
+
+  async function runAuditExecution(tierToRun: TierId) {
+    const targetAddress = projectInput.trim();
+    setIsGenerating(true);
+    setGenerationStep(1);
+
+    const requestId = requestIdRef.current ?? (globalThis.crypto?.randomUUID?.() || `audit_${Date.now()}`);
+    requestIdRef.current = requestId;
+    setStaged(false);
+    setIntakeState("submitting");
+    setIntakeMessage("");
+    setCaseRef("");
+    setAccountOwnedCase(false);
+
+    // Sequence generation steps with clean progression
+    const bytecodeParam = customBytecode.trim() ? `&bytecode=${encodeURIComponent(customBytecode.trim())}` : "";
+    setTimeout(() => setGenerationStep(2), 380);
+    setTimeout(() => setGenerationStep(3), 760);
+    setTimeout(() => setGenerationStep(4), 1140);
+    setTimeout(() => {
+      window.location.assign(
+        `/${localeKey}/security/audits/report/${encodeURIComponent(targetAddress)}?address=${encodeURIComponent(targetAddress)}&tier=${encodeURIComponent(tierToRun)}&chainId=${encodeURIComponent(selectedChainId)}${bytecodeParam}`
+      );
+    }, 1550);
+
+    try {
+      const response = await fetchWithDeadline("/api/security/audit-intake", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        credentials: "same-origin",
+        body: JSON.stringify({
+          target: targetAddress,
+          chainId: selectedChainId,
+          chainName: selectedChainId === "1" ? "Ethereum Mainnet" : selectedChainId === "42161" ? "Arbitrum One" : selectedChainId === "137" ? "Polygon POS" : "BNB Smart Chain (BSC)",
+          tier: selectedTier,
+          locale: localeKey,
+          requestId,
+        }),
+      }, { timeoutMs: 15_000, operation: "audit_intake" });
+      const payload = await readJsonResponseBounded<AuditIntakeResponse>(response, 2 * 1024 * 1024).catch(() => ({} as AuditIntakeResponse));
+
+      if (response.ok && payload.ok && payload.case?.caseRef) {
+        const durable = payload.case.durable === true;
+        const accountOwned = payload.auth?.accountResolved === true;
+        const statusMessage = payload.case.status === "queued_basic_prescreen" ? t.basicQueued : t.paidWaiting;
+        setCaseRef(payload.case.caseRef);
+        setAccountOwnedCase(accountOwned);
+        if (accountOwned) rememberAuditCaseRef(payload.case.caseRef, { tier: selectedTier });
+        setIntakeMessage(`${statusMessage}${durable ? "" : ` ${t.localOnly}`}${accountOwned ? "" : ` ${t.anonymousBasic}`}`);
+        setStaged(true);
+        setIntakeState("success");
+      }
+    } catch {
+      // Background intake error handled silently as client continues to canonical report
+    }
+  };
+
 
   const completeAuditPaymentSuccess = (tier: "pro" | "advanced") => {
     if (auditStripePopupState?.popupWindow && !auditStripePopupState.popupWindow.closed) {
@@ -756,11 +795,18 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     const { sessionId, tier, popupWindow } = auditStripePopupState;
 
     const handleMessage = (event: MessageEvent) => {
-      if (event.data?.type === "VELMERE_STRIPE_PAYMENT_SUCCESS") {
-        if (!event.data.sessionId || event.data.sessionId === sessionId) {
-          completeAuditPaymentSuccess(tier);
-        }
-      } else if (event.data?.type === "VELMERE_STRIPE_PAYMENT_CANCELLED") {
+      if (event.origin !== window.location.origin || event.source !== popupWindow || !popupWindow) return;
+      if (!event.data || event.data.sessionId !== sessionId) return;
+      // A same-origin popup message is only a wake-up signal, never a paid grant.
+      if (event.data.type === "VELMERE_STRIPE_PAYMENT_SUCCESS") {
+        void fetch(`/api/checkout/stripe-analysis?sessionId=${encodeURIComponent(sessionId)}`, {
+          credentials: "same-origin", cache: "no-store",
+        }).then(async (response) => {
+          if (!response.ok) return;
+          const payload = await response.json();
+          if (payload.ok === true && payload.paid === true) completeAuditPaymentSuccess(tier);
+        }).catch(() => { /* Polling may retry; failures do not grant access. */ });
+      } else if (event.data.type === "VELMERE_STRIPE_PAYMENT_CANCELLED") {
         setAuditStripeError("Płatność została anulowana.");
         setAuditStripePopupState(null);
       }
@@ -944,61 +990,6 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     runAuditExecution(selectedTier);
   };
 
-  async function runAuditExecution(tierToRun: TierId) {
-    const targetAddress = projectInput.trim();
-    setIsGenerating(true);
-    setGenerationStep(1);
-
-    const requestId = requestIdRef.current ?? (globalThis.crypto?.randomUUID?.() || `audit_${Date.now()}`);
-    requestIdRef.current = requestId;
-    setStaged(false);
-    setIntakeState("submitting");
-    setIntakeMessage("");
-    setCaseRef("");
-    setAccountOwnedCase(false);
-
-    // Sequence generation steps with clean progression
-    const bytecodeParam = customBytecode.trim() ? `&bytecode=${encodeURIComponent(customBytecode.trim())}` : "";
-    setTimeout(() => setGenerationStep(2), 380);
-    setTimeout(() => setGenerationStep(3), 760);
-    setTimeout(() => setGenerationStep(4), 1140);
-    setTimeout(() => {
-      window.location.assign(
-        `/${localeKey}/security/audits/report/${encodeURIComponent(targetAddress)}?address=${encodeURIComponent(targetAddress)}&tier=${encodeURIComponent(tierToRun)}&chainId=${encodeURIComponent(selectedChainId)}${bytecodeParam}`
-      );
-    }, 1550);
-
-    try {
-      const response = await fetchWithDeadline("/api/security/audit-intake", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        credentials: "same-origin",
-        body: JSON.stringify({
-          target: targetAddress,
-          chainId: selectedChainId,
-          chainName: selectedChainId === "1" ? "Ethereum Mainnet" : selectedChainId === "42161" ? "Arbitrum One" : selectedChainId === "137" ? "Polygon POS" : "BNB Smart Chain (BSC)",
-          tier: selectedTier,
-          locale: localeKey,
-          requestId,
-        }),
-      }, { timeoutMs: 15_000, operation: "audit_intake" });
-      const payload = await readJsonResponseBounded<AuditIntakeResponse>(response, 2 * 1024 * 1024).catch(() => ({} as AuditIntakeResponse));
-
-      if (response.ok && payload.ok && payload.case?.caseRef) {
-        const durable = payload.case.durable === true;
-        const accountOwned = payload.auth?.accountResolved === true;
-        const statusMessage = payload.case.status === "queued_basic_prescreen" ? t.basicQueued : t.paidWaiting;
-        setCaseRef(payload.case.caseRef);
-        setAccountOwnedCase(accountOwned);
-        if (accountOwned) rememberAuditCaseRef(payload.case.caseRef, { tier: selectedTier });
-        setIntakeMessage(`${statusMessage}${durable ? "" : ` ${t.localOnly}`}${accountOwned ? "" : ` ${t.anonymousBasic}`}`);
-        setStaged(true);
-        setIntakeState("success");
-      }
-    } catch {
-      // Background intake error handled silently as client continues to canonical report
-    }
-  };
 
   return (
     <main
