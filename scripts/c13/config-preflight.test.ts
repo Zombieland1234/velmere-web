@@ -11,7 +11,7 @@ import { join, resolve } from 'node:path';
 const proxyKey = randomBytes(32).toString('hex');
 const fingerprintKey = randomBytes(32).toString('hex');
 const storeToken = randomBytes(32).toString('hex');
-const signed: NodeJS.ProcessEnv = {
+const signed: Partial<NodeJS.ProcessEnv> = {
   VELMERE_TRUSTED_PROXY_PROFILE: 'signed_proxy',
   VELMERE_PROXY_HMAC_SECRET: proxyKey,
   VELMERE_PROXY_HMAC_AUDIENCE: 'c13-isolated-fixture',
@@ -19,7 +19,7 @@ const signed: NodeJS.ProcessEnv = {
   VELMERE_RATE_LIMIT_BACKEND: 'redis',
   REDIS_URL: `redis://:${storeToken}@127.0.0.1:6379/0`,
 };
-const vercel: NodeJS.ProcessEnv = {
+const vercel: Partial<NodeJS.ProcessEnv> = {
   VELMERE_TRUSTED_PROXY_PROFILE: 'vercel', VERCEL: '1', VERCEL_ENV: 'preview',
   VELMERE_SECURITY_FINGERPRINT_SECRET: fingerprintKey,
   UPSTASH_REDIS_REST_URL: 'https://c13-fixture.invalid',
@@ -28,7 +28,7 @@ const vercel: NodeJS.ProcessEnv = {
 const proxy = 'TRUSTED_PROXY_CONFIGURATION_MISSING';
 const privacy = 'FINGERPRINT_SECRET_MISSING_OR_WEAK';
 const storage = 'DURABLE_STORAGE_CONFIGURATION_MISSING';
-type Case = { id: string; env: NodeJS.ProcessEnv; blockers: string[]; mode: string };
+type Case = { id: string; env: Partial<NodeJS.ProcessEnv>; blockers: string[]; mode: string };
 const cases: Case[] = [
   { id: 'unconfigured-production-refuses', env: {}, blockers: [proxy, privacy, storage], mode: 'unavailable' },
   { id: 'signed-loopback-configuration-only', env: signed, blockers: [], mode: 'redis' },
@@ -52,7 +52,7 @@ const cases: Case[] = [
 const results: { id: string; passed: boolean; exitCode: number | null; expectedExitCode: number; diagnostic: unknown }[] = [];
 for (const fixture of cases) {
   test(`production preflight: ${fixture.id}`, () => {
-    const env: NodeJS.ProcessEnv = { NODE_ENV: 'production', NEXT_TELEMETRY_DISABLED: '1', ...fixture.env };
+    const env: NodeJS.ProcessEnv = { ...fixture.env, NODE_ENV: 'production', NEXT_TELEMETRY_DISABLED: '1' };
     for (const key of ['PATH', 'HOME', 'TMPDIR', 'CI', 'GITHUB_SHA']) {
       if (process.env[key] !== undefined) env[key] = process.env[key];
     }
