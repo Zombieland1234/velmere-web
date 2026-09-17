@@ -53,7 +53,7 @@ export async function applyNativeRedisRateLimit(options: DurableRateLimitOptions
   let destroy = () => {};
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    const client = createClient({ url: process.env.REDIS_URL!, disableOfflineQueue: true, commandsQueueMaxLength: 1,
+    const client = createClient({ url: process.env.REDIS_URL!, disableOfflineQueue: true, commandsQueueMaxLength: 16,
       socket: { connectTimeout: 1500, socketTimeout: 2200, reconnectStrategy: false } });
     client.on("error", () => { /* do not log connection URLs, credentials or raw errors */ });
     destroy = () => { try { if (client.isOpen) client.destroy(); } catch { /* already closed */ } };

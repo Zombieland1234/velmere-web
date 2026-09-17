@@ -28,6 +28,13 @@ test('corrupt persisted state is rejected rather than reset to grant new quota',
  const key=randomUUID();const a=await applyDurableRateLimit({key,limit:5,windowMs:60000});keys.push(a.boundaryKey);
  await admin.hSet(a.boundaryKey,'count','invalid');const b=await applyDurableRateLimit({key,limit:5,windowMs:60000});assert.equal(b.ok,false);assert.equal(b.mode,'unavailable');
 });
+test('authenticated selected database supports handshake and repeated quota decisions',async()=>{
+ const saved=process.env.REDIS_URL;const database=new URL(url!);database.pathname='/1';process.env.REDIS_URL=database.href;
+ const key=randomUUID();const dbAdmin=createClient({url:database.href});dbAdmin.on('error',()=>{});
+ try{const first=await applyDurableRateLimit({key,limit:1,windowMs:60000});assert.ok(first.ok);assert.equal((await applyDurableRateLimit({key,limit:1,windowMs:60000})).ok,false);
+  await dbAdmin.connect();await dbAdmin.del(first.boundaryKey);
+ }finally{process.env.REDIS_URL=saved;if(dbAdmin.isOpen)dbAdmin.destroy();}
+});
 test('cleanup removes only keys created by this test process',async()=>{
  if(admin.isReady){for(const k of keys)await admin.del(k);await admin.close();}
 });

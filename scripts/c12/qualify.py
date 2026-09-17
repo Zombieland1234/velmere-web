@@ -14,6 +14,7 @@ checks=[
  ('clean-install',['npm','ci','--ignore-scripts','--no-fund'],600),
  ('worker-build',['npm','run','build:audit-worker'],180),
  ('c12-production-config-preflight',['env','NODE_ENV=production','node_modules/.bin/tsx','scripts/c12/config-preflight.ts'],30),
+ ('c11-response-reproductions',['node_modules/.bin/tsx','scripts/c12/baseline-replay.ts',str(out)],180),
  ('c12-focused-regressions',['node_modules/.bin/tsx','--test',*c12_tests],240),
  ('c12-typescript',['node_modules/.bin/tsc','-p','tsconfig.c12-tests.json','--pretty','false'],480),
  ('redis-real-integration',['bash','scripts/c12/redis-tests.sh'],180),
