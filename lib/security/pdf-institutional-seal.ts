@@ -255,7 +255,7 @@ export function renderInstitutionalMerkleSealCard(
   );
 
   // 2. Top Header Title & Status Badge
-  const headerHex = Buffer.from("VELMERE CRYPTOGRAPHIC AUDIT SEAL - SHA-256 MERKLE ROOT", "ascii").toString("hex");
+  const headerHex = Buffer.from("VELMERE LOCAL SHA-256 COMMITMENT", "ascii").toString("hex");
   commands.push(
     "0.12 0.18 0.32 rg",
     "BT", "/F2 8.5 Tf",
@@ -265,7 +265,7 @@ export function renderInstitutionalMerkleSealCard(
   );
 
   // Verified Status Pill on Right
-  const pillHex = Buffer.from("[VERIFIED - IMMUTABLE]", "ascii").toString("hex");
+  const pillHex = Buffer.from("[HASH ONLY - NOT ATTESTED]", "ascii").toString("hex");
   commands.push(
     "0.15 0.58 0.30 rg", // Emerald green pill
     `432 ${cardY + 28} 112 12 re`,
@@ -305,7 +305,7 @@ export function renderInstitutionalMerkleSealCard(
 
   // 5. Bottom Provenance Footer
   const blockText = options.blockNumber ? `Block #${options.blockNumber} | ` : "";
-  const footerText = `${blockText}Standard: Merkle Non-Repudiation Seal | RFC 3161 Pinned | Verification: /api/audit/report-pdf`;
+  const footerText = `${blockText}Local digest only | No external timestamp or issuer attestation`;
   const footerHex = Buffer.from(footerText, "ascii").toString("hex");
   commands.push(
     "0.38 0.44 0.52 rg",

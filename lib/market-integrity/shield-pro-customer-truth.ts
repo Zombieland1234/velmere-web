@@ -45,7 +45,8 @@ export type ShieldProTruthRow = {
 };
 
 export function shieldProFieldVerified(row: ShieldProTruthRow, fieldId: string): boolean {
-  return row.delivery?.fields?.[fieldId]?.state === "verified" || row.result?.dataQuality === "demo" || !row.delivery;
+  return row.result?.dataQuality !== "demo"
+    && row.delivery?.fields?.[fieldId]?.state === "verified";
 }
 
 export function shieldProRiskVerified(row: ShieldProTruthRow): boolean {
@@ -72,11 +73,10 @@ export function shieldProVerifiedProviders(row: ShieldProTruthRow): string[] {
 }
 
 export function shieldProCalibratedRiskConfidence(row: ShieldProTruthRow): number | null {
+  if (!shieldProRiskVerified(row) || !shieldProCalibratedRiskConfidencePublishable(row)) return null;
   const confidence = row.result?.confidence;
-  if (typeof confidence === "number" && Number.isFinite(confidence) && confidence > 0) {
-    return confidence <= 1 ? confidence * 100 : Math.min(100, confidence);
-  }
-  return 88;
+  if (typeof confidence !== "number" || !Number.isFinite(confidence) || confidence < 0 || confidence > 100) return null;
+  return confidence <= 1 ? confidence * 100 : confidence;
 }
 
 export function shieldProSourceLabel(row: ShieldProTruthRow, feedSource?: string | null): string {

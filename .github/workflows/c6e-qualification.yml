@@ -1,0 +1,145 @@
+name: C6E actual release evidence qualification
+on:
+  push:
+    branches: [c6e/release-evidence-20260917]
+    paths: [.github/workflows/c6e-qualification.yml]
+permissions:
+  contents: write
+concurrency:
+  group: c6e-qualification
+  cancel-in-progress: false
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Apply exact reviewed PDF boundary and test-media corrections
+        run: |
+          mkdir -p /tmp/c6e-evidence /tmp/c6e-source
+          test "$(git rev-parse HEAD^)" = 84cddafad09868d3d8e51595420a5157dfe79367
+          python3 - <<'PY'
+          import pathlib,json,hashlib
+          for item in json.loads(pathlib.Path('scripts/c6e/CORE_PATCH.json').read_text()):
+            p=pathlib.Path(item['path']);raw=p.read_bytes();assert hashlib.sha256(raw).hexdigest()==item['before'],item['path']
+            lines=raw.decode().splitlines(keepends=True)
+            for c in reversed(item['changes']):lines[c['start']:c['end']]=[c['text']]
+            result=''.join(lines).encode();assert hashlib.sha256(result).hexdigest()==item['after'],item['path'];p.write_bytes(result)
+          PY
+          git diff --check
+      - name: Commit final candidate only on the isolated branch
+        env:
+          C6_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          test "$GITHUB_REF_NAME" = c6e/release-evidence-20260917
+          cat > /tmp/c6e-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C6_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c6e-askpass.sh
+          export GIT_ASKPASS=/tmp/c6e-askpass.sh GIT_TERMINAL_PROMPT=0
+          test "$(git ls-remote origin refs/heads/c6e/release-evidence-20260917 | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'Velmere C6E qualification'
+          git config user.email 'c6e-qualification@users.noreply.github.com'
+          git add lib/security/audit-canonical-report.ts lib/security/pdf-institutional-seal.ts scripts/c6d/rpc-pdf-boundaries.test.ts
+          git commit -m 'fix(c6e): withhold unexecuted audit and timestamp proof claims in customer PDFs'
+          git push origin HEAD:refs/heads/c6e/release-evidence-20260917
+          echo "C6_SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git diff HEAD^ HEAD --binary > /tmp/c6e-evidence/APPLIED_SOURCE.diff
+      - name: Full application install typecheck build lint audit and regression
+        run: python3 scripts/c6e/qualify.py
+      - name: Source-derived product manifest
+        run: |
+          node_modules/.bin/tsx -e "import{VLM_CANONICAL_CUSTOMER_PRODUCTS as products}from'./lib/product/vlm-canonical-product-topology';import fs from'node:fs';import{createHash}from'node:crypto';const p='lib/product/vlm-canonical-product-topology.ts';fs.writeFileSync('/tmp/c6e-evidence/PRODUCT_MANIFEST.json',JSON.stringify({sourceSha:process.env.C6_SOURCE_SHA,recordedAt:new Date().toISOString(),topologyPath:p,topologySha256:createHash('sha256').update(fs.readFileSync(p)).digest('hex'),catalogCount:products.length,activeOrSellableCount:'NOT_ASSUMED_FROM_CATALOG_COUNT',products},null,2));"
+      - name: Redacted tracked-source secret scan and dependency drift inventory
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/c6e-scan /tmp/c6e-tools
+          git archive HEAD | tar -x -C /tmp/c6e-scan
+          curl --fail --silent --show-error --location --max-time 60 https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_checksums.txt -o /tmp/c6e-tools/checksums.txt
+          echo '061476c21adaf5441516f96f185c1a4706a83cd6329b9b38762271b3d4a52fae  /tmp/c6e-tools/checksums.txt' | sha256sum -c -
+          curl --fail --silent --show-error --location --max-time 90 https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz -o /tmp/c6e-tools/gitleaks_8.30.1_linux_x64.tar.gz
+          (cd /tmp/c6e-tools; grep ' gitleaks_8.30.1_linux_x64.tar.gz$' checksums.txt | sha256sum -c -; tar -xzf gitleaks_8.30.1_linux_x64.tar.gz gitleaks)
+          python3 - <<'PY'
+          import subprocess,pathlib,json,datetime,hashlib,os
+          out=pathlib.Path('/tmp/c6e-evidence');rows=[]
+          commands=[('gitleaks-tracked-source',['/tmp/c6e-tools/gitleaks','dir','/tmp/c6e-scan','--redact=100','--no-banner','--no-color','--ignore-gitleaks-allow','--max-archive-depth','2','--max-decode-depth','2','--report-format','json','--report-path',str(out/'GITLEAKS_REDACTED.json')]),('dependency-outdated',['npm','outdated','--json']),('software-bill-of-materials',['npm','sbom','--sbom-format','cyclonedx'])]
+          for name,args in commands:
+            log=out/(name+'.log');started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+            with log.open('wb') as f:
+              try:code=subprocess.run(args,stdout=f,stderr=subprocess.STDOUT,timeout=240).returncode
+              except subprocess.TimeoutExpired:code=124
+            rows.append({'id':name,'sourceSha':os.environ.get('C6_SOURCE_SHA'),'startedAt':started,'finishedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'command':args,'exitCode':code,'log':log.name,'logSha256':hashlib.sha256(log.read_bytes()).hexdigest(),'scope':'SOURCE_DIRECTORY_NOT_GIT_HISTORY' if name.startswith('gitleaks') else 'INVENTORY_NOT_AUTOMATIC_RELEASE_PASS'})
+          (out/'ADDITIONAL_SCANS.json').write_text(json.dumps(rows,indent=2))
+          PY
+      - name: Actual built-page browser and reference PDF evidence
+        continue-on-error: true
+        run: |
+          node -e "const a=require('/tmp/c6e-evidence/QUALIFICATION.json');if(!a.find(x=>x.id==='production-build'&&x.result==='PASS'))process.exit(1)"
+          node_modules/.bin/playwright install --with-deps chromium > /tmp/c6e-evidence/browser-install.log 2>&1
+          node_modules/.bin/next start --hostname localhost > /tmp/c6e-evidence/next-runtime.log 2>&1 &
+          server=$!
+          trap 'kill "$server" || true' EXIT
+          for i in $(seq 1 30); do if curl -s -o /dev/null http://localhost:3000/en; then break; fi; sleep 1; done
+          timeout 300 node scripts/c6/browser-observations.mjs http://localhost:3000 /tmp/c6e-evidence/browser > /tmp/c6e-evidence/browser.log 2>&1
+          timeout 90 node scripts/c6c/provider-outage-browser.mjs /tmp/c6e-evidence/failures > /tmp/c6e-evidence/controlled-failures.log 2>&1
+          timeout 90 node scripts/c6d/reference-pdf-browser.mjs /tmp/c6e-evidence/pdf > /tmp/c6e-evidence/pdf-browser.log 2>&1
+      - name: Export exact committed source and checksums
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,subprocess,zipfile,hashlib,json,datetime,os
+          out=pathlib.Path('/tmp/c6e-evidence');out.mkdir(exist_ok=True);src=pathlib.Path('/tmp/c6e-source');src.mkdir(exist_ok=True)
+          sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();excluded=[];files=[]
+          with zipfile.ZipFile(src/'VELMERE_SOURCE_C6E.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for name in subprocess.check_output(['git','ls-files','-z'],text=True).split('\0'):
+              if not name:continue
+              raw=subprocess.check_output(['git','show','HEAD:'+name]);item={'path':name,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+              if pathlib.Path(name).suffix.lower() in {'.woff','.woff2','.ttf','.otf','.eot','.ttc'} or pathlib.Path(name).name=='embedded-font-data.ts':excluded.append(item);continue
+              z.writestr(name,raw);files.append(item)
+          identity={'sourceSha':sha,'treeSha':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'repository':'Zombieland1234/velmere-web','branch':os.environ.get('GITHUB_REF_NAME'),'originalUI2ZipIdentityConfirmed':False,'fontAssetsExcluded':excluded,'files':files,'zipSha256':hashlib.sha256((src/'VELMERE_SOURCE_C6E.zip').read_bytes()).hexdigest()}
+          (src/'SOURCE_IDENTITY.json').write_text(json.dumps(identity,indent=2));(out/'SOURCE_IDENTITY.json').write_text(json.dumps({k:v for k,v in identity.items() if k!='files'},indent=2))
+          subprocess.run(['git','status','--porcelain'],stdout=(out/'final-working-tree-status.txt').open('w'),check=True)
+          items=[{'path':str(p.relative_to(out)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(out.rglob('*')) if p.is_file()]
+          (out/'EVIDENCE_MANIFEST.json').write_text(json.dumps({'sourceSha':sha,'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':items},indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6e-source-${{ github.run_id }}
+          path: /tmp/c6e-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6e-evidence-${{ github.run_id }}
+          path: /tmp/c6e-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Honest non-promoting release gate
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,sys
+          out=pathlib.Path('/tmp/c6e-evidence');p=out/'QUALIFICATION.json'
+          if not p.exists():sys.exit('Missing full source checks; NO_GO')
+          rows=json.loads(p.read_text())
+          if len(rows)!=8 or any(x['result']!='PASS' for x in rows):sys.exit('Failing or missing full-source checks; NO_GO')
+          if any(x['result']!='PASS' for x in json.loads((out/'engine/ENGINE_OBSERVATIONS.json').read_text())['rows']):sys.exit('Engine false positives/negatives remain; NO_GO')
+          for f in ['failures/CONTROLLED_FAILURES.json','pdf/REFERENCE_PDF_BROWSER.json']:
+            p=out/f
+            if not p.exists() or any(x['result']!='PASS' for x in json.loads(p.read_text())['rows']):sys.exit('Missing or failed browser evidence; NO_GO')
+          print('Code gates passed, but this is NOT release GO: real paid lifecycle, deployed auth/provider integration and independent review are still required.')
+          PY

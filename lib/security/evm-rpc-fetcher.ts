@@ -2,7 +2,7 @@
  * Live On-Chain EVM RPC Bytecode Fetcher
  *
  * Reliably fetches deployed runtime bytecode from public blockchain RPC nodes
- * with automatic endpoint failover, strict timeouts, and memory LRU caching.
+ * with automatic endpoint failover, strict timeouts, and bounded memory caching.
  */
 
 import { fetchWithDeadline, readJsonResponseBounded } from "../network/fetch-with-deadline";
@@ -98,6 +98,8 @@ interface CacheEntry {
 }
 const BYTECODE_CACHE = new Map<string, CacheEntry>();
 const CACHE_TTL_MS = 5 * 60 * 1000;
+const MAX_CACHED_BYTECODES = 256;
+const MAX_BYTECODE_HEX_LENGTH = 2 + 2 * 128 * 1024;
 
 export interface FetchBytecodeResult {
   ok: boolean;
@@ -119,8 +121,11 @@ export async function fetchOnChainBytecode(
   const t0 = performance.now();
   const address = contractAddress.toLowerCase().trim();
 
-  const targetChainId: SupportedChainId =
-    chainId in SUPPORTED_CHAINS ? (chainId as SupportedChainId) : "56";
+  // An unsupported identity must never silently select a different chain.
+  if (!Object.prototype.hasOwnProperty.call(SUPPORTED_CHAINS, chainId)) {
+    return { ok: false, source: "rpc_failed", chainId, chainName: "Unsupported chain", latencyMs: performance.now() - t0, error: "unsupported_chain_id" };
+  }
+  const targetChainId = chainId as SupportedChainId;
   const chainConfig = SUPPORTED_CHAINS[targetChainId];
 
   if (!/^0x[a-f0-9]{40}$/.test(address)) {
@@ -169,13 +174,17 @@ export async function fetchOnChainBytecode(
         { timeoutMs: 3000, operation: `rpc_eth_getCode_${targetChainId}` },
       );
 
-      type RpcResponse = { jsonrpc?: string; result?: string; error?: { message?: string } };
+      if (!response.ok) continue;
+      type RpcResponse = { jsonrpc?: string; id?: unknown; result?: unknown; error?: unknown };
       const data = await readJsonResponseBounded<RpcResponse>(response, 1024 * 1024);
 
-      if (data && typeof data.result === "string") {
-        const rawCode = data.result.trim();
+      if (data && data.jsonrpc === "2.0" && data.id === 1 && data.error === undefined && typeof data.result === "string") {
+        const rawCode = data.result;
+        // EIP-1474 DATA is 0x-prefixed and uses exactly two digits per byte.
+        // A valid-looking HTTP error or malformed RPC result cannot enter cache.
+        if (rawCode.length > MAX_BYTECODE_HEX_LENGTH || !/^0x(?:[0-9a-fA-F]{2})*$/.test(rawCode)) continue;
         // "0x" or empty indicates non-contract (EOA) or selfdestructed contract
-        if (!rawCode || rawCode === "0x" || rawCode === "0x0") {
+        if (rawCode === "0x") {
           return {
             ok: false,
             source: "eoa_no_code",
@@ -186,7 +195,15 @@ export async function fetchOnChainBytecode(
           };
         }
 
-        // Store in cache
+        // Bounded cache: evict expired records, then the oldest inserted entry.
+        // This is not an LRU or an assertion that chain state is current.
+        for (const [key, entry] of BYTECODE_CACHE) {
+          if (Date.now() - entry.fetchedAt >= CACHE_TTL_MS) BYTECODE_CACHE.delete(key);
+        }
+        if (!BYTECODE_CACHE.has(cacheKey) && BYTECODE_CACHE.size >= MAX_CACHED_BYTECODES) {
+          const oldestKey = BYTECODE_CACHE.keys().next().value;
+          if (oldestKey !== undefined) BYTECODE_CACHE.delete(oldestKey);
+        }
         BYTECODE_CACHE.set(cacheKey, {
           bytecode: rawCode,
           fetchedAt: Date.now(),

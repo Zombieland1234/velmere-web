@@ -5,14 +5,14 @@ import { createHash } from 'node:crypto';
 const base=process.argv[2],out=process.argv[3];
 if(!base||!out)throw new Error('Usage: browser-observations.mjs origin output-dir');
 const origin=new URL(base).origin;
-if(!['https://velmere-web.vercel.app','http://127.0.0.1:3000'].includes(origin))throw new Error('Unapproved browser target');
+if(!['https://velmere-web.vercel.app','http://127.0.0.1:3000','http://localhost:3000'].includes(origin))throw new Error('Unapproved browser target');
 fs.mkdirSync(out,{recursive:true});
 const safeUrl=value=>{try{const u=new URL(value);return u.origin+u.pathname;}catch{return '[invalid-url]';}};
 const rows=[];const browser=await chromium.launch({headless:true,args:['--disable-dev-shm-usage']});
 try{
  for(const viewport of [{name:'desktop',width:1440,height:1000},{name:'mobile',width:390,height:844}]){
   const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},locale:'en-US',reducedMotion:'reduce'});
-  for(const route of ['/en','/en/login','/en/security','/en/shield','/en/shield-pro','/en/real-markets','/en/search','/en/account']){
+  for(const route of ['/en','/en/login','/en/security','/en/security/audits','/en/browser','/en/shield-map','/en/shield','/en/shield-pro','/en/real-markets','/en/search','/en/account']){
    const page=await context.newPage();const consoleErrors=[],runtimeErrors=[],requestFailures=[],httpErrors=[];
    page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text().slice(0,300));});
    page.on('pageerror',e=>runtimeErrors.push(e.message.slice(0,300)));

@@ -164,6 +164,11 @@ export type CanonicalAuditReportModel = {
   sections: CanonicalReportSection[];
   humanReviewEvidencePresent: boolean;
   reportDigest: string;
+  /** A profile or heuristic is not an execution attestation for the current target. */
+  executionEvidence?: {
+    sourceMode: "reference-profile" | "unverified-static-analysis" | "insufficient-evidence";
+    qualification: "NOT_VERIFIED";
+  };
   merkleRoot?: string;
   pkiAttestation?: ReportPkiAttestation;
   applicationSurface?: "browser" | "shield" | "shield-pro" | "real-markets" | "canonical";
@@ -569,6 +574,11 @@ export function buildFullInternalCanonicalReport(input: FullAuditReportInput): C
 
   const reportCore = {
     schemaVersion: "velmere.canonical-audit-report.v1" as const,
+    executionEvidence: {
+      sourceMode: (BENCHMARK_50_CONTRACTS[lookupKey] || MASTER_INSTITUTIONAL_PROFILES[lookupKey]
+        ? "reference-profile" : input.rawBytecode ? "unverified-static-analysis" : "insufficient-evidence") as "reference-profile" | "unverified-static-analysis" | "insufficient-evidence",
+      qualification: "NOT_VERIFIED" as const,
+    },
     reportId: input.reportId,
     caseRef: input.caseRef,
     target: {
@@ -862,321 +872,53 @@ export function canonicalReportToPdfLines(
   report: CanonicalAuditReportModel,
   options?: { includeLockedTeasers?: boolean },
 ): string[] {
-  const includeLockedTeasers = options?.includeLockedTeasers ?? (!report.reportId?.includes("tri_locale"));
-  const lines: string[] = [];
-  const isPl = report.locale === "pl";
-  const isDe = report.locale === "de";
-
-  const tTitle = isPl
-    ? `RAPORT BEZPIECZEŃSTWA VELMÈRE: ${report.target.contractName.toUpperCase()}`
-    : isDe
-      ? `VELMÈRE SICHERHEITSAUDITBERICHT: ${report.target.contractName.toUpperCase()}`
-      : `VELMERE SECURITY AUDIT REPORT: ${report.target.contractName.toUpperCase()}`;
-  const tContract = isPl ? "Badany kontrakt" : isDe ? "Geprüfter Vertrag" : "Audited Contract";
-  const tNetwork = isPl ? "Sieć" : isDe ? "Netzwerk" : "Network";
-  const tReportId = isPl ? "ID Raportu" : isDe ? "Berichts-ID" : "Report ID";
-  const tTier = isPl ? "Pakiet" : isDe ? "Stufe" : "Tier";
-  const tCreated = isPl ? "Data wygenerowania" : isDe ? "Erstellt am" : "Created At";
-  const tVerdict = isPl ? "WERDYKT KOŃCOWY" : isDe ? "ENDGÜLTIGES URTEIL" : "VERDICT SUMMARY";
-  const tConfidence = isPl ? "Wskaźnik pewności" : isDe ? "Konfidenzwert" : "Confidence Score";
-  const tCoverage = isPl ? "Pokrycie dowodami" : isDe ? "Beweisabdeckung" : "Evidence Coverage";
-
-  lines.push(tTitle);
-  const isMarket = report.applicationSurface === "real-markets" ||
-    report.target.network?.toLowerCase().includes("stock") ||
-    report.target.network?.toLowerCase().includes("nasdaq") ||
-    report.target.network?.toLowerCase().includes("nyse") ||
-    report.target.network?.toLowerCase().includes("commodit") ||
-    Boolean(report.auditScopeManifest?.marketSpec);
-
-  const isNative = report.applicationSurface === "shield" ||
-    report.target.network?.toLowerCase().includes("bitcoin") ||
-    report.target.network?.toLowerCase().includes("solana") ||
-    report.target.network?.toLowerCase().includes("cardano") ||
-    report.target.network?.toLowerCase().includes("xrp") ||
-    report.target.network?.toLowerCase().includes("doge") ||
-    Boolean(report.auditScopeManifest?.consensusSpec);
-
-  lines.push(`${tContract}: ${report.target.contractAddress}`);
-  if (isMarket) {
-    lines.push(`${tNetwork}: ${report.target.network}`);
-  } else if (isNative) {
-    lines.push(`${tNetwork}: ${report.target.network}${report.target.chainId && report.target.chainId !== "0" && !report.target.chainId.includes("-") ? ` (Chain ID: ${report.target.chainId})` : ""}`);
-  } else {
-    lines.push(`${tNetwork}: ${report.target.network} (Chain ID: ${report.target.chainId})`);
-  }
-  const tSurface = isPl ? "Powierzchnia aplikacji" : isDe ? "Anwendungsoberfläche" : "Application Surface";
-  const surfaceLabel = (report.applicationSurface || "canonical").toUpperCase().replace("-", " ");
-  lines.push(`${tReportId}: ${report.reportId} | ${tTier}: ${report.clientEntitlementTier.toUpperCase()} | ${tSurface}: ${surfaceLabel}`);
-  lines.push(`${tCreated}: ${report.createdAt}`);
-  lines.push("");
-
-  const qScore = report.verdict.auditQualityScore ?? (report.clientEntitlementTier === "advanced" ? 95 : report.clientEntitlementTier === "pro" ? 82 : 62);
-  const verdictStr =
-    report.verdict.riskScore === null || report.verdict.riskLabel.includes("NOT SCORED")
-      ? `${tVerdict}: ${report.verdict.riskLabel} | Audit Quality: ${qScore}/100`
-      : `${tVerdict}: ${report.verdict.riskLabel} (Risk: ${report.verdict.riskScore}/100 | Quality: ${qScore}/100)`;
-  lines.push(verdictStr);
-
-  const tDecision = isPl ? "Decyzja wdrozeniowa" : isDe ? "Freigabeentscheidung" : "Release Decision";
-  const tStatus = isPl ? "Status weryfikacji" : isDe ? "Verifikationsstatus" : "Verification Status";
-  const releaseDecisionStr = report.verdict.releaseDecision ?? "PASS";
-  const verificationStatusStr = report.verdict.verificationStatus ?? "VERIFIED";
-  lines.push(`${tDecision}: ${releaseDecisionStr} | ${tStatus}: ${verificationStatusStr}`);
-
-  if (report.verdict.stopSellActive) {
-    const tStopSell = isPl
-      ? `STOP-SELL BLOKADA SPRZEDAZY: ${report.verdict.stopSellReason ?? "WYKRYTO PODATNOSC KRYTYCZNA"}`
-      : isDe
-        ? `STOP-SELL SPERRE: ${report.verdict.stopSellReason ?? "KRITISCHE SCHWACHSTELLE ENTDECKT"}`
-        : `STOP-SELL DIRECTIVE: ${report.verdict.stopSellReason ?? "CRITICAL VULNERABILITY DETECTED"}`;
-    lines.push(tStopSell);
-  }
-
-  lines.push(`${tConfidence}: ${report.verdict.confidenceScore}/100 | ${tCoverage}: ${report.verdict.evidenceCoverage}% | Audit Quality Score: ${qScore}/100`);
-
-  if (report.verdict.snapshotProvenance) {
-    const sp = report.verdict.snapshotProvenance;
-    if (isMarket) {
-      lines.push(
-        isPl
-          ? `Proweniencja danych rynkowych: SEC EDGAR / OTC | Znacznik: ${sp.marketStateTimestamp || "2026-09-09T16:00:00Z (NYSE Close)"} | Identyfikator: ${sp.regulatoryFilingHash || report.target.contractAddress} | ${sp.reproducibilityStatus}`
-          : `Market Data Provenance: SEC EDGAR / OTC | Timestamp: ${sp.marketStateTimestamp || "2026-09-09T16:00:00Z (NYSE Close)"} | Filing ID: ${sp.regulatoryFilingHash || report.target.contractAddress} | ${sp.reproducibilityStatus}`
-      );
-    } else if (isNative) {
-      lines.push(
-        isPl
-          ? `Proweniencja sieci L1: Blok #${sp.snapshotBlockNumber || 0} | Hash bloku: ${(sp.snapshotBlockHash || "0x0").slice(0, 18)}... | ${sp.reproducibilityStatus}`
-          : `L1 Network Provenance: Block #${sp.snapshotBlockNumber || 0} | Block Hash: ${(sp.snapshotBlockHash || "0x0").slice(0, 18)}... | ${sp.reproducibilityStatus}`
-      );
-    } else {
-      lines.push(
-        isPl
-          ? `Proweniencja stanu EVM: Blok #${sp.snapshotBlockNumber} | Bytecode SHA-256: ${sp.runtimeBytecodeSha256 ? sp.runtimeBytecodeSha256.slice(0, 16) + "..." : "N/A"} | ${sp.reproducibilityStatus}`
-          : `EVM State Provenance: Block #${sp.snapshotBlockNumber} | Bytecode SHA-256: ${sp.runtimeBytecodeSha256 ? sp.runtimeBytecodeSha256.slice(0, 16) + "..." : "N/A"} | ${sp.reproducibilityStatus}`
-      );
-    }
-  }
-  if (report.merkleRoot) {
-    lines.push(`Merkle Root: ${report.merkleRoot}`);
-  }
-
-  if (report.verdict.coverageTuple) {
-    const ct = report.verdict.coverageTuple;
-    if (isMarket) {
-      lines.push(
-        isPl
-          ? `Macierz pokrycia analitycznego rynku: Analiza czynnikowa ${ct.functionsPct}% | Zmienność GARCH ${ct.reachableCFGEdgesPct}% | Testy skrajne (Stress-Test) ${ct.detectorsExecutedPct}% | Weryfikacja ekonometryczna ${ct.formalPropertiesPct}%`
-          : `Market Analytical Coverage Matrix: Factor Models ${ct.functionsPct}% | GARCH Volatility ${ct.reachableCFGEdgesPct}% | Liquidity Stress-Testing ${ct.detectorsExecutedPct}% | Econometric Verification ${ct.formalPropertiesPct}%`
-      );
-    } else if (isNative) {
-      lines.push(
-        isPl
-          ? `Macierz odporności sieci L1: Weryfikacja konsensusu ${ct.functionsPct}% | Graf komunikacji P2P ${ct.reachableCFGEdgesPct}% | Detektory błędów węzłów ${ct.detectorsExecutedPct}% | Weryfikacja kryptograficzna ${ct.formalPropertiesPct}%`
-          : `L1 Network Resilience Matrix: Consensus Verification ${ct.functionsPct}% | P2P Topology Graph ${ct.reachableCFGEdgesPct}% | Node Fault Detectors ${ct.detectorsExecutedPct}% | Cryptographic Verification ${ct.formalPropertiesPct}%`
-      );
-    } else {
-      lines.push(
-        isPl
-          ? `Macierz pokrycia dowodowego: Bytecode ${ct.bytecodeInstructionsPct}% | CFG ${ct.reachableCFGEdgesPct}% | Funkcje ${ct.functionsPct}% | Detektory ${ct.detectorsExecutedPct}% | Weryfikacja formalna ${ct.formalPropertiesPct}%`
-          : `Evidence Coverage Matrix: Bytecode ${ct.bytecodeInstructionsPct}% | CFG ${ct.reachableCFGEdgesPct}% | Functions ${ct.functionsPct}% | Detectors ${ct.detectorsExecutedPct}% | Formal Verification ${ct.formalPropertiesPct}%`
-      );
-    }
-  }
-
-  if (report.auditScopeManifest && report.clientEntitlementTier !== "basic") {
-    const asm = report.auditScopeManifest;
-    if (isMarket && asm.marketSpec) {
-      lines.push(
-        isPl
-          ? `Manifest zakresu analitycznego rynku: Ticker ${asm.marketSpec.tickerSymbol} | Venue ${asm.marketSpec.exchangeMic} | Model ryzyka: ${asm.marketSpec.volatilityModel} | Jurysdykcja: ${asm.marketSpec.regulatoryJurisdiction}`
-          : `Market Scope Manifest: Ticker ${asm.marketSpec.tickerSymbol} | Venue ${asm.marketSpec.exchangeMic} | Risk Model: ${asm.marketSpec.volatilityModel} | Jurisdiction: ${asm.marketSpec.regulatoryJurisdiction}`
-      );
-    } else if (isNative && asm.consensusSpec) {
-      lines.push(
-        isPl
-          ? `Manifest sieci L1: Sieć ${asm.targetSpec.network} | Konsensus: ${asm.consensusSpec.consensusArchitecture} | Klient: ${asm.consensusSpec.nodeClientVersion} | Kryptografia: ${asm.consensusSpec.cryptographicPrimitives}`
-          : `L1 Network Manifest: Network ${asm.targetSpec.network} | Consensus: ${asm.consensusSpec.consensusArchitecture} | Client: ${asm.consensusSpec.nodeClientVersion} | Cryptography: ${asm.consensusSpec.cryptographicPrimitives}`
-      );
-    } else if (asm.compilerSpec) {
-      lines.push(
-        isPl
-          ? `Manifest zakresu audytu: Cel ${asm.targetSpec.contractAddress} | Kompilator ${asm.compilerSpec.compilerVersion} | EVM ${asm.compilerSpec.evmTarget}`
-          : `Audit Scope Manifest: Target ${asm.targetSpec.contractAddress} | Compiler ${asm.compilerSpec.compilerVersion} | EVM ${asm.compilerSpec.evmTarget}`
-      );
-    }
-  }
-
-  if (report.attackPathAnalysis && report.clientEntitlementTier === "advanced" && (report.attackPathAnalysis.synthesizedAttackPaths?.length ?? 0) > 0) {
-    for (const p of report.attackPathAnalysis.synthesizedAttackPaths) {
-      lines.push(
-        isPl
-          ? `Wektor ataku [${p.id}]: ${p.vectorTitle} | Wplyw: ${p.economicImpactUsdEst} | Status: ${p.mitigationStatus}`
-          : `Attack Path [${p.id}]: ${p.vectorTitle} | Impact: ${p.economicImpactUsdEst} | Status: ${p.mitigationStatus}`
-      );
-    }
-  }
-
-  lines.push(report.verdict.summary);
-  lines.push("");
-
+  // This exporter has no independently validated execution receipt, solver
+  // artifact, TSA token, or trusted reviewer signature. Do not promote the
+  // legacy model's profile percentages and labels into customer proof.
+  const locale = report.locale;
+  const select = (pl: string, en: string, de: string) => locale === "pl" ? pl : locale === "de" ? de : en;
+  const sourceMode = report.executionEvidence?.sourceMode ?? "insufficient-evidence";
+  const lines: string[] = [
+    select("STATUS DOWODOWY VELMÈRE", "VELMÈRE EVIDENCE STATUS", "VELMÈRE NACHWEISSTATUS"),
+    `Source mode: ${sourceMode} | Qualification: NOT_VERIFIED`,
+    select(
+      "To nie jest potwierdzony audyt aktualnego stanu celu. Zapisany profil i wynik heurystyki nie są dowodem bieżącej weryfikacji.",
+      "This is not a verified audit of the current target. A stored profile or heuristic result is not proof of current verification.",
+      "Dies ist kein verifiziertes Audit des aktuellen Ziels. Ein gespeichertes Profil oder heuristisches Ergebnis ist kein aktueller Prüfungsnachweis.",
+    ),
+    `Target: ${report.target.contractName}`,
+    `Contract address: ${report.target.contractAddress}`,
+    `Network: ${report.target.network} | Chain ID: ${report.target.chainId}`,
+    `Report ID: ${report.reportId} | Tier: ${report.clientEntitlementTier.toUpperCase()}`,
+    `Generated at: ${report.createdAt}`,
+    "",
+    select("--- GRANICE DOWODÓW ---", "--- EVIDENCE LIMITATIONS ---", "--- NACHWEISGRENZEN ---"),
+    select("Wynik ryzyka, jakość, pewność i pokrycie: NIEZMIERZONE dla tego wykonania.", "Risk, quality, confidence and coverage: NOT MEASURED for this execution.", "Risiko, Qualität, Konfidenz und Abdeckung: für diese Ausführung NICHT GEMESSEN."),
+    select("Aktualny blok i hash kodu: NIEZWERYFIKOWANE. Czas wygenerowania dokumentu nie jest czasem obserwacji źródła.", "Current block and code hash: NOT VERIFIED. Document generation time is not a source observation timestamp.", "Aktueller Block und Code-Hash: NICHT VERIFIZIERT. Die Dokumentzeit ist kein Zeitstempel einer Quellenbeobachtung."),
+    select("Dowód formalny i test wykonalności ataku: BRAK ZWERYFIKOWANEGO ARTEFAKTU.", "Formal proof and exploit reproduction: NO VERIFIED EXECUTION ARTIFACT.", "Formaler Beweis und Angriffsreproduktion: KEIN VERIFIZIERTES AUSFÜHRUNGSARTEFAKT."),
+    select("Niezależny przegląd i zewnętrzny znacznik czasu: BRAK ZWERYFIKOWANEJ ATESTACJI.", "Independent review and external timestamp: NO VERIFIED ATTESTATION.", "Unabhängige Prüfung und externer Zeitstempel: KEINE VERIFIZIERTE BESTÄTIGUNG."),
+    select("Decyzja o dopuszczeniu celu: NOT_VERIFIED. Ten dokument nie nadaje zgody na wdrożenie ani prawa do sprzedaży danych.", "Target release decision: NOT_VERIFIED. This document grants neither deployment approval nor data resale rights.", "Zielfreigabe: NOT_VERIFIED. Dieses Dokument erteilt weder eine Bereitstellungsfreigabe noch Datenvertriebsrechte."),
+    "",
+  ];
   for (const section of report.sections) {
     if (section.isLocked) {
-      if (!includeLockedTeasers) {
-        // Customer requested: In clean PDF, do NOT mention what would be unlocked in Pro or Advanced!
-        continue;
+      if (options?.includeLockedTeasers === true) {
+        lines.push(`Section ${section.id}: LOCKED (${section.requiredTier.toUpperCase()})`);
       }
-      lines.push(`--- ${section.title.toUpperCase()} [${section.requiredTier.toUpperCase()}] ---`);
-      lines.push(
-        isPl
-          ? `[SEKCJA ZABLOKOWANA - WYMAGA PAKIETU ${section.requiredTier.toUpperCase()}]`
-          : isDe
-            ? `[GESPERRTER ABSCHNITT - ERFORDERT ${section.requiredTier.toUpperCase()}-STUFE]`
-            : `[LOCKED SECTION - REQUIRES ${section.requiredTier.toUpperCase()} ENTITLEMENT]`
-      );
-      lines.push(
-        isPl
-          ? "Podsumowanie zakresu analitycznego tej sekcji:"
-          : isDe
-            ? "Zusammenfassung der analytischen Tiefe dieses Abschnitts:"
-            : "Summary of Analytical Depth in this section:"
-      );
-      if (section.sampleSummaryLines) {
-        for (const summaryLine of section.sampleSummaryLines) {
-          lines.push(`  * ${summaryLine}`);
-        }
-      }
-      lines.push(
-        isPl
-          ? "Szczegółowe dowody i ustalenia wstrzymane do czasu podniesienia pakietu."
-          : isDe
-            ? "Geschützte Beweise und Befunde bis zum Stufen-Upgrade zurückgehalten."
-            : "Protected evidence and findings withheld pending tier upgrade."
-      );
-      lines.push("");
       continue;
     }
-
-    // Clean section header without tier tags
-    lines.push(`--- ${section.title.toUpperCase()} ---`);
-    if (section.id === "advanced_human_review") {
-      lines.push(
-        report.humanReviewEvidencePresent
-          ? (isPl ? "TYP WERYFIKACJI: NIEZALEŻNY PRZEGLĄD MANUALNY AUDYTORA" : isDe ? "VERIFIKATIONSTYP: UNABHÄNGIGE MANUELLE AUDITORPRÜFUNG" : "VERIFICATION TYPE: INDEPENDENT MANUAL AUDITOR REVIEW")
-          : (isPl ? "STATUS RECENZJI: WYŁĄCZNIE ANALIZA AUTOMATYCZNA (AUTOMATED_ONLY)" : isDe ? "STATUS DER ÜBERPRÜFUNG: NUR AUTOMATISIERTE ANALYSE (AUTOMATED_ONLY)" : "REVIEW STATUS: AUTOMATED ANALYSIS ONLY (AUTOMATED_ONLY)")
-      );
-    } else {
-      lines.push(
-        isPl
-          ? "TYP ANALIZY: ZAUTOMATYZOWANA WERYFIKACJA STATYCZNA & FORMALNA"
-          : isDe
-            ? "ANALYSETYP: AUTOMATISIERTE STATISCHE & FORMALE PRÜFUNG"
-            : "ANALYSIS TYPE: AUTOMATED STATIC & FORMAL ANALYSIS"
-      );
+    const candidates = section.data?.findings ?? [];
+    if (!candidates.length) continue;
+    lines.push(`--- ${select("KANDYDACI DO WERYFIKACJI", "CANDIDATES FOR REVIEW", "PRÜFKANDIDATEN")} (${section.id}) ---`);
+    lines.push(select("Poniższe etykiety pochodzą z profilu lub heurystyki; nie potwierdzają obecności luki w aktualnym celu.", "The following labels come from a profile or heuristic; they do not confirm a vulnerability in the current target.", "Die folgenden Bezeichnungen stammen aus einem Profil oder einer Heuristik; sie bestätigen keine aktuelle Schwachstelle."));
+    for (const finding of candidates) {
+      lines.push(`${finding.id}: ${finding.title}`);
+      lines.push(`${select("Deklarowana istotność (niezweryfikowana)", "Declared severity (not validated)", "Angegebener Schweregrad (nicht validiert)")}: ${finding.severity}`);
     }
-    lines.push(section.subtitle);
-    lines.push("");
-
-    if (section.data?.keyValuePairs) {
-      for (const pair of section.data.keyValuePairs) {
-        lines.push(`  ${pair.label}: ${pair.value}`);
-      }
-      lines.push("");
-    }
-
-    if (section.data?.metrics) {
-      for (const metric of section.data.metrics) {
-        lines.push(`  * ${metric.label}: ${metric.value} [${metric.status.toUpperCase()}]`);
-      }
-      lines.push("");
-    }
-
-    if (section.data?.paragraphs) {
-      for (const p of section.data.paragraphs) {
-        lines.push(`  ${p}`);
-        lines.push("");
-      }
-    }
-
-    if (section.data?.findings && section.data.findings.length > 0) {
-      lines.push(isPl ? "  Ustalenia i weryfikacja podatności:" : isDe ? "  Befunde & Schwachstellenanalyse:" : "  Findings & Vulnerability Analysis:");
-      const tCat = isPl ? "Kategoria" : isDe ? "Kategorie" : "Category";
-      const tSt = isPl ? "Status" : isDe ? "Status" : "State";
-      const tEv = isPl ? "Dowód" : isDe ? "Beweis" : "Evidence";
-      const tRec = isPl ? "Rekomendacja" : isDe ? "Empfehlung" : "Recommendation";
-
-      for (const finding of section.data.findings) {
-        const swcTag = finding.swcId ? ` [${finding.swcId}${finding.cweId ? ` / ${finding.cweId}` : ""}]` : "";
-        const diffTag = finding.difficulty ? ` [${isPl ? "Trudność" : isDe ? "Schwierigkeit" : "Difficulty"}: ${finding.difficulty}]` : "";
-        lines.push(`    - [${finding.severity.toUpperCase()}] ${finding.id}${swcTag}${diffTag}: ${finding.title}`);
-        lines.push(`      ${tCat}: ${finding.category} | ${tSt}: ${finding.remediationState ?? "open"}`);
-        lines.push(`      ${tEv}: ${finding.evidence}`);
-        if (finding.attackScenario && !section.isLocked && section.requiredTier !== "basic") {
-          lines.push(`      ${isPl ? "Scenariusz ataku" : isDe ? "Angriffsszenario" : "Attack Scenario"}: ${finding.attackScenario}`);
-        }
-        if (finding.proofOfConcept && !section.isLocked && section.requiredTier === "advanced") {
-          lines.push(`      ${isPl ? "Dowód wykonalności (PoC)" : isDe ? "Proof of Concept (PoC)" : "Proof of Concept (PoC)"}: ${finding.proofOfConcept}`);
-        }
-        lines.push(`      ${tRec}: ${finding.recommendation}`);
-        if (finding.remediationDiff && section.requiredTier === "advanced") {
-          lines.push(`      ${isPl ? "Poprawka kodu (Diff)" : isDe ? "Code-Patch (Diff)" : "Remediation Patch (Diff)"}:`);
-          for (const diffLine of finding.remediationDiff.trim().split("\n")) {
-            lines.push(`        ${diffLine}`);
-          }
-        }
-        if (finding.clientResponse && !section.isLocked && section.requiredTier !== "basic") {
-          lines.push(`      ${isPl ? "Odpowiedź klienta" : isDe ? "Kundenantwort" : "Client Response"}: ${finding.clientResponse}`);
-        }
-        if (finding.retestStatus && !section.isLocked && section.requiredTier === "advanced") {
-          lines.push(`      ${isPl ? "Weryfikacja re-testu" : isDe ? "Nachtest-Verifikation" : "Retest Verification"}: ${finding.retestStatus}`);
-        }
-        lines.push("");
-      }
-    }
-
-    if (section.data?.reviewerState) {
-      const tRevState = isPl ? "Stan weryfikacji" : isDe ? "Prüferstatus" : "Reviewer State";
-      const tAn = isPl ? "Analityk" : isDe ? "Analyst" : "Analyst";
-      const tSig = isPl ? "Podpis atestacji" : isDe ? "Bestätigungssignatur" : "Attestation Signature";
-
-      if (section.data.reviewerState.status === "not_commissioned" || section.data.reviewerState.status === "pending_submission") {
-        lines.push(`  ${tRevState}: INDEPENDENT HUMAN REVIEW NOT COMMISSIONED`);
-        lines.push(`  ${tAn}: ${isPl ? "BRAK (Niezależny przegląd analityka nie został zlecony)" : isDe ? "KEINER (Unabhängige manuelle Prüfung nicht beauftragt)" : "NONE (Independent manual review not commissioned)"}`);
-        lines.push(`  ${tSig}: ${isPl ? "BRAK PODPISU (Brak atestacji - brak deklaracji wykonania)" : isDe ? "KEINE SIGNATUR (Keine Bestätigung - keine Ausführungsbehauptung)" : "NONE (No attestation emitted - review not performed)"}`);
-      } else {
-        lines.push(`  ${tRevState}: ${section.data.reviewerState.status}`);
-        if (section.data.reviewerState.reviewedBy) {
-          lines.push(`  ${tAn}: ${section.data.reviewerState.reviewedBy} (${section.data.reviewerState.reviewDate})`);
-          lines.push(`  ${tSig}: ${section.data.reviewerState.signedHash}`);
-        }
-      }
-    }
-
     lines.push("");
   }
-
-  lines.push(
-    isPl
-      ? "POUFNOŚĆ I ZASTRZEŻENIE PRAWNE:"
-      : isDe
-        ? "VERTRAULICHKEIT & RECHTLICHER HINWEIS:"
-        : "CONFIDENTIALITY & LEGAL NOTICE:"
-  );
-  lines.push(
-    isPl
-      ? "Niniejszy dokument jest raportem analizy bezpieczeństwa opartym na dowodach, wygenerowanym przez Velmère Security."
-      : isDe
-        ? "Dieses Dokument ist ein beweisbasierter Sicherheitsanalysebericht von Velmère Security."
-        : "This document is an evidence-bound security analysis report produced by Velmere Security."
-  );
-  lines.push(
-    isPl
-      ? "Nie stanowi gwarancji komercyjnej, porady inwestycyjnej ani certyfikatu absolutnego bezpieczeństwa."
-      : isDe
-        ? "Es stellt keine kommerzielle Garantie, Anlageberatung oder garantierte Sicherheitszertifizierung dar."
-        : "It does not represent a commercial warranty, investment advice, or guaranteed-safe certification."
-  );
-
+  lines.push(select("--- INTEGRALNOŚĆ PLIKU ---", "--- FILE INTEGRITY ---", "--- DATEIINTEGRITÄT ---"));
+  lines.push(select("SHA-256 w nagłówku pobrania identyfikuje bajty PDF. Sam hash nie potwierdza ustaleń, czasu, niezależności wystawcy ani bezpieczeństwa celu.", "The download SHA-256 identifies PDF bytes. A hash alone does not validate findings, time, issuer independence or target safety.", "Der SHA-256-Downloadwert identifiziert die PDF-Bytes. Ein Hash allein bestätigt weder Befunde, Zeit, unabhängige Herkunft noch die Sicherheit des Ziels."));
   return lines;
 }
 
@@ -1201,16 +943,18 @@ export function renderCanonicalReportToPdf(report: CanonicalAuditReportModel): {
   const lines = canonicalReportToPdfLines(report);
   const options: CustomerSafePdfOptions = {
     title: report.locale === "pl"
-      ? `RAPORT AUDYTU VELMÈRE ${report.clientEntitlementTier.toUpperCase()}`
+      ? `VELMÈRE ${report.clientEntitlementTier.toUpperCase()} — NOT_VERIFIED`
       : report.locale === "de"
-        ? `VELMÈRE ${report.clientEntitlementTier.toUpperCase()} AUDITBERICHT`
-        : `VELMÈRE ${report.clientEntitlementTier.toUpperCase()} AUDIT REPORT`,
+        ? `VELMÈRE ${report.clientEntitlementTier.toUpperCase()} — NOT_VERIFIED`
+        : `VELMÈRE ${report.clientEntitlementTier.toUpperCase()} — NOT_VERIFIED`,
     subtitle: `${report.target.contractName} (${report.target.contractAddress})`,
     footer: report.locale === "pl"
-      ? `Audyt Velmère ${report.clientEntitlementTier.toUpperCase()} | Kanoniczny raport dowodowy | Nie stanowi porady finansowej`
+      ? `Audyt Velmère ${report.clientEntitlementTier.toUpperCase()} | Niezweryfikowany status dowodów | Nie stanowi porady finansowej`
       : report.locale === "de"
-        ? `Velmère ${report.clientEntitlementTier.toUpperCase()} Audit | Kanonischer Beweisbericht | Keine Finanzberatung`
-        : `Velmère ${report.clientEntitlementTier.toUpperCase()} Audit | Canonical Evidence Report | Not financial advice`,
+        ? `Velmère ${report.clientEntitlementTier.toUpperCase()} Audit | Unverifizierter Nachweisstatus | Keine Finanzberatung`
+        : `Velmère ${report.clientEntitlementTier.toUpperCase()} Audit | Unverified evidence status | Not financial advice`,
+    integrityLabel: "Local file digest only; not an issuer attestation",
+    generator: "Generated by Velmère; target verification not established",
     documentId: report.reportId,
     generatedAt: report.createdAt,
     locale: report.locale,
