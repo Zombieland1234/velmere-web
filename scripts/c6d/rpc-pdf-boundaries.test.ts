@@ -23,11 +23,11 @@ for(const [id,body,status]of invalidResponses)test(`invalid actual RPC response 
  const good=await fetchOnChainBytecode(target,'1');assert.equal(good.source,'live_rpc');assert.equal(good.bytecode,'0x6000');
 });
 test('empty DATA is no-code, not an invented runtime',async t=>{
- t.mock.method(globalThis,'fetch',async()=>new Response(JSON.stringify({jsonrpc:'2.0',id:1,result:'0x'})));
+ t.mock.method(globalThis,'fetch',async()=>new Response(JSON.stringify({jsonrpc:'2.0',id:1,result:'0x'}),{headers:{'content-type':'application/json'}}));
  const r=await fetchOnChainBytecode(address(),'1');assert.equal(r.ok,false);assert.equal(r.source,'eoa_no_code');
 });
 test('actual RPC cache stays bounded and evicts oldest entries',async t=>{
- const stub=t.mock.method(globalThis,'fetch',async()=>new Response(JSON.stringify({jsonrpc:'2.0',id:1,result:'0x6000'})));
+ const stub=t.mock.method(globalThis,'fetch',async()=>new Response(JSON.stringify({jsonrpc:'2.0',id:1,result:'0x6000'}),{headers:{'content-type':'application/json'}}));
  const first=address();await fetchOnChainBytecode(first,'1');for(let n=0;n<256;n++)await fetchOnChainBytecode(address(),'1');const count=stub.mock.callCount();
  assert.equal((await fetchOnChainBytecode(first,'1')).source,'live_rpc');assert.equal(stub.mock.callCount(),count+1);
 });
