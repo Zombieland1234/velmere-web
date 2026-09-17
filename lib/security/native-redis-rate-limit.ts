@@ -26,10 +26,15 @@ local reset = (wid + 1) * window
 local old = redis.call('HMGET', KEYS[1], 'window', 'count')
 local count = 0
 if old[1] or old[2] then
-  if not tonumber(old[1]) or not tonumber(old[2]) or tonumber(old[2]) < 0 then
+  local oldWindow = tonumber(old[1])
+  local oldCount = tonumber(old[2])
+  -- Corrupt fractions/future windows must not reset quota or be truncated by RESP.
+  if not oldWindow or not oldCount or oldWindow ~= math.floor(oldWindow) or
+      oldCount ~= math.floor(oldCount) or oldWindow < 0 or oldWindow > wid or
+      oldCount < 0 or oldCount > limit + 100 then
     return redis.error_reply('invalid_limiter_state')
   end
-  if tonumber(old[1]) == wid then count = tonumber(old[2]) end
+  if oldWindow == wid then count = oldCount end
 end
 count = math.min(limit + 100, count + cost)
 redis.call('HSET', KEYS[1], 'window', wid, 'count', count)

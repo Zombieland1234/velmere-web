@@ -9,7 +9,7 @@ old_tests=['scripts/c6/route-boundaries.test.ts','scripts/c6/provider-engine-bou
 c10_tests=[str(p) for p in sorted(Path('scripts/c10').glob('*.test.ts'))]
 assert len(c10_tests)==3
 new_tests=['scripts/c8/request-boundaries.test.ts','scripts/c8/webhook-ingress.test.ts','scripts/c8/edge-boundary.test.ts','scripts/c9/engine-boundaries.test.ts','scripts/c9/engine-claims.test.ts','scripts/c9/customer-report-regressions.test.ts',*c10_tests]
-c12_tests=['scripts/c12/production-boundaries.test.ts','scripts/c12/unavailable-report.test.ts']
+c12_tests=['scripts/c12/production-boundaries.test.ts','scripts/c12/unavailable-report.test.ts','scripts/c12/host-normalization.test.ts']
 checks=[
  ('clean-install',['npm','ci','--ignore-scripts','--no-fund'],600),
  ('worker-build',['npm','run','build:audit-worker'],180),
