@@ -18,7 +18,9 @@ export interface ReentrancyAnalysisResult {
   hasVulnerability: boolean;
   findings: StandardFindingV2[];
   isGuardedByMutex: boolean;
-  ceiAdherence: boolean;
+  ceiAdherence: boolean | null;
+  sourceMutexObserved: boolean;
+  limitations: string[];
   readOnlyVulnerable: boolean;
 }
 
@@ -30,14 +32,12 @@ export function analyzeContextualReentrancy(
   const findings: StandardFindingV2[] = [];
   const { cfg, selectorsDiscovered } = cfgResult;
 
-  // Suppression is allowed only when the bounded source analyzer can identify
-  // every supported external-interaction -> state-effect path and every one of
-  // those paths carries a recognized function-scoped reentrancy guard. Merely
-  // seeing a modifier name, a lock variable or an unrelated SSTORE is not proof.
+  // Submitted source is NOT authenticated against this runtime. Recognizing a
+  // valid mutex in that text cannot suppress an independent bytecode signal.
   const sourceGuardCoverage = sourceCode?.trim()
     ? analyzeReentrancyGuardCoverage(sourceCode)
     : null;
-  const hasReentrancyGuard = Boolean(sourceGuardCoverage?.allSupportedPathsGuarded);
+  const hasReentrancyGuard = false;
 
   let classicReentrancyDetected = false;
   let readOnlyReentrancyDetected = false;
@@ -74,14 +74,6 @@ export function analyzeContextualReentrancy(
       if (sstorePc >= 0) break;
     }
     if (sstorePc >= 0) classicReentrancyDetected = true;
-
-    if (classicReentrancyDetected && hasReentrancyGuard) {
-      // The bytecode-only CALL -> SSTORE shape also occurs for the guard exit
-      // write itself. A function-scoped source guard therefore suppresses this
-      // candidate only under the explicit bounded coverage condition above.
-      classicReentrancyDetected = false;
-      continue;
-    }
 
     if (classicReentrancyDetected) {
       findings.push({
@@ -274,7 +266,10 @@ export function analyzeContextualReentrancy(
     hasVulnerability: findings.length > 0,
     findings,
     isGuardedByMutex: hasReentrancyGuard,
-    ceiAdherence: !classicReentrancyDetected,
+    // No signal is not a proof that CEI holds on unresolved/unrepresented paths.
+    ceiAdherence: classicReentrancyDetected ? false : null,
+    sourceMutexObserved: Boolean(sourceGuardCoverage?.allSupportedPathsGuarded),
+    limitations: ["SOURCE_RUNTIME_IDENTITY_NOT_VERIFIED", "NO_COMPLETE_PATH_FEASIBILITY_PROOF", ...(cfg.unresolvedDynamicJumps ? [`UNRESOLVED_DYNAMIC_JUMPS:${cfg.unresolvedDynamicJumps}`] : [])],
     readOnlyVulnerable: readOnlyReentrancyDetected,
   };
 }

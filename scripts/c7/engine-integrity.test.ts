@@ -65,13 +65,14 @@ test('remediation proposals remain explicitly un-applied without an executor/com
   assert.equal(r.patchValidation.patchesPassingRegression,0);
 });
 
-test('recognized function-scoped mutex suppresses CALL->guard-exit-SSTORE false positive without comment/name suppression',()=>{
+test('C9 correction: observed source mutex is not bytecode identity proof; candidate is not suppressed',()=>{
   const unsafe=PRE+'contract Case { mapping(address=>uint) b; function w() external { uint x=b[msg.sender]; (bool ok,)=msg.sender.call{value:x}(""); require(ok); b[msg.sender]=0; } }';
   const guarded=PRE+'contract Case { mapping(address=>uint) b; bool private entered; modifier nonReentrant(){require(!entered);entered=true;_;entered=false;} function w() external nonReentrant { uint x=b[msg.sender]; (bool ok,)=msg.sender.call{value:x}(""); require(ok); b[msg.sender]=0; } }';
   const a=audit(unsafe,compile(unsafe,'Case'));
   const b=audit(guarded,compile(guarded,'Case'));
   assert.equal(a.findings.some(f=>f.findingId==='VLM-SEC-REENTRANCY-01'),true);
-  assert.equal(b.findings.some(f=>f.findingId==='VLM-SEC-REENTRANCY-01'),false);
+  assert.equal(b.findings.some(f=>f.findingId==='VLM-SEC-REENTRANCY-01'),true);
+  assert.equal(b.findings.find(f=>f.findingId==='VLM-SEC-REENTRANCY-01')?.claimState,'HEURISTIC_CANDIDATE');
   const coverage=analyzeReentrancyGuardCoverage(guarded);
   assert.equal(coverage.allSupportedPathsGuarded,true);
   assert.equal(coverage.unguardedPaths,0);

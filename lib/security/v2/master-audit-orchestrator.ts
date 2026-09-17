@@ -5,7 +5,7 @@
  * 1. Bytecode Disassembly & Instruction Normalization
  * 2. Basic Block Partitioning & Directed CFG Construction
  * 3. Taint Analysis & Abstract Stack State Simulation
- * 4. Contextual Reentrancy Engine (suppressing false alarms on mutex guards)
+ * 4. Contextual Reentrancy Engine (unbound source cannot suppress bytecode candidates)
  * 5. Contextual Access Control Engine & Privilege Graph Construction
  * 6. Contextual Oracle & AMM Reserve Engine (TWAP vs Spot, Chainlink, L2 Sequencer)
  * 7. DeFi Economic Attack Engine (Vault inflation, Flash-loan sandwich simulations)

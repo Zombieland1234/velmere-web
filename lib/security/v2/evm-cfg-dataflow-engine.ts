@@ -59,7 +59,8 @@ const OP_NAMES: Record<number, string> = {
   0x46: "CHAINID", 0x47: "SELFBALANCE", 0x48: "BASEFEE", 0x50: "POP", 0x51: "MLOAD",
   0x52: "MSTORE", 0x53: "MSTORE8", 0x54: "SLOAD", 0x55: "SSTORE", 0x56: "JUMP",
   0x57: "JUMPI", 0x58: "PC", 0x59: "MSIZE", 0x5a: "GAS", 0x5b: "JUMPDEST",
-  0x5c: "TLOAD", 0x5d: "TSTORE", 0x5e: "MCOPY",
+  0x49: "BLOBHASH", 0x4a: "BLOBBASEFEE",
+  0x5c: "TLOAD", 0x5d: "TSTORE", 0x5e: "MCOPY", 0x5f: "PUSH0",
   0x80: "DUP1", 0x81: "DUP2", 0x82: "DUP3", 0x83: "DUP4", 0x8f: "DUP16",
   0x90: "SWAP1", 0x91: "SWAP2", 0x9f: "SWAP16", 0xa0: "LOG0", 0xa1: "LOG1",
   0xa4: "LOG4", 0xf0: "CREATE", 0xf1: "CALL", 0xf2: "CALLCODE", 0xf3: "RETURN",
@@ -71,7 +72,12 @@ const OP_NAMES: Record<number, string> = {
  * Disassembles raw EVM bytecode cleanly into structured instructions.
  */
 export function disassembleBytecode(rawHex: string): DisassemblyResult {
-  const cleanHex = rawHex.startsWith("0x") ? rawHex.slice(2) : rawHex;
+  if (typeof rawHex !== "string") throw new TypeError("EVM_BYTECODE_MUST_BE_HEX_STRING");
+  const cleanHex = /^0x/i.test(rawHex) ? rawHex.slice(2) : rawHex;
+  if (cleanHex.length % 2 !== 0 || !/^[a-f0-9]*$/i.test(cleanHex)) {
+    throw new TypeError("EVM_BYTECODE_INVALID_HEX");
+  }
+  if (cleanHex.length > 2_000_000) throw new RangeError("EVM_BYTECODE_INPUT_LIMIT");
   const bytes = Buffer.from(cleanHex, "hex");
   const instructions: EvmInstruction[] = [];
   let pc = 0;
@@ -83,25 +89,27 @@ export function disassembleBytecode(rawHex: string): DisassemblyResult {
     let pushValueHex: string | undefined;
     let pushValueBigInt: bigint | undefined;
 
-    if (opcode >= OP_PUSH1 && opcode <= OP_PUSH32) {
+    if (opcode === 0x5f) {
+      pushValueHex = "";
+      pushValueBigInt = 0n;
+    } else if (opcode >= OP_PUSH1 && opcode <= OP_PUSH32) {
       pushBytes = opcode - OP_PUSH1 + 1;
       const dataStart = pc + 1;
       const dataEnd = Math.min(dataStart + pushBytes, bytes.length);
       const slice = bytes.subarray(dataStart, dataEnd);
-      pushValueHex = slice.toString("hex").padStart(pushBytes * 2, "0");
-      if (slice.length > 0) {
-        try {
-          pushValueBigInt = BigInt(`0x${pushValueHex}`);
-        } catch {
-          pushValueBigInt = 0n;
-        }
-      }
+      // Missing immediate bytes are virtual zero bytes AFTER the available code.
+      pushValueHex = slice.toString("hex").padEnd(pushBytes * 2, "0");
+      pushValueBigInt = BigInt(`0x${pushValueHex}`);
       size = 1 + pushBytes;
     }
 
     const name =
       OP_NAMES[opcode] ??
-      (opcode >= OP_PUSH1 && opcode <= OP_PUSH32 ? `PUSH${opcode - OP_PUSH1 + 1}` : `UNKNOWN_0x${opcode.toString(16)}`);
+      (opcode >= OP_PUSH1 && opcode <= OP_PUSH32 ? `PUSH${opcode - OP_PUSH1 + 1}`
+        : opcode >= 0x80 && opcode <= 0x8f ? `DUP${opcode - 0x7f}`
+        : opcode >= 0x90 && opcode <= 0x9f ? `SWAP${opcode - 0x8f}`
+        : opcode >= 0xa0 && opcode <= 0xa4 ? `LOG${opcode - 0xa0}`
+        : `UNKNOWN_0x${opcode.toString(16)}`);
 
     instructions.push({
       pc,
@@ -228,7 +236,7 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
     if (!lastInst) continue;
 
     // Analyze stack inside the block to track push values, storage slots, and jump targets
-    const abstractStack: bigint[] = [];
+    const abstractStack: Array<bigint | null> = [];
     const activeTaint: TaintSource[] = [];
 
     for (let i = 0; i < block.instructions.length; i++) {
@@ -255,13 +263,15 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
 
       // Track SLOAD / SSTORE storage slots
       if (inst.opcode === OP_SLOAD) {
-        const slot = abstractStack.length > 0 ? `0x${abstractStack[abstractStack.length - 1].toString(16)}` : "unknown";
+        const top = abstractStack.at(-1);
+        const slot = top != null ? `0x${top.toString(16)}` : "unknown";
         block.readsStorageSlots.add(slot);
         storageSlotsRead.add(slot);
       }
 
       if (inst.opcode === OP_SSTORE) {
-        const slot = abstractStack.length > 1 ? `0x${abstractStack[abstractStack.length - 2].toString(16)}` : "unknown";
+        const top = abstractStack.at(-1);
+        const slot = top != null ? `0x${top.toString(16)}` : "unknown";
         block.writesStorageSlots.add(slot);
         storageSlotsWritten.add(slot);
 
@@ -282,18 +292,31 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
         taintSinks.push({ kind: "SELFDESTRUCT", instructionPc: inst.pc, taintedBy: [...activeTaint] });
       }
 
-      // Check for Mutex lock pattern: SLOAD slot -> PUSH 2 -> SSTORE slot (Reentrancy Guard)
-      if (
-        i >= 3 &&
-        block.instructions[i].opcode === OP_SSTORE &&
-        block.instructions[i - 1].opcode === OP_PUSH1 &&
-        (block.instructions[i - 1].pushValueHex === "02" || block.instructions[i - 1].pushValueHex === "01")
-      ) {
-        const guardedSlot =
-          abstractStack.length > 1 ? `0x${abstractStack[abstractStack.length - 2].toString(16)}` : "0x0";
-        guardedStorageSlots.add(guardedSlot);
-        block.isReentrancyGuarded = true;
+      // A nearby constant/SSTORE is not mutex proof. Keep guarded flags false.
+      // Track only local stack shapes. Unknown operations discard constants rather
+      // than attributing a stale PUSH to a later storage slot.
+      if (inst.pushValueBigInt === undefined) {
+        const op = inst.opcode;
+        if (op >= 0x80 && op <= 0x8f) {
+          abstractStack.push(abstractStack.at(-(op - 0x7f)) ?? null);
+        } else if (op >= 0x90 && op <= 0x9f) {
+          const index = abstractStack.length - 1 - (op - 0x8f);
+          if (index < 0) abstractStack.length = 0;
+          else [abstractStack[index], abstractStack[abstractStack.length - 1]] =
+            [abstractStack[abstractStack.length - 1], abstractStack[index]];
+        } else if (op === 0x50) abstractStack.pop();
+        else if (op === OP_SLOAD || op === 0x51 || op === 0x5c || op === 0x35 || op === 0x31 || op === 0x3b || op === 0x3f || op === 0x40 || op === 0x49) {
+          abstractStack.pop(); abstractStack.push(null);
+        } else if (op === OP_SSTORE || op === 0x52 || op === 0x53 || op === 0x5d) {
+          abstractStack.pop(); abstractStack.pop();
+        } else if (op === OP_JUMPDEST) { /* no stack effect */ }
+        else if ([0x30,0x32,0x33,0x34,0x36,0x38,0x3a,0x3d,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x4a,0x58,0x59,0x5a].includes(op)) {
+          abstractStack.push(null);
+        } else {
+          abstractStack.length = 0;
+        }
       }
+
     }
 
     // Connect edges based on terminal instruction
@@ -302,7 +325,7 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
       if (prevInst && prevInst.pushValueBigInt !== undefined) {
         const targetPc = Number(prevInst.pushValueBigInt);
         const targetBlockId = pcToBlockId.get(targetPc);
-        if (targetBlockId && blocks.has(targetBlockId)) {
+        if (targetBlockId && blocks.get(targetBlockId)?.startPc === targetPc && instructions[pcToIndex.get(targetPc)!]?.opcode === OP_JUMPDEST) {
           block.successors.push(targetBlockId);
           blocks.get(targetBlockId)!.predecessors.push(block.id);
         } else {
@@ -317,9 +340,11 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
       if (prevInst && prevInst.pushValueBigInt !== undefined) {
         const targetPc = Number(prevInst.pushValueBigInt);
         const targetBlockId = pcToBlockId.get(targetPc);
-        if (targetBlockId && blocks.has(targetBlockId)) {
+        if (targetBlockId && blocks.get(targetBlockId)?.startPc === targetPc && instructions[pcToIndex.get(targetPc)!]?.opcode === OP_JUMPDEST) {
           block.successors.push(targetBlockId);
           blocks.get(targetBlockId)!.predecessors.push(block.id);
+        } else {
+          unresolvedDynamicJumps++;
         }
       } else {
         unresolvedDynamicJumps++;

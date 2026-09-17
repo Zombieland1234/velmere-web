@@ -1,0 +1,11 @@
+{
+ "canonicalMaster":"VELMERE_ENGINE_REDTEAM_MASTER_R16_2026-09-17.md",
+ "canonicalLedger":"VELMERE_ENGINE_DEFECT_LEDGER_R16_2026-09-17.json",
+ "canonicalPackage":"VELMERE_ENGINE_REDTEAM_R16_PACKAGE.zip",
+ "expectedPackageSha256":"69c847b4e796c4d7134c82deb9a146b2bdadf1366043778cca58778a5f516f2b",
+ "r16OriginalLoaded":false,"r17Role":"HISTORICAL_ONLY",
+ "denominator":null,"verifiedMappedClosures":[],"fixedPercent":null,
+ "reason":"Original R16 ledger/package bytes not available in mounted handoff or targeted repository searches. Historical names/counts are not a canonical defect list.",
+ "closureRule":"Unique R16 defect ID + baseline reproducer + candidate regression + exact source SHA + evidence; numerator divided by frozen unique confirmed defects, never mutation/contract/execution counts.",
+ "newC9FindingsNotAutoMappedToR16":true
+}
