@@ -98,7 +98,10 @@ export async function acquireAuditRuntimeSnapshot(
           reader.releaseLock();
         }
         if (controller.signal.aborted || performance.now() >= deadline) throw new Error("runtime_snapshot_timeout");
-        if (declared !== null && Number(declared) !== used) throw new Error("rpc_content_length_mismatch");
+        // Fetch transparently decodes gzip/br/deflate while Content-Length can
+        // describe encoded bytes. The streaming cap always applies to decoded bytes.
+        const encoding = response.headers.get("content-encoding")?.trim().toLowerCase();
+        if ((!encoding || encoding === "identity") && declared !== null && Number(declared) !== used) throw new Error("rpc_content_length_mismatch");
         const text = new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(0, used));
         const decoded: unknown = parseStrictJsonText(text, { maxBytes: MAX_RESPONSE, maxDepth: 16, maxNodes: 8192, requireObject: true });
         if (!decoded || typeof decoded !== "object" || Array.isArray(decoded)) throw new Error("rpc_envelope_invalid");
