@@ -29,6 +29,7 @@ if any(r['id']=='production-build' and r['result']=='PASS' for r in checks):
     run('built-worker-file-traces',['node','scripts/c11/verify-worker-traces.mjs',str(out)],60)
     browser='''set -euo pipefail
 node_modules/.bin/playwright install --with-deps chromium > /tmp/c13-evidence/browser-install.log 2>&1
+timeout 60 node scripts/c13/runtime-report-readiness.test.mjs /tmp/c13-evidence > /tmp/c13-evidence/runtime-report-readiness-fixtures.log 2>&1
 node_modules/.bin/next start --hostname localhost > /tmp/c13-evidence/next-runtime.log 2>&1 &
 server=$!; trap 'kill "$server" || true' EXIT
 for i in $(seq 1 30); do if curl -s -o /dev/null http://localhost:3000/en; then break; fi; sleep 1; done
