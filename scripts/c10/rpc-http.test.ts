@@ -44,7 +44,7 @@ test('typed public block receipt survives the actual PDF sanitizer and render pl
     const results:Record<string,unknown>={eth_chainId:'0x1',eth_getBlockByNumber:{number:'0x123',hash:blockHash,timestamp:'0x'+Math.floor(Date.now()/1000).toString(16)},eth_getCode:'0x600060005500'};
     return Response.json({jsonrpc:'2.0',id:r.id,result:results[r.method]});
   });
-  const report=await buildCustomerAuditReport({reportId:'c10-pdf-receipt',contractAddress:target,chainId:'1',analysisMode:'runtime'},'basic');
+  const report=await buildCustomerAuditReport({reportId:'c10-pdf-receipt',contractAddress:target,contractName:'C10 receipt fixture',chainId:'1',analysisMode:'runtime'},'basic');
   assert.equal(report.runtimeAnalysis?.status,'STATIC_ANALYSIS_COMPLETED');
   const line=`RPC-asserted block: 0x123 | ${blockHash}; independentlyVerified=false`;
   const lines=canonicalReportToPdfLines(report);assert.ok(lines.includes(line));
