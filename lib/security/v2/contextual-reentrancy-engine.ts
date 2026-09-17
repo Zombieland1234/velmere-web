@@ -12,6 +12,7 @@ import { createHash } from "node:crypto";
 
 import { StandardFindingV2, BasicBlock, ControlFlowGraph } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { analyzeReentrancyGuardCoverage } from "../solidity-structured-signal.mjs";
 
 export interface ReentrancyAnalysisResult {
   hasVulnerability: boolean;
@@ -24,14 +25,19 @@ export interface ReentrancyAnalysisResult {
 export function analyzeContextualReentrancy(
   contractAddress: string,
   cfgResult: CfgAnalysisResult,
-  _sourceCode?: string,
+  sourceCode?: string,
 ): ReentrancyAnalysisResult {
   const findings: StandardFindingV2[] = [];
   const { cfg, selectorsDiscovered } = cfgResult;
 
-  // Source keywords and a contract-wide SSTORE heuristic do not establish a
-  // mutex proof for this call path. The detector emits reviewable signals.
-  const hasReentrancyGuard = false;
+  // Suppression is allowed only when the bounded source analyzer can identify
+  // every supported external-interaction -> state-effect path and every one of
+  // those paths carries a recognized function-scoped reentrancy guard. Merely
+  // seeing a modifier name, a lock variable or an unrelated SSTORE is not proof.
+  const sourceGuardCoverage = sourceCode?.trim()
+    ? analyzeReentrancyGuardCoverage(sourceCode)
+    : null;
+  const hasReentrancyGuard = Boolean(sourceGuardCoverage?.allSupportedPathsGuarded);
 
   let classicReentrancyDetected = false;
   let readOnlyReentrancyDetected = false;
@@ -68,6 +74,14 @@ export function analyzeContextualReentrancy(
       if (sstorePc >= 0) break;
     }
     if (sstorePc >= 0) classicReentrancyDetected = true;
+
+    if (classicReentrancyDetected && hasReentrancyGuard) {
+      // The bytecode-only CALL -> SSTORE shape also occurs for the guard exit
+      // write itself. A function-scoped source guard therefore suppresses this
+      // candidate only under the explicit bounded coverage condition above.
+      classicReentrancyDetected = false;
+      continue;
+    }
 
     if (classicReentrancyDetected) {
       findings.push({
@@ -207,7 +221,7 @@ export function analyzeContextualReentrancy(
 
   // 3. Token Callback Reentrancy: Check for ERC-777 tokensReceived hook
   const tokensReceivedSelector = "0x0023de29";
-  if (selectorsDiscovered.has(tokensReceivedSelector) && !hasReentrancyGuard) {
+  if (selectorsDiscovered.has(tokensReceivedSelector)) {
     tokenCallbackReentrancyDetected = true;
     const pc = selectorsDiscovered.get(tokensReceivedSelector)!;
 

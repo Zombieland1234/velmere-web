@@ -11,6 +11,7 @@
 
 import { StandardFindingV2 } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { evidenceSha256 } from "./evidence-integrity";
 
 export interface EdgeCaseAnalysisResult {
   hasVulnerability: boolean;
@@ -87,7 +88,7 @@ export function analyzeSolidityEvmEdgeCases(
         evidence: {
           opcodeTraceExcerpt: "EVM precompile 0x01 call without upper bound s check (s <= 0x7FFFFFFF...)",
           disassemblyContext: "Raw ecrecover call identified without OpenZeppelin ECDSA library.",
-          hashProof: `sha256:${Buffer.from(`ecdsa-${contractAddress}`).toString("hex")}`,
+          hashProof: evidenceSha256(`ecdsa-${contractAddress}`),
         },
         remediation: {
           strategy: "Use OpenZeppelin ECDSA.recover which rejects malleable s values and address(0).",
@@ -97,8 +98,6 @@ export function analyzeSolidityEvmEdgeCases(
 +import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 -    address signer = ecrecover(hash, v, r, s);
 +    address signer = ECDSA.recover(hash, v, r, s);`,
-          appliedSuccessfully: true,
-          regressionPassed: true,
         },
         verificationState: "AUTOMATED",
       });
@@ -138,7 +137,7 @@ export function analyzeSolidityEvmEdgeCases(
         evidence: {
           opcodeTraceExcerpt: `PC 0x${pc.toString(16)}: SELFDESTRUCT opcode reachable in un-guarded block`,
           disassemblyContext: "SELFDESTRUCT opcode present in bytecode.",
-          hashProof: `sha256:${Buffer.from(`selfdestruct-${pc}`).toString("hex")}`,
+          hashProof: evidenceSha256(`selfdestruct-${pc}`),
         },
         remediation: {
           strategy: "Remove SELFDESTRUCT entirely (deprecated in Cancun EIP-6780).",

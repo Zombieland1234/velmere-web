@@ -17,4 +17,25 @@ export type SolidityStructuredSignalResult = {
   limitations: string[];
 };
 
+export type ReentrancyGuardCoverageRow = {
+  contractName: string;
+  functionName: string;
+  line: number;
+  guarded: boolean;
+  interactionKind: string;
+  effectKind: string;
+};
+
+export type ReentrancyGuardCoverage = {
+  analyzerClass: typeof ANALYZER_CLASS;
+  supportedPaths: number;
+  guardedPaths: number;
+  unguardedPaths: number;
+  allSupportedPathsGuarded: boolean;
+  rows: ReentrancyGuardCoverageRow[];
+  limitations: string[];
+};
+
+export function stripCommentsAndStrings(source: string): string;
+export function analyzeReentrancyGuardCoverage(source: string): ReentrancyGuardCoverage;
 export function analyzeSolidityStructuredSignals(source: string): SolidityStructuredSignalResult;

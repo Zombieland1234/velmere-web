@@ -107,11 +107,11 @@ export interface DefiEconomicAttackSimulation {
     | "REWARD_DISTORTION";
   classification: "SIMULATION / ESTIMATE / ASSUMPTIONS";
   targetContract: string;
-  capitalRequiredUsd: number;
-  estimatedProfitUsd: number;
-  maximumLossUsd: number;
-  priceImpactPercent: number;
-  gasCostEstimatedGwei: number;
+  capitalRequiredUsd: number | null;
+  estimatedProfitUsd: number | null;
+  maximumLossUsd: number | null;
+  priceImpactPercent: number | null;
+  gasCostEstimatedGwei: number | null;
   attackSequence: Array<{
     step: number;
     action: string;
@@ -137,6 +137,8 @@ export interface InvariantDefinition {
     | "PAUSE_CONFINEMENT"
     | "REENTRANCY_ISOLATION";
   passed: boolean;
+  evaluationScope?: "SYNTHETIC_BALANCE_MODEL_ONLY";
+  targetEvaluated?: false;
   counterexample?: {
     sequenceLength: number;
     trace: Array<{ step: number; action: string; caller: string; amount: string }>;
@@ -172,6 +174,10 @@ export interface FormalAssuranceResult {
 
 export interface StandardFindingV2 {
   findingId: string;
+  /** Candidate findings are surfaced for review but excluded from numeric risk scoring. */
+  claimState?: "DETECTOR_FINDING" | "HEURISTIC_CANDIDATE";
+  analysisMethod?: "BYTECODE_CFG_HEURISTIC" | "STRUCTURED_SOURCE_HEURISTIC" | "SIMULATION";
+  limitations?: string[];
   title: string;
   severity: SeverityLevel;
   confidence: ConfidenceLevel;
@@ -228,15 +234,26 @@ export interface MultiDimensionalScoreV2 {
   economicRisk: number;
   codeQualityRisk: number;
   operationalRisk: number;
-  overallScore: number;
+  overallScore: number | null;
   assessmentConfidence: number; // 0 to 100%
+  assessmentState: "COMPLETE" | "ANALYSIS_INCOMPLETE";
+  scopeStatement: "AVAILABLE_DETECTORS_ONLY_NOT_SECURITY_CERTIFICATION";
+  coverage: {
+    sourceProvided: boolean;
+    meaningfulBytecode: boolean;
+    instructionCount: number;
+    blockCount: number;
+    unresolvedDynamicJumps: number;
+    limitations: string[];
+    heuristicCandidateCount: number;
+  };
 }
 
 export interface AuditSnapshotId {
   snapshotDigest: string; // SHA-256 over all constituent hashes
   contractAddress: string;
   chainId: string;
-  blockNumber: number;
+  blockNumber?: number;
   bytecodeSha256: string;
   sourceCodeSha256?: string;
   compilerVersion?: string;

@@ -12,9 +12,9 @@
  * 8. ERC/EIP Conformance & Non-Standard Token Engine (USDT, Fee-on-transfer, Rebasing)
  * 9. Upgradeability & Proxy Engine (ERC-1967 slots, UUPS, initializers)
  * 10. Solidity & EVM Edge-Case Engine (Transient storage, ECDSA malleability)
- * 11. Property-Based Fuzzing & Invariant Verification Engine
- * 12. Bounded Symbolic Execution & SMT Formal Assurance Engine
- * 13. Automated Patch Validation Lifecycle (Apply -> Verify -> Regression proof)
+ * 11. Synthetic Balance-Model Fuzzing (target bytecode is not executed)
+ * 12. Bounded CFG Traversal Assurance Observations (no SMT solver)
+ * 13. Patch Proposal Validation Boundary (no patch executor/compiler/regression runner)
  * 14. Multi-Dimensional Risk Scoring (Security, Centralization, Upgrade, Oracle, Economic)
  * 15. Deterministic Cryptographic Audit Snapshot ID Fingerprint
  */
@@ -32,6 +32,7 @@ import { runFuzzAndInvariantCampaign } from "./fuzzing-and-invariant-engine";
 import { executeBoundedSymbolicAnalysis } from "./symbolic-formal-engine";
 import { validateRemediationPatch } from "./patch-validation-engine";
 import { computeMultiDimensionalScores, generateAuditSnapshotId } from "./scoring-and-evidence-engine";
+import { fuseStructuredSourceCandidates } from "./structured-source-fusion";
 
 export interface AuditExecutionOptions {
   contractAddress: string;
@@ -48,7 +49,7 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
   const tTotalStart = performance.now();
 
   const tier = options.tier ?? "ADVANCED";
-  const blockNumber = options.blockNumber ?? 19000000;
+  const blockNumber = options.blockNumber;
   const contractName = options.contractName ?? "TargetContract";
 
   // Step 1: Disassemble Bytecode
@@ -95,9 +96,14 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
   findings.push(...econRes.findings);
   const simulationMs = Math.round(performance.now() - tSimStart);
 
+  // H. Preserve structured-source review signals in the Full V2 result. These
+  // are explicitly HEURISTIC_CANDIDATE findings and are excluded from numeric
+  // risk scoring until correlated with compiler/bytecode/execution evidence.
+  findings.push(...fuseStructuredSourceCandidates(options.contractAddress, options.sourceCode));
+
   const detectorsMs = Math.round(performance.now() - tDetStart);
 
-  // Step 4: Run Property-Based Fuzzing & Invariants
+  // Step 4: Run synthetic balance-model fuzzing & invariants (not target-bytecode fuzzing)
   const tFuzzStart = performance.now();
   const contractKind = ercRes.isErc4626 ? "ERC4626" : ercRes.isErc20 ? "ERC20" : "GENERIC";
   const fuzzOutput = runFuzzAndInvariantCampaign(options.contractAddress, contractKind, {
@@ -105,21 +111,23 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
   });
   const fuzzingMs = Math.round(performance.now() - tFuzzStart);
 
-  // Step 5: Symbolic Execution & SMT Formal Assurance
+  // Step 5: Bounded CFG assurance observations (no SMT solver/path-feasibility proof)
   const symbolicRes = executeBoundedSymbolicAnalysis(cfgResult.cfg, options.contractAddress);
 
-  // Step 6: Automated Patch Validation Lifecycle
+  // Step 6: Patch proposal validation boundary
   let totalPatchesTested = 0;
   let patchesPassingRegression = 0;
   for (const finding of findings) {
     if (finding.remediation && finding.remediation.solidityPatchDiff) {
       totalPatchesTested++;
       const patchReport = validateRemediationPatch(finding, options.sourceCode);
-      if (patchReport.validationStatus === "VERIFIED") {
-        patchesPassingRegression++;
-        finding.remediation.appliedSuccessfully = true;
-        finding.remediation.regressionPassed = true;
-      }
+      finding.remediation.appliedSuccessfully = patchReport.patchApplied && patchReport.validationStatus === "VERIFIED";
+      finding.remediation.regressionPassed = patchReport.validationStatus === "VERIFIED"
+        && patchReport.compilationClean
+        && patchReport.vulnerabilityEliminated
+        && !patchReport.regressionIntroduced
+        && patchReport.allInvariantsSatisfied;
+      if (finding.remediation.regressionPassed) patchesPassingRegression++;
     }
   }
 
@@ -129,8 +137,14 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
     {
       blockCount: cfgResult.cfg.blocks.size,
       cyclomaticComplexity: cfgResult.cfg.cyclomaticComplexity,
+      instructionCount: instructions.length,
+      unresolvedDynamicJumps: cfgResult.cfg.unresolvedDynamicJumps,
     },
     upgradeRes.isProxy,
+    {
+      sourceProvided: Boolean(options.sourceCode?.trim()),
+      meaningfulBytecode: /^0x[0-9a-fA-F]+$/.test(options.bytecode) && options.bytecode.length >= 18 && options.bytecode !== "0x00",
+    },
   );
 
   // Step 8: Deterministic Cryptographic Snapshot Generation
@@ -178,11 +192,11 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
     timings: {
       disassemblyMs,
       cfgMs,
-      dataflowMs: Math.max(1, Math.round(cfgMs * 0.3)),
+      dataflowMs: 0, // Data-flow work is included in cfgMs and is not separately timed.
       detectorsMs,
       fuzzingMs,
       simulationMs,
-      pdfMs: 15,
+      pdfMs: 0, // PDF generation is not executed by this orchestrator.
       totalExecutionMs,
     },
   };

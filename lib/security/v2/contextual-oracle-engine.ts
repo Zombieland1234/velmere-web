@@ -12,6 +12,7 @@
 
 import { StandardFindingV2, OracleDependency, SeverityLevel } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { evidenceSha256 } from "./evidence-integrity";
 
 export interface OracleAnalysisResult {
   hasVulnerability: boolean;
@@ -103,7 +104,7 @@ export function analyzeContextualOracles(
         evidence: {
           opcodeTraceExcerpt: `PUSH4 0x0902f1ac -> STATICCALL Pair -> DIV without price0CumulativeLast check`,
           disassemblyContext: "Direct spot AMM reserve consumption without cumulative TWAP filter or multi-block delay.",
-          hashProof: `sha256:${Buffer.from(`spot-${pc}`).toString("hex")}`,
+          hashProof: evidenceSha256(`spot-${pc}`),
         },
         remediation: {
           strategy: "Replace instantaneous getReserves() with a Time-Weighted Average Price (TWAP) oracle or Chainlink price feed.",
@@ -114,8 +115,6 @@ export function analyzeContextualOracles(
 -    uint256 spotPrice = (uint256(r1) * 1e18) / r0;
 +    // Use Uniswap v3 TWAP or Chainlink Decentralized Feed
 +    uint256 securePrice = getChainlinkPrice(token);`,
-          appliedSuccessfully: true,
-          regressionPassed: true,
         },
         verificationState: "AUTOMATED",
       });
@@ -189,7 +188,7 @@ export function analyzeContextualOracles(
         evidence: {
           opcodeTraceExcerpt: `PUSH4 0xfeaf968c -> STATICCALL -> Unchecked updatedAt and roundId values`,
           disassemblyContext: "Chainlink latestRoundData return values ignored except for price answer.",
-          hashProof: `sha256:${Buffer.from(`chainlink-${pc}`).toString("hex")}`,
+          hashProof: evidenceSha256(`chainlink-${pc}`),
         },
         remediation: {
           strategy: "Validate that updatedAt is non-zero, within heartbeat threshold, and answeredInRound >= roundId.",
@@ -201,8 +200,6 @@ export function analyzeContextualOracles(
 +    require(price > 0, "Invalid price");
 +    require(updatedAt != 0 && block.timestamp - updatedAt <= HEARTBEAT, "Stale price");
 +    require(answeredInRound >= roundId, "Incomplete round");`,
-          appliedSuccessfully: true,
-          regressionPassed: true,
         },
         verificationState: "AUTOMATED",
       });
@@ -264,7 +261,7 @@ export function analyzeContextualOracles(
         evidence: {
           opcodeTraceExcerpt: `ChainId: ${chainId} (Rollup) without sequencer uptime feed address or check`,
           disassemblyContext: "L2 deployment lacks Chainlink Sequencer Uptime Feed check.",
-          hashProof: `sha256:${Buffer.from(`l2-${chainId}`).toString("hex")}`,
+          hashProof: evidenceSha256(`l2-${chainId}`),
         },
         remediation: {
           strategy: "Query Chainlink L2 Sequencer Uptime Feed and enforce a grace period (e.g., 3600s) post-restart.",

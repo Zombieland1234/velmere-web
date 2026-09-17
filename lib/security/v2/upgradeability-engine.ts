@@ -11,6 +11,7 @@
 
 import { StandardFindingV2 } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { evidenceSha256 } from "./evidence-integrity";
 
 export const EIP1967_IMPLEMENTATION_SLOT =
   "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc";
@@ -102,7 +103,7 @@ export function analyzeUpgradeability(
         evidence: {
           opcodeTraceExcerpt: "_authorizeUpgrade exposed without caller authorization modifier",
           disassemblyContext: "UUPS upgrade method lacks access control.",
-          hashProof: `sha256:${Buffer.from(`uups-${contractAddress}`).toString("hex")}`,
+          hashProof: evidenceSha256(`uups-${contractAddress}`),
         },
         remediation: {
           strategy: "Restrict _authorizeUpgrade with onlyOwner or onlyRole(UPGRADER_ROLE).",

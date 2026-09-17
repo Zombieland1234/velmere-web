@@ -13,16 +13,19 @@ import { createHash } from "node:crypto";
 
 export function computeMultiDimensionalScores(
   findings: StandardFindingV2[],
-  cfgMetrics: { blockCount: number; cyclomaticComplexity: number },
+  cfgMetrics: { blockCount: number; cyclomaticComplexity: number; instructionCount: number; unresolvedDynamicJumps: number },
   isProxy: boolean,
+  coverageInput: { sourceProvided: boolean; meaningfulBytecode: boolean },
 ): MultiDimensionalScoreV2 {
   let securityRisk = 0;
   let centralizationRisk = 0;
   let upgradeRisk = isProxy ? 25 : 0;
   let oracleRisk = 0;
   let economicRisk = 0;
+  const heuristicCandidateCount = findings.filter((finding) => finding.claimState === "HEURISTIC_CANDIDATE").length;
+  const scoredFindings = findings.filter((finding) => finding.claimState !== "HEURISTIC_CANDIDATE");
 
-  for (const finding of findings) {
+  for (const finding of scoredFindings) {
     const weight =
       finding.severity === "critical"
         ? 35
@@ -71,7 +74,7 @@ export function computeMultiDimensionalScores(
 
   // Code Quality Risk based on complexity and findings count
   const complexityRisk = Math.min(100, Math.round(cfgMetrics.cyclomaticComplexity * 1.5));
-  const codeQualityRisk = Math.min(100, Math.round(complexityRisk * 0.4 + findings.length * 5));
+  const codeQualityRisk = Math.min(100, Math.round(complexityRisk * 0.4 + scoredFindings.length * 5));
 
   // Operational Risk
   const operationalRisk = Math.min(100, Math.round((centralizationRisk + upgradeRisk) / 2));
@@ -86,10 +89,37 @@ export function computeMultiDimensionalScores(
       oracleRisk * 0.15 +
       economicRisk * 0.15);
 
-  const overallScore = Math.max(5, Math.min(99, Math.round(100 - (maxRisk * 0.6 + averageRisk * 0.4))));
+  const rawOverallScore = Math.max(5, Math.min(99, Math.round(100 - (maxRisk * 0.6 + averageRisk * 0.4))));
 
-  // Confidence metric: based on block count, CFG completeness, and evidence depth
-  const assessmentConfidence = Math.min(98, 80 + Math.min(18, Math.round(cfgMetrics.blockCount / 2)));
+  const limitations: string[] = [];
+  if (!coverageInput.sourceProvided) limitations.push("SOURCE_NOT_PROVIDED");
+  if (!coverageInput.meaningfulBytecode) limitations.push("BYTECODE_MISSING_OR_PLACEHOLDER");
+  if (cfgMetrics.instructionCount < 8) limitations.push("BYTECODE_TOO_SHALLOW_FOR_FULL_ANALYSIS");
+  if (cfgMetrics.blockCount < 2) limitations.push("CFG_TOO_SHALLOW_FOR_FULL_ANALYSIS");
+  if (cfgMetrics.unresolvedDynamicJumps > 0) limitations.push(`UNRESOLVED_DYNAMIC_JUMPS:${cfgMetrics.unresolvedDynamicJumps}`);
+  if (heuristicCandidateCount > 0) limitations.push(`HEURISTIC_CANDIDATES_EXCLUDED_FROM_SCORE:${heuristicCandidateCount}`);
+
+  // A Full V2 safety score is withheld unless both source and meaningful runtime
+  // bytecode were supplied and the CFG has enough structure to support analysis.
+  // This prevents placeholder-bytecode corpora from producing a misleading 99.
+  const assessmentState =
+    coverageInput.sourceProvided &&
+    coverageInput.meaningfulBytecode &&
+    cfgMetrics.instructionCount >= 8 &&
+    cfgMetrics.blockCount >= 2 &&
+    cfgMetrics.unresolvedDynamicJumps === 0 &&
+    heuristicCandidateCount === 0
+      ? "COMPLETE"
+      : "ANALYSIS_INCOMPLETE";
+
+  const coveragePoints =
+    (coverageInput.sourceProvided ? 25 : 0) +
+    (coverageInput.meaningfulBytecode ? 35 : 0) +
+    Math.min(20, cfgMetrics.blockCount * 2) +
+    Math.min(15, Math.floor(cfgMetrics.instructionCount / 20)) +
+    (cfgMetrics.unresolvedDynamicJumps === 0 ? 5 : 0);
+  const assessmentConfidence = Math.max(0, Math.min(95, coveragePoints));
+  const overallScore = assessmentState === "COMPLETE" ? rawOverallScore : null;
 
   return {
     securityRisk,
@@ -101,13 +131,24 @@ export function computeMultiDimensionalScores(
     operationalRisk,
     overallScore,
     assessmentConfidence,
+    assessmentState,
+    scopeStatement: "AVAILABLE_DETECTORS_ONLY_NOT_SECURITY_CERTIFICATION",
+    coverage: {
+      sourceProvided: coverageInput.sourceProvided,
+      meaningfulBytecode: coverageInput.meaningfulBytecode,
+      instructionCount: cfgMetrics.instructionCount,
+      blockCount: cfgMetrics.blockCount,
+      unresolvedDynamicJumps: cfgMetrics.unresolvedDynamicJumps,
+      limitations,
+      heuristicCandidateCount,
+    },
   };
 }
 
 export function generateAuditSnapshotId(params: {
   contractAddress: string;
   chainId: string;
-  blockNumber: number;
+  blockNumber?: number;
   bytecode: string;
   sourceCode?: string;
   compilerVersion?: string;
@@ -119,7 +160,10 @@ export function generateAuditSnapshotId(params: {
 
   const timestamp = new Date().toISOString();
 
-  const rawPayload = `${params.contractAddress}-${params.chainId}-${params.blockNumber}-${bytecodeSha256}-${sourceCodeSha256 ?? "no_source"}-Velmère-V2.4.0-${timestamp}`;
+  // The digest identifies analyzed content and context. Wall-clock observation
+  // time remains metadata and is deliberately excluded so identical inputs
+  // produce the same snapshotDigest across repeat runs.
+  const rawPayload = `${params.contractAddress}-${params.chainId}-${params.blockNumber ?? "unknown_block"}-${bytecodeSha256}-${sourceCodeSha256 ?? "no_source"}-Velmère-V2.4.0`;
   const snapshotDigest = `0x${createHash("sha256").update(rawPayload).digest("hex")}`;
 
   return {
