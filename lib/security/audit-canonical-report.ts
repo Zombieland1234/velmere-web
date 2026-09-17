@@ -924,7 +924,9 @@ export function canonicalReportToPdfLines(
     const r = report.runtimeAnalysis;
     lines.push("--- STATIC ANALYSIS RECEIPT ---", `Status: ${r.status}`, `Engine: ${r.engineVersion ?? "NOT_RUN"}`,
       `Source SHA: ${r.sourceSha ?? "UNAVAILABLE"}`, `Runtime SHA-256: ${r.inputBytecodeSha256 ?? "UNAVAILABLE"}`,
-      `Block: ${r.blockNumber ?? "UNKNOWN"} | ${r.blockHash ?? "UNKNOWN"}`,
+      r.blockNumber && r.blockHash
+        ? `RPC-asserted block: ${r.blockNumber} | ${r.blockHash}; independentlyVerified=false`
+        : "Block: NOT_OBSERVED",
       `Observed at: ${r.observedAt ?? "NOT_OBSERVED"}`, `Result digest: ${r.resultSha256 ?? "UNAVAILABLE"}`,
       "RPC-asserted snapshot only. No independent consensus, license or safety verification. Target EVM execution: NOT_PERFORMED.",
       `Limitations: ${r.limitations.join("; ")}`, `Acquisition/analysis error: ${r.errorCode ?? "none"}`, "");

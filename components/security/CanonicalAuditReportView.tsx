@@ -41,7 +41,7 @@ const COPY_BY_LOCALE = {
   pl: {
     badge: "RAPORT ANALIZY — NIEZWERYFIKOWANY",
     title: "Raport Audytu Bezpieczeństwa Smart Kontraktu",
-    subtitle: "Deterministyczna analiza statyczna w oparciu o specyfikację EVM, matrycę podatności SWC/CWE/OWASP oraz sumę kontrolną SHA-256.",
+    subtitle: "Profil referencyjny lub kandydaci heurystyczni; faktyczny zakres określa zapis analizy. SHA-256 nie jest niezależną atestacją.",
     tier: "PAKIET",
     downloadPdf: "Pobierz Kanoniczny Raport PDF",
     generatingPdf: "Przygotowywanie dokumentu PDF...",
@@ -86,7 +86,7 @@ const COPY_BY_LOCALE = {
   de: {
     badge: "ANALYSEBERICHT — NICHT VERIFIZIERT",
     title: "Smart-Contract Sicherheitsaudit-Bericht",
-    subtitle: "Deterministische statische Analyse gegen EVM-Spezifikationen, SWC/CWE/OWASP-Matrix und kryptografischen SHA-256-Hash.",
+    subtitle: "Referenzprofil oder heuristische Kandidaten; der Analysenachweis benennt den tatsächlichen Umfang. SHA-256 ist keine unabhängige Bestätigung.",
     tier: "STUFE",
     downloadPdf: "Kanonischen PDF-Bericht herunterladen",
     generatingPdf: "PDF-Dokument wird vorbereitet...",
@@ -131,7 +131,7 @@ const COPY_BY_LOCALE = {
   en: {
     badge: "ANALYSIS REPORT — NOT VERIFIED",
     title: "Smart Contract Security Audit Report",
-    subtitle: "Deterministic static analysis against EVM specifications, SWC/CWE/OWASP matrices, and SHA-256 seal.",
+    subtitle: "Reference profile or heuristic candidates; the analysis receipt states the actual scope. SHA-256 is not an independent attestation.",
     tier: "TIER",
     downloadPdf: "Download Canonical PDF Report",
     generatingPdf: "Preparing PDF Document...",

@@ -64,6 +64,10 @@ const PUBLIC_TARGET_ADDRESS_LINE = /^(target|contract(?: address)?|audited addre
 const PUBLIC_HISTORICAL_CHAIN_EVIDENCE_LINE = /^historicalDeployment=0x[a-fA-F0-9]{40}; snapshotBlock=\d+; attackBlock=\d+; attackTx=0x[a-fA-F0-9]{64}; proxy=EIP_1167_COMPATIBLE_MINIMAL_PROXY; implementation=0x[a-fA-F0-9]{40}; trustedForwarder=0x[a-fA-F0-9]{40}; upstreamReplay=PASS; profit=[0-9.]+ WBNB; independentVelmereReplay=false; currentExploitabilityProven=false$/;
 const PUBLIC_CURRENT_DEPLOYMENT_QUORUM_LINE = /^currentDeployment=0x[a-fA-F0-9]{40}; snapshotBlock=\d+; blockHash=0x[a-fA-F0-9]{64}; stateRoot=0x[a-fA-F0-9]{64}; runtimeSha256=sha256:[a-f0-9]{64}; proxy=EIP_1167_COMPATIBLE_MINIMAL_PROXY; implementation=0x[a-fA-F0-9]{40}; implementationSha256=sha256:[a-f0-9]{64}; trustedForwarder=0x[a-fA-F0-9]{40}; trustedForwarderState=(?:ACTIVE|INACTIVE); negativeControl=INACTIVE; currentExploitabilityProven=false; independentReplay=false$/;
 
+// A typed public block observation is not an address or private token. Keep the
+// exact envelope closed: do not broadly exempt arbitrary hexadecimal payloads.
+const PUBLIC_RPC_BLOCK_OBSERVATION_LINE = /^RPC-asserted block: 0x(?:0|[1-9a-f][0-9a-f]*) \| 0x[a-f0-9]{64}; independentlyVerified=false$/;
+
 export const PASS4808_PDF_RENDER_CONTRACT_ID = "pass4808-deterministic-latin-extended-pagination-v1" as const;
 
 export type CustomerSafePdfOptions = {
@@ -128,9 +132,10 @@ export function isCustomerSafeProAuditPdfLine(value: string) {
   const hasPublicTargetAddress = PUBLIC_TARGET_ADDRESS_LINE.test(trimmed);
   const hasClosedHistoricalChainEvidence = PUBLIC_HISTORICAL_CHAIN_EVIDENCE_LINE.test(trimmed);
   const hasClosedCurrentDeploymentQuorum = PUBLIC_CURRENT_DEPLOYMENT_QUORUM_LINE.test(trimmed);
+  const hasPublicRpcBlockObservation = PUBLIC_RPC_BLOCK_OBSERVATION_LINE.test(trimmed);
   return !CUSTOMER_UNSAFE_PATTERN.test(value)
     && !EMAIL_PATTERN.test(value)
-    && (!EVM_ADDRESS_PATTERN.test(value) || hasPublicTargetAddress || hasClosedHistoricalChainEvidence || hasClosedCurrentDeploymentQuorum);
+    && (!EVM_ADDRESS_PATTERN.test(value) || hasPublicTargetAddress || hasClosedHistoricalChainEvidence || hasClosedCurrentDeploymentQuorum || hasPublicRpcBlockObservation);
 }
 
 function normalizeCustomerPdfText(value: string) {
