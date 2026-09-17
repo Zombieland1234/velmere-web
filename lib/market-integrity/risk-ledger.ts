@@ -98,7 +98,7 @@ function ensureRiskHistoryDir() {
     if (!fs.existsSync(RISK_HISTORY_DIR)) {
       fs.mkdirSync(RISK_HISTORY_DIR, { recursive: true });
     }
-  } catch {}
+  } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
 }
 
 function saveRiskHistoryToDisk(canonicalAssetId: string, events: RiskHistoryEvent[]) {
@@ -113,7 +113,7 @@ function saveRiskHistoryToDisk(canonicalAssetId: string, events: RiskHistoryEven
     if (fs.existsSync(marketLedgerPath)) {
       try {
         summary = JSON.parse(fs.readFileSync(marketLedgerPath, "utf-8"));
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
     }
     const latest = events[events.length - 1];
     if (latest) {
@@ -124,7 +124,7 @@ function saveRiskHistoryToDisk(canonicalAssetId: string, events: RiskHistoryEven
       };
       fs.writeFileSync(marketLedgerPath, JSON.stringify(summary, null, 2), "utf-8");
     }
-  } catch {}
+  } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
 }
 
 function loadRiskHistoryFromDisk(canonicalAssetId: string): RiskHistoryEvent[] | null {
@@ -134,7 +134,7 @@ function loadRiskHistoryFromDisk(canonicalAssetId: string): RiskHistoryEvent[] |
     if (fs.existsSync(filePath)) {
       return JSON.parse(fs.readFileSync(filePath, "utf-8"));
     }
-  } catch {}
+  } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
   return null;
 }
 
@@ -165,7 +165,7 @@ function getStore(): LedgerStore {
           }
         }
       }
-    } catch {}
+    } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
   }
   return g[globalKey]!;
 }

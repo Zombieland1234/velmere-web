@@ -513,7 +513,7 @@ export default function AssetAreaChart({
 
         const points: PricePoint[] = sampled.map((c, i) => {
           const d = new Date(Number(c.timestamp));
-          let t = "";
+          let t: string;
           if (timeframe === "1D") {
             t = `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
           } else if (timeframe === "1W") {

@@ -1041,7 +1041,7 @@ export default function ShieldRealMarketsParityClient({
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) return parsed;
         }
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
     }
     return getShieldInstantBootstrapRows();
   });
@@ -1098,7 +1098,7 @@ export default function ShieldRealMarketsParityClient({
           if (typeof window !== "undefined") {
             try {
               window.sessionStorage.setItem("velmere_shield_rows_cache", JSON.stringify(nextRows.slice(0, 100)));
-            } catch {}
+            } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
           }
           setSourceLabel(catalog.source || t.source);
           setFeedMode(reference ? "reference" : catalog.complete ? catalog.mode : "partial");

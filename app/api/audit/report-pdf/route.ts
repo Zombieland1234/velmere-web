@@ -1,18 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
+import { publicApiError } from "@/lib/security/api-error-envelope";
 import { resolveRequestAccount } from "@/lib/auth/account-session";
 import {
   buildCanonicalAuditReport,
   renderCanonicalReportToPdf,
   type AuditTier,
 } from "@/lib/security/audit-canonical-report";
-import { getAuditCaseForOwningAccount } from "@/lib/security/audit-intake-case-vault";
 import { verifyVlmPaidSurfaceEntitlementById } from "@/lib/commerce/vlm-paid-surface-guard";
 import { verifyVlmPaidAccountEntitlement } from "@/lib/commerce/vlm-entitlement-ledger";
 import { hashVelmereAccountBinding } from "@/lib/auth/account-session";
 import { buildExactCustomerPdfDelivery } from "@/lib/reporting/exact-customer-pdf-delivery";
 import { fetchOnChainBytecode } from "@/lib/security/evm-rpc-fetcher";
 import { BENCHMARK_20_CONTRACTS } from "@/lib/security/contract-audit-profiles";
-import { MASTER_50_AUDITS } from "@/lib/security/master-50-audits";
 import { MASTER_50_ASSETS } from "@/lib/security/corpus/master-50-assets";
 
 export const runtime = "nodejs";
@@ -42,15 +41,7 @@ async function resolveClientAuditTier(
   const entitlementId = entitlementHeader || searchParams.get("entitlementId")?.trim();
 
   if (!entitlementId) {
-    if (caseRef) {
-      const caseRecord = await getAuditCaseForOwningAccount({ caseRef, accountId });
-      if (caseRecord.ok && caseRecord.record) {
-        if (caseRecord.record.entitlementVerified && caseRecord.record.tier) {
-          if (caseRecord.record.tier === "advanced") return { clientTier: "advanced" };
-          if (caseRecord.record.tier === "pro") return { clientTier: "pro" };
-        }
-      }
-    }
+    // Historical verification is not current access: regeneration requires an active grant.
     // Check if account has an active server entitlement in ledger
     const accountIdHash = hashVelmereAccountBinding(accountId);
     const advCheck = await verifyVlmPaidAccountEntitlement({
@@ -110,7 +101,7 @@ export async function GET(request: NextRequest) {
     // Look up in MASTER_50_ASSETS if assetId or address provided
     const idClean = (assetId || address || "").toLowerCase().trim();
     const idAlpha = idClean.replace(/[^a-z0-9]/g, "");
-    const corpusMatch = MASTER_50_ASSETS.find((a) => {
+    const corpusMatch = idClean ? MASTER_50_ASSETS.find((a) => {
       const aId = a.assetId.toLowerCase();
       const aSym = a.symbol.toLowerCase();
       const aSymAlpha = aSym.replace(/[^a-z0-9]/g, "");
@@ -122,12 +113,11 @@ export async function GET(request: NextRequest) {
         aSym === idClean ||
         aSymAlpha === idAlpha ||
         aAddr === idClean ||
-        aId.includes(idClean) ||
+        (idClean.length >= 3 && aId.includes(idClean)) ||
         (idAlpha.length >= 2 && aSymAlpha.includes(idAlpha)) ||
-        aName.includes(idClean) ||
         (idClean.length >= 3 && aName.includes(idClean))
       );
-    });
+    }) : undefined;
 
     if (corpusMatch) {
       if (!address) address = corpusMatch.address;
@@ -159,19 +149,15 @@ export async function GET(request: NextRequest) {
       caseRef,
     );
 
-    const isBenchmark = Boolean(
-      BENCHMARK_20_CONTRACTS[address.toLowerCase()] ||
-      MASTER_50_AUDITS[address.toLowerCase()]
-    );
-
-    let effectiveTier: AuditTier = clientTier;
-    if (isBenchmark && (requestedTierParam === "pro" || requestedTierParam === "advanced" || requestedTierParam === "basic")) {
-      effectiveTier = requestedTierParam;
-    } else if (requestedTierParam === "basic") {
-      effectiveTier = "basic";
-    } else if (requestedTierParam === "pro" && clientTier === "advanced") {
-      effectiveTier = "pro";
+    if (requestedTierParam && !["basic", "pro", "advanced"].includes(requestedTierParam)) {
+      return json(400, { ok: false, error: "invalid_audit_tier" });
     }
+    const rank = { basic: 0, pro: 1, advanced: 2 } as const;
+    const requestedTier = (requestedTierParam || clientTier) as AuditTier;
+    if (rank[requestedTier] > rank[clientTier]) {
+      return json(account ? 403 : 401, { ok: false, error: "current_audit_entitlement_required" });
+    }
+    const effectiveTier: AuditTier = requestedTier;
 
     let effectiveBytecode = bytecode;
     if (isEvm && !effectiveBytecode && !BENCHMARK_20_CONTRACTS[address.toLowerCase()]) {
@@ -227,8 +213,7 @@ export async function GET(request: NextRequest) {
         "x-velmere-preview-download-parity": "canonical_shared_model",
       },
     });
-  } catch (err: any) {
-    console.error("[REPORT_PDF_GET_ERROR]", err);
-    return json(500, { ok: false, error: err?.message || String(err), stack: err?.stack });
+  } catch (error: unknown) {
+    return publicApiError(error, { route: "/api/audit/report-pdf", code: "report_pdf_unavailable" });
   }
 }

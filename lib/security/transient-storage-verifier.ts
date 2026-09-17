@@ -188,7 +188,7 @@ export function verifyTransientStorageBytecode(
 
   const hasExecutable = realOpcodeCount > 0 && isCancunOrLater;
 
-  let forensicSummary = "";
+  let forensicSummary: string;
   if (totalLength === 0) {
     forensicSummary = "Brak runtime bytecode dla kontraktu (kontrakt niezweryfikowany lub pusty).";
   } else if (countRaw5c === 0 && countRaw5d === 0) {

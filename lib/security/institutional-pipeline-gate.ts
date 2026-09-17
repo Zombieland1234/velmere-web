@@ -1331,11 +1331,11 @@ output: AuditOutput,
 const failures: ReleaseGateFailure[] = [];
 const warnings: string[] = [];
 
-let evidenceIntegrity = false;
-let formalIntegrity = false;
+let evidenceIntegrity: boolean;
+let formalIntegrity: boolean;
 let unknownPassProtection = false;
-let scoringIntegrity = false;
-let pdfIntegrity = false;
+let scoringIntegrity: boolean;
+let pdfIntegrity: boolean;
 
 /* ----------------------------- Evidence -------------------------------- */
 

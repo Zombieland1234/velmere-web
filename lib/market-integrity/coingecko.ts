@@ -368,7 +368,7 @@ export async function searchCoinGeckoMarket(query: string) {
   const id = await resolveCoinId(clean);
   if (!id) return null;
   const startedAt = Date.now();
-  let row = null;
+  let row;
   try {
     const rows = await fetchCoinGeckoMarkets({ ids: [id], perPage: 10 });
     row = rows[0] ?? null;

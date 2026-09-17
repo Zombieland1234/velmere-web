@@ -146,7 +146,7 @@ export class FormalVerificationEngine {
     let notRunCount = 0;
 
     for (const inv of standardInvariants) {
-      let status: InvariantStatus = "NOT_RUN";
+      let status: InvariantStatus;
       let durationMs = 0;
 
       if (tier === "advanced" && options?.runSolver) {

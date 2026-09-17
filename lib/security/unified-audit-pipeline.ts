@@ -123,7 +123,7 @@ export class UnifiedAuditPipeline {
         });
         formalProofs.push(proof);
 
-        let invStatus: FormalInvariantRecord["status"] = "UNKNOWN";
+        let invStatus: FormalInvariantRecord["status"];
         if (proof.proofStatus === "PROVEN") {
           invStatus = "PROVEN";
           provenCount++;

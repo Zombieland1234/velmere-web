@@ -173,7 +173,7 @@ export class MarketProvenanceEngine {
 
     // BANNED: 41.2% universal static! Must be asset-specific or NOT OBSERVED
     let darkPoolSharePercent: number | undefined;
-    let darkPoolStatus: TraditionalMarketMetrics["darkPoolStatus"] = "NOT_OBSERVED_INSUFFICIENT_DATA";
+    let darkPoolStatus: TraditionalMarketMetrics["darkPoolStatus"];
     let atsDataSource: string | undefined;
 
     if (options?.observedDarkPoolShare !== undefined) {

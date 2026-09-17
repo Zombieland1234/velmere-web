@@ -8,8 +8,10 @@
  * - Multi-vector SSRF (decimal/hex/octal IPs, IPv6 mapped, cloud IMDS, internal subnets)
  */
 
+import { ASCII_CONTROL_PATTERN } from "./ascii-control-characters";
+
 const DANGEROUS_HTML_PATTERNS = /<[^>]*>|javascript:|data:|vbscript:/gi;
-const CONTROL_CHARACTERS = /[\x00-\x1f\x7f]/g;
+const CONTROL_CHARACTERS = ASCII_CONTROL_PATTERN;
 const PATH_TRAVERSAL_PATTERNS = /(\.\.[/\\]|[/\\]\.\.|^\/|^\\)/;
 
 export function sanitizeContractInput(value: unknown): string {

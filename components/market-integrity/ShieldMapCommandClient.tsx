@@ -543,8 +543,8 @@ function getLaneVisualData(
   }
 
   // Meaningful status
-  let statusText = "";
-  let statusBadgeStyle = "";
+  let statusText: string;
+  let statusBadgeStyle: string;
   if (lane.status === "confirmed" || score < 25) {
     statusText = safeLocale === "pl" ? "Zweryfikowano" : safeLocale === "de" ? "Verifiziert" : "Verified";
     statusBadgeStyle = "border-emerald-500/30 bg-emerald-500/10 text-emerald-300";

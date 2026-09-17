@@ -78,7 +78,7 @@ export function runFuzzAndInvariantCampaign(
   balances.set(actors[0], initialSupply);
   balances.set(actors[1], 0n);
   balances.set(actors[2], 0n);
-  let currentTotalSupply = initialSupply;
+  const currentTotalSupply = initialSupply;
 
   // 3. PRNG with deterministic seed
   let seedNum = Number.parseInt(seedHex.slice(0, 8), 16) >>> 0;

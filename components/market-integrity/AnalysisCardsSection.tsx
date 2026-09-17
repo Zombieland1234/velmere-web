@@ -258,7 +258,7 @@ export default function AnalysisCardsSection({
           setUnlockedTiers(new Set(["basic", ...parsed]));
         }
       }
-    } catch {}
+    } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
   }, []);
 
   // Stripe checkout states (with popup mode support)
@@ -341,7 +341,7 @@ export default function AnalysisCardsSection({
       if (typeof window !== "undefined") {
         try {
           localStorage.setItem("velmere_unlocked_tiers", JSON.stringify([...next]));
-        } catch {}
+        } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
       }
       return next;
     });
@@ -527,7 +527,7 @@ export default function AnalysisCardsSection({
     if (stripePopupState?.popupWindow && !stripePopupState.popupWindow.closed) {
       try {
         stripePopupState.popupWindow.close();
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
     }
     setStripePopupState(null);
     unlockAndSave(tier);
@@ -552,7 +552,7 @@ export default function AnalysisCardsSection({
           return;
         }
       }
-    } catch {}
+    } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
     setIsStripeLoading(false);
   };
 
@@ -599,7 +599,7 @@ export default function AnalysisCardsSection({
             completePaymentSuccess(tier);
           }
         }
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
 
       // If user closed popup window manually
       if (popupWindow && popupWindow.closed) {
@@ -610,7 +610,7 @@ export default function AnalysisCardsSection({
             if (checkData.ok && checkData.paid) {
               completePaymentSuccess(tier);
             }
-          } catch {}
+          } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
         }, 600);
       }
     }, 1500);

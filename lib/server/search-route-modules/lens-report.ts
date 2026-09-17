@@ -141,7 +141,7 @@ async function handleLensReportPost(request: Request, nowMs: number) {
       ? "lens_pdf_basic" as const
       : "lens_preview" as const;
   let deliveryPreflight: BrowserDeliveryPreflight;
-  let deliveryBinding: R7BrowserEcbDeliveryBinding | BrowserDerivedDeliveryBinding | null = null;
+  let deliveryBinding: R7BrowserEcbDeliveryBinding | BrowserDerivedDeliveryBinding | null;
   const limiterLane = `${format}:${selectedDepth}`;
   const pass2177SizeGuard = rejectPass2177LargeContentLength(
     request,

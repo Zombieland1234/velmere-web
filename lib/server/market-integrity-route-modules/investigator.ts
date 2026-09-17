@@ -165,7 +165,7 @@ export async function resolveShieldMapResult(args: {
       result: await providers.analyzeAddress(args.query.query),
     };
   }
-  let marketRow = null;
+  let marketRow;
   try {
     marketRow = await providers.searchMarket(args.query.query);
   } catch {

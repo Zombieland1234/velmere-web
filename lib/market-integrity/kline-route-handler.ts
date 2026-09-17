@@ -243,7 +243,7 @@ export async function handleKlineGet(request: Request, dependencies: KlineRouteD
     }
     return customerKlineResponse(rightsPreflight, null, { status: 503 });
   }
-  let resolution = await resolveIdentity(requestedIdentity);
+  const resolution = await resolveIdentity(requestedIdentity);
   if (!resolution.ok) {
     // Generate valid development/testing deterministic klines so any cryptocurrency opens perfectly
     const bars = range === "1m" ? 240 : 180;

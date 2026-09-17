@@ -94,12 +94,14 @@ export class EvidenceReplayEngine {
 
     for (const sec of reportA.sections || []) {
       for (const f of sec.data?.findings || []) {
-        findingsA.add(f.id || f.title);
+        const identity = f.id || f.title;
+        if (identity) findingsA.add(identity);
       }
     }
     for (const sec of reportB.sections || []) {
       for (const f of sec.data?.findings || []) {
-        findingsB.add(f.id || f.title);
+        const identity = f.id || f.title;
+        if (identity) findingsB.add(identity);
       }
     }
 

@@ -329,8 +329,8 @@ export function analyzeEvmBytecode(rawBytecode: string): EvmBytecodeAnalysisResu
   const findings: EvmOpcodeFinding[] = [];
 
   let riskScore = 12; // baseline clean EVM contract starts at 12
-  let confidence = 85;
-  let coverage = 88;
+  const confidence = 85;
+  const coverage = 88;
 
   // 2. Dangerous Opcode Detection via Linear Disassembly
   const hasSelfDestruct = instructions.hasOpcode(0xff);

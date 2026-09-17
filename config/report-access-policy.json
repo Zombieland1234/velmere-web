@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "velmere.report-access-policy.v1",
+  "policyId": "current-entitlement-for-regeneration-v1",
+  "appliesTo": [
+    "/api/audit/report-pdf"
+  ],
+  "paidRegenerationRequiresCurrentEntitlement": true,
+  "historicalCaseVerificationGrantsCurrentAccess": false,
+  "benchmarkInputGrantsPaidAccess": false,
+  "storedImmutableArtifacts": "existing owner-bound route; full current-rights integration still required",
+  "customerContractChange": "not deployed to production"
+}

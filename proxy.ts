@@ -273,7 +273,6 @@ export default function proxy(request: NextRequest) {
   }
 
   if (normalizedPath.startsWith("/api/")) {
-    console.log('[DEBUG PROXY EDGE]', {
       url: request.url,
       host: request.headers.get('host'),
       origin: request.headers.get('origin'),

@@ -138,7 +138,7 @@ export function auditAndSanitizeReportLines(
   const evidenceCategories = new Set<string>(evidenceRecords.map((e) => e.category));
   const validEvidenceIds = new Set(evidenceRecords.filter((e) => e.status === "PASS").map((e) => e.id));
 
-  let blockedCount = 0;
+  const blockedCount = 0;
   let rewrittenCount = 0;
   const sanitizedLines: string[] = [];
   const findings: ClaimAuditResult["findings"] = [];

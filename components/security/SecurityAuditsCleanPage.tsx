@@ -640,7 +640,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
           setUnlockedAuditTiers(new Set(["basic", ...parsed]));
         }
       }
-    } catch {}
+    } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
   }, []);
 
   const unlockAuditTierAndSave = (tier: "pro" | "advanced") => {
@@ -649,7 +649,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
       next.add(tier);
       try {
         localStorage.setItem("velmere_unlocked_audit_tiers", JSON.stringify(Array.from(next)));
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
       return next;
     });
   };
@@ -705,7 +705,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     if (auditStripePopupState?.popupWindow && !auditStripePopupState.popupWindow.closed) {
       try {
         auditStripePopupState.popupWindow.close();
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
     }
     setAuditStripePopupState(null);
     unlockAuditTierAndSave(tier);
@@ -731,7 +731,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
           return;
         }
       }
-    } catch {}
+    } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
     setIsAuditStripeLoading(false);
   };
 
@@ -777,7 +777,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
             completeAuditPaymentSuccess(tier);
           }
         }
-      } catch {}
+      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
 
       if (popupWindow && popupWindow.closed) {
         setTimeout(async () => {
@@ -787,7 +787,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
             if (checkData.ok && checkData.paid) {
               completeAuditPaymentSuccess(tier);
             }
-          } catch {}
+          } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
         }, 600);
       }
     }, 1500);
@@ -944,7 +944,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     runAuditExecution(selectedTier);
   };
 
-  const runAuditExecution = async (tierToRun: TierId) => {
+  async function runAuditExecution(tierToRun: TierId) {
     const targetAddress = projectInput.trim();
     setIsGenerating(true);
     setGenerationStep(1);

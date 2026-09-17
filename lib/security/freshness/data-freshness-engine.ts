@@ -61,7 +61,7 @@ export function evaluateDataFreshness(
   const maxAge = FRESHNESS_POLICIES[policy];
   const staleAfter = new Date(srcDate.getTime() + maxAge * 1000).toISOString();
 
-  let status: FreshnessStatus = "LIVE";
+  let status: FreshnessStatus;
   if (ageSeconds > maxAge) {
     status = "STALE";
   } else if (ageSeconds > maxAge * 0.5) {

@@ -478,7 +478,7 @@ export function buildFullInternalCanonicalReport(input: FullAuditReportInput): C
     const rawMetrics = sec.metrics || [];
     const sanitizedMetrics = rawMetrics.map((m, mIdx: number) => {
       let status = m.status;
-      let classification: "A" | "B" | "C" | "D" | "E" | "F" = "B";
+      let classification: "A" | "B" | "C" | "D" | "E" | "F";
       if (isSimulatedFixture) {
         classification = "F";
         if (status === "verified") {

@@ -5698,10 +5698,6 @@ function analysisSurfaceForGate(): VlmPaidAccessContext["surface"] {
     setAnalysisGateNotice(null);
     setAnalysisGateAction(null);
 
-    // Allow user to execute Pro and Advanced analysis directly
-    startLocalAnalysis(tier);
-    return;
-
     const pass35PaidUiStopSell = paidAnalysisUiStopSell(data, paidTier);
     if (!pass35PaidUiStopSell.ok || !pass35PaidUiStopSell.checkoutAllowed) {
       setAnalysisGateNotice(copy.unavailable);

@@ -32,7 +32,7 @@ export function analyzeSolidityEvmEdgeCases(
   let usesTransientStorage = false;
   let hasSignatureMalleability = false;
   let hasUnprotectedSelfdestruct = false;
-  let hasUncheckedCall = false;
+  const hasUncheckedCall = false;
 
   // 1. Transient Storage (EIP-1153: TLOAD = 0x5c, TSTORE = 0x5d)
   for (const block of cfg.blocks.values()) {
