@@ -1,0 +1,140 @@
+name: C6B final source qualification
+on:
+  push:
+    branches: [c6/release-recovery-20260917]
+    paths: [.github/workflows/c6b-final-qualification.yml]
+permissions:
+  contents: write
+concurrency:
+  group: c6b-final-qualification
+  cancel-in-progress: false
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Apply locally qualified source patch with exact identity guard
+        run: |
+          mkdir -p /tmp/c6b-results /tmp/c6b-source
+          test "$(git rev-parse HEAD^)" = 507055c53543b9eb25433430f82547a088767ea8
+          python3 - <<'PY'
+          import pathlib,base64,gzip,hashlib,subprocess
+          data=''.join(pathlib.Path(f'scripts/c6/transfer/c6b-{i}.b64').read_text().strip() for i in range(4))
+          patch=gzip.decompress(base64.b64decode(data,validate=True))
+          assert hashlib.sha256(patch).hexdigest()=='436ffa1de7f522236f30dc261d3031e3be91743826a6a0afcbd197b6ea3de6f0'
+          p=pathlib.Path('/tmp/c6b-results/REVIEWED_SOURCE.patch');p.write_bytes(patch)
+          subprocess.run(['git','apply','--check',str(p)],check=True)
+          subprocess.run(['git','apply',str(p)],check=True)
+          PY
+      - name: Resolve final override and perform clean lockfile install
+        run: |
+          npm install --package-lock-only --ignore-scripts --no-fund > /tmp/c6b-results/lock-update.log 2>&1
+          sha256sum package-lock.json > /tmp/c6b-results/lock-before-install.txt
+          npm ci --ignore-scripts --no-fund > /tmp/c6b-results/clean-install.log 2>&1
+          sha256sum package-lock.json > /tmp/c6b-results/lock-after-install.txt
+          diff /tmp/c6b-results/lock-before-install.txt /tmp/c6b-results/lock-after-install.txt
+      - name: Record final candidate on isolated branch
+        env:
+          C6_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          test "$GITHUB_REF_NAME" = c6/release-recovery-20260917
+          cat > /tmp/c6b-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C6_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c6b-askpass.sh
+          export GIT_ASKPASS=/tmp/c6b-askpass.sh GIT_TERMINAL_PROMPT=0
+          test "$(git ls-remote origin refs/heads/c6/release-recovery-20260917 | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'Velmere C6 qualification'
+          git config user.email 'c6-qualification@users.noreply.github.com'
+          git add app components lib package.json package-lock.json proxy.ts scripts/c6/provider-engine-boundaries.test.ts scripts/c6/engine-observations.ts
+          git commit -m 'fix(c6b): integrate delivery rights, repair build and remove unexecuted proof claims'
+          git push origin HEAD:refs/heads/c6/release-recovery-20260917
+          echo "C6_SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git diff HEAD^ HEAD --binary > /tmp/c6b-results/APPLIED_SOURCE.diff
+      - name: Archive final exact GitHub source and hash manifest
+        run: |
+          git archive --format=zip -o /tmp/c6b-source/VELMERE_C6B_EXACT_GITHUB_SOURCE.zip HEAD
+          python3 - <<'PY'
+          import pathlib,subprocess,json,hashlib,datetime,os
+          files=[]
+          for name in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+            if name:
+              p=pathlib.Path(name);files.append({'path':name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest() if p.is_file() else None})
+          z=pathlib.Path('/tmp/c6b-source/VELMERE_C6B_EXACT_GITHUB_SOURCE.zip')
+          r={'schema':'velmere.c6b.actual-github-source.v1','repository':'Zombieland1234/velmere-web','branch':'c6/release-recovery-20260917','sourceSha':os.environ['C6_SOURCE_SHA'],'runId':os.environ['GITHUB_RUN_ID'],'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'originalUi2IdentityConfirmed':False,'zipSha256':hashlib.sha256(z.read_bytes()).hexdigest(),'files':files}
+          pathlib.Path('/tmp/c6b-source/SOURCE_IDENTITY.json').write_text(json.dumps(r,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c6b-final-source-${{ github.run_id }}
+          path: /tmp/c6b-source
+          retention-days: 14
+          if-no-files-found: error
+      - name: Qualify actual source with separate logs and outcomes
+        run: |
+          python3 - <<'PY'
+          import pathlib,subprocess,json,datetime,hashlib,os
+          out=pathlib.Path('/tmp/c6b-results');rows=[]
+          checks=[('strict-typescript',['node_modules/.bin/tsc','--noEmit','--strict','--pretty','false'],420),('eslint',['node_modules/.bin/eslint','.','--format','json','--output-file','/tmp/c6b-results/eslint.json'],420),('dependency-audit',['npm','audit','--json'],120),('dependency-drift',['npm','ls','--all','--json'],120),('actual-routes',['node_modules/.bin/tsx','--test','scripts/c6/route-boundaries.test.ts','scripts/c6/provider-engine-boundaries.test.ts'],180),('production-build',['npm','run','build'],600),('engine-observations',['node_modules/.bin/tsx','scripts/c6/engine-observations.ts','/tmp/c6b-results/engine'],180)]
+          for name,args,limit in checks:
+            started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+            with (out/(name+'.log')).open('wb') as log:
+              try:code=subprocess.run(args,stdout=log,stderr=subprocess.STDOUT,timeout=limit,check=False).returncode
+              except subprocess.TimeoutExpired:code=124
+              except OSError as exc:log.write(str(exc).encode());code=127
+            rows.append({'id':name,'sourceSha':os.environ['C6_SOURCE_SHA'],'command':args,'startedAt':started,'finishedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exitCode':code,'result':'PASS' if code==0 else 'TIMEOUT' if code==124 else 'FAIL','scope':'OBSERVATION_COLLECTION_ONLY' if name=='engine-observations' else 'ACTUAL_APPLICATION_CODE','log':name+'.log','logSha256':hashlib.sha256((out/(name+'.log')).read_bytes()).hexdigest()})
+            (out/'QUALIFICATION.json').write_text(json.dumps(rows,indent=2));print(name,code,flush=True)
+          PY
+      - name: Extract product manifest from actual runtime topology
+        run: |
+          node_modules/.bin/tsx -e "import {VLM_CANONICAL_CUSTOMER_PRODUCTS as products} from './lib/product/vlm-canonical-product-topology';import fs from 'node:fs';import{createHash}from'node:crypto';const p='lib/product/vlm-canonical-product-topology.ts';fs.writeFileSync('/tmp/c6b-results/PRODUCT_MANIFEST.json',JSON.stringify({sourceSha:process.env.C6_SOURCE_SHA,recordedAt:new Date().toISOString(),topologyPath:p,topologySha256:createHash('sha256').update(fs.readFileSync(p)).digest('hex'),catalogCount:products.length,activeOrSellableCount:'NOT_ASSUMED_FROM_CATALOG_COUNT',products},null,2));"
+      - name: Browser verification of actual built candidate
+        continue-on-error: true
+        run: |
+          node -e "const a=require('/tmp/c6b-results/QUALIFICATION.json');if(!a.find(x=>x.id==='production-build'&&x.result==='PASS'))process.exit(1)"
+          node_modules/.bin/playwright install --with-deps chromium > /tmp/c6b-results/browser-install.log 2>&1
+          VELMERE_CANONICAL_ORIGIN=http://127.0.0.1:3000 VELMERE_LOOPBACK_HTTP_BROWSER_PROOF=1 node_modules/.bin/next start --hostname 127.0.0.1 > /tmp/c6b-results/next-runtime.log 2>&1 &
+          server=$!
+          trap 'kill "$server" || true' EXIT
+          for attempt in $(seq 1 30); do if curl -s -o /dev/null http://127.0.0.1:3000/en; then break; fi; sleep 1; done
+          timeout 240 node scripts/c6/browser-observations.mjs http://127.0.0.1:3000 /tmp/c6b-results/browser-candidate > /tmp/c6b-results/browser-candidate.log 2>&1
+      - name: Final worktree and evidence manifest
+        if: always()
+        run: |
+          git status --porcelain > /tmp/c6b-results/final-working-tree-status.txt
+          python3 - <<'PY'
+          import pathlib,hashlib,json,os,datetime
+          root=pathlib.Path('/tmp/c6b-results');files=[{'path':str(p.relative_to(root)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in sorted(root.rglob('*')) if p.is_file()]
+          (root/'EVIDENCE_MANIFEST.json').write_text(json.dumps({'sourceSha':os.getenv('C6_SOURCE_SHA'),'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':files},indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6b-final-qualification-${{ github.run_id }}
+          path: /tmp/c6b-results
+          retention-days: 14
+          if-no-files-found: error
+      - name: Honest qualification outcome
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,sys
+          p=pathlib.Path('/tmp/c6b-results/QUALIFICATION.json')
+          if not p.exists():sys.exit('Qualification missing')
+          a=json.loads(p.read_text())
+          if len(a)!=7 or any(x['result']!='PASS' for x in a):sys.exit('Code checks incomplete or failed')
+          e=json.loads(pathlib.Path('/tmp/c6b-results/engine/ENGINE_OBSERVATIONS.json').read_text())
+          if any(x['result']!='PASS' for x in e['rows']):sys.exit('Known engine false-positive/negative remains; release NO_GO')
+          print('All requested code checks passed, but paid product E2E and independent review still required.')
+          PY
