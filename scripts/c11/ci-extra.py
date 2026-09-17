@@ -26,6 +26,7 @@ if run('scanner-setup',['bash','-c',setup])==0:run('gitleaks-source',['/tmp/c11-
 run('dependency-outdated',['npm','outdated','--json']);run('sbom',['npm','sbom','--sbom-format','cyclonedx'])
 checks=json.loads((out/'QUALIFICATION.json').read_text())
 if any(r['id']=='production-build' and r['result']=='PASS' for r in checks):
+    run('built-worker-file-traces',['node','scripts/c11/verify-worker-traces.mjs',str(out)],60)
     browser='''set -euo pipefail
 node_modules/.bin/playwright install --with-deps chromium > /tmp/c11-evidence/browser-install.log 2>&1
 node_modules/.bin/next start --hostname localhost > /tmp/c11-evidence/next-runtime.log 2>&1 &
@@ -55,6 +56,9 @@ identity=dict(sourceSha=sha,treeSha=subprocess.check_output(['git','rev-parse','
 subprocess.run(['git','status','--porcelain'],stdout=(out/'final-working-tree-status.txt').open('w'),check=True)
 subprocess.run(['git','diff','8841c625ede6452de55bd57c1024759d6dc53845','HEAD','--','components','public','app/**/*.css'],stdout=(out/'ui-source-diff.txt').open('w'),check=True)
 blockers=[r['id'] for r in checks if r['result']!='PASS']
+# Collection failures and non-green security scans must remain visible release gates.
+# npm outdated exit 1 only inventories newer versions; it is not an execution error.
+blockers.extend(r['id'] for r in rows if r['exitCode']!=0 and r['id']!='dependency-outdated')
 if json.loads((out/'SOURCE_INVENTORY.json').read_text()).get('scriptsWithMissingReferencedFiles'):blockers.append('missing-historical-scripts')
 (out/'RELEASE_GATE.json').write_text(json.dumps(dict(status='NO_GO',sourceSha=sha,technicalBlockers=blockers,benchmarkMustBeReviewedSeparately=True,r16FixedPercent=None,openGates=['R16_original_ledger','real_Stripe_TEST_lifecycle','real_Auth_A_B','all_product_hosted_E2E','global_provider_enforcement','independent_review']),indent=2))
 items=[dict(path=str(p.relative_to(out)),bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(out.rglob('*')) if p.is_file() and p.name!='EVIDENCE_MANIFEST.json']

@@ -55,6 +55,8 @@ export default defineConfig([
     },
   },
   globalIgnores([
+    // Machine-built worker output; all TypeScript inputs remain linted.
+    ".generated/**",
     ".next/**",
     "out/**",
     "build/**",

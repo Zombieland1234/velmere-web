@@ -35,7 +35,7 @@ const frozen=[...cases.values()];const sourceSha=process.env.GITHUB_SHA||null;
 fs.writeFileSync(path.join(out,'MICROPROGRAM_MANIFEST.json'),JSON.stringify({sourceSha,oracle:'@ethereumjs/evm@10.1.3',hardfork:'Cancun',selection:'Deterministic edge-value Cartesian inputs across arithmetic, bit, DUP/SWAP and computed conditional branches. No renamed-code duplicates.',uniqueBytecodeCount:frozen.length,newMicroprogramsNotIndependentDefectFamilies:true,cases:frozen},null,2));
 const rows=[];let trace=[];evm.events.on('step',s=>trace.push({pc:s.pc,opcode:s.opcode.name,stack:s.stack.map(String)}));
 for(const item of frozen){
- trace=[];let exception=null;
+ trace=[];let exception;
  try{const result=await evm.runCode({code:Buffer.from(item.hex,'hex'),gasLimit:10_000_000n});exception=result.exceptionError?.error??null;}catch(e){exception=String(e.message);}
  const key=trace.find(s=>s.opcode==='SLOAD')?.stack.at(-1);const expected=key===undefined?null:'0x'+BigInt(key).toString(16);
  const row={id:item.id,family:item.family,exception,expectedStorageKey:expected,oracleExecutedInstructions:trace.length,versions:{}};

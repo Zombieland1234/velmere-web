@@ -10,7 +10,13 @@ const thread=(code:string)=>new Worker(code,{eval:true,execArgv:[],stdout:true,s
 
 test('C11 real worker bundle returns the same findings/input identity as the direct engine',async()=>{
  const direct=executeFullAuditV2(options);const isolated=await executeAuditInWorker(options);
- assert.deepEqual(isolated.findings,direct.findings);assert.deepEqual(isolated.snapshot,direct.snapshot);
+ assert.deepEqual(isolated.findings,direct.findings);
+ const {timestamp:directTime,...directIdentity}=direct.snapshot;
+ const {timestamp:isolatedTime,...isolatedIdentity}=isolated.snapshot;
+ assert.deepEqual(isolatedIdentity,directIdentity);
+ // Separate real executions have separate timestamps; do not fake clock parity.
+ assert.ok(Number.isFinite(Date.parse(directTime)));assert.ok(Number.isFinite(Date.parse(isolatedTime)));
+ assert.ok(Date.parse(isolatedTime)>=Date.parse(directTime));
 });
 test('C11 generated bundle has a matching digest and tracked input manifest',()=>{
  const m=JSON.parse(readFileSync('.generated/audit-engine-worker-manifest.json','utf8'));
