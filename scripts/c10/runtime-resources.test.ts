@@ -30,7 +30,7 @@ test('isolate concurrency allows two reservations and releases idempotently',asy
 });
 for(const kind of ['json','pdf','ssr']as const)test(`${kind} enforces shared refusal before any RPC and preserves retry response`,async t=>{
   const paths:string[]=[];
-  t.mock.method(customerRuntimeResourceDependencies,'rateLimit',async(r:Request)=>{paths.push(new URL(r.url).pathname);return {ok:false as const,response:Response.json({error:'rate_limited_fixture'},{status:429,headers:{'retry-after':'5','cache-control':'no-store'}})};});
+  t.mock.method(customerRuntimeResourceDependencies,'rateLimit',async(_r:Request,o?:{quotaPath?:string})=>{paths.push(o?.quotaPath??'MISSING_SHARED_QUOTA');return {ok:false as const,response:Response.json({error:'rate_limited_fixture'},{status:429,headers:{'retry-after':'5','cache-control':'no-store'}})};});
   const rpc=t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',()=>{throw new Error('SHOULD_NOT_CALL_RPC');});
   if(kind==='ssr')await assert.rejects(()=>prepareCustomerReport(make('/en/security/audits/report/x','203.0.113.195'),{address:target,chainId:'1'}),e=>typeof e==='object'&&e!==null&&'status'in e&&e.status===429);
   else{const r=await(kind==='json'?getJson:getPdf)(make(kind==='json'?'/api/audit/report':'/api/audit/report-pdf','203.0.113.195'));assert.equal(r.status,429);assert.equal(r.headers.get('retry-after'),'5');}

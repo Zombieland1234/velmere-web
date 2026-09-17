@@ -1,3 +1,4 @@
+import { inspectNativeRedisConfig, applyNativeRedisRateLimit } from "./native-redis-rate-limit";
 import { brokeredConfiguredOriginFetch } from "@/lib/network/brokered-egress";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import {
@@ -6,7 +7,7 @@ import {
   buildPass632RecoveryDelay,
 } from "@/lib/security/production-rate-limit-adapter";
 
-export type DurableRateLimitMode = "memory" | "upstash_rest" | "upstash_fallback_memory" | "unavailable" | "disabled";
+export type DurableRateLimitMode = "memory" | "redis" | "upstash_rest" | "upstash_fallback_memory" | "unavailable" | "disabled";
 // PASS183 compatibility marker: upstash_ready was upgraded to upstash_rest in PASS184.
 export type DurableRateLimitDecision = {
   ok: boolean;
@@ -20,7 +21,7 @@ export type DurableRateLimitDecision = {
   degraded: boolean;
   reason?: string;
   retryAfterSeconds?: number;
-  provider?: "memory" | "upstash";
+  provider?: "memory" | "upstash" | "redis";
   providerError?: string;
 };
 
@@ -70,6 +71,7 @@ export function inspectDurableRateLimitRuntime(env: NodeJS.ProcessEnv = process.
   // A production deployment may be self-hosted. Durable state must remain a
   // hard requirement there too; Vercel metadata is not a security boundary.
   const productionLike = env.NODE_ENV === "production" || env.VERCEL_ENV === "production";
+  const native = inspectNativeRedisConfig(env);
   const disabledRequested = env.VELMERE_RATE_LIMIT_DISABLED === "1";
   const hasUpstashUrl = Boolean(env.UPSTASH_REDIS_REST_URL?.trim());
   const hasUpstashToken = Boolean(env.UPSTASH_REDIS_REST_TOKEN?.trim());
@@ -78,11 +80,13 @@ export function inspectDurableRateLimitRuntime(env: NodeJS.ProcessEnv = process.
   const unsupportedConfiguredSignals = [
     hasUpstashUrl && !upstashUrlValid ? "upstash_rest_url_invalid" : null,
     env.KV_REST_API_URL || env.KV_REST_API_TOKEN ? "vercel_kv_not_implemented" : null,
-    env.REDIS_URL ? "redis_url_not_implemented" : null,
+    native.urlPresent && !native.configured ? "redis_backend_not_selected_or_url_invalid" : null,
   ].filter((item): item is string => Boolean(item));
   const mode: DurableRateLimitMode = disabledRequested
     ? productionLike ? "unavailable" : "disabled"
-    : upstashConfigured
+    : native.selected
+      ? native.configured ? "redis" : "unavailable"
+      : upstashConfigured
       ? "upstash_rest"
       : productionLike ? "unavailable" : "memory";
   return {
@@ -92,12 +96,13 @@ export function inspectDurableRateLimitRuntime(env: NodeJS.ProcessEnv = process.
     hasUpstashToken,
     upstashUrlValid,
     upstashConfigured,
+    redisConfigured: native.configured,
     unsupportedConfiguredSignals,
     mode,
-    exactRuntimeAdapter: mode === "upstash_rest" ? "upstash_rest_eval_incrby_pexpire" : mode,
+    exactRuntimeAdapter: mode === "redis" ? "redis_eval_server_time_fixed_window" : mode === "upstash_rest" ? "upstash_rest_eval_incrby_pexpire" : mode,
     memoryAllowed: !productionLike,
     productionFailClosed: productionLike,
-    productionConfigured: productionLike && mode === "upstash_rest",
+    productionConfigured: productionLike && (mode === "upstash_rest" || mode === "redis"),
   } as const;
 }
 
@@ -385,6 +390,7 @@ export async function applyDurableRateLimit(options: DurableRateLimitOptions): P
       runtime.disabledRequested ? "rate_limit_disabled_in_production" : "upstash_configuration_missing",
     );
   }
+  if (mode === "redis") return applyNativeRedisRateLimit(options);
   if (mode === "upstash_rest") return upstashRestDecision(options);
   return memoryDecision(options, "memory");
 }
@@ -410,7 +416,7 @@ export function buildDurableRateLimitReadiness() {
     hasUpstashUrl: runtime.hasUpstashUrl,
     hasUpstashToken: runtime.hasUpstashToken,
     upstashUrlValid: runtime.upstashUrlValid,
-    configuredAdapter: runtime.upstashConfigured ? "upstash_rest" : null,
+    configuredAdapter: mode === "redis" ? "redis" : runtime.upstashConfigured ? "upstash_rest" : null,
     exactRuntimeAdapter: runtime.exactRuntimeAdapter,
     productionConfigured: runtime.productionConfigured,
     productionFailClosed: runtime.productionFailClosed,
@@ -428,6 +434,6 @@ export function buildDurableRateLimitReadiness() {
     providerCooldownUntil: circuit.cooldownUntil ? new Date(circuit.cooldownUntil).toISOString() : null,
     fallbackMode: runtime.memoryAllowed ? "non_production_memory_only" : "production_fail_closed",
     productionBoundary:
-      "PASS4824 accepts only the implemented Upstash REST EVAL/INCRBY adapter as distributed-ready. Missing or failed durable state is fail-closed in production; memory is non-production only.",
+      "C12 supports explicit native Redis EVAL/server-time and Upstash REST EVAL adapters. Configuration alone is not a connectivity or availability proof. Missing or failed durable state is fail-closed in production; memory is non-production only.",
   };
 }

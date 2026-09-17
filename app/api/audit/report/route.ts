@@ -12,8 +12,10 @@ const json = (status: number, body: unknown) => NextResponse.json(body, { status
 } });
 async function generate(request: NextRequest, input: Record<string, unknown>) {
   const prepared = await prepareCustomerReport(request, input);
-  const response = json(200, { ok: true, clientTier: prepared.tier, authorizedMaxTier: prepared.authorizedMaxTier,
+  const unavailable = prepared.report.runtimeAnalysis?.status === "ANALYSIS_UNAVAILABLE";
+  const response = json(unavailable ? 503 : 200, { ok: !unavailable, clientTier: prepared.tier, authorizedMaxTier: prepared.authorizedMaxTier,
     entitlementId: prepared.entitlementId, report: prepared.report });
+  if (unavailable) response.headers.set("retry-after", "10");
   await prepared.authorizeDelivery();
   return response;
 }

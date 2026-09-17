@@ -1,0 +1,140 @@
+name: C12 real production-mode runtime qualification
+on:
+  push:
+    branches: [c12/production-runtime-qualification-20260917]
+permissions:
+  contents: read
+concurrency:
+  group: c12-production-runtime-qualification
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    outputs:
+      materialized: ${{ steps.stage.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - id: stage
+        name: Materialize reviewed code and a locked explicit Redis client once
+        env:
+          C12_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c12-stage ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$GITHUB_REF_NAME" = 'c12/production-runtime-qualification-20260917'
+          test "$(git rev-parse HEAD^)" = '9ca2860e4133e9f8695076b50f323c7825a1c7b3'
+          cp package-lock.json /tmp/c12-lock-before.json
+          python3 - <<'PY'
+          import pathlib,gzip,json,hashlib,subprocess
+          stage=pathlib.Path('scripts/c12-stage');parts=sorted(stage.glob('*.bin'));assert len(parts)==4
+          raw=b''.join(p.read_bytes() for p in parts)
+          assert hashlib.sha256(raw).hexdigest()=='0c88f2449e57fc079c9092b571fc1975c54de43f9f8a2fcdaa326b94fc9e3171'
+          decoded=gzip.decompress(raw);assert len(decoded)==63747
+          data=json.loads(decoded);assert set(data)=={'patch','newFiles'} and len(data['newFiles'])==12
+          patch=data['patch'].encode();assert hashlib.sha256(patch).hexdigest()=='6ba3e0329481eb257c1702f872b477fe417d87b80b49d06a392a363eed002a49'
+          for name,content in data['newFiles'].items():
+            p=pathlib.Path(name);assert not p.is_absolute() and '..' not in p.parts and not p.exists()
+            assert name in ['lib/security/native-redis-rate-limit.ts','lib/security/signed-proxy-identity.ts','tsconfig.c12-tests.json'] or name.startswith('scripts/c12/')
+            p.parent.mkdir(parents=True,exist_ok=True);p.write_text(content)
+          pathlib.Path('/tmp/c12-reviewed.patch').write_bytes(patch)
+          subprocess.run(['git','apply','--check','/tmp/c12-reviewed.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c12-reviewed.patch'],check=True)
+          PY
+          npm install --package-lock-only --ignore-scripts --no-fund
+          python3 - <<'PY'
+          import pathlib,json,hashlib
+          before=json.loads(pathlib.Path('/tmp/c12-lock-before.json').read_text())['packages']
+          after=json.loads(pathlib.Path('package-lock.json').read_text())['packages']
+          changed=[p for p in before if p and (p not in after or before[p].get('version')!=after[p].get('version') or before[p].get('integrity')!=after[p].get('integrity'))]
+          added=[dict(path=p,version=after[p].get('version'),integrity=after[p].get('integrity')) for p in sorted(set(after)-set(before))]
+          assert not changed, 'Unrelated existing dependency versions or integrity changed: '+repr(changed)
+          assert after['node_modules/@redis/client']['version']=='6.2.1'
+          pathlib.Path('scripts/c12/DEPENDENCY_DELTA.json').write_text(json.dumps(dict(baseSha='9ca2860e4133e9f8695076b50f323c7825a1c7b3',existingVersionIntegrityChanges=changed,added=added,lockSha256=hashlib.sha256(pathlib.Path('package-lock.json').read_bytes()).hexdigest(),installScriptsExecuted=False),indent=2))
+          PY
+          git rm -r scripts/c12-stage
+          git diff --check
+          git config user.name 'Velmere C12 integration'
+          git config user.email 'c12-integration@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c12): enforce production quota with explicit Redis and authenticated ingress; refuse unavailable report success'
+          cat > /tmp/c12-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C12_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c12-askpass.sh
+          GIT_ASKPASS=/tmp/c12-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c12/production-runtime-qualification-20260917
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+          echo 'Source integrated only. A separate exact-SHA push must trigger qualification.'
+          git rev-parse HEAD
+  application:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Prepare isolated loopback Redis, no customer database or network writes
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c12-evidence
+          if ! command -v redis-server >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends redis-server
+          fi
+          redis-server --version > /tmp/c12-evidence/REDIS_VERSION.txt
+          node --version > /tmp/c12-evidence/NODE_VERSION.txt
+          npm --version > /tmp/c12-evidence/NPM_VERSION.txt
+      - name: Fresh whole application and real Redis checks
+        run: python3 scripts/c12/qualify.py
+      - name: Actual production Next pipeline, browser, failure recovery and immutable exports
+        if: always()
+        run: python3 scripts/c12/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c12-source-${{ github.run_id }}
+          path: /tmp/c12-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c12-evidence-${{ github.run_id }}
+          path: /tmp/c12-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Keep open release gates red, never auto-promote
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,sys
+          p=pathlib.Path('/tmp/c12-evidence/RELEASE_GATE.json')
+          if not p.exists():sys.exit('NO_GO: missing evidence')
+          gate=json.loads(p.read_text());print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:sys.exit(1)
+          print('Selected checks passed, but unresolved product gates still mean NO_GO.')
+          PY

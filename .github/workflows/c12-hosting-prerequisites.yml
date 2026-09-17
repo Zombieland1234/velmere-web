@@ -1,0 +1,28 @@
+name: C12 read-only hosting prerequisites
+on:
+  push:
+    branches: [c12/production-runtime-qualification-20260917]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Inspect existing authorization and project env metadata only
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: node scripts/c12/hosting-prerequisites.mjs /tmp/c12-hosting
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c12-hosting-${{ github.run_id }}
+          path: /tmp/c12-hosting
+          retention-days: 14
+          if-no-files-found: error
