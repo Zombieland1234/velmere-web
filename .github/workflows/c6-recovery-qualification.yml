@@ -1,0 +1,109 @@
+name: C6 source recovery and application qualification
+on:
+  push:
+    branches: [c6/release-recovery-20260917]
+    paths: [.github/workflows/c6-recovery-qualification.yml]
+permissions:
+  contents: read
+concurrency:
+  group: c6-recovery-qualification
+  cancel-in-progress: false
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Archive exact repository before executing project code
+        run: |
+          mkdir -p /tmp/c6-source /tmp/c6-results
+          git archive --format=zip -o /tmp/c6-source/VELMERE_GITHUB_SNAPSHOT.zip HEAD
+          git ls-tree -r -z HEAD > /tmp/c6-source/git-tree.bin
+          python3 - <<'PY'
+          import json, subprocess, hashlib, pathlib, datetime, os
+          root=pathlib.Path('/tmp/c6-source')
+          sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          parent=subprocess.check_output(['git','rev-parse','HEAD^'],text=True).strip()
+          files=[]
+          for name in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if not name: continue
+              p=pathlib.Path(name)
+              files.append({'path':name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest() if p.is_file() else None})
+          record={'schema':'velmere.c6.recovered-source.v1','recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository':'Zombieland1234/velmere-web','sourceSha':sha,'parentSha':parent,'runId':os.environ['GITHUB_RUN_ID'],'scope':'EXACT_GITHUB_SNAPSHOT_NOT_CONFIRMED_UI2','originalUi2Sha256':'3a12adb21c24a5bd8fab696b233a255539d7aeb42e430bf6ad059848da28e2f6','zipSha256':hashlib.sha256((root/'VELMERE_GITHUB_SNAPSHOT.zip').read_bytes()).hexdigest(),'files':files}
+          (root/'SOURCE_IDENTITY.json').write_text(json.dumps(record,indent=2))
+          print(json.dumps({k:v for k,v in record.items() if k!='files'},indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c6-exact-source-${{ github.run_id }}
+          path: /tmp/c6-source
+          retention-days: 14
+          if-no-files-found: error
+      - name: Clean lockfile installation
+        id: install
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          test -f package-lock.json
+          sha256sum package-lock.json > /tmp/c6-results/lock-before.txt
+          timeout 600 npm ci --ignore-scripts --no-fund 2>&1 | tee /tmp/c6-results/clean-install.log
+          sha256sum package-lock.json > /tmp/c6-results/lock-after.txt
+          diff /tmp/c6-results/lock-before.txt /tmp/c6-results/lock-after.txt
+      - name: Full-application checks with independent outcomes
+        if: steps.install.outcome == 'success'
+        run: |
+          python3 - <<'PY'
+          import subprocess, pathlib, json, datetime, os, hashlib
+          out=pathlib.Path('/tmp/c6-results'); records=[]
+          checks=[('strict-typescript',['node_modules/.bin/tsc','--noEmit','--strict','--pretty','false'],420),('eslint',['node_modules/.bin/eslint','.','--format','json','--output-file','/tmp/c6-results/eslint.json'],420),('dependency-audit',['npm','audit','--json'],120),('dependency-drift',['npm','ls','--all','--json'],120),('production-build',['npm','run','build'],600)]
+          for name,args,limit in checks:
+              started=datetime.datetime.now(datetime.timezone.utc).isoformat()
+              with (out/(name+'.log')).open('wb') as log:
+                  try: code=subprocess.run(args,stdout=log,stderr=subprocess.STDOUT,timeout=limit,check=False).returncode
+                  except subprocess.TimeoutExpired: code=124
+                  except OSError as exc: log.write(str(exc).encode()); code=127
+              records.append({'id':name,'command':args,'sourceSha':os.environ['GITHUB_SHA'],'startedAt':started,'finishedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exitCode':code,'result':'PASS' if code==0 else 'TIMEOUT' if code==124 else 'FAIL','log':name+'.log','logSha256':hashlib.sha256((out/(name+'.log')).read_bytes()).hexdigest()})
+              (out/'QUALIFICATION.json').write_text(json.dumps(records,indent=2))
+              print(name,code,flush=True)
+          PY
+      - name: Record actual scripts and routes without inventing products
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,os,datetime
+          pkg=json.loads(pathlib.Path('package.json').read_text())
+          routes=[]
+          for root in ('app','src/app','pages','src/pages'):
+              p=pathlib.Path(root)
+              if p.exists():
+                  routes.extend(str(x) for x in p.rglob('*') if x.is_file() and (x.name.startswith('page.') or x.name.startswith('route.') or '/api/' in str(x)))
+          record={'sourceSha':os.environ['GITHUB_SHA'],'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scripts':pkg.get('scripts',{}),'routes':routes,'productCount':'NOT_INFERRED_FROM_ROUTE_COUNT','installOutcome':'${{ steps.install.outcome }}'}
+          pathlib.Path('/tmp/c6-results/ROUTES_AND_SCRIPTS.json').write_text(json.dumps(record,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6-application-qualification-${{ github.run_id }}
+          path: /tmp/c6-results
+          retention-days: 14
+          if-no-files-found: error
+      - name: Do not label an incomplete or failed qualification green
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,sys
+          p=pathlib.Path('/tmp/c6-results/QUALIFICATION.json')
+          if not p.exists(): sys.exit('Qualification unavailable: clean install failed or job interrupted')
+          rows=json.loads(p.read_text())
+          if len(rows)!=5 or any(x['result']!='PASS' for x in rows): sys.exit('Full qualification has failures; see individual results')
+          print('Five requested build checks passed; release is still NOT established by these checks.')
+          PY
