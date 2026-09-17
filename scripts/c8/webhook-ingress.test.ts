@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import Stripe from 'stripe';
+import { NextResponse } from 'next/server';
 import { handleStripeWebhookRequest, stripeWebhookIngressDependencies, type StripeWebhookIngressDependencies } from '../../lib/payments/stripe-webhook/ingress';
 
 // SDK signing is real. All downstream persistence/dispatch is a controlled adapter;
@@ -28,8 +29,8 @@ function harness(overrides: Partial<StripeWebhookIngressDependencies> = {}) {
     markEventProcessed: async () => { seen.push('processed'); },
     markRetryableFailure: async () => { seen.push('retry'); },
     markTerminalFailure: async () => { seen.push('terminal'); },
-    dispatchEvent: async () => { seen.push('dispatch'); return Response.json({ received: true }, { headers: { 'cache-control': 'no-store' } }); },
-    orderEventJson: async (body, init) => Response.json(body, init),
+    dispatchEvent: async () => { seen.push('dispatch'); return NextResponse.json({ received: true }, { headers: { 'cache-control': 'no-store' } }); },
+    orderEventJson: async (body, init) => NextResponse.json(body, init),
     ...overrides,
   };
   return { deps, seen };

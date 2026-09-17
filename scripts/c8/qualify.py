@@ -6,9 +6,10 @@ sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
 assert sha == os.environ['GITHUB_SHA'], 'Trigger SHA and qualified source SHA must match'
 os.environ['C6_SOURCE_SHA'] = sha
 old_tests = ['scripts/c6/route-boundaries.test.ts','scripts/c6/provider-engine-boundaries.test.ts','scripts/c6c/actual-app-regressions.test.ts','scripts/c6d/rpc-pdf-boundaries.test.ts','scripts/c6e/pdf-evidence-boundary.test.ts','scripts/c7/engine-integrity.test.ts']
-new_tests = ['scripts/c8/request-boundaries.test.ts','scripts/c8/webhook-ingress.test.ts']
+new_tests = ['scripts/c8/request-boundaries.test.ts','scripts/c8/webhook-ingress.test.ts','scripts/c8/edge-boundary.test.ts']
 checks = [
  ('clean-install', ['npm','ci','--ignore-scripts','--no-fund'],600),
+ ('edge-live-negative-probe', ['node','scripts/c8/edge-live-probe.mjs',str(out)],100),
  ('c7-bug-reproductions', ['node_modules/.bin/tsx','scripts/c8/baseline-replay.ts',str(out)],180),
  ('c8-route-webhook-regressions', ['node_modules/.bin/tsx','--test',*new_tests],240),
  ('strict-typescript', ['node_modules/.bin/tsc','--noEmit','--strict','--pretty','false'],480),
