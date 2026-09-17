@@ -183,8 +183,6 @@ export function analyzeContextualAccessControl(
   if (selectorsDiscovered.has(mintSelector)) {
     // If the contract has mint and lacks owner/admin checks in the dispatcher branch
     const pc = selectorsDiscovered.get(mintSelector)!;
-    // Check if caller opcode is checked near this selector
-    const hasCallerCheck = cfg.totalInstructions > 100; // heuristic check
     // If source exists and does not contain onlyOwner/onlyRole on mint
     if (sourceCode && sourceCode.includes("function mint(") && !sourceCode.includes("onlyOwner") && !sourceCode.includes("onlyRole")) {
       hasUnprotectedMinter = true;
@@ -239,7 +237,7 @@ export function analyzeContextualAccessControl(
     !sourceCode.includes("onlyRole")
   ) {
     findings.push({
-      findingId: "VLM-SEC-AUTH-UNPROTECTED-MINT-03",
+      findingId: "VLM-SEC-AUTH-ARBITRARY-BURN-04",
       title: "Arbitrary Third-Party Token Burn Flaw (SafeMoon Incident Model)",
       severity: "critical",
       confidence: "certain",

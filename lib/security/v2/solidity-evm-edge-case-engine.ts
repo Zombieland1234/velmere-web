@@ -57,7 +57,7 @@ export function analyzeSolidityEvmEdgeCases(
     findings.push({
       findingId: "VLM-SEC-CRYPTO-SIGNATURE-MALLEABILITY-01",
       claimState: "HEURISTIC_CANDIDATE",
-      analysisMethod: "STATIC",
+      analysisMethod: "STRUCTURED_SOURCE_HEURISTIC",
       limitations: [
         "Raw ecrecover use is observed in supplied source, but low-s enforcement, zero-address rejection, nonce/domain separation and replay protection are not proved absent by this detector.",
         "No executed signature path or adversarial replay was performed.",
@@ -116,7 +116,7 @@ export function analyzeSolidityEvmEdgeCases(
     findings.push({
       findingId: "VLM-SEC-EVM-SELFDESTRUCT-02",
       claimState: "HEURISTIC_CANDIDATE",
-      analysisMethod: "STATIC",
+      analysisMethod: "BYTECODE_CFG_HEURISTIC",
       limitations: [
         "CFG presence does not prove caller reachability or missing authorization.",
         "SELFDESTRUCT effects depend on chain/fork semantics; after EIP-6780 it generally does not delete pre-existing code/storage unless executed in the creation transaction.",

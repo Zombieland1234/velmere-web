@@ -186,7 +186,7 @@ export function simulateDefiEconomicAttacks(
     !cleanSource.includes("checkLiquidity")
   ) {
     findings.push({
-      findingId: "VLM-SEC-DEFI-VAULT-INFLATION-01",
+      findingId: "VLM-SEC-DEFI-RESERVE-DONATION-02",
       claimState: "HEURISTIC_CANDIDATE",
       analysisMethod: "SIMULATION",
       limitations: ["Source-pattern candidate only; no target execution or solvency-state proof."],
@@ -356,11 +356,11 @@ export function simulateDefiEconomicAttacks(
         attackScenario:
           "UNEXECUTED hypothesis: attempt an unauthorized lender/initiator callback against the deployed target and verify whether caller checks, state transitions and repayment approvals permit loss.",
         proofOfConcept: {
-          summary: "Arbitrary attacker triggers flash loan on victim receiver, draining balance via flash loan fees.",
+          summary: "UNEXECUTED hypothesis: unauthorized flash-loan initiation may expose callback fee/state paths if caller and initiator checks are absent.",
           sequence: [
             { step: 1, actor: "Attacker", call: "flashLender.flashLoan(victim, token, amount, '')", expectation: "Callback invoked on victim" },
-            { step: 2, actor: "Victim Contract", call: "onFlashLoan(attacker, token, amount, fee, '')", expectation: "Executes without revert due to missing auth" },
-            { step: 3, actor: "Flash Lender", call: "token.transferFrom(victim, lender, amount + fee)", expectation: "Victim funds drained" }
+            { step: 2, actor: "Victim Contract", call: "onFlashLoan(attacker, token, amount, fee, '')", expectation: "Determine whether unauthorized callback is rejected before privileged effects" },
+            { step: 3, actor: "Flash Lender", call: "token.transferFrom(victim, lender, amount + fee)", expectation: "Confirm whether any target funds/state can actually be affected" }
           ]
         },
         evidence: {

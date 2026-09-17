@@ -12,6 +12,16 @@ const checks=[
   ['derived_dataflow_timing',/Math\.round\(cfgMs\s*\*\s*0\.3\)/],
 ];
 const failures=[];
-for(const file of files){const text=fs.readFileSync(file,'utf8');for(const [id,re] of checks){if(re.test(text))failures.push({id,file});}}
+const findingIds=new Map();
+for(const file of files){
+  const text=fs.readFileSync(file,'utf8');
+  for(const [id,re] of checks){if(re.test(text))failures.push({id,file});}
+  for(const match of text.matchAll(/findingId\s*:\s*["']([^"']+)["']/g)){
+    const id=match[1];
+    const previous=findingIds.get(id);
+    if(previous) failures.push({id:'duplicate_finding_id',findingId:id,file,previousFile:previous});
+    else findingIds.set(id,file);
+  }
+}
 if(failures.length){console.error(JSON.stringify({status:'FAIL',failures},null,2));process.exit(1);}
-console.log(JSON.stringify({status:'PASS',filesScanned:files.length,checks:checks.map(x=>x[0])},null,2));
+console.log(JSON.stringify({status:'PASS',filesScanned:files.length,checks:[...checks.map(x=>x[0]),'unique_finding_ids'],findingIdCount:findingIds.size},null,2));
