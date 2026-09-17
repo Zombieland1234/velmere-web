@@ -38,7 +38,9 @@ for(const kind of ['json','pdf','ssr']as const)test(`${kind} enforces shared ref
 });
 test('production cannot silently downgrade runtime analysis to QA memory limiting',async t=>{
   const keys=['NODE_ENV','VERCEL_ENV','VERCEL','VELMERE_TRUSTED_PROXY_PROFILE','UPSTASH_REDIS_REST_URL','UPSTASH_REDIS_REST_TOKEN','VELMERE_RATE_LIMIT_DISABLED'];
-  const saved=new Map(keys.map(k=>[k,process.env[k]]));for(const k of keys)delete process.env[k];process.env.NODE_ENV='production';process.env.VELMERE_RATE_LIMIT_DISABLED='1';
+  const saved=new Map(keys.map(k=>[k,process.env[k]]));for(const k of keys)delete process.env[k];
+  // Test-only process setup; do not weaken the runtime guard or TypeScript checks.
+  Object.assign(process.env,{NODE_ENV:'production',VELMERE_RATE_LIMIT_DISABLED:'1'});
   const rpc=t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',()=>{throw new Error('SHOULD_NOT_CALL_RPC');});
   try{const r=await getJson(make('/api/audit/report','203.0.113.196'));assert.equal(r.status,503);assert.equal(rpc.mock.callCount(),0);}
   finally{for(const[k,v]of saved){if(v===undefined)delete process.env[k];else process.env[k]=v;}}
