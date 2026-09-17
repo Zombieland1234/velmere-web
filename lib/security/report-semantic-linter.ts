@@ -75,8 +75,12 @@ export function lintCanonicalReport(
 ): SemanticLintResult {
   const issues: SemanticLintIssue[] = [];
 
+  if ([report.verdict.riskScore, report.verdict.confidenceScore, report.verdict.evidenceCoverage].some(v => v === null)
+      && (report.verdict.releaseDecision !== "NOT_VERIFIED" || report.executionEvidence?.qualification !== "NOT_VERIFIED")) {
+    issues.push({ code: "UNMEASURED_WITH_VERIFIED_CLAIM", field: "verdict", message: "Unmeasured metrics must remain explicitly unverified.", severity: "CRITICAL" });
+  }
   // --- CHECK 1: Contradictory Claims ---
-  if (report.verdict.confidenceScore > 80 && report.verdict.evidenceCoverage < 50) {
+  if (report.verdict.confidenceScore !== null && report.verdict.evidenceCoverage !== null && report.verdict.confidenceScore > 80 && report.verdict.evidenceCoverage < 50) {
     issues.push({
       code: "CONTRADICTORY_CONFIDENCE_COVERAGE",
       field: "verdict.confidenceScore",
@@ -86,7 +90,7 @@ export function lintCanonicalReport(
   }
 
   // --- CHECK 2: Numeric Bounds ---
-  if (report.verdict.riskScore < 0 || report.verdict.riskScore > 100 || isNaN(report.verdict.riskScore)) {
+  if (report.verdict.riskScore !== null && (report.verdict.riskScore < 0 || report.verdict.riskScore > 100 || !Number.isFinite(report.verdict.riskScore))) {
     issues.push({
       code: "NUMERIC_BOUNDS_VIOLATION",
       field: "verdict.riskScore",
@@ -94,7 +98,7 @@ export function lintCanonicalReport(
       severity: "CRITICAL",
     });
   }
-  if (report.verdict.confidenceScore < 0 || report.verdict.confidenceScore > 100 || isNaN(report.verdict.confidenceScore)) {
+  if (report.verdict.confidenceScore !== null && (report.verdict.confidenceScore < 0 || report.verdict.confidenceScore > 100 || !Number.isFinite(report.verdict.confidenceScore))) {
     issues.push({
       code: "NUMERIC_BOUNDS_VIOLATION",
       field: "verdict.confidenceScore",
@@ -102,7 +106,7 @@ export function lintCanonicalReport(
       severity: "CRITICAL",
     });
   }
-  if (report.verdict.evidenceCoverage < 0 || report.verdict.evidenceCoverage > 100 || isNaN(report.verdict.evidenceCoverage)) {
+  if (report.verdict.evidenceCoverage !== null && (report.verdict.evidenceCoverage < 0 || report.verdict.evidenceCoverage > 100 || !Number.isFinite(report.verdict.evidenceCoverage))) {
     issues.push({
       code: "NUMERIC_BOUNDS_VIOLATION",
       field: "verdict.evidenceCoverage",

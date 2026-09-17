@@ -126,7 +126,9 @@ export function generateAuditSnapshotId(params: {
   sourceCode?: string;
   compilerVersion?: string;
 }): AuditSnapshotId {
-  const bytecodeSha256 = createHash("sha256").update(params.bytecode).digest("hex");
+  const hex = params.bytecode.replace(/^0x/i, "");
+  if (hex.length % 2 || !/^[0-9a-f]*$/i.test(hex)) throw new Error("INVALID_HEX_SNAPSHOT");
+  const bytecodeSha256 = createHash("sha256").update(Buffer.from(hex, "hex")).digest("hex");
   const sourceCodeSha256 = params.sourceCode
     ? createHash("sha256").update(params.sourceCode).digest("hex")
     : undefined;
@@ -136,7 +138,11 @@ export function generateAuditSnapshotId(params: {
   // The digest identifies analyzed content and context. Wall-clock observation
   // time remains metadata and is deliberately excluded so identical inputs
   // produce the same snapshotDigest across repeat runs.
-  const rawPayload = `${params.contractAddress}-${params.chainId}-${params.blockNumber ?? "unknown_block"}-${bytecodeSha256}-${sourceCodeSha256 ?? "no_source"}-Velmère-V2.4.0`;
+  const rawPayload = JSON.stringify({
+    schema: "velmere.audit-content-snapshot.v2", address: params.contractAddress.toLowerCase(),
+    chainId: params.chainId, blockNumber: params.blockNumber ?? null,
+    bytecodeSha256, sourceCodeSha256: sourceCodeSha256 ?? null, engineVersion: "Velmère-V2.4.0",
+  });
   const snapshotDigest = `0x${createHash("sha256").update(rawPayload).digest("hex")}`;
 
   return {

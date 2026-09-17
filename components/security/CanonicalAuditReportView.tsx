@@ -39,13 +39,13 @@ interface CanonicalAuditReportViewProps {
 
 const COPY_BY_LOCALE = {
   pl: {
-    badge: "KANONICZNY CERTYFIKAT AUDYTU",
+    badge: "RAPORT ANALIZY — NIEZWERYFIKOWANY",
     title: "Raport Audytu Bezpieczeństwa Smart Kontraktu",
     subtitle: "Deterministyczna analiza statyczna w oparciu o specyfikację EVM, matrycę podatności SWC/CWE/OWASP oraz sumę kontrolną SHA-256.",
     tier: "PAKIET",
     downloadPdf: "Pobierz Kanoniczny Raport PDF",
     generatingPdf: "Przygotowywanie dokumentu PDF...",
-    canonicalSync: "100% spójne dane z podpisem kryptograficznym",
+    canonicalSync: "Lokalna suma danych; bez niezależnej atestacji",
     riskScore: "Wskaźnik Ryzyka VLM",
     coverage: "Pokrycie dowodowe",
     confidence: "Pewność analizy",
@@ -53,10 +53,10 @@ const COPY_BY_LOCALE = {
     network: "Sieć / Protokół",
     contractAddress: "Adres Kontraktu",
     status: "Status Audytu",
-    statusVerified: "Zweryfikowany & Zapieczętowany",
+    statusVerified: "NIEZWERYFIKOWANY",
     shaDigest: "Suma Kontrolna SHA-256",
-    findingsSummary: "Wykryte Podatności",
-    noCriticalFound: "0 krytycznych luk w ewaluowanym korpusie referencyjnym",
+    findingsSummary: "Kandydaci do weryfikacji",
+    noCriticalFound: "Brak kandydatów nie potwierdza bezpieczeństwa",
     critical: "Krytyczne",
     high: "Wysokie",
     medium: "Średnie",
@@ -69,8 +69,8 @@ const COPY_BY_LOCALE = {
     scopeSection: "Zakres sekcji",
     requiresTier: (tier: string) => `Wymaga pakietu ${tier.toUpperCase()}`,
     upgradeCta: "Zarządzaj pakietem w Centrum Audytu",
-    methodology: "Metodologia: ISO/IEC 25010, SWC & OWASP 2026",
-    attestationSignature: "Kryptograficzny podpis atestacji",
+    methodology: "Zakres: dostępne heurystyki; pokrycie nieustalone",
+    attestationSignature: "Lokalna integralność danych",
     evidenceLabel: "Dowód / Ślad w kodzie",
     attackScenario: "Wektor Ataku (Impact)",
     proofOfConcept: "Dowód Koncepcji (PoC)",
@@ -81,16 +81,16 @@ const COPY_BY_LOCALE = {
     missingStatus: "Brak danych",
     disclaimerTitle: "Poufność i zastrzeżenie prawne",
     disclaimerBody:
-      "Niniejszy raport audytu stanowi zautomatyzowaną analizę techniczną w oparciu o stan kodu z momentu badania. Raport ma charakter techniczny i informacyjny. Nie stanowi porady finansowej, inwestycyjnej ani prawnej. 0 wyników fałszywie ujemnych w ewaluowanym korpusie referencyjnym nie stanowi gwarancji braku błędów w nieprzebadanych wektorach zeroday.",
+      "Raport przedstawia informacje referencyjne lub kandydatów z analizy statycznej. Nie jest audytem niezależnym, dowodem formalnym, gwarancją bezpieczeństwa ani poradą inwestycyjną.",
   },
   de: {
-    badge: "KANONISCHES AUDIT-ZERTIFIKAT",
+    badge: "ANALYSEBERICHT — NICHT VERIFIZIERT",
     title: "Smart-Contract Sicherheitsaudit-Bericht",
     subtitle: "Deterministische statische Analyse gegen EVM-Spezifikationen, SWC/CWE/OWASP-Matrix und kryptografischen SHA-256-Hash.",
     tier: "STUFE",
     downloadPdf: "Kanonischen PDF-Bericht herunterladen",
     generatingPdf: "PDF-Dokument wird vorbereitet...",
-    canonicalSync: "100% konsistente Daten mit kryptografischer Signatur",
+    canonicalSync: "Lokale Prüfsumme; keine unabhängige Bestätigung",
     riskScore: "VLM-Risiko-Score",
     coverage: "Beweisabdeckung",
     confidence: "Analysekonfidenz",
@@ -98,10 +98,10 @@ const COPY_BY_LOCALE = {
     network: "Netzwerk / Protokoll",
     contractAddress: "Vertragsadresse",
     status: "Audit-Status",
-    statusVerified: "Verifiziert & Versiegelt",
+    statusVerified: "NICHT VERIFIZIERT",
     shaDigest: "SHA-256 Prüfsumme",
-    findingsSummary: "Erkannte Schwachstellen",
-    noCriticalFound: "0 kritische Schwachstellen im evaluierten Referenzkorpus",
+    findingsSummary: "Kandidaten zur Überprüfung",
+    noCriticalFound: "Keine Kandidaten sind kein Sicherheitsnachweis",
     critical: "Kritisch",
     high: "Hoch",
     medium: "Mittel",
@@ -114,8 +114,8 @@ const COPY_BY_LOCALE = {
     scopeSection: "Abschnittsumfang",
     requiresTier: (tier: string) => `Erfordert ${tier.toUpperCase()}-Stufe`,
     upgradeCta: "Stufen im Audit-Hub verwalten",
-    methodology: "Methodik: ISO/IEC 25010, SWC & OWASP 2026",
-    attestationSignature: "Kryptografische Signatur",
+    methodology: "Umfang: verfügbare Heuristiken; Abdeckung ungeklärt",
+    attestationSignature: "Lokale Datenintegrität",
     evidenceLabel: "Beweis / Code-Spur",
     attackScenario: "Angriffsszenario (Impact)",
     proofOfConcept: "Machbarkeitsnachweis (PoC)",
@@ -126,16 +126,16 @@ const COPY_BY_LOCALE = {
     missingStatus: "Fehlt",
     disclaimerTitle: "Vertraulichkeit & Rechtlicher Hinweis",
     disclaimerBody:
-      "Dieser Bericht stellt eine technische Sicherheitsprüfung dar. 0 falsch-negative Befunde im evaluierten Referenzkorpus garantieren keine absolute Abwesenheit unentdeckter Zero-Day-Vektoren.",
+      "Dieser Bericht enthält Referenzinformationen oder statische heuristische Kandidaten. Er ist kein unabhängiges Audit, formaler Nachweis, Sicherheitsversprechen oder Anlageberatung.",
   },
   en: {
-    badge: "CANONICAL AUDIT CERTIFICATE",
+    badge: "ANALYSIS REPORT — NOT VERIFIED",
     title: "Smart Contract Security Audit Report",
     subtitle: "Deterministic static analysis against EVM specifications, SWC/CWE/OWASP matrices, and SHA-256 seal.",
     tier: "TIER",
     downloadPdf: "Download Canonical PDF Report",
     generatingPdf: "Preparing PDF Document...",
-    canonicalSync: "100% Consistent Canonical Data & Cryptographic Seal",
+    canonicalSync: "Local data digest; no independent attestation",
     riskScore: "VLM Risk Score",
     coverage: "Evidence coverage",
     confidence: "Analysis confidence",
@@ -143,10 +143,10 @@ const COPY_BY_LOCALE = {
     network: "Network / Chain",
     contractAddress: "Contract Address",
     status: "Audit Status",
-    statusVerified: "Verified & Cryptographically Sealed",
+    statusVerified: "NOT VERIFIED",
     shaDigest: "SHA-256 Checksum",
-    findingsSummary: "Vulnerability Findings",
-    noCriticalFound: "0 false negatives in the evaluated reference corpus",
+    findingsSummary: "Review Candidates",
+    noCriticalFound: "No candidates does not establish safety",
     critical: "Critical",
     high: "High",
     medium: "Medium",
@@ -159,8 +159,8 @@ const COPY_BY_LOCALE = {
     scopeSection: "Section scope",
     requiresTier: (tier: string) => `Requires ${tier.toUpperCase()} Tier`,
     upgradeCta: "Manage Tiers in Audit Hub",
-    methodology: "Methodology: ISO/IEC 25010, SWC & OWASP 2026",
-    attestationSignature: "Cryptographic Attestation Signature",
+    methodology: "Scope: available heuristics; coverage not qualified",
+    attestationSignature: "Local Data Integrity",
     evidenceLabel: "Evidence / Code Trace",
     attackScenario: "Attack Scenario (Impact)",
     proofOfConcept: "Proof of Concept (PoC)",
@@ -171,7 +171,7 @@ const COPY_BY_LOCALE = {
     missingStatus: "Missing",
     disclaimerTitle: "Confidentiality & Legal Notice",
     disclaimerBody:
-      "This audit report represents an automated formal security assessment. 0 false negatives in the evaluated reference corpus does not guarantee absence of unforeseen zero-day vectors.",
+      "This report contains reference information or static heuristic candidates. It is not a formal assessment, independent audit, guarantee of safety or investment advice.",
   },
 };
 
@@ -211,7 +211,8 @@ export default function CanonicalAuditReportView({
 
   const score = report.verdict.riskScore;
   const riskTone =
-    score <= 25
+    score === null ? { color: "#c7a35b", label: loc === "pl" ? "NIEZMIERZONE" : loc === "de" ? "NICHT GEMESSEN" : "NOT MEASURED" }
+      : score <= 25
       ? { color: "#34d399", label: loc === "pl" ? "MINIMALNE RYZYKO (INSTITUTIONAL GRADE)" : "MINIMAL RISK (INSTITUTIONAL GRADE)" }
       : score <= 50
       ? { color: "#c7a35b", label: loc === "pl" ? "RYZYKO STANDARDOWE" : "STANDARD RISK" }
@@ -343,13 +344,13 @@ export default function CanonicalAuditReportView({
                           strokeLinecap="round"
                           strokeDasharray="251.3"
                           initial={{ strokeDashoffset: 251.3 }}
-                          animate={{ strokeDashoffset: 251.3 - (251.3 * score) / 100 }}
+                          animate={{ strokeDashoffset: 251.3 - (251.3 * (score ?? 0)) / 100 }}
                           transition={{ duration: 1.2, ease: "easeOut" }}
                           style={{ filter: `drop-shadow(0 0 6px ${riskTone.color}60)` }}
                         />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center font-mono text-xs font-bold text-white">
-                        {score}
+                        {score ?? "—"}
                       </div>
                     </div>
 
@@ -359,7 +360,7 @@ export default function CanonicalAuditReportView({
                           className="font-mono text-xl font-light tracking-tight"
                           style={{ color: riskTone.color }}
                         >
-                          {score.toFixed(1)} <small className="text-white/40 text-xs font-normal">/ 100</small>
+                          {score === null ? "—" : score.toFixed(1)} <small className="text-white/40 text-xs font-normal">/ 100</small>
                         </span>
                         <span
                           className="rounded-full border px-2.5 py-0.5 font-mono text-[10px] font-semibold uppercase"
@@ -389,12 +390,12 @@ export default function CanonicalAuditReportView({
                   <div className="flex flex-wrap items-center gap-4 font-mono">
                     <div className="flex items-center gap-1.5">
                       <span className="text-white/50">{t.coverage}:</span>
-                      <strong className="text-white">{report.verdict.evidenceCoverage}%</strong>
+                      <strong className="text-white">{report.verdict.evidenceCoverage === null ? "—" : `${report.verdict.evidenceCoverage}%`}</strong>
                     </div>
                     <span className="text-white/20">|</span>
                     <div className="flex items-center gap-1.5">
                       <span className="text-white/50">{t.confidence}:</span>
-                      <strong className="text-cyan-300">{report.verdict.confidenceScore}%</strong>
+                      <strong className="text-cyan-300">{report.verdict.confidenceScore === null ? "—" : `${report.verdict.confidenceScore}%`}</strong>
                     </div>
                     <span className="text-white/20">|</span>
                     <span className="text-[11px] text-white/40">

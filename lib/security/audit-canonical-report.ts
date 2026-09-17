@@ -1,3 +1,4 @@
+import type { CustomerAnalysisReceipt } from "./customer-audit-pipeline";
 import { canonicalJson } from "@/lib/security/canonical-json";
 import { sha256Digest, sha256BytesDigest } from "@/lib/security/cryptographic-digest";
 import { resolveContractAuditProfile, BENCHMARK_50_CONTRACTS } from "@/lib/security/contract-audit-profiles";
@@ -116,12 +117,12 @@ export type CanonicalAuditReportModel = {
   locale: "pl" | "en" | "de";
   createdAt: string;
   verdict: {
-    riskScore: number;
+    riskScore: number | null;
     riskLabel: string;
-    confidenceScore: number;
-    auditQualityScore?: number;
+    confidenceScore: number | null;
+    auditQualityScore?: number | null;
     summary: string;
-    evidenceCoverage: number;
+    evidenceCoverage: number | null;
     verificationStatus?: "VERIFIED" | "PARTIALLY_VERIFIED" | "AUTOMATED_ONLY" | "INSUFFICIENT_EVIDENCE" | "UNVERIFIED";
     releaseDecision?: "PASS" | "CONDITIONAL" | "BLOCKED" | "NOT_VERIFIED";
     stopSellActive?: boolean;
@@ -164,6 +165,7 @@ export type CanonicalAuditReportModel = {
   sections: CanonicalReportSection[];
   humanReviewEvidencePresent: boolean;
   reportDigest: string;
+  runtimeAnalysis?: CustomerAnalysisReceipt;
   /** A profile or heuristic is not an execution attestation for the current target. */
   executionEvidence?: {
     sourceMode: "reference-profile" | "unverified-static-analysis" | "insufficient-evidence";
@@ -248,6 +250,7 @@ export type CanonicalAuditReportModel = {
 export type CanonicalAuditReport = CanonicalAuditReportModel;
 
 export type FullAuditReportInput = {
+  analysisMode?: "reference" | "runtime";
   reportId: string;
   caseRef?: string;
   contractAddress: string;
@@ -828,13 +831,13 @@ export function filterCanonicalReportByEntitlement(
     schemaVersion: "velmere.canonical-audit-report.v1",
   };
   const tierQualityScore = clientTier === "advanced"
-    ? Math.min(99, Math.round(92 + (report.verdict.confidenceScore % 7)))
+    ? Math.min(99, Math.round(92 + ((report.verdict.confidenceScore ?? 0) % 7)))
     : clientTier === "pro"
-    ? Math.min(88, Math.round(80 + (report.verdict.confidenceScore % 8)))
-    : Math.min(68, Math.round(58 + (report.verdict.confidenceScore % 9)));
+    ? Math.min(88, Math.round(80 + ((report.verdict.confidenceScore ?? 0) % 8)))
+    : Math.min(68, Math.round(58 + ((report.verdict.confidenceScore ?? 0) % 9)));
 
   const commitment = buildAuditMerkleCommitment(filteredSections, leafProvenance, {
-    riskScore: report.verdict.riskScore,
+    riskScore: report.verdict.riskScore ?? 0,
     auditQualityScore: tierQualityScore,
     targetAddress: report.target?.contractAddress,
     chainId: String(report.target?.chainId || "1"),
@@ -916,6 +919,15 @@ export function canonicalReportToPdfLines(
       lines.push(`${select("Deklarowana istotność (niezweryfikowana)", "Declared severity (not validated)", "Angegebener Schweregrad (nicht validiert)")}: ${finding.severity}`);
     }
     lines.push("");
+  }
+  if (report.runtimeAnalysis) {
+    const r = report.runtimeAnalysis;
+    lines.push("--- STATIC ANALYSIS RECEIPT ---", `Status: ${r.status}`, `Engine: ${r.engineVersion ?? "NOT_RUN"}`,
+      `Source SHA: ${r.sourceSha ?? "UNAVAILABLE"}`, `Runtime SHA-256: ${r.inputBytecodeSha256 ?? "UNAVAILABLE"}`,
+      `Block: ${r.blockNumber ?? "UNKNOWN"} | ${r.blockHash ?? "UNKNOWN"}`,
+      `Observed at: ${r.observedAt ?? "NOT_OBSERVED"}`, `Result digest: ${r.resultSha256 ?? "UNAVAILABLE"}`,
+      "RPC-asserted snapshot only. No independent consensus, license or safety verification. Target EVM execution: NOT_PERFORMED.",
+      `Limitations: ${r.limitations.join("; ")}`, `Acquisition/analysis error: ${r.errorCode ?? "none"}`, "");
   }
   lines.push(select("--- INTEGRALNOŚĆ PLIKU ---", "--- FILE INTEGRITY ---", "--- DATEIINTEGRITÄT ---"));
   lines.push(select("SHA-256 w nagłówku pobrania identyfikuje bajty PDF. Sam hash nie potwierdza ustaleń, czasu, niezależności wystawcy ani bezpieczeństwa celu.", "The download SHA-256 identifies PDF bytes. A hash alone does not validate findings, time, issuer independence or target safety.", "Der SHA-256-Downloadwert identifiziert die PDF-Bytes. Ein Hash allein bestätigt weder Befunde, Zeit, unabhängige Herkunft noch die Sicherheit des Ziels."));
