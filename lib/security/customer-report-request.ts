@@ -47,7 +47,9 @@ export function normalizeCustomerReportInput(input: Record<string, unknown>): {
   const chainId = value("chainId") || asset?.chainId || reference?.chainId || exactCatalog?.chainId || "56";
   if (evm && !Object.prototype.hasOwnProperty.call(SUPPORTED_CHAINS, chainId)) throw new CustomerReportRequestError(400, "unsupported_chain_id");
   if (asset && asset.chainId !== chainId) throw new CustomerReportRequestError(409, "asset_chain_mismatch");
-  if (reference && reference.chainId !== chainId) throw new CustomerReportRequestError(409, "reference_profile_chain_mismatch");
+  // The same address may hold unrelated bytecode on another supported chain.
+  // Runtime mode must analyze the explicitly requested chain, not force a profile.
+  if (reference && reference.chainId !== chainId && requestedMode !== "runtime") throw new CustomerReportRequestError(409, "reference_profile_chain_mismatch");
   if (!evm && exactCatalog?.chainId !== chainId) throw new CustomerReportRequestError(409, "asset_chain_mismatch");
   const mode = (requestedMode || ((reference || exactCatalog) ? "reference" : "runtime")) as "reference" | "runtime";
   if (mode === "reference" && !reference && !exactCatalog) throw new CustomerReportRequestError(400, "unknown_reference_target");

@@ -257,7 +257,7 @@ export interface AuditSnapshotId {
   bytecodeSha256: string;
   sourceCodeSha256?: string;
   compilerVersion?: string;
-  engineVersion: "Velmère-V2.4.0";
+  engineVersion: "Velmère-V2.5.0";
   timestamp: string;
 }
 
