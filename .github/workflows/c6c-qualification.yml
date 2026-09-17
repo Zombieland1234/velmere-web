@@ -1,0 +1,132 @@
+name: C6C actual product qualification
+on:
+  push:
+    branches: [c6c/product-qualification-20260917]
+    paths: [.github/workflows/c6c-qualification.yml]
+permissions:
+  contents: write
+concurrency:
+  group: c6c-product-qualification
+  cancel-in-progress: false
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Apply reviewed actual-source changes with before and after identity guards
+        run: |
+          mkdir -p /tmp/c6c-evidence /tmp/c6c-source
+          test "$(git rev-parse HEAD^)" = ffa40ec83c5f742a02243fc01cd320952fa11d70
+          python3 - <<'PY'
+          import pathlib,json,hashlib
+          edits=json.loads(pathlib.Path('scripts/c6c/CORE_PATCH.json').read_text())
+          for item in edits:
+            p=pathlib.Path(item['path']);raw=p.read_bytes()
+            assert hashlib.sha256(raw).hexdigest()==item['before'],item['path']
+            lines=raw.decode().splitlines(keepends=True)
+            for change in reversed(item['changes']):lines[change['start']:change['end']]=[change['text']]
+            result=''.join(lines).encode()
+            assert hashlib.sha256(result).hexdigest()==item['after'],item['path']
+            p.write_bytes(result)
+          p=pathlib.Path('scripts/c6/browser-observations.mjs');s=p.read_text()
+          s=s.replace("'http://127.0.0.1:3000'].includes", "'http://127.0.0.1:3000','http://localhost:3000'].includes")
+          s=s.replace("'/en/security','/en/shield'", "'/en/security','/en/security/audits','/en/browser','/en/shield-map','/en/shield'")
+          p.write_text(s)
+          PY
+          git diff --check
+      - name: Commit candidate only to this isolated branch
+        env:
+          C6_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          test "$GITHUB_REF_NAME" = c6c/product-qualification-20260917
+          cat > /tmp/c6c-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C6_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c6c-askpass.sh
+          export GIT_ASKPASS=/tmp/c6c-askpass.sh GIT_TERMINAL_PROMPT=0
+          test "$(git ls-remote origin refs/heads/c6c/product-qualification-20260917 | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'Velmere C6C qualification'
+          git config user.email 'c6c-qualification@users.noreply.github.com'
+          git add components/market-integrity/ShieldRealMarketsParityClient.tsx lib/market-integrity/shield-instant-bootstrap.ts lib/market-integrity/shield-pro-customer-truth.ts lib/security/v2/contextual-reentrancy-engine.ts scripts/c6/browser-observations.mjs
+          git commit -m 'fix(c6c): remove fabricated Shield evidence and unexecuted engine proof claims'
+          git push origin HEAD:refs/heads/c6c/product-qualification-20260917
+          echo "C6_SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git diff HEAD^ HEAD --binary > /tmp/c6c-evidence/APPLIED_SOURCE.diff
+      - name: Requalify the entire actual candidate without changing lockfile
+        run: python3 scripts/c6c/qualify.py
+      - name: Derive product manifest from runtime topology
+        run: |
+          node_modules/.bin/tsx -e "import {VLM_CANONICAL_CUSTOMER_PRODUCTS as products} from './lib/product/vlm-canonical-product-topology';import fs from 'node:fs';import{createHash}from'node:crypto';const p='lib/product/vlm-canonical-product-topology.ts';fs.writeFileSync('/tmp/c6c-evidence/PRODUCT_MANIFEST.json',JSON.stringify({sourceSha:process.env.C6_SOURCE_SHA,recordedAt:new Date().toISOString(),topologyPath:p,topologySha256:createHash('sha256').update(fs.readFileSync(p)).digest('hex'),catalogCount:products.length,activeOrSellableCount:'NOT_ASSUMED_FROM_CATALOG_COUNT',products},null,2));"
+      - name: Real built pages and controlled provider-failure browser tests
+        continue-on-error: true
+        run: |
+          node -e "const a=require('/tmp/c6c-evidence/QUALIFICATION.json');if(!a.find(x=>x.id==='production-build'&&x.result==='PASS'))process.exit(1)"
+          node_modules/.bin/playwright install --with-deps chromium > /tmp/c6c-evidence/browser-install.log 2>&1
+          node_modules/.bin/next start --hostname localhost > /tmp/c6c-evidence/next-runtime.log 2>&1 &
+          server=$!
+          trap 'kill "$server" || true' EXIT
+          for i in $(seq 1 30); do if curl -s -o /dev/null http://localhost:3000/en; then break; fi; sleep 1; done
+          timeout 300 node scripts/c6/browser-observations.mjs http://localhost:3000 /tmp/c6c-evidence/browser > /tmp/c6c-evidence/browser.log 2>&1
+          timeout 90 node scripts/c6c/provider-outage-browser.mjs /tmp/c6c-evidence/failures > /tmp/c6c-evidence/controlled-failures.log 2>&1
+      - name: Export exact committed application code and evidence manifest
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,subprocess,zipfile,hashlib,json,datetime,os
+          out=pathlib.Path('/tmp/c6c-evidence');out.mkdir(exist_ok=True);src=pathlib.Path('/tmp/c6c-source');src.mkdir(exist_ok=True)
+          sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip();excluded=[];files=[]
+          with zipfile.ZipFile(src/'VELMERE_SOURCE_C6C.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for name in subprocess.check_output(['git','ls-files','-z'],text=True).split('\0'):
+              if not name:continue
+              raw=subprocess.check_output(['git','show','HEAD:'+name])
+              item={'path':name,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+              if pathlib.Path(name).suffix.lower() in {'.woff','.woff2','.ttf','.otf','.eot','.ttc'}:excluded.append(item);continue
+              z.writestr(name,raw);files.append(item)
+          identity={'sourceSha':sha,'treeSha':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'repository':'Zombieland1234/velmere-web','branch':os.environ.get('GITHUB_REF_NAME'),'originalUI2ZipIdentityConfirmed':False,'fontBinariesExcluded':excluded,'files':files,'zipSha256':hashlib.sha256((src/'VELMERE_SOURCE_C6C.zip').read_bytes()).hexdigest()}
+          (src/'SOURCE_IDENTITY.json').write_text(json.dumps(identity,indent=2));(out/'SOURCE_IDENTITY.json').write_text(json.dumps({k:v for k,v in identity.items() if k!='files'},indent=2))
+          subprocess.run(['git','status','--porcelain'],stdout=(out/'final-working-tree-status.txt').open('w'),check=True)
+          items=[{'path':str(p.relative_to(out)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(out.rglob('*')) if p.is_file()]
+          (out/'EVIDENCE_MANIFEST.json').write_text(json.dumps({'sourceSha':sha,'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':items},indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6c-source-${{ github.run_id }}
+          path: /tmp/c6c-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6c-evidence-${{ github.run_id }}
+          path: /tmp/c6c-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Reject an incomplete release qualification
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,sys
+          out=pathlib.Path('/tmp/c6c-evidence');p=out/'QUALIFICATION.json'
+          if not p.exists():sys.exit('Qualification missing')
+          checks=json.loads(p.read_text())
+          if len(checks)!=8 or any(x['result']!='PASS' for x in checks):sys.exit('Full source qualification has failing or missing checks; NO_GO')
+          engine=json.loads((out/'engine/ENGINE_OBSERVATIONS.json').read_text())
+          if any(x['result']!='PASS' for x in engine['rows']):sys.exit('Engine benchmark includes false positives or negatives; NO_GO')
+          f=out/'failures/CONTROLLED_FAILURES.json'
+          if not f.exists() or any(x['result']!='PASS' for x in json.loads(f.read_text())['rows']):sys.exit('Controlled browser failure tests not qualified')
+          print('Code checks passed. Real paid lifecycle, production environment and independent validation are still required; this is not a release GO.')
+          PY
