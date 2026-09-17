@@ -5,6 +5,8 @@ import { executeFullAuditV2 } from '../../lib/security/v2/master-audit-orchestra
 import { computeMultiDimensionalScores, generateAuditSnapshotId } from '../../lib/security/v2/scoring-and-evidence-engine';
 import { fuseStructuredSourceCandidates } from '../../lib/security/v2/structured-source-fusion';
 import { analyzeReentrancyGuardCoverage } from '../../lib/security/solidity-structured-signal.mjs';
+import { disassembleBytecode, buildControlFlowGraph } from '../../lib/security/v2/evm-cfg-dataflow-engine';
+import { analyzeSolidityEvmEdgeCases } from '../../lib/security/v2/solidity-evm-edge-case-engine';
 
 const PRE='// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n';
 const ADDRESS='0x00000000000000000000000000000000000000c7';
@@ -14,7 +16,7 @@ function compile(source:string, contractName:string):string {
     language:'Solidity',sources:{'Case.sol':{content:source}},
     settings:{optimizer:{enabled:false},outputSelection:{'*':{'*':['evm.deployedBytecode.object']}}}
   })));
-  const errors=(compiled.errors??[]).filter((e:any)=>e.severity==='error');
+  const errors=(compiled.errors??[]).filter((e:{severity?:string})=>e.severity==='error');
   assert.equal(errors.length,0,JSON.stringify(errors));
   const object=compiled.contracts['Case.sol'][contractName].evm.deployedBytecode.object;
   return '0x'+object;
@@ -137,4 +139,54 @@ test('all V2 finding evidence hashes emitted in a compiled unsafe case are real 
   const r=audit(source,compile(source,'Case'));
   assert.ok(r.findings.length>0);
   for(const f of r.findings) assert.match(f.evidence.hashProof,/^sha256:[a-f0-9]{64}$/,f.findingId);
+});
+
+test('a modifier name alone never suppresses reentrancy without check-enter-exit semantics',()=>{
+  const fakeGuard=PRE+'contract Case { modifier nonReentrant(){_;} mapping(address=>uint) b; function w() external nonReentrant { uint x=b[msg.sender]; (bool ok,)=msg.sender.call{value:x}(""); require(ok); b[msg.sender]=0; } }';
+  const coverage=analyzeReentrancyGuardCoverage(fakeGuard);
+  assert.equal(coverage.allSupportedPathsGuarded,false);
+  assert.equal(coverage.unguardedPaths,1);
+  const r=audit(fakeGuard,compile(fakeGuard,'Case'));
+  assert.equal(r.findings.some(f=>f.findingId==='VLM-SEC-REENTRANCY-01'),true);
+});
+
+test('final Full V2 output cannot label an unexecuted detector result active_exploit',()=>{
+  const source=PRE+'contract Case { address owner; constructor(){owner=msg.sender;} function take(address payable to) external { require(tx.origin==owner); to.transfer(address(this).balance); } receive() external payable {} }';
+  const r=audit(source,compile(source,'Case'));
+  const candidates=r.findings.filter(f=>f.findingId==='VLM-SEC-AUTH-TXORIGIN-01');
+  assert.ok(candidates.length>0);
+  assert.ok(candidates.every(f=>f.exploitability!=='active_exploit'));
+  assert.ok(candidates.every(f=>f.claimState==='HEURISTIC_CANDIDATE'));
+  assert.ok(candidates.every(f=>(f.limitations??[]).some(x=>x.includes('No target exploit execution'))));
+});
+
+test('permit surface is not treated as proof of raw ecrecover malleability',()=>{
+  const source=PRE+'contract Case { function permit(address,address,uint,uint,uint8,bytes32,bytes32) external {} }';
+  const bytecode=compile(source,'Case');
+  const cfg=buildControlFlowGraph(disassembleBytecode(bytecode).instructions);
+  const edge=analyzeSolidityEvmEdgeCases(ADDRESS,cfg,source);
+  assert.equal(edge.findings.some(f=>f.findingId==='VLM-SEC-CRYPTO-SIGNATURE-MALLEABILITY-01'),false);
+});
+
+test('raw ecrecover and SELFDESTRUCT are review candidates rather than executed exploits',()=>{
+  const source=PRE+'contract Case { function recover(bytes32 h,uint8 v,bytes32 r,bytes32 s) external pure returns(address){return ecrecover(h,v,r,s);} function destroy(address payable to) external { selfdestruct(to); } }';
+  const bytecode=compile(source,'Case');
+  const cfg=buildControlFlowGraph(disassembleBytecode(bytecode).instructions);
+  const edge=analyzeSolidityEvmEdgeCases(ADDRESS,cfg,source);
+  const crypto=edge.findings.find(f=>f.findingId==='VLM-SEC-CRYPTO-SIGNATURE-MALLEABILITY-01');
+  const destruct=edge.findings.find(f=>f.findingId==='VLM-SEC-EVM-SELFDESTRUCT-02');
+  assert.ok(crypto); assert.equal(crypto?.claimState,'HEURISTIC_CANDIDATE'); assert.equal(crypto?.exploitability,'theoretical');
+  assert.ok(destruct); assert.equal(destruct?.claimState,'HEURISTIC_CANDIDATE'); assert.equal(destruct?.exploitability,'theoretical');
+  assert.equal(edge.hasUnprotectedSelfdestruct,false);
+  assert.ok((destruct?.limitations??[]).some(x=>x.includes('EIP-6780')));
+});
+
+test('flash-loan callback heuristic stays bounded and does not claim static proof',()=>{
+  const source=PRE+'contract Case { function onFlashLoan(address,address,uint256,uint256,bytes calldata) external pure returns(bytes32){ return bytes32(0); } }';
+  const r=audit(source,compile(source,'Case'));
+  const f=r.findings.find(x=>x.findingId==='VLM-SEC-DEFI-FLASH-CALLBACK-01');
+  assert.ok(f);
+  assert.equal(f?.claimState,'HEURISTIC_CANDIDATE');
+  assert.equal(f?.exploitability,'theoretical');
+  assert.equal(f?.verificationState,'SIMULATED');
 });

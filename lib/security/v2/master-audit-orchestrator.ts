@@ -33,6 +33,7 @@ import { executeBoundedSymbolicAnalysis } from "./symbolic-formal-engine";
 import { validateRemediationPatch } from "./patch-validation-engine";
 import { computeMultiDimensionalScores, generateAuditSnapshotId } from "./scoring-and-evidence-engine";
 import { fuseStructuredSourceCandidates } from "./structured-source-fusion";
+import { enforceFindingClaimIntegrity } from "./finding-claim-integrity";
 
 export interface AuditExecutionOptions {
   contractAddress: string;
@@ -100,6 +101,10 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
   // are explicitly HEURISTIC_CANDIDATE findings and are excluded from numeric
   // risk scoring until correlated with compiler/bytecode/execution evidence.
   findings.push(...fuseStructuredSourceCandidates(options.contractAddress, options.sourceCode));
+
+  // Full V2 currently does not execute a target exploit. Normalize legacy
+  // active-exploit metadata before scoring, reports or exports can consume it.
+  enforceFindingClaimIntegrity(findings);
 
   const detectorsMs = Math.round(performance.now() - tDetStart);
 
