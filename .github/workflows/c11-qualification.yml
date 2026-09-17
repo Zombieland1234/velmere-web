@@ -1,0 +1,200 @@
+name: C11 isolated engine and EVM differential qualification
+on:
+  push:
+    branches: [c11/engine-isolation-qualification-20260917]
+permissions:
+  contents: read
+concurrency:
+  group: c11-release-qualification
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    outputs:
+      materialized: ${{ steps.stage.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - id: stage
+        name: Apply exact reviewed source only on C11 branch
+        env:
+          C11_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c11-stage ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$GITHUB_REF_NAME" = 'c11/engine-isolation-qualification-20260917'
+          test "$(git rev-parse HEAD^)" = '8841c625ede6452de55bd57c1024759d6dc53845'
+          python3 - <<'PY'
+          import pathlib,hashlib,gzip,json,subprocess
+          stage=pathlib.Path('scripts/c11-stage')
+          files=sorted(stage.glob('*.bin'));assert len(files)==4
+          raw=b''.join(p.read_bytes() for p in files)
+          assert hashlib.sha256(raw).hexdigest()=='23cf5499c840c45bcbce56b989e0f77e129f5821e0d0c2b6641e1bc676cb03c6'
+          decoded=gzip.decompress(raw);assert len(decoded)==65921
+          data=json.loads(decoded);assert set(data)=={'patch','newFiles'}
+          patch=data['patch'].encode();payload=data['newFiles'];assert len(payload)==14
+          assert hashlib.sha256(patch).hexdigest()=='0f1fe97bf9a0ad8a9f18b9dd3d224babfd69a001b3e789251fef5588e77ce0e1'
+          allowed=['lib/security/v2/evm-local-stack.ts','lib/security/v2/audit-engine-worker.ts','lib/security/v2/isolated-audit-runner.ts','tsconfig.c11-tests.json']
+          for name,text in payload.items():
+            p=pathlib.Path(name)
+            assert not p.is_absolute() and '..' not in p.parts
+            assert name in allowed or name.startswith('scripts/c11/')
+            assert not p.exists(),name
+            p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+          pathlib.Path('/tmp/c11-reviewed.patch').write_bytes(patch)
+          subprocess.run(['git','apply','--check','/tmp/c11-reviewed.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c11-reviewed.patch'],check=True)
+          PY
+          git rm -r scripts/c11-stage
+          git diff --check
+          git config user.name 'Velmere C11 integration'
+          git config user.email 'c11-integration@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c11): isolate customer CPU analysis and track local EVM stack semantics'
+          cat > /tmp/c11-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C11_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c11-askpass.sh
+          GIT_ASKPASS=/tmp/c11-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c11/engine-isolation-qualification-20260917
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+          echo 'Materialized only; a new exact-SHA trigger is required for qualification.'
+          git rev-parse HEAD
+  application:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Fresh whole-application checks at the trigger SHA
+        run: python3 scripts/c11/qualify.py
+      - name: Browser, inventories, immutable source and evidence export
+        if: always()
+        run: python3 scripts/c11/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c11-source-${{ github.run_id }}
+          path: /tmp/c11-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c11-evidence-${{ github.run_id }}
+          path: /tmp/c11-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Preserve truthful NO_GO release gate
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,sys
+          p=pathlib.Path('/tmp/c11-evidence/RELEASE_GATE.json')
+          if not p.exists():sys.exit('NO_GO: release evidence unavailable')
+          gate=json.loads(p.read_text());print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:sys.exit(1)
+          print('Selected checks passed; unresolved product gates still mean NO_GO.')
+          PY
+  external-corpus-regression:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: C10 versus C11 on the frozen already-seen CGT corpus
+        run: bash scripts/c11/benchmark.sh
+      - name: Record benchmark integrity, never redistribute third-party inputs
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,hashlib,datetime,os
+          root=pathlib.Path('/tmp/c11-benchmark');root.mkdir(exist_ok=True)
+          for p in root.glob('*engine.cjs'):p.unlink()
+          p=root/'private-inputs.json'
+          if p.exists():p.unlink()
+          files=[dict(path=str(p.relative_to(root)),bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(root.rglob('*')) if p.is_file() and p.name!='BENCHMARK_MANIFEST.json']
+          (root/'BENCHMARK_MANIFEST.json').write_text(json.dumps(dict(sourceSha=os.environ['GITHUB_SHA'],recordedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),newUniqueCases=0,allCasesPreviouslySeenInC9=True,ownReviewIsNotExternalAudit=True,files=files),indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c11-benchmark-${{ github.run_id }}
+          path: /tmp/c11-benchmark
+          retention-days: 14
+          if-no-files-found: error
+  evm-semantic-oracle:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Byte-unique local programs against a pinned Cancun interpreter
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c11-micro /tmp/c11-oracle /tmp/c11-oracle-base
+          exec > >(tee /tmp/c11-micro/execution.log) 2>&1
+          echo "source=$GITHUB_SHA"
+          npm ci --ignore-scripts --no-fund
+          git archive 8841c625ede6452de55bd57c1024759d6dc53845 | tar -x -C /tmp/c11-oracle-base
+          ln -s "$PWD/node_modules" /tmp/c11-oracle-base/node_modules
+          printf '{"name":"velmere-c11-test-only-oracle","private":true}' > /tmp/c11-oracle/package.json
+          npm install --prefix /tmp/c11-oracle --ignore-scripts --no-fund --save-exact @ethereumjs/evm@10.1.3 @ethereumjs/common@10.1.3
+          cp /tmp/c11-oracle/package.json /tmp/c11-micro/ORACLE_PACKAGE.json
+          cp /tmp/c11-oracle/package-lock.json /tmp/c11-micro/ORACLE_LOCK.json
+          timeout 480 node scripts/c11/evm-differential.mjs /tmp/c11-oracle-base "$PWD" /tmp/c11-micro /tmp/c11-oracle
+      - name: Hash evidence, keep synthetic cases distinct from vulnerability benchmark
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,hashlib,datetime,os
+          root=pathlib.Path('/tmp/c11-micro');root.mkdir(exist_ok=True)
+          for p in root.glob('*-cfg.cjs'):p.unlink()
+          files=[dict(path=str(p.relative_to(root)),bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(root.rglob('*')) if p.is_file() and p.name!='EVIDENCE_MANIFEST.json']
+          (root/'EVIDENCE_MANIFEST.json').write_text(json.dumps(dict(sourceSha=os.environ['GITHUB_SHA'],recordedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),scope='SYNTHETIC_MICROPROGRAM_SEMANTICS_NOT_EXTERNAL_SECURITY_AUDIT',files=files),indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c11-micro-${{ github.run_id }}
+          path: /tmp/c11-micro
+          retention-days: 14
+          if-no-files-found: error
