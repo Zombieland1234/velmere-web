@@ -33,6 +33,6 @@ export async function GET(request: NextRequest) {
       "x-velmere-preview-download-parity": "canonical_shared_model",
     } });
   } catch (error) {
-    return error instanceof CustomerReportRequestError ? json(error.status, { ok: false, error: error.code }) : publicApiError(error, { route: "/api/audit/report-pdf", code: "report_pdf_unavailable" });
+    return error instanceof CustomerReportRequestError ? (error.response ?? json(error.status, { ok: false, error: error.code })) : publicApiError(error, { route: "/api/audit/report-pdf", code: "report_pdf_unavailable" });
   }
 }

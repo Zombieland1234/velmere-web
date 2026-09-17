@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { parseStrictJsonText } from "./strict-json-boundary";
 import { SUPPORTED_CHAINS } from "./evm-rpc-fetcher";
 
 /** Acquisition is a node assertion, not independent consensus, a license, or proof of safety. */
@@ -68,14 +69,18 @@ export async function acquireAuditRuntimeSnapshot(
         } finally { interrupt = undefined; }
       }
       try {
-        const response = await bounded(auditRuntimeAcquisitionDependencies.fetch(url, {
+        const fetching = auditRuntimeAcquisitionDependencies.fetch(url, {
           method: "POST", headers: { "content-type": "application/json" },
           body: JSON.stringify({ jsonrpc: "2.0", id, method, params }),
           redirect: "error", cache: "no-store", signal: controller.signal,
-        }));
-        if (!response.ok || !response.body) throw new Error("rpc_http_failure");
+        });
+        // Clean up a late response even if a controlled adapter ignored abort.
+        void fetching.then(r => { if (controller.signal.aborted) void r.body?.cancel().catch(() => undefined); }, () => undefined);
+        const response = await bounded(fetching);
+        const cancelBody = () => { void response.body?.cancel().catch(() => undefined); };
+        if (!response.ok || !response.body) { cancelBody(); throw new Error("rpc_http_failure"); }
         const declared = response.headers.get("content-length");
-        if (declared !== null && (!/^\d+$/.test(declared) || Number(declared) > MAX_RESPONSE)) throw new Error("rpc_response_too_large");
+        if (declared !== null && (!/^\d+$/.test(declared) || !Number.isSafeInteger(Number(declared)) || Number(declared) > MAX_RESPONSE)) { cancelBody(); throw new Error("rpc_response_too_large"); }
         const reader = response.body.getReader();
         const bytes = new Uint8Array(MAX_RESPONSE);
         let used = 0;
@@ -93,7 +98,9 @@ export async function acquireAuditRuntimeSnapshot(
           reader.releaseLock();
         }
         if (controller.signal.aborted || performance.now() >= deadline) throw new Error("runtime_snapshot_timeout");
-        const decoded: unknown = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(0, used)));
+        if (declared !== null && Number(declared) !== used) throw new Error("rpc_content_length_mismatch");
+        const text = new TextDecoder("utf-8", { fatal: true }).decode(bytes.subarray(0, used));
+        const decoded: unknown = parseStrictJsonText(text, { maxBytes: MAX_RESPONSE, maxDepth: 16, maxNodes: 8192, requireObject: true });
         if (!decoded || typeof decoded !== "object" || Array.isArray(decoded)) throw new Error("rpc_envelope_invalid");
         const row = decoded as Record<string, unknown>;
         if (row.jsonrpc !== "2.0" || row.id !== id || "error" in row || !("result" in row)) throw new Error("rpc_envelope_invalid");
@@ -112,6 +119,7 @@ export async function acquireAuditRuntimeSnapshot(
           typeof b.timestamp !== "string" || !quantity.test(b.timestamp)) throw new Error("rpc_block_invalid");
       const timestamp = Number(BigInt(b.timestamp));
       if (!Number.isSafeInteger(timestamp) || timestamp <= 0 || timestamp * 1000 > Date.now() + 300_000) throw new Error("rpc_block_time_invalid");
+      if (Date.now() - timestamp * 1000 > 15 * 60_000) throw new Error("rpc_block_stale_reverification_required");
       const blockHash = b.hash.toLowerCase();
       const bytecode = await rpc("eth_getCode", [address, { blockHash, requireCanonical: true }]);
       if (typeof bytecode !== "string" || !/^0x(?:[0-9a-f]{2})*$/i.test(bytecode)) throw new Error("rpc_runtime_invalid");
@@ -128,7 +136,7 @@ export async function acquireAuditRuntimeSnapshot(
       const code = error instanceof Error ? error.message : "runtime_snapshot_unavailable";
       lastError = /^(rpc_|runtime_)/.test(code) ? code : "runtime_snapshot_unavailable";
     } finally {
-      clearTimeout(timer); signal?.removeEventListener("abort", abort);
+      controller.abort(); clearTimeout(timer); signal?.removeEventListener("abort", abort);
     }
   }
   return { ok: false, error: signal?.aborted ? "request_aborted" : lastError };

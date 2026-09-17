@@ -17,7 +17,7 @@ async function generate(request: NextRequest, input: Record<string, unknown>) {
   await prepared.authorizeDelivery();
   return response;
 }
-const failure = (error: unknown) => error instanceof CustomerReportRequestError ? json(error.status, { ok: false, error: error.code }) : publicApiError(error, { route: "/api/audit/report", code: "report_unavailable" });
+const failure = (error: unknown) => error instanceof CustomerReportRequestError ? (error.response ?? json(error.status, { ok: false, error: error.code })) : publicApiError(error, { route: "/api/audit/report", code: "report_unavailable" });
 export async function GET(request: NextRequest) {
   try {
     if (Buffer.byteLength(request.url, "utf8") > MAX) return json(413, { ok: false, error: "report_parameter_too_large" });

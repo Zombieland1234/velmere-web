@@ -5,12 +5,13 @@ import { SUPPORTED_CHAINS } from "./evm-rpc-fetcher";
 import { BENCHMARK_20_CONTRACTS } from "./contract-audit-profiles";
 import { MASTER_50_ASSETS } from "./corpus/master-50-assets";
 import { validateOptionalStringFields } from "./exact-request-boundary";
+import { reserveCustomerRuntimeRequest } from "./customer-runtime-resource-guard";
 import { buildCustomerAuditReport } from "./customer-audit-pipeline";
 import type { AuditTier, FullAuditReportInput } from "./audit-canonical-report";
 
 export const CUSTOMER_REPORT_FIELDS = ["address", "assetId", "name", "caseRef", "network", "chainId", "tokenSymbol", "website", "docs", "github", "bytecode", "tier", "locale", "analysisMode"] as const;
 export class CustomerReportRequestError extends Error {
-  constructor(public readonly status: number, public readonly code: string) { super(code); }
+  constructor(public readonly status: number, public readonly code: string, public readonly response?: Response) { super(code); }
 }
 const rank = { basic: 0, pro: 1, advanced: 2 } as const;
 
@@ -42,10 +43,10 @@ export function normalizeCustomerReportInput(input: Record<string, unknown>): {
   const evm = /^0x[a-f0-9]{40}$/.test(address);
   const exactCatalog = asset ?? MASTER_50_ASSETS.find(a => a.address.toLowerCase() === address);
   if (!evm && (!exactCatalog || address.startsWith("0x"))) throw new CustomerReportRequestError(400, "invalid_contract_address");
-  const chainId = value("chainId") || asset?.chainId || (evm ? "56" : exactCatalog?.chainId || "0");
+  const reference = evm ? BENCHMARK_20_CONTRACTS[address] : undefined;
+  const chainId = value("chainId") || asset?.chainId || reference?.chainId || exactCatalog?.chainId || "56";
   if (evm && !Object.prototype.hasOwnProperty.call(SUPPORTED_CHAINS, chainId)) throw new CustomerReportRequestError(400, "unsupported_chain_id");
   if (asset && asset.chainId !== chainId) throw new CustomerReportRequestError(409, "asset_chain_mismatch");
-  const reference = BENCHMARK_20_CONTRACTS[address];
   if (reference && reference.chainId !== chainId) throw new CustomerReportRequestError(409, "reference_profile_chain_mismatch");
   if (!evm && exactCatalog?.chainId !== chainId) throw new CustomerReportRequestError(409, "asset_chain_mismatch");
   const mode = (requestedMode || ((reference || exactCatalog) ? "reference" : "runtime")) as "reference" | "runtime";
@@ -67,10 +68,13 @@ export async function prepareCustomerReport(request: NextRequest, input: Record<
   const access = await resolveCurrentAuditAccess(request, account?.accountId ?? null, normalized.target.caseRef);
   const tier = normalized.requestedTier ?? access.clientTier;
   if (rank[tier] > rank[access.clientTier]) throw new CustomerReportRequestError(account ? 403 : 401, "current_audit_entitlement_required");
-  const report = await buildCustomerAuditReport({ ...normalized.target,
+  const reservation = normalized.analysisMode === "runtime"
+    ? await reserveCustomerRuntimeRequest(request) : { ok: true as const, release: () => undefined };
+  if (!reservation.ok) throw new CustomerReportRequestError(reservation.response.status, "runtime_resource_gate_denied", reservation.response);
+  const report = await (async () => { try { return await buildCustomerAuditReport({ ...normalized.target,
     reportId: reportId ?? normalized.target.caseRef ?? `rep_${normalized.target.contractAddress.slice(0, 18)}_${Date.now()}`,
     analysisMode: normalized.analysisMode,
-  }, tier, request.signal);
+  }, tier, request.signal); } finally { reservation.release(); } })();
   /** Call after serialization/render. Never authorize with a historical case boolean. */
   async function authorizeDelivery() {
     if (request.signal.aborted) throw new CustomerReportRequestError(400, "request_aborted");

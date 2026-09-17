@@ -24,15 +24,16 @@ const methods: {method:string;params:unknown[]}[]=[];
 function goodFetch(overrides: Record<string, unknown> = {}) {
   return async (_url: string | URL | Request, init?: RequestInit) => {
     const req=JSON.parse(String(init?.body));methods.push({method:req.method,params:req.params});
-    const results:Record<string,unknown> = {eth_chainId:'0x1',eth_getBlockByNumber:{number:'0x100',hash:bh,timestamp:'0x65000000'},eth_getCode:code,...overrides};
+    const results:Record<string,unknown> = {eth_chainId:'0x1',eth_getBlockByNumber:{number:'0x100',hash:bh,timestamp:'0x'+Math.floor(Date.now()/1000).toString(16)},eth_getCode:code,...overrides};
     return Response.json({jsonrpc:'2.0',id:req.id,result:results[req.method]});
   };
 }
 function rpcMock(t: TestContext, overrides: Record<string,unknown>={}) {
   methods.length=0;return t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',goodFetch(overrides));
 }
+let ip = 1;
 function request(path:string,params:Record<string,string>) {
-  return new NextRequest('http://localhost:3000'+path+'?'+new URLSearchParams(params));
+  return new NextRequest('http://localhost:3000'+path+'?'+new URLSearchParams(params), { headers: { 'x-forwarded-for': `198.51.100.${ip++}` } });
 }
 
 test('EIP1898 acquisition binds eth_chainId, exact block hash and decoded runtime digest',async t=>{
@@ -61,7 +62,7 @@ test('unsupported network or invalid address is refused before provider request'
   const m=rpcMock(t);assert.equal((await acquireAuditRuntimeSnapshot(target,'constructor')).ok,false);assert.equal((await acquireAuditRuntimeSnapshot('btc','1')).ok,false);assert.equal(m.mock.callCount(),0);
 });
 test('a node refusing blockHash must not trigger a weaker block-number/latest fallback',async t=>{
-  const valid=goodFetch();t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',async (u,init)=>{
+  const valid=goodFetch();t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',async (u: Parameters<typeof fetch>[0],init?: RequestInit)=>{
     const r=JSON.parse(String(init?.body));if(r.method==='eth_getCode') {methods.push(r);return Response.json({jsonrpc:'2.0',id:r.id,error:{code:-32602,message:'unsupported'}});} return valid(u,init);
   });
   const r=await acquireAuditRuntimeSnapshot(target,'1');assert.equal(r.ok,false);assert.ok(methods.filter(x=>x.method==='eth_getCode').every(x=>typeof x.params[1]==='object'));
@@ -92,7 +93,7 @@ test('Full V2 snapshot hash identifies decoded bytes, not hexadecimal spelling',
 });
 for(const method of ['GET','POST'] as const)test(`real JSON ${method} calls real Full V2 with exact server-acquired bytes`,async t=>{
   rpcMock(t);const actual=customerAuditPipelineDependencies.execute;let callCount=0;
-  t.mock.method(customerAuditPipelineDependencies,'execute',args=>{callCount++;assert.equal(args.bytecode,code);assert.equal(args.chainId,'1');assert.equal(args.blockNumber,256);assert.equal(args.sourceCode,undefined);return actual(args);});
+  t.mock.method(customerAuditPipelineDependencies,'execute',(args: Parameters<typeof customerAuditPipelineDependencies.execute>[0])=>{callCount++;assert.equal(args.bytecode,code);assert.equal(args.chainId,'1');assert.equal(args.blockNumber,256);assert.equal(args.sourceCode,undefined);return actual(args);});
   const params={address:target,chainId:'1',tier:'basic',analysisMode:'runtime'};
   const r=method==='GET'?await getJson(request('/api/audit/report',params)):await postJson(new NextRequest('http://localhost:3000/api/audit/report',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(params)}));
   assert.equal(r.status,200);const b=await r.json();assert.equal(callCount,1);assert.equal(b.report.runtimeAnalysis.status,'STATIC_ANALYSIS_COMPLETED');assert.equal(b.report.runtimeAnalysis.inputBytecodeSha256,digest(code));assert.equal(b.report.verdict.riskScore,null);assert.equal(b.report.verdict.confidenceScore,null);assert.equal(b.report.verdict.evidenceCoverage,null);assert.equal(b.report.humanReviewEvidencePresent,false);assert.equal(b.report.pkiAttestation,undefined);assert.equal(b.report.merkleRoot,undefined);
@@ -100,7 +101,7 @@ for(const method of ['GET','POST'] as const)test(`real JSON ${method} calls real
   mkdirSync('/tmp/c10-evidence',{recursive:true});writeFileSync(`/tmp/c10-evidence/RUNTIME_JSON_${method}.json`,JSON.stringify({scope:'REAL_ROUTE_AND_ENGINE_WITH_CONTROLLED_RPC_NOT_LIVE_PAYMENT',sourceSha:process.env.GITHUB_SHA,body:b},null,2));
 });
 test('real PDF route invokes same engine and receipt, returns integrity-bound PDF',async t=>{
-  rpcMock(t);const actual=customerAuditPipelineDependencies.execute;let count=0;t.mock.method(customerAuditPipelineDependencies,'execute',args=>{count++;return actual(args);});
+  rpcMock(t);const actual=customerAuditPipelineDependencies.execute;let count=0;t.mock.method(customerAuditPipelineDependencies,'execute',(args: Parameters<typeof customerAuditPipelineDependencies.execute>[0])=>{count++;return actual(args);});
   const r=await getPdf(request('/api/audit/report-pdf',{address:target,chainId:'1',analysisMode:'runtime',locale:'en'}));
   assert.equal(r.status,200);assert.equal(count,1);assert.equal(r.headers.get('x-velmere-analysis-status'),'STATIC_ANALYSIS_COMPLETED');
   const raw=Buffer.from(await r.arrayBuffer());assert.equal(raw.subarray(0,5).toString(),'%PDF-');assert.equal(r.headers.get('x-velmere-audit-pdf-digest'),'sha256:'+createHash('sha256').update(raw).digest('hex'));
@@ -155,4 +156,39 @@ test('route uses one shared preparation in JSON/PDF/SSR; layout classes unchange
 test('target parser refuses arrays and preserves actual chain in recognized asset references',()=>{
   assert.throws(()=>normalizeCustomerReportInput({address:[reference]}),/invalid_body_field_type/);
   assert.equal(normalizeCustomerReportInput({assetId:'USDT'}).target.chainId,'1');
+});
+
+test('all exact EVM reference addresses infer their registry chain without client guessing',()=>{
+  for(const [address,p] of Object.entries(BENCHMARK_20_CONTRACTS)) if(/^0x[0-9a-f]{40}$/i.test(address)) {
+    const normalized=normalizeCustomerReportInput({address});assert.equal(normalized.target.chainId,p.chainId);
+  }
+});
+test('wire receipt result digest is reproducible from delivered findings and context',async t=>{
+  rpcMock(t);const r=await getJson(request('/api/audit/report',{address:target,chainId:'1'}));assert.equal(r.status,200);
+  const {report}=await r.json();const receipt=report.runtimeAnalysis;
+  const findings=report.sections.flatMap((s:{data?:{findings?:unknown[]}})=>s.data?.findings??[]);
+  assert.equal(receipt.resultSha256,sha256Digest(canonicalJson({inputBytecodeSha256:receipt.inputBytecodeSha256,chainId:receipt.chainId,address:receipt.address,blockHash:receipt.blockHash,engineVersion:receipt.engineVersion,findings})));
+});
+test('stale latest block is refused before code acquisition and carries reverification reason',async t=>{
+  rpcMock(t,{eth_getBlockByNumber:{number:'0x100',hash:bh,timestamp:'0x1'}});
+  const r=await acquireAuditRuntimeSnapshot(target,'1');assert.equal(r.ok,false);
+  if(!r.ok)assert.equal(r.error,'rpc_block_stale_reverification_required');
+  assert.equal(methods.filter(x=>x.method==='eth_getCode').length,0);
+});
+test('ambiguous duplicate RPC identity keys cannot be interpreted as a snapshot',async t=>{
+  t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',async()=>new Response('{"jsonrpc":"2.0","id":2,"id":1,"result":"0x1"}',{headers:{'content-type':'application/json'}}));
+  assert.equal((await acquireAuditRuntimeSnapshot(target,'1')).ok,false);
+});
+test('over-depth RPC metadata fails bounded parsing',async t=>{
+  const nested='{"x":'.repeat(19)+'1'+'}'.repeat(19);
+  t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',async()=>new Response('{"jsonrpc":"2.0","id":1,"result":"0x1","other":'+nested+'}'));
+  assert.equal((await acquireAuditRuntimeSnapshot(target,'1')).ok,false);
+});
+test('declared oversized RPC and unsuccessful HTTP cancel producer without waiting',async t=>{
+  let cancelled=0;
+  for(const init of [{status:503},{status:200,headers:{'content-length':'131073'}}]){
+    const mocked=t.mock.method(auditRuntimeAcquisitionDependencies,'fetch',async()=>new Response(new ReadableStream({cancel(){cancelled++;return new Promise<void>(()=>{});}}),init));
+    assert.equal((await acquireAuditRuntimeSnapshot(target,'1',undefined,100)).ok,false);mocked.mock.restore();
+  }
+  assert.ok(cancelled>=2);
 });

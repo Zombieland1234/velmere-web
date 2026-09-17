@@ -128,6 +128,7 @@ export async function buildCustomerAuditReport(
           if (result.findings.length > maxFindings) receipt.limitations.push(`FINDINGS_TRUNCATED:${result.findings.length - maxFindings}`);
           // Full V2's findings alone are preserved; synthetic fuzz/formal/score
           // metadata is never promoted into customer execution evidence.
+          findings = JSON.parse(JSON.stringify(findings)) as CanonicalFinding[];
           receipt.resultSha256 = sha256Digest(canonicalJson({ inputBytecodeSha256: snap.bytecodeSha256, chainId, address,
             blockHash: snap.blockHash, engineVersion: receipt.engineVersion, findings }));
         } catch (error) {
@@ -165,7 +166,10 @@ export async function buildCustomerAuditReport(
     executionEvidence: { sourceMode: reference ? "reference-profile" : receipt.status === "STATIC_ANALYSIS_COMPLETED" ? "unverified-static-analysis" : "insufficient-evidence", qualification: "NOT_VERIFIED" },
     runtimeAnalysis: receipt,
   };
-  const { reportDigest: _omitted, ...core } = report;
+  // Hash exactly the JSON-deliverable projection, never explicit undefined
+  // properties that disappear during JSON/RSC transport.
+  const serialized = JSON.parse(JSON.stringify(report)) as CanonicalAuditReportModel;
+  const { reportDigest: _omitted, ...core } = serialized;
   void _omitted;
-  return { ...report, reportDigest: sha256Digest(canonicalJson(core)) };
+  return { ...serialized, reportDigest: sha256Digest(canonicalJson(core)) };
 }

@@ -48,34 +48,23 @@ export class CrossAssetAndTierForensicEngine {
       // -----------------------------------------------------------------------
       // 1. Metric Integrity Checks (Section 26)
       // -----------------------------------------------------------------------
-      if (report.verdict.riskScore < 0 || report.verdict.riskScore > 100) {
-        violations.push({
-          code: "METRIC_RISK_OUT_OF_BOUNDS",
-          severity: "CRITICAL",
-          message: `Risk score ${report.verdict.riskScore} outside [0, 100]`,
-          assetId: asset.assetId,
-          tier,
-        });
-      }
-
-      if (report.verdict.confidenceScore < 0 || report.verdict.confidenceScore > 100) {
-        violations.push({
-          code: "METRIC_CONFIDENCE_OUT_OF_BOUNDS",
-          severity: "CRITICAL",
-          message: `Confidence score ${report.verdict.confidenceScore} outside [0, 100]`,
-          assetId: asset.assetId,
-          tier,
-        });
-      }
-
-      if (report.verdict.evidenceCoverage < 0 || report.verdict.evidenceCoverage > 100) {
-        violations.push({
-          code: "METRIC_COVERAGE_OUT_OF_BOUNDS",
-          severity: "CRITICAL",
-          message: `Evidence coverage ${report.verdict.evidenceCoverage} outside [0, 100] (scaling bug detection)`,
-          assetId: asset.assetId,
-          tier,
-        });
+      // Missing measurements are not zero and cannot coexist with verification.
+      const claimsVerified = report.verdict.releaseDecision === "PASS" || report.verdict.verificationStatus === "VERIFIED";
+      for (const [label, value] of [
+        ["RISK", report.verdict.riskScore],
+        ["CONFIDENCE", report.verdict.confidenceScore],
+        ["COVERAGE", report.verdict.evidenceCoverage],
+      ] as const) {
+        if (value === null && !claimsVerified) continue;
+        if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > 100) {
+          violations.push({
+            code: value === null ? "UNMEASURED_METRIC_CANNOT_CERTIFY" : `METRIC_${label}_OUT_OF_BOUNDS`,
+            severity: "CRITICAL",
+            message: value === null ? `${label} is unmeasured but the report claims verification` : `${label} is not a finite percentage in [0, 100]`,
+            assetId: asset.assetId,
+            tier,
+          });
+        }
       }
 
       // -----------------------------------------------------------------------
