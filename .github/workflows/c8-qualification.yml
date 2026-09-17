@@ -111,7 +111,7 @@ jobs:
           if [ -x node_modules/.bin/next ] && node -e "const fs=require('fs');const p='/tmp/c8-evidence/QUALIFICATION.json';if(!fs.existsSync(p)||!JSON.parse(fs.readFileSync(p)).some(x=>x.id==='production-build'&&x.result==='PASS'))process.exit(1)"; then
             node_modules/.bin/playwright install --with-deps chromium > /tmp/c8-evidence/browser-install.log 2>&1
             node_modules/.bin/next start --hostname localhost > /tmp/c8-evidence/next-runtime.log 2>&1 &
-            server=$!; trap 'kill \"$server\" || true' EXIT
+            server=$!; trap 'kill "$server" || true' EXIT
             for i in $(seq 1 30); do if curl -s -o /dev/null http://localhost:3000/en; then break; fi; sleep 1; done
             timeout 300 node scripts/c6/browser-observations.mjs http://localhost:3000 /tmp/c8-evidence/browser > /tmp/c8-evidence/browser.log 2>&1
             timeout 90 node scripts/c6c/provider-outage-browser.mjs /tmp/c8-evidence/failures > /tmp/c8-evidence/controlled-failures.log 2>&1
