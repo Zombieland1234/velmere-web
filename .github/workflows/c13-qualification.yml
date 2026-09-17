@@ -1,0 +1,154 @@
+name: C13 stored-tier authority and source-boundary qualification
+on:
+  push:
+    branches: [c13/authority-source-boundaries-20260918]
+permissions:
+  contents: read
+concurrency:
+  group: c13-qualification
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {contents: write}
+    outputs:
+      materialized: ${{ steps.stage.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 2, persist-credentials: false}
+      - id: stage
+        name: Integrate reviewed patch once, never qualify the staging SHA
+        env:
+          C13_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c13-stage ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$GITHUB_REF_NAME" = 'c13/authority-source-boundaries-20260918'
+          test "$(git rev-parse HEAD^)" = '9a176fe2e844ccf7166bf1bd7552f1bec79584cb'
+          python3 - <<'PY'
+          import pathlib,gzip,json,hashlib,subprocess
+          stage=pathlib.Path('scripts/c13-stage');parts=sorted(stage.glob('*.bin'));assert len(parts)==4
+          raw=b''.join(p.read_bytes() for p in parts)
+          assert hashlib.sha256(raw).hexdigest()=='7b182dffb5e38eef6eab7f6375aa8f33f1606563ea61f399dd5f1b65b9871b34'
+          decoded=gzip.decompress(raw);assert len(decoded)==54442
+          data=json.loads(decoded);assert set(data)=={'patch','newFiles'} and len(data['newFiles'])==12
+          patch=data['patch'].encode();assert hashlib.sha256(patch).hexdigest()=='73dee920b34073c30927255b02303a60984b365cf7cd273015babd040337d6f0'
+          for name,text in data['newFiles'].items():
+            p=pathlib.Path(name)
+            assert not p.is_absolute() and '..' not in p.parts and not p.exists()
+            assert name in ('lib/security/v2/detector-source-boundary.ts','tsconfig.c13-tests.json') or name.startswith('scripts/c13/')
+            p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+          pathlib.Path('/tmp/c13-reviewed.patch').write_bytes(patch)
+          subprocess.run(['git','apply','--check','/tmp/c13-reviewed.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c13-reviewed.patch'],check=True)
+          PY
+          git rm -r scripts/c13-stage
+          git diff --check
+          git config user.name 'Velmere C13 integration'
+          git config user.email 'c13-integration@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c13): preserve bytecode evidence and guard stored Shield workspace tier'
+          cat > /tmp/c13-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C13_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c13-askpass.sh
+          GIT_ASKPASS=/tmp/c13-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c13/authority-source-boundaries-20260918
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+          echo 'Integrated source only. Separate exact-SHA push required for qualification.'
+          git rev-parse HEAD
+  application:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Isolated Redis prerequisites
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c13-evidence
+          if ! command -v redis-server >/dev/null; then sudo apt-get update -qq; sudo apt-get install -y --no-install-recommends redis-server; fi
+          redis-server --version > /tmp/c13-evidence/REDIS_VERSION.txt
+          node --version > /tmp/c13-evidence/NODE_VERSION.txt
+      - run: python3 scripts/c13/qualify.py
+      - if: always()
+        run: python3 scripts/c13/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c13-source-${{ github.run_id }}', path: /tmp/c13-source, retention-days: 14, if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c13-evidence-${{ github.run_id }}', path: /tmp/c13-evidence, retention-days: 14, if-no-files-found: error}
+      - name: Open technical gates remain red
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,sys
+          gate=json.load(open('/tmp/c13-evidence/RELEASE_GATE.json'));print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:sys.exit(1)
+          print('Selected technical checks passed; product status remains NO_GO.')
+          PY
+  shield-database:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env: {POSTGRES_PASSWORD: c13_ephemeral_ci_only, POSTGRES_DB: c13_fixture}
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c13_ephemeral_ci_only
+      PGDATABASE: c13_fixture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - name: Real PostgreSQL, synthetic identity and grants, no customer writes
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c13-sql
+          psql -X -At -c 'select version()' > /tmp/c13-sql/POSTGRES_VERSION.txt
+          python3 scripts/c13/shield-db-test.py 2>&1 | tee /tmp/c13-sql/execution.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c13-sql-${{ github.run_id }}', path: /tmp/c13-sql, retention-days: 14, if-no-files-found: error}
+  frozen-benchmark:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - run: bash scripts/c13/benchmark.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c13-benchmark-${{ github.run_id }}
+          path: |
+            /tmp/c13-benchmark
+            !/tmp/c13-benchmark/private-inputs.json
+            !/tmp/c13-benchmark/*-engine.cjs
+          retention-days: 14
+          if-no-files-found: error

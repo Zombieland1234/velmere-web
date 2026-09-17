@@ -1,0 +1,25 @@
+{
+  "scope": "CONNECTED_SUPABASE_APPLY_MIGRATION_AND_CATALOG_READBACK_NOT_REAL_AUTH_HTTP_E2E",
+  "projectId": "yljjyowcvjgjcamffnvd",
+  "migration": {
+    "version": "20260917230935",
+    "name": "velmere_c13_shield_workspace_stored_tier_guard",
+    "applied": true
+  },
+  "sourceSha": "a16c71acb7dd32c792e5692650eafb35ede520ee",
+  "isolatedQualificationRun": 35285233324,
+  "isolatedChecks": 28,
+  "liveCustomerRowsWritten": 0,
+  "livePaymentsChanged": 0,
+  "beforeWorkspaceDefinitionSha256": "102115ac57049f2c588179da665ad238da258a9f9ba128c3c7cd3490ee7af42a",
+  "afterWorkspaceDefinitionSha256": "b7392a8f1777d9501d4d3ab09d70d40db9b1edd7792c4c9a754610d04000cfb6",
+  "helperDefinitionSha256": "233e604a2992be58bcf3b4bd78dd45b51babdcfcaf66c1741343cd5b55ad3f92",
+  "acl": {
+    "anonymousExecute": false,
+    "authenticatedExecute": true,
+    "changed": false
+  },
+  "evidenceOrigin": "Supabase connector calls in C13 conversation; this is a normalized observation, not raw tool export",
+  "reapplyBehavior": "Reject changed precondition or already-applied patch",
+  "liveAfterHashEqualsCapturedTestedFunction": true
+}

@@ -33,6 +33,7 @@ import { executeBoundedSymbolicAnalysis } from "./symbolic-formal-engine";
 import { validateRemediationPatch } from "./patch-validation-engine";
 import { computeMultiDimensionalScores, generateAuditSnapshotId } from "./scoring-and-evidence-engine";
 import { fuseStructuredSourceCandidates } from "./structured-source-fusion";
+import { preserveBytecodeCandidates } from "./detector-source-boundary";
 import { enforceFindingClaimIntegrity } from "./finding-claim-integrity";
 
 export interface AuditExecutionOptions {
@@ -68,32 +69,32 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
   const findings: StandardFindingV2[] = [];
 
   // A. Reentrancy
-  const reentrancyRes = analyzeContextualReentrancy(options.contractAddress, cfgResult, options.sourceCode);
+  const reentrancyRes = preserveBytecodeCandidates(source => analyzeContextualReentrancy(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...reentrancyRes.findings);
 
   // B. Access Control
-  const accessControlRes = analyzeContextualAccessControl(options.contractAddress, cfgResult, options.sourceCode);
+  const accessControlRes = preserveBytecodeCandidates(source => analyzeContextualAccessControl(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...accessControlRes.findings);
 
   // C. Oracles
-  const oracleRes = analyzeContextualOracles(options.contractAddress, options.chainId, cfgResult, options.sourceCode);
+  const oracleRes = preserveBytecodeCandidates(source => analyzeContextualOracles(options.contractAddress, options.chainId, cfgResult, source), options.sourceCode);
   findings.push(...oracleRes.findings);
 
   // D. ERC & Token Quirks
-  const ercRes = analyzeErcAndTokenQuirks(options.contractAddress, cfgResult, options.sourceCode);
+  const ercRes = preserveBytecodeCandidates(source => analyzeErcAndTokenQuirks(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...ercRes.findings);
 
   // E. Upgradeability
-  const upgradeRes = analyzeUpgradeability(options.contractAddress, cfgResult, options.sourceCode);
+  const upgradeRes = preserveBytecodeCandidates(source => analyzeUpgradeability(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...upgradeRes.findings);
 
   // F. Solidity & EVM Edge Cases
-  const edgeCaseRes = analyzeSolidityEvmEdgeCases(options.contractAddress, cfgResult, options.sourceCode);
+  const edgeCaseRes = preserveBytecodeCandidates(source => analyzeSolidityEvmEdgeCases(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...edgeCaseRes.findings);
 
   // G. DeFi Economic Attack Simulations
   const tSimStart = performance.now();
-  const econRes = simulateDefiEconomicAttacks(options.contractAddress, cfgResult, options.sourceCode);
+  const econRes = preserveBytecodeCandidates(source => simulateDefiEconomicAttacks(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...econRes.findings);
   const simulationMs = Math.round(performance.now() - tSimStart);
 

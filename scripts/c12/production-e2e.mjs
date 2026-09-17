@@ -6,6 +6,7 @@ import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
 import {spawn} from 'node:child_process';import http from 'node:http';
 import {createHmac,randomBytes,createHash} from 'node:crypto';
 import {chromium} from 'playwright';
+import {waitForSettledRuntimeReport} from '../c13/runtime-report-readiness.mjs';
 const out=process.argv[2]||'/tmp/c12-evidence/production-e2e';fs.mkdirSync(out,{recursive:true});
 const work=fs.mkdtempSync(path.join(os.tmpdir(),'velmere-c12-'));const rows=[];const children=[];
 const redisPassword=randomBytes(32).toString('hex'),proxySecret=randomBytes(32).toString('hex'),fingerprintSecret=randomBytes(32).toString('hex');
@@ -47,7 +48,9 @@ try{
  for(const [name,width,height]of[['desktop',1440,1000],['mobile',390,844]])await record(`production-runtime-ssr-${name}`,async()=>{
   const page=await browser.newPage({viewport:{width,height}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
   try{const r=await page.goto(`http://localhost:3200/en/security/audits/report/${target}?chainId=1&analysisMode=runtime&tier=basic`,{waitUntil:'domcontentloaded',timeout:25000});
-   await page.locator('.audit-canonical-view').waitFor({state:'visible',timeout:20000});
+   const initialDom=await page.locator('.audit-canonical-view').evaluateAll(nodes=>nodes.map(n=>({visible:n.getClientRects().length>0,hiddenAncestor:!!n.closest('[hidden]'),parentId:n.parentElement?.id??'',status:n.textContent?.includes('STATIC_ANALYSIS_COMPLETED')??false})));
+   fs.writeFileSync(path.join(out,`RUNTIME_${name}_initial_dom.json`),JSON.stringify(initialDom,null,2));
+   await waitForSettledRuntimeReport(page,20000);
    const text=await page.locator('body').innerText();fs.writeFileSync(path.join(out,`RUNTIME_${name}.txt`),text);await page.screenshot({path:path.join(out,`RUNTIME_${name}.png`)});assert(r?.status()===200,`ssr_http_${r?.status()}`);assert(await page.locator('.audit-canonical-view').count()===1,'ssr_report_missing');assert(text.includes('STATIC_ANALYSIS_COMPLETED'),'ssr_analysis_not_completed');assert(!/ANALYSIS_UNAVAILABLE/.test(text),'ssr_unavailable');assert(errors.length===0,'page_exception');return{http:r.status(),screenshot:`RUNTIME_${name}.png`,pageErrors:errors,bodySha256:createHash('sha256').update(text).digest('hex')};}finally{await page.close();}
  });
  await record('production-anonymous-pro-json-still-denied',async()=>{const r=await fetch(`http://localhost:3200/api/audit/report?${query.replace('tier=basic','tier=pro')}`,{signal:AbortSignal.timeout(10000)});await r.body?.cancel();assert(r.status===401,`unexpected_pro_status_${r.status}`);return{http:r.status};});
