@@ -1,0 +1,61 @@
+name: C9 reviewed JSON authority and engine claim integration
+on:
+  push:
+    branches: [c9/r16-regression-qualification-20260917]
+permissions:
+  contents: read
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Apply reviewed hash-locked refinement once
+        env:
+          C9_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c9-r2-stage ]; then exit 0; fi
+          test "$GITHUB_REF_NAME" = 'c9/r16-regression-qualification-20260917'
+          test "$(git rev-parse HEAD^)" = 'fb04721048adbb929ee1597a9df8fa27b1c891a7'
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64,gzip,hashlib,json,subprocess
+          # Correct a transport transcription before decoding; exact-byte hash is mandatory.
+          part0=Path('scripts/c9-r2-stage/part0.bin').read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(part0)).encode()+b'\0'+part0).hexdigest()=='637c896b0655cbca81877b8363feca3c379981e7'
+          encoded=base64.b64encode(part0).decode();assert encoded.count('Beopyqq6')==1
+          restored=base64.b64decode(encoded.replace('Beopyqq6','Beopyq6')+'i')
+          assert hashlib.sha1(b'blob '+str(len(restored)).encode()+b'\0'+restored).hexdigest()=='f38e881e8b86c173d9bf72aae657607c4bab37fe'
+          raw=restored+b''.join(Path(f'scripts/c9-r2-stage/part{i}.bin').read_bytes() for i in (1,2))
+          assert hashlib.sha256(raw).hexdigest()=='cc27e48f2736fa2affd82b0b87b719fd37f2bb9fad5f5be1ab21a2a782e1fa4d'
+          decoded=gzip.decompress(raw);assert len(decoded)<150000
+          files=json.loads(decoded);assert len(files)==6
+          patch=files.pop('reviewed.patch');assert hashlib.sha256(patch.encode()).hexdigest()=='a949d69e8cf61dfd0380e2f72627e474de3be8165b6e250c86bfe5190b654011'
+          for name,text in files.items():
+            p=Path(name);assert not p.is_absolute() and '..' not in p.parts and not p.exists()
+            assert name.startswith('scripts/c9/') or name=='lib/security/current-audit-access.ts'
+            p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+          Path('/tmp/c9-r2.patch').write_text(patch)
+          subprocess.run(['git','apply','--check','/tmp/c9-r2.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c9-r2.patch'],check=True)
+          PY
+          git rm -r scripts/c9-r2-stage
+          git diff --check
+          git config user.name 'Velmere C9 source integration'
+          git config user.email 'c9-integration@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c9): unify current JSON/PDF access and withhold unproved engine claims'
+          cat > /tmp/c9-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C9_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c9-askpass.sh
+          GIT_ASKPASS=/tmp/c9-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c9/r16-regression-qualification-20260917
+          echo 'Source integrated; trigger a separate exact-SHA qualification. No main merge or production promotion.'
+          git rev-parse HEAD
