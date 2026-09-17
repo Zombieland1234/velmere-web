@@ -7,6 +7,7 @@
  */
 
 import { EvmInstruction, BasicBlock, ControlFlowGraph, TaintSource, TaintSink } from "./types";
+import { applyLocalStackInstruction, isLegacyHalt } from "./evm-local-stack";
 
 export interface DisassemblyResult {
   instructions: EvmInstruction[];
@@ -168,7 +169,8 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
       inst.opcode === OP_REVERT ||
       inst.opcode === OP_STOP ||
       inst.opcode === OP_SELFDESTRUCT ||
-      inst.opcode === OP_INVALID
+      inst.opcode === OP_INVALID ||
+      isLegacyHalt(inst.opcode)
     ) {
       if (i + 1 < instructions.length) {
         leaderPcs.add(instructions[i + 1].pc);
@@ -238,6 +240,8 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
     // Analyze stack inside the block to track push values, storage slots, and jump targets
     const abstractStack: Array<bigint | null> = [];
     const activeTaint: TaintSource[] = [];
+    let jumpTarget: bigint | null = null;
+    let jumpCondition: bigint | null = null;
 
     for (let i = 0; i < block.instructions.length; i++) {
       const inst = block.instructions[i];
@@ -254,11 +258,6 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
       // Track method dispatcher selectors: PUSH4 0xXXXXXXXX -> EQ -> JUMPI
       if (inst.opcode === OP_PUSH4 && inst.pushValueHex && inst.pushValueHex.length === 8) {
         selectorsDiscovered.set(`0x${inst.pushValueHex}`, inst.pc);
-      }
-
-      // Track push values on abstract stack
-      if (inst.pushValueBigInt !== undefined) {
-        abstractStack.push(inst.pushValueBigInt);
       }
 
       // Track SLOAD / SSTORE storage slots
@@ -292,86 +291,35 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
         taintSinks.push({ kind: "SELFDESTRUCT", instructionPc: inst.pc, taintedBy: [...activeTaint] });
       }
 
-      // A nearby constant/SSTORE is not mutex proof. Keep guarded flags false.
-      // Track only local stack shapes. Unknown operations discard constants rather
-      // than attributing a stale PUSH to a later storage slot.
-      if (inst.pushValueBigInt === undefined) {
-        const op = inst.opcode;
-        if (op >= 0x80 && op <= 0x8f) {
-          abstractStack.push(abstractStack.at(-(op - 0x7f)) ?? null);
-        } else if (op >= 0x90 && op <= 0x9f) {
-          const index = abstractStack.length - 1 - (op - 0x8f);
-          if (index < 0) abstractStack.length = 0;
-          else [abstractStack[index], abstractStack[abstractStack.length - 1]] =
-            [abstractStack[abstractStack.length - 1], abstractStack[index]];
-        } else if (op === 0x50) abstractStack.pop();
-        else if (op === OP_SLOAD || op === 0x51 || op === 0x5c || op === 0x35 || op === 0x31 || op === 0x3b || op === 0x3f || op === 0x40 || op === 0x49) {
-          abstractStack.pop(); abstractStack.push(null);
-        } else if (op === OP_SSTORE || op === 0x52 || op === 0x53 || op === 0x5d) {
-          abstractStack.pop(); abstractStack.pop();
-        } else if (op === OP_JUMPDEST) { /* no stack effect */ }
-        else if ([0x30,0x32,0x33,0x34,0x36,0x38,0x3a,0x3d,0x41,0x42,0x43,0x44,0x45,0x46,0x47,0x48,0x4a,0x58,0x59,0x5a].includes(op)) {
-          abstractStack.push(null);
-        } else {
-          abstractStack.length = 0;
-        }
+      // Observe the actual abstract stack BEFORE JUMP/JUMPI consume operands.
+      // An adjacent PUSH is not a substitute for stack semantics.
+      if (inst.opcode === OP_JUMP || inst.opcode === OP_JUMPI) {
+        jumpTarget = abstractStack.at(-1) ?? null;
+        if (inst.opcode === OP_JUMPI) jumpCondition = abstractStack.at(-2) ?? null;
       }
-
+      applyLocalStackInstruction(abstractStack, inst);
     }
 
-    // Connect edges based on terminal instruction
-    if (lastInst.opcode === OP_JUMP) {
-      const prevInst = block.instructions[block.instructions.length - 2];
-      if (prevInst && prevInst.pushValueBigInt !== undefined) {
-        const targetPc = Number(prevInst.pushValueBigInt);
-        const targetBlockId = pcToBlockId.get(targetPc);
-        if (targetBlockId && blocks.get(targetBlockId)?.startPc === targetPc && instructions[pcToIndex.get(targetPc)!]?.opcode === OP_JUMPDEST) {
-          block.successors.push(targetBlockId);
-          blocks.get(targetBlockId)!.predecessors.push(block.id);
-        } else {
-          unresolvedDynamicJumps++;
-        }
-      } else {
-        unresolvedDynamicJumps++;
-      }
-    } else if (lastInst.opcode === OP_JUMPI) {
-      // 1. Conditional jump target
-      const prevInst = block.instructions[block.instructions.length - 2];
-      if (prevInst && prevInst.pushValueBigInt !== undefined) {
-        const targetPc = Number(prevInst.pushValueBigInt);
-        const targetBlockId = pcToBlockId.get(targetPc);
-        if (targetBlockId && blocks.get(targetBlockId)?.startPc === targetPc && instructions[pcToIndex.get(targetPc)!]?.opcode === OP_JUMPDEST) {
-          block.successors.push(targetBlockId);
-          blocks.get(targetBlockId)!.predecessors.push(block.id);
-        } else {
-          unresolvedDynamicJumps++;
-        }
-      } else {
-        unresolvedDynamicJumps++;
-      }
-
-      // 2. Fallthrough target
-      const nextBlockPc = lastInst.pc + lastInst.size;
-      const fallthroughId = pcToBlockId.get(nextBlockPc);
-      if (fallthroughId && blocks.has(fallthroughId)) {
-        block.successors.push(fallthroughId);
-        blocks.get(fallthroughId)!.predecessors.push(block.id);
-      }
-    } else if (
-      lastInst.opcode !== OP_RETURN &&
-      lastInst.opcode !== OP_REVERT &&
-      lastInst.opcode !== OP_STOP &&
-      lastInst.opcode !== OP_SELFDESTRUCT &&
-      lastInst.opcode !== OP_INVALID
-    ) {
-      // Standard sequential fallthrough
-      const nextBlockPc = lastInst.pc + lastInst.size;
-      const fallthroughId = pcToBlockId.get(nextBlockPc);
-      if (fallthroughId && blocks.has(fallthroughId)) {
-        block.successors.push(fallthroughId);
-        blocks.get(fallthroughId)!.predecessors.push(block.id);
-      }
-    }
+    const connect = (target: string | undefined) => {
+      if (!target || !blocks.has(target) || block.successors.includes(target)) return;
+      block.successors.push(target);
+      blocks.get(target)!.predecessors.push(block.id);
+    };
+    const resolveJump = () => {
+      // Only exact JUMPDEST instruction boundaries in the legacy code are legal.
+      const targetPc = jumpTarget !== null && jumpTarget <= BigInt(Number.MAX_SAFE_INTEGER) ? Number(jumpTarget) : -1;
+      const targetBlock = pcToBlockId.get(targetPc);
+      if (targetBlock && blocks.get(targetBlock)?.startPc === targetPc &&
+          instructions[pcToIndex.get(targetPc)!]?.opcode === OP_JUMPDEST) connect(targetBlock);
+      else unresolvedDynamicJumps++;
+    };
+    if (lastInst.opcode === OP_JUMP) resolveJump();
+    else if (lastInst.opcode === OP_JUMPI) {
+      // Known zero never evaluates the jump destination; unknown retains both
+      // potential branches. A represented edge is still not path-feasibility proof.
+      if (jumpCondition !== 0n) resolveJump();
+      if (jumpCondition === null || jumpCondition === 0n) connect(pcToBlockId.get(lastInst.pc + lastInst.size));
+    } else if (!isLegacyHalt(lastInst.opcode)) connect(pcToBlockId.get(lastInst.pc + lastInst.size));
   }
 
   // Calculate Cyclomatic Complexity: M = E - N + 2P

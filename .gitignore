@@ -64,3 +64,6 @@ artifacts/**/started-server.log
 /gemini*.txt
 /zadanie*.txt
 /run_dev*.ps1
+
+# Reproducible server-only audit worker built from source
+.generated/

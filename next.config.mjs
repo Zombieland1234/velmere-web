@@ -20,6 +20,7 @@ const a60RuntimeProbeSha256 = /^[a-f0-9]{64}$/u.test(process.env.VELMERE_A60_RUN
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingIncludes: { "/*": ["./.generated/audit-engine-worker.cjs"] },
   typescript: { ignoreBuildErrors: false },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,

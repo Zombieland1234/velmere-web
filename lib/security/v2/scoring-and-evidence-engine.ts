@@ -141,7 +141,7 @@ export function generateAuditSnapshotId(params: {
   const rawPayload = JSON.stringify({
     schema: "velmere.audit-content-snapshot.v2", address: params.contractAddress.toLowerCase(),
     chainId: params.chainId, blockNumber: params.blockNumber ?? null,
-    bytecodeSha256, sourceCodeSha256: sourceCodeSha256 ?? null, engineVersion: "Velmère-V2.4.0",
+    bytecodeSha256, sourceCodeSha256: sourceCodeSha256 ?? null, engineVersion: "Velmère-V2.5.0",
   });
   const snapshotDigest = `0x${createHash("sha256").update(rawPayload).digest("hex")}`;
 
@@ -153,7 +153,7 @@ export function generateAuditSnapshotId(params: {
     bytecodeSha256: `0x${bytecodeSha256}`,
     sourceCodeSha256: sourceCodeSha256 ? `0x${sourceCodeSha256}` : undefined,
     compilerVersion: params.compilerVersion ?? "unknown-solc",
-    engineVersion: "Velmère-V2.4.0",
+    engineVersion: "Velmère-V2.5.0",
     timestamp,
   };
 }

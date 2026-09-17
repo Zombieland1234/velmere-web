@@ -57,7 +57,8 @@
     "tailwindcss": "3.4.19",
     "tsx": "4.22.4",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.65.0"
+    "typescript-eslint": "8.65.0",
+    "esbuild": "0.28.1"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -118,7 +119,7 @@
     "audit:source": "node scripts/pass13/audit-full-tree.mjs --output artifacts/pass13/PASS13_CLEAN_SAFE_AUDIT.json --manifest artifacts/pass13/PASS13_CLEAN_SAFE_MANIFEST.json",
     "audit:source:a44": "node scripts/a44-source-integrity-audit.mjs",
     "bootstrap:offline:a62": "node scripts/a62-offline-exact-runtime-dependency-bootstrap.mjs",
-    "build": "next build",
+    "build": "node scripts/c11/build-audit-worker.mjs && next build",
     "build:pass4816:observability-receipt": "tsx scripts/pass4816/build-observability-incident-receipt.ts",
     "build:a102r12:descendant": "node scripts/pass36/build-a102r12-current-root-descendant-manifest.mjs",
     "build:a102r13:descendant": "node scripts/pass36/build-a102r13-current-root-descendant-manifest.mjs",
@@ -216,7 +217,7 @@
     "contract:worldclass-output": "node scripts/pass16/verify-worldclass-output-contract.mjs",
     "corpus:verify": "node scripts/pass16/verify-worldclass-corpus.mjs",
     "deployment:preflight": "node scripts/deployment/preflight.mjs",
-    "dev": "next dev",
+    "dev": "node scripts/c11/build-audit-worker.mjs && next dev",
     "dev:clean": "node scripts/velmere-dev-runner.mjs --clean",
     "dev:clean:a42": "node scripts/velmere-dev-runner.mjs --clean",
     "dev:clean:a43": "node scripts/velmere-dev-runner.mjs --clean",
@@ -1019,7 +1020,8 @@
     "build:p40:source-identity": "python scripts/closure/build-p40-source-identity.py",
     "build:p40:current-state": "python scripts/closure/build-p40-current-state.py",
     "lint:strict": "eslint . --max-warnings=0",
-    "test:c6": "tsx --test scripts/c6/*.test.ts"
+    "test:c6": "tsx --test scripts/c6/*.test.ts",
+    "build:audit-worker": "node scripts/c11/build-audit-worker.mjs"
   },
   "velmere": {
     "a102r18DirectPublicClipboardSinksRemaining": 0,

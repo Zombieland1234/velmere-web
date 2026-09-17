@@ -5,7 +5,9 @@ import { buildCanonicalAuditReport, isTierSufficient, type AuditTier, type Canon
 import { BENCHMARK_20_CONTRACTS } from "./contract-audit-profiles";
 import { MASTER_50_ASSETS } from "./corpus/master-50-assets";
 import { acquireAuditRuntimeSnapshot } from "./audit-runtime-snapshot";
-import { executeFullAuditV2 } from "./v2/master-audit-orchestrator";
+import type { AuditExecutionOptions } from "./v2/master-audit-orchestrator";
+import type { FullAuditResultV2 } from "./v2/types";
+import { executeAuditInWorker } from "./v2/isolated-audit-runner";
 import { disassembleBytecode } from "./v2/evm-cfg-dataflow-engine";
 
 export interface CustomerAnalysisReceipt {
@@ -33,7 +35,7 @@ export interface CustomerAnalysisReceipt {
 }
 export const customerAuditPipelineDependencies = {
   acquire: acquireAuditRuntimeSnapshot,
-  execute: executeFullAuditV2,
+  execute: executeAuditInWorker as (options: AuditExecutionOptions, signal?: AbortSignal) => FullAuditResultV2 | Promise<FullAuditResultV2>,
 };
 const maxFindings = 128;
 const sectionSpecs = [
@@ -107,17 +109,18 @@ export async function buildCustomerAuditReport(
           const started = performance.now();
           const block = Number(BigInt(snap.blockNumber));
           if (!Number.isSafeInteger(block) || block < 0) throw new Error("runtime_block_out_of_range");
-          const result = customerAuditPipelineDependencies.execute({
+          const result = await customerAuditPipelineDependencies.execute({
             contractAddress: address, chainId, bytecode: snap.bytecode,
             blockNumber: block, contractName: input.contractName, tier: tier.toUpperCase() as "BASIC" | "PRO" | "ADVANCED", fuzzIterations: 0,
-          });
-          // This check rejects late success; it is not preemption of synchronous JS.
+          }, signal);
+          // The default runner terminates its worker on deadline; this final check
+          // also refuses a late result from an injected internal adapter.
           if (performance.now() - started > 3000) throw new Error("runtime_analysis_budget_exceeded");
           if (signal?.aborted) throw new Error("request_aborted");
           if (result.snapshot.contractAddress.toLowerCase() !== address || result.snapshot.chainId !== chainId || result.snapshot.blockNumber !== block || result.snapshot.bytecodeSha256.replace(/^0x/, "sha256:") !== snap.bytecodeSha256) throw new Error("runtime_result_identity_mismatch");
           receipt.engineVersion = result.snapshot.engineVersion;
           receipt.status = "STATIC_ANALYSIS_COMPLETED";
-          receipt.limitations.push(...result.scores.coverage.limitations, "SOURCE_NOT_PROVIDED", "TARGET_EVM_NOT_EXECUTED", "SYNCHRONOUS_ENGINE_NOT_PREEMPTIBLE");
+          receipt.limitations.push(...result.scores.coverage.limitations, "SOURCE_NOT_PROVIDED", "TARGET_EVM_NOT_EXECUTED", customerAuditPipelineDependencies.execute === executeAuditInWorker ? "WORKER_V8_HEAP_LIMIT_NOT_GLOBAL_MEMORY_BOUND" : "CONTROLLED_ENGINE_ADAPTER_USED");
           findings = result.findings.slice(0, maxFindings).map((f, index) => ({
             id: `${f.findingId}:${index}`, swcId: f.taxonomy?.swcId, cweId: f.taxonomy?.cweId,
             severity: f.severity, title: `Heuristic candidate: ${f.title.replace(/^Heuristic candidate:\s*/i, "")}`,
