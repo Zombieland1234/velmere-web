@@ -3,7 +3,7 @@ import { beginSupabaseGoogleOAuth, SupabaseAuthFlowError } from "@/lib/auth/supa
 import { scheduleAuthSecurityEvent } from "@/lib/auth/auth-security-observability";
 import { applyApiRateLimit, assertSameOriginRequest, rejectLargeContentLength } from "@/lib/security/api-guard";
 import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
-import { isProductionLikeEnvironment, validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
+import { isProductionLikeEnvironment, validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +18,7 @@ export async function POST(request: Request) {
   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4718-google-oauth-start", limit: 8, windowMs: 60_000 }); if (!rate.ok) return rate.response;
   const body = await readBoundedJsonBody<Payload>(request, 8 * 1024, { maxDepth: 3 }); if (!body.ok) return body.response;
   const exactBody = validateExactObjectKeys(body.value, ["locale", "returnPath"]); if (!exactBody.ok) return exactBody.response;
+  const fieldTypes = validateOptionalStringFields(body.value, ["locale", "returnPath"]); if (!fieldTypes.ok) return fieldTypes.response;
   try {
     const result = await beginSupabaseGoogleOAuth(request, body.value);
     scheduleAuthSecurityEvent("oauth_started");

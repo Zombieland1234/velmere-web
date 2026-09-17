@@ -11,7 +11,7 @@ import {
   resolveRequestAccount,
 } from "@/lib/auth/account-session";
 import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
-import { validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
+import { validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
 import {
   SupabaseAuthSessionError,
   establishSupabasePasswordSession,
@@ -138,6 +138,8 @@ export async function POST(request: Request) {
   if (!parsedBody.ok) return parsedBody.response;
   const exactBody = validateExactObjectKeys(parsedBody.value, ["email", "password", "mode", "displayName", "provider", "accountId", "handle", "locale"]);
   if (!exactBody.ok) return exactBody.response;
+  const fieldTypes = validateOptionalStringFields(parsedBody.value, ["email", "password", "mode", "displayName", "provider", "accountId", "handle", "locale"]);
+  if (!fieldTypes.ok) return fieldTypes.response;
   const payload = parsedBody.value;
 
   if (payload.provider === "email" || payload.password) {

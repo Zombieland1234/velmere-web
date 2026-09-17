@@ -1,0 +1,12 @@
+{
+  "function": "r7-shield-pro-paid-workspace-v1",
+  "capturedVersion": 1,
+  "bundleSha256": "b9c83e6524434b30be10eae3b60ec904995c0e4949c39ba627d0e2a75565211f",
+  "capture": "UTF8_content_from_Supabase_get_edge_function",
+  "originalFileSha256": "e903e498cecacfa5d1998c8e5032992e51201812a6cd7775a394517dbc8034e5",
+  "candidateFileSha256": "58e61cc9bf4aa30af7fe1532c17c38e94aca1a379792db04875132cad72ed72d",
+  "existingHandlerBodyUnchanged": false,
+  "originalHandlerBodySha256": "5ec5d146386ab437c5617c9411f73c849a7a3aac2a6ec4f3107ee813eef1937d",
+  "note": "Guard added and unused assignment removed. Original reconstruction plus response-parity tests retain captured version 1 baseline. Provider freshness and rights policy NOT certified.",
+  "nonvisualHandlerChange": "Removed unused initial empty-string assignment from raw; every subsequent use follows successful request.text()."
+}
