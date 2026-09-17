@@ -1,0 +1,156 @@
+name: C10 real customer engine integration and qualification
+on:
+  push:
+    branches: [c10/customer-runtime-qualification-20260917]
+permissions:
+  contents: read
+concurrency:
+  group: c10-release-qualification
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    outputs:
+      materialized: ${{ steps.stage.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - id: stage
+        name: Apply exact reviewed source only on C10 branch
+        env:
+          C10_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c10-stage ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$GITHUB_REF_NAME" = 'c10/customer-runtime-qualification-20260917'
+          test "$(git rev-parse HEAD^)" = '80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d'
+          python3 - <<'PY'
+          import pathlib,hashlib,gzip,json,subprocess
+          stage=pathlib.Path('scripts/c10-stage')
+          files=sorted(stage.glob('*.bin'));assert len(files)==9
+          raw=b''.join(p.read_bytes() for p in files)
+          assert hashlib.sha256(raw).hexdigest()=='e159f2fed9a76f0cd300620c3010e1e838f24f40b65f6e5d18f5eeb71816533a'
+          decoded=gzip.decompress(raw);assert len(decoded)==122185
+          payload=json.loads(decoded);assert len(payload)==12
+          patch=payload.pop('reviewed.patch').encode()
+          assert hashlib.sha256(patch).hexdigest()=='a8ed5cc8fd409affdac5e2b622baf6c5eb9d47d566f2f4eb6f94b9f609acb21c'
+          allowed=['lib/security/audit-runtime-snapshot.ts','lib/security/customer-audit-pipeline.ts','lib/security/customer-report-request.ts','tsconfig.c10-tests.json']
+          for name,text in payload.items():
+            p=pathlib.Path(name)
+            assert not p.is_absolute() and '..' not in p.parts
+            assert name in allowed or name.startswith('scripts/c10/')
+            assert not p.exists(),name
+            p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
+          pathlib.Path('/tmp/c10-reviewed.patch').write_bytes(patch)
+          subprocess.run(['git','apply','--check','/tmp/c10-reviewed.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c10-reviewed.patch'],check=True)
+          PY
+          git rm -r scripts/c10-stage
+          git diff --check
+          git config user.name 'Velmere C10 integration'
+          git config user.email 'c10-integration@users.noreply.github.com'
+          git add -A
+          git commit -m 'fix(c10): connect customer reports to bounded block-pinned static analysis'
+          cat > /tmp/c10-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C10_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c10-askpass.sh
+          GIT_ASKPASS=/tmp/c10-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c10/customer-runtime-qualification-20260917
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+          echo 'Materialized only; a new exact-SHA trigger is required for qualification.'
+          git rev-parse HEAD
+  application:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Fresh whole-application checks at the trigger SHA
+        run: python3 scripts/c10/qualify.py
+      - name: Browser, inventories, immutable source and evidence export
+        if: always()
+        run: python3 scripts/c10/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c10-source-${{ github.run_id }}
+          path: /tmp/c10-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c10-evidence-${{ github.run_id }}
+          path: /tmp/c10-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Preserve truthful NO_GO release gate
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,sys
+          p=pathlib.Path('/tmp/c10-evidence/RELEASE_GATE.json')
+          if not p.exists():sys.exit('NO_GO: release evidence unavailable')
+          gate=json.loads(p.read_text());print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:sys.exit(1)
+          print('Selected checks passed; unresolved product gates still mean NO_GO.')
+          PY
+  external-corpus-regression:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: C9 versus C10 on the frozen already-seen CGT corpus
+        run: bash scripts/c10/benchmark.sh
+      - name: Record benchmark integrity, never redistribute third-party inputs
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,hashlib,datetime,os
+          root=pathlib.Path('/tmp/c10-benchmark');root.mkdir(exist_ok=True)
+          for p in root.glob('*engine.cjs'):p.unlink()
+          p=root/'private-inputs.json'
+          if p.exists():p.unlink()
+          files=[dict(path=str(p.relative_to(root)),bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(root.rglob('*')) if p.is_file() and p.name!='BENCHMARK_MANIFEST.json']
+          (root/'BENCHMARK_MANIFEST.json').write_text(json.dumps(dict(sourceSha=os.environ['GITHUB_SHA'],recordedAt=datetime.datetime.now(datetime.timezone.utc).isoformat(),newUniqueCases=0,allCasesPreviouslySeenInC9=True,ownReviewIsNotExternalAudit=True,files=files),indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c10-benchmark-${{ github.run_id }}
+          path: /tmp/c10-benchmark
+          retention-days: 14
+          if-no-files-found: error
