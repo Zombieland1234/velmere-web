@@ -1,0 +1,144 @@
+name: C6 apply repairs and qualify actual application
+on:
+  push:
+    branches: [c6/release-recovery-20260917]
+    paths: [.github/workflows/c6-apply-and-qualify.yml]
+permissions:
+  contents: write
+concurrency:
+  group: c6-apply-and-qualify
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Reproduce baseline defects before applying repairs
+        run: |
+          mkdir -p /tmp/c6-results /tmp/c6-source /tmp/c6-tools
+          npm ci --ignore-scripts --no-fund > /tmp/c6-results/baseline-clean-install.log 2>&1
+          git rev-parse HEAD > /tmp/c6-results/baseline-source-sha.txt
+          set +e
+          timeout 120 node_modules/.bin/tsx --test scripts/c6/route-boundaries.test.ts > /tmp/c6-results/routes-before.tap 2>&1
+          echo "$?" > /tmp/c6-results/routes-before.exit
+          exit 0
+      - name: Apply reviewed source changes and rebuild exact lockfile
+        run: |
+          test "$GITHUB_REF_NAME" = 'c6/release-recovery-20260917'
+          python3 scripts/c6/apply-hardening.py
+          cp /tmp/c6-changes.json /tmp/c6-results/REPAIR_CHANGE_MANIFEST.json
+          npm install --package-lock-only --ignore-scripts --no-fund > /tmp/c6-results/lock-update.log 2>&1
+          npm ci --ignore-scripts --no-fund > /tmp/c6-results/candidate-clean-install.log 2>&1
+          set +e
+          node_modules/.bin/eslint lib/market-integrity/kline-route-handler.ts lib/security/evidence/claim-audit-blocker.ts lib/security/evm-bytecode-analyzer.ts lib/security/v2/fuzzing-and-invariant-engine.ts lib/security/v2/solidity-evm-edge-case-engine.ts --fix > /tmp/c6-results/scoped-lint-fix.log 2>&1
+          exit 0
+      - name: Commit candidate to isolated branch without force push
+        env:
+          C6_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          cat > /tmp/c6-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C6_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c6-askpass.sh
+          export GIT_ASKPASS=/tmp/c6-askpass.sh GIT_TERMINAL_PROMPT=0
+          remote=$(git ls-remote origin refs/heads/c6/release-recovery-20260917 | cut -f1)
+          test "$remote" = "$GITHUB_SHA"
+          git config user.name 'Velmere C6 qualification'
+          git config user.email 'c6-qualification@users.noreply.github.com'
+          git add app components lib config/report-access-policy.json package.json package-lock.json next.config.mjs tsconfig.json proxy.ts
+          git commit -m 'fix(c6): close runtime paid bypasses, enforce type checks and update vulnerable packages'
+          git push origin HEAD:refs/heads/c6/release-recovery-20260917
+          echo "C6_SOURCE_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          git diff HEAD^ HEAD --binary > /tmp/c6-results/APPLIED_SOURCE.diff
+      - name: Archive exact repaired source
+        run: |
+          git archive --format=zip -o /tmp/c6-source/VELMERE_C6_GITHUB_SOURCE.zip HEAD
+          python3 - <<'PY'
+          import pathlib,hashlib,subprocess,json,datetime,os
+          files=[]
+          for name in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+            if name:
+              p=pathlib.Path(name);files.append({'path':name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest() if p.is_file() else None})
+          z=pathlib.Path('/tmp/c6-source/VELMERE_C6_GITHUB_SOURCE.zip')
+          r={'schema':'velmere.c6.github-candidate.v1','sourceSha':os.environ['C6_SOURCE_SHA'],'repository':'Zombieland1234/velmere-web','branch':'c6/release-recovery-20260917','runId':os.environ['GITHUB_RUN_ID'],'originalUi2IdentityConfirmed':False,'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'zipSha256':hashlib.sha256(z.read_bytes()).hexdigest(),'files':files}
+          pathlib.Path('/tmp/c6-source/SOURCE_IDENTITY.json').write_text(json.dumps(r,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c6-repaired-source-${{ github.run_id }}
+          path: /tmp/c6-source
+          retention-days: 14
+          if-no-files-found: error
+      - name: Independent full-code outcomes
+        run: |
+          python3 - <<'PY'
+          import pathlib,subprocess,json,datetime,hashlib,os
+          out=pathlib.Path('/tmp/c6-results');rows=[]
+          checks=[('strict-typescript',['node_modules/.bin/tsc','--noEmit','--strict','--pretty','false'],420),('eslint',['node_modules/.bin/eslint','.','--format','json','--output-file','/tmp/c6-results/eslint.json'],420),('dependency-audit',['npm','audit','--json'],120),('dependency-drift',['npm','ls','--all','--json'],120),('routes-after',['node_modules/.bin/tsx','--test','scripts/c6/route-boundaries.test.ts'],180),('production-build',['npm','run','build'],600)]
+          for name,args,limit in checks:
+            start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+            with (out/(name+'.log')).open('wb') as log:
+              try:code=subprocess.run(args,stdout=log,stderr=subprocess.STDOUT,timeout=limit,check=False).returncode
+              except subprocess.TimeoutExpired:code=124
+              except OSError as e:log.write(str(e).encode());code=127
+            rows.append({'id':name,'sourceSha':os.environ['C6_SOURCE_SHA'],'command':args,'startedAt':start,'finishedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exitCode':code,'result':'PASS' if code==0 else 'TIMEOUT' if code==124 else 'FAIL','log':name+'.log','logSha256':hashlib.sha256((out/(name+'.log')).read_bytes()).hexdigest()})
+            (out/'QUALIFICATION.json').write_text(json.dumps(rows,indent=2));print(name,code,flush=True)
+          PY
+      - name: Install browser and observe actual production pages
+        continue-on-error: true
+        run: |
+          node_modules/.bin/playwright install --with-deps chromium > /tmp/c6-results/browser-install.log 2>&1
+          C6_SOURCE_SHA=f29294570da87e05ac4063e24b1749254a112703 timeout 240 node scripts/c6/browser-observations.mjs https://velmere-web.vercel.app /tmp/c6-results/browser-production > /tmp/c6-results/browser-production.log 2>&1
+      - name: Exercise the actual built candidate over HTTP
+        continue-on-error: true
+        run: |
+          node -e "const a=require('/tmp/c6-results/QUALIFICATION.json');if(!a.find(x=>x.id==='production-build'&&x.result==='PASS'))process.exit(1)"
+          node_modules/.bin/next start --hostname 127.0.0.1 > /tmp/c6-results/next-runtime.log 2>&1 &
+          server=$!
+          trap 'kill "$server" || true' EXIT
+          for attempt in $(seq 1 30); do if curl -s -o /dev/null http://127.0.0.1:3000/en; then break; fi; sleep 1; done
+          timeout 240 node scripts/c6/browser-observations.mjs http://127.0.0.1:3000 /tmp/c6-results/browser-candidate > /tmp/c6-results/browser-candidate.log 2>&1
+      - name: Export offline dependency runtime for further verification
+        if: always()
+        continue-on-error: true
+        run: |
+          tar -czf /tmp/c6-tools/node_modules.tgz node_modules
+          cp "$(command -v node)" /tmp/c6-tools/node
+          sha256sum package-lock.json /tmp/c6-tools/node_modules.tgz /tmp/c6-tools/node > /tmp/c6-tools/SHA256SUMS.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6-offline-runtime-${{ github.run_id }}
+          path: /tmp/c6-tools
+          retention-days: 7
+      - name: Record final working-tree status
+        if: always()
+        run: git status --porcelain > /tmp/c6-results/final-working-tree-status.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c6-repair-qualification-${{ github.run_id }}
+          path: /tmp/c6-results
+          retention-days: 14
+      - name: Fail on incomplete full-code checks
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,sys
+          p=pathlib.Path('/tmp/c6-results/QUALIFICATION.json')
+          if not p.exists():sys.exit('Qualification missing')
+          a=json.loads(p.read_text())
+          if len(a)!=6 or any(x['result']!='PASS' for x in a):sys.exit('Actual candidate has failed checks; no release approval')
+          print('Six code checks passed; this is not complete product qualification.')
+          PY
