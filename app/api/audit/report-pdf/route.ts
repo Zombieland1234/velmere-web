@@ -10,7 +10,7 @@ import { verifyVlmPaidSurfaceEntitlementById } from "@/lib/commerce/vlm-paid-sur
 import { verifyVlmPaidAccountEntitlement } from "@/lib/commerce/vlm-entitlement-ledger";
 import { hashVelmereAccountBinding } from "@/lib/auth/account-session";
 import { buildExactCustomerPdfDelivery } from "@/lib/reporting/exact-customer-pdf-delivery";
-import { fetchOnChainBytecode } from "@/lib/security/evm-rpc-fetcher";
+import { fetchOnChainBytecode, SUPPORTED_CHAINS } from "@/lib/security/evm-rpc-fetcher";
 import { BENCHMARK_20_CONTRACTS } from "@/lib/security/contract-audit-profiles";
 import { MASTER_50_ASSETS } from "@/lib/security/corpus/master-50-assets";
 
@@ -141,9 +141,27 @@ export async function GET(request: NextRequest) {
     chainId = chainId || "56";
 
     const isEvm = /^0x[a-fA-F0-9]{40}$/.test(address);
+    if (!["pl", "en", "de"].includes(locale)) {
+      return json(400, { ok: false, error: "invalid_report_locale" });
+    }
+    if (isEvm && !Object.prototype.hasOwnProperty.call(SUPPORTED_CHAINS, chainId)) {
+      return json(400, { ok: false, error: "unsupported_chain_id" });
+    }
+    if (bytecode && (bytecode.length > 2 + 2 * 128 * 1024 || !/^0x(?:[0-9a-fA-F]{2})*$/.test(bytecode))) {
+      return json(400, { ok: false, error: "invalid_runtime_bytecode" });
+    }
+
+    if (bytecode) {
+      return json(409, { ok: false, error: "untrusted_runtime_bytecode_not_exportable" });
+    }
+    const referenceProfile = BENCHMARK_20_CONTRACTS[address.toLowerCase()];
+    if (isEvm && referenceProfile && referenceProfile.chainId !== chainId) {
+      return json(409, { ok: false, error: "reference_profile_chain_mismatch" });
+    }
+    if (isEvm) network = SUPPORTED_CHAINS[chainId as keyof typeof SUPPORTED_CHAINS].chainName;
 
     const account = await resolveRequestAccount(request);
-    const { clientTier } = await resolveClientAuditTier(
+    const { clientTier, entitlementId: initialEntitlementId } = await resolveClientAuditTier(
       request,
       account?.accountId ?? null,
       caseRef,
@@ -188,7 +206,7 @@ export async function GET(request: NextRequest) {
       effectiveTier,
     );
 
-    const { pdfBytes, pdfDigest, pdfByteLength } = renderCanonicalReportToPdf(report);
+    const { pdfBytes, pdfDigest } = renderCanonicalReportToPdf(report);
 
     const delivery = buildExactCustomerPdfDelivery({
       pdfBytes,
@@ -197,6 +215,20 @@ export async function GET(request: NextRequest) {
       filenameStem: `${report.target.contractName.toLowerCase().replace(/[^a-z0-9_-]/g, "-")}-${effectiveTier}-audit`,
       fallbackStem: `velmere-${effectiveTier}-audit`,
     });
+
+    // Generation may include network calls and CPU work. Re-read authoritative
+    // access at the final boundary rather than relying on the earlier snapshot.
+    // A downgrade never silently returns a previously generated higher tier.
+    if (effectiveTier !== "basic") {
+      const currentAccount = await resolveRequestAccount(request);
+      if (!currentAccount || currentAccount.accountId !== account?.accountId) {
+        return json(401, { ok: false, error: "current_audit_session_required" });
+      }
+      const currentAccess = await resolveClientAuditTier(request, currentAccount.accountId, caseRef);
+      if (rank[effectiveTier] > rank[currentAccess.clientTier] || currentAccess.entitlementId !== initialEntitlementId) {
+        return json(403, { ok: false, error: "current_audit_entitlement_required" });
+      }
+    }
 
     return new NextResponse(delivery.bytes as BodyInit, {
       status: 200,
@@ -208,6 +240,7 @@ export async function GET(request: NextRequest) {
         "x-frame-options": "DENY",
         "referrer-policy": "no-referrer",
         "x-velmere-audit-pdf-tier": effectiveTier,
+        "x-velmere-audit-source-mode": referenceProfile ? "reference-profile" : "runtime-or-unverified",
         "x-velmere-audit-pdf-digest": pdfDigest,
         "x-velmere-audit-report-digest": report.reportDigest,
         "x-velmere-preview-download-parity": "canonical_shared_model",
