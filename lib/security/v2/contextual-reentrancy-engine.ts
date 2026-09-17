@@ -4,7 +4,7 @@ import { createHash } from "node:crypto";
  *
  * Implements multi-layer reentrancy analysis:
  * - Classic state mutation after external call (Checks-Effects-Interactions violation)
- * - Mutex guard suppression: silences false alarms when nonReentrant is active
+ * - Mutex proof is not implemented; post-call writes remain review candidates
  * - Cross-function reentrancy on shared storage slots
  * - Read-only reentrancy during dynamic AMM LP pricing queries
  * - Token callback reentrancy (ERC-777 tokensReceived, ERC-721/1155 hooks)
@@ -24,7 +24,7 @@ export interface ReentrancyAnalysisResult {
 export function analyzeContextualReentrancy(
   contractAddress: string,
   cfgResult: CfgAnalysisResult,
-  sourceCode?: string,
+  _sourceCode?: string,
 ): ReentrancyAnalysisResult {
   const findings: StandardFindingV2[] = [];
   const { cfg, selectorsDiscovered } = cfgResult;
@@ -140,12 +140,9 @@ export function analyzeContextualReentrancy(
   const getRateSelector = "0x679aefce";
 
   if (selectorsDiscovered.has(getVirtualPriceSelector) || selectorsDiscovered.has(getRateSelector)) {
-    const hasLockCheck =
-      hasReentrancyGuard ||
-      (sourceCode &&
-        (sourceCode.includes("is_reentrant") ||
-          sourceCode.includes("claim_admin_fees") ||
-          sourceCode.includes("nonReentrantView")));
+    // Arbitrary source text, including comments or unused function names, is
+    // not evidence of a lock on the relevant bytecode call path.
+    const hasLockCheck = false;
 
     if (!hasLockCheck) {
       readOnlyReentrancyDetected = true;
@@ -153,12 +150,12 @@ export function analyzeContextualReentrancy(
 
       findings.push({
         findingId: "VLM-SEC-REENTRANCY-RO-02",
-        title: "Read-Only Reentrancy in AMM Curve/Balancer Virtual Price Query",
+        title: "AMM Price Selector Present (Call Path and Lock Unverified)",
         severity: "high",
-        confidence: "high",
-        exploitability: "moderate",
+        confidence: "low",
+        exploitability: "theoretical",
         impact:
-          "An attacker can manipulate the pool collateral valuation mid-callback and borrow excess funds or liquidate accounts at an artificial virtual price.",
+          "A consumer may be exposed if it uses a manipulable pool price during a callback. Selector presence alone does not prove an external call, a reachable attack path, or loss.",
         likelihood: "medium",
         taxonomy: {
           swcId: "SWC-107",
@@ -180,7 +177,7 @@ export function analyzeContextualReentrancy(
         attackScenario:
           "1. Attacker takes flash loan of underlying assets.\n2. Attacker removes liquidity from Curve/Balancer pool using raw ETH removal.\n3. During the ETH receive callback, pool reserves are distorted but pool lock is not checked by external consumer.\n4. Attacker invokes consumer protocol to borrow undercollateralized assets based on inflated virtual price.\n5. Transaction completes and flash loan is repaid with excess profit.",
         proofOfConcept: {
-          summary: "Querying virtual price inside raw ETH callback when AMM pool state is temporarily imbalanced",
+          summary: "UNEXECUTED hypothesis: validate an actual consumer call path and pool state before confirming read-only reentrancy",
           sequence: [
             { step: 1, actor: "Attacker", call: "CurvePool.remove_liquidity_one_coin()", expectation: "ETH transfer callback" },
             { step: 2, actor: "Attacker Callback", call: "VictimProtocol.borrow()", expectation: "Uses inflated get_virtual_price" },
@@ -188,9 +185,9 @@ export function analyzeContextualReentrancy(
           ],
         },
         evidence: {
-          opcodeTraceExcerpt: `PUSH4 ${selectorsDiscovered.has(getVirtualPriceSelector) ? getVirtualPriceSelector : getRateSelector} -> STATICCALL without pool lock check`,
-          disassemblyContext: "External AMM pool view call detected without reentrancy guard or lock assertion.",
-          hashProof: `sha256:${Buffer.from(`${pc}-readonly`).toString("hex")}`,
+          opcodeTraceExcerpt: `PUSH4 ${selectorsDiscovered.has(getVirtualPriceSelector) ? getVirtualPriceSelector : getRateSelector} at PC ${pc}; external call and lock are unverified`,
+          disassemblyContext: "Selector constant detected. It may be a declaration or unrelated constant; target identity, call path, lock and exploitability are not proved.",
+          hashProof: `sha256:${createHash("sha256").update(JSON.stringify({ contractAddress, pc, kind: "readonly-selector-observation" })).digest("hex")}`,
         },
         remediation: {
           strategy: "Verify target AMM pool reentrancy lock or consume a reentrancy-guarded price feed.",
@@ -200,8 +197,8 @@ export function analyzeContextualReentrancy(
 +    // Assert pool reentrancy lock before reading virtual price
 +    ICurvePool(pool).claim_admin_fees(); // Reverts if pool is mid-reentrant
      uint256 price = ICurvePool(pool).get_virtual_price();`,
-          appliedSuccessfully: true,
-          regressionPassed: true,
+          appliedSuccessfully: false,
+          regressionPassed: false,
         },
         verificationState: "AUTOMATED",
       });
@@ -216,11 +213,11 @@ export function analyzeContextualReentrancy(
 
     findings.push({
       findingId: "VLM-SEC-REENTRANCY-ERC777-03",
-      title: "Arbitrary State Reentrancy Via ERC-777 tokensReceived Hook",
+      title: "ERC-777 Hook Selector Present (Reentrancy Unverified)",
       severity: "high",
-      confidence: "certain",
-      exploitability: "active_exploit",
-      impact: "ERC-777 tokens trigger a hook in the sender/recipient, granting execution control before token transfer state is settled.",
+      confidence: "low",
+      exploitability: "theoretical",
+      impact: "Token callbacks can be a reentrancy surface, but a hook selector alone does not establish a vulnerable state transition or a successful exploit.",
       likelihood: "high",
       taxonomy: {
         swcId: "SWC-107",
@@ -235,7 +232,7 @@ export function analyzeContextualReentrancy(
       stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
       attackScenario: "1. Attacker receives ERC-777 token.\n2. tokensReceived hook executes.\n3. Attacker re-enters protocol before balance deduction.",
       proofOfConcept: {
-        summary: "ERC-777 token transfer hook reentrancy",
+        summary: "UNEXECUTED hypothesis: validate callback reachability, shared state and guards before confirming reentrancy",
         sequence: [
           { step: 1, actor: "Attacker", call: "triggerTransfer()", expectation: "ERC-777 transfers" },
           { step: 2, actor: "ERC-777", call: "tokensReceived() callback", expectation: "Attacker gains control" },
@@ -243,9 +240,9 @@ export function analyzeContextualReentrancy(
         ],
       },
       evidence: {
-        opcodeTraceExcerpt: `PUSH4 0x0023de29 (tokensReceived) found in un-guarded dispatcher`,
-        disassemblyContext: "ERC-777 token hook selector present without mutex guard",
-        hashProof: `sha256:${Buffer.from(`${pc}-erc777`).toString("hex")}`,
+        opcodeTraceExcerpt: `PUSH4 0x0023de29 (tokensReceived) at PC ${pc}; guard status is unverified`,
+        disassemblyContext: "Hook selector observed; no proof of callback execution, missing mutex, or feasible state-changing reentry",
+        hashProof: `sha256:${createHash("sha256").update(JSON.stringify({ contractAddress, pc, kind: "erc777-selector-observation" })).digest("hex")}`,
       },
       remediation: {
         strategy: "Apply nonReentrant modifier to all state-mutating functions accepting arbitrary ERC-20/ERC-777 tokens.",

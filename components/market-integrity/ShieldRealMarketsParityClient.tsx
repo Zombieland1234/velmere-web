@@ -252,6 +252,7 @@ function sourceFamilyCount(row: MarketIntegrityRow) {
 }
 
 function sourceBoundRisk(row: MarketIntegrityRow): number | null {
+  if (!shieldProRiskVerified(row)) return null;
   const delivery = (row as unknown as { delivery?: { risk?: { score?: number | null } } }).delivery;
   const score = delivery?.risk?.score ?? row.result?.score ?? (row as unknown as { riskScore?: number | null }).riskScore;
   if (!finite(score)) return null;
@@ -259,20 +260,13 @@ function sourceBoundRisk(row: MarketIntegrityRow): number | null {
 }
 
 function buildCurrentRiskHistoryObservation(row: MarketIntegrityRow, score: number | null) {
-  const safeScore = score ?? 28;
-  return {
-    schemaVersion: "velmere.risk-history-current-observation.v1" as const,
-    status: "AVAILABLE" as const,
-    score: safeScore,
-    snapshotScore: Math.round(safeScore),
-    observedAt: new Date().toISOString(),
-    canonicalAssetId: `market:${row.id}`,
-    methodologyVersion: "continuous_fusion_v10",
-    scoreVersion: "v10",
-    evidenceVersion: "v10",
-    comparabilityKey: "cross_asset_v10",
-    blocker: null,
-  };
+  // The shared contract binds the score to a publishable, versioned snapshot.
+  // A missing score is withheld; render time is never a source observation time.
+  return buildRiskHistoryCurrentObservation({
+    assetId: row.id,
+    result: row.result,
+    publishedScore: score,
+  });
 }
 
 function sourceBoundConfidence(row: MarketIntegrityRow): number | null {
@@ -401,58 +395,8 @@ function ShieldTableSparkline({
   loading: boolean;
 }) {
   const sourceLabel = shieldProSourceLabel(row);
-  let sample = (row.sparkline7d ?? []).filter(finite).slice(-56);
-
-  // If missing or too short, generate realistic candles matching Real Markets rhythm
-  if (sample.length < 2) {
-    const p = row.price || 100;
-    const change = row.priceChange7d ?? row.priceChange24h ?? 0;
-    const openPrice = p / (1 + change / 100);
-    const lowPrice = Math.min(openPrice, p) * 0.985;
-    const highPrice = Math.max(openPrice, p) * 1.015;
-    const seed = (row.symbol ?? row.id ?? "42").split("").reduce((acc, c) => acc + c.charCodeAt(0), 42);
-    const pointsCount = 56;
-
-    let s = (Math.abs(seed) % 2147483647) || 1;
-    const rand = () => {
-      s = (s * 16807) % 2147483647;
-      return (s - 1) / 2147483646;
-    };
-    const gaussian = () => {
-      const u = Math.max(rand(), 1e-7);
-      const v = rand();
-      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-    };
-
-    const raw = new Array(pointsCount);
-    raw[0] = 0;
-    for (let i = 1; i < pointsCount; i++) raw[i] = raw[i - 1] + gaussian();
-    const bEnd = raw[pointsCount - 1];
-    const bridge = raw.map((val, i) => val - (i / (pointsCount - 1)) * bEnd);
-    const bMin = Math.min(...bridge);
-    const bMax = Math.max(...bridge);
-    const bSpan = Math.max(bMax - bMin, 0.0001);
-    const range = highPrice - lowPrice;
-
-    const intermediate = new Array(pointsCount);
-    for (let i = 0; i < pointsCount; i++) {
-      const base = openPrice + (p - openPrice) * (i / (pointsCount - 1));
-      const wave = ((bridge[i] - (bMin + bMax) / 2) / bSpan) * range * 0.75;
-      intermediate[i] = base + wave;
-    }
-    intermediate[0] = openPrice;
-    intermediate[pointsCount - 1] = p;
-
-    const curMin = Math.min(...intermediate);
-    const curMax = Math.max(...intermediate);
-    const curSpan = Math.max(curMax - curMin, 0.000001);
-
-    sample = intermediate.map((v, i) => {
-      if (i === 0) return openPrice;
-      if (i === pointsCount - 1) return p;
-      return lowPrice + ((v - curMin) / curSpan) * (highPrice - lowPrice);
-    });
-  }
+  // Missing upstream history is not reconstructed from price changes or noise.
+  const sample = (row.sparkline7d ?? []).filter(finite).slice(-56);
 
   if (loading || sample.length < 2) {
     return (
@@ -1033,23 +977,12 @@ export default function ShieldRealMarketsParityClient({
   const safeLocale: Locale = locale === "en" || locale === "de" ? locale : "pl";
   const router = useRouter();
   const t = copy[safeLocale];
-  const [rows, setRows] = useState<MarketIntegrityRow[]>(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const cached = window.sessionStorage.getItem("velmere_shield_rows_cache");
-        if (cached) {
-          const parsed = JSON.parse(cached);
-          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-        }
-      } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
-    }
-    return getShieldInstantBootstrapRows();
-  });
+  const [rows, setRows] = useState<MarketIntegrityRow[]>(getShieldInstantBootstrapRows);
   const [sourceLabel, setSourceLabel] = useState<string>(t.source);
-  const [feedMode, setFeedMode] = useState<"loading" | "live" | "stale" | "partial" | "reference" | "error">("live");
-  const [loading, setLoading] = useState(false);
+  const [feedMode, setFeedMode] = useState<"loading" | "live" | "stale" | "partial" | "reference" | "error">("loading");
+  const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
-  const rowsAvailableRef = useRef(true);
+  const rowsAvailableRef = useRef(false);
   const [reloadNonce, setReloadNonce] = useState(0);
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
@@ -1093,16 +1026,15 @@ export default function ShieldRealMarketsParityClient({
         if (catalog.rows.length) {
           const nextRows = normalizeRows(catalog.rows);
           const reference = nextRows.every((row) => row.result?.dataQuality === "demo");
-          rowsAvailableRef.current = true;
-          setRows(nextRows);
-          if (typeof window !== "undefined") {
-            try {
-              window.sessionStorage.setItem("velmere_shield_rows_cache", JSON.stringify(nextRows.slice(0, 100)));
-            } catch { /* Best-effort UI/cache operation; preserve the existing fallback. */ }
+          const nextMode = reference ? "reference" : catalog.complete ? catalog.mode : "partial";
+          const publishableRows = nextRows.filter((row) => projectShieldProTableRow(row, nextMode) !== null);
+          if (publishableRows.length) {
+            rowsAvailableRef.current = true;
+            setRows(publishableRows);
+            setSourceLabel(catalog.source || t.source);
+            setFeedMode(nextMode);
+            return;
           }
-          setSourceLabel(catalog.source || t.source);
-          setFeedMode(reference ? "reference" : catalog.complete ? catalog.mode : "partial");
-          return;
         }
         if (!rowsAvailableRef.current) {
           setRows([]);
@@ -1186,7 +1118,7 @@ export default function ShieldRealMarketsParityClient({
 
   const customerRows = useMemo<MarketIntegrityRow[]>(() => rows.flatMap((row) => {
     const projection = projectShieldProTableRow(row, feedMode);
-    if (!projection) return [row];
+    if (!projection) return [];
     return [{
       ...row,
       id: projection.marketId,
