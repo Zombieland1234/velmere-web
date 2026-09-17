@@ -14,4 +14,5 @@ printf '/runtime/\n/source/\n/consolidated.csv\n/README.md\n/LICENSE.txt\n' > /t
 git -C /tmp/cgt fetch --depth=1 --filter=blob:none origin f8cd72cf7fbbfebc809c454667eee271706a4b2b
 git -C /tmp/cgt checkout --detach FETCH_HEAD
 python3 scripts/c9/prepare-cgt.py /tmp/cgt /tmp/c9-benchmark
+node_modules/.bin/tsx scripts/c9/cfg-diagnostics.ts /tmp/c9-base "$PWD" /tmp/c9-benchmark
 node scripts/c9/run-corpus.mjs /tmp/c9-base "$PWD" /tmp/c9-benchmark

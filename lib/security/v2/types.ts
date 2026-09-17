@@ -235,7 +235,7 @@ export interface MultiDimensionalScoreV2 {
   codeQualityRisk: number;
   operationalRisk: number;
   overallScore: number | null;
-  assessmentConfidence: number; // 0 to 100%
+  assessmentConfidence: number | null; // Withheld until calibration; not a safety probability.
   assessmentState: "COMPLETE" | "ANALYSIS_INCOMPLETE";
   scopeStatement: "AVAILABLE_DETECTORS_ONLY_NOT_SECURITY_CERTIFICATION";
   coverage: {

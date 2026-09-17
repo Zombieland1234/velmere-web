@@ -1,3 +1,4 @@
+import { resolveCurrentAuditAccess } from "@/lib/security/current-audit-access";
 import { NextRequest, NextResponse } from "next/server";
 import { publicApiError } from "@/lib/security/api-error-envelope";
 import { resolveRequestAccount } from "@/lib/auth/account-session";
@@ -6,9 +7,6 @@ import {
   renderCanonicalReportToPdf,
   type AuditTier,
 } from "@/lib/security/audit-canonical-report";
-import { verifyVlmPaidSurfaceEntitlementById } from "@/lib/commerce/vlm-paid-surface-guard";
-import { verifyVlmPaidAccountEntitlement } from "@/lib/commerce/vlm-entitlement-ledger";
-import { hashVelmereAccountBinding } from "@/lib/auth/account-session";
 import { buildExactCustomerPdfDelivery } from "@/lib/reporting/exact-customer-pdf-delivery";
 import { fetchOnChainBytecode, SUPPORTED_CHAINS } from "@/lib/security/evm-rpc-fetcher";
 import { BENCHMARK_20_CONTRACTS } from "@/lib/security/contract-audit-profiles";
@@ -27,58 +25,6 @@ function json(status: number, body: unknown) {
   });
 }
 
-async function resolveClientAuditTier(
-  request: NextRequest,
-  accountId: string | null,
-  caseRef?: string,
-): Promise<{ clientTier: AuditTier; entitlementId?: string }> {
-  if (!accountId) {
-    return { clientTier: "basic" };
-  }
-
-  const entitlementHeader = request.headers.get("x-velmere-entitlement-id")?.trim();
-  const searchParams = request.nextUrl.searchParams;
-  const entitlementId = entitlementHeader || searchParams.get("entitlementId")?.trim();
-
-  if (!entitlementId) {
-    // Historical verification is not current access: regeneration requires an active grant.
-    // Check if account has an active server entitlement in ledger
-    const accountIdHash = hashVelmereAccountBinding(accountId);
-    const advCheck = await verifyVlmPaidAccountEntitlement({
-      productId: "vlm_advanced_audit_human_review",
-      context: { accountIdHash, auditCaseRef: caseRef },
-    });
-    if (advCheck.ok && advCheck.entitlement) {
-      return { clientTier: "advanced", entitlementId: advCheck.entitlement.id };
-    }
-    const proCheck = await verifyVlmPaidAccountEntitlement({
-      productId: "vlm_pro_audit_review",
-      context: { accountIdHash, auditCaseRef: caseRef },
-    });
-    if (proCheck.ok && proCheck.entitlement) {
-      return { clientTier: "pro", entitlementId: proCheck.entitlement.id };
-    }
-    return { clientTier: "basic" };
-  }
-
-  const entitlementCheck = await verifyVlmPaidSurfaceEntitlementById({
-    policyId: "audit_pdf_download",
-    entitlementId,
-    allowedProductIds: ["vlm_pro_audit_review", "vlm_advanced_audit_human_review"],
-    accountIdHash: hashVelmereAccountBinding(accountId),
-    auditCaseRef: caseRef,
-  });
-
-  if (entitlementCheck.ok && entitlementCheck.entitlement) {
-    const isAdvanced = entitlementCheck.entitlement.productId === "vlm_advanced_audit_human_review";
-    return {
-      clientTier: isAdvanced ? "advanced" : "pro",
-      entitlementId,
-    };
-  }
-
-  return { clientTier: "basic" };
-}
 
 export async function GET(request: NextRequest) {
   try {
@@ -161,7 +107,7 @@ export async function GET(request: NextRequest) {
     if (isEvm) network = SUPPORTED_CHAINS[chainId as keyof typeof SUPPORTED_CHAINS].chainName;
 
     const account = await resolveRequestAccount(request);
-    const { clientTier, entitlementId: initialEntitlementId } = await resolveClientAuditTier(
+    const { clientTier, entitlementId: initialEntitlementId } = await resolveCurrentAuditAccess(
       request,
       account?.accountId ?? null,
       caseRef,
@@ -224,7 +170,7 @@ export async function GET(request: NextRequest) {
       if (!currentAccount || currentAccount.accountId !== account?.accountId) {
         return json(401, { ok: false, error: "current_audit_session_required" });
       }
-      const currentAccess = await resolveClientAuditTier(request, currentAccount.accountId, caseRef);
+      const currentAccess = await resolveCurrentAuditAccess(request, currentAccount.accountId, caseRef);
       if (rank[effectiveTier] > rank[currentAccess.clientTier] || currentAccess.entitlementId !== initialEntitlementId) {
         return json(403, { ok: false, error: "current_audit_entitlement_required" });
       }

@@ -79,18 +79,6 @@ export function computeMultiDimensionalScores(
   // Operational Risk
   const operationalRisk = Math.min(100, Math.round((centralizationRisk + upgradeRisk) / 2));
 
-  // Overall Score: 0 is highest risk, 100 is best (safe)
-  // Higher individual risks pull overall safety score down
-  const maxRisk = Math.max(securityRisk, centralizationRisk, upgradeRisk, oracleRisk, economicRisk);
-  const averageRisk =
-    (securityRisk * 0.35 +
-      centralizationRisk * 0.2 +
-      upgradeRisk * 0.15 +
-      oracleRisk * 0.15 +
-      economicRisk * 0.15);
-
-  const rawOverallScore = Math.max(5, Math.min(99, Math.round(100 - (maxRisk * 0.6 + averageRisk * 0.4))));
-
   const limitations: string[] = [];
   if (!coverageInput.sourceProvided) limitations.push("SOURCE_NOT_PROVIDED");
   if (!coverageInput.meaningfulBytecode) limitations.push("BYTECODE_MISSING_OR_PLACEHOLDER");
@@ -99,27 +87,12 @@ export function computeMultiDimensionalScores(
   if (cfgMetrics.unresolvedDynamicJumps > 0) limitations.push(`UNRESOLVED_DYNAMIC_JUMPS:${cfgMetrics.unresolvedDynamicJumps}`);
   if (heuristicCandidateCount > 0) limitations.push(`HEURISTIC_CANDIDATES_EXCLUDED_FROM_SCORE:${heuristicCandidateCount}`);
 
-  // A Full V2 safety score is withheld unless both source and meaningful runtime
-  // bytecode were supplied and the CFG has enough structure to support analysis.
-  // This prevents placeholder-bytecode corpora from producing a misleading 99.
-  const assessmentState =
-    coverageInput.sourceProvided &&
-    coverageInput.meaningfulBytecode &&
-    cfgMetrics.instructionCount >= 8 &&
-    cfgMetrics.blockCount >= 2 &&
-    cfgMetrics.unresolvedDynamicJumps === 0 &&
-    heuristicCandidateCount === 0
-      ? "COMPLETE"
-      : "ANALYSIS_INCOMPLETE";
-
-  const coveragePoints =
-    (coverageInput.sourceProvided ? 25 : 0) +
-    (coverageInput.meaningfulBytecode ? 35 : 0) +
-    Math.min(20, cfgMetrics.blockCount * 2) +
-    Math.min(15, Math.floor(cfgMetrics.instructionCount / 20)) +
-    (cfgMetrics.unresolvedDynamicJumps === 0 ? 5 : 0);
-  const assessmentConfidence = Math.max(0, Math.min(95, coveragePoints));
-  const overallScore = assessmentState === "COMPLETE" ? rawOverallScore : null;
+  // Structural depth and "no findings" do not prove target identity or detector
+  // coverage. No independent evidence verifier exists in this API yet.
+  limitations.push("SOURCE_RUNTIME_IDENTITY_NOT_VERIFIED", "DETECTOR_COVERAGE_NOT_QUALIFIED", "ASSESSMENT_CONFIDENCE_NOT_CALIBRATED");
+  const assessmentState = "ANALYSIS_INCOMPLETE" as const;
+  const overallScore = null;
+  const assessmentConfidence = null;
 
   return {
     securityRisk,

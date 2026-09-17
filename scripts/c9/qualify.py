@@ -6,7 +6,7 @@ sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
 assert sha == os.environ['GITHUB_SHA'], 'Trigger SHA and qualified source SHA must match'
 os.environ['C6_SOURCE_SHA'] = sha
 old_tests = ['scripts/c6/route-boundaries.test.ts','scripts/c6/provider-engine-boundaries.test.ts','scripts/c6c/actual-app-regressions.test.ts','scripts/c6d/rpc-pdf-boundaries.test.ts','scripts/c6e/pdf-evidence-boundary.test.ts','scripts/c7/engine-integrity.test.ts']
-new_tests = ['scripts/c8/request-boundaries.test.ts','scripts/c8/webhook-ingress.test.ts','scripts/c8/edge-boundary.test.ts','scripts/c9/engine-boundaries.test.ts']
+new_tests = ['scripts/c8/request-boundaries.test.ts','scripts/c8/webhook-ingress.test.ts','scripts/c8/edge-boundary.test.ts','scripts/c9/engine-boundaries.test.ts','scripts/c9/engine-claims.test.ts','scripts/c9/customer-report-regressions.test.ts']
 checks = [
  ('clean-install', ['npm','ci','--ignore-scripts','--no-fund'],600),
  ('edge-live-negative-probe', ['node','scripts/c8/edge-live-probe.mjs',str(out)],100),
@@ -17,6 +17,7 @@ checks = [
  ('strict-typescript', ['node_modules/.bin/tsc','--noEmit','--strict','--pretty','false'],480),
  ('c8-tests-typescript', ['node_modules/.bin/tsc','-p','tsconfig.c8-tests.json','--pretty','false'],480),
  ('all-current-route-regressions', ['node_modules/.bin/tsx','--test',*old_tests,*new_tests],480),
+ ('engine-route-map', ['python3','scripts/c9/engine-route-map.py',str(out)],30),
  ('source-truth-audit', ['node','scripts/c7/source-truth-audit.mjs'],120),
  ('eslint-zero-warning', ['node_modules/.bin/eslint','.','--max-warnings','0','--format','json','--output-file',str(out/'eslint.json')],480),
  ('dependency-audit', ['npm','audit','--json'],240),
