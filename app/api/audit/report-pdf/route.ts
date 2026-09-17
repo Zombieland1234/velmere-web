@@ -18,6 +18,10 @@ export async function GET(request: NextRequest) {
     const input = Object.fromEntries(Object.entries(exact.values).filter(([key, value]) => !["entitlementId", "disposition"].includes(key) && value !== null));
     const prepared = await prepareCustomerReport(request, input);
     const { report, tier } = prepared;
+    if (report.runtimeAnalysis?.status === "ANALYSIS_UNAVAILABLE") {
+      await prepared.authorizeDelivery();
+      return json(503, { ok: false, error: "runtime_analysis_unavailable", analysis: report.runtimeAnalysis });
+    }
     const { pdfBytes, pdfDigest } = renderCanonicalReportToPdf(report);
     const delivery = buildExactCustomerPdfDelivery({ pdfBytes, expectedPdfSha256: pdfDigest,
       disposition: exact.values.disposition === "preview" ? "inline" : "attachment",

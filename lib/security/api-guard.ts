@@ -1,3 +1,4 @@
+import { resolveSignedProxyAddress } from "./signed-proxy-identity";
 import { ASCII_CONTROL_PATTERN } from "./ascii-control-characters";
 
 import {
@@ -28,6 +29,8 @@ export type ApiGuardOptions = {
   /** Legacy aliases used by historical PASS API routes. */
   key?: string;
   bucket?: string;
+  /** Server-defined shared quota path; never read this from request input. */
+  quotaPath?: string;
 };
 
 const TRUSTED_ORIGIN_PROTOCOLS = new Set(["http:", "https:"]);
@@ -75,7 +78,8 @@ export function isDurableRateLimitRequired() {
 }
 
 export function hasDurableRateLimitSignal() {
-  return inspectDurableRateLimitRuntime().upstashConfigured;
+  const runtime = inspectDurableRateLimitRuntime();
+  return runtime.upstashConfigured || runtime.redisConfigured;
 }
 
 export function resolveRateLimitRuntimeMode() {
@@ -130,11 +134,13 @@ export const PASS36_A75_TRUSTED_REQUEST_CLIENT_IDENTITY_BOUNDARY_ID = "velmere.p
 export type TrustedClientAddressResolution = {
   address: string | null;
   trusted: boolean;
-  profile: "nonproduction_compat" | "vercel" | "untrusted";
-  source: "x-vercel-forwarded-for" | "x-forwarded-for" | "x-real-ip" | "none";
+  profile: "nonproduction_compat" | "vercel" | "signed_proxy" | "untrusted";
+  source: "x-vercel-forwarded-for" | "x-forwarded-for" | "x-real-ip" | "x-velmere-proxy-address" | "none";
   reason:
     | "nonproduction_compatibility"
     | "verified_vercel_profile"
+    | "verified_signed_proxy"
+    | "signed_proxy_assertion_invalid"
     | "trusted_header_missing_or_invalid"
     | "trusted_proxy_profile_missing_or_unverified";
 };
@@ -247,6 +253,12 @@ export function resolveTrustedClientAddress(
   }
 
   const profile = env.VELMERE_TRUSTED_PROXY_PROFILE?.trim().toLowerCase();
+  if (profile === "signed_proxy") {
+    const raw = resolveSignedProxyAddress(request, env);
+    const address = raw ? normalizedIp(raw) : null;
+    return { address, trusted: Boolean(address), profile: "signed_proxy", source: address ? "x-velmere-proxy-address" : "none",
+      reason: address ? "verified_signed_proxy" : "signed_proxy_assertion_invalid" };
+  }
   const verifiedVercelProfile =
     profile === "vercel" &&
     env.VERCEL === "1" &&
@@ -461,7 +473,7 @@ export async function applyApiRateLimit(request: Request, options: ApiGuardOptio
   const windowMs = Math.max(1_000, options.windowMs ?? DEFAULT_WINDOW_MS);
   const decision = await applyDurableRateLimit({
     namespace: `velmere-api-guard:${keyPrefix}`,
-    key: `${new URL(request.url).pathname}:${trustedClient.durableClientKey}`,
+    key: `${options.quotaPath ?? new URL(request.url).pathname}:${trustedClient.durableClientKey}`,
     limit,
     windowMs,
   });
