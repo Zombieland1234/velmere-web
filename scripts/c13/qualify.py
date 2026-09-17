@@ -5,19 +5,19 @@ out=Path('/tmp/c13-evidence');out.mkdir(parents=True,exist_ok=True)
 sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
 assert sha==os.environ['GITHUB_SHA'],'Trigger SHA and qualified source must match'
 os.environ['C6_SOURCE_SHA']=sha
+os.environ['C13_CONFIG_EVIDENCE_DIR']=str(out)
 old_tests=['scripts/c6/route-boundaries.test.ts','scripts/c6/provider-engine-boundaries.test.ts','scripts/c6c/actual-app-regressions.test.ts','scripts/c6d/rpc-pdf-boundaries.test.ts','scripts/c6e/pdf-evidence-boundary.test.ts','scripts/c7/engine-integrity.test.ts']
 c10_tests=[str(p) for p in sorted(Path('scripts/c10').glob('*.test.ts'))]
 assert len(c10_tests)==3
 new_tests=['scripts/c8/request-boundaries.test.ts','scripts/c8/webhook-ingress.test.ts','scripts/c8/edge-boundary.test.ts','scripts/c9/engine-boundaries.test.ts','scripts/c9/engine-claims.test.ts','scripts/c9/customer-report-regressions.test.ts',*c10_tests]
 c12_tests=['scripts/c12/production-boundaries.test.ts','scripts/c12/unavailable-report.test.ts','scripts/c12/host-normalization.test.ts']
-c13_tests=["scripts/c13/source-boundary.test.ts"]
+c13_tests=["scripts/c13/source-boundary.test.ts", "scripts/c13/config-preflight.test.ts"]
 checks=[
  ('clean-install',['npm','ci','--ignore-scripts','--no-fund'],600),
  ('c13-focused-regressions',['node_modules/.bin/tsx','--test',*c13_tests],240),
  ('c13-test-typescript',['node_modules/.bin/tsc','-p','tsconfig.c13-tests.json','--pretty','false'],480),
  ('c13-source-boundary-before-after',['node','scripts/c13/source-boundary-replay.mjs',str(out)],180),
  ('worker-build',['npm','run','build:audit-worker'],180),
- ('c12-production-config-preflight',['env','NODE_ENV=production','node_modules/.bin/tsx','scripts/c12/config-preflight.ts'],30),
  ('c11-response-reproductions',['node_modules/.bin/tsx','scripts/c12/baseline-replay.ts',str(out)],180),
  ('c12-focused-regressions',['node_modules/.bin/tsx','--test',*c12_tests],240),
  ('c12-typescript',['node_modules/.bin/tsc','-p','tsconfig.c12-tests.json','--pretty','false'],480),
