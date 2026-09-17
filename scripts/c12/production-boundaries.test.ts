@@ -47,9 +47,9 @@ test('production local memory cannot replace Redis or bypass durable storage',t=
  assert.equal(inspectDurableRateLimitRuntime().mode,'unavailable');assert.equal(applySoftRateLimit(req({})).ok,false);
 });
 test('native Redis must be explicitly selected and remote plaintext is prohibited',()=>{
- assert.equal(inspectNativeRedisConfig({REDIS_URL:'redis://localhost:6379'}).configured,false);
- for(const url of ['redis://remote.example:6379','https://localhost','rediss://remote.example/100','rediss://remote.example?x=1'])assert.equal(inspectNativeRedisConfig({VELMERE_RATE_LIMIT_BACKEND:'redis',REDIS_URL:url}).configured,false);
- for(const url of ['redis://127.0.0.1:6379/0','redis://[::1]:6379','rediss://user:password@redis.example:6380/1'])assert.equal(inspectNativeRedisConfig({VELMERE_RATE_LIMIT_BACKEND:'redis',REDIS_URL:url}).configured,true);
+ assert.equal(inspectNativeRedisConfig({NODE_ENV:'production',REDIS_URL:'redis://localhost:6379'}).configured,false);
+ for(const url of ['redis://remote.example:6379','https://localhost','rediss://remote.example/100','rediss://remote.example?x=1'])assert.equal(inspectNativeRedisConfig({NODE_ENV:'production',VELMERE_RATE_LIMIT_BACKEND:'redis',REDIS_URL:url}).configured,false);
+ for(const url of ['redis://127.0.0.1:6379/0','redis://[::1]:6379','rediss://user:password@redis.example:6380/1'])assert.equal(inspectNativeRedisConfig({NODE_ENV:'production',VELMERE_RATE_LIMIT_BACKEND:'redis',REDIS_URL:url}).configured,true);
 });
 test('misconfigured selected Redis cannot silently fall back to available Upstash or memory',()=>{
  assert.equal(inspectDurableRateLimitRuntime({...env,VELMERE_RATE_LIMIT_BACKEND:'redis',REDIS_URL:'redis://remote.invalid',UPSTASH_REDIS_REST_URL:'https://database.upstash.io',UPSTASH_REDIS_REST_TOKEN:'fixture'}).mode,'unavailable');
