@@ -1,0 +1,289 @@
+diff --git a/lib/security/solidity-structured-signal.mjs b/lib/security/solidity-structured-signal.mjs
+index dbf6c80..b39f376 100644
+--- a/lib/security/solidity-structured-signal.mjs
++++ b/lib/security/solidity-structured-signal.mjs
+@@ -309,9 +309,7 @@ function stateEffectRows(body, stateVariables) {
+   return rows.filter((row) => row.index >= 0).sort((a, b) => a.index - b.index);
+ }
+ 
+-function hasReentrancyGuard(fn) {
+-  if (/\b(?:nonReentrant|noReentrancy|reentrancyGuard|mutex|lockGuard)\b/i.test(fn.tail)) return true;
+-  const body = fn.body;
++function guardSemantics(body) {
+   const guardCheck = /\b(?:require|assert)\s*\([^)]*(?:locked|_locked|entered|_entered|_status)[^)]*\)/i.test(body);
+   const guardEnter = /\b(?:locked|_locked|entered|_entered|_status)\s*=\s*(?:true|1|_ENTERED)\b/i.test(body);
+   const guardExit = /\b(?:locked|_locked|entered|_entered|_status)\s*=\s*(?:false|0|_NOT_ENTERED)\b/i.test(body);
+@@ -322,12 +320,23 @@ function modifierIsUsed(fn, modifierName) {
+   return new RegExp(`(?:^|\\s)${modifierName}(?:\\s*\\([^)]*\\))?(?:\\s|$)`).test(fn.tail);
+ }
+ 
++function hasReentrancyGuard(fn, modifiers = []) {
++  // A modifier name is never proof of mutex semantics. Suppression requires
++  // an actual check/enter/exit sequence in the function or in a locally
++  // defined modifier that the function really uses.
++  if (guardSemantics(fn.body)) return true;
++  return modifiers
++    .filter((modifier) => modifier.contractName === fn.contractName && modifierIsUsed(fn, modifier.name))
++    .some((modifier) => guardSemantics(modifier.body));
++}
++
+ export function analyzeReentrancyGuardCoverage(source) {
+   const preserved = stripCommentsAndStrings(source).replace(/\r\n?/g, "\n");
+   const version = versionTuple(source);
+   const legacyDefaultPublic = versionLessThan(version, 0, 5, 0);
+   const contracts = extractContracts(preserved);
+   const functions = contracts.flatMap((contract) => extractFunctions(contract, preserved, legacyDefaultPublic));
++  const modifiers = contracts.flatMap((contract) => extractModifiers(contract, preserved));
+   const stateVariablesByContract = new Map(contracts.map((contract) => [contract.name, extractStateVariables(contract)]));
+   const rows = [];
+ 
+@@ -345,7 +354,7 @@ export function analyzeReentrancyGuardCoverage(source) {
+       contractName: fn.contractName,
+       functionName: fn.name || "<fallback>",
+       line: fn.line,
+-      guarded: hasReentrancyGuard(fn),
++      guarded: hasReentrancyGuard(fn, modifiers),
+       interactionKind: firstInteraction.kind,
+       effectKind: postInteractionEffect.kind,
+     });
+@@ -401,7 +410,7 @@ export function analyzeSolidityStructuredSignals(source) {
+     const postInteractionEffect = firstInteraction
+       ? effects.find((effect) => effect.index > firstInteraction.index)
+       : null;
+-    if (firstInteraction && postInteractionEffect && !hasReentrancyGuard(fn)) {
++    if (firstInteraction && postInteractionEffect && !hasReentrancyGuard(fn, modifiers)) {
+       addSignal(signals, "reentrancy_order", {
+         category: "reentrancy",
+         line,
+@@ -410,7 +419,7 @@ export function analyzeSolidityStructuredSignals(source) {
+       });
+     }
+ 
+-    if (!hasReentrancyGuard(fn) && effects.length > 0) {
++    if (!hasReentrancyGuard(fn, modifiers) && effects.length > 0) {
+       const contractModifiers = modifiers.filter((modifier) => modifier.contractName === fn.contractName);
+       for (const modifier of contractModifiers) {
+         if (!modifierIsUsed(fn, modifier.name)) continue;
+diff --git a/lib/security/v2/defi-economic-attack-engine.ts b/lib/security/v2/defi-economic-attack-engine.ts
+index 009c9ad..ff15d70 100644
+--- a/lib/security/v2/defi-economic-attack-engine.ts
++++ b/lib/security/v2/defi-economic-attack-engine.ts
+@@ -321,54 +321,64 @@ export function simulateDefiEconomicAttacks(
+     cleanSource.includes("receiveFlashLoan");
+ 
+   if (hasFlashLoanCallback) {
+-    // Check if source has sender verification patterns
+-    const hasCallerVerification =
+-      cleanSource.includes("msg.sender") &&
+-      (cleanSource.includes("==") || cleanSource.includes("require(")) &&
+-      (cleanSource.includes("POOL") || cleanSource.includes("lender") || cleanSource.includes("vault"));
++    const hasInitiatorCheck =
++      cleanSource.includes("initiator == address(this)") ||
++      cleanSource.includes("msg.sender == address(pool)") ||
++      cleanSource.includes("msg.sender == pool") ||
++      cleanSource.includes("msg.sender == lender") ||
++      cleanSource.includes("onlyPool") ||
++      cleanSource.includes("onlyLender");
+ 
+-    if (!hasCallerVerification) {
++    if (!hasInitiatorCheck) {
+       findings.push({
+         findingId: "VLM-SEC-DEFI-FLASH-CALLBACK-01",
+-        title: "Flash-Loan Callback Lacks Caller Authorization",
++        claimState: "HEURISTIC_CANDIDATE",
++        analysisMethod: "SIMULATION",
++        limitations: ["Callback/caller checks are source/selector heuristics; no malicious flash-loan execution was performed."],
++        title: "Heuristic candidate: flash-loan callback authorization gap",
+         severity: "critical",
+-        confidence: "high",
+-        exploitability: "proof-of-concept",
+-        impact: "Arbitrary callers can invoke the flash-loan callback directly with crafted parameters to execute privileged logic, drain pre-funded balances, or manipulate protocol accounting without repaying any flash loan.",
++        confidence: "medium",
++        exploitability: "theoretical",
++        impact:
++          "If the reachable callback lacks equivalent lender/initiator authorization, arbitrary invocation can create fee or execution risk. The bounded source/selector check does not prove an exploitable callback path.",
+         likelihood: "high",
+         taxonomy: {
+           swcId: "SWC-105",
+           cweId: "CWE-284",
+           eeaSvsLevel: "S",
+-          owaspScsvsCategory: "S2: Access Control",
++          owaspScsvsCategory: "G5: Access Control and Authentication",
+         },
+         affectedContract: contractAddress,
+-        affectedFunction: selectorsDiscovered.has(onFlashLoanSelector) ? "onFlashLoan(address,address,uint256,uint256,bytes)" : "executeOperation(address[],uint256[],uint256[],address,bytes)",
++        affectedFunction: "onFlashLoan / executeOperation callback",
+         bytecodeOffset: { pcStart: 0, pcEnd: 64 },
+-        executionPath: ["External call to flash-loan callback", "No msg.sender validation", "Privileged token operation"],
++        executionPath: ["External Flash Loan initiation", "Callback triggered", "Missing caller/initiator guard", "Repayment fee deducted"],
+         stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
+-        attackScenario: "Attacker calls callback function directly without going through the authorized lender. Contract processes arbitrary parameters and may transfer pre-funded tokens to attacker.",
++        attackScenario:
++          "UNEXECUTED hypothesis: attempt an unauthorized lender/initiator callback against the deployed target and verify whether caller checks, state transitions and repayment approvals permit loss.",
+         proofOfConcept: {
+-          summary: "Direct unauthorized callback invocation",
++          summary: "Arbitrary attacker triggers flash loan on victim receiver, draining balance via flash loan fees.",
+           sequence: [
+-            { step: 1, actor: "Attacker", call: "target.onFlashLoan(attacker, token, balance, 0, maliciousData)", expectation: "Callback accepts unauthorized caller" },
+-            { step: 2, actor: "Target", call: "Privileged token operation", expectation: "Pre-funded balance at risk" },
+-          ],
++            { step: 1, actor: "Attacker", call: "flashLender.flashLoan(victim, token, amount, '')", expectation: "Callback invoked on victim" },
++            { step: 2, actor: "Victim Contract", call: "onFlashLoan(attacker, token, amount, fee, '')", expectation: "Executes without revert due to missing auth" },
++            { step: 3, actor: "Flash Lender", call: "token.transferFrom(victim, lender, amount + fee)", expectation: "Victim funds drained" }
++          ]
+         },
+         evidence: {
+-          opcodeTraceExcerpt: `${hasFlashLoanCallback ? "Flash callback selector detected" : ""}: ${onFlashLoanSelector}/${executeOperationSelector}`,
+-          disassemblyContext: "Source analysis: no msg.sender == lender/POOL verification detected",
+-          hashProof: evidenceSha256(`flash-callback-${contractAddress}`),
++          opcodeTraceExcerpt: "Flash-loan callback selector/source token observed; executed caller-check path not proved",
++          disassemblyContext: "No recognized caller/initiator check in the bounded source heuristic; equivalent guards and bytecode reachability are not excluded.",
++          hashProof: evidenceSha256(`${contractAddress}:FLASH_CALLBACK_AUTH`)
+         },
+         remediation: {
+-          strategy: "Validate msg.sender against the expected lending pool/lender in the flash-loan callback before processing any parameters.",
+-          solidityPatchDiff: `--- a/contracts/FlashLoanReceiver.sol
+-+++ b/contracts/FlashLoanReceiver.sol
+-@@ -5,3 +5,4 @@
+-     function onFlashLoan(...) external returns (bytes32) {
+-+        require(msg.sender == address(lender), "Unauthorized lender");`,
++          strategy: "Enforce strict caller and initiator checks in flash loan callback: require(msg.sender == address(lender), 'Unauthorized lender'); require(initiator == address(this), 'Untrusted loan initiator');",
++          solidityPatchDiff: `@@ -1,5 +1,7 @@
++ function onFlashLoan(address initiator, address token, uint amount, uint fee, bytes calldata data) external returns (bytes32) {
+++    require(msg.sender == address(lender), "Untrusted lender");
+++    require(initiator == address(this), "Untrusted initiator");
++     // Callback logic
++     return keccak256("ERC3156FlashBorrower.onFlashLoan");
++ }`
+         },
+-        verificationState: "STATIC_PROVEN",
++        verificationState: "SIMULATED"
+       });
+     }
+   }
+diff --git a/lib/security/v2/finding-claim-integrity.ts b/lib/security/v2/finding-claim-integrity.ts
+new file mode 100644
+index 0000000..d8cb1dc
+--- /dev/null
++++ b/lib/security/v2/finding-claim-integrity.ts
+@@ -0,0 +1,21 @@
++import type { StandardFindingV2 } from "./types";
++
++const UNEXECUTED_LIMITATION =
++  "No target exploit execution was performed by Full V2; static/heuristic evidence must not be presented as an active exploit.";
++
++/** Fail closed on exploit-status language at the final Full V2 boundary. */
++export function enforceFindingClaimIntegrity(findings: StandardFindingV2[]): void {
++  for (const finding of findings) {
++    if (finding.exploitability !== "active_exploit") continue;
++    finding.claimState = "HEURISTIC_CANDIDATE";
++    finding.exploitability = "theoretical";
++    if (finding.confidence === "certain") finding.confidence = "high";
++    finding.limitations = Array.from(new Set([...(finding.limitations ?? []), UNEXECUTED_LIMITATION]));
++    if (!finding.title.startsWith("Heuristic candidate:")) finding.title = `Heuristic candidate: ${finding.title}`;
++    if (!finding.impact.startsWith("POTENTIAL IMPACT IF CONFIRMED:")) finding.impact = `POTENTIAL IMPACT IF CONFIRMED: ${finding.impact}`;
++    if (!finding.attackScenario.startsWith("UNEXECUTED HYPOTHESIS:")) finding.attackScenario = `UNEXECUTED HYPOTHESIS: ${finding.attackScenario}`;
++    if (!finding.proofOfConcept.summary.startsWith("UNEXECUTED HYPOTHESIS:")) {
++      finding.proofOfConcept.summary = `UNEXECUTED HYPOTHESIS: ${finding.proofOfConcept.summary}`;
++    }
++  }
++}
+diff --git a/lib/security/v2/master-audit-orchestrator.ts b/lib/security/v2/master-audit-orchestrator.ts
+index d8c3cd9..4919761 100644
+--- a/lib/security/v2/master-audit-orchestrator.ts
++++ b/lib/security/v2/master-audit-orchestrator.ts
+@@ -33,6 +33,7 @@ import { executeBoundedSymbolicAnalysis } from "./symbolic-formal-engine";
+ import { validateRemediationPatch } from "./patch-validation-engine";
+ import { computeMultiDimensionalScores, generateAuditSnapshotId } from "./scoring-and-evidence-engine";
+ import { fuseStructuredSourceCandidates } from "./structured-source-fusion";
++import { enforceFindingClaimIntegrity } from "./finding-claim-integrity";
+ 
+ export interface AuditExecutionOptions {
+   contractAddress: string;
+@@ -101,6 +102,10 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
+   // risk scoring until correlated with compiler/bytecode/execution evidence.
+   findings.push(...fuseStructuredSourceCandidates(options.contractAddress, options.sourceCode));
+ 
++  // Full V2 currently does not execute a target exploit. Normalize legacy
++  // active-exploit metadata before scoring, reports or exports can consume it.
++  enforceFindingClaimIntegrity(findings);
++
+   const detectorsMs = Math.round(performance.now() - tDetStart);
+ 
+   // Step 4: Run synthetic balance-model fuzzing & invariants (not target-bytecode fuzzing)
+diff --git a/scripts/c7/engine-integrity.test.ts b/scripts/c7/engine-integrity.test.ts
+index cfd1c34..6df1a8b 100644
+--- a/scripts/c7/engine-integrity.test.ts
++++ b/scripts/c7/engine-integrity.test.ts
+@@ -5,6 +5,8 @@ import { executeFullAuditV2 } from '../../lib/security/v2/master-audit-orchestra
+ import { computeMultiDimensionalScores, generateAuditSnapshotId } from '../../lib/security/v2/scoring-and-evidence-engine';
+ import { fuseStructuredSourceCandidates } from '../../lib/security/v2/structured-source-fusion';
+ import { analyzeReentrancyGuardCoverage } from '../../lib/security/solidity-structured-signal.mjs';
++import { disassembleBytecode, buildControlFlowGraph } from '../../lib/security/v2/evm-cfg-dataflow-engine';
++import { analyzeSolidityEvmEdgeCases } from '../../lib/security/v2/solidity-evm-edge-case-engine';
+ 
+ const PRE='// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n';
+ const ADDRESS='0x00000000000000000000000000000000000000c7';
+@@ -14,7 +16,7 @@ function compile(source:string, contractName:string):string {
+     language:'Solidity',sources:{'Case.sol':{content:source}},
+     settings:{optimizer:{enabled:false},outputSelection:{'*':{'*':['evm.deployedBytecode.object']}}}
+   })));
+-  const errors=(compiled.errors??[]).filter((e:any)=>e.severity==='error');
++  const errors=(compiled.errors??[]).filter((e:{severity?:string})=>e.severity==='error');
+   assert.equal(errors.length,0,JSON.stringify(errors));
+   const object=compiled.contracts['Case.sol'][contractName].evm.deployedBytecode.object;
+   return '0x'+object;
+@@ -138,3 +140,53 @@ test('all V2 finding evidence hashes emitted in a compiled unsafe case are real
+   assert.ok(r.findings.length>0);
+   for(const f of r.findings) assert.match(f.evidence.hashProof,/^sha256:[a-f0-9]{64}$/,f.findingId);
+ });
++
++test('a modifier name alone never suppresses reentrancy without check-enter-exit semantics',()=>{
++  const fakeGuard=PRE+'contract Case { modifier nonReentrant(){_;} mapping(address=>uint) b; function w() external nonReentrant { uint x=b[msg.sender]; (bool ok,)=msg.sender.call{value:x}(""); require(ok); b[msg.sender]=0; } }';
++  const coverage=analyzeReentrancyGuardCoverage(fakeGuard);
++  assert.equal(coverage.allSupportedPathsGuarded,false);
++  assert.equal(coverage.unguardedPaths,1);
++  const r=audit(fakeGuard,compile(fakeGuard,'Case'));
++  assert.equal(r.findings.some(f=>f.findingId==='VLM-SEC-REENTRANCY-01'),true);
++});
++
++test('final Full V2 output cannot label an unexecuted detector result active_exploit',()=>{
++  const source=PRE+'contract Case { address owner; constructor(){owner=msg.sender;} function take(address payable to) external { require(tx.origin==owner); to.transfer(address(this).balance); } receive() external payable {} }';
++  const r=audit(source,compile(source,'Case'));
++  const candidates=r.findings.filter(f=>f.findingId==='VLM-SEC-AUTH-TXORIGIN-01');
++  assert.ok(candidates.length>0);
++  assert.ok(candidates.every(f=>f.exploitability!=='active_exploit'));
++  assert.ok(candidates.every(f=>f.claimState==='HEURISTIC_CANDIDATE'));
++  assert.ok(candidates.every(f=>(f.limitations??[]).some(x=>x.includes('No target exploit execution'))));
++});
++
++test('permit surface is not treated as proof of raw ecrecover malleability',()=>{
++  const source=PRE+'contract Case { function permit(address,address,uint,uint,uint8,bytes32,bytes32) external {} }';
++  const bytecode=compile(source,'Case');
++  const cfg=buildControlFlowGraph(disassembleBytecode(bytecode).instructions);
++  const edge=analyzeSolidityEvmEdgeCases(ADDRESS,cfg,source);
++  assert.equal(edge.findings.some(f=>f.findingId==='VLM-SEC-CRYPTO-SIGNATURE-MALLEABILITY-01'),false);
++});
++
++test('raw ecrecover and SELFDESTRUCT are review candidates rather than executed exploits',()=>{
++  const source=PRE+'contract Case { function recover(bytes32 h,uint8 v,bytes32 r,bytes32 s) external pure returns(address){return ecrecover(h,v,r,s);} function destroy(address payable to) external { selfdestruct(to); } }';
++  const bytecode=compile(source,'Case');
++  const cfg=buildControlFlowGraph(disassembleBytecode(bytecode).instructions);
++  const edge=analyzeSolidityEvmEdgeCases(ADDRESS,cfg,source);
++  const crypto=edge.findings.find(f=>f.findingId==='VLM-SEC-CRYPTO-SIGNATURE-MALLEABILITY-01');
++  const destruct=edge.findings.find(f=>f.findingId==='VLM-SEC-EVM-SELFDESTRUCT-02');
++  assert.ok(crypto); assert.equal(crypto?.claimState,'HEURISTIC_CANDIDATE'); assert.equal(crypto?.exploitability,'theoretical');
++  assert.ok(destruct); assert.equal(destruct?.claimState,'HEURISTIC_CANDIDATE'); assert.equal(destruct?.exploitability,'theoretical');
++  assert.equal(edge.hasUnprotectedSelfdestruct,false);
++  assert.ok((destruct?.limitations??[]).some(x=>x.includes('EIP-6780')));
++});
++
++test('flash-loan callback heuristic stays bounded and does not claim static proof',()=>{
++  const source=PRE+'contract Case { function onFlashLoan(address,address,uint256,uint256,bytes calldata) external pure returns(bytes32){ return bytes32(0); } }';
++  const r=audit(source,compile(source,'Case'));
++  const f=r.findings.find(x=>x.findingId==='VLM-SEC-DEFI-FLASH-CALLBACK-01');
++  assert.ok(f);
++  assert.equal(f?.claimState,'HEURISTIC_CANDIDATE');
++  assert.equal(f?.exploitability,'theoretical');
++  assert.equal(f?.verificationState,'SIMULATED');
++});
