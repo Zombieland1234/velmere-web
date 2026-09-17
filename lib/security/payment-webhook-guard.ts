@@ -5,7 +5,7 @@ export type PaymentGuardDecision =
   | { ok: false; response: NextResponse };
 
 function jsonError(message: string, status: number, details?: unknown) {
-  return NextResponse.json({ error: message, details }, { status });
+  return NextResponse.json({ error: message, details }, { status, headers: { "cache-control": "no-store", "x-content-type-options": "nosniff" } });
 }
 
 function contentLength(request: Request) {
@@ -104,11 +104,15 @@ export function validateStripeWebhookBoundary(request: Request): PaymentGuardDec
 }
 
 export const paymentWebhookGuardReadiness = {
-  schemaVersion: "velmere-payment-webhook-guard-v3",
+  schemaVersion: "velmere-payment-webhook-guard-v4",
   checkoutMaxBytes: 64_000,
   webhookMaxBytes: 1_000_000,
   signatureHeaderMaxBytes: 2_500,
   streamingLimitEnforced: true,
+  bodyReadDeadlineMs: 10_000,
+  requestAbortEnforced: true,
+  cancellationDoesNotBlockResponse: true,
+  nonFiniteJsonNumbersRejected: true,
   strictJsonObjectBoundary: true,
   duplicateJsonKeysRejected: true,
   dangerousJsonKeysRejected: true,
@@ -120,90 +124,113 @@ export type BoundedBodyBytesResult =
   | { ok: true; bytes: Uint8Array; byteLength: number }
   | { ok: false; response: NextResponse };
 
+export type BoundedBodyReadOptions = {
+  /** Total body-read budget, not a per-chunk timeout. Maximum 30 seconds. */
+  maxDurationMs?: number;
+};
+
 export async function readBoundedBodyBytes(
   request: Request,
   maxBytes: number,
+  options: BoundedBodyReadOptions = {},
 ): Promise<BoundedBodyBytesResult> {
   if (!Number.isSafeInteger(maxBytes) || maxBytes < 0) {
     throw new RangeError("maxBytes must be a non-negative safe integer");
   }
-
+  const maxDurationMs = options.maxDurationMs ?? 10_000;
+  if (!Number.isSafeInteger(maxDurationMs) || maxDurationMs < 1 || maxDurationMs > 30_000) {
+    throw new RangeError("maxDurationMs must be an integer from 1 to 30000");
+  }
   const declaredLength = contentLength(request);
   if (!declaredLength.valid || hasAmbiguousTransferFraming(request)) {
-    return {
-      ok: false,
-      response: jsonError("Request framing is ambiguous.", 400),
-    };
+    return { ok: false, response: jsonError("Request framing is ambiguous.", 400) };
   }
   if (declaredLength.value > maxBytes) {
-    return {
-      ok: false,
-      response: jsonError("Request payload is too large.", 413, {
-        maxBytes,
-        declaredBytes: declaredLength.value,
-      }),
-    };
+    return { ok: false, response: jsonError("Request payload is too large.", 413, {
+      maxBytes, declaredBytes: declaredLength.value,
+    }) };
   }
-
+  if (request.signal.aborted) {
+    return { ok: false, response: jsonError("Request was aborted.", 400) };
+  }
   if (!request.body) {
     if (declaredLength.present && declaredLength.value !== 0) {
       return { ok: false, response: jsonError("Content-Length does not match request body.", 400) };
     }
     return { ok: true, bytes: new Uint8Array(0), byteLength: 0 };
   }
+  let reader: ReadableStreamDefaultReader<Uint8Array>;
+  try { reader = request.body.getReader(); }
+  catch { return { ok: false, response: jsonError("Unable to read request body.", 400) }; }
 
-  const reader = request.body.getReader();
-  const chunks: Uint8Array[] = [];
+  const deadline = performance.now() + maxDurationMs;
+  let timedOut = false;
+  // Only the current read has an interrupt handler. Racing every chunk against
+  // one never-settled Promise would retain one listener per chunk until expiry.
+  let interruptRead: ((error: Error) => void) | undefined;
+  const timer = setTimeout(() => {
+    timedOut = true;
+    interruptRead?.(new Error("body_read_timeout"));
+  }, maxDurationMs);
+  const onAbort = () => interruptRead?.(new Error("body_read_aborted"));
+  request.signal.addEventListener("abort", onAbort, { once: true });
+  // A producer's cancellation hook can fail or never settle. It must not hold
+  // the response open after a size/time/abort rejection.
+  const cancel = (reason: string) => { void reader.cancel(reason).catch(() => undefined); };
+  let storage = new Uint8Array(0);
   let byteLength = 0;
-
   try {
     while (true) {
-      const { done, value } = await reader.read();
+      if (request.signal.aborted) throw new Error("body_read_aborted");
+      if (performance.now() >= deadline) { timedOut = true; throw new Error("body_read_timeout"); }
+      const { done, value } = await new Promise<ReadableStreamReadResult<Uint8Array>>((resolve, reject) => {
+        interruptRead = reject;
+        void reader.read().then(resolve, reject);
+      });
+      interruptRead = undefined;
+      if (request.signal.aborted) throw new Error("body_read_aborted");
+      if (performance.now() >= deadline) { timedOut = true; throw new Error("body_read_timeout"); }
       if (done) break;
       if (!value) continue;
       if (!(value instanceof Uint8Array)) {
-        await reader.cancel("payload_chunk_type_invalid").catch(() => undefined);
+        cancel("payload_chunk_type_invalid");
         return { ok: false, response: jsonError("Unable to read request body.", 400) };
       }
-
-      byteLength += value.byteLength;
-      if (byteLength > maxBytes) {
-        await reader.cancel("payload_limit_exceeded").catch(() => undefined);
-        return {
-          ok: false,
-          response: jsonError("Request payload is too large.", 413, {
-            maxBytes,
-            actualBytesAtAbort: byteLength,
-          }),
-        };
+      if (value.byteLength > maxBytes - byteLength) {
+        cancel("payload_limit_exceeded");
+        return { ok: false, response: jsonError("Request payload is too large.", 413, {
+          maxBytes, actualBytesAtAbort: byteLength + value.byteLength,
+        }) };
       }
-      chunks.push(value);
+      const needed = byteLength + value.byteLength;
+      if (needed > storage.byteLength) {
+        const capacity = Math.min(maxBytes, Math.max(needed, 8192, storage.byteLength * 2));
+        const next = new Uint8Array(capacity);
+        next.set(storage.subarray(0, byteLength));
+        storage = next;
+      }
+      // Snapshot every delivered chunk before the producer can reuse its buffer.
+      storage.set(value, byteLength);
+      byteLength = needed;
     }
   } catch {
-    await reader.cancel("payload_read_failed").catch(() => undefined);
-    return { ok: false, response: jsonError("Unable to read request body.", 400) };
+    cancel(timedOut ? "payload_read_timeout" : request.signal.aborted ? "payload_read_aborted" : "payload_read_failed");
+    return { ok: false, response: jsonError(
+      timedOut ? "Request body read timed out." : request.signal.aborted ? "Request was aborted." : "Unable to read request body.",
+      timedOut ? 408 : 400,
+    ) };
   } finally {
+    interruptRead = undefined;
+    clearTimeout(timer);
+    request.signal.removeEventListener("abort", onAbort);
     reader.releaseLock();
   }
-
   if (declaredLength.present && declaredLength.value !== byteLength) {
-    return {
-      ok: false,
-      response: jsonError("Content-Length does not match request body.", 400, {
-        declaredBytes: declaredLength.value,
-        actualBytes: byteLength,
-      }),
-    };
+    return { ok: false, response: jsonError("Content-Length does not match request body.", 400, {
+      declaredBytes: declaredLength.value, actualBytes: byteLength,
+    }) };
   }
-
-  const bytes = new Uint8Array(byteLength);
-  let offset = 0;
-  for (const chunk of chunks) {
-    bytes.set(chunk, offset);
-    offset += chunk.byteLength;
-  }
-
-  return { ok: true, bytes, byteLength };
+  return { ok: true, bytes: storage.slice(0, byteLength), byteLength };
 }
 
 /**
@@ -378,7 +405,7 @@ function scanJsonObjectKeys(
   return issue;
 }
 
-export type StrictJsonBodyOptions = {
+export type StrictJsonBodyOptions = BoundedBodyReadOptions & {
   requireObject?: boolean;
   rejectDuplicateKeys?: boolean;
   rejectDangerousKeys?: boolean;
@@ -401,7 +428,7 @@ export async function readBoundedJsonBody<T>(
     };
   }
 
-  const body = await readBoundedBodyBytes(request, maxBytes);
+  const body = await readBoundedBodyBytes(request, maxBytes, options);
   if (!body.ok) return body;
 
   let raw: string;
@@ -413,7 +440,10 @@ export async function readBoundedJsonBody<T>(
 
   let value: unknown;
   try {
-    value = JSON.parse(raw);
+    value = JSON.parse(raw, (_key, item: unknown) => {
+      if (typeof item === "number" && !Number.isFinite(item)) throw new Error("non_finite_json_number");
+      return item;
+    });
   } catch {
     return { ok: false, response: jsonError("Invalid JSON payload.", 400) };
   }

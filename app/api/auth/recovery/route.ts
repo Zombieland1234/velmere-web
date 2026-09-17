@@ -7,7 +7,7 @@ import { appendSetCookieHeaders, buildClearedSupabaseAuthCookieHeaders } from "@
 import { scheduleAuthSecurityEvent } from "@/lib/auth/auth-security-observability";
 import { applyApiRateLimit, assertSameOriginRequest, rejectLargeContentLength } from "@/lib/security/api-guard";
 import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
-import { isProductionLikeEnvironment, validateExactObjectKeys } from "@/lib/security/exact-request-boundary";
+import { isProductionLikeEnvironment, validateExactObjectKeys, validateOptionalStringFields } from "@/lib/security/exact-request-boundary";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,6 +25,7 @@ export async function POST(request: Request) {
   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4718-password-recovery-request", limit: 5, windowMs: 15 * 60_000 }); if (!rate.ok) return rate.response;
   const body = await readBoundedJsonBody<RequestPayload>(request, 8 * 1024, { maxDepth: 3 }); if (!body.ok) return body.response;
   const exactBody = validateExactObjectKeys(body.value, ["email", "locale"]); if (!exactBody.ok) return exactBody.response;
+  const fieldTypes = validateOptionalStringFields(body.value, ["email", "locale"]); if (!fieldTypes.ok) return fieldTypes.response;
   const email = body.value.email?.trim().toLowerCase() ?? "";
   if (!EMAIL.test(email) || email.length > 180) return NextResponse.json({ ok: false, error: "INVALID_RECOVERY_INPUT" }, { status: 400, headers: headers() });
   try {
@@ -45,6 +46,7 @@ export async function PUT(request: Request) {
   const rate = await applyApiRateLimit(request, { keyPrefix: "pass4718-password-recovery-update", limit: 5, windowMs: 15 * 60_000 }); if (!rate.ok) return rate.response;
   const body = await readBoundedJsonBody<UpdatePayload>(request, 8 * 1024, { maxDepth: 2 }); if (!body.ok) return body.response;
   const exactBody = validateExactObjectKeys(body.value, ["password"]); if (!exactBody.ok) return exactBody.response;
+  const fieldTypes = validateOptionalStringFields(body.value, ["password"]); if (!fieldTypes.ok) return fieldTypes.response;
   const password = body.value.password ?? "";
   if (password.length < 10 || password.length > 128) return NextResponse.json({ ok: false, error: "INVALID_NEW_PASSWORD" }, { status: 400, headers: headers() });
   try {

@@ -207,7 +207,7 @@ async function applyOrdering(
   }
 }
 
-export async function handleStripeWebhookRequest(
+async function processStripeWebhookRequest(
   req: Request,
   dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
 ) {
@@ -253,6 +253,15 @@ export async function handleStripeWebhookRequest(
         headers: dependencies.customerWebhookHeaders("invalid-signature-rejected"),
       },
     );
+  }
+
+  // The SDK authenticates bytes; it does not schema-validate arbitrary signed JSON.
+  if (!event || typeof event !== "object" || Array.isArray(event) ||
+      !event.data || typeof event.data !== "object" || Array.isArray(event.data) ||
+      !event.data.object || typeof event.data.object !== "object" || Array.isArray(event.data.object)) {
+    return NextResponse.json({ received: false, retryable: false, error: "stripe_event_payload_invalid" }, {
+      status: 400, headers: dependencies.customerWebhookHeaders("invalid-payload-rejected"),
+    });
   }
 
   const runtimeVerdict = dependencies.validateRuntimeEvent({
@@ -365,5 +374,22 @@ export async function handleStripeWebhookRequest(
         },
       },
     );
+  }
+}
+
+/** Keep infrastructure failures retryable, including those before dispatch. */
+export async function handleStripeWebhookRequest(
+  req: Request,
+  dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
+): Promise<Response> {
+  try {
+    return await processStripeWebhookRequest(req, dependencies);
+  } catch {
+    // Do not log request bodies, signatures, tokens or raw downstream errors.
+    console.error("[velmere.webhook] dependency_unavailable");
+    return NextResponse.json({ received: false, retryable: true, error: "webhook_temporarily_unavailable" }, {
+      status: 503,
+      headers: { "cache-control": "no-store", "x-content-type-options": "nosniff", "retry-after": "10" },
+    });
   }
 }

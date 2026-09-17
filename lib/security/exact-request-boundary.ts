@@ -30,6 +30,26 @@ export function validateExactObjectKeys(
   return { ok: true, keys: keys.sort() };
 }
 
+/** JSON type parameters are not runtime validation. Never coerce credentials. */
+export function validateOptionalStringFields(
+  value: Record<string, unknown>,
+  fields: readonly string[],
+): { ok: true } | { ok: false; response: Response } {
+  const invalid = fields.filter((field) =>
+    value[field] !== undefined && typeof value[field] !== "string",
+  );
+  if (invalid.length) {
+    return {
+      ok: false,
+      response: securityJson(
+        { ok: false, error: "invalid_body_field_type", fields: invalid.sort() },
+        { status: 400 },
+      ),
+    };
+  }
+  return { ok: true };
+}
+
 export type ExactSearchParamResult =
   | { ok: true; values: Readonly<Record<string, string | null>> }
   | { ok: false; response: Response; code: "unknown_query_parameter" | "duplicate_query_parameter" };
