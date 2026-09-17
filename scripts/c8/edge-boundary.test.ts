@@ -11,6 +11,7 @@ const candidate = readFileSync('supabase/functions/r7-shield-pro-paid-workspace-
 const baseline = candidate
   .replace('import { guardWorkspaceRequest } from "./request-boundary.ts";\n', '')
   .replace('const handleWorkspaceRequest = async(req:Request)=>{', 'Deno.serve(async(req:Request)=>{')
+  .replace('let raw:string;', 'let raw="";')
   .replace('};\nDeno.serve((req: Request) => guardWorkspaceRequest(req, handleWorkspaceRequest));\n', '});\n');
 const captureMeta = JSON.parse(readFileSync('supabase/functions/r7-shield-pro-paid-workspace-v1/SOURCE_CAPTURE.json', 'utf8'));
 assert.equal(createHash('sha256').update(baseline).digest('hex'), captureMeta.originalFileSha256);

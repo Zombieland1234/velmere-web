@@ -17,6 +17,6 @@ for(const [id,method,body,expected] of cases){
  }catch(error){item.result='ERROR';item.error=String(error?.message||error).slice(0,300);}
  item.finishedAt=new Date().toISOString();rows.push(item);
 }
-fs.writeFileSync(path.join(out,'EDGE_LIVE_PROBE.json'),JSON.stringify({sourceSha:process.env.GITHUB_SHA||null,functionSlug:'r7-shield-pro-paid-workspace-v1',expectedDeployedVersion:2,expectedBundleSha256:'6284ff1074df6c0cd471d85745e2890661c9a7c363a8212311198abc2d6934c0',rows},null,2));
+fs.writeFileSync(path.join(out,'EDGE_LIVE_PROBE.json'),JSON.stringify({sourceSha:process.env.GITHUB_SHA||null,functionSlug:'r7-shield-pro-paid-workspace-v1',expectedDeployedVersion:3,expectedBundleSha256:'56ed3a70982cd1a25120aeeefb0a68a94eca63992e95eb591fd9b7777d80d47e',rows},null,2));
 console.log(JSON.stringify(rows,null,2));
 if(rows.some(r=>r.result!=='PASS'))process.exitCode=1;
