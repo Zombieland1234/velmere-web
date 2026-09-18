@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import {
   blankPass464FundamentalQuality,
   buildPass464EquityQuality,
@@ -240,7 +241,27 @@ async function fetchAlphaVantage(
   if (!key) return {};
   const cacheKey = new URLSearchParams(params).toString();
   const now = Date.now();
-  const cached = pass460ResponseCache.get(cacheKey);
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "alpha_vantage",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: now,
+  });
+  if (!fetchRights.allowed) {
+    return attachFetchMeta({ Information: `provider_rights_${fetchRights.code.toLowerCase()}` }, {
+      cache: "miss",
+      quota: "guarded",
+      fetchedAt: null,
+    });
+  }
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "alpha_vantage",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: Math.max(30, revalidate),
+    nowMs: now,
+  });
+  const cached = cacheRights.allowed ? pass460ResponseCache.get(cacheKey) : undefined;
   if (cached && cached.expiresAt > now) {
     return attachFetchMeta(cached.payload, {
       cache: "hit",
@@ -273,14 +294,14 @@ async function fetchAlphaVantage(
             "user-agent": "Velmere-Provider-Truth/460",
           },
           signal: controller.signal,
-          next: { revalidate },
-        } as RequestInit & { next: { revalidate: number } },
+          ...(cacheRights.allowed ? { next: { revalidate } } : { cache: "no-store" as RequestCache }),
+        } as RequestInit & { next?: { revalidate: number } },
         { profile: "alpha_vantage", operation: "alpha_vantage_query", timeoutMs: 8_000, maxResponseBytes: 4_194_304 },
       );
       if (!response.ok) throw new Error(`alpha_vantage_${response.status}`);
       const payload = await readJsonResponseBounded<JsonObject>(response, 4_194_304);
       const failure = providerFailure(payload);
-      if (!failure) {
+      if (!failure && cacheRights.allowed) {
         pass460ResponseCache.set(cacheKey, {
           payload,
           expiresAt: now + Math.max(30, revalidate) * 1_000,
