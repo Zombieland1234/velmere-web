@@ -846,8 +846,21 @@ export function filterCanonicalReportByEntitlement(
     locale: report.locale,
   });
 
+  // Integrity must bind the customer-deliverable projection itself. The
+  // internal/full-report digest and attestation cannot be carried forward
+  // because locked sections have been removed or replaced by entitlement
+  // notices. Exclude both integrity fields from the hash core, then attest the
+  // newly projected digest.
+  const {
+    reportDigest: _internalReportDigest,
+    pkiAttestation: _internalPkiAttestation,
+    ...reportWithoutIntegrity
+  } = report;
+  void _internalReportDigest;
+  void _internalPkiAttestation;
+
   const filteredCore = {
-    ...report,
+    ...reportWithoutIntegrity,
     merkleRoot: commitment.merkleRoot,
     clientEntitlementTier: clientTier,
     verdict: {
@@ -856,10 +869,12 @@ export function filterCanonicalReportByEntitlement(
     },
     sections: filteredSections,
   };
+  const reportDigest = sha256Digest(canonicalJson(filteredCore));
 
   return {
     ...filteredCore,
-    reportDigest: sha256Digest(canonicalJson(filteredCore)),
+    reportDigest,
+    pkiAttestation: signReportWithPki(reportDigest, report.createdAt),
   };
 }
 
@@ -932,6 +947,10 @@ export function canonicalReportToPdfLines(
       `Limitations: ${r.limitations.join("; ")}`, `Acquisition/analysis error: ${r.errorCode ?? "none"}`, "");
   }
   lines.push(select("--- INTEGRALNOŚĆ PLIKU ---", "--- FILE INTEGRITY ---", "--- DATEIINTEGRITÄT ---"));
+  // Keep the detached document bound to the same canonical report model that
+  // JSON and SSR expose. The PDF byte hash is separate and is returned in the
+  // download headers; this line identifies the semantic model inside the file.
+  lines.push(`Report model SHA-256: ${report.reportDigest}`);
   lines.push(select("SHA-256 w nagłówku pobrania identyfikuje bajty PDF. Sam hash nie potwierdza ustaleń, czasu, niezależności wystawcy ani bezpieczeństwa celu.", "The download SHA-256 identifies PDF bytes. A hash alone does not validate findings, time, issuer independence or target safety.", "Der SHA-256-Downloadwert identifiziert die PDF-Bytes. Ein Hash allein bestätigt weder Befunde, Zeit, unabhängige Herkunft noch die Sicherheit des Ziels."));
   return lines;
 }
