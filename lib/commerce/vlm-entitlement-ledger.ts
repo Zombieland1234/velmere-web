@@ -644,6 +644,8 @@ export async function verifyVlmPaidAccountEntitlement(args: {
   context: Partial<VlmPaidAccessContext>;
   now?: Date;
 }): Promise<VlmPaidAccountEntitlementVerdict> {
+  const requestedSurface = args.context.surface;
+  const requestedDepth = args.context.depth;
   const normalizedContext = normalizePaidContext(args.context, args.context.locale);
   const accountIdHash = normalizedContext.accountIdHash?.trim().toLowerCase() ?? "";
   if (!/^[a-f0-9]{64}$/.test(accountIdHash)) {
@@ -685,6 +687,8 @@ export async function verifyVlmPaidAccountEntitlement(args: {
     .filter((record) =>
       record.productId === args.productId
       && record.context.accountIdHash === accountIdHash
+      && (!requestedSurface || record.context.surface === requestedSurface)
+      && (!requestedDepth || record.context.depth === requestedDepth)
       && (
         record.contextHash === contextHash
         || (!record.context.assetId && !record.context.auditCaseRef)
@@ -916,6 +920,8 @@ export async function verifyVlmPaidEntitlementById(args: {
   entitlementId: string;
   allowedProductIds: VlmPaidProductId[];
   accountIdHash: string;
+  surface?: VlmPaidAccessContext["surface"] | null;
+  depth?: VlmPaidAccessContext["depth"] | null;
   auditCaseRef?: string | null;
   assetId?: string | null;
   symbol?: string | null;
@@ -932,6 +938,8 @@ export async function verifyVlmPaidEntitlementById(args: {
     if (record.status !== "active" && record.status !== "paid") return { ok: false, error: "entitlement_inactive", ledgerMode: mode };
     if (!Number.isFinite(Date.parse(record.expiresAt)) || Date.parse(record.expiresAt) <= nowMs) return { ok: false, error: "entitlement_expired", ledgerMode: mode };
     if (record.context.accountIdHash !== accountIdHash) return { ok: false, error: "entitlement_account_mismatch", ledgerMode: mode };
+    if (args.surface && record.context.surface !== args.surface) return { ok: false, error: "entitlement_surface_mismatch", ledgerMode: mode };
+    if (args.depth && record.context.depth !== args.depth) return { ok: false, error: "entitlement_depth_mismatch", ledgerMode: mode };
     if (args.auditCaseRef && record.context.auditCaseRef !== args.auditCaseRef) return { ok: false, error: "entitlement_audit_case_mismatch", ledgerMode: mode };
     if (args.assetId && record.context.assetId !== args.assetId) return { ok: false, error: "entitlement_asset_mismatch", ledgerMode: mode };
     if (args.symbol && record.context.symbol?.toUpperCase() !== args.symbol.toUpperCase()) return { ok: false, error: "entitlement_symbol_mismatch", ledgerMode: mode };
