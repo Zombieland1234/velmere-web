@@ -1,0 +1,48 @@
+name: C14 P26 monitoring and recovery qualification
+on:
+  push:
+    branches: [parallel/c14-p26-monitoring-recovery]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p26-monitoring-recovery
+  cancel-in-progress: false
+
+jobs:
+  monitoring-recovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+          cache: npm
+      - name: Install locked dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Patch hygiene
+        run: git diff --check 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df..HEAD
+      - name: Focused strict TypeScript
+        run: npx tsc -p tsconfig.c14-p26.json
+      - name: Focused ESLint
+        run: >
+          npx eslint
+          lib/observability/request-correlation.ts
+          lib/observability/runtime-readiness.ts
+          lib/security/operational-log-boundary.ts
+          lib/security/native-redis-rate-limit.ts
+          lib/db/bounded-supabase-rpc.ts
+          lib/payments/stripe-webhook/ingress.ts
+          lib/server/internal-worker-route-modules/runtime-readiness.ts
+          lib/server/route-registries/internal-workers.ts
+          scripts/c14/monitoring-recovery.test.ts
+      - name: Failure and recovery drills
+        run: npx tsx --test scripts/c14/monitoring-recovery.test.ts
