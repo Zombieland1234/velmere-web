@@ -62,7 +62,7 @@ async function login(label,user){
   const jar=new Map();
   const x=await app('POST','/api/auth/session',{jar,body:{provider:'email',mode:'signin',email:user.email,password:user.password}});
   record(`${label}-app-password-login`,x.status===200 && x.body?.authenticated===true && x.body?.session?.accountId===`supabase:${user.id}`,{status:x.status,auth:x.body?.authenticated,accountId:x.body?.session?.accountId});
-  record(`${label}-httponly-cookie-set`,jar.has('velmere_supabase_access')&&jar.has('velmere_supabase_refresh')&&jar.has('velmere_auth_family')&&jar.has('velmere_account'),{cookieNames:[...jar.keys()].sort()});
+  record(`${label}-httponly-cookie-set`,jar.has('velmere_supabase_access')&&jar.has('velmere_supabase_refresh')&&jar.has('velmere_auth_family')&&jar.has('velmere_account_session'),{cookieNames:[...jar.keys()].sort()});
   return jar;
 }
 function tokenSessionId(token){
