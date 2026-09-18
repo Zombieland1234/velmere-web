@@ -1,0 +1,26 @@
+name: C14 P02 source provenance
+on:
+  push:
+    branches:
+      - parallel/c14-p02-source-provenance
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: c14-p02-source-provenance
+  cancel-in-progress: false
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Syntax and helper tests
+        run: |
+          python3 -m py_compile scripts/c14/source_provenance_check.py scripts/c14/test_source_provenance_check.py
+          python3 scripts/c14/test_source_provenance_check.py
+      - name: Verify immutable C13 source anchor and ancestry
+        run: python3 scripts/c14/source_provenance_check.py
