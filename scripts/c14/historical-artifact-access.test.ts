@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { evaluateHistoricalArtifactAccess } from "@/lib/reporting/historical-customer-artifact-access";
+import {
+  authorizeHistoricalCustomerArtifactAccess,
+  evaluateHistoricalArtifactAccess,
+} from "@/lib/reporting/historical-customer-artifact-access";
+import { hashVelmereAccountBinding } from "@/lib/auth/account-session";
+import type { AccountCustomerArtifactSnapshot } from "@/lib/reporting/account-customer-artifact-snapshot";
 import { evaluateVlmPaidEntitlementLifecycleTransition, isVlmPaidEntitlementPrivileged } from "@/lib/commerce/vlm-entitlement-lifecycle";
 
 const access=(requiredTier:"basic"|"pro"|"advanced",currentTier:"basic"|"pro"|"advanced",ownerMatches=true)=>
@@ -42,4 +47,44 @@ test("terminal or time-expired entitlement is never privileged",()=>{
   const future=new Date(Date.now()+86400000).toISOString();
   for(const status of ["refunded","revoked","expired"] as const) assert.equal(isVlmPaidEntitlementPrivileged({status,expiresAt:future}),false);
   assert.equal(isVlmPaidEntitlementPrivileged({status:"active",expiresAt:new Date(Date.now()-1000).toISOString()}),false);
+});
+
+
+test("runtime authorizer binds the immutable snapshot to account A, not account B", async () => {
+  const snapshot = {
+    accountIdHash: hashVelmereAccountBinding("account-A"),
+    surface: "audit",
+    requestedTier: "advanced",
+    deliveredTier: "advanced",
+    payload: { caseRef: "AUD-OWNER-A" },
+  } as unknown as AccountCustomerArtifactSnapshot;
+
+  let resolverCalled = false;
+  const otherAccount = await authorizeHistoricalCustomerArtifactAccess({
+    snapshot,
+    accountId: "account-B",
+    resolveAuditTier: async () => {
+      resolverCalled = true;
+      return "advanced";
+    },
+  });
+  assert.equal(otherAccount.allowed, false);
+  assert.equal(otherAccount.reason, "owner_mismatch");
+  assert.equal(resolverCalled, false, "cross-account request must stop before entitlement lookup");
+
+  const downgradedOwner = await authorizeHistoricalCustomerArtifactAccess({
+    snapshot,
+    accountId: "account-A",
+    resolveAuditTier: async () => "pro",
+  });
+  assert.equal(downgradedOwner.allowed, false);
+  assert.equal(downgradedOwner.reason, "current_entitlement_required");
+
+  const currentOwner = await authorizeHistoricalCustomerArtifactAccess({
+    snapshot,
+    accountId: "account-A",
+    resolveAuditTier: async () => "advanced",
+  });
+  assert.equal(currentOwner.allowed, true);
+  assert.equal(currentOwner.reason, "current_entitlement_sufficient");
 });
