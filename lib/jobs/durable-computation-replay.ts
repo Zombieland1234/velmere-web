@@ -511,11 +511,13 @@ async function run<T>(args: RunArgs<T>) {
     sealedPayload,
     bridge,
   });
-  if (claim.state === "direct" || claim.state === "store_required" || claim.state === "store_failed") {
+  if (claim.state === "direct") {
     const value = await args.execute();
     const result = args.encode(value, args.maxResultBytes ?? DEFAULT_MAX_RESULT_BYTES);
     return { value: args.decode(result), replayed: false, attemptCount: 1, jobId: identity.jobId, mode: "direct_non_durable" as DurableComputationMode };
   }
+  if (claim.state === "store_required") throw new DurableComputationError("durable_computation_store_required", 15);
+  if (claim.state === "store_failed") throw new DurableComputationError("durable_computation_store_failed", 15);
   if (claim.state === "completed") {
     try {
       return { value: args.decode(claim.result), replayed: true, attemptCount: claim.attemptCount, jobId: identity.jobId, mode: (hasSupabaseServiceRoleConfig() || bridge ? "supabase" : "memory_non_production") as DurableComputationMode };
@@ -523,14 +525,12 @@ async function run<T>(args: RunArgs<T>) {
       throw new DurableComputationError("durable_computation_result_integrity_failed");
     }
   }
-  const claimState = (claim as { state?: string }).state;
-  if (claimState === "store_required") throw new DurableComputationError("durable_computation_store_required");
-  if (claimState === "store_failed") throw new DurableComputationError("durable_computation_store_failed", 15);
-  if (claim.state === "in_progress" || claim.state === "dead_letter" || claim.state === "conflict" || claim.state === "retry_wait") {
-    const value = await args.execute();
-    const result = args.encode(value, args.maxResultBytes ?? DEFAULT_MAX_RESULT_BYTES);
-    return { value: args.decode(result), replayed: false, attemptCount: 1, jobId: identity.jobId, mode: "direct_non_durable" as DurableComputationMode };
+  if (claim.state === "in_progress") throw new DurableComputationError("durable_computation_in_progress", 1);
+  if (claim.state === "retry_wait") {
+    throw new DurableComputationError("durable_computation_retry_wait", Math.max(1, Math.ceil(claim.retryAfterMs / 1000)));
   }
+  if (claim.state === "dead_letter") throw new DurableComputationError("durable_computation_dead_letter");
+  if (claim.state === "conflict") throw new DurableComputationError("durable_computation_conflict");
   try {
     const value = await args.execute();
     const result = args.encode(value, args.maxResultBytes ?? DEFAULT_MAX_RESULT_BYTES);
