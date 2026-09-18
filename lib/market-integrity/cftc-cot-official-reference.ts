@@ -11,6 +11,7 @@ import {
   type DurableRateLimitOptions,
 } from "@/lib/security/durable-rate-limit";
 import { parseStrictJsonBytes } from "@/lib/security/strict-json-boundary";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 
 export const CFTC_COT_DATASETS = {
   disaggregatedFuturesOnly: {
@@ -629,6 +630,22 @@ async function executeCftcCotReferenceRequest(args: {
   tier: CftcCotTier;
   cacheKey: string;
 }) {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "cftc",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: args.now.getTime(),
+  });
+  if (!rights.allowed) {
+    return envelopeBase({
+      state: "temporarily_unavailable",
+      blocker: `provider_rights_${rights.code.toLowerCase()}`,
+      now: args.now,
+      symbol: args.request.symbol,
+      tier: args.tier,
+      datasetId: args.request.datasetId,
+    });
+  }
   const decision = await cftcCotOfficialReferenceDependencies.reserveRateLimit({
     namespace: "cftc-cot:global-budget",
     key: CFTC_COT_RUNTIME_POLICY.host,
