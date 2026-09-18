@@ -1,0 +1,72 @@
+name: C14 immutable review snapshot
+on:
+  push:
+    branches: [c14/integration-final-20260918]
+    paths: [.github/workflows/c14-review-snapshot.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - name: Export exact source, candidate reports and diffs without executing candidate code
+        run: |
+          python3 - <<'PY'
+          import subprocess, pathlib, json, hashlib, zipfile, datetime, re, os
+          out=pathlib.Path('/tmp/c14-review');out.mkdir(parents=True,exist_ok=True)
+          base='4cb45bbcf910f0517d4a5d265682cd2f7e4e41df'
+          def git(*args): return subprocess.check_output(['git',*args])
+          def text(*args): return git(*args).decode('utf-8').strip()
+          sha=text('rev-parse','HEAD');assert sha==os.environ['GITHUB_SHA']
+          assert subprocess.run(['git','merge-base','--is-ancestor',base,sha]).returncode==0
+          fonts={'.woff','.woff2','.ttf','.otf','.eot','.ttc'}
+          def permitted(path,raw):
+              return pathlib.Path(path).suffix.lower() not in fonts and raw[:4] not in (b'wOFF',b'wOF2',b'OTTO',b'ttcf',b'\x00\x01\x00\x00')
+          manifest=[];omitted=[]
+          with zipfile.ZipFile(out/'SOURCE.zip','w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+              for record in git('ls-tree','-rz',sha).split(b'\0'):
+                  if not record: continue
+                  meta,path=record.split(b'\t',1);mode,kind,blob=meta.decode().split();path=path.decode()
+                  if kind!='blob':continue
+                  raw=git('cat-file','blob',blob)
+                  row={'path':path,'mode':mode,'blobSha':blob,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+                  if not permitted(path,raw):omitted.append({**row,'reason':'FONT_RESOURCE_NOT_DISTRIBUTED'});continue
+                  z.writestr(path,raw);manifest.append(row)
+          (out/'SOURCE_MANIFEST.json').write_text(json.dumps({'sourceSha':sha,'treeSha':text('rev-parse','HEAD^{tree}'),'files':manifest,'omitted':omitted},indent=2))
+          refs=text('for-each-ref','--format=%(refname:short)','refs/remotes/origin').splitlines()
+          refs=[r for r in refs if r.startswith('origin/parallel/c14-') or r=='origin/c14/origin-dataflow-qualification-20260918']
+          inventory=[]
+          for ref in refs:
+              head=text('rev-parse',ref);name=ref.removeprefix('origin/');key=name.replace('/','__')
+              folder=out/'candidates'/key;folder.mkdir(parents=True,exist_ok=True)
+              changed=text('diff','--name-only',base,head).splitlines()
+              status=text('diff','--name-status',base,head)
+              (folder/'diff.patch').write_bytes(git('diff','--no-ext-diff','--no-color',base,head,'--',*changed) if changed else b'')
+              reports=[];copied=[];skipped=[]
+              for path in changed:
+                  try:raw=git('show',head+':'+path)
+                  except subprocess.CalledProcessError:continue
+                  if not permitted(path,raw):skipped.append({'path':path,'reason':'FONT'});continue
+                  if len(raw)>2000000:skipped.append({'path':path,'reason':'LARGE_FILE','sha256':hashlib.sha256(raw).hexdigest()});continue
+                  if pathlib.Path(path).suffix.lower() not in {'.ts','.tsx','.js','.mjs','.cjs','.py','.sh','.sql','.yml','.yaml','.md','.json','.toml','.txt'}:continue
+                  dest=folder/'files'/path;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(raw);copied.append(path)
+                  if path.startswith('_handoff/parallel/') and path.endswith('.md'):reports.append(path)
+              row={'branch':name,'headSha':head,'treeSha':text('rev-parse',head+'^{tree}'),'mergeBase':text('merge-base',base,head),'commitsAboveC13':int(text('rev-list','--count',base+'..'+head)),'changedFiles':changed,'nameStatus':status,'reportPaths':reports,'testFiles':[p for p in changed if re.search(r'(?:test|spec)\.[cm]?[jt]sx?$',p)],'snapshotDirectory':key,'copiedFiles':copied,'skippedFiles':skipped}
+              inventory.append(row)
+          (out/'INVENTORY.json').write_text(json.dumps({'observedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'baseSha':base,'sourceSha':sha,'branches':inventory},indent=2))
+          (out/'INTEGRATION_DIFF.patch').write_bytes(git('diff','--no-color',base,sha))
+          (out/'INTEGRATION_COMMITS.txt').write_bytes(git('log','--format=fuller',base+'..'+sha))
+          (out/'IDENTITY.json').write_text(json.dumps({'baseSha':base,'sourceSha':sha,'treeSha':text('rev-parse','HEAD^{tree}'),'branch':os.environ['GITHUB_REF_NAME'],'runId':os.environ['GITHUB_RUN_ID'],'gitStatus':text('status','--porcelain'),'scope':'READ_ONLY_REPO_SNAPSHOT_NOT_TEST_EXECUTION','sourceArchiveSha256':hashlib.sha256((out/'SOURCE.zip').read_bytes()).hexdigest()},indent=2))
+          print(json.dumps({'sourceSha':sha,'sourceFiles':len(manifest),'fontOmissions':len(omitted),'candidateBranches':len(inventory)}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-review-snapshot-${{ github.run_id }}
+          path: /tmp/c14-review/
+          retention-days: 14
+          if-no-files-found: error
