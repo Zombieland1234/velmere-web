@@ -73,6 +73,7 @@ export type C14ProviderOperationDecision = {
   cacheTtlSecondsRequested: number | null;
   cacheTtlSecondsMaximum: number | null;
   currentPlanOrTier: string | null;
+  requiredPlanOrConsent: string | null;
   expiresAt: string | null;
   reverifyBy: string | null;
 };
@@ -95,6 +96,7 @@ export type C14ProviderMatrixRow = {
   reverifyBy: string | null;
   revocation: "RE_EVALUATE_EACH_OPERATION" | "UNVERIFIED";
   planTierRestriction: string | null;
+  requiredPlanOrConsent: string | null;
   customerDisplayAllowed: boolean;
   commercialUseAllowed: boolean;
   rawRedistributionAllowed: boolean;
@@ -326,6 +328,10 @@ function rightsFacts(canonicalProviderId: string) {
     ?? textAt(p36, "currentPlanEvidence")
     ?? textAt(p21, "tier")
     ?? textAt(p65, "engineeringRightsState");
+  const requiredPlanOrConsent =
+    textAt(p36, "requiredPlanOrConsent")
+    ?? textAt(p21, "requiredPlanOrConsent")
+    ?? null;
 
   const blockers = new Set<string>();
   for (const row of [p90, p36]) {
@@ -351,6 +357,7 @@ function rightsFacts(canonicalProviderId: string) {
     internalDiagnosticAllowed: explicitInternalDiagnostic(canonicalProviderId),
     technicalState,
     planTierRestriction,
+    requiredPlanOrConsent,
     blockers: [...blockers].sort(),
   };
 }
@@ -390,6 +397,7 @@ export function buildC14ProviderEnforcementMatrix(nowMs = Date.now()): C14Provid
       reverifyBy: deadline.reverifyBy,
       revocation: hasEvidence ? "RE_EVALUATE_EACH_OPERATION" : "UNVERIFIED",
       planTierRestriction: facts.planTierRestriction,
+      requiredPlanOrConsent: facts.requiredPlanOrConsent,
       customerDisplayAllowed: facts.customerDisplayAllowed && !expired,
       commercialUseAllowed: facts.commercialUseAllowed && !expired,
       rawRedistributionAllowed: facts.rawRedistributionAllowed && !expired,
@@ -445,6 +453,7 @@ export function evaluateC14ProviderOperation(
     cacheTtlSecondsRequested: request.cacheTtlSeconds ?? null,
     cacheTtlSecondsMaximum: row?.ttlSecondsMaximum ?? 0,
     currentPlanOrTier: row?.planTierRestriction ?? null,
+    requiredPlanOrConsent: row?.requiredPlanOrConsent ?? null,
     expiresAt: row?.expiresAt ?? null,
     reverifyBy: row?.reverifyBy ?? null,
   };
