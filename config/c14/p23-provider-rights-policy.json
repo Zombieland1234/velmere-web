@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "velmere.c14.p23.provider-rights-policy.v1",
+  "capturedAt": "2026-09-18",
+  "baseSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "branch": "parallel/c14-p23-provider-rights",
+  "purpose": "Keep provider access, downstream data rights, branding permission, and formal relationship status separate and fail closed.",
+  "rightDimensions": [
+    {
+      "id": "api_access",
+      "label": "API/service access",
+      "description": "Permission to access the provider API/service under the identified plan/terms."
+    },
+    {
+      "id": "processing",
+      "label": "Processing/derived use",
+      "description": "Permission to analyze, transform, derive metrics/findings, or otherwise process provider output."
+    },
+    {
+      "id": "cache_storage",
+      "label": "Cache/storage",
+      "description": "Permission to retain provider output or necessary evidence, including retention scope where known."
+    },
+    {
+      "id": "redistribution_export",
+      "label": "Redistribution/export",
+      "description": "Permission to deliver raw or selected provider values and/or derived output to customers, including PDF/JSON exports."
+    },
+    {
+      "id": "commercial_use",
+      "label": "Commercial use",
+      "description": "Permission to use the provider in a paid/commercial Velmere product."
+    },
+    {
+      "id": "logo_trademark",
+      "label": "Logo/trademark",
+      "description": "Permission to display provider name/logo/marks in the specifically described context."
+    },
+    {
+      "id": "formal_partnership",
+      "label": "Formal partnership",
+      "description": "Executed or mutually accepted formal partner/collaboration status; ordinary technical permission, pilot interest, or brand consent is not enough."
+    }
+  ],
+  "evidenceStates": {
+    "CONFIRMED_WRITTEN": "Explicit provider/counterparty written confirmation located.",
+    "CONFIRMED_PUBLIC_TERMS": "Explicit right is stated in current official public terms/docs.",
+    "CONDITIONAL_PLAN": "Right exists only if the identified commercial/business plan/license is active and applicable.",
+    "LIMITED_SCOPE": "Confirmed only for the exact described use/markets/fields/context.",
+    "PENDING": "Discussion or approval workflow exists, but permission is not yet granted.",
+    "NOT_CONFIRMED": "No sufficient evidence located.",
+    "RESTRICTED": "Evidence expressly restricts or excludes the right.",
+    "NOT_APPLICABLE": "Dimension does not materially apply to the provider/service or relationship being classified."
+  },
+  "relationshipRule": "Do not label a permission, exploratory exchange, pilot, design-partner conversation, co-marketing discussion, or proposed framework as a formal partnership unless mutual acceptance/execution of the relationship itself is evidenced.",
+  "runtimeActivationRule": {
+    "changeExistingRuntimeGrantFlags": false,
+    "reason": "C14-P23 evidence classification is not a substitute for the existing legal-review, document-hash, expiry, and operation-scope gates.",
+    "requiredBeforeProductionGrant": [
+      "reviewed source document or agreement snapshot",
+      "stable document SHA-256 / evidence binding",
+      "legal review when required by existing gate",
+      "effective plan/license actually active where the permission is plan-dependent",
+      "dataset/product/environment operation scope",
+      "expiry/revocation/currentness handling"
+    ],
+    "existingManifestAtBase": "config/pass22/provider-rights-evidence-manifest.json is empty; C14-P23 does not silently populate it with APPROVED records."
+  },
+  "legalBoundary": "Engineering evidence classification only; not legal advice and not a declaration that a provider contract is enforceable in a particular jurisdiction."
+}
