@@ -336,6 +336,7 @@ export async function runDurableComputationWorkerDrain(input: {
     lostDuringExecution: 0,
     storeFailed: 0,
     heartbeatFailures: 0,
+    heartbeatSkippedInFlight: 0,
     admittedCostUnits: 0,
     admittedPayloadBytes: 0,
     globalCostLimit,
@@ -407,11 +408,18 @@ export async function runDurableComputationWorkerDrain(input: {
   }
 
   let heartbeatFailures = 0;
+  let heartbeatSkippedInFlight = 0;
+  let heartbeatInFlight = false;
   const activeJobIds = new Set(jobs.map((job) => job.jobId));
   const currentOwnership = new Set(jobs.map((job) => job.jobId));
   const timer = setInterval(() => {
     const requested = [...activeJobIds].filter((jobId) => currentOwnership.has(jobId));
     if (requested.length === 0) return;
+    if (heartbeatInFlight) {
+      heartbeatSkippedInFlight += 1;
+      return;
+    }
+    heartbeatInFlight = true;
     dependencies.heartbeat({ jobIds: requested, leaseToken, leaseSeconds })
       .then((value) => {
         const ownedNow = new Set(normalizeOwnedJobIds(value, requested));
@@ -420,7 +428,8 @@ export async function runDurableComputationWorkerDrain(input: {
       .catch(() => {
         heartbeatFailures += 1;
         for (const jobId of requested) currentOwnership.delete(jobId);
-      });
+      })
+      .finally(() => { heartbeatInFlight = false; });
   }, heartbeatIntervalMs);
   (timer as unknown as { unref?: () => void }).unref?.();
 
@@ -459,6 +468,7 @@ export async function runDurableComputationWorkerDrain(input: {
       lostBeforeExecution,
       ...summary,
       heartbeatFailures,
+      heartbeatSkippedInFlight,
       admittedCostUnits: budgetPlan.totalCostUnits,
       admittedPayloadBytes: budgetPlan.totalPayloadBytes,
       globalCostLimit,
