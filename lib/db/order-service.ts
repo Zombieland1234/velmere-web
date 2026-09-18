@@ -2,7 +2,11 @@ import type Stripe from "stripe";
 import { getSupabaseServiceRoleClient, hasSupabaseServiceRoleConfig } from "@/lib/db/supabase";
 import { runRegisteredServiceRoleRpc } from "@/lib/db/supabase-rpc-operation-registry";
 import type { OrderLineItem } from "@/lib/orders/order-store";
-import { assertStripeWebhookCompletionLease } from "@/lib/payments/stripe-webhook-lease";
+import {
+  assertWebhookEventSettlement, parseWebhookEventClaim, validateWebhookAttempt,
+  validateWebhookEvent, validateWebhookEventName, validateWebhookSettlement, webhookEventErrorCode,
+  type StripeWebhookEventIdentity, type StripeWebhookEventSettlement,
+} from "@/lib/payments/stripe-webhook-event-contract";
 import { buildOperationalLogRecord, writeOperationalEvent } from "@/lib/security/operational-log-boundary";
 import {
   buildPaymentEventWatermark,
@@ -59,124 +63,77 @@ function canUseDurablePaymentStorage() {
   return hasSupabaseServiceRoleConfig();
 }
 
-export async function claimStripeWebhookEvent(input: {
-  eventId: string;
-  eventType: string;
-  eventCreatedAt: number;
-}): Promise<StripeWebhookClaimResult> {
-  const now = Date.now();
-  const existing = memoryStripeWebhookEvents.get(input.eventId);
+export type StripeWebhookEventStorageDependencies = { rpc: typeof runRegisteredServiceRoleRpc };
+const defaultEventStorage: StripeWebhookEventStorageDependencies = { rpc: runRegisteredServiceRoleRpc };
+
+export async function claimStripeWebhookEvent(
+  input: StripeWebhookEventIdentity,
+  storage: StripeWebhookEventStorageDependencies = defaultEventStorage,
+): Promise<StripeWebhookClaimResult> {
+  validateWebhookEvent(input);
   if (!canUseDurablePaymentStorage()) {
-    if (requiresDurablePaymentStorage()) {
-      throw new Error("stripe_webhook_claim_storage_unavailable");
+    if (requiresDurablePaymentStorage()) throw new Error("stripe_webhook_claim_storage_unavailable");
+    const now = Date.now();
+    const existing = memoryStripeWebhookEvents.get(input.eventId);
+    if (existing && (existing.eventType !== input.eventType || existing.eventCreatedAt !== input.eventCreatedAt)) {
+      throw new Error("stripe_webhook_event_identity_conflict");
     }
     if (existing?.status === "processed" || existing?.status === "dead_letter") {
       return { claimed: false, status: existing.status, attempt: existing.attemptCount };
     }
-    if (
-      existing?.status === "processing" &&
-      now - existing.claimedAt < WEBHOOK_CLAIM_STALE_MS
-    ) {
-      return {
-        claimed: false,
-        status: "processing",
-        attempt: existing.attemptCount,
-        retryAfterSeconds: Math.max(
-          1,
-          Math.ceil((WEBHOOK_CLAIM_STALE_MS - (now - existing.claimedAt)) / 1000),
-        ),
-      };
+    if (existing && now < existing.claimedAt) throw new Error("stripe_webhook_clock_reversed");
+    if (existing?.status === "processing" && now - existing.claimedAt < WEBHOOK_CLAIM_STALE_MS) {
+      return { claimed: false, status: "processing", attempt: existing.attemptCount,
+        retryAfterSeconds: Math.max(1, Math.ceil((WEBHOOK_CLAIM_STALE_MS - (now - existing.claimedAt)) / 1000)) };
     }
     const attemptCount = (existing?.attemptCount ?? 0) + 1;
-    memoryStripeWebhookEvents.set(input.eventId, {
-      status: "processing",
-      eventType: input.eventType,
-      eventCreatedAt: input.eventCreatedAt,
-      attemptCount,
-      claimedAt: now,
-    });
+    validateWebhookAttempt(attemptCount);
+    memoryStripeWebhookEvents.set(input.eventId, { status: "processing", eventType: input.eventType,
+      eventCreatedAt: input.eventCreatedAt, attemptCount, claimedAt: now });
     return { claimed: true, status: "processing", attempt: attemptCount };
   }
-
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
-      operation: "stripe_webhook_event_claim",
-      args: {
-        p_event_id: input.eventId,
-        p_event_type: input.eventType,
-        p_event_created_at: input.eventCreatedAt,
-        p_stale_after_seconds: Math.floor(WEBHOOK_CLAIM_STALE_MS / 1000),
-      },
-    }));
+    ({ data } = await storage.rpc({ operation: "stripe_webhook_event_claim", args: {
+      p_event_id: input.eventId, p_event_type: input.eventType, p_event_created_at: input.eventCreatedAt,
+      p_stale_after_seconds: Math.floor(WEBHOOK_CLAIM_STALE_MS / 1000),
+    } }));
   } catch {
     throw new Error("stripe_webhook_claim_failed");
   }
-  const row = Array.isArray(data) ? data[0] : data;
-  if (!row) throw new Error("stripe_webhook_claim_empty_result");
-  return row.claimed
-    ? {
-        claimed: true,
-        status: "processing",
-        attempt: Number(row.attempt_count ?? 1),
-      }
-    : {
-        claimed: false,
-        status: row.status === "processed"
-          ? "processed"
-          : row.status === "dead_letter"
-            ? "dead_letter"
-            : "processing",
-        attempt: Number(row.attempt_count ?? 1),
-        retryAfterSeconds: row.retry_after_seconds
-          ? Number(row.retry_after_seconds)
-          : undefined,
-      };
+  return parseWebhookEventClaim(data, input);
 }
 
-export async function completeStripeWebhookEvent(input: {
-  eventId: string;
-  eventType: string;
-  status: "processed" | "retryable_failed" | "dead_letter";
-  errorCode?: string;
-  expectedAttempt: number;
-}) {
-  const expectedAttempt = Math.max(1, Math.floor(input.expectedAttempt));
-  const existing = memoryStripeWebhookEvents.get(input.eventId);
-
+export async function completeStripeWebhookEvent(
+  input: StripeWebhookEventSettlement,
+  storage: StripeWebhookEventStorageDependencies = defaultEventStorage,
+) {
+  validateWebhookSettlement(input);
+  const errorCode = webhookEventErrorCode(input);
   if (!canUseDurablePaymentStorage()) {
-    if (requiresDurablePaymentStorage()) {
-      throw new Error("stripe_webhook_completion_storage_unavailable");
+    if (requiresDurablePaymentStorage()) throw new Error("stripe_webhook_completion_storage_unavailable");
+    const existing = memoryStripeWebhookEvents.get(input.eventId);
+    if (!existing || existing.eventType !== input.eventType || existing.attemptCount !== input.expectedAttempt) {
+      throw new Error("stripe_webhook_stale_completion");
     }
-    const activeLease = existing ?? null;
-    assertStripeWebhookCompletionLease(activeLease, expectedAttempt);
-    memoryStripeWebhookEvents.set(input.eventId, {
-      status: input.status,
-      eventType: input.eventType,
-      eventCreatedAt: existing?.eventCreatedAt ?? 0,
-      attemptCount: activeLease.attemptCount,
-      claimedAt: existing?.claimedAt ?? Date.now(),
-      lastErrorCode: input.errorCode,
-    });
+    if (existing.status === input.status && (existing.lastErrorCode ?? null) === errorCode) return;
+    const now = Date.now();
+    if (existing.status !== "processing" || now < existing.claimedAt || now >= existing.claimedAt + WEBHOOK_CLAIM_STALE_MS) {
+      throw new Error("stripe_webhook_stale_completion");
+    }
+    memoryStripeWebhookEvents.set(input.eventId, { ...existing, status: input.status, lastErrorCode: errorCode ?? undefined });
     return;
   }
-
-  const supabase = getSupabaseServiceRoleClient();
-  if (!supabase) throw new Error("stripe_webhook_completion_storage_unavailable");
-  const { data, error } = await supabase
-    .from("velmere_stripe_webhook_events")
-    .update({
-      status: input.status,
-      processed_at: new Date().toISOString(),
-      last_error_code: input.errorCode ?? null,
-    })
-    .eq("id", input.eventId)
-    .eq("status", "processing")
-    .eq("attempt_count", expectedAttempt)
-    .select("id")
-    .maybeSingle();
-  if (error) throw new Error(`stripe_webhook_completion_failed:${error.message}`);
-  if (!data) throw new Error("stripe_webhook_stale_completion");
+  let data: unknown;
+  try {
+    ({ data } = await storage.rpc({ operation: "stripe_webhook_event_complete", args: {
+      p_event_id: input.eventId, p_event_type: input.eventType, p_expected_attempt: input.expectedAttempt,
+      p_status: input.status, p_error_code: errorCode,
+    } }));
+  } catch {
+    throw new Error("stripe_webhook_completion_failed");
+  }
+  assertWebhookEventSettlement(data, input);
 }
 
 export async function applyPaymentEventWatermark(input: {
@@ -229,16 +186,23 @@ export async function applyPaymentEventWatermark(input: {
 
 // Compatibility wrappers for older callers. New webhook runtime uses atomic claim/complete.
 export async function hasProcessedStripeWebhookEvent(eventId: string) {
+  validateWebhookEventName(eventId);
   const row = memoryStripeWebhookEvents.get(eventId);
-  if (!canUseDurablePaymentStorage()) return row?.status === "processed";
+  if (!canUseDurablePaymentStorage()) {
+    if (requiresDurablePaymentStorage()) throw new Error("stripe_webhook_lookup_storage_unavailable");
+    return row?.status === "processed";
+  }
   const supabase = getSupabaseServiceRoleClient();
-  if (!supabase) return row?.status === "processed";
+  if (!supabase) throw new Error("stripe_webhook_lookup_storage_unavailable");
   const { data, error } = await supabase
     .from("velmere_stripe_webhook_events")
     .select("status")
     .eq("id", eventId)
     .maybeSingle();
-  if (error) throw new Error(`stripe_webhook_lookup_failed:${error.message}`);
+  if (error) throw new Error("stripe_webhook_lookup_failed");
+  if (data && !["processing", "processed", "retryable_failed", "dead_letter"].includes(data.status)) {
+    throw new Error("stripe_webhook_invalid_lookup_response");
+  }
   return data?.status === "processed";
 }
 
