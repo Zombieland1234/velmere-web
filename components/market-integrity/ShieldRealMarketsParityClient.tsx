@@ -13,7 +13,7 @@ import { resolveVolumeSemantics } from "@/lib/market-integrity/volume-semantics"
 import { buildRiskHistoryCurrentObservation } from "@/lib/market-integrity/risk-history-current-alignment";
 import type { MarketIntegrityRow } from "@/lib/market-integrity/coingecko";
 import { dedupeMarketInstruments, filterMarketInstruments } from "@/lib/market-integrity/market-instrument-search";
-import { shieldProAggregateMetricsAvailable, shieldProCalibratedRiskConfidencePublishable, shieldProModalMarketDataState, shieldProModeAfterRefreshFailure, shieldProPrimaryMarketSourceAsOf, shieldProRiskVerified, shieldProSourceLabel, shieldProVerifiedProviders, type ShieldProFeedMode } from "@/lib/market-integrity/shield-pro-customer-truth";
+import { shieldProCalibratedRiskConfidencePublishable, shieldProModalMarketDataState, shieldProModeAfterRefreshFailure, shieldProPrimaryMarketSourceAsOf, shieldProRiskVerified, shieldProSourceLabel, shieldProVerifiedProviders, type ShieldProFeedMode } from "@/lib/market-integrity/shield-pro-customer-truth";
 import { projectShieldProTableRow } from "@/lib/market-integrity/shield-pro-table-customer-projection";
 import { buildChartLifecycleReceipt } from "@/lib/market-integrity/top1-risk-foundation";
 import { pass4570SanitizePercent } from "@/lib/market-integrity/pass4570-market-data-sanity";

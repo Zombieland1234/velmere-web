@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from "react";
-import { Activity, ArrowRight, BarChart3, Bell, CircleAlert, Database, Info, Radar, RefreshCcw, Scale, ShieldCheck, TrendingUp, WalletCards, Waves, X, type LucideIcon } from "lucide-react";
+import { Activity, ArrowRight, BarChart3, Bell, CircleAlert, Database, Info, Radar, Scale, ShieldCheck, TrendingUp, WalletCards, Waves, X, type LucideIcon } from "lucide-react";
 import type { VlmAssetDetailModalData } from "@/components/market-integrity/AssetDetailModal";
 import { fetchRuntime, invalidateRuntimeCache, normalizeLocale, runtimeKey, type MarketExecution, type MarketIntelligenceResponse, type WhaleAlert } from "@/components/market-integrity/asset-detail/market-intelligence-client-runtime";
 import { buildInstitutionalMarketImpact, buildInstitutionalWhaleWatch, isCryptoAsset } from "@/lib/market-integrity/institutional-market-intelligence-model";

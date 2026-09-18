@@ -1,6 +1,4 @@
 import createNextIntlPlugin from "next-intl/plugin";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 import { buildSecurityHeaders } from "./lib/security/http-security.mjs";
 import { PASS4666_ACCOUNT_OPERATION_REDIRECTS } from "./lib/security/account-operation-redirects.mjs";
 import { PASS4666_PAGE_ALIAS_REDIRECTS } from "./lib/security/page-alias-redirects.mjs";
