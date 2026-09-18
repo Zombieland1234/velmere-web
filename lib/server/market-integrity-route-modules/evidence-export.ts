@@ -8,6 +8,7 @@ import { checkRateLimit, guardrailHeaders } from "@/lib/market-integrity/api-gua
 import { persistSourceSnapshot } from "@/lib/market-integrity/source-snapshot-ledger";
 import { buildTerminalEvidenceExport } from "@/lib/market-integrity/terminal-evidence-export";
 import { buildSafeDownloadDisposition } from "@/lib/security/download-response-boundary";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 
 type ErrorPayload = { mode: "error"; error: string };
 
@@ -28,7 +29,22 @@ export async function GET(request: Request) {
 
   try {
     const marketRow = await searchCoinGeckoMarket(query);
+    const providerId = marketRow ? "coingecko" : "dexscreener";
     const result = marketRow?.result ?? await analyzeDexScreenerToken(query);
+    const exportRights = evaluateC14ProviderOperation({
+      providerId,
+      operation: "export",
+      channel: "customer",
+      dataClass: "raw",
+      attributionPresent: false,
+      nowMs: Date.now(),
+    });
+    if (!exportRights.allowed) {
+      return NextResponse.json<ErrorPayload>(
+        { mode: "error", error: "Provider export rights are not confirmed for this draft." },
+        { status: 403, headers: baseHeaders },
+      );
+    }
     const investigator = buildVlmShieldInvestigator(result);
     const evidenceReport = buildEvidenceReportDraft(result, investigator);
     const sourceSnapshot = await persistSourceSnapshot(result, investigator, evidenceReport);
