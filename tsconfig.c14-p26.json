@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "types": ["node"]
+  },
+  "include": [
+    "next-env.d.ts",
+    "lib/observability/request-correlation.ts",
+    "lib/observability/runtime-readiness.ts",
+    "lib/security/operational-log-boundary.ts",
+    "lib/security/native-redis-rate-limit.ts",
+    "lib/db/bounded-supabase-rpc.ts",
+    "lib/payments/stripe-webhook/ingress.ts",
+    "lib/server/internal-worker-route-modules/runtime-readiness.ts",
+    "lib/server/route-registries/internal-workers.ts",
+    "scripts/c14/monitoring-recovery.test.ts"
+  ],
+  "exclude": ["node_modules"]
+}
