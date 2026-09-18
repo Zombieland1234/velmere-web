@@ -10,6 +10,9 @@ concurrency:
   group: c14-p01-full-source-audit
   cancel-in-progress: false
 
+env:
+  C14_P01_BASE_SHA: 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df
+
 jobs:
   focused-regressions:
     runs-on: ubuntu-latest
@@ -32,3 +35,148 @@ jobs:
         run: npx tsc -p tsconfig.c14-p01-tests.json --noEmit
       - name: Focused C14-P01 reproductions
         run: npx tsx --test scripts/c14-p01/*.test.ts
+
+  protected-source-scope:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Prove branch ancestry and protected UI/public scope
+        run: |
+          set -euo pipefail
+          test "$(git merge-base "$C14_P01_BASE_SHA" HEAD)" = "$C14_P01_BASE_SHA"
+          test "$(git rev-list --count "$C14_P01_BASE_SHA"..HEAD)" -ge 1
+          git diff --check "$C14_P01_BASE_SHA"..HEAD
+          git diff --name-only "$C14_P01_BASE_SHA"..HEAD > /tmp/c14-p01-changed-files.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          changed=[line.strip() for line in Path('/tmp/c14-p01-changed-files.txt').read_text().splitlines() if line.strip()]
+          protected=[
+              p for p in changed
+              if p.startswith('components/')
+              or p.startswith('public/')
+              or p.endswith('.css')
+              or (p.startswith('app/') and p.endswith(('.tsx','.jsx')))
+          ]
+          print("changed files:", *changed, sep="\n  ")
+          if protected:
+              raise SystemExit("C14-P01 modified protected UI/CSS/public surfaces: " + ", ".join(protected))
+          PY
+
+  application:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      CI: "1"
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: "true"
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+      - name: Isolated Redis prerequisites
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c13-evidence
+          if ! command -v redis-server >/dev/null; then sudo apt-get update -qq; sudo apt-get install -y --no-install-recommends redis-server; fi
+          redis-server --version > /tmp/c13-evidence/REDIS_VERSION.txt
+          node --version > /tmp/c13-evidence/NODE_VERSION.txt
+      - name: Existing full application qualification
+        run: python3 scripts/c13/qualify.py
+      - name: Browser, source scanner, SBOM and production-mode E2E
+        if: always()
+        run: python3 scripts/c13/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p01-source-${{ github.run_id }}
+          path: /tmp/c13-source
+          retention-days: 14
+          if-no-files-found: error
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p01-application-evidence-${{ github.run_id }}
+          path: /tmp/c13-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Keep all existing technical gates authoritative
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,sys
+          gate=json.load(open('/tmp/c13-evidence/RELEASE_GATE.json'))
+          print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:
+              sys.exit(1)
+          print('Selected technical checks passed; product status remains NO_GO.')
+          PY
+
+  shield-database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: c13_ephemeral_ci_only
+          POSTGRES_DB: c13_fixture
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: "5432"
+      PGUSER: postgres
+      PGPASSWORD: c13_ephemeral_ci_only
+      PGDATABASE: c13_fixture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Real PostgreSQL, synthetic identity and grants, no customer writes
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c13-sql
+          psql -X -At -c 'select version()' > /tmp/c13-sql/POSTGRES_VERSION.txt
+          python3 scripts/c13/shield-db-test.py 2>&1 | tee /tmp/c13-sql/execution.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p01-postgres-${{ github.run_id }}
+          path: /tmp/c13-sql
+          retention-days: 14
+          if-no-files-found: error
+
+  frozen-benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+      - name: Frozen external corpus comparison
+        run: bash scripts/c13/benchmark.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p01-benchmark-${{ github.run_id }}
+          path: |
+            /tmp/c13-benchmark
+            !/tmp/c13-benchmark/private-inputs.json
+            !/tmp/c13-benchmark/*-engine.cjs
+          retention-days: 14
+          if-no-files-found: error
