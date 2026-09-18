@@ -140,8 +140,9 @@ for name in db.dump storage.tar.gz config.tar.gz redis.rdb; do
   openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -salt -in "$WORK/$name" -out "$WORK/backup/$name.enc" -pass file:"$WORK/backup.key"
   rm -f "$WORK/$name"
 done
-python3 scripts/c14/p16/manifest.py write --root "$WORK/backup" --manifest "$WORK/backup/manifest.json" \
-  db.dump.enc storage.tar.gz.enc config.tar.gz.enc redis.rdb.enc
+python3 scripts/c14/p16/manifest.py write \
+  db.dump.enc storage.tar.gz.enc config.tar.gz.enc redis.rdb.enc \
+  --root "$WORK/backup" --manifest "$WORK/backup/manifest.json"
 cp "$WORK/backup/manifest.json" "$EVIDENCE/BACKUP_MANIFEST.json"
 
 # Post-cutoff writes prove the recovery boundary: these MUST NOT appear after restore.
