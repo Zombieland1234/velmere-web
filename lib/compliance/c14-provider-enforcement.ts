@@ -13,6 +13,9 @@ export const C14_RUNTIME_PROVIDER_IDS = Object.freeze([
   "geckoterminal",
   "defillama",
   "binance",
+  "bybit",
+  "mexc",
+  "kraken",
   "coinbase",
   "goplus",
   "honeypot_is",
@@ -494,12 +497,15 @@ export function evaluateC14ProviderOperation(
   }
 
   if (request.channel === "internal_diagnostic") {
+    if (request.operation === "storage" && row.retentionAllowed) {
+      return { ...base, allowed: true, state: "CONFIRMED", code: "ALLOW_INTERNAL_RETENTION", blockers: [] };
+    }
     return {
       ...base,
       allowed: false,
       state: row.evidencePaths.length ? "BLOCKED" : "UNVERIFIED",
       code: "INTERNAL_OPERATION_NOT_GRANTED",
-      blockers: [...row.blockers, "only_internal_diagnostic_fetch_is_implicitly_routable"],
+      blockers: [...row.blockers, "internal_operation_not_explicitly_granted"],
     };
   }
 
