@@ -1,0 +1,143 @@
+name: C14-P12 real Auth A-B isolation
+on:
+  push:
+    branches: [parallel/c14-p12-auth-isolation]
+permissions:
+  contents: read
+concurrency:
+  group: c14-p12-auth-isolation
+  cancel-in-progress: false
+jobs:
+  auth-http-ab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      VELMERE_CANONICAL_ORIGIN: http://127.0.0.1:3000
+      VELMERE_ACCOUNT_SESSION_SECRET_CURRENT: c14-p12-account-session-secret-20260918-isolated-ci-only
+      VELMERE_AUTH_SESSION_FAMILY_SECRET_CURRENT: c14-p12-family-session-secret-20260918-isolated-ci-only
+      VELMERE_AUTH_FLOW_SECRET_CURRENT: c14-p12-auth-flow-secret-20260918-isolated-ci-only
+      VELMERE_PASSWORD_RECOVERY_GRANT_SECRET_CURRENT: c14-p12-recovery-secret-20260918-isolated-ci-only
+      VELMERE_SECURITY_FINGERPRINT_SECRET: c14-p12-fingerprint-secret-20260918-isolated-ci-only
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Source identity and static regression contracts
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = '4cb45bbcf910f0517d4a5d265682cd2f7e4e41df' || test "$(git merge-base HEAD 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df)" = '4cb45bbcf910f0517d4a5d265682cd2f7e4e41df'
+          git diff --check 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df..HEAD
+          node --check scripts/c14/p12/auth-http-e2e.mjs
+          node scripts/c14/p12/build-local-sql.mjs /tmp/c14-p12-local-fixture.sql
+          grep -q 'velmere_current_auth_session_active' supabase/migrations/20260918024000_c14_p12_active_auth_session_owner_boundary.sql
+          grep -q 'auth.sessions' supabase/migrations/20260918024000_c14_p12_active_auth_session_owner_boundary.sql
+      - name: Install application dependencies
+        run: npm ci --ignore-scripts --no-fund
+      - name: Start disposable local Supabase
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p12-supabase /tmp/c14-p12-evidence
+          cd /tmp/c14-p12-supabase
+          npx --yes supabase@2.117.0 init
+          npx --yes supabase@2.117.0 start
+          npx --yes supabase@2.117.0 status -o env > /tmp/c14-p12-local.env
+          chmod 600 /tmp/c14-p12-local.env
+          grep -E '^(API_URL|DB_URL)=' /tmp/c14-p12-local.env | sed 's#=.*#=<ephemeral-local>#' > /tmp/c14-p12-evidence/LOCAL_STACK_ENDPOINT_KEYS.txt
+      - name: Apply vulnerable baseline fixture and actual current Shield source
+        run: |
+          set -euo pipefail
+          source /tmp/c14-p12-local.env
+          command -v psql >/dev/null || { sudo apt-get update -qq; sudo apt-get install -y --no-install-recommends postgresql-client; }
+          node scripts/c14/p12/build-local-sql.mjs /tmp/c14-p12-local-fixture.sql > /tmp/c14-p12-evidence/FIXTURE_BUILD.json
+          psql "$DB_URL" -X -v ON_ERROR_STOP=1 -f /tmp/c14-p12-local-fixture.sql > /tmp/c14-p12-evidence/FIXTURE_APPLY.log
+          psql "$DB_URL" -X -At -v ON_ERROR_STOP=1 -c "select encode(extensions.digest(pg_get_functiondef('public.velmere_r7_shield_pro_paid_workspace_v1(text,text,text,uuid)'::regprocedure),'sha256'),'hex')" > /tmp/c14-p12-evidence/SHIELD_FUNCTION_HASH.txt
+      - name: Start real application HTTP route against local Auth
+        run: |
+          set -euo pipefail
+          source /tmp/c14-p12-local.env
+          export NEXT_PUBLIC_SUPABASE_URL="$API_URL"
+          export SUPABASE_URL="$API_URL"
+          export NEXT_PUBLIC_SUPABASE_ANON_KEY="$ANON_KEY"
+          export SUPABASE_SERVICE_ROLE_KEY="$SERVICE_ROLE_KEY"
+          node_modules/.bin/next dev --hostname 127.0.0.1 --port 3000 > /tmp/c14-p12-evidence/NEXT_HTTP.log 2>&1 &
+          echo $! > /tmp/c14-p12-next.pid
+          for i in $(seq 1 60); do
+            if curl --silent --fail --max-time 2 http://127.0.0.1:3000/api/auth/session >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/c14-p12-evidence/NEXT_HTTP.log
+          exit 1
+      - name: Reproduce stale-JWT owner read before patch
+        run: |
+          set -euo pipefail
+          source /tmp/c14-p12-local.env
+          P12_SUPABASE_URL="$API_URL" P12_ANON_KEY="$ANON_KEY" P12_SERVICE_ROLE_KEY="$SERVICE_ROLE_KEY" \
+          P12_APP_URL='http://127.0.0.1:3000' P12_EVIDENCE_DIR=/tmp/c14-p12-evidence \
+          node scripts/c14/p12/auth-http-e2e.mjs prepatch | tee /tmp/c14-p12-evidence/PREPATCH_HTTP.log
+      - name: Apply C14-P12 active-session migration to disposable DB
+        run: |
+          set -euo pipefail
+          source /tmp/c14-p12-local.env
+          psql "$DB_URL" -X -v ON_ERROR_STOP=1 -f supabase/migrations/20260918024000_c14_p12_active_auth_session_owner_boundary.sql > /tmp/c14-p12-evidence/P12_MIGRATION_APPLY.log
+          psql "$DB_URL" -X -At -v ON_ERROR_STOP=1 <<'SQL' > /tmp/c14-p12-evidence/P12_DB_CONTRACT.txt
+          select 'active_helper=' || (to_regprocedure('public.velmere_current_auth_session_active()') is not null)::text;
+          select 'resolver_security_definer=' || p.prosecdef::text from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname='velmere_current_account_id';
+          select 'anon_active_helper_exec=' || has_function_privilege('anon','public.velmere_current_auth_session_active()','execute')::text;
+          select 'auth_active_helper_exec=' || has_function_privilege('authenticated','public.velmere_current_auth_session_active()','execute')::text;
+          SQL
+      - name: Real HTTP Auth A-B matrix after patch
+        run: |
+          set -euo pipefail
+          source /tmp/c14-p12-local.env
+          P12_SUPABASE_URL="$API_URL" P12_ANON_KEY="$ANON_KEY" P12_SERVICE_ROLE_KEY="$SERVICE_ROLE_KEY" \
+          P12_APP_URL='http://127.0.0.1:3000' P12_EVIDENCE_DIR=/tmp/c14-p12-evidence \
+          node scripts/c14/p12/auth-http-e2e.mjs postpatch | tee /tmp/c14-p12-evidence/POSTPATCH_HTTP.log
+      - name: Regression summary
+        if: always()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,hashlib,subprocess,datetime
+          out=Path('/tmp/c14-p12-evidence'); out.mkdir(exist_ok=True)
+          rows=[]
+          for name in ('prepatch','postpatch'):
+            p=out/f'{name}.json'
+            if p.exists():
+              data=json.loads(p.read_text()); rows.extend(data['checks'])
+          manifest={
+            'schemaVersion':'velmere.c14-p12-evidence.v1',
+            'sourceSha':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+            'baseSha':'4cb45bbcf910f0517d4a5d265682cd2f7e4e41df',
+            'scope':'DISPOSABLE_LOCAL_SUPABASE_REAL_GOTRUE_POSTGREST_NEXT_HTTP_NO_CUSTOMER_DATA',
+            'realAuthHttpTest':True,
+            'customerWrites':0,
+            'passed':sum(r.get('result')=='PASS' for r in rows),
+            'total':len(rows),
+            'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          }
+          (out/'SUMMARY.json').write_text(json.dumps(manifest,indent=2))
+          files=[]
+          for p in sorted(out.iterdir()):
+            if p.is_file() and p.name!='EVIDENCE_MANIFEST.json': files.append({'path':p.name,'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+          (out/'EVIDENCE_MANIFEST.json').write_text(json.dumps({**manifest,'files':files},indent=2))
+          print(json.dumps(manifest,indent=2))
+          if not (out/'postpatch.json').exists(): raise SystemExit(1)
+          if any(r.get('result')!='PASS' for r in rows): raise SystemExit(1)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p12-auth-isolation-${{ github.run_id }}
+          path: /tmp/c14-p12-evidence
+          retention-days: 14
+          if-no-files-found: error
+      - name: Stop disposable Supabase
+        if: always()
+        run: |
+          if [ -d /tmp/c14-p12-supabase/supabase ]; then
+            cd /tmp/c14-p12-supabase
+            npx --yes supabase@2.117.0 stop --no-backup || true
+          fi
