@@ -165,6 +165,8 @@ export async function resolveVlmAdvancedOnlyAccess(args: {
       entitlementId: directEntitlementId,
       allowedProductIds: [productId],
       accountIdHash: context.accountIdHash ?? "",
+      surface: context.surface,
+      depth: context.depth,
       auditCaseRef: context.auditCaseRef,
       assetId: context.assetId,
       symbol: context.symbol,

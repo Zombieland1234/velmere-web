@@ -12,8 +12,7 @@ export async function GET(request: Request) {
   if (!symbol) return NextResponse.json({ mode: "error", error: "Missing symbol" }, { status: 400 });
   const deliveryPreflight = buildMarketImpactDeliveryPreflight("orderbook");
   const initialDelivery = projectMarketImpactDelivery({ decision: deliveryPreflight, payload: null });
-  const isAuthorized = request.headers.get("x-velmere-pro") === "true" || searchParams.get("authorized") === "true";
-  if (!initialDelivery.allowed && !isAuthorized) {
+  if (!initialDelivery.allowed) {
     return NextResponse.json(initialDelivery.payload, {
       status: initialDelivery.status,
       headers: { "cache-control": "no-store" },
@@ -32,17 +31,6 @@ export async function GET(request: Request) {
       generatedAt: new Date().toISOString(),
     };
     const projected = projectMarketImpactDelivery({ decision: deliveryPreflight, payload });
-    if (!projected.allowed && isAuthorized) {
-      return NextResponse.json({
-        ok: true,
-        mode: "derived_analytics",
-        orderbook,
-        generatedAt: new Date().toISOString(),
-      }, {
-        status: 200,
-        headers: { "cache-control": "no-store", "x-velmere-mode": "derived-orderbook-analytics" },
-      });
-    }
     return NextResponse.json(projected.payload, {
       status: projected.status,
       headers: { "cache-control": "no-store" },

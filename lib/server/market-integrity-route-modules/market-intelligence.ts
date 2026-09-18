@@ -1,4 +1,8 @@
 import { publicApiError } from "@/lib/security/api-error-envelope";
+import {
+  VLM_CANONICAL_STANDALONE_PRODUCTS,
+  VLM_CANONICAL_TIERED_FAMILIES,
+} from "@/lib/product/vlm-canonical-product-topology";
 import { resolveRequestAccount } from "@/lib/auth/account-session";
 import { analyzeTokenRisk } from "@/lib/market-integrity/risk-engine";
 import type { TokenRiskInput, VelmereMarketAssetClass } from "@/lib/market-integrity/risk-types";
@@ -512,10 +516,12 @@ export async function POST(request: Request) {
     }
   }
 
-  const isDevOrLive = request.headers.get("x-velmere-dev") === "true"
+  const isDevOrLive = process.env.NODE_ENV !== "production" && (
+    request.headers.get("x-velmere-dev") === "true"
     || request.headers.get("x-velmere-live") === "true"
     || request.headers.get("x-velmere-pro") === "true"
-    || (process.env.NODE_ENV !== "production" && !request.headers.get("x-velmere-firewall-test"));
+    || !request.headers.get("x-velmere-firewall-test")
+  );
   const isProAuthorized = selectedDepth === "pro" || selectedDepth === "advanced" || isDevOrLive;
   const customerOwnedEvidenceMode = selectedEvidenceMode === "customer_owned_attested";
   const deliveryPreflight = (customerOwnedEvidenceMode || isProAuthorized)
@@ -572,8 +578,10 @@ export async function POST(request: Request) {
       },
       productTruth: {
         reportContextDepth: selectedDepth,
-        tieredProducts: ["audit", "pdf", "browser"],
-        standaloneProducts: ["shield", "shield-pro", "shield-map", "real-markets", "market-impact", "whale-watch", "angel", "risk-indicator"],
+        tieredProducts: [...VLM_CANONICAL_TIERED_FAMILIES],
+        standaloneProducts: [...VLM_CANONICAL_STANDALONE_PRODUCTS],
+        reportArtifacts: ["pdf"],
+        pdfIsProductFamily: false,
         reportContextChangesPresentationDepthOnly: true,
       },
     }, {

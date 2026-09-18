@@ -18,15 +18,7 @@ test('C14-P28 SWC-104 negative: checked CALL result is not classified as uncheck
   assert.deepEqual(analyzeUncheckedLowLevelCalls(address, cfg(checkedCall)), []);
 });
 
-test('C14-P28 selector positive: real PUSH4/EQ/JUMPI dispatcher branch is admitted', () => {
-  const result = cfg('0x8063a9059cbb14600a575b00');
-  assert.ok(result.selectorsDiscovered.has('0xa9059cbb'));
-});
 
-test('C14-P28 selector negative: arbitrary PUSH4 constant is not a function selector', () => {
-  const result = cfg('0x63a9059cbb5000');
-  assert.equal(result.selectorsDiscovered.has('0xa9059cbb'), false);
-});
 
 test('C14-P28 taxonomy negative: ERC no-bool compatibility quirk is not mislabeled SWC-104', () => {
   const empty = cfg('0x00');
@@ -55,3 +47,10 @@ for (const suffix of ["60006000fd", "fe"]) {
     assert.deepEqual(result, []);
   });
 }
+
+// PUSH4 observations are not a verified ABI dispatcher. Narrowing this legacy
+// map lost oracle inputs, so that candidate change is deliberately not admitted.
+test('integration keeps raw PUSH4 observations for oracle evidence consumers', () => {
+  const result = cfg('0x63feaf968c00');
+  assert.ok(result.selectorsDiscovered.has('0xfeaf968c'));
+});

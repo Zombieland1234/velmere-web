@@ -13,6 +13,7 @@
 import { StandardFindingV2, PrivilegeGraph, PrivilegeRole, SeverityLevel } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
 import { evidenceSha256 } from "./evidence-integrity";
+import { findOriginDependentBranches, ORIGIN_DATAFLOW_LIMITATION } from "./origin-branch-dataflow";
 
 export interface AccessControlAnalysisResult {
   hasVulnerability: boolean;
@@ -44,42 +45,24 @@ export function analyzeContextualAccessControl(
   let hasUnprotectedMinter = false;
   let hasUninitializedProxy = false;
 
-  // Check 1: tx.origin Authorization Trap (SWC-115)
-  // Check if ORIGIN (0x32) opcode is present and compared with EQ
-  let originSeen = false;
-  let originPc = -1;
-  for (const block of cfg.blocks.values()) {
-    for (let i = 0; i < block.instructions.length; i++) {
-      const inst = block.instructions[i];
-      if (inst.opcode === 0x32) {
-        // ORIGIN
-        originSeen = true;
-        originPc = inst.pc;
-        // Look for subsequent EQ opcode within 6 instructions
-        const subsequentOpcodes = block.instructions.slice(i + 1, i + 8).map((ins) => ins.name);
-        if (subsequentOpcodes.includes("EQ")) {
-          usesTxOrigin = true;
-          break;
-        }
-      }
-    }
-    if (usesTxOrigin) break;
-  }
-
-  if (usesTxOrigin) {
-    const hasDrainCapability =
-      Array.from(cfg.blocks.values()).some((b) => b.hasCall || b.hasSstore) ||
-      (sourceCode ? /withdraw|send|transfer|payout|drain/i.test(sourceCode) : false);
-    const originSeverity: SeverityLevel = hasDrainCapability ? "critical" : "high";
+  // Observe ORIGIN-derived conditional operands, not an arbitrary nearby EQ.
+  // Even a real data dependency is not proof the branch authorizes an action.
+  const originBranches = findOriginDependentBranches(cfg);
+  const originBranch = originBranches.find(b => !b.directCallerComparison);
+  usesTxOrigin = originBranches.length > 0;
+  if (originBranch) {
+    usesTxOrigin = true;
+    const originPc = originBranch.originPc;
+    const originSeverity: SeverityLevel = "high";
 
     findings.push({
       findingId: "VLM-SEC-AUTH-TXORIGIN-01",
-      title: "Authentication via Deprecated tx.origin Instead of msg.sender",
+      title: "tx.origin-Dependent Branch (Authorization Purpose Unverified)",
       severity: originSeverity,
-      confidence: "certain",
-      exploitability: "active_exploit",
+      confidence: "medium",
+      exploitability: "theoretical",
       impact:
-        "Using tx.origin for access control leaves the contract vulnerable to phishing attacks where an authorized user interacting with a malicious contract unknowingly authorizes administrative transactions.",
+        "If this origin-dependent branch authorizes a privileged operation, an intermediary contract could relay an authorized transaction. Branch dependency alone does not establish authorization, reachability, or loss.",
       likelihood: "high",
       taxonomy: {
         swcId: "SWC-115",
@@ -88,26 +71,20 @@ export function analyzeContextualAccessControl(
         owaspScsvsCategory: "G5: Access Control and Authentication",
       },
       affectedContract: contractAddress,
-      affectedFunction: "authorization modifier / check",
-      bytecodeOffset: { pcStart: originPc, pcEnd: originPc + 8 },
-      executionPath: [`ORIGIN@0x${originPc.toString(16)}`, "EQ comparison", "Access granted"],
+      affectedFunction: "Unresolved origin-dependent conditional branch",
+      bytecodeOffset: { pcStart: originPc, pcEnd: originBranch.branchPc },
+      executionPath: [`ORIGIN@0x${originPc.toString(16)}`, ...(originBranch.comparisonPc !== null ? [`COMPARISON@0x${originBranch.comparisonPc.toString(16)}`] : []), `JUMPI_CONDITION@0x${originBranch.branchPc.toString(16)}`],
+      limitations: [ORIGIN_DATAFLOW_LIMITATION],
       stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
-      attackScenario:
-        "1. Victim owner is lured into interacting with Attacker contract.\n2. Attacker contract calls victim contract's protected function.\n3. tx.origin evaluates to the victim owner (the EOA initiating the transaction).\n4. Unauthorized administrative call succeeds.",
-      proofOfConcept: {
-        summary: "Phishing contract relaying call from victim EOA",
-        sequence: [
-          { step: 1, actor: "Victim Owner", call: "AttackerContract.claimGift()", expectation: "Victim triggers transaction" },
-          { step: 2, actor: "Attacker Contract", call: "VictimContract.transferOwnership(attacker)", expectation: "tx.origin == Victim Owner passes" },
-        ],
-      },
+      attackScenario: "Conditional hypothesis only: establish that the branch guards a privileged action and accepts a relayed call before considering a tx.origin authorization attack. Neither condition has been executed or proved.",
+      proofOfConcept: { summary: "NOT_EXECUTED: no target-specific exploit or privileged action is established", sequence: [] },
       evidence: {
-        opcodeTraceExcerpt: `PC 0x${originPc.toString(16)}: ORIGIN -> PUSH20/SLOAD -> EQ`,
-        disassemblyContext: "EVM ORIGIN opcode evaluated in conditional authorization jump.",
-        hashProof: evidenceSha256(`txorigin-${originPc}`),
+        opcodeTraceExcerpt: `ORIGIN@${originPc} contributes to JUMPI condition@${originBranch.branchPc} in ${originBranch.blockId}`,
+        disassemblyContext: "Bounded operand provenance reaches a conditional jump. The target path and authorization purpose are not proved.",
+        hashProof: evidenceSha256(JSON.stringify(originBranch)),
       },
       remediation: {
-        strategy: "Replace tx.origin with msg.sender to guarantee immediate caller authentication.",
+        strategy: "Review authorization intent. Where tx.origin is used as an owner identity, authenticate the intended immediate caller and review trusted-forwarder semantics; no automatic fix is validated here.",
         solidityPatchDiff: `--- a/contracts/Auth.sol
 +++ b/contracts/Auth.sol
 @@ -5,3 +5,3 @@
@@ -117,6 +94,26 @@ export function analyzeContextualAccessControl(
       verificationState: "AUTOMATED",
     });
   }
+
+  const callerBranch = originBranches.find(b => b.directCallerComparison);
+  if (callerBranch) findings.push({
+    findingId: "VLM-SEC-CONTEXT-ORIGIN-CALLER-01",
+    title: "Direct Caller / Origin Comparison (Context Only)",
+    severity: "informational", confidence: "medium", exploitability: "none",
+    impact: "A conditional compares the immediate caller with the transaction origin. This may constrain contract callers; it is not by itself evidence that an intermediary can impersonate an owner. It does not establish safety of this or other paths.",
+    likelihood: "Contextual observation; authorization intent unverified",
+    taxonomy: { cweId: "CWE-284" }, affectedContract: contractAddress,
+    affectedFunction: "Unresolved caller/origin comparison",
+    bytecodeOffset: { pcStart: callerBranch.originPc, pcEnd: callerBranch.branchPc },
+    executionPath: [`ORIGIN@${callerBranch.originPc}`, `CALLER_ORIGIN_EQUALITY_CONDITION@${callerBranch.branchPc}`],
+    limitations: [ORIGIN_DATAFLOW_LIMITATION, "DIRECT_CALLER_COMPARISON_NOT_OWNER_AUTHORIZATION_PROOF"],
+    stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
+    attackScenario: "No exploit is asserted for this comparison.",
+    proofOfConcept: { summary: "NOT_EXECUTED: contextual comparison only", sequence: [] },
+    evidence: { opcodeTraceExcerpt: JSON.stringify(callerBranch), disassemblyContext: "Exact equality or boolean inversion, with address-preserving masks only.", hashProof: evidenceSha256(JSON.stringify(callerBranch)) },
+    remediation: { strategy: "Review whether restricting contract callers is intended. Do not treat this observation as a complete authorization review.", solidityPatchDiff: "" },
+    verificationState: "AUTOMATED",
+  });
 
   // Check 2: Single-Step Ownership Transfer (SWC-105)
   // Contextual evaluation:

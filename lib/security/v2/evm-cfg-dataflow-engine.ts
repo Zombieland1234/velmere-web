@@ -255,19 +255,9 @@ export function buildControlFlowGraph(instructions: EvmInstruction[]): CfgAnalys
         activeTaint.push({ kind: "ORIGIN", instructionPc: inst.pc, label: "tx.origin" });
       }
 
-      // Track method dispatcher selectors only when the PUSH4 actually
-      // participates in a local selector-comparison branch.  Treating every
-      // PUSH4 constant as a function selector promoted unrelated constants
-      // (magic values, masks, hashes) into ERC/proxy/security signals.
+      // Track method dispatcher selectors: PUSH4 0xXXXXXXXX -> EQ -> JUMPI
       if (inst.opcode === OP_PUSH4 && inst.pushValueHex && inst.pushValueHex.length === 8) {
-        const tail = block.instructions.slice(i + 1, i + 6);
-        const eqIndex = tail.findIndex(candidate => candidate.opcode === 0x14);
-        const jumpiIndex = eqIndex >= 0
-          ? tail.findIndex((candidate, offset) => offset > eqIndex && candidate.opcode === OP_JUMPI)
-          : -1;
-        if (eqIndex >= 0 && jumpiIndex > eqIndex) {
-          selectorsDiscovered.set(`0x${inst.pushValueHex}`, inst.pc);
-        }
+        selectorsDiscovered.set(`0x${inst.pushValueHex}`, inst.pc);
       }
 
       // Track SLOAD / SSTORE storage slots

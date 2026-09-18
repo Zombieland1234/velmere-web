@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
     const observed = 'sha256:' + createHash('sha256').update(bytes).digest('hex');
     if (bytes.length < 1000 || observed !== pdfDigest || Number(body.pdfByteLength) !== bytes.length || !/^sha256:[a-f0-9]{64}$/.test(recordDigest)) return json(502, { ok: false, error: 'pdf_integrity_failed' });
     const safeName = reportId.replace(/[^A-Za-z0-9._-]+/g, '-').slice(0, 120) || 'velmere-audit-basic-report';
-    return new NextResponse(Uint8Array.from(bytes), { status: 200, headers: { 'content-type': 'application/pdf', 'content-length': String(bytes.length), 'content-disposition': 'attachment; filename="' + safeName + '.pdf"', 'cache-control': 'private, no-store, max-age=0', pragma: 'no-cache', etag: '"' + pdfDigest.slice(7) + '"', 'x-velmere-pdf-digest': pdfDigest, 'x-velmere-record-digest': recordDigest } });
+    return new NextResponse(Uint8Array.from(bytes), { status: 200, headers: { 'content-type': 'application/pdf', 'content-length': String(bytes.length), 'content-disposition': 'attachment; filename="' + safeName + '.pdf"', 'cache-control': 'private, no-store, max-age=0', pragma: 'no-cache', etag: '"' + pdfDigest.slice(7) + '"', 'x-content-type-options': 'nosniff', 'content-security-policy': 'sandbox', 'cross-origin-resource-policy': 'same-origin', 'x-frame-options': 'DENY', 'referrer-policy': 'no-referrer', 'x-velmere-pdf-digest': pdfDigest, 'x-velmere-record-digest': recordDigest } });
   } catch (error) { const code = error instanceof Error ? error.message : 'audit_report_route_failed'; return json(routeStatus(code), { ok: false, error: code }); }
 }
 

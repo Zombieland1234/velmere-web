@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "velmere.c14-p16.backup-scope.v1",
+  "baseSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "safety": {
+    "customerDataWritesAllowed": false,
+    "destructiveManagedProjectRestoreAllowed": false,
+    "isolatedRestoreTargetRequired": true,
+    "encryptedBackupPayloadRequired": true,
+    "manifestVerificationBeforeRestoreRequired": true,
+    "productionRpoRtoClaimsAllowedWithoutMeasurement": false
+  },
+  "layers": {
+    "postgresSupabase": {
+      "classification": "authoritative",
+      "backup": "portable logical roles/schema/data plus provider-native backup when available",
+      "restore": "fresh isolated target before any cutover",
+      "mustVerify": [
+        "row counts and cryptographic digests",
+        "RLS policies and grants",
+        "security-definer functions and search_path",
+        "auth/account ownership bindings",
+        "entitlements and immutable ledgers",
+        "jobs/leases/idempotency metadata"
+      ]
+    },
+    "storage": {
+      "classification": "authoritative_object_bytes",
+      "backup": "separate object export; database metadata alone is insufficient",
+      "mustVerify": ["object count", "byte length", "sha256", "owner/bucket binding"]
+    },
+    "redis": {
+      "classification": "derived_but_security_relevant",
+      "backup": "provider snapshot/RDB when supported; otherwise documented fail-closed reset policy",
+      "mustVerify": ["rate-limit counters", "idempotency markers", "TTL remains positive", "post-cutoff keys absent"]
+    },
+    "configuration": {
+      "classification": "rebuild_authority",
+      "backup": "Git-tracked config plus secret-name/provider inventory; never store secret values in repository backup",
+      "mustVerify": ["source SHA", "lockfile", "deployment config", "migration set", "required secret presence after restore"]
+    },
+    "reports": {
+      "classification": "customer_authoritative",
+      "mustVerify": ["JSON digest", "PDF digest", "JSON/PDF/storage binding", "owner binding", "immutable record digest"]
+    },
+    "criticalMetadata": {
+      "classification": "authoritative",
+      "include": [
+        "account subject bindings",
+        "entitlement events",
+        "audit case/report metadata",
+        "rate-limit/idempotency state where security relevant",
+        "release/evidence ledgers",
+        "schema and migration lineage"
+      ]
+    }
+  },
+  "evidence": {
+    "isolatedCiResult": "/tmp/c14-p16-evidence/RESULT.json",
+    "backupManifest": "/tmp/c14-p16-evidence/BACKUP_MANIFEST.json",
+    "postgresVerification": "/tmp/c14-p16-evidence/POSTGRES_VERIFY.log"
+  }
+}

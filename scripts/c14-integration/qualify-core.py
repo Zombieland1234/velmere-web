@@ -25,7 +25,7 @@ def run(name,args,timeout=600,cwd=ROOT,scope='INTERNAL_SOURCE_QUALIFICATION'):
     return code
 (OUT/'IDENTITY.json').write_text(json.dumps({'sourceSha':SHA,'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'branch':os.environ['GITHUB_REF_NAME'],'runId':os.environ['GITHUB_RUN_ID'],'attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'base':BASE,'node':subprocess.check_output(['node','--version'],text=True).strip()},indent=2))
 run('initial-status',['git','status','--porcelain'],30)
-if run('install',['npm','ci','--ignore-scripts','--no-fund'],600)!=0:raise SystemExit('Dependency installation failed; remaining checks are BLOCKED')
+if run('install',['npm','ci','--foreground-scripts','--no-fund'],600)!=0:raise SystemExit('Dependency installation failed; remaining checks are BLOCKED')
 run('dependency-structure',['node','scripts/c14/dependency-audit.mjs'],60)
 run('npm-audit',['npm','audit','--json'],180)
 run('dependency-tree',['npm','ls','--all','--json'],180)
@@ -34,7 +34,9 @@ old=['scripts/c6/route-boundaries.test.ts','scripts/c6/provider-engine-boundarie
 new=[str(p) for p in sorted(Path('scripts/c14-p01').glob('*.test.ts'))]+['scripts/c14/unsafe-json-boundary.test.ts']+[str(p) for p in sorted(Path('scripts/c14-integration').glob('*.test.ts'))]
 if Path('scripts/c14-integration/accepted-tests.json').exists():new+=json.loads(Path('scripts/c14-integration/accepted-tests.json').read_text())
 tests=list(dict.fromkeys(old+new));(OUT/'TEST_FILES.json').write_text(json.dumps({'baseFiles':old,'newFiles':sorted(set(new)-set(old)),'uniqueFiles':tests,'countsFrom': 'combined-regressions TAP only; focused and repeated runs never added'},indent=2))
-run('combined-regressions',['node_modules/.bin/tsx','--test',*tests],900,scope='REAL_SOURCE_SYNTHETIC_FIXTURES_NOT_STRIPE_OR_HOSTED_E2E')
+run('combined-regressions',['node_modules/.bin/tsx','--test','--test-reporter=tap',*tests],900,scope='REAL_SOURCE_SYNTHETIC_FIXTURES_NOT_STRIPE_OR_HOSTED_E2E')
+run('compiler-origin-matrix',['node_modules/.bin/tsx','scripts/c14/compiler-origin-matrix.ts',str(OUT/'compiler')],240)
+run('secret-triage-tests',['python3','scripts/c14/test_secret_triage.py'],60)
 run('strict-typescript',['node_modules/.bin/tsc','--noEmit','--strict','--pretty','false'],600)
 for config in sorted(Path('.').glob('tsconfig.c*-tests.json')):
     run('types-'+config.stem,['node_modules/.bin/tsc','-p',str(config),'--pretty','false'],600)
