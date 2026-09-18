@@ -54,6 +54,9 @@ jobs:
           set -euo pipefail
           npm run test:c14:p19:stripe 2>&1 | tee "$C14_P19_EVIDENCE_DIR/TESTS.log"
 
+      - name: Strict TypeScript
+        run: npm run typecheck
+
       - name: Diff hygiene
         run: git diff --check
 
