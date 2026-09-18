@@ -104,7 +104,6 @@ export function analyzeErcAndTokenQuirks(
         "Standard IERC20 integrations generally expect a boolean return value. A token whose transfer path returns no ABI boolean can cause strict callers to revert; actual impact depends on the caller integration and the executed return path.",
       likelihood: "high",
       taxonomy: {
-        swcId: "SWC-104",
         cweId: "CWE-754",
         eeaSvsLevel: "S",
         owaspScsvsCategory: "C1: Token Standard Conformance",
