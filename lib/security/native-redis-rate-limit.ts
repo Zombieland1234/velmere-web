@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { createClient } from "@redis/client";
+import { writeOperationalEvent } from "@/lib/security/operational-log-boundary";
 import type { DurableRateLimitDecision, DurableRateLimitOptions } from "./durable-rate-limit";
 
 /** Server-owned URL only. No caller URL, redirects, remote plaintext or offline replay. */
@@ -15,6 +16,101 @@ export function inspectNativeRedisConfig(env: NodeJS.ProcessEnv = process.env) {
   } catch { /* configuration is unavailable, never memory fallback */ }
   return { selected, urlPresent: Boolean(env.REDIS_URL), urlValid, configured: selected && urlValid };
 }
+
+type RedisProbeClient = {
+  isOpen: boolean;
+  on: (event: "error", listener: (error: unknown) => void) => unknown;
+  connect: () => Promise<unknown>;
+  ping: () => Promise<string>;
+  destroy: () => unknown;
+};
+
+type RedisProbeClientFactory = (url: string) => RedisProbeClient;
+
+function defaultRedisProbeClientFactory(url: string): RedisProbeClient {
+  return createClient({
+    url,
+    disableOfflineQueue: true,
+    commandsQueueMaxLength: 4,
+    socket: { connectTimeout: 1_500, socketTimeout: 2_000, reconnectStrategy: false },
+  }) as unknown as RedisProbeClient;
+}
+
+export async function probeNativeRedisReadiness(input: {
+  env?: NodeJS.ProcessEnv;
+  timeoutMs?: number;
+  correlationId?: string;
+  clientFactory?: RedisProbeClientFactory;
+} = {}) {
+  const env = input.env ?? process.env;
+  const config = inspectNativeRedisConfig(env);
+  const timeoutMs = Math.max(250, Math.min(Number(input.timeoutMs ?? 2_000), 5_000));
+  if (!config.configured) {
+    return {
+      schemaVersion: "velmere.redis-readiness.v1" as const,
+      state: "not_configured" as const,
+      ready: false,
+      latencyMs: null,
+      code: config.selected ? "redis_configuration_invalid" : "redis_backend_not_selected",
+      selected: config.selected,
+      urlPresent: config.urlPresent,
+      urlValid: config.urlValid,
+    };
+  }
+
+  const started = performance.now();
+  const client = (input.clientFactory ?? defaultRedisProbeClientFactory)(env.REDIS_URL!);
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  client.on("error", () => { /* never log Redis URL, credentials or raw driver errors */ });
+  try {
+    const result = await Promise.race([
+      (async () => {
+        await client.connect();
+        return client.ping();
+      })(),
+      new Promise<never>((_resolve, reject) => {
+        timer = setTimeout(() => reject(new Error("redis_probe_deadline")), timeoutMs);
+      }),
+    ]);
+    const latencyMs = Math.max(0, Math.round(performance.now() - started));
+    if (result !== "PONG") throw new Error("redis_probe_invalid_response");
+    return {
+      schemaVersion: "velmere.redis-readiness.v1" as const,
+      state: "ready" as const,
+      ready: true,
+      latencyMs,
+      code: "redis_ready",
+      selected: true,
+      urlPresent: true,
+      urlValid: true,
+    };
+  } catch (error) {
+    const latencyMs = Math.max(0, Math.round(performance.now() - started));
+    writeOperationalEvent({
+      level: "error",
+      system: "redis",
+      event: "readiness_probe_failed",
+      code: "redis_unavailable",
+      correlationId: input.correlationId,
+      metrics: { latencyMs, timeoutMs },
+      error,
+    });
+    return {
+      schemaVersion: "velmere.redis-readiness.v1" as const,
+      state: "unavailable" as const,
+      ready: false,
+      latencyMs,
+      code: "redis_unavailable",
+      selected: true,
+      urlPresent: true,
+      urlValid: true,
+    };
+  } finally {
+    if (timer) clearTimeout(timer);
+    try { if (client.isOpen) client.destroy(); } catch { /* already closed */ }
+  }
+}
+
 const LUA = `
 local t = redis.call('TIME')
 local now = tonumber(t[1]) * 1000 + math.floor(tonumber(t[2]) / 1000)
@@ -43,6 +139,7 @@ return {count, reset, wid, now}
 `;
 let inFlight = 0;
 const MAX_IN_FLIGHT = 32;
+
 export async function applyNativeRedisRateLimit(options: DurableRateLimitOptions): Promise<DurableRateLimitDecision> {
   const valid = Number.isSafeInteger(options.limit) && options.limit >= 1 && options.limit <= 1_000_000 &&
     Number.isSafeInteger(options.windowMs) && options.windowMs >= 1000 && options.windowMs <= 86_400_000 &&
