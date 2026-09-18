@@ -1,0 +1,19 @@
+name: C14-P18 paid-tier bypass qualification
+on:
+  push:
+    branches: [parallel/c14-p18-paid-tier-bypass]
+permissions:
+  contents: read
+jobs:
+  paid-tier-bypass:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: C14-P18 entitlement scope regression
+        run: node --import ./scripts/pass11/register-offline-ts-loader.mjs scripts/c14/test-paid-tier-bypass.ts
