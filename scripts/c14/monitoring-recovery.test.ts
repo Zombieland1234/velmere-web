@@ -19,6 +19,7 @@ import {
   BoundedSupabaseRpcError,
   runBoundedSupabaseRpc,
 } from "../../lib/db/bounded-supabase-rpc";
+import { stripeWebhookFailureCode } from "../../lib/payments/stripe-webhook/failure-code";
 
 const correlationId = `req_${"a".repeat(32)}`;
 
@@ -160,6 +161,18 @@ test("Redis readiness accepts a bounded PONG probe", async () => {
   assert.equal(result.code, "redis_ready");
   assert.equal(typeof result.latencyMs, "number");
   assert.equal(destroyed, true);
+});
+
+test("Stripe durable failure state stores stable codes, never raw error messages", () => {
+  assert.equal(stripeWebhookFailureCode(new Error("provider_timeout")), "provider_timeout");
+  assert.equal(
+    stripeWebhookFailureCode(new Error("postgres://user:secret@example.invalid/private")),
+    "webhook_processing_failed",
+  );
+  assert.equal(
+    stripeWebhookFailureCode(new Error("sk_live_supersecret leaked by dependency")),
+    "webhook_processing_failed",
+  );
 });
 
 test("bounded Supabase RPC emits a redacted structured failure", async () => {
