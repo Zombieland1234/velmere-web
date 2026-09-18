@@ -1,0 +1,101 @@
+name: C14 P07 ESLint warning qualification
+
+on:
+  push:
+    branches:
+      - parallel/c14-p07-eslint-warnings
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Install exact dependencies
+        run: npm ci --ignore-scripts --no-fund
+      - name: Capture ESLint JSON and grouped inventory
+        shell: bash
+        run: |
+          set +e
+          mkdir -p /tmp/c14-p07
+          node_modules/.bin/eslint . --max-warnings 0 --format json --output-file /tmp/c14-p07/eslint.json
+          eslint_code=$?
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const rows = JSON.parse(fs.readFileSync('/tmp/c14-p07/eslint.json', 'utf8'));
+          const warnings = [];
+          const errors = [];
+          for (const row of rows) {
+            const rel = path.relative(process.cwd(), row.filePath).replaceAll('\\', '/');
+            for (const message of row.messages || []) {
+              const item = {
+                file: rel,
+                line: message.line ?? null,
+                column: message.column ?? null,
+                ruleId: message.ruleId ?? null,
+                severity: message.severity,
+                message: message.message,
+              };
+              if (message.severity === 1) warnings.push(item);
+              if (message.severity === 2) errors.push(item);
+            }
+          }
+          const subsystemFor = (file) => {
+            const head = file.split('/')[0] || '(root)';
+            if (['app','components','lib','scripts','tests','config','types'].includes(head)) return head;
+            return '(root/other)';
+          };
+          const countBy = (items, keyFn) => [...items.reduce((m, x) => {
+            const key = keyFn(x) ?? '(none)';
+            m.set(key, (m.get(key) || 0) + 1);
+            return m;
+          }, new Map()).entries()].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
+          const summary = {
+            sourceSha: process.env.GITHUB_SHA,
+            totalWarnings: warnings.length,
+            totalErrors: errors.length,
+            byRule: countBy(warnings, x => x.ruleId),
+            byFile: countBy(warnings, x => x.file),
+            bySubsystem: countBy(warnings, x => subsystemFor(x.file)),
+            warnings,
+            errors,
+          };
+          fs.writeFileSync('/tmp/c14-p07/summary.json', JSON.stringify(summary, null, 2));
+          const lines = [
+            '# C14-P07 ESLint inventory',
+            '',
+            `SHA: ${summary.sourceSha}`,
+            `Warnings: ${summary.totalWarnings}`,
+            `Errors: ${summary.totalErrors}`,
+            '',
+            '## By rule',
+            ...summary.byRule.map(([k,v]) => `- ${k}: ${v}`),
+            '',
+            '## By subsystem',
+            ...summary.bySubsystem.map(([k,v]) => `- ${k}: ${v}`),
+            '',
+            '## By file',
+            ...summary.byFile.map(([k,v]) => `- ${k}: ${v}`),
+          ];
+          fs.writeFileSync('/tmp/c14-p07/summary.md', lines.join('\n') + '\n');
+          console.log(JSON.stringify({warnings: summary.totalWarnings, errors: summary.totalErrors, byRule: summary.byRule, bySubsystem: summary.bySubsystem}, null, 2));
+          NODE
+          exit "$eslint_code"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p07-eslint-${{ github.run_id }}
+          path: /tmp/c14-p07
+          retention-days: 14
+          if-no-files-found: error
