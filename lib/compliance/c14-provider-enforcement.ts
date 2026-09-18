@@ -165,9 +165,21 @@ export function canonicalC14ProviderId(providerId: string) {
   return ALIASES[normalized] ?? normalized;
 }
 
+function candidateSourceIds(canonicalProviderId: string) {
+  const ids = new Set([canonicalProviderId]);
+  if (canonicalProviderId === "etherscan-v2") ids.add("etherscan");
+  if (canonicalProviderId === "dexscreener-api") ids.add("dexscreener");
+  if (canonicalProviderId === "coingecko-search") ids.add("coingecko");
+  return ids;
+}
+
 function sourceById(path: string, canonicalProviderId: string): LooseRecord | null {
+  const candidates = candidateSourceIds(canonicalProviderId);
   if (path === PASS21_PATH) {
-    return records(record(pass21Registry)?.providers).find((row) => textAt(row, "id") === canonicalProviderId) ?? null;
+    return records(record(pass21Registry)?.providers).find((row) => {
+      const id = textAt(row, "id");
+      return id ? candidates.has(id) : false;
+    }) ?? null;
   }
   if (path === PASS36_PATH) {
     return records(record(pass36Matrix)?.providers).find((row) => textAt(row, "providerId") === canonicalProviderId) ?? null;
@@ -191,23 +203,15 @@ function evidencePathsFor(canonicalProviderId: string) {
 }
 
 function allProviderIds() {
-  const ids = new Set<string>(C14_RUNTIME_PROVIDER_IDS.map(String));
-  for (const row of records(record(pass21Registry)?.providers)) {
-    const id = textAt(row, "id");
-    if (id) ids.add(id);
-  }
-  for (const row of records(record(pass36Matrix)?.providers)) {
-    const id = textAt(row, "providerId");
-    if (id) ids.add(id);
-  }
-  for (const row of records(record(p65Policy)?.sources)) {
-    const id = textAt(row, "id");
-    if (id) ids.add(id);
-  }
-  for (const row of records(record(p90Registry)?.providers)) {
-    const id = textAt(row, "providerId");
-    if (id) ids.add(id);
-  }
+  const ids = new Set<string>();
+  const add = (id: string | null) => {
+    if (id) ids.add(canonicalC14ProviderId(id));
+  };
+  for (const id of C14_RUNTIME_PROVIDER_IDS) add(id);
+  for (const row of records(record(pass21Registry)?.providers)) add(textAt(row, "id"));
+  for (const row of records(record(pass36Matrix)?.providers)) add(textAt(row, "providerId"));
+  for (const row of records(record(p65Policy)?.sources)) add(textAt(row, "id"));
+  for (const row of records(record(p90Registry)?.providers)) add(textAt(row, "providerId"));
   return [...ids].sort();
 }
 
