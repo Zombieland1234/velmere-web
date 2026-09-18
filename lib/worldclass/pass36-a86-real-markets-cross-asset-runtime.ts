@@ -135,6 +135,14 @@ export type A86TierPacket = {
   packetDigestSha256: string;
 };
 
+type SemanticMutationCandidate<T> =
+  T extends false ? boolean
+    : T extends Array<infer U> ? Array<SemanticMutationCandidate<U>>
+      : T extends object ? { [K in keyof T]: SemanticMutationCandidate<T[K]> }
+        : T;
+
+type A86TierPacketCandidate = SemanticMutationCandidate<A86TierPacket>;
+
 export type A86Runtime = {
   schemaVersion: typeof RUNTIME_SCHEMA;
   revisionId: typeof A86_REVISION;
@@ -410,7 +418,7 @@ function buildPacket(asset: CatalogAsset, index: number, tier: Tier, fields: Fie
   return { ...core, packetDigestSha256: sha256(core) };
 }
 
-function factsCoreFromPacket(packet: A86TierPacket) {
+function factsCoreFromPacket(packet: A86TierPacketCandidate) {
   return {
     canonicalAssetId: packet.canonicalAssetId,
     symbol: packet.symbol,
@@ -427,7 +435,7 @@ function expectedSemanticUnit(assetClass: AssetClass, currency: string): string 
   return semanticUnitFor(assetClass, currency);
 }
 
-export function verifyA86TierPacket(packet: A86TierPacket, policy: A86Policy): boolean {
+export function verifyA86TierPacket(packet: A86TierPacketCandidate, policy: A86Policy): boolean {
   try {
     if (!TIERS.includes(packet.tier) || !ASSET_CLASSES.includes(packet.assetClass)) return false;
     if (packet.packetId !== `a86:${packet.canonicalAssetId}:${packet.tier}`) return false;
@@ -485,7 +493,7 @@ export function verifyA86TierPacket(packet: A86TierPacket, policy: A86Policy): b
 }
 
 function mutationKilled(packet: A86TierPacket, policy: A86Policy, family: string): boolean {
-  const mutated = structuredClone(packet);
+  const mutated: A86TierPacketCandidate = structuredClone(packet);
   if (family === "asset_class_substitution") mutated.assetClass = ["stock", "etf", "real_estate"].includes(mutated.assetClass) ? "index" : "stock";
   else if (family === "quote_state_promotion") { const row = mutated.fields.find((field) => field.fieldId === "quote")!; row.state = row.state === "AVAILABLE" ? "UNAVAILABLE" : "AVAILABLE"; }
   else if (family === "history_state_promotion") mutated.fields = mutated.fields.filter((field) => field.fieldId !== "history");
@@ -501,11 +509,11 @@ function mutationKilled(packet: A86TierPacket, policy: A86Policy, family: string
   else if (family === "decision_promotion") mutated.analysisDecision = mutated.analysisDecision === "FUNCTIONAL_READY_OFFLINE" ? "UNAVAILABLE_NOT_FOR_SALE" : "FUNCTIONAL_READY_OFFLINE";
   else if (family === "blocker_drop") mutated.blockers = mutated.blockers.length ? [] : ["forged_blocker"];
   else if (family === "http_status_substitution") mutated.httpStatus = mutated.httpStatus === 200 ? 403 : 200;
-  else if (family === "channel_fact_addition") (mutated.channelProjections[0] as any).addsFacts = true;
+  else if (family === "channel_fact_addition") mutated.channelProjections[0].addsFacts = true;
   else if (family === "facts_digest_substitution") mutated.factsDigestSha256 = sha256("forged");
-  else if (family === "rights_promotion") (mutated as any).providerRightsApproved = true;
-  else if (family === "browser_promotion") (mutated as any).productionBrowserExecuted = true;
-  else if (family === "live_sale_promotion") { (mutated as any).liveProven = true; (mutated as any).saleEnabled = true; }
+  else if (family === "rights_promotion") mutated.providerRightsApproved = true;
+  else if (family === "browser_promotion") mutated.productionBrowserExecuted = true;
+  else if (family === "live_sale_promotion") { mutated.liveProven = true; mutated.saleEnabled = true; }
   else if (family === "crypto_scope_substitution") mutated.cryptoScope = mutated.cryptoScope === "COMPARISON_ONLY" ? "PRIMARY_REAL_MARKETS_SURFACE" : "COMPARISON_ONLY";
   for (const field of mutated.fields) field.evidenceDigestSha256 = sha256({ fieldId: field.fieldId, state: field.state, applicable: field.applicable, semanticValue: field.semanticValue, providerFamilies: field.providerFamilies });
   if (family !== "facts_digest_substitution") mutated.factsDigestSha256 = sha256(factsCoreFromPacket(mutated));

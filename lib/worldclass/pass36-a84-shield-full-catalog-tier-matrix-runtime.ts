@@ -156,6 +156,14 @@ export type A84TierPacket = {
   packetDigestSha256: string;
 };
 
+type SemanticMutationCandidate<T> =
+  T extends false ? boolean
+    : T extends Array<infer U> ? Array<SemanticMutationCandidate<U>>
+      : T extends object ? { [K in keyof T]: SemanticMutationCandidate<T[K]> }
+        : T;
+
+type A84TierPacketCandidate = SemanticMutationCandidate<A84TierPacket>;
+
 export type A84Runtime = {
   schemaVersion: typeof RUNTIME_SCHEMA;
   revisionId: typeof A84_REVISION;
@@ -381,7 +389,7 @@ function packetCore(packet: Omit<A84TierPacket, "packetDigestSha256">): Omit<A84
   return packet;
 }
 
-export function verifyA84TierPacket(packet: A84TierPacket, policy: A84Policy): boolean {
+export function verifyA84TierPacket(packet: A84TierPacketCandidate, policy: A84Policy): boolean {
   try {
     const { packetDigestSha256, ...core } = packet;
     if (packetDigestSha256 !== sha256(core)) return false;
@@ -483,18 +491,18 @@ function buildTierPacket(asset: A84CatalogAsset, tier: Tier, observations: Obser
 }
 
 function mutationKilled(packet: A84TierPacket, policy: A84Policy, family: string, variant: number): boolean {
-  const mutated = structuredClone(packet);
+  const mutated: A84TierPacketCandidate = structuredClone(packet);
   if (family === "field_state_promotion") mutated.fields[0].state = mutated.fields[0].state === "AVAILABLE" ? "UNAVAILABLE" : "AVAILABLE";
   else if (family === "freshness_timestamp_rewrite") mutated.fields[0].staleProviderFamilies = ["forged_provider"];
   else if (family === "provider_family_duplication") mutated.observedProviderFamilies += 1;
   else if (family === "required_field_drop") mutated.fields.pop();
   else if (family === "tier_label_substitution") mutated.tier = mutated.tier === "basic" ? "advanced" : "basic";
   else if (family === "decision_promotion") { mutated.decision = mutated.decision === "FUNCTIONAL_READY_OFFLINE" ? "UNAVAILABLE_NOT_FOR_SALE" : "FUNCTIONAL_READY_OFFLINE"; mutated.blockers = []; }
-  else if (family === "popup_fact_addition") (mutated.popupSections[0] as any).addsFacts = true;
+  else if (family === "popup_fact_addition") mutated.popupSections[0].addsFacts = true;
   else if (family === "popup_section_promotion") mutated.popupSections[0].sectionId = mutated.popupSections[1].sectionId;
-  else if (family === "sale_flag_promotion") (mutated as any).saleEnabled = true;
-  else if (family === "live_flag_promotion") (mutated as any).liveProven = true;
-  else if (family === "rights_flag_promotion") (mutated as any).providerRightsApproved = true;
+  else if (family === "sale_flag_promotion") mutated.saleEnabled = true;
+  else if (family === "live_flag_promotion") mutated.liveProven = true;
+  else if (family === "rights_flag_promotion") mutated.providerRightsApproved = true;
   else if (family === "packet_identity_substitution") mutated.canonicalAssetId = `crypto:Z${String(variant).padStart(4, "0")}`;
   const { packetDigestSha256: _old, ...core } = mutated;
   mutated.packetDigestSha256 = sha256(core);

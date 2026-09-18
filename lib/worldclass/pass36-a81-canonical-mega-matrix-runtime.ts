@@ -174,6 +174,14 @@ type Projection = {
   projectionDigestSha256: string;
 };
 
+type SemanticMutationCandidate<T> =
+  T extends false ? boolean
+    : T extends Array<infer U> ? Array<SemanticMutationCandidate<U>>
+      : T extends object ? { [K in keyof T]: SemanticMutationCandidate<T[K]> }
+        : T;
+
+type ProjectionCandidate = SemanticMutationCandidate<Projection>;
+
 export type A81Runtime = {
   schemaVersion: typeof RUNTIME_SCHEMA;
   revisionId: typeof A81_REVISION;
@@ -566,12 +574,12 @@ function buildProjection(args: Parameters<typeof projectionCore>[0]): Projection
   return { ...core, projectionDigestSha256: sha256(core) };
 }
 
-function resealProjection(projection: Projection): Projection {
+function resealProjection(projection: ProjectionCandidate): ProjectionCandidate {
   const { projectionDigestSha256: _discarded, ...core } = projection;
   return { ...core, projectionDigestSha256: sha256(core) };
 }
 
-function verifyProjection(projection: Projection, expected: {
+function verifyProjection(projection: ProjectionCandidate, expected: {
   channel: Channel;
   matrixId: string;
   sourceMatrixId: string;
@@ -770,13 +778,13 @@ export function runA81CanonicalMegaMatrix(root: string, policyInput?: A81Policy)
             channelCounts[projection.channel] += 1;
           }
           const mutationBase = projectionRows[0];
-          const mutationCases: Projection[] = [
+          const mutationCases: ProjectionCandidate[] = [
             resealProjection({ ...mutationBase, packetHash: sha256("mutated-packet") }),
             resealProjection({ ...mutationBase, factsHash: sha256("mutated-facts") }),
             resealProjection({ ...mutationBase, outputClaimIds: [...mutationBase.outputClaimIds, "invented.claim"] }),
             resealProjection({ ...mutationBase, outputClaimIds: mutationBase.outputClaimIds.slice(1) }),
             resealProjection({ ...mutationBase, tier: tier === "basic" ? "pro" : "basic" }),
-            resealProjection({ ...mutationBase, saleEnabled: true as any }),
+            resealProjection({ ...mutationBase, saleEnabled: true }),
             resealProjection({ ...mutationBase, adapterStatus: mutationBase.adapterStatus === "blocked" ? "passed" : "blocked" }),
             resealProjection({ ...mutationBase, analysisDecision: mutationBase.analysisDecision === "ABSTAIN_SYNTHETIC" ? "READY_OFFLINE_SYNTHETIC" : "ABSTAIN_SYNTHETIC" }),
           ];

@@ -117,9 +117,7 @@ if (jsonPath) fs.writeFileSync(jsonPath, rendered + "\n");
 const hardFailures = [];
 if (byPattern.tsIgnore.length > 0) hardFailures.push("@ts-ignore is not permitted");
 if (byPattern.tsExpectError.length > 0) hardFailures.push("@ts-expect-error requires an explicit C14 review before admission");
-if (hardGateBoundaryHits.explicitAny.length > 0) {
-  hardFailures.push("explicit any is not permitted on API/Edge/auth/db/security/commerce hard-gate boundaries");
-}
+if (byPattern.explicitAny.length > 0) hardFailures.push("explicit any is not permitted in tracked TypeScript");
 
 if (hardFailures.length > 0) {
   console.error("C14 type-risk gate failed:");
