@@ -1,3 +1,7 @@
+# C14-P03 CURRENT TRUTH: despite the historical filename, this is an environment inventory/example, not a production-readiness certificate.
+# The audited C13 release is NO_GO. Keep commercial readiness false unless a later exact release authority explicitly proves and approves promotion.
+# Empty/example values prove no hosted configuration. Real secrets must remain in the deployment secret manager.
+
 # Velmère production ENV template — PASS2105
 # Copy to Vercel/GitHub Actions secrets. Never commit real values.
 
@@ -61,7 +65,7 @@ NEXT_PUBLIC_VELMERE_OPERATOR_DIAGNOSTICS=0
 NEXT_PUBLIC_VELMERE_SHOW_PDF_QA=0
 
 # PASS2223 paid Advanced fail-closed
-VELMERE_SERVICES_COMMERCIAL_READY=true
+VELMERE_SERVICES_COMMERCIAL_READY=false
 VELMERE_PAID_ACCESS_SECRET=replace_with_32_plus_random_chars
 VELMERE_PAID_ACCESS_TTL_MS=2592000000
 VELMERE_REQUIRE_PAID_ENTITLEMENT_LEDGER=true
