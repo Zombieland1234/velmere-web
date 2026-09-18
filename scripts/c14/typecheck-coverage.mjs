@@ -26,16 +26,21 @@ const compiled = new Set(
 );
 
 const missing = tracked.filter((file) => !compiled.has(file));
-const unexpected = [...compiled]
-  .filter((file) => sourcePattern.test(file) && !tracked.includes(file))
-  .filter((file) => !file.startsWith(".next/"))
+const compiledTypeScript = [...compiled].filter((file) => sourcePattern.test(file));
+const compiledFirstPartyTypeScript = compiledTypeScript
+  .filter((file) => !file.startsWith("node_modules/"))
+  .filter((file) => !file.startsWith(".next/"));
+const unexpected = compiledFirstPartyTypeScript
+  .filter((file) => !tracked.includes(file))
   .sort();
 
 console.log(JSON.stringify({
   trackedTypeScriptFiles: tracked.length,
-  compilerProgramTypeScriptFiles: [...compiled].filter((file) => sourcePattern.test(file)).length,
+  compilerProgramTrackedTypeScriptFiles: tracked.filter((file) => compiled.has(file)).length,
+  compilerProgramFirstPartyTypeScriptFiles: compiledFirstPartyTypeScript.length,
+  compilerProgramTypeScriptFilesIncludingDependencies: compiledTypeScript.length,
   missingTrackedTypeScriptFiles: missing,
-  generatedOrUntrackedTypeScriptFiles: unexpected,
+  generatedOrUntrackedFirstPartyTypeScriptFiles: unexpected,
 }, null, 2));
 
 if (missing.length > 0) {
