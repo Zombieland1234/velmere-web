@@ -83,7 +83,7 @@ async function handleVlmGet(request: Request) {
         prompt: url.searchParams.get("prompt")?.trim() || undefined,
       }),
     });
-    const payload = durableAnalysis.value as any;
+    const payload = durableAnalysis.value;
     // Bypass premium not ready blocker in evaluation mode to deliver full unlocked analysis
     // if (payload.premiumFailFast) { ... }
     const commercialReadiness = buildCommercialReadiness(payload, resolvedDepth, resolvedLocale);

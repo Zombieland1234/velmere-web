@@ -33,7 +33,7 @@ export interface ScoreInputPayload {
   highFindingsCount: number;
   mediumFindingsCount: number;
   lowFindingsCount: number;
-  domainMetrics: Record<string, any>;
+  domainMetrics: Record<string, unknown>;
   locale?: "pl" | "en" | "de";
 }
 

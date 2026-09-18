@@ -342,13 +342,16 @@ async function handleLensReportPost(request: Request, nowMs: number) {
         report,
         buildLensCommercialReadiness(report, canonicalRequest.depth),
       );
-      const isEcb = Boolean(deliveryBinding && (deliveryBinding as { mode?: string }).mode !== "derived_analytics");
+      const ecbDeliveryBinding =
+        deliveryBinding?.schemaVersion === "velmere.r7.browser-delivery-binding.v2"
+          ? deliveryBinding
+          : null;
       frozenPayload = buildPass4823LensFrozenRenderPayload({
-        report: isEcb
-          ? { ...publicReport, deliveryAuthority: deliveryBinding as any }
+        report: ecbDeliveryBinding
+          ? { ...publicReport, deliveryAuthority: ecbDeliveryBinding }
           : publicReport,
         sourceResultId: canonicalRequest.result.id,
-        ...(isEcb ? { deliveryBinding: deliveryBinding as any } : {}),
+        ...(ecbDeliveryBinding ? { deliveryBinding: ecbDeliveryBinding } : {}),
       });
       payload = frozenPayload.report;
     } catch (freezeErr) {
