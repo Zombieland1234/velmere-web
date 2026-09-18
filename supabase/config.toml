@@ -1,0 +1,4 @@
+[functions.r7-shield-pro-paid-workspace-v1]
+# This endpoint accepts only authenticated user bearer JWTs. Keep the platform
+# JWT gate enabled in addition to the handler's auth.getUser() and RPC checks.
+verify_jwt = true
