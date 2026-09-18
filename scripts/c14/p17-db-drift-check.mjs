@@ -72,7 +72,8 @@ export function auditRepository(root, snapshot = null) {
   const migrationDir = path.join(root, 'supabase', 'migrations');
   const filenames = fs.existsSync(migrationDir) ? fs.readdirSync(migrationDir).filter(x => x.endsWith('.sql')) : [];
   const migrationSet = inspectMigrationSet(filenames);
-  const liveMigrations = snapshot?.liveMigrations ?? [];
+  const hasLiveSnapshot = Boolean(snapshot && Array.isArray(snapshot.liveMigrations) && snapshot.liveMigrations.length);
+  const liveMigrations = hasLiveSnapshot ? snapshot.liveMigrations : [];
   const history = compareMigrationHistory(migrationSet.migrations, liveMigrations);
   const hardeningPath = migrationSet.migrations.find(x => x.version === P17_HARDENING_VERSION)?.filename;
   const hardening = hardeningPath ? inspectHardeningSql(fs.readFileSync(path.join(migrationDir, hardeningPath), 'utf8')) : null;
@@ -82,8 +83,8 @@ export function auditRepository(root, snapshot = null) {
   }));
   const recoveredC13 = migrationSet.migrations.some(x => x.version === EXPECTED_RECOVERED_C13);
   const hardeningComplete = Boolean(hardening && !hardening.customerDml && hardening.functions.every(x => x.searchPathPinned && x.anonRevoked && x.intendedGrant) && hardening.constraints.every(x => x.validated));
-  const status = migrationSet.malformed.length || migrationSet.duplicateVersions.length || !recoveredC13 || !hardeningComplete || history.liveMissingFromRepo.length ? 'DRIFT' : 'PASS';
-  return { status, recoveredC13, hardeningComplete, migrationSet, history, replay, hardening };
+  const status = !hasLiveSnapshot ? 'UNVERIFIED' : migrationSet.malformed.length || migrationSet.duplicateVersions.length || !recoveredC13 || !hardeningComplete || history.liveMissingFromRepo.length ? 'DRIFT' : 'PASS';
+  return { status, hasLiveSnapshot, recoveredC13, hardeningComplete, migrationSet, history, replay, hardening };
 }
 
 function parseArgs(argv) {
