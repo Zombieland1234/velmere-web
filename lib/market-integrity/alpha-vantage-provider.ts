@@ -370,7 +370,21 @@ async function fetchPass465SecJson(
   const cache = kind === "submissions" ? pass465SubmissionsCache : pass465CompanyfactsCache;
   const inflight = kind === "submissions" ? pass465SubmissionsInflight : pass465CompanyfactsInflight;
   const now = Date.now();
-  const cached = cache.get(cik);
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "sec_edgar",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: now,
+  });
+  if (!fetchRights.allowed) return null;
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "sec_edgar",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: Math.max(1, Math.ceil(requestPolicy.cacheTtlMs / 1000)),
+    nowMs: now,
+  });
+  const cached = cacheRights.allowed ? cache.get(cik) : undefined;
   if (cached && cached.expiresAt > now) return cached.value;
   const pending = inflight.get(cik);
   if (pending) return pending;
@@ -382,8 +396,10 @@ async function fetchPass465SecJson(
       const response = await brokeredEgressFetch(requestPolicy.url, {
         headers: requestPolicy.headers,
         signal: controller.signal,
-        next: { revalidate: requestPolicy.cacheTtlMs / 1_000 },
-      } as RequestInit & { next: { revalidate: number } }, {
+        ...(cacheRights.allowed
+          ? { next: { revalidate: requestPolicy.cacheTtlMs / 1_000 } }
+          : { cache: "no-store" as RequestCache }),
+      } as RequestInit & { next?: { revalidate: number } }, {
         profile: "sec_edgar",
         operation: `sec_edgar_${kind}`,
         timeoutMs: requestPolicy.timeoutMs,
@@ -400,10 +416,12 @@ async function fetchPass465SecJson(
   })();
   inflight.set(cik, request);
   const value = await request;
-  cache.set(cik, {
-    value,
-    expiresAt: Date.now() + (value ? requestPolicy.cacheTtlMs : requestPolicy.negativeCacheTtlMs),
-  });
+  if (cacheRights.allowed) {
+    cache.set(cik, {
+      value,
+      expiresAt: Date.now() + (value ? requestPolicy.cacheTtlMs : requestPolicy.negativeCacheTtlMs),
+    });
+  }
   return value;
 }
 
