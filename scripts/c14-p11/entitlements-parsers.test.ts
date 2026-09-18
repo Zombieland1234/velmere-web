@@ -56,8 +56,9 @@ const accountB: VelmereResolvedAccount = {
 
 beforeEach(() => {
   for (const key of ENV_KEYS) savedEnv.set(key, process.env[key]);
-  process.env.NODE_ENV = "test";
-  delete process.env.VERCEL_ENV;
+  const mutableEnv = process.env as Record<string, string | undefined>;
+  mutableEnv.NODE_ENV = "test";
+  delete mutableEnv.VERCEL_ENV;
   delete process.env.NEXT_PUBLIC_SUPABASE_URL;
   delete process.env.SUPABASE_SERVICE_ROLE_KEY;
   clearMemoryEntitlements();
@@ -67,8 +68,9 @@ afterEach(() => {
   clearMemoryEntitlements();
   for (const key of ENV_KEYS) {
     const value = savedEnv.get(key);
-    if (value === undefined) delete process.env[key];
-    else process.env[key] = value;
+    const mutableEnv = process.env as Record<string, string | undefined>;
+    if (value === undefined) delete mutableEnv[key];
+    else mutableEnv[key] = value;
   }
   savedEnv.clear();
 });
