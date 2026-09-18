@@ -18,7 +18,7 @@ jobs:
       C6_SOURCE_SHA: ${{ github.sha }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with: {persist-credentials: false}
+        with: {fetch-depth: 0, persist-credentials: false}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with: {node-version: '24.18.0'}
       - run: |
@@ -61,7 +61,11 @@ jobs:
         with: {fetch-depth: 0,persist-credentials: false}
       - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends redis-server
       - name: Canonical Shield PostgreSQL regression
-        run: mkdir -p /tmp/c13-sql; set -o pipefail; python3 scripts/c13/shield-db-test.py 2>&1 | tee /tmp/c13-sql/execution.log
+        run: |
+          mkdir -p /tmp/c13-sql
+          createdb c13_fixture
+          set -o pipefail
+          PGDATABASE=c13_fixture python3 scripts/c13/shield-db-test.py 2>&1 | tee /tmp/c13-sql/execution.log
       - name: Synthetic disposable PostgreSQL Redis object-file restore drill
         run: mkdir -p /tmp/c14-restore; set -o pipefail; bash scripts/c14/p16/run-isolated-restore.sh 2>&1 | tee /tmp/c14-restore/execution.log
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
