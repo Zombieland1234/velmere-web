@@ -3,7 +3,7 @@
 Branch: `parallel/c14-p03-documentation`  
 Audited source base: `4cb45bbcf910f0517d4a5d265682cd2f7e4e41df`  
 Audited source tree: `a5268de961923bf0982506167396cda14c0a1381`  
-Documentation branch HEAD: updated at finalization  
+Documentation branch HEAD: resolve the Git ref `parallel/c14-p03-documentation`; the containing commit cannot truthfully self-embed its own Git SHA. The exact final SHA is reported by the final C14-P03 handoff response.  
 Merge performed: **NO**
 
 ## Scope
@@ -73,6 +73,33 @@ This confirms the narrow C13 deployment record. It does not prove real HTTP Auth
 14. The C13 2472-case corpus is a replay of cases already observed in C9, not 2472 new independent audits.
 15. Public PactVerity evidence cites three SHAs that do not resolve as commits in the current velmere-web repository; current lineage is unverified.
 16. Historical C10-C12 files were not clearly labelled as historical relative to C13.
+
+## Changed documentation
+
+Added:
+- `README.md`
+- `docs/CURRENT_STATE.md`
+- `docs/RUNBOOK.md`
+- `docs/RECOVERY.md`
+- `docs/PRODUCTS_AND_LIMITATIONS.md`
+- `docs/PROVIDERS_AND_RIGHTS.md`
+- `docs/CLAIM_LEDGER.md`
+- `_handoff/parallel/C14-P03-DOCUMENTATION.md`
+
+Updated without changing product/UI logic:
+- `scripts/c10/QUALIFICATION_TRIGGER.md`
+- `scripts/c10/RECEIPT_QUALIFICATION.md`
+- `scripts/c11/QUALIFICATION_NOTES.md`
+- `scripts/c11/QUALIFICATION_TRIGGER.md`
+- `scripts/c12/DEPLOYMENT_REQUIREMENTS.md`
+- `scripts/c12/QUALIFICATION_TRIGGER.md`
+- `scripts/c13/QUALIFICATION_TRIGGER.md`
+- `scripts/c13/RECOVERY_SCOPE.md`
+- `supabase/migrations/README_C6D.md`
+- `lib/security/pro-audit-pdf/NIMBUS_SANS_FONT_NOTICE.md`
+- `ENV_PRODUCTION_READY.example`
+
+The final branch diff contains documentation/config-example changes only. No files under `app/`, `components/`, product engine/runtime implementation, API route logic or UI styling were changed.
 
 ## Corrections
 
