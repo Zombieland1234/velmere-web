@@ -287,11 +287,12 @@ function rightsFacts(canonicalProviderId: string) {
     || boolAt(p36Rights, "commercialUseAllowed") === true
     || boolAt(p21, "commercialUseAllowed") === true;
 
-  const rawRedistributionAllowed =
-    boolAt(p65, "rawRedistributionAllowed") === true
-    || boolAt(p36Rights, "redistributionAllowed") === true
-    || boolAt(p90Rights, "rawRedistributionAllowed") === true
-    || boolAt(p21, "redistributionAllowed") === true;
+  const rawRedistributionAllowed = ecbApproved
+    ? boolAt(ecbApproved, "publicBulkRedistribution") === true
+    : boolAt(p65, "rawRedistributionAllowed") === true
+      || boolAt(p36Rights, "redistributionAllowed") === true
+      || boolAt(p90Rights, "rawRedistributionAllowed") === true
+      || boolAt(p21, "redistributionAllowed") === true;
 
   const derivedUseAllowed =
     boolAt(p65, "derivedUseAllowed") === true
@@ -477,6 +478,9 @@ export function evaluateC14ProviderOperation(
     }
     if (row.ttlSecondsMaximum !== null && ttl! > row.ttlSecondsMaximum) {
       return { ...base, allowed: false, state: "BLOCKED", code: "CACHE_TTL_EXCEEDED", blockers: ["cache_ttl_exceeds_approved_maximum"] };
+    }
+    if (request.channel === "internal_diagnostic") {
+      return { ...base, allowed: true, state: "CONFIRMED", code: "ALLOW_INTERNAL_DIAGNOSTIC_CACHE", blockers: [] };
     }
   }
 
