@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { executeFullAuditV2 } from "../../lib/security/v2/master-audit-orchestrator";
 
 const [sourcePath, artifactPath, outputPath = "artifacts/bounty/across-spokeperiphery-velmere.json"] = process.argv.slice(2);
@@ -46,21 +47,26 @@ const envelope = {
   result,
 };
 
-await writeFile(outputPath, JSON.stringify(envelope, null, 2));
+const serialized = JSON.stringify(envelope, null, 2);
+await writeFile(outputPath, serialized);
 
-const summary = result.findings.map((f: any) => ({
-  id: f.id,
-  title: f.title,
-  severity: f.severity,
-  confidence: f.confidence,
-  status: f.status,
-  category: f.category,
-  evidenceClass: f.evidenceClass,
-}));
+const countBy = (values: Array<string | undefined>) =>
+  values.reduce<Record<string, number>>((acc, value) => {
+    const key = value || "unknown";
+    acc[key] = (acc[key] ?? 0) + 1;
+    return acc;
+  }, {});
+
+// Bounty-safe stdout: no titles, locations, descriptions, evidence, or PoC-like details.
 console.log(JSON.stringify({
-  snapshot: result.snapshot,
+  schema: "velmere.bounty.public-aggregate.v1",
+  targetCommit: process.env.ACROSS_SHA ?? "unknown",
+  resultDigestSha256: createHash("sha256").update(serialized).digest("hex"),
+  findingCount: result.findings.length,
+  severityCounts: countBy(result.findings.map((f: any) => f.severity)),
+  categoryCounts: countBy(result.findings.map((f: any) => f.category)),
+  evidenceClassCounts: countBy(result.findings.map((f: any) => f.evidenceClass)),
+  statusCounts: countBy(result.findings.map((f: any) => f.status)),
   scores: result.scores,
   cfgMetrics: result.cfgMetrics,
-  findingCount: result.findings.length,
-  findings: summary,
 }, null, 2));
