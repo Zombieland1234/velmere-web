@@ -1,0 +1,192 @@
+name: C15 Q8 payment identity integration
+on:
+  push:
+    branches: [c15/qualification-q8-20260919]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: c15-q8-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  admission:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      ready: ${{ steps.admit.outputs.ready }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Admit only exact locally reviewed Q6 Q7 Q8 source
+        id: admit
+        env:
+          TARGET_BRANCH: c15/qualification-q8-20260919
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, lzma, os, pathlib, subprocess
+          def git(*args): return subprocess.check_output(['git',*args],text=True).strip()
+          root=pathlib.Path.cwd(); out=pathlib.Path('/tmp/q8-admission');out.mkdir()
+          paths=[root/f'_handoff/q8-transfer-{i}.b64' for i in range(1,5)]
+          if not any(p.exists() for p in paths):
+            assert not git('status','--porcelain')
+            with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready=true\n')
+            (out/'RESULT.json').write_text(json.dumps({'state':'QUALIFY_CURRENT_COMMIT','sourceSha':git('rev-parse','HEAD')}))
+            raise SystemExit(0)
+          assert all(p.is_file() for p in paths)
+          assert not git('status','--porcelain')
+          subprocess.run(['git','merge-base','--is-ancestor','57a29cfccb9b5e3718ae89c8426e7155a0c086ee','HEAD'],check=True)
+          packed=base64.b64decode(''.join(p.read_text() for p in paths),validate=True)
+          assert hashlib.sha256(packed).hexdigest()=='12cd25c704b90521cdb59355cc214f2e012887084697056f8da5f03cd5306dbe'
+          patch=lzma.decompress(packed)
+          assert hashlib.sha256(patch).hexdigest()=='0c06d0e501d2aabdd5cae1897f266dbf580df912c2164e8686b76f1597e5e2db'
+          p=out/'REVIEWED.patch';p.write_bytes(patch)
+          subprocess.run(['git','apply','--check',str(p)],check=True)
+          subprocess.run(['git','apply',str(p)],check=True)
+          for p in paths:p.unlink()
+          subprocess.run(['git','add','--all'],check=True)
+          workflow='.github/workflows/c15-q8-qualification.yml'
+          subprocess.run(['git','update-index','--force-remove',workflow],check=True)
+          actual=git('write-tree')
+          assert actual=='6dc956ed4df8c004031ed9ae8a048493a5db4de6',actual
+          subprocess.run(['git','add',workflow],check=True)
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','commit','-m','feat(c15-q8): integrate exact reviewed Q6-Q8 payment identity source'],check=True)
+          sha=git('rev-parse','HEAD');tree=git('rev-parse','HEAD^{tree}')
+          subprocess.run(['git','push','origin','HEAD:refs/heads/'+os.environ['TARGET_BRANCH']],check=True)
+          (out/'RESULT.json').write_text(json.dumps({'state':'SOURCE_PUBLISHED_NOT_YET_QUALIFIED','sourceSha':sha,'tree':tree,'reviewedSourceTree':actual,'releaseStatus':'NO_GO'},indent=2))
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ready=false\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q8-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/q8-admission
+          retention-days: 14
+  application:
+    needs: admission
+    if: needs.admission.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: --max-old-space-size=2048
+      RAYON_NUM_THREADS: '2'
+      C6_SOURCE_SHA: ${{ github.sha }}
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Fresh install regressions strict lint and production build
+        run: python3 scripts/c14-integration/qualify-core.py
+      - name: Export only committed source with declared font omissions
+        if: always()
+        run: python3 scripts/c14-integration/export-source.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q8-core-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/c14-integration
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q8-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/c14-source
+          retention-days: 14
+  benchmark:
+    needs: admission
+    if: needs.admission.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Full frozen offline corpus without label changes
+        run: bash scripts/c14-integration/benchmark.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q8-benchmark-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/c14-benchmark
+          retention-days: 14
+  runtime:
+    needs: admission
+    if: needs.admission.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: --max-old-space-size=2048
+      RAYON_NUM_THREADS: '2'
+      C6_SOURCE_SHA: ${{ github.sha }}
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - run: |
+          mkdir -p /tmp/c14-runtime
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends redis-server
+          node --version > /tmp/c14-runtime/NODE_VERSION.txt
+          redis-server --version > /tmp/c14-runtime/REDIS_VERSION.txt
+          printf '%s\n' "$GITHUB_SHA" > /tmp/c14-runtime/SOURCE_SHA.txt
+      - run: npm ci --ignore-scripts --no-fund
+      - name: Real Redis checks on private temporary instance
+        run: bash scripts/c12/redis-tests.sh > /tmp/c14-runtime/REDIS_TESTS.log 2>&1
+      - name: Full production bundle
+        run: npm run build > /tmp/c14-runtime/BUILD.log 2>&1
+      - run: node_modules/.bin/playwright install --with-deps chromium
+      - name: Dynamic Basic JSON PDF browser quota and recovery
+        run: set -o pipefail; node scripts/c12/production-e2e.mjs /tmp/c14-runtime/e2e 2>&1 | tee /tmp/c14-runtime/e2e.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q8-runtime-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/c14-runtime
+          retention-days: 14
+  secrets:
+    needs: admission
+    if: needs.admission.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - run: python3 scripts/c14-integration/scan-secrets.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q8-secrets-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/c14-secrets
+          retention-days: 14

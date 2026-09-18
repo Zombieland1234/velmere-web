@@ -1,4 +1,5 @@
 import type Stripe from "stripe";
+import { resolveStripePaymentIdentity } from "@/lib/payments/stripe-payment-identity";
 import { normalizeVlmPaidProductId, type VlmPaidProductId } from "@/lib/commerce/vlm-paid-access";
 import { stripeObjectPaymentIntentId } from "@/lib/payments/stripe-webhook-state";
 
@@ -48,14 +49,7 @@ function paymentIntentIdFromObject(object: unknown) {
 }
 
 async function resolvePaymentIntentId(event: Stripe.Event, stripe: Stripe) {
-  const direct = paymentIntentIdFromObject(event.data.object);
-  if (direct) return direct;
-  if (event.type !== "charge.dispute.created") return null;
-  const dispute = event.data.object as Stripe.Dispute;
-  const chargeId = typeof dispute.charge === "string" ? dispute.charge : dispute.charge?.id;
-  if (!chargeId) return null;
-  const charge = await stripe.charges.retrieve(chargeId);
-  return paymentIntentIdFromObject(charge);
+  return (await resolveStripePaymentIdentity(event, stripe)).paymentIntentId;
 }
 
 export async function resolveVlmPaidTerminalBindingFromEvent(

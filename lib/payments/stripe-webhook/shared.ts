@@ -1,12 +1,9 @@
 import { NextResponse } from "next/server";
+import { resolveStripePaymentIdentity } from "@/lib/payments/stripe-payment-identity";
 import type Stripe from "stripe";
 import { flushOrderEventStorageWrites } from "@/lib/orders/order-event-storage";
 import { completeStripeWebhookEvent } from "@/lib/db/order-service";
 import { isPaidAuditProduct } from "@/lib/security/audit-intake-case-vault";
-import {
-  stripeEventFallbackSubjectKey,
-  stripeObjectPaymentIntentId,
-} from "@/lib/payments/stripe-webhook-state";
 
 export const SUPPORTED_STRIPE_WEBHOOK_EVENTS = new Set([
   "checkout.session.completed",
@@ -222,27 +219,7 @@ export async function paymentSubjectKeyFromEvent(
   event: Stripe.Event,
   stripe: Stripe,
 ) {
-  const directPaymentIntent = stripeObjectPaymentIntentId(event.data.object);
-  if (directPaymentIntent) return `stripe:payment_intent:${directPaymentIntent}`;
-
-  if (event.type === "charge.dispute.created") {
-    const dispute = event.data.object as Stripe.Dispute;
-    const chargeId =
-      typeof dispute.charge === "string" ? dispute.charge : dispute.charge?.id;
-    if (chargeId) {
-      try {
-        const charge = await stripe.charges.retrieve(chargeId);
-        const paymentIntentId = stripeObjectPaymentIntentId(charge);
-        if (paymentIntentId) {
-          return `stripe:payment_intent:${paymentIntentId}`;
-        }
-      } catch {
-        // Fall back to a stable object/order/audit key below.
-      }
-    }
-  }
-
-  return stripeEventFallbackSubjectKey(event);
+  return (await resolveStripePaymentIdentity(event, stripe)).subjectKey;
 }
 
 export async function markWebhookRetryableFailure(
@@ -254,7 +231,8 @@ export async function markWebhookRetryableFailure(
     eventId: event.id,
     eventType: event.type,
     status: "retryable_failed",
-    errorCode,
+    // Only symbolic codes cross the storage boundary; never persist raw provider errors.
+    errorCode: /^[a-zA-Z0-9:_-]{1,160}$/.test(errorCode) ? errorCode : "webhook_processing_failed",
     expectedAttempt,
   });
 }
@@ -268,7 +246,8 @@ export async function markWebhookTerminalFailure(
     eventId: event.id,
     eventType: event.type,
     status: "dead_letter",
-    errorCode,
+    // Only symbolic codes cross the storage boundary; never persist raw provider errors.
+    errorCode: /^[a-zA-Z0-9:_-]{1,160}$/.test(errorCode) ? errorCode : "webhook_processing_failed",
     expectedAttempt,
   });
 }
