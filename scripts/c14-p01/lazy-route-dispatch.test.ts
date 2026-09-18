@@ -6,7 +6,7 @@ import {
 } from "../../lib/server/lazy-route-dispatch";
 
 test("lazy route handler failures never disclose raw exception details", async () => {
-  const sensitive = "provider https://db.internal.example/?token=opaque-c14p01-sensitive credential=c14p01-sensitive";
+  const sensitive = "provider https://db.internal.example/internal-sensitive-marker-c14p01 phrase-c14p01-sensitive-material";
   const registry = {
     explode: {
       methods: ["GET"] as const,
