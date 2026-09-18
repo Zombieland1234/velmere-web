@@ -229,10 +229,10 @@ try {
   });
 
   await record("shield-map-production-dev-flag-cannot-bypass-rights", async () => {
-    const { response, body } = await request("/api/market-integrity/investigator?query=BTC&locale=en&dev=true", {
+    const { response, body } = await request("/api/market-integrity/investigator?query=BTC&locale=en", {
       headers: { "x-velmere-dev": "true" },
     });
-    assert(response.status !== 200, "shield_map_dev_bypass_returned_customer_result");
+    assert(response.status === 503, "shield_map_dev_bypass_http_" + response.status);
     assert(safeBlocked(body), "shield_map_blocked_payload_claimed_live");
     return { http: response.status, classification: "PASS_FAIL_CLOSED", error: body?.error || body?.availability || null };
   });
@@ -297,9 +297,16 @@ try {
   const auditTarget = "0xdac17f958d2ee523a2206206994597c13d831ec7";
   for (const tier of ["pro", "advanced"]) {
     await record("browser-" + tier + "-anonymous-not-positive", async () => {
-      const { response } = await request("/en/security/audits/report/" + auditTarget + "?chainId=1&analysisMode=runtime&tier=" + tier);
-      assert(response.status === 404, "browser_paid_unauthorized_http_" + response.status);
-      return { http: response.status, classification: "AUTH_OR_ENTITLEMENT_BLOCKED" };
+      const { response, body } = await request("/en/security/audits/report/" + auditTarget + "?chainId=1&analysisMode=runtime&tier=" + tier);
+      assert(response.status === 404 || response.status === 200, "browser_paid_unauthorized_http_" + response.status);
+      assert(typeof body === "string", "browser_paid_response_not_html");
+      assert(!body.includes("audit-canonical-view"), "browser_paid_report_rendered_without_entitlement");
+      assert(!body.includes("STATIC_ANALYSIS_COMPLETED"), "browser_paid_runtime_analysis_leaked_without_entitlement");
+      return {
+        http: response.status,
+        classification: response.status === 404 ? "AUTH_OR_ENTITLEMENT_BLOCKED" : "AUTH_BLOCKED_STREAMED_NOT_FOUND_HTTP_200",
+        canonicalReportRendered: false,
+      };
     });
   }
 

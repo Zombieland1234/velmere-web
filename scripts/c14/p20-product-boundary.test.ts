@@ -52,3 +52,11 @@ test("C14-P20 Shield Map has no synthetic provider-live fallback", () => {
   assert.doesNotMatch(source, /resolveFallbackMarketRow/);
   assert.doesNotMatch(source, /local hardcoded|hardcoded.*coingecko/i);
 });
+
+test("C14-P20 runtime product truth follows current P66 topology and keeps PDF as an artifact", () => {
+  const source = fs.readFileSync("lib/server/market-integrity-route-modules/market-intelligence.ts", "utf8");
+  assert.match(source, /VLM_CANONICAL_TIERED_FAMILIES/);
+  assert.match(source, /VLM_CANONICAL_STANDALONE_PRODUCTS/);
+  assert.match(source, /pdfIsProductFamily:\s*false/);
+  assert.doesNotMatch(source, /tieredProducts:\s*\["audit",\s*"pdf",\s*"browser"\]/);
+});
