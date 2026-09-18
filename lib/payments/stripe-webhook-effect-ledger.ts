@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { parseEffectClaim, validateEffectAttempt, validateEffectLease } from "./stripe-webhook-effect-contract";
 import { hasSupabaseServiceRoleConfig } from "@/lib/db/supabase";
 import { runRegisteredServiceRoleRpc } from "@/lib/db/supabase-rpc-operation-registry";
 import {
@@ -10,6 +11,8 @@ import {
 } from "./stripe-webhook-effect-state";
 
 export const STRIPE_WEBHOOK_EFFECT_STALE_MS = 5 * 60 * 1_000;
+export type StripeWebhookEffectStorageDependencies = { rpc: typeof runRegisteredServiceRoleRpc };
+const defaultStorageDependencies: StripeWebhookEffectStorageDependencies = { rpc: runRegisteredServiceRoleRpc };
 const MAX_RECEIPT_BYTES = 16_384;
 const SAFE_EFFECT_KEY = /^[a-z0-9][a-z0-9:_-]{0,119}$/;
 
@@ -47,7 +50,7 @@ function memoryStore(): MemoryEffectStore {
 }
 
 function storageKey(eventId: string, effectKey: string) {
-  return `${eventId}:${effectKey}`;
+  return JSON.stringify([eventId, effectKey]);
 }
 
 function requiresDurableStorage() {
@@ -129,11 +132,14 @@ export async function claimStripeWebhookEffect<TReceipt>(input: {
   eventType: string;
   effectKey: string;
   staleAfterMs?: number;
-}): Promise<ClaimedEffect | CompletedEffect<TReceipt> | BusyEffect | DeadLetterEffect> {
+}, dependencies: StripeWebhookEffectStorageDependencies = defaultStorageDependencies): Promise<ClaimedEffect | CompletedEffect<TReceipt> | BusyEffect | DeadLetterEffect> {
   const eventId = normalizeIdentity(input.eventId, "event_id", 180);
   const eventType = normalizeIdentity(input.eventType, "event_type", 180);
   const effectKey = normalizeEffectKey(input.effectKey);
-  const staleAfterMs = Math.max(1_000, Math.floor(input.staleAfterMs ?? STRIPE_WEBHOOK_EFFECT_STALE_MS));
+  const staleAfterMs = input.staleAfterMs ?? STRIPE_WEBHOOK_EFFECT_STALE_MS;
+  if (!Number.isSafeInteger(staleAfterMs) || staleAfterMs < 1_000 || staleAfterMs > 3_600_000) {
+    throw new Error("stripe_webhook_effect_invalid_lease_duration");
+  }
   const requestedLeaseToken = randomUUID();
 
   if (!hasServiceRoleStorage()) {
@@ -178,7 +184,7 @@ export async function claimStripeWebhookEffect<TReceipt>(input: {
 
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
+    ({ data } = await dependencies.rpc({
       operation: "stripe_webhook_effect_claim",
       args: {
         p_event_id: eventId,
@@ -191,34 +197,7 @@ export async function claimStripeWebhookEffect<TReceipt>(input: {
   } catch {
     throw new Error("stripe_webhook_effect_claim_failed");
   }
-  const row = Array.isArray(data) ? data[0] : data;
-  if (!row) throw new Error("stripe_webhook_effect_claim_empty_result");
-  const status = String(row.status ?? "processing");
-  if (status === "completed") {
-    return {
-      kind: "completed",
-      attempt: Number(row.attempt_count ?? 1),
-      receipt: (row.result_json ?? null) as TReceipt,
-    };
-  }
-  if (status === "dead_letter") {
-    return {
-      kind: "dead_letter",
-      attempt: Number(row.attempt_count ?? 1),
-    };
-  }
-  if (!row.claimed) {
-    return {
-      kind: "busy",
-      attempt: Number(row.attempt_count ?? 1),
-      retryAfterSeconds: Math.max(1, Number(row.retry_after_seconds ?? 5)),
-    };
-  }
-  return {
-    kind: "claimed",
-    attempt: Number(row.attempt_count ?? 1),
-    leaseToken: String(row.lease_token ?? requestedLeaseToken),
-  };
+  return parseEffectClaim<TReceipt>(data, requestedLeaseToken);
 }
 
 export async function completeStripeWebhookEffect<TReceipt>(input: {
@@ -227,7 +206,9 @@ export async function completeStripeWebhookEffect<TReceipt>(input: {
   expectedAttempt: number;
   leaseToken: string;
   receipt: TReceipt;
-}) {
+}, dependencies: StripeWebhookEffectStorageDependencies = defaultStorageDependencies) {
+  validateEffectAttempt(input.expectedAttempt);
+  validateEffectLease(input.leaseToken);
   const eventId = normalizeIdentity(input.eventId, "event_id", 180);
   const effectKey = normalizeEffectKey(input.effectKey);
   const receipt = normalizeReceipt(input.receipt);
@@ -247,12 +228,12 @@ export async function completeStripeWebhookEffect<TReceipt>(input: {
 
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
+    ({ data } = await dependencies.rpc({
       operation: "stripe_webhook_effect_complete",
       args: {
         p_event_id: eventId,
         p_effect_key: effectKey,
-        p_expected_attempt: Math.max(1, Math.floor(input.expectedAttempt)),
+        p_expected_attempt: input.expectedAttempt,
         p_lease_token: input.leaseToken,
         p_result_json: receipt,
       },
@@ -269,10 +250,12 @@ export async function failStripeWebhookEffect(input: {
   expectedAttempt: number;
   leaseToken: string;
   errorCode: string;
-}) {
+}, dependencies: StripeWebhookEffectStorageDependencies = defaultStorageDependencies) {
+  validateEffectAttempt(input.expectedAttempt);
+  validateEffectLease(input.leaseToken);
   const eventId = normalizeIdentity(input.eventId, "event_id", 180);
   const effectKey = normalizeEffectKey(input.effectKey);
-  const errorCode = normalizeErrorCode(input.errorCode);
+  const errorCode = normalizeErrorCode(new Error(input.errorCode));
 
   if (!hasServiceRoleStorage()) {
     if (requiresDurableStorage()) throw new Error("stripe_webhook_effect_storage_unavailable");
@@ -289,12 +272,12 @@ export async function failStripeWebhookEffect(input: {
 
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
+    ({ data } = await dependencies.rpc({
       operation: "stripe_webhook_effect_fail",
       args: {
         p_event_id: eventId,
         p_effect_key: effectKey,
-        p_expected_attempt: Math.max(1, Math.floor(input.expectedAttempt)),
+        p_expected_attempt: input.expectedAttempt,
         p_lease_token: input.leaseToken,
         p_error_code: errorCode,
       },
@@ -311,10 +294,12 @@ export async function deadLetterStripeWebhookEffect(input: {
   expectedAttempt: number;
   leaseToken: string;
   errorCode: string;
-}) {
+}, dependencies: StripeWebhookEffectStorageDependencies = defaultStorageDependencies) {
+  validateEffectAttempt(input.expectedAttempt);
+  validateEffectLease(input.leaseToken);
   const eventId = normalizeIdentity(input.eventId, "event_id", 180);
   const effectKey = normalizeEffectKey(input.effectKey);
-  const errorCode = normalizeErrorCode(input.errorCode);
+  const errorCode = normalizeErrorCode(new Error(input.errorCode));
 
   if (!hasServiceRoleStorage()) {
     if (requiresDurableStorage()) throw new Error("stripe_webhook_effect_storage_unavailable");
@@ -331,12 +316,12 @@ export async function deadLetterStripeWebhookEffect(input: {
 
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
+    ({ data } = await dependencies.rpc({
       operation: "stripe_webhook_effect_dead_letter",
       args: {
         p_event_id: eventId,
         p_effect_key: effectKey,
-        p_expected_attempt: Math.max(1, Math.floor(input.expectedAttempt)),
+        p_expected_attempt: input.expectedAttempt,
         p_lease_token: input.leaseToken,
         p_error_code: errorCode,
       },
