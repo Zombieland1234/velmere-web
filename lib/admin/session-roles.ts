@@ -68,8 +68,8 @@ function parseSessionToken(token: string, secret: string): VelmereAdminSession |
 }
 
 export function createAdminSessionTokenForServerTest(input: { actorId: string; role: VelmereAdminRole; email?: string; ttlMs?: number }) {
-  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET;
-  if (!secret) throw new Error("Missing VELMERE_ADMIN_SESSION_SECRET.");
+  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET?.trim() ?? "";
+  if (Buffer.byteLength(secret, "utf8") < 32) throw new Error("Missing or weak VELMERE_ADMIN_SESSION_SECRET.");
   const issuedAt = Date.now();
   const payload: VelmereAdminSession = {
     schemaVersion: "velmere.admin-session.v1",
@@ -86,8 +86,8 @@ export function createAdminSessionTokenForServerTest(input: { actorId: string; r
 }
 
 export function verifyAdminSessionRequest(req: Request, requiredScope: VelmereAdminScope) {
-  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET;
-  if (!secret) {
+  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET?.trim() ?? "";
+  if (Buffer.byteLength(secret, "utf8") < 32) {
     return {
       ok: false as const,
       status: "blocked_env" as const,
@@ -108,12 +108,17 @@ export function verifyAdminSessionRequest(req: Request, requiredScope: VelmereAd
 }
 
 export function buildAdminRoleReadiness() {
-  const hasSecret = Boolean(process.env.VELMERE_ADMIN_SESSION_SECRET);
+  const configuredSecret = process.env.VELMERE_ADMIN_SESSION_SECRET?.trim() ?? "";
+  const hasSecret = Boolean(configuredSecret);
+  const strongSecret = Buffer.byteLength(configuredSecret, "utf8") >= 32;
   return {
     schemaVersion: "velmere.admin-role-readiness.v1",
     hasSecret,
+    strongSecret,
     roles: Object.keys(ROLE_SCOPES),
     scopes: Object.values(ROLE_SCOPES).flat(),
-    productionBoundary: hasSecret ? "Signed admin session contract ready; still connect to real auth provider before 100%." : "BLOCKED: VELMERE_ADMIN_SESSION_SECRET missing.",
+    productionBoundary: strongSecret
+      ? "Signed admin session contract ready; still connect to real auth provider before 100%."
+      : "BLOCKED: VELMERE_ADMIN_SESSION_SECRET must contain at least 32 bytes.",
   };
 }
