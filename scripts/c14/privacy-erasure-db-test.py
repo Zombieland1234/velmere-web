@@ -65,13 +65,12 @@ def as_user(subject: str, sql: str, *, expect_fail: bool = False) -> str:
         "set role authenticated;"
         f"select set_config('request.jwt.claim.sub','{subject}',false);"
         f"{sql};"
-        "reset role;"
     )
     return psql(statement, expect_fail=expect_fail)
 
 
 def as_service(sql: str, *, expect_fail: bool = False) -> str:
-    return psql(f"set role service_role;{sql};reset role;", expect_fail=expect_fail)
+    return psql(f"set role service_role;{sql};", expect_fail=expect_fail)
 
 
 FIXTURE = r"""
