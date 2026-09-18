@@ -1,4 +1,5 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { klineRangeProfile } from "./verified-kline-quality";
 import type { BinanceKlineInterval, MarketCandle } from "./kline-types";
 
@@ -81,6 +82,13 @@ async function fetchPages(args: {
   nowMs: number;
   requestTimeoutMs: number;
 }) {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "binance",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: args.nowMs,
+  });
+  if (!rights.allowed) throw new Error(`binance_rights_${rights.code.toLowerCase()}`);
   const profile = klineRangeProfile(args.range);
   const targetBars = Math.min(profile.maximumBars, profile.targetBars);
   const perPage = 1_000;
