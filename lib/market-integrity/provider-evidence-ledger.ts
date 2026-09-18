@@ -2,6 +2,7 @@ import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredConfiguredOriginFetch } from "@/lib/network/brokered-egress";
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { readDurableJsonBounded, writeDurableJsonAtomic } from "@/lib/security/durable-file-boundary";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import {
   isPass4644CommerciallyFreshReceipt,
   pass4644CanonicalReceiptDigest,
@@ -378,6 +379,33 @@ async function persistToSupabase(ledger: Pass4645ProviderEvidenceLedger, url: st
 }
 
 export async function persistPass4645ProviderEvidenceLedger(ledger: Pass4645ProviderEvidenceLedger): Promise<Pass4645LedgerPersistence> {
+  const nowMs = Date.now();
+  const storageBlockers = ledger.entries
+    .map((entry) => ({
+      providerId: entry.providerId,
+      decision: evaluateC14ProviderOperation({
+        providerId: entry.providerId,
+        operation: "storage",
+        channel: "internal_diagnostic",
+        nowMs,
+      }),
+    }))
+    .filter(({ decision }) => !decision.allowed)
+    .map(({ providerId, decision }) => `provider_storage_rights:${providerId}:${decision.code.toLowerCase()}`);
+  if (storageBlockers.length) {
+    return {
+      schemaVersion: "pass4645_provider_evidence_persistence_v1",
+      durable: false,
+      mode: "not_configured",
+      ledgerId: ledger.ledgerId,
+      headHash: ledger.headHash,
+      recordCount: ledger.entries.length,
+      readBackVerified: false,
+      persistedAt: null,
+      locator: null,
+      blockers: Array.from(new Set(storageBlockers)).sort(),
+    };
+  }
   const signingSecret = process.env.VELMERE_PROVIDER_RECEIPT_SIGNING_SECRET?.trim() || null;
   const directory = process.env.VELMERE_PROVIDER_RECEIPT_STORE_DIR?.trim();
   if (directory) return persistToFilesystem(ledger, directory, signingSecret);
