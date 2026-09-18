@@ -8,7 +8,7 @@ permissions:
 
 concurrency:
   group: c14-p26-monitoring-recovery
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   monitoring-recovery:
