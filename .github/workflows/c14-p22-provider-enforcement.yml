@@ -33,6 +33,8 @@ jobs:
         run: npm ci --ignore-scripts
       - name: C14 P22 enforcement regression
         run: npx tsx scripts/c14/test-provider-enforcement.ts
+      - name: Static provider egress coverage
+        run: node scripts/c14/audit-provider-egress-coverage.mjs
       - name: Existing provider rights gates
         run: |
           npm run audit:provider-rights
