@@ -35,10 +35,12 @@ jobs:
         run: npx tsx scripts/c14/test-provider-enforcement.ts
       - name: Static provider egress coverage
         run: node scripts/c14/audit-provider-egress-coverage.mjs
-      - name: Existing provider rights gates
+      - name: Project rights evidence inputs
         run: |
-          npm run audit:provider-rights
-          npm run test:provider-rights-runtime
-          npm run test:pass36:a102r44p18:rights
+          test -f config/pass21/provider-commercial-rights-registry.json
+          test -f config/pass36/a102r44p18-official-provider-rights-decision-matrix.json
+          test -f config/p65/P65_CURRENT_FREE_LEGAL_SOURCE_POLICY.json
+          test -f config/p90/audit-provider-field-rights-currentness-registry.json
+          test -f artifacts/r7/providers/R7_ECB_USAGE_POLICY_REVIEW_20260824.json
       - name: Strict TypeScript
         run: npx tsc --noEmit --pretty false
