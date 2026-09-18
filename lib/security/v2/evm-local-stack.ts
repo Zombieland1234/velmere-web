@@ -68,6 +68,11 @@ const effects: Readonly<Record<number, readonly [number, number]>> = {
   0xf0:[3,1],0xf1:[7,1],0xf2:[7,1],0xf3:[2,0],0xf4:[6,1],0xf5:[4,1],0xfa:[6,1],
   0xfd:[2,0],0xff:[1,0],
 };
+/** Stack effects for non-arithmetic legacy operations; callers handle PUSH/DUP/SWAP separately. */
+export function legacyStackEffect(op: number): readonly [number, number] | null {
+  return effects[op] ?? (op >= 0xa0 && op <= 0xa4 ? [2 + op - 0xa0, 0] as const : null);
+}
+
 const arithmetic = (op: number) => (op >= 1 && op <= 0x0b) || (op >= 0x10 && op <= 0x1d);
 export function isKnownLegacyOpcode(op: number): boolean {
   return op === 0 || op === 0xfe || op === 0x58 || op === 0x5f || arithmetic(op) ||
@@ -94,7 +99,7 @@ export function applyLocalStackInstruction(stack: LocalStack, inst: EvmInstructi
     const args = Array.from({length:arity}, pop);
     stack.push(args.some(x => x === null) ? null : foldEvmConstant(op, args[0]!, args[1] ?? 0n, args[2] ?? 0n));
   } else {
-    const effect = effects[op] ?? (op >= 0xa0 && op <= 0xa4 ? [2 + op - 0xa0, 0] as const : null);
+    const effect = legacyStackEffect(op);
     if (!effect) { stack.length = 0; return; }
     for (let i = 0; i < effect[0]; i++) pop();
     for (let i = 0; i < effect[1]; i++) stack.push(null);

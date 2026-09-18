@@ -1,0 +1,178 @@
+name: C14 origin operand provenance and exact secret triage qualification
+on:
+  push:
+    branches: [c14/origin-dataflow-qualification-20260918]
+permissions:
+  contents: read
+concurrency:
+  group: c14-qualification
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {contents: write}
+    outputs:
+      materialized: ${{ steps.stage.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 2, persist-credentials: false}
+      - id: stage
+        name: Integrate hash-checked patch once; never qualify transport staging
+        env:
+          C14_PUSH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ ! -d scripts/c14-stage ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$GITHUB_REF_NAME" = 'c14/origin-dataflow-qualification-20260918'
+          test "$(git rev-parse HEAD^)" = '4cb45bbcf910f0517d4a5d265682cd2f7e4e41df'
+          python3 - <<'PY'
+          import pathlib,gzip,json,hashlib,subprocess
+          parts=[pathlib.Path(f'scripts/c14-stage/{i:03}.bin') for i in range(4)]
+          raw=bytearray(b''.join(p.read_bytes() for p in parts))
+          # A single transcription byte in the connector transport was identified
+          # against the reviewed local payload. Both states are pinned, not guessed.
+          assert hashlib.sha256(raw).hexdigest()=='64833ca69da8aa5bb9ed64cf514f4225ba22245a17d138c106ca7faad9a8bd0a'
+          assert raw[2243]==247;raw[2243]=253
+          assert hashlib.sha256(raw).hexdigest()=='91ffb2f173076ac6c9edf62119027e0ea378f91d62f86f58b732ab9bf20f4884'
+          decoded=gzip.decompress(raw);assert len(decoded)==50426
+          data=json.loads(decoded);assert set(data)=={'patch','newFiles','derivedFiles'}
+          assert len(data['newFiles'])==9 and len(data['derivedFiles'])==4
+          def target(name):
+            p=pathlib.Path(name)
+            assert not p.is_absolute() and '..' not in p.parts and not p.exists()
+            assert name in ('lib/security/v2/origin-branch-dataflow.ts','tsconfig.c14-tests.json') or name.startswith('scripts/c14/')
+            p.parent.mkdir(parents=True,exist_ok=True);return p
+          for name,text in data['newFiles'].items():target(name).write_text(text)
+          allowed_bases={'scripts/c13/qualify.py','scripts/c13/ci-extra.py','scripts/c13/run-corpus.mjs','scripts/c13/benchmark.sh'}
+          for name,spec in data['derivedFiles'].items():
+            assert spec['base'] in allowed_bases
+            original=pathlib.Path(spec['base']).read_bytes()
+            assert hashlib.sha256(original).hexdigest()==spec['before']
+            lines=original.decode().splitlines(True)
+            for edit in reversed(spec['edits']):
+              assert 0<=edit['start']<=edit['end']<=len(lines)
+              lines[edit['start']:edit['end']]=[edit['text']]
+            result=''.join(lines).encode();assert hashlib.sha256(result).hexdigest()==spec['after']
+            target(name).write_bytes(result)
+          patch=data['patch'].encode()
+          assert hashlib.sha256(patch).hexdigest()=='cc80104dc0ff295b58b0365f0297350faaaca447818b1b538bd987fd8e826d05'
+          pathlib.Path('/tmp/c14-reviewed.patch').write_bytes(patch)
+          subprocess.run(['git','apply','--check','/tmp/c14-reviewed.patch'],check=True)
+          subprocess.run(['git','apply','/tmp/c14-reviewed.patch'],check=True)
+          PY
+          git rm -r scripts/c14-stage
+          git diff --check
+          git config user.name 'Velmere C14 integration'
+          git config user.email 'c14-integration@users.noreply.github.com'
+          git add -A
+          python3 - <<'PY'
+          import subprocess
+          for name in subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines():
+            assert name.startswith(('scripts/c14/','scripts/c14-stage/')) or name in ('tsconfig.c14-tests.json','lib/security/v2/origin-branch-dataflow.ts','lib/security/v2/evm-local-stack.ts','lib/security/v2/contextual-access-control-engine.ts'),name
+          PY
+          git commit -m 'fix(c14): follow tx.origin branch operands and qualify exact source secret triage'
+          cat > /tmp/c14-askpass.sh <<'SH'
+          #!/bin/sh
+          case "$1" in *Username*) printf '%s\n' x-access-token;; *) printf '%s\n' "$C14_PUSH_TOKEN";; esac
+          SH
+          chmod 700 /tmp/c14-askpass.sh
+          GIT_ASKPASS=/tmp/c14-askpass.sh GIT_TERMINAL_PROMPT=0 git push origin HEAD:refs/heads/c14/origin-dataflow-qualification-20260918
+          rm /tmp/c14-askpass.sh
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+          echo 'Integrated code only. Separate exact-SHA connector push required for qualification.'
+          git rev-parse HEAD
+  application:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+      C6_SOURCE_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Isolated Redis prerequisites
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-evidence
+          if ! command -v redis-server >/dev/null; then sudo apt-get update -qq; sudo apt-get install -y --no-install-recommends redis-server; fi
+          redis-server --version > /tmp/c14-evidence/REDIS_VERSION.txt
+          node --version > /tmp/c14-evidence/NODE_VERSION.txt
+      - run: python3 scripts/c14/qualify.py
+      - if: always()
+        run: python3 scripts/c14/ci-extra.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c14-source-${{ github.run_id }}', path: /tmp/c14-source, retention-days: 14, if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c14-evidence-${{ github.run_id }}', path: /tmp/c14-evidence, retention-days: 14, if-no-files-found: error}
+      - name: Open technical gates remain red
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json,sys
+          gate=json.load(open('/tmp/c14-evidence/RELEASE_GATE.json'));print(json.dumps(gate,indent=2))
+          if gate['technicalBlockers']:sys.exit(1)
+          print('Selected technical checks passed; product status remains NO_GO.')
+          PY
+  shield-database:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env: {POSTGRES_PASSWORD: c13_ephemeral_ci_only, POSTGRES_DB: c13_fixture}
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c13_ephemeral_ci_only
+      PGDATABASE: c13_fixture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - name: Actual PostgreSQL; C13 RPC regression; synthetic identity and grants
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c13-sql
+          psql -X -At -c 'select version()' > /tmp/c13-sql/POSTGRES_VERSION.txt
+          python3 scripts/c13/shield-db-test.py 2>&1 | tee /tmp/c13-sql/execution.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c14-sql-${{ github.run_id }}', path: /tmp/c13-sql, retention-days: 14, if-no-files-found: error}
+  frozen-benchmark:
+    needs: materialize
+    if: needs.materialize.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - run: bash scripts/c14/benchmark.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-benchmark-${{ github.run_id }}
+          path: |
+            /tmp/c14-benchmark
+            !/tmp/c14-benchmark/private-inputs.json
+            !/tmp/c14-benchmark/*-engine.cjs
+          retention-days: 14
+          if-no-files-found: error
