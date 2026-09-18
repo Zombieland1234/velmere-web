@@ -161,3 +161,72 @@ test("paid/account report routes re-check current authority immediately before d
     assert.ok(count >= minimum, `${path}: expected at least ${minimum} final/current authority reads, observed ${count}`);
   }
 });
+
+
+test("XSS-shaped customer text remains valid data and does not corrupt report semantics", async () => {
+  const name = '<img id="c14-p24-xss" src=x onerror="globalThis.__c14P24Xss=1"> Café Żółć Über €';
+  const normalized = normalizeCustomerReportInput({
+    address,
+    chainId: "1",
+    analysisMode: "reference",
+    tier: "basic",
+    locale: "en",
+    name,
+  });
+  assert.equal(normalized.target.contractName, name.normalize("NFC"));
+  const report = await customerReport(normalized.target.contractName);
+  const lint = lintCanonicalReport(report, "evm_contract");
+  assert.equal(lint.valid, true, JSON.stringify(lint.issues));
+  const lines = canonicalReportToPdfLines(report).join("\n");
+  assert.ok(lines.includes(name.normalize("NFC")));
+});
+
+test("empty findings remain a valid explicit-unverified report and render to PDF", async () => {
+  const report = await customerReport();
+  const copy = JSON.parse(JSON.stringify(report)) as CanonicalAuditReportModel;
+  for (const section of copy.sections) {
+    if (section.data?.findings) section.data.findings = [];
+  }
+  const empty = recomputeCustomerDigest(copy);
+  const lint = lintCanonicalReport(empty, "evm_contract");
+  assert.equal(lint.valid, true, JSON.stringify(lint.issues));
+  assert.equal(empty.sections.flatMap(section => section.data?.findings ?? []).length, 0);
+  assert.ok(renderCanonicalReportToPdf(empty).pdfByteLength > 1_000);
+});
+
+test("malformed and oversized report inputs fail closed before generation", () => {
+  assert.throws(() => normalizeCustomerReportInput({
+    address,
+    chainId: "1",
+    analysisMode: "reference",
+    tier: "basic",
+    locale: ["en"],
+  } as unknown as Record<string, unknown>), /invalid_body_field_type/);
+  assert.throws(() => normalizeCustomerReportInput({
+    address,
+    chainId: "1",
+    analysisMode: "reference",
+    tier: "basic",
+    locale: "en",
+    name: "X".repeat(2_049),
+  }), /report_parameter_too_large/);
+});
+
+test("Basic PDF route carries the same browser hardening envelope as canonical PDF delivery", () => {
+  const source = readFileSync("app/api/audit/basic/report/route.ts", "utf8");
+  for (const required of [
+    "'x-content-type-options': 'nosniff'",
+    "'content-security-policy': 'sandbox'",
+    "'cross-origin-resource-policy': 'same-origin'",
+    "'x-frame-options': 'DENY'",
+    "'referrer-policy': 'no-referrer'",
+  ]) assert.ok(source.includes(required), `missing PDF response hardening: ${required}`);
+});
+
+test("archive restore route bounds and structurally validates JSON before bridge use", () => {
+  const source = readFileSync("app/api/audit/basic/report/restore/route.ts", "utf8");
+  assert.ok(source.includes("readBoundedJsonBody<Record<string, unknown>>(request, 8 * 1024"));
+  assert.ok(source.includes("rejectDuplicateKeys: true"));
+  assert.ok(source.includes("rejectDangerousKeys: true"));
+  assert.ok(source.includes("/^abk_[a-f0-9]{64}$/"));
+});
