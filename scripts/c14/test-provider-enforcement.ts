@@ -8,6 +8,7 @@ import {
   evaluateC14ProviderOperation,
 } from "../../lib/compliance/c14-provider-enforcement";
 import { createProviderReliabilityControlPlane } from "../../lib/market-integrity/provider-reliability-control-plane";
+import { persistPass4645ProviderEvidenceLedger } from "../../lib/market-integrity/provider-evidence-ledger";
 import { buildPass4643ProviderRuntimeInventory } from "../../lib/market-integrity/provider-runtime-inventory";
 
 async function main() {
@@ -196,6 +197,22 @@ async function main() {
   assert.equal(second.receipt.state, "fresh_cache");
   assert.equal(cachedExecutions, 1);
   
+  const blockedPersistence = await persistPass4645ProviderEvidenceLedger({
+    ledgerId: "c14-p22-test-ledger",
+    headHash: "0".repeat(64),
+    entries: [{ providerId: "coinbase" }],
+  } as never);
+  assert.equal(blockedPersistence.durable, false);
+  assert.ok(blockedPersistence.blockers.some((blocker) => blocker.startsWith("provider_storage_rights:coinbase:")));
+
+  const evidenceExportSource = readFileSync("lib/server/market-integrity-route-modules/evidence-export.ts", "utf8");
+  const exportGateIndex = evidenceExportSource.indexOf('operation: "export"');
+  const persistSnapshotIndex = evidenceExportSource.indexOf("persistSourceSnapshot");
+  assert.ok(exportGateIndex >= 0);
+  assert.ok(persistSnapshotIndex >= 0);
+  assert.ok(exportGateIndex < persistSnapshotIndex, "provider export rights must be checked before snapshot persistence");
+  assert.match(evidenceExportSource, /dataClass: "raw"/u);
+
   const deliveryGateSource = readFileSync("lib/market-integrity/market-row-delivery-gate.ts", "utf8");
   assert.match(deliveryGateSource, /provider_rights:/u);
   assert.match(
@@ -206,7 +223,7 @@ async function main() {
   
   console.log(JSON.stringify({
     schemaVersion: "velmere.c14-p22.provider-enforcement-test.v1",
-    assertions: 37,
+    assertions: 44,
     runtimeProvidersCovered: C14_RUNTIME_PROVIDER_IDS.length,
     matrixRows: matrix.length,
     currentTime: new Date(NOW).toISOString(),
