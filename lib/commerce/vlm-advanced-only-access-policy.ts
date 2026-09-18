@@ -140,6 +140,23 @@ export async function resolveVlmAdvancedOnlyAccess(args: {
   const product = getVlmPaidProduct(productId, args.locale);
   const skuTruth = getVlmCurrentSkuTruth(paidDepth, args.locale);
 
+  // Current SKU truth is authoritative over any legacy/stale entitlement row.
+  // A NOT_FOR_SALE tier must never be resurrected by a durable record, token,
+  // query parameter, or memory fallback.
+  if (skuTruth.decision === "NOT_FOR_SALE") {
+    return {
+      ok: false,
+      depth: paidDepth,
+      paidRequired: true,
+      accessMode: paidMode,
+      policy,
+      context,
+      product,
+      reason: "product_not_for_sale",
+      headers: { "x-velmere-access-decision": "NOT_FOR_SALE" },
+    };
+  }
+
   if (!account) {
     return {
       ok: false,

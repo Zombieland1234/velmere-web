@@ -89,7 +89,14 @@ export function evaluateVlmPaidEntitlementLifecycleTransition(args: {
   };
 }
 
-function parseDurableRow(data: unknown): VlmPaidEntitlementLifecycleResult {
+function parseDurableRow(
+  data: unknown,
+  expected: {
+    event: VlmPaidEntitlementLifecycleEvent;
+    entitlementIdHash: string;
+    eventIdHash: string;
+  },
+): VlmPaidEntitlementLifecycleResult {
   const row = Array.isArray(data) ? data[0] : data;
   if (!row || typeof row !== "object") return { ok: false, error: "invalid_lifecycle_rpc_result", retryable: true, ledgerMode: "durable" };
   const value = row as Record<string, unknown>;
@@ -109,9 +116,21 @@ function parseDurableRow(data: unknown): VlmPaidEntitlementLifecycleResult {
   if (!ALLOWED_EVENT.has(event) || !previousStatus || !nextStatus || !/^[a-f0-9]{64}$/.test(entitlementIdHash) || !/^[a-f0-9]{64}$/.test(eventIdHash)) {
     return { ok: false, error: "invalid_lifecycle_rpc_result", retryable: true, ledgerMode: "durable" };
   }
+  const transition = evaluateVlmPaidEntitlementLifecycleTransition({ currentStatus: previousStatus, event });
+  const idempotent = Boolean(value.idempotent);
+  if (
+    !transition.ok
+    || event !== expected.event
+    || transition.nextStatus !== nextStatus
+    || transition.idempotent !== idempotent
+    || entitlementIdHash !== expected.entitlementIdHash
+    || eventIdHash !== expected.eventIdHash
+  ) {
+    return { ok: false, error: "invalid_lifecycle_rpc_result", retryable: true, ledgerMode: "durable" };
+  }
   return {
     ok: true,
-    idempotent: Boolean(value.idempotent),
+    idempotent,
     event,
     previousStatus,
     nextStatus,
@@ -143,11 +162,13 @@ export async function applyVlmPaidEntitlementLifecycleEvent(args: {
   if (hasSupabaseServiceRoleConfig()) {
     const rpc = args.dependencies?.rpc ?? runRegisteredServiceRoleRpc;
     try {
+      const expectedEntitlementIdHash = sha256(entitlementId);
+      const expectedEventIdHash = sha256(eventId);
       const result = await rpc({
         operation: "vlm_paid_entitlement_lifecycle_apply",
         args: {
           p_entitlement_id: entitlementId,
-          p_event_id_hash: sha256(eventId),
+          p_event_id_hash: expectedEventIdHash,
           p_event_type: args.event,
           p_source_event_hash: sourceEventId ? sha256(sourceEventId) : null,
           p_operator_hash: operatorId ? sha256(operatorId) : null,
@@ -155,7 +176,11 @@ export async function applyVlmPaidEntitlementLifecycleEvent(args: {
           p_event_at: (args.now ?? new Date()).toISOString(),
         },
       });
-      return parseDurableRow(result.data);
+      return parseDurableRow(result.data, {
+        event: args.event,
+        entitlementIdHash: expectedEntitlementIdHash,
+        eventIdHash: expectedEventIdHash,
+      });
     } catch {
       return { ok: false, error: "entitlement_lifecycle_store_failed", retryable: true, ledgerMode: "durable" };
     }

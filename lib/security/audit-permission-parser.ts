@@ -200,8 +200,14 @@ function verifiedBytecodeCorpus(value: unknown) {
 }
 
 function verifiedStaticEvidence(input: PermissionParserInput) {
+  // The exported input shape historically accepted a caller-supplied object named
+  // "verifiedStaticEvidence". Its responseDigest is a digest of the provider HTTP
+  // response envelope, so it cannot be recomputed from sourceText/abiText here.
+  // Trust only the private, receipt-keyed evidence cache populated by the provider
+  // runtime after exact response identity verification. Caller-supplied static
+  // evidence remains deliberately non-authoritative.
   const privateProviderEvidence = readPass2572AuditProviderPrivateStaticEvidence(input.providerRuntime);
-  const evidence: Pass2576VerifiedStaticEvidence | null | undefined = input.verifiedStaticEvidence ?? (privateProviderEvidence && input.providerRuntime
+  const evidence: Pass2576VerifiedStaticEvidence | null = privateProviderEvidence && input.providerRuntime
     ? {
         contractAddress: privateProviderEvidence.contractAddress,
         chain: input.providerRuntime.target.chain,
@@ -211,7 +217,7 @@ function verifiedStaticEvidence(input: PermissionParserInput) {
         sourceText: privateProviderEvidence.sourceText,
         abiText: privateProviderEvidence.abiText,
       }
-    : null);
+    : null;
   const contractAddress = clean(input.contractAddress, 96) ?? input.providerRuntime?.target.contractAddress;
   const chain = clean(input.chain, 40) ?? input.providerRuntime?.target.chain;
   if (
