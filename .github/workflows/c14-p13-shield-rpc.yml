@@ -1,0 +1,68 @@
+name: C14-P13 Shield RPC and Edge qualification
+
+on:
+  push:
+    branches:
+      - parallel/c14-p13-shield-rpc
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p13-shield-rpc
+  cancel-in-progress: false
+
+jobs:
+  shield-rpc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: c14_p13_ephemeral_ci_only
+          POSTGRES_DB: c14_p13_fixture
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: "5432"
+      PGUSER: postgres
+      PGPASSWORD: c14_p13_ephemeral_ci_only
+      PGDATABASE: c14_p13_fixture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Qualify captured RPC in isolated PostgreSQL
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p13-sql
+          psql -X -At -c 'select version()' > /tmp/c14-p13-sql/POSTGRES_VERSION.txt
+          python3 scripts/c14/p13/shield-rpc-test.py 2>&1 | tee /tmp/c14-p13-sql/execution.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p13-sql-${{ github.run_id }}
+          path: /tmp/c14-p13-sql
+          retention-days: 14
+          if-no-files-found: error
+
+  shield-edge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+      - name: Edge authority and transport regressions
+        run: node --experimental-strip-types --test scripts/c14/p13/edge-authority.test.ts
