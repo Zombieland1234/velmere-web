@@ -40,6 +40,7 @@ jobs:
           lib/security/operational-log-boundary.ts
           lib/security/native-redis-rate-limit.ts
           lib/db/bounded-supabase-rpc.ts
+          lib/payments/stripe-webhook/failure-code.ts
           lib/payments/stripe-webhook/ingress.ts
           lib/server/internal-worker-route-modules/runtime-readiness.ts
           lib/server/route-registries/internal-workers.ts
