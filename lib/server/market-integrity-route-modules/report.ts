@@ -40,6 +40,7 @@ import { buildSourceSynchronizationPacket } from "@/lib/market-integrity/source-
 import { buildAnalysisReadiness } from "@/lib/market-integrity/analysis-readiness";
 import { buildPass4645ProviderEvidenceLedger, persistPass4645ProviderEvidenceLedger } from "@/lib/market-integrity/provider-evidence-ledger";
 import { PDF_V2_ACCEPTANCE_GATES, buildCustomerReportPayload, type VelmereReportAssetFamily } from "@/lib/market-integrity/customer-report-payload";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import type { Pass4825RuntimeFieldValue } from "@/lib/reporting/runtime-canonical-field-adapter";
 import { buildCustomerReportDecisionSections } from "@/lib/market-integrity/customer-report-decision-sections";
 import { buildCustomerReportLayoutModel } from "@/lib/market-integrity/customer-report-layout-model";
@@ -124,10 +125,21 @@ async function handleMarketReportGet(request: Request) {
         { status: 424, headers: { "cache-control": "no-store" } },
       );
     }
-    const memory = recordSingleResult(result);
+    const providerReceiptsForRetention = result.providerEvidenceReceipts ?? [];
+    const providerRetentionDecisions = providerReceiptsForRetention.map((receipt) =>
+      evaluateC14ProviderOperation({
+        providerId: receipt.providerId,
+        operation: "storage",
+        channel: "internal_diagnostic",
+        nowMs: Date.now(),
+      }),
+    );
+    const providerRetentionReady = providerReceiptsForRetention.length > 0
+      && providerRetentionDecisions.every((decision) => decision.allowed);
+    const memory = providerRetentionReady ? recordSingleResult(result) : null;
     const ledger = memory?.lastSnapshot ? await persistRiskSnapshots([memory.lastSnapshot]) : undefined;
     const id = result.token.marketId ?? result.token.tokenAddress ?? result.token.symbol;
-    const history = await getPersistentRiskHistory(id, 144);
+    const history = providerRetentionReady ? await getPersistentRiskHistory(id, 144) : [];
     const investigationPlan = buildInvestigationPlan(result, history);
     const attackSurface = buildAttackSurface(result);
     const rules = buildSingleAssetRuleHits(result, searchParams.get("watchlist"));
