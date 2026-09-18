@@ -80,9 +80,13 @@ jobs:
           test "$(node --version)" = 'v24.18.0'
           test "$(npm --version)" = '11.16.0'
       - name: Clean install with package scripts disabled
-        run: npm ci --ignore-scripts --no-fund 2>&1 | tee /tmp/c14-p08/clean-install.log
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts --no-fund 2>&1 | tee /tmp/c14-p08/clean-install.log
       - name: Dependency integrity policy
-        run: node scripts/c14/dependency-audit.mjs 2>&1 | tee /tmp/c14-p08/dependency-audit.log
+        run: |
+          set -euo pipefail
+          node scripts/c14/dependency-audit.mjs 2>&1 | tee /tmp/c14-p08/dependency-audit.log
       - name: npm audit
         run: npm audit --json > /tmp/c14-p08/npm-audit.json
       - name: npm outdated inventory
@@ -96,13 +100,21 @@ jobs:
       - name: Dependency tree
         run: npm ls --all --json > /tmp/c14-p08/npm-ls.json
       - name: TypeScript
-        run: npm run typecheck 2>&1 | tee /tmp/c14-p08/typecheck.log
+        run: |
+          set -euo pipefail
+          npm run typecheck 2>&1 | tee /tmp/c14-p08/typecheck.log
       - name: Focused C13 regressions
-        run: node_modules/.bin/tsx --test scripts/c13/source-boundary.test.ts scripts/c13/config-preflight.test.ts 2>&1 | tee /tmp/c14-p08/c13-focused-regressions.log
+        run: |
+          set -euo pipefail
+          node_modules/.bin/tsx --test scripts/c13/source-boundary.test.ts scripts/c13/config-preflight.test.ts 2>&1 | tee /tmp/c14-p08/c13-focused-regressions.log
       - name: ESLint
-        run: npm run lint:direct 2>&1 | tee /tmp/c14-p08/eslint.log
+        run: |
+          set -euo pipefail
+          npm run lint:direct 2>&1 | tee /tmp/c14-p08/eslint.log
       - name: Production build
-        run: npm run build 2>&1 | tee /tmp/c14-p08/production-build.log
+        run: |
+          set -euo pipefail
+          npm run build 2>&1 | tee /tmp/c14-p08/production-build.log
       - name: Lockfile immutability after qualification
         run: |
           git diff --exit-code -- package.json package-lock.json
