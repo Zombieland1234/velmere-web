@@ -14,6 +14,60 @@ interface VerifyPageProps {
   params: Promise<{ locale: string; id: string }>;
 }
 
+type AuditVerificationManifest = {
+  leafHashes?: string[];
+  evidenceRoot?: string;
+  symbol?: string;
+  name?: string;
+  chain?: string;
+  target?: { network?: string; addressOrId?: string };
+  contractAddress?: string;
+  blockNumber?: string | number;
+  commitHash?: string;
+  sourceHash?: string;
+  reportSha256?: string;
+  engineVersion?: string;
+  createdAt?: string;
+};
+
+function manifestRecord(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? value as Record<string, unknown>
+    : null;
+}
+
+function parseAuditVerificationManifest(value: unknown): AuditVerificationManifest | null {
+  const record = manifestRecord(value);
+  if (!record) return null;
+  const target = manifestRecord(record.target);
+  return {
+    ...(Array.isArray(record.leafHashes) && record.leafHashes.every((item) => typeof item === "string")
+      ? { leafHashes: record.leafHashes }
+      : {}),
+    ...(typeof record.evidenceRoot === "string" ? { evidenceRoot: record.evidenceRoot } : {}),
+    ...(typeof record.symbol === "string" ? { symbol: record.symbol } : {}),
+    ...(typeof record.name === "string" ? { name: record.name } : {}),
+    ...(typeof record.chain === "string" ? { chain: record.chain } : {}),
+    ...(target
+      ? {
+          target: {
+            ...(typeof target.network === "string" ? { network: target.network } : {}),
+            ...(typeof target.addressOrId === "string" ? { addressOrId: target.addressOrId } : {}),
+          },
+        }
+      : {}),
+    ...(typeof record.contractAddress === "string" ? { contractAddress: record.contractAddress } : {}),
+    ...(typeof record.blockNumber === "string" || typeof record.blockNumber === "number"
+      ? { blockNumber: record.blockNumber }
+      : {}),
+    ...(typeof record.commitHash === "string" ? { commitHash: record.commitHash } : {}),
+    ...(typeof record.sourceHash === "string" ? { sourceHash: record.sourceHash } : {}),
+    ...(typeof record.reportSha256 === "string" ? { reportSha256: record.reportSha256 } : {}),
+    ...(typeof record.engineVersion === "string" ? { engineVersion: record.engineVersion } : {}),
+    ...(typeof record.createdAt === "string" ? { createdAt: record.createdAt } : {}),
+  };
+}
+
 export async function generateMetadata({ params }: VerifyPageProps): Promise<Metadata> {
   const { id } = await params;
   return {
@@ -32,14 +86,15 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
   const auditId = decodeURIComponent(id);
   const manifestPath = path.resolve(process.cwd(), "evidence", auditId, "manifest", "manifest.json");
 
-  let manifest: any = null;
+  let manifest: AuditVerificationManifest | null = null;
   let isMerkleValid = true;
   let recomputedRoot = "";
 
   if (fs.existsSync(manifestPath)) {
     try {
       const raw = fs.readFileSync(manifestPath, "utf-8");
-      manifest = JSON.parse(raw);
+      const parsed: unknown = JSON.parse(raw);
+      manifest = parseAuditVerificationManifest(parsed);
       recomputedRoot = computeMerkleRoot(manifest.leafHashes || []);
       isMerkleValid = recomputedRoot === manifest.evidenceRoot;
     } catch {

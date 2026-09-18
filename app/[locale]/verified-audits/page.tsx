@@ -22,13 +22,17 @@ const metadataCopy = {
   },
 };
 
+function isSupportedMetadataLocale(value: string): value is keyof typeof metadataCopy {
+  return SUPPORTED_LOCALES.some((supported) => supported === value);
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const resolved = (SUPPORTED_LOCALES.includes(locale as any) ? locale : "pl") as "en" | "pl" | "de";
+  const resolved = isSupportedMetadataLocale(locale) ? locale : "pl";
   return buildVelmereMetadata({
     locale: resolved,
     path: "/verified-audits",
