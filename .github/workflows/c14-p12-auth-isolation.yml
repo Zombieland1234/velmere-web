@@ -14,8 +14,7 @@ jobs:
     env:
       CI: '1'
       NEXT_TELEMETRY_DISABLED: '1'
-      VELMERE_CANONICAL_ORIGIN: http://127.0.0.1:3000
-      VELMERE_ALLOWED_ORIGINS: http://127.0.0.1:3000,http://localhost:3000
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
       VELMERE_ACCOUNT_SESSION_SECRET_CURRENT: c14-p12-account-session-secret-20260918-isolated-ci-only
       VELMERE_AUTH_SESSION_FAMILY_SECRET_CURRENT: c14-p12-family-session-secret-20260918-isolated-ci-only
       VELMERE_AUTH_FLOW_SECRET_CURRENT: c14-p12-auth-flow-secret-20260918-isolated-ci-only
@@ -66,7 +65,7 @@ jobs:
           node_modules/.bin/next dev --hostname 127.0.0.1 --port 3000 > /tmp/c14-p12-evidence/NEXT_HTTP.log 2>&1 &
           echo $! > /tmp/c14-p12-next.pid
           for i in $(seq 1 60); do
-            code="$(curl --silent --show-error --max-time 2 --output /tmp/c14-p12-ready-body.json --write-out '%{http_code}' http://127.0.0.1:3000/api/auth/session || true)"
+            code="$(curl --silent --show-error --max-time 2 --output /tmp/c14-p12-ready-body.json --write-out '%{http_code}' http://localhost:3000/api/auth/session || true)"
             if [ "$code" != "000" ]; then
               echo "readiness_http_status=$code"
               cat /tmp/c14-p12-ready-body.json || true
@@ -81,7 +80,7 @@ jobs:
           set -euo pipefail
           source /tmp/c14-p12-local.env
           P12_SUPABASE_URL="$API_URL" P12_ANON_KEY="$ANON_KEY" P12_SERVICE_ROLE_KEY="$SERVICE_ROLE_KEY" \
-          P12_APP_URL='http://127.0.0.1:3000' P12_EVIDENCE_DIR=/tmp/c14-p12-evidence \
+          P12_APP_URL='http://localhost:3000' P12_EVIDENCE_DIR=/tmp/c14-p12-evidence \
           node scripts/c14/p12/auth-http-e2e.mjs prepatch | tee /tmp/c14-p12-evidence/PREPATCH_HTTP.log
       - name: Apply C14-P12 active-session migration to disposable DB
         run: |
@@ -99,7 +98,7 @@ jobs:
           set -euo pipefail
           source /tmp/c14-p12-local.env
           P12_SUPABASE_URL="$API_URL" P12_ANON_KEY="$ANON_KEY" P12_SERVICE_ROLE_KEY="$SERVICE_ROLE_KEY" \
-          P12_APP_URL='http://127.0.0.1:3000' P12_EVIDENCE_DIR=/tmp/c14-p12-evidence \
+          P12_APP_URL='http://localhost:3000' P12_EVIDENCE_DIR=/tmp/c14-p12-evidence \
           node scripts/c14/p12/auth-http-e2e.mjs postpatch | tee /tmp/c14-p12-evidence/POSTPATCH_HTTP.log
       - name: Regression summary
         if: always()
