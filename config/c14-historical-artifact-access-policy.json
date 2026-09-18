@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "velmere.c14.historical-artifact-access-policy.v1",
+  "sourceBaseSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "customerContractFinalized": false,
+  "deploymentState": "SOURCE_ONLY_NOT_DEPLOYED",
+  "authority": {
+    "regeneration": "config/report-access-policy.json + lib/security/current-audit-access.ts",
+    "workspace": "scripts/c13/shield-workspace-guard.sql + live RPC readback",
+    "immutableAuditArchive": "config/report-access-policy.json: full current-rights integration still required",
+    "legacyCorroboration": "PASS2494/PASS2842 support revocation-aware hiding but are not sole current authority"
+  },
+  "matrix": {
+    "advanced_to_pro": {
+      "advancedAuditArchive": "DENY",
+      "proAuditArchive": "ALLOW_IF_OWNER_AND_CURRENT_PRO",
+      "advancedWorkspace": "DENY_READ_RESTORE"
+    },
+    "advanced_to_basic": {
+      "advancedAuditArchive": "DENY",
+      "proAuditArchive": "DENY",
+      "basicArchive": "ALLOW_OWNER",
+      "paidWorkspace": "DENY_READ_RESTORE"
+    },
+    "pro_to_basic": {
+      "proAuditArchive": "DENY",
+      "basicArchive": "ALLOW_OWNER",
+      "proWorkspace": "DENY_READ_RESTORE"
+    },
+    "paid_to_revoked": {
+      "paidAuditArchive": "DENY",
+      "regeneration": "DENY_PAID",
+      "workspace": "DENY_READ_RESTORE"
+    },
+    "paid_to_refunded": {
+      "paidAuditArchive": "DENY_WHEN_LIFECYCLE_REFUND_APPLIED",
+      "regeneration": "DENY_PAID",
+      "workspace": "REFUND_TO_REVOKE_MAPPING_UNVERIFIED"
+    },
+    "subscription_expired": {
+      "paidAuditArchive": "DENY",
+      "regeneration": "DENY_PAID",
+      "workspace": "DENY_READ_RESTORE"
+    }
+  },
+  "unknownPaidSurfaceBehavior": "FAIL_CLOSED_POLICY_UNDEFINED",
+  "basicImmutableOwnerHistory": "ALLOW",
+  "directBrowserStorageReadAllowed": false,
+  "shareLinks": "NO_CURRENT_PRODUCTION_SHARE_LINK_ROUTE_CONFIRMED",
+  "cachePolicy": "PRIVATE_NO_STORE_AT_APPLICATION_ROUTE",
+  "notes": [
+    "Paid non-Audit immutable archive SKU mapping is not inferred.",
+    "No production database mutation is performed by C14-P14."
+  ]
+}

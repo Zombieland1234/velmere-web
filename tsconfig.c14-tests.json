@@ -1,0 +1,1 @@
+{"extends":"./tsconfig.json","compilerOptions":{"incremental":false,"noEmit":true,"strict":true},"include":["next-env.d.ts","lib/reporting/historical-customer-artifact-access.ts","lib/server/lazy-route-modules/account--customer-artifact.ts","scripts/c14/**/*.ts"],"exclude":["node_modules"]}

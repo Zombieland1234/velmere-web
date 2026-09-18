@@ -1,0 +1,58 @@
+name: C14-P14 downgrade and historical report access
+on:
+  push:
+    branches: [parallel/c14-p14-downgrade-reports]
+permissions:
+  contents: read
+jobs:
+  policy-and-types:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - run: npm ci --ignore-scripts
+      - run: npx tsc -p tsconfig.c14-tests.json
+      - run: npx tsx --test scripts/c14/historical-artifact-access.test.ts
+      - run: node scripts/c14/downgrade-report-surface.test.mjs
+  direct-read-database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env: {POSTGRES_PASSWORD: c14_ephemeral_ci_only, POSTGRES_DB: c14_fixture}
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c14_ephemeral_ci_only
+      PGDATABASE: c14_fixture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - run: python3 scripts/c14/direct-read-boundary-db-test.py
+  shield-workspace-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env: {POSTGRES_PASSWORD: c14_ephemeral_ci_only, POSTGRES_DB: c13_fixture}
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c14_ephemeral_ci_only
+      PGDATABASE: c13_fixture
+      GITHUB_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - run: python3 scripts/c13/shield-db-test.py

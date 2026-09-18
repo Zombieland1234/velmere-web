@@ -7,10 +7,7 @@ import {
   getPass4824AccountCustomerArtifactPdfMetadata,
   listPass4822AccountCustomerArtifactSnapshots,
 } from "@/lib/reporting/account-customer-artifact-store";
-import {
-  getP85OwnerVisibleCustomerArtifact,
-  listP85OwnerVisibleCustomerArtifacts,
-} from "@/lib/reporting/account-customer-artifact-owner-visible-read";
+import { authorizeHistoricalCustomerArtifactAccess } from "@/lib/reporting/historical-customer-artifact-access";
 import {
   verifyPass4822AccountCustomerArtifactSnapshot,
   type AccountCustomerArtifactSnapshot,
@@ -63,11 +60,15 @@ export async function GET(request: Request) {
 
   // Every real account read is rebound to an active Supabase user token and
   // the database account binding before the route can touch durable artifacts.
-  let ownerClient: Awaited<ReturnType<typeof resolveCustomerOwnedDataBoundary>>["client"] | null = null;
+  let durableOwnerSession = false;
   if (!localPreviewSession) {
     try {
-      const boundary = await resolveCustomerOwnedDataBoundary({ request, accountId: account.accountId });
-      ownerClient = boundary.client;
+      // Resolve and verify the user-scoped boundary first, but do not use the
+      // browser JWT as a direct artifact read capability. C14 moves durable
+      // artifact reads behind this server route so downgrade/revoke policy
+      // cannot be bypassed through PostgREST or the old owner-visible RPCs.
+      await resolveCustomerOwnedDataBoundary({ request, accountId: account.accountId });
+      durableOwnerSession = true;
     } catch (error) {
       if (error instanceof CustomerOwnedWriteBoundaryError) {
         return NextResponse.json(customerOwnedDataErrorPayload(error, "read"), {
@@ -99,20 +100,65 @@ export async function GET(request: Request) {
   if (!snapshotId) {
     if (format !== "json") return NextResponse.json({ ok: false, error: "artifact_id_required_for_pdf" }, { status: 400, headers: { "cache-control": "no-store" } });
     let visibleSnapshots: AccountCustomerArtifactSnapshot[];
-    if (ownerClient) {
-      // Real-account reads require the P85 SECURITY INVOKER projection. The
-      // database applies owner RLS and the immutable Audit publication boundary
-      // before LIMIT, so hidden/orphan rows cannot starve valid older artifacts
-      // and this route performs exactly one owner-token RPC instead of N+1 reads.
+    if (durableOwnerSession) {
+      let listed: Awaited<ReturnType<typeof listPass4822AccountCustomerArtifactSnapshots>>;
       try {
-        const listed = await listP85OwnerVisibleCustomerArtifacts({
+        listed = await listPass4822AccountCustomerArtifactSnapshots({
           accountId: account.accountId,
-          limit,
-          client: ownerClient,
+          limit: 50,
+          client: undefined,
         });
-        visibleSnapshots = listed.artifacts.map((artifact) => artifact.snapshot);
       } catch {
         return NextResponse.json({ ok: false, error: "artifact_visibility_boundary_unavailable", retryable: true }, {
+          status: 503,
+          headers: { "cache-control": "no-store" },
+        });
+      }
+      visibleSnapshots = [];
+      for (const snapshot of listed.snapshots) {
+        if (snapshot.surface === "audit") {
+          try {
+            if (!await hasAuditAccountMessageExactArtifactLink({
+              accountId: account.accountId,
+              snapshotId: snapshot.snapshotId,
+              client: undefined,
+            })) continue;
+          } catch {
+            return NextResponse.json({ ok: false, error: "artifact_delivery_link_storage_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
+          }
+        }
+        visibleSnapshots.push(snapshot);
+      }
+    } else {
+      const listed = await listPass4822AccountCustomerArtifactSnapshots({ accountId: account.accountId, limit: 50, client: null });
+      visibleSnapshots = [];
+      for (const snapshot of listed.snapshots) {
+        if (snapshot.surface !== "audit") {
+          visibleSnapshots.push(snapshot);
+          continue;
+        }
+        try {
+          if (await hasAuditAccountMessageExactArtifactLink({
+            accountId: account.accountId,
+            snapshotId: snapshot.snapshotId,
+            client: null,
+          })) visibleSnapshots.push(snapshot);
+        } catch {
+          return NextResponse.json({ ok: false, error: "artifact_delivery_link_storage_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
+        }
+      }
+    }
+
+    const authorizedSnapshots: AccountCustomerArtifactSnapshot[] = [];
+    for (const snapshot of visibleSnapshots) {
+      const access = await authorizeHistoricalCustomerArtifactAccess({
+        snapshot,
+        accountId: account.accountId,
+      });
+      if (access.allowed) authorizedSnapshots.push(snapshot);
+    }
+    visibleSnapshots = authorizedSnapshots;
+    return NextResponse.json({ ok: false, error: "artifact_visibility_boundary_unavailable", retryable: true }, {
           status: 503,
           headers: { "cache-control": "no-store" },
         });
@@ -166,14 +212,13 @@ export async function GET(request: Request) {
   }
 
   let found: Awaited<ReturnType<typeof getPass4822AccountCustomerArtifactSnapshot>>;
-  if (ownerClient) {
+  if (durableOwnerSession) {
     try {
-      const visible = await getP85OwnerVisibleCustomerArtifact({
+      found = await getPass4822AccountCustomerArtifactSnapshot({
         accountId: account.accountId,
         snapshotId,
-        client: ownerClient,
+        client: undefined,
       });
-      found = visible ? { snapshot: visible.artifact.snapshot, source: "supabase" as const } : null;
     } catch {
       return NextResponse.json({ ok: false, error: "artifact_visibility_boundary_unavailable", retryable: true }, {
         status: 503,
@@ -188,17 +233,35 @@ export async function GET(request: Request) {
   if (!verifyPass4822AccountCustomerArtifactSnapshot(snapshot)) {
     return NextResponse.json({ ok: false, error: "artifact_snapshot_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
   }
-  if (snapshot.surface === "audit" && !ownerClient) {
+  if (snapshot.surface === "audit") {
     try {
       const linked = await hasAuditAccountMessageExactArtifactLink({
         accountId: account.accountId,
         snapshotId: snapshot.snapshotId,
-        client: null,
+        client: durableOwnerSession ? undefined : null,
       });
       if (!linked) return NextResponse.json({ ok: false, error: "artifact_not_found" }, { status: 404, headers: { "cache-control": "no-store" } });
     } catch {
       return NextResponse.json({ ok: false, error: "artifact_delivery_link_storage_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
     }
+  }
+
+  const historicalAccess = await authorizeHistoricalCustomerArtifactAccess({
+    snapshot,
+    accountId: account.accountId,
+  });
+  if (!historicalAccess.allowed) {
+    return NextResponse.json({
+      ok: false,
+      error: historicalAccess.policyState === "undefined"
+        ? "historical_paid_artifact_policy_undefined"
+        : "historical_artifact_current_entitlement_required",
+      requiredTier: historicalAccess.requiredTier,
+      policyState: historicalAccess.policyState,
+    }, {
+      status: 403,
+      headers: { "cache-control": "private, no-store" },
+    });
   }
 
   let preview: unknown;
@@ -219,7 +282,7 @@ export async function GET(request: Request) {
   if (format === "json") {
     let exactMetadata: Awaited<ReturnType<typeof getPass4824AccountCustomerArtifactPdfMetadata>>;
     try {
-      exactMetadata = await getPass4824AccountCustomerArtifactPdfMetadata({ accountId: account.accountId, snapshotId, client: ownerClient });
+      exactMetadata = await getPass4824AccountCustomerArtifactPdfMetadata({ accountId: account.accountId, snapshotId, client: durableOwnerSession ? undefined : null });
     } catch {
       return NextResponse.json({ ok: false, error: "artifact_exact_pdf_storage_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
     }
@@ -264,7 +327,7 @@ export async function GET(request: Request) {
 
   let exactPdf: Awaited<ReturnType<typeof getPass4824AccountCustomerArtifactPdfBlob>>;
   try {
-    exactPdf = await getPass4824AccountCustomerArtifactPdfBlob({ accountId: account.accountId, snapshotId, client: ownerClient });
+    exactPdf = await getPass4824AccountCustomerArtifactPdfBlob({ accountId: account.accountId, snapshotId, client: durableOwnerSession ? undefined : null });
   } catch {
     return NextResponse.json({ ok: false, error: "artifact_exact_pdf_storage_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
   }
