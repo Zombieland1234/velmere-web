@@ -207,7 +207,7 @@ async function main() {
 
   const evidenceExportSource = readFileSync("lib/server/market-integrity-route-modules/evidence-export.ts", "utf8");
   const exportGateIndex = evidenceExportSource.indexOf('operation: "export"');
-  const persistSnapshotIndex = evidenceExportSource.indexOf("persistSourceSnapshot");
+  const persistSnapshotIndex = evidenceExportSource.indexOf("const sourceSnapshot = await persistSourceSnapshot");
   assert.ok(exportGateIndex >= 0);
   assert.ok(persistSnapshotIndex >= 0);
   assert.ok(exportGateIndex < persistSnapshotIndex, "provider export rights must be checked before snapshot persistence");
