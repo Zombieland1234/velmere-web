@@ -22,13 +22,21 @@ jobs:
       - name: Install exact dependencies without lifecycle scripts
         run: npm ci --ignore-scripts --no-fund
       - name: Audit tracked TypeScript coverage
-        run: node scripts/c14/typecheck-coverage.mjs | tee /tmp/c14-typescript-coverage.log
+        run: |
+          set -o pipefail
+          node scripts/c14/typecheck-coverage.mjs | tee /tmp/c14-typescript-coverage.log
       - name: Audit TypeScript escape hatches and boundary risk
-        run: node scripts/c14/typescript-risk-audit.mjs --json=/tmp/c14-typescript-risk.json | tee /tmp/c14-typescript-risk.log
+        run: |
+          set -o pipefail
+          node scripts/c14/typescript-risk-audit.mjs --json=/tmp/c14-typescript-risk.json | tee /tmp/c14-typescript-risk.log
       - name: Strict TypeScript over all tracked TS/TSX/MTS/CTS
-        run: npm run typecheck:c14 2>&1 | tee /tmp/c14-typescript.log
+        run: |
+          set -o pipefail
+          npm run typecheck:c14 2>&1 | tee /tmp/c14-typescript.log
       - name: Existing production build gate
-        run: npm run build 2>&1 | tee /tmp/c14-build.log
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee /tmp/c14-build.log
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
