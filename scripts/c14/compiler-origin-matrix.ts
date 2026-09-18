@@ -4,8 +4,7 @@ import path from 'node:path';
 import { createRequire } from 'node:module';
 import { createHash } from 'node:crypto';
 import { executeFullAuditV2 } from '../../lib/security/v2/master-audit-orchestrator';
-const require = createRequire(import.meta.url);
-const solc = require('solc') as { compile(input: string): string; version(): string };
+const solc = createRequire(path.resolve('package.json'))('solc') as { compile(input: string): string; version(): string };
 const out = process.argv[2];
 if (!out) throw new Error('evidence directory required');
 fs.mkdirSync(out, { recursive: true });
@@ -15,6 +14,8 @@ const fixtures = [
   { id: 'origin-inequality', expected: true, body: 'uint x; function f(address a) external {require(tx.origin != a); x=7;}' },
   { id: 'origin-view-only-control', expected: false, body: 'address owner; function f() external view returns(bool) {return tx.origin == owner;}' },
   { id: 'origin-discarded-before-caller-check', expected: false, body: 'uint x; function f(address a) external {assembly {pop(origin())} require(msg.sender == a); x=7;}' },
+  { id: 'caller-origin-context-control', expected: false, body: 'uint x; function f() external {require(msg.sender == tx.origin); x=7;}' },
+  { id: 'compound-owner-origin-authorization', expected: true, body: 'address owner; uint x; function f() external {require(tx.origin == owner || tx.origin == msg.sender); x=7;}' },
   { id: 'origin-via-invert', expected: true, body: 'uint x; function f(address a) external {if (!(tx.origin != a)) {x=7;} else {revert();}}' },
 ];
 const hash = (s: string | Buffer) => createHash('sha256').update(s).digest('hex');
@@ -31,7 +32,7 @@ const rows = cases.map(f => {
   // No submitted source: the assertion exercises the bytecode lane alone.
   const report = executeFullAuditV2({ contractAddress: '0x0000000000000000000000000000000000000014', chainId: '1', bytecode: '0x' + runtime, fuzzIterations: 0 });
   const findings = report.findings.filter(x => x.findingId === 'VLM-SEC-AUTH-TXORIGIN-01');
-  return { id: f.id, viaIR: f.viaIR, optimize: f.optimize, sourceSha256: hash(source), runtimeSha256: hash(Buffer.from(runtime, 'hex')), runtimeBytes: runtime.length / 2, expectedCandidate: f.expected, candidateObserved: findings.length > 0, passed: (findings.length > 0) === f.expected, findings };
+  return { id: f.id, viaIR: f.viaIR, optimize: f.optimize, sourceSha256: hash(source), runtimeSha256: hash(Buffer.from(runtime, 'hex')), runtimeBytes: runtime.length / 2, runtimeHex: runtime, expectedCandidate: f.expected, candidateObserved: findings.length > 0, passed: (findings.length > 0) === f.expected, findings };
 });
 fs.writeFileSync(path.join(out, 'COMPILER_MATRIX.json'), JSON.stringify({ sourceSha: process.env.GITHUB_SHA ?? null, scope: 'ACTUAL_SOLC_COMPILATION_AND_STATIC_ANALYSIS_NOT_EVM_EXECUTION', compiler: solc.version(), compilerInvocations: rows.length, uniqueRuntimeCount: new Set(rows.map(r => r.runtimeSha256)).size, passed: rows.filter(r => r.passed).length, total: rows.length, rows }, null, 2));
 console.log(JSON.stringify({ total: rows.length, passed: rows.filter(r => r.passed).length, failed: rows.filter(r => !r.passed).map(r => ({ id: r.id, viaIR: r.viaIR, optimize: r.optimize })) }));

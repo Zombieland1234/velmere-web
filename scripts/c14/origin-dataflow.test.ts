@@ -61,8 +61,8 @@ test('an origin equality returned as data is not called an authorization branch'
 test('origin in JUMPI destination does not taint independent condition', () => {
   assert.equal(trace('0x6001325700').length, 0);
 });
-test('block-local scope does not borrow stack provenance across JUMPDEST', () => {
-  assert.equal(trace(branch('325b600114')).length, 0);
+test('fallthrough carries actual stack provenance across JUMPDEST', () => {
+  assert.equal(trace(branch('325b600114')).length, 1);
 });
 test('memory roundtrip is explicitly outside this block-local model', () => {
   assert.equal(trace(branch('325f525f51600114')).length, 0);
@@ -98,4 +98,25 @@ test('unbound submitted source cannot remove the observed origin branch', () => 
   const other = executeFullAuditV2({ ...options, sourceCode: 'contract Other { function ok() external pure returns(bool) { return true; } }' });
   const find = (r: ReturnType<typeof executeFullAuditV2>) => r.findings.find(x => x.findingId === 'VLM-SEC-AUTH-TXORIGIN-01');
   assert.deepEqual(find(other), find(baseline));
+});
+
+for (const code of ['323314', '333214', '32331415', '3273'+'ff'.repeat(20)+'163373'+'ff'.repeat(20)+'161415']) test(`pure caller equality is a contextual observation: ${code}`, () => {
+  const hex=branch(code); const b=trace(hex); assert.ok(b.some(x=>x.directCallerComparison));
+  const r=executeFullAuditV2({contractAddress:address,chainId:'1',bytecode:hex,fuzzIterations:0});
+  assert.ok(!r.findings.some(f=>f.findingId==='VLM-SEC-AUTH-TXORIGIN-01'));
+  const context=r.findings.find(f=>f.findingId==='VLM-SEC-CONTEXT-ORIGIN-CALLER-01');assert.ok(context);assert.equal(context.taxonomy.swcId,undefined);
+});
+for (const code of ['3233143260011417', '323310', '32600114', '323314600117']) test(`compound or other comparisons are not suppressed: ${code}`,()=>{
+  const r=trace(branch(code));assert.ok(r.some(x=>!x.directCallerComparison));
+});
+test('constant-resolved helper jump retains origin and return-address stack',()=>{
+  // PUSH return-label; ORIGIN; PUSH helper; JUMP; return: comparison; branch.
+  const hex='0x61000832610017565b60011461001457000000005b00005b9056';
+  const rows=trace(hex);assert.ok(rows.some(x=>x.originPc===3 && x.branchPc===15));
+});
+test('an unresolved jump cannot borrow an unrelated later origin condition',()=>{
+  assert.equal(trace('0x3235565b600114600b57005b00').length,0);
+});
+test('constant resolved loop terminates within deterministic bounds',()=>{
+  const rows=trace('0x5b326000565b600114600e5700005b00');assert.deepEqual(rows,[]);
 });

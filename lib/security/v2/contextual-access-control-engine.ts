@@ -47,7 +47,9 @@ export function analyzeContextualAccessControl(
 
   // Observe ORIGIN-derived conditional operands, not an arbitrary nearby EQ.
   // Even a real data dependency is not proof the branch authorizes an action.
-  const originBranch = findOriginDependentBranches(cfg)[0];
+  const originBranches = findOriginDependentBranches(cfg);
+  const originBranch = originBranches.find(b => !b.directCallerComparison);
+  usesTxOrigin = originBranches.length > 0;
   if (originBranch) {
     usesTxOrigin = true;
     const originPc = originBranch.originPc;
@@ -74,22 +76,15 @@ export function analyzeContextualAccessControl(
       executionPath: [`ORIGIN@0x${originPc.toString(16)}`, ...(originBranch.comparisonPc !== null ? [`COMPARISON@0x${originBranch.comparisonPc.toString(16)}`] : []), `JUMPI_CONDITION@0x${originBranch.branchPc.toString(16)}`],
       limitations: [ORIGIN_DATAFLOW_LIMITATION],
       stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
-      attackScenario:
-        "1. Victim owner is lured into interacting with Attacker contract.\n2. Attacker contract calls victim contract's protected function.\n3. tx.origin evaluates to the victim owner (the EOA initiating the transaction).\n4. Unauthorized administrative call succeeds.",
-      proofOfConcept: {
-        summary: "Phishing contract relaying call from victim EOA",
-        sequence: [
-          { step: 1, actor: "Victim Owner", call: "AttackerContract.claimGift()", expectation: "Victim triggers transaction" },
-          { step: 2, actor: "Attacker Contract", call: "VictimContract.transferOwnership(attacker)", expectation: "tx.origin == Victim Owner passes" },
-        ],
-      },
+      attackScenario: "Conditional hypothesis only: establish that the branch guards a privileged action and accepts a relayed call before considering a tx.origin authorization attack. Neither condition has been executed or proved.",
+      proofOfConcept: { summary: "NOT_EXECUTED: no target-specific exploit or privileged action is established", sequence: [] },
       evidence: {
         opcodeTraceExcerpt: `ORIGIN@${originPc} contributes to JUMPI condition@${originBranch.branchPc} in ${originBranch.blockId}`,
-        disassemblyContext: "Block-local operand provenance reaches a conditional jump. The target path and authorization purpose are not proved.",
+        disassemblyContext: "Bounded operand provenance reaches a conditional jump. The target path and authorization purpose are not proved.",
         hashProof: evidenceSha256(JSON.stringify(originBranch)),
       },
       remediation: {
-        strategy: "Replace tx.origin with msg.sender to guarantee immediate caller authentication.",
+        strategy: "Review authorization intent. Where tx.origin is used as an owner identity, authenticate the intended immediate caller and review trusted-forwarder semantics; no automatic fix is validated here.",
         solidityPatchDiff: `--- a/contracts/Auth.sol
 +++ b/contracts/Auth.sol
 @@ -5,3 +5,3 @@
@@ -99,6 +94,26 @@ export function analyzeContextualAccessControl(
       verificationState: "AUTOMATED",
     });
   }
+
+  const callerBranch = originBranches.find(b => b.directCallerComparison);
+  if (callerBranch) findings.push({
+    findingId: "VLM-SEC-CONTEXT-ORIGIN-CALLER-01",
+    title: "Direct Caller / Origin Comparison (Context Only)",
+    severity: "informational", confidence: "medium", exploitability: "none",
+    impact: "A conditional compares the immediate caller with the transaction origin. This may constrain contract callers; it is not by itself evidence that an intermediary can impersonate an owner. It does not establish safety of this or other paths.",
+    likelihood: "Contextual observation; authorization intent unverified",
+    taxonomy: { cweId: "CWE-284" }, affectedContract: contractAddress,
+    affectedFunction: "Unresolved caller/origin comparison",
+    bytecodeOffset: { pcStart: callerBranch.originPc, pcEnd: callerBranch.branchPc },
+    executionPath: [`ORIGIN@${callerBranch.originPc}`, `CALLER_ORIGIN_EQUALITY_CONDITION@${callerBranch.branchPc}`],
+    limitations: [ORIGIN_DATAFLOW_LIMITATION, "DIRECT_CALLER_COMPARISON_NOT_OWNER_AUTHORIZATION_PROOF"],
+    stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
+    attackScenario: "No exploit is asserted for this comparison.",
+    proofOfConcept: { summary: "NOT_EXECUTED: contextual comparison only", sequence: [] },
+    evidence: { opcodeTraceExcerpt: JSON.stringify(callerBranch), disassemblyContext: "Exact equality or boolean inversion, with address-preserving masks only.", hashProof: evidenceSha256(JSON.stringify(callerBranch)) },
+    remediation: { strategy: "Review whether restricting contract callers is intended. Do not treat this observation as a complete authorization review.", solidityPatchDiff: "" },
+    verificationState: "AUTOMATED",
+  });
 
   // Check 2: Single-Step Ownership Transfer (SWC-105)
   // Contextual evaluation:
