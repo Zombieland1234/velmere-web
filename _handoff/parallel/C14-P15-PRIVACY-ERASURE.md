@@ -515,11 +515,21 @@ Results:
 - `postgres-ab-noauth` — PASS
 - `typecheck` — PASS
 
-The later implementation SHA:
+The final implementation SHA before the handoff-only commit:
 
 `700434fabfb160b3391aae3409fea686c71419d1`
 
-changed the stale public blocker labels to reflect the new approval-gated executor. On run `35293346992`, `unit-contract` and `postgres-ab-noauth` are PASS at report-authoring time; the typecheck job was still running when this report text was prepared. The preceding SHA already had a full TypeScript PASS and the later source change is limited to static blocker strings.
+also has a complete green qualification in run:
+
+`35293346992`
+
+Results:
+
+- `unit-contract` — PASS
+- `postgres-ab-noauth` — PASS
+- `typecheck` — PASS
+
+This run includes the final blocker-label correction and is the exact code SHA used as the C14-P15 tested implementation reference.
 
 ---
 
