@@ -28,20 +28,44 @@ server_major=$(psql -X -At -d postgres -c "select current_setting('server_versio
 PG_DUMP_BIN=$(command -v pg_dump)
 PG_RESTORE_BIN=$(command -v pg_restore)
 client_major=$("$PG_DUMP_BIN" --version | grep -oE '[0-9]+([.][0-9]+)+' | head -1 | cut -d. -f1)
+PG_CLIENT_MODE=native
 if (( client_major < server_major )); then
   candidate="/usr/lib/postgresql/$server_major/bin"
   if [[ -x "$candidate/pg_dump" && -x "$candidate/pg_restore" ]]; then
     PG_DUMP_BIN="$candidate/pg_dump"
     PG_RESTORE_BIN="$candidate/pg_restore"
     client_major=$("$PG_DUMP_BIN" --version | grep -oE '[0-9]+([.][0-9]+)+' | head -1 | cut -d. -f1)
+  else
+    command -v docker >/dev/null || { echo "missing compatible PostgreSQL client and docker fallback" >&2; exit 2; }
+    PG_CLIENT_MODE=docker
   fi
 fi
-if (( client_major < server_major )); then
+if [[ "$PG_CLIENT_MODE" == native ]] && (( client_major < server_major )); then
   echo "refusing incompatible PostgreSQL backup client: server_major=$server_major pg_dump=$($PG_DUMP_BIN --version)" >&2
   exit 2
 fi
-printf '%s\n' "$($PG_DUMP_BIN --version)" > "$EVIDENCE/PG_DUMP_VERSION.txt"
-printf '%s\n' "$($PG_RESTORE_BIN --version)" > "$EVIDENCE/PG_RESTORE_VERSION.txt"
+db_dump() {
+  if [[ "$PG_CLIENT_MODE" == native ]]; then
+    "$PG_DUMP_BIN" "$@"
+  else
+    docker run --rm --network host -e PGPASSWORD="$PGPASSWORD" "postgres:$server_major" pg_dump -h 127.0.0.1 -p "$PGPORT" -U "$PGUSER" "$@"
+  fi
+}
+db_restore() {
+  if [[ "$PG_CLIENT_MODE" == native ]]; then
+    "$PG_RESTORE_BIN" "$@"
+  else
+    docker run --rm -i --network host -e PGPASSWORD="$PGPASSWORD" "postgres:$server_major" pg_restore -h 127.0.0.1 -p "$PGPORT" -U "$PGUSER" "$@"
+  fi
+}
+if [[ "$PG_CLIENT_MODE" == native ]]; then
+  printf '%s\n' "$($PG_DUMP_BIN --version)" > "$EVIDENCE/PG_DUMP_VERSION.txt"
+  printf '%s\n' "$($PG_RESTORE_BIN --version)" > "$EVIDENCE/PG_RESTORE_VERSION.txt"
+else
+  docker run --rm "postgres:$server_major" pg_dump --version > "$EVIDENCE/PG_DUMP_VERSION.txt"
+  docker run --rm "postgres:$server_major" pg_restore --version > "$EVIDENCE/PG_RESTORE_VERSION.txt"
+fi
+printf '%s\n' "$PG_CLIENT_MODE" > "$EVIDENCE/PG_CLIENT_MODE.txt"
 redis-server --version > "$EVIDENCE/REDIS_VERSION.txt"
 
 # Safe, synthetic object bytes. No customer data is read or copied.
@@ -82,7 +106,7 @@ psql -X -v ON_ERROR_STOP=1 -d c14_p16_source -f scripts/c14/p16/verify_restore.s
 
 # Real logical DB backup. This snapshot cutoff is explicit.
 backup_cutoff_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-"$PG_DUMP_BIN" -Fc --no-owner -d c14_p16_source -f "$WORK/db.dump"
+db_dump -Fc --no-owner -d c14_p16_source > "$WORK/db.dump"
 
 # Separate Storage and configuration backups. Supabase DB backups do not contain Storage object bytes.
 tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner -C "$WORK/source-storage" -czf "$WORK/storage.tar.gz" .
@@ -139,7 +163,7 @@ done
 # PostgreSQL restore + integrity/RLS/ownership/limits/report consistency.
 restore_start=$(date +%s%3N)
 createdb c14_p16_restore
-"$PG_RESTORE_BIN" --exit-on-error --no-owner -d c14_p16_restore "$WORK/restore/db.dump"
+db_restore --exit-on-error --no-owner -d c14_p16_restore < "$WORK/restore/db.dump"
 psql -X -v ON_ERROR_STOP=1 -d c14_p16_restore -f scripts/c14/p16/verify_restore.sql > "$EVIDENCE/POSTGRES_VERIFY.log"
 restore_end=$(date +%s%3N); restore_rto_ms=$((restore_end-restore_start))
 
