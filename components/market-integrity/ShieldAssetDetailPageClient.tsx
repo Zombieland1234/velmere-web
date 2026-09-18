@@ -187,6 +187,9 @@ export default function ShieldAssetDetailPageClient({
             const delivery = marketRecord(matched.delivery);
             const deliveryRisk = marketRecord(delivery?.risk);
             const result = marketRecord(matched.result);
+            const deliveryScore = marketNumber(deliveryRisk?.score);
+            const resultScore = marketNumber(result?.score);
+            const confidencePercent = marketNumber(deliveryRisk?.confidencePercent);
             setAsset((prev) => ({
               ...prev,
               price,
@@ -197,14 +200,14 @@ export default function ShieldAssetDetailPageClient({
               high24h: marketNumber(matched.high24h) ?? prev.high24h,
               low24h: marketNumber(matched.low24h) ?? prev.low24h,
               riskScore:
-                marketNumber(deliveryRisk?.score) !== undefined
-                  ? Math.round(marketNumber(deliveryRisk?.score)!)
-                  : marketNumber(result?.score) !== undefined
-                    ? Math.round(marketNumber(result?.score)!)
+                deliveryScore !== undefined
+                  ? Math.round(deliveryScore)
+                  : resultScore !== undefined
+                    ? Math.round(resultScore)
                     : prev.riskScore,
               confidence:
-                marketNumber(deliveryRisk?.confidencePercent) !== undefined
-                  ? Math.round(marketNumber(deliveryRisk?.confidencePercent)!)
+                confidencePercent !== undefined
+                  ? Math.round(confidencePercent)
                   : prev.confidence,
               freshness: "Live Feed Synchronized",
             }));

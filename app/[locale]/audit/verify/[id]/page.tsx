@@ -95,8 +95,10 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
       const raw = fs.readFileSync(manifestPath, "utf-8");
       const parsed: unknown = JSON.parse(raw);
       manifest = parseAuditVerificationManifest(parsed);
-      recomputedRoot = computeMerkleRoot(manifest.leafHashes || []);
-      isMerkleValid = recomputedRoot === manifest.evidenceRoot;
+      if (manifest) {
+        recomputedRoot = computeMerkleRoot(manifest.leafHashes ?? []);
+        isMerkleValid = recomputedRoot === manifest.evidenceRoot;
+      }
     } catch {
       manifest = null;
     }
