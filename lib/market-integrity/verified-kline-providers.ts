@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import {
   type BinanceKlineInterval,
   type MarketCandle,
@@ -194,6 +195,13 @@ async function fetchKrakenKlines(
   range: BinanceKlineInterval,
   options: ProviderRuntimeOptions,
 ): Promise<ProviderSuccess> {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "kraken",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: options.nowMs,
+  });
+  if (!rights.allowed) throw new Error(`kraken:rights-${rights.code.toLowerCase()}`);
   const profile = klineRangeProfile(range);
   const base = cleanBaseSymbol(identity.symbol);
   const pair = `${krakenBaseSymbol(base)}USD`;
@@ -259,6 +267,13 @@ async function fetchCoinbaseKlines(
   range: BinanceKlineInterval,
   options: ProviderRuntimeOptions,
 ): Promise<ProviderSuccess> {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "coinbase",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: options.nowMs,
+  });
+  if (!rights.allowed) throw new Error(`coinbase:rights-${rights.code.toLowerCase()}`);
   const profile = klineRangeProfile(range);
   const base = cleanBaseSymbol(identity.symbol);
   const pair = `${base}-USD`;
