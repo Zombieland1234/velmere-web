@@ -7,6 +7,8 @@ import { MASTER_50_ASSETS } from "./corpus/master-50-assets";
 import { validateOptionalStringFields } from "./exact-request-boundary";
 import { reserveCustomerRuntimeRequest } from "./customer-runtime-resource-guard";
 import { buildCustomerAuditReport } from "./customer-audit-pipeline";
+import { lintCanonicalReport } from "./report-semantic-linter";
+import { resolveAssetClass } from "./asset-class-firewall";
 import type { AuditTier, FullAuditReportInput } from "./audit-canonical-report";
 
 export const CUSTOMER_REPORT_FIELDS = ["address", "assetId", "name", "caseRef", "network", "chainId", "tokenSymbol", "website", "docs", "github", "bytecode", "tier", "locale", "analysisMode"] as const;
@@ -21,7 +23,7 @@ export function normalizeCustomerReportInput(input: Record<string, unknown>): {
 } {
   const types = validateOptionalStringFields(input, CUSTOMER_REPORT_FIELDS);
   if (!types.ok) throw new CustomerReportRequestError(400, "invalid_body_field_type");
-  const value = (key: typeof CUSTOMER_REPORT_FIELDS[number]) => (input[key] as string | undefined)?.trim();
+  const value = (key: typeof CUSTOMER_REPORT_FIELDS[number]) => (input[key] as string | undefined)?.trim().normalize("NFC");
   if (CUSTOMER_REPORT_FIELDS.some(key => (value(key)?.length ?? 0) > (key === "bytecode" ? 262146 : 2048))) throw new CustomerReportRequestError(413, "report_parameter_too_large");
   const code = value("bytecode");
   if (code && !/^0x(?:[a-f0-9]{2})*$/i.test(code)) throw new CustomerReportRequestError(400, "invalid_runtime_bytecode");
@@ -77,6 +79,18 @@ export async function prepareCustomerReport(request: NextRequest, input: Record<
     reportId: reportId ?? normalized.target.caseRef ?? `rep_${normalized.target.contractAddress.slice(0, 18)}_${Date.now()}`,
     analysisMode: normalized.analysisMode,
   }, tier, request.signal); } finally { reservation.release(); } })();
+
+  // JSON, SSR and PDF must cross the same semantic/integrity gate before any
+  // surface can serialize customer-visible report data.
+  const assetClass = resolveAssetClass({
+    symbol: report.target.tokenSymbol,
+    name: report.target.contractName,
+    address: report.target.contractAddress,
+    network: report.target.network,
+  });
+  const semantic = lintCanonicalReport(report, assetClass);
+  if (!semantic.valid) throw new CustomerReportRequestError(422, "report_semantic_validation_failed");
+
   /** Call after serialization/render. Never authorize with a historical case boolean. */
   async function authorizeDelivery() {
     if (request.signal.aborted) throw new CustomerReportRequestError(400, "request_aborted");
