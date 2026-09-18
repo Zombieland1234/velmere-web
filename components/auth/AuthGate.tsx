@@ -261,7 +261,7 @@ export default function AuthGate({ children, title, body }: AuthGateProps) {
 
   if (!ready) {
     return (
-      <main className="min-h-[80dvh] bg-velmere-black px-4 pt-32 text-velmere-ivory">
+      <main className="min-h-[100dvh] bg-velmere-black px-4 pt-32 text-velmere-ivory">
         <div className="mx-auto max-w-xl rounded-[2rem] border border-white/[0.10] bg-[#111113] p-8 shadow-velmere-card">
           <div className="h-4 w-44 animate-pulse rounded-full bg-white/[0.08]" />
           <div className="mt-6 h-12 w-3/4 animate-pulse rounded-xl bg-white/[0.06]" />
