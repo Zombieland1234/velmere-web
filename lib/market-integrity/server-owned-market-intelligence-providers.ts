@@ -2,6 +2,7 @@ import { canonicalJson } from "../security/canonical-json";
 import { sha256Hex } from "../security/cryptographic-digest";
 import { readJsonResponseBounded, VELMERE_FETCH_TIMEOUTS } from "../network/fetch-with-deadline";
 import { brokeredEgressFetch } from "../network/brokered-egress";
+import { evaluateC14ProviderOperation } from "../compliance/c14-provider-enforcement";
 import { verifyMarketAssetBinding, type MarketAssetBindingArtifact, type MarketAssetBindingPayload } from "./market-asset-binding";
 import {
   parseBinanceOrderBook,
@@ -257,6 +258,13 @@ function defaultFetch(input: RequestInfo | URL, init?: RequestInit) {
 
 type ReliableJsonFetchResult = { payload: unknown; receipt: ProviderReliabilityReceipt };
 
+class ProviderPolicyBlockedError extends Error {
+  constructor(readonly providerId: string, readonly code: string) {
+    super(`provider_policy_blocked:${providerId}:${code}`);
+    this.name = "ProviderPolicyBlockedError";
+  }
+}
+
 class ReliableProviderFetchError extends Error {
   readonly receipt: ProviderReliabilityReceipt;
   constructor(receipt: ProviderReliabilityReceipt) {
@@ -289,6 +297,7 @@ function reliabilityFromError(error: unknown) {
 }
 
 function providerStateFromError(error: unknown): ServerProviderState {
+  if (error instanceof ProviderPolicyBlockedError) return "blocked";
   const reliability = reliabilityFromError(error);
   return reliability?.state === "blocked" ? "blocked" : "failed";
 }
@@ -303,6 +312,23 @@ async function reliableJsonFetch(args: {
   schemaProjection?: (payload: unknown) => unknown;
   quotaLimit?: number;
 }): Promise<ReliableJsonFetchResult> {
+  const policyNowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: args.providerId,
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: policyNowMs,
+  });
+  if (!fetchRights.allowed) {
+    throw new ProviderPolicyBlockedError(args.providerId, fetchRights.code);
+  }
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: args.providerId,
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: 120,
+    nowMs: policyNowMs,
+  });
   const result = await serverOwnedProviderReliability.execute({
     providerId: args.providerId,
     endpointId: args.endpointId,
@@ -310,6 +336,7 @@ async function reliableJsonFetch(args: {
     validate: (value) => value !== null && typeof value === "object",
     schemaProjection: args.schemaProjection,
     policy: {
+      cacheEnabled: cacheRights.allowed,
       freshTtlMs: 5_000,
       staleTtlMs: 120_000,
       timeoutMs: VELMERE_FETCH_TIMEOUTS.provider,
@@ -320,7 +347,7 @@ async function reliableJsonFetch(args: {
       cooldownMs: 20_000,
       quotaLimit: args.quotaLimit ?? 120,
       quotaWindowMs: 60_000,
-      allowStaleOnFailure: true,
+      allowStaleOnFailure: cacheRights.allowed,
       rejectSchemaDrift: true,
     },
     execute: async (signal) => {
@@ -560,7 +587,23 @@ export async function fetchServerOwnedMarketImpactEvidence(args: { assetKey: str
   const assetKey = cleanAssetKey(args.assetKey);
   const binding = bindingSummary({ assetKey, artifact: args.bindingArtifact, secret: args.bindingSecret, now });
   const cacheKey = digestPayload({ assetKey, binding: binding.artifactDigest ?? binding.venueMarkets });
-  const cached = marketCache.get(cacheKey);
+  const aggregateProviderIds = [
+    binding.venueMarkets.binance && "binance",
+    binding.venueMarkets.mexc && "mexc",
+    binding.venueMarkets.coinbase && "coinbase",
+    binding.venueMarkets.kraken && "kraken",
+  ].filter((value): value is string => Boolean(value));
+  const aggregateCacheAllowed = aggregateProviderIds.length > 0 && aggregateProviderIds.every((providerId) =>
+    evaluateC14ProviderOperation({
+      providerId,
+      operation: "cache",
+      channel: "internal_diagnostic",
+      cacheTtlSeconds: Math.ceil(MARKET_CACHE_TTL_MS / 1000),
+      nowMs: now.getTime(),
+    }).allowed,
+  );
+  if (!aggregateCacheAllowed) marketCache.delete(cacheKey);
+  const cached = aggregateCacheAllowed ? marketCache.get(cacheKey) : undefined;
   if (!args.bypassCache && cached && cached.expiresAt > now.getTime()) return cloneMarketWithCacheState(cached.value, "hit");
   const existing = marketInflight.get(cacheKey);
   if (!args.bypassCache && existing) return cloneMarketWithCacheState(await existing, "shared_inflight");
@@ -594,8 +637,10 @@ export async function fetchServerOwnedMarketImpactEvidence(args: { assetKey: str
   marketInflight.set(cacheKey, operation);
   try {
     const result = await operation;
-    marketCache.set(cacheKey, { expiresAt: now.getTime() + MARKET_CACHE_TTL_MS, value: result });
-    trimCache(marketCache);
+    if (aggregateCacheAllowed) {
+      marketCache.set(cacheKey, { expiresAt: now.getTime() + MARKET_CACHE_TTL_MS, value: result });
+      trimCache(marketCache);
+    }
     return result;
   } finally {
     marketInflight.delete(cacheKey);
@@ -1055,7 +1100,17 @@ export async function fetchServerOwnedWhaleEvidence(args: { assetKey: string } &
   const assetKey = cleanAssetKey(args.assetKey);
   const binding = bindingSummary({ assetKey, artifact: args.bindingArtifact, secret: args.bindingSecret, now });
   const cacheKey = digestPayload({ assetKey, binding: binding.artifactDigest ?? binding.tokenAddress, fallbackPriceUsd: args.fallbackPriceUsd ?? null });
-  const cached = whaleCache.get(cacheKey);
+  const aggregateCacheAllowed = ["etherscan", "alchemy"].every((providerId) =>
+    evaluateC14ProviderOperation({
+      providerId,
+      operation: "cache",
+      channel: "internal_diagnostic",
+      cacheTtlSeconds: Math.ceil(WHALE_CACHE_TTL_MS / 1000),
+      nowMs: now.getTime(),
+    }).allowed,
+  );
+  if (!aggregateCacheAllowed) whaleCache.delete(cacheKey);
+  const cached = aggregateCacheAllowed ? whaleCache.get(cacheKey) : undefined;
   if (!args.bypassCache && cached && cached.expiresAt > now.getTime()) return cloneWhaleWithCacheState(cached.value, "hit");
   const existing = whaleInflight.get(cacheKey);
   if (!args.bypassCache && existing) return cloneWhaleWithCacheState(await existing, "shared_inflight");
@@ -1111,8 +1166,10 @@ export async function fetchServerOwnedWhaleEvidence(args: { assetKey: string } &
   whaleInflight.set(cacheKey, operation);
   try {
     const result = await operation;
-    whaleCache.set(cacheKey, { expiresAt: now.getTime() + WHALE_CACHE_TTL_MS, value: result });
-    trimCache(whaleCache);
+    if (aggregateCacheAllowed) {
+      whaleCache.set(cacheKey, { expiresAt: now.getTime() + WHALE_CACHE_TTL_MS, value: result });
+      trimCache(whaleCache);
+    }
     return result;
   } finally {
     whaleInflight.delete(cacheKey);
