@@ -1,13 +1,13 @@
 {
   "schema": "velmere.research.across-bounty.v1",
-  "generatedAt": "2026-09-18T22:23:36.920Z",
+  "generatedAt": "2026-09-18T22:27:24.271Z",
   "authorizationBasis": "Across public bug bounty; local/static analysis only; no production exploitation",
   "bountyProgramUrl": "https://docs.across.to/introduction/bug-bounty",
   "scopeVerifiedAt": "2026-09-19",
   "acrossRepository": "across-protocol/contracts",
   "acrossSha": "7445f72de17900544605c7e6706c5fb3b3784738",
   "velmereRepository": "Zombieland1234/velmere-web",
-  "velmereSha": "602a0d60152ddc27c2bc60e568e284d249943b31",
+  "velmereSha": "318b120932b8af4fc725792a2cbeb30c60733d55",
   "engineBoundary": {
     "targetBytecodeExecutedByFuzzer": false,
     "fuzzingScope": "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE",
@@ -45,7 +45,7 @@
           "sourceCodeSha256": "0xc5274610d99854d881447382db8fdd126bd9128b6f6d3b938ca136776588f6c2",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:32.593Z"
+          "timestamp": "2026-09-18T22:27:21.092Z"
         },
         "contractProfile": {
           "name": "HubPool",
@@ -373,7 +373,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:0b035a6e9fdc18c7c68a425dec79e35afaa3b8df716663fedd32abd78335bc00",
-          "durationMs": 6,
+          "durationMs": 1,
           "failures": []
         },
         "invariants": [
@@ -442,14 +442,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 3,
-          "cfgMs": 23,
+          "disassemblyMs": 2,
+          "cfgMs": 16,
           "dataflowMs": 0,
-          "detectorsMs": 82,
-          "fuzzingMs": 6,
+          "detectorsMs": 57,
+          "fuzzingMs": 1,
           "simulationMs": 1,
           "pdfMs": 0,
-          "totalExecutionMs": 117
+          "totalExecutionMs": 78
         }
       }
     },
@@ -482,7 +482,7 @@
           "sourceCodeSha256": "0xb6a834fdbc71d64e96c22f8f09f85bf2d6a7cdcf60415f16783bc81bba821e21",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:32.790Z"
+          "timestamp": "2026-09-18T22:27:21.231Z"
         },
         "contractProfile": {
           "name": "AcrossConfigStore",
@@ -611,7 +611,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:a153a3c45aa9081910bd72e92bff0025cc100633b948079e270fa978a7a695a5",
-          "durationMs": 2,
+          "durationMs": 1,
           "failures": []
         },
         "invariants": [
@@ -681,13 +681,13 @@
         "auditTier": "ADVANCED",
         "timings": {
           "disassemblyMs": 0,
-          "cfgMs": 3,
+          "cfgMs": 2,
           "dataflowMs": 0,
-          "detectorsMs": 15,
-          "fuzzingMs": 2,
+          "detectorsMs": 9,
+          "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 21
+          "totalExecutionMs": 13
         }
       }
     },
@@ -716,7 +716,7 @@
           "sourceCodeSha256": "0xd3098ec4c052149df1a4f6cbb4584df2a0101e4eaf56ddd78a755dff8ec89915",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:33.033Z"
+          "timestamp": "2026-09-18T22:27:21.399Z"
         },
         "contractProfile": {
           "name": "Arbitrum_SpokePool",
@@ -843,14 +843,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 4,
-          "cfgMs": 26,
+          "disassemblyMs": 2,
+          "cfgMs": 15,
           "dataflowMs": 0,
-          "detectorsMs": 33,
+          "detectorsMs": 21,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 65
+          "totalExecutionMs": 40
         }
       }
     },
@@ -879,7 +879,7 @@
           "sourceCodeSha256": "0x4d74010b27cd281abc80b5076c515de5c858c6429a538b50572171184757d424",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:33.281Z"
+          "timestamp": "2026-09-18T22:27:21.568Z"
         },
         "contractProfile": {
           "name": "OP_SpokePool",
@@ -1006,14 +1006,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 7,
-          "cfgMs": 34,
+          "disassemblyMs": 3,
+          "cfgMs": 11,
           "dataflowMs": 0,
-          "detectorsMs": 33,
+          "detectorsMs": 21,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 76
+          "totalExecutionMs": 37
         }
       }
     },
@@ -1047,7 +1047,7 @@
           "sourceCodeSha256": "0xa084c09330b44f93ee7109f707347050cc67c687176763e207e20a542f9949e2",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:33.504Z"
+          "timestamp": "2026-09-18T22:27:21.730Z"
         },
         "contractProfile": {
           "name": "SpokePoolPeriphery",
@@ -1375,14 +1375,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 4,
-          "cfgMs": 12,
+          "disassemblyMs": 2,
+          "cfgMs": 8,
           "dataflowMs": 0,
-          "detectorsMs": 38,
+          "detectorsMs": 26,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 55
+          "totalExecutionMs": 37
         }
       }
     },
@@ -1411,7 +1411,7 @@
           "sourceCodeSha256": "0x59bda83675e2940f2414fca71049af3ca4687dd95d7f390a208f08221c1dbe69",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:33.697Z"
+          "timestamp": "2026-09-18T22:27:21.879Z"
         },
         "contractProfile": {
           "name": "PermissionedMulticallHandler",
@@ -1538,14 +1538,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 1,
-          "cfgMs": 3,
+          "disassemblyMs": 0,
+          "cfgMs": 2,
           "dataflowMs": 0,
-          "detectorsMs": 18,
+          "detectorsMs": 11,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 24
+          "totalExecutionMs": 14
         }
       }
     },
@@ -1579,7 +1579,7 @@
           "sourceCodeSha256": "0x32714209c39297b2af9654836325b71917064894a489351a08879cae8eac2918",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:33.885Z"
+          "timestamp": "2026-09-18T22:27:22.016Z"
         },
         "contractProfile": {
           "name": "Router_Adapter",
@@ -1830,11 +1830,11 @@
           "disassemblyMs": 0,
           "cfgMs": 1,
           "dataflowMs": 0,
-          "detectorsMs": 5,
+          "detectorsMs": 3,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 7
+          "totalExecutionMs": 5
         }
       }
     },
@@ -1867,7 +1867,7 @@
           "sourceCodeSha256": "0x5fe29314b5abddc222613c302e7f357a4800f640b6fbc4662086e7bde5447870",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:34.077Z"
+          "timestamp": "2026-09-18T22:27:22.154Z"
         },
         "contractProfile": {
           "name": "AdminWithdrawManager",
@@ -1996,7 +1996,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:3473de0c0230f27b1de456b66437ee704458c6d9b2feef673f850c00ec7eaf37",
-          "durationMs": 1,
+          "durationMs": 0,
           "failures": []
         },
         "invariants": [
@@ -2066,13 +2066,13 @@
         "auditTier": "ADVANCED",
         "timings": {
           "disassemblyMs": 0,
-          "cfgMs": 3,
+          "cfgMs": 2,
           "dataflowMs": 0,
-          "detectorsMs": 13,
-          "fuzzingMs": 1,
+          "detectorsMs": 6,
+          "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 18
+          "totalExecutionMs": 9
         }
       }
     },
@@ -2105,7 +2105,7 @@
           "sourceCodeSha256": "0x699ca8f2467844e74ef0f862bb4d304a65d8734f322a92b6cdd3679699b69b43",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:34.274Z"
+          "timestamp": "2026-09-18T22:27:22.290Z"
         },
         "contractProfile": {
           "name": "CounterfactualBeacon",
@@ -2218,7 +2218,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:b73d3d047d6b2efc2d22bbedc4ee78d4bf150ec87ecde8f1faab75154a35ddc6",
-          "durationMs": 2,
+          "durationMs": 1,
           "failures": []
         },
         "invariants": [
@@ -2290,11 +2290,11 @@
           "disassemblyMs": 0,
           "cfgMs": 2,
           "dataflowMs": 0,
-          "detectorsMs": 15,
-          "fuzzingMs": 2,
+          "detectorsMs": 8,
+          "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 20
+          "totalExecutionMs": 11
         }
       }
     },
@@ -2327,7 +2327,7 @@
           "sourceCodeSha256": "0x6a1427ccce3d816abdcc397d410039375844520f7abc4160894186baf52acc8e",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:34.462Z"
+          "timestamp": "2026-09-18T22:27:22.438Z"
         },
         "contractProfile": {
           "name": "CounterfactualDeposit",
@@ -2446,7 +2446,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:512c3cef9efd4058d4f86a46f40594b597cabc05bda1fb19b6e7d63762a3aa66",
-          "durationMs": 2,
+          "durationMs": 1,
           "failures": []
         },
         "invariants": [
@@ -2516,13 +2516,13 @@
         "auditTier": "ADVANCED",
         "timings": {
           "disassemblyMs": 0,
-          "cfgMs": 3,
+          "cfgMs": 1,
           "dataflowMs": 0,
-          "detectorsMs": 16,
-          "fuzzingMs": 2,
+          "detectorsMs": 9,
+          "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 21
+          "totalExecutionMs": 12
         }
       }
     },
@@ -2551,7 +2551,7 @@
           "sourceCodeSha256": "0x18739d3616d3596cb883b47e26aea9e38ba9ef903950c2223d40619b2272e68f",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:34.649Z"
+          "timestamp": "2026-09-18T22:27:22.582Z"
         },
         "contractProfile": {
           "name": "CounterfactualDepositCCTP",
@@ -2678,14 +2678,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 1,
-          "cfgMs": 4,
+          "disassemblyMs": 0,
+          "cfgMs": 3,
           "dataflowMs": 0,
-          "detectorsMs": 9,
+          "detectorsMs": 13,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 15
+          "totalExecutionMs": 17
         }
       }
     },
@@ -2714,7 +2714,7 @@
           "sourceCodeSha256": "0xe9bf46d65dbe396f6995431b0196669536bc44cf9a08f7a1c77e3a31bc598dd6",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:34.830Z"
+          "timestamp": "2026-09-18T22:27:22.715Z"
         },
         "contractProfile": {
           "name": "CounterfactualDepositFactory",
@@ -2772,6 +2772,169 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:b19f7bffd5eb445debec7805abb7d28b855763bd6c47693c95bc7c74fdf25cea",
+          "durationMs": 0,
+          "failures": []
+        },
+        "invariants": [
+          {
+            "id": "INV-01-SUPPLY-CONSERVATION",
+            "name": "Total Supply Conservation",
+            "description": "Sum of all account balances must strictly equal totalSupply at all times.",
+            "formalExpression": "forall s in States: s.totalSupply == sum(s.balances)",
+            "category": "SUPPLY_CONSERVATION",
+            "passed": true,
+            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
+            "targetEvaluated": false
+          },
+          {
+            "id": "INV-02-NO-UNAUTHORIZED-MINT",
+            "name": "No Unauthorized Balance Inflation",
+            "description": "Non-owner actors cannot increase global token supply without authorization.",
+            "formalExpression": "forall a not in Admins: State.totalSupply after a.mint() == revert",
+            "category": "NO_UNAUTHORIZED_MINT",
+            "passed": true,
+            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
+            "targetEvaluated": false
+          },
+          {
+            "id": "INV-03-SOLVENCY",
+            "name": "Vault Solvency and Backing Conservation",
+            "description": "Vault total assets must equal or exceed total depositor obligations.",
+            "formalExpression": "Vault.totalAssets() >= sum(Vault.sharesOf(u) * sharePrice)",
+            "category": "SOLVENCY",
+            "passed": true,
+            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
+            "targetEvaluated": false
+          },
+          {
+            "id": "INV-04-NO-NEGATIVE-BALANCES",
+            "name": "Balance Underflow Impossibility",
+            "description": "No account balance can underflow or represent negative integers.",
+            "formalExpression": "forall u in Users: u.balance >= 0",
+            "category": "BALANCE_MONOTONICITY",
+            "passed": true,
+            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
+            "targetEvaluated": false
+          }
+        ],
+        "formalAssurance": [
+          {
+            "propertyId": "FORMAL-PROP-01-TRANSFER-NO-OVERFLOW",
+            "specification": "Target-contract arithmetic safety",
+            "proven": false,
+            "status": "NOT_VERIFIED",
+            "solver": "NOT_RUN",
+            "statement": "NOT VERIFIED: bounded CFG traversal only; no SMT solver, target execution or proof certificate was produced."
+          },
+          {
+            "propertyId": "FORMAL-PROP-02-REVERT-SAFETY",
+            "specification": "Target-contract revert-path safety",
+            "proven": false,
+            "status": "NOT_VERIFIED",
+            "solver": "NOT_RUN",
+            "statement": "NOT VERIFIED: bounded CFG traversal only; no SMT solver, target execution or proof certificate was produced."
+          }
+        ],
+        "patchValidation": {
+          "totalPatchesTested": 0,
+          "patchesPassingRegression": 0
+        },
+        "auditTier": "ADVANCED",
+        "timings": {
+          "disassemblyMs": 0,
+          "cfgMs": 1,
+          "dataflowMs": 0,
+          "detectorsMs": 3,
+          "fuzzingMs": 0,
+          "simulationMs": 0,
+          "pdfMs": 0,
+          "totalExecutionMs": 5
+        }
+      }
+    },
+    {
+      "target": {
+        "name": "CounterfactualDepositOFT",
+        "contractRef": "contracts/periphery/counterfactual/CounterfactualDepositOFT.sol:CounterfactualDepositOFT",
+        "sourcePath": "contracts/periphery/counterfactual/CounterfactualDepositOFT.sol",
+        "address": "0x000000000000000000000000000000000000000d",
+        "chainId": "1"
+      },
+      "status": "ANALYZED",
+      "sourceSha256": "14823bdeb8c1f5d93bbf0fb2e53d941f26d093fc899ca087684ebec165ac29c7",
+      "bytecodeSha256": "345ce5bc58098fb560fc76e3ff0ce83fd691c11cf04d3d5eec8b46a53c902fe8",
+      "bytecodeLengthBytes": 4790,
+      "severityCounts": {},
+      "claimStateCounts": {},
+      "priorityCandidateCount": 0,
+      "priorityCandidates": [],
+      "result": {
+        "snapshot": {
+          "snapshotDigest": "0xc996664a941c78e32849970ccc680924764b631fbfa4c98b5aa46a9805b26721",
+          "contractAddress": "0x000000000000000000000000000000000000000d",
+          "chainId": "1",
+          "bytecodeSha256": "0xd6b56e9be4bc14e30175c90aa8dc64010dd8ced0f7cdfa3a54281019467f5543",
+          "sourceCodeSha256": "0x14823bdeb8c1f5d93bbf0fb2e53d941f26d093fc899ca087684ebec165ac29c7",
+          "compilerVersion": "unknown-solc",
+          "engineVersion": "Velmère-V2.5.1",
+          "timestamp": "2026-09-18T22:27:22.853Z"
+        },
+        "contractProfile": {
+          "name": "CounterfactualDepositOFT",
+          "isProxy": false,
+          "proxyType": "NONE",
+          "standardConformance": {
+            "erc20": false,
+            "eip2612": false,
+            "erc4626": false,
+            "erc721": false,
+            "erc1155": false,
+            "nonStandardQuirks": []
+          }
+        },
+        "scores": {
+          "securityRisk": 0,
+          "centralizationRisk": 0,
+          "upgradeRisk": 0,
+          "oracleRisk": 0,
+          "economicRisk": 0,
+          "codeQualityRisk": 30,
+          "operationalRisk": 0,
+          "overallScore": null,
+          "assessmentConfidence": null,
+          "assessmentState": "ANALYSIS_INCOMPLETE",
+          "scopeStatement": "AVAILABLE_DETECTORS_ONLY_NOT_SECURITY_CERTIFICATION",
+          "coverage": {
+            "sourceProvided": true,
+            "meaningfulBytecode": true,
+            "instructionCount": 2912,
+            "blockCount": 227,
+            "unresolvedDynamicJumps": 26,
+            "limitations": [
+              "UNRESOLVED_DYNAMIC_JUMPS:26",
+              "SOURCE_RUNTIME_IDENTITY_NOT_VERIFIED",
+              "DETECTOR_COVERAGE_NOT_QUALIFIED",
+              "ASSESSMENT_CONFIDENCE_NOT_CALIBRATED"
+            ],
+            "heuristicCandidateCount": 0
+          }
+        },
+        "findings": [],
+        "cfgMetrics": {
+          "blockCount": 227,
+          "instructionCount": 2912,
+          "cyclomaticComplexity": 50
+        },
+        "economicSimulations": [],
+        "fuzzResults": {
+          "engine": "Velmère-PropertyFuzzer-V2",
+          "executionScope": "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE",
+          "targetExecuted": false,
+          "iterationsExecuted": 300,
+          "uniqueSequencesExplored": 300,
+          "invariantsChecked": 4,
+          "invariantsViolated": 0,
+          "fuzzSeed": "sha256:4b4a3934266c8abbdaf4619025f611348e6e20ab4d352898f49977ff8d236cb1",
           "durationMs": 1,
           "failures": []
         },
@@ -2844,174 +3007,11 @@
           "disassemblyMs": 0,
           "cfgMs": 2,
           "dataflowMs": 0,
-          "detectorsMs": 10,
+          "detectorsMs": 8,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 13
-        }
-      }
-    },
-    {
-      "target": {
-        "name": "CounterfactualDepositOFT",
-        "contractRef": "contracts/periphery/counterfactual/CounterfactualDepositOFT.sol:CounterfactualDepositOFT",
-        "sourcePath": "contracts/periphery/counterfactual/CounterfactualDepositOFT.sol",
-        "address": "0x000000000000000000000000000000000000000d",
-        "chainId": "1"
-      },
-      "status": "ANALYZED",
-      "sourceSha256": "14823bdeb8c1f5d93bbf0fb2e53d941f26d093fc899ca087684ebec165ac29c7",
-      "bytecodeSha256": "345ce5bc58098fb560fc76e3ff0ce83fd691c11cf04d3d5eec8b46a53c902fe8",
-      "bytecodeLengthBytes": 4790,
-      "severityCounts": {},
-      "claimStateCounts": {},
-      "priorityCandidateCount": 0,
-      "priorityCandidates": [],
-      "result": {
-        "snapshot": {
-          "snapshotDigest": "0xc996664a941c78e32849970ccc680924764b631fbfa4c98b5aa46a9805b26721",
-          "contractAddress": "0x000000000000000000000000000000000000000d",
-          "chainId": "1",
-          "bytecodeSha256": "0xd6b56e9be4bc14e30175c90aa8dc64010dd8ced0f7cdfa3a54281019467f5543",
-          "sourceCodeSha256": "0x14823bdeb8c1f5d93bbf0fb2e53d941f26d093fc899ca087684ebec165ac29c7",
-          "compilerVersion": "unknown-solc",
-          "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:35.045Z"
-        },
-        "contractProfile": {
-          "name": "CounterfactualDepositOFT",
-          "isProxy": false,
-          "proxyType": "NONE",
-          "standardConformance": {
-            "erc20": false,
-            "eip2612": false,
-            "erc4626": false,
-            "erc721": false,
-            "erc1155": false,
-            "nonStandardQuirks": []
-          }
-        },
-        "scores": {
-          "securityRisk": 0,
-          "centralizationRisk": 0,
-          "upgradeRisk": 0,
-          "oracleRisk": 0,
-          "economicRisk": 0,
-          "codeQualityRisk": 30,
-          "operationalRisk": 0,
-          "overallScore": null,
-          "assessmentConfidence": null,
-          "assessmentState": "ANALYSIS_INCOMPLETE",
-          "scopeStatement": "AVAILABLE_DETECTORS_ONLY_NOT_SECURITY_CERTIFICATION",
-          "coverage": {
-            "sourceProvided": true,
-            "meaningfulBytecode": true,
-            "instructionCount": 2912,
-            "blockCount": 227,
-            "unresolvedDynamicJumps": 26,
-            "limitations": [
-              "UNRESOLVED_DYNAMIC_JUMPS:26",
-              "SOURCE_RUNTIME_IDENTITY_NOT_VERIFIED",
-              "DETECTOR_COVERAGE_NOT_QUALIFIED",
-              "ASSESSMENT_CONFIDENCE_NOT_CALIBRATED"
-            ],
-            "heuristicCandidateCount": 0
-          }
-        },
-        "findings": [],
-        "cfgMetrics": {
-          "blockCount": 227,
-          "instructionCount": 2912,
-          "cyclomaticComplexity": 50
-        },
-        "economicSimulations": [],
-        "fuzzResults": {
-          "engine": "Velmère-PropertyFuzzer-V2",
-          "executionScope": "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE",
-          "targetExecuted": false,
-          "iterationsExecuted": 300,
-          "uniqueSequencesExplored": 300,
-          "invariantsChecked": 4,
-          "invariantsViolated": 0,
-          "fuzzSeed": "sha256:4b4a3934266c8abbdaf4619025f611348e6e20ab4d352898f49977ff8d236cb1",
-          "durationMs": 0,
-          "failures": []
-        },
-        "invariants": [
-          {
-            "id": "INV-01-SUPPLY-CONSERVATION",
-            "name": "Total Supply Conservation",
-            "description": "Sum of all account balances must strictly equal totalSupply at all times.",
-            "formalExpression": "forall s in States: s.totalSupply == sum(s.balances)",
-            "category": "SUPPLY_CONSERVATION",
-            "passed": true,
-            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
-            "targetEvaluated": false
-          },
-          {
-            "id": "INV-02-NO-UNAUTHORIZED-MINT",
-            "name": "No Unauthorized Balance Inflation",
-            "description": "Non-owner actors cannot increase global token supply without authorization.",
-            "formalExpression": "forall a not in Admins: State.totalSupply after a.mint() == revert",
-            "category": "NO_UNAUTHORIZED_MINT",
-            "passed": true,
-            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
-            "targetEvaluated": false
-          },
-          {
-            "id": "INV-03-SOLVENCY",
-            "name": "Vault Solvency and Backing Conservation",
-            "description": "Vault total assets must equal or exceed total depositor obligations.",
-            "formalExpression": "Vault.totalAssets() >= sum(Vault.sharesOf(u) * sharePrice)",
-            "category": "SOLVENCY",
-            "passed": true,
-            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
-            "targetEvaluated": false
-          },
-          {
-            "id": "INV-04-NO-NEGATIVE-BALANCES",
-            "name": "Balance Underflow Impossibility",
-            "description": "No account balance can underflow or represent negative integers.",
-            "formalExpression": "forall u in Users: u.balance >= 0",
-            "category": "BALANCE_MONOTONICITY",
-            "passed": true,
-            "evaluationScope": "SYNTHETIC_BALANCE_MODEL_ONLY",
-            "targetEvaluated": false
-          }
-        ],
-        "formalAssurance": [
-          {
-            "propertyId": "FORMAL-PROP-01-TRANSFER-NO-OVERFLOW",
-            "specification": "Target-contract arithmetic safety",
-            "proven": false,
-            "status": "NOT_VERIFIED",
-            "solver": "NOT_RUN",
-            "statement": "NOT VERIFIED: bounded CFG traversal only; no SMT solver, target execution or proof certificate was produced."
-          },
-          {
-            "propertyId": "FORMAL-PROP-02-REVERT-SAFETY",
-            "specification": "Target-contract revert-path safety",
-            "proven": false,
-            "status": "NOT_VERIFIED",
-            "solver": "NOT_RUN",
-            "statement": "NOT VERIFIED: bounded CFG traversal only; no SMT solver, target execution or proof certificate was produced."
-          }
-        ],
-        "patchValidation": {
-          "totalPatchesTested": 0,
-          "patchesPassingRegression": 0
-        },
-        "auditTier": "ADVANCED",
-        "timings": {
-          "disassemblyMs": 1,
-          "cfgMs": 4,
-          "dataflowMs": 0,
-          "detectorsMs": 22,
-          "fuzzingMs": 0,
-          "simulationMs": 0,
-          "pdfMs": 0,
-          "totalExecutionMs": 28
+          "totalExecutionMs": 11
         }
       }
     },
@@ -3044,7 +3044,7 @@
           "sourceCodeSha256": "0xb811cbb8359ef6212508eb46d7d1d955635306f09cde41f49f4c5a6eca4b7cd3",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:35.237Z"
+          "timestamp": "2026-09-18T22:27:22.998Z"
         },
         "contractProfile": {
           "name": "CounterfactualDepositSpokePool",
@@ -3234,13 +3234,13 @@
         "auditTier": "ADVANCED",
         "timings": {
           "disassemblyMs": 0,
-          "cfgMs": 4,
+          "cfgMs": 3,
           "dataflowMs": 0,
-          "detectorsMs": 10,
+          "detectorsMs": 13,
           "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 15
+          "totalExecutionMs": 17
         }
       }
     },
@@ -3269,7 +3269,7 @@
           "sourceCodeSha256": "0x59f6d27b03e93452da65d5d3f781e0e81196d55fc93b879f3c31a1534fc2c31d",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:35.420Z"
+          "timestamp": "2026-09-18T22:27:23.159Z"
         },
         "contractProfile": {
           "name": "CounterfactualDepositVanillaCCTP",
@@ -3327,7 +3327,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:d23ba3316f564bdac4402f8442bc0237b7c1658e845cf432fca522999b9e00af",
-          "durationMs": 0,
+          "durationMs": 1,
           "failures": []
         },
         "invariants": [
@@ -3399,11 +3399,11 @@
           "disassemblyMs": 0,
           "cfgMs": 3,
           "dataflowMs": 0,
-          "detectorsMs": 11,
-          "fuzzingMs": 0,
+          "detectorsMs": 12,
+          "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 14
+          "totalExecutionMs": 16
         }
       }
     },
@@ -3432,7 +3432,7 @@
           "sourceCodeSha256": "0x4a26d73e6cb7a551e4d607cc1427663c4c5b03717be8901c6219fa2420dd8b2a",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:35.659Z"
+          "timestamp": "2026-09-18T22:27:23.340Z"
         },
         "contractProfile": {
           "name": "HyperCoreFlowExecutor",
@@ -3559,14 +3559,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 5,
-          "cfgMs": 18,
+          "disassemblyMs": 2,
+          "cfgMs": 12,
           "dataflowMs": 0,
-          "detectorsMs": 49,
-          "fuzzingMs": 1,
+          "detectorsMs": 25,
+          "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 73
+          "totalExecutionMs": 40
         }
       }
     },
@@ -3595,7 +3595,7 @@
           "sourceCodeSha256": "0xbc098a8095d0b4c681f6c026b9b5754fc3ac34f2d0a93a486acf22a564f47cc8",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:35.850Z"
+          "timestamp": "2026-09-18T22:27:23.478Z"
         },
         "contractProfile": {
           "name": "SwapHandler",
@@ -3723,13 +3723,13 @@
         "auditTier": "ADVANCED",
         "timings": {
           "disassemblyMs": 0,
-          "cfgMs": 3,
+          "cfgMs": 2,
           "dataflowMs": 0,
-          "detectorsMs": 14,
+          "detectorsMs": 8,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 18
+          "totalExecutionMs": 11
         }
       }
     },
@@ -3762,7 +3762,7 @@
           "sourceCodeSha256": "0xc9eec522d0639ed5ff1260dee451171933da3a6d90037695f6e3d17fd7aa00ee",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:36.056Z"
+          "timestamp": "2026-09-18T22:27:23.634Z"
         },
         "contractProfile": {
           "name": "Tron_SpokePoolPeriphery",
@@ -3901,7 +3901,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:aa707bf7e3204e3a4b1d55371b76fdb99265289ea372fcee902065ab2a287332",
-          "durationMs": 1,
+          "durationMs": 0,
           "failures": []
         },
         "invariants": [
@@ -3971,13 +3971,13 @@
         "auditTier": "ADVANCED",
         "timings": {
           "disassemblyMs": 1,
-          "cfgMs": 10,
+          "cfgMs": 6,
           "dataflowMs": 0,
-          "detectorsMs": 19,
-          "fuzzingMs": 1,
+          "detectorsMs": 12,
+          "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 31
+          "totalExecutionMs": 20
         }
       }
     },
@@ -4011,7 +4011,7 @@
           "sourceCodeSha256": "0x54cd8ab7c7aff105f3eec4f7ac011000982619cbbb9f303448cab90a32221145",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:36.278Z"
+          "timestamp": "2026-09-18T22:27:23.794Z"
         },
         "contractProfile": {
           "name": "Ethereum_SpokePool",
@@ -4262,14 +4262,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 2,
-          "cfgMs": 12,
+          "disassemblyMs": 1,
+          "cfgMs": 8,
           "dataflowMs": 0,
-          "detectorsMs": 20,
+          "detectorsMs": 13,
           "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 34
+          "totalExecutionMs": 22
         }
       }
     },
@@ -4298,7 +4298,7 @@
           "sourceCodeSha256": "0xf50b7e439cf93c5d4065494a07f72098567e780d5f4597df7f1eed2a196a5d3a",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:36.491Z"
+          "timestamp": "2026-09-18T22:27:23.959Z"
         },
         "contractProfile": {
           "name": "Lens_SpokePool",
@@ -4425,14 +4425,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 2,
-          "cfgMs": 13,
+          "disassemblyMs": 1,
+          "cfgMs": 9,
           "dataflowMs": 0,
-          "detectorsMs": 25,
+          "detectorsMs": 17,
           "fuzzingMs": 1,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 40
+          "totalExecutionMs": 27
         }
       }
     },
@@ -4461,7 +4461,7 @@
           "sourceCodeSha256": "0xc784baad157b31525d9dc23d8f237f2505430fe57fa469c7d46815f16ab3ea1e",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:36.709Z"
+          "timestamp": "2026-09-18T22:27:24.114Z"
         },
         "contractProfile": {
           "name": "ZkSync_SpokePool",
@@ -4519,7 +4519,7 @@
           "invariantsChecked": 4,
           "invariantsViolated": 0,
           "fuzzSeed": "sha256:c89ca2dc77502a05443a693eacfad22a4f72ccf00e52369e5ce9deacdb8cb45f",
-          "durationMs": 1,
+          "durationMs": 0,
           "failures": []
         },
         "invariants": [
@@ -4588,14 +4588,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 2,
-          "cfgMs": 13,
+          "disassemblyMs": 1,
+          "cfgMs": 8,
           "dataflowMs": 0,
-          "detectorsMs": 25,
-          "fuzzingMs": 1,
+          "detectorsMs": 16,
+          "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 41
+          "totalExecutionMs": 26
         }
       }
     },
@@ -4624,7 +4624,7 @@
           "sourceCodeSha256": "0x3dc7e9e51414417dcd3a159efa0b9ec43bcc03e99cc3ff00867371b2e506b411",
           "compilerVersion": "unknown-solc",
           "engineVersion": "Velmère-V2.5.1",
-          "timestamp": "2026-09-18T22:23:36.920Z"
+          "timestamp": "2026-09-18T22:27:24.270Z"
         },
         "contractProfile": {
           "name": "Cher_SpokePool",
@@ -4751,14 +4751,14 @@
         },
         "auditTier": "ADVANCED",
         "timings": {
-          "disassemblyMs": 2,
-          "cfgMs": 13,
+          "disassemblyMs": 1,
+          "cfgMs": 9,
           "dataflowMs": 0,
-          "detectorsMs": 20,
+          "detectorsMs": 14,
           "fuzzingMs": 0,
           "simulationMs": 0,
           "pdfMs": 0,
-          "totalExecutionMs": 36
+          "totalExecutionMs": 24
         }
       }
     }

@@ -1,0 +1,40 @@
+Compiling 5 files with Solc 0.8.30
+Solc 0.8.30 finished in 5.03s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to view
+   --> test/evm/foundry/local/CounterfactualDeposit.t.sol:155:5:
+    |
+155 |     function testSaltYieldsDistinctAddresses() public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 26 tests for test/evm/foundry/local/CounterfactualDeposit.t.sol:CounterfactualDepositTest
+[PASS] testBeaconWiring() (gas: 29534)
+[PASS] testDeployIfNeededAndExecuteIsIdempotent() (gas: 244872)
+[PASS] testDeployIsDeterministicAndInitializesRoot() (gas: 206069)
+[PASS] testExecuteBubblesRevert() (gas: 217562)
+[PASS] testExecuteDispatches() (gas: 222757)
+[PASS] testExecuteForwardsValue() (gas: 231958)
+[PASS] testExecuteInvalidProofReverts() (gas: 213822)
+[PASS] testExecuteWrongImplementationReverts() (gas: 215453)
+[PASS] testInitializeAllowsZeroImplementation() (gas: 1202516)
+[PASS] testInitializeRejectsEoaImplementation() (gas: 1172094)
+[PASS] testMultiLeafTree() (gas: 264694)
+[PASS] testProxyAcceptsEth() (gas: 216473)
+[PASS] testSaltYieldsDistinctAddresses() (gas: 10273)
+[PASS] testSetImplementationOnlyOwner() (gas: 18786)
+[PASS] testSetImplementationRejectsEOA() (gas: 23148)
+[PASS] testSetImplementationRejectsNonConformingContract() (gas: 24239)
+[PASS] testSetImplementationRejectsWrongBeacon() (gas: 587020)
+[PASS] testSetImplementationRetargetsAllProxies() (gas: 986910)
+[PASS] testSetUpgradeRootOnlyOwner() (gas: 15910)
+[PASS] testUpdateRoot() (gas: 256413)
+[PASS] testUpdateRootAndExecuteActivatesNewRoute() (gas: 276263)
+[PASS] testUpdateRootAndExecuteSkipsUpdateWhenCurrent() (gas: 223272)
+[PASS] testUpdateRootForgedProofReverts() (gas: 252255)
+[PASS] testUpdateRootNoOpReverts() (gas: 245593)
+[PASS] testUpdateRootWrongProxyReverts() (gas: 434942)
+[PASS] testWithdrawGating() (gas: 335555)
+Suite result: ok. 26 passed; 0 failed; 0 skipped; finished in 2.83ms (5.45ms CPU time)
+
+Ran 1 test suite in 13.84ms (2.83ms CPU time): 26 tests passed, 0 failed, 0 skipped (26 total tests)

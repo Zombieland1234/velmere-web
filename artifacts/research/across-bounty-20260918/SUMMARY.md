@@ -1,7 +1,7 @@
 # Velmère × Across — bounty research pass
 
 - Across SHA: `7445f72de17900544605c7e6706c5fb3b3784738`
-- Velmère SHA: `602a0d60152ddc27c2bc60e568e284d249943b31`
+- Velmère SHA: `318b120932b8af4fc725792a2cbeb30c60733d55`
 - Bounty scope verified: 2026-09-19 — https://docs.across.to/introduction/bug-bounty
 - Targets analyzed: 22/22
 - High/Critical detector candidates requiring manual validation: 0

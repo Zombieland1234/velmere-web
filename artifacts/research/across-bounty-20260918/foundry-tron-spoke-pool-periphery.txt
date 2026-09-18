@@ -1,0 +1,10 @@
+No files changed, compilation skipped
+
+Ran 4 tests for test/evm/foundry/local/Tron_SpokePoolPeriphery.t.sol:Tron_SpokePoolPeripheryTest
+[PASS] test_BasePeriphery_RevertsOnTronUSDT() (gas: 4222302)
+[PASS] test_SwapAndBridge_RevertsOnGenuineTransferFailure() (gas: 187727)
+[PASS] test_SwapAndBridge_TronUSDTInputToken() (gas: 308824)
+[PASS] test_SwapAndBridge_TronUSDTSwapToken() (gas: 310022)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 1.90ms (1.31ms CPU time)
+
+Ran 1 test suite in 10.34ms (1.90ms CPU time): 4 tests passed, 0 failed, 0 skipped (4 total tests)
