@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "velmere.c14.p17.test-receipt.v1",
+  "baseSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "localUnit": {
+    "command": "node --test scripts/c14/p17-db-drift-check.test.mjs",
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "checks": [
+      "14-digit migration filename parsing",
+      "duplicate migration version detection",
+      "live migration history missing from repo detection",
+      "7 SECURITY DEFINER hardening targets + 2 constraint validations",
+      "recovered C13 guard source byte equality",
+      "UNVERIFIED without live snapshot",
+      "DRIFT while historical live migration source is missing",
+      "read-only live checker contains no DDL/DML"
+    ]
+  },
+  "liveReadOnly": {
+    "checker": "scripts/c14/p17-live-readonly-check.sql",
+    "executedAt": "2026-09-18T00:59:39.743631Z",
+    "status": "PASS",
+    "observations": {
+      "publicTables": 19,
+      "publicRlsTables": 19,
+      "privateTables": 35,
+      "privateRlsTables": 18,
+      "clientExposureAnomalies": 0,
+      "authenticatedSecurityDefiner": 7,
+      "anonSecurityDefiner": 0,
+      "publicSecurityDefiner": 0,
+      "missingSecurityDefinerSearchPath": 0,
+      "unvalidatedConstraints": 2,
+      "invalidIndexes": 0
+    }
+  },
+  "roleMatrix": {
+    "authenticatedA": "PASS_FAIL_CLOSED_0_ROWS",
+    "authenticatedB": "PASS_FAIL_CLOSED_0_ROWS",
+    "anonTableRead": "PASS_42501_DENIED",
+    "anonRpcExecute": "PASS_42501_DENIED",
+    "serviceRole": "PASS_EXPECTED_FULL_ACCESS"
+  },
+  "productionMutation": {
+    "persistentDataWrites": 0,
+    "persistentSchemaWrites": 0,
+    "note": "Only catalog SELECTs, role/JWT-local probes and temporary ON COMMIT DROP result tables were used on live."
+  },
+  "overall": "PASS_WITH_KNOWN_DRIFT",
+  "blockers": [
+    "115 live migration source files are still absent from the repository after recovering C13.",
+    "No disposable Supabase development branch exists, so positive real owner-A/owner-B fixture writes with active Auth sessions were not executed.",
+    "20260918024500_c14_p17_rls_schema_hardening.sql is source-only and not applied to live."
+  ]
+}
