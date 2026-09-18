@@ -69,3 +69,36 @@ test("admin verifier rejects invalid timestamp ordering even with a valid signat
     else process.env.VELMERE_ADMIN_SESSION_SECRET = previous;
   }
 });
+
+
+test("admin verifier fails closed when the session HMAC secret is weak", async () => {
+  const previous = process.env.VELMERE_ADMIN_SESSION_SECRET;
+  const weakSecret = "weak";
+  process.env.VELMERE_ADMIN_SESSION_SECRET = weakSecret;
+  const now = Date.now();
+  const token = signedToken({
+    schemaVersion: "velmere.admin-session.v1",
+    actorId: "weak-secret-operator",
+    role: "viewer",
+    scopes: ["audit:read"],
+    issuedAt: now,
+    expiresAt: now + 10 * 60 * 1000,
+    sessionId: "adm_weak_secret_c14p01",
+  }, weakSecret);
+  try {
+    const verdict = verifyAdminSessionRequest(
+      new Request("https://velmere.test/api/admin/audit-events", {
+        headers: { authorization: `Bearer ${token}` },
+      }),
+      "audit:read",
+    );
+    assert.equal(verdict.ok, false);
+    if (verdict.ok) return;
+    assert.equal(verdict.response.status, 503);
+    const body = await verdict.response.json() as { code?: string };
+    assert.equal(body.code, "admin_session_env_blocked");
+  } finally {
+    if (previous === undefined) delete process.env.VELMERE_ADMIN_SESSION_SECRET;
+    else process.env.VELMERE_ADMIN_SESSION_SECRET = previous;
+  }
+});
