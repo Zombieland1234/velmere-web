@@ -169,11 +169,10 @@ jobs:
         run: |
           set -euo pipefail
           test -f /tmp/c14-p29/VERDICT.json
-
           python3 - <<'PY'
           import json, sys
           gate = json.load(open("/tmp/c14-p29/VERDICT.json"))
           print(json.dumps(gate, indent=2))
-        if gate["decision"] != "GO":
-            sys.exit(1)
+          if gate["decision"] != "GO":
+              sys.exit(1)
           PY
