@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import type { TokenRiskResult } from "./risk-types";
 
 const DEFILLAMA_FREE_BASE = "https://api.llama.fi";
@@ -147,11 +148,26 @@ function buildDefiLlamaUrl(path: string) {
 }
 
 async function fetchDefiLlamaJson<T>(path: string, revalidate = 120): Promise<T> {
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "defillama",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) throw new Error(`defillama_rights_${fetchRights.code.toLowerCase()}`);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "defillama",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: Math.max(1, revalidate),
+    nowMs,
+  });
   const response = await brokeredEgressFetch(buildDefiLlamaUrl(path), {
     headers: { accept: "application/json" },
     signal: AbortSignal.timeout(6_000),
-    next: { revalidate },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "defi_llama", operation: "defillama_json", timeoutMs: 6_000, maxResponseBytes: 16_777_216 });
+    ...(cacheRights.allowed ? { next: { revalidate } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "defi_llama", operation: "defillama_json", timeoutMs: 6_000, maxResponseBytes: 16_777_216 });
   if (!response.ok) throw new Error(`DefiLlama request failed with status ${response.status}`);
   return readJsonResponseBounded<T>(response, 16_777_216, { jsonMaxNodes: 500_000 });
 }
