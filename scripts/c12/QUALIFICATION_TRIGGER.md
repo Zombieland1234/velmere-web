@@ -1,3 +1,5 @@
+> C14-P03 documentation note (2026-09-18): this is a historical stage record, not current release truth. The audited C13 source baseline is `4cb45bbcf910f0517d4a5d265682cd2f7e4e41df` and remains `NO_GO`. See `/docs/CURRENT_STATE.md` and `/docs/CLAIM_LEDGER.md`. Historical SHAs and bounded observations below are preserved rather than rewritten.
+
 # C12 exact-SHA qualification
 
 Materialized parent `5e93f36765d9313638d8fe381505e5b9ae1dffec` preserves previous dependency versions/integrity and locks the new Redis adapter.
