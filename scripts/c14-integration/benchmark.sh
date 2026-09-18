@@ -2,10 +2,12 @@
 set -euo pipefail
 mkdir -p /tmp/c14-benchmark /tmp/c14-base /tmp/cgt
 exec > >(tee /tmp/c14-benchmark/benchmark.log) 2>&1
+test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+git merge-base --is-ancestor e718df06d20a8129ffe261eef9c6c74cc5c91729 HEAD
 printf 'candidate=%s\n' "$GITHUB_SHA"
 npm ci --ignore-scripts --no-fund
-# Offline comparison uses exact previously qualified C14 tree (C14B comparison), and never executes the corpus contracts.
-git archive e680098a3915264576cdab6bb79ab1e1ca695b11 | tar -x -C /tmp/c14-base
+# Offline comparison uses exact previously qualified C14B tree (C15 comparison), and never executes the corpus contracts.
+git archive e718df06d20a8129ffe261eef9c6c74cc5c91729 | tar -x -C /tmp/c14-base
 ln -s "$PWD/node_modules" /tmp/c14-base/node_modules
 git -C /tmp/cgt init -q
 git -C /tmp/cgt remote add origin https://github.com/gsalzer/cgt.git

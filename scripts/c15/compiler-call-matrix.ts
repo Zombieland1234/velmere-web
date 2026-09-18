@@ -30,7 +30,7 @@ const rows = cases.map(f => {
   const before = select(baseline.executeFullAuditV2(input)); const after = select(executeFullAuditV2(input));
   return { ...f, source: undefined, sourceSha256: sha(f.source), runtimeSha256: sha(Buffer.from(runtime, 'hex')), runtimeHex: runtime, beforeObserved: before.length > 0, afterObserved: after.length > 0, beforePassed: (before.length > 0) === f.expectedCandidate, passed: (after.length > 0) === f.expectedCandidate };
 });
-const result = { compiler: solc.version(), scope: 'REAL_SOLC_AND_FULL_STATIC_ENGINE_NO_DEPLOYMENT_OR_TARGET_EXECUTION', baselineSourceSha: 'e718df06d20a8129ffe261eef9c6c74cc5c91729', candidate: 'LOCAL_C15', total: rows.length, uniqueRuntimeCount: new Set(rows.map(x => x.runtimeSha256)).size, beforePassed: rows.filter(x => x.beforePassed).length, afterPassed: rows.filter(x => x.passed).length, rows };
+const result = { compiler: solc.version(), scope: 'REAL_SOLC_AND_FULL_STATIC_ENGINE_NO_DEPLOYMENT_OR_TARGET_EXECUTION', baselineSourceSha: 'e718df06d20a8129ffe261eef9c6c74cc5c91729', candidateSourceSha: process.env.GITHUB_SHA ?? null, candidate: process.env.GITHUB_SHA ? 'CI_EXACT_SHA' : 'LOCAL_UNCOMMITTED', total: rows.length, uniqueRuntimeCount: new Set(rows.map(x => x.runtimeSha256)).size, beforePassed: rows.filter(x => x.beforePassed).length, afterPassed: rows.filter(x => x.passed).length, rows };
 fs.writeFileSync(path.join(out, 'RESULTS.json'), JSON.stringify(result, null, 2));
 console.log(JSON.stringify({ ...result, rows: rows.filter(x => !x.passed) }, null, 2));
 if (rows.some(x => !x.passed)) process.exitCode = 1;

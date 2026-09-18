@@ -36,7 +36,7 @@ const rows = cases.map(f=>{
  return {...f,runtimeSha256:createHash('sha256').update(Buffer.from(f.runtimeHex,'hex')).digest('hex'),before:pick(before.executeFullAuditV2(input)),after:pick(executeFullAuditV2(input))};
 });
 const matrix=(lane:'before'|'after')=>rows.reduce((m,r)=>{m[r.expected?(r[lane]?'tp':'fn'):(r[lane]?'fp':'tn')]++;return m;},{tp:0,tn:0,fp:0,fn:0});
-const result={scope:'INTERNAL_DEVELOPMENT_FIXTURES_ONLY_NO_EVM_EXECUTION_OR_GENERALIZATION_CLAIM',inputSha256:sha(fs.readFileSync(file,'utf8')),families:8,variantsPerFamily:16,uniqueBytecodes:cases.length,before:matrix('before'),after:matrix('after'),rows};
+const result={baselineSourceSha:'e718df06d20a8129ffe261eef9c6c74cc5c91729',candidateSourceSha:process.env.GITHUB_SHA??null,scope:'INTERNAL_DEVELOPMENT_FIXTURES_ONLY_NO_EVM_EXECUTION_OR_GENERALIZATION_CLAIM',inputSha256:sha(fs.readFileSync(file,'utf8')),families:8,variantsPerFamily:16,uniqueBytecodes:cases.length,before:matrix('before'),after:matrix('after'),rows};
 fs.writeFileSync(path.join(out,'RESULTS.json'),JSON.stringify(result,null,2));
 console.log(JSON.stringify({...result,rows:undefined},null,2));
 if(rows.some(r=>r.after!==r.expected))process.exitCode=1;

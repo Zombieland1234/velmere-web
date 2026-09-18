@@ -41,7 +41,7 @@ async function lane(label,root,sourceSha,rows){
  const summary={label,sourceSha,manifestSha256,selectionDigestSha256:manifest.selectionDigestSha256,split,bundleSha256,uniqueInputCount:rows.length,completed:results.filter(r=>r.execution==='COMPLETED').length,timeouts:results.filter(r=>r.execution==='TIMEOUT').length,errors:results.filter(r=>!['COMPLETED','TIMEOUT'].includes(r.execution)).length,ambiguousAssessmentPairs:ambiguous,totalAssessmentPairs:total,bySwc:matrices,resultsSha256:createHash('sha256').update(fs.readFileSync(log)).digest('hex'),interpretation:'Strict taxonomy-mapped signal comparison against CGT SWC consensus; signals are heuristic candidates, not confirmed exploits. Multiple assessments per runtime are not extra unique tests. Missing taxonomy may cause misses. Source/runtime association not independently compiled.'};
  fs.writeFileSync(path.join(corpusDir,`${label}-summary.json`),JSON.stringify(summary,null,2));return {summary,results};
 }
-const baselineSha='e680098a3915264576cdab6bb79ab1e1ca695b11'; // C14B compares against the prior qualified C14.
+const baselineSha='e718df06d20a8129ffe261eef9c6c74cc5c91729'; // C15 compares against exact qualified C14B; corpus and labels are unchanged.
 const baseline=await lane('BASELINE',baseRoot,baselineSha,inputs);
 const candidate=await lane('C14',candidateRoot,process.env.GITHUB_SHA??'LOCAL_UNCOMMITTED',inputs);
 const bm=new Map(baseline.results.map(r=>[r.id,r]));const changes=candidate.results.filter(r=>r.findingsSha256!==bm.get(r.id)?.findingsSha256).map(r=>({id:r.id,before:bm.get(r.id)?.findingsSha256??null,after:r.findingsSha256??null,execution:r.execution}));
