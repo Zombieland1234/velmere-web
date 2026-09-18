@@ -28,6 +28,35 @@ jobs:
           mkdir -p /tmp/c14-p24
           set -o pipefail
           node_modules/.bin/tsx --test scripts/c14/reports.test.ts 2>&1 | tee /tmp/c14-p24/reports-test.log
+      - name: Existing report regression families
+        run: |
+          set -o pipefail
+          node_modules/.bin/tsx --test \
+            scripts/c6d/rpc-pdf-boundaries.test.ts \
+            scripts/c6e/pdf-evidence-boundary.test.ts \
+            scripts/c9/customer-report-regressions.test.ts \
+            scripts/c12/unavailable-report.test.ts 2>&1 | tee /tmp/c14-p24/existing-report-regressions.log
+      - name: Strict TypeScript
+        run: |
+          set -o pipefail
+          node_modules/.bin/tsc --noEmit --strict --pretty false 2>&1 | tee /tmp/c14-p24/strict-typescript.log
+      - name: Production build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee /tmp/c14-p24/production-build.log
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Browser report security and responsive matrix
+        run: |
+          set -euo pipefail
+          npm run start -- -H 127.0.0.1 > /tmp/c14-p24/next-start.log 2>&1 &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:3000/en >/dev/null 2>&1; then break; fi
+            sleep 1
+          done
+          node scripts/c14/reports-browser.mjs /tmp/c14-p24
       - name: Record source identity
         if: always()
         run: |
@@ -36,7 +65,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: c14-p24-baseline-${{ github.run_id }}
+          name: c14-p24-evidence-${{ github.run_id }}
           path: /tmp/c14-p24
           retention-days: 14
           if-no-files-found: error
