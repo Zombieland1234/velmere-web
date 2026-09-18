@@ -53,6 +53,12 @@ test('recovered C13 migration is byte-identical to the retained C13 guard source
   assert.deepEqual(migration, source);
 });
 
+test('repository audit is UNVERIFIED without a live snapshot', () => {
+  const report = auditRepository(repoRoot);
+  assert.equal(report.hasLiveSnapshot, false);
+  assert.equal(report.status, 'UNVERIFIED');
+});
+
 test('repository audit stays DRIFT while older live migration source is still missing', () => {
   const liveMigrations = [
     { version: '20260824002402', name: 'r7_browser_basic_staging_foundation' },
