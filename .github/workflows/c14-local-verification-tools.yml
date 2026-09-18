@@ -1,0 +1,34 @@
+name: C14 locked local verification tools
+on:
+  push:
+    branches: [c14/integration-final-20260918]
+    paths: [.github/workflows/c14-local-verification-tools.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Install exactly the committed lock without lifecycle execution
+        run: npm ci --ignore-scripts --no-fund
+      - name: Export tool binaries only, not environment or credentials
+        run: |
+          mkdir -p /tmp/c14-local-tools
+          cp "$(command -v node)" /tmp/c14-local-tools/node
+          node -v > /tmp/c14-local-tools/NODE_VERSION.txt
+          sha256sum package-lock.json > /tmp/c14-local-tools/LOCKFILE_SHA256.txt
+          tar -czf /tmp/c14-local-tools/locked-node-modules.tar.gz --exclude='*.woff' --exclude='*.woff2' --exclude='*.ttf' --exclude='*.otf' --exclude='*.eot' --exclude='*.ttc' node_modules
+          cd /tmp/c14-local-tools
+          sha256sum node locked-node-modules.tar.gz > SHA256SUMS
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c14-local-verification-tools-${{ github.run_id }}
+          path: /tmp/c14-local-tools/
+          retention-days: 2
+          if-no-files-found: error
