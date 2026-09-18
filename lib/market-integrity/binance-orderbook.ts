@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 export type OrderBookLevel = {
   price: number;
   quantity: number;
@@ -81,13 +82,28 @@ function simulateBuySlippage(asks: [string, string][], notionalUsd: number, mid:
 }
 
 export async function fetchBinanceOrderBook(symbol: string): Promise<OrderBookDepthResult> {
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "binance",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) throw new Error(`binance_rights_${fetchRights.code.toLowerCase()}`);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "binance",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: 20,
+    nowMs,
+  });
   const clean = symbol.toUpperCase().replace(/[^A-Z0-9]/g, "");
   const pair = clean.endsWith("USDT") ? clean : `${clean}USDT`;
   const response = await brokeredEgressFetch(`https://api.binance.com/api/v3/depth?symbol=${encodeURIComponent(pair)}&limit=100`, {
     headers: { accept: "application/json" },
     signal: AbortSignal.timeout(4_000),
-    next: { revalidate: 20 },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "binance_spot", operation: "binance_orderbook", timeoutMs: 4_000 });
+    ...(cacheRights.allowed ? { next: { revalidate: 20 } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "binance_spot", operation: "binance_orderbook", timeoutMs: 4_000 });
   if (!response.ok) throw new Error(`Binance depth request failed with status ${response.status}`);
   const data = await readJsonResponseBounded<DepthResponse>(response, 1_048_576);
   const bids = data.bids ?? [];
