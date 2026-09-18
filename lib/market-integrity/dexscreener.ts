@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { analyzeTokenRisk } from "./risk-engine";
 import { fetchGoPlusTokenSecurity } from "./goplus";
 import type { TokenRiskInput, TokenRiskResult } from "./risk-types";
@@ -74,11 +75,25 @@ export async function analyzeDexScreenerToken(
   if (!normalized) throw new Error("Missing token query");
 
   const startedAt = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "dexscreener",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: startedAt,
+  });
+  if (!fetchRights.allowed) throw new Error(`dexscreener_rights_${fetchRights.code.toLowerCase()}`);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "dexscreener",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: 60,
+    nowMs: startedAt,
+  });
   const response = await brokeredEgressFetch(`https://api.dexscreener.com/latest/dex/search?q=${encodeURIComponent(normalized)}`, {
     headers: { accept: "application/json" },
     signal: AbortSignal.timeout(4_500),
-    next: { revalidate: 60 },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "dex_screener", operation: "dexscreener_search", timeoutMs: 4_500 });
+    ...(cacheRights.allowed ? { next: { revalidate: 60 } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "dex_screener", operation: "dexscreener_search", timeoutMs: 4_500 });
 
   if (!response.ok) throw new Error(`DEX Screener request failed with status ${response.status}`);
   const data = await readJsonResponseBounded<DexSearchResponse>(response, 1_048_576);
