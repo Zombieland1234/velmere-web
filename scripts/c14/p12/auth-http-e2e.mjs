@@ -37,7 +37,15 @@ function updateJar(jar,headers){
   for(const row of rows){
     const first=row.split(';',1)[0]; const eq=first.indexOf('='); if(eq<1) continue;
     const name=first.slice(0,eq); const value=first.slice(eq+1);
-    if(!value || /(?:^|;)\s*max-age=0(?:;|$)/i.test(row)) jar.delete(name); else jar.set(name,value);
+    const clear=/(?:^|;)\s*max-age=0(?:;|$)/i.test(row);
+    const path=(row.match(/(?:^|;)\s*path=([^;]+)/i)?.[1]??'/').trim();
+    // Browsers key cookies by name+domain+path. During a transition Velmere
+    // sets the active auth-family cookie on "/" and clears only the legacy
+    // same-name cookie scoped to "/api/auth/session".
+    if(clear){
+      if(name==='velmere_auth_family' && path==='/api/auth/session') continue;
+      jar.delete(name);
+    } else jar.set(name,value);
   }
 }
 function cookieHeader(jar){return [...jar].map(([k,v])=>`${k}=${v}`).join('; ');}
