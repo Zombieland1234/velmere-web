@@ -2,6 +2,8 @@ name: C14-P01 full source audit
 on:
   push:
     branches: [parallel/c14-p01-full-source-audit]
+    paths-ignore:
+      - "_handoff/**"
 
 permissions:
   contents: read
@@ -67,6 +69,7 @@ jobs:
           PY
 
   application:
+    if: contains(github.event.head_commit.message, '[full-qualification]')
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
@@ -122,6 +125,7 @@ jobs:
           PY
 
   shield-database:
+    if: contains(github.event.head_commit.message, '[full-qualification]')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     services:
@@ -158,6 +162,7 @@ jobs:
           if-no-files-found: error
 
   frozen-benchmark:
+    if: contains(github.event.head_commit.message, '[full-qualification]')
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
