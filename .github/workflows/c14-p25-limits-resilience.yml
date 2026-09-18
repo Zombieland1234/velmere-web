@@ -1,0 +1,45 @@
+name: C14 P25 limits and resilience
+on:
+  push:
+    branches: [parallel/c14-p25-limits-resilience]
+  pull_request:
+    branches: [parallel/c14-p25-limits-resilience]
+permissions:
+  contents: read
+concurrency:
+  group: c14-p25-limits-resilience-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+jobs:
+  resilience:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Install private Redis prerequisite
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v redis-server >/dev/null || ! command -v redis-cli >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends redis-server
+          fi
+          command -v redis-server
+          command -v redis-cli
+      - name: C14-P25 isolated limits and resilience qualification
+        run: python3 scripts/c14/qualify.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p25-resilience-${{ github.run_id }}
+          path: /tmp/c14-p25-evidence
+          retention-days: 14
+          if-no-files-found: error
