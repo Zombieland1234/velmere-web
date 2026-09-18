@@ -129,6 +129,7 @@ export type ProviderAvailabilityLedgerSnapshot = {
 };
 
 type ProviderPolicy = {
+  cacheEnabled?: boolean;
   freshTtlMs?: number;
   staleTtlMs?: number;
   timeoutMs?: number;
@@ -414,6 +415,7 @@ export function createProviderReliabilityControlPlane(deps: {
     const requestKey = executionKey(providerId, endpointId, args.cacheKey);
     const freshTtlMs = Math.max(250, args.policy?.freshTtlMs ?? 10_000);
     const policy = {
+      cacheEnabled: args.policy?.cacheEnabled !== false,
       freshTtlMs,
       staleTtlMs: Math.max(freshTtlMs, args.policy?.staleTtlMs ?? 120_000),
       timeoutMs: Math.max(100, args.policy?.timeoutMs ?? 4_000),
@@ -435,7 +437,7 @@ export function createProviderReliabilityControlPlane(deps: {
     const cacheAgeMs = cached ? Math.max(0, observedAtMs - cached.storedAtMs) : null;
     const quota = quotaSnapshot(key, policy.quotaLimit, policy.quotaWindowMs);
 
-    if (cached && cacheAgeMs !== null && cacheAgeMs <= policy.freshTtlMs) {
+    if (policy.cacheEnabled && cached && cacheAgeMs !== null && cacheAgeMs <= policy.freshTtlMs) {
       const drifted = cached.schemaState === "drift";
       const receipt = buildReceipt({ providerId, endpointId, cacheKey: args.cacheKey, state: "fresh_cache", circuit, evidenceEligible: !drifted, cacheAgeMs, payloadDigest: cached.payloadDigest, schemaFingerprint: cached.schemaFingerprint, schemaState: cached.schemaState, quota, observedAtMs, blockers: drifted ? ["cached_schema_drift_not_evidence_eligible"] : [] });
       appendAvailability(receipt);
@@ -445,7 +447,7 @@ export function createProviderReliabilityControlPlane(deps: {
     if (circuit.openedAtMs !== null) {
       const elapsed = observedAtMs - circuit.openedAtMs;
       if (elapsed < policy.cooldownMs || circuit.halfOpenProbe) {
-        if (policy.allowStaleOnFailure && cached && cacheAgeMs !== null && cacheAgeMs <= policy.staleTtlMs) {
+        if (policy.cacheEnabled && policy.allowStaleOnFailure && cached && cacheAgeMs !== null && cacheAgeMs <= policy.staleTtlMs) {
           const receipt = buildReceipt({ providerId, endpointId, cacheKey: args.cacheKey, state: "stale_cache", failureKind: "circuit_open", circuit, evidenceEligible: false, cacheAgeMs, payloadDigest: cached.payloadDigest, schemaFingerprint: cached.schemaFingerprint, schemaState: cached.schemaState, quota, observedAtMs, blockers: ["circuit_open_stale_evidence_only"] });
           appendAvailability(receipt);
           return { ok: true, value: cached.value, receipt };
@@ -466,7 +468,7 @@ export function createProviderReliabilityControlPlane(deps: {
 
     const active = activeByEndpoint.get(key) ?? 0;
     if (active >= policy.maxConcurrent) {
-      if (policy.allowStaleOnFailure && cached && cacheAgeMs !== null && cacheAgeMs <= policy.staleTtlMs) {
+      if (policy.cacheEnabled && policy.allowStaleOnFailure && cached && cacheAgeMs !== null && cacheAgeMs <= policy.staleTtlMs) {
         if (halfOpenProbeAcquired) circuit.halfOpenProbe = false;
         const receipt = buildReceipt({ providerId, endpointId, cacheKey: args.cacheKey, state: "stale_cache", failureKind: "concurrency_limited", circuit, evidenceEligible: false, cacheAgeMs, payloadDigest: cached.payloadDigest, schemaFingerprint: cached.schemaFingerprint, schemaState: cached.schemaState, quota, observedAtMs, blockers: ["provider_concurrency_limited"] });
         appendAvailability(receipt);
@@ -573,7 +575,9 @@ export function createProviderReliabilityControlPlane(deps: {
             const endedAtMs = now();
             attempts.push({ attempt, startedAtMs, endedAtMs, latencyMs: Math.max(0, endedAtMs - startedAtMs), failureKind: null, retryDelayMs: 0 });
             const payloadDigest = providerPayloadDigest(value);
-            cache.set(requestKey, { value, storedAtMs: endedAtMs, payloadDigest, schemaFingerprint: fingerprint, schemaState });
+            if (policy.cacheEnabled) {
+              cache.set(requestKey, { value, storedAtMs: endedAtMs, payloadDigest, schemaFingerprint: fingerprint, schemaState });
+            }
             circuit.consecutiveFailures = 0;
             circuit.openedAtMs = null;
             circuit.halfOpenProbe = false;
@@ -620,7 +624,7 @@ export function createProviderReliabilityControlPlane(deps: {
         circuit.halfOpenProbe = false;
         const completedAtMs = now();
         const failureBlockers = [`provider_failure:${finalFailure}`, ...distributedBlockers];
-        if (policy.allowStaleOnFailure && cached && cacheAgeMs !== null && cacheAgeMs <= policy.staleTtlMs) {
+        if (policy.cacheEnabled && policy.allowStaleOnFailure && cached && cacheAgeMs !== null && cacheAgeMs <= policy.staleTtlMs) {
           const receipt = buildReceipt({ providerId, endpointId, cacheKey: args.cacheKey, state: "stale_cache", failureKind: finalFailure, circuit, attempts, evidenceEligible: false, cacheAgeMs, payloadDigest: cached.payloadDigest, schemaFingerprint: cached.schemaFingerprint, schemaState: cached.schemaState, quota: quotaState, distributedState, observedAtMs, completedAtMs, blockers: [...failureBlockers, "stale_evidence_not_live_eligible"] });
           appendAvailability(receipt);
           return { ok: true, value: cached.value, receipt };
