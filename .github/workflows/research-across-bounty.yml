@@ -15,6 +15,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: research-across-bounty
+  cancel-in-progress: true
+
 jobs:
   local-audit:
     runs-on: ubuntu-latest
@@ -53,9 +57,10 @@ jobs:
         with:
           version: v1.7.1
 
-      - name: Compile Across EVM contracts locally
+      - name: Compile only selected Across targets
         working-directory: targets/across
-        run: forge build
+        run: |
+          forge build             contracts/hub-pool/HubPool.sol             contracts/hub-pool/AcrossConfigStore.sol             contracts/spoke-pools/Arbitrum_SpokePool.sol             contracts/spoke-pools/OP_SpokePool.sol             contracts/periphery/SpokePoolPeriphery.sol             contracts/handlers/PermissionedMulticallHandler.sol             contracts/chain-adapters/Router_Adapter.sol             --skip test --skip script --skip '**/contracts/test/**'
 
       - name: Run Velmere against selected Across contracts
         env:
