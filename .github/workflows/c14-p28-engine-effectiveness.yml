@@ -1,0 +1,48 @@
+name: C14 P28 engine effectiveness qualification
+on:
+  push:
+    branches: [parallel/c14-p28-engine-effectiveness]
+permissions:
+  contents: read
+concurrency:
+  group: c14-p28-engine-effectiveness
+  cancel-in-progress: false
+jobs:
+  engine-effectiveness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Install exact dependencies
+        run: npm ci --ignore-scripts --no-fund
+      - name: C14-P28 focused positive negative and cross-class regressions
+        run: node_modules/.bin/tsx --test scripts/c14/p28-engine-effectiveness.test.ts scripts/c9/engine-boundaries.test.ts scripts/c11/local-stack.test.ts
+      - name: Strict TypeScript
+        run: node_modules/.bin/tsc --noEmit --strict --pretty false
+      - name: Frozen C13 external benchmark on candidate engine
+        run: bash scripts/c13/benchmark.sh
+      - name: Structural corpus diagnostics
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p28-diagnostics /tmp/c14-p28-diag-corpus
+          python3 scripts/c10/prepare-cgt.py /tmp/cgt /tmp/c14-p28-diag-corpus >/tmp/c14-p28-diagnostics/prepare.log
+          python3 scripts/c14/p28-corpus-diagnostics.py /tmp/c14-p28-diag-corpus /tmp/c14-p28-diagnostics/P28-CORPUS-DIAGNOSTICS.json > /tmp/c14-p28-diagnostics/diagnostics.log
+          cp /tmp/c13-benchmark/C13-summary.json /tmp/c14-p28-diagnostics/CANDIDATE-SUMMARY.json
+          cp /tmp/c13-benchmark/COMPARISON.json /tmp/c14-p28-diagnostics/COMPARISON.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p28-engine-${{ github.run_id }}
+          path: |
+            /tmp/c13-benchmark
+            /tmp/c14-p28-diagnostics
+            !/tmp/c13-benchmark/private-inputs.json
+            !/tmp/c13-benchmark/*-engine.cjs
+          retention-days: 14
+          if-no-files-found: error
