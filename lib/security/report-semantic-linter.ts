@@ -15,6 +15,9 @@
  */
 
 import { AssetClass } from "./asset-class-firewall";
+import { canonicalJson } from "./canonical-json";
+import { sha256Digest } from "./cryptographic-digest";
+import { verifyReportPki } from "./audit-pki-signature";
 import type { CanonicalAuditReportModel, AuditTier } from "./audit-canonical-report";
 
 export interface SemanticLintIssue {
@@ -74,6 +77,96 @@ export function lintCanonicalReport(
   assetClass: AssetClass,
 ): SemanticLintResult {
   const issues: SemanticLintIssue[] = [];
+
+  // Delivery integrity is part of report semantics: JSON, SSR and PDF must be
+  // able to identify the same canonical customer projection. PKI is excluded
+  // from the digest core because it signs that digest and would otherwise make
+  // the hash circular.
+  if (report.schemaVersion !== "velmere.canonical-audit-report.v1") {
+    issues.push({
+      code: "REPORT_SCHEMA_VERSION_INVALID",
+      field: "schemaVersion",
+      message: `Unsupported report schema: ${String(report.schemaVersion)}.`,
+      severity: "CRITICAL",
+    });
+  }
+  const { reportDigest, pkiAttestation, ...reportDigestCore } = report;
+  const expectedReportDigest = sha256Digest(canonicalJson(reportDigestCore));
+  if (!/^sha256:[a-f0-9]{64}$/.test(reportDigest) || reportDigest !== expectedReportDigest) {
+    issues.push({
+      code: "REPORT_DIGEST_MISMATCH",
+      field: "reportDigest",
+      message: "Report digest does not match the canonical customer-deliverable projection.",
+      severity: "CRITICAL",
+    });
+  }
+  if (pkiAttestation) {
+    if (pkiAttestation.signedDigest !== reportDigest.replace(/^sha256:/, "")) {
+      issues.push({
+        code: "REPORT_PKI_DIGEST_MISMATCH",
+        field: "pkiAttestation.signedDigest",
+        message: "PKI attestation is not bound to the delivered report digest.",
+        severity: "CRITICAL",
+      });
+    } else if (!verifyReportPki(pkiAttestation)) {
+      issues.push({
+        code: "REPORT_PKI_SIGNATURE_INVALID",
+        field: "pkiAttestation",
+        message: "PKI attestation signature validation failed.",
+        severity: "CRITICAL",
+      });
+    }
+  }
+
+  const unsafeTextControl = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/u;
+  const checkTextBudget = (value: unknown, field: string, max: number) => {
+    if (typeof value !== "string") return;
+    if (value.length > max) {
+      issues.push({
+        code: "REPORT_TEXT_BUDGET_EXCEEDED",
+        field,
+        message: `Customer-visible text exceeds the ${max}-character delivery budget.`,
+        severity: "HIGH",
+      });
+    }
+    if (unsafeTextControl.test(value)) {
+      issues.push({
+        code: "UNSAFE_TEXT_CONTROL",
+        field,
+        message: "Customer-visible text contains control or bidi-override characters.",
+        severity: "HIGH",
+      });
+    }
+  };
+  checkTextBudget(report.reportId, "reportId", 192);
+  checkTextBudget(report.target.contractName, "target.contractName", 1_024);
+  checkTextBudget(report.target.contractAddress, "target.contractAddress", 768);
+  checkTextBudget(report.target.network, "target.network", 256);
+  checkTextBudget(report.target.chainId, "target.chainId", 96);
+  checkTextBudget(report.verdict.riskLabel, "verdict.riskLabel", 512);
+  checkTextBudget(report.verdict.summary, "verdict.summary", 16_384);
+  for (const [sectionIndex, section] of report.sections.entries()) {
+    checkTextBudget(section.title, `sections[${sectionIndex}].title`, 1_024);
+    checkTextBudget(section.subtitle, `sections[${sectionIndex}].subtitle`, 4_096);
+    section.data?.paragraphs?.forEach((value, index) => checkTextBudget(value, `sections[${sectionIndex}].paragraphs[${index}]`, 16_384));
+    section.data?.metrics?.forEach((metric, index) => {
+      checkTextBudget(metric.label, `sections[${sectionIndex}].metrics[${index}].label`, 1_024);
+      checkTextBudget(metric.value, `sections[${sectionIndex}].metrics[${index}].value`, 8_192);
+      checkTextBudget(metric.detail, `sections[${sectionIndex}].metrics[${index}].detail`, 16_384);
+    });
+    section.data?.findings?.forEach((finding, index) => {
+      const base = `sections[${sectionIndex}].findings[${index}]`;
+      checkTextBudget(finding.id, `${base}.id`, 256);
+      checkTextBudget(finding.title, `${base}.title`, 1_024);
+      checkTextBudget(finding.category, `${base}.category`, 512);
+      checkTextBudget(finding.description, `${base}.description`, 16_384);
+      checkTextBudget(finding.evidence, `${base}.evidence`, 16_384);
+      checkTextBudget(finding.recommendation, `${base}.recommendation`, 16_384);
+      checkTextBudget(finding.attackScenario, `${base}.attackScenario`, 32_768);
+      checkTextBudget(finding.proofOfConcept, `${base}.proofOfConcept`, 65_536);
+      checkTextBudget(finding.remediationDiff, `${base}.remediationDiff`, 65_536);
+    });
+  }
 
   if ([report.verdict.riskScore, report.verdict.confidenceScore, report.verdict.evidenceCoverage].some(v => v === null)
       && (report.verdict.releaseDecision !== "NOT_VERIFIED" || report.executionEvidence?.qualification !== "NOT_VERIFIED")) {
