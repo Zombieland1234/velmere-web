@@ -8,6 +8,7 @@ export const INTERNAL_WORKERS_ROUTES = {
   "durable-computation-promotion": { methods: ["GET", "POST"] as const, load: () => import("@/lib/server/internal-worker-route-modules/durable-computation-promotion") },
   "fulfilment-incident-outbox": { methods: ["POST"] as const, load: () => import("@/lib/server/internal-worker-route-modules/fulfilment-incident-outbox") },
   "fulfilment-provider-sync": { methods: ["POST"] as const, load: () => import("@/lib/server/internal-worker-route-modules/fulfilment-provider-sync") },
+  "runtime-readiness": { methods: ["GET"] as const, load: () => import("@/lib/server/internal-worker-route-modules/runtime-readiness") },
   "stripe-webhook-reconciliation": { methods: ["POST"] as const, load: () => import("@/lib/server/internal-worker-route-modules/stripe-webhook-reconciliation") },
   "verify-continuous-monitor": { methods: ["GET", "POST"] as const, load: () => import("@/lib/server/internal-worker-route-modules/verify-continuous-monitor") },
 } as const satisfies LazyRouteRegistry;
