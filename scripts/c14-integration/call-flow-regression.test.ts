@@ -123,7 +123,7 @@ test('C14B self-contained unconditional cycle has no committing continuation', (
 test('C14B engine identity is revised while snapshot remains deterministic', () => {
   const input={contractAddress:address,chainId:'1',bytecode:'0x00'};
   const a=generateAuditSnapshotId(input),b=generateAuditSnapshotId(input);
-  assert.equal(a.engineVersion,'Velmère-V2.5.1');
+  assert.equal(a.engineVersion,'Velmère-V2.5.2');
   assert.equal(a.snapshotDigest,b.snapshotDigest);
 });
 test('C14B snapshot cannot collide with prior engine version for identical code', () => {
