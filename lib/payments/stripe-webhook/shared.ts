@@ -4,9 +4,6 @@ import type Stripe from "stripe";
 import { flushOrderEventStorageWrites } from "@/lib/orders/order-event-storage";
 import { completeStripeWebhookEvent } from "@/lib/db/order-service";
 import { isPaidAuditProduct } from "@/lib/security/audit-intake-case-vault";
-import {
-  stripeObjectPaymentIntentId,
-} from "@/lib/payments/stripe-webhook-state";
 
 export const SUPPORTED_STRIPE_WEBHOOK_EVENTS = new Set([
   "checkout.session.completed",
