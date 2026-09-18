@@ -16,7 +16,7 @@ const shared = read("lib/payments/stripe-webhook/shared.ts");
 const registry = read("lib/db/supabase-rpc-operation-registry.ts");
 const schema = read("lib/db/schema.sql");
 
-const requiredRpcNames = [
+const requiredRegistryRpcNames = [
   "velmere_claim_stripe_webhook_event",
   "velmere_apply_payment_event_watermark",
   "velmere_claim_stripe_webhook_effect",
@@ -25,12 +25,18 @@ const requiredRpcNames = [
   "velmere_dead_letter_stripe_webhook_effect",
   "velmere_apply_vlm_paid_entitlement_lifecycle_event",
   "velmere_create_or_read_vlm_paid_entitlement",
+];
+// The reconciliation worker is intentionally invoked through the bounded RPC helper
+// rather than the named registry, but its database function is still required.
+const requiredCanonicalSchemaRpcNames = [
+  ...requiredRegistryRpcNames,
   "velmere_run_stripe_webhook_reconciliation_worker",
 ];
 
-const rpcRegistryPresence = Object.fromEntries(requiredRpcNames.map((name) => [name, registry.includes(name)]));
-const canonicalSchemaPresence = Object.fromEntries(requiredRpcNames.map((name) => [name, schema.includes(name)]));
-const missingCanonicalSchemaRpc = requiredRpcNames.filter((name) => !canonicalSchemaPresence[name]);
+const rpcRegistryPresence = Object.fromEntries(requiredRegistryRpcNames.map((name) => [name, registry.includes(name)]));
+const missingRegistryRpc = requiredRegistryRpcNames.filter((name) => !rpcRegistryPresence[name]);
+const canonicalSchemaPresence = Object.fromEntries(requiredCanonicalSchemaRpcNames.map((name) => [name, schema.includes(name)]));
+const missingCanonicalSchemaRpc = requiredCanonicalSchemaRpcNames.filter((name) => !canonicalSchemaPresence[name]);
 
 const subscriptionEventMarkers = [
   "customer.subscription.created",
@@ -57,7 +63,8 @@ const result = {
     subscriptionLifecycleImplemented: subscriptionEventsImplemented.length > 0,
   },
   durableStorage: {
-    registryHasRequiredRpcNames: requiredRpcNames.every((name) => rpcRegistryPresence[name]),
+    registryHasRequiredRpcNames: missingRegistryRpc.length === 0,
+    missingRegistryRpc,
     canonicalSchemaHasRequiredRpcNames: missingCanonicalSchemaRpc.length === 0,
     missingCanonicalSchemaRpc,
   },
