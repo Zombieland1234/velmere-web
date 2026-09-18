@@ -1,13 +1,13 @@
 name: C14 internal integration qualification
 on:
   push:
-    branches: [c14/integration-final-20260918]
+    branches: [c14/integration-final-20260918, c15/qualification-q2-20260918]
     paths-ignore: ['_handoff/**', 'docs/**']
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: c14-integration-qualification
+  group: c14-integration-qualification-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   application:
