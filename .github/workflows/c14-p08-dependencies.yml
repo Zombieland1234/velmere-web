@@ -1,0 +1,112 @@
+name: C14 P08 dependency qualification
+on:
+  push:
+    branches: [parallel/c14-p08-dependencies]
+permissions:
+  contents: read
+concurrency:
+  group: c14-p08-dependencies
+  cancel-in-progress: false
+
+jobs:
+  materialize-security-patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      materialized: \${{ steps.patch.outputs.materialized }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - id: patch
+        env:
+          TARGET_BRANCH: parallel/c14-p08-dependencies
+        run: |
+          set -euo pipefail
+          current="$(node -p "require('./package.json').dependencies['@walletconnect/ethereum-provider']")"
+          if [ "$current" = '2.23.10' ]; then
+            echo 'materialized=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          test "$current" = '2.23.9'
+          test "$GITHUB_REF_NAME" = "$TARGET_BRANCH"
+          test "$(node --version)" = 'v24.18.0'
+          test "$(npm --version)" = '11.16.0'
+          npm install --package-lock-only --ignore-scripts --save-exact @walletconnect/ethereum-provider@2.23.10
+          test "$(node -p "require('./package.json').dependencies['@walletconnect/ethereum-provider']")" = '2.23.10'
+          test "$(node -p "require('./package-lock.json').packages['node_modules/@walletconnect/ethereum-provider'].version")" = '2.23.10'
+          unexpected="$(git diff --name-only | grep -vE '^(package.json|package-lock.json)$' || true)"
+          test -z "$unexpected"
+          git diff --check
+          git config user.name 'Velmere C14 P08 dependency audit'
+          git config user.email 'c14-p08@users.noreply.github.com'
+          git add package.json package-lock.json
+          git commit -m 'fix(c14-p08): apply WalletConnect security patch'
+          git push origin "HEAD:refs/heads/$TARGET_BRANCH"
+          echo 'materialized=true' >> "$GITHUB_OUTPUT"
+
+  qualify:
+    needs: materialize-security-patch
+    if: needs.materialize-security-patch.outputs.materialized != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      C14_P08_AUDIT_OUTPUT: /tmp/c14-p08/dependency-audit.json
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Runtime identity
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p08
+          node --version | tee /tmp/c14-p08/node-version.txt
+          npm --version | tee /tmp/c14-p08/npm-version.txt
+          test "$(node --version)" = 'v24.18.0'
+          test "$(npm --version)" = '11.16.0'
+      - name: Clean install with package scripts disabled
+        run: npm ci --ignore-scripts --no-fund 2>&1 | tee /tmp/c14-p08/clean-install.log
+      - name: Dependency integrity policy
+        run: node scripts/c14/dependency-audit.mjs 2>&1 | tee /tmp/c14-p08/dependency-audit.log
+      - name: npm audit
+        run: npm audit --json > /tmp/c14-p08/npm-audit.json
+      - name: npm outdated inventory
+        shell: bash
+        run: |
+          set +e
+          npm outdated --json > /tmp/c14-p08/npm-outdated.json
+          code=$?
+          set -e
+          test "$code" = 0 -o "$code" = 1
+      - name: Dependency tree
+        run: npm ls --all --json > /tmp/c14-p08/npm-ls.json
+      - name: TypeScript
+        run: npm run typecheck 2>&1 | tee /tmp/c14-p08/typecheck.log
+      - name: Focused C13 regressions
+        run: node_modules/.bin/tsx --test scripts/c13/source-boundary.test.ts scripts/c13/config-preflight.test.ts 2>&1 | tee /tmp/c14-p08/c13-focused-regressions.log
+      - name: ESLint
+        run: npm run lint:direct 2>&1 | tee /tmp/c14-p08/eslint.log
+      - name: Production build
+        run: npm run build 2>&1 | tee /tmp/c14-p08/production-build.log
+      - name: Lockfile immutability after qualification
+        run: |
+          git diff --exit-code -- package.json package-lock.json
+          git status --short > /tmp/c14-p08/final-status.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p08-dependency-evidence-\${{ github.run_id }}
+          path: /tmp/c14-p08
+          retention-days: 14
+          if-no-files-found: error
