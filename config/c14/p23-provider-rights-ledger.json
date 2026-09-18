@@ -1,0 +1,659 @@
+{
+  "schemaVersion": "velmere.c14.p23.provider-rights-ledger.v1",
+  "capturedAt": "2026-09-18",
+  "baseSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "branch": "parallel/c14-p23-provider-rights",
+  "policyPath": "config/c14/p23-provider-rights-policy.json",
+  "truthBoundary": "This ledger records evidence observed by C14-P23. It does not activate runtime customer-delivery rights. Public API access, written data-use permission, logo permission, pilot participation, and formal partnership are separate facts.",
+  "runtimeRightsActivation": "UNCHANGED_FAIL_CLOSED",
+  "providers": [
+    {
+      "id": "tatum",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_TERMS",
+      "confirmedRights": [
+        "Pre-launch testing on the free plan is acceptable in the described low-volume case, subject to usage/limits.",
+        "Written permission states that obtained raw data may be indexed, prepared, curated, built on, and resold to customers and partners.",
+        "Pay-as-you-go production capacity is available as usage begins; custom/enterprise can follow at scale."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Free-plan validation/testing; PAYG/custom options for production usage.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e",
+            "https://tatum.io/terms-of-use"
+          ]
+        },
+        "processing": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Index, prepare, curate and build on obtained raw data.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e"
+          ]
+        },
+        "cache_storage": {
+          "state": "LIMITED_SCOPE",
+          "scope": "Indexing/curation is expressly allowed; exact retention duration and deletion obligations were not specified in the email.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e"
+          ]
+        },
+        "redistribution_export": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Email expressly permits resale of obtained raw data to customers and partners; exact product/dataset exceptions still require review.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e"
+          ]
+        },
+        "commercial_use": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Written provider consent is materially broader than the public default non-commercial license; treat the email as specific written consent requiring evidence preservation/legal review before runtime activation.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e",
+            "https://tatum.io/terms-of-use"
+          ]
+        },
+        "logo_trademark": {
+          "state": "PENDING",
+          "scope": "Provider said it was okay with disclosing, but did not unambiguously grant use of the Tatum logo/mark in the requested website placement.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e"
+          ]
+        },
+        "formal_partnership": {
+          "state": "PENDING",
+          "scope": "Provider is open to explore referral/co-selling/co-marketing structures; no accepted partner agreement was located.",
+          "evidence": [
+            "gmail:1a0ab263e6c0aa3e"
+          ]
+        }
+      },
+      "missingRights": [
+        "Explicit logo/wordmark approval for the exact public placement.",
+        "Executed/accepted formal partnership terms.",
+        "Retention limits and any dataset-specific carve-outs.",
+        "Legal-reviewed hashed evidence package for runtime activation."
+      ],
+      "currentPlanOrContract": "No purchased plan or executed partnership agreement evidenced by C14-P23.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "alpha_vantage",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_TERMS",
+      "confirmedRights": [
+        "Commercial customer-facing use requires a commercial license before go-live, even for derivative values.",
+        "A commercial license was described as supporting internal ingestion, derivative works, external display and caching.",
+        "Attribution is not required under the described commercial license."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Development/API access exists; production commercial use requires the appropriate commercial license.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64",
+            "https://www.alphavantage.co/terms_of_service/",
+            "https://www.alphavantage.co/documentation/"
+          ]
+        },
+        "processing": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Internal ingestion and creation of derivative works under the commercial license described by Alpha Vantage.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64"
+          ]
+        },
+        "cache_storage": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Caching is permitted under the described commercial license; exact retention period was not specified.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64"
+          ]
+        },
+        "redistribution_export": {
+          "state": "LIMITED_SCOPE",
+          "scope": "External display/derived customer use is covered by the described license. Raw-feed resale/redistribution was not granted and exchange/data-source conditions can apply.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64"
+          ]
+        },
+        "commercial_use": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Requires active commercial license before customer-facing launch.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64",
+            "https://www.alphavantage.co/terms_of_service/"
+          ]
+        },
+        "logo_trademark": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Attribution not required is not trademark/logo permission.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Commercial licensing discussion only.",
+          "evidence": [
+            "gmail:1a0ab096b4c18a64"
+          ]
+        }
+      },
+      "missingRights": [
+        "Active purchased commercial license/order form.",
+        "Raw data redistribution rights, if ever needed.",
+        "Exact cache/retention limits.",
+        "Logo/trademark permission if Velmere wants to display the mark.",
+        "Legal-reviewed hashed evidence package for runtime activation."
+      ],
+      "currentPlanOrContract": "No active commercial license purchase evidenced. Email quoted commercial pricing/startup discount; this is an offer, not an entitlement.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "twelve_data",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_TERMS",
+      "confirmedRights": [
+        "Internal development/testing may remain on free tier until official launch; short beta may be tolerated.",
+        "Business plan is required at official commercial launch.",
+        "Provider explicitly answered yes for software/AI processing, derived display, PDF/JSON reports, temporary cache/storage, and derived customer reports without exposing the raw API feed.",
+        "For the described Venture scope, US market data, FX, crypto and commodities display were confirmed without additional licensing; other markets may need add-ons/direct licensing."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Free/internal testing before launch; Business plan required for launch.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2",
+            "https://twelvedata.com/pricing-business",
+            "https://support.twelvedata.com/en/articles/5332349-commercial-and-personal-usage"
+          ]
+        },
+        "processing": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Software/AI analysis and derived metrics are confirmed for the described commercial path; production requires Business plan.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2"
+          ]
+        },
+        "cache_storage": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Temporary caching/storage for analysis, auditability and reproducibility was explicitly confirmed; exact retention duration remains unspecified.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2"
+          ]
+        },
+        "redistribution_export": {
+          "state": "LIMITED_SCOPE",
+          "scope": "Derived/selected customer-facing PDF/JSON reporting was explicitly confirmed for the described plan/use case. Raw data redistribution requires a separate agreement under current public guidance.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2",
+            "https://support.twelvedata.com/en/articles/5332349-commercial-and-personal-usage"
+          ]
+        },
+        "commercial_use": {
+          "state": "CONDITIONAL_PLAN",
+          "scope": "Business plan required at official launch/trading; market/exchange licensing scope varies.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2",
+            "https://twelvedata.com/pricing-business"
+          ]
+        },
+        "logo_trademark": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No specific logo permission located in the reviewed thread.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Licensing/support discussion, not a partnership agreement.",
+          "evidence": [
+            "gmail:1a0aaa3756198ef2"
+          ]
+        }
+      },
+      "missingRights": [
+        "Active Business plan/license at launch.",
+        "Separate redistribution agreement for raw data if needed.",
+        "Market-specific approvals outside the confirmed US/FX/crypto/commodities scope.",
+        "Exact cache/retention limits.",
+        "Logo/trademark permission if desired.",
+        "Legal-reviewed hashed evidence package for runtime activation."
+      ],
+      "currentPlanOrContract": "No purchased Business plan evidenced by C14-P23. Provider email identified Venture 610 at $149/month for the described path; current public pricing page presents Venture as a family starting at $149/month, with higher-credit selections also shown.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "dexscreener",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_TERMS",
+      "confirmedRights": [
+        "DEX Screener support confirmed that the published API Terms are the full agreement and that commercial use is allowed under Section 4, subject to the competing-product restriction and rate limits.",
+        "Support stated there is currently only the free API and no paid upgrade tier."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONFIRMED_PUBLIC_TERMS",
+          "scope": "Limited, revocable API license subject to current API Terms and rate limits.",
+          "evidence": [
+            "gmail:1a040cf24aea45c3",
+            "https://docs.dexscreener.com/api/api-terms-and-conditions",
+            "https://docs.dexscreener.com/api/reference"
+          ]
+        },
+        "processing": {
+          "state": "LIMITED_SCOPE",
+          "scope": "Commercial API use is allowed for a non-competing product, but the Terms/support response did not separately enumerate every derived-processing operation.",
+          "evidence": [
+            "gmail:1a040cf24aea45c3",
+            "https://docs.dexscreener.com/api/api-terms-and-conditions"
+          ]
+        },
+        "cache_storage": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No explicit cache/retention grant located in the reviewed evidence.",
+          "evidence": [
+            "https://docs.dexscreener.com/api/api-terms-and-conditions"
+          ]
+        },
+        "redistribution_export": {
+          "state": "RESTRICTED",
+          "scope": "API Services may not be made available/resold to third parties. Derived-report export was not separately confirmed.",
+          "evidence": [
+            "https://docs.dexscreener.com/api/api-terms-and-conditions"
+          ]
+        },
+        "commercial_use": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Commercial use expressly confirmed by support under Section 4, subject to non-compete restriction/rate limits.",
+          "evidence": [
+            "gmail:1a040cf24aea45c3",
+            "https://docs.dexscreener.com/api/api-terms-and-conditions"
+          ]
+        },
+        "logo_trademark": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Support expressly declined to authorize or confirm anything beyond the published API Terms, including logo usage.",
+          "evidence": [
+            "gmail:1a040cf24aea45c3"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No partnership grant or agreement located.",
+          "evidence": [
+            "gmail:1a040cf24aea45c3"
+          ]
+        }
+      },
+      "missingRights": [
+        "Explicit cache/retention scope.",
+        "Explicit derived PDF/JSON export scope if Velmere wants provider values in reports.",
+        "Logo/wordmark permission.",
+        "Any rights beyond the non-competing-product API Terms."
+      ],
+      "currentPlanOrContract": "Free API under published API Terms; no paid tier offered per provider support email.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "sourcify",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_DOCS",
+      "confirmedRights": [
+        "Sourcify API v2 is the current public API; legacy v1 was turned off on 2026-07-07.",
+        "Sourcify explicitly granted Velmere permission to display the official Sourcify name/logo for the described factual attribution and pointed to official brand assets."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONFIRMED_PUBLIC_TERMS",
+          "scope": "Public API v2 access documented by Sourcify.",
+          "evidence": [
+            "https://docs.sourcify.dev/docs/api/",
+            "https://sourcify.dev/server/api-docs/"
+          ]
+        },
+        "processing": {
+          "state": "LIMITED_SCOPE",
+          "scope": "Technical consumption of verification/provenance facts is supported by the public API; no broad downstream commercial-data license was located in the reviewed evidence.",
+          "evidence": [
+            "https://docs.sourcify.dev/docs/api/"
+          ]
+        },
+        "cache_storage": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No blanket downstream cache/retention grant for retrieved source artifacts was located; underlying source licenses can differ.",
+          "evidence": [
+            "https://sourcify.dev/server/api-docs/"
+          ]
+        },
+        "redistribution_export": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Do not infer redistribution rights for verified source code or third-party content from API availability alone.",
+          "evidence": [
+            "https://sourcify.dev/server/api-docs/"
+          ]
+        },
+        "commercial_use": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No explicit broad commercial-use statement for Velmere's downstream reports was located in the reviewed API/brand evidence.",
+          "evidence": [
+            "https://docs.sourcify.dev/docs/api/"
+          ]
+        },
+        "logo_trademark": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Official Sourcify name/logo may be displayed for the described attribution; use official assets.",
+          "evidence": [
+            "gmail:1a041bc3fdd694b6",
+            "https://github.com/sourcifyeth/assets"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Sourcify logo/attribution permission is not a partnership, sponsorship, audit or endorsement.",
+          "evidence": [
+            "gmail:1a041bc3fdd694b6"
+          ]
+        }
+      },
+      "missingRights": [
+        "Explicit commercial downstream data/content scope if needed.",
+        "Cache/retention and redistribution scope for retrieved source artifacts/content.",
+        "Any partnership agreement, if desired."
+      ],
+      "currentPlanOrContract": "Public API; no commercial contract/partnership evidenced.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "chainlink",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_DOCS",
+      "confirmedRights": [
+        "Public Chainlink Data Feeds/documentation and official brand assets are available.",
+        "Chainlink Business Development offered to coordinate the branding/attribution question with the relevant team."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "LIMITED_SCOPE",
+          "scope": "Technical/public access to Data Feeds and documentation is observable; this is not itself a downstream redistribution license.",
+          "evidence": [
+            "https://chain.link/data-feeds",
+            "https://docs.chain.link/"
+          ]
+        },
+        "processing": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No Velmere-specific written commercial processing grant located.",
+          "evidence": [
+            "gmail:1a049951cbe3c382"
+          ]
+        },
+        "cache_storage": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No Velmere-specific cache/retention grant located.",
+          "evidence": [
+            "gmail:1a049951cbe3c382"
+          ]
+        },
+        "redistribution_export": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No commercial redistribution/export grant located.",
+          "evidence": [
+            "gmail:1a049951cbe3c382"
+          ]
+        },
+        "commercial_use": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Public feed availability does not establish the requested paid customer-report rights.",
+          "evidence": [
+            "https://chain.link/data-feeds",
+            "gmail:1a049951cbe3c382"
+          ]
+        },
+        "logo_trademark": {
+          "state": "PENDING",
+          "scope": "Official assets/guidelines exist, but the direct BD email said it would coordinate with the appropriate team to confirm what is permitted. Treat approval as pending, not granted.",
+          "evidence": [
+            "gmail:1a049951cbe3c382",
+            "https://chain.link/brand-assets"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Business Development contact and Telegram coordination are not a partnership agreement.",
+          "evidence": [
+            "gmail:1a049951cbe3c382"
+          ]
+        }
+      },
+      "missingRights": [
+        "Explicit commercial processing/customer-display scope.",
+        "Cache/storage and export/redistribution scope.",
+        "Final logo/trademark approval for Velmere's exact placement if required by guidelines.",
+        "Formal partnership agreement, if pursued."
+      ],
+      "currentPlanOrContract": "No provider-specific commercial agreement or formal partnership evidenced.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "resend",
+      "reviewClass": "C14_FRESH_EMAIL_AND_OFFICIAL_TERMS",
+      "confirmedRights": [
+        "Use of Resend service is governed by current account Terms/AUP/DPA as applicable.",
+        "Resend Customer Success explicitly said the proposed factual infrastructure branding sounds okay as long as it follows Resend brand guidelines."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONFIRMED_PUBLIC_TERMS",
+          "scope": "Service/API use under the applicable Resend account plan and current Terms/AUP.",
+          "evidence": [
+            "https://resend.com/legal/terms-of-service"
+          ]
+        },
+        "processing": {
+          "state": "NOT_APPLICABLE",
+          "scope": "This ledger dimension concerns downstream provider-data transformation; Resend is transactional email infrastructure rather than a market/security data feed.",
+          "evidence": [
+            "https://resend.com/legal/terms-of-service"
+          ]
+        },
+        "cache_storage": {
+          "state": "NOT_APPLICABLE",
+          "scope": "Provider-data cache/export rights are not the primary issue; message/customer data handling is governed by Resend Terms/DPA/privacy obligations instead.",
+          "evidence": [
+            "https://resend.com/legal"
+          ]
+        },
+        "redistribution_export": {
+          "state": "NOT_APPLICABLE",
+          "scope": "No provider feed is being redistributed by the described integration.",
+          "evidence": [
+            "https://resend.com/legal/terms-of-service"
+          ]
+        },
+        "commercial_use": {
+          "state": "CONFIRMED_PUBLIC_TERMS",
+          "scope": "Service is offered for account customers; no non-commercial-only restriction was located for ordinary service use.",
+          "evidence": [
+            "https://resend.com/legal/terms-of-service"
+          ]
+        },
+        "logo_trademark": {
+          "state": "CONFIRMED_WRITTEN",
+          "scope": "Factual website attribution using Resend branding is okay if it follows brand guidelines.",
+          "evidence": [
+            "gmail:1a04144d95825dcf",
+            "https://resend.com/brand",
+            "https://resend.com/handbook/design/what-are-our-brand-guidelines"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Brand-use permission and infrastructure use are not a partnership.",
+          "evidence": [
+            "gmail:1a04144d95825dcf"
+          ]
+        }
+      },
+      "missingRights": [
+        "No partnership agreement, if one is desired.",
+        "Operational privacy/DPA review remains separate from branding/provider-rights classification."
+      ],
+      "currentPlanOrContract": "Account/service relationship under Resend Terms; no formal partnership evidenced.",
+      "runtimeGrantEligible": false
+    },
+    {
+      "id": "goplus",
+      "reviewClass": "C14_FRESH_OFFICIAL_DOCS_EMAIL_NO_REPLY",
+      "confirmedRights": [
+        "GoPlus publicly describes its Security API as open and license-free and publishes a free version plus paid capacity tiers.",
+        "Public documentation states a free API/rate-limited access path."
+      ],
+      "rights": {
+        "api_access": {
+          "state": "CONFIRMED_PUBLIC_TERMS",
+          "scope": "Public Security API access exists, including a free/rate-limited tier and paid capacity options.",
+          "evidence": [
+            "https://www.gopluslabs.io/en/security-api",
+            "https://docs.gopluslabs.io/reference/support"
+          ]
+        },
+        "processing": {
+          "state": "NOT_CONFIRMED",
+          "scope": "The public 'open, license-free' description does not by itself answer Velmere's detailed downstream processing/report questions.",
+          "evidence": [
+            "https://www.gopluslabs.io/en/security-api"
+          ]
+        },
+        "cache_storage": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No explicit storage/retention grant located in the reviewed public pages.",
+          "evidence": [
+            "https://www.gopluslabs.io/en/security-api"
+          ]
+        },
+        "redistribution_export": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No explicit paid-customer PDF/JSON redistribution/export grant located.",
+          "evidence": [
+            "https://www.gopluslabs.io/en/security-api"
+          ]
+        },
+        "commercial_use": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Velmere asked for written confirmation of commercial SaaS/report use on 2026-09-16; no reply was located.",
+          "evidence": [
+            "gmail:1a0aaae80e92bf00"
+          ]
+        },
+        "logo_trademark": {
+          "state": "NOT_CONFIRMED",
+          "scope": "No written logo permission located.",
+          "evidence": [
+            "gmail:1a0aaae80e92bf00"
+          ]
+        },
+        "formal_partnership": {
+          "state": "NOT_CONFIRMED",
+          "scope": "Partnership discussion was requested by Velmere but no provider reply was located.",
+          "evidence": [
+            "gmail:1a0aaae80e92bf00"
+          ]
+        }
+      },
+      "missingRights": [
+        "Written commercial SaaS use confirmation.",
+        "Processing/derived-report scope.",
+        "Cache/retention scope.",
+        "PDF/JSON/export scope.",
+        "Logo permission.",
+        "Any partnership agreement."
+      ],
+      "currentPlanOrContract": "No purchase and no provider reply to the 2026-09-16 commercial-rights/partnership request located.",
+      "runtimeGrantEligible": false
+    }
+  ],
+  "collaborationCounterparties": [
+    {
+      "id": "bolyra",
+      "status": "EXPLORATORY_EXCHANGE_NOT_PARTNERSHIP",
+      "evidence": [
+        "gmail:1a0a0c5f348e01eb"
+      ],
+      "finding": "Counterparty explicitly kept the boundary clear and left future contact contingent on a deployed workflow/named decision owner. Do not call Bolyra a design partner or partner."
+    },
+    {
+      "id": "neuroforge",
+      "status": "EXPLORATORY_METHODOLOGY_COMPARISON_NOT_PARTNERSHIP",
+      "evidence": [
+        "gmail:1a098c02205e4265"
+      ],
+      "finding": "Counterparty explicitly described the exchange as an exploratory methodology comparison rather than an active design partnership."
+    },
+    {
+      "id": "eve_verified",
+      "status": "METHODOLOGY_EXCHANGE_COMPLETED_NOT_PARTNERSHIP",
+      "evidence": [
+        "gmail:1a09b485f862ae10",
+        "gmail:1a09fe37f657e7a4",
+        "gmail:1a0a0a78cac93dea"
+      ],
+      "finding": "A bounded methodology comparison/reproduction proceeded. Both sides kept certification, endorsement and public-partnership claims out of scope."
+    },
+    {
+      "id": "privatedao",
+      "status": "PILOT_ACCEPTED_FORMALIZATION_PROPOSED_NOT_ACCEPTED",
+      "evidence": [
+        "gmail:1a099036e24eb3ca",
+        "gmail:1a09d5724c59dfa4",
+        "gmail:1a0a066f5a9fd47f"
+      ],
+      "finding": "PrivateDAO accepted a pilot and proposed a formal technical verification collaboration/public announcement, but Velmere's latest reviewed response explicitly framed its cooperation framework as a proposal for review, not an already accepted agreement/public partnership."
+    },
+    {
+      "id": "zerovaultid",
+      "status": "PRIVATE_PILOT_ACCEPTED_PUBLICATION_RESTRICTED",
+      "evidence": [
+        "gmail:1a0a80cb4e6db741"
+      ],
+      "finding": "A bounded private pilot is accepted. Nothing referencing ZeroVaultID may be published/shared without the counterparty's written approval. This is not a formal partnership."
+    },
+    {
+      "id": "pactverity",
+      "status": "BOUNDED_REPRODUCIBILITY_REVIEW_NOT_PARTNERSHIP",
+      "evidence": [
+        "gmail:1a0a4ec54f77361b"
+      ],
+      "finding": "Counterparty agreed only to a bounded no-charge methodological/reproducibility review and had not independently reproduced Velmere at the reviewed point. No endorsement, certification or partnership."
+    }
+  ],
+  "baseRegistryNotFreshlyReverifiedInC14P23": [
+    "alchemy",
+    "angel_external",
+    "arkham",
+    "binance",
+    "coinbase",
+    "coingecko",
+    "coinmarketcap",
+    "coinpaprika",
+    "contrado",
+    "defillama",
+    "blockaid",
+    "etherscan",
+    "gemini",
+    "kraken",
+    "openai",
+    "polygon",
+    "printful",
+    "pyth",
+    "quicknode",
+    "rwa_xyz",
+    "stripe",
+    "supabase",
+    "tapstitch"
+  ],
+  "treatmentOfUnreviewedProviders": "No new rights are inferred. Preserve the base registry's fail-closed state until current primary evidence is reviewed.",
+  "score": {
+    "baseline": "3/10",
+    "c14p23": "6/10",
+    "rationale": "Evidence is now separated by seven right dimensions and several high-priority providers have current primary-source/email confirmation. The score is capped because the production evidence manifest remains empty, no legal-reviewed document hashes were activated, several commercial rights are plan-conditional, many registry providers were not freshly re-reviewed, and no formal provider partnership is evidenced."
+  }
+}
