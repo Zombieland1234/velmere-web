@@ -1,5 +1,6 @@
 import { readResponseBytesBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { canonicalJson } from "@/lib/security/canonical-json";
 import { sha256BytesDigest, sha256Digest } from "@/lib/security/cryptographic-digest";
 import {
@@ -292,9 +293,28 @@ function summarizeJson(value: unknown, max = 180) {
   }
 }
 
-async function safeFetchJson(url: string, timeoutMs: number): Promise<SafeFetchResult> {
+async function safeFetchJson(providerId: string, url: string, timeoutMs: number): Promise<SafeFetchResult> {
   const started = Date.now();
   const observedAt = new Date().toISOString();
+  const rights = evaluateC14ProviderOperation({
+    providerId,
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: started,
+  });
+  if (!rights.allowed) {
+    return {
+      ok: false,
+      status: 0,
+      url,
+      error: `provider_rights_${rights.code.toLowerCase()}`,
+      latencyMs: 0,
+      timedOut: false,
+      observedAt,
+      contentType: "application/octet-stream",
+      bodyBytes: 0,
+    };
+  }
   try {
     const response = await pass4824AuditProviderRuntimeClientDependencies.brokeredEgressFetch(url, {
       cache: "no-store",
@@ -473,8 +493,8 @@ async function explorerLane(contractAddress: string | undefined, chainId: string
   const sourceUrl = `https://api.etherscan.io/v2/api?chainid=${encodeURIComponent(chainId)}&module=contract&action=getsourcecode&address=${encodeURIComponent(contractAddress)}&apikey=${encodeURIComponent(key.value)}`;
   const identityUrl = `https://api.etherscan.io/v2/api?chainid=${encodeURIComponent(chainId)}&module=contract&action=getcontractcreation&contractaddresses=${encodeURIComponent(contractAddress)}&apikey=${encodeURIComponent(key.value)}`;
   const [sourceResult, identityResult] = await Promise.all([
-    safeFetchJson(sourceUrl, timeoutMs),
-    safeFetchJson(identityUrl, timeoutMs),
+    safeFetchJson("etherscan-v2", sourceUrl, timeoutMs),
+    safeFetchJson("etherscan-v2", identityUrl, timeoutMs),
   ]);
   const data = asRecord(sourceResult.data);
   const rows = Array.isArray(data?.result) ? data.result : [];
@@ -568,7 +588,7 @@ async function dexScreenerLane(contractAddress: string | undefined, chainId: str
     });
   }
   const url = `https://api.dexscreener.com/latest/dex/tokens/${encodeURIComponent(contractAddress)}`;
-  const result = await safeFetchJson(url, timeoutMs);
+  const result = await safeFetchJson("dexscreener-api", url, timeoutMs);
   const data = asRecord(result.data);
   const pairs = Array.isArray(data?.pairs) ? data.pairs : [];
   const requestedAddress = contractAddress.toLowerCase();
@@ -628,7 +648,7 @@ async function goPlusLane(contractAddress: string | undefined, chainId: string):
     });
   }
   const url = `https://api.gopluslabs.io/api/v1/token_security/${encodeURIComponent(chainId)}?contract_addresses=${encodeURIComponent(contractAddress)}`;
-  const result = await safeFetchJson(url, timeoutMs);
+  const result = await safeFetchJson("goplus-token-security", url, timeoutMs);
   const data = asRecord(result.data);
   const resultRecord = asRecord(data?.result);
   const token = resultRecord ? asRecord(resultRecord[contractAddress.toLowerCase()] ?? resultRecord[contractAddress]) : null;
@@ -681,7 +701,7 @@ async function honeypotLane(contractAddress: string | undefined, chainId: string
     });
   }
   const url = `https://api.honeypot.is/v2/IsHoneypot?address=${encodeURIComponent(contractAddress)}&chainID=${encodeURIComponent(chainId)}`;
-  const result = await safeFetchJson(url, timeoutMs);
+  const result = await safeFetchJson("honeypot-is", url, timeoutMs);
   const data = asRecord(result.data);
   const simulation = asRecord(data?.simulationResult);
   const summary = asRecord(data?.summary);
@@ -734,7 +754,7 @@ async function coinGeckoLane(projectName: string | undefined, contractAddress: s
     });
   }
   const url = `https://api.coingecko.com/api/v3/search?query=${encodeURIComponent(query)}`;
-  const result = await safeFetchJson(url, timeoutMs);
+  const result = await safeFetchJson("coingecko-search", url, timeoutMs);
   const data = asRecord(result.data);
   const coins = Array.isArray(data?.coins) ? data.coins : [];
   const positive = coins.length > 0;
@@ -853,7 +873,7 @@ async function sourcifyLane(contractAddress: string | undefined, chainId: string
   // metadata, compiler input and bytecode never cross this public provider lane.
   const requestedAddress = contractAddress.toLowerCase();
   const url = `https://sourcify.dev/server/v2/contract/${encodeURIComponent(chainId)}/${encodeURIComponent(contractAddress)}`;
-  const result = await safeFetchJson(url, timeoutMs);
+  const result = await safeFetchJson("sourcify-v2", url, timeoutMs);
   const classification = parsePass4827SourcifyLookupResponse(result.data, requestedAddress, chainId);
   const {
     resolvedAddress,
