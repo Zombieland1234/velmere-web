@@ -103,6 +103,10 @@ jobs:
         run: |
           set -euo pipefail
           npm run typecheck 2>&1 | tee /tmp/c14-p08/typecheck.log
+      - name: Build audit worker prerequisite
+        run: |
+          set -euo pipefail
+          npm run build:audit-worker 2>&1 | tee /tmp/c14-p08/audit-worker-build.log
       - name: Current route regressions
         run: |
           set -euo pipefail
