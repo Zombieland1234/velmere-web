@@ -1,3 +1,5 @@
+> C14-P03 scope note (2026-09-18): this file describes C12 deployment requirements. It remains operationally useful, but current release status is defined by C13 evidence and is `NO_GO`. See `/docs/CURRENT_STATE.md`.
+
 # C12 deployment requirements
 
 C12 does not disable production rate limiting. The initial C11 503 is a closed
@@ -44,6 +46,9 @@ shared quotas, forged headers, a Redis outage and recovery. Public RPC dependenc
 failures remain failures. This is a self-hosted CI qualification, not hosted Vercel
 or Stripe checkout. Credentials and Redis database files are removed, not uploaded.
 
-Vercel connector did not expose environment-variable read/write actions in this
-session. Do not assume the new native Redis backend or signed proxy is enabled on
-Vercel just because its preview compiled. No automatic production promotion.
+Historical C12 session observation: the connector available in that qualification
+session did not expose environment-variable read/write actions. This is not a durable
+claim about current Vercel tooling. At the C13 documentation baseline, hosted Vercel
+environment/runtime proof remains UNVERIFIED and all-product hosted E2E remains an
+open release gate. Do not infer enablement from a successful build or preview. No
+automatic production promotion.
