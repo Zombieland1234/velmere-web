@@ -24,6 +24,24 @@ done
 git merge-base --is-ancestor "$BASE_SHA" HEAD
 printf '%s\n' "$(git rev-parse HEAD)" > "$EVIDENCE/SOURCE_SHA.txt"
 printf '%s\n' "$(psql -X -At -d postgres -c 'show server_version')" > "$EVIDENCE/POSTGRES_VERSION.txt"
+server_major=$(psql -X -At -d postgres -c "select current_setting('server_version_num')::int / 10000")
+PG_DUMP_BIN=$(command -v pg_dump)
+PG_RESTORE_BIN=$(command -v pg_restore)
+client_major=$("$PG_DUMP_BIN" --version | sed -E 's/.* ([0-9]+)(\\..*)?$/\\1/')
+if (( client_major < server_major )); then
+  candidate="/usr/lib/postgresql/$server_major/bin"
+  if [[ -x "$candidate/pg_dump" && -x "$candidate/pg_restore" ]]; then
+    PG_DUMP_BIN="$candidate/pg_dump"
+    PG_RESTORE_BIN="$candidate/pg_restore"
+    client_major=$("$PG_DUMP_BIN" --version | sed -E 's/.* ([0-9]+)(\\..*)?$/\\1/')
+  fi
+fi
+if (( client_major < server_major )); then
+  echo "refusing incompatible PostgreSQL backup client: server_major=$server_major pg_dump=$($PG_DUMP_BIN --version)" >&2
+  exit 2
+fi
+printf '%s\n' "$($PG_DUMP_BIN --version)" > "$EVIDENCE/PG_DUMP_VERSION.txt"
+printf '%s\n' "$($PG_RESTORE_BIN --version)" > "$EVIDENCE/PG_RESTORE_VERSION.txt"
 redis-server --version > "$EVIDENCE/REDIS_VERSION.txt"
 
 # Safe, synthetic object bytes. No customer data is read or copied.
@@ -64,7 +82,7 @@ psql -X -v ON_ERROR_STOP=1 -d c14_p16_source -f scripts/c14/p16/verify_restore.s
 
 # Real logical DB backup. This snapshot cutoff is explicit.
 backup_cutoff_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-pg_dump -Fc --no-owner -d c14_p16_source -f "$WORK/db.dump"
+"$PG_DUMP_BIN" -Fc --no-owner -d c14_p16_source -f "$WORK/db.dump"
 
 # Separate Storage and configuration backups. Supabase DB backups do not contain Storage object bytes.
 tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner -C "$WORK/source-storage" -czf "$WORK/storage.tar.gz" .
@@ -121,7 +139,7 @@ done
 # PostgreSQL restore + integrity/RLS/ownership/limits/report consistency.
 restore_start=$(date +%s%3N)
 createdb c14_p16_restore
-pg_restore --exit-on-error --no-owner -d c14_p16_restore "$WORK/restore/db.dump"
+"$PG_RESTORE_BIN" --exit-on-error --no-owner -d c14_p16_restore "$WORK/restore/db.dump"
 psql -X -v ON_ERROR_STOP=1 -d c14_p16_restore -f scripts/c14/p16/verify_restore.sql > "$EVIDENCE/POSTGRES_VERIFY.log"
 restore_end=$(date +%s%3N); restore_rto_ms=$((restore_end-restore_start))
 
