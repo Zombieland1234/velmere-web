@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 
 /**
  * Pyth Hermes is a reference-price lane, not a customer-delivery licence.
@@ -58,6 +59,13 @@ export async function fetchPythReferencePrice(
   const feedId = FEED_IDS[symbol];
   const sourceUri = `${PYTH_HERMES_BASE}/api/latest_price_feeds?ids%5B%5D=0x${feedId}`;
   const retrieved = options.now ?? new Date();
+  const rights = evaluateC14ProviderOperation({
+    providerId: "pyth",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: retrieved.getTime(),
+  });
+  if (!rights.allowed) return null;
   const response = await brokeredEgressFetch(sourceUri, {
     headers: { accept: "application/json", authorization: `Bearer ${apiKey}` },
     cache: "no-store",
