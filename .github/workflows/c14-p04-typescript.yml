@@ -29,10 +29,33 @@ jobs:
         run: |
           set -o pipefail
           node scripts/c14/typescript-risk-audit.mjs --json=/tmp/c14-typescript-risk.json | tee /tmp/c14-typescript-risk.log
+      - name: Check first-party declarations with skipLibCheck disabled
+        run: |
+          set -o pipefail
+          node scripts/c14/first-party-declaration-check.mjs | tee /tmp/c14-declarations.log
       - name: Strict TypeScript over all tracked TS/TSX/MTS/CTS
         run: |
           set -o pipefail
           npm run typecheck:c14 2>&1 | tee /tmp/c14-typescript.log
+      - name: Runtime regressions for previously uncovered C6/C7 TypeScript
+        run: |
+          set -o pipefail
+          node_modules/.bin/tsx --test \
+            scripts/c6/provider-engine-boundaries.test.ts \
+            scripts/c6/route-boundaries.test.ts \
+            scripts/c6c/actual-app-regressions.test.ts \
+            scripts/c6d/rpc-pdf-boundaries.test.ts \
+            scripts/c6e/pdf-evidence-boundary.test.ts \
+            scripts/c7/engine-integrity.test.ts \
+            2>&1 | tee /tmp/c14-c6-c7-regressions.log
+      - name: Runtime smoke for previously uncovered C6 engine observations
+        env:
+          C6_SOURCE_SHA: ${{ github.sha }}
+        run: |
+          set -o pipefail
+          mkdir -p /tmp/c14-engine-observations
+          node_modules/.bin/tsx scripts/c6/engine-observations.ts /tmp/c14-engine-observations \
+            2>&1 | tee /tmp/c14-c6-engine-observations.log
       - name: Existing production build gate
         run: |
           set -o pipefail
@@ -45,7 +68,11 @@ jobs:
             /tmp/c14-typescript-coverage.log
             /tmp/c14-typescript-risk.json
             /tmp/c14-typescript-risk.log
+            /tmp/c14-declarations.log
             /tmp/c14-typescript.log
+            /tmp/c14-c6-c7-regressions.log
+            /tmp/c14-c6-engine-observations.log
+            /tmp/c14-engine-observations
             /tmp/c14-build.log
           retention-days: 14
           if-no-files-found: warn
