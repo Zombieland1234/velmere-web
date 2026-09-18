@@ -19,7 +19,7 @@ There are 70 new C15 test cases. The expected full registered suite is 484 inher
 
 ## Fresh CI contract
 
-Core: npm ci with install scripts; worker bundle; all registered tests; compiler ORIGIN matrix; Python triage tests; strict application and extended test configurations; lint coverage; zero-warning ESLint; production build. No test or warning threshold is relaxed.
+Core: npm ci under the unchanged repository install-script policy; explicit capture of effective ignore-scripts; worker bundle; all registered tests; compiler ORIGIN matrix; Python triage tests; strict application and extended test configurations; lint coverage; zero-warning ESLint; production build. No test or warning threshold is relaxed.
 
 Runtime: real temporary Redis; production Next.js Basic HTTP/JSON/PDF/browser flow; PostgreSQL synthetic identity tests; interlocked isolated restore. TEST identities only; no production mutation or real charge.
 
@@ -32,3 +32,7 @@ Compiler CALL and development matrices run separately against archived exact C14
 Real Auth A/B lifecycle, Stripe TEST checkout/webhook/grant/refund/revoke, all paid products, global provider enforcement, privacy/erasure, production disaster recovery, warning-free lint, full secret-history/environment review, engine generalization and independent external validation remain open. Running this workflow does not imply these gates passed.
 
 The export excludes the two declared font resources. A reduced downloadable ZIP is not the complete checkout used for build, and does not include Git history. No font bytes, secrets, private correspondence or production credentials are added by this handoff.
+
+## Correction to installation interpretation
+
+The first full C15 run on `14512cfac9a8cfe297edca2b5ab99899a4f950cb` passed 554 regressions and the full build, but `npm ci --foreground-scripts` did NOT establish lifecycle execution: the unchanged `.npmrc` sets `ignore-scripts=true`. Prior wording that install scripts were executed was too strong. No install policy is disabled to obtain a green result. The final runner records only this effective npm setting and non-sensitive dependency identities, and four new tests prevent treating configuration or successful installation as execution attestation. The subsequent expected registered count is 558, to be confirmed only by new TAP. Full logs from 14512 remain valid for that SHA and are retained separately.

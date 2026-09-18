@@ -25,7 +25,8 @@ def run(name,args,timeout=600,cwd=ROOT,scope='INTERNAL_SOURCE_QUALIFICATION'):
     return code
 (OUT/'IDENTITY.json').write_text(json.dumps({'sourceSha':SHA,'tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip(),'branch':os.environ['GITHUB_REF_NAME'],'runId':os.environ['GITHUB_RUN_ID'],'attempt':os.environ.get('GITHUB_RUN_ATTEMPT'),'base':BASE,'node':subprocess.check_output(['node','--version'],text=True).strip()},indent=2))
 run('initial-status',['git','status','--porcelain'],30)
-if run('install',['npm','ci','--foreground-scripts','--no-fund'],600)!=0:raise SystemExit('Dependency installation failed; remaining checks are BLOCKED')
+if run('install',['npm','ci','--foreground-scripts','--no-fund'],600,scope='INSTALL_UNDER_REPO_POLICY_NOT_PROOF_OF_LIFECYCLE_EXECUTION')!=0:raise SystemExit('Dependency installation failed; remaining checks are BLOCKED')
+run('install-policy',['node','scripts/c15/install-policy.mjs'],60,scope='EFFECTIVE_NPM_CONFIG_NOT_LIFECYCLE_EXECUTION')
 run('dependency-structure',['node','scripts/c14/dependency-audit.mjs'],60)
 run('npm-audit',['npm','audit','--json'],180)
 run('dependency-tree',['npm','ls','--all','--json'],180)
