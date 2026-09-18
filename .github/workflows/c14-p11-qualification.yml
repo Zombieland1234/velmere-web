@@ -30,6 +30,11 @@ jobs:
           node-version: "24.18.0"
           cache: npm
       - run: npm ci --ignore-scripts
+      - name: Test-only Next server-only marker shim
+        run: |
+          mkdir -p node_modules/server-only
+          printf '%s\n' '{"name":"server-only","version":"0.0.0-c14-test","main":"index.js"}' > node_modules/server-only/package.json
+          : > node_modules/server-only/index.js
       - name: C14-P11 reproductions and regressions
         run: npx tsx --test scripts/c14-p11/entitlements-parsers.test.ts
       - name: C13 source/bytecode boundary regression
