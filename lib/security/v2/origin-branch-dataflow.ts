@@ -106,11 +106,14 @@ export function findOriginDependentBranches(cfg: ControlFlowGraph): OriginBranch
           const originPc = first(args.map(v => v.originPc));
           // A 160-bit address mask does not change ORIGIN or CALLER identity.
           const masked = op === 0x16 ? args.find((v, i) => v.identity !== null && args[1-i]?.constant !== null && (args[1-i].constant! & ADDRESS_MASK) === ADDRESS_MASK) : undefined;
-          const equality = op === 0x14 && ((args[0].identity === 'origin' && args[1].identity === 'caller') || (args[0].identity === 'caller' && args[1].identity === 'origin'));
+          // EQ is true on equality; SUB and XOR are zero on equality.
+          // JUMPI/ISZERO only observes zero versus nonzero, so exact address
+          // operands preserve the same pure caller-origin comparison context.
+          const equality = (op === 0x14 || op === 0x03 || op === 0x18) && ((args[0].identity === 'origin' && args[1].identity === 'caller') || (args[0].identity === 'caller' && args[1].identity === 'origin'));
           stack.push({ constant: null, originPc,
             comparisonPc: originPc !== null && op >= 0x10 && op <= 0x15 ? inst.pc : first(args.map(v => v.comparisonPc)),
             identity: masked?.identity ?? null,
-            // Only EQ and boolean inversion preserve the precise comparison.
+            // Only exact EQ/SUB/XOR and boolean inversion preserve this comparison.
             // Compound AND/OR, arithmetic or mixing with owner checks do NOT.
             callerEquality: equality || (op === 0x15 && args[0].callerEquality),
           });
