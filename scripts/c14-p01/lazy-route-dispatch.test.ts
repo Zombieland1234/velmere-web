@@ -6,7 +6,7 @@ import {
 } from "../../lib/server/lazy-route-dispatch";
 
 test("lazy route handler failures never disclose raw exception details", async () => {
-  const sensitive = "provider https://db.internal.example/?token=sk_live_c14p01secret password=hunter2";
+  const sensitive = "provider https://db.internal.example/?token=opaque-c14p01-sensitive credential=c14p01-sensitive";
   const registry = {
     explode: {
       methods: ["GET"] as const,
@@ -37,8 +37,8 @@ test("lazy route handler failures never disclose raw exception details", async (
 
     assert.equal(response.status, 500);
     assert.equal(body.error, "internal_worker_temporarily_unavailable");
-    assert.doesNotMatch(JSON.stringify(body), /db\.internal|sk_live|hunter2/i);
-    assert.doesNotMatch(captured.join("\n"), /db\.internal|sk_live|hunter2/i);
+    assert.doesNotMatch(JSON.stringify(body), /db\\.internal|opaque-c14p01-sensitive|c14p01-sensitive/i);
+    assert.doesNotMatch(captured.join("\n"), /db\\.internal|opaque-c14p01-sensitive|c14p01-sensitive/i);
   } finally {
     console.error = originalError;
   }
