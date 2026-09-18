@@ -1,5 +1,5 @@
 {
   "framework": "nextjs",
   "installCommand": "npm_config_engine_strict=false npm ci --no-audit --no-fund --progress=false",
-  "buildCommand": "npm run build"
+  "buildCommand": "node scripts/deployment/preflight.mjs --report && npm run build"
 }
