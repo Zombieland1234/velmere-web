@@ -22,6 +22,10 @@ import {
 
 const correlationId = `req_${"a".repeat(32)}`;
 
+function redisEnv(url: string): NodeJS.ProcessEnv {
+  return { ...process.env, VELMERE_RATE_LIMIT_BACKEND: "redis", REDIS_URL: url };
+}
+
 function baseline(): RuntimeReadinessInput {
   return {
     correlationId,
@@ -102,10 +106,7 @@ test("operational logs keep timestamp/correlation but hash identifiers and omit 
 test("Redis readiness refuses invalid config without echoing Redis URL", async () => {
   const secretUrl = "redis://default:super-secret@remote.example:6379/0";
   const result = await probeNativeRedisReadiness({
-    env: {
-      VELMERE_RATE_LIMIT_BACKEND: "redis",
-      REDIS_URL: secretUrl,
-    } as NodeJS.ProcessEnv,
+    env: redisEnv(secretUrl),
   });
   assert.equal(result.ready, false);
   assert.equal(result.state, "not_configured");
@@ -119,10 +120,7 @@ test("Redis readiness exposes safe failure code and never raw driver error", asy
   console.error = (...args: unknown[]) => { captured.push(args.map(String).join(" ")); };
   try {
     const result = await probeNativeRedisReadiness({
-      env: {
-        VELMERE_RATE_LIMIT_BACKEND: "redis",
-        REDIS_URL: "redis://127.0.0.1:6379/0",
-      } as NodeJS.ProcessEnv,
+      env: redisEnv("redis://127.0.0.1:6379/0"),
       correlationId,
       clientFactory: () => ({
         isOpen: false,
@@ -148,10 +146,7 @@ test("Redis readiness exposes safe failure code and never raw driver error", asy
 test("Redis readiness accepts a bounded PONG probe", async () => {
   let destroyed = false;
   const result = await probeNativeRedisReadiness({
-    env: {
-      VELMERE_RATE_LIMIT_BACKEND: "redis",
-      REDIS_URL: "redis://127.0.0.1:6379/0",
-    } as NodeJS.ProcessEnv,
+    env: redisEnv("redis://127.0.0.1:6379/0"),
     clientFactory: () => ({
       isOpen: true,
       on: () => undefined,
