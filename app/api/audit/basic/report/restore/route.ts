@@ -1,13 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { callAuditBasicCustomerBridge } from '@/lib/security/audit-basic-customer-bridge-client';
+import { readBoundedJsonBody } from '@/lib/security/payment-webhook-guard';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export async function POST(request: NextRequest) {
   const caseRef = request.nextUrl.searchParams.get('caseRef')?.trim() ?? '';
   if (!/^AUD-[A-F0-9]{10}$/.test(caseRef)) return NextResponse.json({ ok: false, error: 'case_ref_invalid' }, { status: 400 });
-  let body: unknown; try { body = await request.json(); } catch { return NextResponse.json({ ok: false, error: 'invalid_json' }, { status: 400 }); }
-  const backupId = body && typeof body === 'object' && !Array.isArray(body) && typeof (body as Record<string, unknown>).backupId === 'string' ? String((body as Record<string, unknown>).backupId) : '';
+  const parsed = await readBoundedJsonBody<Record<string, unknown>>(request, 8 * 1024, {
+    maxDepth: 2,
+    requireObject: true,
+    rejectDuplicateKeys: true,
+    rejectDangerousKeys: true,
+  });
+  if (!parsed.ok) return parsed.response;
+  const body = parsed.value;
+  const backupId = typeof body.backupId === 'string' ? body.backupId : '';
   if (!/^abk_[a-f0-9]{64}$/.test(backupId)) return NextResponse.json({ ok: false, error: 'backup_id_invalid' }, { status: 400 });
   try {
     const result = await callAuditBasicCustomerBridge<Record<string, unknown>>(request.headers.get('authorization'), { action: 'restore', caseRef, backupId });
