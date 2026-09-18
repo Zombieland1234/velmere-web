@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "velmere.c14-p27.visual-regression.v1",
+  "baseSourceSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "baseUrl": "http://127.0.0.1:4173",
+  "theme": {
+    "testedColorScheme": "dark",
+    "lightThemeSupported": false,
+    "reason": "Current source exposes basic/pro interface mode but no light/dark theme provider or customer theme switch."
+  },
+  "viewports": {
+    "desktop": { "width": 1440, "height": 1000 },
+    "tablet": { "width": 834, "height": 1112 },
+    "mobile": { "width": 390, "height": 844 }
+  },
+  "budgets": {
+    "routeTimeoutMs": 90000,
+    "maximumHorizontalOverflowPx": 4,
+    "maximumCumulativeLayoutShift": 0.1,
+    "maximumConsoleErrorsPerRoute": 0,
+    "maximumPageErrorsPerRoute": 0,
+    "maximumBrokenImagesPerRoute": 0,
+    "maximumFailedStaticAssetsPerRoute": 0,
+    "maximumCriticalClippedTextNodes": 0,
+    "minimumBodyHeightPx": 180,
+    "minimumVisibleTextCharacters": 20
+  },
+  "routes": [
+    { "id": "home", "path": "/en", "selector": "main" },
+    { "id": "auth-login", "path": "/en/login", "selector": "[data-pass2005-auth-form]" },
+    { "id": "account-gate", "path": "/en/account", "selector": "main.velmere-public-page" },
+    { "id": "dashboard", "path": "/en/account", "selector": ".pass2006-dashboard-card", "authFixture": true },
+    { "id": "report", "path": "/en/security/audits/sample", "selector": "[data-audit-sample-report]" },
+    { "id": "shop", "path": "/en/shop", "selector": "main" },
+    { "id": "product", "discoverFrom": "/en/shop", "selector": "main" },
+    { "id": "search", "path": "/en/search", "selector": "main" },
+    { "id": "market-integrity", "path": "/en/market-integrity", "selector": "main" },
+    { "id": "error-state", "path": "/en/__visual-regression__/error", "selector": ".pass2007-error-shell", "expectedErrorState": true },
+    { "id": "loading-state", "path": "/en/__visual-regression__/loading", "selector": "[data-velmere-route-loading=\"true\"]", "loadingState": true }
+  ]
+}
