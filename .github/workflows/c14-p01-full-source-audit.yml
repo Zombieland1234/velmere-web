@@ -1,0 +1,34 @@
+name: C14-P01 full source audit
+on:
+  push:
+    branches: [parallel/c14-p01-full-source-audit]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p01-full-source-audit
+  cancel-in-progress: false
+
+jobs:
+  focused-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CI: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+          cache: npm
+      - name: Install exact dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Strict C14-P01 test compile
+        run: npx tsc -p tsconfig.c14-p01-tests.json --noEmit
+      - name: Focused C14-P01 reproductions
+        run: npx tsx --test scripts/c14-p01/*.test.ts
