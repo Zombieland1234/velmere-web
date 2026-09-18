@@ -32,6 +32,7 @@ import {
   TrendingDown,
   TrendingUp,
   Users,
+  type LucideIcon,
 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import AssetLogo from "@/components/market-integrity/AssetLogo";
@@ -518,7 +519,7 @@ function getLaneVisualData(
   overallRisk: number,
   safeLocale: Locale
 ) {
-  const laneIcons: Record<string, any> = {
+  const laneIcons: Record<string, LucideIcon> = {
     supply: Layers,
     unlock: Clock,
     liquidity: Activity,

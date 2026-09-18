@@ -36,6 +36,37 @@ type TradingViewCandleChartProps = {
   onPriceUpdate?: (price: number, lastCandle: CandleDataPoint) => void;
 };
 
+type ChartPayloadRecord = Record<string, unknown>;
+
+function chartRecord(value: unknown): ChartPayloadRecord | null {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? value as ChartPayloadRecord
+    : null;
+}
+
+function chartNumber(value: unknown, fallback = 0): number {
+  const numeric = typeof value === "number" ? value : Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+function chartString(value: unknown): string | undefined {
+  return typeof value === "string" ? value : undefined;
+}
+
+function normalizedCandle(value: unknown): CandleDataPoint | null {
+  const row = chartRecord(value);
+  if (!row) return null;
+  const time = chartNumber(row.time ?? row.timestamp, Number.NaN);
+  const open = chartNumber(row.open, Number.NaN);
+  const high = chartNumber(row.high, Number.NaN);
+  const low = chartNumber(row.low, Number.NaN);
+  const close = chartNumber(row.close, Number.NaN);
+  const volume = chartNumber(row.volume, 0);
+  return [time, open, high, low, close].every(Number.isFinite)
+    ? { time: time > 1e11 ? Math.floor(time / 1000) : time, open, high, low, close, volume }
+    : null;
+}
+
 const AVAILABLE_INTERVALS: { id: Interval; label: string; supported: boolean }[] = [
   { id: "1m", label: "1m", supported: false },
   { id: "5m", label: "5m", supported: false },
@@ -118,8 +149,9 @@ export default function TradingViewCandleChart({
             `/api/market-integrity/chart?id=${encodeURIComponent(assetId)}&range=${rangeParam}&symbol=${encodeURIComponent(symbol)}`
           );
           if (chartRes.ok) {
-            const data = await chartRes.json();
-            const rawPoints = Array.isArray(data.points) ? data.points : [];
+            const data: unknown = await chartRes.json();
+            const dataRecord = chartRecord(data);
+            const rawPoints = Array.isArray(dataRecord?.points) ? dataRecord.points : [];
             if (rawPoints.length >= 2) {
               const parsedCandles: CandleDataPoint[] = [];
               const chunkSize = Math.max(1, Math.floor(rawPoints.length / 45));
@@ -127,23 +159,38 @@ export default function TradingViewCandleChart({
               for (let i = 0; i < rawPoints.length; i += chunkSize) {
                 const chunk = rawPoints.slice(i, i + chunkSize);
                 if (chunk.length === 0) continue;
-                const prices = chunk.map((p: any) => (Array.isArray(p) ? p[1] : p.price ?? p.close ?? 0));
-                const times = chunk.map((p: any) => (Array.isArray(p) ? p[0] : p.time ?? p.timestamp ?? 0));
-                const vols = chunk.map((p: any) => (Array.isArray(p) ? p[2] ?? 100 : p.volume ?? 100));
+                const prices = chunk.map((point) => {
+                  const row = chartRecord(point);
+                  return Array.isArray(point)
+                    ? chartNumber(point[1])
+                    : chartNumber(row?.price ?? row?.close);
+                });
+                const times = chunk.map((point) => {
+                  const row = chartRecord(point);
+                  return Array.isArray(point)
+                    ? chartNumber(point[0])
+                    : chartNumber(row?.time ?? row?.timestamp);
+                });
+                const vols = chunk.map((point) => {
+                  const row = chartRecord(point);
+                  return Array.isArray(point)
+                    ? chartNumber(point[2], 100)
+                    : chartNumber(row?.volume, 100);
+                });
 
                 const open = prices[0];
                 const close = prices[prices.length - 1];
                 const high = Math.max(...prices);
                 const low = Math.min(...prices);
                 const time = Math.floor(times[0] / 1000);
-                const volume = vols.reduce((a: number, b: number) => a + b, 0);
+                const volume = vols.reduce((a, b) => a + b, 0);
 
                 parsedCandles.push({ time, open, high, low, close, volume });
               }
 
               if (active) {
                 setCandles(parsedCandles);
-                setSourceAttribution(data.source ?? "CoinGecko / Binance Verified");
+                setSourceAttribution(chartString(dataRecord?.source) ?? "CoinGecko / Binance Verified");
                 if (parsedCandles.length > 0) {
                   const latest = parsedCandles[parsedCandles.length - 1];
                   onPriceUpdate?.(latest.close, latest);
@@ -162,32 +209,40 @@ export default function TradingViewCandleChart({
           const cleanSym = symbol.toLowerCase().replace(/[^a-z0-9=]/g, "");
           const rmRes = await fetchWithTimeout(`/api/market-integrity/real-markets?symbols=${encodeURIComponent(cleanSym)}`);
           if (rmRes.ok) {
-            const rmData = await rmRes.json();
+            const rmData: unknown = await rmRes.json();
+            const rmRecord = chartRecord(rmData);
+            const quotes = Array.isArray(rmRecord?.quotes)
+              ? rmRecord.quotes.map(chartRecord).filter((quote): quote is ChartPayloadRecord => quote !== null)
+              : [];
             const quote =
-              rmData.quotes?.find(
-                (q: any) =>
-                  q.symbol?.toLowerCase() === cleanSym ||
-                  q.id?.toLowerCase() === assetId.toLowerCase()
-              ) || rmData.quotes?.[0];
+              quotes.find(
+                (candidate) =>
+                  chartString(candidate.symbol)?.toLowerCase() === cleanSym ||
+                  chartString(candidate.id)?.toLowerCase() === assetId.toLowerCase()
+              ) ?? quotes[0];
 
             if (quote && Array.isArray(quote.candles) && quote.candles.length >= 2) {
-              const parsedCandles: CandleDataPoint[] = quote.candles.map((c: any) => ({
-                time:
-                  typeof c.timestamp === "number"
-                    ? c.timestamp > 1e11
-                      ? Math.floor(c.timestamp / 1000)
-                      : c.timestamp
-                    : Math.floor(Date.now() / 1000),
-                open: Number(c.open) || Number(quote.currentPrice) || 100,
-                high: Number(c.high) || Math.max(Number(c.open) || 100, Number(c.close) || 100),
-                low: Number(c.low) || Math.min(Number(c.open) || 100, Number(c.close) || 100),
-                close: Number(c.close) || Number(quote.currentPrice) || 100,
-                volume: Number(c.volume) || 10000,
-              }));
+              const currentQuote = chartNumber(quote.currentPrice, 100);
+              const parsedCandles: CandleDataPoint[] = quote.candles
+                .map((value) => chartRecord(value))
+                .filter((candle): candle is ChartPayloadRecord => candle !== null)
+                .map((candle) => {
+                  const timestamp = chartNumber(candle.timestamp, Date.now());
+                  const open = chartNumber(candle.open, currentQuote);
+                  const close = chartNumber(candle.close, currentQuote);
+                  return {
+                    time: timestamp > 1e11 ? Math.floor(timestamp / 1000) : timestamp,
+                    open,
+                    high: chartNumber(candle.high, Math.max(open, close)),
+                    low: chartNumber(candle.low, Math.min(open, close)),
+                    close,
+                    volume: chartNumber(candle.volume, 10000),
+                  };
+                });
 
-              if (active) {
+              if (active && parsedCandles.length >= 2) {
                 setCandles(parsedCandles);
-                setSourceAttribution(`${quote.exchange || "Exchange"} Direct Feed (${quote.source || "Stooq / Yahoo"})`);
+                setSourceAttribution(`${chartString(quote.exchange) ?? "Exchange"} Direct Feed (${chartString(quote.source) ?? "Stooq / Yahoo"})`);
                 const latest = parsedCandles[parsedCandles.length - 1];
                 if (latest) onPriceUpdate?.(latest.close, latest);
                 setLoading(false);
@@ -205,12 +260,16 @@ export default function TradingViewCandleChart({
             `/api/market-integrity/klines?id=${encodeURIComponent(assetId)}&symbol=${encodeURIComponent(symbol)}&range=${rangeParam}`
           );
           if (kRes.ok) {
-            const kData = await kRes.json();
-            if (Array.isArray(kData.candles) && kData.candles.length > 0) {
+            const kData: unknown = await kRes.json();
+            const kRecord = chartRecord(kData);
+            const kCandles = Array.isArray(kRecord?.candles)
+              ? kRecord.candles.map(normalizedCandle).filter((candle): candle is CandleDataPoint => candle !== null)
+              : [];
+            if (kCandles.length > 0) {
               if (active) {
-                setCandles(kData.candles);
+                setCandles(kCandles);
                 setSourceAttribution("Verified Venue Klines");
-                const latest = kData.candles[kData.candles.length - 1];
+                const latest = kCandles[kCandles.length - 1];
                 if (latest) onPriceUpdate?.(latest.close, latest);
                 setLoading(false);
                 return;
@@ -250,9 +309,9 @@ export default function TradingViewCandleChart({
           if (latest) onPriceUpdate?.(latest.close, latest);
           setLoading(false);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         if (active) {
-          setError(err?.message || "Failed to load market chart");
+          setError(err instanceof Error && err.message ? err.message : "Failed to load market chart");
           setLoading(false);
         }
       }
