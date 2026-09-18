@@ -64,16 +64,25 @@ try {
     name: xssName,
   });
   const jsonResponse = await context.request.get(`${origin}/api/audit/report?${params}`);
+  const jsonText = await jsonResponse.text();
+  if (jsonResponse.status() !== 200) console.error(JSON.stringify({ stage: "json", status: jsonResponse.status(), body: jsonText.slice(0, 2_000) }));
   assert.equal(jsonResponse.status(), 200);
   assert.match(jsonResponse.headers()["cache-control"] ?? "", /no-store/);
   assert.equal(jsonResponse.headers()["x-content-type-options"], "nosniff");
-  const json = await jsonResponse.json();
+  const json = JSON.parse(jsonText);
   assert.equal(json.report.target.contractName, xssName.normalize("NFC"));
   assert.equal(json.report.verdict.releaseDecision, "NOT_VERIFIED");
   assert.equal(json.report.verdict.riskScore, null);
   assert.equal(json.report.verdict.confidenceScore, null);
   assert.equal(json.report.verdict.evidenceCoverage, null);
   assert.match(json.report.reportDigest, /^sha256:[a-f0-9]{64}$/);
+
+  for (const deniedTier of ["pro", "advanced"]) {
+    const denied = new URLSearchParams(params);
+    denied.set("tier", deniedTier);
+    const deniedResponse = await context.request.get(`${origin}/api/audit/report?${denied}`);
+    assert.equal(deniedResponse.status(), 401, `anonymous ${deniedTier} report must not be granted`);
+  }
 
   const pdfResponse = await context.request.get(`${origin}/api/audit/report-pdf?${params}&disposition=preview`);
   assert.equal(pdfResponse.status(), 200);
@@ -85,6 +94,8 @@ try {
   assert.equal(pdfHeaders["x-frame-options"], "DENY");
   assert.match(pdfHeaders["x-velmere-audit-pdf-digest"] ?? "", /^sha256:[a-f0-9]{64}$/);
   assert.match(pdfHeaders["x-velmere-audit-report-digest"] ?? "", /^sha256:[a-f0-9]{64}$/);
+  assert.equal(pdfHeaders["x-velmere-analysis-status"], json.report.runtimeAnalysis?.status ?? "ANALYSIS_UNAVAILABLE");
+  assert.equal(pdfHeaders["x-velmere-audit-pdf-tier"], json.clientTier);
   const bytes = Buffer.from(await pdfResponse.body());
   assert.equal(Number(pdfHeaders["content-length"]), bytes.length);
   assert.equal("sha256:" + createHash("sha256").update(bytes).digest("hex"), pdfHeaders["x-velmere-audit-pdf-digest"]);
