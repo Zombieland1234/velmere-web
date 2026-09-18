@@ -59,10 +59,11 @@ for (const needle of [
 ]) has(paidPdfIssue, needle, `paid PDF token issue route must enforce ${needle}`);
 
 const workspace = "scripts/c13/shield-workspace-guard.sql";
-has(workspace, "p_operation in('READ','RESTORE')", "workspace READ/RESTORE must inspect stored tier");
-has(workspace, "v_latest.tier not in('pro','advanced')", "stored workspace tier must be validated");
-has(workspace, "velmere_r7_shield_pro_has_paid_entitlement_v1(v_latest.tier)", "restore/read must require a current entitlement for the stored tier");
-has(workspace, "and workspace_id=p_workspace_id and account_id=v_account", "guessed workspace IDs must remain owner-bound");
+const workspaceSql = source(workspace);
+assert.match(workspaceSql, /p_operation\s+in\s*\(\s*['"]READ['"]\s*,\s*['"]RESTORE['"]\s*\)/i, "workspace READ/RESTORE must inspect stored tier");
+assert.match(workspaceSql, /v_latest\.tier\s+not\s+in\s*\(\s*['"]pro['"]\s*,\s*['"]advanced['"]\s*\)/i, "stored workspace tier must be validated");
+assert.match(workspaceSql, /velmere_r7_shield_pro_has_paid_entitlement_v1\s*\(\s*v_latest\.tier\s*\)/i, "restore/read must require a current entitlement for the stored tier");
+assert.match(workspaceSql, /workspace_id\s*=\s*p_workspace_id\s+and\s+account_id\s*=\s*v_account/i, "guessed workspace IDs must remain owner-bound");
 
 const exportRoute = "app/api/market-integrity/export/route.ts";
 has(exportRoute, "verified_stored_report_required", "generic client-composed export must fail closed");
