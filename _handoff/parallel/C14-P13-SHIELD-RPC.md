@@ -3,8 +3,8 @@
 Date: 2026-09-18  
 Base: `4cb45bbcf910f0517d4a5d265682cd2f7e4e41df`  
 Branch: `parallel/c14-p13-shield-rpc`  
-Qualification source SHA: `1229a1f9bbcb9d81e0bed78db054a0f9614e254d`  
-GitHub Actions: run `35292885388` — PASS  
+Qualification source SHA: `50cf782bb5104dcb1ca867498a28daa1a24f0acc`  
+GitHub Actions: run `35293168728` — PASS  
 Scope rule: no production customer rows were inserted, updated, deleted, restored, or inspected.
 
 ## Result
@@ -47,6 +47,8 @@ ACL readback:
 - `authenticated`: EXECUTE
 - `service_role`: EXECUTE
 - both functions are `SECURITY DEFINER` with explicit `search_path`.
+
+Supabase security advisor also flags the authenticated-callable `SECURITY DEFINER` workspace/helper functions. For the workspace RPC this exposure is intentional and separately constrained by `auth.uid()`, live `session_id`, ownership, and entitlement checks. The helper likewise evaluates only the current authenticated subject; no cross-account or privilege bypass was established. C14-P13 does not revoke this API surface without a product contract proving it should be private-only.
 
 Live migrations include:
 - `20260917043048_velmere_c6d_shield_session_and_null_validation`
@@ -145,6 +147,18 @@ C14 adds:
 
 This is defense in depth and must be verified again after deployment.
 
+
+### P13-08 — live migration existed without matching repository migration — CONFIRMED / FIXED ON BRANCH
+
+Live Supabase contained migration `20260917230935_velmere_c13_shield_workspace_stored_tier_guard`, but the base repository had only the reviewed SQL under `scripts/c13/shield-workspace-guard.sql`, not under `supabase/migrations`.
+
+Fix:
+- restored the exact reviewed C13 SQL as `supabase/migrations/20260917230935_velmere_c13_shield_workspace_stored_tier_guard.sql`;
+- changed C14 PostgreSQL qualification to apply that repository migration file;
+- reproduced the live C13 RPC hash `b7392a8f...` before applying C14 hardening.
+
+This closes source/live migration-source parity for the already-live C13 guard without executing any mutation against the connected project.
+
 ## Lifecycle matrix
 
 | Case | Result |
@@ -177,7 +191,7 @@ This is defense in depth and must be verified again after deployment.
 
 ## Automated evidence
 
-GitHub Actions run: `35292885388`
+GitHub Actions run: `35293168728`
 
 Jobs:
 - `shield-rpc`: PASS
@@ -201,8 +215,8 @@ Edge:
 - `verify_jwt=true` config assertion
 
 Evidence artifact:
-- artifact id: `10526628554`
-- artifact digest: `sha256:e4a3335b4549d6550dea0372aa3064ad6fa73b65261e334509450f5662a5990c`
+- artifact id: `10526528028`
+- artifact digest: `sha256:46dedc91c88008456668ad2d73e8884338bd04c9a3153e46626c90c7e2df6545`
 
 ## Files changed
 
