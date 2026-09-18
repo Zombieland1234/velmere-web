@@ -109,8 +109,42 @@ export async function POST(request: Request) {
   if (review.processingMode !== expectedProcessingMode) return NextResponse.json({ ok: false, error: "audit_automation_processing_mode_mismatch" }, { status: 409, headers: { "cache-control": "no-store" } });
   if (review.state !== "completed") return NextResponse.json({ ok: false, error: `${expectedTier}_automation_not_completed`, reviewState: review.state }, { status: 409, headers: { "cache-control": "no-store" } });
 
+  // Token issuance is itself a delivery capability. Re-resolve the current
+  // session/entitlement after snapshot and review lookups so a revocation that
+  // races those reads cannot mint a fresh download token.
+  const finalAccount = await resolveRequestAccount(request);
+  if (!finalAccount || finalAccount.accountId !== account.accountId) {
+    return NextResponse.json({ ok: false, error: "current_audit_session_required" }, { status: 401, headers: { "cache-control": "no-store" } });
+  }
+  const finalAccess = await resolveVlmPaidSurfaceAccess({
+    policyId: "audit_pdf_issue",
+    request,
+    depth: expectedTier,
+    locale,
+    auditCaseRef,
+    requestId: record.requestId,
+    returnPath: null,
+  });
+  const finalEntitlementId = finalAccess.ok && finalAccess.reason === "paid_entitlement_verified"
+    ? finalAccess.entitlement.entitlement?.id
+    : null;
+  if (!finalAccess.ok
+    || finalAccess.reason !== "paid_entitlement_verified"
+    || finalAccess.entitlement.ledgerMode !== "durable"
+    || !finalEntitlementId
+    || finalEntitlementId !== entitlementId) {
+    return NextResponse.json({ ok: false, error: "durable_paid_entitlement_no_longer_current" }, { status: 402, headers: { "cache-control": "no-store" } });
+  }
+  const finalCase = await getAuditCaseForOwningAccount({ caseRef: auditCaseRef, accountId: finalAccount.accountId });
+  if (!finalCase.ok || !finalCase.record
+    || finalCase.record.entitlementId !== entitlementId
+    || !finalCase.record.entitlementVerified
+    || finalCase.record.status !== "queued_paid_review") {
+    return NextResponse.json({ ok: false, error: "audit_case_report_binding_mismatch" }, { status: 409, headers: { "cache-control": "no-store" } });
+  }
+
   const issued = issuePass4657AuditPdfDownloadToken({
-    accountId: account.accountId,
+    accountId: finalAccount.accountId,
     entitlementId,
     reportId: report.reportId,
     reportVersionHash: report.reportVersionHash,
