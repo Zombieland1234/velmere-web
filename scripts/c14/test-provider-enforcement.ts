@@ -1,15 +1,15 @@
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+
+import {
+  buildC14ProviderEnforcementMatrix,
+  C14_RUNTIME_PROVIDER_IDS,
+  evaluateC14ProviderOperation,
+} from "../../lib/compliance/c14-provider-enforcement";
+import { createProviderReliabilityControlPlane } from "../../lib/market-integrity/provider-reliability-control-plane";
+import { buildPass4643ProviderRuntimeInventory } from "../../lib/market-integrity/provider-runtime-inventory";
+
 async function main() {
-  import assert from "node:assert/strict";
-  import { readFileSync } from "node:fs";
-  
-  import {
-    buildC14ProviderEnforcementMatrix,
-    C14_RUNTIME_PROVIDER_IDS,
-    evaluateC14ProviderOperation,
-  } from "../../lib/compliance/c14-provider-enforcement";
-  import { createProviderReliabilityControlPlane } from "../../lib/market-integrity/provider-reliability-control-plane";
-  import { buildPass4643ProviderRuntimeInventory } from "../../lib/market-integrity/provider-runtime-inventory";
-  
   const NOW = Date.parse("2026-09-18T00:00:00.000Z");
   const ECB_VALID = Date.parse("2026-08-25T12:00:00.000Z");
   
