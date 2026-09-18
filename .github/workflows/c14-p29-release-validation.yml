@@ -1,0 +1,131 @@
+name: C14-P29 internal release validation
+
+on:
+  push:
+    branches:
+      - parallel/c14-p29-release-validation
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p29-release-validation
+  cancel-in-progress: false
+
+jobs:
+  exact-sha-qualification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: c14_p29_ephemeral_ci_only
+          POSTGRES_DB: c14_p29_fixture
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      QUALIFIED_SHA: 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df
+      NEXT_TELEMETRY_DISABLED: "1"
+      CI: "1"
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: "true"
+      C6_SOURCE_SHA: 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df
+      PGHOST: localhost
+      PGPORT: "5432"
+      PGUSER: postgres
+      PGPASSWORD: c14_p29_ephemeral_ci_only
+      PGDATABASE: c14_p29_fixture
+    steps:
+      - name: Checkout validator branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: validator
+          persist-credentials: false
+
+      - name: Checkout exact subject SHA
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.QUALIFIED_SHA }}
+          fetch-depth: 0
+          path: subject
+          persist-credentials: false
+
+      - name: Set up Node 24.18.0
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+
+      - name: Install isolated Redis prerequisite
+        run: |
+          set -euo pipefail
+          if ! command -v redis-server >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends redis-server
+          fi
+          redis-server --version
+
+      - name: Re-run C13 source-derived qualification at exact SHA
+        working-directory: subject
+        run: |
+          set -euo pipefail
+          GITHUB_SHA="$QUALIFIED_SHA" GITHUB_REF_NAME="parallel/c14-p29-release-validation" \
+            python3 scripts/c13/qualify.py
+          GITHUB_SHA="$QUALIFIED_SHA" GITHUB_REF_NAME="parallel/c14-p29-release-validation" \
+            python3 scripts/c13/ci-extra.py
+
+      - name: Re-run Shield database fixture at exact SHA
+        working-directory: subject
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c13-sql
+          GITHUB_SHA="$QUALIFIED_SHA" python3 scripts/c13/shield-db-test.py \
+            2>&1 | tee /tmp/c13-sql/execution.log
+
+      - name: Re-run frozen benchmark at exact SHA
+        working-directory: subject
+        run: |
+          set -euo pipefail
+          GITHUB_SHA="$QUALIFIED_SHA" bash scripts/c13/benchmark.sh
+
+      - name: C14-P29 conservative release gate
+        id: gate
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p29
+          python3 validator/scripts/c14-p29/verify_release_evidence.py \
+            --evidence /tmp/c13-evidence \
+            --sql /tmp/c13-sql \
+            --benchmark /tmp/c13-benchmašÈˆKXÜš]\šXH˜[Y]Ü‹ÜØÜš\ËØÌM\KÜ™[X\ÙKXÜš]\šXKšœÛÛˆˆKX˜\ÙK\ÚH‰UPSQ’QQÔÒHˆˆK[İ]]İ\ØÌM\KÕ‘T‘PÕšœÛÛ‚‚ˆH˜[YNˆZ[ÛÛXš[™Y\Y˜XİX[šY™\İˆYˆ[Ø^\Ê
+Bˆ[ˆˆÙ]Y][È\Y˜Z[ˆZÙ\ˆ\İ\ØÌM\Bˆ]ÛŒÈH	ÔIÂˆœ›ÛH]Xˆ[\Ü]ˆ[\Ü\ÚX‹œÛÛ‹ÜÂˆ›ÛİÈHÂˆ]
+‹İ\ØÌLËY]šY[˜ÙHŠKˆ]
+‹İ\ØÌLË\Ü[ŠKˆ]
+‹İ\ØÌLËX™[˜ÚX\šÈŠKˆ]
+‹İ\ØÌM\HŠKˆBˆ›İÜÈH×Bˆ›Üˆ›Ûİ[ˆ›ÛİÎ‚ˆYˆ›İ›Ûİ™^\İÊ
+N‚ˆÛÛ[YBˆ›Üˆ[ˆÛÜY
+›Ûİœ™ÛØŠŠˆŠJN‚ˆYˆš\×Ùš[J
+H[™›˜[YHOHT•QPÕÓPS’Q‘TÕšœÛÛˆ‚ˆ›İÜË˜\[™
+Âˆœ›ÛİˆİŠ›Ûİ
+Kˆœ]ˆİŠœ™[]]™WİÊ›Ûİ
+JKˆ˜]\Èˆœİ]
+
+KœİÜÚ^™KˆœÚLMˆˆ\ÚX‹œÚLMŠœ™XYØ]\Ê
+JKš^YÙ\İ
+
+KˆJBˆİ]HÂˆœØÚ[XHˆ™[Y\™K˜ÌM\K˜\Y˜Xİ[X[šY™\İŒH‹ˆœİXš™XİÚHˆÜË™[š\›Û–È”UPSQ’QQÔÒH—Kˆ™š[\Èˆ›İÜËˆBˆ]
+‹İ\ØÌM\KĞT•QPÕÓPS’Q‘TÕšœÛÛˆŠKÜš]Wİ^
+ˆœÛÛ‹™[\Êİ][™[LŠH
+È—ˆ‚ˆ
+BˆB‚ˆH˜[YNˆ\ØYÌMTH]X[YšXØ][ÛˆXÚØYÙBˆYˆ[Ø^\Ê
+Bˆ\Ù\ÎˆXİ[ÛœËİ\ØYX\Y˜XİXLMYX™MÍXMYNL˜™ÍŒÙ˜L‚ˆÚ]‚ˆ˜[YNˆÌM\K\™[X\ÙK]˜[Y][Û‹IŞÈÚ]X‹œ[—ÚY_Bˆ]ˆˆİ\ØÌLËY]šY[˜ÙBˆİ\ØÌLË\Ü[ˆİ\ØÌLËX™[˜ÚX\šÂˆİ\ØÌM\Bˆ™][[Û‹Y^\ÎˆÌˆY‹[›ËYš[\ËY›İ[™ˆ\œ›Ü‚‚ˆH˜[YNˆÙY\™[X\ÙHØ]H™YÚ[ˆ[H™\]Z\™YØ]H˜Z[ÂˆYˆ[Ø^\Ê
+Bˆ[ˆˆÙ]Y][È\Y˜Z[ˆ\İYˆİ\ØÌM\KÕ‘T‘PÕšœÛÛ‚ˆ]ÛŒÈH	ÔIÂˆ[\ÜœÛÛ‹Ş\ÂˆØ]HHœÛÛ‹›ØY
+Ü[Š‹İ\ØÌM\KÕ‘T‘PÕšœÛÛˆŠJBˆš[
+œÛÛ‹™[\ÊØ]K[™[LŠJBˆYˆØ]VÈ™XÚ\Ú[Ûˆ—HOH‘ÓÈ‚ˆŞ\Ë™^]
+JBˆB

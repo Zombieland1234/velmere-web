@@ -1,0 +1,28 @@
+{
+  "schema": "velmere.c14-p29.release-criteria.v1",
+  "subjectSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "policy": "ALL_REQUIRED_GATES_MUST_PASS_UNKNOWN_COUNTS_AS_FAIL",
+  "requiredQualificationChecks": 29,
+  "requiredConfigPreflightCases": 18,
+  "requiredProductionE2ECases": 17,
+  "requiredShieldDatabaseChecks": 28,
+  "eslintMaxWarnings": 0,
+  "gitleaksMaxUnresolvedFindings": 0,
+  "packageScriptsWithMissingLiteralPathsMax": 0,
+  "benchmark": {
+    "requireAllCasesCompleted": true,
+    "requireZeroTimeouts": true,
+    "requireZeroErrors": true,
+    "requireStableSubset": true,
+    "requireNovelHoldout": true,
+    "requireIndependentGroundTruthOrExternalReviewBeforeReleaseCredit": true
+  },
+  "manualReleaseGates": [
+    "R16_original_ledger_or_formally_superseded_traceable_ledger",
+    "real_Stripe_TEST_payment_refund_webhook_entitlement_lifecycle",
+    "real_Auth_account_A_account_B_tenant_isolation",
+    "all_sellable_products_hosted_E2E",
+    "global_provider_rights_and_enforcement",
+    "independent_external_security_review"
+  ]
+}
