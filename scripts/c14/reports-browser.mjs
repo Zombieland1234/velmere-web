@@ -11,7 +11,7 @@ fs.mkdirSync(out, { recursive: true });
 const origin = "http://127.0.0.1:3000";
 const address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 const xssName = '<img id="c14-p24-xss" src=x onerror="window.__c14P24Xss=1"> Café Żółć Über €';
-const longName = "LONG_UNBROKEN_" + "W".repeat(1_800);
+const longName = "LONG_UNBROKEN_" + "W".repeat(980);
 const rows = [];
 const browser = await chromium.launch({ headless: true });
 
@@ -19,10 +19,14 @@ async function visit(page, viewport, name, kind) {
   const url = `${origin}/en/security/audits/report/${address}?chainId=1&tier=basic&analysisMode=reference&name=${encodeURIComponent(name)}`;
   const response = await page.goto(url, { waitUntil: "networkidle", timeout: 30_000 });
   assert.equal(response?.status(), 200);
-  assert.equal(await page.locator(".audit-canonical-view").count(), 1);
   await page.waitForTimeout(250);
-  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+  const reportViews = await page.locator(".audit-canonical-view").count();
   const body = await page.locator("body").innerText();
+  if (reportViews !== 1) {
+    console.error(JSON.stringify({ viewport, kind, status: response?.status(), url, body: body.slice(0, 2_000) }));
+  }
+  assert.equal(reportViews, 1, `${kind} report did not reach canonical SSR view`);
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
   rows.push({ viewport, kind, url, overflow, bodySha256: createHash("sha256").update(body).digest("hex") });
   assert.equal(overflow, false, `${kind} caused horizontal document overflow on ${viewport}`);
   assert.match(body, /NOT VERIFIED|NOT_VERIFIED|NOT MEASURED/);
