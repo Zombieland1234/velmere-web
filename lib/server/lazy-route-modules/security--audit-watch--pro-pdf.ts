@@ -166,6 +166,39 @@ async function handleProAuditPdfGet(request: Request) {
     });
     if (delivery.byteLength !== report.pdfByteLength) throw new Error("audit_pdf_stored_length_mismatch");
 
+    // Re-check both the signed session and durable entitlement after storage,
+    // review and PDF work. A grant/session revoked while the request is in
+    // flight must not receive bytes merely because the first check succeeded.
+    const finalAccount = await resolveRequestAccount(request);
+    if (!finalAccount || finalAccount.accountId !== account.accountId) {
+      await failPass4658AuditPdfDownloadReservation({ tokenHash: tokenVerdict.tokenHash, reservationId: tokenReservation.reservationId, failureCode: "session_revoked_before_delivery" });
+      return noStoreJson({ ok: false, error: "current_audit_session_required" }, 401);
+    }
+    const finalEntitlementVerdict = await verifyVlmPaidSurfaceEntitlementById({
+      policyId: "audit_pdf_download",
+      entitlementId,
+      allowedProductIds: ["vlm_pro_audit_review", "vlm_advanced_audit_human_review"],
+      accountIdHash: hashVelmereAccountBinding(finalAccount.accountId),
+      auditCaseRef,
+    });
+    if (!finalEntitlementVerdict.ok) {
+      await failPass4658AuditPdfDownloadReservation({ tokenHash: tokenVerdict.tokenHash, reservationId: tokenReservation.reservationId, failureCode: "entitlement_revoked_before_delivery" });
+      return noStoreJson({ ok: false, error: "paid_entitlement_not_verified" }, 402);
+    }
+    const finalEntitlementTier = finalEntitlementVerdict.entitlement.productId === "vlm_advanced_audit_human_review" ? "advanced" : "pro";
+    if (finalEntitlementTier !== expectedCaseTier) {
+      await failPass4658AuditPdfDownloadReservation({ tokenHash: tokenVerdict.tokenHash, reservationId: tokenReservation.reservationId, failureCode: "entitlement_tier_changed_before_delivery" });
+      return noStoreJson({ ok: false, error: "audit_case_entitlement_binding_invalid" }, 409);
+    }
+    const finalAuditCase = await getAuditCaseForOwningAccount({ caseRef: auditCaseRef, accountId: finalAccount.accountId });
+    if (!finalAuditCase.ok || !finalAuditCase.record
+      || finalAuditCase.record.entitlementId !== entitlementId
+      || !finalAuditCase.record.entitlementVerified
+      || finalAuditCase.record.status !== "queued_paid_review") {
+      await failPass4658AuditPdfDownloadReservation({ tokenHash: tokenVerdict.tokenHash, reservationId: tokenReservation.reservationId, failureCode: "case_binding_changed_before_delivery" });
+      return noStoreJson({ ok: false, error: "audit_case_entitlement_binding_invalid" }, 409);
+    }
+
     const tokenFinalization = await finalizePass4658AuditPdfDownloadToken({ tokenHash: tokenVerdict.tokenHash, reservationId: tokenReservation.reservationId });
     if (!tokenFinalization.ok) {
       return noStoreJson({ ok: false, error: tokenFinalization.error, message: "The secure download could not be committed." }, tokenFinalization.error === "audit_pdf_token_replayed" ? 409 : 503, { "retry-after": "15" });
