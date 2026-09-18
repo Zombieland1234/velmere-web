@@ -1,4 +1,5 @@
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { type VelmereSearchResult, buildVelmereShieldBridge } from "@/lib/search/intelligence-search-contract";
 import { resolvePass461VenueHealthWithFallback } from "@/lib/market-integrity/venue-health-runtime";
@@ -150,9 +151,19 @@ export function defiLlamaToLensResult(match: DefiLlamaProtocolMatch, locale: Len
 export async function loadDefiLlamaMatches(query: string, locale: LensLocale) {
   const clean = query.trim();
   if (clean.length < 2) return [];
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({ providerId: "defillama", operation: "fetch", channel: "internal_diagnostic", nowMs });
+  const cacheKey = `search:defillama:${clean.toLowerCase()}`;
+  if (!fetchRights.allowed) {
+    searchProviderResilience.invalidate(cacheKey);
+    return [];
+  }
+  const cacheRights = evaluateC14ProviderOperation({ providerId: "defillama", operation: "cache", channel: "internal_diagnostic", cacheTtlSeconds: 60, nowMs });
   const provider = await searchProviderResilience.execute({
     providerId: "defillama-protocols",
-    cacheKey: `search:defillama:${clean.toLowerCase()}`,
+    cacheKey,
+    cacheEnabled: cacheRights.allowed,
+    allowStaleOnFailure: cacheRights.allowed,
     execute: () => searchDefiLlamaProtocols(clean, undefined, 3),
     validate: (matches) => Array.isArray(matches) && matches.every((match) =>
       typeof match?.slug === "string" && typeof match?.name === "string"),
@@ -506,9 +517,19 @@ export function scoreCoinGeckoMatch(coin: CoinGeckoMarket, query: string) {
 export async function loadCoinGeckoMatches(query: string, locale: LensLocale) {
   const clean = query.trim().toLowerCase();
   if (clean.length < 1) return [];
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({ providerId: "coingecko", operation: "fetch", channel: "internal_diagnostic", nowMs });
+  const cacheKey = "search:coingecko:markets:usd:250";
+  if (!fetchRights.allowed) {
+    searchProviderResilience.invalidate(cacheKey);
+    return [];
+  }
+  const cacheRights = evaluateC14ProviderOperation({ providerId: "coingecko", operation: "cache", channel: "internal_diagnostic", cacheTtlSeconds: 45, nowMs });
   const provider = await searchProviderResilience.execute({
     providerId: "coingecko-markets",
-    cacheKey: "search:coingecko:markets:usd:250",
+    cacheKey,
+    cacheEnabled: cacheRights.allowed,
+    allowStaleOnFailure: cacheRights.allowed,
     execute: async () => {
       const params = new URLSearchParams({
         vs_currency: "usd",
@@ -525,7 +546,7 @@ export async function loadCoinGeckoMatches(query: string, locale: LensLocale) {
             accept: "application/json",
             "user-agent": "Velmere-Market-Integrity/1.0",
           },
-          next: { revalidate: 45 },
+          ...(cacheRights.allowed ? { next: { revalidate: 45 } } : { cache: "no-store" as RequestCache }),
         },
         {
           profile: "coingecko",
