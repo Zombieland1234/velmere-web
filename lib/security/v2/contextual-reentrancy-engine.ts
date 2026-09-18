@@ -13,6 +13,30 @@ import { createHash } from "node:crypto";
 import { StandardFindingV2, BasicBlock, ControlFlowGraph } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
 import { analyzeReentrancyGuardCoverage } from "../solidity-structured-signal.mjs";
+import { applyLocalStackInstruction } from "./evm-local-stack";
+
+function callGasBefore(block: BasicBlock, callIndex: number): bigint | null {
+  const stack: Array<bigint | null> = [];
+  for (let index = 0; index < callIndex; index++) applyLocalStackInstruction(stack, block.instructions[index]);
+  // CALL pops gas first; therefore gas is the top word immediately before CALL.
+  return stack.at(-1) ?? null;
+}
+
+function hasStorageReadBeforeCall(cfg: ControlFlowGraph, block: BasicBlock, callIndex: number): boolean {
+  if (block.instructions.slice(0, callIndex).some(instruction => instruction.name === "SLOAD")) return true;
+  const queue = [...block.predecessors];
+  const visited = new Set<string>();
+  while (queue.length && visited.size < 128) {
+    const id = queue.shift()!;
+    if (visited.has(id)) continue;
+    visited.add(id);
+    const predecessor = cfg.blocks.get(id);
+    if (!predecessor) continue;
+    if (predecessor.hasSload) return true;
+    for (const parent of predecessor.predecessors) if (!visited.has(parent)) queue.push(parent);
+  }
+  return false;
+}
 
 export interface ReentrancyAnalysisResult {
   hasVulnerability: boolean;
@@ -43,7 +67,11 @@ export function analyzeContextualReentrancy(
   let readOnlyReentrancyDetected = false;
   let tokenCallbackReentrancyDetected = false;
 
-  // 1. Classic Reentrancy: Check CFG paths for CALL followed by SSTORE in non-guarded blocks
+  // 1. Classic Reentrancy: CALL -> reachable SSTORE is only the starting point.
+  // A fixed 2300-gas send/transfer call cannot be promoted to SWC-107, and a
+  // post-call write without any represented pre-call state read is kept as a
+  // generic interaction-order review candidate rather than a reentrancy claim.
+  let weakInteractionCandidate: { block: BasicBlock; callPc: number; sstorePc: number; evidencePath: string[]; gas: bigint | null; reason: string } | null = null;
   for (const block of cfg.blocks.values()) {
     let callPc = -1;
     let sstorePc = -1;
@@ -71,7 +99,24 @@ export function analyzeContextualReentrancy(
         }
         for (const id of next.successors) if (!visited.has(id)) queue.push({id,path:[...current.path,id]});
       }
-      if (sstorePc >= 0) break;
+      if (sstorePc >= 0) {
+        const gas = callGasBefore(block, index);
+        const stipendLimited = gas !== null && gas <= 2300n;
+        const hasPriorStateRead = hasStorageReadBeforeCall(cfg, block, index);
+        if (stipendLimited || !hasPriorStateRead) {
+          weakInteractionCandidate ??= {
+            block,
+            callPc,
+            sstorePc,
+            evidencePath,
+            gas,
+            reason: stipendLimited ? "FIXED_OR_BOUNDED_2300_GAS_CALL" : "NO_REPRESENTED_PRE_CALL_STORAGE_READ",
+          };
+          callPc = -1; sstorePc = -1; evidencePath = [];
+          continue;
+        }
+        break;
+      }
     }
     if (sstorePc >= 0) classicReentrancyDetected = true;
 
@@ -141,6 +186,48 @@ export function analyzeContextualReentrancy(
     }
   }
 
+  if (!classicReentrancyDetected && weakInteractionCandidate) {
+    const { block, callPc, sstorePc, evidencePath, gas, reason } = weakInteractionCandidate;
+    findings.push({
+      findingId: "VLM-SEC-EXTERNAL-CALL-POST-WRITE-REVIEW-01",
+      claimState: "HEURISTIC_CANDIDATE",
+      analysisMethod: "BYTECODE_CFG_HEURISTIC",
+      limitations: [reason, "NO_COMPLETE_PATH_FEASIBILITY_PROOF", "NOT_MAPPED_TO_SWC_107_WITHOUT_STRONGER_STATE_DEPENDENCY"],
+      title: "External Call Precedes a Reachable State Write (Reentrancy Not Established)",
+      severity: "medium",
+      confidence: "low",
+      exploitability: "theoretical",
+      impact: "The interaction order deserves review, but the observed bytecode does not establish the shared-state dependency required for a reentrancy classification.",
+      likelihood: "unverified",
+      taxonomy: { cweId: "CWE-841", eeaSvsLevel: "M", owaspScsvsCategory: "G6: Secure Interactions" },
+      affectedContract: contractAddress,
+      affectedFunction: "Unresolved external-call path",
+      bytecodeOffset: { pcStart: callPc, pcEnd: sstorePc },
+      executionPath: [...evidencePath, `CALL@0x${callPc.toString(16)}`, `SSTORE@0x${sstorePc.toString(16)}`],
+      stateDependencies: {
+        storageSlotsRead: Array.from(block.readsStorageSlots),
+        storageSlotsWritten: Array.from(block.writesStorageSlots),
+      },
+      attackScenario: "UNEXECUTED review hypothesis only. Validate call gas/target, shared storage, function boundaries, path feasibility and any runtime mutex before treating this ordering as reentrant.",
+      proofOfConcept: {
+        summary: "No exploit was executed; bytecode contains an interaction-before-write ordering with insufficient SWC-107 evidence.",
+        sequence: [{ step: 1, actor: "Reviewer", call: "trace CALL -> SSTORE path", expectation: "Confirm or reject shared-state reentry conditions" }],
+      },
+      evidence: {
+        opcodeTraceExcerpt: `PC 0x${callPc.toString(16)} CALL -> PC 0x${sstorePc.toString(16)} SSTORE`,
+        disassemblyContext: `Reason=${reason}; represented call gas=${gas === null ? "UNKNOWN" : gas.toString()}; path=${evidencePath.join(" -> ")}`,
+        hashProof: `sha256:${createHash("sha256").update(JSON.stringify({contractAddress,callPc,sstorePc,evidencePath,reason,gas:gas?.toString() ?? null})).digest("hex")}`,
+      },
+      remediation: {
+        strategy: "Review the path for CEI ordering and shared-state callbacks. Apply a mutex only if the concrete path is reentrant.",
+        solidityPatchDiff: "",
+        appliedSuccessfully: false,
+        regressionPassed: false,
+      },
+      verificationState: "AUTOMATED",
+    });
+  }
+
   // 2. Read-Only Reentrancy Detection: Inspect queries to AMM virtual prices without pool lock checks
   const getVirtualPriceSelector = "0xbb7b8686";
   const getRateSelector = "0x679aefce";
@@ -164,7 +251,6 @@ export function analyzeContextualReentrancy(
           "A consumer may be exposed if it uses a manipulable pool price during a callback. Selector presence alone does not prove an external call, a reachable attack path, or loss.",
         likelihood: "medium",
         taxonomy: {
-          swcId: "SWC-107",
           cweId: "CWE-841",
           eeaSvsLevel: "M",
           owaspScsvsCategory: "G6: Secure Interactions",
@@ -226,7 +312,6 @@ export function analyzeContextualReentrancy(
       impact: "Token callbacks can be a reentrancy surface, but a hook selector alone does not establish a vulnerable state transition or a successful exploit.",
       likelihood: "high",
       taxonomy: {
-        swcId: "SWC-107",
         cweId: "CWE-841",
         eeaSvsLevel: "S",
         owaspScsvsCategory: "I2: Token Interactions",
