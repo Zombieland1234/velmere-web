@@ -1,7 +1,7 @@
-name: C14 isolated runtime recovery and secret qualification
+name: C14-C15 isolated runtime recovery and secret qualification
 on:
   push:
-    branches: [c14/integration-final-20260918]
+    branches: [c14/integration-final-20260918, c15/call-status-qualification-20260918]
     paths-ignore: ['_handoff/**','docs/**']
   workflow_dispatch:
 permissions:

@@ -1,0 +1,36 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
+import assert from 'node:assert/strict';
+import { executeFullAuditV2 } from '../../lib/security/v2/master-audit-orchestrator';
+const require = createRequire(path.resolve('package.json'));
+const solc = require('solc') as { compile(input: string): string; version(): string };
+const [base, out] = process.argv.slice(2);
+if (!base || !out) throw new Error('Exact C14 source directory and new evidence directory required');
+fs.mkdirSync(out, { recursive: true });
+const baseline = require(path.resolve(base, 'lib/security/v2/master-audit-orchestrator.ts')) as { executeFullAuditV2: typeof executeFullAuditV2 };
+const sha = (s: string | Buffer) => createHash('sha256').update(s).digest('hex');
+const cases = ['call', 'callcode', 'delegatecall', 'staticcall'].flatMap(op => [false, true].flatMap(checked => [false, true].flatMap(viaIR => [false, true].map(optimize => {
+  const expression = `${op}(gas(), target, ${op === 'call' || op === 'callcode' ? '0, ' : ''}0, 0, 0, 0)`;
+  const body = checked ? `if iszero(${expression}) {revert(0,0)}` : `pop(${expression})`;
+  const source = `// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0; contract Probe { function f(address target) external { assembly { ${body} } } }`;
+  return { op, checked, viaIR, optimize, source, expectedCandidate: !checked };
+}))));
+const frozen = path.join(out, 'INPUTS.json');
+assert.equal(fs.existsSync(frozen), false, 'Never overwrite earlier evidence');
+fs.writeFileSync(frozen, JSON.stringify({ scope: 'AUTHOR_CREATED_DEVELOPMENT_MATRIX_NOT_BLIND_HOLDOUT', compiler: solc.version(), evmVersion: 'cancun', families: 8, cases }, null, 2));
+const rows = cases.map(f => {
+  const compiled = JSON.parse(solc.compile(JSON.stringify({ language: 'Solidity', sources: { 'Probe.sol': { content: f.source } }, settings: { evmVersion: 'cancun', viaIR: f.viaIR, optimizer: { enabled: f.optimize, runs: 200 }, metadata: { bytecodeHash: 'none' }, outputSelection: { '*': { '*': ['evm.deployedBytecode.object'] } } } })));
+  const errors = (compiled.errors ?? []).filter((e: { severity: string }) => e.severity === 'error');
+  assert.equal(errors.length, 0, JSON.stringify(errors));
+  const runtime = compiled.contracts['Probe.sol'].Probe.evm.deployedBytecode.object as string;
+  const input = { contractAddress: '0x0000000000000000000000000000000000000015', chainId: '1', bytecode: '0x' + runtime, fuzzIterations: 0 };
+  const select = (r: ReturnType<typeof executeFullAuditV2>) => r.findings.filter(x => x.findingId === 'VLM-SEC-UNCHECKED-LOW-LEVEL-CALL-01');
+  const before = select(baseline.executeFullAuditV2(input)); const after = select(executeFullAuditV2(input));
+  return { ...f, source: undefined, sourceSha256: sha(f.source), runtimeSha256: sha(Buffer.from(runtime, 'hex')), runtimeHex: runtime, beforeObserved: before.length > 0, afterObserved: after.length > 0, beforePassed: (before.length > 0) === f.expectedCandidate, passed: (after.length > 0) === f.expectedCandidate };
+});
+const result = { compiler: solc.version(), scope: 'REAL_SOLC_AND_FULL_STATIC_ENGINE_NO_DEPLOYMENT_OR_TARGET_EXECUTION', baselineSourceSha: 'e718df06d20a8129ffe261eef9c6c74cc5c91729', candidateSourceSha: process.env.GITHUB_SHA ?? null, candidate: process.env.GITHUB_SHA ? 'CI_EXACT_SHA' : 'LOCAL_UNCOMMITTED', total: rows.length, uniqueRuntimeCount: new Set(rows.map(x => x.runtimeSha256)).size, beforePassed: rows.filter(x => x.beforePassed).length, afterPassed: rows.filter(x => x.passed).length, rows };
+fs.writeFileSync(path.join(out, 'RESULTS.json'), JSON.stringify(result, null, 2));
+console.log(JSON.stringify({ ...result, rows: rows.filter(x => !x.passed) }, null, 2));
+if (rows.some(x => !x.passed)) process.exitCode = 1;

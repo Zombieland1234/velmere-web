@@ -1,13 +1,13 @@
-name: C14 internal integration qualification
+name: C14-C15 internal exact-source qualification
 on:
   push:
-    branches: [c14/integration-final-20260918]
+    branches: [c14/integration-final-20260918, c15/call-status-qualification-20260918]
     paths-ignore: ['_handoff/**', 'docs/**']
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: c14-integration-qualification
+  group: exact-source-qualification-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   application:
@@ -58,5 +58,38 @@ jobs:
             /tmp/c14-benchmark
             !/tmp/c14-benchmark/private-inputs.json
             !/tmp/c14-benchmark/*-engine.cjs
+          retention-days: 14
+          if-no-files-found: error
+  compiler-call-matrices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Exact parent and candidate identities, no production credentials
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git merge-base --is-ancestor e718df06d20a8129ffe261eef9c6c74cc5c91729 HEAD
+          mkdir -p /tmp/c15-matrix-base /tmp/c15-matrices
+          git archive e718df06d20a8129ffe261eef9c6c74cc5c91729 | tar -x -C /tmp/c15-matrix-base
+          printf '%s\n' "$GITHUB_SHA" > /tmp/c15-matrices/SOURCE_SHA.txt
+          git rev-parse 'HEAD^{tree}' > /tmp/c15-matrices/SOURCE_TREE.txt
+      - run: npm ci --ignore-scripts --no-fund
+      - run: ln -s "$PWD/node_modules" /tmp/c15-matrix-base/node_modules
+      - name: Real solc matrix, static analysis only
+        run: set -o pipefail; node_modules/.bin/tsx scripts/c15/compiler-call-matrix.ts /tmp/c15-matrix-base /tmp/c15-matrices/compiler-call 2>&1 | tee /tmp/c15-matrices/compiler-call.log
+      - name: Previously authored development fixtures, not blind holdout
+        if: always()
+        run: set -o pipefail; node_modules/.bin/tsx scripts/c15/development-matrix.ts /tmp/c15-matrix-base /tmp/c15-matrices/development 2>&1 | tee /tmp/c15-matrices/development.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-matrices-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/c15-matrices/
           retention-days: 14
           if-no-files-found: error
