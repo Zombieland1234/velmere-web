@@ -49,6 +49,7 @@ type ExecuteArgs<T> = {
   cooldownMs?: number;
   maxConcurrent?: number;
   allowStaleOnFailure?: boolean;
+  cacheEnabled?: boolean;
 };
 
 export type ProviderFallbackAttempt = {
@@ -129,8 +130,11 @@ export function createProviderResilienceRuntime(deps: {
     const failureThreshold = Math.max(1, args.failureThreshold ?? 3);
     const cooldownMs = Math.max(1_000, args.cooldownMs ?? 30_000);
     const maxConcurrent = Math.max(1, args.maxConcurrent ?? 6);
-    const allowStale = args.allowStaleOnFailure !== false;
-    const cached = cacheState<T>(args.cacheKey, freshTtlMs, staleTtlMs);
+    const cacheEnabled = args.cacheEnabled !== false;
+    const allowStale = cacheEnabled && args.allowStaleOnFailure !== false;
+    const cached = cacheEnabled
+      ? cacheState<T>(args.cacheKey, freshTtlMs, staleTtlMs)
+      : { entry: null, ageMs: null, fresh: false, staleUsable: false };
     const circuit = circuitFor(args.providerId);
     const retrievedAtMs = now();
 
@@ -206,7 +210,7 @@ export function createProviderResilienceRuntime(deps: {
         if (!args.validate(value)) throw Object.assign(new Error("provider_invalid_payload"), { code: "INVALID_PAYLOAD" });
         const storedAt = now();
         const valueSha256 = providerValueSha256(value);
-        cache.set(args.cacheKey, { value, storedAt, valueSha256 });
+        if (cacheEnabled) cache.set(args.cacheKey, { value, storedAt, valueSha256 });
         circuit.consecutiveFailures = 0;
         circuit.openedAt = null;
         circuit.halfOpenProbe = false;
@@ -221,7 +225,9 @@ export function createProviderResilienceRuntime(deps: {
         circuit.consecutiveFailures += 1;
         if (circuit.consecutiveFailures >= failureThreshold) circuit.openedAt = now();
         circuit.halfOpenProbe = false;
-        const fallback = cacheState<T>(args.cacheKey, freshTtlMs, staleTtlMs);
+        const fallback = cacheEnabled
+          ? cacheState<T>(args.cacheKey, freshTtlMs, staleTtlMs)
+          : { entry: null, ageMs: null, fresh: false, staleUsable: false };
         if (allowStale && fallback.staleUsable && fallback.entry) {
           return {
             ok: true, status: "stale_cache", value: fallback.entry.value, providerId: args.providerId,
