@@ -27,13 +27,13 @@ printf '%s\n' "$(psql -X -At -d postgres -c 'show server_version')" > "$EVIDENCE
 server_major=$(psql -X -At -d postgres -c "select current_setting('server_version_num')::int / 10000")
 PG_DUMP_BIN=$(command -v pg_dump)
 PG_RESTORE_BIN=$(command -v pg_restore)
-client_major=$("$PG_DUMP_BIN" --version | sed -nE 's/.*PostgreSQL[^0-9]*([0-9]+).*/\\1/p')
+client_major=$("$PG_DUMP_BIN" --version | grep -oE '[0-9]+([.][0-9]+)+' | head -1 | cut -d. -f1)
 if (( client_major < server_major )); then
   candidate="/usr/lib/postgresql/$server_major/bin"
   if [[ -x "$candidate/pg_dump" && -x "$candidate/pg_restore" ]]; then
     PG_DUMP_BIN="$candidate/pg_dump"
     PG_RESTORE_BIN="$candidate/pg_restore"
-    client_major=$("$PG_DUMP_BIN" --version | sed -nE 's/.*PostgreSQL[^0-9]*([0-9]+).*/\\1/p')
+    client_major=$("$PG_DUMP_BIN" --version | grep -oE '[0-9]+([.][0-9]+)+' | head -1 | cut -d. -f1)
   fi
 fi
 if (( client_major < server_major )); then
