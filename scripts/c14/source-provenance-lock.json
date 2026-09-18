@@ -46,6 +46,36 @@
   },
   "chain": [
     {
+      "stage": "C6B",
+      "sourceSha": "ffa40ec83c5f742a02243fc01cd320952fa11d70",
+      "treeSha": "d685dba5c9f7f0f4c07df2a9cce0624687ab43eb",
+      "included": 3842,
+      "excluded": 0,
+      "innerZip": "VELMERE_C6B_EXACT_GITHUB_SOURCE.zip",
+      "innerZipSha256": "672143936de4b2ffb0e5ee792b0da6a03e79e4cf3eef2894d3c564c8b43611a6",
+      "outerArtifactSha256": "dd44d1f0abb841dbb118844c14a74af009a2e2790aab525ffb08e4fbd10e1aef"
+    },
+    {
+      "stage": "C6C",
+      "sourceSha": "cb34427bae770760c9d11474eefdaefb35613847",
+      "treeSha": "a7ab5dbf289fabd6865fcc3a9c3056851e500ca4",
+      "included": 3846,
+      "excluded": 1,
+      "innerZip": "VELMERE_SOURCE_C6C.zip",
+      "innerZipSha256": "0c4cfe51ec217da1fe9c89bc153ae41ce5809de8bfcf1d59c9c48a23fa3b1725",
+      "outerArtifactSha256": "9e3f432b0b6825b82abe97a4ccdd2462ce7113c9a4c72dfcd308fe56f7417260"
+    },
+    {
+      "stage": "C6D",
+      "sourceSha": "84cddafad09868d3d8e51595420a5157dfe79367",
+      "treeSha": "49dd0ca250041d9541fb70088a61fe12578976af",
+      "included": 3853,
+      "excluded": 1,
+      "innerZip": "VELMERE_SOURCE_C6D.zip",
+      "innerZipSha256": "15a22a8c5819ca0e2de0c77c0c9245613189cc27a44dd48af6bab6ffc7226d48",
+      "outerArtifactSha256": "b9fb3312e99c569865c63b0719614ae08314d8f21b3435449dc26aa82d2c3151"
+    },
+    {
       "stage": "C6E",
       "sourceSha": "aca5e67105dc02b25a8058b3e41fdd47312f7d26",
       "treeSha": "41f50b7a5f3525499e42b8270ebc2ff0c7c955e1",
@@ -127,13 +157,61 @@
     }
   ],
   "ancestry": [
-    {"from": "aca5e67105dc02b25a8058b3e41fdd47312f7d26", "to": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d", "aheadBy": 18},
-    {"from": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d", "to": "0609ef1c5aeecfab6de3ada8144efaa089064c71", "aheadBy": 5},
-    {"from": "0609ef1c5aeecfab6de3ada8144efaa089064c71", "to": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d", "aheadBy": 6},
-    {"from": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d", "to": "8841c625ede6452de55bd57c1024759d6dc53845", "aheadBy": 11},
-    {"from": "8841c625ede6452de55bd57c1024759d6dc53845", "to": "9ca2860e4133e9f8695076b50f323c7825a1c7b3", "aheadBy": 4},
-    {"from": "9ca2860e4133e9f8695076b50f323c7825a1c7b3", "to": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb", "aheadBy": 6},
-    {"from": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb", "to": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df", "aheadBy": 6}
+    {
+      "from": "05d5ce6afb5364b5184de14e745857f6757f3344",
+      "to": "ffa40ec83c5f742a02243fc01cd320952fa11d70",
+      "aheadBy": 7
+    },
+    {
+      "from": "ffa40ec83c5f742a02243fc01cd320952fa11d70",
+      "to": "cb34427bae770760c9d11474eefdaefb35613847",
+      "aheadBy": 2
+    },
+    {
+      "from": "cb34427bae770760c9d11474eefdaefb35613847",
+      "to": "84cddafad09868d3d8e51595420a5157dfe79367",
+      "aheadBy": 2
+    },
+    {
+      "from": "84cddafad09868d3d8e51595420a5157dfe79367",
+      "to": "aca5e67105dc02b25a8058b3e41fdd47312f7d26",
+      "aheadBy": 2
+    },
+    {
+      "from": "aca5e67105dc02b25a8058b3e41fdd47312f7d26",
+      "to": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d",
+      "aheadBy": 18
+    },
+    {
+      "from": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d",
+      "to": "0609ef1c5aeecfab6de3ada8144efaa089064c71",
+      "aheadBy": 5
+    },
+    {
+      "from": "0609ef1c5aeecfab6de3ada8144efaa089064c71",
+      "to": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d",
+      "aheadBy": 6
+    },
+    {
+      "from": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d",
+      "to": "8841c625ede6452de55bd57c1024759d6dc53845",
+      "aheadBy": 11
+    },
+    {
+      "from": "8841c625ede6452de55bd57c1024759d6dc53845",
+      "to": "9ca2860e4133e9f8695076b50f323c7825a1c7b3",
+      "aheadBy": 4
+    },
+    {
+      "from": "9ca2860e4133e9f8695076b50f323c7825a1c7b3",
+      "to": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb",
+      "aheadBy": 6
+    },
+    {
+      "from": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb",
+      "to": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+      "aheadBy": 6
+    }
   ],
   "recovery": {
     "firstObservedC6QualificationSha": "05d5ce6afb5364b5184de14e745857f6757f3344",
@@ -174,11 +252,21 @@
       "thoseMissingPathsPresentInUi2": 977
     },
     "fontRelationship": [
-      {"path": "lib/security/pro-audit-pdf/embedded-font-data.ts", "presentInUi2": true, "sameSha256AsC13": true},
-      {"path": "r7-runtime/external-assets/manrope-pdf-latin-plus-ext.ttf", "presentInUi2": false, "sameSha256AsC13": false}
+      {
+        "path": "lib/security/pro-audit-pdf/embedded-font-data.ts",
+        "presentInUi2": true,
+        "sameSha256AsC13": true
+      },
+      {
+        "path": "r7-runtime/external-assets/manrope-pdf-latin-plus-ext.ttf",
+        "presentInUi2": false,
+        "sameSha256AsC13": false
+      }
     ]
   },
   "knownDiscontinuities": [
+    "Initial C6 and C6B exact GitHub source archives included all tracked files.",
+    "C6C and C6D excluded only the tracked TTF font binary from their distributable source ZIPs.",
     "C6E excluded the two declared font resources from the distributable source ZIP.",
     "C7 included both tracked font resources in its source ZIP (excluded count 0).",
     "C8 through C13 again excluded the same two tracked font resources.",
