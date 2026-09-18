@@ -103,29 +103,69 @@ jobs:
           python3 validator/scripts/c14-p29/verify_release_evidence.py \
             --evidence /tmp/c13-evidence \
             --sql /tmp/c13-sql \
-            --benchmark /tmp/c13-benchmašÈˆKXÜš]\šXH˜[Y]Ü‹ÜØÜš\ËØÌM\KÜ™[X\ÙKXÜš]\šXKšœÛÛˆˆKX˜\ÙK\ÚH‰UPSQ’QQÔÒHˆˆK[İ]]İ\ØÌM\KÕ‘T‘PÕšœÛÛ‚‚ˆH˜[YNˆZ[ÛÛXš[™Y\Y˜XİX[šY™\İˆYˆ[Ø^\Ê
-Bˆ[ˆˆÙ]Y][È\Y˜Z[ˆZÙ\ˆ\İ\ØÌM\Bˆ]ÛŒÈH	ÔIÂˆœ›ÛH]Xˆ[\Ü]ˆ[\Ü\ÚX‹œÛÛ‹ÜÂˆ›ÛİÈHÂˆ]
-‹İ\ØÌLËY]šY[˜ÙHŠKˆ]
-‹İ\ØÌLË\Ü[ŠKˆ]
-‹İ\ØÌLËX™[˜ÚX\šÈŠKˆ]
-‹İ\ØÌM\HŠKˆBˆ›İÜÈH×Bˆ›Üˆ›Ûİ[ˆ›ÛİÎ‚ˆYˆ›İ›Ûİ™^\İÊ
-N‚ˆÛÛ[YBˆ›Üˆ[ˆÛÜY
-›Ûİœ™ÛØŠŠˆŠJN‚ˆYˆš\×Ùš[J
-H[™›˜[YHOHT•QPÕÓPS’Q‘TÕšœÛÛˆ‚ˆ›İÜË˜\[™
-Âˆœ›ÛİˆİŠ›Ûİ
-Kˆœ]ˆİŠœ™[]]™WİÊ›Ûİ
-JKˆ˜]\Èˆœİ]
+            --benchmark /tmp/c13-benchmark \
+            --criteria validator/scripts/c14-p29/release-criteria.json \
+            --base-sha "$QUALIFIED_SHA" \
+            --output /tmp/c14-p29/VERDICT.json
 
-KœİÜÚ^™KˆœÚLMˆˆ\ÚX‹œÚLMŠœ™XYØ]\Ê
-JKš^YÙ\İ
+      - name: Build combined artifact manifest
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p29
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os
+          roots = [
+              Path("/tmp/c13-evidence"),
+              Path("/tmp/c13-sql"),
+              Path("/tmp/c13-benchmark"),
+              Path("/tmp/c14-p29"),
+          ]
+          rows = []
+          for root in roots:
+              if not root.exists():
+                  continue
+              for p in sorted(root.rglob("*")):
+                  if p.is_file() and p.name != "ARTIFACT_MANIFEST.json":
+                      rows.append({
+                          "root": str(root),
+                          "path": str(p.relative_to(root)),
+                          "bytes": p.stat().st_size,
+                          "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
+                      })
+          out = {
+              "schema": "velmere.c14-p29.artifact-manifest.v1",
+              "subjectSha": os.environ["QUALIFIED_SHA"],
+              "files": rows,
+          }
+          Path("/tmp/c14-p29/ARTIFACT_MANIFEST.json").write_text(
+              json.dumps(out, indent=2) + "\n"
+          )
+          PY
 
-KˆJBˆİ]HÂˆœØÚ[XHˆ™[Y\™K˜ÌM\K˜\Y˜Xİ[X[šY™\İŒH‹ˆœİXš™XİÚHˆÜË™[š\›Û–È”UPSQ’QQÔÒH—Kˆ™š[\Èˆ›İÜËˆBˆ]
-‹İ\ØÌM\KĞT•QPÕÓPS’Q‘TÕšœÛÛˆŠKÜš]Wİ^
-ˆœÛÛ‹™[\Êİ][™[LŠH
-È—ˆ‚ˆ
-BˆB‚ˆH˜[YNˆ\ØYÌMTH]X[YšXØ][ÛˆXÚØYÙBˆYˆ[Ø^\Ê
-Bˆ\Ù\ÎˆXİ[ÛœËİ\ØYX\Y˜XİXLMYX™MÍXMYNL˜™ÍŒÙ˜L‚ˆÚ]‚ˆ˜[YNˆÌM\K\™[X\ÙK]˜[Y][Û‹IŞÈÚ]X‹œ[—ÚY_Bˆ]ˆˆİ\ØÌLËY]šY[˜ÙBˆİ\ØÌLË\Ü[ˆİ\ØÌLËX™[˜ÚX\šÂˆİ\ØÌM\Bˆ™][[Û‹Y^\ÎˆÌˆY‹[›ËYš[\ËY›İ[™ˆ\œ›Ü‚‚ˆH˜[YNˆÙY\™[X\ÙHØ]H™YÚ[ˆ[H™\]Z\™YØ]H˜Z[ÂˆYˆ[Ø^\Ê
-Bˆ[ˆˆÙ]Y][È\Y˜Z[ˆ\İYˆİ\ØÌM\KÕ‘T‘PÕšœÛÛ‚ˆ]ÛŒÈH	ÔIÂˆ[\ÜœÛÛ‹Ş\ÂˆØ]HHœÛÛ‹›ØY
-Ü[Š‹İ\ØÌM\KÕ‘T‘PÕšœÛÛˆŠJBˆš[
-œÛÛ‹™[\ÊØ]K[™[LŠJBˆYˆØ]VÈ™XÚ\Ú[Ûˆ—HOH‘ÓÈ‚ˆŞ\Ë™^]
-JBˆB
+      - name: Upload C14-P29 qualification package
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c14-p29-release-validation-${{ github.run_id }}
+          path: |
+            /tmp/c13-evidence
+            /tmp/c13-sql
+            /tmp/c13-benchmark
+            /tmp/c14-p29
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Keep release gate red when any required gate fails
+        if: always()
+        run: |
+          set -euo pipefail
+          test -f /tmp/c14-p29/VERDICT.json
+          python3 - <<'PY'
+          import json, sys
+          gate = json.load(open("/tmp/c14-p29/VERDICT.json"))
+          print(json.dumps(gate, indent=2))
+          if gate["decision"] != "GO":
+              sys.exit(1)
+          PY

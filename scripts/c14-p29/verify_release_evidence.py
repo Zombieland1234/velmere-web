@@ -205,10 +205,10 @@ def main() -> int:
              "MANUAL_REQUIRED")
     else:
         gate("benchmark_execution_integrity", False, {"reason": "Benchmark evidence directory not supplied"})
-        gate("benchmark_stability_subset", False, {"reason": "Benchmark evidence directory not supplid"})
+        gate("benchmark_stability_subset", False, {"reason": "Benchmark evidence directory not supplied"})
         gate("benchmark_novel_holdout", False, {"reason": "Benchmark evidence directory not supplied"})
         gate("benchmark_independent_ground_truth_or_external_review", False,
-            {"reason": "Benchmark evidence directory not supplid"}, "MANUAL_REQUIRED")
+             {"reason": "Benchmark evidence directory not supplied"}, "MANUAL_REQUIRED")
 
     # These gates deliberately stay red until evidence outside this internal validator exists.
     for manual in criteria["manualReleaseGates"]:
