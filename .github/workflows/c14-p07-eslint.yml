@@ -21,6 +21,10 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24.18.0'
+      - name: Export exact checkout
+        run: |
+          mkdir -p /tmp/c14-p07
+          git archive --format=zip HEAD -o /tmp/c14-p07/source.zip
       - name: Install exact dependencies
         run: npm ci --ignore-scripts --no-fund
       - name: Capture ESLint JSON and grouped inventory
