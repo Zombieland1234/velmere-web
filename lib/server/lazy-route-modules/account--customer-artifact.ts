@@ -157,37 +157,11 @@ export async function GET(request: Request) {
       });
       if (access.allowed) authorizedSnapshots.push(snapshot);
     }
-    visibleSnapshots = authorizedSnapshots;
-    return NextResponse.json({ ok: false, error: "artifact_visibility_boundary_unavailable", retryable: true }, {
-          status: 503,
-          headers: { "cache-control": "no-store" },
-        });
-      }
-    } else {
-      // Preview-only memory fixtures retain the bounded legacy lookup. They are
-      // never customer-final and cannot reach durable owner data.
-      const listed = await listPass4822AccountCustomerArtifactSnapshots({ accountId: account.accountId, limit: 50, client: null });
-      visibleSnapshots = [];
-      for (const snapshot of listed.snapshots) {
-        if (snapshot.surface !== "audit") {
-          visibleSnapshots.push(snapshot);
-          continue;
-        }
-        try {
-          if (await hasAuditAccountMessageExactArtifactLink({
-            accountId: account.accountId,
-            snapshotId: snapshot.snapshotId,
-            client: null,
-          })) visibleSnapshots.push(snapshot);
-        } catch {
-          return NextResponse.json({ ok: false, error: "artifact_delivery_link_storage_invalid" }, { status: 409, headers: { "cache-control": "no-store" } });
-        }
-      }
-    }
+
     return NextResponse.json({
       ok: true,
       schemaVersion: P86_PUBLIC_ACCOUNT_ARTIFACT_LIST_SCHEMA,
-      artifacts: visibleSnapshots.slice(0, limit).map((snapshot) => {
+      artifacts: authorizedSnapshots.slice(0, limit).map((snapshot) => {
         const pdfDelivery = resolveP86CustomerArtifactPdfAvailability(snapshot);
         return {
           artifactId: snapshot.snapshotId,
