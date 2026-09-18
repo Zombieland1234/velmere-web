@@ -1,5 +1,6 @@
 import { readJsonResponseBounded, readResponseBytesBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { analyzeTokenRisk, badgeFromLevel, levelFromScore } from "./risk-engine";
 import type { TokenRiskInput, TokenRiskResult, VelmereMarketAssetClass } from "./risk-types";
 import {
@@ -255,6 +256,13 @@ function parseStooqCsv(csv: string) {
 }
 
 async function loadStooqQuote(symbol: string) {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "stooq",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.now(),
+  });
+  if (!rights.allowed) return null;
   const mapped = stooqSymbol(symbol);
   if (!mapped) return null;
   const startedAt = performance.now();
@@ -469,6 +477,13 @@ export function isRealMarketVlmQuery(query: string): boolean {
 }
 
 async function loadYahooChart(symbol: string) {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "yahoo_finance",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.now(),
+  });
+  if (!rights.allowed) return null;
   const startedAt = performance.now();
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=7d&interval=1d&includePrePost=false`;
   const response = await brokeredEgressFetch(url, { cache: "no-store", signal: AbortSignal.timeout(6_000), headers: { accept: "application/json" } }, { profile: "real_markets", operation: "yahoo_chart", timeoutMs: 6_000 });
@@ -492,6 +507,13 @@ async function loadYahooChart(symbol: string) {
 }
 
 async function loadYahooQuote(symbol: string) {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "yahoo_finance",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.now(),
+  });
+  if (!rights.allowed) return null;
   const startedAt = performance.now();
   const params = new URLSearchParams({ symbols: symbol });
   const response = await brokeredEgressFetch(`https://query1.finance.yahoo.com/v7/finance/quote?${params.toString()}`, {
