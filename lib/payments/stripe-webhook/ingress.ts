@@ -209,6 +209,13 @@ async function applyOrdering(
   }
 }
 
+function safeWebhookFailureCode(error: unknown) {
+  const candidate = error instanceof Error ? error.message.trim().toLowerCase() : "";
+  return /^[a-z][a-z0-9_]{2,79}$/.test(candidate)
+    ? candidate
+    : "webhook_processing_failed";
+}
+
 async function processStripeWebhookRequest(
   req: Request,
   dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
@@ -328,10 +335,7 @@ async function processStripeWebhookRequest(
       },
     );
   } catch (error) {
-    const errorCode =
-      error instanceof Error
-        ? error.message.slice(0, 160)
-        : "webhook_processing_failed";
+    const errorCode = safeWebhookFailureCode(error);
     if (isStripeWebhookTerminalEffectError(error)) {
       try {
         await dependencies.markTerminalFailure(event, errorCode, claim.attempt);
