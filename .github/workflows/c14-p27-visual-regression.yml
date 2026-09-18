@@ -6,7 +6,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: c14-p27-visual-regression
+  group: c14-p27-visual-regression-v2
   cancel-in-progress: true
 jobs:
   visual:
