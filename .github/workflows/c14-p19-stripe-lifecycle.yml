@@ -3,6 +3,8 @@ name: C14-P19 Stripe lifecycle qualification
 on:
   push:
     branches: [parallel/c14-p19-stripe-lifecycle]
+    paths-ignore:
+      - "_handoff/**"
   workflow_dispatch:
 
 permissions:
@@ -10,7 +12,7 @@ permissions:
 
 concurrency:
   group: c14-p19-stripe-lifecycle-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   focused-lifecycle:
