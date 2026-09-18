@@ -8,7 +8,7 @@ permissions:
   contents: read
 concurrency:
   group: c14-p08-dependencies
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   materialize-security-patch:
