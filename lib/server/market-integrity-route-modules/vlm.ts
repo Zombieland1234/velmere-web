@@ -84,8 +84,14 @@ async function handleVlmGet(request: Request) {
       }),
     });
     const payload = durableAnalysis.value;
-    // Bypass premium not ready blocker in evaluation mode to deliver full unlocked analysis
-    // if (payload.premiumFailFast) { ... }
+    if (payload.premiumFailFast) {
+      return premiumFailFastResponse(
+        payload,
+        resolvedDepth,
+        resolvedLocale,
+        Boolean(paidGate.access.ok),
+      );
+    }
     const commercialReadiness = buildCommercialReadiness(payload, resolvedDepth, resolvedLocale);
     const pass2287RuntimeOutputFirewall = buildPass2287RuntimeOutputFirewall(payload, resolvedDepth, Boolean(paidGate.access.ok), resolvedLocale);
     const pass2288ClaimProofFirewall = buildPass2288ClaimProofFirewallOutput(payload, resolvedDepth, Boolean(paidGate.access.ok), resolvedLocale, pass2287RuntimeOutputFirewall.customerOutput);
