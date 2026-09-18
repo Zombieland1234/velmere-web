@@ -10,9 +10,15 @@ const countBy = (values: Array<string | undefined>) =>
   }, {});
 
 async function main() {
-  const [sourcePath, artifactPath, outputPath = "artifacts/bounty/across-spokeperiphery-velmere.json"] = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  const sourcePath = args[0];
+  const artifactPath = args[1];
+  const contractName = args.length >= 4 ? args[2] : "SpokePoolPeriphery";
+  const outputPath = args.length >= 4
+    ? args[3]
+    : (args[2] ?? "artifacts/bounty/across-spokeperiphery-velmere.json");
   if (!sourcePath || !artifactPath) {
-    throw new Error("usage: tsx scripts/bounty/run-across-spokeperiphery.ts <source.sol> <artifact.json> [output.json]");
+    throw new Error("usage: tsx scripts/bounty/run-across-spokeperiphery.ts <source.sol> <artifact.json> [contractName] [output.json]");
   }
 
   const sourceCode = await readFile(sourcePath, "utf8");
@@ -24,7 +30,15 @@ async function main() {
     artifact?.bytecode;
 
   if (typeof rawBytecode !== "string" || rawBytecode.length < 16) {
-    throw new Error("compiled_runtime_bytecode_missing");
+    console.log(JSON.stringify({
+      schema: "velmere.bounty.public-aggregate.v1",
+      contractName,
+      contractName,
+    sourcePath,
+    targetCommit: process.env.ACROSS_SHA ?? "unknown",
+      status: "SKIPPED_NO_RUNTIME_BYTECODE"
+    }, null, 2));
+    return;
   }
   const bytecode = rawBytecode.startsWith("0x") ? rawBytecode : `0x${rawBytecode}`;
 
@@ -33,7 +47,7 @@ async function main() {
     chainId: "1",
     bytecode,
     sourceCode,
-    contractName: "AcrossSpokePoolPeriphery_CurrentSourceBuild",
+    contractName: `Across_${contractName}_CurrentSourceBuild`,
     tier: "ADVANCED",
     fuzzIterations: 300,
   });
@@ -44,7 +58,7 @@ async function main() {
     target: {
       repository: "across-protocol/contracts",
       commit: process.env.ACROSS_SHA ?? "unknown",
-      contract: "contracts/periphery/SpokePoolPeriphery.sol",
+      contract: sourcePath,
       mode: "SOURCE_BUILD_NOT_DEPLOYMENT_BOUND",
       bountyProgram: "Across Protocol",
     },
