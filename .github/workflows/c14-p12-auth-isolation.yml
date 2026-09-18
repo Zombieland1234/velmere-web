@@ -6,7 +6,7 @@ permissions:
   contents: read
 concurrency:
   group: c14-p12-auth-isolation
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   auth-http-ab:
     runs-on: ubuntu-latest
