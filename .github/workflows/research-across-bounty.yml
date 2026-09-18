@@ -1,0 +1,71 @@
+name: Research - Across bounty with Velmere
+
+on:
+  push:
+    branches:
+      - research/across-bounty-20260918
+    paths:
+      - "scripts/research/run-across-bounty-velmere.ts"
+      - ".github/workflows/research-across-bounty.yml"
+      - "lib/security/v2/**"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout Velmere research branch
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install Velmere dependencies
+        run: npm ci
+
+      - name: Checkout Across contracts at pinned SHA
+        uses: actions/checkout@v4
+        with:
+          repository: across-protocol/contracts
+          ref: 7445f72de17900544605c7e6706c5fb3b3784738
+          path: targets/across
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Install Across Node dependencies
+        working-directory: targets/across
+        run: |
+          corepack enable
+          yarn install --frozen-lockfile
+
+      - name: Setup pinned Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.7.1
+
+      - name: Compile Across EVM contracts locally
+        working-directory: targets/across
+        run: forge build
+
+      - name: Run Velmere against selected Across contracts
+        env:
+          ACROSS_REPO_DIR: targets/across
+        run: npx tsx scripts/research/run-across-bounty-velmere.ts
+
+      - name: Upload research evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: velmere-across-bounty-research
+          path: artifacts/research/across-bounty-20260918/
+          if-no-files-found: warn
