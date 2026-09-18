@@ -4,6 +4,7 @@ import { AlertTriangle, LoaderCircle, RotateCcw, UserRoundX } from "lucide-react
 import { useLocale } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
+import { clearPrivateAccountTabStore, purgeLegacyPrivateAccountLocalStorage } from "@/lib/account/private-account-ephemeral-store";
 
 type ErasureMetadata = {
   schemaVersion: "velmere.public-account-erasure-request.v1";
@@ -139,6 +140,10 @@ export default function AccountErasurePanel() {
       const parsed = response.ok ? parseMetadata(await readJsonResponseBounded<unknown>(response, 32 * 1024)) : null;
       if (!parsed) throw new Error("account_erasure_unavailable");
       setMetadata(parsed);
+      if (body.action === "request") {
+        clearPrivateAccountTabStore();
+        purgeLegacyPrivateAccountLocalStorage();
+      }
       setStatus("ready");
     } catch {
       setStatus("error");
