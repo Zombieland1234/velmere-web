@@ -1,6 +1,7 @@
 /** Real FullV2 calls on frozen external bytes. Worker processes are NOT AI subagents/auditors. */
 import fs from 'node:fs';import path from 'node:path';import{Worker}from'node:worker_threads';import{createHash}from'node:crypto';import{createRequire}from'node:module';
 import { loadVerifiedCorpus, ensureFreshOutputs } from './corpus-integrity.mjs';
+import { evaluateBenchmarkGate } from './benchmark-gate.mjs';
 const require=createRequire(import.meta.url);const esbuild=require('esbuild');
 const [baseRoot,candidateRoot,corpusDir,inputRoot,baselineSha]=process.argv.slice(2);
 if(!inputRoot || !/^[a-f0-9]{40}$/u.test(baselineSha??''))throw new Error('baseRoot candidateRoot corpusDir inputRoot exactBaselineCommitSha required');
@@ -8,7 +9,7 @@ const manifestPath=path.join(corpusDir,'MANIFEST.json');
 const pinnedManifestHash=fs.readFileSync(path.join(corpusDir,'MANIFEST_SHA256.txt'),'utf8').trim().split(/\s+/u)[0];
 const {manifest,rows:inputs,receipt:inputIntegrity}=loadVerifiedCorpus({manifestPath,inputsPath:path.join(corpusDir,'private-inputs.json'),expectedManifestSha256:pinnedManifestHash,inputRoot});
 const manifestSha256=inputIntegrity.manifestSha256;
-ensureFreshOutputs(corpusDir,['RUN_STARTED.json','INPUT_INTEGRITY.json','COMPARISON.json',...['BASELINE','C14','C14-stability'].flatMap(label=>[`${label}-engine.cjs`,`${label}-results.jsonl`,`${label}-summary.json`])]);
+ensureFreshOutputs(corpusDir,['RUN_STARTED.json','INPUT_INTEGRITY.json','COMPARISON.json','MEASUREMENT_GATE.json',...['BASELINE','C14','C14-stability'].flatMap(label=>[`${label}-engine.cjs`,`${label}-results.jsonl`,`${label}-summary.json`])]);
 fs.writeFileSync(path.join(corpusDir,'RUN_STARTED.json'),JSON.stringify({startedAt:new Date().toISOString(),candidateCommitSha:process.env.GITHUB_SHA??null,scope:'OFFLINE_STATIC_ANALYSIS_NO_CHAIN_EXECUTION'}),{flag:'wx'});
 fs.writeFileSync(path.join(corpusDir,'INPUT_INTEGRITY.json'),JSON.stringify(inputIntegrity,null,2),{flag:'wx'});
 const workerScript=new URL('../c9/corpus-worker.cjs',import.meta.url);
@@ -59,4 +60,6 @@ fs.writeFileSync(path.join(corpusDir,'COMPARISON.json'),JSON.stringify({manifest
 fs.unlinkSync(path.join(corpusDir,'private-inputs.json'));
 for(const name of ['BASELINE','C14','C14-stability'])fs.unlinkSync(path.join(corpusDir,`${name}-engine.cjs`));
 console.log(JSON.stringify({uniqueCases:inputs.length,baseline:baseline.summary.totalAssessmentPairs,candidate:candidate.summary.totalAssessmentPairs,changes:changes.length,unstable},null,2));
-if(candidate.summary.errors||candidate.summary.timeouts)process.exitCode=1;
+const measurementGate=evaluateBenchmarkGate({baseline:baseline.summary,candidate:candidate.summary,stability:repeat.summary,unstable,expectedCases:inputs.length,expectedPairs:inputs.reduce((n,item)=>n+item.consensusLabels.filter(label=>!label.ambiguous).length,0),expectedStability:stabilityInputs.length});
+fs.writeFileSync(path.join(corpusDir,'MEASUREMENT_GATE.json'),JSON.stringify(measurementGate,null,2),{flag:'wx'});
+if(measurementGate.status!=='PASS')process.exitCode=1;
