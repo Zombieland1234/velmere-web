@@ -44,6 +44,37 @@ function json(body: unknown, status = 200) {
   });
 }
 
+function quarantineApprovalRequest(
+  body: Record<string, unknown>,
+  action: ProviderQuarantineApprovalRequest["action"],
+): ProviderQuarantineApprovalRequest {
+  return {
+    action,
+    maxAssets: Number(body.maxAssets),
+    operatorId: String(body.operatorId ?? ""),
+    reason: String(body.reason ?? ""),
+    approvalTimestamp: typeof body.approvalTimestamp === "number" ? body.approvalTimestamp : Number.NaN,
+    approvalNonce: String(body.approvalNonce ?? ""),
+    approvalSignature: String(body.approvalSignature ?? ""),
+  };
+}
+
+function incidentApprovalRequest(
+  body: Record<string, unknown>,
+  action: ProviderQualityIncidentApprovalRequest["action"],
+): ProviderQualityIncidentApprovalRequest {
+  return {
+    action,
+    operatorId: String(body.operatorId ?? ""),
+    reason: String(body.reason ?? ""),
+    approvalTimestamp: typeof body.approvalTimestamp === "number" ? body.approvalTimestamp : Number.NaN,
+    approvalNonce: String(body.approvalNonce ?? ""),
+    approvalSignature: String(body.approvalSignature ?? ""),
+    expectedIncidentDigest: String(body.expectedIncidentDigest ?? ""),
+    expectedQualityDigest: String(body.expectedQualityDigest ?? ""),
+  };
+}
+
 async function applyWorkerRateLimit(request: Request) {
   const rate = await applyApiRateLimit(request, {
     keyPrefix: "provider-observation-operations",
@@ -140,7 +171,7 @@ export async function POST(request: Request) {
     }
     if (action === "revalidate" || action === "release") {
       const result = await applyProviderObservationQuarantineAction({
-        request: body as unknown as ProviderQuarantineApprovalRequest,
+        request: quarantineApprovalRequest(body, action),
       });
       return json({ ok: result.ok, result }, result.ok ? 200 : 409);
     }
@@ -162,7 +193,7 @@ export async function POST(request: Request) {
     }
     if (action === "acknowledge" || action === "start_recovery" || action === "resolve") {
       const result = await applyProviderQualityIncidentAction({
-        request: body as unknown as ProviderQualityIncidentApprovalRequest,
+        request: incidentApprovalRequest(body, action),
       });
       return json({ ok: result.ok, result }, result.ok ? 200 : 409);
     }

@@ -56,7 +56,13 @@ const rendered = JSON.stringify(report, null, 2);
 console.log(rendered);
 if (jsonPath) fs.writeFileSync(jsonPath, rendered + "\n");
 
-if (byPattern.tsIgnore.length > 0) {
-  console.error("C14 type-risk gate failed: @ts-ignore is not permitted.");
+const hardFailures = [];
+if (byPattern.tsIgnore.length > 0) hardFailures.push("@ts-ignore is not permitted");
+if (byPattern.tsExpectError.length > 0) hardFailures.push("@ts-expect-error requires an explicit C14 review before admission");
+if (boundaryHits.explicitAny.length > 0) hardFailures.push("explicit any is not permitted on critical API/auth/db/security/commerce/Edge boundaries");
+
+if (hardFailures.length > 0) {
+  console.error("C14 type-risk gate failed:");
+  for (const failure of hardFailures) console.error(`- ${failure}`);
   process.exit(1);
 }
