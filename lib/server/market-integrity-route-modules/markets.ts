@@ -327,10 +327,12 @@ export async function GET(request: Request) {
   }
 
   const shieldRightsPreflight = buildShieldBasicDeliveryPreflight("markets");
-  const isDevRequest = request.headers.get("x-velmere-dev") === "true"
+  const isDevRequest = process.env.NODE_ENV !== "production" && (
+    request.headers.get("x-velmere-dev") === "true"
     || url.searchParams.get("dev") === "true"
     || url.searchParams.get("live") === "true"
-    || request.headers.get("x-velmere-live") === "true";
+    || request.headers.get("x-velmere-live") === "true"
+  );
   if ((!shieldRightsPreflight.customerDeliveryAllowed || !shieldRightsPreflight.providerNetworkAllowed) && !hasBrokeredEgressTestTransport()) {
     if (process.env.NODE_ENV !== "production" || isDevRequest) {
       try {

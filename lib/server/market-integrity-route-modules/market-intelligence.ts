@@ -512,10 +512,12 @@ export async function POST(request: Request) {
     }
   }
 
-  const isDevOrLive = request.headers.get("x-velmere-dev") === "true"
+  const isDevOrLive = process.env.NODE_ENV !== "production" && (
+    request.headers.get("x-velmere-dev") === "true"
     || request.headers.get("x-velmere-live") === "true"
     || request.headers.get("x-velmere-pro") === "true"
-    || (process.env.NODE_ENV !== "production" && !request.headers.get("x-velmere-firewall-test"));
+    || !request.headers.get("x-velmere-firewall-test")
+  );
   const isProAuthorized = selectedDepth === "pro" || selectedDepth === "advanced" || isDevOrLive;
   const customerOwnedEvidenceMode = selectedEvidenceMode === "customer_owned_attested";
   const deliveryPreflight = (customerOwnedEvidenceMode || isProAuthorized)
