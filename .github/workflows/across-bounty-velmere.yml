@@ -1,4 +1,4 @@
-name: Across bounty - Velmere audit
+name: Across bounty - Velmere batch audit
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     env:
       ACROSS_SHA: 7445f72de17900544605c7e6706c5fb3b3784738
       VELMERE_SHA: e718df06d20a8129ffe261eef9c6c74cc5c91729
@@ -42,29 +42,64 @@ jobs:
           corepack enable
           yarn install --immutable
 
-      - name: Pin Across Foundry toolchain and compile target
+      - name: Pin Across Foundry toolchain
         run: |
           export PATH="$HOME/.config/.foundry/bin:$HOME/.foundry/bin:$PATH"
           cd /tmp/across-contracts
           yarn pin-foundry
           forge --version
-          forge build contracts/periphery/SpokePoolPeriphery.sol
 
-      - name: Locate SpokePoolPeriphery artifact
-        id: artifact
+      - name: Compile selected bounty targets
+        run: |
+          export PATH="$HOME/.config/.foundry/bin:$HOME/.foundry/bin:$PATH"
+          cd /tmp/across-contracts
+          for source in \
+            contracts/periphery/SpokePoolPeriphery.sol \
+            contracts/hub-pool/HubPool.sol \
+            contracts/spoke-pools/Ethereum_SpokePool.sol \
+            contracts/handlers/MulticallHandler.sol \
+            contracts/periphery/SpokePoolVerifier.sol \
+            contracts/periphery/ERC6492SignatureHandler.sol \
+            contracts/periphery/counterfactual/CounterfactualDepositFactory.sol \
+            contracts/periphery/counterfactual/CounterfactualBeacon.sol \
+            contracts/periphery/counterfactual/AdminWithdrawManager.sol
+          do
+            forge build "$source"
+          done
+
+      - name: Run Velmere ADVANCED batch
         shell: bash
         run: |
-          ARTIFACT="$(find /tmp/across-contracts/out -type f -path '*/SpokePoolPeriphery.sol/SpokePoolPeriphery.json' | head -n 1)"
-          test -n "$ARTIFACT"
-          echo "path=$ARTIFACT" >> "$GITHUB_OUTPUT"
-
-      - name: Run Velmere ADVANCED audit
-        run: |
+          set -euo pipefail
           mkdir -p artifacts/bounty
-          npx tsx scripts/bounty/run-across-spokeperiphery.ts \
-            /tmp/across-contracts/contracts/periphery/SpokePoolPeriphery.sol \
-            "${{ steps.artifact.outputs.path }}" \
-            artifacts/bounty/across-spokeperiphery-velmere.json
+
+          run_target () {
+            local source="$1"
+            local contract="$2"
+            local artifact
+            artifact="$(find /tmp/across-contracts/out -type f -path "*/$(basename "$source")/$contract.json" | head -n 1 || true)"
+            echo "=== VELMERE_TARGET $contract ==="
+            if [ -z "$artifact" ]; then
+              echo "{"schema":"velmere.bounty.public-aggregate.v1","contractName":"$contract","status":"SKIPPED_ARTIFACT_NOT_FOUND"}"
+              return 0
+            fi
+            npx tsx scripts/bounty/run-across-spokeperiphery.ts \
+              "/tmp/across-contracts/$source" \
+              "$artifact" \
+              "$contract" \
+              "artifacts/bounty/$contract.json"
+            rm -f "artifacts/bounty/$contract.json"
+          }
+
+          run_target contracts/periphery/SpokePoolPeriphery.sol SpokePoolPeriphery
+          run_target contracts/hub-pool/HubPool.sol HubPool
+          run_target contracts/spoke-pools/Ethereum_SpokePool.sol Ethereum_SpokePool
+          run_target contracts/handlers/MulticallHandler.sol MulticallHandler
+          run_target contracts/periphery/SpokePoolVerifier.sol SpokePoolVerifier
+          run_target contracts/periphery/ERC6492SignatureHandler.sol ERC6492SignatureHandler
+          run_target contracts/periphery/counterfactual/CounterfactualDepositFactory.sol CounterfactualDepositFactory
+          run_target contracts/periphery/counterfactual/CounterfactualBeacon.sol CounterfactualBeacon
+          run_target contracts/periphery/counterfactual/AdminWithdrawManager.sol AdminWithdrawManager
 
       - name: Remove private finding payload
         if: always()
