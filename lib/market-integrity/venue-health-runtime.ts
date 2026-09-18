@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { applyDurableRateLimit } from "@/lib/security/durable-rate-limit";
 import { executeUpstashRestCommand, executeUpstashRestEval } from "@/lib/security/upstash-rest-atomic";
 import {
@@ -474,6 +475,34 @@ async function probeVenue(
   }
   const pair = target.pair;
   const now = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: venueId,
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: now,
+  });
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: venueId,
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: Math.ceil(CACHE_TTL_MS / 1000),
+    nowMs: now,
+  });
+  const storageRights = evaluateC14ProviderOperation({
+    providerId: venueId,
+    operation: "storage",
+    channel: "internal_diagnostic",
+    nowMs: now,
+  });
+  if (!fetchRights.allowed) {
+    memoryCache.delete(cacheKey);
+    return unavailableVenueSnapshot({
+      venueId,
+      requestedAsset: target.assetSymbol,
+      state: "provider_error",
+      reason: `provider_rights_${fetchRights.code.toLowerCase()}`,
+    });
+  }
   const quota = await applyDurableRateLimit({
     key: cacheKey,
     namespace: "velmere:pass461:venue-probe",
@@ -486,8 +515,8 @@ async function probeVenue(
 
   if (!quota.ok) {
     const cached =
-      memoryCache.get(cacheKey)?.value ||
-      (await readDurableSnapshot(venueId, target.assetSymbol));
+      (cacheRights.allowed ? memoryCache.get(cacheKey)?.value : undefined) ||
+      (storageRights.allowed ? await readDurableSnapshot(venueId, target.assetSymbol) : null);
     if (cached) {
       return {
         ...cached,
@@ -749,15 +778,17 @@ async function probeVenue(
       "Venue health is a connectivity, freshness, spread, depth and continuity probe. It is not proof of reserves, solvency, withdrawal availability or exchange safety.",
   };
 
-  const durableWrite = await writeDurableSnapshot(snapshot);
+  const durableWrite = storageRights.allowed ? await writeDurableSnapshot(snapshot) : false;
   const finalSnapshot =
-    snapshot.storageMode === "upstash_rest" && !durableWrite
+    storageRights.allowed && snapshot.storageMode === "upstash_rest" && !durableWrite
       ? { ...snapshot, storageMode: "upstash_fallback_memory" as const }
       : snapshot;
-  memoryCache.set(cacheKey, {
-    expiresAt: Date.now() + CACHE_TTL_MS,
-    value: finalSnapshot,
-  });
+  if (cacheRights.allowed) {
+    memoryCache.set(cacheKey, {
+      expiresAt: Date.now() + CACHE_TTL_MS,
+      value: finalSnapshot,
+    });
+  }
   return finalSnapshot;
 }
 
@@ -770,7 +801,31 @@ export async function resolvePass461VenueHealth(
   const venueKey = normalized as Pass461VenueId;
   const assetSymbol = normalizePass463AssetSymbol(requestedAsset || "BTC");
   const cacheKey = `${venueKey}:${assetSymbol}`;
-  const cached = memoryCache.get(cacheKey);
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: venueKey,
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) {
+    memoryCache.delete(cacheKey);
+    return unavailableVenueSnapshot({
+      venueId: venueKey,
+      requestedAsset: assetSymbol,
+      state: "provider_error",
+      reason: `provider_rights_${fetchRights.code.toLowerCase()}`,
+    });
+  }
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: venueKey,
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: Math.ceil(CACHE_TTL_MS / 1000),
+    nowMs,
+  });
+  if (!cacheRights.allowed) memoryCache.delete(cacheKey);
+  const cached = cacheRights.allowed ? memoryCache.get(cacheKey) : undefined;
   if (cached && cached.expiresAt > Date.now()) {
     return { ...cached.value, cacheState: "hit" };
   }
@@ -793,8 +848,22 @@ export async function resolvePass461VenueHealthWithFallback(
     const venueKey = normalized as Pass461VenueId;
     const assetSymbol = normalizePass463AssetSymbol(requestedAsset || "BTC");
     const cacheKey = `${venueKey}:${assetSymbol}`;
-    const memory = memoryCache.get(cacheKey);
-    const durable = memory?.value || (await readDurableSnapshot(venueKey, assetSymbol));
+    const nowMs = Date.now();
+    const cacheRights = evaluateC14ProviderOperation({
+      providerId: venueKey,
+      operation: "cache",
+      channel: "internal_diagnostic",
+      cacheTtlSeconds: Math.ceil(CACHE_TTL_MS / 1000),
+      nowMs,
+    });
+    const storageRights = evaluateC14ProviderOperation({
+      providerId: venueKey,
+      operation: "storage",
+      channel: "internal_diagnostic",
+      nowMs,
+    });
+    const memory = cacheRights.allowed ? memoryCache.get(cacheKey) : undefined;
+    const durable = memory?.value || (storageRights.allowed ? await readDurableSnapshot(venueKey, assetSymbol) : null);
     if (durable && Date.now() - Date.parse(durable.observedAt) <= STALE_FALLBACK_MS) {
       return {
         ...durable,
