@@ -95,7 +95,7 @@ if(mode==='prepatch'){
   let x=await resources(token,`resource_id=eq.${resource}&select=resource_id,account_id`);
   record('prepatch-active-token-owner-read',x.status===200&&x.body?.length===1,{status:x.status,count:x.body?.length});
   const oldJar=new Map(jar); const logout=await app('DELETE','/api/auth/session',{jar});
-  record('prepatch-app-logout',logout.status===200&&logout.body?.authenticated===false,{status:logout.status,providerRevoked:logout.body?.providerRevoked});
+  record('prepatch-app-logout',logout.status===200&&logout.body?.cleared===true,{status:logout.status,cleared:logout.body?.cleared,providerRevoked:logout.body?.providerRevoked});
   const existsAfter=await serviceRpc('p12_session_exists',{p_session:sessionId}); record('prepatch-provider-session-revoked',existsAfter.status===200&&existsAfter.body===false,{status:existsAfter.status,exists:existsAfter.body});
   x=await resources(token,`resource_id=eq.${resource}&select=resource_id,account_id`);
   record('prepatch-vulnerability-reproduced-stale-jwt-reads-owner-data',x.status===200&&x.body?.length===1,{status:x.status,count:x.body?.length,expectedVulnerable:true});
@@ -143,7 +143,7 @@ if(mode==='prepatch'){
   const bExpired=await app('GET','/api/auth/session',{jar:jarB}); record('expired-B-app-session-denied',bExpired.status===200&&bExpired.body?.authenticated===false,{status:bExpired.status,authenticated:bExpired.body?.authenticated,bindingState:bExpired.body?.bindingState});
 
   const logoutToken=jarA.get('velmere_supabase_access'); const replayJar=new Map(jarA); const logout=await app('DELETE','/api/auth/session',{jar:jarA});
-  record('A-app-global-logout',logout.status===200&&logout.body?.authenticated===false,{status:logout.status,providerRevoked:logout.body?.providerRevoked});
+  record('A-app-global-logout',logout.status===200&&logout.body?.cleared===true,{status:logout.status,cleared:logout.body?.cleared,providerRevoked:logout.body?.providerRevoked});
   const replayApp=await app('GET','/api/auth/session',{jar:replayJar}); record('A-logged-out-cookie-replay-denied',replayApp.status===200&&replayApp.body?.authenticated===false,{status:replayApp.status,authenticated:replayApp.body?.authenticated});
   x=await resources(logoutToken,`resource_id=eq.${idsA.report}&select=resource_id`); record('A-logged-out-JWT-direct-rest-denied',x.status===200&&x.body?.length===0,{status:x.status,count:x.body?.length});
   x=await userRpc(logoutToken,'p12_owner_resource_get',{p_resource_id:idsA.storage}); record('A-logged-out-JWT-direct-rpc-denied',x.status===200&&Array.isArray(x.body)&&x.body.length===0,{status:x.status,count:x.body?.length});
