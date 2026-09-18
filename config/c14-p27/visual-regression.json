@@ -8,9 +8,18 @@
     "reason": "Current source exposes basic/pro interface mode but no light/dark theme provider or customer theme switch."
   },
   "viewports": {
-    "desktop": { "width": 1440, "height": 1000 },
-    "tablet": { "width": 834, "height": 1112 },
-    "mobile": { "width": 390, "height": 844 }
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "tablet": {
+      "width": 834,
+      "height": 1112
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
   },
   "budgets": {
     "routeTimeoutMs": 90000,
@@ -22,19 +31,68 @@
     "maximumFailedStaticAssetsPerRoute": 0,
     "maximumCriticalClippedTextNodes": 0,
     "minimumBodyHeightPx": 180,
-    "minimumVisibleTextCharacters": 20
+    "minimumVisibleTextCharacters": 20,
+    "maximumPerceptualMeanDelta": 0.018,
+    "maximumPerceptualChangedCellRatio": 0.1
   },
   "routes": [
-    { "id": "home", "path": "/en", "selector": "main" },
-    { "id": "auth-login", "path": "/en/login", "selector": "[data-pass2005-auth-form]" },
-    { "id": "account-gate", "path": "/en/account", "selector": "main.velmere-public-page" },
-    { "id": "dashboard", "path": "/en/account", "selector": ".pass2006-dashboard-card", "authFixture": true },
-    { "id": "report", "path": "/en/security/audits/sample", "selector": "[data-audit-sample-report]" },
-    { "id": "shop", "path": "/en/shop", "selector": "main" },
-    { "id": "product", "discoverFrom": "/en/shop", "selector": "main" },
-    { "id": "search", "path": "/en/search", "selector": "main" },
-    { "id": "market-integrity", "path": "/en/market-integrity", "selector": "main" },
-    { "id": "error-state", "path": "/en/__visual-regression__/error", "selector": ".pass2007-error-shell", "expectedErrorState": true },
-    { "id": "loading-state", "path": "/en/__visual-regression__/loading", "selector": "[data-velmere-route-loading=\"true\"]", "loadingState": true }
+    {
+      "id": "home",
+      "path": "/en",
+      "selector": "main"
+    },
+    {
+      "id": "auth-login",
+      "path": "/en/login",
+      "selector": "[data-pass2005-auth-form]"
+    },
+    {
+      "id": "account-gate",
+      "path": "/en/account",
+      "selector": "main.velmere-public-page"
+    },
+    {
+      "id": "dashboard",
+      "path": "/en/account",
+      "selector": ".pass2006-dashboard-card",
+      "authFixture": true
+    },
+    {
+      "id": "report",
+      "path": "/en/security/audits/sample",
+      "selector": "[data-audit-sample-report]"
+    },
+    {
+      "id": "shop",
+      "path": "/en/shop",
+      "selector": "main"
+    },
+    {
+      "id": "product",
+      "discoverFrom": "/en/shop",
+      "selector": "main"
+    },
+    {
+      "id": "search",
+      "path": "/en/search",
+      "selector": "main"
+    },
+    {
+      "id": "market-integrity",
+      "path": "/en/market-integrity",
+      "selector": "main"
+    },
+    {
+      "id": "error-state",
+      "path": "/en/__visual-regression__/error",
+      "selector": ".pass2007-error-shell",
+      "expectedErrorState": true
+    },
+    {
+      "id": "loading-state",
+      "path": "/en/__visual-regression__/loading",
+      "selector": "[data-velmere-route-loading=\"true\"]",
+      "loadingState": true
+    }
   ]
 }
