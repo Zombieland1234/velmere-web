@@ -60,7 +60,31 @@ async function installObservationHooks(page) {
         for (const entry of list.getEntries()) {
           if (!entry.hadRecentInput) {
             window.__c14P27LayoutShift += entry.value;
-            window.__c14P27LayoutShiftEntries.push({ value: entry.value, startTime: entry.startTime });
+            const rect = (value) => value ? ({
+              x: value.x,
+              y: value.y,
+              width: value.width,
+              height: value.height,
+              top: value.top,
+              right: value.right,
+              bottom: value.bottom,
+              left: value.left
+            }) : null;
+            window.__c14P27LayoutShiftEntries.push({
+              value: entry.value,
+              startTime: entry.startTime,
+              sources: Array.from(entry.sources || []).slice(0, 12).map((source) => {
+                const node = source.node;
+                return {
+                  node: node instanceof Element ? node.tagName.toLowerCase() : null,
+                  id: node instanceof Element ? node.id || null : null,
+                  className: node instanceof Element && typeof node.className === "string" ? node.className.slice(0, 180) : null,
+                  text: node instanceof HTMLElement ? (node.innerText || "").replace(/\s+/g, " ").trim().slice(0, 120) : null,
+                  previousRect: rect(source.previousRect),
+                  currentRect: rect(source.currentRect)
+                };
+              })
+            });
           }
         }
       });
