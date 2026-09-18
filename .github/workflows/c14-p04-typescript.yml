@@ -37,6 +37,11 @@ jobs:
         run: |
           set -o pipefail
           npm run typecheck:c14 2>&1 | tee /tmp/c14-typescript.log
+      - name: Unsafe JSON boundary regressions
+        run: |
+          set -o pipefail
+          node_modules/.bin/tsx --test scripts/c14/unsafe-json-boundary.test.ts \
+            2>&1 | tee /tmp/c14-unsafe-json-boundary.log
       - name: Runtime regressions for previously uncovered C6/C7 TypeScript
         run: |
           set -o pipefail
@@ -70,6 +75,7 @@ jobs:
             /tmp/c14-typescript-risk.log
             /tmp/c14-declarations.log
             /tmp/c14-typescript.log
+            /tmp/c14-unsafe-json-boundary.log
             /tmp/c14-c6-c7-regressions.log
             /tmp/c14-c6-engine-observations.log
             /tmp/c14-engine-observations

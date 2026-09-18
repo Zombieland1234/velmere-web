@@ -35,6 +35,14 @@ const ROLE_SCOPES: Record<VelmereAdminRole, VelmereAdminScope[]> = {
   viewer: ["product:read", "order:read", "audit:read"],
 };
 
+function isAdminRole(value: unknown): value is VelmereAdminRole {
+  return typeof value === "string" && Object.prototype.hasOwnProperty.call(ROLE_SCOPES, value);
+}
+
+function isAdminScope(value: unknown): value is VelmereAdminScope {
+  return typeof value === "string" && Object.values(ROLE_SCOPES).some((scopes) => scopes.includes(value as VelmereAdminScope));
+}
+
 function base64url(value: string) {
   return Buffer.from(value).toString("base64url");
 }
@@ -54,13 +62,33 @@ function parseSessionToken(token: string, secret: string): VelmereAdminSession |
   if (!payload64 || !signature) return null;
   const expected = sign(payload64, secret);
   if (!safeEqual(signature, expected)) return null;
-  const parsed = JSON.parse(Buffer.from(payload64, "base64url").toString("utf8")) as Partial<VelmereAdminSession>;
-  if (parsed.schemaVersion !== "velmere.admin-session.v1") return null;
-  if (!parsed.actorId || !parsed.role || !parsed.expiresAt || !parsed.issuedAt || !parsed.sessionId) return null;
-  if (!ROLE_SCOPES[parsed.role]) return null;
-  if (Date.now() > parsed.expiresAt) return null;
-  const scopes = Array.from(new Set([...(parsed.scopes ?? []), ...ROLE_SCOPES[parsed.role]])).filter((scope): scope is VelmereAdminScope => ROLE_SCOPES[parsed.role as VelmereAdminRole].includes(scope as VelmereAdminScope));
-  return { schemaVersion: "velmere.admin-session.v1", actorId: parsed.actorId, email: parsed.email, role: parsed.role, scopes, issuedAt: parsed.issuedAt, expiresAt: parsed.expiresAt, sessionId: parsed.sessionId };
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(Buffer.from(payload64, "base64url").toString("utf8"));
+  } catch {
+    return null;
+  }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
+  const value = parsed as Record<string, unknown>;
+  if (value.schemaVersion !== "velmere.admin-session.v1") return null;
+  if (typeof value.actorId !== "string" || !value.actorId) return null;
+  if (!isAdminRole(value.role)) return null;
+  if (typeof value.expiresAt !== "number" || typeof value.issuedAt !== "number" || typeof value.sessionId !== "string" || !value.sessionId) return null;
+  if (value.email !== undefined && typeof value.email !== "string") return null;
+  if (value.scopes !== undefined && !Array.isArray(value.scopes)) return null;
+  if (Date.now() > value.expiresAt) return null;
+  const suppliedScopes = Array.isArray(value.scopes) ? value.scopes.filter(isAdminScope) : [];
+  const scopes = Array.from(new Set([...suppliedScopes, ...ROLE_SCOPES[value.role]]));
+  return {
+    schemaVersion: "velmere.admin-session.v1",
+    actorId: value.actorId,
+    email: value.email,
+    role: value.role,
+    scopes,
+    issuedAt: value.issuedAt,
+    expiresAt: value.expiresAt,
+    sessionId: value.sessionId,
+  };
 }
 
 export function createAdminSessionTokenForServerTest(input: { actorId: string; role: VelmereAdminRole; email?: string; ttlMs?: number }) {
