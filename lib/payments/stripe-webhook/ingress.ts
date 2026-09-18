@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { resolveRequestCorrelationId, withRequestCorrelation } from "@/lib/observability/request-correlation";
+import { writeOperationalEvent } from "@/lib/security/operational-log-boundary";
 import type Stripe from "stripe";
 import { appendOrderEvent } from "@/lib/orders/order-event-ledger";
 import {
@@ -210,6 +212,7 @@ async function applyOrdering(
 async function processStripeWebhookRequest(
   req: Request,
   dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
+  correlationId?: string,
 ) {
   const paymentGuard = dependencies.validateBoundary(req);
   if (!paymentGuard.ok) return paymentGuard.response;
@@ -342,6 +345,16 @@ async function processStripeWebhookRequest(
           { status: 500, headers: { "retry-after": "10" } },
         );
       }
+      writeOperationalEvent({
+        level: "error",
+        system: "stripe",
+        event: "webhook_dead_lettered",
+        code: "webhook_effect_dead_lettered",
+        correlationId,
+        metrics: { attempt: claim.attempt },
+        identifiers: { eventId: event.id, eventType: event.type },
+        error,
+      });
       return NextResponse.json(
         {
           received: false,
@@ -360,6 +373,16 @@ async function processStripeWebhookRequest(
     } catch {
       // Stripe will retry the original event.
     }
+    writeOperationalEvent({
+      level: "warn",
+      system: "stripe",
+      event: "webhook_retry_scheduled",
+      code: "webhook_processing_retryable",
+      correlationId,
+      metrics: { attempt: claim.attempt },
+      identifiers: { eventId: event.id, eventType: event.type },
+      error,
+    });
     return NextResponse.json(
       {
         received: false,
@@ -382,14 +405,26 @@ export async function handleStripeWebhookRequest(
   req: Request,
   dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
 ): Promise<Response> {
+  const correlationId = resolveRequestCorrelationId(req);
   try {
-    return await processStripeWebhookRequest(req, dependencies);
-  } catch {
-    // Do not log request bodies, signatures, tokens or raw downstream errors.
-    console.error("[velmere.webhook] dependency_unavailable");
-    return NextResponse.json({ received: false, retryable: true, error: "webhook_temporarily_unavailable" }, {
-      status: 503,
-      headers: { "cache-control": "no-store", "x-content-type-options": "nosniff", "retry-after": "10" },
+    const response = await processStripeWebhookRequest(req, dependencies, correlationId);
+    return withRequestCorrelation(response, correlationId);
+  } catch (error) {
+    // Never log request bodies, signatures, tokens, URLs or raw downstream messages.
+    writeOperationalEvent({
+      level: "error",
+      system: "stripe",
+      event: "webhook_dependency_unavailable",
+      code: "webhook_temporarily_unavailable",
+      correlationId,
+      error,
     });
+    return withRequestCorrelation(NextResponse.json(
+      { received: false, retryable: true, error: "webhook_temporarily_unavailable" },
+      {
+        status: 503,
+        headers: { "cache-control": "no-store", "x-content-type-options": "nosniff", "retry-after": "10" },
+      },
+    ), correlationId);
   }
 }
