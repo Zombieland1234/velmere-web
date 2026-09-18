@@ -28,7 +28,7 @@ jobs:
       - name: Install Velmere dependencies
         run: npm install --ignore-scripts --no-audit --no-fund
 
-      - name: Install Foundry
+      - name: Install Foundry bootstrap
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: stable
@@ -44,8 +44,10 @@ jobs:
 
       - name: Pin Across Foundry toolchain and compile
         run: |
+          export PATH="$HOME/.config/.foundry/bin:$HOME/.foundry/bin:$PATH"
           cd /tmp/across-contracts
           yarn pin-foundry
+          forge --version
           yarn build-evm-foundry
 
       - name: Locate SpokePoolPeriphery artifact
@@ -59,7 +61,10 @@ jobs:
       - name: Run Velmere ADVANCED audit
         run: |
           mkdir -p artifacts/bounty
-          npx tsx scripts/bounty/run-across-spokeperiphery.ts             /tmp/across-contracts/contracts/periphery/SpokePoolPeriphery.sol             "${{ steps.artifact.outputs.path }}"             artifacts/bounty/across-spokeperiphery-velmere.json
+          npx tsx scripts/bounty/run-across-spokeperiphery.ts \
+            /tmp/across-contracts/contracts/periphery/SpokePoolPeriphery.sol \
+            "${{ steps.artifact.outputs.path }}" \
+            artifacts/bounty/across-spokeperiphery-velmere.json
 
       - name: Emit compact finding summary
         run: |
