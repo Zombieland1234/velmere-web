@@ -42,9 +42,15 @@ export async function POST(request: Request) {
   if (!parsedBody.ok) return parsedBody.response;
 
   const preview = createAdminAuditWritePreview(parsedBody.value);
+  const {
+    sessionPreview: _sessionPreview,
+    permissionPreview: _permissionPreview,
+    idempotencyPreview: _idempotencyPreview,
+    ...publicPreview
+  } = preview;
   return jsonResponse(
     {
-      ...preview,
+      ...publicPreview,
       route: "/api/admin/audit-events",
       mode: "locked-contract-preview",
       storageWritePerformed: false,
