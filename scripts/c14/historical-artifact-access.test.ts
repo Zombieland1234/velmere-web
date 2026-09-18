@@ -6,7 +6,18 @@ import {
 } from "@/lib/reporting/historical-customer-artifact-access";
 import { hashVelmereAccountBinding } from "@/lib/auth/account-session";
 import type { AccountCustomerArtifactSnapshot } from "@/lib/reporting/account-customer-artifact-snapshot";
-import { evaluateVlmPaidEntitlementLifecycleTransition, isVlmPaidEntitlementPrivileged } from "@/lib/commerce/vlm-entitlement-lifecycle";
+import {
+  applyVlmPaidEntitlementLifecycleEvent,
+  evaluateVlmPaidEntitlementLifecycleTransition,
+  isVlmPaidEntitlementPrivileged,
+} from "@/lib/commerce/vlm-entitlement-lifecycle";
+import {
+  clearMemoryEntitlements,
+  seedMemoryEntitlementRecord,
+  verifyVlmPaidAccountEntitlement,
+} from "@/lib/commerce/vlm-entitlement-ledger";
+import { hashVlmPaidAccessContext } from "@/lib/commerce/vlm-paid-access-server";
+import { normalizePaidContext } from "@/lib/commerce/vlm-paid-access";
 
 const access=(requiredTier:"basic"|"pro"|"advanced",currentTier:"basic"|"pro"|"advanced",ownerMatches=true)=>
   evaluateHistoricalArtifactAccess({ownerMatches,requiredTier,currentTier,paidPolicyDefined:true});
@@ -87,4 +98,58 @@ test("runtime authorizer binds the immutable snapshot to account A, not account 
   });
   assert.equal(currentOwner.allowed, true);
   assert.equal(currentOwner.reason, "current_entitlement_sufficient");
+});
+
+
+test("real memory ledger stops authorizing the same paid grant after refund/revoke", async () => {
+  const accountIdHash = hashVelmereAccountBinding("ledger-account");
+  const context = normalizePaidContext({ accountIdHash, auditCaseRef: "AUD-LEDGER01" }, "en");
+  const contextHash = hashVlmPaidAccessContext(context);
+  const future = new Date(Date.now() + 86_400_000).toISOString();
+  const now = new Date().toISOString();
+
+  for (const event of ["refund", "manual_revoke"] as const) {
+    clearMemoryEntitlements();
+    const entitlementId = "ent-c14-" + event;
+    seedMemoryEntitlementRecord({
+      id: entitlementId,
+      stripeSessionId: "cs_test_c14_" + event,
+      stripeCustomerId: "cus_test_c14",
+      productId: "vlm_advanced_audit_human_review",
+      accessScope: "audit_advanced_analysis",
+      status: "active",
+      contextHash,
+      context,
+      locale: "en",
+      amountTotal: 0,
+      currency: "eur",
+      paymentStatus: "paid",
+      source: "local_demo_verify",
+      createdAt: now,
+      updatedAt: now,
+      expiresAt: future,
+      auditQueueId: null,
+    });
+
+    const before = await verifyVlmPaidAccountEntitlement({
+      productId: "vlm_advanced_audit_human_review",
+      context,
+    });
+    assert.equal(before.ok, true, event + " precondition");
+
+    const transition = await applyVlmPaidEntitlementLifecycleEvent({
+      entitlementId,
+      eventId: "evt-c14-" + event,
+      event,
+      now: new Date(),
+    });
+    assert.equal(transition.ok, true, event + " transition");
+
+    const after = await verifyVlmPaidAccountEntitlement({
+      productId: "vlm_advanced_audit_human_review",
+      context,
+    });
+    assert.equal(after.ok, false, event + " must remove current paid authority");
+  }
+  clearMemoryEntitlements();
 });
