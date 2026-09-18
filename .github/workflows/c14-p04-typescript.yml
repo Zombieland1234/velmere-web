@@ -1,0 +1,43 @@
+name: C14 P04 TypeScript full-source qualification
+on:
+  push:
+    branches: [parallel/c14-p04-typescript]
+permissions:
+  contents: read
+concurrency:
+  group: c14-p04-typescript
+  cancel-in-progress: true
+jobs:
+  typescript:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0, persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Install exact dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts --no-fund
+      - name: Audit tracked TypeScript coverage
+        run: node scripts/c14/typecheck-coverage.mjs | tee /tmp/c14-typescript-coverage.log
+      - name: Audit TypeScript escape hatches and boundary risk
+        run: node scripts/c14/typescript-risk-audit.mjs --json=/tmp/c14-typescript-risk.json | tee /tmp/c14-typescript-risk.log
+      - name: Strict TypeScript over all tracked TS/TSX/MTS/CTS
+        run: npm run typecheck:c14 2>&1 | tee /tmp/c14-typescript.log
+      - name: Existing production build gate
+        run: npm run build 2>&1 | tee /tmp/c14-build.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p04-typescript-${{ github.run_id }}
+          path: |
+            /tmp/c14-typescript-coverage.log
+            /tmp/c14-typescript-risk.json
+            /tmp/c14-typescript-risk.log
+            /tmp/c14-typescript.log
+            /tmp/c14-build.log
+          retention-days: 14
+          if-no-files-found: warn

@@ -263,6 +263,7 @@
     "intake:evidence:a47": "node scripts/a47-evidence-intake.mjs",
     "intake:independent-retest:a55": "node scripts/a55-independent-retest-legal-customer-release-acceptance.mjs",
     "intake:out-of-time-observation:a56": "node scripts/a56-out-of-time-slo-vendor-exit-observation-acceptance.mjs",
+    "typecheck:c14": "node scripts/c14/typecheck.mjs",
     "lint": "eslint .",
     "lint:direct": "eslint . --max-warnings 0",
     "manifest:pass26": "node scripts/pass26/build-package-payload-manifest.mjs",
