@@ -3,19 +3,13 @@ import { canonicalJson } from "@/lib/security/canonical-json";
 import { sha256Digest, sha256BytesDigest } from "@/lib/security/cryptographic-digest";
 import { resolveContractAuditProfile, BENCHMARK_50_CONTRACTS } from "@/lib/security/contract-audit-profiles";
 import { MASTER_INSTITUTIONAL_PROFILES } from "@/lib/security/benchmarks/institutional-asset-profiles";
-import {
-  planCustomerSafePdf,
-  buildCustomerSafeMinimalPdf,
-  type CustomerSafePdfOptions,
-} from "@/lib/security/pro-audit-pdf/customer-safe-renderer";
+import { planCustomerSafePdf, buildCustomerSafeMinimalPdf, type CustomerSafePdfOptions } from "@/lib/security/pro-audit-pdf/customer-safe-renderer";
 import { resolveAssetClass } from "@/lib/security/asset-class-firewall";
 import { lintCanonicalReport, ReportSemanticViolationError } from "@/lib/security/report-semantic-linter";
 import { resolveSecurityEngine, type CanonicalAssetIdentity } from "@/lib/security/engines";
 import { assertZeroMockLeakage } from "@/lib/security/mock-leakage-guard";
 import { buildAuditMerkleCommitment } from "@/lib/security/audit-merkle-commitment";
 import { signReportWithPki, type ReportPkiAttestation } from "@/lib/security/audit-pki-signature";
-import { lintPdfForPdfA2b } from "@/lib/security/pdf-a2b-linter";
-
 export type AuditTier = "basic" | "pro" | "advanced";
 
 export type AuditReportFindingSeverity = "critical" | "high" | "medium" | "low" | "informational";

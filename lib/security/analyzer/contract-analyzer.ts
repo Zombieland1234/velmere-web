@@ -6,16 +6,7 @@
 
 import { createHash } from "node:crypto";
 import { createEvidenceRecord, type EvidenceRecord } from "../evidence/evidence-record.ts";
-import {
-  attachVelmereTop5Detectors,
-  runVelmereTop5Detectors,
-  type CanonicalFinding,
-  type AstNode as CompilerAstNode,
-  type NetworkContext,
-  type RuleId,
-  type FindingStatus as Top5FindingStatus,
-} from "./vlm-top5-detectors.ts";
-
+import { attachVelmereTop5Detectors, type CanonicalFinding, type AstNode as CompilerAstNode } from "./vlm-top5-detectors.ts";
 export interface AstFunction {
   name: string;
   visibility: "public" | "external" | "internal" | "private";

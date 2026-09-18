@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Activity, ArrowDownRight, ArrowUpRight, CheckCircle2, ChevronRight, Layers, Radio, Sparkles, TrendingUp, Zap } from "lucide-react";
-
+import { Activity, ArrowDownRight, ArrowUpRight, CheckCircle2, Radio } from "lucide-react";
 type Locale = "pl" | "en" | "de";
 type AssetSymbol = "BTC" | "ETH" | "SOL" | "VLM";
 

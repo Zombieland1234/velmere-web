@@ -1,4 +1,3 @@
-import { publicApiError } from "@/lib/security/api-error-envelope";
 import { NextResponse } from "next/server";
 import { searchCoinGeckoMarket } from "@/lib/market-integrity/coingecko";
 import { analyzeDexScreenerToken } from "@/lib/market-integrity/dexscreener";
@@ -12,11 +11,7 @@ import { enforceLegacyRiskPublicationTruth } from "@/lib/market-integrity/legacy
 import { parseShieldMapQuery, shieldMapTierState, verifyShieldMapResolvedIdentity } from "@/lib/market-integrity/shield-map-query-boundary";
 import type { ShieldMapQuery } from "@/lib/market-integrity/shield-map-query-boundary";
 import type { TokenRiskResult } from "@/lib/market-integrity/risk-types";
-import {
-  buildShieldBasicDeliveryPreflight,
-  projectShieldBasicCustomerDelivery,
-} from "@/lib/market-integrity/shield-basic-delivery-policy";
-
+import { buildShieldBasicDeliveryPreflight, projectShieldBasicCustomerDelivery } from "@/lib/market-integrity/shield-basic-delivery-policy";
 type ErrorPayload = { mode: "error"; error: string };
 
 export type ShieldMapIdentityBoundEffects = {
@@ -45,13 +40,8 @@ const DEFAULT_RESOLUTION_PROVIDERS: ShieldMapResolutionProviders = {
   analyzeAddress: analyzeDexScreenerToken,
 };
 
-import {
-  attachPass4644ProviderReceipts,
-  createPass4644ProviderEvidenceReceipt,
-  pass4644CanonicalReceiptDigest,
-} from "@/lib/market-integrity/provider-evidence-receipt";
+import { attachPass4644ProviderReceipts, createPass4644ProviderEvidenceReceipt, pass4644CanonicalReceiptDigest } from "@/lib/market-integrity/provider-evidence-receipt";
 import { analyzeTokenRisk } from "@/lib/market-integrity/risk-engine";
-
 const CANONICAL_FALLBACK_ASSETS: Record<string, { id: string; symbol: string; name: string; price: number; rank: number; volume24h: number; marketCap: number; priceChange24h: number }> = {
   btc: { id: "bitcoin", symbol: "BTC", name: "Bitcoin", price: 92450, rank: 1, volume24h: 38_500_000_000, marketCap: 1_820_000_000_000, priceChange24h: 2.45 },
   bitcoin: { id: "bitcoin", symbol: "BTC", name: "Bitcoin", price: 92450, rank: 1, volume24h: 38_500_000_000, marketCap: 1_820_000_000_000, priceChange24h: 2.45 },

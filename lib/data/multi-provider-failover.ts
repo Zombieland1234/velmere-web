@@ -4,8 +4,7 @@
  * Invariant: TRUTH OVER COVERAGE. Never hallucinate data on provider failure.
  */
 
-import { FieldObservationAttempt, FieldCompletenessDiagnosis, diagnoseFieldCompleteness } from "./completeness-root-cause-engine";
-
+import { FieldObservationAttempt } from "./completeness-root-cause-engine";
 export interface ProviderQueryConfig<T> {
   providerName: string;
   fetcher: () => Promise<T>;

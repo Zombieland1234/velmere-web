@@ -1,19 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  Activity,
-  ArrowRight,
-  CheckCircle2,
-  Database,
-  FileCheck2,
-  Lock,
-  Scale,
-  Shield,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
-
+import { Activity, Database, FileCheck2, Scale, ShieldCheck } from "lucide-react";
 type Stage = {
   id: string;
   step: string;

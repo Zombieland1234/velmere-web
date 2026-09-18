@@ -1,8 +1,7 @@
 "use client";
 
-import { AlertTriangle, CheckCircle2, Clock, Info, ShieldAlert, ShieldCheck } from "lucide-react";
+import { Clock, ShieldCheck } from "lucide-react";
 import { type AssessmentValidityState, type InvalidationReason } from "@/lib/security/audit-validity-engine";
-
 type AuditValidityBadgeProps = {
   validity: AssessmentValidityState;
   reason?: InvalidationReason;

@@ -7,66 +7,23 @@
 "use client";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { normalizeSafeExternalBrowserUrl } from "@/lib/security/browser-external-navigation";
-import {
-  buildSafeClientPdfFilename,
-  createClientPdfObjectUrl,
-  parseLensPdfAccountArtifactBinding,
-  verifyLensPdfAccountArtifactReadback,
-  verifyLensPdfResponseBytes,
-  type ClientPdfAccountArtifactReadback,
-} from "@/lib/security/client-pdf-blob-boundary";
-import {
-  createCustomerAuthRefreshBudget,
-  fetchWithCustomerAuth,
-} from "@/lib/auth/customer-auth-fetch";
-
-import {
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type ChangeEvent as ReactChangeEvent,
-  type FormEvent,
-  type KeyboardEvent as ReactKeyboardEvent,
-  type MouseEvent as ReactMouseEvent,
-  type PointerEvent as ReactPointerEvent,
-  type ReactNode,
-} from "react";
-import {
-  Brain,
-  Download,
-  FileText,
-  Loader2,
-  Search,
-  Shield,
-  X,
-} from "lucide-react";
+import { buildSafeClientPdfFilename, createClientPdfObjectUrl, parseLensPdfAccountArtifactBinding, verifyLensPdfAccountArtifactReadback, verifyLensPdfResponseBytes, type ClientPdfAccountArtifactReadback } from "@/lib/security/client-pdf-blob-boundary";
+import { createCustomerAuthRefreshBudget, fetchWithCustomerAuth } from "@/lib/auth/customer-auth-fetch";
+import { useDeferredValue, useEffect, useMemo, useRef, useState, type ChangeEvent as ReactChangeEvent, type FormEvent, type KeyboardEvent as ReactKeyboardEvent, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
+import { Brain, Download, FileText, Loader2, Search, Shield, X } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
-import PremiumAmbientGlobe from "@/components/ui/PremiumAmbientGlobe";
 import VelmereLuxuryShield from "@/components/ui/VelmereLuxuryShield";
 import { useModalScrollLock } from "@/components/ui/useModalScrollLock";
 import { useDialogFocusBoundary } from "@/components/ui/useDialogFocusBoundary";
 import { pass628LayerStyle } from "@/lib/ui/pass628-overlay-constitution";
-import {
-  sourceEvidenceCoverageScore,
-  type VelmereSearchMode,
-  type VelmereSearchResult,
-} from "@/lib/search/intelligence-search-contract";
-import {
-  resolveLensReportLocale,
-  type LensReport,
-  type LensReportDepth,
-} from "@/lib/search/lens-report";
+import { sourceEvidenceCoverageScore, type VelmereSearchMode, type VelmereSearchResult } from "@/lib/search/intelligence-search-contract";
+import { resolveLensReportLocale, type LensReport, type LensReportDepth } from "@/lib/search/lens-report";
 import { buildPass451PdfExactPreview } from "@/lib/market-integrity/pass451-pdf-exact-preview-runtime";
 import { buildPass454EvidenceDenseHumanAnalysis } from "@/lib/market-integrity/pass454-evidence-dense-human-analysis-runtime";
 import { buildPass455HumanDecisionPdfForge } from "@/lib/market-integrity/pass455-human-decision-pdf-forge-runtime";
 import { buildPass486PdfForgeIntelligence } from "@/lib/market-integrity/pass486-pdf-forge-intelligence";
 import type { Pass488PageId } from "@/lib/market-integrity/pass488-a4-decision-cockpit";
-import {
-  pass494A4ReaderNavigation,
-  pass494ReaderProgress,
-} from "@/lib/market-integrity/pass494-a4-reader-navigation";
+import { pass494A4ReaderNavigation, pass494ReaderProgress } from "@/lib/market-integrity/pass494-a4-reader-navigation";
 import { buildPass499A4ReaderHealth } from "@/lib/market-integrity/pass499-a4-reader-health";
 import { buildPass505PdfPageBreakAudit } from "@/lib/market-integrity/pass505-pdf-page-break-audit";
 import { buildPass512ReportIntegritySeal } from "@/lib/market-integrity/pass512-report-integrity-seal";
@@ -76,84 +33,20 @@ import { buildPass533TypesettingAudit } from "@/lib/market-integrity/pass533-pdf
 import { buildPass539PdfPageRhythm } from "@/lib/market-integrity/pass539-pdf-page-rhythm";
 import { buildPass547PdfVisualReleaseAudit } from "@/lib/market-integrity/pass547-pdf-visual-release-audit";
 import { buildPass466ConfidenceWaterfall } from "@/lib/market-integrity/pass466-confidence-waterfall";
-import {
-  buildPass468HandoffHref,
-  buildPass468HandoffPacket,
-  purgeLegacyPass468HandoffStorage,
-  type Pass468HandoffTarget,
-} from "@/lib/market-integrity/pass468-browser-shield-orbit-handoff";
-import {
-  buildPass469PdfDownloadReceipt,
-  readPass469PdfDownloadReceipts,
-  writePass469PdfDownloadReceipt,
-  type Pass469PdfDownloadReceipt,
-} from "@/lib/market-integrity/pass469-pdf-a4-download-receipt";
-
-import {
-  auditPass470KeyboardFlow,
-  buildPass470ReceiptHistory,
-  buildPass470RuntimeGuard,
-  type Pass470ReceiptHistory,
-  type Pass470ReceiptHistoryItem,
-} from "@/lib/market-integrity/pass470-browser-runtime-qa";
-import {
-  buildPass579ExactSearchReceipt,
-  type Pass579ExactSearchReceipt,
-} from "@/lib/search/pass579-exact-search-receipt";
+import { buildPass468HandoffHref, buildPass468HandoffPacket, purgeLegacyPass468HandoffStorage, type Pass468HandoffTarget } from "@/lib/market-integrity/pass468-browser-shield-orbit-handoff";
+import { buildPass469PdfDownloadReceipt, readPass469PdfDownloadReceipts, writePass469PdfDownloadReceipt, type Pass469PdfDownloadReceipt } from "@/lib/market-integrity/pass469-pdf-a4-download-receipt";
+import { auditPass470KeyboardFlow, buildPass470ReceiptHistory, buildPass470RuntimeGuard, type Pass470ReceiptHistory, type Pass470ReceiptHistoryItem } from "@/lib/market-integrity/pass470-browser-runtime-qa";
+import { buildPass579ExactSearchReceipt, type Pass579ExactSearchReceipt } from "@/lib/search/pass579-exact-search-receipt";
 import { getVlmPaidProduct, type VlmPaidAccessContext } from "@/lib/commerce/pass2024-vlm-paid-access";
 import { getVlmCurrentSkuTruth } from "@/lib/commerce/vlm-current-sku-truth";
 import { readVlmPaidAccessToken, startVlmServiceCheckout } from "@/lib/commerce/pass2024-vlm-paid-access-client";
-import {
-  pass35PaidUiStopSellCopy,
-  resolvePass35PaidUiStopSell,
-} from "@/lib/commerce/pass35-paid-ui-stop-sell";
-import {
-  LENS_SINGLE_RESULT_LIMIT,
-  normalizeCanonicalReportResponse,
-  normalizeClientSearchResponse,
-  normalizeClientSearchResults,
-  safeClientText,
-  selectLensDetailResult,
-} from "@/lib/search/pass4407-lens-client-normalizers";
-
-import {
-  buildPublicLensEvidenceRows,
-  buildCompactBrowserMarketMetrics,
-  buildOfficialReferenceDisplay,
-  compactBrowserPreviewCopy,
-  formatSnapshotMoney,
-  formatSnapshotPercent,
-  isCompactBrowserAssetResult,
-  lensToneClass,
-  pass4153LensDepthDescription,
-  pass4153LensDepthLabel,
-  publicEvidenceStateClass,
-  publicEvidenceStateLabel,
-  publicKernelLabel,
-  publicKernelStatus,
-  publicPdfMetricLabel,
-  reportSection,
-  type Pass4153LensDepthDescriptionMap,
-  type Pass4153LensDepthLabelMap,
-} from "@/lib/search/pass4415-lens-public-report-helpers";
-import {
-  lensPublicEvidenceLimitsTitle,
-  lensPublicEvidenceWaterfallTitle,
-} from "@/lib/search/lens-confidence-publication";
-import {
-  PASS4416_LENS_LOCALE_COPY as copy,
-  PASS4416_LENS_PDF_DEPTH_ORDER as pdfDepthOrder,
-  buildPass4416LensCommandPrompts,
-} from "@/lib/search/pass4416-lens-locale-copy";
-
-import {
-  nextPass4417LensCommandPromptState,
-  pass4417LensCommandPromptDelay,
-  pass4417LensReaderHealthLabel,
-  type Pass4417LensCommandPromptState,
-} from "@/lib/search/pass4417-lens-reader-runtime-helpers";
+import { pass35PaidUiStopSellCopy, resolvePass35PaidUiStopSell } from "@/lib/commerce/pass35-paid-ui-stop-sell";
+import { LENS_SINGLE_RESULT_LIMIT, normalizeCanonicalReportResponse, normalizeClientSearchResponse, normalizeClientSearchResults, safeClientText, selectLensDetailResult } from "@/lib/search/pass4407-lens-client-normalizers";
+import { buildPublicLensEvidenceRows, buildCompactBrowserMarketMetrics, buildOfficialReferenceDisplay, compactBrowserPreviewCopy, formatSnapshotMoney, formatSnapshotPercent, isCompactBrowserAssetResult, lensToneClass, pass4153LensDepthDescription, pass4153LensDepthLabel, publicEvidenceStateClass, publicEvidenceStateLabel, publicKernelLabel, publicKernelStatus, publicPdfMetricLabel, reportSection, type Pass4153LensDepthDescriptionMap, type Pass4153LensDepthLabelMap } from "@/lib/search/pass4415-lens-public-report-helpers";
+import { lensPublicEvidenceLimitsTitle, lensPublicEvidenceWaterfallTitle } from "@/lib/search/lens-confidence-publication";
+import { PASS4416_LENS_LOCALE_COPY as copy, PASS4416_LENS_PDF_DEPTH_ORDER as pdfDepthOrder, buildPass4416LensCommandPrompts } from "@/lib/search/pass4416-lens-locale-copy";
+import { nextPass4417LensCommandPromptState, pass4417LensCommandPromptDelay, pass4417LensReaderHealthLabel, type Pass4417LensCommandPromptState } from "@/lib/search/pass4417-lens-reader-runtime-helpers";
 import { nextLensSuggestionKeyboardDecision } from "@/lib/search/lens-suggestion-keyboard";
-
 // PASS4154 Lens legacy boundary cleanup: PDF reader rows are narrowed to LensReport-derived types.
 // PASS4149 Lens preview narrowing: PDF forge progress and reader dialog events now use concrete stage/event boundaries.
 const RENDER_LEGACY_PDF_CAPSULE: boolean = false;

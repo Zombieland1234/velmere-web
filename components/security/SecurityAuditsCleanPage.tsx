@@ -2,36 +2,14 @@
 
 import { fetchWithDeadline, readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { assertCheckoutRedirectUrl } from "@/lib/security/navigation-redirect-boundary";
-import { pass35PaidUiStopSellCopy, resolvePass35PaidUiStopSell } from "@/lib/commerce/pass35-paid-ui-stop-sell";
-
+import { resolvePass35PaidUiStopSell } from "@/lib/commerce/pass35-paid-ui-stop-sell";
 import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  AlertCircle,
-  ArrowRight,
-  Calculator,
-  Check,
-  CheckCircle2,
-  ChevronDown,
-  ChevronRight,
-  CircleCheck,
-  CreditCard,
-  ExternalLink,
-  FileSearch,
-  Loader2,
-  LockKeyhole,
-  Search,
-  ShieldCheck,
-  Sparkles,
-  X,
-} from "lucide-react";
+import { AlertCircle, ArrowRight, Check, CheckCircle2, ChevronDown, ChevronRight, CircleCheck, CreditCard, ExternalLink, FileSearch, Loader2, LockKeyhole, Search, ShieldCheck, Sparkles, X } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
 import { useModalScrollLock } from "@/components/ui/useModalScrollLock";
-import AuditPaidPreviewModal from "@/components/security/AuditPaidPreviewModal";
 import HowRiskIsCalculatedModal from "@/components/security/HowRiskIsCalculatedModal";
 import type { AuditPaidTierPreview } from "@/lib/security/audit-tier-preview";
 import { rememberAuditCaseRef } from "@/lib/security/audit-case-client-registry";
-
-
 type Locale = "pl" | "en" | "de";
 type TierId = "basic" | "pro" | "advanced";
 type IntakeUiState = "idle" | "submitting" | "checkout" | "success" | "error" | "account_required";

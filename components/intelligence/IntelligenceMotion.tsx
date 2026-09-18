@@ -3,24 +3,9 @@
 import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import {
-  Activity,
-  BookOpenCheck,
-  Check,
-  CircleDot,
-  Database,
-  Info,
-  Layers,
-  RefreshCw,
-  Sparkles,
-  TrendingDown,
-  TrendingUp,
-  X,
-  Zap,
-} from "lucide-react";
+import { BookOpenCheck, Check, CircleDot, Database, Info, Layers, RefreshCw, Sparkles, TrendingDown, TrendingUp, X, Zap } from "lucide-react";
 import type { IntelligenceTier } from "./IntelligenceInteractive";
 import styles from "./IntelligenceLuxury.module.css";
-
 type TierId = IntelligenceTier["id"];
 
 export type SqueezeExperienceCopy = {

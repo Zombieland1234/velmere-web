@@ -2,35 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-  AlertTriangle,
-  ArrowRight,
-  Check,
-  CheckCircle2,
-  ChevronDown,
-  ChevronUp,
-  Copy,
-  Download,
-  ExternalLink,
-  FileCheck2,
-  FileText,
-  Fingerprint,
-  Info,
-  Lock,
-  Shield,
-  ShieldAlert,
-  ShieldCheck,
-  Sparkles,
-  Terminal,
-} from "lucide-react";
-import type {
-  CanonicalAuditReportModel,
-  AuditTier,
-  CanonicalReportSection,
-  CanonicalFinding,
-} from "@/lib/security/audit-canonical-report";
-import Link from "next/link";
-
+import { AlertTriangle, Check, CheckCircle2, ChevronDown, ChevronUp, Copy, Download, FileText, Fingerprint, Sparkles } from "lucide-react";
+import type { CanonicalAuditReportModel, AuditTier, CanonicalReportSection } from "@/lib/security/audit-canonical-report";
 interface CanonicalAuditReportViewProps {
   report: CanonicalAuditReportModel;
   onUpgradeTier?: (tier: AuditTier) => void;

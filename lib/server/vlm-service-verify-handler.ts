@@ -1,49 +1,18 @@
 import { NextResponse } from "next/server";
-import {
-  applyApiRateLimit as applyPass2177SoftRateLimit,
-  assertSameOriginRequest as assertPass2177SameOriginRequest,
-  rejectLargeContentLength as rejectPass2177LargeContentLength,
-  securityJson,
-} from "@/lib/security/api-guard";
-import {
-  getVlmPaidProduct,
-  normalizePaidContext,
-  normalizeVlmPaidProductId,
-  type VlmPaidAccessContext,
-} from "@/lib/commerce/vlm-paid-access";
-import { getVlmCurrentSkuTruth, tierForVlmProductId } from "@/lib/commerce/vlm-current-sku-truth";
-import {
-  hashVlmPaidAccessContext,
-  isVlmLocalPaidAccessDemoEnabled,
-} from "@/lib/commerce/vlm-paid-access-server";
-import {
-  upsertVlmPaidEntitlementFromDemoReceipt,
-  upsertVlmPaidEntitlementFromStripeSession,
-} from "@/lib/commerce/vlm-entitlement-ledger";
+import { applyApiRateLimit as applyPass2177SoftRateLimit, assertSameOriginRequest as assertPass2177SameOriginRequest, rejectLargeContentLength as rejectPass2177LargeContentLength, securityJson } from "@/lib/security/api-guard";
+import { getVlmPaidProduct, normalizePaidContext, normalizeVlmPaidProductId, type VlmPaidAccessContext } from "@/lib/commerce/vlm-paid-access";
+import { hashVlmPaidAccessContext, isVlmLocalPaidAccessDemoEnabled } from "@/lib/commerce/vlm-paid-access-server";
+import { upsertVlmPaidEntitlementFromDemoReceipt, upsertVlmPaidEntitlementFromStripeSession } from "@/lib/commerce/vlm-entitlement-ledger";
 import { getStripeServerClient } from "@/lib/stripe/server";
 import { verifyVlmPaidStripeReceipt } from "@/lib/payments/vlm-paid-stripe-receipt-verifier";
-import {
-  isPaidAuditProduct,
-  promoteAuditCaseFromPaidEntitlement,
-  PASS4612_AUDIT_CHECKOUT_BINDING_ID,
-} from "@/lib/security/audit-intake-case-vault";
-import {
-  normalizeVlmServicePaymentRail,
-  PASS2364_STRIPE_BLIK_REPLAY_ID,
-} from "@/lib/checkout/stripe-blik-readiness";
+import { isPaidAuditProduct, promoteAuditCaseFromPaidEntitlement, PASS4612_AUDIT_CHECKOUT_BINDING_ID } from "@/lib/security/audit-intake-case-vault";
+import { normalizeVlmServicePaymentRail, PASS2364_STRIPE_BLIK_REPLAY_ID } from "@/lib/checkout/stripe-blik-readiness";
 import { recordPaymentRuntimeEvidence } from "@/lib/security/payment-runtime-evidence";
 import { storePaymentRuntimeEvidenceDurable } from "@/lib/security/durable-payment-evidence-store";
 import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
 import { hashVelmereAccountBinding, resolveRequestAccount } from "@/lib/auth/account-session";
-import {
-  buildVlmCheckoutProductionEnvContract,
-  redactVelmereEnvContractForPublic,
-} from "@/lib/security/production-env-contract";
-import {
-  verifyVlmCheckoutSessionMetadataBinding,
-  verifyVlmCheckoutVerificationBinding,
-} from "@/lib/commerce/vlm-checkout-verification-binding";
-
+import { buildVlmCheckoutProductionEnvContract, redactVelmereEnvContractForPublic } from "@/lib/security/production-env-contract";
+import { verifyVlmCheckoutSessionMetadataBinding, verifyVlmCheckoutVerificationBinding } from "@/lib/commerce/vlm-checkout-verification-binding";
 type VerifyBody = {
   sessionId?: unknown;
   productId?: unknown;

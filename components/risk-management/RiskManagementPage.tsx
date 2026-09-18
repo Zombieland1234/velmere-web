@@ -3,27 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Shield,
-  Layers,
-  Activity,
-  AlertTriangle,
-  Lock,
-  Cpu,
-  Database,
-  ArrowRight,
-  TrendingDown,
-  Scale,
-  Zap,
-  CheckCircle2,
-  FileCheck2,
-  Eye,
-  Sliders,
-  ChevronRight,
-  BarChart3,
-  ExternalLink,
-} from "lucide-react";
-
+import { Shield, Activity, Lock, Cpu, ArrowRight, CheckCircle2, FileCheck2, Sliders, BarChart3 } from "lucide-react";
 interface RiskManagementPageProps {
   locale: string;
 }

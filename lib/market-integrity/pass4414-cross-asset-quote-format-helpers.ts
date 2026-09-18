@@ -1,18 +1,7 @@
 // PASS4414 no-visual CrossAsset / Real Markets quote-format helper extraction.
 // Boundary: quote math, formatting and sparkline geometry only. No JSX, CSS, copy or visual behavior changes.
 
-import type {
-  Pass4413AssetCategory,
-  Pass4413CrossAssetCandle as Candle,
-  Pass4413CrossAssetQuote as Quote,
-  Pass4413RealMarketsAsset as Asset,
-} from "@/lib/market-integrity/pass4413-cross-asset-runtime-normalizers";
-import { hasServerVerifiedQuoteLiveGate } from "@/components/market-integrity/live-truth";
-import {
-  pass4574QuoteDisplayState,
-  pass4577CanShowPercent,
-} from "@/lib/market-integrity/pass4570-market-data-sanity";
-
+import type { Pass4413AssetCategory, Pass4413CrossAssetCandle as Candle, Pass4413CrossAssetQuote as Quote, Pass4413RealMarketsAsset as Asset } from "@/lib/market-integrity/pass4413-cross-asset-runtime-normalizers";
 export const PASS4414_CROSS_ASSET_QUOTE_FORMAT_HELPERS_BOUNDARY = {
   passId: "PASS4414",
   mode: "no_visual_crossasset_quote_format_helper_extraction",

@@ -1,23 +1,10 @@
 "use client";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { clearShieldMarketCatalogClientCache, fetchShieldProFullCatalog } from "@/lib/market-integrity/shield-pro-full-catalog-client";
-
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "@/navigation";
-import {
-  Activity,
-  ArrowUpDown,
-  BarChart3,
-  Crosshair,
-  Droplets,
-  FileCheck2,
-  Globe2,
-  Search,
-  ShieldCheck,
-  TrendingUp,
-  X,
-} from "lucide-react";
+import { Activity, ArrowUpDown, BarChart3, Crosshair, Droplets, FileCheck2, Globe2, Search, ShieldCheck, TrendingUp, X } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
 import AssetDetailModal, { type VlmAssetDetailModalData } from "@/components/market-integrity/AssetDetailModal";
 import AssetLogo from "@/components/market-integrity/AssetLogo";
@@ -25,31 +12,10 @@ import ShieldProMonochromeGlobe from "@/components/market-integrity/ShieldProMon
 import ShieldMetricExplainerModal from "@/components/market-integrity/ShieldMetricExplainerModal";
 import { VShieldPulse } from "@/components/motion/VelmereAnalysisMarks";
 import { normalizeConfidencePercent } from "@/lib/market-integrity/confidence-calibration";
-import {
-  dedupeMarketInstruments,
-  filterMarketInstruments,
-} from "@/lib/market-integrity/market-instrument-search";
-import {
-  shieldProAggregateMetricsAvailable,
-  shieldProCalibratedRiskConfidence,
-  shieldProFieldVerified,
-  shieldProModalMarketDataState,
-  shieldProModeAfterRefreshFailure,
-  shieldProPrimaryMarketSourceAsOf,
-  shieldProRiskVerified,
-  shieldProSourceLabel,
-  shieldProVerifiedProviders,
-  type ShieldProFeedMode,
-  type ShieldProPublicDelivery,
-} from "@/lib/market-integrity/shield-pro-customer-truth";
-import {
-  projectShieldProTableRow,
-  type ShieldProTableCustomerProjection,
-  type ShieldProTableProjectedField,
-} from "@/lib/market-integrity/shield-pro-table-customer-projection";
+import { dedupeMarketInstruments, filterMarketInstruments } from "@/lib/market-integrity/market-instrument-search";
+import { shieldProCalibratedRiskConfidence, shieldProFieldVerified, shieldProModalMarketDataState, shieldProModeAfterRefreshFailure, shieldProPrimaryMarketSourceAsOf, shieldProRiskVerified, shieldProSourceLabel, shieldProVerifiedProviders, type ShieldProFeedMode, type ShieldProPublicDelivery } from "@/lib/market-integrity/shield-pro-customer-truth";
+import { projectShieldProTableRow, type ShieldProTableCustomerProjection, type ShieldProTableProjectedField } from "@/lib/market-integrity/shield-pro-table-customer-projection";
 import RiskHistoryControl from "@/components/market-integrity/RiskHistoryControl";
-
-
 type Locale = "pl" | "en" | "de";
 
 type RiskResult = {

@@ -4,12 +4,10 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Eye, EyeOff, Loader2, LockKeyhole, LogIn, ShieldCheck, Sparkles, UserPlus } from "lucide-react";
 import Image from "next/image";
-import { Link } from "@/navigation";
 import { useLocale } from "next-intl";
 import { completeVelmerePasswordRecovery, createVelmereAccountSession, requestVelmerePasswordRecovery, startVelmereGoogleOAuth, VelmereAuthConfirmationRequiredError } from "@/components/auth/AuthGate";
 import { useWalletConnect } from "@/lib/wallet/useWalletConnect";
 import { useWalletUiStore } from "@/store/useWalletUiStore";
-
 type AuthFormClientProps = {
   labels?: {
     email?: string;

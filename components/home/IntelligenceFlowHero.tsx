@@ -1,18 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  Activity,
-  ArrowRight,
-  CheckCircle2,
-  Cpu,
-  Database,
-  FileCheck2,
-  Layers,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
-
+import { Activity, ArrowRight, CheckCircle2, Cpu, Database, FileCheck2, ShieldCheck } from "lucide-react";
 type Locale = "pl" | "en" | "de";
 
 type IntelligenceFlowHeroProps = {

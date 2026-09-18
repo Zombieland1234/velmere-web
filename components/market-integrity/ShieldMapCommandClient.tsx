@@ -1,38 +1,8 @@
 "use client";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
-
-import {
-  type FormEvent,
-  type KeyboardEvent,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { type FormEvent, type KeyboardEvent, useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  Activity,
-  AlertTriangle,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  CheckCircle2,
-  Clock,
-  ExternalLink,
-  FileCode,
-  HelpCircle,
-  Layers,
-  Loader2,
-  Paperclip,
-  Radar,
-  Radio,
-  Search,
-  ShieldAlert,
-  ShieldCheck,
-  TrendingDown,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { Activity, AlertTriangle, ArrowLeft, ArrowRight, Clock, ExternalLink, FileCode, Layers, Loader2, Paperclip, Radar, Radio, Search, ShieldAlert, ShieldCheck, TrendingDown, TrendingUp, Users } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import AssetLogo from "@/components/market-integrity/AssetLogo";
 import VlmBrainWorkspace from "@/components/market-integrity/VlmBrainWorkspace";
@@ -54,24 +24,11 @@ import { getPass522MobileGestureQa } from "@/lib/motion/pass522-mobile-gesture-q
 import { usePass527AdaptiveFrameBudget } from "@/lib/motion/usePass527AdaptiveFrameBudget";
 import { buildPass542MotionControl } from "@/lib/motion/pass542-motion-control";
 import { buildPass549InteractionBudget } from "@/lib/motion/pass549-interaction-budget";
-import {
-  verifyShieldMapCustomerIdentity,
-  type ShieldMapCanonicalCustomerIdentity,
-} from "@/lib/market-integrity/shield-map-customer-identity";
-import {
-  projectShieldMapCustomerConfidence,
-  type ShieldMapCustomerConfidenceProjection,
-} from "@/lib/market-integrity/shield-map-customer-confidence";
-import {
-  projectShieldMapCustomerAssetDisplay,
-  type ShieldMapCustomerAssetDisplay,
-} from "@/lib/market-integrity/shield-map-customer-asset-display";
-import {
-  deduplicateShieldMapSuggestions,
-  normalizeShieldMapSuggestionKey,
-} from "@/lib/market-integrity/shield-map-suggestion-dedup";
+import { verifyShieldMapCustomerIdentity, type ShieldMapCanonicalCustomerIdentity } from "@/lib/market-integrity/shield-map-customer-identity";
+import { projectShieldMapCustomerConfidence, type ShieldMapCustomerConfidenceProjection } from "@/lib/market-integrity/shield-map-customer-confidence";
+import { projectShieldMapCustomerAssetDisplay, type ShieldMapCustomerAssetDisplay } from "@/lib/market-integrity/shield-map-customer-asset-display";
+import { deduplicateShieldMapSuggestions, normalizeShieldMapSuggestionKey } from "@/lib/market-integrity/shield-map-suggestion-dedup";
 import { nextLensSuggestionKeyboardDecision } from "@/lib/search/lens-suggestion-keyboard";
-
 type Locale = "pl" | "de" | "en";
 type EvidenceState =
   | "confirmed"

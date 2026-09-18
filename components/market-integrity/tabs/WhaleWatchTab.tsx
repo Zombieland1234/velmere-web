@@ -1,7 +1,6 @@
 "use client";
 
-import { ArrowDownLeft, ArrowUpRight, Compass, ShieldAlert, Users, Wallet } from "lucide-react";
-
+import { ArrowDownLeft, ArrowUpRight, Compass, Users, Wallet } from "lucide-react";
 type WhaleWatchTabProps = {
   assetId: string;
   symbol: string;

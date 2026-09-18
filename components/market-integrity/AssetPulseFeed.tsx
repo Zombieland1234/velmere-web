@@ -1,8 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Activity, Bell, ExternalLink, Flame, ShieldAlert, Sparkles, TrendingUp, Zap } from "lucide-react";
-
+import { Activity } from "lucide-react";
 export type PulseEvent = {
   id: string;
   time: string;

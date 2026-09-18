@@ -2,61 +2,22 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { clearShieldMarketCatalogClientCache, fetchShieldProFullCatalog } from "@/lib/market-integrity/shield-pro-full-catalog-client";
 import { getShieldInstantBootstrapRows } from "@/lib/market-integrity/shield-instant-bootstrap";
-
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
-import {
-  Activity,
-  ArrowUpRight,
-  ArrowUpDown,
-  Brain,
-  Database,
-  Gauge,
-  LineChart,
-  Loader2,
-  Search,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { Activity, ArrowUpRight, ArrowUpDown, Brain, Database, Gauge, LineChart, Loader2, Search, ShieldCheck, Sparkles } from "lucide-react";
 import { useRouter } from "@/navigation";
-import AssetDetailModal, {
-  type VlmAssetDetailModalData,
-} from "@/components/market-integrity/AssetDetailModal";
+import AssetDetailModal, { type VlmAssetDetailModalData } from "@/components/market-integrity/AssetDetailModal";
 import ShieldMetricExplainerModal, { type MetricExplainerId } from "@/components/market-integrity/ShieldMetricExplainerModal";
 import ResolvedAssetLogo from "@/components/market-integrity/AssetLogo";
 import RiskHistoryControl from "@/components/market-integrity/RiskHistoryControl";
 import { resolveVolumeSemantics } from "@/lib/market-integrity/volume-semantics";
 import { buildRiskHistoryCurrentObservation } from "@/lib/market-integrity/risk-history-current-alignment";
 import type { MarketIntegrityRow } from "@/lib/market-integrity/coingecko";
-import {
-  dedupeMarketInstruments,
-  filterMarketInstruments,
-} from "@/lib/market-integrity/market-instrument-search";
-import {
-  shieldProAggregateMetricsAvailable,
-  shieldProCalibratedRiskConfidencePublishable,
-  shieldProModalMarketDataState,
-  shieldProModeAfterRefreshFailure,
-  shieldProPrimaryMarketSourceAsOf,
-  shieldProRiskVerified,
-  shieldProSourceLabel,
-  shieldProVerifiedProviders,
-  type ShieldProFeedMode,
-} from "@/lib/market-integrity/shield-pro-customer-truth";
+import { dedupeMarketInstruments, filterMarketInstruments } from "@/lib/market-integrity/market-instrument-search";
+import { shieldProAggregateMetricsAvailable, shieldProCalibratedRiskConfidencePublishable, shieldProModalMarketDataState, shieldProModeAfterRefreshFailure, shieldProPrimaryMarketSourceAsOf, shieldProRiskVerified, shieldProSourceLabel, shieldProVerifiedProviders, type ShieldProFeedMode } from "@/lib/market-integrity/shield-pro-customer-truth";
 import { projectShieldProTableRow } from "@/lib/market-integrity/shield-pro-table-customer-projection";
-import {
-  buildChartLifecycleReceipt,
-} from "@/lib/market-integrity/top1-risk-foundation";
-import { buildPass4485ChartEdge } from "@/lib/ui/pass4485-screen-runtime-fit";
+import { buildChartLifecycleReceipt } from "@/lib/market-integrity/top1-risk-foundation";
 import { pass4570SanitizePercent } from "@/lib/market-integrity/pass4570-market-data-sanity";
 import { normalizeConfidencePercent } from "@/lib/market-integrity/confidence-calibration";
-
 const RENDER_LEGACY_SHIELD_TABLE: boolean = false;
 
 type Locale = "pl" | "en" | "de";

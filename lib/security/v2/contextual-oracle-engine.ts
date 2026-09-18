@@ -10,10 +10,9 @@
  * - Constructs Oracle Dependency Graph and estimates manipulation window.
  */
 
-import { StandardFindingV2, OracleDependency, SeverityLevel } from "./types";
+import { StandardFindingV2, OracleDependency } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
 import { evidenceSha256 } from "./evidence-integrity";
-
 export interface OracleAnalysisResult {
   hasVulnerability: boolean;
   findings: StandardFindingV2[];

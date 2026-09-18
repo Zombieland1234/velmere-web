@@ -16,13 +16,8 @@ import { buildPublicProductPathwayReceiptGate } from "@/lib/market-integrity/pub
 import { buildPublicProvenanceDropConciergeGate } from "@/lib/market-integrity/public-provenance-drop-concierge-gate";
 import { buildPublicSizeConfidenceConciergeGate } from "@/lib/market-integrity/public-size-confidence-concierge-gate";
 import { CartGuardStatusPanel } from "@/components/cart/CartGuardStatusPanel";
-import {
-  findCheckoutGuardLineForItem,
-  useCartCheckoutGuard,
-} from "@/components/cart/useCartCheckoutGuard";
-import { CustomerSafeStatusSurface } from "@/components/status/CustomerSafeStatusSurface";
+import { findCheckoutGuardLineForItem, useCartCheckoutGuard } from "@/components/cart/useCartCheckoutGuard";
 import { buildPass2196CustomerSafeStatusSurface, type Pass2196CustomerLocale } from "@/lib/ui/customer-safe-status-surface";
-
 function customerLocale(locale: string): Pass2196CustomerLocale {
   return locale === "pl" || locale === "de" || locale === "en" ? locale : "en";
 }

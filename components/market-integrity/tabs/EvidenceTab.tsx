@@ -1,8 +1,7 @@
 "use client";
 
-import { CheckCircle2, Copy, ExternalLink, FileCheck2, Fingerprint, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Copy, FileCheck2, Fingerprint } from "lucide-react";
 import { useState } from "react";
-
 type EvidenceTabProps = {
   assetId: string;
   symbol: string;

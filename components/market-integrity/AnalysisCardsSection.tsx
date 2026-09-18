@@ -1,54 +1,9 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import {
-  Activity,
-  AlertCircle,
-  AlertTriangle,
-  ArrowDownLeft,
-  ArrowRightLeft,
-  ArrowUpRight,
-  BarChart3,
-  CheckCircle2,
-  ChevronRight,
-  Clock,
-  Compass,
-  Cpu,
-  CreditCard,
-  Database,
-  Download,
-  ExternalLink,
-  FileCode2,
-  Filter,
-  Flame,
-  Info,
-  Layers,
-  Loader2,
-  Lock,
-  Percent,
-  RefreshCw,
-  Search,
-  Shield,
-  ShieldAlert,
-  ShieldCheck,
-  Sliders,
-  Sparkles,
-  TrendingDown,
-  TrendingUp,
-  Users,
-  Wallet,
-  Waves,
-  X,
-  Zap,
-} from "lucide-react";
+import { Activity, AlertCircle, AlertTriangle, ArrowDownLeft, ArrowRightLeft, ArrowUpRight, CheckCircle2, ChevronRight, Compass, CreditCard, Database, Download, ExternalLink, FileCode2, Layers, Loader2, Lock, Percent, RefreshCw, Sliders, Users, Wallet, Waves, X } from "lucide-react";
 import { VShieldPulse } from "@/components/motion/VelmereAnalysisMarks";
-import {
-  CANONICAL_SIGNALS,
-  evaluateDynamicSignals,
-  type AuditOrAssetTier,
-  type SignalDefinition,
-} from "@/lib/commerce/vlm-dynamic-signal-engine";
-
+import { evaluateDynamicSignals } from "@/lib/commerce/vlm-dynamic-signal-engine";
 type AnalysisCardsSectionProps = {
   asset: {
     id: string;

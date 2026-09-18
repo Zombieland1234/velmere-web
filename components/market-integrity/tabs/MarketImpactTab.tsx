@@ -1,7 +1,6 @@
 "use client";
 
-import { Activity, ArrowRightLeft, Layers, Percent, TrendingDown, TrendingUp, Waves } from "lucide-react";
-
+import { Activity, ArrowRightLeft, Percent, Waves } from "lucide-react";
 type MarketImpactTabProps = {
   assetId: string;
   symbol: string;

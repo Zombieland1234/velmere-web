@@ -1,25 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  PRO_VS_ADVANCED_COMPARISONS,
-  getAllSurfacesComparison,
-  getComparisonStatistics,
-  type SurfaceId,
-  type CapabilityComparisonItem,
-} from "@/lib/market-integrity/pro-vs-advanced-comparison";
-import {
-  CheckCircle2,
-  AlertCircle,
-  ExternalLink,
-  Shield,
-  Layers,
-  Sparkles,
-  Search,
-  Globe,
-  TrendingUp,
-} from "lucide-react";
-
+import { PRO_VS_ADVANCED_COMPARISONS, getAllSurfacesComparison, getComparisonStatistics, type SurfaceId } from "@/lib/market-integrity/pro-vs-advanced-comparison";
+import { CheckCircle2, AlertCircle, ExternalLink, Shield, Layers, Sparkles, Search, Globe, TrendingUp } from "lucide-react";
 const SURFACE_ICONS: Record<SurfaceId, React.ReactNode> = {
   browser: <Globe className="h-4 w-4" />,
   lens: <Search className="h-4 w-4" />,

@@ -8,8 +8,7 @@
  * NOT RUN, UNKNOWN, NOT APPLICABLE, INSUFFICIENT EVIDENCE, NOT VERIFIED, HUMAN REVIEW REQUIRED.
  */
 
-import type { EvidenceRecord, ClaimRecord, EvidenceStatus } from "./evidence-record";
-
+import type { EvidenceRecord } from "./evidence-record";
 export interface ClaimAuditResult {
   passed: boolean;
   blockedCount: number;

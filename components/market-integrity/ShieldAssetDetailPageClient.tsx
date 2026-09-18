@@ -1,37 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import {
-  Activity,
-  ArrowDownRight,
-  ArrowLeft,
-  ArrowUpRight,
-  Bookmark,
-  Check,
-  CheckCircle2,
-  Clock,
-  Download,
-  ExternalLink,
-  Eye,
-  FileText,
-  Flame,
-  Globe,
-  Layers,
-  Lock,
-  RefreshCw,
-  Search,
-  Shield,
-  ShieldAlert,
-  ShieldCheck,
-  Sparkles,
-  Zap,
-} from "lucide-react";
+import { Activity, ArrowLeft, Check, CheckCircle2, Download, ExternalLink, Eye, Lock, RefreshCw, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { Link } from "@/navigation";
 import ResolvedAssetLogo from "@/components/market-integrity/AssetLogo";
 import TradingViewCandleChart from "@/components/market-integrity/TradingViewCandleChart";
-import VelmereAssuranceRadar, {
-  type RadarDimension,
-} from "@/components/market-integrity/VelmereAssuranceRadar";
+import VelmereAssuranceRadar, { type RadarDimension } from "@/components/market-integrity/VelmereAssuranceRadar";
 import ForensicSecurityMatrix from "@/components/market-integrity/ForensicSecurityMatrix";
 import AssetPulseFeed from "@/components/market-integrity/AssetPulseFeed";
 import OverviewTab from "@/components/market-integrity/tabs/OverviewTab";
@@ -40,7 +14,6 @@ import MarketImpactTab from "@/components/market-integrity/tabs/MarketImpactTab"
 import WhaleWatchTab from "@/components/market-integrity/tabs/WhaleWatchTab";
 import EvidenceTab from "@/components/market-integrity/tabs/EvidenceTab";
 import HistoryTab from "@/components/market-integrity/tabs/HistoryTab";
-
 type TabId = "overview" | "analysis" | "market_impact" | "whale_watch" | "evidence" | "history";
 
 export type AssetDetailData = {

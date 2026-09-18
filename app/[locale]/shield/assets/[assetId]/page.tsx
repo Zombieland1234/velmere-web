@@ -1,10 +1,6 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { MASTER_50_ASSETS } from "@/lib/security/corpus/master-50-assets";
-import AssetDetailPageNew, {
-  type AssetDetailData,
-} from "@/components/market-integrity/AssetDetailPageNew";
-
+import AssetDetailPageNew, { type AssetDetailData } from "@/components/market-integrity/AssetDetailPageNew";
 type Props = {
   params: Promise<{
     locale: string;

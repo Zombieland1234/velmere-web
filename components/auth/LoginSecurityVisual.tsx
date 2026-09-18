@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { BadgeCheck, Binary, Fingerprint, KeyRound, LockKeyhole, ShieldCheck, WalletCards } from "lucide-react";
+import { BadgeCheck, Binary, Fingerprint, KeyRound, LockKeyhole, WalletCards } from "lucide-react";
 import { useLocale } from "next-intl";
-
 import { Link } from "@/navigation";
-
 const nodes = [
   [18, 28],
   [34, 62],

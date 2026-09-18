@@ -1,8 +1,7 @@
 "use client";
 
-import { Calendar, Download, ExternalLink, GitCommit, History, ShieldAlert, ShieldCheck } from "lucide-react";
+import { Download, History } from "lucide-react";
 import { Link } from "@/navigation";
-
 type HistoryTabProps = {
   assetId: string;
   symbol: string;

@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2, ShieldCheck, XCircle, Loader2 } from "lucide-react";
-
+import { ShieldCheck, XCircle, Loader2 } from "lucide-react";
 export default function StripePopupCallbackPage() {
   const searchParams = useSearchParams();
   const status = searchParams.get("status") || "success";

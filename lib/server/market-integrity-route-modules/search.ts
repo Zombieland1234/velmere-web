@@ -1,13 +1,7 @@
-import { publicApiError } from "@/lib/security/api-error-envelope";
 import { fetchCoinGeckoSuggestions } from "@/lib/market-integrity/coingecko";
 import { abuseShieldResponseMeta, applyApiAbuseShield } from "@/lib/security/api-abuse-shield";
 import { securityJson } from "@/lib/security/api-guard";
-import {
-  buildShieldBasicDeliveryPreflight,
-  projectShieldBasicCustomerDelivery,
-  toShieldBasicCustomerSafeWithheld,
-} from "@/lib/market-integrity/shield-basic-delivery-policy";
-
+import { buildShieldBasicDeliveryPreflight, projectShieldBasicCustomerDelivery, toShieldBasicCustomerSafeWithheld } from "@/lib/market-integrity/shield-basic-delivery-policy";
 export async function GET(request: Request) {
   const shield = await applyApiAbuseShield(request, "search", { keyPrefix: "market-search", queryParam: "query", allowEmptyQuery: true });
   if (!shield.ok) return shield.response;

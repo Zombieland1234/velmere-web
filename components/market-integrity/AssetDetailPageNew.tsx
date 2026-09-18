@@ -1,24 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  ArrowLeft,
-  ChevronDown,
-  ShieldCheck,
-  TrendingUp,
-  Activity,
-  Layers,
-} from "lucide-react";
+import { ArrowLeft, ChevronDown, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "@/navigation";
-import AssetAreaChart, {
-  ChartControls,
-  type Timeframe,
-} from "@/components/market-integrity/AssetAreaChart";
+import AssetAreaChart, { ChartControls, type Timeframe } from "@/components/market-integrity/AssetAreaChart";
 import RiskDonutPanel from "@/components/market-integrity/RiskDonutPanel";
 import AnalysisCardsSection from "@/components/market-integrity/AnalysisCardsSection";
 import ResolvedAssetLogo from "@/components/market-integrity/AssetLogo";
-
 export type AssetDetailData = {
   id: string;
   symbol: string;
