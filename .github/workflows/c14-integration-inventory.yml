@@ -1,0 +1,77 @@
+name: C14 integration inventory (read-only candidates)
+on:
+  push:
+    branches: [c14/integration-final-20260918]
+    paths: [.github/workflows/c14-integration-inventory.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Snapshot candidate diffs; never execute candidate code
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import subprocess,json,pathlib,hashlib,datetime,re
+          B='4cb45bbcf910f0517d4a5d265682cd2f7e4e41df'
+          O=pathlib.Path('/tmp/c14-inventory'); O.mkdir()
+          def git(*args): return subprocess.check_output(['git',*args])
+          def text(*args): return git(*args).decode()
+          def entries(sha):
+            result={}
+            for raw in git('ls-tree','-rz',sha).split(b'\0'):
+              if not raw: continue
+              info,path=raw.split(b'\t',1); mode,kind,blob=info.decode().split()
+              result[path.decode()]={'mode':mode,'type':kind,'sha':blob}
+            return result
+          def excluded(path):
+            p=pathlib.PurePosixPath(path)
+            return p.suffix.lower() in {'.woff','.woff2','.ttf','.otf','.eot','.zip','.gz','.tgz','.7z'} or (p.name.startswith('.env') and 'example' not in p.name and 'template' not in p.name)
+          base=entries(B); (O/'BASE_TREE.json').write_text(json.dumps(base,indent=2))
+          (O/'BASE_COMMIT.txt').write_bytes(git('cat-file','commit',B))
+          # Source bytes, not .git or credential material. Font resources are intentionally omitted.
+          omissions=[]
+          for path,e in base.items():
+            if excluded(path) or e['type']!='blob': omissions.append(path); continue
+            dst=O/'base'/path; dst.parent.mkdir(parents=True,exist_ok=True); dst.write_bytes(git('cat-file','blob',e['sha']))
+          refs=text('for-each-ref','--format=%(refname:short) %(objectname)','refs/remotes/origin').splitlines()
+          result=[]
+          for line in refs:
+            ref,sha=line.split(); branch=ref.removeprefix('origin/')
+            if not (branch.startswith('parallel/c14-') or branch=='c14/origin-dataflow-qualification-20260918'): continue
+            key=branch.replace('/','__'); root=O/'candidates'/key; root.mkdir(parents=True)
+            tree=entries(sha); files=[]
+            for path in sorted(set(base)|set(tree)):
+              old,new=base.get(path),tree.get(path)
+              if old==new: continue
+              row={'path':path,'old':old,'new':new,'status':'A' if old is None else 'D' if new is None else 'M','exported':False}
+              if not excluded(path):
+                if new and new['type']=='blob':
+                  raw=git('cat-file','blob',new['sha']); dst=root/'files'/path; dst.parent.mkdir(parents=True,exist_ok=True); dst.write_bytes(raw); row['sha256']=hashlib.sha256(raw).hexdigest(); row['bytes']=len(raw); row['exported']=True
+                diff=git('diff','--no-ext-diff','--no-textconv','--unified=5',B,sha,'--',path)
+                dst=root/'diffs'/(path+'.diff'); dst.parent.mkdir(parents=True,exist_ok=True); dst.write_bytes(diff)
+              files.append(row)
+            reports=[p for p in tree if p.startswith('_handoff/parallel/C14-')]
+            for path in reports:
+              dst=root/'reports'/path; dst.parent.mkdir(parents=True,exist_ok=True); dst.write_bytes(git('cat-file','blob',tree[path]['sha']))
+            row={'branch':branch,'sha':sha,'tree':text('rev-parse',sha+'^{tree}').strip(),'ahead':int(text('rev-list','--count',B+'..'+sha)),'baseAncestor':subprocess.run(['git','merge-base','--is-ancestor',B,sha]).returncode==0,'commits':text('log','--format=%H %P %s',B+'..'+sha).splitlines(),'files':files,'reports':reports}
+            (root/'inventory.json').write_text(json.dumps(row,indent=2)); result.append(row)
+          inventory={'base':B,'observedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'collectorSha':text('rev-parse','HEAD').strip(),'candidateCount':len(result),'baseOmissions':omissions,'candidates':result,'scope':'READ_ONLY_SOURCE_COLLECTION_NO_REVIEW_NO_TEST_NO_INTEGRATION'}
+          (O/'INVENTORY.json').write_text(json.dumps(inventory,indent=2))
+          manifest=[{'path':str(p.relative_to(O)),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size} for p in sorted(O.rglob('*')) if p.is_file()]
+          (O/'MANIFEST.json').write_text(json.dumps(manifest,indent=2))
+          print(json.dumps({'candidates':len(result),'files':len(manifest),'omissions':omissions}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: c14-inventory-${{ github.run_id }}
+          path: /tmp/c14-inventory/
+          include-hidden-files: true
+          retention-days: 14
