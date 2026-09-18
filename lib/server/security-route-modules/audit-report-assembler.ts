@@ -244,6 +244,38 @@ async function handlePass4824AuditProviderGet(request: Request) {
     });
   }
 
+  if (tierContract.entitlementRequired && tierContract.productId) {
+    const finalPaidAccess = await verifyVlmPaidSurfaceTokenEntitlement({
+      policyId: "audit_review",
+      request,
+      productId: tierContract.productId,
+      context: buildPass4420AdvancedPaidContext({
+        locale: selectedLocale,
+        depth: "pro",
+        contractAddress: isContract ? target : undefined,
+        projectName: isContract ? undefined : target,
+      }),
+    });
+    if (!hasVlmPaidSurfaceServerEntitlement(finalPaidAccess)
+      || finalPaidAccess.entitlement?.id !== paidBinding.entitlementId
+      || finalPaidAccess.entitlement?.contextHash !== paidBinding.paidEntitlementBinding) {
+      return NextResponse.json({
+        ok: false,
+        error: "audit_pro_entitlement_no_longer_current",
+        tier,
+      }, {
+        status: 403,
+        headers: {
+          ...reportRouteHeaders("/api/security/audit-report-assembler"),
+          "cache-control": "private, no-store, max-age=0",
+          "x-content-type-options": "nosniff",
+          "x-velmere-audit-tier": tier,
+          "x-velmere-access-decision": "REVOKED_BEFORE_DELIVERY",
+        },
+      });
+    }
+  }
+
   return NextResponse.json({
     ok: true,
     tier,
