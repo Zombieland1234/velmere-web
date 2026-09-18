@@ -2231,10 +2231,24 @@ export function generateAgent13SystemDeploymentGraphsData(): Agent13SystemGraphs
     "TOKEN",
   ];
 
-  const edgeTypeCoverage: Record<
+  const edgeTypeCoverage = {
+    PROXY_OF: { count: 0, status: "MISSING", example: "N/A" },
+    CALLS: { count: 0, status: "MISSING", example: "N/A" },
+    READS_FROM: { count: 0, status: "MISSING", example: "N/A" },
+    WRITES_TO: { count: 0, status: "MISSING", example: "N/A" },
+    GOVERNED_BY: { count: 0, status: "MISSING", example: "N/A" },
+    UPGRADES: { count: 0, status: "MISSING", example: "N/A" },
+    DEPENDS_ON: { count: 0, status: "MISSING", example: "N/A" },
+    ORACLE_SOURCE: { count: 0, status: "MISSING", example: "N/A" },
+    POOL: { count: 0, status: "MISSING", example: "N/A" },
+    VAULT: { count: 0, status: "MISSING", example: "N/A" },
+    ROUTER: { count: 0, status: "MISSING", example: "N/A" },
+    FACTORY: { count: 0, status: "MISSING", example: "N/A" },
+    TOKEN: { count: 0, status: "MISSING", example: "N/A" },
+  } satisfies Record<
     RequiredRelationshipEdgeType,
     { count: number; status: "COVERED" | "MISSING"; example: string }
-  > = {} as any;
+  >;
 
   for (const edgeType of requiredEdgeTypes) {
     let count = 0;

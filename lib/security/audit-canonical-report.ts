@@ -554,7 +554,14 @@ export function buildFullInternalCanonicalReport(input: FullAuditReportInput): C
     schemaVersion: "velmere.canonical-audit-report.v1",
   };
   const internalTier = input.userTier || "advanced";
-  const effectiveQualityScore = (profile as any).auditQualityScore ?? (internalTier === "advanced" ? 95 : internalTier === "pro" ? 82 : 62);
+  const effectiveQualityScore =
+    "auditQualityScore" in profile && typeof profile.auditQualityScore === "number"
+      ? profile.auditQualityScore
+      : internalTier === "advanced"
+        ? 95
+        : internalTier === "pro"
+          ? 82
+          : 62;
   const merkleCommitment = buildAuditMerkleCommitment(sections, leafProvenance, {
     riskScore: profile.riskScore,
     auditQualityScore: effectiveQualityScore,
