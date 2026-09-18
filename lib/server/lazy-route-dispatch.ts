@@ -51,10 +51,14 @@ export async function dispatchLazyRoute(options: {
   try {
     return await handler(request);
   } catch (err) {
+    const metadata = redactApiErrorForStructuredLog(err);
     console.error(JSON.stringify({
       event: "lazy_route_handler_failed",
       routeKey: key,
-      error: redactApiErrorForStructuredLog(err),
+      error: {
+        name: metadata.name,
+        code: metadata.code,
+      },
     }));
     return response({ ok: false, error: unavailableError }, 500);
   }
