@@ -59,8 +59,31 @@ jobs:
 
       - name: Compile only selected Across targets
         working-directory: targets/across
-        run: |
-          forge build             contracts/hub-pool/HubPool.sol             contracts/hub-pool/AcrossConfigStore.sol             contracts/spoke-pools/Arbitrum_SpokePool.sol             contracts/spoke-pools/OP_SpokePool.sol             contracts/periphery/SpokePoolPeriphery.sol             contracts/handlers/PermissionedMulticallHandler.sol             contracts/chain-adapters/Router_Adapter.sol             --skip test --skip script --skip '**/contracts/test/**'
+        run: >
+          forge build
+          contracts/hub-pool/HubPool.sol
+          contracts/hub-pool/AcrossConfigStore.sol
+          contracts/spoke-pools/Arbitrum_SpokePool.sol
+          contracts/spoke-pools/OP_SpokePool.sol
+          contracts/periphery/SpokePoolPeriphery.sol
+          contracts/handlers/PermissionedMulticallHandler.sol
+          contracts/chain-adapters/Router_Adapter.sol
+          contracts/periphery/counterfactual/AdminWithdrawManager.sol
+          contracts/periphery/counterfactual/CounterfactualBeacon.sol
+          contracts/periphery/counterfactual/CounterfactualDeposit.sol
+          contracts/periphery/counterfactual/CounterfactualDepositCCTP.sol
+          contracts/periphery/counterfactual/CounterfactualDepositFactory.sol
+          contracts/periphery/counterfactual/CounterfactualDepositOFT.sol
+          contracts/periphery/counterfactual/CounterfactualDepositSpokePool.sol
+          contracts/periphery/counterfactual/CounterfactualDepositVanillaCCTP.sol
+          contracts/periphery/mintburn/HyperCoreFlowExecutor.sol
+          contracts/periphery/mintburn/SwapHandler.sol
+          contracts/periphery/Tron_SpokePoolPeriphery.sol
+          contracts/spoke-pools/Ethereum_SpokePool.sol
+          contracts/spoke-pools/Lens_SpokePool.sol
+          contracts/spoke-pools/ZkSync_SpokePool.sol
+          contracts/spoke-pools/Cher_SpokePool.sol
+          --skip test --skip script --skip '**/contracts/test/**'
 
       - name: Run Velmere against selected Across contracts
         env:
