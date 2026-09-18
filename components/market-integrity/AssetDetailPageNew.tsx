@@ -47,6 +47,22 @@ type AssetDetailPageNewProps = {
   surface?: "shield" | "real-markets";
 };
 
+type UnknownRecord = Record<string, unknown>;
+
+function asUnknownRecord(value: unknown): UnknownRecord | null {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? value as UnknownRecord
+    : null;
+}
+
+function finiteNumber(value: unknown): number | undefined {
+  return typeof value === "number" && Number.isFinite(value) ? value : undefined;
+}
+
+function optionalString(value: unknown): string | undefined {
+  return typeof value === "string" ? value : undefined;
+}
+
 // Top known assets for quick switching dropdown
 const SELECTABLE_ASSETS = [
   { id: "bitcoin", symbol: "BTC", name: "Bitcoin", price: 78681.99, change: -0.18, score: 42, color: "#f7931a" },
@@ -97,24 +113,30 @@ export default function AssetDetailPageNew({
             },
           );
           if (!res.ok) return;
-          const data = await res.json();
-          const quotes = data.quotes || {};
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const match: any = quotes[sym] || quotes[asset.id] || Object.values(quotes)[0];
+          const data: unknown = await res.json();
+          const dataRecord = asUnknownRecord(data);
+          const quotes = asUnknownRecord(dataRecord?.quotes);
+          if (!quotes) return;
+          const firstQuote = Object.values(quotes)
+            .map(asUnknownRecord)
+            .find((candidate): candidate is UnknownRecord => candidate !== null);
+          const match = asUnknownRecord(quotes[sym]) ?? asUnknownRecord(quotes[asset.id]) ?? firstQuote;
           if (match && !cancelled) {
             const rawPrice = match.currentPrice ?? match.primaryPrice ?? match.price;
-            const price = typeof rawPrice === "number" && !isNaN(rawPrice) && rawPrice > 0 ? rawPrice : undefined;
-            const change = typeof match.changePercent === "number" ? match.changePercent : typeof match.priceChange24h === "number" ? match.priceChange24h : undefined;
+            const price = finiteNumber(rawPrice);
+            const usablePrice = price !== undefined && price > 0 ? price : undefined;
+            const change = finiteNumber(match.changePercent) ?? finiteNumber(match.priceChange24h);
             const rawScore = match.riskScore ?? match.risk;
-            const score = typeof rawScore === "number" && !isNaN(rawScore) ? Math.round(rawScore * 10) / 10 : undefined;
+            const scoreValue = finiteNumber(rawScore);
+            const score = scoreValue !== undefined ? Math.round(scoreValue * 10) / 10 : undefined;
 
             setAsset((prev) => ({
               ...prev,
-              price: typeof initialAsset.price === "number" && initialAsset.price > 0 ? initialAsset.price : (price ?? prev.price),
+              price: typeof initialAsset.price === "number" && initialAsset.price > 0 ? initialAsset.price : (usablePrice ?? prev.price),
               priceChange24h: typeof initialAsset.priceChange24h === "number" ? initialAsset.priceChange24h : (change ?? prev.priceChange24h),
               riskScore: typeof initialAsset.riskScore === "number" ? initialAsset.riskScore : (score ?? prev.riskScore),
-              marketCap: match.marketCap ?? prev.marketCap,
-              volume24h: match.volume24h ?? prev.volume24h,
+              marketCap: finiteNumber(match.marketCap) ?? prev.marketCap,
+              volume24h: finiteNumber(match.volume24h) ?? prev.volume24h,
             }));
           }
           return;
@@ -125,34 +147,45 @@ export default function AssetDetailPageNew({
           headers: { "x-velmere-dev": "true" },
         });
         if (!res.ok) return;
-        const data = await res.json();
-        if (!data.rows || !Array.isArray(data.rows)) return;
+        const data: unknown = await res.json();
+        const dataRecord = asUnknownRecord(data);
+        const rows = Array.isArray(dataRecord?.rows)
+          ? dataRecord.rows.map(asUnknownRecord).filter((row): row is UnknownRecord => row !== null)
+          : [];
+        if (rows.length === 0) return;
         const cleanId = (asset.id || "").toLowerCase();
         const cleanSym = (asset.symbol || "").toLowerCase();
-        const match = data.rows.find(
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (r: any) => r.id?.toLowerCase() === cleanId || r.symbol?.toLowerCase() === cleanSym,
+        const match = rows.find((row) =>
+          optionalString(row.id)?.toLowerCase() === cleanId ||
+          optionalString(row.symbol)?.toLowerCase() === cleanSym
         );
         if (match && !cancelled) {
-          const delivery = match.delivery;
-          const rawScore = delivery?.risk?.score ?? match.result?.score ?? match.riskScore;
-          const score = typeof rawScore === "number" && !isNaN(rawScore) ? Math.round(rawScore * 10) / 10 : asset.riskScore;
-          const conf = match.result?.confidence ?? match.delivery?.risk?.confidencePercent;
-          const confidence = typeof conf === "number" && !isNaN(conf) ? (conf <= 1 ? Math.round(conf * 100) : Math.round(conf)) : asset.confidence;
+          const delivery = asUnknownRecord(match.delivery);
+          const deliveryRisk = asUnknownRecord(delivery?.risk);
+          const result = asUnknownRecord(match.result);
+          const rawScore = deliveryRisk?.score ?? result?.score ?? match.riskScore;
+          const scoreValue = finiteNumber(rawScore);
+          const score = scoreValue !== undefined ? Math.round(scoreValue * 10) / 10 : asset.riskScore;
+          const conf = result?.confidence ?? deliveryRisk?.confidencePercent;
+          const confidenceValue = finiteNumber(conf);
+          const confidence = confidenceValue !== undefined
+            ? (confidenceValue <= 1 ? Math.round(confidenceValue * 100) : Math.round(confidenceValue))
+            : asset.confidence;
+          const dataSources = Array.isArray(result?.dataSources) ? result.dataSources : null;
 
           setAsset((prev) => ({
             ...prev,
-            price: typeof initialAsset.price === "number" && initialAsset.price > 0 ? initialAsset.price : (match.price ?? prev.price),
-            priceChange24h: typeof initialAsset.priceChange24h === "number" ? initialAsset.priceChange24h : (match.priceChange24h ?? prev.priceChange24h),
-            priceChange7d: match.priceChange7d ?? prev.priceChange7d,
-            marketCap: match.marketCap ?? prev.marketCap,
-            volume24h: match.volume24h ?? prev.volume24h,
-            high24h: match.high24h ?? prev.high24h,
-            low24h: match.low24h ?? prev.low24h,
+            price: typeof initialAsset.price === "number" && initialAsset.price > 0 ? initialAsset.price : (finiteNumber(match.price) ?? prev.price),
+            priceChange24h: typeof initialAsset.priceChange24h === "number" ? initialAsset.priceChange24h : (finiteNumber(match.priceChange24h) ?? prev.priceChange24h),
+            priceChange7d: finiteNumber(match.priceChange7d) ?? prev.priceChange7d,
+            marketCap: finiteNumber(match.marketCap) ?? prev.marketCap,
+            volume24h: finiteNumber(match.volume24h) ?? prev.volume24h,
+            high24h: finiteNumber(match.high24h) ?? prev.high24h,
+            low24h: finiteNumber(match.low24h) ?? prev.low24h,
             riskScore: typeof initialAsset.riskScore === "number" ? initialAsset.riskScore : score,
-            confidence: confidence,
-            imageUrl: match.image ?? prev.imageUrl,
-            verifiedSourcesCount: match.result?.dataSources?.length ?? prev.verifiedSourcesCount,
+            confidence,
+            imageUrl: optionalString(match.image) ?? prev.imageUrl,
+            verifiedSourcesCount: dataSources?.length ?? prev.verifiedSourcesCount,
           }));
         }
       } catch (err) {
