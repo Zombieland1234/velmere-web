@@ -65,7 +65,12 @@ jobs:
           node_modules/.bin/next dev --hostname 127.0.0.1 --port 3000 > /tmp/c14-p12-evidence/NEXT_HTTP.log 2>&1 &
           echo $! > /tmp/c14-p12-next.pid
           for i in $(seq 1 60); do
-            if curl --silent --fail --max-time 2 http://127.0.0.1:3000/api/auth/session >/dev/null; then exit 0; fi
+            code="$(curl --silent --show-error --max-time 2 --output /tmp/c14-p12-ready-body.json --write-out '%{http_code}' http://127.0.0.1:3000/api/auth/session || true)"
+            if [ "$code" != "000" ]; then
+              echo "readiness_http_status=$code"
+              cat /tmp/c14-p12-ready-body.json || true
+              exit 0
+            fi
             sleep 1
           done
           cat /tmp/c14-p12-evidence/NEXT_HTTP.log
