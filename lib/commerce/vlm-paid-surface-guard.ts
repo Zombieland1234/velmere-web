@@ -111,6 +111,7 @@ export async function verifyVlmPaidSurfaceTokenEntitlement(args: {
     productId: args.productId,
     context: {
       ...args.context,
+      surface: policy.surface,
       accountIdHash: hashVelmereAccountBinding(account.accountId),
     },
   });
@@ -140,6 +141,7 @@ export async function verifyVlmPaidSurfaceEntitlementById(args: {
     entitlementId: args.entitlementId,
     allowedProductIds: args.allowedProductIds,
     accountIdHash: args.accountIdHash,
+    surface: policy.surface,
     auditCaseRef: args.auditCaseRef,
     assetId: args.assetId,
     symbol: args.symbol,
