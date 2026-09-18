@@ -68,6 +68,15 @@ async function main() {
     categoryCounts: countBy(result.findings.map((f: any) => f.category)),
     evidenceClassCounts: countBy(result.findings.map((f: any) => f.evidenceClass)),
     statusCounts: countBy(result.findings.map((f: any) => f.status)),
+    claimStateCounts: countBy(result.findings.map((f: any) => f.claimState)),
+    analysisMethodCounts: countBy(result.findings.map((f: any) => f.analysisMethod)),
+    confidenceCounts: countBy(result.findings.map((f: any) => f.confidence)),
+    locationShapeCounts: {
+      sourceOnly: result.findings.filter((f: any) => Boolean(f.sourceLocation) && !f.bytecodeOffset).length,
+      bytecodeOnly: result.findings.filter((f: any) => !f.sourceLocation && Boolean(f.bytecodeOffset)).length,
+      both: result.findings.filter((f: any) => Boolean(f.sourceLocation) && Boolean(f.bytecodeOffset)).length,
+      neither: result.findings.filter((f: any) => !f.sourceLocation && !f.bytecodeOffset).length,
+    },
     scores: result.scores,
     cfgMetrics: result.cfgMetrics,
   }, null, 2));
