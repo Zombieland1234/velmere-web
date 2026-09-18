@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 
 import {
   buildC14ProviderEnforcementMatrix,
+  canonicalC14ProviderId,
   C14_RUNTIME_PROVIDER_IDS,
   evaluateC14ProviderOperation,
 } from "../../lib/compliance/c14-provider-enforcement";
@@ -31,7 +32,7 @@ async function main() {
   const matrix = buildC14ProviderEnforcementMatrix(NOW);
   for (const providerId of C14_RUNTIME_PROVIDER_IDS) {
     assert.ok(
-      matrix.some((row) => row.providerId === providerId),
+      matrix.some((row) => row.providerId === canonicalC14ProviderId(providerId)),
       `runtime provider missing from C14 matrix: ${providerId}`,
     );
   }
@@ -62,6 +63,9 @@ async function main() {
   }
   
   assert.equal(decision("defillama", "fetch", "internal_diagnostic").allowed, false);
+  assert.equal(decision("bybit", "fetch", "internal_diagnostic").state, "UNVERIFIED");
+  assert.equal(decision("mexc", "fetch", "internal_diagnostic").state, "UNVERIFIED");
+  assert.equal(decision("kraken", "fetch", "internal_diagnostic").state, "BLOCKED");
   assert.equal(decision("stooq", "fetch", "internal_diagnostic").state, "UNVERIFIED");
   assert.equal(decision("yahoo_finance", "fetch", "internal_diagnostic").state, "UNVERIFIED");
   assert.equal(decision("sec_edgar", "fetch", "internal_diagnostic").state, "UNVERIFIED");
