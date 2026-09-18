@@ -41,7 +41,6 @@ export function analyzeContextualAccessControl(
   roles.set("MINTER", { roleId: "MINTER", name: "Token Minter", members: [], capabilities: ["mint"] });
 
   let hasSingleStepOwnership = false;
-  let usesTxOrigin = false;
   let hasUnprotectedMinter = false;
   let hasUninitializedProxy = false;
 
@@ -49,9 +48,8 @@ export function analyzeContextualAccessControl(
   // Even a real data dependency is not proof the branch authorizes an action.
   const originBranches = findOriginDependentBranches(cfg);
   const originBranch = originBranches.find(b => !b.directCallerComparison);
-  usesTxOrigin = originBranches.length > 0;
+  const usesTxOrigin = originBranches.length > 0;
   if (originBranch) {
-    usesTxOrigin = true;
     const originPc = originBranch.originPc;
     const originSeverity: SeverityLevel = "high";
 
@@ -110,7 +108,7 @@ export function analyzeContextualAccessControl(
     stateDependencies: { storageSlotsRead: [], storageSlotsWritten: [] },
     attackScenario: "No exploit is asserted for this comparison.",
     proofOfConcept: { summary: "NOT_EXECUTED: contextual comparison only", sequence: [] },
-    evidence: { opcodeTraceExcerpt: JSON.stringify(callerBranch), disassemblyContext: "Exact equality or boolean inversion, with address-preserving masks only.", hashProof: evidenceSha256(JSON.stringify(callerBranch)) },
+    evidence: { opcodeTraceExcerpt: JSON.stringify(callerBranch), disassemblyContext: "Exact EQ/SUB/XOR zero comparison or boolean inversion, with address-preserving masks only.", hashProof: evidenceSha256(JSON.stringify(callerBranch)) },
     remediation: { strategy: "Review whether restricting contract callers is intended. Do not treat this observation as a complete authorization review.", solidityPatchDiff: "" },
     verificationState: "AUTOMATED",
   });
