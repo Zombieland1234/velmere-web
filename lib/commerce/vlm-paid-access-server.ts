@@ -130,9 +130,13 @@ export function verifyVlmPaidAccessToken(args: {
   } catch {
     return { ok: false as const, error: "invalid_payload" };
   }
-  if (!isVlmPaidAccessTokenPayload(parsedPayload)) return { ok: false as const, error: "invalid_payload" };
-  const payload = parsedPayload;
-  if (payload.version !== "vlm-paid-access-v1") return { ok: false as const, error: "invalid_version" };
+  if (!parsedPayload || typeof parsedPayload !== "object" || Array.isArray(parsedPayload)) {
+    return { ok: false as const, error: "invalid_payload" };
+  }
+  const payloadRecord = parsedPayload as Record<string, unknown>;
+  if (payloadRecord.version !== "vlm-paid-access-v1") return { ok: false as const, error: "invalid_version" };
+  if (!isVlmPaidAccessTokenPayload(payloadRecord)) return { ok: false as const, error: "invalid_payload" };
+  const payload = payloadRecord;
   if (payload.productId !== args.productId) return { ok: false as const, error: "product_mismatch" };
   if (payload.contextHash !== hashVlmPaidAccessContext(args.context)) return { ok: false as const, error: "context_mismatch" };
   if (!payload.sessionId || payload.sessionId.length > 96 || !payload.nonce || payload.nonce.length < 16 || payload.nonce.length > 96) {

@@ -184,8 +184,15 @@ export function verifyPass4657AuditPdfDownloadToken(args: {
   } catch {
     return { ok: false as const, error: "audit_pdf_token_invalid" as const };
   }
-  if (!isAuditPdfTokenPayload(parsedPayload)) return { ok: false as const, error: "audit_pdf_token_invalid" as const };
-  const payload = parsedPayload;
+  if (!parsedPayload || typeof parsedPayload !== "object" || Array.isArray(parsedPayload)) {
+    return { ok: false as const, error: "audit_pdf_token_invalid" as const };
+  }
+  const payloadRecord = parsedPayload as Record<string, unknown>;
+  if (payloadRecord.v !== 1 || payloadRecord.purpose !== "audit_pro_pdf_download") {
+    return { ok: false as const, error: "audit_pdf_token_purpose_mismatch" as const };
+  }
+  if (!isAuditPdfTokenPayload(payloadRecord)) return { ok: false as const, error: "audit_pdf_token_invalid" as const };
+  const payload = payloadRecord;
   const candidate = availableKeys.find((key) => key.kid === payload.kid);
   if (!candidate) return { ok: false as const, error: "audit_pdf_token_key_unknown" as const };
   let supplied: Buffer;
