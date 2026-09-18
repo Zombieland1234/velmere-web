@@ -20,6 +20,13 @@ function normalizeLocale(value: string | null) {
   return value === "pl" || value === "de" || value === "en" ? value : "en";
 }
 
+async function hasCurrentAccountAuthority(request: Request, expectedAccountId: string) {
+  const current = await resolveRequestAccount(request);
+  if (!current || current.accountId !== expectedAccountId) return false;
+  if ((process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production") && current.sessionSource === "preview") return false;
+  return true;
+}
+
 export async function GET(request: Request) {
   const account = await resolveRequestAccount(request);
   if (!account || ((process.env.NODE_ENV === "production" || process.env.VERCEL_ENV === "production") && account.sessionSource === "preview")) {
@@ -120,6 +127,9 @@ export async function GET(request: Request) {
       filenameStem: `${payload.projectName}-${payload.reportId}`,
       fallbackStem: "velmere-audit-report",
     });
+    if (!await hasCurrentAccountAuthority(request, account.accountId)) {
+      return NextResponse.json({ ok: false, error: "account_session_no_longer_current" }, { status: 401, headers: { "cache-control": "private, no-store, max-age=0" } });
+    }
     return new NextResponse(delivery.bytes as BodyInit, {
       status: 200,
       headers: {
@@ -136,6 +146,10 @@ export async function GET(request: Request) {
         "x-velmere-customer-safe-boundary": "no-raw-payment-no-exploit-instructions",
       },
     });
+  }
+
+  if (!await hasCurrentAccountAuthority(request, account.accountId)) {
+    return NextResponse.json({ ok: false, error: "account_session_no_longer_current" }, { status: 401, headers: { "cache-control": "private, no-store, max-age=0" } });
   }
 
   return NextResponse.json({
