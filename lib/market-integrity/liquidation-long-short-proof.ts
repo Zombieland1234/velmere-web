@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import type { TokenRiskResult } from "./risk-types";
 import { buildPass2466DerivativesSqueezeProof, normalizePass2466DerivativesPair, type Pass2466DerivativesSqueezeProof } from "./derivatives-squeeze-proof";
 
@@ -125,12 +126,22 @@ function isCryptoPerpCandidate(result?: TokenRiskResult | null, symbol?: string)
   return assetClass === "crypto" || assetClass === "unknown" || assetClass === undefined;
 }
 
-async function safeJson<T>(url: string, cacheSeconds: number): Promise<T> {
+async function safeJson<T>(providerId: "binance" | "bybit", url: string, cacheSeconds: number): Promise<T> {
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({ providerId, operation: "fetch", channel: "internal_diagnostic", nowMs });
+  if (!fetchRights.allowed) throw new Error(`${providerId}_rights_${fetchRights.code.toLowerCase()}`);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId,
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: cacheSeconds,
+    nowMs,
+  });
   const response = await brokeredEgressFetch(url, {
     headers: { accept: "application/json" },
     signal: AbortSignal.timeout(4_000),
-    next: { revalidate: cacheSeconds },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "derivatives", operation: "long_short_json", timeoutMs: 4_000 });
+    ...(cacheRights.allowed ? { next: { revalidate: cacheSeconds } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "derivatives", operation: "long_short_json", timeoutMs: 4_000 });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   return await readJsonResponseBounded<T>(response, 512 * 1024);
 }
@@ -143,8 +154,8 @@ function observedAtFrom(value?: string | number) {
 export async function fetchPass2467BinanceLongShortSnapshot(pair: string): Promise<Pass2467LongShortSnapshot> {
   try {
     const [globalRows, topRows] = await Promise.all([
-      safeJson<BinanceLongShortResponse>(`https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol=${encodeURIComponent(pair)}&period=5m&limit=1`, 60),
-      safeJson<BinanceLongShortResponse>(`https://fapi.binance.com/futures/data/topLongShortAccountRatio?symbol=${encodeURIComponent(pair)}&period=5m&limit=1`, 60),
+      safeJson<BinanceLongShortResponse>("binance", `https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol=${encodeURIComponent(pair)}&period=5m&limit=1`, 60),
+      safeJson<BinanceLongShortResponse>("binance", `https://fapi.binance.com/futures/data/topLongShortAccountRatio?symbol=${encodeURIComponent(pair)}&period=5m&limit=1`, 60),
     ]);
     const row = globalRows[0];
     const topRow = topRows[0];
@@ -196,7 +207,7 @@ export async function fetchPass2467BinanceLongShortSnapshot(pair: string): Promi
 
 export async function fetchPass2467BybitLongShortSnapshot(pair: string): Promise<Pass2467LongShortSnapshot> {
   try {
-    const payload = await safeJson<BybitLongShortResponse>(`https://api.bybit.com/v5/market/long-short-ratio?category=linear&symbol=${encodeURIComponent(pair)}&period=5min&limit=1`, 60);
+    const payload = await safeJson<BybitLongShortResponse>("bybit", `https://api.bybit.com/v5/market/long-short-ratio?category=linear&symbol=${encodeURIComponent(pair)}&period=5min&limit=1`, 60);
     const row = payload.result?.list?.[0];
     const longAccount = finite(row?.buyRatio);
     const shortAccount = finite(row?.sellRatio);
