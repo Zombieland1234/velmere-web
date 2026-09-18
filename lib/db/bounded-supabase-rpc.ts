@@ -5,6 +5,7 @@ import {
   hasSupabasePublicConfig,
   hasSupabaseServiceRoleConfig,
 } from "@/lib/db/supabase";
+import { writeOperationalEvent } from "@/lib/security/operational-log-boundary";
 
 export type SupabaseRpcCapability = "public_read" | "user_rls" | "service_role_write";
 
@@ -155,6 +156,7 @@ export async function runBoundedSupabaseRpc(input: {
   deadlineMs?: number;
   clientOverride?: SupabaseRpcClient | null;
   now?: () => number;
+  correlationId?: string;
 }): Promise<{ data: unknown; receipt: BoundedRpcReceipt }> {
   const operation = input.operation.trim().toLowerCase();
   if (!SAFE_OPERATION.test(operation)) {
@@ -173,11 +175,22 @@ export async function runBoundedSupabaseRpc(input: {
     clientOverride: input.clientOverride,
   });
   if (resolved.state !== "ready" || !resolved.client) {
-    throw new BoundedSupabaseRpcError({
+    const unavailable = new BoundedSupabaseRpcError({
       code: "rpc_capability_unavailable",
       operation,
       capability: input.capability,
     });
+    writeOperationalEvent({
+      level: "error",
+      system: "supabase",
+      event: "rpc_failed",
+      code: unavailable.code,
+      correlationId: input.correlationId,
+      metrics: { durationMs: Math.max(0, now() - startedAt), deadlineMs },
+      identifiers: { operation, capability: input.capability },
+      error: unavailable,
+    });
+    throw unavailable;
   }
 
   const controller = new AbortController();
@@ -226,12 +239,32 @@ export async function runBoundedSupabaseRpc(input: {
       },
     };
   } catch (error) {
-    if (error instanceof BoundedSupabaseRpcError) throw error;
-    throw new BoundedSupabaseRpcError({
-      code: timedOut || controller.signal.aborted ? "rpc_aborted" : "rpc_failed",
-      operation,
-      capability: input.capability,
+    const failure = error instanceof BoundedSupabaseRpcError
+      ? error
+      : new BoundedSupabaseRpcError({
+          code: timedOut || controller.signal.aborted ? "rpc_aborted" : "rpc_failed",
+          operation,
+          capability: input.capability,
+        });
+    writeOperationalEvent({
+      level: failure.code === "rpc_deadline_exceeded" || failure.code === "rpc_aborted" ? "warn" : "error",
+      system: "supabase",
+      event: "rpc_failed",
+      code: failure.code,
+      correlationId: input.correlationId,
+      metrics: {
+        durationMs: Math.max(0, now() - startedAt),
+        deadlineMs,
+        aborted: timedOut || controller.signal.aborted,
+      },
+      identifiers: {
+        operation,
+        capability: input.capability,
+        ...(failure.providerCode ? { providerCode: failure.providerCode } : {}),
+      },
+      error: failure,
     });
+    throw failure;
   } finally {
     if (timer) clearTimeout(timer);
   }
