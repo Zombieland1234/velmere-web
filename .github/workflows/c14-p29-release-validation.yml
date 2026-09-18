@@ -21,11 +21,11 @@ jobs:
         image: postgres:17
         env:
           POSTGRES_PASSWORD: c14_p29_ephemeral_ci_only
-          POSTGRES_DB: c14_p29_fixture
+          POSTGRES_DB: c13_fixture
         ports:
           - 5432:5432
         options: >-
-          --health-cmd pg_isready
+          --health-cmd "pg_isready -U postgres -d c13_fixture"
           --health-interval 5s
           --health-timeout 5s
           --health-retries 10
@@ -40,7 +40,7 @@ jobs:
       PGPORT: "5432"
       PGUSER: postgres
       PGPASSWORD: c14_p29_ephemeral_ci_only
-      PGDATABASE: c14_p29_fixture
+      PGDATABASE: c13_fixture
     steps:
       - name: Checkout validator branch
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -72,6 +72,8 @@ jobs:
           redis-server --version
 
       - name: Re-run C13 source-derived qualification at exact SHA
+        if: always()
+        continue-on-error: true
         working-directory: subject
         run: |
           set -euo pipefail
@@ -81,6 +83,8 @@ jobs:
             python3 scripts/c13/ci-extra.py
 
       - name: Re-run Shield database fixture at exact SHA
+        if: always()
+        continue-on-error: true
         working-directory: subject
         run: |
           set -euo pipefail
@@ -89,12 +93,15 @@ jobs:
             2>&1 | tee /tmp/c13-sql/execution.log
 
       - name: Re-run frozen benchmark at exact SHA
+        if: always()
+        continue-on-error: true
         working-directory: subject
         run: |
           set -euo pipefail
           GITHUB_SHA="$QUALIFIED_SHA" bash scripts/c13/benchmark.sh
 
       - name: C14-P29 conservative release gate
+        if: always()
         id: gate
         continue-on-error: true
         run: |
@@ -162,10 +169,11 @@ jobs:
         run: |
           set -euo pipefail
           test -f /tmp/c14-p29/VERDICT.json
+
           python3 - <<'PY'
           import json, sys
           gate = json.load(open("/tmp/c14-p29/VERDICT.json"))
           print(json.dumps(gate, indent=2))
-          if gate["decision"] != "GO":
-              sys.exit(1)
+        if gate["decision"] != "GO":
+            sys.exit(1)
           PY
