@@ -1,0 +1,20 @@
+name: C14 P21 deployment contract
+
+on:
+  push:
+    branches:
+      - parallel/c14-p21-vercel-deployment
+
+permissions:
+  contents: read
+
+jobs:
+  deployment-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Test deployment preflight contract
+        run: node --test scripts/c14/deployment-preflight.test.mjs
