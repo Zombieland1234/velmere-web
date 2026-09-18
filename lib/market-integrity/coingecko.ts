@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { analyzeTokenRisk } from "./risk-engine";
 import type { TokenRiskInput } from "./risk-types";
 import type { MarketIntegrityRow } from "./market-row-types";
@@ -167,11 +168,26 @@ export function coinToMarketRow(coin: CoinGeckoMarketCoin): MarketIntegrityRow {
 }
 
 async function fetchJson<T>(url: string, revalidate = 90): Promise<T> {
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "coingecko",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) throw new Error(`coingecko_rights_${fetchRights.code.toLowerCase()}`);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "coingecko",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: Math.max(1, revalidate),
+    nowMs,
+  });
   const response = await brokeredEgressFetch(url, {
     headers: cgHeaders(),
     signal: AbortSignal.timeout(4_500),
-    next: { revalidate },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "coingecko", operation: "coingecko_json", timeoutMs: 4_500, maxResponseBytes: 4_194_304 });
+    ...(cacheRights.allowed ? { next: { revalidate } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "coingecko", operation: "coingecko_json", timeoutMs: 4_500, maxResponseBytes: 4_194_304 });
   if (!response.ok)
     throw new Error(`CoinGecko request failed with status ${response.status}`);
   return readJsonResponseBounded<T>(response, 4_194_304);
