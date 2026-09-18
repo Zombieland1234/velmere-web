@@ -17,6 +17,7 @@ import type { SourceReceipt } from "@/lib/market-integrity/top1-risk-foundation"
 import type { MarketIntegrityRow } from "@/lib/market-integrity/market-row-types";
 import { buildMarketRowEvidencePayload } from "@/lib/market-integrity/market-row-evidence-payload";
 import { getP99RealMarketsFieldContract, type RealMarketsFieldSemanticClass } from "@/lib/market-integrity/real-markets-basic-field-policy";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 
 export const MARKET_ROW_DELIVERY_GATE_ID = "velmere.p99.market-row-delivery-gate.v2" as const;
 
@@ -591,6 +592,22 @@ export function buildMarketRowDeliveryReceipt(args: {
   const safeGeneratedAtMs = Number.isFinite(generatedAtMs) ? generatedAtMs : Number.NaN;
   const canonicalIdentity = cleanCanonicalIdentity(args.row);
   const rawReceipts = asProviderReceipts(args.row);
+  const providerRightsDecisions = Array.from(new Set(rawReceipts.map((receipt) => receipt.providerId)))
+    .sort()
+    .map((providerId) => evaluateC14ProviderOperation({
+      providerId,
+      operation: "display",
+      channel: "customer",
+      dataClass: "derived",
+      attributionPresent: false,
+      nowMs: safeGeneratedAtMs,
+    }));
+  const providerRightsBlockers = providerRightsDecisions
+    .filter((decision) => !decision.allowed)
+    .map((decision) => `provider_rights:${decision.providerId}:${decision.code.toLowerCase()}`);
+  const rightsAllowedProviderIds = new Set(
+    providerRightsDecisions.filter((decision) => decision.allowed).map((decision) => decision.providerId),
+  );
   const projectionEnv = args.projectionEnv ?? process.env;
   const projectionSigningReady = getPass4993SourceReceiptProjectionReadiness(projectionEnv).ready;
   const binding = buildCustomerReportSourceBinding({
@@ -602,6 +619,7 @@ export function buildMarketRowDeliveryReceipt(args: {
   });
   const contentReceipts = uniqueContentReceipts(binding.receipts.filter((receipt) =>
     receipt.evidenceState === "content_bound"
+    && rightsAllowedProviderIds.has(receipt.provider)
     && receipt.commercialEvidenceEligible === true
     && receipt.identityMatched === true
     && verifyPass4993SourceReceiptProjection({
@@ -675,6 +693,7 @@ export function buildMarketRowDeliveryReceipt(args: {
     ...requiredFields.map((field) => field.blocker).filter((value): value is string => Boolean(value)),
     ...binding.blockers.filter((blocker) =>
       !blocker.startsWith("independent_content_bound_upstreams:") || tier !== "basic"),
+    ...providerRightsBlockers,
     !Number.isFinite(generatedAtMs) ? "generated_at_invalid" : null,
   ].filter((value): value is string => Boolean(value)))).sort();
   const sourceReceiptRoot = sha256Digest(canonicalJson(contentReceipts.map((receipt) => ({
@@ -689,7 +708,9 @@ export function buildMarketRowDeliveryReceipt(args: {
     schemaVersion: MARKET_ROW_DELIVERY_GATE_ID,
     canonicalIdentity,
     tier,
-    state: completeFieldCount === requiredFields.length ? "verified" as const : "withheld" as const,
+    state: completeFieldCount === requiredFields.length && providerRightsBlockers.length === 0
+      ? "verified" as const
+      : "withheld" as const,
     completenessBps,
     requiredFieldCount: requiredFields.length,
     completeFieldCount,
@@ -820,12 +841,7 @@ export function withholdProviderRiskResult(args: {
 }
 
 function fieldVerified(delivery: MarketRowDeliveryReceipt, fieldId: string) {
-  return (
-    delivery.fields[fieldId]?.state === "verified" ||
-    delivery.fields[fieldId]?.valueAvailable === true ||
-    (delivery.state as string) === "reference" ||
-    delivery.state === "withheld"
-  );
+  return delivery.state === "verified" && delivery.fields[fieldId]?.state === "verified";
 }
 
 /**
@@ -838,10 +854,10 @@ export function projectMarketRowForDelivery(
   delivery: MarketRowDeliveryReceipt,
   generatedAt: string,
 ) {
-  const publishedScore = (delivery.risk.state === "verified" && delivery.risk.score !== null)
+  const publishedScore = (delivery.state === "verified" && delivery.risk.state === "verified" && delivery.risk.score !== null)
     ? delivery.risk.score
-    : (typeof row.result?.score === "number" ? row.result.score : delivery.risk.score);
-  const riskVerified = publishedScore !== null && publishedScore !== undefined;
+    : null;
+  const riskVerified = publishedScore !== null;
   const result = riskVerified
     ? {
         token: { marketId: row.id, symbol: row.symbol, name: row.name },
