@@ -1,0 +1,221 @@
+name: C15 Q3 exact-source integration and qualification
+on:
+  push:
+    branches: [c15/qualification-q3-20260918]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: c15-q3-qualification
+  cancel-in-progress: false
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.integrate.outputs.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {fetch-depth: 0}
+      - id: integrate
+        name: Verify reviewed source tree before isolated branch publication
+        env:
+          TARGET_BRANCH: c15/qualification-q3-20260918
+        run: |
+          python3 - <<'PY'
+          import base64, gzip, hashlib, json, os, subprocess, tempfile
+          from pathlib import Path
+          branch=os.environ['TARGET_BRANCH']
+          baseline='e718df06d20a8129ffe261eef9c6c74cc5c91729'
+          patch_digest='4cda99eff0433ec9f6ff5a6b703e97041aaa0d06c1cf63df52eac5d614d1f406'
+          expected='b98417b5c52d6cc198ec2013bd40b814bda9b3c8'
+          out=Path('/tmp/c15-integration');out.mkdir()
+          def git(*args,env=None):
+              return subprocess.check_output(['git',*args],text=True,env=env).strip()
+          assert os.environ['GITHUB_REPOSITORY']=='Zombieland1234/velmere-web'
+          assert os.environ['GITHUB_REF']=='refs/heads/'+branch
+          head=git('rev-parse','HEAD');assert head==os.environ['GITHUB_SHA']
+          assert not git('status','--porcelain'),'Unexpected worktree changes'
+          subprocess.run(['git','merge-base','--is-ancestor',baseline,head],check=True)
+          marker=Path('_handoff/c15-q3/INTEGRATED_SOURCE.json')
+          if marker.exists():
+              recorded=json.loads(marker.read_text())
+              assert recorded['baselineSha']==baseline and recorded['patchSha256']==patch_digest
+              mode='EXISTING_INTEGRATED_BRANCH_CURRENT_SHA_QUALIFIED'
+          else:
+              assert git('ls-remote','origin','refs/heads/'+branch).split()[0]==head,'Branch advanced; do not overwrite'
+              parts=[Path(f'_handoff/c15-q3/reviewed-q2.patch.gz.b64.{i}') for i in range(4)]
+              bootstrap=[str(p) for p in parts]+['.github/workflows/c15-q3-qualification.yml']
+              changed=set(git('diff','--name-only',baseline,head).splitlines())
+              assert changed==set(bootstrap),'Unreviewed changes in staging tree'
+              encoded=''.join(p.read_text().strip() for p in parts)
+              patch=gzip.decompress(base64.b64decode(encoded,validate=True))
+              assert len(patch)==82829 and hashlib.sha256(patch).hexdigest()==patch_digest,'Transport integrity failed'
+              patch_path=out/'REVIEWED.patch';patch_path.write_bytes(patch)
+              subprocess.run(['git','apply','--index','--check',str(patch_path)],check=True)
+              subprocess.run(['git','apply','--index',str(patch_path)],check=True)
+              with tempfile.TemporaryDirectory() as td:
+                  env=dict(os.environ,GIT_INDEX_FILE=str(Path(td)/'index'))
+                  git('read-tree',git('write-tree'),env=env)
+                  git('update-index','--force-remove','--',*bootstrap,env=env)
+                  tree=git('write-tree',env=env)
+              assert tree==expected,f'Reviewed source tree mismatch: {tree}'
+              subprocess.run(['git','rm','--',*[str(p) for p in parts]],check=True)
+              marker.write_text(json.dumps({'baselineSha':baseline,'patchSha256':patch_digest,'admittedSourceTree':tree,'stagingCommitSha':head,'scope':'INTERNAL_Q2_SOURCE_ADMISSION_NOT_RELEASE_APPROVAL'},indent=2)+'\n')
+              subprocess.run(['git','add',str(marker)],check=True)
+              subprocess.run(['git','-c','user.name=github-actions[bot]','-c','user.email=41898282+github-actions[bot]@users.noreply.github.com','commit','-m','feat(c15): integrate reviewed Q2 source with exact tree admission'],check=True)
+              subprocess.run(['git','push','origin','HEAD:refs/heads/'+branch],check=True)
+              mode='EXACT_Q2_SOURCE_TREE_VERIFIED_AND_COMMITTED'
+          sha=git('rev-parse','HEAD');tree=git('rev-parse','HEAD^{tree}')
+          assert not git('status','--porcelain')
+          (out/'SOURCE_COMMIT.json').write_text(json.dumps({'sourceSha':sha,'treeSha':tree,'triggerSha':head,'branch':branch,'baselineSha':baseline,'reviewedQ2Tree':expected,'mode':mode,'releaseVerdict':'NO_GO'},indent=2))
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('sha='+sha+'\n')
+          print(json.dumps({'qualifiedSourceSha':sha,'tree':tree,'mode':mode}))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c15-q3-integration-${{ github.run_id }}-${{ github.run_attempt }}',path: /tmp/c15-integration/,retention-days: 14,if-no-files-found: error}
+  application:
+    needs: integrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      QUALIFIED_SHA: ${{ needs.integrate.outputs.sha }}
+      C6_SOURCE_SHA: ${{ needs.integrate.outputs.sha }}
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: --max-old-space-size=2048
+      RAYON_NUM_THREADS: '2'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ needs.integrate.outputs.sha }}',fetch-depth: 0,persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Fresh install scripts regressions strict lint and production build
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; python3 scripts/c14-integration/qualify-core.py
+      - if: always()
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; python3 scripts/c14-integration/export-source.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c15-q3-core-${{ github.run_id }}-${{ github.run_attempt }}',path: /tmp/c14-integration/,retention-days: 14,if-no-files-found: error}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c15-q3-source-${{ github.run_id }}-${{ github.run_attempt }}',path: /tmp/c14-source/,retention-days: 14,if-no-files-found: error}
+  frozen-benchmark:
+    needs: integrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      QUALIFIED_SHA: ${{ needs.integrate.outputs.sha }}
+      VELMERE_BENCHMARK_BASELINE_SHA: e718df06d20a8129ffe261eef9c6c74cc5c91729
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ needs.integrate.outputs.sha }}',fetch-depth: 0,persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - name: Full frozen corpus, unchanged labels, no chain execution
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; bash scripts/c14-integration/benchmark.sh
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q3-benchmark-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            /tmp/c14-benchmark
+            !/tmp/c14-benchmark/private-inputs.json
+            !/tmp/c14-benchmark/*-engine.cjs
+          retention-days: 14
+          if-no-files-found: error
+  runtime:
+    needs: integrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      QUALIFIED_SHA: ${{ needs.integrate.outputs.sha }}
+      C6_SOURCE_SHA: ${{ needs.integrate.outputs.sha }}
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: --max-old-space-size=2048
+      RAYON_NUM_THREADS: '2'
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+      VELMERE_LOOPBACK_HTTP_BROWSER_PROOF: 'true'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ needs.integrate.outputs.sha }}',fetch-depth: 0,persist-credentials: false}
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: {node-version: '24.18.0'}
+      - run: |
+          mkdir -p /tmp/c14-runtime
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends redis-server
+          node --version > /tmp/c14-runtime/NODE_VERSION.txt
+          redis-server --version > /tmp/c14-runtime/REDIS_VERSION.txt
+          printf '%s\n' "$QUALIFIED_SHA" > /tmp/c14-runtime/SOURCE_SHA.txt
+      - run: npm ci --ignore-scripts --no-fund
+      - name: Real Redis checks on private temporary instance
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; set -o pipefail; bash scripts/c12/redis-tests.sh 2>&1 | tee /tmp/c14-runtime/redis-tests.log
+      - name: Full production bundle
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; set -o pipefail; npm run build 2>&1 | tee /tmp/c14-runtime/build.log
+      - run: node_modules/.bin/playwright install --with-deps chromium
+      - name: Dynamic Basic JSON PDF browser quota and recovery
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; set -o pipefail; node scripts/c12/production-e2e.mjs /tmp/c14-runtime/e2e 2>&1 | tee /tmp/c14-runtime/e2e.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c15-q3-runtime-${{ github.run_id }}-${{ github.run_attempt }}',path: /tmp/c14-runtime/,retention-days: 14,if-no-files-found: error}
+  database-restore:
+    needs: integrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:17
+        env: {POSTGRES_PASSWORD: c14_ephemeral_ci_only,POSTGRES_DB: c14_fixture}
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      QUALIFIED_SHA: ${{ needs.integrate.outputs.sha }}
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c14_ephemeral_ci_only
+      PGDATABASE: c14_fixture
+      C14_DISPOSABLE_RESTORE_ACK: ISOLATED_CI_ONLY
+      C14_P16_EVIDENCE_DIR: /tmp/c14-restore
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ needs.integrate.outputs.sha }}',fetch-depth: 0,persist-credentials: false}
+      - run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends redis-server
+      - name: Canonical Shield PostgreSQL regression
+        run: |
+          export GITHUB_SHA="$QUALIFIED_SHA"
+          mkdir -p /tmp/c13-sql
+          createdb c13_fixture
+          set -o pipefail
+          PGDATABASE=c13_fixture python3 scripts/c13/shield-db-test.py 2>&1 | tee /tmp/c13-sql/execution.log
+      - name: Disposable PostgreSQL Redis object-file restore drill
+        run: export GITHUB_SHA="$QUALIFIED_SHA"; mkdir -p /tmp/c14-restore; set -o pipefail; bash scripts/c14/p16/run-isolated-restore.sh 2>&1 | tee /tmp/c14-restore/execution.log
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q3-database-restore-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            /tmp/c13-sql/
+            /tmp/c14-restore/
+          retention-days: 14
+          if-no-files-found: error
+  secrets:
+    needs: integrate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      QUALIFIED_SHA: ${{ needs.integrate.outputs.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with: {ref: '${{ needs.integrate.outputs.sha }}',fetch-depth: 0,persist-credentials: false}
+      - run: export GITHUB_SHA="$QUALIFIED_SHA"; python3 scripts/c14-integration/scan-secrets.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: {name: 'c15-q3-secrets-${{ github.run_id }}-${{ github.run_attempt }}',path: /tmp/c14-secrets/,retention-days: 14,if-no-files-found: error}
