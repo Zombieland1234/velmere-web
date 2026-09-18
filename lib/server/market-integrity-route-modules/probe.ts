@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { searchCoinGeckoMarket } from "@/lib/market-integrity/coingecko";
 import { analyzeDexScreenerToken } from "@/lib/market-integrity/dexscreener";
 import {
@@ -63,7 +64,14 @@ function num(value: unknown): number | undefined {
   return typeof value === "number" && Number.isFinite(value) ? value : undefined;
 }
 
-async function fetchJson(url: string) {
+async function fetchJson(providerId: "yahoo_finance" | "binance", url: string) {
+  const rights = evaluateC14ProviderOperation({
+    providerId,
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.now(),
+  });
+  if (!rights.allowed) throw new Error(`provider_rights_${providerId}_${rights.code.toLowerCase()}`);
   const response = await brokeredEgressFetch(url, {
     headers: { accept: "application/json", "user-agent": "Velmere-PASS435-Live-Query-TestBench/1.0" },
     cache: "no-store",
@@ -76,7 +84,7 @@ async function resolveYahooSymbol(query: string) {
   const clean = query.trim().toLowerCase();
   const direct = yahooSymbolAliases[clean] ?? (safeYahooSymbol.test(query.trim()) ? query.trim().toUpperCase() : undefined);
   if (direct) return direct;
-  const payload = await fetchJson(`https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(query)}&quotesCount=1&newsCount=0&enableFuzzyQuery=true`) as { quotes?: Array<{ symbol?: string }> };
+  const payload = await fetchJson("yahoo_finance", `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(query)}&quotesCount=1&newsCount=0&enableFuzzyQuery=true`) as { quotes?: Array<{ symbol?: string }> };
   const found = payload.quotes?.find((item) => item.symbol && safeYahooSymbol.test(item.symbol))?.symbol;
   if (!found) throw new Error("no_yahoo_match");
   return found;
@@ -84,7 +92,7 @@ async function resolveYahooSymbol(query: string) {
 
 async function loadYahooRiskResult(query: string): Promise<{ result: TokenRiskResult; probe: Pass433ProviderProbe }> {
   const symbol = await resolveYahooSymbol(query);
-  const payload = await fetchJson(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=30m&includePrePost=false&events=div%2Csplits`) as {
+  const payload = await fetchJson("yahoo_finance", `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=30m&includePrePost=false&events=div%2Csplits`) as {
     chart?: { result?: Array<{ meta?: { regularMarketPrice?: number; chartPreviousClose?: number; shortName?: string; currency?: string; regularMarketTime?: number }; timestamp?: number[]; indicators?: { quote?: Array<{ close?: Array<number | null>; volume?: Array<number | null> }> } }> };
   };
   const chart = payload.chart?.result?.[0];
@@ -157,7 +165,7 @@ async function loadYahooRiskResult(query: string): Promise<{ result: TokenRiskRe
 async function loadBinanceKlineProbe(query: string): Promise<Pass433ProviderProbe | undefined> {
   const symbol = binanceSymbolAliases[query.trim().toLowerCase()];
   if (!symbol) return undefined;
-  const rows = await fetchJson(`https://api.binance.com/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=1h&limit=48`) as unknown[];
+  const rows = await fetchJson("binance", `https://api.binance.com/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=1h&limit=48`) as unknown[];
   if (!Array.isArray(rows) || rows.length < 2) throw new Error("binance_klines_empty");
   const first = Number((rows[0] as unknown[])[1]);
   const last = Number((rows.at(-1) as unknown[])[4]);
