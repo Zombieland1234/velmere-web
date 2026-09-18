@@ -592,6 +592,7 @@ export function buildMarketRowDeliveryReceipt(args: {
   const safeGeneratedAtMs = Number.isFinite(generatedAtMs) ? generatedAtMs : Number.NaN;
   const canonicalIdentity = cleanCanonicalIdentity(args.row);
   const rawReceipts = asProviderReceipts(args.row);
+  const providerPolicyNowMs = Number.isFinite(safeGeneratedAtMs) ? safeGeneratedAtMs : Date.now();
   const providerRightsDecisions = Array.from(new Set(rawReceipts.map((receipt) => receipt.providerId)))
     .sort()
     .map((providerId) => evaluateC14ProviderOperation({
@@ -600,7 +601,7 @@ export function buildMarketRowDeliveryReceipt(args: {
       channel: "customer",
       dataClass: "derived",
       attributionPresent: false,
-      nowMs: safeGeneratedAtMs,
+      nowMs: providerPolicyNowMs,
     }));
   const providerRightsBlockers = providerRightsDecisions
     .filter((decision) => !decision.allowed)
