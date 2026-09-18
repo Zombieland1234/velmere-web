@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { afterEach, beforeEach, test } from "node:test";
 import { NextRequest } from "next/server";
 
@@ -75,6 +76,10 @@ afterEach(() => {
   savedEnv.clear();
 });
 
+function sha256(value: string) {
+  return createHash("sha256").update(value, "utf8").digest("hex");
+}
+
 function entitlement(args: {
   id: string;
   productId: VlmPaidProductId;
@@ -136,6 +141,24 @@ test("Pro remains available only through a matching current server entitlement",
   assert.equal(verdict.entitlement.entitlement.id, "ent_c14_pro");
 });
 
+test("Basic stays free and ignores caller entitlement decoration", async () => {
+  const verdict = await resolveVlmAdvancedOnlyAccess({
+    request: new Request("http://localhost/api/c14-p11?entitlementId=forged", {
+      headers: { "x-velmere-entitlement-id": "forged" },
+    }),
+    purpose: "analysis",
+    depth: "basic",
+    surface: "shield",
+    locale: "en",
+    account: null,
+  });
+  assert.equal(verdict.ok, true);
+  if (verdict.ok) {
+    assert.equal(verdict.depth, "basic");
+    assert.equal(verdict.paidRequired, false);
+  }
+});
+
 test("Advanced NOT_FOR_SALE cannot be resurrected by a stale stored entitlement", async () => {
   const accountIdHash = hashVelmereAccountBinding(accountA.accountId);
   const context = {
@@ -184,6 +207,30 @@ test("audit report regeneration ignores legacy Advanced entitlement while Advanc
 
   assert.equal(access.clientTier, "basic");
   assert.equal(access.entitlementId, undefined);
+});
+
+test("legacy Advanced plus a current Pro grant downgrades regeneration to Pro", async () => {
+  const caseRef = "AUD-C14P11DG01";
+  const accountIdHash = hashVelmereAccountBinding(accountA.accountId);
+  seedMemoryEntitlementRecord(entitlement({
+    id: "ent_c14_audit_advanced_stale",
+    productId: "vlm_advanced_audit_human_review",
+    context: { locale: "en", accountIdHash, auditCaseRef: caseRef },
+  }));
+  seedMemoryEntitlementRecord(entitlement({
+    id: "ent_c14_audit_pro_after_downgrade",
+    productId: "vlm_pro_audit_review",
+    context: { locale: "en", accountIdHash, auditCaseRef: caseRef },
+  }));
+
+  const access = await resolveCurrentAuditAccess(
+    new NextRequest(`http://localhost/api/audit/report?caseRef=${caseRef}`),
+    accountA.accountId,
+    caseRef,
+  );
+
+  assert.equal(access.clientTier, "pro");
+  assert.equal(access.entitlementId, "ent_c14_audit_pro_after_downgrade");
 });
 
 test("audit report regeneration still accepts a matching Pro beta entitlement", async () => {
@@ -284,6 +331,66 @@ test("durable lifecycle response parser rejects an impossible restore transition
   const result = await applyVlmPaidEntitlementLifecycleEvent({
     entitlementId: "ent_c14_impossible_restore",
     eventId: "evt-c14-impossible-restore",
+    event: "restore",
+    dependencies: { rpc: fakeRpc as never },
+  });
+
+  assert.equal(result.ok, false);
+  if (!result.ok) assert.equal(result.error, "invalid_lifecycle_rpc_result");
+});
+
+test("durable lifecycle accepts only a semantically valid response bound to this request", async () => {
+  process.env.NEXT_PUBLIC_SUPABASE_URL = "https://c14-p11.invalid.supabase.co";
+  process.env.SUPABASE_SERVICE_ROLE_KEY = "c14-p11-test-service-role-key-not-used";
+  const entitlementId = "ent_c14_valid_restore";
+  const eventId = "evt-c14-valid-restore";
+  const fakeRpc = async () => ({
+    data: {
+      ok: true,
+      event_type: "restore",
+      previous_status: "expired",
+      next_status: "active",
+      idempotent: false,
+      entitlement_id_hash: sha256(entitlementId),
+      event_id_hash: sha256(eventId),
+    },
+    error: null,
+  });
+
+  const result = await applyVlmPaidEntitlementLifecycleEvent({
+    entitlementId,
+    eventId,
+    event: "restore",
+    dependencies: { rpc: fakeRpc as never },
+  });
+
+  assert.equal(result.ok, true);
+  if (result.ok) {
+    assert.equal(result.event, "restore");
+    assert.equal(result.previousStatus, "expired");
+    assert.equal(result.nextStatus, "active");
+  }
+});
+
+test("durable lifecycle rejects a valid-looking response bound to another request", async () => {
+  process.env.NEXT_PUBLIC_SUPABASE_URL = "https://c14-p11.invalid.supabase.co";
+  process.env.SUPABASE_SERVICE_ROLE_KEY = "c14-p11-test-service-role-key-not-used";
+  const fakeRpc = async () => ({
+    data: {
+      ok: true,
+      event_type: "expire",
+      previous_status: "active",
+      next_status: "expired",
+      idempotent: false,
+      entitlement_id_hash: sha256("another-entitlement"),
+      event_id_hash: sha256("another-event"),
+    },
+    error: null,
+  });
+
+  const result = await applyVlmPaidEntitlementLifecycleEvent({
+    entitlementId: "ent_c14_requested",
+    eventId: "evt-c14-requested",
     event: "restore",
     dependencies: { rpc: fakeRpc as never },
   });
