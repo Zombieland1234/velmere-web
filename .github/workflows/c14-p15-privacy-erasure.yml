@@ -1,0 +1,93 @@
+name: C14 P15 privacy export and erasure qualification
+
+on:
+  push:
+    branches:
+      - parallel/c14-p15-privacy-erasure
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p15-privacy-erasure
+  cancel-in-progress: false
+
+jobs:
+  unit-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Privacy inventory and orchestrator tests
+        run: node --experimental-strip-types --test scripts/c14/privacy-erasure.test.ts
+      - name: Source contract
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          migration=Path('supabase/migrations/20260918030000_c14_p15_privacy_export_erasure_foundation.sql').read_text()
+          required=[
+            'velmere_create_account_data_export_v1',
+            'velmere_request_account_erasure_v1',
+            'velmere_confirm_account_erasure_session_revocation_v1',
+            'velmere_execute_account_erasure_application_v1',
+            'velmere_finalize_account_erasure_v1',
+            'velmere_account_erasure_tombstones',
+            "full_erasure_claimed boolean not null default false",
+          ]
+          missing=[item for item in required if item not in migration]
+          assert not missing, missing
+          assert 'delete from storage.objects' not in migration.lower()
+          service=Path('lib/privacy/account-erasure-service.ts').read_text()
+          assert '.storage.from(bucketId).remove' in service
+          assert '.auth.admin.deleteUser' in service
+          print('C14-P15 source contract PASS')
+          PY
+
+  postgres-ab-noauth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: c14_p15_ephemeral_only
+          POSTGRES_DB: c14_p15
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c14_p15_ephemeral_only
+      PGDATABASE: c14_p15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Real PostgreSQL 17 privacy lifecycle
+        run: python3 scripts/c14/privacy-erasure-db-test.py
+
+  typecheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx tsc --noEmit
