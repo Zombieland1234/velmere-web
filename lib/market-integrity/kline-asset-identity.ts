@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { canonicalJson } from "@/lib/security/canonical-json";
 import { sha256Digest } from "@/lib/security/cryptographic-digest";
 
@@ -163,6 +164,13 @@ type CoinGeckoPlatformRow = {
 type FetchLike = typeof fetch;
 
 async function identityFetch(url: string, fetchImpl?: FetchLike) {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "coingecko",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.now(),
+  });
+  if (!rights.allowed) throw new Error(`coingecko_rights_${rights.code.toLowerCase()}`);
   if (fetchImpl) {
     return fetchImpl(url, {
       headers: { accept: "application/json" },
