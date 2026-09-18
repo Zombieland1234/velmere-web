@@ -1,0 +1,71 @@
+name: C14-P27 visual regression
+on:
+  push:
+    branches: [parallel/c14-p27-visual-regression]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: c14-p27-visual-regression
+  cancel-in-progress: false
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      CI: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+      C14_P27_BASE_URL: http://127.0.0.1:4173
+      C14_P27_OUTPUT_DIR: /tmp/c14-p27-visual
+      VELMERE_CANONICAL_ORIGIN: http://127.0.0.1:4173
+      VELMERE_VISUAL_REGRESSION_FIXTURES: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.18.0'
+      - name: Exact source identity
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git diff --exit-code
+          git status --porcelain=v1
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts --no-fund
+      - name: Install Chromium runtime
+        run: npx playwright install --with-deps chromium
+      - name: Strict TypeScript
+        run: npx tsc --noEmit --strict --pretty false
+      - name: Production build
+        run: npm run build
+      - name: Start exact production build
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p27-visual
+          nohup npm run start -- -H 127.0.0.1 -p 4173 > /tmp/c14-p27-visual/NEXT_SERVER.log 2>&1 &
+          echo $! > /tmp/c14-p27-visual/NEXT_SERVER.pid
+      - name: Visual qualification
+        run: node scripts/c14-p27/visual-regression.mjs
+      - name: Preserve source and runtime identity
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/c14-p27-visual
+          {
+            echo "source_sha=$GITHUB_SHA"
+            echo "tree_sha=$(git rev-parse HEAD^{tree})"
+            echo "node=$(node --version)"
+            echo "npm=$(npm --version)"
+            echo "playwright=$(node -p "require('playwright/package.json').version")"
+          } > /tmp/c14-p27-visual/IDENTITY.txt
+          git status --porcelain=v1 > /tmp/c14-p27-visual/GIT_STATUS.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p27-visual-${{ github.run_id }}
+          path: /tmp/c14-p27-visual
+          retention-days: 30
+          if-no-files-found: error
