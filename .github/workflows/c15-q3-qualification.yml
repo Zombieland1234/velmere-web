@@ -63,6 +63,7 @@ jobs:
                   tree=git('write-tree',env=env)
               assert tree==expected,f'Reviewed source tree mismatch: {tree}'
               subprocess.run(['git','rm','--',*[str(p) for p in parts]],check=True)
+              marker.parent.mkdir(parents=True,exist_ok=True)
               marker.write_text(json.dumps({'baselineSha':baseline,'patchSha256':patch_digest,'admittedSourceTree':tree,'stagingCommitSha':head,'scope':'INTERNAL_Q2_SOURCE_ADMISSION_NOT_RELEASE_APPROVAL'},indent=2)+'\n')
               subprocess.run(['git','add',str(marker)],check=True)
               subprocess.run(['git','-c','user.name=github-actions[bot]','-c','user.email=41898282+github-actions[bot]@users.noreply.github.com','commit','-m','feat(c15): integrate reviewed Q2 source with exact tree admission'],check=True)
