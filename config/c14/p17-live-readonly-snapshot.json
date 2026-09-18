@@ -1,0 +1,556 @@
+{
+  "schemaVersion": "velmere.c14.p17.live-readonly-snapshot.v1",
+  "capturedAt": "2026-09-18T00:51:44.430832Z",
+  "sourceBaseSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+  "projectRef": "yljjyowcvjgjcamffnvd",
+  "postgresVersion": "17.6",
+  "truthBoundary": [
+    "Read-only catalog/ACL/RLS inspection plus session-local role/JWT probes on the live project.",
+    "No persistent production row or schema mutation was performed.",
+    "No disposable Supabase development branch exists, so positive owner-A/owner-B fixture writes were not executed."
+  ],
+  "liveMigrations": [
+    {
+      "version": "20260824002402",
+      "name": "r7_browser_basic_staging_foundation"
+    },
+    {
+      "version": "20260824003615",
+      "name": "r7_staging_backup_restore_http_helpers"
+    },
+    {
+      "version": "20260824004028",
+      "name": "r7_real_gotrue_context_storage"
+    },
+    {
+      "version": "20260824004307",
+      "name": "r7_one_time_edge_authority"
+    },
+    {
+      "version": "20260824004724",
+      "name": "r7_postgrest_http_rls_probe"
+    },
+    {
+      "version": "20260824010427",
+      "name": "r7_durable_erasure_and_staging_summary"
+    },
+    {
+      "version": "20260824012329",
+      "name": "r7_exact_execution_transport_bucket"
+    },
+    {
+      "version": "20260824013956",
+      "name": "r7_live_schema_reconciliation_and_security_hardening"
+    },
+    {
+      "version": "20260824014432",
+      "name": "r7_private_control_explicit_deny_policies"
+    },
+    {
+      "version": "20260824020029",
+      "name": "r7_temporary_exact_migration_corpus_export"
+    },
+    {
+      "version": "20260824024555",
+      "name": "r7_remove_temporary_migration_export"
+    },
+    {
+      "version": "20260824024822",
+      "name": "r7_close_unused_anonymous_execution_upload"
+    },
+    {
+      "version": "20260824162247",
+      "name": "r7_source_authority_run_attempt_binding"
+    },
+    {
+      "version": "20260825012155",
+      "name": "r7_browser_basic_product_route_runtime_closure"
+    },
+    {
+      "version": "20260825013405",
+      "name": "r7_exact_service_role_table_acl_closure"
+    },
+    {
+      "version": "20260825013656",
+      "name": "r7_identity_sequence_acl_closure"
+    },
+    {
+      "version": "20260825033238",
+      "name": "r7_source_authority_append_only_history"
+    },
+    {
+      "version": "20260825054159",
+      "name": "r7_browser_basic_user_authenticated_atomic_store"
+    },
+    {
+      "version": "20260825054301",
+      "name": "r7_browser_basic_user_authenticated_durable_computation"
+    },
+    {
+      "version": "20260825055719",
+      "name": "r7_browser_basic_authenticated_rpc_abuse_hardening"
+    },
+    {
+      "version": "20260825061048",
+      "name": "r7_browser_basic_server_capability_hardening"
+    },
+    {
+      "version": "20260826173848",
+      "name": "p91_risk_history_event_driven_versioned_durable_truth"
+    },
+    {
+      "version": "20260826173910",
+      "name": "p93_risk_history_canonical_identity_public_resolution"
+    },
+    {
+      "version": "20260826173931",
+      "name": "p94_risk_history_public_only_pagination_temporal_window"
+    },
+    {
+      "version": "20260826174017",
+      "name": "p94_risk_history_asset_id_regex_runtime_fix"
+    },
+    {
+      "version": "20260826174202",
+      "name": "p91_risk_history_pgcrypto_schema_runtime_fix"
+    },
+    {
+      "version": "20260826175738",
+      "name": "p94_risk_history_asset_id_regex_source_reconciliation"
+    },
+    {
+      "version": "20260826175747",
+      "name": "p91_risk_history_pgcrypto_schema_source_reconciliation"
+    },
+    {
+      "version": "20260826204201",
+      "name": "pass4611_audit_intake_case_vault_current_source"
+    },
+    {
+      "version": "20260827000214",
+      "name": "r7_audit_basic_current_prerequisite_foundation_v2"
+    },
+    {
+      "version": "20260827000415",
+      "name": "r7_audit_basic_current_exact_worker_artifact_closure"
+    },
+    {
+      "version": "20260827000519",
+      "name": "r7_audit_basic_pgcrypto_search_path_runtime_fix"
+    },
+    {
+      "version": "20260827004534",
+      "name": "r7_audit_basic_customer_bridge_capability"
+    },
+    {
+      "version": "20260827005739",
+      "name": "r7_audit_basic_backup_erase_restore_lifecycle"
+    },
+    {
+      "version": "20260827010328",
+      "name": "r7_customer_final_ledger_browser_basic_guard"
+    },
+    {
+      "version": "20260827014420",
+      "name": "r7_audit_basic_exact_pdf_customer_read_bridge"
+    },
+    {
+      "version": "20260827020903",
+      "name": "r7_browser_basic_envfix_finalizer_v2"
+    },
+    {
+      "version": "20260827023850",
+      "name": "r7_audit_basic_exact_pdf_backup_erase_restore"
+    },
+    {
+      "version": "20260827025552",
+      "name": "r7_audit_basic_qualified_human_review_gate"
+    },
+    {
+      "version": "20260827025936",
+      "name": "r7_audit_basic_append_only_evidence_gate"
+    },
+    {
+      "version": "20260827030022",
+      "name": "r7_audit_basic_evidence_ledger_v2_no_placeholder_hashes"
+    },
+    {
+      "version": "20260827044726",
+      "name": "r7_risk_indicator_public_route_rate_limit"
+    },
+    {
+      "version": "20260827045009",
+      "name": "r7_risk_history_server_capability"
+    },
+    {
+      "version": "20260827054234",
+      "name": "r7_risk_indicator_customer_tile_finalization_v1"
+    },
+    {
+      "version": "20260827054320",
+      "name": "r7_risk_indicator_tile_route_support_v1"
+    },
+    {
+      "version": "20260827054422",
+      "name": "r7_risk_indicator_finalizer_route_binding_v2"
+    },
+    {
+      "version": "20260827054447",
+      "name": "r7_risk_indicator_bridge_security_v2"
+    },
+    {
+      "version": "20260827054511",
+      "name": "r7_risk_indicator_component_authority_registry_v1"
+    },
+    {
+      "version": "20260827054531",
+      "name": "r7_component_authority_immutability_v1"
+    },
+    {
+      "version": "20260827054613",
+      "name": "r7_risk_component_authority_recorder_v1"
+    },
+    {
+      "version": "20260827054709",
+      "name": "r7_risk_bridge_ready_marker_v1"
+    },
+    {
+      "version": "20260827054807",
+      "name": "r7_risk_indicator_tile_rpc_exact_contract_v1"
+    },
+    {
+      "version": "20260827054837",
+      "name": "r7_risk_indicator_tile_contract_comment_v1"
+    },
+    {
+      "version": "20260827054916",
+      "name": "r7_risk_indicator_tile_contract_final_ready_v1"
+    },
+    {
+      "version": "20260827055004",
+      "name": "r7_risk_indicator_noop_checkpoint_v1"
+    },
+    {
+      "version": "20260827061219",
+      "name": "r7_browser_pro_diagnostic_append_only_v1"
+    },
+    {
+      "version": "20260827061652",
+      "name": "r7_shield_basic_customer_tile_finalization_v1"
+    },
+    {
+      "version": "20260827094543",
+      "name": "r7_risk_indicator_finalizer_risk_v5_authority"
+    },
+    {
+      "version": "20260827102618",
+      "name": "r7_shield_basic_current_risk_authority_and_resolver_fix"
+    },
+    {
+      "version": "20260827173934",
+      "name": "r7_shield_basic_risk_v5_source_authority_finalizer"
+    },
+    {
+      "version": "20260827192502",
+      "name": "r7_audit_basic_backup_schema_version_restore_fix"
+    },
+    {
+      "version": "20260827192514",
+      "name": "r7_audit_basic_restore_schema_version_fix"
+    },
+    {
+      "version": "20260827195309",
+      "name": "r7_audit_basic_gate_benchmark_evidence_binding"
+    },
+    {
+      "version": "20260828010003",
+      "name": "r7_whale_watch_guarded_finalizer_v1"
+    },
+    {
+      "version": "20260828011542",
+      "name": "r7_browser_paid_entitlement_candidate_infra"
+    },
+    {
+      "version": "20260828011802",
+      "name": "r7_paid_value_final_10_transition_ledger"
+    },
+    {
+      "version": "20260828011908",
+      "name": "r7_browser_advanced_test_entitlement_creator"
+    },
+    {
+      "version": "20260828045105",
+      "name": "r7_canonical_final_registry_hardening_20260828"
+    },
+    {
+      "version": "20260828052205",
+      "name": "r7_shared_entitlement_helper_prerequisites_v1"
+    },
+    {
+      "version": "20260828073337",
+      "name": "r7_shield_map_data_plane_v1"
+    },
+    {
+      "version": "20260828073937",
+      "name": "r7_shield_map_guarded_finalizer_v1"
+    },
+    {
+      "version": "20260828080059",
+      "name": "r7_shield_pro_basic_data_plane_v1"
+    },
+    {
+      "version": "20260828080358",
+      "name": "r7_shield_pro_basic_guarded_finalizer_v1"
+    },
+    {
+      "version": "20260828081801",
+      "name": "r7_shield_pro_basic_v2_data_plane"
+    },
+    {
+      "version": "20260828081848",
+      "name": "r7_shield_pro_basic_v2_guarded_finalizer"
+    },
+    {
+      "version": "20260828082802",
+      "name": "r7_shield_pro_basic_v3_direct_ledger_adapter"
+    },
+    {
+      "version": "20260828083136",
+      "name": "r7_real_markets_basic_v1_capability_and_finalizer"
+    },
+    {
+      "version": "20260828084531",
+      "name": "r7_shield_pro_pro_v1_entitlement_case_plane"
+    },
+    {
+      "version": "20260828084822",
+      "name": "r7_shield_pro_pro_v1_guarded_customer_paid_finalizer"
+    },
+    {
+      "version": "20260828090337",
+      "name": "r7_shield_pro_basic_data_plane_v2"
+    },
+    {
+      "version": "20260828090439",
+      "name": "r7_shield_pro_basic_guarded_finalizer_v2"
+    },
+    {
+      "version": "20260828092105",
+      "name": "r7_shield_pro_paid_workspace_engine_v1"
+    },
+    {
+      "version": "20260828092352",
+      "name": "r7_shield_pro_paid_guarded_finalizer_v1"
+    },
+    {
+      "version": "20260828171200",
+      "name": "harden_paid_value_transition_shield_pro_authority_binding"
+    },
+    {
+      "version": "20260828171218",
+      "name": "fix_real_markets_basic_capability_runtime_path"
+    },
+    {
+      "version": "20260828171259",
+      "name": "remove_ambiguous_shield_pro_basic_finalizer_overload"
+    },
+    {
+      "version": "20260828201707",
+      "name": "fix_shield_pro_pro_paid_value_transition_contract_v2"
+    },
+    {
+      "version": "20260828205021",
+      "name": "shield_pro_pro_customer_final_independent_from_paid_authority"
+    },
+    {
+      "version": "20260828205410",
+      "name": "real_markets_basic_capability_public_wrapper_v1"
+    },
+    {
+      "version": "20260828210029",
+      "name": "fix_shield_pro_pro_finalizer_jsonb_argument_limit"
+    },
+    {
+      "version": "20260828210902",
+      "name": "split_real_markets_basic_final_evidence_payload"
+    },
+    {
+      "version": "20260828211715",
+      "name": "fix_r7_shield_pro_paid_finalizer_transition_reread"
+    },
+    {
+      "version": "20260828211852",
+      "name": "restore_r7_shield_pro_paid_guarded_finalizer_with_transition_binding"
+    },
+    {
+      "version": "20260828212048",
+      "name": "align_shield_pro_paid_release_authority_transition_slugs"
+    },
+    {
+      "version": "20260828212057",
+      "name": "normalize_shield_pro_paid_release_authority_paid_slug_on_insert"
+    },
+    {
+      "version": "20260829020257",
+      "name": "r7_add_guarded_angel_customer_finalizer_v1"
+    },
+    {
+      "version": "20260829083238",
+      "name": "add_chain_surface_materializer_v1"
+    },
+    {
+      "version": "20260829083311",
+      "name": "add_chain_surface_materializer_fn_v1"
+    },
+    {
+      "version": "20260829083339",
+      "name": "materializer_policy_v1"
+    },
+    {
+      "version": "20260829083356",
+      "name": "chain_surface_materializer_edge_function_marker_v1"
+    },
+    {
+      "version": "20260829083417",
+      "name": "chain_materializer_metadata_v1"
+    },
+    {
+      "version": "20260829083606",
+      "name": "fix_r7_chain_surface_materializer_v1"
+    },
+    {
+      "version": "20260829083630",
+      "name": "fix_r7_chain_surface_history_gap_v2"
+    },
+    {
+      "version": "20260829083723",
+      "name": "fix_r7_chain_surface_recent_block_evidence_v3"
+    },
+    {
+      "version": "20260829083757",
+      "name": "fix_r7_chain_surface_recent_cache_v4"
+    },
+    {
+      "version": "20260829083916",
+      "name": "switch_r7_chain_surface_rpc_to_blockmachine_v5"
+    },
+    {
+      "version": "20260829083932",
+      "name": "fix_r7_chain_surface_json_precedence_v6"
+    },
+    {
+      "version": "20260829084045",
+      "name": "add_r7_chain_surface_more_materializer_v1"
+    },
+    {
+      "version": "20260829084104",
+      "name": "fix_r7_chain_surface_more_evidence_binding_v2"
+    },
+    {
+      "version": "20260829084342",
+      "name": "fix_shield_pro_advanced_source_authority_pin_v1"
+    },
+    {
+      "version": "20260830014727",
+      "name": "fix_shield_pro_pro_paid_evidence_exact_source_flag"
+    },
+    {
+      "version": "20260830014754",
+      "name": "fix_shield_pro_pro_paid_identity_fields"
+    },
+    {
+      "version": "20260916003122",
+      "name": "r13_contain_public_capability_readers"
+    },
+    {
+      "version": "20260916010416",
+      "name": "r13b_restrict_finalizer_and_pin_methodology_search_path"
+    },
+    {
+      "version": "20260916200422",
+      "name": "r13f_ui1_add_missing_foreign_key_indexes"
+    },
+    {
+      "version": "20260917043048",
+      "name": "velmere_c6d_shield_session_and_null_validation"
+    },
+    {
+      "version": "20260917230935",
+      "name": "velmere_c13_shield_workspace_stored_tier_guard"
+    }
+  ],
+  "summary": {
+    "liveMigrationCount": 117,
+    "repoMigrationCountAtBase": 1,
+    "repoMigrationCountAfterP17": 3,
+    "liveMissingFromRepoAtBase": 116,
+    "liveMissingFromRepoAfterRecoveredC13": 115,
+    "pendingRepoOnlyP17Migration": 1,
+    "publicTables": 19,
+    "publicRlsTables": 19,
+    "privateTables": 35,
+    "privateRlsTables": 18,
+    "clientExposureAnomalies": 0,
+    "publicSecurityDefinerFunctions": 121,
+    "authenticatedSecurityDefinerExecute": 7,
+    "anonSecurityDefinerExecute": 0,
+    "publicSecurityDefinerExecute": 0,
+    "securityDefinerMissingSearchPath": 0,
+    "invalidIndexes": 0,
+    "foreignKeysWithoutCandidateIndex": 0,
+    "unvalidatedConstraintsBeforeP17": 2,
+    "unvalidatedConstraintRowViolations": 0,
+    "libDbSchemaDeclaredTables": 48,
+    "livePublicPrivateTables": 54,
+    "commonTablesVsLibDbSchema": 5,
+    "liveOnlyTablesVsLibDbSchema": 49,
+    "repoOnlyTablesVsLive": 43,
+    "libDbSchemaDeclaredFunctionNames": 43,
+    "liveFunctionNames": 161,
+    "commonFunctionNamesVsLibDbSchema": 14,
+    "liveOnlyFunctionNamesVsLibDbSchema": 147,
+    "repoOnlyFunctionNamesVsLive": 29
+  },
+  "roleProbe": {
+    "administratorRowCounts": {
+      "bindings": 14,
+      "auditBasicReportArtifacts": 28,
+      "customerArtifactSnapshots": 54,
+      "customerArtifactPdfBlobs": 54
+    },
+    "authenticatedA": {
+      "syntheticIdentity": true,
+      "bindings": 0,
+      "auditBasicReportArtifacts": 0,
+      "customerArtifactSnapshots": 0,
+      "customerArtifactPdfBlobs": 0,
+      "proEntitlement": false,
+      "advancedEntitlement": false
+    },
+    "authenticatedB": {
+      "syntheticIdentity": true,
+      "bindings": 0,
+      "auditBasicReportArtifacts": 0,
+      "customerArtifactSnapshots": 0,
+      "customerArtifactPdfBlobs": 0,
+      "proEntitlement": false,
+      "advancedEntitlement": false
+    },
+    "anon": {
+      "customerArtifactSnapshotsSelect": "42501 permission denied",
+      "paidEntitlementRpcExecute": "42501 permission denied"
+    },
+    "serviceRole": {
+      "bindings": 14,
+      "auditBasicReportArtifacts": 28,
+      "customerArtifactSnapshots": 54,
+      "customerArtifactPdfBlobs": 54
+    }
+  },
+  "constraintProbe": {
+    "table": "public.velmere_audit_intake_cases",
+    "existingRows": 67,
+    "velmere_audit_intake_contract_chain_identity_violations": 0,
+    "velmere_audit_intake_contract_target_hash_identity_violations": 0
+  }
+}
