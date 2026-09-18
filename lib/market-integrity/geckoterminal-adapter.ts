@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 export type GeckoTerminalTimeframe = "minute" | "hour" | "day";
 
 export type GeckoTerminalOhlcvPoint = {
@@ -94,6 +95,29 @@ export async function fetchGeckoTerminalPoolOhlcv(args: {
     };
   }
 
+  const rights = evaluateC14ProviderOperation({
+    providerId: "geckoterminal",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.parse(generatedAt),
+  });
+  if (!rights.allowed) {
+    return {
+      version: "pass2449-geckoterminal-pool-ohlcv-v1",
+      mode: "blocked",
+      provider: "GeckoTerminal",
+      network,
+      poolAddress,
+      timeframe,
+      aggregate,
+      limit,
+      points: [],
+      confidenceCap: 0,
+      missingData: [`provider rights: ${rights.code}`],
+      boundary,
+      generatedAt,
+    };
+  }
   const params = new URLSearchParams({ aggregate: String(aggregate), limit: String(limit), currency: args.currency ?? "usd", token: args.token ?? "base" });
   const url = `https://api.geckoterminal.com/api/v2/networks/${encodeURIComponent(network)}/pools/${encodeURIComponent(poolAddress)}/ohlcv/${timeframe}?${params.toString()}`;
 
