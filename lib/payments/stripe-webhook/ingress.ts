@@ -16,6 +16,7 @@ import {
 import { shouldResumeClaimedWebhookAfterWatermark } from "@/lib/payments/stripe-webhook-lease";
 import { paymentEventKindFromStripeType } from "@/lib/payments/stripe-webhook-state";
 import { isStripeWebhookTerminalEffectError } from "@/lib/payments/stripe-webhook-effect-ledger";
+import { stripeWebhookFailureCode } from "@/lib/payments/stripe-webhook/failure-code";
 import { dispatchStripeWebhookEvent } from "./dispatcher";
 import { evaluateRuntimePaymentAuthority } from "@/lib/checkout/runtime-payment-authority";
 import { evaluateStripeWebhookRuntimeContract } from "@/lib/payments/stripe-webhook-runtime-contract";
@@ -209,13 +210,6 @@ async function applyOrdering(
   }
 }
 
-function safeWebhookFailureCode(error: unknown) {
-  const candidate = error instanceof Error ? error.message.trim().toLowerCase() : "";
-  return /^[a-z][a-z0-9_]{2,79}$/.test(candidate)
-    ? candidate
-    : "webhook_processing_failed";
-}
-
 async function processStripeWebhookRequest(
   req: Request,
   dependencies: StripeWebhookIngressDependencies = stripeWebhookIngressDependencies,
@@ -335,7 +329,7 @@ async function processStripeWebhookRequest(
       },
     );
   } catch (error) {
-    const errorCode = safeWebhookFailureCode(error);
+    const errorCode = stripeWebhookFailureCode(error);
     if (isStripeWebhookTerminalEffectError(error)) {
       try {
         await dependencies.markTerminalFailure(event, errorCode, claim.attempt);
