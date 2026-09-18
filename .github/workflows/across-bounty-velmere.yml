@@ -1,4 +1,4 @@
-name: Across bounty - Velmere batch audit
+name: Across bounty - Velmere fresh-surface audit
 
 on:
   push:
@@ -12,27 +12,23 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     env:
       ACROSS_SHA: 7445f72de17900544605c7e6706c5fb3b3784738
       VELMERE_SHA: e718df06d20a8129ffe261eef9c6c74cc5c91729
     steps:
       - name: Checkout Velmere
         uses: actions/checkout@v4
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-
       - name: Install Velmere dependencies
         run: npm install --ignore-scripts --no-audit --no-fund
-
       - name: Install Foundry bootstrap
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: stable
-
       - name: Checkout pinned Across source
         run: |
           git clone --filter=blob:none https://github.com/across-protocol/contracts.git /tmp/across-contracts
@@ -41,38 +37,37 @@ jobs:
           git submodule update --init --recursive
           corepack enable
           yarn install --immutable
-
       - name: Pin Across Foundry toolchain
         run: |
           export PATH="$HOME/.config/.foundry/bin:$HOME/.foundry/bin:$PATH"
           cd /tmp/across-contracts
           yarn pin-foundry
           forge --version
-
-      - name: Compile selected bounty targets
+      - name: Compile fresh bounty targets
         run: |
           export PATH="$HOME/.config/.foundry/bin:$HOME/.foundry/bin:$PATH"
           cd /tmp/across-contracts
           for source in \
-            contracts/periphery/SpokePoolPeriphery.sol \
-            contracts/hub-pool/HubPool.sol \
-            contracts/spoke-pools/Ethereum_SpokePool.sol \
-            contracts/handlers/MulticallHandler.sol \
-            contracts/periphery/SpokePoolVerifier.sol \
-            contracts/periphery/ERC6492SignatureHandler.sol \
-            contracts/periphery/counterfactual/CounterfactualDepositFactory.sol \
-            contracts/periphery/counterfactual/CounterfactualBeacon.sol \
-            contracts/periphery/counterfactual/AdminWithdrawManager.sol
+            contracts/periphery/counterfactual/CounterfactualDepositSpokePool.sol \
+            contracts/periphery/counterfactual/CounterfactualDepositCCTP.sol \
+            contracts/periphery/counterfactual/CounterfactualDepositVanillaCCTP.sol \
+            contracts/periphery/counterfactual/CounterfactualDepositOFT.sol \
+            contracts/periphery/counterfactual/WithdrawImplementation.sol \
+            contracts/periphery/mintburn/HyperCoreFlowExecutor.sol \
+            contracts/periphery/mintburn/ArbitraryEVMFlowExecutor.sol \
+            contracts/periphery/mintburn/SwapHandler.sol \
+            contracts/periphery/mintburn/sponsored-cctp/SponsoredCCTPSrcPeriphery.sol \
+            contracts/periphery/mintburn/sponsored-cctp/SponsoredCCTPDstPeriphery.sol \
+            contracts/periphery/mintburn/sponsored-oft/SponsoredOFTSrcPeriphery.sol \
+            contracts/spoke-pools/Universal_SpokePool.sol
           do
             forge build "$source"
           done
-
-      - name: Run Velmere ADVANCED batch
+      - name: Run Velmere ADVANCED fresh-surface batch
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p artifacts/bounty
-
           run_target () {
             local source="$1"
             local contract="$2"
@@ -90,17 +85,18 @@ jobs:
               "artifacts/bounty/$contract.json"
             rm -f "artifacts/bounty/$contract.json"
           }
-
-          run_target contracts/periphery/SpokePoolPeriphery.sol SpokePoolPeriphery
-          run_target contracts/hub-pool/HubPool.sol HubPool
-          run_target contracts/spoke-pools/Ethereum_SpokePool.sol Ethereum_SpokePool
-          run_target contracts/handlers/MulticallHandler.sol MulticallHandler
-          run_target contracts/periphery/SpokePoolVerifier.sol SpokePoolVerifier
-          run_target contracts/periphery/ERC6492SignatureHandler.sol ERC6492SignatureHandler
-          run_target contracts/periphery/counterfactual/CounterfactualDepositFactory.sol CounterfactualDepositFactory
-          run_target contracts/periphery/counterfactual/CounterfactualBeacon.sol CounterfactualBeacon
-          run_target contracts/periphery/counterfactual/AdminWithdrawManager.sol AdminWithdrawManager
-
+          run_target contracts/periphery/counterfactual/CounterfactualDepositSpokePool.sol CounterfactualDepositSpokePool
+          run_target contracts/periphery/counterfactual/CounterfactualDepositCCTP.sol CounterfactualDepositCCTP
+          run_target contracts/periphery/counterfactual/CounterfactualDepositVanillaCCTP.sol CounterfactualDepositVanillaCCTP
+          run_target contracts/periphery/counterfactual/CounterfactualDepositOFT.sol CounterfactualDepositOFT
+          run_target contracts/periphery/counterfactual/WithdrawImplementation.sol WithdrawImplementation
+          run_target contracts/periphery/mintburn/HyperCoreFlowExecutor.sol HyperCoreFlowExecutor
+          run_target contracts/periphery/mintburn/ArbitraryEVMFlowExecutor.sol ArbitraryEVMFlowExecutor
+          run_target contracts/periphery/mintburn/SwapHandler.sol SwapHandler
+          run_target contracts/periphery/mintburn/sponsored-cctp/SponsoredCCTPSrcPeriphery.sol SponsoredCCTPSrcPeriphery
+          run_target contracts/periphery/mintburn/sponsored-cctp/SponsoredCCTPDstPeriphery.sol SponsoredCCTPDstPeriphery
+          run_target contracts/periphery/mintburn/sponsored-oft/SponsoredOFTSrcPeriphery.sol SponsoredOFTSrcPeriphery
+          run_target contracts/spoke-pools/Universal_SpokePool.sol Universal_SpokePool
       - name: Remove private finding payload
         if: always()
         run: rm -rf artifacts/bounty
