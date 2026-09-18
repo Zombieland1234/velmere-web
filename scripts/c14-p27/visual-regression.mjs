@@ -172,11 +172,15 @@ async function collectVisualMetrics(page, routeDef) {
     const isVisible = (element) => {
       const style = getComputedStyle(element);
       const rect = element.getBoundingClientRect();
-      return style.display !== "none"
+      const intentionallyScreenReaderOnly =
+        element.classList.contains("sr-only")
+        || Boolean(element.closest(".sr-only"));
+      return !intentionallyScreenReaderOnly
+        && style.display !== "none"
         && style.visibility !== "hidden"
         && Number(style.opacity || "1") > 0.01
-        && rect.width > 0
-        && rect.height > 0;
+        && rect.width > 1.5
+        && rect.height > 1.5;
     };
 
     const brokenImages = Array.from(document.images)
@@ -184,19 +188,42 @@ async function collectVisualMetrics(page, routeDef) {
       .map((image) => ({ src: image.currentSrc || image.src, alt: image.alt }))
       .slice(0, 25);
 
-    const criticalTextNodes = Array.from(document.querySelectorAll("a,button,label,h1,h2,h3,h4,input,textarea,select,[role='button']"));
+    const textRectsEscapeClip = (element, tolerance = 3) => {
+      const clipRect = element.getBoundingClientRect();
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      let node = walker.nextNode();
+      while (node) {
+        if ((node.textContent || "").trim()) {
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          for (const rect of Array.from(range.getClientRects())) {
+            if (
+              rect.width > 0
+              && rect.height > 0
+              && (
+                rect.left < clipRect.left - tolerance
+                || rect.right > clipRect.right + tolerance
+                || rect.top < clipRect.top - tolerance
+                || rect.bottom > clipRect.bottom + tolerance
+              )
+            ) return true;
+          }
+        }
+        node = walker.nextNode();
+      }
+      return false;
+    };
+
+    const criticalTextNodes = Array.from(document.querySelectorAll("a,button,label,h1,h2,h3,h4,[role='button']"));
     const clippedCriticalText = criticalTextNodes.flatMap((element) => {
       if (!(element instanceof HTMLElement) || !isVisible(element)) return [];
       const style = getComputedStyle(element);
       const clips = ["hidden", "clip"].includes(style.overflowX)
         || ["hidden", "clip"].includes(style.overflowY)
         || ["hidden", "clip"].includes(style.overflow);
-      if (!clips) return [];
-      const clippedX = element.scrollWidth - element.clientWidth > 3;
-      const clippedY = element.scrollHeight - element.clientHeight > 3;
-      if (!clippedX && !clippedY) return [];
-      if (style.textOverflow === "ellipsis") return [];
-      const text = (element.innerText || element.getAttribute("aria-label") || element.getAttribute("placeholder") || "").trim();
+      if (!clips || style.textOverflow === "ellipsis") return [];
+      if (!textRectsEscapeClip(element)) return [];
+      const text = (element.innerText || element.getAttribute("aria-label") || "").trim();
       if (!text) return [];
       return [{
         tag: element.tagName.toLowerCase(),
@@ -208,17 +235,35 @@ async function collectVisualMetrics(page, routeDef) {
       }];
     }).slice(0, 25);
 
+    const isInsideIntentionalHorizontalScroller = (element) => {
+      let current = element.parentElement;
+      while (current && current !== document.body) {
+        const style = getComputedStyle(current);
+        if (["auto", "scroll"].includes(style.overflowX)) return true;
+        current = current.parentElement;
+      }
+      return false;
+    };
+
     const viewportEscapes = Array.from(document.querySelectorAll("main *")).flatMap((element) => {
       if (!(element instanceof HTMLElement) || !isVisible(element)) return [];
       const rect = element.getBoundingClientRect();
       const style = getComputedStyle(element);
-      if (style.position === "fixed") return [];
+      const classes = typeof element.className === "string" ? element.className : "";
+      const intentionalDecoration =
+        style.pointerEvents === "none"
+        && (style.position === "absolute" || style.position === "fixed");
+      if (
+        style.position === "fixed"
+        || intentionalDecoration
+        || isInsideIntentionalHorizontalScroller(element)
+      ) return [];
       const leftEscape = Math.max(0, -rect.left);
       const rightEscape = Math.max(0, rect.right - viewportWidth);
       if (leftEscape <= args.maximumHorizontalOverflowPx && rightEscape <= args.maximumHorizontalOverflowPx) return [];
       return [{
         tag: element.tagName.toLowerCase(),
-        className: typeof element.className === "string" ? element.className.slice(0, 180) : "",
+        className: classes.slice(0, 180),
         leftEscape: Math.round(leftEscape * 100) / 100,
         rightEscape: Math.round(rightEscape * 100) / 100
       }];
