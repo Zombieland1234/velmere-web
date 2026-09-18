@@ -213,6 +213,12 @@ async function main() {
   assert.ok(exportGateIndex < persistSnapshotIndex, "provider export rights must be checked before snapshot persistence");
   assert.match(evidenceExportSource, /dataClass: "raw"/u);
 
+  const reportRouteSource = readFileSync("lib/server/market-integrity-route-modules/report.ts", "utf8");
+  const retentionGateIndex = reportRouteSource.indexOf('operation: "storage"');
+  const recordResultIndex = reportRouteSource.indexOf("recordSingleResult(result)");
+  assert.ok(retentionGateIndex >= 0 && recordResultIndex >= 0 && retentionGateIndex < recordResultIndex);
+  assert.match(reportRouteSource, /providerRetentionReady \? await getPersistentRiskHistory\(id, 144\) : \[\]/u);
+
   const deliveryGateSource = readFileSync("lib/market-integrity/market-row-delivery-gate.ts", "utf8");
   assert.match(deliveryGateSource, /provider_rights:/u);
   assert.match(
@@ -223,7 +229,7 @@ async function main() {
   
   console.log(JSON.stringify({
     schemaVersion: "velmere.c14-p22.provider-enforcement-test.v1",
-    assertions: 44,
+    assertions: 46,
     runtimeProvidersCovered: C14_RUNTIME_PROVIDER_IDS.length,
     matrixRows: matrix.length,
     currentTime: new Date(NOW).toISOString(),
