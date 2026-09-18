@@ -80,24 +80,30 @@ export function analyzeContextualReentrancy(
       if (instruction.name !== "CALL") continue;
       const localWrite = block.instructions.slice(index + 1).find(candidate => candidate.name === "SSTORE");
       if (localWrite) {
-        callPc = instruction.pc; sstorePc = localWrite.pc; evidencePath = [block.id]; break;
-      }
-      // Compiler return-data/revert checks often span more than one successor.
-      // Traverse the represented CFG with a strict work bound; unresolved jumps
-      // remain a limitation, not proof that a storage write cannot follow.
-      const queue = block.successors.map(id => ({id, path:[block.id, id]}));
-      const visited = new Set<string>();
-      for (let cursor = 0; cursor < queue.length && visited.size < 512; cursor++) {
-        const current = queue[cursor];
-        if (visited.has(current.id)) continue;
-        visited.add(current.id);
-        const next = cfg.blocks.get(current.id);
-        if (!next) continue;
-        const write = next.instructions.find(candidate => candidate.name === "SSTORE");
-        if (write) {
-          callPc = instruction.pc; sstorePc = write.pc; evidencePath = current.path; break;
+        callPc = instruction.pc;
+        sstorePc = localWrite.pc;
+        evidencePath = [block.id];
+      } else {
+        // Compiler return-data/revert checks often span more than one successor.
+        // Traverse the represented CFG with a strict work bound; unresolved jumps
+        // remain a limitation, not proof that a storage write cannot follow.
+        const queue = block.successors.map(id => ({id, path:[block.id, id]}));
+        const visited = new Set<string>();
+        for (let cursor = 0; cursor < queue.length && visited.size < 512; cursor++) {
+          const current = queue[cursor];
+          if (visited.has(current.id)) continue;
+          visited.add(current.id);
+          const next = cfg.blocks.get(current.id);
+          if (!next) continue;
+          const write = next.instructions.find(candidate => candidate.name === "SSTORE");
+          if (write) {
+            callPc = instruction.pc;
+            sstorePc = write.pc;
+            evidencePath = current.path;
+            break;
+          }
+          for (const id of next.successors) if (!visited.has(id)) queue.push({id,path:[...current.path,id]});
         }
-        for (const id of next.successors) if (!visited.has(id)) queue.push({id,path:[...current.path,id]});
       }
       if (sstorePc >= 0) {
         const gas = callGasBefore(block, index);
