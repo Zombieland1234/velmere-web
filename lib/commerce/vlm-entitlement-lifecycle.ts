@@ -89,34 +89,61 @@ export function evaluateVlmPaidEntitlementLifecycleTransition(args: {
   };
 }
 
-function parseDurableRow(data: unknown): VlmPaidEntitlementLifecycleResult {
-  const row = Array.isArray(data) ? data[0] : data;
-  if (!row || typeof row !== "object") return { ok: false, error: "invalid_lifecycle_rpc_result", retryable: true, ledgerMode: "durable" };
+const ENTITLEMENT_STATUSES: ReadonlySet<string> = new Set([
+  "paid", "active", "expired", "refunded", "revoked", "consumed",
+]);
+
+function isLifecycleEvent(value: unknown): value is VlmPaidEntitlementLifecycleEvent {
+  return typeof value === "string" && ALLOWED_EVENT.has(value as VlmPaidEntitlementLifecycleEvent);
+}
+
+function isEntitlementStatus(value: unknown): value is VlmPaidEntitlementStatus {
+  return typeof value === "string" && ENTITLEMENT_STATUSES.has(value);
+}
+
+function parseDurableRow(data: unknown, expected: {
+  event: VlmPaidEntitlementLifecycleEvent;
+  entitlementIdHash: string;
+  eventIdHash: string;
+}): VlmPaidEntitlementLifecycleResult {
+  const invalid = (): VlmPaidEntitlementLifecycleResult => ({
+    ok: false, error: "invalid_lifecycle_rpc_result", retryable: true, ledgerMode: "durable",
+  });
+  // A receipt must identify exactly the operation just requested. Do not turn a
+  // partial/stale/multi-row response into an acknowledgement of a different write.
+  if (Array.isArray(data) && data.length !== 1) return invalid();
+  const row: unknown = Array.isArray(data) ? data[0] : data;
+  if (!row || typeof row !== "object" || Array.isArray(row)) return invalid();
   const value = row as Record<string, unknown>;
   if (value.ok === false) {
     return {
       ok: false,
       error: safeText(value.error, 120) || "entitlement_lifecycle_rejected",
-      retryable: Boolean(value.retryable),
+      // Ambiguous failures must not silently stop a webhook retry.
+      retryable: value.retryable !== false,
       ledgerMode: "durable",
     };
   }
-  const event = safeText(value.event_type, 32) as VlmPaidEntitlementLifecycleEvent;
-  const previousStatus = safeText(value.previous_status, 32) as VlmPaidEntitlementStatus;
-  const nextStatus = safeText(value.next_status, 32) as VlmPaidEntitlementStatus;
-  const entitlementIdHash = safeText(value.entitlement_id_hash, 64);
-  const eventIdHash = safeText(value.event_id_hash, 64);
-  if (!ALLOWED_EVENT.has(event) || !previousStatus || !nextStatus || !/^[a-f0-9]{64}$/.test(entitlementIdHash) || !/^[a-f0-9]{64}$/.test(eventIdHash)) {
-    return { ok: false, error: "invalid_lifecycle_rpc_result", retryable: true, ledgerMode: "durable" };
-  }
+  if (value.ok !== true || typeof value.idempotent !== "boolean") return invalid();
+  const event = value.event_type;
+  const previousStatus = value.previous_status;
+  const nextStatus = value.next_status;
+  if (!isLifecycleEvent(event) || event !== expected.event ||
+      !isEntitlementStatus(previousStatus) || !isEntitlementStatus(nextStatus) ||
+      value.entitlement_id_hash !== expected.entitlementIdHash ||
+      value.event_id_hash !== expected.eventIdHash) return invalid();
+  const transition = evaluateVlmPaidEntitlementLifecycleTransition({ currentStatus: previousStatus, event });
+  if (!transition.ok || transition.nextStatus !== nextStatus) return invalid();
+  // idempotent=true can describe replay of an earlier state-changing operation;
+  // it is not necessarily equivalent to previousStatus === nextStatus.
   return {
     ok: true,
-    idempotent: Boolean(value.idempotent),
+    idempotent: value.idempotent,
     event,
     previousStatus,
     nextStatus,
-    entitlementIdHash,
-    eventIdHash,
+    entitlementIdHash: expected.entitlementIdHash,
+    eventIdHash: expected.eventIdHash,
     ledgerMode: "durable",
   };
 }
@@ -131,12 +158,14 @@ export async function applyVlmPaidEntitlementLifecycleEvent(args: {
   now?: Date;
   dependencies?: { rpc?: LifecycleRpc };
 }): Promise<VlmPaidEntitlementLifecycleResult> {
-  const entitlementId = safeText(args.entitlementId, 180);
-  const eventId = safeText(args.eventId, 180);
+  // Truncation changes identity and can collapse unrelated events. Reject an
+  // oversized identity before the RPC rather than writing to a shortened key.
+  const entitlementId = typeof args.entitlementId === "string" ? args.entitlementId.trim() : "";
+  const eventId = typeof args.eventId === "string" ? args.eventId.trim() : "";
   const sourceEventId = safeText(args.sourceEventId, 220);
   const operatorId = safeText(args.operatorId, 220);
   const reason = safeText(args.reason, 500);
-  if (!entitlementId || !eventId || !ALLOWED_EVENT.has(args.event)) {
+  if (!entitlementId || entitlementId.length > 180 || !eventId || eventId.length > 180 || !ALLOWED_EVENT.has(args.event)) {
     return { ok: false, error: "invalid_entitlement_lifecycle_request", retryable: false };
   }
 
@@ -155,7 +184,7 @@ export async function applyVlmPaidEntitlementLifecycleEvent(args: {
           p_event_at: (args.now ?? new Date()).toISOString(),
         },
       });
-      return parseDurableRow(result.data);
+      return parseDurableRow(result.data, { event: args.event, entitlementIdHash: sha256(entitlementId), eventIdHash: sha256(eventId) });
     } catch {
       return { ok: false, error: "entitlement_lifecycle_store_failed", retryable: true, ledgerMode: "durable" };
     }

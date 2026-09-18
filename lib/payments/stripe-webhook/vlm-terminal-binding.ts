@@ -79,8 +79,10 @@ export async function resolveVlmPaidTerminalBindingFromEvent(
   const directSessionId = typeof object.metadata?.stripeSessionId === "string"
     ? object.metadata.stripeSessionId.trim()
     : "";
-  if (bindingMetadata && directSessionId.startsWith("cs_")) {
-    return { ok: true, binding: { ...bindingMetadata, stripeSessionId: directSessionId.slice(0, 180) } };
+  // Metadata is a hint, not proof of the Session -> PaymentIntent relationship.
+  // In particular, never shorten an identifier and revoke the shortened target.
+  if (directSessionId && (!directSessionId.startsWith("cs_") || directSessionId.length > 180)) {
+    return { ok: false, error: "vlm_paid_checkout_session_hint_invalid", retryable: true };
   }
   if (!paymentIntentId) {
     if (!bindingMetadata) {
@@ -90,9 +92,43 @@ export async function resolveVlmPaidTerminalBindingFromEvent(
   }
 
   try {
-    const sessions = await stripe.checkout.sessions.list({ payment_intent: paymentIntentId, limit: 10 });
+    // A first page cannot prove absence or uniqueness. Retrieve a bounded,
+    // complete list or ask for retry/review without authorizing a mutation.
+    const sessionRows: Stripe.Checkout.Session[] = [];
+    const seenIds = new Set<string>();
+    let startingAfter: string | undefined;
+    let complete = false;
+    for (let pageIndex = 0; pageIndex < 5; pageIndex++) {
+      const page = await stripe.checkout.sessions.list({
+        payment_intent: paymentIntentId, limit: 100,
+        ...(startingAfter ? { starting_after: startingAfter } : {}),
+      });
+      if (!page || page.object !== "list" || !Array.isArray(page.data) ||
+          typeof page.has_more !== "boolean" || page.data.length > 100) {
+        return { ok: false, error: "stripe_checkout_session_list_invalid", retryable: true };
+      }
+      for (const candidate of page.data) {
+        if (!candidate || typeof candidate.id !== "string" || !candidate.id.startsWith("cs_") ||
+            candidate.id.length > 180 || seenIds.has(candidate.id) ||
+            paymentIntentIdFromObject(candidate) !== paymentIntentId ||
+            candidate.livemode !== event.livemode) {
+          return { ok: false, error: "stripe_checkout_session_binding_inconsistent", retryable: true };
+        }
+        seenIds.add(candidate.id);
+        sessionRows.push(candidate);
+      }
+      if (!page.has_more) { complete = true; break; }
+      const lastId = page.data.at(-1)?.id;
+      if (!lastId || lastId === startingAfter) {
+        return { ok: false, error: "stripe_checkout_session_pagination_stalled", retryable: true };
+      }
+      startingAfter = lastId;
+    }
+    if (!complete) {
+      return { ok: false, error: "stripe_checkout_session_list_incomplete", retryable: true };
+    }
     if (!bindingMetadata) {
-      const candidates = sessions.data
+      const candidates = sessionRows
         .map((candidate) => ({ candidate, metadata: metadataBinding(candidate.metadata) }))
         .filter((entry) => entry.metadata !== null);
       if (candidates.length === 0) {
@@ -107,7 +143,7 @@ export async function resolveVlmPaidTerminalBindingFromEvent(
     if (!resolvedBindingMetadata) {
       return { ok: false, error: "not_vlm_paid_access", retryable: false, notVlmPaidAccess: true };
     }
-    const matchingSessions = sessions.data.filter((candidate) => {
+    const matchingSessions = sessionRows.filter((candidate) => {
       const candidateMetadata = metadataBinding(candidate.metadata);
       return candidateMetadata?.productId === resolvedBindingMetadata.productId
         && candidateMetadata.contextHash === resolvedBindingMetadata.contextHash;
@@ -115,11 +151,14 @@ export async function resolveVlmPaidTerminalBindingFromEvent(
     if (matchingSessions.length !== 1 || !matchingSessions[0]?.id) {
       return { ok: false, error: "vlm_paid_checkout_session_not_found", retryable: true };
     }
+    if (directSessionId && directSessionId !== matchingSessions[0].id) {
+      return { ok: false, error: "vlm_paid_checkout_session_hint_mismatch", retryable: true };
+    }
     return {
       ok: true,
       binding: {
         ...resolvedBindingMetadata,
-        stripeSessionId: matchingSessions[0].id.slice(0, 180),
+        stripeSessionId: matchingSessions[0].id,
       },
     };
   } catch {
