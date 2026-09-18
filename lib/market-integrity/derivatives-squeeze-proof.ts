@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import type { TokenRiskResult } from "./risk-types";
 
 export type Pass2466DerivativesVenueId = "binance_usdm" | "bybit_linear";
@@ -156,12 +157,22 @@ function isCryptoDerivativesCandidate(result?: TokenRiskResult | null, symbol?: 
   return assetClass === "crypto" || assetClass === "unknown" || assetClass === undefined;
 }
 
-async function safeJson<T>(url: string, cacheSeconds: number): Promise<T> {
+async function safeJson<T>(providerId: "binance" | "bybit", url: string, cacheSeconds: number): Promise<T> {
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({ providerId, operation: "fetch", channel: "internal_diagnostic", nowMs });
+  if (!fetchRights.allowed) throw new Error(`${providerId}_rights_${fetchRights.code.toLowerCase()}`);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId,
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: cacheSeconds,
+    nowMs,
+  });
   const response = await brokeredEgressFetch(url, {
     headers: { accept: "application/json" },
     signal: AbortSignal.timeout(4_000),
-    next: { revalidate: cacheSeconds },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "derivatives", operation: "derivatives_json", timeoutMs: 4_000 });
+    ...(cacheRights.allowed ? { next: { revalidate: cacheSeconds } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "derivatives", operation: "derivatives_json", timeoutMs: 4_000 });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
   return await readJsonResponseBounded<T>(response, 512 * 1024);
 }
@@ -169,9 +180,9 @@ async function safeJson<T>(url: string, cacheSeconds: number): Promise<T> {
 export async function fetchPass2466BinanceUsdmVenue(pair: string): Promise<Pass2466DerivativesVenueSnapshot> {
   try {
     const [openInterest, funding, ticker] = await Promise.all([
-      safeJson<BinanceOpenInterestResponse>(`https://fapi.binance.com/fapi/v1/openInterest?symbol=${encodeURIComponent(pair)}`, 20),
-      safeJson<BinanceFundingResponse>(`https://fapi.binance.com/fapi/v1/fundingRate?symbol=${encodeURIComponent(pair)}&limit=1`, 120),
-      safeJson<BinanceTickerResponse>(`https://fapi.binance.com/fapi/v1/ticker/24hr?symbol=${encodeURIComponent(pair)}`, 20),
+      safeJson<BinanceOpenInterestResponse>("binance", `https://fapi.binance.com/fapi/v1/openInterest?symbol=${encodeURIComponent(pair)}`, 20),
+      safeJson<BinanceFundingResponse>("binance", `https://fapi.binance.com/fapi/v1/fundingRate?symbol=${encodeURIComponent(pair)}&limit=1`, 120),
+      safeJson<BinanceTickerResponse>("binance", `https://fapi.binance.com/fapi/v1/ticker/24hr?symbol=${encodeURIComponent(pair)}`, 20),
     ]);
     const oiBase = finite(openInterest.openInterest);
     const lastPrice = finite(ticker.lastPrice) ?? finite(ticker.markPrice);
@@ -224,9 +235,9 @@ export async function fetchPass2466BinanceUsdmVenue(pair: string): Promise<Pass2
 export async function fetchPass2466BybitLinearVenue(pair: string): Promise<Pass2466DerivativesVenueSnapshot> {
   try {
     const [ticker, openInterest, funding] = await Promise.all([
-      safeJson<BybitTickerResponse>(`https://api.bybit.com/v5/market/tickers?category=linear&symbol=${encodeURIComponent(pair)}`, 20),
-      safeJson<BybitOpenInterestResponse>(`https://api.bybit.com/v5/market/open-interest?category=linear&symbol=${encodeURIComponent(pair)}&intervalTime=1h&limit=1`, 120),
-      safeJson<BybitFundingResponse>(`https://api.bybit.com/v5/market/funding/history?category=linear&symbol=${encodeURIComponent(pair)}&limit=1`, 120),
+      safeJson<BybitTickerResponse>("bybit", `https://api.bybit.com/v5/market/tickers?category=linear&symbol=${encodeURIComponent(pair)}`, 20),
+      safeJson<BybitOpenInterestResponse>("bybit", `https://api.bybit.com/v5/market/open-interest?category=linear&symbol=${encodeURIComponent(pair)}&intervalTime=1h&limit=1`, 120),
+      safeJson<BybitFundingResponse>("bybit", `https://api.bybit.com/v5/market/funding/history?category=linear&symbol=${encodeURIComponent(pair)}&limit=1`, 120),
     ]);
     const row = ticker.result?.list?.[0];
     const oiRow = openInterest.result?.list?.[0];
