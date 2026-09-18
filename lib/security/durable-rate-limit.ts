@@ -2,6 +2,11 @@ import { inspectNativeRedisConfig, applyNativeRedisRateLimit } from "./native-re
 import { brokeredConfiguredOriginFetch } from "@/lib/network/brokered-egress";
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import {
+  REDIS_FIXED_WINDOW_LUA,
+  buildRedisFixedWindowStorageKey,
+  parseRedisFixedWindowResult,
+} from "@/lib/security/redis-fixed-window";
+import {
   buildPass632FixedWindow,
   buildPass632RateLimitHeaders,
   buildPass632RecoveryDelay,
@@ -44,8 +49,10 @@ type UpstashCircuit = {
   consecutiveFailures: number;
   cooldownUntil: number;
   recoveryProbeInFlight: boolean;
+  inFlight: number;
 };
 const upstashCircuits = new Map<string, UpstashCircuit>();
+const MAX_UPSTASH_IN_FLIGHT = 32;
 
 function nowMs() {
   return Date.now();
@@ -99,7 +106,7 @@ export function inspectDurableRateLimitRuntime(env: NodeJS.ProcessEnv = process.
     redisConfigured: native.configured,
     unsupportedConfiguredSignals,
     mode,
-    exactRuntimeAdapter: mode === "redis" ? "redis_eval_server_time_fixed_window" : mode === "upstash_rest" ? "upstash_rest_eval_incrby_pexpire" : mode,
+    exactRuntimeAdapter: mode === "redis" ? "redis_eval_server_time_fixed_window" : mode === "upstash_rest" ? "upstash_rest_eval_server_time_fixed_window" : mode,
     memoryAllowed: !productionLike,
     productionFailClosed: productionLike,
     productionConfigured: productionLike && (mode === "upstash_rest" || mode === "redis"),
@@ -190,12 +197,13 @@ function memoryDecision(
 function unavailableDecision(
   options: DurableRateLimitOptions,
   providerError: string,
+  provider: "upstash" | "redis" = "upstash",
 ): DurableRateLimitDecision {
   const normalized = normalizedOptions(options);
   return {
     ok: false,
     mode: "unavailable",
-    provider: "upstash",
+    provider,
     remaining: 0,
     resetAt: normalized.fixedWindow.resetAt,
     limit: normalized.limit,
@@ -220,7 +228,7 @@ function upstashCircuit(options: DurableRateLimitOptions, url: string) {
   const circuitKey = normalizeKey(`${providerOrigin}:${options.namespace ?? "velmere"}`);
   let circuit = upstashCircuits.get(circuitKey);
   if (!circuit) {
-    circuit = { consecutiveFailures: 0, cooldownUntil: 0, recoveryProbeInFlight: false };
+    circuit = { consecutiveFailures: 0, cooldownUntil: 0, recoveryProbeInFlight: false, inFlight: 0 };
     upstashCircuits.set(circuitKey, circuit);
   }
   return { circuitKey, circuit };
@@ -252,12 +260,23 @@ function finishUpstashRecoveryProbe(circuit: UpstashCircuit, recoveryProbe: bool
   if (recoveryProbe) circuit.recoveryProbeInFlight = false;
 }
 
+function beginUpstashRequest(circuit: UpstashCircuit) {
+  if (circuit.inFlight >= MAX_UPSTASH_IN_FLIGHT) return false;
+  circuit.inFlight += 1;
+  return true;
+}
+
+function finishUpstashRequest(circuit: UpstashCircuit) {
+  circuit.inFlight = Math.max(0, circuit.inFlight - 1);
+}
+
 function legacyCircuitSummary() {
   const circuits = [...upstashCircuits.values()];
   return {
     consecutiveFailures: circuits.reduce((max, circuit) => Math.max(max, circuit.consecutiveFailures), 0),
     cooldownUntil: circuits.reduce((max, circuit) => Math.max(max, circuit.cooldownUntil), 0),
     recoveryProbesInFlight: circuits.filter((circuit) => circuit.recoveryProbeInFlight).length,
+    requestsInFlight: circuits.reduce((sum, circuit) => sum + circuit.inFlight, 0),
   };
 }
 
@@ -279,23 +298,33 @@ async function upstashRestDecision(options: DurableRateLimitOptions): Promise<Du
   const probe = beginUpstashRecoveryProbe(circuit);
   if (!probe.ok) return providerFailureDecision(options, "upstash_recovery_probe_in_progress");
 
-  const retentionMs = normalized.windowMs + 30_000;
-  const key = normalized.fixedWindow.bucketKey;
+  if (!beginUpstashRequest(circuit)) {
+    finishUpstashRecoveryProbe(circuit, probe.recoveryProbe);
+    return providerFailureDecision(options, "upstash_inflight_capacity");
+  }
+  const key = buildRedisFixedWindowStorageKey({
+    namespace: options.namespace,
+    key: options.key,
+    limit: normalized.limit,
+    windowMs: normalized.windowMs,
+    cost: normalized.cost,
+  });
   try {
-    const lua = [
-      "local current = redis.call('INCRBY', KEYS[1], ARGV[2])",
-      "if current == tonumber(ARGV[2]) then redis.call('PEXPIRE', KEYS[1], ARGV[1]) end",
-      "local ttl = redis.call('PTTL', KEYS[1])",
-      "if ttl < 0 then redis.call('PEXPIRE', KEYS[1], ARGV[1]); ttl = tonumber(ARGV[1]) end",
-      "return {current, ttl}",
-    ].join("\n");
     const response = await brokeredConfiguredOriginFetch(url.replace(/\/$/, ""), {
       method: "POST",
       headers: {
         authorization: `Bearer ${token}`,
         "content-type": "application/json",
       },
-      body: JSON.stringify(["EVAL", lua, "1", key, String(retentionMs), String(normalized.cost)]),
+      body: JSON.stringify([
+        "EVAL",
+        REDIS_FIXED_WINDOW_LUA,
+        "1",
+        key,
+        String(normalized.windowMs),
+        String(normalized.cost),
+        String(normalized.limit),
+      ]),
       cache: "no-store",
     }, {
       configuredProfile: "upstash_rest",
@@ -315,15 +344,20 @@ async function upstashRestDecision(options: DurableRateLimitOptions): Promise<Du
       response,
       1_048_576,
     );
-    const result = Array.isArray(payload?.result) ? payload.result : [];
-    const count = Number(result[0]);
-    const ttlMs = Number(result[1]);
-    if (payload?.error || !Number.isFinite(count) || count < 1 || !Number.isFinite(ttlMs) || ttlMs < 0) {
+    const parsed = payload?.error ? null : parseRedisFixedWindowResult(payload?.result, {
+      namespace: options.namespace,
+      key: options.key,
+      limit: normalized.limit,
+      windowMs: normalized.windowMs,
+      cost: normalized.cost,
+    });
+    if (!parsed) {
       registerUpstashFailure(circuitKey, circuit);
       return providerFailureDecision(options, "upstash_invalid_eval_result");
     }
 
     registerUpstashSuccess(circuit);
+    const { count, resetAt, fixedWindowId, serverNow } = parsed;
     const remaining = Math.max(0, normalized.limit - count);
     if (count > normalized.limit) {
       return {
@@ -331,13 +365,13 @@ async function upstashRestDecision(options: DurableRateLimitOptions): Promise<Du
         mode: "upstash_rest",
         provider: "upstash",
         remaining: 0,
-        resetAt: normalized.fixedWindow.resetAt,
+        resetAt,
         limit: normalized.limit,
         windowMs: normalized.windowMs,
-        fixedWindowId: normalized.fixedWindow.windowId,
-        boundaryKey: normalized.baseKey,
+        fixedWindowId,
+        boundaryKey: key,
         degraded: false,
-        retryAfterSeconds: Math.max(1, Math.ceil((normalized.fixedWindow.resetAt - now) / 1000)),
+        retryAfterSeconds: Math.max(1, Math.ceil((resetAt - serverNow) / 1000)),
         reason: "rate_limit_exceeded",
       };
     }
@@ -347,11 +381,11 @@ async function upstashRestDecision(options: DurableRateLimitOptions): Promise<Du
       mode: "upstash_rest",
       provider: "upstash",
       remaining,
-      resetAt: normalized.fixedWindow.resetAt,
+      resetAt,
       limit: normalized.limit,
       windowMs: normalized.windowMs,
-      fixedWindowId: normalized.fixedWindow.windowId,
-      boundaryKey: normalized.baseKey,
+      fixedWindowId,
+      boundaryKey: key,
       degraded: false,
     };
   } catch (error) {
@@ -361,6 +395,7 @@ async function upstashRestDecision(options: DurableRateLimitOptions): Promise<Du
       error instanceof Error ? error.message.slice(0, 120) : "upstash_unknown_error",
     );
   } finally {
+    finishUpstashRequest(circuit);
     finishUpstashRecoveryProbe(circuit, probe.recoveryProbe);
   }
 }
@@ -385,9 +420,13 @@ export async function applyDurableRateLimit(options: DurableRateLimitOptions): P
 
   if (mode === "unavailable") {
     const runtime = inspectDurableRateLimitRuntime();
+    const native = inspectNativeRedisConfig();
     return unavailableDecision(
       options,
-      runtime.disabledRequested ? "rate_limit_disabled_in_production" : "upstash_configuration_missing",
+      runtime.disabledRequested
+        ? "rate_limit_disabled_in_production"
+        : native.selected ? "redis_configuration_invalid" : "upstash_configuration_missing",
+      native.selected ? "redis" : "upstash",
     );
   }
   if (mode === "redis") return applyNativeRedisRateLimit(options);
@@ -430,6 +469,8 @@ export function buildDurableRateLimitReadiness() {
     singleRecoveryProbe: true,
     circuitCount: upstashCircuits.size,
     recoveryProbesInFlight: circuit.recoveryProbesInFlight,
+    providerRequestsInFlight: circuit.requestsInFlight,
+    providerInFlightLimit: MAX_UPSTASH_IN_FLIGHT,
     consecutiveProviderFailures: circuit.consecutiveFailures,
     providerCooldownUntil: circuit.cooldownUntil ? new Date(circuit.cooldownUntil).toISOString() : null,
     fallbackMode: runtime.memoryAllowed ? "non_production_memory_only" : "production_fail_closed",
