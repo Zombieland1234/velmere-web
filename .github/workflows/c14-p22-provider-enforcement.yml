@@ -1,0 +1,42 @@
+name: C14 P22 provider enforcement qualification
+
+on:
+  push:
+    branches:
+      - parallel/c14-p22-provider-enforcement
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p22-provider-enforcement
+  cancel-in-progress: true
+
+jobs:
+  provider-enforcement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      CI: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+          cache: npm
+      - name: Install exact dependencies
+        run: npm ci --ignore-scripts
+      - name: C14 P22 enforcement regression
+        run: npx tsx scripts/c14/test-provider-enforcement.ts
+      - name: Existing provider rights gates
+        run: |
+          npm run audit:provider-rights
+          npm run test:provider-rights-runtime
+          npm run test:pass36:a102r44p18:rights
+      - name: Strict TypeScript
+        run: npx tsc --noEmit --pretty false
