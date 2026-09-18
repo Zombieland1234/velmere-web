@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { NextRequest } from "next/server";
 
 import { buildCanonicalAuditReport, canonicalReportToPdfLines, renderCanonicalReportToPdf, type CanonicalAuditReportModel } from "../../lib/security/audit-canonical-report";
 import { buildCustomerAuditReport } from "../../lib/security/customer-audit-pipeline";
@@ -12,6 +13,8 @@ import { verifyReportPki } from "../../lib/security/audit-pki-signature";
 import { planCustomerSafePdf } from "../../lib/security/pro-audit-pdf/customer-safe-renderer";
 import { verifyExactCustomerPdfPreviewDownloadPair } from "../../lib/reporting/exact-customer-pdf-delivery";
 import { currentDeploymentTimestampBlocker, AUDIT_CURRENT_DEPLOYMENT_MAX_AGE_MS, AUDIT_CURRENT_DEPLOYMENT_FUTURE_SKEW_MS } from "../../lib/security/audit-current-deployment-freshness-policy";
+import { buildPass2581AuditVersionedRecheckReceiptReport } from "../../lib/security/audit-versioned-recheck-receipt";
+import { GET as getCanonicalJsonReport } from "../../app/api/audit/report/route";
 
 const address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 
@@ -229,4 +232,31 @@ test("archive restore route bounds and structurally validates JSON before bridge
   assert.ok(source.includes("rejectDuplicateKeys: true"));
   assert.ok(source.includes("rejectDangerousKeys: true"));
   assert.ok(source.includes("/^abk_[a-f0-9]{64}$/"));
+});
+
+
+test("actual JSON GET accepts XSS-shaped text as inert report data", async () => {
+  const name = '<img id="c14-p24-xss" src=x onerror="globalThis.__c14P24Xss=1"> Café Żółć Über €';
+  const url = new URL("http://localhost/api/audit/report");
+  for (const [key, value] of Object.entries({
+    address,
+    chainId: "1",
+    analysisMode: "reference",
+    tier: "basic",
+    locale: "en",
+    name,
+  })) url.searchParams.set(key, value);
+  const response = await getCanonicalJsonReport(new NextRequest(url));
+  const body = await response.json() as Record<string, any>;
+  assert.equal(response.status, 200, JSON.stringify(body));
+  assert.equal(body.report?.target?.contractName, name.normalize("NFC"));
+  assert.equal(body.report?.verdict?.releaseDecision, "NOT_VERIFIED");
+});
+
+test("versioned recheck state fails closed until evidence is revalidated", () => {
+  const receipt = buildPass2581AuditVersionedRecheckReceiptReport({ locale: "en" });
+  assert.equal(receipt.receipt.status, "recheck_required");
+  assert.equal(receipt.summary.canFinalSign, false);
+  assert.ok(receipt.recheckPlan.nextCheckAt);
+  assert.ok(receipt.recheckPlan.requiredBeforeFinal.length > 0);
 });
