@@ -1,3 +1,5 @@
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
+
 export type Pass4643ProviderSurface = "crypto" | "real_markets" | "contract_audit" | "cross_surface";
 export type Pass4643ProviderStatus = "public_runtime" | "configured" | "missing_configuration" | "disabled";
 
@@ -45,6 +47,7 @@ function configured(definition: Pass4643ProviderDefinition, env: NodeJS.ProcessE
 export function buildPass4643ProviderRuntimeInventory(
   surface: Pass4643ProviderSurface,
   env: NodeJS.ProcessEnv = process.env,
+  nowMs = Date.now(),
 ) {
   const rows = PROVIDERS.filter((provider) => provider.surfaces.includes(surface) || provider.surfaces.includes("cross_surface")).map((provider) => {
     const isConfigured = configured(provider, env);
@@ -55,13 +58,34 @@ export function buildPass4643ProviderRuntimeInventory(
         : provider.enabledWhen && env[provider.enabledWhen] !== "true"
           ? "disabled"
           : "missing_configuration";
+    const transportUsable = status === "public_runtime" || status === "configured";
+    const fetchRights = evaluateC14ProviderOperation({
+      providerId: provider.id,
+      operation: "fetch",
+      channel: "internal_diagnostic",
+      nowMs,
+    });
+    const customerDisplayRights = evaluateC14ProviderOperation({
+      providerId: provider.id,
+      operation: "display",
+      channel: "customer",
+      dataClass: "derived",
+      attributionPresent: false,
+      nowMs,
+    });
     return {
       id: provider.id,
       family: provider.family,
       capabilities: provider.capabilities,
       status,
-      usable: status === "public_runtime" || status === "configured",
-      configurationReady: status === "public_runtime" || status === "configured",
+      transportUsable,
+      usable: transportUsable && fetchRights.allowed,
+      configurationReady: transportUsable,
+      providerFetchRightsState: fetchRights.state,
+      providerFetchRightsCode: fetchRights.code,
+      customerDeliveryAllowed: customerDisplayRights.allowed,
+      customerDeliveryRightsState: customerDisplayRights.state,
+      customerDeliveryRightsCode: customerDisplayRights.code,
       runtimeHealthVerified: false,
       commercialEvidenceReady: false,
       // Never expose secret names or values in the runtime/customer envelope.
@@ -84,13 +108,17 @@ export function buildPass4643ProviderRuntimeInventory(
     rows,
     runtimeHealthVerified: false,
     commercialEvidenceReady: false,
-    readinessBoundary: "Configuration/public access is not a live receipt. Each provider must still return a fresh, identity-bound response before it counts as commercial evidence.",
+    readinessBoundary: "Configuration/public access is transport readiness only. A provider is usable only when the central C14 rights gate also permits the operation; customer delivery is evaluated separately and fail-closed.",
     secretValuesExposed: false,
   } as const;
 }
 
-export function buildPass4643ProviderRuntimeSummary(surface: Pass4643ProviderSurface, env: NodeJS.ProcessEnv = process.env) {
-  const inventory = buildPass4643ProviderRuntimeInventory(surface, env);
+export function buildPass4643ProviderRuntimeSummary(
+  surface: Pass4643ProviderSurface,
+  env: NodeJS.ProcessEnv = process.env,
+  nowMs = Date.now(),
+) {
+  const inventory = buildPass4643ProviderRuntimeInventory(surface, env, nowMs);
   return {
     schemaVersion: inventory.schemaVersion,
     surface: inventory.surface,
