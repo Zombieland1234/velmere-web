@@ -84,128 +84,136 @@ function countBy<T extends string>(items: T[]): Record<T, number> {
   }, {} as Record<T, number>);
 }
 
-await mkdir(outputDir, { recursive: true });
+async function main(): Promise<void> {
+  await mkdir(outputDir, { recursive: true });
 
-const acrossSha = command("git", ["rev-parse", "HEAD"], acrossDir);
-const velmereSha = command("git", ["rev-parse", "HEAD"], process.cwd());
+  const acrossSha = command("git", ["rev-parse", "HEAD"], acrossDir);
+  const velmereSha = command("git", ["rev-parse", "HEAD"], process.cwd());
 
-const rows: Array<Record<string, unknown>> = [];
+  const rows: Array<Record<string, unknown>> = [];
 
-for (const target of targets) {
-  try {
-    const sourceCode = await readFile(resolve(acrossDir, target.sourcePath), "utf8");
-    const bytecode = command("forge", ["inspect", target.contractRef, "deployedBytecode"], acrossDir);
+  for (const target of targets) {
+    try {
+      const sourceCode = await readFile(resolve(acrossDir, target.sourcePath), "utf8");
+      const bytecode = command("forge", ["inspect", target.contractRef, "deployedBytecode"], acrossDir);
 
-    if (!/^0x[0-9a-fA-F]+$/.test(bytecode) || bytecode.length < 18) {
+      if (!/^0x[0-9a-fA-F]+$/.test(bytecode) || bytecode.length < 18) {
+        rows.push({
+          target,
+          status: "SKIPPED_NON_CONCRETE_BYTECODE",
+          bytecodePreview: bytecode.slice(0, 120),
+        });
+        continue;
+      }
+
+      const result = executeFullAuditV2({
+        contractAddress: target.address,
+        chainId: target.chainId,
+        bytecode,
+        sourceCode,
+        contractName: target.name,
+        tier: "ADVANCED",
+        fuzzIterations: 300,
+      });
+
+      const severityCounts = countBy(result.findings.map((finding) => finding.severity));
+      const claimStateCounts = countBy(
+        result.findings.map((finding) => finding.claimState ?? "DETECTOR_FINDING"),
+      );
+
+      const priorityCandidates = result.findings.filter(
+        (finding) =>
+          finding.claimState !== "HEURISTIC_CANDIDATE" &&
+          (finding.severity === "critical" || finding.severity === "high") &&
+          (finding.confidence === "certain" || finding.confidence === "high"),
+      );
+
       rows.push({
         target,
-        status: "SKIPPED_NON_CONCRETE_BYTECODE",
-        bytecodePreview: bytecode.slice(0, 120),
+        status: "ANALYZED",
+        sourceSha256: createHash("sha256").update(sourceCode).digest("hex"),
+        bytecodeSha256: createHash("sha256").update(bytecode).digest("hex"),
+        bytecodeLengthBytes: (bytecode.length - 2) / 2,
+        severityCounts,
+        claimStateCounts,
+        priorityCandidateCount: priorityCandidates.length,
+        priorityCandidates,
+        result,
       });
-      continue;
+    } catch (error) {
+      rows.push({
+        target,
+        status: "ERROR",
+        error: error instanceof Error ? error.message : String(error),
+      });
     }
-
-    const result = executeFullAuditV2({
-      contractAddress: target.address,
-      chainId: target.chainId,
-      bytecode,
-      sourceCode,
-      contractName: target.name,
-      tier: "ADVANCED",
-      fuzzIterations: 300,
-    });
-
-    const severityCounts = countBy(result.findings.map((finding) => finding.severity));
-    const claimStateCounts = countBy(
-      result.findings.map((finding) => finding.claimState ?? "DETECTOR_FINDING"),
-    );
-
-    const priorityCandidates = result.findings.filter(
-      (finding) =>
-        finding.claimState !== "HEURISTIC_CANDIDATE" &&
-        (finding.severity === "critical" || finding.severity === "high") &&
-        (finding.confidence === "certain" || finding.confidence === "high"),
-    );
-
-    rows.push({
-      target,
-      status: "ANALYZED",
-      sourceSha256: createHash("sha256").update(sourceCode).digest("hex"),
-      bytecodeSha256: createHash("sha256").update(bytecode).digest("hex"),
-      bytecodeLengthBytes: (bytecode.length - 2) / 2,
-      severityCounts,
-      claimStateCounts,
-      priorityCandidateCount: priorityCandidates.length,
-      priorityCandidates,
-      result,
-    });
-  } catch (error) {
-    rows.push({
-      target,
-      status: "ERROR",
-      error: error instanceof Error ? error.message : String(error),
-    });
   }
+
+  const payload = {
+    schema: "velmere.research.across-bounty.v1",
+    generatedAt: new Date().toISOString(),
+    authorizationBasis: "Across public bug bounty; local/static analysis only; no production exploitation",
+    acrossRepository: "across-protocol/contracts",
+    acrossSha,
+    velmereRepository: "Zombieland1234/velmere-web",
+    velmereSha,
+    engineBoundary: {
+      targetBytecodeExecutedByFuzzer: false,
+      fuzzingScope: "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE",
+      formalSolverExecuted: false,
+      findingsAreBountyReadyByDefault: false,
+    },
+    targets: rows,
+  };
+
+  await writeFile(
+    resolve(outputDir, "velmere-across-results.json"),
+    JSON.stringify(payload, null, 2),
+    "utf8",
+  );
+
+  const analyzed = rows.filter((row) => row.status === "ANALYZED");
+  const totalPriority = analyzed.reduce(
+    (sum, row) => sum + Number(row.priorityCandidateCount ?? 0),
+    0,
+  );
+
+  const md = [
+    "# Velmère × Across — bounty research pass",
+    "",
+    `- Across SHA: \`${acrossSha}\``,
+    `- Velmère SHA: \`${velmereSha}\``,
+    `- Targets analyzed: ${analyzed.length}/${targets.length}`,
+    `- High/Critical detector candidates requiring manual validation: ${totalPriority}`,
+    "",
+    "## Safety / evidence boundary",
+    "",
+    "This run performs local compilation and static/CFG/source analysis only.",
+    "It does not send transactions, call production RPC endpoints, move funds, access user data, or attempt live exploitation.",
+    "Velmère's current V2 fuzz campaign is a synthetic balance model and does not execute target bytecode; therefore no finding is treated as bounty-ready without independent reproduction.",
+    "",
+    "## Target summary",
+    "",
+    "| Target | Status | Critical | High | Medium | Low | Informational | Priority candidates |",
+    "|---|---:|---:|---:|---:|---:|---:|---:|",
+    ...rows.map((row) => {
+      const target = row.target as Target;
+      const counts = (row.severityCounts ?? {}) as Record<string, number>;
+      return `| ${target.name} | ${row.status} | ${counts.critical ?? 0} | ${counts.high ?? 0} | ${counts.medium ?? 0} | ${counts.low ?? 0} | ${counts.informational ?? 0} | ${row.priorityCandidateCount ?? 0} |`;
+    }),
+    "",
+    "## Next triage rule",
+    "",
+    "Only High/Critical detector findings with high/certain confidence advance to manual source review and a local Foundry reproduction. Heuristic-only findings remain leads, not vulnerability claims.",
+    "",
+  ].join("\n");
+
+  await writeFile(resolve(outputDir, "SUMMARY.md"), md, "utf8");
+  console.log(md);
+
 }
 
-const payload = {
-  schema: "velmere.research.across-bounty.v1",
-  generatedAt: new Date().toISOString(),
-  authorizationBasis: "Across public bug bounty; local/static analysis only; no production exploitation",
-  acrossRepository: "across-protocol/contracts",
-  acrossSha,
-  velmereRepository: "Zombieland1234/velmere-web",
-  velmereSha,
-  engineBoundary: {
-    targetBytecodeExecutedByFuzzer: false,
-    fuzzingScope: "SYNTHETIC_BALANCE_MODEL_NOT_TARGET_BYTECODE",
-    formalSolverExecuted: false,
-    findingsAreBountyReadyByDefault: false,
-  },
-  targets: rows,
-};
-
-await writeFile(
-  resolve(outputDir, "velmere-across-results.json"),
-  JSON.stringify(payload, null, 2),
-  "utf8",
-);
-
-const analyzed = rows.filter((row) => row.status === "ANALYZED");
-const totalPriority = analyzed.reduce(
-  (sum, row) => sum + Number(row.priorityCandidateCount ?? 0),
-  0,
-);
-
-const md = [
-  "# Velmère × Across — bounty research pass",
-  "",
-  `- Across SHA: \`${acrossSha}\``,
-  `- Velmère SHA: \`${velmereSha}\``,
-  `- Targets analyzed: ${analyzed.length}/${targets.length}`,
-  `- High/Critical detector candidates requiring manual validation: ${totalPriority}`,
-  "",
-  "## Safety / evidence boundary",
-  "",
-  "This run performs local compilation and static/CFG/source analysis only.",
-  "It does not send transactions, call production RPC endpoints, move funds, access user data, or attempt live exploitation.",
-  "Velmère's current V2 fuzz campaign is a synthetic balance model and does not execute target bytecode; therefore no finding is treated as bounty-ready without independent reproduction.",
-  "",
-  "## Target summary",
-  "",
-  "| Target | Status | Critical | High | Medium | Low | Informational | Priority candidates |",
-  "|---|---:|---:|---:|---:|---:|---:|---:|",
-  ...rows.map((row) => {
-    const target = row.target as Target;
-    const counts = (row.severityCounts ?? {}) as Record<string, number>;
-    return `| ${target.name} | ${row.status} | ${counts.critical ?? 0} | ${counts.high ?? 0} | ${counts.medium ?? 0} | ${counts.low ?? 0} | ${counts.informational ?? 0} | ${row.priorityCandidateCount ?? 0} |`;
-  }),
-  "",
-  "## Next triage rule",
-  "",
-  "Only High/Critical detector findings with high/certain confidence advance to manual source review and a local Foundry reproduction. Heuristic-only findings remain leads, not vulnerability claims.",
-  "",
-].join("\n");
-
-await writeFile(resolve(outputDir, "SUMMARY.md"), md, "utf8");
-console.log(md);
+main().catch((error) => {
+  console.error(error instanceof Error ? error.stack ?? error.message : String(error));
+  process.exitCode = 1;
+});
