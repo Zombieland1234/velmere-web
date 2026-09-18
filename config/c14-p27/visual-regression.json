@@ -84,13 +84,13 @@
     },
     {
       "id": "error-state",
-      "path": "/en/__visual-regression__/error",
+      "path": "/en/visual-qa/error",
       "selector": ".pass2007-error-shell",
       "expectedErrorState": true
     },
     {
       "id": "loading-state",
-      "path": "/en/__visual-regression__/loading",
+      "path": "/en/visual-qa/loading",
       "selector": "[data-velmere-route-loading=\"true\"]",
       "loadingState": true
     }
