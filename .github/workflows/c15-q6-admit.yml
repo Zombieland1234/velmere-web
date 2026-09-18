@@ -1,0 +1,25 @@
+{
+  "name": "C15 Q6 exact source admission",
+  "on": {
+    "push": {
+      "branches": ["c15/qualification-q6-20260918"],
+      "paths": [".github/workflows/c15-q6-admit.yml", "_handoff/q6-admission-*.payload"]
+    }
+  },
+  "permissions": {"contents": "write"},
+  "concurrency": {"group": "c15-q6-exact-admission", "cancel-in-progress": false},
+  "jobs": {
+    "admit": {
+      "runs-on": "ubuntu-latest",
+      "timeout-minutes": 5,
+      "steps": [
+        {"uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262", "with": {"fetch-depth": 0, "persist-credentials": true, "ref": "${{ github.sha }}"}},
+        {
+          "name": "Verify fixed patch and exact target tree before committing",
+          "run": "python3 - <<'PY'\nfrom pathlib import Path\nimport base64,gzip,hashlib,json,os,subprocess,tempfile,shutil\nBASE='57a29cfccb9b5e3718ae89c8426e7155a0c086ee'\nTARGET='fbd157f6da85c723f2aaac00b0583d21c3f892e1'\nWF='.github/workflows/c15-q6-admit.yml'\nBRANCH='c15/qualification-q6-20260918'\nOUT=Path('/tmp/q6-admission');OUT.mkdir(exist_ok=False)\nFILES=['tsconfig.c15-q6-tests.json','_handoff/C15-Q6-EVENT-STORE.md','scripts/c14-integration/accepted-tests.json','scripts/c15-q6/event-contract.test.ts','scripts/c15-q6/entrypoint-replay.ts','scripts/c15-q6/native-postgres.py','scripts/c15-q6/event-store.sql','scripts/c15-q6/event-store.test.ts','lib/db/order-service.ts','lib/db/supabase-rpc-operation-registry.ts','lib/payments/stripe-webhook-event-contract.ts']\nPARTS=[f'_handoff/q6-admission-{i}.payload' for i in range(1,5)]\nSHAS=['f8e9b6bb07dc211aae2b07647923aa2361f6c1b2967ba750859ac3917ace4df7','f517ccb5577d8807706eb407bf6552b8928a13419ab4b249fa5da18628f4ba93','4f92e1e95abb60e6428971c58424d55517ba7b1a96dc1719b68dbcd1b7b9b456','a54e24fbb3df098585c7fbacc21936c290ab86d03803d0166be59c136357be7a']\ndef git(*args,env=None):return subprocess.check_output(['git',*args],text=True,env=env).strip()\ndef digest(b):return hashlib.sha256(b).hexdigest()\nreceipt={'baseSha':BASE,'targetSourceTree':TARGET,'triggerSha':os.environ['GITHUB_SHA'],'status':'STARTED','transmissionCorrections':[]}\ntry:\n assert os.environ['GITHUB_REF_NAME']==BRANCH\n assert git('rev-parse','HEAD')==os.environ['GITHUB_SHA']\n assert not git('status','--porcelain')\n subprocess.run(['git','merge-base','--is-ancestor',BASE,'HEAD'],check=True)\n assert set(git('diff','--name-only',BASE,'HEAD').splitlines())==set(PARTS+[WF])\n chunks=[]\n for i,path in enumerate(PARTS):\n  chunk=Path(path).read_bytes()\n  if i==2 and digest(chunk)=='864b8ab606e27cb25b5fc84748a3cc630af1052b4920779aae7d2f35416fa6d6':\n   # One verified omitted transport character; never amend source or weaken the target hash.\n   assert chunk.count(b'PdV8cXNZFV')==1\n   chunk=chunk.replace(b'PdV8cXNZFV',b'PdV8YcXNZFV')\n   receipt['transmissionCorrections'].append({'part':3,'omittedCharacter':'Y','correctedSha256':digest(chunk)})\n  assert digest(chunk)==SHAS[i],f'part {i+1} hash mismatch'\n  chunks.append(chunk)\n packed=base64.b64decode(b''.join(chunks),validate=True)\n assert digest(packed)=='c7f2ad6244ae1c3bf6972bc1977a298ab2b917c6de0572e80e8e34f48db6d9b1'\n patch=gzip.decompress(packed)\n assert digest(patch)=='3b974124e88b5d36b0cf4e89e0fe20b1298bdfd22f2d39f3634aafcfb1ed5384'\n p=OUT/'REVIEWED.patch';p.write_bytes(patch)\n subprocess.run(['git','apply','--check',str(p)],check=True)\n subprocess.run(['git','apply',str(p)],check=True)\n subprocess.run(['git','add','--',*FILES],check=True)\n subprocess.run(['git','rm','--',*PARTS],check=True)\n idx=OUT/'reviewed.index';shutil.copyfile('.git/index',idx)\n env=dict(os.environ,GIT_INDEX_FILE=str(idx))\n subprocess.run(['git','update-index','--force-remove',WF],env=env,check=True)\n actual=git('write-tree',env=env);assert actual==TARGET,actual\n assert set(git('diff','--cached','--name-only').splitlines())==set(FILES+PARTS)\n assert git('ls-remote','origin','refs/heads/'+BRANCH).split()[0]==os.environ['GITHUB_SHA']\n subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)\n subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)\n subprocess.run(['git','commit','-m','feat(c15-q6): admit exact reviewed event persistence and strict acknowledgments'],check=True)\n receipt.update(status='ADMITTED',commitSha=git('rev-parse','HEAD'),treeSha=git('rev-parse','HEAD^{tree}'),sourceTreeVerified=actual,worktreeClean=not git('status','--porcelain'))\n (OUT/'ADMISSION.json').write_text(json.dumps(receipt,indent=2))\n subprocess.run(['git','push','origin','HEAD:refs/heads/'+BRANCH],check=True)\n receipt['pushed']=True\nfinally:\n (OUT/'ADMISSION.json').write_text(json.dumps(receipt,indent=2))\nPY\n"
+        },
+        {"uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02", "if": "always()", "with": {"name": "c15-q6-admission-${{ github.run_id }}-${{ github.run_attempt }}", "path": "/tmp/q6-admission/", "if-no-files-found": "error", "retention-days": 14}}
+      ]
+    }
+  }
+}
