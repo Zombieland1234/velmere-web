@@ -1022,7 +1022,8 @@
     "build:p40:current-state": "python scripts/closure/build-p40-current-state.py",
     "lint:strict": "eslint . --max-warnings=0",
     "test:c6": "tsx --test scripts/c6/*.test.ts",
-    "build:audit-worker": "node scripts/c11/build-audit-worker.mjs"
+    "build:audit-worker": "node scripts/c11/build-audit-worker.mjs",
+    "test:c14:p19:stripe": "node --import tsx --test scripts/c8/webhook-ingress.test.ts scripts/c14/stripe-lifecycle-contracts.test.ts"
   },
   "velmere": {
     "a102r18DirectPublicClipboardSinksRemaining": 0,
