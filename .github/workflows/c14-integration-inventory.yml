@@ -33,7 +33,7 @@ jobs:
             return result
           def excluded(path):
             p=pathlib.PurePosixPath(path)
-            return p.suffix.lower() in {'.woff','.woff2','.ttf','.otf','.eot','.zip','.gz','.tgz','.7z'} or (p.name.startswith('.env') and 'example' not in p.name and 'template' not in p.name)
+            return path=='lib/security/pro-audit-pdf/embedded-font-data.ts' or p.suffix.lower() in {'.woff','.woff2','.ttf','.otf','.eot','.pfb','.pfa','.zip','.gz','.tgz','.7z'} or (p.name.startswith('.env') and 'example' not in p.name and 'template' not in p.name)
           base=entries(B); (O/'BASE_TREE.json').write_text(json.dumps(base,indent=2))
           (O/'BASE_COMMIT.txt').write_bytes(git('cat-file','commit',B))
           # Source bytes, not .git or credential material. Font resources are intentionally omitted.
