@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": false,
+    "incremental": false
+  },
+  "include": ["scripts/c15/**/*.ts", "lib/security/v2/**/*.ts"],
+  "exclude": ["node_modules"]
+}
