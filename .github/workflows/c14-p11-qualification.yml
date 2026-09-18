@@ -1,0 +1,67 @@
+name: C14 P11 entitlements and parser boundaries
+
+on:
+  push:
+    branches:
+      - parallel/c14-p11-entitlements-parsers
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p11-entitlements-parsers
+  cancel-in-progress: false
+
+jobs:
+  node-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CI: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+      VELMERE_CANONICAL_ORIGIN: http://localhost:3000
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: C14-P11 reproductions and regressions
+        run: npx tsx --test scripts/c14-p11/entitlements-parsers.test.ts
+      - name: C13 source/bytecode boundary regression
+        run: npx tsx --test scripts/c13/source-boundary.test.ts
+      - name: C14-P11 typecheck
+        run: npx tsc -p tsconfig.c14-p11-tests.json
+
+  shield-workspace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: c14_p11_ephemeral_only
+          POSTGRES_DB: c14_p11_fixture
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: "5432"
+      PGUSER: postgres
+      PGPASSWORD: c14_p11_ephemeral_only
+      PGDATABASE: c14_p11_fixture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Synthetic owner A/B and stored-tier Shield replay
+        run: python3 scripts/c13/shield-db-test.py
