@@ -8,7 +8,10 @@ const PROVIDER_HOSTS = new Map([
   ["dexscreener-api", ["api.dexscreener.com"]],
   ["geckoterminal", ["api.geckoterminal.com"]],
   ["defillama", ["api.llama.fi", "pro-api.llama.fi"]],
-  ["binance", ["api.binance.com", "api1.binance.com", "api2.binance.com", "api3.binance.com"]],
+  ["binance", ["api.binance.com", "api1.binance.com", "api2.binance.com", "api3.binance.com", "fapi.binance.com", "data-api.binance.vision"]],
+  ["bybit", ["api.bybit.com"]],
+  ["mexc", ["api.mexc.com"]],
+  ["kraken", ["api.kraken.com"]],
   ["coinbase", ["api.exchange.coinbase.com", "api.coinbase.com"]],
   ["goplus-token-security", ["api.gopluslabs.io"]],
   ["honeypot-is", ["api.honeypot.is"]],
@@ -28,6 +31,7 @@ const PROVIDER_HOSTS = new Map([
 ]);
 
 const NETWORK_PRIMITIVE = /(?:\bbrokeredEgressFetch\s*\(|\bfetch\s*\(|\.fetch\s*\()/u;
+const INFRASTRUCTURE_EXEMPT_PATHS = new Set(["lib/network/brokered-egress.ts"]);
 const CENTRAL_MARKER = /c14-provider-enforcement|evaluateC14ProviderOperation/u;
 const SPECIALIZED_FAIL_CLOSED = [
   /browser-ecb-delivery-authority/u,
@@ -58,6 +62,7 @@ for (const path of files) {
   const text = readFileSync(path, "utf8");
   if (!NETWORK_PRIMITIVE.test(text)) continue;
   const relativePath = relative(".", path).replaceAll("\\", "/");
+  if (INFRASTRUCTURE_EXEMPT_PATHS.has(relativePath)) continue;
   for (const [providerId, hosts] of PROVIDER_HOSTS) {
     if (!hosts.some((host) => text.includes(host))) continue;
     const central = CENTRAL_MARKER.test(text);
