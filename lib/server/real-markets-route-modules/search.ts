@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { buildUniversalAssetMarketMatrix } from "@/lib/market-integrity/universal-asset-market-matrix";
 import {
   normalizeTwelveDataSearchItem,
@@ -56,7 +57,21 @@ export async function GET(request: Request) {
   let providerResults: RealMarketSearchResult[] = [];
   let providerMode: "catalog_live" | "curated_reference" = "curated_reference";
 
-  if (apiKey && query.length >= 2) {
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "twelve_data",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "twelve_data",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: 60 * 60 * 6,
+    nowMs,
+  });
+  if (apiKey && query.length >= 2 && fetchRights.allowed) {
     const params = new URLSearchParams({
       symbol: query,
       outputsize: "32",
@@ -67,8 +82,8 @@ export async function GET(request: Request) {
         `https://api.twelvedata.com/symbol_search?${params.toString()}`,
         {
           headers: { accept: "application/json" },
-          next: { revalidate: 60 * 60 * 6 },
-        } as RequestInit & { next: { revalidate: number } },
+          ...(cacheRights.allowed ? { next: { revalidate: 60 * 60 * 6 } } : { cache: "no-store" as RequestCache }),
+        } as RequestInit & { next?: { revalidate: number } },
         { profile: "twelve_data", operation: "twelve_data_symbol_search", timeoutMs: 8_000 },
       );
       if (response.ok) {
