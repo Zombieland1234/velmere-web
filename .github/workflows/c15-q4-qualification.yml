@@ -226,9 +226,22 @@ jobs:
         persist-credentials: false
     - name: Native SQL, concurrency, rollback and logical restore
       run: |
-        sudo apt-get update -qq
-        sudo apt-get install -y --no-install-recommends postgresql-client-17
-        export PATH="/usr/lib/postgresql/17/bin:$PATH"
+        # Run the original backup clients from the SAME pulled image as the server.
+        # Host psql is protocol-compatible; pg_dump must not be older than server.
+        mkdir -p /tmp/q4-pg-bin
+        export Q4_PG_CLIENT_IMAGE="$(docker image inspect postgres:17 --format '{{.Id}}')"
+        for tool in pg_dump pg_restore; do
+          cat > "/tmp/q4-pg-bin/$tool" <<'CLIENT'
+        #!/usr/bin/env bash
+        set -euo pipefail
+        exec docker run --rm --network host -v /tmp:/tmp \
+          -e PGHOST -e PGPORT -e PGUSER -e PGPASSWORD -e PGDATABASE \
+          "$Q4_PG_CLIENT_IMAGE" "$(basename "$0")" "$@"
+        CLIENT
+          chmod 700 "/tmp/q4-pg-bin/$tool"
+        done
+        export PATH="/tmp/q4-pg-bin:$PATH"
+        printf 'PostgreSQL client image: %s\n' "$Q4_PG_CLIENT_IMAGE"
         psql --version
         pg_dump --version
         pg_restore --version
