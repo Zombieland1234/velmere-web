@@ -8,7 +8,7 @@ const out = process.argv[2];
 if (!out) throw new Error("output directory required");
 fs.mkdirSync(out, { recursive: true });
 
-const origin = "http://127.0.0.1:3000";
+const origin = "http://localhost:3000";
 const address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 const xssName = '<img id="c14-p24-xss" src=x onerror="window.__c14P24Xss=1"> Café Żółć Über €';
 const longName = "LONG_UNBROKEN_" + "W".repeat(980);
