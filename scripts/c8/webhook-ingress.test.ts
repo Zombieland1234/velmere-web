@@ -2,6 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import Stripe from 'stripe';
 import { NextResponse } from 'next/server';
+import { buildPaymentEventWatermark, decidePaymentEventOrdering } from '../../lib/payments/stripe-webhook-state';
 import { handleStripeWebhookRequest, stripeWebhookIngressDependencies, type StripeWebhookIngressDependencies } from '../../lib/payments/stripe-webhook/ingress';
 
 // SDK signing is real. All downstream persistence/dispatch is a controlled adapter;
@@ -25,7 +26,7 @@ function harness(overrides: Partial<StripeWebhookIngressDependencies> = {}) {
     getRuntimeAuthority: () => ({ credentialMode: 'test', requestedMode: 'test', modeMatches: true, testPaymentsAllowed: true, livePaymentsAllowed: false, blockers: [] }),
     claimEvent: async () => { seen.push('claim'); return { claimed: true, status: 'processing', attempt: 1 }; },
     paymentSubjectKeyFromEvent: async () => 'pi_c8_fixture',
-    applyPaymentEventWatermark: async () => { seen.push('ordering'); return { accepted: true, reason: 'new_subject' } as Awaited<ReturnType<StripeWebhookIngressDependencies['applyPaymentEventWatermark']>>; },
+    applyPaymentEventWatermark: async (input) => { seen.push('ordering'); return decidePaymentEventOrdering(null, buildPaymentEventWatermark(input)); },
     markEventProcessed: async () => { seen.push('processed'); },
     markRetryableFailure: async () => { seen.push('retry'); },
     markTerminalFailure: async () => { seen.push('terminal'); },
@@ -93,7 +94,10 @@ test('ordering and retry-marker simultaneous failures remain retryable', async (
   const r = await handleStripeWebhookRequest(request(event()), h.deps); assert.equal(r.status, 503); assert.deepEqual(h.seen, ['claim']);
 });
 test('older event is acknowledged without restoring superseded entitlements', async () => {
-  const h = harness({ applyPaymentEventWatermark: async () => ({ accepted: false, reason: 'stale_event', currentEventId: 'evt_newer', currentKind: 'refund' } as Awaited<ReturnType<StripeWebhookIngressDependencies['applyPaymentEventWatermark']>>) });
+  const h = harness({ applyPaymentEventWatermark: async (input) => decidePaymentEventOrdering(
+    buildPaymentEventWatermark({ ...input, eventId: 'evt_newer', eventCreatedAt: input.eventCreatedAt + 1, kind: 'refund' }),
+    buildPaymentEventWatermark(input),
+  ) });
   const r = await handleStripeWebhookRequest(request(event()), h.deps); assert.equal(r.status, 200); assert.equal((await r.json()).staleIgnored, true); assert.deepEqual(h.seen, ['claim', 'processed']);
 });
 test('dispatch failure is non-success and schedules retry', async () => {

@@ -1,8 +1,11 @@
 import type Stripe from "stripe";
+import { assertPaymentWatermarkInput, assertSamePaymentEventIdentity, parsePaymentWatermarkDecision } from "@/lib/payments/payment-watermark-contract";
 import { getSupabaseServiceRoleClient, hasSupabaseServiceRoleConfig } from "@/lib/db/supabase";
 import { runRegisteredServiceRoleRpc } from "@/lib/db/supabase-rpc-operation-registry";
 import type { OrderLineItem } from "@/lib/orders/order-store";
 import { assertStripeWebhookCompletionLease } from "@/lib/payments/stripe-webhook-lease";
+import { assertStripeWebhookEventIdentity, assertStripeWebhookEventSettlement,
+  parseStripeWebhookEventClaim, assertStripeWebhookEventReceipt } from "@/lib/payments/stripe-webhook-event-contract";
 import { buildOperationalLogRecord, writeOperationalEvent } from "@/lib/security/operational-log-boundary";
 import {
   buildPaymentEventWatermark,
@@ -49,6 +52,7 @@ const memoryStripeWebhookEvents = new Map<
   }
 >();
 const memoryPaymentEventWatermarks = new Map<string, PaymentEventWatermark>();
+const memoryPaymentEventIdentities = new Map<string, PaymentEventWatermark>();
 const WEBHOOK_CLAIM_STALE_MS = 5 * 60 * 1000;
 
 function requiresDurablePaymentStorage() {
@@ -59,16 +63,23 @@ function canUseDurablePaymentStorage() {
   return hasSupabaseServiceRoleConfig();
 }
 
+export type StripeWebhookEventStorageDependencies = { rpc: typeof runRegisteredServiceRoleRpc };
+const eventStorage: StripeWebhookEventStorageDependencies = { rpc: runRegisteredServiceRoleRpc };
+
 export async function claimStripeWebhookEvent(input: {
   eventId: string;
   eventType: string;
   eventCreatedAt: number;
-}): Promise<StripeWebhookClaimResult> {
+}, dependencies: StripeWebhookEventStorageDependencies = eventStorage): Promise<StripeWebhookClaimResult> {
+  assertStripeWebhookEventIdentity(input);
   const now = Date.now();
   const existing = memoryStripeWebhookEvents.get(input.eventId);
   if (!canUseDurablePaymentStorage()) {
     if (requiresDurablePaymentStorage()) {
       throw new Error("stripe_webhook_claim_storage_unavailable");
+    }
+    if (existing && (existing.eventType !== input.eventType || existing.eventCreatedAt !== input.eventCreatedAt)) {
+      throw new Error("stripe_webhook_event_identity_conflict");
     }
     if (existing?.status === "processed" || existing?.status === "dead_letter") {
       return { claimed: false, status: existing.status, attempt: existing.attemptCount };
@@ -87,6 +98,7 @@ export async function claimStripeWebhookEvent(input: {
         ),
       };
     }
+    if (existing && existing.attemptCount >= 2147483647) throw new Error("stripe_webhook_attempt_exhausted");
     const attemptCount = (existing?.attemptCount ?? 0) + 1;
     memoryStripeWebhookEvents.set(input.eventId, {
       status: "processing",
@@ -100,7 +112,7 @@ export async function claimStripeWebhookEvent(input: {
 
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
+    ({ data } = await dependencies.rpc({
       operation: "stripe_webhook_event_claim",
       args: {
         p_event_id: input.eventId,
@@ -112,26 +124,7 @@ export async function claimStripeWebhookEvent(input: {
   } catch {
     throw new Error("stripe_webhook_claim_failed");
   }
-  const row = Array.isArray(data) ? data[0] : data;
-  if (!row) throw new Error("stripe_webhook_claim_empty_result");
-  return row.claimed
-    ? {
-        claimed: true,
-        status: "processing",
-        attempt: Number(row.attempt_count ?? 1),
-      }
-    : {
-        claimed: false,
-        status: row.status === "processed"
-          ? "processed"
-          : row.status === "dead_letter"
-            ? "dead_letter"
-            : "processing",
-        attempt: Number(row.attempt_count ?? 1),
-        retryAfterSeconds: row.retry_after_seconds
-          ? Number(row.retry_after_seconds)
-          : undefined,
-      };
+  return parseStripeWebhookEventClaim(data, input);
 }
 
 export async function completeStripeWebhookEvent(input: {
@@ -140,8 +133,9 @@ export async function completeStripeWebhookEvent(input: {
   status: "processed" | "retryable_failed" | "dead_letter";
   errorCode?: string;
   expectedAttempt: number;
-}) {
-  const expectedAttempt = Math.max(1, Math.floor(input.expectedAttempt));
+}, dependencies: StripeWebhookEventStorageDependencies = eventStorage) {
+  assertStripeWebhookEventSettlement(input);
+  const expectedAttempt = input.expectedAttempt;
   const existing = memoryStripeWebhookEvents.get(input.eventId);
 
   if (!canUseDurablePaymentStorage()) {
@@ -150,6 +144,9 @@ export async function completeStripeWebhookEvent(input: {
     }
     const activeLease = existing ?? null;
     assertStripeWebhookCompletionLease(activeLease, expectedAttempt);
+    if (existing?.eventType !== input.eventType || Date.now() - existing.claimedAt >= WEBHOOK_CLAIM_STALE_MS) {
+      throw new Error("stripe_webhook_stale_completion");
+    }
     memoryStripeWebhookEvents.set(input.eventId, {
       status: input.status,
       eventType: input.eventType,
@@ -161,22 +158,16 @@ export async function completeStripeWebhookEvent(input: {
     return;
   }
 
-  const supabase = getSupabaseServiceRoleClient();
-  if (!supabase) throw new Error("stripe_webhook_completion_storage_unavailable");
-  const { data, error } = await supabase
-    .from("velmere_stripe_webhook_events")
-    .update({
-      status: input.status,
-      processed_at: new Date().toISOString(),
-      last_error_code: input.errorCode ?? null,
-    })
-    .eq("id", input.eventId)
-    .eq("status", "processing")
-    .eq("attempt_count", expectedAttempt)
-    .select("id")
-    .maybeSingle();
-  if (error) throw new Error(`stripe_webhook_completion_failed:${error.message}`);
-  if (!data) throw new Error("stripe_webhook_stale_completion");
+  let data: unknown;
+  try {
+    ({ data } = await dependencies.rpc({ operation: "stripe_webhook_event_complete", args: {
+      p_event_id: input.eventId, p_event_type: input.eventType, p_expected_attempt: expectedAttempt,
+      p_status: input.status, p_error_code: input.errorCode ?? null,
+    }}));
+  } catch {
+    throw new Error("stripe_webhook_completion_failed");
+  }
+  assertStripeWebhookEventReceipt(data, input);
 }
 
 export async function applyPaymentEventWatermark(input: {
@@ -184,16 +175,20 @@ export async function applyPaymentEventWatermark(input: {
   eventId: string;
   eventCreatedAt: number;
   kind: PaymentEventKind;
-}) {
+}, dependencies: StripeWebhookEventStorageDependencies = eventStorage) {
+  assertPaymentWatermarkInput(input);
   const incoming = buildPaymentEventWatermark(input);
   if (!canUseDurablePaymentStorage()) {
     if (requiresDurablePaymentStorage()) {
       throw new Error("payment_event_watermark_storage_unavailable");
     }
+    const previousIdentity = memoryPaymentEventIdentities.get(input.eventId);
+    if (previousIdentity) assertSamePaymentEventIdentity(previousIdentity, incoming);
     const decision = decidePaymentEventOrdering(
       memoryPaymentEventWatermarks.get(input.subjectKey) ?? null,
       incoming,
     );
+    memoryPaymentEventIdentities.set(input.eventId, incoming);
     if (decision.accepted) {
       memoryPaymentEventWatermarks.set(input.subjectKey, decision.next);
     }
@@ -202,7 +197,7 @@ export async function applyPaymentEventWatermark(input: {
 
   let data: unknown;
   try {
-    ({ data } = await runRegisteredServiceRoleRpc({
+    ({ data } = await dependencies.rpc({
       operation: "payment_event_watermark_apply",
       args: {
         p_subject_key: incoming.subjectKey,
@@ -216,15 +211,7 @@ export async function applyPaymentEventWatermark(input: {
   } catch {
     throw new Error("payment_event_watermark_failed");
   }
-  const row = Array.isArray(data) ? data[0] : data;
-  if (!row) throw new Error("payment_event_watermark_empty_result");
-  return {
-    accepted: Boolean(row.accepted),
-    reason: String(row.reason ?? "stale_or_lower_priority"),
-    next: incoming,
-    currentEventId: row.current_event_id ? String(row.current_event_id) : null,
-    currentKind: row.current_kind ? String(row.current_kind) : null,
-  };
+  return parsePaymentWatermarkDecision(data, input);
 }
 
 // Compatibility wrappers for older callers. New webhook runtime uses atomic claim/complete.

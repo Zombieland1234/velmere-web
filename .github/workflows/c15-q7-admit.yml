@@ -1,0 +1,69 @@
+name: C15 Q7 exact reviewed source admission
+on:
+  push:
+    branches: [c15/qualification-q7-20260918]
+    paths:
+      - '.github/workflows/c15-q7-admit.yml'
+      - '_handoff/q7-admission-*.payload'
+permissions:
+  contents: write
+concurrency:
+  group: c15-q7-admission
+  cancel-in-progress: false
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Verify and apply reviewed patch without executing its contents
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, hashlib, json, lzma, subprocess
+          base='57a29cfccb9b5e3718ae89c8426e7155a0c086ee'
+          expected='e3bc3d23bf5369266b3ae8f63437b499252b10c4'
+          def git(*args):return subprocess.check_output(['git',*args]).decode().strip()
+          subprocess.run(['git','merge-base','--is-ancestor',base,'HEAD'],check=True)
+          assert git('status','--porcelain')=='', 'dirty admission checkout'
+          parts=[Path(f'_handoff/q7-admission-{i}.payload') for i in range(1,7)]
+          encoded=''.join(p.read_text().strip() for p in parts)
+          assert len(encoded)==31080
+          assert hashlib.sha256(encoded.encode()).hexdigest()=='b14a9b36cd8b2e6c7cfb2131851af99147b9b6f761a540d01c1ac6978b5f5425', 'transfer checksum mismatch'
+          raw=lzma.decompress(base64.b64decode(encoded,validate=True),memlimit=134217728)
+          assert hashlib.sha256(raw).hexdigest()=='7004447373c30bb1e5736c689f78b5c9db8c08e1a417f926d0c472582e773c02'
+          data=json.loads(raw);assert data['base']==base and len(data['files'])==22
+          names=[f['path'] for f in data['files']];assert len(names)==len(set(names))
+          for f in data['files']:
+            p=Path(f['path']);assert not p.is_absolute() and '..' not in p.parts and p.parts[0] in ('lib','scripts','_handoff') or str(p).startswith('tsconfig.c15-')
+            assert not str(p).startswith('.github/')
+            if f['before'] is None:assert not p.exists(), f['path']
+            else:assert hashlib.sha256(p.read_bytes()).hexdigest()==f['before'], f['path']
+          patch=Path('/tmp/q7-reviewed.patch');patch.write_text(data['patch'])
+          subprocess.run(['git','apply','--check',str(patch)],check=True)
+          subprocess.run(['git','apply',str(patch)],check=True)
+          for f in data['files']:assert hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['after'], f['path']
+          subprocess.run(['git','add','--',*names],check=True)
+          subprocess.run(['git','rm','--',*[str(p) for p in parts]],check=True)
+          workflow='.github/workflows/c15-q7-admit.yml'
+          subprocess.run(['git','rm','--cached','--',workflow],check=True)
+          actual=git('write-tree');assert actual==expected, (actual,expected)
+          subprocess.run(['git','add','--',workflow],check=True)
+          final_tree=git('write-tree')
+          Path('/tmp/Q7_ADMISSION.json').write_text(json.dumps({'base':base,'reviewedContentTree':actual,'committedTreeWithAdmissionWorkflow':final_tree,'sourceFiles':4070,'changedFiles':len(names),'scope':'exact byte admission only; no tests or release GO implied'},indent=2))
+          print(Path('/tmp/Q7_ADMISSION.json').read_text())
+          subprocess.run(['git','config','user.name','github-actions[bot]'],check=True)
+          subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)
+          subprocess.run(['git','commit','-m','feat(c15-q7): admit reviewed local Q6 plus strict durable payment watermark'],check=True)
+          subprocess.run(['git','push','origin','HEAD:refs/heads/c15/qualification-q7-20260918'],check=True)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q7-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/Q7_ADMISSION.json
+          if-no-files-found: warn
+          retention-days: 14
