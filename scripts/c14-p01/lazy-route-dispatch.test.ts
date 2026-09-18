@@ -37,8 +37,8 @@ test("lazy route handler failures never disclose raw exception details", async (
 
     assert.equal(response.status, 500);
     assert.equal(body.error, "internal_worker_temporarily_unavailable");
-    assert.doesNotMatch(JSON.stringify(body), /db\\.internal|opaque-c14p01-sensitive|c14p01-sensitive/i);
-    assert.doesNotMatch(captured.join("\n"), /db\\.internal|opaque-c14p01-sensitive|c14p01-sensitive/i);
+    assert.doesNotMatch(JSON.stringify(body), /db\\.internal|internal-sensitive-marker-c14p01|phrase-c14p01-sensitive-material/i);
+    assert.doesNotMatch(captured.join("\n"), /db\\.internal|internal-sensitive-marker-c14p01|phrase-c14p01-sensitive-material/i);
   } finally {
     console.error = originalError;
   }
