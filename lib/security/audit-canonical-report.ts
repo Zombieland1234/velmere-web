@@ -476,7 +476,7 @@ export function buildFullInternalCanonicalReport(input: FullAuditReportInput): C
     Boolean(effectiveTokenSymbol?.startsWith("COLL-")) ||
     Boolean(effectiveTokenSymbol?.startsWith("EIP1167-"));
 
-  const sections: CanonicalReportSection[] = engineSections.map((sec, secIdx) => {
+  const sections: CanonicalReportSection[] = engineSections.map((sec) => {
     const rawMetrics = sec.metrics || [];
     const sanitizedMetrics = rawMetrics.map((m, mIdx: number) => {
       let status = m.status;
@@ -564,10 +564,6 @@ export function buildFullInternalCanonicalReport(input: FullAuditReportInput): C
     rawSummary = `[SIMULATED FIXTURE] ${rawSummary}`;
   }
 
-  const isRouter =
-    profile.tokenType === "ROUTER" ||
-    name.toLowerCase().includes("router") ||
-    (profile.tokenSymbol && profile.tokenSymbol.toLowerCase().includes("router"));
 
   const reportCore = {
     schemaVersion: "velmere.canonical-audit-report.v1" as const,

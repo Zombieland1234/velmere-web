@@ -224,8 +224,6 @@ export default function AngelPanel({
     }
   };
 
-  const hasUserSentMessage = messages.some((m) => m.role === "user");
-
   return (
     <DrawerRoot
       open={open}

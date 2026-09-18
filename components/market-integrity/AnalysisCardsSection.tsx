@@ -422,12 +422,6 @@ export default function AnalysisCardsSection({
     }
   };
 
-  // Instant unlock for BETA / demo testing
-  const handleUnlockTierBeta = (tier: "pro" | "advanced") => {
-    unlockAndSave(tier);
-    setPaywallModal(null);
-    triggerAnalysis(tier);
-  };
 
   // Real Stripe Checkout initiation with in-page popup modal window
   const handleStripeCheckout = async (tier: "pro" | "advanced") => {

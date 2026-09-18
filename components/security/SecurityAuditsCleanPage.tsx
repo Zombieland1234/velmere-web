@@ -581,10 +581,10 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
   const [comparisonTab, setComparisonTab] = useState<"tiers" | "industry">("tiers");
   const [howRiskModalOpen, setHowRiskModalOpen] = useState(false);
   const [paidPreviewOpen, setPaidPreviewOpen] = useState(false);
-  const [paidPreviewTier, setPaidPreviewTier] = useState<PaidPreviewTier | null>(null);
-  const [paidPreview, setPaidPreview] = useState<AuditPaidTierPreview | null>(null);
-  const [paidPreviewLoading, setPaidPreviewLoading] = useState(false);
-  const [paidPreviewError, setPaidPreviewError] = useState<string | null>(null);
+  const [, setPaidPreviewTier] = useState<PaidPreviewTier | null>(null);
+  const [, setPaidPreview] = useState<AuditPaidTierPreview | null>(null);
+  const [, setPaidPreviewLoading] = useState(false);
+  const [, setPaidPreviewError] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationStep, setGenerationStep] = useState(1);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -601,7 +601,7 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
   const [auditPaywallModal, setAuditPaywallModal] = useState<"pro" | "advanced" | null>(null);
   const [isAuditStripeLoading, setIsAuditStripeLoading] = useState(false);
   const [auditStripeError, setAuditStripeError] = useState<string | null>(null);
-  const [auditStripeSuccessNotification, setAuditStripeSuccessNotification] = useState<string | null>(null);
+  const [, setAuditStripeSuccessNotification] = useState<string | null>(null);
   const [auditStripePopupState, setAuditStripePopupState] = useState<{
     sessionId: string;
     tier: "pro" | "advanced";
@@ -840,7 +840,6 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
   const paidSaleBlocked = selectedPaidUiGate?.checkoutAllowed === false;
   const productCellGate = selectedPaidUiGate;
   void productCellGate; // productCellId: productCellGate.productCellId
-  const paidPreviewButtonLabel = localeKey === "pl" ? "Bezpieczny podgląd" : localeKey === "de" ? "Sichere Vorschau" : "Secure preview";
 
   useEffect(() => {
     document.body.classList.add("audit-v4609-active", "audit-v4610-global-header-owner");
@@ -874,7 +873,8 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     };
   }, [comparisonOpen]);
 
-  const closePaidPreview = () => {
+  const _closePaidPreview = () => { // Retained with the legacy preview state machine; no current control invokes it.
+
     setPaidPreviewOpen(false);
     setPaidPreviewLoading(false);
     setPaidPreviewError(null);
@@ -915,7 +915,8 @@ export default function SecurityAuditsCleanPage({ locale }: { locale: string }) 
     requestIdRef.current = undefined;
   };
 
-  const beginPaidCheckout = async (caseReference: string, requestId: string, tier: "pro" | "advanced") => {
+  const _beginPaidCheckout = async (caseReference: string, requestId: string, tier: "pro" | "advanced") => { // Retained for the dormant paid-preview flow without altering side-effect code.
+
     setIntakeState("checkout");
     setIntakeMessage(t.checkoutRedirect);
     const productId = tier === "advanced" ? "vlm_advanced_audit_human_review" : "vlm_pro_audit_review";

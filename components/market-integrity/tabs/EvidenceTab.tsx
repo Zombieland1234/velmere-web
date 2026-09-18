@@ -79,7 +79,7 @@ const TRADITIONAL_EVIDENCE_RECORDS: EvidenceRecord[] = [
   },
 ];
 
-export default function EvidenceTab({ assetId, symbol, isTraditional = false }: EvidenceTabProps) {
+export default function EvidenceTab({ isTraditional = false }: EvidenceTabProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const copyDigest = (text: string, id: string) => {

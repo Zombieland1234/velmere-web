@@ -40,11 +40,9 @@ const OP_INVALID = 0xfe;
 const OP_SELFDESTRUCT = 0xff;
 const OP_CALL = 0xf1;
 const OP_DELEGATECALL = 0xf4;
-const OP_STATICCALL = 0xfa;
 const OP_CALLDATALOAD = 0x35;
 const OP_CALLER = 0x33;
 const OP_ORIGIN = 0x32;
-const OP_RETURNDATACOPY = 0x3e;
 
 const OP_NAMES: Record<number, string> = {
   0x00: "STOP", 0x01: "ADD", 0x02: "MUL", 0x03: "SUB", 0x04: "DIV", 0x05: "SDIV",

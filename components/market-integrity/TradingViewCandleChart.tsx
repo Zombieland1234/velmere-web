@@ -48,7 +48,7 @@ export default function TradingViewCandleChart({
   assetId,
   symbol,
   currentPrice,
-  locale = "en",
+  locale: _locale = "en", // Shared chart API remains locale-aware even though this renderer currently has no locale branch.
   className = "",
   onPriceUpdate,
 }: TradingViewCandleChartProps) {

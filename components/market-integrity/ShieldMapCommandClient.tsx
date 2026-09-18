@@ -1262,7 +1262,6 @@ export default function ShieldMapCommandClient({ locale }: { locale: string }) {
   };
 
   const symbol = customerAssetDisplay?.canonicalSymbol ?? "";
-  const assetCaseLabel = customerAssetDisplay?.customerLabel ?? c.withheld;
   const topAction = investigator?.nextActions[0];
   const plainMeaning = investigator
     ? investigator.overallRisk === null

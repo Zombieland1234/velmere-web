@@ -59,7 +59,7 @@ export function isCryptoAsset(asset: VlmAssetDetailModalData): boolean {
 
 export function buildInstitutionalMarketImpact(
   asset: VlmAssetDetailModalData,
-  locale = "pl",
+  _locale = "pl", // Stable public model signature; returned metrics are locale-neutral.
 ): BasicMarketImpact {
   const midPrice = extractNumericPrice(
     asset.priceLabel,
@@ -158,7 +158,6 @@ export function buildInstitutionalWhaleWatch(
   locale = "pl",
 ): WhaleWatchView {
   const isCrypto = isCryptoAsset(asset);
-  const midPrice = extractNumericPrice(asset.priceLabel, 100);
   const adv = extractAdvUsd(asset);
 
   if (isCrypto) {

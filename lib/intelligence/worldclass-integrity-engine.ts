@@ -477,7 +477,7 @@ export function computeWeightedConsensus(
 export function buildDataLineage(
   asset: string,
   observations: RawMarketSourceObservation[],
-  consensus: SourceWeightingResult
+  _consensus: SourceWeightingResult // Stable engine signature; lineage currently derives directly from observations.
 ): DataLineageRecord {
   const metrics: DataLineageNode[] = observations.map((obs) => {
     const rawPayloadString = obs.rawPayload ? canonicalJsonStringify(obs.rawPayload) : `${obs.providerId}:${obs.priceUsd}`;
@@ -553,7 +553,7 @@ export function calibrateConfidence(params: {
   contradictionBrake: ContradictionBrakeResult;
   healthScores: ProviderHealthScore[];
 }): ConfidenceCalibrationResult {
-  const { observations, circuitBreaker, contradictionBrake, healthScores } = params;
+  const { observations, circuitBreaker, contradictionBrake } = params;
 
   if (observations.length === 0) {
     return {
@@ -621,7 +621,7 @@ export function calibrateConfidence(params: {
 
 export function detectMarketAnomalies(
   observations: RawMarketSourceObservation[],
-  consensus: SourceWeightingResult
+  _consensus: SourceWeightingResult // Stable detector signature; anomaly thresholds currently use raw observations.
 ): AnomalyDetectionResult {
   if (observations.length < 3) {
     return {

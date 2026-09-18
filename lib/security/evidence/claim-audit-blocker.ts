@@ -135,7 +135,6 @@ export function auditAndSanitizeReportLines(
   evidenceRecords: EvidenceRecord[]
 ): ClaimAuditResult {
   const evidenceCategories = new Set<string>(evidenceRecords.map((e) => e.category));
-  const validEvidenceIds = new Set(evidenceRecords.filter((e) => e.status === "PASS").map((e) => e.id));
 
   const blockedCount = 0;
   let rewrittenCount = 0;
@@ -144,7 +143,6 @@ export function auditAndSanitizeReportLines(
 
   for (const line of lines) {
     let sanitizedLine = line;
-    let lineModified = false;
 
     for (const rule of CRITICAL_CLAIM_PATTERNS) {
       if (rule.regex.test(sanitizedLine)) {
@@ -156,7 +154,6 @@ export function auditAndSanitizeReportLines(
         if (!hasEvidence) {
           // Replace forbidden claim with truthful fallback
           sanitizedLine = sanitizedLine.replace(rule.regex, rule.truthfulFallback);
-          lineModified = true;
           rewrittenCount++;
           findings.push({
             originalLine: line,

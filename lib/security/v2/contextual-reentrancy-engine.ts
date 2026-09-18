@@ -40,7 +40,6 @@ export function analyzeContextualReentrancy(
 
   let classicReentrancyDetected = false;
   let readOnlyReentrancyDetected = false;
-  let tokenCallbackReentrancyDetected = false;
 
   // 1. Classic Reentrancy: Check CFG paths for CALL followed by SSTORE in non-guarded blocks
   for (const block of cfg.blocks.values()) {
@@ -213,7 +212,6 @@ export function analyzeContextualReentrancy(
   // 3. Token Callback Reentrancy: Check for ERC-777 tokensReceived hook
   const tokensReceivedSelector = "0x0023de29";
   if (selectorsDiscovered.has(tokensReceivedSelector)) {
-    tokenCallbackReentrancyDetected = true;
     const pc = selectorsDiscovered.get(tokensReceivedSelector)!;
 
     findings.push({

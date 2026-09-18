@@ -26,11 +26,6 @@ export interface ReportPkiAttestation {
   provenanceProof: string;
 }
 
-// Fixed deterministic root key for repeatable reproducible verification
-const VELMERE_ED25519_SEED = Buffer.from(
-  "76656c6d6572652d61756469742d726f6f742d736565642d323032362d3039",
-  "hex"
-); // 32 bytes seed
 
 let keyPairCache: crypto.KeyPairSyncResult<string, string> | null = null;
 

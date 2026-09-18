@@ -96,7 +96,6 @@ export function analyzeProxySecurity(options: {
   const implVal = storageSlots?.implementationSlot || '0x' + '0'.repeat(64);
   const adminVal = storageSlots?.adminSlot || '0x' + '0'.repeat(64);
   const beaconVal = storageSlots?.beaconSlot || '0x' + '0'.repeat(64);
-  const proxiableVal = storageSlots?.proxiableSlot || '0x' + '0'.repeat(64);
 
   const implAddr = extractAddressFromSlot(implVal);
   const adminAddr = extractAddressFromSlot(adminVal);

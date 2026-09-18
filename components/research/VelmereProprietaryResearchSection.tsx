@@ -52,7 +52,7 @@ export default function VelmereProprietaryResearchSection({
 
   // VGPI
   const [vgpiOwner, setVgpiOwner] = useState<"renounced" | "multisig" | "eoa">("multisig");
-  const [vgpiProxy, setVgpiProxy] = useState<"none" | "erc1967" | "unrestricted">("erc1967");
+  const [vgpiProxy] = useState<"none" | "erc1967" | "unrestricted">("erc1967");
   const [vgpiPrivileges, setVgpiPrivileges] = useState(2); // 0-5
   const [vgpiTimelock, setVgpiTimelock] = useState(24); // hours
 
@@ -65,13 +65,13 @@ export default function VelmereProprietaryResearchSection({
   const [verSellTax, setVerSellTax] = useState(2); // %
   const [verLpLocked, setVerLpLocked] = useState(90); // %
   const [verWhaleConc, setVerWhaleConc] = useState(25); // %
-  const [verIsHoneypot, setVerIsHoneypot] = useState(false);
+  const [verIsHoneypot] = useState(false);
 
   // VDCS
   const [vdcsConsensus, setVdcsConsensus] = useState(92);
   const [vdcsAgeSec, setVdcsAgeSec] = useState(15);
   const [vdcsSignedPct, setVdcsSignedPct] = useState(100);
-  const [vdcsReplayOk, setVdcsReplayOk] = useState(true);
+  const [vdcsReplayOk] = useState(true);
 
   // VSCS
   const [vscsCorr, setVscsCorr] = useState(0.35); // -1.0 to 1.0

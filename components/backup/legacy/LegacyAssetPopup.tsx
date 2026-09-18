@@ -2418,7 +2418,6 @@ function VelmerePerformanceChart({
       const plotRight = layout.left + layout.plotWidth;
       const xFor = (index: number) => layout.left + ((index - range.from) / span) * layout.plotWidth;
       const yFor = (value: number) => layout.top + ((high - value) / priceRange) * layout.priceHeight;
-      const volumeY = (value: number) => layout.volumeBottom - (value / maxVolume) * (layout.volumeBottom - layout.volumeTop);
       const candleWidth = Math.max(2.5, Math.min(54, (layout.plotWidth / Math.max(span, 1)) * 0.76));
 
       // TradingView-grade subtle horizontal price gridlines:
@@ -5696,7 +5695,7 @@ function analysisSurfaceForGate(): VlmPaidAccessContext["surface"] {
 
     const paidTier = tier.label as "Pro" | "Advanced";
     const copy = paidTierCopy(paidTier);
-    const currentSkuTruth = getVlmCurrentSkuTruth(paidTier === "Pro" ? "pro" : "advanced", currentLocaleForVlm());
+    void getVlmCurrentSkuTruth(paidTier === "Pro" ? "pro" : "advanced", currentLocaleForVlm()); // Preserve the policy read; no local value is consumed.
     setAnalysisGateNotice(null);
     setAnalysisGateAction(null);
 

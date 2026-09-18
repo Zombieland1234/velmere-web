@@ -19,7 +19,7 @@ export interface BoundedPathExplorationResult {
 
 export function executeBoundedSymbolicAnalysis(
   cfg: ControlFlowGraph,
-  contractAddress: string,
+  _contractAddress: string, // Stable engine signature; bounded path exploration depends on CFG only.
 ): BoundedPathExplorationResult {
   const formalAssurance: FormalAssuranceResult[] = [];
 

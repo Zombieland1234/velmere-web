@@ -30,7 +30,7 @@ export function analyzeContextualAccessControl(
   sourceCode?: string
 ): AccessControlAnalysisResult {
   const findings: StandardFindingV2[] = [];
-  const { cfg, selectorsDiscovered, storageSlotsWritten } = cfgResult;
+  const { cfg, selectorsDiscovered } = cfgResult;
 
   // 1. Construct Privilege Graph
   const roles = new Map<string, PrivilegeRole>();
@@ -46,14 +46,12 @@ export function analyzeContextualAccessControl(
 
   // Check 1: tx.origin Authorization Trap (SWC-115)
   // Check if ORIGIN (0x32) opcode is present and compared with EQ
-  let originSeen = false;
   let originPc = -1;
   for (const block of cfg.blocks.values()) {
     for (let i = 0; i < block.instructions.length; i++) {
       const inst = block.instructions[i];
       if (inst.opcode === 0x32) {
         // ORIGIN
-        originSeen = true;
         originPc = inst.pc;
         // Look for subsequent EQ opcode within 6 instructions
         const subsequentOpcodes = block.instructions.slice(i + 1, i + 8).map((ins) => ins.name);

@@ -92,7 +92,7 @@ const TRADITIONAL_TXS: LargeTransaction[] = [
   },
 ];
 
-export default function WhaleWatchTab({ assetId, symbol, isTraditional = false }: WhaleWatchTabProps) {
+export default function WhaleWatchTab({ symbol, isTraditional = false }: WhaleWatchTabProps) {
   return (
     <div className="space-y-6">
       {/* Concentration Grid */}

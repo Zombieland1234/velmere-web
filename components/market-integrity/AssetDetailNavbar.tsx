@@ -18,7 +18,7 @@ type AssetDetailNavbarProps = {
 };
 
 export default function AssetDetailNavbar({
-  activeSection = "markets",
+  activeSection: _activeSection = "markets", // Stable navbar API; active styling is routed elsewhere.
 }: AssetDetailNavbarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();

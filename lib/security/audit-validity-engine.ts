@@ -36,7 +36,6 @@ export interface AuditValidityEvaluationInput {
 }
 
 const DEFAULT_MAX_VALIDITY_DAYS = 90;
-const CURRENT_ACTIVE_METHODOLOGY = "v3.2.0";
 
 /**
  * Deterministically evaluates the validity state of an audit assessment.

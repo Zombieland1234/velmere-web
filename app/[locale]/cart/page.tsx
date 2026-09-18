@@ -88,7 +88,7 @@ export default function CartPage({ params }: { params: Promise<{ locale: string 
   });
   const cartHasItems = items.length > 0;
   const cartCheckoutReady = cartGuard.status === "allowed";
-  const cartCustomerStatusSurface = buildPass2196CustomerSafeStatusSurface(
+  void buildPass2196CustomerSafeStatusSurface(
     cartHasItems ? (cartCheckoutReady ? "order_status_safe" : "provider_proof_missing") : "receipt_missing",
     customerLocale(locale),
   );

@@ -4,7 +4,7 @@ import DashboardClient from "@/components/dashboard/DashboardClient";
 import { buildVelmereMetadata } from "@/lib/seo/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
+  await params; // Preserve route-param resolution without retaining an unused binding.
   return buildVelmereMetadata({
     locale,
     path: "/account",

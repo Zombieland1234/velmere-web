@@ -371,7 +371,7 @@ const klineCache = new Map<string, { points: PricePoint[]; xAxisLabels: string[]
 export default function AssetAreaChart({
   symbol,
   currentPrice,
-  priceChange24h = 2.48,
+  priceChange24h: _priceChange24h = 2.48, // Kept for the shared chart prop contract; rendering no longer consumes it directly.
   timeframe: externalTf,
   mode: externalMode,
   isOutdated = false,

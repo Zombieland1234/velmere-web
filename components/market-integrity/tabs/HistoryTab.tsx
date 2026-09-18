@@ -48,7 +48,7 @@ const AUDIT_HISTORY: AuditSnapshot[] = [
   },
 ];
 
-export default function HistoryTab({ assetId, symbol }: HistoryTabProps) {
+export default function HistoryTab({ assetId }: HistoryTabProps) {
   return (
     <div className="space-y-6">
       {/* Lineage Header */}

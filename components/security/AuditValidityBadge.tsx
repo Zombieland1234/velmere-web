@@ -12,7 +12,7 @@ type AuditValidityBadgeProps = {
 
 export default function AuditValidityBadge({
   validity,
-  reason,
+  reason: _reason, // Badge API keeps the reason field for callers; visual output currently uses normalized status only.
   reasonDetails,
   className = "",
   showDetails = false,

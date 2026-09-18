@@ -108,7 +108,6 @@ export class TwoDimensionalScorer {
     // 3. Compute Confidence Score
     const unknownCount = params.evidenceRecords.filter((e) => e.status === "UNKNOWN" || e.status === "NOT_VERIFIED").length;
     const passCount = params.evidenceRecords.filter((e) => e.status === "PASS").length;
-    const totalCount = params.evidenceRecords.length || 1;
     const confidenceScore = Math.round(Math.min(99, Math.max(40, (passCount / (passCount + unknownCount * 1.5)) * 100)));
 
     const explanation = `Risk Score (${riskScore}/100, ${riskTier}) derived from ${params.findings.length} findings and architectural penalties. Audit Quality Score (${auditQualityScore}/100, ${auditQualityTier}) reflects tool coverage: source=${sourcePoints}/20, static=${staticPoints}/15, fuzz=${fuzzPoints}/15, formal=${formalPoints}/15, human=${humanPoints}/10.`;

@@ -261,21 +261,6 @@ function sparkPath(values: number[], width = 122, height = 30) {
     .join(" ");
 }
 
-function sparkPoints(values: number[], width = 122, height = 30) {
-  const clean = values.filter(finite);
-  if (clean.length < 2) return "";
-  const min = Math.min(...clean);
-  const max = Math.max(...clean);
-  const range = Math.max(0.000001, max - min);
-  return clean
-    .map((value, index) => {
-      const x = (index / Math.max(1, clean.length - 1)) * width;
-      const y = height - ((value - min) / range) * height;
-      return `${x.toFixed(2)},${y.toFixed(2)}`;
-    })
-    .join(" ");
-}
-
 function hasSourceSparkline(values: number[] | undefined) {
   return (values ?? []).filter(finite).length >= 4;
 }
@@ -1125,7 +1110,6 @@ export default function ShieldRealMarketsParityClient({
   }, [customerRows, query, remoteSuggestions]);
 
   const referenceMode = feedMode === "reference" || (rows.length > 0 && rows.every((row) => row.result?.dataQuality === "demo"));
-  const metricsUnavailable = referenceMode || customerRows.length === 0 || !shieldProAggregateMetricsAvailable(feedMode);
   const heroSubtitle = referenceMode ? t.referenceSubtitle : t.subtitle;
 
   const stats = useMemo(() => {

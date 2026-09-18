@@ -7,7 +7,8 @@ type MarketImpactTabProps = {
   locale?: string;
 };
 
-export default function MarketImpactTab({ assetId, symbol }: MarketImpactTabProps) {
+export default function MarketImpactTab(_props: MarketImpactTabProps) { // Props are retained for the shared tab contract; this static panel does not consume them.
+
   return (
     <div className="space-y-6">
       {/* Top Liquidity Metrics */}

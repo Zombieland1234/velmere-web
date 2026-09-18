@@ -278,7 +278,6 @@ export class SmartContractAnalyzer {
     // 3. Real Proxy Detection
     const EIP1967_IMPL_SLOT = "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc";
     const EIP1967_ADMIN_SLOT = "0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103";
-    const EIP1967_BEACON_SLOT = "0xa3f0ad74e5423aeb0d0795f00e3a074202b3d9f2da8e88ddfd4385f43d082c";
 
     let proxyStatus: ProxyDetectionResult["status"] = "NOT_DETECTED";
     let proxyType: ProxyDetectionResult["proxyType"];

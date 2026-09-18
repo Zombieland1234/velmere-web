@@ -5338,10 +5338,6 @@ export default function CrossAssetCollapseRadarPanel({
         notation: "compact",
         maximumFractionDigits: 1,
       }).format(value);
-    const activePercent = displayRows.length
-      ? Math.round((verifiedRiskValues.length / displayRows.length) * 100)
-      : 0;
-    const activePercentReady = verifiedRiskValues.length > 0;
     const unavailableSourceLabel = loading
       ? safeLocale === "pl"
         ? "oczekuje na dane"

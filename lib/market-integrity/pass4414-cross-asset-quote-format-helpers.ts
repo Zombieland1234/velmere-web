@@ -386,7 +386,7 @@ export function inferMarketSession(asset: Asset, locale: Pass4414Locale) {
 
 export function displayTrustedPrice(
   quote?: Quote,
-  category?: Pass4413AssetCategory | null,
+  _category?: Pass4413AssetCategory | null, // Signature retained for cross-asset callers; current trust gate is quote-derived.
 ): number | null {
   if (
     !quote

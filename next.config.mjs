@@ -8,11 +8,9 @@ import { resolveBuildSettings } from "./lib/build/build-profile.mjs";
 
 const withNextIntl = createNextIntlPlugin("./i18n.ts");
 const isDev = process.env.NODE_ENV !== "production";
-const turbopackDevCacheEnabled = process.env.VELMERE_TURBOPACK_DEV_CACHE === "1";
 const buildSettings = resolveBuildSettings(process.env);
-const { profile, runtimeBuildScope, runtimeDistDir, runtimeBuildId, outputStandalone, turbopackMemoryLimit } = buildSettings;
+const { runtimeBuildScope } = buildSettings;
 const webpackPersistentCacheEnabled = process.env.VELMERE_BUILD_WEBPACK_PERSISTENT_CACHE === "1";
-const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const a60RuntimeProbeSha256 = /^[a-f0-9]{64}$/u.test(process.env.VELMERE_A60_RUNTIME_PROBE_SHA256 ?? "")
   ? process.env.VELMERE_A60_RUNTIME_PROBE_SHA256
   : null;

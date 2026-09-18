@@ -70,7 +70,7 @@ export class FormalVerificationEngine {
   public static evaluate(
     auditId: string,
     tier: "basic" | "pro" | "advanced",
-    contractType: "token" | "vault" | "dex" | "lending" | "governance" | "general" = "general",
+    _contractType: "token" | "vault" | "dex" | "lending" | "governance" | "general" = "general", // Reserved for solver specialization; signature remains stable.
     options?: {
       runSolver?: boolean;
       fuzzRuns?: number;

@@ -53,7 +53,8 @@ export async function GET(request: Request) {
       generatedAt: new Date().toISOString(),
       ...abuseShieldResponseMeta(shield),
     });
-  } catch (error) {
+  } catch (_error) { // Provider failure intentionally activates the local identity-registry fallback.
+
     const { PASS481_ASSET_IDENTITIES } = await import("@/lib/market-integrity/asset-identity-registry");
     const q = query.trim().toLowerCase();
     const matches = PASS481_ASSET_IDENTITIES.filter(

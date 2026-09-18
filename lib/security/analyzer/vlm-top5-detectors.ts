@@ -567,7 +567,6 @@ export function detectEIP712Replay(contract: ContractModel): CanonicalFinding[] 
       return /s[<>=]0x7f|secp256k1n?\/2|s<=|s>=/.test(t);
     });
     const missingNonce = nonce.length === 0;
-    const missingDomain = domain.eip712.length === 0 || (domain.chain.length === 0 && domain.verifying.length === 0 && !domain.eip712.length);
     const replayEvidence = missingNonce || (domain.eip712.length === 0 && (domain.chain.length === 0 || domain.verifying.length === 0));
     if (!replayEvidence && !(rawEcrecover && !hasLowSGuard)) continue;
     const evidence: Evidence[] = [
@@ -646,7 +645,6 @@ export function detectERC20SemanticMismatch(contract: ContractModel): CanonicalF
     if (!inbound.length) continue;
     if (!/deposit|mint|stake|supply|join|fund|_deposit|_mint/i.test(fn.name ?? '') &&
         !walk(fn).some(n => n.nodeType === 'Assignment' && /totalAssets|shares|credit|balance/i.test(binaryTreeString(n)))) continue;
-    const prePost = balanceOfThisCalls(fn);
     const hasOrderedDeltaCheck = inbound.some(call => {
       const statements = extractFunctionStatements(fn);
       const callId = nodeId(call);

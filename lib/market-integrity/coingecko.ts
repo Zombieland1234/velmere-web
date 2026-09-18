@@ -372,7 +372,8 @@ export async function searchCoinGeckoMarket(query: string) {
   try {
     const rows = await fetchCoinGeckoMarkets({ ids: [id], perPage: 10 });
     row = rows[0] ?? null;
-  } catch (err) {
+  } catch (_err) { // Primary-provider failure intentionally falls through to the Binance fallback.
+
     const { fetchBinanceMarketFallback } = await import("./binance-market-fallback");
     const fallback = await fetchBinanceMarketFallback({ perPage: 100 });
     row = fallback.rows.find(r => r.symbol.toLowerCase() === clean || r.id.toLowerCase() === id) ?? null;

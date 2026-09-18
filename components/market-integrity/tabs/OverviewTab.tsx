@@ -23,8 +23,7 @@ type OverviewTabProps = {
   isTraditional?: boolean;
 };
 
-export default function OverviewTab({ asset, locale = "en", isTraditional = false }: OverviewTabProps) {
-  const isPositive24h = (asset.priceChange24h ?? 0) >= 0;
+export default function OverviewTab({ asset, isTraditional = false }: OverviewTabProps) {
   const isPositive7d = (asset.priceChange7d ?? 0) >= 0;
 
   return (

@@ -20,7 +20,7 @@ type ForensicSecurityMatrixProps = {
 
 export default function ForensicSecurityMatrix({
   assetSymbol,
-  assetName,
+  assetName: _assetName, // Retained for callers that share the forensic-card input contract.
   contractAddress,
   isTraditional = false,
   scanScore = 96.8,

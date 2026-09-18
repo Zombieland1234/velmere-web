@@ -99,8 +99,6 @@ const TRADITIONAL_RISK_FACTORS: RiskFactor[] = [
 ];
 
 export default function AnalysisTab({
-  assetId,
-  symbol,
   riskScore,
   confidence,
   isTraditional = false,

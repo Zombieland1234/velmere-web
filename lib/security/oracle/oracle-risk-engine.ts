@@ -30,7 +30,8 @@ export interface OracleRiskAnalysis {
   recommendations: string[];
 }
 
-export function analyzeOracleRisk(rawBytecode?: string, context?: { tokenType?: string; isRouter?: boolean }): OracleRiskAnalysis {
+export function analyzeOracleRisk(rawBytecode?: string, _context?: { tokenType?: string; isRouter?: boolean }): OracleRiskAnalysis { // Context is reserved for provider-specific oracle policies.
+
   if (!rawBytecode || rawBytecode.trim().length < 8) {
     return {
       providerType: "UNVERIFIABLE",
@@ -57,7 +58,6 @@ export function analyzeOracleRisk(rawBytecode?: string, context?: { tokenType?: 
   const hasTwapObserve = clean.includes("883fc40b");
 
   // Pyth updatePriceFeeds selector is 0x3d30925e
-  const hasPyth = clean.includes("3d30925e");
 
   if (hasGetReserves && !hasChainlink && !hasTwapObserve) {
     return {

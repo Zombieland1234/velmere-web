@@ -690,12 +690,10 @@ export function analyzeEvmBytecode(rawBytecode: string): EvmBytecodeAnalysisResu
   const hasDomainSeparator = cleanHex.includes("3644e515") || selectors.some((s) => s.selectorHex === "0x3644e515" || s.signature?.includes("DOMAIN_SEPARATOR"));
   const hasNonces = cleanHex.includes("7ecebe00") || selectors.some((s) => s.selectorHex === "0x7ecebe00" || s.signature?.includes("nonces"));
   const hasEcrecoverPrecompile = cleanHex.includes("0000000000000000000000000000000000000001") && (cleanHex.includes("fa") || cleanHex.includes("f1") || cleanHex.includes("f4"));
-  const hasTimestampExpiry = cleanHex.includes("42") && (cleanHex.includes("10") || cleanHex.includes("11") || cleanHex.includes("12") || cleanHex.includes("13"));
 
   const isDaiPermitSemantic = hasDaiPermitSelector && (hasDomainSeparator || hasNonces || hasEcrecoverPrecompile);
   const isEip2612PermitSemantic = hasEip2612Selector && (hasDomainSeparator || hasNonces || hasEcrecoverPrecompile);
   const isEip2612Permit = isEip2612PermitSemantic;
-  const isDaiPermit = isDaiPermitSemantic;
   const isErc4626Vault = cleanHex.includes("38d52e0f") || selectors.some((s) => s.selectorHex === "0x38d52e0f" || s.signature?.includes("totalAssets"));
 
   // Detect non-standard ERC-20 return (e.g. USDT missing boolean return)
@@ -718,7 +716,6 @@ export function analyzeEvmBytecode(rawBytecode: string): EvmBytecodeAnalysisResu
 
   // 7. Spot Oracle & Flash Loan Risk Sentinel (SWC-114 / CWE-362)
   const hasSpotReserves = cleanHex.includes("0902f1ac") || selectors.some((s) => s.selectorHex === "0x0902f1ac" || s.signature?.includes("getReserves"));
-  const hasFlashCallback = selectors.some((s) => s.signature?.includes("FlashLoan") || s.signature?.includes("executeOperation") || s.signature?.includes("Callback"));
 
   if (hasSpotReserves) {
     riskScore += 18;

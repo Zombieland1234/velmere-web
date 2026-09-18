@@ -360,7 +360,6 @@ export default function VerifiedAuditsPage({ locale }: { locale: string }) {
   );
   const [filter, setFilter] = useState<"ALL" | "VERIFIED" | "TAMPERED">("ALL");
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedAudit, setSelectedAudit] = useState<AuditRecord | null>(null);
 
   // Toggle on-chain tamper status to demonstrate real-time badge flipping
   const toggleTamper = (id: string) => {

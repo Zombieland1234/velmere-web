@@ -138,7 +138,7 @@ export async function resolveVlmAdvancedOnlyAccess(args: {
   const policy = { ...policies[paidDepth], productId };
   const paidMode = paidAccessModeForDepth(paidDepth);
   const product = getVlmPaidProduct(productId, args.locale);
-  const skuTruth = getVlmCurrentSkuTruth(paidDepth, args.locale);
+  void getVlmCurrentSkuTruth(paidDepth, args.locale); // Preserve current SKU policy evaluation; only access outcome is consumed here.
 
   if (!account) {
     return {

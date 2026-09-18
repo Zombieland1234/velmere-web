@@ -148,7 +148,6 @@ export default function RiskCalculationTelemetryFlow({
         {STAGES.map((stage, idx) => {
           const Icon = stage.icon;
           const isActive = activeStep === idx;
-          const isPassed = activeStep > idx;
 
           return (
             <div

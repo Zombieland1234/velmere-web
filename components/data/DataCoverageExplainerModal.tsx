@@ -94,7 +94,7 @@ export default function DataCoverageExplainerModal({
   isOpen,
   onClose,
   report,
-  locale = "en",
+  locale: _locale = "en", // Retained in the public prop contract; this modal is locale-neutral today.
 }: DataCoverageExplainerModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const [selectedField, setSelectedField] = useState<FieldCompletenessDiagnosis | null>(null);

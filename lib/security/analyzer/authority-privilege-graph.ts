@@ -68,7 +68,6 @@ export function buildAuthorityGraph(options: {
 }): AuthorityGraphReport {
   const {
     contractAddress,
-    rolesDetected,
     ownerAddress,
     observedQuorum,
     observedTimelockDelay,

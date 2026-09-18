@@ -310,7 +310,6 @@ function RiskCalculationSchematic({ locale, currentScore }: { locale: Locale; cu
 
 function RiskHistoryChart({
   history,
-  currentScore,
   locale,
   large = false,
   timeframe = "24h",
@@ -603,7 +602,6 @@ function RiskHistoryControlStateful({
       ? currentObservation.score
       : null);
   const latestStored = alignment.historyDisplayAllowed ? alignment.latestHistory : null;
-  const recent = history.slice(-3).reverse();
   const dialogTitle = `${copy.title} · ${symbol}`;
 
   const closeDialog = useCallback(() => setDialogOpen(false), []);

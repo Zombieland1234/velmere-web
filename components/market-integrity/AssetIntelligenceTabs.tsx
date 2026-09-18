@@ -192,19 +192,6 @@ function PanelTitle({ icon: Icon, children }: { icon: LucideIcon; children: Reac
   return <h3 className={styles.panelTitle}><Icon aria-hidden="true" />{children}</h3>;
 }
 
-function RuntimeStatus({ state, locale, onRetry, extra }: { state: RuntimeState; locale: string; onRetry: () => void; extra?: ReactNode }) {
-  const c = copy(locale);
-  const evidence = state.value?.marketImpact?.evidenceStatus ?? state.value?.whaleWatch?.evidenceStatus ?? state.value?.publication?.evidenceState ?? "unavailable";
-  return (
-    <div className={styles.runtimeStatus} data-status={state.status} role="status" aria-live="polite">
-      <span><ShieldCheck aria-hidden="true" /><strong>{c.evidenceState}</strong><em>{String(evidence).replaceAll("_", " ")}</em></span>
-      <p>{state.status === "loading" ? c.loading : state.status === "ready" ? c.sourceBoundary : state.status === "reference" ? c.reference : state.message || c.unavailable}</p>
-      {extra}
-      {(state.status === "error" || state.status === "unavailable") ? <button type="button" onClick={onRetry}><RefreshCcw aria-hidden="true" />{c.retry}</button> : null}
-    </div>
-  );
-}
-
 function focusableElements(root: HTMLElement): HTMLElement[] {
   return Array.from(root.querySelectorAll<HTMLElement>(
     "button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])",

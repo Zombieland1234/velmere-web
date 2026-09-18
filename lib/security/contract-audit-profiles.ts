@@ -2008,7 +2008,7 @@ export const BENCHMARK_20_CONTRACTS: Record<string, ContractAuditProfile> = BENC
 export function resolveContractAuditProfile(
   address: string,
   chainId: string = "56",
-  locale: "pl" | "en" | "de" = "en",
+  _locale: "pl" | "en" | "de" = "en", // Stable profile API; generated profile text is currently canonical English.
   customContractName?: string,
   rawBytecode?: string,
 ): ContractAuditProfile {
