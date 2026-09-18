@@ -92,6 +92,18 @@ const MAX_PAID_ACCESS_TOKEN_LENGTH = 16 * 1024;
 const MAX_PAID_ACCESS_TOKEN_TTL_MS = 1000 * 60 * 60 * 24 * 365;
 const MAX_PAID_ACCESS_FUTURE_SKEW_MS = 30_000;
 
+function isVlmPaidAccessTokenPayload(value: unknown): value is VlmPaidAccessTokenPayload {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const payload = value as Record<string, unknown>;
+  return payload.version === "vlm-paid-access-v1"
+    && typeof payload.productId === "string"
+    && typeof payload.contextHash === "string"
+    && typeof payload.sessionId === "string"
+    && typeof payload.issuedAt === "string"
+    && typeof payload.expiresAt === "string"
+    && typeof payload.nonce === "string";
+}
+
 export function verifyVlmPaidAccessToken(args: {
   token: string | null | undefined;
   productId: VlmPaidProductId;
@@ -112,13 +124,19 @@ export function verifyVlmPaidAccessToken(args: {
   if (expectedBuffer.length !== actualBuffer.length || !timingSafeEqual(expectedBuffer, actualBuffer)) {
     return { ok: false as const, error: "invalid_signature" };
   }
-  let payload: VlmPaidAccessTokenPayload;
+  let parsedPayload: unknown;
   try {
-    payload = JSON.parse(parseBase64url(encoded)) as VlmPaidAccessTokenPayload;
+    parsedPayload = JSON.parse(parseBase64url(encoded));
   } catch {
     return { ok: false as const, error: "invalid_payload" };
   }
-  if (payload.version !== "vlm-paid-access-v1") return { ok: false as const, error: "invalid_version" };
+  if (!parsedPayload || typeof parsedPayload !== "object" || Array.isArray(parsedPayload)) {
+    return { ok: false as const, error: "invalid_payload" };
+  }
+  const payloadRecord = parsedPayload as Record<string, unknown>;
+  if (payloadRecord.version !== "vlm-paid-access-v1") return { ok: false as const, error: "invalid_version" };
+  if (!isVlmPaidAccessTokenPayload(payloadRecord)) return { ok: false as const, error: "invalid_payload" };
+  const payload = payloadRecord;
   if (payload.productId !== args.productId) return { ok: false as const, error: "product_mismatch" };
   if (payload.contextHash !== hashVlmPaidAccessContext(args.context)) return { ok: false as const, error: "context_mismatch" };
   if (!payload.sessionId || payload.sessionId.length > 96 || !payload.nonce || payload.nonce.length < 16 || payload.nonce.length > 96) {

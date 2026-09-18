@@ -35,6 +35,7 @@ import { computeMultiDimensionalScores, generateAuditSnapshotId } from "./scorin
 import { fuseStructuredSourceCandidates } from "./structured-source-fusion";
 import { preserveBytecodeCandidates } from "./detector-source-boundary";
 import { enforceFindingClaimIntegrity } from "./finding-claim-integrity";
+import { analyzeUncheckedLowLevelCalls } from "./unchecked-low-level-call-engine";
 
 export interface AuditExecutionOptions {
   contractAddress: string;
@@ -71,6 +72,10 @@ export function executeFullAuditV2(options: AuditExecutionOptions): FullAuditRes
   // A. Reentrancy
   const reentrancyRes = preserveBytecodeCandidates(source => analyzeContextualReentrancy(options.contractAddress, cfgResult, source), options.sourceCode);
   findings.push(...reentrancyRes.findings);
+
+  // A2. Unchecked CALL-family status. This bytecode-only rule deliberately
+  // precedes source fusion so unverified source cannot create or suppress it.
+  findings.push(...analyzeUncheckedLowLevelCalls(options.contractAddress, cfgResult));
 
   // B. Access Control
   const accessControlRes = preserveBytecodeCandidates(source => analyzeContextualAccessControl(options.contractAddress, cfgResult, source), options.sourceCode);

@@ -846,8 +846,13 @@ export function filterCanonicalReportByEntitlement(
     locale: report.locale,
   });
 
+  const {
+    reportDigest: _previousReportDigest,
+    pkiAttestation: _previousPkiAttestation,
+    ...unsignedReport
+  } = report;
   const filteredCore = {
-    ...report,
+    ...unsignedReport,
     merkleRoot: commitment.merkleRoot,
     clientEntitlementTier: clientTier,
     verdict: {
@@ -856,10 +861,12 @@ export function filterCanonicalReportByEntitlement(
     },
     sections: filteredSections,
   };
+  const reportDigest = sha256Digest(canonicalJson(filteredCore));
 
   return {
     ...filteredCore,
-    reportDigest: sha256Digest(canonicalJson(filteredCore)),
+    reportDigest,
+    pkiAttestation: signReportWithPki(reportDigest, report.createdAt),
   };
 }
 

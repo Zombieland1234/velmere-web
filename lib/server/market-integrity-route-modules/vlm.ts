@@ -83,9 +83,15 @@ async function handleVlmGet(request: Request) {
         prompt: url.searchParams.get("prompt")?.trim() || undefined,
       }),
     });
-    const payload = durableAnalysis.value as any;
-    // Bypass premium not ready blocker in evaluation mode to deliver full unlocked analysis
-    // if (payload.premiumFailFast) { ... }
+    const payload = durableAnalysis.value;
+    if (payload.premiumFailFast) {
+      return premiumFailFastResponse(
+        payload,
+        resolvedDepth,
+        resolvedLocale,
+        Boolean(paidGate.access.ok),
+      );
+    }
     const commercialReadiness = buildCommercialReadiness(payload, resolvedDepth, resolvedLocale);
     const pass2287RuntimeOutputFirewall = buildPass2287RuntimeOutputFirewall(payload, resolvedDepth, Boolean(paidGate.access.ok), resolvedLocale);
     const pass2288ClaimProofFirewall = buildPass2288ClaimProofFirewallOutput(payload, resolvedDepth, Boolean(paidGate.access.ok), resolvedLocale, pass2287RuntimeOutputFirewall.customerOutput);

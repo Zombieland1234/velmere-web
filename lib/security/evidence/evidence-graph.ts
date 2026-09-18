@@ -14,7 +14,7 @@ export interface GraphNode {
   id: string;
   type: "Asset" | "Snapshot" | "Source" | "Observation" | "Analysis" | "Finding" | "ScoreContribution" | "Recommendation" | "Claim" | "Evidence";
   label: string;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
   createdAt: string;
 }
 

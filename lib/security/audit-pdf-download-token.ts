@@ -34,6 +34,21 @@ const MAX_RESERVATION_SECONDS = 5 * 60;
 const DEFAULT_RESERVATION_SECONDS = 90;
 const DOMAIN = "velmere:audit_pro_pdf_download:v1:";
 
+function isAuditPdfTokenPayload(value: unknown): value is AuditPdfTokenPayload {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const payload = value as Record<string, unknown>;
+  return payload.v === 1
+    && payload.purpose === "audit_pro_pdf_download"
+    && typeof payload.kid === "string"
+    && typeof payload.accountIdHash === "string"
+    && typeof payload.entitlementIdHash === "string"
+    && typeof payload.reportId === "string"
+    && typeof payload.reportVersionHash === "string"
+    && typeof payload.nonce === "string"
+    && typeof payload.iat === "number"
+    && typeof payload.exp === "number";
+}
+
 function productionLike(env: Record<string, string | undefined>) {
   return env.NODE_ENV === "production" || env.VERCEL_ENV === "production";
 }
@@ -163,13 +178,21 @@ export function verifyPass4657AuditPdfDownloadToken(args: {
   const body = token.slice("vlm_pdf_".length);
   const [encoded, suppliedSignature, ...extra] = body.split(".");
   if (!encoded || !suppliedSignature || extra.length) return { ok: false as const, error: "audit_pdf_token_invalid" as const };
-  let payload: AuditPdfTokenPayload;
+  let parsedPayload: unknown;
   try {
-    payload = JSON.parse(Buffer.from(encoded, "base64url").toString("utf8")) as AuditPdfTokenPayload;
+    parsedPayload = JSON.parse(Buffer.from(encoded, "base64url").toString("utf8"));
   } catch {
     return { ok: false as const, error: "audit_pdf_token_invalid" as const };
   }
-  if (payload.v !== 1 || payload.purpose !== "audit_pro_pdf_download") return { ok: false as const, error: "audit_pdf_token_purpose_mismatch" as const };
+  if (!parsedPayload || typeof parsedPayload !== "object" || Array.isArray(parsedPayload)) {
+    return { ok: false as const, error: "audit_pdf_token_invalid" as const };
+  }
+  const payloadRecord = parsedPayload as Record<string, unknown>;
+  if (payloadRecord.v !== 1 || payloadRecord.purpose !== "audit_pro_pdf_download") {
+    return { ok: false as const, error: "audit_pdf_token_purpose_mismatch" as const };
+  }
+  if (!isAuditPdfTokenPayload(payloadRecord)) return { ok: false as const, error: "audit_pdf_token_invalid" as const };
+  const payload = payloadRecord;
   const candidate = availableKeys.find((key) => key.kid === payload.kid);
   if (!candidate) return { ok: false as const, error: "audit_pdf_token_key_unknown" as const };
   let supplied: Buffer;

@@ -1,4 +1,6 @@
 
+import { redactApiErrorForStructuredLog } from "@/lib/security/api-error-envelope";
+
 export type LazyRouteMethod = "GET" | "POST" | "PUT" | "PATCH";
 export type LazyRouteHandler = (request: Request) => Response | Promise<Response>;
 export type LazyRouteHandlerModule = Partial<Record<LazyRouteMethod, LazyRouteHandler>>;
@@ -49,8 +51,16 @@ export async function dispatchLazyRoute(options: {
   try {
     return await handler(request);
   } catch (err) {
-    console.error('[lazy-route-dispatch ERROR]', key, err);
-    return response({ ok: false, error: err instanceof Error ? err.message : String(err) }, 500);
+    const metadata = redactApiErrorForStructuredLog(err);
+    console.error(JSON.stringify({
+      event: "lazy_route_handler_failed",
+      routeKey: key,
+      error: {
+        name: metadata.name,
+        code: metadata.code,
+      },
+    }));
+    return response({ ok: false, error: unavailableError }, 500);
   }
 }
 

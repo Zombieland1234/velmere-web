@@ -1,0 +1,82 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { GET, POST } from "../../lib/server/admin-route-modules/audit-events";
+
+test("unauthenticated admin diagnostic never exposes operator identity, role or scopes", async () => {
+  const saved = {
+    ADMIN_AUTH_CONTEXT_READY: process.env.ADMIN_AUTH_CONTEXT_READY,
+    ADMIN_OPERATOR_ID: process.env.ADMIN_OPERATOR_ID,
+    ADMIN_ROLE_PREVIEW: process.env.ADMIN_ROLE_PREVIEW,
+    ADMIN_PERMISSION_SCOPES: process.env.ADMIN_PERMISSION_SCOPES,
+    ADMIN_SESSION_FRESH: process.env.ADMIN_SESSION_FRESH,
+  };
+  process.env.ADMIN_AUTH_CONTEXT_READY = "true";
+  process.env.ADMIN_OPERATOR_ID = "operator:sensitive-c14p01-internal";
+  process.env.ADMIN_ROLE_PREVIEW = "admin";
+  process.env.ADMIN_PERMISSION_SCOPES = "product:active_publish,support:export,audit:write";
+  process.env.ADMIN_SESSION_FRESH = "true";
+
+  try {
+    const response = await GET();
+    const raw = await response.text();
+
+    assert.equal(response.status, 423);
+    assert.doesNotMatch(raw, /sensitive-c14p01-internal/i);
+    assert.doesNotMatch(raw, /product:active_publish|support:export/i);
+    assert.doesNotMatch(raw, /"role"\s*:\s*"admin"/i);
+    assert.doesNotMatch(raw, /"authenticated"\s*:\s*true/i);
+  } finally {
+    for (const [key, value] of Object.entries(saved)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  }
+});
+
+
+test("unauthenticated admin audit preview never reflects env operator identity into POST response", async () => {
+  const saved = {
+    ADMIN_AUTH_CONTEXT_READY: process.env.ADMIN_AUTH_CONTEXT_READY,
+    ADMIN_OPERATOR_ID: process.env.ADMIN_OPERATOR_ID,
+    ADMIN_ROLE_PREVIEW: process.env.ADMIN_ROLE_PREVIEW,
+    ADMIN_PERMISSION_SCOPES: process.env.ADMIN_PERMISSION_SCOPES,
+    ADMIN_SESSION_FRESH: process.env.ADMIN_SESSION_FRESH,
+    ADMIN_AUDIT_WRITE_ENABLED: process.env.ADMIN_AUDIT_WRITE_ENABLED,
+    ADMIN_AUDIT_WRITE_ENV: process.env.ADMIN_AUDIT_WRITE_ENV,
+    ADMIN_AUDIT_STORAGE_READY: process.env.ADMIN_AUDIT_STORAGE_READY,
+  };
+  process.env.ADMIN_AUTH_CONTEXT_READY = "true";
+  process.env.ADMIN_OPERATOR_ID = "operator:sensitive-c14p01-post";
+  process.env.ADMIN_ROLE_PREVIEW = "admin";
+  process.env.ADMIN_PERMISSION_SCOPES = "product:active_publish,support:export,audit:write";
+  process.env.ADMIN_SESSION_FRESH = "true";
+  process.env.ADMIN_AUDIT_WRITE_ENABLED = "false";
+  process.env.ADMIN_AUDIT_WRITE_ENV = "staging";
+  process.env.ADMIN_AUDIT_STORAGE_READY = "false";
+
+  try {
+    const request = new Request("https://velmere.test/api/admin/audit-events", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        action: "product_import",
+        operatorId: "operator:request-value",
+        targetId: "product:test",
+        reason: "c14-p01 boundary probe",
+        idempotencyKey: "c14-p01-key",
+      }),
+    });
+    const response = await POST(request);
+    const raw = await response.text();
+
+    assert.equal(response.status, 423);
+    assert.doesNotMatch(raw, /sensitive-c14p01-post/i);
+    assert.doesNotMatch(raw, /product:active_publish|support:export/i);
+    assert.doesNotMatch(raw, /"role"\s*:\s*"admin"/i);
+  } finally {
+    for (const [key, value] of Object.entries(saved)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
+  }
+});

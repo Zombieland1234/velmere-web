@@ -35,6 +35,14 @@ const ROLE_SCOPES: Record<VelmereAdminRole, VelmereAdminScope[]> = {
   viewer: ["product:read", "order:read", "audit:read"],
 };
 
+function isAdminRole(value: unknown): value is VelmereAdminRole {
+  return typeof value === "string" && Object.prototype.hasOwnProperty.call(ROLE_SCOPES, value);
+}
+
+function isAdminScope(value: unknown): value is VelmereAdminScope {
+  return typeof value === "string" && Object.values(ROLE_SCOPES).some((scopes) => scopes.includes(value as VelmereAdminScope));
+}
+
 function base64url(value: string) {
   return Buffer.from(value).toString("base64url");
 }
@@ -50,22 +58,47 @@ function safeEqual(a: string, b: string) {
 }
 
 function parseSessionToken(token: string, secret: string): VelmereAdminSession | null {
-  const [payload64, signature] = token.split(".");
-  if (!payload64 || !signature) return null;
+  if (token.length > 16 * 1024) return null;
+  const [payload64, signature, ...extra] = token.split(".");
+  if (!payload64 || !signature || extra.length) return null;
   const expected = sign(payload64, secret);
   if (!safeEqual(signature, expected)) return null;
-  const parsed = JSON.parse(Buffer.from(payload64, "base64url").toString("utf8")) as Partial<VelmereAdminSession>;
-  if (parsed.schemaVersion !== "velmere.admin-session.v1") return null;
-  if (!parsed.actorId || !parsed.role || !parsed.expiresAt || !parsed.issuedAt || !parsed.sessionId) return null;
-  if (!ROLE_SCOPES[parsed.role]) return null;
-  if (Date.now() > parsed.expiresAt) return null;
-  const scopes = Array.from(new Set([...(parsed.scopes ?? []), ...ROLE_SCOPES[parsed.role]])).filter((scope): scope is VelmereAdminScope => ROLE_SCOPES[parsed.role as VelmereAdminRole].includes(scope as VelmereAdminScope));
-  return { schemaVersion: "velmere.admin-session.v1", actorId: parsed.actorId, email: parsed.email, role: parsed.role, scopes, issuedAt: parsed.issuedAt, expiresAt: parsed.expiresAt, sessionId: parsed.sessionId };
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(Buffer.from(payload64, "base64url").toString("utf8"));
+  } catch {
+    return null;
+  }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
+  const value = parsed as Record<string, unknown>;
+  if (value.schemaVersion !== "velmere.admin-session.v1") return null;
+  if (typeof value.actorId !== "string" || !value.actorId) return null;
+  if (!isAdminRole(value.role)) return null;
+  if (typeof value.expiresAt !== "number" || typeof value.issuedAt !== "number" || typeof value.sessionId !== "string" || !value.sessionId) return null;
+  if (value.email !== undefined && typeof value.email !== "string") return null;
+  if (value.scopes !== undefined && !Array.isArray(value.scopes)) return null;
+  if (!Number.isSafeInteger(value.issuedAt) || !Number.isSafeInteger(value.expiresAt)) return null;
+  const now = Date.now();
+  if (value.issuedAt > now + 5 * 60_000 || value.expiresAt <= now || value.issuedAt >= value.expiresAt) return null;
+  const suppliedScopes = Array.isArray(value.scopes) ? value.scopes.filter(isAdminScope) : [];
+  // A signed payload cannot enlarge the maximum authority of its stored role.
+  const roleScopes = ROLE_SCOPES[value.role];
+  const scopes = Array.from(new Set([...suppliedScopes, ...roleScopes])).filter(scope => roleScopes.includes(scope));
+  return {
+    schemaVersion: "velmere.admin-session.v1",
+    actorId: value.actorId,
+    email: value.email,
+    role: value.role,
+    scopes,
+    issuedAt: value.issuedAt,
+    expiresAt: value.expiresAt,
+    sessionId: value.sessionId,
+  };
 }
 
 export function createAdminSessionTokenForServerTest(input: { actorId: string; role: VelmereAdminRole; email?: string; ttlMs?: number }) {
-  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET;
-  if (!secret) throw new Error("Missing VELMERE_ADMIN_SESSION_SECRET.");
+  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET?.trim() ?? "";
+  if (Buffer.byteLength(secret, "utf8") < 32) throw new Error("Missing or weak VELMERE_ADMIN_SESSION_SECRET.");
   const issuedAt = Date.now();
   const payload: VelmereAdminSession = {
     schemaVersion: "velmere.admin-session.v1",
@@ -82,8 +115,8 @@ export function createAdminSessionTokenForServerTest(input: { actorId: string; r
 }
 
 export function verifyAdminSessionRequest(req: Request, requiredScope: VelmereAdminScope) {
-  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET;
-  if (!secret) {
+  const secret = process.env.VELMERE_ADMIN_SESSION_SECRET?.trim() ?? "";
+  if (Buffer.byteLength(secret, "utf8") < 32) {
     return {
       ok: false as const,
       status: "blocked_env" as const,
@@ -104,12 +137,17 @@ export function verifyAdminSessionRequest(req: Request, requiredScope: VelmereAd
 }
 
 export function buildAdminRoleReadiness() {
-  const hasSecret = Boolean(process.env.VELMERE_ADMIN_SESSION_SECRET);
+  const configuredSecret = process.env.VELMERE_ADMIN_SESSION_SECRET?.trim() ?? "";
+  const hasSecret = Boolean(configuredSecret);
+  const strongSecret = Buffer.byteLength(configuredSecret, "utf8") >= 32;
   return {
     schemaVersion: "velmere.admin-role-readiness.v1",
     hasSecret,
+    strongSecret,
     roles: Object.keys(ROLE_SCOPES),
     scopes: Object.values(ROLE_SCOPES).flat(),
-    productionBoundary: hasSecret ? "Signed admin session contract ready; still connect to real auth provider before 100%." : "BLOCKED: VELMERE_ADMIN_SESSION_SECRET missing.",
+    productionBoundary: strongSecret
+      ? "Signed admin session contract ready; still connect to real auth provider before 100%."
+      : "BLOCKED: VELMERE_ADMIN_SESSION_SECRET must contain at least 32 bytes.",
   };
 }
