@@ -71,6 +71,23 @@ type ShieldAssetDetailPageClientProps = {
   surface?: "shield" | "real-markets";
 };
 
+type MarketPayloadRecord = Record<string, unknown>;
+
+function marketRecord(value: unknown): MarketPayloadRecord | null {
+  return value && typeof value === "object" && !Array.isArray(value)
+    ? value as MarketPayloadRecord
+    : null;
+}
+
+function marketNumber(value: unknown): number | undefined {
+  const numeric = typeof value === "number" ? value : Number.NaN;
+  return Number.isFinite(numeric) ? numeric : undefined;
+}
+
+function marketString(value: unknown): string | undefined {
+  return typeof value === "string" ? value : undefined;
+}
+
 export default function ShieldAssetDetailPageClient({
   initialAsset,
   locale = "en",
@@ -117,30 +134,33 @@ export default function ShieldAssetDetailPageClient({
       const cleanSym = initialAsset.symbol.toLowerCase().replace(/[^a-z0-9=]/g, "");
       fetch(`/api/market-integrity/real-markets?symbols=${encodeURIComponent(cleanSym)}`)
         .then((r) => r.json())
-        .then((data) => {
+        .then((data: unknown) => {
           if (!active) return;
+          const payload = marketRecord(data);
+          const quotes = Array.isArray(payload?.quotes)
+            ? payload.quotes.map(marketRecord).filter((quote): quote is MarketPayloadRecord => quote !== null)
+            : [];
           const quote =
-            data.quotes?.find(
-              (q: any) =>
-                q.symbol?.toLowerCase() === cleanSym ||
-                q.id?.toLowerCase() === initialAsset.id.toLowerCase()
-            ) || data.quotes?.[0];
+            quotes.find(
+              (candidate) =>
+                marketString(candidate.symbol)?.toLowerCase() === cleanSym ||
+                marketString(candidate.id)?.toLowerCase() === initialAsset.id.toLowerCase()
+            ) ?? quotes[0];
 
-          if (quote && Number(quote.currentPrice) > 0) {
+          const currentPrice = marketNumber(quote?.currentPrice);
+          if (quote && currentPrice !== undefined && currentPrice > 0) {
             setAsset((prev) => ({
               ...prev,
-              price: Number(quote.currentPrice),
+              price: currentPrice,
               priceChange24h:
-                typeof quote.priceChange24h === "number"
-                  ? quote.priceChange24h
-                  : typeof quote.changePercent === "number"
-                    ? quote.changePercent
-                    : prev.priceChange24h,
-              priceChange7d: typeof quote.priceChange7d === "number" ? quote.priceChange7d : prev.priceChange7d,
-              marketCap: Number(quote.marketCap) || prev.marketCap,
-              volume24h: Number(quote.volume24h) || prev.volume24h,
-              high24h: Number(quote.high24h) || prev.high24h,
-              low24h: Number(quote.low24h) || prev.low24h,
+                marketNumber(quote.priceChange24h) ??
+                marketNumber(quote.changePercent) ??
+                prev.priceChange24h,
+              priceChange7d: marketNumber(quote.priceChange7d) ?? prev.priceChange7d,
+              marketCap: marketNumber(quote.marketCap) ?? prev.marketCap,
+              volume24h: marketNumber(quote.volume24h) ?? prev.volume24h,
+              high24h: marketNumber(quote.high24h) ?? prev.high24h,
+              low24h: marketNumber(quote.low24h) ?? prev.low24h,
               freshness: "Exchange Feed Synchronized",
             }));
           }
@@ -151,32 +171,40 @@ export default function ShieldAssetDetailPageClient({
         headers: { "x-velmere-dev": "true" },
       })
         .then((r) => r.json())
-        .then((data) => {
-          if (!active || !Array.isArray(data.rows)) return;
-          const matched = data.rows.find(
-            (r: any) =>
-              r.id?.toLowerCase() === initialAsset.id.toLowerCase() ||
-              r.symbol?.toLowerCase() === initialAsset.symbol.toLowerCase()
+        .then((data: unknown) => {
+          const payload = marketRecord(data);
+          const rows = Array.isArray(payload?.rows)
+            ? payload.rows.map(marketRecord).filter((row): row is MarketPayloadRecord => row !== null)
+            : [];
+          if (!active || rows.length === 0) return;
+          const matched = rows.find(
+            (row) =>
+              marketString(row.id)?.toLowerCase() === initialAsset.id.toLowerCase() ||
+              marketString(row.symbol)?.toLowerCase() === initialAsset.symbol.toLowerCase()
           );
-          if (matched && Number(matched.price) > 0) {
+          const price = marketNumber(matched?.price);
+          if (matched && price !== undefined && price > 0) {
+            const delivery = marketRecord(matched.delivery);
+            const deliveryRisk = marketRecord(delivery?.risk);
+            const result = marketRecord(matched.result);
             setAsset((prev) => ({
               ...prev,
-              price: Number(matched.price),
-              priceChange24h: typeof matched.priceChange24h === "number" ? matched.priceChange24h : prev.priceChange24h,
-              priceChange7d: typeof matched.priceChange7d === "number" ? matched.priceChange7d : prev.priceChange7d,
-              marketCap: Number(matched.marketCap) || prev.marketCap,
-              volume24h: Number(matched.volume24h) || prev.volume24h,
-              high24h: Number(matched.high24h) || prev.high24h,
-              low24h: Number(matched.low24h) || prev.low24h,
+              price,
+              priceChange24h: marketNumber(matched.priceChange24h) ?? prev.priceChange24h,
+              priceChange7d: marketNumber(matched.priceChange7d) ?? prev.priceChange7d,
+              marketCap: marketNumber(matched.marketCap) ?? prev.marketCap,
+              volume24h: marketNumber(matched.volume24h) ?? prev.volume24h,
+              high24h: marketNumber(matched.high24h) ?? prev.high24h,
+              low24h: marketNumber(matched.low24h) ?? prev.low24h,
               riskScore:
-                typeof matched.delivery?.risk?.score === "number"
-                  ? Math.round(matched.delivery.risk.score)
-                  : typeof matched.result?.score === "number"
-                    ? Math.round(matched.result.score)
+                marketNumber(deliveryRisk?.score) !== undefined
+                  ? Math.round(marketNumber(deliveryRisk?.score)!)
+                  : marketNumber(result?.score) !== undefined
+                    ? Math.round(marketNumber(result?.score)!)
                     : prev.riskScore,
               confidence:
-                typeof matched.delivery?.risk?.confidencePercent === "number"
-                  ? Math.round(matched.delivery.risk.confidencePercent)
+                marketNumber(deliveryRisk?.confidencePercent) !== undefined
+                  ? Math.round(marketNumber(deliveryRisk?.confidencePercent)!)
                   : prev.confidence,
               freshness: "Live Feed Synchronized",
             }));
