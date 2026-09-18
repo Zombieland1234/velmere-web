@@ -52,6 +52,8 @@ Live migrations include:
 - `20260917043048_velmere_c6d_shield_session_and_null_validation`
 - `20260917230935_velmere_c13_shield_workspace_stored_tier_guard`
 
+At the C14 base SHA, the second migration was present **live** but its corresponding file was missing from `supabase/migrations`. C14-P13 restores that exact reviewed C13 SQL as `supabase/migrations/20260917230935_velmere_c13_shield_workspace_stored_tier_guard.sql`. The regression job now applies that repository migration and reproduces the live RPC hash `b7392a...`. Adding the source file does not re-run or mutate the connected project.
+
 ### Edge
 
 Live function `r7-shield-pro-paid-workspace-v1`:
@@ -207,6 +209,7 @@ Evidence artifact:
 - `supabase/functions/r7-shield-pro-paid-workspace-v1/index.ts`
 - `supabase/functions/r7-shield-pro-paid-workspace-v1/response-authority.ts`
 - `supabase/config.toml`
+- `supabase/migrations/20260917230935_velmere_c13_shield_workspace_stored_tier_guard.sql`
 - `scripts/c14/p13/shield-rpc-hardening.sql`
 - `scripts/c14/p13/shield-rpc-test.py`
 - `scripts/c14/p13/edge-authority.test.ts`

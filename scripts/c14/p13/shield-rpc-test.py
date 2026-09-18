@@ -148,7 +148,7 @@ try:
         )
 
     # Reconstruct the exact C13 state first.
-    c13 = Path("scripts/c13/shield-workspace-guard.sql").read_text()
+    c13 = Path("supabase/migrations/20260917230935_velmere_c13_shield_workspace_stored_tier_guard.sql").read_text()
     check("c13-stored-tier-guard-applies", "BEGIN;" + c13 + "COMMIT;")
     check(
         "c13-live-hash-parity-before-c14",
