@@ -45,7 +45,7 @@ jobs:
         image: postgres:17
         env:
           POSTGRES_PASSWORD: c14_p11_ephemeral_only
-          POSTGRES_DB: c14_p11_fixture
+          POSTGRES_DB: c13_fixture
         ports:
           - 5432:5432
         options: >-
@@ -58,7 +58,7 @@ jobs:
       PGPORT: "5432"
       PGUSER: postgres
       PGPASSWORD: c14_p11_ephemeral_only
-      PGDATABASE: c14_p11_fixture
+      PGDATABASE: c13_fixture
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
