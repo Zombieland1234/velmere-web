@@ -8,6 +8,7 @@ import {
 } from "@/lib/market-integrity/provider-evidence-receipt";
 import { canonicalJson } from "@/lib/security/canonical-json";
 import { sha256Digest } from "@/lib/security/cryptographic-digest";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 
 export const PASS4818_CUSTOMER_REPORT_SOURCE_BINDING_ID = "pass4818-customer-report-source-binding-v1" as const;
 export const PASS4993_SOURCE_RECEIPT_PROJECTION_ID = "pass4993_source_receipt_projection_v1" as const;
@@ -465,11 +466,24 @@ export function buildCustomerReportSourceBinding(args: {
   const projectionReady = getPass4993SourceReceiptProjectionReadiness(projectionEnv).ready;
   const receiptsByKey = new Map<string, SourceReceipt>();
   const unmappedObservedLabels = new Set<string>();
+  const providerRightsBlockers = new Set<string>();
   let rejectedProviderReceiptCount = 0;
 
   for (const receipt of providerReceipts) {
     const entry = registryForProviderReceipt(receipt);
-    const eligible = receipt.state === "confirmed"
+    const providerRights = evaluateC14ProviderOperation({
+      providerId: receipt.providerId,
+      operation: "display",
+      channel: "customer",
+      dataClass: "derived",
+      attributionPresent: false,
+      nowMs: safeGeneratedAtMs,
+    });
+    if (!providerRights.allowed) {
+      providerRightsBlockers.add(`provider_rights:${receipt.providerId}:${providerRights.code.toLowerCase()}`);
+    }
+    const eligible = providerRights.allowed
+      && receipt.state === "confirmed"
       && isPass4644CommerciallyFreshReceipt(receipt, safeGeneratedAtMs)
       && receipt.identity.matched
       && /^[a-f0-9]{64}$/i.test(receipt.payloadHash)
@@ -534,6 +548,7 @@ export function buildCustomerReportSourceBinding(args: {
     independentContentBoundUpstreams.length < 2 ? `independent_content_bound_upstreams:${independentContentBoundUpstreams.length}/2` : null,
     labelOnlyReceiptCount > 0 ? `label_only_sources_not_commercial_evidence:${labelOnlyReceiptCount}` : null,
     unmappedObservedLabels.size > 0 ? `unmapped_observed_sources:${unmappedObservedLabels.size}` : null,
+    ...Array.from(providerRightsBlockers).sort(),
   ].filter((value): value is string => Boolean(value));
 
   return {
