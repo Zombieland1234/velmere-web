@@ -42,10 +42,24 @@ function boundedInteger(value: unknown, fallback: number, min: number, max: numb
 
 export function buildStripeWebhookReconciliationReadiness() {
   const serviceRoleConfigured = hasSupabaseServiceRoleConfig();
+  // C14-P19: credential presence is configuration evidence, not durable-runtime
+  // evidence. A target database can have a valid service-role key while the
+  // Stripe payment RPC/table migration is missing. Require an explicit
+  // qualification marker set only after the durable lifecycle is exercised
+  // against the target database.
+  const durableStorageQualified =
+    process.env.VELMERE_STRIPE_DURABLE_STORAGE_QUALIFIED?.trim().toLowerCase() === "true";
+  const durableReady = serviceRoleConfigured && durableStorageQualified;
+  const blockers = [
+    ...(serviceRoleConfigured ? [] : ["supabase_service_role_not_configured"]),
+    ...(durableStorageQualified ? [] : ["stripe_durable_storage_not_qualified"]),
+  ];
   return {
-    schemaVersion: "velmere.stripe-webhook-reconciliation-readiness.v2" as const,
+    schemaVersion: "velmere.stripe-webhook-reconciliation-readiness.v3" as const,
     serviceRoleConfigured,
-    durableReady: serviceRoleConfigured,
+    durableStorageQualified,
+    durableReady,
+    blockers,
     cronSecretConfigured: Boolean(
       process.env.MARKET_INTEGRITY_CRON_SECRET?.trim() || process.env.CRON_SECRET?.trim(),
     ),
