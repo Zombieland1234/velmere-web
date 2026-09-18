@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import type { TokenRiskInput } from "./risk-types";
 
 const GO_PLUS_CHAIN_BY_DEX: Record<string, string> = {
@@ -43,10 +44,25 @@ export async function fetchGoPlusTokenSecurity(chainId: string | undefined, toke
   if (!goPlusChainId || !tokenAddress) return {};
 
   const params = new URLSearchParams({ contract_addresses: tokenAddress });
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "goplus",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) return {};
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "goplus",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: 300,
+    nowMs,
+  });
   const response = await brokeredEgressFetch(`https://api.gopluslabs.io/api/v1/token_security/${goPlusChainId}?${params.toString()}`, {
     headers: { accept: "application/json" },
-    next: { revalidate: 300 },
-  } as RequestInit & { next: { revalidate: number } }, { profile: "goplus", operation: "goplus_token_security", timeoutMs: 8_000 });
+    ...(cacheRights.allowed ? { next: { revalidate: 300 } } : { cache: "no-store" as RequestCache }),
+  } as RequestInit & { next?: { revalidate: number } }, { profile: "goplus", operation: "goplus_token_security", timeoutMs: 8_000 });
 
   if (!response.ok) return {};
   const data = await readJsonResponseBounded<{ result?: Record<string, GoPlusTokenPayload> }>(response, 1_000_000);
