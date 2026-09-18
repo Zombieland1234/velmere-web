@@ -1,5 +1,6 @@
 import { readJsonResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import type { MarketIntegrityRow } from "./coingecko";
 import {
   attachPass4644ProviderReceipts,
@@ -272,6 +273,13 @@ function abortableDelay(delayMs: number, signal: AbortSignal) {
 }
 
 async function fetchTickerPayload() {
+  const rights = evaluateC14ProviderOperation({
+    providerId: "binance",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs: Date.now(),
+  });
+  if (!rights.allowed) throw new Error(`binance_rights_${rights.code.toLowerCase()}`);
   const errors = new Map<number, string>();
   const winnerController = new AbortController();
   const totalTimeoutSignal = AbortSignal.timeout(BINANCE_TOTAL_TIMEOUT_MS);
@@ -364,15 +372,34 @@ const ESTIMATED_CIRCULATING_SUPPLY: Record<string, number> = {
 const binanceKlinesCache = new Map<string, { time: number; series: number[] }>();
 
 async function getLiveBinanceSparkline(pair: string): Promise<number[] | null> {
-  const cached = binanceKlinesCache.get(pair);
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId: "binance",
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) {
+    binanceKlinesCache.delete(pair);
+    return null;
+  }
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId: "binance",
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: 60,
+    nowMs,
+  });
+  const cached = cacheRights.allowed ? binanceKlinesCache.get(pair) : undefined;
   if (cached && Date.now() - cached.time < 60_000) {
     return cached.series;
   }
   try {
-    const res = await fetch(`https://api.binance.com/api/v3/klines?symbol=${encodeURIComponent(pair)}&interval=1h&limit=56`, {
+    const res = await brokeredEgressFetch(`https://api.binance.com/api/v3/klines?symbol=${encodeURIComponent(pair)}&interval=1h&limit=56`, {
       signal: AbortSignal.timeout(1800),
       headers: { accept: "application/json" },
-    });
+      cache: "no-store",
+    }, { profile: "binance_spot", operation: "binance_sparkline", timeoutMs: 1_800 });
     if (!res.ok) return null;
     const data = (await res.json()) as Array<unknown[]>;
     if (!Array.isArray(data) || data.length < 2) return null;
@@ -380,7 +407,7 @@ async function getLiveBinanceSparkline(pair: string): Promise<number[] | null> {
       .map((bar) => parseFloat(String(bar[4])))
       .filter((val): val is number => Number.isFinite(val) && val > 0);
     if (series.length >= 2) {
-      binanceKlinesCache.set(pair, { time: Date.now(), series });
+      if (cacheRights.allowed) binanceKlinesCache.set(pair, { time: Date.now(), series });
       return series;
     }
   } catch {
