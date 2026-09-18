@@ -37,6 +37,31 @@ jobs:
         run: npx tsc -p tsconfig.c14-p01-tests.json --noEmit
       - name: Focused C14-P01 reproductions
         run: npx tsx --test scripts/c14-p01/*.test.ts
+      - name: Historical admin disclosure reproductions are red before their fixes
+        run: |
+          set -euo pipefail
+          prove_red() {
+            sha="$1"
+            target="$2"
+            dir="/tmp/c14-p01-before-$target"
+            git worktree add --detach "$dir" "$sha"
+            ln -s "$GITHUB_WORKSPACE/node_modules" "$dir/node_modules"
+            set +e
+            (
+              cd "$dir"
+              "$GITHUB_WORKSPACE/node_modules/.bin/tsx" --test scripts/c14-p01/admin-diagnostic-boundary.test.ts
+            ) >"/tmp/c14-p01-$target-before.log" 2>&1
+            code=$?
+            set -e
+            cat "/tmp/c14-p01-$target-before.log"
+            if [ "$code" -eq 0 ]; then
+              echo "Historical reproduction unexpectedly passed for $target" >&2
+              exit 1
+            fi
+            echo "Confirmed historical red reproduction for $target at $sha"
+          }
+          prove_red ed4ca14e551722ef2ecc7d7f132a34ff07bc898c admin-get
+          prove_red 2591d9cbb9844645e64f7a6a9b9b9e6e6e773617 admin-post
 
   protected-source-scope:
     runs-on: ubuntu-latest
@@ -188,7 +213,7 @@ jobs:
 
 
   lint-diagnostic:
-    if: contains(github.event.head_commit.message, '[diagnostics]')
+    if: contains(github.event.head_commit.message, '[diagnostics]') || contains(github.event.head_commit.message, '[full-qualification]')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -205,7 +230,7 @@ jobs:
         run: npx eslint . --max-warnings 0
 
   gitleaks-diagnostic:
-    if: contains(github.event.head_commit.message, '[diagnostics]')
+    if: contains(github.event.head_commit.message, '[diagnostics]') || contains(github.event.head_commit.message, '[full-qualification]')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
