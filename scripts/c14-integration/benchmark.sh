@@ -4,8 +4,8 @@ mkdir -p /tmp/c14-benchmark /tmp/c14-base /tmp/cgt
 exec > >(tee /tmp/c14-benchmark/benchmark.log) 2>&1
 printf 'candidate=%s\n' "$GITHUB_SHA"
 npm ci --ignore-scripts --no-fund
-# Offline comparison uses exact canonical C13 tree, and never executes the corpus contracts.
-git archive 4cb45bbcf910f0517d4a5d265682cd2f7e4e41df | tar -x -C /tmp/c14-base
+# Offline comparison uses exact previously qualified C14 tree (C14B comparison), and never executes the corpus contracts.
+git archive e680098a3915264576cdab6bb79ab1e1ca695b11 | tar -x -C /tmp/c14-base
 ln -s "$PWD/node_modules" /tmp/c14-base/node_modules
 git -C /tmp/cgt init -q
 git -C /tmp/cgt remote add origin https://github.com/gsalzer/cgt.git

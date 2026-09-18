@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import type { StandardFindingV2 } from "./types";
 import type { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { analyzeCallContinuation } from "./evm-call-continuation";
 
 const LOW_LEVEL_CALLS = new Set(["CALL", "CALLCODE", "DELEGATECALL", "STATICCALL"]);
 
@@ -15,7 +16,9 @@ export function analyzeUncheckedLowLevelCalls(
   contractAddress: string,
   cfgResult: CfgAnalysisResult,
 ): StandardFindingV2[] {
+  const continuation = analyzeCallContinuation(cfgResult.cfg);
   for (const block of cfgResult.cfg.blocks.values()) {
+    if (!continuation.entryReachable.has(block.id) || !continuation.canReachSuccessfulExit.has(block.id)) continue;
     // A straight-line block that always aborts cannot commit any bookkeeping.
     // Do not equate discarding a word with an unhandled successful continuation.
     const terminator = block.instructions.at(-1)?.name;
@@ -28,7 +31,7 @@ export function analyzeUncheckedLowLevelCalls(
         findingId: "VLM-SEC-UNCHECKED-LOW-LEVEL-CALL-01",
         claimState: "DETECTOR_FINDING",
         analysisMethod: "BYTECODE_CFG_HEURISTIC",
-        limitations: ["IMMEDIATE_CALL_STATUS_DISCARD_ONLY", "NO_EXECUTED_TARGET_CALL", "BUSINESS_REQUIREMENT_TO_REVERT_NOT_ESTABLISHED"],
+        limitations: ["IMMEDIATE_CALL_STATUS_DISCARD_ONLY", "NO_EXECUTED_TARGET_CALL", "BUSINESS_REQUIREMENT_TO_REVERT_NOT_ESTABLISHED", ...continuation.limitations],
         title: "Low-Level Call Success Flag Is Immediately Discarded",
         severity: "high",
         confidence: "high",
