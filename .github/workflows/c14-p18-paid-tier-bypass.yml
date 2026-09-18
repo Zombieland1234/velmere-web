@@ -16,4 +16,4 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: C14-P18 entitlement scope regression
-        run: node --import ./scripts/pass11/register-offline-ts-loader.mjs scripts/c14/test-paid-tier-bypass.ts
+        run: npx --no-install tsx scripts/c14/test-paid-tier-bypass.ts
