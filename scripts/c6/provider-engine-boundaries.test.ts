@@ -12,7 +12,7 @@ import type {StandardFindingV2} from '../../lib/security/v2/types';
 const now=Date.parse('2026-09-17T00:00:00.000Z');
 function canonical(value:unknown):string {if(Array.isArray(value))return `[${value.map(canonical).join(',')}]`;if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical((value as Record<string,unknown>)[k])).join(',')+'}';return JSON.stringify(value);}
 const digest=(x:unknown)=>createHash('sha256').update(typeof x==='string'?x:canonical(x)).digest('hex');
-function fixture(change:(p:Record<string,any>)=>void=()=>{}) {
+function fixture(change:(p:{status:string;evidence:{expiresAt:string;reviewBy:string}})=>void=()=>{}) {
  const policy={schemaVersion:'velmere.provider-use-policy.v1',providerId:'synthetic',policyVersion:'test-1',status:'approved',evidence:{reference:'SYNTHETIC_NO_LEGAL_GRANT',reviewStatus:'verified',verifiedAt:'2026-09-16T00:00:00.000Z',reviewBy:'2026-09-18T00:00:00.000Z',effectiveFrom:'2026-09-16T00:00:00.000Z',expiresAt:'2026-09-18T00:00:00.000Z'},grants:[{datasetId:'synthetic-data',productId:'synthetic-product',environment:'internal_test',operations:['display_derived','export_derived_pdf','cache'],maxCacheTtlSeconds:60}]};change(policy);
  const source={url:'https://example.invalid/synthetic-rights',sourceLocationHash:digest('https://example.invalid/synthetic-rights')};const boundSource={...source,observationSha256:digest(source)};
  const provider={providerId:'synthetic',sourceIds:['test'],legalApprovalStatus:'APPROVED',internalDiagnosticAllowed:false,rights:{customerDeliveryAllowed:true,pdfExportAllowed:true,cachingAllowed:true},operationPolicy:policy};

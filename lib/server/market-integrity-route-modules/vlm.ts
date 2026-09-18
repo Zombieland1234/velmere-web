@@ -9,7 +9,7 @@ import { inspectVlmUserPrompt } from "@/lib/ai/vlm-user-prompt-boundary";
 import { inspectVlmAdviceBoundary } from "@/lib/ai/vlm-advice-boundary";
 import { recordVlmSecurityInspection } from "@/lib/ai/vlm-security-events";
 import { applyApiRateLimit, assertSameOriginRequest, rejectLargeContentLength, rejectOversizedUrl, securityJson } from "@/lib/security/api-guard";
-import { depth, locale, normalizedRequestId, requireVlmTierAccess, resolveAnalysis, surface, wantsFullProofEnvelope } from "@/lib/market-integrity/vlm-route-analysis";
+import { depth, locale, normalizedRequestId, requireVlmTierAccess, resolveAnalysis, surface, wantsFullProofEnvelope, type ResolvedVlmAnalysis } from "@/lib/market-integrity/vlm-route-analysis";
 import { buildCommercialDeliveryState, buildCommercialReadiness, buildCustomerRiskResult, buildPass2283OutputGate, buildPass2287RuntimeOutputFirewall, buildPass2288ClaimProofFirewallOutput, buildPass2289CustomerReleaseGateOutput, buildPass2290ReleaseTraceLedgerOutput, buildPass2291ProductionReplayGateOutput, buildPublicAiSummary, buildPublicCommercialReadiness, buildPublicCustomerNarrative, buildPublicEvidencePacket, buildPublicKernelSummary, premiumFailFastResponse, premiumNotReadyResponse } from "@/lib/market-integrity/vlm-route-output";
 import type { VlmBehavioralTraceSink } from "@/lib/ai/vlm-behavioral-trace";
 
@@ -83,7 +83,7 @@ async function handleVlmGet(request: Request) {
         prompt: url.searchParams.get("prompt")?.trim() || undefined,
       }),
     });
-    const payload = durableAnalysis.value as any;
+    const payload = durableAnalysis.value as ResolvedVlmAnalysis;
     // Bypass premium not ready blocker in evaluation mode to deliver full unlocked analysis
     // if (payload.premiumFailFast) { ... }
     const commercialReadiness = buildCommercialReadiness(payload, resolvedDepth, resolvedLocale);

@@ -28,7 +28,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const resolved = (SUPPORTED_LOCALES.includes(locale as any) ? locale : "pl") as "en" | "pl" | "de";
+  const resolved = (SUPPORTED_LOCALES.includes(locale as (typeof SUPPORTED_LOCALES)[number]) ? locale : "pl") as "en" | "pl" | "de";
   return buildVelmereMetadata({
     locale: resolved,
     path: "/risk-management",

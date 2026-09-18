@@ -14,6 +14,22 @@ interface VerifyPageProps {
   params: Promise<{ locale: string; id: string }>;
 }
 
+type AuditManifest = {
+  leafHashes?: string[];
+  evidenceRoot?: string;
+  symbol?: string;
+  name?: string;
+  chain?: string;
+  target?: { network?: string; addressOrId?: string };
+  contractAddress?: string;
+  blockNumber?: number;
+  commitHash?: string;
+  sourceHash?: string;
+  reportSha256?: string;
+  engineVersion?: string;
+  createdAt?: string;
+};
+
 export async function generateMetadata({ params }: VerifyPageProps): Promise<Metadata> {
   const { id } = await params;
   return {
@@ -32,14 +48,14 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
   const auditId = decodeURIComponent(id);
   const manifestPath = path.resolve(process.cwd(), "evidence", auditId, "manifest", "manifest.json");
 
-  let manifest: any = null;
+  let manifest: AuditManifest | null = null;
   let isMerkleValid = true;
   let recomputedRoot = "";
 
   if (fs.existsSync(manifestPath)) {
     try {
       const raw = fs.readFileSync(manifestPath, "utf-8");
-      manifest = JSON.parse(raw);
+      manifest = JSON.parse(raw) as AuditManifest;
       recomputedRoot = computeMerkleRoot(manifest.leafHashes || []);
       isMerkleValid = recomputedRoot === manifest.evidenceRoot;
     } catch {

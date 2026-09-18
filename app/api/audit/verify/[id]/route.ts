@@ -64,7 +64,7 @@ export async function GET(
       reportSha256: "b45a9871e9823fca8192a83b2718921829103819203810293810293810293810",
       timestampNotice: "Local deterministic SHA-256 integrity seal applied. Zero unverified marketing claims.",
     });
-  } catch (err: any) {
-    return NextResponse.json({ ok: false, error: err.message || "Failed to verify audit ID" }, { status: 500 });
+  } catch (err: unknown) {
+    return NextResponse.json({ ok: false, error: err instanceof Error ? err.message : "Failed to verify audit ID" }, { status: 500 });
   }
 }

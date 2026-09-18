@@ -2234,7 +2234,7 @@ export function generateAgent13SystemDeploymentGraphsData(): Agent13SystemGraphs
   const edgeTypeCoverage: Record<
     RequiredRelationshipEdgeType,
     { count: number; status: "COVERED" | "MISSING"; example: string }
-  > = {} as any;
+  > = {} as Record<RequiredRelationshipEdgeType, { count: number; status: "COVERED" | "MISSING"; example: string }>;
 
   for (const edgeType of requiredEdgeTypes) {
     let count = 0;

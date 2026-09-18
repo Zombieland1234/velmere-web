@@ -342,13 +342,13 @@ async function handleLensReportPost(request: Request, nowMs: number) {
         report,
         buildLensCommercialReadiness(report, canonicalRequest.depth),
       );
-      const isEcb = Boolean(deliveryBinding && (deliveryBinding as { mode?: string }).mode !== "derived_analytics");
+      const isEcb = Boolean(deliveryBinding && deliveryBinding.mode !== "derived_analytics");
       frozenPayload = buildPass4823LensFrozenRenderPayload({
         report: isEcb
-          ? { ...publicReport, deliveryAuthority: deliveryBinding as any }
+          ? { ...publicReport, deliveryAuthority: deliveryBinding! }
           : publicReport,
         sourceResultId: canonicalRequest.result.id,
-        ...(isEcb ? { deliveryBinding: deliveryBinding as any } : {}),
+        ...(isEcb ? { deliveryBinding: deliveryBinding! } : {}),
       });
       payload = frozenPayload.report;
     } catch (freezeErr) {

@@ -13,6 +13,10 @@ export type CandleDataPoint = {
 
 type Interval = "1m" | "5m" | "15m" | "1h" | "4h" | "1D" | "1W" | "1M";
 
+type RawChartPoint = [number, number, number?] | { price?: number; close?: number; time?: number; timestamp?: number; volume?: number };
+type RealMarketCandle = { timestamp?: number; open?: number; high?: number; low?: number; close?: number; volume?: number };
+type RealMarketQuote = { symbol?: string; id?: string; currentPrice?: number; candles?: RealMarketCandle[] };
+
 type TradingViewCandleChartProps = {
   assetId: string;
   symbol: string;
@@ -113,9 +117,9 @@ export default function TradingViewCandleChart({
               for (let i = 0; i < rawPoints.length; i += chunkSize) {
                 const chunk = rawPoints.slice(i, i + chunkSize);
                 if (chunk.length === 0) continue;
-                const prices = chunk.map((p: any) => (Array.isArray(p) ? p[1] : p.price ?? p.close ?? 0));
-                const times = chunk.map((p: any) => (Array.isArray(p) ? p[0] : p.time ?? p.timestamp ?? 0));
-                const vols = chunk.map((p: any) => (Array.isArray(p) ? p[2] ?? 100 : p.volume ?? 100));
+                const prices = chunk.map((p: RawChartPoint) => (Array.isArray(p) ? p[1] : p.price ?? p.close ?? 0));
+                const times = chunk.map((p: RawChartPoint) => (Array.isArray(p) ? p[0] : p.time ?? p.timestamp ?? 0));
+                const vols = chunk.map((p: RawChartPoint) => (Array.isArray(p) ? p[2] ?? 100 : p.volume ?? 100));
 
                 const open = prices[0];
                 const close = prices[prices.length - 1];
@@ -151,13 +155,13 @@ export default function TradingViewCandleChart({
             const rmData = await rmRes.json();
             const quote =
               rmData.quotes?.find(
-                (q: any) =>
+                (q: RealMarketQuote) =>
                   q.symbol?.toLowerCase() === cleanSym ||
                   q.id?.toLowerCase() === assetId.toLowerCase()
               ) || rmData.quotes?.[0];
 
             if (quote && Array.isArray(quote.candles) && quote.candles.length >= 2) {
-              const parsedCandles: CandleDataPoint[] = quote.candles.map((c: any) => ({
+              const parsedCandles: CandleDataPoint[] = quote.candles.map((c: RealMarketCandle) => ({
                 time:
                   typeof c.timestamp === "number"
                     ? c.timestamp > 1e11
@@ -236,9 +240,9 @@ export default function TradingViewCandleChart({
           if (latest) onPriceUpdate?.(latest.close, latest);
           setLoading(false);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         if (active) {
-          setError(err?.message || "Failed to load market chart");
+          setError(err instanceof Error ? err.message : "Failed to load market chart");
           setLoading(false);
         }
       }

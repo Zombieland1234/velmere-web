@@ -776,6 +776,7 @@ export function runA81CanonicalMegaMatrix(root: string, policyInput?: A81Policy)
             resealProjection({ ...mutationBase, outputClaimIds: [...mutationBase.outputClaimIds, "invented.claim"] }),
             resealProjection({ ...mutationBase, outputClaimIds: mutationBase.outputClaimIds.slice(1) }),
             resealProjection({ ...mutationBase, tier: tier === "basic" ? "pro" : "basic" }),
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Adversarial mutation intentionally violates the literal-safe schema so the verifier must reject a forged sale promotion.
             resealProjection({ ...mutationBase, saleEnabled: true as any }),
             resealProjection({ ...mutationBase, adapterStatus: mutationBase.adapterStatus === "blocked" ? "passed" : "blocked" }),
             resealProjection({ ...mutationBase, analysisDecision: mutationBase.analysisDecision === "ABSTAIN_SYNTHETIC" ? "READY_OFFLINE_SYNTHETIC" : "ABSTAIN_SYNTHETIC" }),

@@ -94,7 +94,7 @@ export default function ShieldAssetDetailPageClient({
           if (!active) return;
           const quote =
             data.quotes?.find(
-              (q: any) =>
+              (q: { symbol?: string; id?: string }) =>
                 q.symbol?.toLowerCase() === cleanSym ||
                 q.id?.toLowerCase() === initialAsset.id.toLowerCase()
             ) || data.quotes?.[0];
@@ -127,7 +127,7 @@ export default function ShieldAssetDetailPageClient({
         .then((data) => {
           if (!active || !Array.isArray(data.rows)) return;
           const matched = data.rows.find(
-            (r: any) =>
+            (r: { id?: string; symbol?: string }) =>
               r.id?.toLowerCase() === initialAsset.id.toLowerCase() ||
               r.symbol?.toLowerCase() === initialAsset.symbol.toLowerCase()
           );
