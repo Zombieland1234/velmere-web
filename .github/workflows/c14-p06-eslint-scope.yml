@@ -1,0 +1,57 @@
+name: C14 P06 ESLint active-source scope
+
+on:
+  push:
+    branches:
+      - parallel/c14-p06-eslint-errors
+    paths:
+      - "**/*.js"
+      - "**/*.jsx"
+      - "**/*.mjs"
+      - "**/*.cjs"
+      - "**/*.ts"
+      - "**/*.tsx"
+      - "**/*.mts"
+      - "**/*.cts"
+      - "package.json"
+      - "package-lock.json"
+      - "eslint.config.mjs"
+      - ".github/workflows/c14-p06-eslint-scope.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**/*.js"
+      - "**/*.jsx"
+      - "**/*.mjs"
+      - "**/*.cjs"
+      - "**/*.ts"
+      - "**/*.tsx"
+      - "**/*.mts"
+      - "**/*.cts"
+      - "package.json"
+      - "package-lock.json"
+      - "eslint.config.mjs"
+      - ".github/workflows/c14-p06-eslint-scope.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  eslint-active-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CI: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24.18.0"
+      - name: Install exact lockfile
+        run: npm ci --ignore-scripts --no-fund
+      - name: Lint all tracked active source and verify traversal coverage
+        run: npm run lint
