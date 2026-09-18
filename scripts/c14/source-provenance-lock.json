@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "velmere.c14.p02.source-provenance-lock.v1",
+  "anchor": {
+    "repository": "Zombieland1234/velmere-web",
+    "baseBranch": "c13/authority-source-boundaries-20260918",
+    "sourceSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+    "treeSha": "a5268de961923bf0982506167396cda14c0a1381",
+    "trackedFileCount": 3975,
+    "allBlobMode": "100644",
+    "canonicalTrackedFilesSha256": "f48c8e37e93b4992dbc5c9d9eca40f932321e3b674fd879b42625e22ef4f71cc",
+    "aggregateRecordFormat": "UTF8(path) NUL decimal(bytes) NUL lowercase_sha256(bytes) LF; records sorted by UTF-8 path bytes"
+  },
+  "c13SourceArtifact": {
+    "workflowRunId": 35289099092,
+    "artifactId": 10525382939,
+    "artifactName": "c13-source-35289099092",
+    "outerArtifactSha256": "a6648114f681f483476990a3ccb04b1c3fabef11f66554cebe7c2f48a5f3c7dc",
+    "innerZipName": "VELMERE_SOURCE_C13.zip",
+    "innerZipSha256": "766e739094325d5824f76cfdb03c3ecec9712825e9fd102f5b2f738065ab7ea9",
+    "includedFileCount": 3973,
+    "excludedFileCount": 2,
+    "excluded": [
+      {
+        "path": "lib/security/pro-audit-pdf/embedded-font-data.ts",
+        "bytes": 37477,
+        "sha256": "e0b08419f49573415c9d2537420fe6277752a1662c15f5d5d9c0f1d2d83d9fb9",
+        "reason": "FONT_RESOURCE_NOT_REDISTRIBUTED"
+      },
+      {
+        "path": "r7-runtime/external-assets/manrope-pdf-latin-plus-ext.ttf",
+        "bytes": 46464,
+        "sha256": "a07eea516ecb22957f162d68a559462c9af0534487669969d500f8e92aece0fa",
+        "reason": "FONT_RESOURCE_NOT_REDISTRIBUTED"
+      }
+    ]
+  },
+  "c13EvidenceArtifact": {
+    "workflowRunId": 35289099092,
+    "artifactId": 10526031537,
+    "artifactName": "c13-evidence-35289099092",
+    "outerArtifactSha256": "2091e7cdf61d83c068c9f916d6060d2cddc706ec82f5667613e0b222fc25cb93",
+    "evidenceManifestFileCount": 122,
+    "finalWorkingTreeStatus": " M next-env.d.ts\n",
+    "uniqueMissingReferencedScriptPaths": 977,
+    "packageScriptsWithMissingReferencedFiles": 892
+  },
+  "chain": [
+    {
+      "stage": "C6E",
+      "sourceSha": "aca5e67105dc02b25a8058b3e41fdd47312f7d26",
+      "treeSha": "41f50b7a5f3525499e42b8270ebc2ff0c7c955e1",
+      "included": 3856,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C6E.zip",
+      "innerZipSha256": "a869c5cbd0479f046224735f7690f1881c219fb2f45ede4f82c344a06e2f38b0",
+      "outerArtifactSha256": "e451b6099c9fe5eeaa83856aab9e42e864c56aa7ab3e2b7519177cc246ebfbb6"
+    },
+    {
+      "stage": "C7",
+      "sourceSha": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d",
+      "treeSha": "716ef54174a074958d3231b8f57a262caa44ffdd",
+      "included": 3873,
+      "excluded": 0,
+      "innerZip": "VELMERE_SOURCE_C7.zip",
+      "innerZipSha256": "ac732dcb8f1e6edd572384cab478341c41d39863024d0945eca5fc59630148a4",
+      "outerArtifactSha256": "06a887c846daa15a2f19f1d991272467d7664dada1c23e60dc76ada7b760d243"
+    },
+    {
+      "stage": "C8",
+      "sourceSha": "0609ef1c5aeecfab6de3ada8144efaa089064c71",
+      "treeSha": "7f7dac449b54e131c33a0e01ab9703eed1867621",
+      "included": 3882,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C8.zip",
+      "innerZipSha256": "c5d31ffa7b6f4dff7784ebc2daf1a661fcbafdaaaf6bf01a6e1201f069c52d53",
+      "outerArtifactSha256": "480a167fb8fb1e7b0c5ee2b04b0c4866cc04224de8d0f6ae09ff8c9d11fbf652"
+    },
+    {
+      "stage": "C9",
+      "sourceSha": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d",
+      "treeSha": "96429ed850028a68b8a96d6f623fbf42a95ae347",
+      "included": 3900,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C9.zip",
+      "innerZipSha256": "4f1dba162dded4a170c3f5bc7fee721947aaeeb5de341820905a63fae0228eae",
+      "outerArtifactSha256": "1d1ea01c6952c8c060e9e23c3dd21abae8d6e53942be6f4a44af6e040dada631"
+    },
+    {
+      "stage": "C10",
+      "sourceSha": "8841c625ede6452de55bd57c1024759d6dc53845",
+      "treeSha": "ab6ea698f7593a77b48ffe77714b142de8bc1194",
+      "included": 3918,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C10.zip",
+      "innerZipSha256": "88ced9481d5369cd6b8397ccfbf143271d8461c11d67cc8e0fffff9e97091a99",
+      "outerArtifactSha256": "446b6e7c4d04006888c15a2ecc69466a5ab6183f56bb1d131b7c54cec7ecdac8"
+    },
+    {
+      "stage": "C11",
+      "sourceSha": "9ca2860e4133e9f8695076b50f323c7825a1c7b3",
+      "treeSha": "51dd328fe580c155b3b22c91f517cc4c852889a9",
+      "included": 3935,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C11.zip",
+      "innerZipSha256": "501d976e998c0637a98901f5aee7df4e0326e7b4bddca3e385ff26efa332eb4a",
+      "outerArtifactSha256": "b26156a0b169e22e2146f2e1851283a8cc359b4418458ee7abe1d8645966553b"
+    },
+    {
+      "stage": "C12",
+      "sourceSha": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb",
+      "treeSha": "5edd50f23bc534d15fb8ee008856ee1c4df4e40b",
+      "included": 3954,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C12.zip",
+      "innerZipSha256": "370219e47495a158364f5bc08511e0afdf5d9ffd13aa3f17f017b37dab7c788c",
+      "outerArtifactSha256": "1c076e2da71b2d61689ccadd4dca909ce93c4c1830e50cddcc37a01a78587dcb"
+    },
+    {
+      "stage": "C13",
+      "sourceSha": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df",
+      "treeSha": "a5268de961923bf0982506167396cda14c0a1381",
+      "included": 3973,
+      "excluded": 2,
+      "innerZip": "VELMERE_SOURCE_C13.zip",
+      "innerZipSha256": "766e739094325d5824f76cfdb03c3ecec9712825e9fd102f5b2f738065ab7ea9",
+      "outerArtifactSha256": "a6648114f681f483476990a3ccb04b1c3fabef11f66554cebe7c2f48a5f3c7dc"
+    }
+  ],
+  "ancestry": [
+    {"from": "aca5e67105dc02b25a8058b3e41fdd47312f7d26", "to": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d", "aheadBy": 18},
+    {"from": "61a43c4169cd7f1d7937617b0fde9ca7268dd82d", "to": "0609ef1c5aeecfab6de3ada8144efaa089064c71", "aheadBy": 5},
+    {"from": "0609ef1c5aeecfab6de3ada8144efaa089064c71", "to": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d", "aheadBy": 6},
+    {"from": "80385a0bc9dbcff17c2a42e78c6dfc0f24ab407d", "to": "8841c625ede6452de55bd57c1024759d6dc53845", "aheadBy": 11},
+    {"from": "8841c625ede6452de55bd57c1024759d6dc53845", "to": "9ca2860e4133e9f8695076b50f323c7825a1c7b3", "aheadBy": 4},
+    {"from": "9ca2860e4133e9f8695076b50f323c7825a1c7b3", "to": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb", "aheadBy": 6},
+    {"from": "9a176fe2e844ccf7166bf1bd7552f1bec79584cb", "to": "4cb45bbcf910f0517d4a5d265682cd2f7e4e41df", "aheadBy": 6}
+  ],
+  "recovery": {
+    "firstObservedC6QualificationSha": "05d5ce6afb5364b5184de14e745857f6757f3344",
+    "firstObservedC6ParentSha": "f29294570da87e05ac4063e24b1749254a112703",
+    "firstObservedC6WorkflowRunId": 35174090708,
+    "firstObservedC6SourceArtifactId": 10477832282,
+    "firstObservedC6OuterArtifactSha256": "5b2b58acd934814133e9fc8466c182cf5f8d90895167794a3cba5fee86c52878",
+    "firstObservedC6InnerZipSha256": "a08807d01fba0c269c9ccb42a3417fab5ce795831bc4b19fe26f7fc4b2bb8f84",
+    "firstObservedC6TrackedFiles": 3828,
+    "scopeRecordedByWorkflow": "EXACT_GITHUB_SNAPSHOT_NOT_CONFIRMED_UI2",
+    "recordedOriginalUi2Sha256": "3a12adb21c24a5bd8fab696b233a255539d7aeb42e430bf6ad059848da28e2f6"
+  },
+  "ui2": {
+    "identityStatus": "NOT_IDENTICAL_AND_NO_GIT_ANCESTRY_PROVEN",
+    "zipName": "VELMERE_SOURCE_R13F-UI2.zip",
+    "zipSha256": "3a12adb21c24a5bd8fab696b233a255539d7aeb42e430bf6ad059848da28e2f6",
+    "zipBytes": 109334650,
+    "zipFileEntries": 14141,
+    "crc": "PASS",
+    "recordedSourceAggregateSha256": "61984ac64fe4ab1b7c31f63bb07f003e71e330b8bc767630f6af589bacc37bdb",
+    "recordedSourceManifestFileCount": 14139,
+    "embeddedOriginalSourceManifest": {
+      "path": "VELMERE_HANDOFF/ORIGINAL_SOURCE_MANIFEST.json",
+      "sha256": "570b809f54ac4befca6aa95ceb689f57ed696c164b461aeb46a8a9be10c7c076",
+      "sourceCommit": "671132a95a497e45c128a4dc364d6823edaf4168",
+      "includedCount": 13860,
+      "excludedCount": 3646
+    },
+    "c13Comparison": {
+      "c13TrackedFiles": 3975,
+      "ui2FileEntries": 14141,
+      "overlappingPaths": 3662,
+      "byteIdenticalOverlaps": 3413,
+      "differentBytesAtSamePath": 249,
+      "c13OnlyPaths": 313,
+      "ui2OnlyPaths": 10479,
+      "c13MissingReferencedScriptPaths": 977,
+      "thoseMissingPathsPresentInUi2": 977
+    },
+    "fontRelationship": [
+      {"path": "lib/security/pro-audit-pdf/embedded-font-data.ts", "presentInUi2": true, "sameSha256AsC13": true},
+      {"path": "r7-runtime/external-assets/manrope-pdf-latin-plus-ext.ttf", "presentInUi2": false, "sameSha256AsC13": false}
+    ]
+  },
+  "knownDiscontinuities": [
+    "C6E excluded the two declared font resources from the distributable source ZIP.",
+    "C7 included both tracked font resources in its source ZIP (excluded count 0).",
+    "C8 through C13 again excluded the same two tracked font resources.",
+    "C13 evidence records a post-build working-tree mutation of next-env.d.ts; the committed source ZIP still comes from git show at the anchored commit.",
+    "C13 package.json contains literal references to 977 historical script paths missing from C13; all 977 paths are present in UI2."
+  ]
+}
