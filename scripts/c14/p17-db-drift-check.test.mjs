@@ -37,7 +37,7 @@ test('live migration history absent from repo is detected without inventing sour
   assert.deepEqual(drift.liveMissingFromRepo.map(x => x.version), ['20260824002402']);
 });
 
-test('C14-P17 hardening covers all exposed SECURITY DEFININER RPCs and both validated constraints', () => {
+test('C14-P17 hardening covers all exposed SECURITY DEFINER RPCs and both validated constraints', () => {
   const migration = fs.readFileSync(path.join(repoRoot,'supabase','migrations',`${P17_HARDENING_VERSION}_c14_p17_rls_schema_hardening.sql`),'utf8');
   const audit = inspectHardeningSql(migration);
   assert.equal(audit.customerDml, false);
@@ -47,7 +47,7 @@ test('C14-P17 hardening covers all exposed SECURITY DEFININER RPCs and both vali
   assert.ok(audit.constraints.every(x => x.validated));
 });
 
-test('recovered C13 migration is byte-identical to the exact applied guard source retained in scripts/c13', () => {
+test('recovered C13 migration is byte-identical to the retained C13 guard source in scripts/c13', () => {
   const migration = fs.readFileSync(path.join(repoRoot,'supabase','migrations',`${EXPECTED_RECOVERED_C13}_velmere_c13_shield_workspace_stored_tier_guard.sql`));
   const source = fs.readFileSync(path.join(repoRoot,'scripts','c13','shield-workspace-guard.sql'));
   assert.deepEqual(migration, source);
