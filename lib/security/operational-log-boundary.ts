@@ -2,6 +2,7 @@ import crypto from "node:crypto";
 import { stripUnsafeControlOrBidi } from "@/lib/security/control-character-policy";
 
 const SAFE_TOKEN = /^[a-z][a-z0-9_.:-]{2,95}$/;
+const SAFE_CORRELATION_ID = /^(?:req|err|run|job)_[a-f0-9]{32,64}$/;
 const REDACTED_STRING_METRIC = "redacted" as const;
 const STRING_METRIC_POLICIES: Readonly<Record<string, RegExp>> = Object.freeze({
   paymentstatus: /^(?:paid|unpaid|no_payment_required|unknown)$/,
@@ -19,11 +20,13 @@ export const PASS36_A102R13_OPERATIONAL_LOG_BOUNDARY_ID =
 type Primitive = string | number | boolean | null;
 type OperationalLogLevel = "info" | "warn" | "error";
 
-type OperationalEventInput = {
+export type OperationalEventInput = {
   level: OperationalLogLevel;
   system: string;
   event: string;
   code: string;
+  correlationId?: string | null;
+  occurredAt?: Date | string | number;
   metrics?: Record<string, Primitive>;
   identifiers?: Record<string, unknown>;
   error?: unknown;
@@ -50,6 +53,16 @@ function metricValue(key: string, value: Primitive): Primitive {
   return policy?.test(clean) ? clean : REDACTED_STRING_METRIC;
 }
 
+function safeOccurredAt(value: OperationalEventInput["occurredAt"]) {
+  const date = value instanceof Date ? value : value === undefined ? new Date() : new Date(value);
+  return Number.isFinite(date.getTime()) ? date.toISOString() : new Date().toISOString();
+}
+
+function safeCorrelationId(value: unknown) {
+  const clean = String(value ?? "").trim().toLowerCase();
+  return SAFE_CORRELATION_ID.test(clean) ? clean : "uncorrelated";
+}
+
 export function operationalIdentifierHash(label: string, value: unknown) {
   const normalizedLabel = metricKey(label).toLowerCase();
   const normalizedValue = stripUnsafeControlOrBidi(String(value ?? "")).trim().slice(0, 2048);
@@ -72,9 +85,16 @@ export function buildOperationalLogRecord(input: OperationalEventInput) {
       return [normalizedKey, metricValue(normalizedKey, value)];
     }),
   );
-  const identifierHashes = Object.fromEntries(Object.entries(input.identifiers ?? {}).map(([key, value]) => [`${metricKey(key)}Sha256`, operationalIdentifierHash(key, value)]));
+  const identifierHashes = Object.fromEntries(
+    Object.entries(input.identifiers ?? {}).map(([key, value]) => [
+      `${metricKey(key)}Sha256`,
+      operationalIdentifierHash(key, value),
+    ]),
+  );
   return {
     schemaVersion: PASS36_A102R13_OPERATIONAL_LOG_BOUNDARY_ID,
+    occurredAt: safeOccurredAt(input.occurredAt),
+    correlationId: safeCorrelationId(input.correlationId),
     level: input.level,
     system: token(input.system, "velmere.unknown"),
     event: token(input.event, "operational_event"),
