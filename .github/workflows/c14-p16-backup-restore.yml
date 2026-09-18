@@ -1,0 +1,79 @@
+name: C14-P16 isolated backup restore qualification
+
+on:
+  push:
+    branches: [parallel/c14-p16-backup-restore]
+    paths:
+      - '.github/workflows/c14-p16-backup-restore.yml'
+      - 'scripts/c14/p16/**'
+      - 'config/c14/p16-backup-scope.json'
+      - 'docs/operations/BACKUP_RESTORE_RUNBOOK.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c14-p16-backup-restore
+  cancel-in-progress: false
+
+jobs:
+  isolated-restore-drill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: c14_p16_ephemeral_ci_only
+          POSTGRES_DB: postgres
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: c14_p16_ephemeral_ci_only
+      PGDATABASE: postgres
+      C14_P16_EVIDENCE_DIR: /tmp/c14-p16-evidence
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install isolated Redis prerequisite
+        run: |
+          set -euo pipefail
+          if ! command -v redis-server >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends redis-server
+          fi
+      - name: Real isolated backup, failure, restore and validation
+        run: bash scripts/c14/p16/run-isolated-restore.sh
+      - name: Enforce evidence contract
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('/tmp/c14-p16-evidence/RESULT.json')
+          data=json.loads(p.read_text())
+          assert data['status']=='PASS'
+          assert data['scope']=='ISOLATED_SYNTHETIC_CI_ONLY_NO_CUSTOMER_DATA'
+          assert data['postgres']['preCutoffRecordsLost']==0
+          assert data['postgres']['postCutoffRecordsRestored']==0
+          assert data['postgres']['rlsOwnershipVerified'] is True
+          assert data['postgres']['reportDigestAndSemanticConsistencyVerified'] is True
+          assert data['storage']['preCutoffObjectsLost']==0
+          assert data['storage']['postCutoffObjectsRestored']==0
+          assert data['redis']['preCutoffKeysLost']==0
+          assert data['redis']['postCutoffKeysRestored']==0
+          assert data['rpoRtoBoundary']['productionRpoMeasured'] is False
+          assert data['rpoRtoBoundary']['productionRtoMeasured'] is False
+          print(json.dumps(data, indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c14-p16-backup-restore-${{ github.run_id }}
+          path: /tmp/c14-p16-evidence
+          retention-days: 14
+          if-no-files-found: error
