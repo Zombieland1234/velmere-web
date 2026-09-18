@@ -1,7 +1,6 @@
 import { readBoundedJsonBody } from "@/lib/security/payment-webhook-guard";
-import { createAdminAuditWritePreview, getAdminAuditServerGate } from "@/lib/launch/admin-audit-write-contract";
+import { createAdminAuditWritePreview } from "@/lib/launch/admin-audit-write-contract";
 import { applyApiRateLimit as applyPass2177SoftRateLimit, assertSameOriginRequest as assertPass2177SameOriginRequest, rejectLargeContentLength as rejectPass2177LargeContentLength } from "@/lib/security/api-guard";
-import { getAdminSessionPreviewFromEnv } from "@/lib/launch/admin-auth-session-guard";
 
 function jsonResponse(body: unknown, status = 200) {
   return new Response(JSON.stringify(body, null, 2), {
@@ -14,20 +13,12 @@ function jsonResponse(body: unknown, status = 200) {
 }
 
 export async function GET() {
-  const gate = getAdminAuditServerGate();
-  const sessionPreview = getAdminSessionPreviewFromEnv();
   return jsonResponse(
     {
       ok: false,
       status: "locked_preview",
       route: "/api/admin/audit-events",
-      gate,
-      sessionPreview,
-      reason: "GET is diagnostic only. Audit write uses POST and remains locked until server auth/storage are ready.",
-      missing: [
-        ...(!gate.hasAuthContext ? ["server auth context"] : []),
-        ...(!gate.hasStorage ? ["audit storage"] : []),
-      ],
+      reason: "Admin audit diagnostics are not exposed without an authenticated operator context.",
     },
     423,
   );
