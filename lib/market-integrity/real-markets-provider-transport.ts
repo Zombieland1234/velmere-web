@@ -1,5 +1,6 @@
 import { readJsonResponseBounded, readTextResponseBounded } from "@/lib/network/fetch-with-deadline";
 import { brokeredEgressFetch } from "@/lib/network/brokered-egress";
+import { evaluateC14ProviderOperation } from "@/lib/compliance/c14-provider-enforcement";
 import { buildPass2814ProviderFetchFirewall } from "@/lib/market-integrity/top1-source-poisoning-ssrf-firewall";
 import { safeSymbol } from "@/lib/market-integrity/real-markets-catalog";
 
@@ -141,7 +142,35 @@ export function parseStooqCsv(text: string): StooqDailyRow[] {
   });
 }
 
+function c14ProviderIdForRealMarketsUrl(input: string | URL) {
+  const hostname = new URL(input.toString()).hostname.toLowerCase();
+  if (hostname === "stooq.com" || hostname.endsWith(".stooq.com")) return "stooq";
+  if (hostname === "query1.finance.yahoo.com" || hostname.endsWith(".finance.yahoo.com")) return "yahoo_finance";
+  return null;
+}
+
 export async function fetchQuiet(input: string | URL, init: (RequestInit & { next?: { revalidate: number } }) = {}, timeoutMs = 2500) {
+  const providerId = c14ProviderIdForRealMarketsUrl(input);
+  if (!providerId) return null;
+  const nowMs = Date.now();
+  const fetchRights = evaluateC14ProviderOperation({
+    providerId,
+    operation: "fetch",
+    channel: "internal_diagnostic",
+    nowMs,
+  });
+  if (!fetchRights.allowed) return null;
+  const requestedTtl = Math.max(1, init.next?.revalidate ?? 1);
+  const cacheRights = evaluateC14ProviderOperation({
+    providerId,
+    operation: "cache",
+    channel: "internal_diagnostic",
+    cacheTtlSeconds: requestedTtl,
+    nowMs,
+  });
+  const safeInit = cacheRights.allowed
+    ? init
+    : ({ ...init, next: undefined, cache: "no-store" as RequestCache } as RequestInit & { next?: { revalidate: number } });
   const pass2814FetchFirewall = buildPass2814ProviderFetchFirewall({
     surface: "Provider Fetch",
     sourceFamily: "yahoo_stooq",
@@ -153,7 +182,7 @@ export async function fetchQuiet(input: string | URL, init: (RequestInit & { nex
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    return await brokeredEgressFetch(input, { ...init, signal: controller.signal }, {
+    return await brokeredEgressFetch(input, { ...safeInit, signal: controller.signal }, {
       profile: "real_markets",
       operation: "real_markets_provider_transport",
       timeoutMs,
