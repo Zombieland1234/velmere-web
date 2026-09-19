@@ -10,7 +10,7 @@ import { createHash } from "node:crypto";
  * - Token callback reentrancy (ERC-777 tokensReceived, ERC-721/1155 hooks)
  */
 
-import { StandardFindingV2, BasicBlock, ControlFlowGraph } from "./types";
+import { StandardFindingV2 } from "./types";
 import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
 import { analyzeReentrancyGuardCoverage } from "../solidity-structured-signal.mjs";
 

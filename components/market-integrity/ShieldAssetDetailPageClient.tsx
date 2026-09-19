@@ -1,31 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import {
-  Activity,
-  ArrowDownRight,
-  ArrowLeft,
-  ArrowUpRight,
-  Bookmark,
-  Check,
-  CheckCircle2,
-  Clock,
-  Download,
-  ExternalLink,
-  Eye,
-  FileText,
-  Flame,
-  Globe,
-  Layers,
-  Lock,
-  RefreshCw,
-  Search,
-  Shield,
-  ShieldAlert,
-  ShieldCheck,
-  Sparkles,
-  Zap,
-} from "lucide-react";
+import { Activity, ArrowLeft, Check, CheckCircle2, Download, ExternalLink, Eye, Lock, RefreshCw, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { Link } from "@/navigation";
 import ResolvedAssetLogo from "@/components/market-integrity/AssetLogo";
 import TradingViewCandleChart from "@/components/market-integrity/TradingViewCandleChart";

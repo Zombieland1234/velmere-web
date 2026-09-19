@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, ArrowDownRight, ArrowUpRight, CheckCircle2, ShieldCheck, Zap } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 type OverviewTabProps = {
   asset: {

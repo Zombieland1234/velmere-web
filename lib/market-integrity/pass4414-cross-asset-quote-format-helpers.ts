@@ -7,11 +7,8 @@ import type {
   Pass4413CrossAssetQuote as Quote,
   Pass4413RealMarketsAsset as Asset,
 } from "@/lib/market-integrity/pass4413-cross-asset-runtime-normalizers";
-import { hasServerVerifiedQuoteLiveGate } from "@/components/market-integrity/live-truth";
-import {
-  pass4574QuoteDisplayState,
-  pass4577CanShowPercent,
-} from "@/lib/market-integrity/pass4570-market-data-sanity";
+
+
 
 export const PASS4414_CROSS_ASSET_QUOTE_FORMAT_HELPERS_BOUNDARY = {
   passId: "PASS4414",

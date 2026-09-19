@@ -20,7 +20,7 @@ import {
   findCheckoutGuardLineForItem,
   useCartCheckoutGuard,
 } from "@/components/cart/useCartCheckoutGuard";
-import { CustomerSafeStatusSurface } from "@/components/status/CustomerSafeStatusSurface";
+
 import { buildPass2196CustomerSafeStatusSurface, type Pass2196CustomerLocale } from "@/lib/ui/customer-safe-status-surface";
 
 function customerLocale(locale: string): Pass2196CustomerLocale {

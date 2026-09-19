@@ -29,19 +29,7 @@ import {
   dedupeMarketInstruments,
   filterMarketInstruments,
 } from "@/lib/market-integrity/market-instrument-search";
-import {
-  shieldProAggregateMetricsAvailable,
-  shieldProCalibratedRiskConfidence,
-  shieldProFieldVerified,
-  shieldProModalMarketDataState,
-  shieldProModeAfterRefreshFailure,
-  shieldProPrimaryMarketSourceAsOf,
-  shieldProRiskVerified,
-  shieldProSourceLabel,
-  shieldProVerifiedProviders,
-  type ShieldProFeedMode,
-  type ShieldProPublicDelivery,
-} from "@/lib/market-integrity/shield-pro-customer-truth";
+import { shieldProCalibratedRiskConfidence, shieldProFieldVerified, shieldProModalMarketDataState, shieldProModeAfterRefreshFailure, shieldProPrimaryMarketSourceAsOf, shieldProRiskVerified, shieldProSourceLabel, shieldProVerifiedProviders, type ShieldProFeedMode, type ShieldProPublicDelivery } from "@/lib/market-integrity/shield-pro-customer-truth";
 import {
   projectShieldProTableRow,
   type ShieldProTableCustomerProjection,

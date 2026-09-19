@@ -1,17 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  CheckCircle2,
-  AlertTriangle,
-  XCircle,
-  ShieldCheck,
-  ExternalLink,
-  Copy,
-  Check,
-  Search,
-  Lock,
-} from "lucide-react";
+import { CheckCircle2, AlertTriangle, XCircle, ShieldCheck, Copy, Check } from "lucide-react";
 
 export type InvariantItem = {
   label: string;

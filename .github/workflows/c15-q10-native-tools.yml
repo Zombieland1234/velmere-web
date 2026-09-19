@@ -1,0 +1,50 @@
+name: C15 Q10 native PostgreSQL tools
+on:
+  push:
+    branches: [c15/qualification-q10-20260919]
+    paths: [.github/workflows/c15-q10-native-tools.yml]
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Copy official PostgreSQL binaries and their non-glibc dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/q10-native-tools/root
+          docker pull postgres:17-bookworm
+          image=$(docker image inspect postgres:17-bookworm --format '{{.Id}}')
+          docker image inspect "$image" > /tmp/q10-native-tools/IMAGE.json
+          cid=$(docker create "$image")
+          trap 'docker rm -f "$cid" >/dev/null 2>&1 || true' EXIT
+          for p in /usr/lib/postgresql/17 /usr/share/postgresql/17; do
+            mkdir -p "/tmp/q10-native-tools/root$(dirname "$p")"
+            docker cp "$cid:$p" "/tmp/q10-native-tools/root$(dirname "$p")/"
+          done
+          docker run --rm --entrypoint bash "$image" -lc \
+            'for p in /usr/lib/postgresql/17/bin/* /usr/lib/postgresql/17/lib/*.so; do ldd "$p" 2>/dev/null || true; done' \
+            > /tmp/q10-native-tools/LDD.txt
+          awk '/=> \/.* \(/ {print $3} /^\// {print $1}' /tmp/q10-native-tools/LDD.txt | sort -u \
+            | grep -Ev '/(libc\.so|libpthread\.so|libdl\.so|librt\.so|libm\.so|libutil\.so|ld-linux)' \
+            > /tmp/q10-native-tools/DEPENDENCY_PATHS.txt
+          while IFS= read -r p; do
+            mkdir -p "/tmp/q10-native-tools/root$(dirname "$p")"
+            docker cp -L "$cid:$p" "/tmp/q10-native-tools/root$p"
+          done < /tmp/q10-native-tools/DEPENDENCY_PATHS.txt
+          docker run --rm --entrypoint postgres "$image" --version > /tmp/q10-native-tools/VERSION.txt
+          printf '%s\n' "$GITHUB_SHA" > /tmp/q10-native-tools/SOURCE_SHA.txt
+          find /tmp/q10-native-tools/root -type f \( -iname '*.woff*' -o -iname '*.ttf' -o -iname '*.otf' -o -iname '*.cff' \) -print > /tmp/q10-native-tools/FONT_FILES.txt
+          test ! -s /tmp/q10-native-tools/FONT_FILES.txt
+          tar -C /tmp/q10-native-tools/root -czf /tmp/q10-native-tools/postgresql-tools.tar.gz .
+          (cd /tmp/q10-native-tools && sha256sum postgresql-tools.tar.gz > SHA256SUMS)
+          rm -rf /tmp/q10-native-tools/root
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q10-native-tools-${{ github.run_id }}
+          path: /tmp/q10-native-tools
+          retention-days: 7

@@ -3,24 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
 import { Link } from "@/navigation";
-import {
-  Activity,
-  ArrowRight,
-  ArrowUpRight,
-  CheckCircle2,
-  Database,
-  ExternalLink,
-  Eye,
-  FileCheck2,
-  Globe2,
-  History,
-  Lock,
-  Radio,
-  Shield,
-  ShieldAlert,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import IntelligenceFlowHero from "@/components/home/IntelligenceFlowHero";
 import Reveal from "@/components/ui/Reveal";
 

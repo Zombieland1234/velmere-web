@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Activity, AlertTriangle, CheckCircle2, ChevronRight, HelpCircle, Shield, Sliders, Sparkles, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Activity, CheckCircle2, HelpCircle, Shield, Sliders, Sparkles, X } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
 import { useModalScrollLock } from "@/components/ui/useModalScrollLock";
 

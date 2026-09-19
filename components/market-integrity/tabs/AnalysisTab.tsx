@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, CheckCircle2, ChevronRight, FileCode2, Info, Lock, Shield, Zap } from "lucide-react";
+import { AlertTriangle, CheckCircle2 } from "lucide-react";
 
 type AnalysisTabProps = {
   assetId: string;

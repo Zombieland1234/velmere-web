@@ -1,21 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Activity,
-  AlertTriangle,
-  BookOpen,
-  Calculator,
-  CheckCircle2,
-  ExternalLink,
-  Info,
-  Layers,
-  Scale,
-  Shield,
-  ShieldAlert,
-  Sliders,
-  X,
-} from "lucide-react";
+import { BookOpen, Calculator, ExternalLink, Scale, ShieldAlert, Sliders, X } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
 import { useModalScrollLock } from "@/components/ui/useModalScrollLock";
 import RiskCalculationWaterfallFork from "@/components/market-integrity/RiskCalculationWaterfallFork";

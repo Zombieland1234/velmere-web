@@ -1,0 +1,73 @@
+name: C15 Q10 exact Q9 admission
+on:
+  push:
+    branches: [c15/qualification-q10-20260919]
+    paths: [.github/workflows/c15-q10-admission.yml]
+permissions:
+  contents: read
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Verify original patch and complete Q9 Git tree before admission
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/q10-admission
+          python3 - <<'PY'
+          import hashlib,json,lzma,os,subprocess
+          from pathlib import Path
+          expected='993dcc671e94ce1e8e1f2f3bb1b03e00462b3074'
+          base='57a29cfccb9b5e3718ae89c8426e7155a0c086ee'
+          hashes=['c1288072dd257beb7e05c886ade97ecb162e39349c40d7222c97d248377ec527','3e4506ca2ace409a79654b287ef3d0653ad3aa094538b77af991ee0b91c22bd8','12928b009b0e49996720ac16ae23fab57fa3251d0e487cf2d6940e8e3f5b2664','5e4094c1a551b70a52723551391cf98782ec0f29ff1c8817938f87d29a1ce2c7','63e2c91311543db1e4f5e67bea0c4e8a4441b7732a492544a662d9756e87b977','3f85c1fdefd771d32888685feb6a61f1dea6a831fd7980804b37055a71860d54']
+          head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          assert head==os.environ['GITHUB_SHA']
+          assert not subprocess.check_output(['git','status','--porcelain'],text=True).strip()
+          parts=[Path(f'_handoff/q10-admission/part{i}.xzpart').read_bytes() for i in range(6)]
+          for part,want in zip(parts,hashes): assert hashlib.sha256(part).hexdigest()==want
+          packed=b''.join(parts)
+          assert len(packed)==45480
+          assert hashlib.sha256(packed).hexdigest()=='c4ca2b3db38b2a86afa6827215b949bca9445f69e2d450ea45e6d44e0e276ab5'
+          patch=lzma.decompress(packed)
+          assert len(patch)==249335
+          digest=hashlib.sha256(patch).hexdigest()
+          assert digest=='2d8a41171aef4ab915d1b2a326522141fff19dd3016e4b97f607927ea535ecf0'
+          path=Path('/tmp/q10-admission/Q5_TO_Q9.patch');path.write_bytes(patch)
+          env=dict(os.environ,GIT_INDEX_FILE='/tmp/q10-admission/q9.index')
+          subprocess.run(['git','read-tree',base],env=env,check=True)
+          subprocess.run(['git','apply','--cached','--check',str(path)],env=env,check=True)
+          subprocess.run(['git','apply','--cached',str(path)],env=env,check=True)
+          tree=subprocess.check_output(['git','write-tree'],env=env,text=True).strip()
+          assert tree==expected,(tree,expected)
+          subprocess.run(['git','apply','--check',str(path)],check=True)
+          subprocess.run(['git','apply',str(path)],check=True)
+          Path('/tmp/q10-admission/VERIFIED.json').write_text(json.dumps({'base':base,'admissionHead':head,'patchSha256':digest,'expectedQ9Tree':expected,'actualQ9Tree':tree,'result':'PASS','scope':'HASH_AND_SOURCE_IDENTITY_NOT_NEW_TEST_EXECUTION'},indent=2))
+          PY
+          git rm _handoff/q10-admission/part*.xzpart
+          git add -A
+          if git diff --cached --name-only | grep -q '^.github/workflows/'; then
+            echo 'Refuse any workflow modification by admission bot' >&2
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat(c15-q10): admit exact verified Q9 source; production unchanged'
+          git rev-parse HEAD > /tmp/q10-admission/ADMITTED_SHA.txt
+          git rev-parse 'HEAD^{tree}' > /tmp/q10-admission/ADMITTED_TREE.txt
+          git push origin HEAD:c15/qualification-q10-20260919
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q10-admission-${{ github.run_id }}
+          path: |
+            /tmp/q10-admission/VERIFIED.json
+            /tmp/q10-admission/ADMITTED_SHA.txt
+            /tmp/q10-admission/ADMITTED_TREE.txt
+          retention-days: 14

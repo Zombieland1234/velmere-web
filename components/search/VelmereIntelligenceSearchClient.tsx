@@ -43,7 +43,7 @@ import {
   X,
 } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
-import PremiumAmbientGlobe from "@/components/ui/PremiumAmbientGlobe";
+
 import VelmereLuxuryShield from "@/components/ui/VelmereLuxuryShield";
 import { useModalScrollLock } from "@/components/ui/useModalScrollLock";
 import { useDialogFocusBoundary } from "@/components/ui/useDialogFocusBoundary";
