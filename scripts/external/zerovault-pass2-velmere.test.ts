@@ -104,7 +104,9 @@ async function main() {
     ],
     reportBuffer: pdf,
   });
-  publicize(evidenceRoot, authenticId, authenticManifest);
+  const authenticPublicManifest = publicize(evidenceRoot, authenticId, authenticManifest);
+  mkdirSync(resolve(work, "velmere"), { recursive: true });
+  writeFileSync(resolve(work, "velmere", "authentic-manifest.json"), JSON.stringify(authenticPublicManifest, null, 2));
   const authenticLocal = await verifyLocalPublishedAudit(authenticId, evidenceRoot);
   const authenticRoute = await verifyThroughActualRoute(authenticId);
   mkdirSync(resolve(work, "velmere"), { recursive: true });
