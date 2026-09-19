@@ -4,7 +4,12 @@
  * Invariant: TRUTH OVER COVERAGE. Never hallucinate data on provider failure.
  */
 
-import { FieldObservationAttempt, FieldCompletenessDiagnosis, diagnoseFieldCompleteness } from "./completeness-root-cause-engine";
+/**
+ * Velmère Multi-Provider Failover & Quorum Engine
+ * Orchestrates Primary -> Secondary -> Tertiary failover across independent data upstreams.
+ * Invariant: TRUTH OVER COVERAGE. Never hallucinate data on provider failure.
+ */
+import { FieldObservationAttempt } from "./completeness-root-cause-engine";
 
 export interface ProviderQueryConfig<T> {
   providerName: string;

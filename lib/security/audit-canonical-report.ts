@@ -14,7 +14,7 @@ import { resolveSecurityEngine, type CanonicalAssetIdentity } from "@/lib/securi
 import { assertZeroMockLeakage } from "@/lib/security/mock-leakage-guard";
 import { buildAuditMerkleCommitment } from "@/lib/security/audit-merkle-commitment";
 import { signReportWithPki, type ReportPkiAttestation } from "@/lib/security/audit-pki-signature";
-import { lintPdfForPdfA2b } from "@/lib/security/pdf-a2b-linter";
+
 
 export type AuditTier = "basic" | "pro" | "advanced";
 

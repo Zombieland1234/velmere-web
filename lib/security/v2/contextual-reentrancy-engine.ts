@@ -10,8 +10,9 @@ import { createHash } from "node:crypto";
  * - Token callback reentrancy (ERC-777 tokensReceived, ERC-721/1155 hooks)
  */
 
-import { StandardFindingV2, BasicBlock, ControlFlowGraph } from "./types";
-import { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import type { StandardFindingV2 } from "./types";
+import type { CfgAnalysisResult } from "./evm-cfg-dataflow-engine";
+import { analyzeCallContinuation } from "./evm-call-continuation";
 import { analyzeReentrancyGuardCoverage } from "../solidity-structured-signal.mjs";
 
 export interface ReentrancyAnalysisResult {
@@ -31,6 +32,12 @@ export function analyzeContextualReentrancy(
 ): ReentrancyAnalysisResult {
   const findings: StandardFindingV2[] = [];
   const { cfg, selectorsDiscovered } = cfgResult;
+  // Bytecode-only MAY-reach overapproximation. Unknown jumps and exhausted
+  // budgets retain candidates; optional source never removes a bytecode signal.
+  // Only the classic persistent post-CALL-write hypothesis uses this scope.
+  const continuation = analyzeCallContinuation(cfg);
+  const eligible = (id: string) => continuation.entryReachable.has(id) &&
+    continuation.canReachSuccessfulExit.has(id);
 
   // Submitted source is NOT authenticated against this runtime. Recognizing a
   // valid mutex in that text cannot suppress an independent bytecode signal.
@@ -41,10 +48,10 @@ export function analyzeContextualReentrancy(
 
   let classicReentrancyDetected = false;
   let readOnlyReentrancyDetected = false;
-  let tokenCallbackReentrancyDetected = false;
 
   // 1. Classic Reentrancy: Check CFG paths for CALL followed by SSTORE in non-guarded blocks
   for (const block of cfg.blocks.values()) {
+    if (!eligible(block.id)) continue;
     let callPc = -1;
     let sstorePc = -1;
     let evidencePath: string[] = [];
@@ -64,7 +71,7 @@ export function analyzeContextualReentrancy(
         if (visited.has(current.id)) continue;
         visited.add(current.id);
         const next = cfg.blocks.get(current.id);
-        if (!next) continue;
+        if (!next || !eligible(next.id)) continue;
         const write = next.instructions.find(candidate => candidate.name === "SSTORE");
         if (write) {
           callPc = instruction.pc; sstorePc = write.pc; evidencePath = current.path; break;
@@ -83,7 +90,7 @@ export function analyzeContextualReentrancy(
         confidence: "medium",
         exploitability: "theoretical",
         impact:
-          "An attacker contract receiving the external call can invoke the vulnerable function recursively before the storage slot is updated, draining protocol balances.",
+          "A represented post-call state write may warrant review if an external callback can re-enter a state-dependent path. Call target, shared-state dependency, feasible execution, guards and financial impact have not been established.",
         likelihood: "high",
         taxonomy: {
           swcId: "SWC-107",
@@ -102,16 +109,10 @@ export function analyzeContextualReentrancy(
           storageSlotsRead: Array.from(block.readsStorageSlots),
           storageSlotsWritten: Array.from(block.writesStorageSlots),
         },
-        attackScenario:
-          "1. Attacker calls victim contract withdraw function.\n2. Victim sends ETH/tokens via low-level CALL opcode.\n3. Attacker fallback/receive function is triggered and calls withdraw again.\n4. Victim repeats balance transfer because SSTORE updating balance has not executed yet.\n5. Entire contract balance is depleted in a single transaction.",
+        attackScenario: "UNEXECUTED hypothesis only. Review the observed CALL/write ordering and establish callback reachability, state dependencies and guards before concluding reentrancy.",
         proofOfConcept: {
-          summary: "UNEXECUTED test hypothesis: recursive call prior to SSTORE; validate target identity, storage dependency and mutex before confirming exploitability.",
-          sequence: [
-            { step: 1, actor: "Attacker", call: "deposit{value: 1 ether}()", expectation: "Balance credited" },
-            { step: 2, actor: "Attacker", call: "withdraw(1 ether)", expectation: "External CALL to attacker" },
-            { step: 3, actor: "Attacker Contract", call: "receive() -> withdraw(1 ether)", expectation: "Re-entrant entry granted" },
-            { step: 4, actor: "Attacker", call: "SSTORE(balance)", expectation: "Executes after all funds drained" },
-          ],
+          summary: "No target execution or executable proof of concept was produced by this static observation.",
+          sequence: [],
         },
         evidence: {
           opcodeTraceExcerpt: `PC 0x${callPc.toString(16)}: CALL -> PC 0x${sstorePc.toString(16)}: SSTORE`,
@@ -214,7 +215,6 @@ export function analyzeContextualReentrancy(
   // 3. Token Callback Reentrancy: Check for ERC-777 tokensReceived hook
   const tokensReceivedSelector = "0x0023de29";
   if (selectorsDiscovered.has(tokensReceivedSelector)) {
-    tokenCallbackReentrancyDetected = true;
     const pc = selectorsDiscovered.get(tokensReceivedSelector)!;
 
     findings.push({
@@ -269,7 +269,7 @@ export function analyzeContextualReentrancy(
     // No signal is not a proof that CEI holds on unresolved/unrepresented paths.
     ceiAdherence: classicReentrancyDetected ? false : null,
     sourceMutexObserved: Boolean(sourceGuardCoverage?.allSupportedPathsGuarded),
-    limitations: ["SOURCE_RUNTIME_IDENTITY_NOT_VERIFIED", "NO_COMPLETE_PATH_FEASIBILITY_PROOF", ...(cfg.unresolvedDynamicJumps ? [`UNRESOLVED_DYNAMIC_JUMPS:${cfg.unresolvedDynamicJumps}`] : [])],
+    limitations: [...continuation.limitations, "SOURCE_RUNTIME_IDENTITY_NOT_VERIFIED", "NO_COMPLETE_PATH_FEASIBILITY_PROOF", ...(cfg.unresolvedDynamicJumps ? [`UNRESOLVED_DYNAMIC_JUMPS:${cfg.unresolvedDynamicJumps}`] : [])],
     readOnlyVulnerable: readOnlyReentrancyDetected,
   };
 }

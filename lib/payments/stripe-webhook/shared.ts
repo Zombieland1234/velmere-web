@@ -254,7 +254,8 @@ export async function markWebhookRetryableFailure(
     eventId: event.id,
     eventType: event.type,
     status: "retryable_failed",
-    errorCode,
+    // Only symbolic codes cross the storage boundary; never persist raw provider errors.
+    errorCode: /^[a-zA-Z0-9:_-]{1,160}$/.test(errorCode) ? errorCode : "webhook_processing_failed",
     expectedAttempt,
   });
 }
@@ -268,7 +269,8 @@ export async function markWebhookTerminalFailure(
     eventId: event.id,
     eventType: event.type,
     status: "dead_letter",
-    errorCode,
+    // Only symbolic codes cross the storage boundary; never persist raw provider errors.
+    errorCode: /^[a-zA-Z0-9:_-]{1,160}$/.test(errorCode) ? errorCode : "webhook_processing_failed",
     expectedAttempt,
   });
 }

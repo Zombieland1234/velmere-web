@@ -1,4 +1,4 @@
-import { publicApiError } from "@/lib/security/api-error-envelope";
+
 import { fetchCoinGeckoSuggestions } from "@/lib/market-integrity/coingecko";
 import { abuseShieldResponseMeta, applyApiAbuseShield } from "@/lib/security/api-abuse-shield";
 import { securityJson } from "@/lib/security/api-guard";

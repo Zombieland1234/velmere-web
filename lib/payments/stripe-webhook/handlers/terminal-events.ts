@@ -1,3 +1,4 @@
+import { recordVlmTerminalPaymentHold } from "@/lib/payments/vlm-terminal-hold";
 import {
   markPaymentFailed,
   markRefunded,
@@ -31,6 +32,7 @@ import {
 import { classifyStripeChargeRefund } from "@/lib/payments/commerce-payment-integrity";
 
 export type TerminalEventDependencies = {
+  recordVlmTerminalPaymentHold: typeof recordVlmTerminalPaymentHold;
   auditPaymentMetadataFromEvent: typeof auditPaymentMetadataFromEvent;
   commercePaymentMetadataFromEvent: typeof commercePaymentMetadataFromEvent;
   isPaidAuditProduct: typeof isPaidAuditProduct;
@@ -55,6 +57,7 @@ export type TerminalEventDependencies = {
 };
 
 export const terminalEventDependencies: TerminalEventDependencies = {
+  recordVlmTerminalPaymentHold,
   auditPaymentMetadataFromEvent,
   commercePaymentMetadataFromEvent,
   isPaidAuditProduct,
@@ -378,6 +381,28 @@ export async function handleRefundOrChargeback(
         contextHash: terminalBinding.binding.contextHash,
       });
       if (!lookup.ok) {
+        // A full refund/dispute may precede grant creation. Keep terminal payment
+        // evidence instead of relying on a row which does not exist yet. Other
+        // lookup failures still fail closed. The atomic SQL also handles a grant
+        // which appears between this not-found read and the hold write.
+        if (lookup.error === "entitlement_not_found" && lookup.ledgerMode === "durable") {
+          try {
+            const held = await dependencies.recordVlmTerminalPaymentHold({
+              ...terminalBinding.binding, eventId: event.id,
+              event: event.type === "charge.dispute.created" ? "chargeback" : "refund",
+              eventCreatedAt: event.created,
+            });
+            await dependencies.markStripeWebhookEventProcessed(event.id, event.type, attempt);
+            return dependencies.orderEventJson({ received: true, type: event.type,
+              paymentBlocked: true, accessRevoked: held.disposition === "lifecycle_applied",
+              heldBeforeGrant: held.disposition === "held_before_grant" });
+          } catch {
+            await dependencies.markWebhookRetryableFailure(event, "vlm_terminal_hold_failed", attempt);
+            return dependencies.orderEventJson({ received: false, retryable: true,
+              error: "webhook_processing_retryable" }, { status: 503,
+              headers: dependencies.customerWebhookHeaders("vlm-terminal-hold-retry") });
+          }
+        }
         await dependencies.markWebhookRetryableFailure(event, lookup.error, attempt);
         return dependencies.orderEventJson(
           { received: false, retryable: true, error: "webhook_processing_retryable" },

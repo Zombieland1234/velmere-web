@@ -8,6 +8,8 @@ import {
 } from "@/lib/db/supabase-rpc-runtime-governor";
 
 export const SUPABASE_RPC_OPERATIONS = {
+  vlm_terminal_hold_apply: { rpcName: "velmere_record_vlm_terminal_payment_hold", deadlineMs: 4_000, family: "payments" },
+  stripe_webhook_event_complete: { rpcName: "velmere_complete_stripe_webhook_event", deadlineMs: 4_000, family: "payments" },
   stripe_webhook_event_claim: { rpcName: "velmere_claim_stripe_webhook_event", deadlineMs: 3_000, family: "payments" },
   payment_event_watermark_apply: { rpcName: "velmere_apply_payment_event_watermark", deadlineMs: 3_000, family: "payments" },
   stripe_webhook_effect_claim: { rpcName: "velmere_claim_stripe_webhook_effect", deadlineMs: 3_000, family: "payments" },

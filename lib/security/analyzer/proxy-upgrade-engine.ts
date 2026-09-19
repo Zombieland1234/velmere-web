@@ -6,7 +6,7 @@
  * NO EVIDENCE = NO CLAIM.
  */
 
-import { createHash } from 'node:crypto';
+
 
 export type ProxyArchitecture =
   | 'EIP-1967_TRANSPARENT'
