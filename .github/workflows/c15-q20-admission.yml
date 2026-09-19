@@ -1,0 +1,106 @@
+name: C15 Q20 source admission and qualification
+on:
+  push:
+    branches: [c15/qualification-q20-20260919]
+    paths: [.github/workflows/c15-q20-admission.yml]
+permissions:
+  contents: read
+jobs:
+  admit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.admit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Verify exact base, patch and candidate source tree
+        id: admit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/q20-admission
+          python3 - <<'PY'
+          import hashlib,json,lzma,os,subprocess
+          from pathlib import Path
+          base='5690d7d6ffe75236b03833f47f00cc018f43a083'
+          expected='af00f4526ac1d3a66fe7f73ce57ef7ec523757d7'
+          hashes=['aff07dc05d998d3184317402f6d328771629f6e33236bd59c3929cac7174f3d7','b12850d49d358d4d4c18c5df04c7d9fcae8fe43c9a35e4708cd0431103d95da3','db0d4b26befcccfdf93dccb0f29b2855e6bc45ba1a1fdee6111c516b06765b87','873eead9518c8b8e7a6a0734f759ad3b46dc983e11ed1c34860206d680a5b9a9','70d978b5ad2129387c5a08462963fe2fcb2a4b13e3503a51df87c9c52306e358','3c1646669e61927de573f1efd5e472c7b87dfa2b91771bedf4bc8e74a7eecd0a']
+          git=lambda *a:subprocess.check_output(['git',*a],text=True).strip()
+          assert git('rev-parse','HEAD')==os.environ['GITHUB_SHA']
+          assert git('rev-parse','HEAD^')==base
+          assert not git('status','--porcelain')
+          parts=[Path(f'_handoff/q20-admission/part{i}.xzpart').read_bytes() for i in range(6)]
+          assert all(hashlib.sha256(p).hexdigest()==h for p,h in zip(parts,hashes))
+          packed=b''.join(parts)
+          assert len(packed)==49036 and hashlib.sha256(packed).hexdigest()=='dd5c9c6df3046875ad0f66be032e3467276cbcbde418ffd892a2f94ed28d92bf'
+          patch=lzma.decompress(packed)
+          digest=hashlib.sha256(patch).hexdigest()
+          assert len(patch)==211111 and digest=='c45096a30d2c67c59738de5bb22cfedb9cc3a4482e1753ec0fc3aec0b29ed7b5'
+          path=Path('/tmp/q20-admission/SOURCE.patch');path.write_bytes(patch)
+          env=dict(os.environ,GIT_INDEX_FILE='/tmp/q20-admission/source.index')
+          subprocess.run(['git','read-tree',base],env=env,check=True)
+          subprocess.run(['git','apply','--cached','--check',str(path)],env=env,check=True)
+          subprocess.run(['git','apply','--cached',str(path)],env=env,check=True)
+          tree=subprocess.check_output(['git','write-tree'],env=env,text=True).strip()
+          assert tree==expected,(tree,expected)
+          subprocess.run(['git','apply','--check',str(path)],check=True)
+          subprocess.run(['git','apply',str(path)],check=True)
+          Path('/tmp/q20-admission/VERIFIED.json').write_text(json.dumps({'base':base,'admissionHead':os.environ['GITHUB_SHA'],'patchSha256':digest,'sourceTree':tree,'result':'PASS','scope':'SOURCE_IDENTITY_NOT_RELEASE_APPROVAL'},indent=2)+'\n')
+          PY
+          git rm _handoff/q20-admission/part*.xzpart
+          git add -A
+          if git diff --cached --name-only | grep -q '^.github/workflows/'; then
+            echo 'Refuse workflow changes from the source patch' >&2
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'feat(c15-q20): admit verified Q16-Q20 source; staging pending; NO_GO'
+          git push origin HEAD:c15/qualification-q20-20260919
+          git rev-parse HEAD > /tmp/q20-admission/ADMITTED_SHA.txt
+          git rev-parse 'HEAD^{tree}' > /tmp/q20-admission/ADMITTED_TREE.txt
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q20-admission-${{ github.run_id }}
+          path: |
+            /tmp/q20-admission/VERIFIED.json
+            /tmp/q20-admission/ADMITTED_SHA.txt
+            /tmp/q20-admission/ADMITTED_TREE.txt
+          retention-days: 14
+  qualify:
+    needs: admit
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ needs.admit.outputs.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+          cache: npm
+      - name: Install exact locked dependencies
+        run: npm ci --ignore-scripts
+      - name: Qualify admitted source without hosted credentials
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/q20-ci
+          git rev-parse HEAD > /tmp/q20-ci/SOURCE_SHA.txt
+          python3 scripts/c15-q20/qualify.py --out /tmp/q20-ci/qualification --candidate C15-Q20-local --build-strategy monolithic
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q20-qualification-${{ github.run_id }}
+          path: /tmp/q20-ci
+          retention-days: 14
