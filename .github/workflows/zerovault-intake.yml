@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - external/zerovault-intake-20260919
+  pull_request:
+    branches:
+      - c15/q21-ui-staging-integration-20260919
   workflow_dispatch:
 
 permissions:
