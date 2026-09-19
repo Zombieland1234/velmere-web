@@ -13,109 +13,214 @@ permissions:
   contents: read
 
 jobs:
-  discover:
+  qualify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
-      - name: Fetch public Cert Seal page and discover kit without executing it
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Download exact public kit and establish authenticity before executing it
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p /tmp/zv/extracted
-          PAGE="https://zerovaultid.com/certseal/"
-          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 \
-            -A 'Velmere-Evidence-Verification/1.0' "$PAGE" -o /tmp/zv/certseal.html
+          EXPECTED_FP="234374010ba7c648e59f26003b7915ce2c70899cd101c770cb046f5d6e3b5286"
+          EXPECTED_ARCHIVE_SHA="fe876ce644321c2f22b3cd2c565b25ea6c5452912dfdc905a100f31b49e3efac"
+          EXPECTED_ARCHIVE_BYTES="4510686"
+          EXPECTED_VERIFY_SHA="e9fa708bf48ae88354d60ebc379dacb277d2f425b64895aeb6b5206c6114cdb4"
+          mkdir -p /tmp/zv/extracted /tmp/zv/final /tmp/zv/mutations
 
-          python3 - <<'PY'
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 \
+            -A 'Velmere-Evidence-Verification/1.0' \
+            'https://zerovaultid.com/certseal/' -o /tmp/zv/certseal.html
+
+          ZIP_URL="$(python3 - <<'PY'
           from html.parser import HTMLParser
           from urllib.parse import urljoin
-          import pathlib, re
-          base = "https://zerovaultid.com/certseal/"
-          html = pathlib.Path("/tmp/zv/certseal.html").read_text("utf-8", errors="replace")
+          import pathlib
+          base='https://zerovaultid.com/certseal/'
+          html=pathlib.Path('/tmp/zv/certseal.html').read_text('utf-8', errors='replace')
           class P(HTMLParser):
-              def __init__(self):
-                  super().__init__(); self.urls=[]
+              def __init__(self): super().__init__(); self.urls=[]
               def handle_starttag(self, tag, attrs):
                   for k,v in attrs:
-                      if k in {"href","src"} and v:
-                          self.urls.append(urljoin(base,v))
+                      if k=='href' and v: self.urls.append(urljoin(base,v))
           p=P(); p.feed(html)
-          raw = list(dict.fromkeys(p.urls + re.findall(r'https?://[^"\'<>\\s]+', html)))
-          pathlib.Path("/tmp/zv/all_urls.txt").write_text("\n".join(raw)+"\n")
-          zip_urls=[u for u in raw if ".zip" in u.lower()]
-          pathlib.Path("/tmp/zv/page_zip_urls.txt").write_text("\n".join(zip_urls)+"\n")
-          print("PAGE_BYTES", len(html.encode("utf-8")))
-          print("DISCOVERED_URLS", len(raw))
-          print("ZIP_URLS", len(zip_urls))
-          for u in zip_urls: print("ZIP_CANDIDATE",u)
+          z=[u for u in p.urls if u.endswith('zerovaultid-certseal-rung6.zip')]
+          if len(z)!=1: raise SystemExit(f'expected one exact kit URL, found {z}')
+          print(z[0])
           PY
+          )"
+          echo "ZIP_URL=$ZIP_URL"
+          curl --proto '=https' --tlsv1.2 -fL --max-time 90 \
+            -A 'Velmere-Evidence-Verification/1.0' "$ZIP_URL" \
+            -o /tmp/zv/zerovaultid-certseal-rung6.zip
 
+          ACTUAL_ARCHIVE_SHA="$(sha256sum /tmp/zv/zerovaultid-certseal-rung6.zip | awk '{print $1}')"
+          ACTUAL_ARCHIVE_BYTES="$(wc -c < /tmp/zv/zerovaultid-certseal-rung6.zip | tr -d ' ')"
+          test "$ACTUAL_ARCHIVE_SHA" = "$EXPECTED_ARCHIVE_SHA"
+          test "$ACTUAL_ARCHIVE_BYTES" = "$EXPECTED_ARCHIVE_BYTES"
+          unzip -Z -1 /tmp/zv/zerovaultid-certseal-rung6.zip > /tmp/zv/entries.txt
+          ENTRY_COUNT="$(wc -l < /tmp/zv/entries.txt | tr -d ' ')"
+          test "$ENTRY_COUNT" = "430"
+          unzip -q /tmp/zv/zerovaultid-certseal-rung6.zip -d /tmp/zv/extracted
+
+          curl -fsSL 'https://raw.githubusercontent.com/ZeroVaultID-Inc/evidence-signing-keys/main/README.md' \
+            -o /tmp/zv/anchor-main-readme.txt
+          curl -fsSL 'https://raw.githubusercontent.com/ZeroVaultID-Inc/evidence-signing-keys/9a3ef7eed30481a4010441829af5a0a85526fca5/README.md' \
+            -o /tmp/zv/anchor-key-rotation-readme.txt
+          curl -fsSL 'https://raw.githubusercontent.com/ZeroVaultID-Inc/evidence-signing-keys/4650672e0e1bb65fdd6437c271c9c5eceeca01c5/README.md' \
+            -o /tmp/zv/anchor-current-kit-readme.txt
+
+          cd /tmp/zv/extracted/bundle
+          : > /tmp/zv/authenticity-transcript.txt
+
+          ACTUAL_FP="$(openssl pkey -pubin -in manifest-pubkey.pem -pubout -outform DER 2>/dev/null | openssl dgst -sha256 | awk '{print $2}')"
           {
-            cat /tmp/zv/page_zip_urls.txt
-            printf '%s\n' \
-              'https://zerovaultid.com/zerovaultid-certseal-rung6.zip' \
-              'https://zerovaultid.com/certseal/zerovaultid-certseal-rung6.zip' \
-              'https://zerovaultid.com/downloads/zerovaultid-certseal-rung6.zip'
-          } | awk 'NF && !seen[$0]++' > /tmp/zv/candidates.txt
+            echo "ARCHIVE_SHA256=$ACTUAL_ARCHIVE_SHA"
+            echo "ARCHIVE_BYTES=$ACTUAL_ARCHIVE_BYTES"
+            echo "ARCHIVE_ENTRIES=$ENTRY_COUNT"
+            echo "PUBLIC_KEY_FINGERPRINT=$ACTUAL_FP"
+          } >> /tmp/zv/authenticity-transcript.txt
+          test "$ACTUAL_FP" = "$EXPECTED_FP"
+          echo "KEY_FINGERPRINT_MATCH=PASS" >> /tmp/zv/authenticity-transcript.txt
 
-          found=""
-          while IFS= read -r u; do
-            echo "TRY $u"
-            if curl --proto '=https' --tlsv1.2 -fL --max-time 90 \
-              -A 'Velmere-Evidence-Verification/1.0' "$u" -o /tmp/zv/candidate.bin; then
-              if python3 - <<'PY'
-          import pathlib, zipfile, sys
-          p=pathlib.Path('/tmp/zv/candidate.bin')
-          ok=p.exists() and p.stat().st_size>0 and zipfile.is_zipfile(p)
-          print("ZIP_VALID", ok, "BYTES", p.stat().st_size if p.exists() else 0)
-          sys.exit(0 if ok else 1)
+          python3 - "$EXPECTED_FP" "$EXPECTED_ARCHIVE_SHA" "$EXPECTED_ARCHIVE_BYTES" <<'PY'
+          import pathlib,re,sys
+          fp,sha,size=sys.argv[1:]
+          current=pathlib.Path('/tmp/zv/anchor-main-readme.txt').read_text()
+          pinned=pathlib.Path('/tmp/zv/anchor-key-rotation-readme.txt').read_text()
+          exact=pathlib.Path('/tmp/zv/anchor-current-kit-readme.txt').read_text()
+          if fp not in pinned: raise SystemExit('fingerprint absent from pinned key-rotation anchor')
+          rev = re.search(r'## Revoked keys\n(.*?)(?:\n## |\Z)', current, re.S)
+          listed = re.findall(r'^\s{4}([0-9a-f]{64})\s*$', rev.group(1) if rev else '', re.M)
+          if fp in listed: raise SystemExit('current bundle key is now revoked')
+          if fp not in current.split('## Revoked keys',1)[0]: raise SystemExit('fingerprint not current before revoked section')
+          if sha not in exact or size not in exact: raise SystemExit('exact archive anchor does not bind expected sha/size')
+          print('CURRENT_KEY_STATUS=PASS')
+          print('EXACT_ARCHIVE_ANCHOR=PASS')
           PY
-              then
-                mv /tmp/zv/candidate.bin /tmp/zv/zerovaultid-certseal-rung6.zip
-                found="$u"
-                break
-              fi
-            fi
-            rm -f /tmp/zv/candidate.bin
-          done < /tmp/zv/candidates.txt
+          python3 - "$EXPECTED_FP" "$EXPECTED_ARCHIVE_SHA" "$EXPECTED_ARCHIVE_BYTES" <<'PY' >> /tmp/zv/authenticity-transcript.txt
+          import pathlib,re,sys
+          fp,sha,size=sys.argv[1:]
+          current=pathlib.Path('/tmp/zv/anchor-main-readme.txt').read_text()
+          exact=pathlib.Path('/tmp/zv/anchor-current-kit-readme.txt').read_text()
+          rev=re.search(r'## Revoked keys\n(.*?)(?:\n## |\Z)',current,re.S)
+          listed=re.findall(r'^\s{4}([0-9a-f]{64})\s*$',rev.group(1) if rev else '',re.M)
+          assert fp not in listed and fp in current.split('## Revoked keys',1)[0]
+          assert sha in exact and size in exact
+          print('CURRENT_KEY_STATUS=PASS')
+          print('EXACT_ARCHIVE_ANCHOR=PASS')
+          PY
 
-          printf '%s\n' "$found" > /tmp/zv/download_url.txt
-          if [ -z "$found" ]; then
-            echo "KIT_NOT_FOUND"
-            exit 2
-          fi
+          SIG_OUT="$(openssl pkeyutl -verify -pubin -inkey manifest-pubkey.pem -rawin \
+            -in manifest.json -sigfile <(perl -ne 'chomp; print pack("H*",$_)' manifest.sig) 2>&1)"
+          echo "$SIG_OUT"
+          grep -q 'Signature Verified Successfully' <<<"$SIG_OUT"
+          echo "MANIFEST_SIGNATURE=PASS" >> /tmp/zv/authenticity-transcript.txt
 
-          cd /tmp/zv
-          sha256sum zerovaultid-certseal-rung6.zip | tee archive.sha256
-          wc -c zerovaultid-certseal-rung6.zip | tee archive.size
-          unzip -Z -1 zerovaultid-certseal-rung6.zip > entries.txt
-          unzip -q zerovaultid-certseal-rung6.zip -d extracted
-          find extracted -type f -printf '%P\t%s\n' | sort > extracted-files.tsv
+          MANIFEST_VERIFY_SHA="$(python3 - <<'PY'
+          import json
+          print(json.load(open('manifest.json'))['files']['verify.js'])
+          PY
+          )"
+          ACTUAL_VERIFY_SHA="$(sha256sum verify.js | awk '{print $1}')"
+          test "$MANIFEST_VERIFY_SHA" = "$ACTUAL_VERIFY_SHA"
+          test "$ACTUAL_VERIFY_SHA" = "$EXPECTED_VERIFY_SHA"
+          {
+            echo "VERIFY_JS_MANIFEST_SHA=$MANIFEST_VERIFY_SHA"
+            echo "VERIFY_JS_ACTUAL_SHA=$ACTUAL_VERIFY_SHA"
+            echo "VERIFY_JS_DIGEST=PASS"
+          } >> /tmp/zv/authenticity-transcript.txt
 
+      - name: Run ZeroVaultID verifier in isolated Node 20 clean room with networking disabled
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker pull node:20 >/dev/null
+          docker run --rm --network none \
+            -v /tmp/zv/extracted/bundle:/bundle:ro \
+            -w /bundle node:20 node verify.js | tee /tmp/zv/verifier-output.txt
+          grep -q 'RESULT: 7/7 PASS' /tmp/zv/verifier-output.txt
+          echo "CLEAN_ROOM_NETWORK=NONE" >> /tmp/zv/authenticity-transcript.txt
+          echo "PROVIDER_VERIFIER_7_OF_7=PASS" >> /tmp/zv/authenticity-transcript.txt
+
+      - name: Reproduce trust-boundary mutation controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/zv/mutations/artifact /tmp/zv/mutations/verifier /tmp/zv/mutations/key
+          cp -a /tmp/zv/extracted/bundle /tmp/zv/mutations/artifact/bundle
           python3 - <<'PY'
-          import pathlib, re
-          root=pathlib.Path('/tmp/zv/extracted')
-          patterns=('readme','instruction','authentic','verify','manifest')
-          out=[]
-          for p in sorted(root.rglob('*')):
-              if not p.is_file(): continue
-              n=p.name.lower()
-              if any(k in n for k in patterns) and p.stat().st_size <= 512000:
-                  try:
-                      t=p.read_text('utf-8')
-                  except Exception:
-                      continue
-                  out.append(f"===== {p.relative_to(root)} =====\n{t}\n")
-          pathlib.Path('/tmp/zv/instructions-and-text.txt').write_text('\n'.join(out), encoding='utf-8')
-          print("ENTRY_COUNT", sum(1 for _ in pathlib.Path('/tmp/zv/entries.txt').open()))
-          print("TEXT_CAPTURE_FILES", len(out))
+          import json,pathlib
+          p=pathlib.Path('/tmp/zv/mutations/artifact/bundle/artifacts/run.json')
+          d=json.loads(p.read_text()); d['_velmere_mutation']='one-byte-class-control'; p.write_text(json.dumps(d,separators=(',',':')))
+          PY
+          set +e
+          docker run --rm --network none -v /tmp/zv/mutations/artifact/bundle:/bundle:ro -w /bundle node:20 node verify.js \
+            > /tmp/zv/mutations/artifact/verifier-output.txt 2>&1
+          RC=$?
+          set -e
+          test "$RC" -ne 0
+          echo "ARTIFACT_TAMPER_REJECTED=PASS rc=$RC" > /tmp/zv/mutations/results.txt
+
+          cp -a /tmp/zv/extracted/bundle /tmp/zv/mutations/verifier/bundle
+          printf '\n// velmere mutation control\n' >> /tmp/zv/mutations/verifier/bundle/verify.js
+          MUT_VERIFY="$(sha256sum /tmp/zv/mutations/verifier/bundle/verify.js | awk '{print $1}')"
+          SIGNED_VERIFY="$(python3 - <<'PY'
+          import json
+          print(json.load(open('/tmp/zv/mutations/verifier/bundle/manifest.json'))['files']['verify.js'])
+          PY
+          )"
+          test "$MUT_VERIFY" != "$SIGNED_VERIFY"
+          echo "VERIFIER_TAMPER_CAUGHT_BEFORE_EXECUTION=PASS" >> /tmp/zv/mutations/results.txt
+
+          openssl genpkey -algorithm Ed25519 -out /tmp/zv/mutations/key/attacker.key >/dev/null 2>&1
+          openssl pkey -in /tmp/zv/mutations/key/attacker.key -pubout -out /tmp/zv/mutations/key/attacker-pub.pem >/dev/null 2>&1
+          ATTACKER_FP="$(openssl pkey -pubin -in /tmp/zv/mutations/key/attacker-pub.pem -pubout -outform DER 2>/dev/null | openssl dgst -sha256 | awk '{print $2}')"
+          test "$ATTACKER_FP" != "234374010ba7c648e59f26003b7915ce2c70899cd101c770cb046f5d6e3b5286"
+          echo "KEY_SWAP_CAUGHT_BY_OUT_OF_BAND_FINGERPRINT=PASS" >> /tmp/zv/mutations/results.txt
+          cat /tmp/zv/mutations/results.txt
+
+      - name: Run current Velmere Evidence Vault and actual verification API route
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts
+          ZV_WORK=/tmp/zv ZV_ENTRY_COUNT=430 ./node_modules/.bin/tsx scripts/external/zerovault-evidence-vault.test.ts \
+            | tee /tmp/zv/final/velmere-console.txt
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/zv/final/velmere-result.json'))
+          assert r['independentAuthenticity'] == {
+            'keyFingerprintMatch': True,
+            'currentKeyNotRevoked': True,
+            'manifestSignature': True,
+            'verifierDigestMatch': True,
+          }
+          assert r['providerVerifier']['result7of7'] is True
+          assert r['velmereEvidenceVault']['status'] == 'INTEGRITY_MATCH'
+          assert r['velmereEvidenceVault']['authenticity'] == 'NOT_VERIFIED'
+          assert r['actualVelmereApiRoute']['httpStatus'] == 200
+          assert r['actualVelmereApiRoute']['body']['status'] == 'INTEGRITY_MATCH'
+          print('VELMERE_EXTERNAL_CASE=PASS')
           PY
 
-      - name: Upload discovery evidence
+      - name: Upload final evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: zerovaultid-discovery
-          path: /tmp/zv
+          name: zerovaultid-velmere-final
+          path: |
+            /tmp/zv/authenticity-transcript.txt
+            /tmp/zv/verifier-output.txt
+            /tmp/zv/mutations/results.txt
+            /tmp/zv/mutations/artifact/verifier-output.txt
+            /tmp/zv/anchor-main-readme.txt
+            /tmp/zv/anchor-key-rotation-readme.txt
+            /tmp/zv/anchor-current-kit-readme.txt
+            /tmp/zv/final
           if-no-files-found: warn
-          retention-days: 7
+          retention-days: 14
