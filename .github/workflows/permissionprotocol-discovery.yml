@@ -1,4 +1,4 @@
-name: Permission Protocol public receipt discovery
+name: Permission Protocol public receipt qualification
 
 on:
   push:
@@ -10,34 +10,31 @@ permissions:
   contents: read
 
 jobs:
-  discover:
+  qualify:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
       - name: Fetch exact public receipt, key set and public trust pages
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p /tmp/pp
+          mkdir -p /tmp/pp/final
           RECEIPT='https://app.permissionprotocol.com/r/rcpt_dg_cmtd3mwmw00155is990y35ue1'
           curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 "$RECEIPT.json" -o /tmp/pp/receipt.json
           curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 'https://app.permissionprotocol.com/.well-known/permission-protocol/keys.json' -o /tmp/pp/keys.json
           curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 'https://permissionprotocol.com/spec' -o /tmp/pp/spec.html
           curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 'https://permissionprotocol.com/trust' -o /tmp/pp/trust.html
-
           sha256sum /tmp/pp/receipt.json /tmp/pp/keys.json /tmp/pp/spec.html /tmp/pp/trust.html | tee /tmp/pp/downloads.sha256
           wc -c /tmp/pp/receipt.json /tmp/pp/keys.json /tmp/pp/spec.html /tmp/pp/trust.html | tee /tmp/pp/downloads.bytes
-
           jq . /tmp/pp/receipt.json > /tmp/pp/receipt.pretty.json
           jq . /tmp/pp/keys.json > /tmp/pp/keys.pretty.json
-          {
-            echo 'RECEIPT_TOP_LEVEL_KEYS'
-            jq -r 'keys[]' /tmp/pp/receipt.json
-            echo 'KEYSET_TOP_LEVEL_KEYS'
-            jq -r 'keys[]' /tmp/pp/keys.json
-          } | tee /tmp/pp/shape.txt
 
-      - name: Run publisher supplied one line verifier and record exact package version
+      - name: Run publisher supplied verifier and record package identity
         shell: bash
         run: |
           set -euo pipefail
@@ -52,11 +49,46 @@ jobs:
           cat verifier.stderr.txt
           test "$RC" -eq 0
 
-      - name: Upload discovery evidence
+      - name: Check whether the caller supplied commit can be independently resolved
+        shell: bash
+        run: |
+          set -euo pipefail
+          SHA="$(python3 - <<'PY'
+import base64,json
+r=json.load(open('/tmp/pp/receipt.json'))['artifact']
+p=json.loads(base64.b64decode(r['payload_bytes_b64']))
+print(json.loads(p['requestJson'])['scope']['commitSha'])
+PY
+)"
+          set +e
+          curl -sS -o /tmp/pp/commit-resolution.json -w '%{http_code}'             "https://api.github.com/repos/permission-protocol/site/commits/$SHA" > /tmp/pp/commit-http-status.txt
+          set -e
+          echo "COMMIT_HTTP_STATUS=$(cat /tmp/pp/commit-http-status.txt)"
+
+      - name: Run current Velmere Evidence Vault and actual verification API route
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts
+          PP_WORK=/tmp/pp ./node_modules/.bin/tsx scripts/external/permissionprotocol-evidence-vault.test.ts             | tee /tmp/pp/final/velmere-console.txt
+          python3 - <<'PY'
+import json
+r=json.load(open('/tmp/pp/final/velmere-result.json'))
+assert r['subject']['hashMatch'] is True
+assert r['subject']['signatureVerified'] is True
+assert r['subject']['mutatedDigestRejected'] is True
+assert r['subject']['expiredAtReview'] is True
+assert r['velmereEvidenceVault']['status'] == 'INTEGRITY_MATCH'
+assert r['actualVelmereApiRoute']['httpStatus'] == 200
+assert r['claimBoundary']['currentEnforcementValidity'] == 'EXPIRED_REAUTHORIZATION_REQUIRED'
+print('PERMISSION_PROTOCOL_EXTERNAL_CASE=PASS')
+PY
+
+      - name: Upload qualification evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: permissionprotocol-discovery
+          name: permissionprotocol-velmere-final
           path: /tmp/pp
           if-no-files-found: warn
           retention-days: 14
