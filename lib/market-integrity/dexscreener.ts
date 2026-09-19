@@ -4,7 +4,7 @@ import { analyzeTokenRisk } from "./risk-engine";
 import { fetchGoPlusTokenSecurity } from "./goplus";
 import type { TokenRiskInput, TokenRiskResult } from "./risk-types";
 import { attachPass4644ProviderReceipts, createPass4644ProviderEvidenceReceipt, pass4644IdentityMatches } from "./provider-evidence-receipt";
-import { withholdProviderRiskResult } from "./market-row-delivery-gate";
+
 import { canonicalJson } from "@/lib/security/canonical-json";
 import { sha256Digest } from "@/lib/security/cryptographic-digest";
 

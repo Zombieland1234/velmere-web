@@ -4,7 +4,7 @@
  */
 
 import crypto from "crypto";
-import { ProvenFact, FactStatus, AssetClass, CanonicalAssetIdentity } from "./engines/types";
+import { ProvenFact, FactStatus, CanonicalAssetIdentity } from "./engines/types";
 
 /**
  * Deterministic JSON serialization following RFC 8785 principles.

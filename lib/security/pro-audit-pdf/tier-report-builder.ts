@@ -11,7 +11,7 @@
 
 import { auditAndSanitizeReportLines } from "../evidence/claim-audit-blocker.ts";
 import type { EvidenceRecord } from "../evidence/evidence-record.ts";
-import type { ContractAnalysisResult, FindingRecord } from "../analyzer/contract-analyzer.ts";
+import type { ContractAnalysisResult } from "../analyzer/contract-analyzer.ts";
 import type { FormalEngineReport } from "../formal/formal-engine.ts";
 import type { ScoreBreakdown } from "../scoring/two-dimensional-scorer.ts";
 import type { CryptoShieldMetrics, TraditionalMarketMetrics } from "../market-evidence/market-provenance-engine.ts";
