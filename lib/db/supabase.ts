@@ -1,3 +1,4 @@
+import { evaluateSupabaseStagingBoundary } from "./supabase-staging-boundary";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { readSupabaseAccessTokenCookie } from "@/lib/auth/supabase-auth-cookies";
 import {
@@ -18,15 +19,16 @@ export {
 
 export type VelmereDatabase = Record<string, never>;
 
-let cachedServerClient: SupabaseClient | null | undefined;
-let cachedServiceRoleClient: SupabaseClient | null | undefined;
+type ClientCache = { url: string | undefined; key: string | undefined; client: SupabaseClient | null };
+let cachedServerClient: ClientCache | undefined;
+let cachedServiceRoleClient: ClientCache | undefined;
 
 function createServerClient(
   url: string | undefined,
   key: string | undefined,
   options?: { accessToken?: string },
 ) {
-  return url && key
+  return evaluateSupabaseStagingBoundary().allowed && url && key
     ? createClient(url, key, {
         auth: {
           autoRefreshToken: false,
@@ -41,12 +43,16 @@ function createServerClient(
 
 /** Public/anon client for read-only or explicitly RLS-governed paths. */
 export function getSupabasePublicClient() {
-  if (cachedServerClient !== undefined) return cachedServerClient;
-  cachedServerClient = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  );
-  return cachedServerClient;
+  if (!hasSupabasePublicConfig()) {
+    cachedServerClient = undefined;
+    return null;
+  }
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (cachedServerClient && cachedServerClient.url === url && cachedServerClient.key === key) return cachedServerClient.client;
+  const client = createServerClient(url, key);
+  cachedServerClient = { url, key, client };
+  return client;
 }
 
 /** @deprecated Use getSupabasePublicClient() or getSupabaseServiceRoleClient() explicitly. */
@@ -56,12 +62,16 @@ export function getSupabaseServerClient() {
 
 /** Service-role-only client for payment, entitlement and other durable writes. */
 export function getSupabaseServiceRoleClient() {
-  if (cachedServiceRoleClient !== undefined) return cachedServiceRoleClient;
-  cachedServiceRoleClient = createServerClient(
-    process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY,
-  );
-  return cachedServiceRoleClient;
+  if (!hasSupabaseServiceRoleConfig()) {
+    cachedServiceRoleClient = undefined;
+    return null;
+  }
+  const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (cachedServiceRoleClient && cachedServiceRoleClient.url === url && cachedServiceRoleClient.key === key) return cachedServiceRoleClient.client;
+  const client = createServerClient(url, key);
+  cachedServiceRoleClient = { url, key, client };
+  return client;
 }
 
 const SUPABASE_JWT_PATTERN = /^[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}$/;

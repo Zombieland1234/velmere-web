@@ -8,8 +8,7 @@ import { buildVelmereAccountSession, bindVelmereAccountSessionToFamily, buildVel
 import { authSessionSubjectFingerprint, buildAuthSessionFamilyCookie, type AuthSessionFamilyState } from '../../lib/auth/auth-session-family';
 import { seedMemoryEntitlementRecord, clearMemoryEntitlements, updateMemoryVlmPaidEntitlementStatus, requiresDurableVlmPaidEntitlementLedger } from '../../lib/commerce/vlm-entitlement-ledger';
 import { createAuditIntakeCase, buildAuditContractTargetHash, getAuditCaseForOwningAccount } from '../../lib/security/audit-intake-case-vault';
-import { execFileSync } from 'node:child_process';
-import { writeFileSync, unlinkSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, unlinkSync, mkdirSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
@@ -77,7 +76,11 @@ test('C8 historical case bypass reproduced; C9 requires active grant despite his
   // Persisted historical status, deliberately without an active entitlement.
   const record=await getAuditCaseForOwningAccount({caseRef,accountId});assert.ok(record.record);record.record!.entitlementVerified=true;
   const path='app/api/audit/report/c9-baseline-route.ts';
-  const raw=execFileSync('git',['show','0609ef1c5aeecfab6de3ada8144efaa089064c71:app/api/audit/report/route.ts']);writeFileSync(path,raw);
+  // Q13: the exact Git blob is shipped as a text fixture. Verify it before the
+  // historical replay instead of requiring unavailable Git history in a ZIP.
+  const raw=readFileSync(new URL('../c15-q13/fixtures/c8-report-route.ts.txt',import.meta.url));
+  assert.equal(createHash('sha1').update(`blob ${raw.length}\0`).update(raw).digest('hex'),'158f0f6294d56925089e1baace57ba26d09aafdc');
+  writeFileSync(path,raw);
   const old=resolveRequestAccountDependencies.verifyFamily;resolveRequestAccountDependencies.verifyFamily=async state=>({...state,status:'active'});
   try {
     const baseline=await import(pathToFileURL(resolve(path)).href);

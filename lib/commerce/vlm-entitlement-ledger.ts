@@ -1,3 +1,4 @@
+import { isVlmEntitlementIdentifier, isVlmEntitlementAuthorizing, parseVlmDurableSessionWrite, requireVlmEntitlementResponse } from "./vlm-entitlement-response";
 import type Stripe from "stripe";
 import { getSupabaseServiceRoleClient, hasSupabaseServiceRoleConfig } from "@/lib/db/supabase";
 import { runRegisteredServiceRoleRpc } from "@/lib/db/supabase-rpc-operation-registry";
@@ -324,50 +325,6 @@ function explainRejectedPaidSession(session: Stripe.Checkout.Session, productId?
 }
 
 
-function parseDurableSessionWrite(data: unknown): VlmPaidEntitlementSessionWriteResult {
-  const row = Array.isArray(data) ? data[0] : data;
-  if (!row || typeof row !== "object") {
-    return {
-      ok: false,
-      error: "entitlement_session_write_invalid_result",
-      retryable: true,
-      terminal: false,
-      mode: "durable",
-    };
-  }
-  const value = row as Record<string, unknown>;
-  const record = value.id ? entitlementRecordFromRow(value) : undefined;
-  if (value.ok !== true) {
-    return {
-      ok: false,
-      error: typeof value.error === "string" && value.error
-        ? value.error.slice(0, 120)
-        : "entitlement_session_write_rejected",
-      retryable: Boolean(value.retryable),
-      terminal: Boolean(value.terminal),
-      mode: "durable",
-      record,
-    };
-  }
-  if (!record?.id || !record.stripeSessionId || !record.contextHash) {
-    return {
-      ok: false,
-      error: "entitlement_session_write_invalid_result",
-      retryable: true,
-      terminal: false,
-      mode: "durable",
-    };
-  }
-  return {
-    ok: true,
-    record,
-    persisted: true,
-    mode: "durable",
-    idempotent: Boolean(value.idempotent),
-    created: Boolean(value.created),
-  };
-}
-
 async function persistEntitlementToSupabase(
   record: VlmPaidEntitlementRecord,
 ): Promise<VlmPaidEntitlementSessionWriteResult> {
@@ -394,7 +351,7 @@ async function persistEntitlementToSupabase(
         p_created_at: record.createdAt,
       },
     });
-    return parseDurableSessionWrite(data);
+    return parseVlmDurableSessionWrite(data, record);
   } catch {
     return {
       ok: false,
@@ -595,27 +552,10 @@ async function findDurableEntitlement(args: { sessionId: string; productId: VlmP
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
-  return {
-    id: data.id,
-    stripeSessionId: data.stripe_session_id,
-    stripeCustomerId: data.stripe_customer_id,
-    productId: data.product_id,
-    accessScope: data.access_scope,
-    status: data.status,
-    contextHash: data.context_hash,
-    context: data.context,
-    locale: data.locale,
-    amountTotal: data.amount_total,
-    currency: data.currency,
-    customerEmail: data.customer_email,
-    customerName: data.customer_name,
-    paymentStatus: data.payment_status,
-    source: data.source,
-    createdAt: data.created_at,
-    updatedAt: data.updated_at,
-    expiresAt: data.expires_at,
-    auditQueueId: data.audit_queue_id ?? null,
-  } as VlmPaidEntitlementRecord;
+  return requireVlmEntitlementResponse(data, {
+    stripeSessionId: args.sessionId, productId: args.productId,
+    contextHash: args.contextHash, authorizing: true,
+  });
 }
 
 async function findDurableEntitlementByAccountContext(args: {
@@ -636,8 +576,10 @@ async function findDurableEntitlementByAccountContext(args: {
     .maybeSingle();
   if (error) throw error;
   if (!data) return null;
-  const record = entitlementRecordFromRow(data as Record<string, unknown>);
-  if (record.context.accountIdHash !== args.accountIdHash) return null;
+  const record = requireVlmEntitlementResponse(data, {
+    productId: args.productId, contextHash: args.contextHash,
+    accountIdHash: args.accountIdHash, authorizing: true,
+  });
   return record;
 }
 
@@ -816,40 +758,12 @@ export type VlmPaidEntitlementByIdVerdict =
   | { ok: true; entitlement: VlmPaidEntitlementRecord; ledgerMode: "durable" | "memory" }
   | { ok: false; error: string; ledgerMode?: "durable" | "memory" };
 
-function entitlementRecordFromRow(data: Record<string, unknown>): VlmPaidEntitlementRecord {
-  const nullableString = (value: unknown) => typeof value === "string" ? value : null;
-  const nullableNumber = (value: unknown) => typeof value === "number" && Number.isFinite(value) ? value : null;
-  return {
-    id: String(data.id ?? ""),
-    stripeSessionId: String(data.stripe_session_id ?? ""),
-    stripeCustomerId: nullableString(data.stripe_customer_id),
-    productId: data.product_id as VlmPaidProductId,
-    accessScope: String(data.access_scope ?? ""),
-    status: data.status as VlmPaidEntitlementStatus,
-    contextHash: String(data.context_hash ?? ""),
-    context: data.context as VlmPaidAccessContext,
-    locale: data.locale as VlmPaidAccessContext["locale"],
-    amountTotal: nullableNumber(data.amount_total),
-    currency: nullableString(data.currency),
-    customerEmail: nullableString(data.customer_email),
-    customerName: nullableString(data.customer_name),
-    paymentStatus: nullableString(data.payment_status),
-    source: data.source as VlmPaidEntitlementSource,
-    createdAt: String(data.created_at ?? ""),
-    updatedAt: String(data.updated_at ?? ""),
-    expiresAt: String(data.expires_at ?? ""),
-    auditQueueId: nullableString(data.audit_queue_id),
-  };
-}
-
-
-
 export async function readVlmPaidEntitlementForOperations(entitlementIdInput: string): Promise<
   | { ok: true; entitlement: VlmPaidEntitlementRecord; ledgerMode: "durable" | "memory" }
   | { ok: false; error: string; retryable: boolean; ledgerMode?: "durable" | "memory" }
 > {
-  const entitlementId = entitlementIdInput.trim().slice(0, 180);
-  if (!entitlementId) return { ok: false, error: "invalid_entitlement_lookup", retryable: false };
+  const entitlementId = entitlementIdInput.trim();
+  if (!isVlmEntitlementIdentifier(entitlementId)) return { ok: false, error: "invalid_entitlement_lookup", retryable: false };
 
   if (hasSupabaseServiceRoleConfig()) {
     const supabase = getSupabaseServiceRoleClient();
@@ -862,7 +776,7 @@ export async function readVlmPaidEntitlementForOperations(entitlementIdInput: st
         .maybeSingle();
       if (error) return { ok: false, error: "durable_entitlement_lookup_failed", retryable: true, ledgerMode: "durable" };
       if (!data) return { ok: false, error: "entitlement_not_found", retryable: false, ledgerMode: "durable" };
-      return { ok: true, entitlement: entitlementRecordFromRow(data as Record<string, unknown>), ledgerMode: "durable" };
+      return { ok: true, entitlement: requireVlmEntitlementResponse(data, { id: entitlementId }), ledgerMode: "durable" };
     } catch {
       return { ok: false, error: "durable_entitlement_lookup_failed", retryable: true, ledgerMode: "durable" };
     }
@@ -884,9 +798,9 @@ export async function findVlmPaidEntitlementByStripeBinding(args: {
   | { ok: true; entitlement: VlmPaidEntitlementRecord; ledgerMode: "durable" | "memory" }
   | { ok: false; error: string; retryable: boolean; ledgerMode?: "durable" | "memory" }
 > {
-  const stripeSessionId = args.stripeSessionId.trim().slice(0, 180);
+  const stripeSessionId = args.stripeSessionId.trim();
   const contextHash = args.contextHash.trim().toLowerCase();
-  if (!stripeSessionId || !normalizeVlmPaidProductId(args.productId) || !/^[a-f0-9]{64}$/.test(contextHash)) {
+  if (!isVlmEntitlementIdentifier(stripeSessionId) || !normalizeVlmPaidProductId(args.productId) || !/^[a-f0-9]{64}$/.test(contextHash)) {
     return { ok: false, error: "invalid_entitlement_binding_lookup", retryable: false };
   }
 
@@ -903,7 +817,9 @@ export async function findVlmPaidEntitlementByStripeBinding(args: {
         .maybeSingle();
       if (error) return { ok: false, error: "durable_entitlement_lookup_failed", retryable: true, ledgerMode: "durable" };
       if (!data) return { ok: false, error: "entitlement_not_found", retryable: false, ledgerMode: "durable" };
-      return { ok: true, entitlement: entitlementRecordFromRow(data as Record<string, unknown>), ledgerMode: "durable" };
+      return { ok: true, entitlement: requireVlmEntitlementResponse(data, {
+        stripeSessionId, productId: args.productId, contextHash,
+      }), ledgerMode: "durable" };
     } catch {
       return { ok: false, error: "durable_entitlement_lookup_failed", retryable: true, ledgerMode: "durable" };
     }
@@ -929,15 +845,18 @@ export async function verifyVlmPaidEntitlementById(args: {
   symbol?: string | null;
   now?: Date;
 }): Promise<VlmPaidEntitlementByIdVerdict> {
-  const entitlementId = args.entitlementId.trim().slice(0, 180);
+  const entitlementId = args.entitlementId.trim();
   const accountIdHash = args.accountIdHash.trim().toLowerCase();
-  if (!entitlementId || !/^[a-f0-9]{64}$/.test(accountIdHash) || args.allowedProductIds.length === 0) {
+  if (!isVlmEntitlementIdentifier(entitlementId) || !/^[a-f0-9]{64}$/.test(accountIdHash) || args.allowedProductIds.length === 0) {
     return { ok: false, error: "invalid_entitlement_lookup" };
   }
   const nowMs = (args.now ?? new Date()).getTime();
   const validate = (record: VlmPaidEntitlementRecord, mode: "durable" | "memory"): VlmPaidEntitlementByIdVerdict => {
+    if (record.id !== entitlementId) return { ok: false, error: "entitlement_id_mismatch", ledgerMode: mode };
     if (!args.allowedProductIds.includes(record.productId)) return { ok: false, error: "entitlement_product_mismatch", ledgerMode: mode };
-    if (record.status !== "active" && record.status !== "paid") return { ok: false, error: "entitlement_inactive", ledgerMode: mode };
+    // Keep the existing non-production memory fixture policy. Durable rows must
+    // additionally carry confirmed payment status from the validated store.
+    if ((record.status !== "active" && record.status !== "paid") || (mode === "durable" && !isVlmEntitlementAuthorizing(record))) return { ok: false, error: "entitlement_inactive", ledgerMode: mode };
     if (!Number.isFinite(Date.parse(record.expiresAt)) || Date.parse(record.expiresAt) <= nowMs) return { ok: false, error: "entitlement_expired", ledgerMode: mode };
     if (record.context.accountIdHash !== accountIdHash) return { ok: false, error: "entitlement_account_mismatch", ledgerMode: mode };
     if (args.surface && record.context.surface !== args.surface) return { ok: false, error: "entitlement_surface_mismatch", ledgerMode: mode };
@@ -954,7 +873,7 @@ export async function verifyVlmPaidEntitlementById(args: {
     try {
       const { data, error } = await supabase.from("velmere_vlm_paid_entitlements").select("*").eq("id", entitlementId).maybeSingle();
       if (!error && data) {
-        return validate(entitlementRecordFromRow(data as Record<string, unknown>), "durable");
+        return validate(requireVlmEntitlementResponse(data, { id: entitlementId, accountIdHash }), "durable");
       }
       if (requiresDurableVlmPaidEntitlementLedger()) {
         if (error) return { ok: false, error: "durable_entitlement_lookup_failed", ledgerMode: "durable" };

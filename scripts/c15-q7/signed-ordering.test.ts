@@ -1,3 +1,4 @@
+import { hashVlmPaidAccessContext } from "../../lib/commerce/vlm-paid-access-server";
 import { before, after, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -50,11 +51,15 @@ before(async()=>{
  };
 });
 after(async()=>{globalThis.fetch=originalFetch;await db.close();for(const [k,v] of [['SUPABASE_URL',saved.url],['SUPABASE_SERVICE_ROLE_KEY',saved.key]] as const){if(v===undefined)delete process.env[k];else process.env[k]=v;}});
+// Q13: use the same canonical context hash as the application. The older
+// fixture used sha256(subject), which is not a valid durable response binding.
+const grantContext = (subject: string) => ({ surface: 'shield' as const, locale: 'en' as const, depth: 'pro' as const, accountIdHash: hash('owner:'+subject) });
+const grantContextHash = (subject: string) => hashVlmPaidAccessContext(grantContext(subject));
 function session(subject:string){return {id:`cs_test_${subject}`,object:'checkout.session',payment_intent:`pi_${subject}`,livemode:false,
- metadata:{kind:'vlm_paid_access',productId:'vlm_pro_analysis_single',contextHash:hash(subject)}};}
+ metadata:{kind:'vlm_paid_access',productId:'vlm_pro_analysis_single',contextHash:grantContextHash(subject)}};}
 async function grant(subject:string){
  const args={p_id:subject,p_stripe_session_id:session(subject).id,p_stripe_customer_id:null,p_product_id:'vlm_pro_analysis_single',p_access_scope:'vlm_pro_analysis',
- p_context_hash:hash(subject),p_context:{surface:'shield',locale:'en',depth:'pro',accountIdHash:hash('owner:'+subject)},p_locale:'en',p_amount_total:1000,p_currency:'EUR',p_customer_email:null,p_customer_name:null,p_payment_status:'paid',p_source:'stripe_webhook',p_audit_queue_id:null,p_expires_at:'2099-01-01T00:00:00Z',p_created_at:'2026-01-01T00:00:00Z'};
+ p_context_hash:grantContextHash(subject),p_context:grantContext(subject),p_locale:'en',p_amount_total:1000,p_currency:'EUR',p_customer_email:null,p_customer_name:null,p_payment_status:'paid',p_source:'stripe_webhook',p_audit_queue_id:null,p_expires_at:'2099-01-01T00:00:00Z',p_created_at:'2026-01-01T00:00:00Z'};
  const x=(await db.query<{data:{ok:boolean}}>(`SELECT public.velmere_create_or_read_vlm_paid_entitlement(${Object.keys(args).map((k,i)=>`${k} => $${i+1}`).join(',')}) AS data`,Object.values(args))).rows[0].data;assert.equal(x.ok,true);
 }
 const status=async(subject:string)=>(await db.query<{status:string}>('SELECT status FROM public.velmere_vlm_paid_entitlements WHERE id=$1',[subject])).rows[0].status;
