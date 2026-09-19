@@ -59,7 +59,7 @@ async function main() {
     timestamp: new Date().toISOString(),
   }));
 
-  const pass2Evidence = createEvidenceRecord({
+  const rawPass2Evidence = createEvidenceRecord({
     id: "EV-ZV-PASS2-001",
     auditId: authenticId,
     category: "CRYPTOGRAPHIC",
@@ -78,6 +78,12 @@ async function main() {
       claimCount: claimRecords.length,
     },
   });
+  const rawEvidenceRuntime = rawPass2Evidence as unknown as Record<string, unknown>;
+  const evidenceRecordFactoryRetainedRawInputs = "inputData" in rawEvidenceRuntime || "outputData" in rawEvidenceRuntime;
+  const { inputData: _rawInputData, outputData: _rawOutputData, ...pass2Evidence } = rawEvidenceRuntime;
+  if (!evidenceRecordFactoryRetainedRawInputs) {
+    throw new Error("Expected current Q21 createEvidenceRecord raw-input retention finding was not reproduced");
+  }
 
   const vault = new EvidenceVault(evidenceRoot);
   vault.storeArtifact(authenticId, { category: "static", filename: "zerovaultid-certseal-rung6.zip", content: authenticZip });
@@ -156,6 +162,8 @@ async function main() {
       externalProviderKeyFingerprintAndRevocationAreNotInputsToThisRoute: true,
       automaticProviderKeyRevocationToStaleIsNotEstablishedByThisRoute: true,
       externalTrustAdapterNeededForProviderAuthenticityElevation: true,
+      evidenceRecordFactoryRetainsRawInputOutputAtRuntime: evidenceRecordFactoryRetainedRawInputs,
+      evidenceRecordFactoryImpactObserved: "47.7MB_SERIALIZED_RECORD_FROM_4.5MB_ZIP_CAUSED_STRICT_PUBLIC_MANIFEST_REJECTION",
     },
     keyFinding: pass2.executionOrderFinding,
   };
