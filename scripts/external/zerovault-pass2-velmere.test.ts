@@ -107,6 +107,9 @@ async function main() {
   publicize(evidenceRoot, authenticId, authenticManifest);
   const authenticLocal = await verifyLocalPublishedAudit(authenticId, evidenceRoot);
   const authenticRoute = await verifyThroughActualRoute(authenticId);
+  mkdirSync(resolve(work, "velmere"), { recursive: true });
+  writeFileSync(resolve(work, "velmere", "authentic-debug.json"), JSON.stringify({ authenticLocal, authenticRoute }, null, 2));
+  console.log("AUTHENTIC_DEBUG", JSON.stringify({ authenticLocal, authenticRoute }, null, 2));
   if (!authenticLocal.ok || authenticRoute.httpStatus !== 200 || authenticRoute.body.status !== "INTEGRITY_MATCH") {
     throw new Error("Authentic Pass 2 Velmere route failed");
   }
