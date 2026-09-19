@@ -1,4 +1,4 @@
-import { publicApiError } from "@/lib/security/api-error-envelope";
+
 import { NextResponse } from "next/server";
 import { searchCoinGeckoMarket } from "@/lib/market-integrity/coingecko";
 import { analyzeDexScreenerToken } from "@/lib/market-integrity/dexscreener";

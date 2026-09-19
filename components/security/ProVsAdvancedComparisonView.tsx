@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  PRO_VS_ADVANCED_COMPARISONS,
-  getAllSurfacesComparison,
-  getComparisonStatistics,
-  type SurfaceId,
-  type CapabilityComparisonItem,
-} from "@/lib/market-integrity/pro-vs-advanced-comparison";
+import { PRO_VS_ADVANCED_COMPARISONS, getAllSurfacesComparison, getComparisonStatistics, type SurfaceId } from "@/lib/market-integrity/pro-vs-advanced-comparison";
 import {
   CheckCircle2,
   AlertCircle,

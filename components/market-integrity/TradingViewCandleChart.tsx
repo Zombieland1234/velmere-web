@@ -1,20 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import {
-  Activity,
-  AlertCircle,
-  BarChart2,
-  Calendar,
-  Maximize2,
-  Minimize2,
-  RefreshCw,
-  RotateCcw,
-  TrendingDown,
-  TrendingUp,
-  ZoomIn,
-  ZoomOut,
-} from "lucide-react";
+import { AlertCircle, Maximize2, Minimize2, RefreshCw, RotateCcw, ZoomIn, ZoomOut } from "lucide-react";
 
 export type CandleDataPoint = {
   time: number; // Unix timestamp in seconds

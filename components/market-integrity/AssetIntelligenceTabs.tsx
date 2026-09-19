@@ -11,26 +11,7 @@ import {
   type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
 } from "react";
-import {
-  Activity,
-  ArrowRight,
-  BarChart3,
-  Bell,
-  CircleAlert,
-  Database,
-  Droplets,
-  Info,
-  LockKeyhole,
-  Radar,
-  RefreshCcw,
-  Scale,
-  ShieldCheck,
-  TrendingUp,
-  WalletCards,
-  Waves,
-  X,
-  type LucideIcon,
-} from "lucide-react";
+import { Activity, ArrowRight, BarChart3, Bell, CircleAlert, Database, Info, Radar, RefreshCcw, Scale, ShieldCheck, TrendingUp, WalletCards, Waves, X, type LucideIcon } from "lucide-react";
 import type { VlmAssetDetailModalData } from "@/components/market-integrity/AssetDetailModal";
 import {
   fetchRuntime,
@@ -41,10 +22,7 @@ import {
   type MarketIntelligenceResponse,
   type WhaleAlert,
 } from "@/components/market-integrity/asset-detail/market-intelligence-client-runtime";
-import {
-  buildMarketImpactDecisionSupport,
-  buildWhaleWatchDecisionSupport,
-} from "@/lib/intelligence/vlm-standalone-decision-support";
+
 import {
   buildInstitutionalMarketImpact,
   buildInstitutionalWhaleWatch,

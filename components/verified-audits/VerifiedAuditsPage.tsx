@@ -3,27 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Shield,
-  ShieldCheck,
-  ShieldAlert,
-  CheckCircle2,
-  XCircle,
-  AlertTriangle,
-  History,
-  FileCheck2,
-  ExternalLink,
-  Search,
-  Filter,
-  RefreshCw,
-  Lock,
-  Unlock,
-  ArrowUpRight,
-  ChevronRight,
-  TrendingDown,
-  Layers,
-  Fingerprint,
-} from "lucide-react";
+import { ShieldCheck, CheckCircle2, XCircle, AlertTriangle, History, FileCheck2, Search, Lock, Unlock, ArrowUpRight, Fingerprint } from "lucide-react";
 
 interface AuditRecord {
   id: string;

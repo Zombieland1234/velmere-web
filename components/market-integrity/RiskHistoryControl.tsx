@@ -2,32 +2,14 @@
 
 import BodyPortal from "@/components/ui/BodyPortal";
 import { useDialogFocusBoundary } from "@/components/ui/useDialogFocusBoundary";
-import {
-  buildRiskHistoryChartPolyline,
-  fetchRiskHistoryCustomerPayload,
-  mergeRiskHistoryCustomerPages,
-  RISK_HISTORY_CUSTOMER_MAX_EVENTS,
-  RISK_HISTORY_CUSTOMER_MAX_MERGED_EVENTS,
-  type RiskHistoryCustomerRoutePayload,
-} from "@/lib/market-integrity/risk-history-customer-client";
+import { fetchRiskHistoryCustomerPayload, mergeRiskHistoryCustomerPages, RISK_HISTORY_CUSTOMER_MAX_EVENTS, RISK_HISTORY_CUSTOMER_MAX_MERGED_EVENTS, type RiskHistoryCustomerRoutePayload } from "@/lib/market-integrity/risk-history-customer-client";
 import type { RiskHistoryEventType } from "@/lib/market-integrity/risk-history-contract";
 import {
   alignRiskHistoryCurrentObservation,
   type RiskHistoryCurrentAlignmentState,
   type RiskHistoryCurrentObservation,
 } from "@/lib/market-integrity/risk-history-current-alignment";
-import {
-  AlertTriangle,
-  ChevronDown,
-  ChevronUp,
-  Clock3,
-  History,
-  Info,
-  Loader2,
-  Sparkles,
-  Workflow,
-  X,
-} from "lucide-react";
+import { AlertTriangle, ChevronDown, ChevronUp, Clock3, History, Loader2, Sparkles, X } from "lucide-react";
 import { motion } from "framer-motion";
 import RiskCalculationWaterfallFork from "@/components/market-integrity/RiskCalculationWaterfallFork";
 import {

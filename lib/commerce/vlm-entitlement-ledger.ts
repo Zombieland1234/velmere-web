@@ -135,6 +135,11 @@ export function resolveVlmPaidEntitlementSessionWrite(args: {
   releaseHoldBlocked?: boolean;
   now?: Date;
 }): VlmPaidEntitlementSessionWriteResult {
+  // A release hold also blocks the FIRST grant, not only replay of an existing row.
+  if (args.releaseHoldBlocked === true) {
+    return { ok: false, error: "entitlement_release_hold", retryable: false,
+      terminal: true, mode: "memory", ...(args.existing ? { record: args.existing } : {}) };
+  }
   if (!args.existing) {
     return {
       ok: true,
@@ -151,16 +156,13 @@ export function resolveVlmPaidEntitlementSessionWrite(args: {
   const expiry = Date.parse(existing.expiresAt);
   const expired = !Number.isFinite(expiry) || expiry <= (args.now ?? new Date()).getTime();
   if (
-    args.releaseHoldBlocked === true ||
     TERMINAL_ENTITLEMENT_STATUSES.has(existing.status) ||
     TERMINAL_PAYMENT_STATUSES.has(paymentStatus) ||
     expired
   ) {
     return {
       ok: false,
-      error: args.releaseHoldBlocked === true
-        ? "entitlement_release_hold"
-        : expired || existing.status === "expired"
+      error: expired || existing.status === "expired"
           ? "entitlement_expired"
           : "entitlement_terminal_state",
       retryable: false,

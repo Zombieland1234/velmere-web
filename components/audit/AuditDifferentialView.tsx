@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CheckCircle2, ChevronRight, FileCode, GitCompare, Minus, Plus, ShieldCheck, X } from "lucide-react";
+import { ArrowRight, CheckCircle2, GitCompare, Minus, X } from "lucide-react";
 import AuditValidityBadge from "@/components/security/AuditValidityBadge";
 
 export type AuditSnapshotDiffItem = {

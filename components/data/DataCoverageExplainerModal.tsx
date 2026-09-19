@@ -1,20 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Activity,
-  AlertCircle,
-  CheckCircle2,
-  Database,
-  ExternalLink,
-  HelpCircle,
-  RefreshCw,
-  Shield,
-  ShieldAlert,
-  Sliders,
-  Sparkles,
-  X,
-} from "lucide-react";
+import { X } from "lucide-react";
 import BodyPortal from "@/components/ui/BodyPortal";
 import { useModalScrollLock } from "@/components/ui/useModalScrollLock";
 import type {

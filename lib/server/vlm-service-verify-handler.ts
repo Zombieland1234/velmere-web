@@ -11,7 +11,7 @@ import {
   normalizeVlmPaidProductId,
   type VlmPaidAccessContext,
 } from "@/lib/commerce/vlm-paid-access";
-import { getVlmCurrentSkuTruth, tierForVlmProductId } from "@/lib/commerce/vlm-current-sku-truth";
+
 import {
   hashVlmPaidAccessContext,
   isVlmLocalPaidAccessDemoEnabled,

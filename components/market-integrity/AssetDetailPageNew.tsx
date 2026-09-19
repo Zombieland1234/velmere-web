@@ -1,14 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  ArrowLeft,
-  ChevronDown,
-  ShieldCheck,
-  TrendingUp,
-  Activity,
-  Layers,
-} from "lucide-react";
+import { ArrowLeft, ChevronDown, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "@/navigation";
 import AssetAreaChart, {

@@ -10,29 +10,7 @@ import {
   useState,
 } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  Activity,
-  AlertTriangle,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  CheckCircle2,
-  Clock,
-  ExternalLink,
-  FileCode,
-  HelpCircle,
-  Layers,
-  Loader2,
-  Paperclip,
-  Radar,
-  Radio,
-  Search,
-  ShieldAlert,
-  ShieldCheck,
-  TrendingDown,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { Activity, AlertTriangle, ArrowLeft, ArrowRight, Clock, ExternalLink, FileCode, Layers, Loader2, Paperclip, Radar, Radio, Search, ShieldAlert, ShieldCheck, TrendingDown, TrendingUp, Users } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import AssetLogo from "@/components/market-integrity/AssetLogo";
 import VlmBrainWorkspace from "@/components/market-integrity/VlmBrainWorkspace";
