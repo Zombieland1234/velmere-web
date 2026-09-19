@@ -53,15 +53,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          SHA="$(python3 - <<'PY'
-import base64,json
-r=json.load(open('/tmp/pp/receipt.json'))['artifact']
-p=json.loads(base64.b64decode(r['payload_bytes_b64']))
-print(json.loads(p['requestJson'])['scope']['commitSha'])
-PY
-)"
+          SHA="$(jq -r '.artifact.payload_bytes_b64' /tmp/pp/receipt.json | base64 -d | jq -r '.requestJson' | jq -r '.scope.commitSha')"
           set +e
-          curl -sS -o /tmp/pp/commit-resolution.json -w '%{http_code}'             "https://api.github.com/repos/permission-protocol/site/commits/$SHA" > /tmp/pp/commit-http-status.txt
+          curl -sS -o /tmp/pp/commit-resolution.json -w '%{http_code}' "https://api.github.com/repos/permission-protocol/site/commits/$SHA" > /tmp/pp/commit-http-status.txt
           set -e
           echo "COMMIT_HTTP_STATUS=$(cat /tmp/pp/commit-http-status.txt)"
 
@@ -70,19 +64,8 @@ PY
         run: |
           set -euo pipefail
           npm ci --ignore-scripts
-          PP_WORK=/tmp/pp ./node_modules/.bin/tsx scripts/external/permissionprotocol-evidence-vault.test.ts             | tee /tmp/pp/final/velmere-console.txt
-          python3 - <<'PY'
-import json
-r=json.load(open('/tmp/pp/final/velmere-result.json'))
-assert r['subject']['hashMatch'] is True
-assert r['subject']['signatureVerified'] is True
-assert r['subject']['mutatedDigestRejected'] is True
-assert r['subject']['expiredAtReview'] is True
-assert r['velmereEvidenceVault']['status'] == 'INTEGRITY_MATCH'
-assert r['actualVelmereApiRoute']['httpStatus'] == 200
-assert r['claimBoundary']['currentEnforcementValidity'] == 'EXPIRED_REAUTHORIZATION_REQUIRED'
-print('PERMISSION_PROTOCOL_EXTERNAL_CASE=PASS')
-PY
+          PP_WORK=/tmp/pp ./node_modules/.bin/tsx scripts/external/permissionprotocol-evidence-vault.test.ts | tee /tmp/pp/final/velmere-console.txt
+          python3 -c "import json; r=json.load(open('/tmp/pp/final/velmere-result.json')); assert r['subject']['hashMatch'] is True; assert r['subject']['signatureVerified'] is True; assert r['subject']['mutatedDigestRejected'] is True; assert r['subject']['expiredAtReview'] is True; assert r['velmereEvidenceVault']['status']=='INTEGRITY_MATCH'; assert r['actualVelmereApiRoute']['httpStatus']==200; assert r['claimBoundary']['currentEnforcementValidity']=='EXPIRED_REAUTHORIZATION_REQUIRED'; print('PERMISSION_PROTOCOL_EXTERNAL_CASE=PASS')"
 
       - name: Upload qualification evidence
         if: always()
