@@ -1,0 +1,39 @@
+name: C15 Q21 isolated migration tooling
+on:
+  push:
+    branches: [c15/q21-ui-staging-integration-20260919]
+    paths: [.github/workflows/c15-q21-isolated-tools.yml]
+permissions:
+  contents: read
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch and verify pinned official CLI (no hosted credentials)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/q21-tools/bin /tmp/q21-tools/new-migration
+          curl --fail --location --retry 2 --max-time 120 -o /tmp/q21-tools/supabase-cli.tar.gz https://github.com/supabase/cli/releases/download/v2.117.0/supabase_2.117.0_linux_amd64.tar.gz
+          echo '69c05f85b9e47ee706d30f1a6ca8a526b4e337bfd12c7ef1ef522d24e7280d24  /tmp/q21-tools/supabase-cli.tar.gz' | sha256sum -c -
+          tar -xzf /tmp/q21-tools/supabase-cli.tar.gz -C /tmp/q21-tools/bin
+          /tmp/q21-tools/bin/supabase --version > /tmp/q21-tools/version.txt
+          /tmp/q21-tools/bin/supabase --help > /tmp/q21-tools/help.txt
+          /tmp/q21-tools/bin/supabase migration --help > /tmp/q21-tools/migration-help.txt
+          /tmp/q21-tools/bin/supabase migration new --help > /tmp/q21-tools/migration-new-help.txt
+          /tmp/q21-tools/bin/supabase db push --help > /tmp/q21-tools/db-push-help.txt
+          cd /tmp/q21-tools/new-migration
+          /tmp/q21-tools/bin/supabase migration new velmere_q21_bootstrap_reconciliation > /tmp/q21-tools/migration-new.log
+          sha256sum /tmp/q21-tools/supabase-cli.tar.gz > /tmp/q21-tools/SHA256SUMS
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: c15-q21-pinned-cli-${{ github.run_id }}
+          path: |
+            /tmp/q21-tools/supabase-cli.tar.gz
+            /tmp/q21-tools/*.txt
+            /tmp/q21-tools/*.log
+            /tmp/q21-tools/SHA256SUMS
+            /tmp/q21-tools/new-migration
+          retention-days: 7
