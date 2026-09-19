@@ -3,9 +3,11 @@ import { resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { EvidenceVault } from "../../lib/security/evidence-vault/evidence-vault.ts";
 import { verifyLocalPublishedAudit } from "../../lib/security/evidence-vault/public-verification.ts";
+import { GET as verifyRoute } from "../../app/api/audit/verify/[id]/route.ts";
+import { NextRequest } from "next/server";
 
 const work = process.env.ZV_WORK ?? "/tmp/zv";
-const root = resolve(work, "velmere-evidence");
+const root = resolve(process.cwd(), "evidence");
 const auditId = "zerovaultid-rung6-rung6r3b-542e60f5";
 const archive = readFileSync(resolve(work, "zerovaultid-certseal-rung6.zip"));
 const verifierOutput = readFileSync(resolve(work, "verifier-output.txt"), "utf8");
@@ -85,6 +87,15 @@ if (
   throw new Error("Velmere truth-boundary contract changed unexpectedly");
 }
 
+const routeResponse = await verifyRoute(
+  new NextRequest("http://localhost/api/audit/verify/" + auditId),
+  { params: Promise.resolve({ id: auditId }) },
+);
+const routeBody = await routeResponse.json();
+if (routeResponse.status !== 200 || routeBody.status !== "INTEGRITY_MATCH" || routeBody.authenticity !== "NOT_VERIFIED") {
+  throw new Error("Actual Velmere verification API route failed truth-boundary check: " + JSON.stringify(routeBody));
+}
+
 const result = {
   schema: "velmere.external-evidence-case.v1",
   sourceCommit: process.env.GITHUB_SHA ?? null,
@@ -113,6 +124,7 @@ const result = {
     result7of7: verifierOutput.includes("RESULT: 7/7 PASS"),
   },
   velmereEvidenceVault: verification,
+  actualVelmereApiRoute: { httpStatus: routeResponse.status, body: routeBody },
   claimBoundary: {
     bundleConstructionAndRecomputation: "SUPPORTED_BY_REPLAY",
     signedBundleTamperEvidence: "SUPPORTED_BY_REPLAY_AND_INDEPENDENT_SIGNATURE_CHECK",
