@@ -6,6 +6,7 @@ import { verifyLocalPublishedAudit } from "../../lib/security/evidence-vault/pub
 import { GET as verifyRoute } from "../../app/api/audit/verify/[id]/route.ts";
 import { NextRequest } from "next/server";
 
+async function main() {
 const work = process.env.ZV_WORK ?? "/tmp/zv";
 const root = resolve(process.cwd(), "evidence");
 const auditId = "zerovaultid-rung6-rung6r3b-542e60f5";
@@ -142,3 +143,10 @@ mkdirSync(resolve(work, "final"), { recursive: true });
 writeFileSync(resolve(work, "final", "velmere-result.json"), JSON.stringify(result, null, 2));
 writeFileSync(resolve(work, "final", "velmere-manifest.json"), JSON.stringify(publicManifest, null, 2));
 console.log(JSON.stringify(result, null, 2));
+
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
