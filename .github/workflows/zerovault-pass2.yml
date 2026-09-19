@@ -1,0 +1,138 @@
+name: ZeroVaultID Velmere Pass 2
+
+on:
+  push:
+    branches:
+      - external/zerovault-intake-20260919
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deep-qualify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Download and independently authenticate exact public kit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/zv-pass2/bundle-root /tmp/zv-pass2/velmere
+          PAGE=https://zerovaultid.com/certseal/
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 -A 'Velmere-Evidence-Verification/2.0' "$PAGE" -o /tmp/zv-pass2/certseal.html
+          ZIP_URL="$(python3 - <<'PY'
+          from html.parser import HTMLParser
+          from urllib.parse import urljoin
+          import pathlib
+          base='https://zerovaultid.com/certseal/'
+          html=pathlib.Path('/tmp/zv-pass2/certseal.html').read_text('utf-8', errors='replace')
+          class P(HTMLParser):
+              def __init__(self): super().__init__(); self.urls=[]
+              def handle_starttag(self, tag, attrs):
+                  for k,v in attrs:
+                      if k=='href' and v: self.urls.append(urljoin(base,v))
+          p=P(); p.feed(html)
+          z=[u for u in p.urls if u.endswith('zerovaultid-certseal-rung6.zip')]
+          if len(z)!=1: raise SystemExit(z)
+          print(z[0])
+          PY
+          )"
+          curl --proto '=https' --tlsv1.2 -fL --max-time 90 -A 'Velmere-Evidence-Verification/2.0' "$ZIP_URL" -o /tmp/zv-pass2/zerovaultid-certseal-rung6.zip
+          test "$(sha256sum /tmp/zv-pass2/zerovaultid-certseal-rung6.zip | awk '{print $1}')" = "fe876ce644321c2f22b3cd2c565b25ea6c5452912dfdc905a100f31b49e3efac"
+          test "$(wc -c < /tmp/zv-pass2/zerovaultid-certseal-rung6.zip | tr -d ' ')" = "4510686"
+          python3 -m zipfile -e /tmp/zv-pass2/zerovaultid-certseal-rung6.zip /tmp/zv-pass2/bundle-root
+          test "$(find /tmp/zv-pass2/bundle-root/bundle -type f | wc -l | tr -d ' ')" = "430"
+
+          curl -fsSL https://raw.githubusercontent.com/ZeroVaultID-Inc/evidence-signing-keys/main/README.md -o /tmp/zv-pass2/anchor-main.txt
+          curl -fsSL https://raw.githubusercontent.com/ZeroVaultID-Inc/evidence-signing-keys/4650672e0e1bb65fdd6437c271c9c5eceeca01c5/README.md -o /tmp/zv-pass2/anchor-current-kit.txt
+
+          cd /tmp/zv-pass2/bundle-root/bundle
+          FP="$(openssl pkey -pubin -in manifest-pubkey.pem -pubout -outform DER 2>/dev/null | openssl dgst -sha256 | awk '{print $2}')"
+          test "$FP" = "234374010ba7c648e59f26003b7915ce2c70899cd101c770cb046f5d6e3b5286"
+          python3 - <<'PY'
+          import pathlib,re
+          fp='234374010ba7c648e59f26003b7915ce2c70899cd101c770cb046f5d6e3b5286'
+          cur=pathlib.Path('/tmp/zv-pass2/anchor-main.txt').read_text()
+          exact=pathlib.Path('/tmp/zv-pass2/anchor-current-kit.txt').read_text()
+          rev=re.search(r'## Revoked keys\n(.*?)(?:\n## |\Z)',cur,re.S)
+          revoked=re.findall(r'^\s{4}([0-9a-f]{64})\s*$',rev.group(1) if rev else '',re.M)
+          assert fp not in revoked
+          assert 'fe876ce644321c2f22b3cd2c565b25ea6c5452912dfdc905a100f31b49e3efac' in exact
+          assert '4510686' in exact
+          PY
+          openssl pkeyutl -verify -pubin -inkey manifest-pubkey.pem -rawin -in manifest.json -sigfile <(perl -ne 'chomp; print pack("H*",$_)' manifest.sig)
+          test "$(sha256sum verify.js | awk '{print $1}')" = "e9fa708bf48ae88354d60ebc379dacb277d2f425b64895aeb6b5206c6114cdb4"
+
+      - name: Baseline provider verifier in Node 20 clean room
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker pull node:20 >/dev/null
+          docker run --rm --network none -v /tmp/zv-pass2/bundle-root/bundle:/bundle:ro -w /bundle node:20 node verify.js             | tee /tmp/zv-pass2/provider-verifier-output.txt
+          grep -q 'RESULT: 7/7 PASS' /tmp/zv-pass2/provider-verifier-output.txt
+
+      - name: Deep semantic, mutation and fail-closed qualification
+        shell: bash
+        env:
+          ZV_ZIP: /tmp/zv-pass2/zerovaultid-certseal-rung6.zip
+          ZV_BUNDLE: /tmp/zv-pass2/bundle-root/bundle
+          ZV_PASS2_OUT: /tmp/zv-pass2
+          ZV_NODE_IMAGE: node:20
+        run: |
+          set -euo pipefail
+          python3 scripts/external/zerovault-pass2.py | tee /tmp/zv-pass2/pass2-console.txt
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/zv-pass2/pass2-result.json'))
+          assert r['manifest']['all428OneByteMutationsDetectedByDigest']==428
+          assert len(r['semanticResigningCases'])==6
+          assert all(x['providerVerifier7of7'] and x['externalAnchorWouldReject'] for x in r['semanticResigningCases'])
+          assert r['executionOrderFinding']['manifestMismatchDetected'] is True
+          assert r['executionOrderFinding']['mismatchedExecutableRanAfterDetection'] is True
+          print('PASS2_DEEP_MATRIX=PASS_WITH_FINDING')
+          PY
+
+      - name: Classify Pass 2 using current Velmere EvidenceRecord, Evidence Vault and real verify API
+        shell: bash
+        env:
+          ZV_WORK: /tmp/zv-pass2
+          ZV_ZIP: /tmp/zv-pass2/zerovaultid-certseal-rung6.zip
+          ZV_PROVIDER_OUTPUT: /tmp/zv-pass2/provider-verifier-output.txt
+        run: |
+          set -euo pipefail
+          npm ci --ignore-scripts
+          ./node_modules/.bin/tsx scripts/external/zerovault-pass2-velmere.test.ts             | tee /tmp/zv-pass2/velmere/pass2-velmere-console.txt
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/zv-pass2/velmere/pass2-velmere-result.json'))
+          assert r['authentic']['actualApiRoute']['httpStatus']==200
+          assert r['authentic']['actualApiRoute']['body']['status']=='INTEGRITY_MATCH'
+          assert r['authentic']['actualApiRoute']['body']['authenticity']=='NOT_VERIFIED'
+          assert r['nonAuthenticResignedControl']['actualApiRoute']['body']['status']=='INTEGRITY_MATCH'
+          assert r['nonAuthenticResignedControl']['actualApiRoute']['body']['authenticity']=='NOT_VERIFIED'
+          assert r['keyFinding']['mismatchedExecutableRanAfterDetection'] is True
+          print('VELMERE_PASS2=PASS_WITH_FINDING')
+          PY
+
+      - name: Upload reproducible Pass 2 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zerovaultid-velmere-pass2
+          path: |
+            /tmp/zv-pass2/pass2-result.json
+            /tmp/zv-pass2/all428-mutation-matrix.json
+            /tmp/zv-pass2/pass2-console.txt
+            /tmp/zv-pass2/provider-verifier-output.txt
+            /tmp/zv-pass2/anchor-main.txt
+            /tmp/zv-pass2/anchor-current-kit.txt
+            /tmp/zv-pass2/failopen-marker
+            /tmp/zv-pass2/velmere
+          if-no-files-found: warn
+          retention-days: 14
