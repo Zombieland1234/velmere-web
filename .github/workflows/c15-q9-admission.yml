@@ -1,0 +1,48 @@
+{
+  "name": "C15 Q9 exact source admission",
+  "on": {
+    "push": {
+      "branches": [
+        "c15/qualification-q9-20260919"
+      ],
+      "paths": [
+        "_handoff/q9-admission/**",
+        ".github/workflows/c15-q9-admission.yml"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write"
+  },
+  "jobs": {
+    "admit": {
+      "if": "startsWith(github.event.head_commit.message, 'stage(c15-q9):')",
+      "runs-on": "ubuntu-latest",
+      "timeout-minutes": 10,
+      "steps": [
+        {
+          "uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "with": {
+            "ref": "${{ github.sha }}",
+            "fetch-depth": 0,
+            "persist-credentials": true
+          }
+        },
+        {
+          "name": "Verify every transferred byte and final source tree before committing",
+          "run": "set -euo pipefail\npython3 - <<'PYCODE'\nfrom pathlib import Path\nimport hashlib,json,lzma,os,shutil,subprocess,tempfile\nroot=Path('_handoff/q9-admission')\nparts=[('part-00','f255a63167a97a6581e6a212d8cf6e173832ef5c'),('part-01','06949429a0eec4cb976d6eca0837b502d6aa7f93'),('part-02','2fab1ba36679e3b70bfd474447ca6230e4ef55ac'),('part-03','a8b36c5d6b4e738b80c17002fa77934ae25d25c5'),('part-04','b158d9d56a44068b9cfb85e63fca77bf806ece47'),('part-05','e489e2c6bef9086e62699297dfcd03fba0eaa9e5'),('part-06','20bb23d89829737c3c9b941b4748398a83a90190')]\nraw=b''\nfor name,sha in parts:\n b=(root/name).read_bytes();assert hashlib.sha1(f'blob {len(b)}\\0'.encode()+b).hexdigest()==sha\n raw+=b\nassert len(raw)==40852 and hashlib.sha256(raw).hexdigest()=='04855026348bc6df05efaf6cbe90004f2d367e45698ccadc2a107cc6848bae2c'\npatch=lzma.decompress(raw,memlimit=134217728)\nassert len(patch)==218957 and hashlib.sha256(patch).hexdigest()=='0b628a139c72a74af9b94e42ad73de9cc8a7dfbc9c07d1b21d96070aef7dc4fd'\ncorrection=(root/'ci-correction.py').read_bytes()\nassert hashlib.sha256(correction).hexdigest()=='10ea8ff9aac1ca213e2e8e59c6b3befc7d7999f456b1ee056d5f034f0a07a075'\nsubprocess.run(['git','merge-base','--is-ancestor','57a29cfccb9b5e3718ae89c8426e7155a0c086ee','HEAD'],check=True)\np=Path('/tmp/reviewed-q9.patch');p.write_bytes(patch)\nsubprocess.run(['git','apply','--check',str(p)],check=True)\nsubprocess.run(['git','apply',str(p)],check=True)\nPath('scripts/c15-q9/qualify-ci.py').write_bytes(correction)\nsubprocess.run(['git','rm','-r',str(root)],check=True)\nsubprocess.run(['git','add','--all'],check=True)\nfd,index=tempfile.mkstemp();os.close(fd)\nshutil.copyfile(subprocess.check_output(['git','rev-parse','--git-path','index'],text=True).strip(),index)\nenv=dict(os.environ,GIT_INDEX_FILE=index)\nsubprocess.run(['git','update-index','--force-remove','--','.github/workflows/c15-q9-admission.yml','.github/workflows/c15-q9-qualification.yml'],env=env,check=True)\ntree=subprocess.check_output(['git','write-tree'],env=env,text=True).strip();Path(index).unlink()\nassert tree=='a2a81ae834ec8c0421c39e52b67ee75697abf4f5',tree\nsubprocess.run(['git','config','user.name','github-actions[bot]'],check=True)\nsubprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'],check=True)\nsubprocess.run(['git','commit','-m','admit(c15-q9): integrate only the exact reviewed Q6-Q9 source tree'],check=True)\nsha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()\nfulltree=subprocess.check_output(['git','rev-parse','HEAD^{tree}'],text=True).strip()\nsubprocess.run(['git','push','origin','HEAD:refs/heads/c15/qualification-q9-20260919'],check=True)\nPath('/tmp/q9-admission-evidence').mkdir()\nPath('/tmp/q9-admission-evidence/RECEIPT.json').write_text(json.dumps({'admittedCommit':sha,'tree':fulltree,'sourceTreeWithoutTwoWorkflows':tree,'scope':'Exact reviewed source admission only; qualification not claimed'},indent=2))\nprint('ADMITTED_COMMIT='+sha)\nPYCODE\n"
+        },
+        {
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "if": "always()",
+          "with": {
+            "name": "c15-q9-admission-${{ github.run_id }}-${{ github.run_attempt }}",
+            "path": "/tmp/q9-admission-evidence",
+            "if-no-files-found": "warn",
+            "retention-days": 14
+          }
+        }
+      ]
+    }
+  }
+}
