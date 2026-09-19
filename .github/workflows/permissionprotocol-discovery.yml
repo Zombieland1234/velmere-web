@@ -1,0 +1,62 @@
+name: Permission Protocol public receipt discovery
+
+on:
+  push:
+    branches:
+      - external/permissionprotocol-20260919
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Fetch exact public receipt, key set and public trust pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/pp
+          RECEIPT='https://app.permissionprotocol.com/r/rcpt_dg_cmtd3mwmw00155is990y35ue1'
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 "$RECEIPT.json" -o /tmp/pp/receipt.json
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 'https://app.permissionprotocol.com/.well-known/permission-protocol/keys.json' -o /tmp/pp/keys.json
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 'https://permissionprotocol.com/spec' -o /tmp/pp/spec.html
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 'https://permissionprotocol.com/trust' -o /tmp/pp/trust.html
+
+          sha256sum /tmp/pp/receipt.json /tmp/pp/keys.json /tmp/pp/spec.html /tmp/pp/trust.html | tee /tmp/pp/downloads.sha256
+          wc -c /tmp/pp/receipt.json /tmp/pp/keys.json /tmp/pp/spec.html /tmp/pp/trust.html | tee /tmp/pp/downloads.bytes
+
+          jq . /tmp/pp/receipt.json > /tmp/pp/receipt.pretty.json
+          jq . /tmp/pp/keys.json > /tmp/pp/keys.pretty.json
+          {
+            echo 'RECEIPT_TOP_LEVEL_KEYS'
+            jq -r 'keys[]' /tmp/pp/receipt.json
+            echo 'KEYSET_TOP_LEVEL_KEYS'
+            jq -r 'keys[]' /tmp/pp/keys.json
+          } | tee /tmp/pp/shape.txt
+
+      - name: Run publisher supplied one line verifier and record exact package version
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/pp
+          npm view @permission-protocol/verify version dist.integrity dist.tarball --json | tee npm-package.json
+          set +e
+          npx -y @permission-protocol/verify@latest 'https://app.permissionprotocol.com/r/rcpt_dg_cmtd3mwmw00155is990y35ue1' > verifier.stdout.txt 2> verifier.stderr.txt
+          RC=$?
+          set -e
+          echo "$RC" | tee verifier.exit.txt
+          cat verifier.stdout.txt
+          cat verifier.stderr.txt
+          test "$RC" -eq 0
+
+      - name: Upload discovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: permissionprotocol-discovery
+          path: /tmp/pp
+          if-no-files-found: warn
+          retention-days: 14
