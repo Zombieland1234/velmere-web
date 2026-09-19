@@ -1,0 +1,118 @@
+name: ZeroVaultID evidence intake
+
+on:
+  push:
+    branches:
+      - external/zerovault-intake-20260919
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Fetch public Cert Seal page and discover kit without executing it
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/zv/extracted
+          PAGE="https://zerovaultid.com/certseal/"
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 \
+            -A 'Velmere-Evidence-Verification/1.0' "$PAGE" -o /tmp/zv/certseal.html
+
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from urllib.parse import urljoin
+          import pathlib, re
+          base = "https://zerovaultid.com/certseal/"
+          html = pathlib.Path("/tmp/zv/certseal.html").read_text("utf-8", errors="replace")
+          class P(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.urls=[]
+              def handle_starttag(self, tag, attrs):
+                  for k,v in attrs:
+                      if k in {"href","src"} and v:
+                          self.urls.append(urljoin(base,v))
+          p=P(); p.feed(html)
+          raw = list(dict.fromkeys(p.urls + re.findall(r'https?://[^"\'<>\\s]+', html)))
+          pathlib.Path("/tmp/zv/all_urls.txt").write_text("\n".join(raw)+"\n")
+          zip_urls=[u for u in raw if ".zip" in u.lower()]
+          pathlib.Path("/tmp/zv/page_zip_urls.txt").write_text("\n".join(zip_urls)+"\n")
+          print("PAGE_BYTES", len(html.encode("utf-8")))
+          print("DISCOVERED_URLS", len(raw))
+          print("ZIP_URLS", len(zip_urls))
+          for u in zip_urls: print("ZIP_CANDIDATE",u)
+          PY
+
+          {
+            cat /tmp/zv/page_zip_urls.txt
+            printf '%s\n' \
+              'https://zerovaultid.com/zerovaultid-certseal-rung6.zip' \
+              'https://zerovaultid.com/certseal/zerovaultid-certseal-rung6.zip' \
+              'https://zerovaultid.com/downloads/zerovaultid-certseal-rung6.zip'
+          } | awk 'NF && !seen[$0]++' > /tmp/zv/candidates.txt
+
+          found=""
+          while IFS= read -r u; do
+            echo "TRY $u"
+            if curl --proto '=https' --tlsv1.2 -fL --max-time 90 \
+              -A 'Velmere-Evidence-Verification/1.0' "$u" -o /tmp/zv/candidate.bin; then
+              if python3 - <<'PY'
+          import pathlib, zipfile, sys
+          p=pathlib.Path('/tmp/zv/candidate.bin')
+          ok=p.exists() and p.stat().st_size>0 and zipfile.is_zipfile(p)
+          print("ZIP_VALID", ok, "BYTES", p.stat().st_size if p.exists() else 0)
+          sys.exit(0 if ok else 1)
+          PY
+              then
+                mv /tmp/zv/candidate.bin /tmp/zv/zerovaultid-certseal-rung6.zip
+                found="$u"
+                break
+              fi
+            fi
+            rm -f /tmp/zv/candidate.bin
+          done < /tmp/zv/candidates.txt
+
+          printf '%s\n' "$found" > /tmp/zv/download_url.txt
+          if [ -z "$found" ]; then
+            echo "KIT_NOT_FOUND"
+            exit 2
+          fi
+
+          cd /tmp/zv
+          sha256sum zerovaultid-certseal-rung6.zip | tee archive.sha256
+          wc -c zerovaultid-certseal-rung6.zip | tee archive.size
+          unzip -Z -1 zerovaultid-certseal-rung6.zip > entries.txt
+          unzip -q zerovaultid-certseal-rung6.zip -d extracted
+          find extracted -type f -printf '%P\t%s\n' | sort > extracted-files.tsv
+
+          python3 - <<'PY'
+          import pathlib, re
+          root=pathlib.Path('/tmp/zv/extracted')
+          patterns=('readme','instruction','authentic','verify','manifest')
+          out=[]
+          for p in sorted(root.rglob('*')):
+              if not p.is_file(): continue
+              n=p.name.lower()
+              if any(k in n for k in patterns) and p.stat().st_size <= 512000:
+                  try:
+                      t=p.read_text('utf-8')
+                  except Exception:
+                      continue
+                  out.append(f"===== {p.relative_to(root)} =====\n{t}\n")
+          pathlib.Path('/tmp/zv/instructions-and-text.txt').write_text('\n'.join(out), encoding='utf-8')
+          print("ENTRY_COUNT", sum(1 for _ in pathlib.Path('/tmp/zv/entries.txt').open()))
+          print("TEXT_CAPTURE_FILES", len(out))
+          PY
+
+      - name: Upload discovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zerovaultid-discovery
+          path: /tmp/zv
+          if-no-files-found: warn
+          retention-days: 7
