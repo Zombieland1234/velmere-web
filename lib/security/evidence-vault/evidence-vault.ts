@@ -34,6 +34,8 @@ export interface EvidenceArtifact {
 
 export interface ReproducibilityManifest {
   schemaVersion: "velmere.v3.reproducibility-manifest";
+  /** Optional, explicit publication decision. Generation never opts in automatically. */
+  publication?: { visibility: "public"; scope: "integrity-only" };
   auditId: string;
   createdAt: string;
   engineVersion: string;

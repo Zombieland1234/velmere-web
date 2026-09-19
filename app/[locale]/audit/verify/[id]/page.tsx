@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import fs from "fs";
-import path from "path";
 import Link from "next/link";
 import { ArrowLeft, ShieldCheck, CheckCircle2, FileText, Database, GitCommit, Layers, Lock, Cpu, ExternalLink } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
 import { SUPPORTED_LOCALES } from "@/lib/seo/metadata";
-import { computeMerkleRoot } from "@/lib/security/evidence-vault/merkle-tree";
+import { verifyLocalPublishedAudit } from "@/lib/security/evidence-vault/public-verification";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +16,7 @@ export async function generateMetadata({ params }: VerifyPageProps): Promise<Met
   const { id } = await params;
   return {
     title: `Kryptograficzna Weryfikacja Audytu: ${id} — Velmère`,
-    description: `Niezależna weryfikacja integralności raportu, korzenia Merkle Tree i łańcucha dowodowego dla identyfikatora ${id}.`,
+    description: `Lokalne porównanie bajtów opublikowanych plików z manifestem dla identyfikatora ${id}.`,
   };
 }
 
@@ -29,36 +27,21 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
   }
   setRequestLocale(locale);
 
-  const auditId = decodeURIComponent(id);
-  const manifestPath = path.resolve(process.cwd(), "evidence", auditId, "manifest", "manifest.json");
-
-  let manifest: any = null;
-  let isMerkleValid = true;
-  let recomputedRoot = "";
-
-  if (fs.existsSync(manifestPath)) {
-    try {
-      const raw = fs.readFileSync(manifestPath, "utf-8");
-      manifest = JSON.parse(raw);
-      recomputedRoot = computeMerkleRoot(manifest.leafHashes || []);
-      isMerkleValid = recomputedRoot === manifest.evidenceRoot;
-    } catch {
-      manifest = null;
-    }
-  }
-
-  // Fallback metadata if dynamic record is queried directly
-  const symbol = manifest?.symbol || auditId.replace(/^AUD-(CONTRACT|SHIELD|REAL)-/, "").split("-")[1] || auditId;
-  const name = manifest?.name || `Aktyw / Kontrakt ${symbol}`;
-  const chain = manifest?.chain || manifest?.target?.network || "Ethereum Mainnet (ChainID: 1)";
-  const contractAddress = manifest?.contractAddress || manifest?.target?.addressOrId || "0xdac17f958d2ee523a2206206994597c13d831ec7";
-  const blockNumber = manifest?.blockNumber || 20718940;
-  const commitHash = manifest?.commitHash || "4f8a92b109e87d1245cf780231ea49bc23184910";
-  const sourceHash = manifest?.sourceHash || "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
-  const evidenceRoot = manifest?.evidenceRoot || recomputedRoot || "7d864a381e756b394acd890213bf1c3f171a5a07dfe94dedeb37fbaaf693c256";
-  const reportSha256 = manifest?.reportSha256 || "b45a9871e9823fca8192a83b2718921829103819203810293810293810293810";
-  const engineVersion = manifest?.engineVersion || "3.0.0-institutional";
-  const createdAt = manifest?.createdAt || new Date().toISOString();
+  const verification = await verifyLocalPublishedAudit(id);
+  if (!verification.ok) notFound();
+  const auditId = verification.auditId;
+  const target = verification.target;
+  const symbol = target.symbol ?? "NOT PROVIDED";
+  const name = target.name ?? auditId;
+  const chain = target.chain ?? "NOT PROVIDED";
+  const contractAddress = target.contractAddress ?? "NOT PROVIDED";
+  const blockNumber = target.blockNumber ?? "NOT PROVIDED";
+  const commitHash = target.commitHash ?? "NOT PROVIDED";
+  const sourceHash = target.sourceHash ?? "NOT PROVIDED";
+  const evidenceRoot = verification.evidenceRoot;
+  const reportSha256 = verification.reportSha256;
+  const engineVersion = verification.engineVersion;
+  const createdAt = verification.createdAt;
 
   return (
     <main className="min-h-screen bg-[#07090e] px-4 py-16 text-white sm:px-8 md:py-24">
@@ -74,7 +57,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
           </Link>
           <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-mono font-medium text-emerald-400">
             <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-            STATUS: INTEGRITY VERIFIED (PASS)
+            STATUS: LOCAL ARTIFACT DIGESTS MATCH
           </div>
         </div>
 
@@ -84,7 +67,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
             <div>
               <div className="inline-flex items-center gap-2 rounded-lg bg-amber-400/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-amber-400">
                 <ShieldCheck className="h-4 w-4" />
-                Dedykowana Weryfikacja Dowodowa (Dyrektywa v3 Sekcja 76)
+                Porównanie lokalnych plików z opublikowanym manifestem
               </div>
               <h1 className="mt-4 font-serif text-3xl font-light tracking-tight text-white md:text-5xl">
                 {name} <span className="text-white/40 font-mono text-2xl">({symbol})</span>
@@ -118,7 +101,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
               <p className="mt-3 break-all font-mono text-xs text-emerald-400 bg-black/40 p-2.5 rounded-xl border border-white/5">
                 {reportSha256}
               </p>
-              <span className="mt-2 inline-block text-[10px] font-mono text-emerald-400/80">MATCH: Canonical PDF Hash Validated</span>
+              <span className="mt-2 inline-block text-[10px] font-mono text-emerald-400/80">MATCH: Hash odczytanego pliku PDF zgodny z manifestem</span>
             </div>
 
             {/* 2. Evidence Root */}
@@ -131,7 +114,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
                 {evidenceRoot}
               </p>
               <span className="mt-2 inline-block text-[10px] font-mono text-emerald-400/80">
-                MERKLE ROOT RECALCULATION: {isMerkleValid ? "100% INTEGRITY MATCH" : "RECALCULATED PASS"}
+                MERKLE ROOT RECALCULATION: MATCH WITH READ ARTIFACT BYTES
               </span>
             </div>
 
@@ -144,7 +127,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
               <p className="mt-3 break-all font-mono text-xs text-white/90 bg-black/40 p-2.5 rounded-xl border border-white/5">
                 {contractAddress}
               </p>
-              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Canonical On-Chain Address / ISIN</span>
+              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Adres zadeklarowany w manifeście; nie sprawdzono on-chain</span>
             </div>
 
             {/* 4. Chain / Environment */}
@@ -168,7 +151,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
               <p className="mt-3 font-mono text-xs text-white/90 bg-black/40 p-2.5 rounded-xl border border-white/5">
                 Block #{blockNumber}
               </p>
-              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Immutable Execution Block Boundary</span>
+              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Numer bloku zadeklarowany w manifeście</span>
             </div>
 
             {/* 6. Source Hash */}
@@ -180,7 +163,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
               <p className="mt-3 break-all font-mono text-xs text-white/90 bg-black/40 p-2.5 rounded-xl border border-white/5">
                 {sourceHash}
               </p>
-              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">SHA-256 Digest of Normalized AST Source</span>
+              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Hash źródeł zadeklarowany w manifeście</span>
             </div>
 
             {/* 7. Commit */}
@@ -204,7 +187,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
               <p className="mt-3 font-mono text-xs text-emerald-400 bg-black/40 p-2.5 rounded-xl border border-white/5">
                 Velmère Furnace {engineVersion}
               </p>
-              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Deterministic Zero-Bullshit AST Ruleset v3</span>
+              <span className="mt-2 inline-block text-[10px] font-mono text-white/40">Wersja zadeklarowana w manifeście; silnika nie uruchomiono</span>
             </div>
           </div>
 
@@ -214,10 +197,10 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
               <div>
                 <span className="font-mono text-xs uppercase tracking-wider text-emerald-400">9. Status Końcowy</span>
                 <h3 className="mt-1 font-serif text-xl font-medium text-white">
-                  AUTOMATED ASSESSMENT: INTEGRITY VERIFIED
+                  LOCAL CONTENT CONSISTENCY: MATCH
                 </h3>
                 <p className="mt-1 text-xs text-white/60">
-                  Data Rejestracji: {new Date(createdAt).toLocaleString("pl-PL")} | Pieczęć Czasowa: Deterministic SHA-256 Hash
+                  Data z manifestu: {createdAt} | Zewnętrzna pieczęć czasowa: NOT VERIFIED
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -238,7 +221,7 @@ export default async function AuditVerifyPage({ params }: VerifyPageProps) {
         {/* Institutional Methodology Disclaimer */}
         <div className="mt-8 rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-xs leading-relaxed text-white/40">
           <p className="font-mono uppercase tracking-wider text-white/60 mb-2">Zastrzeżenie Instytucjonalne Velmère</p>
-          Weryfikacja kryptograficzna potwierdza niezmienność rekordu dowodowego od momentu generacji oraz matematyczną spójność drzewa Merkle Tree. Velmère nie stosuje marketingu autorytetu: w przypadku braku odpytania węzła on-chain status uprawnień jest oznaczany jako UNKNOWN, a brak zewnętrznego tokena TSA ASN.1 jest transparentnie deklarowany. Żaden automatyczny audyt nie zastępuje formalnej rewizji kodu ani nie stanowi gwarancji braku podatności zero-day.
+          Odczytane pliki mają hashe zgodne z opublikowanym manifestem. Jest to lokalna kontrola spójności, a nie dowód niezmienności od daty generacji, autentyczności wystawcy ani poprawności audytu. Nie zweryfikowano podpisu TSA, stanu on-chain, commitu repozytorium ani skuteczności silnika. Zgodne hashe nie oznaczają braku podatności ani zgody na wydanie.
         </div>
       </div>
     </main>

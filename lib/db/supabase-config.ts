@@ -1,11 +1,13 @@
+import { evaluateSupabaseStagingBoundary } from "./supabase-staging-boundary";
+
 export function hasSupabasePublicConfig() {
-  return Boolean(
+  return evaluateSupabaseStagingBoundary().allowed && Boolean(
     process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   );
 }
 
 export function hasSupabaseServiceRoleConfig() {
-  return Boolean(
+  return evaluateSupabaseStagingBoundary().allowed && Boolean(
     (process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL) &&
       process.env.SUPABASE_SERVICE_ROLE_KEY,
   );

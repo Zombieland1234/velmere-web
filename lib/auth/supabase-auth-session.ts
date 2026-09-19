@@ -1,3 +1,4 @@
+import { evaluateSupabaseStagingBoundary } from "@/lib/db/supabase-staging-boundary";
 import { createHash, randomUUID } from "node:crypto";
 import { createClient, type AuthSession, type AuthUser } from "@supabase/supabase-js";
 import { bindVelmereAccountToSupabaseSubject } from "@/lib/account/supabase-subject-binding";
@@ -82,6 +83,7 @@ export type SupabaseAuthSessionDependencies = {
 };
 
 function defaultCreateAuthClient(): AuthClientLike | null {
+  if (!evaluateSupabaseStagingBoundary().allowed) return null;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
   if (!url || !anonKey) return null;

@@ -1,3 +1,4 @@
+import { evaluateSupabaseStagingBoundary } from "@/lib/db/supabase-staging-boundary";
 import { createHash } from "node:crypto";
 import { createClient, type AuthSession, type AuthUser } from "@supabase/supabase-js";
 import { readSupabaseAccessTokenCookie } from "@/lib/auth/supabase-auth-cookies";
@@ -88,6 +89,7 @@ function createMemoryStorage(seed: Record<string, string> = {}) {
 }
 
 function defaultCreateFlowClient(storage: StorageLike, accessToken?: string): FlowAuthClient | null {
+  if (!evaluateSupabaseStagingBoundary().allowed) return null;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
   if (!url || !anonKey) return null;
