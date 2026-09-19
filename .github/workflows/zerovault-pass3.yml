@@ -1,0 +1,81 @@
+name: ZeroVaultID Velmere Pass 3
+
+on:
+  push:
+    branches:
+      - external/zerovault-intake-20260919
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  practical-failclosed:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Download and authenticate exact public kit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/zv-pass3/bundle-root
+          curl --proto '=https' --tlsv1.2 -fsSL --max-time 60 -A 'Velmere-Evidence-Verification/3.0' https://zerovaultid.com/certseal/ -o /tmp/zv-pass3/page.html
+          ZIP_URL="$(python3 - <<'PY'
+          from html.parser import HTMLParser
+          from urllib.parse import urljoin
+          import pathlib
+          base='https://zerovaultid.com/certseal/'
+          html=pathlib.Path('/tmp/zv-pass3/page.html').read_text('utf8',errors='replace')
+          class P(HTMLParser):
+              def __init__(self): super().__init__(); self.urls=[]
+              def handle_starttag(self, tag, attrs):
+                  for k,v in attrs:
+                      if k=='href' and v: self.urls.append(urljoin(base,v))
+          p=P(); p.feed(html)
+          z=[u for u in p.urls if u.endswith('zerovaultid-certseal-rung6.zip')]
+          if len(z)!=1: raise SystemExit(z)
+          print(z[0])
+          PY
+          )"
+          curl --proto '=https' --tlsv1.2 -fL --max-time 90 -A 'Velmere-Evidence-Verification/3.0' "$ZIP_URL" -o /tmp/zv-pass3/kit.zip
+          test "$(sha256sum /tmp/zv-pass3/kit.zip | awk '{print $1}')" = "fe876ce644321c2f22b3cd2c565b25ea6c5452912dfdc905a100f31b49e3efac"
+          test "$(wc -c < /tmp/zv-pass3/kit.zip | tr -d ' ')" = "4510686"
+          python3 -m zipfile -e /tmp/zv-pass3/kit.zip /tmp/zv-pass3/bundle-root
+          docker pull node:20 >/dev/null
+
+      - name: Practical fail-closed and remediation control
+        shell: bash
+        env:
+          ZV_PASS3_ROOT: /tmp/zv-pass3
+        run: |
+          set -euo pipefail
+          python3 scripts/external/zerovault-pass3.py | tee /tmp/zv-pass3/pass3-console.txt
+          python3 - <<'PY'
+          import json
+          r=json.load(open('/tmp/zv-pass3/pass3-result.json'))
+          assert r['providerVerifier']['manifestMismatchDetected'] is True
+          assert r['providerVerifier']['tamperedExecutableExecuted'] is True
+          assert r['providerVerifier']['dummyCanaryRead'] is True
+          assert r['independentFullManifestPreflight']['authenticBundlePasses'] is True
+          assert r['independentFullManifestPreflight']['tamperedBundleBlockedBeforeExecution'] is True
+          print('PASS3_FAILCLOSED_FINDING_CONFIRMED=PASS')
+          PY
+
+      - name: Upload Pass 3 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zerovaultid-velmere-pass3
+          path: |
+            /tmp/zv-pass3/pass3-result.json
+            /tmp/zv-pass3/pass3-console.txt
+            /tmp/zv-pass3/provider-stdout.txt
+            /tmp/zv-pass3/provider-stderr.txt
+            /tmp/zv-pass3/out
+          if-no-files-found: warn
+          retention-days: 14
