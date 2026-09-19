@@ -1,0 +1,75 @@
+name: TRELYAN public reviewer reproduction
+
+on:
+  push:
+    branches:
+      - external/trelyan-20260919
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact public TRELYAN reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/brandonjsellam-Releone/trelyan-falcon-inscription.git /tmp/trelyan
+          cd /tmp/trelyan
+          git rev-parse HEAD | tee /tmp/trelyan_commit.txt
+          git status --short | tee /tmp/trelyan_status.txt
+          sha256sum README.md REVIEWER.md | tee /tmp/trelyan_docs.sha256
+
+      - name: Run published short read only reviewer step
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/trelyan
+          python3 -m venv /tmp/trelyan-venv
+          . /tmp/trelyan-venv/bin/activate
+          pip install --upgrade pip >/dev/null
+          pip install trelyan-pq | tee /tmp/trelyan_pip.txt
+          set +e
+          python3 sdk/examples/verify_trelyan.py > /tmp/trelyan_verify.stdout.txt 2> /tmp/trelyan_verify.stderr.txt
+          RC=$?
+          set -e
+          echo "$RC" | tee /tmp/trelyan_verify.exit.txt
+          cat /tmp/trelyan_verify.stdout.txt
+          cat /tmp/trelyan_verify.stderr.txt
+          test "$RC" -eq 0
+
+      - name: Record explicit public claim boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/trelyan
+          {
+            echo "SOURCE_COMMIT=$(git rev-parse HEAD)"
+            echo "REVIEWER_COMMAND=python3 sdk/examples/verify_trelyan.py"
+            echo "REVIEWER_EXIT=$(cat /tmp/trelyan_verify.exit.txt)"
+            echo "PUBLIC_SCOPE=READ_ONLY_TESTNET_AND_PINNED_BYTECODE_CHECK"
+            echo "EXTERNAL_AUDIT=NOT_CLAIMED"
+            echo "MAINNET=NOT_CLAIMED"
+            echo "PRODUCTION_READINESS=NOT_CLAIMED"
+          } | tee /tmp/trelyan_summary.txt
+
+      - name: Upload reproduction evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trelyan-public-reproduction
+          path: |
+            /tmp/trelyan_commit.txt
+            /tmp/trelyan_status.txt
+            /tmp/trelyan_docs.sha256
+            /tmp/trelyan_pip.txt
+            /tmp/trelyan_verify.stdout.txt
+            /tmp/trelyan_verify.stderr.txt
+            /tmp/trelyan_verify.exit.txt
+            /tmp/trelyan_summary.txt
+          if-no-files-found: warn
+          retention-days: 14
